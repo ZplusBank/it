@@ -1,387 +1,389 @@
-// ===== STATE =====
-let sections = [];
-let currentSection = null;
-let chapters = [];
-let selectedChapters = [];
-let questions = [];
-let current = 0;
-let answers = {};
-let start = 0;
-let timer = null;
-let scoreByChapter = {};
+// Data loading and app initialization
+const app = {
+    subjects: [],
+    allChapters: [],
+    selectedChapters: [],
+    currentQuestionIndex: 0,
+    questions: [],
+    userAnswers: {},
+    checkedAnswers: {},
+    currentView: 'subjects',
 
-// ===== INIT =====
-document.addEventListener('DOMContentLoaded', async () => {
-    await loadSections();
-    showHome();
-});
+    async init() {
+        await this.loadData();
+        this.showSubjectsView();
+    },
 
-// ===== SECTIONS =====
-async function loadSections() {
-    try {
-        const res = await fetch('config/sections.json');
-        sections = await res.json();
-        if (sections.length > 0) {
-            currentSection = sections[0].id;
-            await loadChapters(currentSection);
-        }
-    } catch (e) {
-        console.error('Error loading sections:', e);
-        sections = [{ id: 'java2', name: 'Java 2', path: 'data/java2' }];
-        currentSection = 'java2';
-        await loadChapters(currentSection);
-    }
-}
-
-// ===== CHAPTERS =====
-async function loadChapters(sectionId) {
-    try {
-        const section = sections.find(s => s.id === sectionId);
-        if (!section) return;
-
-        const res = await fetch(`${section.path}/chapters.json`);
-        const data = await res.json();
-        chapters = Array.isArray(data) ? data : data.chapters || [];
-    } catch (e) {
-        console.error('Error loading chapters:', e);
-        chapters = [];
-    }
-}
-
-// ===== PAGE NAVIGATION =====
-function show(page) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById(page + 'Page').classList.add('active');
-}
-
-function showHome() {
-    show('home');
-    renderSections();
-}
-
-function showChapters() {
-    show('chapter');
-    renderChapters();
-}
-
-function exitExam() { show('home'); }
-function reviewAnswers() { show('review'); renderReview(); }
-
-// ===== SECTIONS DISPLAY =====
-function renderSections() {
-    const container = document.getElementById('sectionsContainer');
-    if (!container) return;
-
-    const html = sections.map(s => `
-        <label class="chapter-item">
-            <input type="radio" name="section" value="${s.id}" onchange="selectSection('${s.id}')">
-            <div class="chapter-item-text">
-                <h3>${s.name}</h3>
-                <p>${s.path}</p>
-            </div>
-        </label>
-    `).join('');
-
-    container.innerHTML = html;
-    const btn = document.getElementById('homeStartBtn');
-    if (btn) btn.disabled = !currentSection;
-}
-
-async function selectSection(sectionId) {
-    currentSection = sectionId;
-    await loadChapters(sectionId);
-    const btn = document.getElementById('homeStartBtn');
-    if (btn) btn.disabled = false;
-}
-
-async function startFromHome() {
-    if (!currentSection) return;
-    selectedChapters = chapters;
-    showChapters();
-}
-
-// ===== CHAPTERS DISPLAY =====
-function renderChapters() {
-    const titleEl = document.getElementById('sectionTitle');
-    if (titleEl) {
-        titleEl.textContent = `Select Chapters - ${sections.find(s => s.id === currentSection)?.name}`;
-    }
-
-    const html = chapters.map(c => `
-        <label class="chapter-item">
-            <input type="checkbox" value="${c.id}" onchange="updateSelection()">
-            <div class="chapter-item-text">
-                <h3>${c.name}</h3>
-                <p>${c.q || 0} questions</p>
-            </div>
-        </label>
-    `).join('');
-
-    const container = document.getElementById('chaptersContainer');
-    if (container) container.innerHTML = html;
-    updateSelection();
-}
-
-function updateSelection() {
-    const selected = Array.from(
-        document.querySelectorAll('#chaptersContainer input:checked')
-    ).map(x => {
-        const val = x.value;
-        return chapters.find(c => c.id === val);
-    }).filter(c => c);
-
-    selectedChapters = selected;
-
-    const total = selectedChapters.reduce((s, c) => s + (c.q || 0), 0);
-
-    const selCount = document.getElementById('selCount');
-    if (selCount) selCount.textContent = selectedChapters.length;
-
-    const qCount = document.getElementById('qCount');
-    if (qCount) qCount.textContent = total;
-
-    const footer = document.getElementById('selectionFooter');
-    if (footer) footer.style.display = selectedChapters.length ? 'block' : 'none';
-
-    const startBtn = document.getElementById('startBtn');
-    if (startBtn) startBtn.disabled = !selectedChapters.length;
-}
-
-// ===== START EXAM =====
-async function startExam() {
-    if (!selectedChapters.length) return;
-
-    questions = [];
-    scoreByChapter = {};
-
-    const section = sections.find(s => s.id === currentSection);
-    if (!section) return;
-
-    for (const ch of selectedChapters) {
+    async loadData() {
         try {
-            const res = await fetch(`${section.path}/chapter${ch.id}.json`);
-            const data = await res.json();
-            const chData = Array.isArray(data) ? data[0] : data;
+            // Load all chapters
+            const chapters = ['chapter9', 'chapter10', 'chapter11', 'chapter12', 'chapter13', 'chapter17'];
 
-            if (chData.questions) {
-                chData.questions.forEach(q => {
-                    q.chapter = ch.id;
-                    questions.push(q);
-                });
+            for (const chapter of chapters) {
+                try {
+                    const response = await fetch(`./data/java2/${chapter}.json`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (data && data.length > 0) {
+                            const chapterData = data[0];
+                            this.allChapters.push({
+                                id: chapter,
+                                title: chapterData.title || chapter.replace('chapter', 'Chapter '),
+                                questions: chapterData.questions || [],
+                                totalQuestions: chapterData.totalQuestions || chapterData.questions?.length || 0
+                            });
+                        }
+                    }
+                } catch (e) {
+                    console.warn(`Could not load ${chapter}.json:`, e);
+                }
             }
-        } catch (e) {
-            console.error('Error loading chapter:', e);
+
+            // Group into subject
+            this.subjects = [{
+                id: 'java2',
+                name: 'Java 2 - Objects and Classes',
+                description: 'Learn about objects, classes, and OOP principles',
+                icon: '☕',
+                chapters: this.allChapters
+            }];
+
+            console.log('Data loaded:', this.subjects);
+        } catch (error) {
+            console.error('Error loading data:', error);
+            alert('Error loading exam data. Please check the file paths.');
         }
-    }
+    },
 
-    if (!questions.length) {
-        alert('No questions found');
-        return;
-    }
+    showSubjectsView() {
+        this.currentView = 'subjects';
+        this.resetExam();
+        this.hideAllViews();
+        document.getElementById('subjectsView').style.display = 'block';
+        this.renderSubjects();
+    },
 
-    current = 0;
-    answers = {};
-    start = Date.now();
-    show('exam');
-    startTimer();
-    renderQuestion();
-}
+    renderSubjects() {
+        const grid = document.getElementById('subjectsGrid');
+        grid.innerHTML = this.subjects.map(subject => `
+            <div class="subject-card" onclick="app.selectSubject('${subject.id}')">
+                <div style="font-size: 2.5em; margin-bottom: 10px;">${subject.icon}</div>
+                <h2>${subject.name}</h2>
+                <p>${subject.description}</p>
+                <p style="margin-top: 15px; font-size: 0.85em; color: #999;">
+                    ${subject.chapters.length} Chapters Available
+                </p>
+            </div>
+        `).join('');
+    },
 
-// ===== QUESTION RENDERING =====
-function renderQuestion() {
-    if (current < 0 || current >= questions.length) return;
+    selectSubject(subjectId) {
+        const subject = this.subjects.find(s => s.id === subjectId);
+        this.showChaptersView(subject);
+    },
 
-    const q = questions[current];
-    const progress = current + 1;
-    const total = questions.length;
-    const pct = (progress / total) * 100;
+    showChaptersView(subject) {
+        this.currentView = 'chapters';
+        this.hideAllViews();
+        document.getElementById('chaptersView').style.display = 'block';
+        this.renderChapters(subject.chapters);
+    },
 
-    document.getElementById('qNumber').textContent = `Q${progress}`;
-    document.getElementById('qChapter').textContent = `Chapter ${q.chapter}`;
-    document.getElementById('qProgress').textContent = `${progress}/${total}`;
-    document.getElementById('progFill').style.width = pct + '%';
-    document.getElementById('qText').textContent = q.text;
+    renderChapters(chapters) {
+        const grid = document.getElementById('chaptersGrid');
+        grid.innerHTML = chapters.map((chapter, idx) => `
+            <div class="chapter-card">
+                <input type="checkbox" id="ch-${idx}" value="${chapter.id}" 
+                       onchange="app.updateSelectedChapters()">
+                <label for="ch-${idx}">
+                    ${chapter.title}<br>
+                    <span style="font-size: 0.8em; color: #999;">${chapter.totalQuestions} questions</span>
+                </label>
+            </div>
+        `).join('');
+    },
 
-    const isMulipte = q.inputType === 'checkbox';
-    const saved = answers[current];
+    updateSelectedChapters() {
+        const checkboxes = document.querySelectorAll('#chaptersGrid input[type="checkbox"]:checked');
+        this.selectedChapters = Array.from(checkboxes).map(cb => cb.value);
+        document.getElementById('startExamBtn').disabled = this.selectedChapters.length === 0;
+    },
 
-    const optHtml = q.choices.map((c, i) => `
-        <label class="option">
-            <input type="${q.inputType}" name="q${current}" value="${c.value}" 
-                   ${(isMulipte && saved?.includes(c.value)) || (!isMulipte && saved === c.value) ? 'checked' : ''}
-                   onchange="handleAnswer()">
-            <span class="option-text">${c.text}</span>
-        </label>
-    `).join('');
+    startExam() {
+        // Collect questions from selected chapters
+        this.questions = [];
+        const selectedChapterIds = new Set(this.selectedChapters);
 
-    document.getElementById('optionsBox').innerHTML = optHtml;
-    document.getElementById('feedback').style.display = 'none';
-    document.getElementById('feedback').textContent = '';
+        this.allChapters.forEach(chapter => {
+            if (selectedChapterIds.has(chapter.id)) {
+                this.questions.push(...chapter.questions);
+            }
+        });
 
-    const hasAns = isMulipte ? (saved && saved.length > 0) : (saved !== undefined);
-    document.getElementById('checkBtn').disabled = !hasAns;
-    document.getElementById('prevBtn').disabled = current === 0;
-    document.getElementById('nextBtn').style.display = current === questions.length - 1 ? 'none' : 'inline-flex';
-    document.getElementById('submitBtn').style.display = current === questions.length - 1 ? 'inline-flex' : 'none';
-}
+        if (this.questions.length === 0) {
+            alert('Please select at least one chapter');
+            return;
+        }
 
-function handleAnswer() {
-    const type = questions[current].inputType;
-    if (type === 'checkbox') {
-        answers[current] = Array.from(
-            document.querySelectorAll(`input[name="q${current}"]:checked`)
-        ).map(x => x.value);
-    } else {
-        answers[current] = document.querySelector(`input[name="q${current}"]:checked`)?.value || undefined;
-    }
-    document.getElementById('checkBtn').disabled = !answers[current];
-}
+        this.currentQuestionIndex = 0;
+        this.userAnswers = {};
+        this.checkedAnswers = {};
 
-// ===== CHECK ANSWER =====
-function checkAnswer() {
-    const q = questions[current];
-    const ans = answers[current];
-    const type = q.inputType;
+        this.showExamView();
+    },
 
-    let correct = false;
+    showExamView() {
+        this.currentView = 'exam';
+        this.hideAllViews();
+        document.getElementById('examView').style.display = 'block';
 
-    if (type === 'checkbox') {
-        const userAns = ans.sort();
-        const rightAns = Array.isArray(q.correctAnswer)
-            ? q.correctAnswer.sort()
-            : q.correctAnswer.split('').sort();
-        correct = JSON.stringify(userAns) === JSON.stringify(rightAns);
-    } else {
-        correct = ans === q.correctAnswer;
-    }
+        // Update title
+        document.getElementById('examTitle').textContent = `Java 2 - Chapter Exam (${this.questions.length} questions)`;
+        document.getElementById('totalQuestions').textContent = this.questions.length;
 
-    const fb = document.getElementById('feedback');
-    fb.style.display = 'block';
-    fb.textContent = correct ? '✓ Correct!' : `✗ Incorrect. Correct: ${Array.isArray(q.correctAnswer) ? q.correctAnswer.join(', ') : q.correctAnswer}`;
-    fb.className = correct ? 'correct' : 'incorrect';
-}
+        this.renderQuestionNumbers();
+        this.renderCurrentQuestion();
+    },
 
-// ===== NAVIGATION =====
-function nextQ() {
-    if (current < questions.length - 1) {
-        current++;
-        renderQuestion();
-    }
-}
+    renderQuestionNumbers() {
+        const container = document.getElementById('questionNumbers');
+        container.innerHTML = this.questions.map((q, idx) => `
+            <button class="question-number ${idx === 0 ? 'active' : ''} ${this.userAnswers[idx] ? 'answered' : ''}"
+                    onclick="app.goToQuestion(${idx})">
+                ${idx + 1}
+            </button>
+        `).join('');
+    },
 
-function prevQ() {
-    if (current > 0) {
-        current--;
-        renderQuestion();
-    }
-}
+    renderCurrentQuestion() {
+        const question = this.questions[this.currentQuestionIndex];
+        const container = document.getElementById('questionContainer');
 
-// ===== SUBMIT EXAM =====
-function submitExam() {
-    clearInterval(timer);
+        document.getElementById('currentQuestion').textContent = this.currentQuestionIndex + 1;
 
-    let correct = 0;
-    scoreByChapter = {};
+        let html = `<div class="question-text">${question.text}</div>`;
 
-    questions.forEach((q, i) => {
-        const ch = q.chapter;
-        if (!scoreByChapter[ch]) scoreByChapter[ch] = { c: 0, t: 0 };
-        scoreByChapter[ch].t++;
+        // Add code block styling
+        html = html.replace(/<span class="keyword">/g, '<span class="keyword">')
+            .replace(/<span class="literal">/g, '<span class="literal">')
+            .replace(/<span class="constant">/g, '<span class="constant">');
+
+        const isCheckbox = question.inputType === 'checkbox';
+        const inputType = isCheckbox ? 'checkbox' : 'radio';
+        const currentAnswer = this.userAnswers[this.currentQuestionIndex] || (isCheckbox ? [] : '');
+
+        html += '<div class="choices">';
+        question.choices.forEach(choice => {
+            const isSelected = isCheckbox
+                ? (Array.isArray(currentAnswer) && currentAnswer.includes(choice.value))
+                : currentAnswer === choice.value;
+
+            html += `
+                <div class="choice ${isSelected ? 'selected' : ''}">
+                    <input type="${inputType}" 
+                           id="choice-${choice.value}" 
+                           name="answer"
+                           value="${choice.value}"
+                           ${isSelected ? 'checked' : ''}
+                           onchange="app.selectAnswer('${choice.value}', ${isCheckbox})">
+                    <label for="choice-${choice.value}">${choice.text}</label>
+                </div>
+            `;
+        });
+        html += '</div>';
+
+        container.innerHTML = html;
+
+        // Update button states
+        document.getElementById('prevBtn').disabled = this.currentQuestionIndex === 0;
+        document.getElementById('nextBtn').disabled = false;
+        document.getElementById('checkBtn').style.display = this.currentQuestionIndex === this.questions.length - 1 ? 'none' : 'block';
+        document.getElementById('submitBtn').style.display = this.currentQuestionIndex === this.questions.length - 1 ? 'block' : 'none';
+
+        // Clear feedback
+        document.getElementById('feedback').className = 'feedback';
+        document.getElementById('feedback').innerHTML = '';
+
+        // Restore check state if already checked
+        if (this.checkedAnswers[this.currentQuestionIndex]) {
+            this.showFeedback(this.currentQuestionIndex);
+        }
+    },
+
+    selectAnswer(value, isCheckbox) {
+        if (isCheckbox) {
+            const currentAnswer = this.userAnswers[this.currentQuestionIndex] || [];
+            if (!Array.isArray(currentAnswer)) {
+                this.userAnswers[this.currentQuestionIndex] = [value];
+            } else {
+                if (currentAnswer.includes(value)) {
+                    this.userAnswers[this.currentQuestionIndex] = currentAnswer.filter(v => v !== value);
+                } else {
+                    this.userAnswers[this.currentQuestionIndex].push(value);
+                }
+            }
+        } else {
+            this.userAnswers[this.currentQuestionIndex] = value;
+        }
+    },
+
+    checkAnswer() {
+        this.checkedAnswers[this.currentQuestionIndex] = true;
+        this.showFeedback(this.currentQuestionIndex);
+    },
+
+    showFeedback(index) {
+        const question = this.questions[index];
+        const userAnswer = this.userAnswers[index];
+        const feedbackEl = document.getElementById('feedback');
 
         let isCorrect = false;
-        const ans = answers[i];
-
-        if (q.inputType === 'checkbox') {
-            const userAns = (ans || []).sort();
-            const rightAns = Array.isArray(q.correctAnswer)
-                ? q.correctAnswer.sort()
-                : q.correctAnswer.split('').sort();
-            isCorrect = JSON.stringify(userAns) === JSON.stringify(rightAns);
+        if (question.inputType === 'checkbox') {
+            const correctAnswers = question.correctAnswer.split('');
+            const userAnswers = Array.isArray(userAnswer) ? userAnswer : [];
+            isCorrect = correctAnswers.length === userAnswers.length &&
+                correctAnswers.every(a => userAnswers.includes(a));
         } else {
-            isCorrect = ans === q.correctAnswer;
+            isCorrect = userAnswer === question.correctAnswer;
         }
 
-        if (isCorrect) {
-            correct++;
-            scoreByChapter[ch].c++;
+        feedbackEl.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+        const message = isCorrect ? '✓ Correct!' : '✗ Incorrect';
+        const correctText = question.inputType === 'checkbox'
+            ? `Correct answers: ${question.correctAnswer.split('').join(', ')}`
+            : `Correct answer: ${question.correctAnswer}`;
+
+        feedbackEl.innerHTML = `<strong>${message}</strong><div class="correct-answer">${correctText}</div>`;
+    },
+
+    goToQuestion(index) {
+        this.currentQuestionIndex = index;
+        this.renderCurrentQuestion();
+        this.updateQuestionNumberStyles();
+    },
+
+    nextQuestion() {
+        if (this.currentQuestionIndex < this.questions.length - 1) {
+            this.currentQuestionIndex++;
+            this.renderCurrentQuestion();
+            this.updateQuestionNumberStyles();
         }
-    });
+    },
 
-    const total = questions.length;
-    const pct = Math.round((correct / total) * 100);
-    const time = Math.floor((Date.now() - start) / 1000);
-
-    document.getElementById('scorePct').textContent = pct;
-    document.getElementById('cCount').textContent = correct;
-    document.getElementById('wCount').textContent = total - correct;
-    document.getElementById('time').textContent = formatTime(time);
-
-    // Ring animation
-    const ring = document.getElementById('ring');
-    if (ring) {
-        const circumference = 2 * Math.PI * 40;
-        ring.style.strokeDashoffset = circumference - (pct / 100) * circumference;
-    }
-
-    // Per-chapter results
-    let chHtml = '<h4>Per Chapter:</h4>';
-    selectedChapters.forEach(ch => {
-        const result = scoreByChapter[ch.id];
-        if (result) {
-            const chPct = Math.round((result.c / result.t) * 100);
-            chHtml += `<div class="chapter-result">
-                <span>${ch.name}</span>
-                <span class="score ${chPct >= 80 ? 'high' : chPct >= 60 ? 'mid' : 'low'}">${chPct}%</span>
-            </div>`;
+    previousQuestion() {
+        if (this.currentQuestionIndex > 0) {
+            this.currentQuestionIndex--;
+            this.renderCurrentQuestion();
+            this.updateQuestionNumberStyles();
         }
-    });
-    const perChapter = document.getElementById('perChapter');
-    if (perChapter) perChapter.innerHTML = chHtml;
+    },
 
-    show('results');
-}
+    updateQuestionNumberStyles() {
+        document.querySelectorAll('.question-number').forEach((btn, idx) => {
+            btn.classList.remove('active');
+            if (idx === this.currentQuestionIndex) {
+                btn.classList.add('active');
+            }
+            if (this.userAnswers[idx]) {
+                btn.classList.add('answered');
+            } else {
+                btn.classList.remove('answered');
+            }
+        });
+    },
 
-// ===== REVIEW =====
-function renderReview() {
-    let html = '';
+    submitExam() {
+        this.showResultsView();
+    },
 
-    questions.forEach((q, i) => {
-        const ans = answers[i];
-        const type = q.inputType;
-        let correct = false;
+    showResultsView() {
+        this.currentView = 'results';
+        this.hideAllViews();
+        document.getElementById('resultsView').style.display = 'block';
+        this.calculateAndDisplayResults();
+    },
 
-        if (type === 'checkbox') {
-            const userAns = (ans || []).sort();
-            const rightAns = Array.isArray(q.correctAnswer)
-                ? q.correctAnswer.sort()
-                : q.correctAnswer.split('').sort();
-            correct = JSON.stringify(userAns) === JSON.stringify(rightAns);
+    calculateAndDisplayResults() {
+        let correctCount = 0;
+        let totalCount = this.questions.length;
+        let details = '';
+
+        this.questions.forEach((question, idx) => {
+            const userAnswer = this.userAnswers[idx];
+            let isCorrect = false;
+
+            if (question.inputType === 'checkbox') {
+                const correctAnswers = question.correctAnswer.split('');
+                const userAnswers = Array.isArray(userAnswer) ? userAnswer : [];
+                isCorrect = correctAnswers.length === userAnswers.length &&
+                    correctAnswers.every(a => userAnswers.includes(a));
+            } else {
+                isCorrect = userAnswer === question.correctAnswer;
+            }
+
+            if (isCorrect) correctCount++;
+
+            details += `
+                <div class="result-item">
+                    <span>Question ${idx + 1}</span>
+                    <span>${isCorrect ? '✓' : '✗'}</span>
+                </div>
+            `;
+        });
+
+        const percentage = Math.round((correctCount / totalCount) * 100);
+
+        document.getElementById('scoreDisplay').textContent = `${correctCount} / ${totalCount}`;
+        document.getElementById('scoreText').textContent = `Score: ${percentage}%`;
+
+        let resultMessage = '';
+        if (percentage >= 90) {
+            resultMessage = '🌟 Outstanding! You have mastered this material!';
+        } else if (percentage >= 80) {
+            resultMessage = '😊 Great job! You have a good understanding.';
+        } else if (percentage >= 70) {
+            resultMessage = '👍 Good effort! Keep practicing to improve.';
+        } else if (percentage >= 60) {
+            resultMessage = '📚 You\'re making progress. Study more and try again.';
         } else {
-            correct = ans === q.correctAnswer;
+            resultMessage = '💪 Keep practicing! Review the material and try again.';
         }
 
-        html += `<div class="review-item ${correct ? 'correct' : 'incorrect'}">
-            <div class="review-q">Q${i + 1}: ${q.text}</div>
-            <div class="review-answer review-${correct ? 'correct' : 'wrong'}">
-                Your answer: ${ans ? (Array.isArray(ans) ? ans.join(', ') : ans) : 'Not answered'}
+        document.getElementById('resultDetails').innerHTML = `
+            <div style="text-align: center; margin-bottom: 20px; font-size: 1.1em; color: #667eea; font-weight: 600;">
+                ${resultMessage}
             </div>
-            ${!correct ? `<div class="review-answer review-correct">Correct: ${Array.isArray(q.correctAnswer) ? q.correctAnswer.join(', ') : q.correctAnswer}</div>` : ''}
-        </div>`;
-    });
+            <div style="max-height: 300px; overflow-y: auto;">
+                ${details}
+            </div>
+        `;
+    },
 
-    document.getElementById('reviewBox').innerHTML = html;
-}
+    goBackToSubjects() {
+        this.showSubjectsView();
+    },
 
-// ===== TIMER =====
-function startTimer() {
-    timer = setInterval(() => {
-        const elapsed = Math.floor((Date.now() - start) / 1000);
-        document.getElementById('timer').textContent = formatTime(elapsed);
-    }, 1000);
-}
+    restart() {
+        this.selectedChapters = [];
+        this.showSubjectsView();
+    },
 
-function formatTime(secs) {
-    const m = Math.floor(secs / 60);
-    const s = secs % 60;
-    return `${m}:${s.toString().padStart(2, '0')}`;
-}
+    hideAllViews() {
+        document.getElementById('subjectsView').style.display = 'none';
+        document.getElementById('chaptersView').style.display = 'none';
+        document.getElementById('examView').style.display = 'none';
+        document.getElementById('resultsView').style.display = 'none';
+    },
+
+    resetExam() {
+        this.currentQuestionIndex = 0;
+        this.questions = [];
+        this.userAnswers = {};
+        this.checkedAnswers = {};
+    }
+};
+
+// Initialize app when page loads
+window.addEventListener('DOMContentLoaded', () => {
+    app.init();
+});

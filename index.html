@@ -3,103 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Java 2 Exam</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <title>Exam System - Java 2</title>
+    <link rel="stylesheet" href="css/exam-styles.css">
 </head>
 <body>
-    <!-- HOME PAGE -->
-    <div id="homePage" class="page active">
-        <div class="header">
-            <h1>📚 Exam Platform</h1>
-            <p>Multiple Subjects • Unlimited Questions</p>
-        </div>
-        <main>
-            <div id="sectionsContainer" class="chapters-container"></div>
-            <button class="btn-primary" onclick="startFromHome()" id="homeStartBtn" disabled>Start Exam</button>
-        </main>
-    </div>
+    <div class="container">
+        <header>
+            <h1>📚 Exam System</h1>
+            <p>Master your Java skills with interactive exams</p>
+        </header>
 
-    <!-- CHAPTER SELECTION -->
-    <div id="chapterPage" class="page">
-        <div class="header">
-            <button class="btn-back" onclick="showHome()">← Back</button>
-            <h1 id="sectionTitle">Select Chapters</h1>
-        </div>
-        <main>
-            <div id="chaptersContainer" class="chapters-container"></div>
-            <div id="selectionFooter" class="selection-footer" style="display:none;">
-                <p><strong id="selCount">0</strong> chapters • <strong id="qCount">0</strong> questions</p>
-                <button class="btn-primary" onclick="startExam()" id="startBtn" disabled>Start Exam</button>
+        <!-- SUBJECTS VIEW -->
+        <div class="subjects-view" id="subjectsView">
+            <div class="subjects-grid" id="subjectsGrid">
+                <!-- Subjects will be generated here -->
             </div>
-        </main>
-    </div>
+        </div>
 
-    <!-- EXAM PAGE -->
-    <div id="examPage" class="page">
-        <div class="exam-header">
-            <button class="btn-back" onclick="exitExam()">← Exit</button>
-            <div>
-                <span id="qProgress">1/1</span>
-                <div class="progress-bar"><div id="progFill" class="progress-fill"></div></div>
+        <!-- CHAPTERS VIEW -->
+        <div class="chapters-view" id="chaptersView">
+            <button class="back-button" onclick="app.goBackToSubjects()">← Back to Subjects</button>
+            <h2 style="color: white; margin-bottom: 20px;">Select Chapters</h2>
+            <div class="chapters-grid" id="chaptersGrid">
+                <!-- Chapters will be generated here -->
             </div>
-            <span id="timer">0:00</span>
+            <button class="start-exam-btn" id="startExamBtn" onclick="app.startExam()" disabled>
+                Start Exam
+            </button>
         </div>
-        <main>
-            <div id="questionBox" class="question-box">
-                <div class="question-header">
-                    <span id="qNumber">Q1</span>
-                    <span id="qChapter" class="badge">Chapter 9</span>
+
+        <!-- EXAM VIEW -->
+        <div class="exam-view" id="examView">
+            <div class="exam-header">
+                <div class="exam-title" id="examTitle"></div>
+                <div class="question-counter">
+                    <span id="currentQuestion">1</span> / <span id="totalQuestions">0</span>
                 </div>
-                <h2 id="qText"></h2>
-                <div id="optionsBox" class="options-box"></div>
-                <button id="checkBtn" class="btn-secondary" onclick="checkAnswer()" disabled>Check Answer</button>
-                <div id="feedback"></div>
             </div>
-            <div class="btn-group">
-                <button id="prevBtn" class="btn-secondary" onclick="prevQ()" disabled>← Previous</button>
-                <button id="nextBtn" class="btn-primary" onclick="nextQ()">Next →</button>
-                <button id="submitBtn" class="btn-success" onclick="submitExam()" style="display:none;">Submit</button>
-            </div>
-        </main>
-    </div>
 
-    <!-- RESULTS PAGE -->
-    <div id="resultsPage" class="page">
-        <div class="header">
-            <h1>✓ Complete!</h1>
+            <div class="question-numbers" id="questionNumbers">
+                <!-- Question numbers will be generated here -->
+            </div>
+
+            <div class="question-container" id="questionContainer">
+                <!-- Question will be rendered here -->
+            </div>
+
+            <div class="feedback" id="feedback"></div>
+
+            <div class="exam-controls">
+                <button class="nav-btn" id="prevBtn" onclick="app.previousQuestion()" disabled>← Previous</button>
+                <button class="check-btn" id="checkBtn" onclick="app.checkAnswer()">Check Answer</button>
+                <button class="nav-btn" id="nextBtn" onclick="app.nextQuestion()">Next →</button>
+                <button class="submit-btn" id="submitBtn" onclick="app.submitExam()" style="display: none;">Submit Exam</button>
+            </div>
         </div>
-        <main>
-            <div class="results-box">
-                <div class="score-ring">
-                    <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" class="ring-bg"></circle><circle cx="50" cy="50" r="40" id="ring" class="ring"></circle></svg>
-                    <div class="score"><span id="scorePct">0</span>%</div>
-                </div>
-                <div class="stats">
-                    <div><span class="label">Correct</span><span class="value correct" id="cCount">0</span></div>
-                    <div><span class="label">Wrong</span><span class="value wrong" id="wCount">0</span></div>
-                    <div><span class="label">Time</span><span class="value" id="time">0:00</span></div>
-                </div>
-                <div id="perChapter" class="per-chapter"></div>
-            </div>
-            <div class="btn-group">
-                <button class="btn-secondary" onclick="reviewAnswers()">Review</button>
-                <button class="btn-primary" onclick="showHome()">New Exam</button>
-            </div>
-        </main>
-    </div>
 
-    <!-- REVIEW PAGE -->
-    <div id="reviewPage" class="page">
-        <div class="header">
-            <button class="btn-back" onclick="showHome()">← Home</button>
-            <h1>Review Answers</h1>
+        <!-- RESULTS VIEW -->
+        <div class="results-view" id="resultsView">
+            <div class="results-title">📊 Exam Results</div>
+            <div class="score" id="scoreDisplay"></div>
+            <div class="score-text" id="scoreText"></div>
+            
+            <div class="result-details" id="resultDetails"></div>
+            
+            <button class="restart-btn" onclick="app.restart()">Take Another Exam</button>
         </div>
-        <main id="reviewBox"></main>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="js/exam-engine.js"></script>
 </body>
 </html>
