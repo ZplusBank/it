@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive exam system for Java 2 - Objects and Classes">
     <title>Exam System - Java 2</title>
     <link rel="stylesheet" href="css/exam-styles.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="container">
-        <header>
+        <header role="banner">
             <h1>📚 Exam System</h1>
             <p>Master your Java skills with interactive exams</p>
         </header>
+
+        <main id="main-content">
 
         <!-- SUBJECTS VIEW -->
         <div class="subjects-view" id="subjectsView">
@@ -69,6 +73,7 @@
             
             <button class="restart-btn" onclick="app.restart()">Take Another Exam</button>
         </div>
+        </main>
     </div>
 
     <script src="js/exam-engine.js"></script>

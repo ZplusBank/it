@@ -4,6 +4,21 @@
     box-sizing: border-box;
 }
 
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #667eea;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -120,6 +135,8 @@ header h1 {
     cursor: pointer;
     font-weight: 500;
     color: #333;
+    display: block;
+    text-align: center;
 }
 
 .start-exam-btn {
@@ -478,29 +495,88 @@ span[style*="monospace"] {
     font-size: 0.9em;
 }
 
+@media (max-width: 1024px) {
+    .subjects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .chapters-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
     .subjects-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .subject-card {
+        padding: 20px;
+    }
+
+    .subject-card h2 {
+        font-size: 1.2em;
+    }
+
+    .chapters-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .chapter-card {
+        padding: 15px;
     }
 
     .exam-view {
+        padding: 15px;
+    }
+
+    .question-container {
+        min-height: 300px;
         padding: 20px;
+    }
+
+    .question-text {
+        font-size: 1em;
     }
 
     .question-numbers {
         gap: 6px;
+        margin-bottom: 20px;
     }
 
     .question-number {
         width: 35px;
         height: 35px;
-        font-size: 0.8em;
+        font-size: 0.75em;
     }
 
     .exam-header {
         flex-direction: column;
         gap: 15px;
         align-items: flex-start;
+    }
+
+    .exam-title {
+        font-size: 1.1em;
+    }
+
+    .question-counter {
+        padding: 6px 12px;
+        font-size: 0.9em;
     }
 
     .exam-controls {
@@ -512,5 +588,90 @@ span[style*="monospace"] {
     .check-btn,
     .submit-btn {
         width: 100%;
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .results-view {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .results-title {
+        font-size: 1.5em;
+    }
+
+    .score {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 8px;
+    }
+
+    header {
+        margin-bottom: 20px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+        margin-bottom: 5px;
+    }
+
+    header p {
+        font-size: 0.85em;
+    }
+
+    .subject-card {
+        padding: 15px;
+    }
+
+    .subject-card h2 {
+        font-size: 1.1em;
+    }
+
+    .chapters-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .chapter-card {
+        padding: 12px;
+    }
+
+    .back-button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .start-exam-btn {
+        padding: 12px;
+    }
+
+    .question-numbers {
+        gap: 4px;
+        margin-bottom: 15px;
+    }
+
+    .question-number {
+        width: 30px;
+        height: 30px;
+        font-size: 0.65em;
+    }
+
+    .code-block {
+        padding: 10px;
+        font-size: 0.85em;
+    }
+
+    .choice {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .choice label {
+        font-size: 0.95em;
     }
 }
