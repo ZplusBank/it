@@ -24,21 +24,37 @@ const app = {
                     const response = await fetch(`./data/java2/${chapter}.json`);
                     if (response.ok) {
                         const data = await response.json();
-                        // Handle both array and object formats
-                        const chapterData = Array.isArray(data) ? data[0] : data;
-                        if (chapterData && chapterData.title) {
+
+                        // Handle multiple JSON format variations:
+                        // 1. Array format: [{title, questions}, ...]
+                        // 2. Direct object format: {title, questions, ...}
+                        let chapterData = null;
+
+                        if (Array.isArray(data)) {
+                            chapterData = data.length > 0 ? data[0] : null;
+                        } else if (typeof data === 'object' && data !== null) {
+                            chapterData = data;
+                        }
+
+                        // Validate chapter has required fields
+                        if (chapterData && chapterData.title && Array.isArray(chapterData.questions)) {
                             this.allChapters.push({
                                 id: chapter,
                                 title: chapterData.title,
-                                questions: chapterData.questions || [],
-                                totalQuestions: chapterData.totalQuestions || chapterData.questions?.length || 0
+                                questions: chapterData.questions,
+                                totalQuestions: chapterData.questions.length
                             });
+                            console.log(`Loaded ${chapter}: ${chapterData.title} (${chapterData.questions.length} questions)`);
+                        } else {
+                            console.warn(`${chapter}.json has invalid structure - missing title or questions array`);
                         }
                     }
                 } catch (e) {
                     console.warn(`Could not load ${chapter}.json:`, e);
                 }
             }
+
+            console.log(`Total chapters loaded: ${this.allChapters.length}`);
 
             // Group into subject
             this.subjects = [{
