@@ -8,6 +8,9 @@ let examStartTime = null;
 let timerInterval = null;
 let currentFilter = 'all';
 let searchQuery = '';
+let selectedChapters = []; // For multiple chapter selection
+let combinedQuestions = []; // Questions from all selected chapters
+let examMode = 'single'; // 'single' or 'multiple'
 
 // ===== Initialize App =====
 document.addEventListener('DOMContentLoaded', () => {
@@ -166,9 +169,43 @@ function openSection(sectionId) {
     const modalTitle = document.getElementById('modalTitle');
     const chaptersList = document.getElementById('chaptersList');
 
-    modalTitle.textContent = `${currentSection.title} - Select Chapter`;
+    modalTitle.textContent = `${currentSection.title} - Select Chapter(s)`;
+    
+    // Add mode selection
+    const modeSelection = `
+        <div class="mode-selection" style="margin-bottom: 20px; padding: 15px; background: #f5f5f5; border-radius: 8px;">
+            <h4 style="margin: 0 0 10px 0; font-size: 14px; font-weight: 600;">Exam Mode:</h4>
+            <label style="display: flex; align-items: center; margin: 8px 0; cursor: pointer;">
+                <input type="radio" name="examMode" value="single" checked onchange="setExamMode('single')" style="margin-right: 10px;">
+                <span><strong>Single Chapter</strong> - One chapter at a time</span>
+            </label>
+            <label style="display: flex; align-items: center; margin: 8px 0; cursor: pointer;">
+                <input type="radio" name="examMode" value="multiple" onchange="setExamMode('multiple')" style="margin-right: 10px;">
+                <span><strong>Multiple Chapters</strong> - Select multiple chapters</span>
+            </label>
+        </div>
+    `;
 
-    chaptersList.innerHTML = currentSection.chapters.map(chapter => `
+    chaptersList.innerHTML = modeSelection + `
+        <div id="chaptersContainer">
+            ${examMode === 'single' ? renderSingleChapters() : renderMultipleChapters()}
+        </div>
+    `;
+
+    modal.classList.add('active');
+}
+
+// ===== Set Exam Mode =====
+function setExamMode(mode) {
+    examMode = mode;
+    selectedChapters = [];
+    document.getElementById('chaptersContainer').innerHTML = 
+        mode === 'single' ? renderSingleChapters() : renderMultipleChapters();
+}
+
+// ===== Render Single Chapters =====
+function renderSingleChapters() {
+    return currentSection.chapters.map(chapter => `
         <div class="chapter-item" onclick="startChapter('${chapter.id}')">
             <div class="chapter-info">
                 <h3>${chapter.title}</h3>
@@ -181,8 +218,76 @@ function openSection(sectionId) {
             </div>
         </div>
     `).join('');
+}
 
-    modal.classList.add('active');
+// ===== Render Multiple Chapters =====
+function renderMultipleChapters() {
+    return `
+        <div class="chapters-selection">
+            ${currentSection.chapters.map(chapter => `
+                <label class="chapter-checkbox-item" style="display: flex; align-items: center; padding: 12px; margin: 8px 0; border: 2px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.2s;">
+                    <input 
+                        type="checkbox" 
+                        value="${chapter.id}"
+                        data-questions="${chapter.questions}"
+                        onchange="toggleChapterSelection('${chapter.id}', this.checked, ${chapter.questions})"
+                        style="margin-right: 12px; cursor: pointer; width: 18px; height: 18px;"
+                    />
+                    <div style="flex: 1;">
+                        <h3 style="margin: 0; font-size: 14px; font-weight: 600;">${chapter.title}</h3>
+                        <p style="margin: 4px 0 0 0; font-size: 13px; color: #666;">${chapter.questions} questions</p>
+                    </div>
+                </label>
+            `).join('')}
+            ${selectedChapters.length > 0 ? `
+                <div style="margin-top: 20px; padding: 15px; background: #e8f5e9; border-radius: 8px; border-left: 4px solid #4caf50;">
+                    <div style="font-size: 14px; margin-bottom: 10px;">
+                        <strong>Selected:</strong> ${selectedChapters.length} chapter(s) - 
+                        <span id="totalQuestionsCount">0</span> total questions
+                    </div>
+                    <button onclick="startMultipleChapters()" style="
+                        width: 100%;
+                        padding: 10px;
+                        background: #4caf50;
+                        color: white;
+                        border: none;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        font-weight: 600;
+                        font-size: 14px;
+                    ">
+                        Start Exam
+                    </button>
+                </div>
+            ` : ''}
+        </div>
+    `;
+}
+
+// ===== Toggle Chapter Selection =====
+function toggleChapterSelection(chapterId, isChecked, questionCount) {
+    if (isChecked) {
+        if (!selectedChapters.includes(chapterId)) {
+            selectedChapters.push(chapterId);
+        }
+    } else {
+        selectedChapters = selectedChapters.filter(id => id !== chapterId);
+    }
+    
+    updateMultiChapterUI();
+}
+
+// ===== Update Multi-Chapter UI =====
+function updateMultiChapterUI() {
+    const totalQuestions = selectedChapters.reduce((sum, chapterId) => {
+        const chapter = currentSection.chapters.find(c => c.id === chapterId);
+        return sum + (chapter ? chapter.questions : 0);
+    }, 0);
+    
+    const countElement = document.getElementById('totalQuestionsCount');
+    if (countElement) {
+        countElement.textContent = totalQuestions;
+    }
 }
 
 // ===== Close Chapter Modal =====
@@ -190,7 +295,7 @@ function closeChapterModal() {
     document.getElementById('chapterModal').classList.remove('active');
 }
 
-// ===== Start Chapter =====
+// ===== Start Chapter (Single) =====
 async function startChapter(chapterId) {
     const chapter = currentSection.chapters.find(c => c.id === chapterId);
     if (!chapter) return;
@@ -207,6 +312,9 @@ async function startChapter(chapterId) {
             throw new Error('Invalid chapter data: missing questions array');
         }
 
+        // Single chapter mode
+        examMode = 'single';
+        combinedQuestions = currentChapter.questions;
         currentQuestionIndex = 0;
         userAnswers = {};
         examStartTime = Date.now();
@@ -218,6 +326,65 @@ async function startChapter(chapterId) {
     } catch (error) {
         console.error('Error loading chapter:', error);
         alert('Failed to load chapter: ' + error.message);
+    }
+}
+
+// ===== Start Multiple Chapters =====
+async function startMultipleChapters() {
+    if (selectedChapters.length === 0) {
+        alert('Please select at least one chapter');
+        return;
+    }
+
+    try {
+        combinedQuestions = [];
+        let chapterData = [];
+
+        // Load all selected chapters
+        for (const chapterId of selectedChapters) {
+            const chapter = currentSection.chapters.find(c => c.id === chapterId);
+            if (!chapter) continue;
+
+            const response = await fetch(`data/${currentSection.folder}/${chapter.file}`);
+            const data = await response.json();
+            
+            const chapterContent = Array.isArray(data) ? data[0] : data;
+            
+            if (chapterContent.questions && Array.isArray(chapterContent.questions)) {
+                // Add chapter info to questions
+                chapterContent.questions.forEach(q => {
+                    q.chapterId = chapterId;
+                    q.chapterTitle = chapter.title;
+                });
+                combinedQuestions = combinedQuestions.concat(chapterContent.questions);
+                chapterData.push({ id: chapterId, title: chapter.title });
+            }
+        }
+
+        if (combinedQuestions.length === 0) {
+            throw new Error('No questions found in selected chapters');
+        }
+
+        // Set up combined exam
+        examMode = 'multiple';
+        currentChapter = {
+            title: `Multiple Chapters (${selectedChapters.length})`,
+            questions: combinedQuestions,
+            isMultiChapter: true,
+            chapters: chapterData
+        };
+        
+        currentQuestionIndex = 0;
+        userAnswers = {};
+        examStartTime = Date.now();
+
+        closeChapterModal();
+        showPage('examPage');
+        startTimer();
+        renderQuestion();
+    } catch (error) {
+        console.error('Error loading chapters:', error);
+        alert('Failed to load chapters: ' + error.message);
     }
 }
 
@@ -245,7 +412,13 @@ function renderQuestion() {
     const question = currentChapter.questions[currentQuestionIndex];
     const container = document.getElementById('questionContainer');
 
-    document.getElementById('examTitle').textContent = currentChapter.title;
+    // Set title with chapter info for multi-chapter mode
+    if (currentChapter.isMultiChapter && question.chapterTitle) {
+        document.getElementById('examTitle').textContent = `${question.chapterTitle}`;
+    } else {
+        document.getElementById('examTitle').textContent = currentChapter.title;
+    }
+    
     document.getElementById('progressText').textContent =
         `${currentQuestionIndex + 1}/${currentChapter.questions.length}`;
 
@@ -256,8 +429,14 @@ function renderQuestion() {
     const savedAnswer = userAnswers[question.id] || (isMultipleChoice ? [] : '');
     const answerStatus = window.answerStatus || {}; // Track answer check status
 
-    container.innerHTML = `
-        <div class="question-number">Question ${currentQuestionIndex + 1} of ${currentChapter.questions.length}</div>
+    // Build question header with chapter tag for multi-chapter
+    let headerHtml = `<div class="question-number">Question ${currentQuestionIndex + 1} of ${currentChapter.questions.length}`;
+    if (currentChapter.isMultiChapter && question.chapterTitle) {
+        headerHtml += ` <span style="background: #e3f2fd; color: #1976d2; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-left: 10px; font-weight: 500;">${question.chapterTitle}</span>`;
+    }
+    headerHtml += `</div>`;
+
+    container.innerHTML = headerHtml + `
         <div class="question-text">${question.text}</div>
         <div class="choices">
             ${question.choices.map(choice => {
@@ -327,20 +506,55 @@ function checkAnswer(questionId) {
 
     const userAnswer = userAnswers[questionId];
     let isCorrect = false;
+    let displayCorrectAnswer = question.correctAnswer;
 
-    if (question.inputType === 'checkbox') {
-        // Multiple selection - compare as sorted arrays
-        const userAnswerSorted = (userAnswer || []).sort();
-        const correctAnswerSorted = (Array.isArray(question.correctAnswer) ? question.correctAnswer : [question.correctAnswer]).sort();
-        isCorrect = JSON.stringify(userAnswerSorted) === JSON.stringify(correctAnswerSorted);
-    } else {
-        // Single selection
-        isCorrect = userAnswer === question.correctAnswer;
+    try {
+        // Handle different question types
+        if (question.inputType === 'checkbox') {
+            // Multiple selection - compare as sorted arrays
+            const userAnswerArray = userAnswer || [];
+            let correctAnswerArray = question.correctAnswer;
+            
+            // Ensure correctAnswer is an array
+            if (typeof correctAnswerArray === 'string') {
+                correctAnswerArray = [correctAnswerArray];
+            } else if (!Array.isArray(correctAnswerArray)) {
+                correctAnswerArray = correctAnswerArray ? [correctAnswerArray] : [];
+            }
+            
+            const userAnswerSorted = (userAnswerArray || []).sort().join('');
+            const correctAnswerSorted = correctAnswerArray.sort().join('');
+            isCorrect = userAnswerSorted === correctAnswerSorted;
+            displayCorrectAnswer = correctAnswerArray.join(', ');
+            
+        } else if (question.inputType === 'radio') {
+            // Single selection
+            isCorrect = userAnswer === question.correctAnswer;
+            displayCorrectAnswer = question.correctAnswer;
+            
+        } else {
+            // Unknown type - try to handle gracefully
+            if (Array.isArray(userAnswer)) {
+                const userAnswerSorted = userAnswer.sort().join('');
+                const correct = Array.isArray(question.correctAnswer) 
+                    ? question.correctAnswer.sort().join('') 
+                    : question.correctAnswer;
+                isCorrect = userAnswerSorted === correct;
+                displayCorrectAnswer = correct;
+            } else {
+                isCorrect = userAnswer === question.correctAnswer;
+                displayCorrectAnswer = question.correctAnswer;
+            }
+        }
+    } catch (error) {
+        console.error('Error in checkAnswer:', error);
+        isCorrect = false;
     }
 
     window.answerStatus[questionId] = {
         isCorrect: isCorrect,
-        correctAnswer: isCorrect ? userAnswer : question.correctAnswer
+        correctAnswer: displayCorrectAnswer,
+        userAnswer: userAnswer
     };
 
     // Re-render to show feedback
