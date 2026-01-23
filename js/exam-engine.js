@@ -10,8 +10,28 @@ const app = {
     currentView: 'subjects',
 
     async init() {
+        this.initTheme(); // Initialize theme
         await this.loadData();
         this.showSubjectsView();
+    },
+
+    initTheme() {
+        const toggle = document.getElementById('themeToggle');
+        if (!toggle) return;
+
+        // Check local storage or system preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+
+        toggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
     },
 
     async loadData() {
