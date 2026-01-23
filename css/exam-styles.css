@@ -229,6 +229,18 @@ header h1 {
     color: #333;
     margin-bottom: 25px;
     line-height: 1.8;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.question-text span {
+    display: inline;
+}
+
+.question-text br {
+    display: block;
+    content: "";
+    margin: 8px 0;
 }
 
 .code-block {
@@ -241,6 +253,8 @@ header h1 {
     line-height: 1.6;
     overflow-x: auto;
     margin: 15px 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 .keyword {
@@ -254,6 +268,15 @@ header h1 {
 
 .constant {
     color: #4ec9b0;
+}
+
+/* Inline code styling */
+span[style*="monospace"] {
+    background: #f4f4f4;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
 }
 
 .choices {

@@ -161,12 +161,15 @@ const app = {
 
         document.getElementById('currentQuestion').textContent = this.currentQuestionIndex + 1;
 
-        let html = `<div class="question-text">${question.text}</div>`;
-
-        // Add code block styling
-        html = html.replace(/<span class="keyword">/g, '<span class="keyword">')
+        // Clean and format question text
+        let questionText = question.text
+            .replace(/&nbsp;/g, ' ')
+            .replace(/<br>/g, '<br>')
+            .replace(/<span class="keyword">/g, '<span class="keyword">')
             .replace(/<span class="literal">/g, '<span class="literal">')
             .replace(/<span class="constant">/g, '<span class="constant">');
+
+        let html = `<div class="question-text">${questionText}</div>`;
 
         const isCheckbox = question.inputType === 'checkbox';
         const inputType = isCheckbox ? 'checkbox' : 'radio';
