@@ -37,7 +37,7 @@ const app = {
     async loadData() {
         try {
             // Load all chapters
-            const chapters = ['chapter9', 'chapter10', 'chapter11', 'chapter12', 'chapter13', 'chapter17'];
+            const chapters = ['chapter1', 'chapter9', 'chapter10', 'chapter11', 'chapter12', 'chapter13', 'chapter17'];
 
             for (const chapter of chapters) {
                 try {
