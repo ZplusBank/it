@@ -11,8 +11,8 @@ let timer = null;
 let scoreByChapter = {};
 
 // ===== INIT =====
-document.addEventListener('DOMContentLoaded', () => {
-    loadSections();
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadSections();
     showHome();
 });
 
@@ -90,7 +90,8 @@ function renderSections() {
 async function selectSection(sectionId) {
     currentSection = sectionId;
     await loadChapters(sectionId);
-    document.getElementById('homeStartBtn').disabled = false;
+    const btn = document.getElementById('homeStartBtn');
+    if (btn) btn.disabled = false;
 }
 
 async function startFromHome() {
