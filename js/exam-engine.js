@@ -264,7 +264,9 @@ const app = {
                 if (currentAnswer.includes(value)) {
                     this.userAnswers[this.currentQuestionIndex] = currentAnswer.filter(v => v !== value);
                 } else {
+                    console.log(this.userAnswers[this.currentQuestionIndex]);
                     this.userAnswers[this.currentQuestionIndex].push(value);
+
                 }
             }
         } else {
@@ -281,7 +283,8 @@ const app = {
         const question = this.questions[index];
         const userAnswer = this.userAnswers[index];
         const feedbackEl = document.getElementById('feedback');
-
+        console.log(userAnswer);
+        console.log(question.correctAnswer);
         let isCorrect = false;
         if (question.inputType === 'checkbox') {
             const correctAnswers = question.correctAnswer.split('');
