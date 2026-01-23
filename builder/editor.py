@@ -97,9 +97,9 @@ class ExamEngineEditor:
         self.notebook.add(self.chapters_tab, text="Chapters")
         self.setup_chapters_tab()
         
-        # Tab 3: Raw JSON
+        # Tab 3: Code Preview
         self.json_tab = ttk.Frame(self.notebook)
-        self.notebook.add(self.json_tab, text="Raw JSON")
+        self.notebook.add(self.json_tab, text="JS Code Preview")
         self.setup_json_tab()
         
     def setup_info_tab(self):
@@ -177,11 +177,11 @@ class ExamEngineEditor:
         ttk.Button(detail_frame, text="Save Chapter", command=self.save_chapter).grid(row=4, column=1, sticky=tk.W, padx=10, pady=10)
         
     def setup_json_tab(self):
-        """Setup raw JSON editor tab"""
+        """Setup JavaScript code preview tab"""
         frame = ttk.Frame(self.json_tab, padding=10)
         frame.pack(fill=tk.BOTH, expand=True)
         
-        ttk.Label(frame, text="Raw JSON (Edit with caution):", font=("Arial", 10, "bold")).pack(anchor=tk.W)
+        ttk.Label(frame, text="Generated JavaScript Code:", font=("Arial", 10, "bold")).pack(anchor=tk.W)
         
         # Text editor
         self.json_text = tk.Text(frame, height=20, width=80)
@@ -193,7 +193,7 @@ class ExamEngineEditor:
         self.json_text.config(yscrollcommand=scrollbar.set)
         
         # Save button
-        ttk.Button(frame, text="Save JSON", command=self.save_json).pack(anchor=tk.W, pady=(0, 10))
+        ttk.Button(frame, text="Save to exam-engine.js", command=self.save_to_js).pack(anchor=tk.W, pady=(0, 10))
         
     def load_sections(self):
         """Load sections from the sections.json or reconstruct from data folders"""
@@ -293,13 +293,14 @@ class ExamEngineEditor:
                 self.chapters_listbox.insert(tk.END, display_text)
     
     def update_json_tab(self):
-        """Update JSON tab with current section"""
+        """Update JS code preview tab with generated code"""
         if not self.current_section:
             return
         
         self.json_text.delete(1.0, tk.END)
-        json_str = json.dumps(self.current_section, indent=2, ensure_ascii=False)
-        self.json_text.insert(1.0, json_str)
+        # Show the generated JavaScript code
+        code = self.generate_loadSections()
+        self.json_text.insert(1.0, code)
     
     def on_chapter_select(self, event=None):
         """Handle chapter selection"""
@@ -474,23 +475,29 @@ class ExamEngineEditor:
         messagebox.showinfo("Success", "Chapter saved!")
     
     def save_json(self):
-        """Save JSON from text editor"""
+        """Save the generated code to exam-engine.js file"""
         try:
-            json_data = json.loads(self.json_text.get(1.0, tk.END))
-            # Find and update section
-            for i, section in enumerate(self.sections):
-                if section['id'] == json_data['id']:
-                    self.sections[i] = json_data
-                    self.current_section = json_data
-                    self.update_info_tab()
-                    self.update_chapters_tab()
-                    self.refresh_sections_listbox()
-                    messagebox.showinfo("Success", "JSON saved!")
-                    return
+            code = self.generate_loadSections()
             
-            messagebox.showerror("Error", "Section ID not found")
-        except json.JSONDecodeError as e:
-            messagebox.showerror("Error", f"Invalid JSON: {e}")
+            # Read the current JS file
+            with open(self.js_path, 'r', encoding='utf-8') as f:
+                js_content = f.read()
+            
+            # Replace the loadSections function
+            pattern = r'async function loadSections\(\)\s*{[\s\S]*?^}'
+            new_js = re.sub(pattern, code, js_content, flags=re.MULTILINE)
+            
+            # Write back to file
+            with open(self.js_path, 'w', encoding='utf-8') as f:
+                f.write(new_js)
+            
+            messagebox.showinfo("Success", f"JavaScript code saved to:\n{self.js_path}")
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to save: {e}")
+    
+    def save_to_js(self):
+        """Save to exam-engine.js"""
+        self.save_json()
     
     def save_all(self):
         """Save all changes to the exam-engine.js file"""
