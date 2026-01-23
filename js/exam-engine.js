@@ -69,6 +69,9 @@ function reviewAnswers() { show('review'); renderReview(); }
 
 // ===== SECTIONS DISPLAY =====
 function renderSections() {
+    const container = document.getElementById('sectionsContainer');
+    if (!container) return;
+
     const html = sections.map(s => `
         <label class="chapter-item">
             <input type="radio" name="section" value="${s.id}" onchange="selectSection('${s.id}')">
@@ -79,8 +82,9 @@ function renderSections() {
         </label>
     `).join('');
 
-    document.getElementById('sectionsContainer').innerHTML = html;
-    document.getElementById('homeStartBtn').disabled = !currentSection;
+    container.innerHTML = html;
+    const btn = document.getElementById('homeStartBtn');
+    if (btn) btn.disabled = !currentSection;
 }
 
 async function selectSection(sectionId) {
@@ -97,7 +101,10 @@ async function startFromHome() {
 
 // ===== CHAPTERS DISPLAY =====
 function renderChapters() {
-    document.getElementById('sectionTitle').textContent = `Select Chapters - ${sections.find(s => s.id === currentSection)?.name}`;
+    const titleEl = document.getElementById('sectionTitle');
+    if (titleEl) {
+        titleEl.textContent = `Select Chapters - ${sections.find(s => s.id === currentSection)?.name}`;
+    }
 
     const html = chapters.map(c => `
         <label class="chapter-item">
@@ -109,7 +116,8 @@ function renderChapters() {
         </label>
     `).join('');
 
-    document.getElementById('chaptersContainer').innerHTML = html;
+    const container = document.getElementById('chaptersContainer');
+    if (container) container.innerHTML = html;
     updateSelection();
 }
 
@@ -125,10 +133,17 @@ function updateSelection() {
 
     const total = selectedChapters.reduce((s, c) => s + (c.q || 0), 0);
 
-    document.getElementById('selCount').textContent = selectedChapters.length;
-    document.getElementById('qCount').textContent = total;
-    document.getElementById('selectionFooter').style.display = selectedChapters.length ? 'block' : 'none';
-    document.getElementById('startBtn').disabled = !selectedChapters.length;
+    const selCount = document.getElementById('selCount');
+    if (selCount) selCount.textContent = selectedChapters.length;
+
+    const qCount = document.getElementById('qCount');
+    if (qCount) qCount.textContent = total;
+
+    const footer = document.getElementById('selectionFooter');
+    if (footer) footer.style.display = selectedChapters.length ? 'block' : 'none';
+
+    const startBtn = document.getElementById('startBtn');
+    if (startBtn) startBtn.disabled = !selectedChapters.length;
 }
 
 // ===== START EXAM =====
@@ -302,23 +317,25 @@ function submitExam() {
 
     // Ring animation
     const ring = document.getElementById('ring');
-    const circumference = 2 * Math.PI * 40;
-    ring.style.strokeDashoffset = circumference - (pct / 100) * circumference;
+    if (ring) {
+        const circumference = 2 * Math.PI * 40;
+        ring.style.strokeDashoffset = circumference - (pct / 100) * circumference;
+    }
 
     // Per-chapter results
     let chHtml = '<h4>Per Chapter:</h4>';
-    selectedChapters.forEach(chId => {
-        const result = scoreByChapter[chId];
+    selectedChapters.forEach(ch => {
+        const result = scoreByChapter[ch.id];
         if (result) {
-            const chName = chapters.find(c => c.id === chId)?.name;
             const chPct = Math.round((result.c / result.t) * 100);
             chHtml += `<div class="chapter-result">
-                <span>${chName}</span>
+                <span>${ch.name}</span>
                 <span class="score ${chPct >= 80 ? 'high' : chPct >= 60 ? 'mid' : 'low'}">${chPct}%</span>
             </div>`;
         }
     });
-    document.querySelector('.per-chapter').innerHTML = chHtml;
+    const perChapter = document.getElementById('perChapter');
+    if (perChapter) perChapter.innerHTML = chHtml;
 
     show('results');
 }
