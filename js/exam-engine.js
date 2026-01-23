@@ -236,7 +236,12 @@ function toggleChapterSelection(chapterId, isChecked, questionCount) {
     }
 
     updateMultiChapterUI();
-    renderChapterSelection();
+
+    // Update the DOM with the new rendered HTML
+    const chaptersList = document.getElementById('chaptersList');
+    if (chaptersList) {
+        chaptersList.innerHTML = renderChapterSelection();
+    }
 }
 
 // ===== Update Multi-Chapter UI =====
