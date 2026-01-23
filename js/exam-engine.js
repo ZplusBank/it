@@ -24,11 +24,12 @@ const app = {
                     const response = await fetch(`./data/java2/${chapter}.json`);
                     if (response.ok) {
                         const data = await response.json();
-                        if (data && data.length > 0) {
-                            const chapterData = data[0];
+                        // Handle both array and object formats
+                        const chapterData = Array.isArray(data) ? data[0] : data;
+                        if (chapterData && chapterData.title) {
                             this.allChapters.push({
                                 id: chapter,
-                                title: chapterData.title || chapter.replace('chapter', 'Chapter '),
+                                title: chapterData.title,
                                 questions: chapterData.questions || [],
                                 totalQuestions: chapterData.totalQuestions || chapterData.questions?.length || 0
                             });
