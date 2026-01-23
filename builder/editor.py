@@ -295,20 +295,20 @@ class ExamEngineEditor:
     def update_json_tab(self):
         """Update JSON tab with current section"""
         if not self.current_section:
-            return=None):
+            return
+        
+        self.json_text.delete(1.0, tk.END)
+        json_str = json.dumps(self.current_section, indent=2, ensure_ascii=False)
+        self.json_text.insert(1.0, json_str)
+    
+    def on_chapter_select(self, event=None):
         """Handle chapter selection"""
         selection = self.chapters_listbox.curselection()
         if not selection:
             return
         
         if not self.current_section or not self.current_section.get('chapters'):
-            messagebox.showwarning("Warning", "No section selected. Please select a section first.")ndent=2, ensure_ascii=False)
-        self.json_text.insert(1.0, json_str)
-    
-    def on_chapter_select(self, event):
-        """Handle chapter selection"""
-        selection = self.chapters_listbox.curselection()
-        if not selection or not self.current_section:
+            messagebox.showwarning("Warning", "No section selected. Please select a section first.")
             return
         
         chapter = self.current_section['chapters'][selection[0]]
