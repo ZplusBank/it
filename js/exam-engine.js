@@ -264,7 +264,7 @@ const app = {
                 if (currentAnswer.includes(value)) {
                     this.userAnswers[this.currentQuestionIndex] = currentAnswer.filter(v => v !== value);
                 } else {
-                    console.log(this.userAnswers[this.currentQuestionIndex]);
+
                     this.userAnswers[this.currentQuestionIndex].push(value);
 
                 }
@@ -283,8 +283,7 @@ const app = {
         const question = this.questions[index];
         const userAnswer = this.userAnswers[index];
         const feedbackEl = document.getElementById('feedback');
-        console.log(userAnswer);
-        console.log(question.correctAnswer);
+
         let isCorrect = false;
         if (question.inputType === 'checkbox') {
             const correctAnswers = question.correctAnswer.split('');
@@ -292,9 +291,9 @@ const app = {
             isCorrect = correctAnswers.length === userAnswers.length &&
                 correctAnswers.every(a => userAnswers.includes(a));
         } else {
-            console.log(userAnswer);
-            console.log(question.correctAnswer);
+
             isCorrect = userAnswer === question.correctAnswer;
+            console.log(isCorrect);
         }
 
         feedbackEl.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
