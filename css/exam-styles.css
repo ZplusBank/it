@@ -704,12 +704,14 @@ button.submit-btn {
 }
 
 .feedback.correct {
+    display: block;
     background: rgba(72, 187, 120, 0.15);
     color: var(--success);
     border: 1px solid var(--success);
 }
 
 .feedback.incorrect {
+    display: block;
     background: rgba(245, 101, 101, 0.15);
     color: var(--danger);
     border: 1px solid var(--danger);
