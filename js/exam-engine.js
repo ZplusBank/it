@@ -25,47 +25,41 @@ const app = {
                     if (response.ok) {
                         const data = await response.json();
 
-                        // Handle multiple JSON format variations:
-                        // 1. Array format: [{title, questions}, ...]
-                        // 2. Direct object format: {title, questions, ...}
+                        // Handle JSON format variations:
+                        // Most chapters: Direct object {title, questions, totalQuestions, ...}
+                        // chapter10: Array [{title, questions, totalQuestions, ...}]
                         let chapterData = null;
 
                         if (Array.isArray(data)) {
+                            // Array format (chapter10)
                             chapterData = data.length > 0 ? data[0] : null;
                         } else if (typeof data === 'object' && data !== null) {
+                            // Direct object format (chapters 9, 11-17)
                             chapterData = data;
                         }
 
                         // Validate chapter has required fields
                         if (chapterData && chapterData.title && Array.isArray(chapterData.questions)) {
+                            const questionCount = chapterData.questions.length;
                             this.allChapters.push({
                                 id: chapter,
                                 title: chapterData.title,
                                 questions: chapterData.questions,
-                                totalQuestions: chapterData.questions.length
+                                totalQuestions: questionCount
                             });
-                            console.log(`Loaded ${chapter}: ${chapterData.title} (${chapterData.questions.length} questions)`);
+                            console.log(`✓ Loaded ${chapter}: ${chapterData.title} (${questionCount} questions)`);
                         } else {
-                            console.warn(`${chapter}.json has invalid structure - missing title or questions array`);
+                            console.warn(`✗ ${chapter}.json - Invalid structure: missing title or questions array`);
                         }
+                    } else {
+                        console.warn(`✗ ${chapter}.json - HTTP ${response.status}`);
                     }
                 } catch (e) {
-                    console.warn(`Could not load ${chapter}.json:`, e);
+                    console.warn(`✗ ${chapter}.json - Load error:`, e.message);
                 }
             }
 
-            console.log(`Total chapters loaded: ${this.allChapters.length}`);
-
-            // Group into subject
-            this.subjects = [{
-                id: 'java2',
-                name: 'Java 2 - Objects and Classes',
-                description: 'Learn about objects, classes, and OOP principles',
-                icon: '☕',
-                chapters: this.allChapters
-            }];
-
-            console.log('Data loaded:', this.subjects);
+            console.log(`📊 Total chapters loaded: ${this.allChapters.length}/6`);
         } catch (error) {
             console.error('Error loading data:', error);
             alert('Error loading exam data. Please check the file paths.');
