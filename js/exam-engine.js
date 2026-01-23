@@ -257,17 +257,12 @@ const app = {
 
     selectAnswer(value, isCheckbox) {
         if (isCheckbox) {
-            const currentAnswer = this.userAnswers[this.currentQuestionIndex] || [];
-            if (!Array.isArray(currentAnswer)) {
-                this.userAnswers[this.currentQuestionIndex] = [value];
+            const currentSelection = this.userAnswers[this.currentQuestionIndex] || [];
+
+            if (currentSelection.includes(value)) {
+                this.userAnswers[this.currentQuestionIndex] = currentSelection.filter(v => v !== value);
             } else {
-                if (currentAnswer.includes(value)) {
-                    this.userAnswers[this.currentQuestionIndex] = currentAnswer.filter(v => v !== value);
-                } else {
-
-                    this.userAnswers[this.currentQuestionIndex].push(value);
-
-                }
+                this.userAnswers[this.currentQuestionIndex] = [...currentSelection, value];
             }
         } else {
             this.userAnswers[this.currentQuestionIndex] = value;
@@ -291,9 +286,7 @@ const app = {
             isCorrect = correctAnswers.length === userAnswers.length &&
                 correctAnswers.every(a => userAnswers.includes(a));
         } else {
-
             isCorrect = userAnswer === question.correctAnswer;
-            console.log(isCorrect);
         }
 
         feedbackEl.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
