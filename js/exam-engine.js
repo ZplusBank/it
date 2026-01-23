@@ -47,40 +47,40 @@ async function loadSections() {
                 "folder": "java2",
                 "chapters": [
                     {
+                        "id": "chapter9",
+                        "title": "Chapter 9 Objects and Classes",
+                        "file": "chapter9.json",
+                        "questions": 52
+                    },
+                    {
                         "id": "chapter10",
-                        "title": "Chapter 10",
+                        "title": "Chapter 10 Object-Oriented Thinking",
                         "file": "chapter10.json",
                         "questions": 47
                     },
                     {
                         "id": "chapter11",
-                        "title": "Chapter 11",
+                        "title": "Chapter 11 Inheritance and Polymorphism",
                         "file": "chapter11.json",
                         "questions": 65
                     },
                     {
                         "id": "chapter12",
-                        "title": "Chapter 12",
+                        "title": "Chapter 12 Exception Handling and Text I/O",
                         "file": "chapter12.json",
                         "questions": 48
                     },
                     {
                         "id": "chapter13",
-                        "title": "Chapter 13",
+                        "title": "Chapter 13 Abstract Classes and Interfaces",
                         "file": "chapter13.json",
                         "questions": 35
                     },
                     {
                         "id": "chapter17",
-                        "title": "Chapter 17",
+                        "title": "Chapter 17 Binary I/O",
                         "file": "chapter17.json",
                         "questions": 20
-                    },
-                    {
-                        "id": "chapter9",
-                        "title": "Chapter 9",
-                        "file": "chapter9.json",
-                        "questions": 52
                     }
                 ],
                 "totalQuestions": 267,
@@ -88,6 +88,7 @@ async function loadSections() {
             }
         ];
 
+        console.log('✓ Sections loaded:', sections[0].chapters.length, 'chapters,', sections[0].totalQuestions, 'questions');
         renderSections();
         updateFilterCounts();
     } catch (error) {
@@ -198,7 +199,14 @@ async function startChapter(chapterId) {
         const response = await fetch(`data/${currentSection.folder}/${chapter.file}`);
         const data = await response.json();
 
-        currentChapter = data[0];
+        // Handle both array and object formats
+        currentChapter = Array.isArray(data) ? data[0] : data;
+
+        // Ensure questions array exists
+        if (!currentChapter.questions || !Array.isArray(currentChapter.questions)) {
+            throw new Error('Invalid chapter data: missing questions array');
+        }
+
         currentQuestionIndex = 0;
         userAnswers = {};
         examStartTime = Date.now();
@@ -209,7 +217,7 @@ async function startChapter(chapterId) {
         renderQuestion();
     } catch (error) {
         console.error('Error loading chapter:', error);
-        alert('Failed to load chapter. Please try again.');
+        alert('Failed to load chapter: ' + error.message);
     }
 }
 
