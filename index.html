@@ -12,11 +12,12 @@
     <!-- HOME PAGE -->
     <div id="homePage" class="page active">
         <div class="header">
-            <h1>📚 Java 2 Exam</h1>
-            <p>267 Questions • 6 Chapters</p>
+            <h1>📚 Exam Platform</h1>
+            <p>Multiple Subjects • Unlimited Questions</p>
         </div>
         <main>
-            <button class="btn-primary" onclick="showChapters()">Start Exam</button>
+            <div id="sectionsContainer" class="chapters-container"></div>
+            <button class="btn-primary" onclick="startFromHome()" id="homeStartBtn" disabled>Start Exam</button>
         </main>
     </div>
 
@@ -24,7 +25,7 @@
     <div id="chapterPage" class="page">
         <div class="header">
             <button class="btn-back" onclick="showHome()">← Back</button>
-            <h1>Select Chapters</h1>
+            <h1 id="sectionTitle">Select Chapters</h1>
         </div>
         <main>
             <div id="chaptersContainer" class="chapters-container"></div>

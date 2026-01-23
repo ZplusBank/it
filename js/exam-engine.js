@@ -1,4 +1,6 @@
 // ===== STATE =====
+let sections = [];
+let currentSection = null;
 let chapters = [];
 let selectedChapters = [];
 let questions = [];
@@ -10,20 +12,40 @@ let scoreByChapter = {};
 
 // ===== INIT =====
 document.addEventListener('DOMContentLoaded', () => {
-    loadChapters();
+    loadSections();
     showHome();
 });
 
+// ===== SECTIONS =====
+async function loadSections() {
+    try {
+        const res = await fetch('config/sections.json');
+        sections = await res.json();
+        if (sections.length > 0) {
+            currentSection = sections[0].id;
+            await loadChapters(currentSection);
+        }
+    } catch (e) {
+        console.error('Error loading sections:', e);
+        sections = [{ id: 'java2', name: 'Java 2', path: 'data/java2' }];
+        currentSection = 'java2';
+        await loadChapters(currentSection);
+    }
+}
+
 // ===== CHAPTERS =====
-async function loadChapters() {
-    chapters = [
-        { id: '9', name: 'Chapter 9 Objects and Classes', q: 52 },
-        { id: '10', name: 'Chapter 10 Object-Oriented Thinking', q: 47 },
-        { id: '11', name: 'Chapter 11 Inheritance and Polymorphism', q: 65 },
-        { id: '12', name: 'Chapter 12 Exception Handling and Text I/O', q: 48 },
-        { id: '13', name: 'Chapter 13 Abstract Classes and Interfaces', q: 35 },
-        { id: '17', name: 'Chapter 17 Binary I/O', q: 20 }
-    ];
+async function loadChapters(sectionId) {
+    try {
+        const section = sections.find(s => s.id === sectionId);
+        if (!section) return;
+
+        const res = await fetch(`${section.path}/chapters.json`);
+        const data = await res.json();
+        chapters = Array.isArray(data) ? data : data.chapters || [];
+    } catch (e) {
+        console.error('Error loading chapters:', e);
+        chapters = [];
+    }
 }
 
 // ===== PAGE NAVIGATION =====
@@ -32,19 +54,57 @@ function show(page) {
     document.getElementById(page + 'Page').classList.add('active');
 }
 
-function showHome() { show('home'); }
-function showChapters() { show('chapter'); renderChapters(); }
+function showHome() {
+    show('home');
+    renderSections();
+}
+
+function showChapters() {
+    show('chapter');
+    renderChapters();
+}
+
 function exitExam() { show('home'); }
 function reviewAnswers() { show('review'); renderReview(); }
 
+// ===== SECTIONS DISPLAY =====
+function renderSections() {
+    const html = sections.map(s => `
+        <label class="chapter-item">
+            <input type="radio" name="section" value="${s.id}" onchange="selectSection('${s.id}')">
+            <div class="chapter-item-text">
+                <h3>${s.name}</h3>
+                <p>${s.path}</p>
+            </div>
+        </label>
+    `).join('');
+
+    document.getElementById('sectionsContainer').innerHTML = html;
+    document.getElementById('homeStartBtn').disabled = !currentSection;
+}
+
+async function selectSection(sectionId) {
+    currentSection = sectionId;
+    await loadChapters(sectionId);
+    document.getElementById('homeStartBtn').disabled = false;
+}
+
+async function startFromHome() {
+    if (!currentSection) return;
+    selectedChapters = chapters;
+    showChapters();
+}
+
 // ===== CHAPTERS DISPLAY =====
 function renderChapters() {
+    document.getElementById('sectionTitle').textContent = `Select Chapters - ${sections.find(s => s.id === currentSection)?.name}`;
+
     const html = chapters.map(c => `
         <label class="chapter-item">
             <input type="checkbox" value="${c.id}" onchange="updateSelection()">
             <div class="chapter-item-text">
                 <h3>${c.name}</h3>
-                <p>${c.q} questions</p>
+                <p>${c.q || 0} questions</p>
             </div>
         </label>
     `).join('');
@@ -54,13 +114,16 @@ function renderChapters() {
 }
 
 function updateSelection() {
-    selectedChapters = Array.from(
+    const selected = Array.from(
         document.querySelectorAll('#chaptersContainer input:checked')
-    ).map(x => x.value);
+    ).map(x => {
+        const val = x.value;
+        return chapters.find(c => c.id === val);
+    }).filter(c => c);
 
-    const total = selectedChapters.reduce((s, id) => {
-        return s + (chapters.find(c => c.id === id)?.q || 0);
-    }, 0);
+    selectedChapters = selected;
+
+    const total = selectedChapters.reduce((s, c) => s + (c.q || 0), 0);
 
     document.getElementById('selCount').textContent = selectedChapters.length;
     document.getElementById('qCount').textContent = total;
@@ -75,15 +138,18 @@ async function startExam() {
     questions = [];
     scoreByChapter = {};
 
-    for (const chId of selectedChapters) {
-        try {
-            const res = await fetch(`data/java2/chapter${chId}.json`);
-            const data = await res.json();
-            const ch = Array.isArray(data) ? data[0] : data;
+    const section = sections.find(s => s.id === currentSection);
+    if (!section) return;
 
-            if (ch.questions) {
-                ch.questions.forEach(q => {
-                    q.chapter = chId;
+    for (const ch of selectedChapters) {
+        try {
+            const res = await fetch(`${section.path}/chapter${ch.id}.json`);
+            const data = await res.json();
+            const chData = Array.isArray(data) ? data[0] : data;
+
+            if (chData.questions) {
+                chData.questions.forEach(q => {
+                    q.chapter = ch.id;
                     questions.push(q);
                 });
             }
