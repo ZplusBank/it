@@ -81,9 +81,12 @@
                 <div class="feedback" id="feedback"></div>
 
                 <div class="exam-controls">
-                    <button class="nav-btn" id="prevBtn" onclick="app.previousQuestion()" disabled>← Previous</button>
+                    <div class="group-btns">
+                        <button class="nav-btn" id="prevBtn" onclick="app.previousQuestion()" disabled>←
+                            Previous</button>
+                        <button class="nav-btn" id="nextBtn" onclick="app.nextQuestion()">Next →</button>
+                    </div>
                     <button class="check-btn" id="checkBtn" onclick="app.checkAnswer()">Check Answer</button>
-                    <button class="nav-btn" id="nextBtn" onclick="app.nextQuestion()">Next →</button>
                     <button class="submit-btn" id="submitBtn" onclick="app.submitExam()" style="display: none;">Submit
                         Exam</button>
                 </div>

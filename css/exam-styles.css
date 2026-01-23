@@ -48,7 +48,7 @@
 }
 
 * {
-    margin: 0;
+    margin: 2px;
     padding: 0;
     box-sizing: border-box;
 }
@@ -58,7 +58,7 @@ body {
     background: var(--bg-body);
     color: var(--text-main);
     min-height: 100vh;
-    padding: 20px;
+    padding: 2px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -243,6 +243,11 @@ header {
     cursor: pointer;
 }
 
+.group-btns {
+    display: flex;
+    gap: 16px;
+}
+
 .chapter-card input[type="checkbox"] {
     width: 20px;
     height: 20px;
@@ -301,14 +306,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
     border-bottom: 2px solid var(--border-color);
 }
 
 .exam-title {
     color: var(--text-main);
-    font-size: 1.4rem;
+    font-size: 90%;
     font-weight: 700;
 }
 
@@ -316,10 +321,10 @@ header {
     background: var(--neutral);
     color: #333;
     /* Contrast on cream background */
-    padding: 8px 20px;
+    padding: 6px 6px;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 80%;
 }
 
 [data-theme="dark"] .question-counter {
@@ -331,7 +336,7 @@ header {
 /* Pagination / Question Numbers */
 .question-numbers {
     display: flex;
-    gap: 12px;
+    gap: 2px;
     margin-bottom: 30px;
     overflow-x: auto;
     padding-bottom: 15px;
@@ -367,7 +372,7 @@ header {
     align-items: center;
     justify-content: center;
     border: 2px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 50px;
     cursor: pointer;
     background: var(--bg-card);
     transition: var(--transition);
@@ -533,7 +538,7 @@ header {
 .choice input[type="radio"],
 .choice input[type="checkbox"] {
     margin: 0;
-    width: 24px;
+    width: 18px;
     /* Larger check */
     height: 24px;
     accent-color: var(--secondary);
@@ -567,7 +572,7 @@ button.submit-btn {
     transition: var(--transition);
     font-family: inherit;
     font-size: 1.05rem;
-    border: none;
+    border: #4a5568 1px solid;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -746,23 +751,24 @@ button.submit-btn {
     .exam-view,
     .results-view,
     .subject-card {
-        padding: 12px;
+        padding: 3px;
         /* reduced from 20px */
         width: 100%;
         border-radius: 12px;
     }
 
     .question-container {
-        padding: 12px;
+        padding-left: 16px;
         /* Reduced from default 30px */
         margin-bottom: 20px;
     }
 
     /* Question Numbers Bar */
     .question-numbers {
-        gap: 8px;
+        gap: 5px;
         margin-bottom: 15px;
-        padding-bottom: 5px;
+        padding-bottom: 12px;
+        padding-top: 10px;
     }
 
     .question-number {
@@ -773,7 +779,8 @@ button.submit-btn {
 
     /* Question Text */
     .question-text {
-        font-size: 1rem;
+        font-size: 100%;
+        padding-left: 6px;
         margin-bottom: 15px;
         line-height: 1.5;
     }
@@ -793,22 +800,22 @@ button.submit-btn {
     }
 
     .choice {
-        padding: 12px 10px;
+        padding: 7px 7px;
         /* Minimal horizontal padding */
-        gap: 10px;
+        gap: 5px;
         width: 100%;
         /* Force full width */
     }
 
     .choice label {
-        font-size: 0.95rem;
+        font-size: 65%;
         line-height: 1.4;
     }
 
     /* Controls */
     .exam-controls {
         flex-direction: column;
-        gap: 10px;
+        gap: 5px;
         margin-top: 20px;
         padding-top: 15px;
     }
