@@ -1029,75 +1029,29 @@ svg defs {
     }
 }
 
-/* ===== Multiple Chapter Selection Styles ===== */
-.mode-selection {
-    margin-bottom: 20px;
-    padding: 15px;
-    background: var(--bg-tertiary);
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-}
-
-.mode-selection h4 {
-    margin: 0 0 10px 0;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-.mode-selection label {
-    display: flex;
-    align-items: center;
-    margin: 8px 0;
-    cursor: pointer;
-    transition: var(--transition);
-    padding: 8px;
-    border-radius: 6px;
-}
-
-.mode-selection label:hover {
-    background: var(--bg-hover);
-}
-
-.mode-selection input[type="radio"] {
-    margin-right: 10px;
-    cursor: pointer;
-    width: 18px;
-    height: 18px;
-    accent-color: var(--primary);
-}
-
-.mode-selection span {
-    font-size: 14px;
-    color: var(--text-primary);
-}
-
-.mode-selection strong {
-    color: var(--primary-light);
-    font-weight: 600;
-}
-
+/* ===== Chapter Selection Styles ===== */
 .chapters-selection {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .chapter-checkbox-item {
     display: flex;
     align-items: center;
-    padding: 12px;
-    margin: 8px 0;
+    padding: 14px;
     border: 2px solid var(--border);
-    border-radius: var(--radius);
+    border-radius: 8px;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     background: var(--bg-tertiary);
 }
 
 .chapter-checkbox-item:hover {
     border-color: var(--primary);
     background: var(--bg-hover);
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
 }
 
 .chapter-checkbox-item input[type="checkbox"] {
@@ -1114,7 +1068,7 @@ svg defs {
 
 .chapter-checkbox-item h3 {
     margin: 0;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--text-primary);
 }
@@ -1125,7 +1079,7 @@ svg defs {
     color: var(--text-secondary);
 }
 
-.chapter-checkbox-item input[type="checkbox"]:checked~div h3 {
+.chapter-checkbox-item input[type="checkbox"]:checked+div h3 {
     color: var(--primary-light);
 }
 
@@ -1136,19 +1090,18 @@ svg defs {
     gap: 1.5rem;
 }
 
-/* ===== Responsive Multi-Chapter Styles ===== */
+/* ===== Responsive Chapter Selection ===== */
 @media (max-width: 768px) {
-    .mode-selection {
-        padding: 12px;
+    .chapters-selection {
+        gap: 10px;
     }
 
     .chapter-checkbox-item {
-        padding: 10px;
-        margin: 6px 0;
+        padding: 12px;
     }
 
     .chapter-checkbox-item h3 {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .chapter-checkbox-item p {

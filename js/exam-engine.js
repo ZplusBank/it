@@ -170,93 +170,54 @@ function openSection(sectionId) {
     const chaptersList = document.getElementById('chaptersList');
 
     modalTitle.textContent = `${currentSection.title} - Select Chapter(s)`;
+    selectedChapters = [];
+    examMode = 'multiple'; // Always use multiple mode for flexibility
 
-    // Add mode selection
-    const modeSelection = `
-        <div class="mode-selection" style="margin-bottom: 20px; padding: 15px; background: #f5f5f5; border-radius: 8px;">
-            <h4 style="margin: 0 0 10px 0; font-size: 14px; font-weight: 600;">Exam Mode:</h4>
-            <label style="display: flex; align-items: center; margin: 8px 0; cursor: pointer;">
-                <input type="radio" name="examMode" value="single" checked onchange="setExamMode('single')" style="margin-right: 10px;">
-                <span><strong>Single Chapter</strong> - One chapter at a time</span>
-            </label>
-            <label style="display: flex; align-items: center; margin: 8px 0; cursor: pointer;">
-                <input type="radio" name="examMode" value="multiple" onchange="setExamMode('multiple')" style="margin-right: 10px;">
-                <span><strong>Multiple Chapters</strong> - Select multiple chapters</span>
-            </label>
-        </div>
-    `;
-
-    chaptersList.innerHTML = modeSelection + `
-        <div id="chaptersContainer">
-            ${examMode === 'single' ? renderSingleChapters() : renderMultipleChapters()}
-        </div>
-    `;
-
+    chaptersList.innerHTML = renderChapterSelection();
     modal.classList.add('active');
 }
 
-// ===== Set Exam Mode =====
-function setExamMode(mode) {
-    examMode = mode;
-    selectedChapters = [];
-    document.getElementById('chaptersContainer').innerHTML =
-        mode === 'single' ? renderSingleChapters() : renderMultipleChapters();
-}
-
-// ===== Render Single Chapters =====
-function renderSingleChapters() {
-    return currentSection.chapters.map(chapter => `
-        <div class="chapter-item" onclick="startChapter('${chapter.id}')">
-            <div class="chapter-info">
-                <h3>${chapter.title}</h3>
-                <p>${chapter.questions} questions</p>
-            </div>
-            <div class="chapter-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </div>
-        </div>
-    `).join('');
-}
-
-// ===== Render Multiple Chapters =====
-function renderMultipleChapters() {
+// ===== Render Chapter Selection =====
+function renderChapterSelection() {
     return `
         <div class="chapters-selection">
+            <div style="margin-bottom: 15px; padding: 12px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; color: white;">
+                <p style="margin: 0; font-size: 13px;">✓ Select one or more chapters to start</p>
+            </div>
             ${currentSection.chapters.map(chapter => `
-                <label class="chapter-checkbox-item" style="display: flex; align-items: center; padding: 12px; margin: 8px 0; border: 2px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.2s;">
+                <label class="chapter-checkbox-item" style="display: flex; align-items: center; padding: 14px; margin: 8px 0; border: 2px solid #ddd; border-radius: 8px; cursor: pointer; transition: all 0.2s; background: white;">
                     <input 
                         type="checkbox" 
                         value="${chapter.id}"
                         data-questions="${chapter.questions}"
                         onchange="toggleChapterSelection('${chapter.id}', this.checked, ${chapter.questions})"
-                        style="margin-right: 12px; cursor: pointer; width: 18px; height: 18px;"
+                        style="margin-right: 12px; cursor: pointer; width: 18px; height: 18px; accent-color: #667eea;"
                     />
                     <div style="flex: 1;">
-                        <h3 style="margin: 0; font-size: 14px; font-weight: 600;">${chapter.title}</h3>
-                        <p style="margin: 4px 0 0 0; font-size: 13px; color: #666;">${chapter.questions} questions</p>
+                        <h3 style="margin: 0; font-size: 15px; font-weight: 600; color: #333;">${chapter.title}</h3>
+                        <p style="margin: 4px 0 0 0; font-size: 13px; color: #999;">${chapter.questions} questions</p>
                     </div>
                 </label>
             `).join('')}
             ${selectedChapters.length > 0 ? `
-                <div style="margin-top: 20px; padding: 15px; background: #e8f5e9; border-radius: 8px; border-left: 4px solid #4caf50;">
-                    <div style="font-size: 14px; margin-bottom: 10px;">
-                        <strong>Selected:</strong> ${selectedChapters.length} chapter(s) - 
-                        <span id="totalQuestionsCount">0</span> total questions
+                <div style="margin-top: 20px; padding: 16px; background: linear-gradient(135deg, #4caf50 0%, #45a049 100%); border-radius: 8px; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);">
+                    <div style="font-size: 14px; margin-bottom: 12px; color: white;">
+                        <strong>📚 ${selectedChapters.length}</strong> chapter(s) selected • 
+                        <strong id="totalQuestionsCount">0</strong> questions total
                     </div>
                     <button onclick="startMultipleChapters()" style="
                         width: 100%;
-                        padding: 10px;
-                        background: #4caf50;
-                        color: white;
+                        padding: 12px;
+                        background: white;
+                        color: #4caf50;
                         border: none;
                         border-radius: 6px;
                         cursor: pointer;
-                        font-weight: 600;
-                        font-size: 14px;
-                    ">
-                        Start Exam
+                        font-weight: 700;
+                        font-size: 15px;
+                        transition: all 0.2s;
+                    " onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                        ▶ Start Exam
                     </button>
                 </div>
             ` : ''}
@@ -275,8 +236,7 @@ function toggleChapterSelection(chapterId, isChecked, questionCount) {
     }
 
     updateMultiChapterUI();
-    // Re-render the chapters list to update the Start button
-    renderChaptersListForMode();
+    renderChapterSelection();
 }
 
 // ===== Update Multi-Chapter UI =====
@@ -292,54 +252,12 @@ function updateMultiChapterUI() {
     }
 }
 
-// ===== Render Chapters List For Current Mode =====
-function renderChaptersListForMode() {
-    const chaptersList = document.getElementById('chaptersList');
-    if (!chaptersList) return;
-
-    chaptersList.innerHTML = examMode === 'single' ? renderSingleChapters() : renderMultipleChapters();
-}
-
 // ===== Close Chapter Modal =====
 function closeChapterModal() {
     document.getElementById('chapterModal').classList.remove('active');
 }
 
-// ===== Start Chapter (Single) =====
-async function startChapter(chapterId) {
-    const chapter = currentSection.chapters.find(c => c.id === chapterId);
-    if (!chapter) return;
-
-    try {
-        const response = await fetch(`data/${currentSection.folder}/${chapter.file}`);
-        const data = await response.json();
-
-        // Handle both array and object formats
-        currentChapter = Array.isArray(data) ? data[0] : data;
-
-        // Ensure questions array exists
-        if (!currentChapter.questions || !Array.isArray(currentChapter.questions)) {
-            throw new Error('Invalid chapter data: missing questions array');
-        }
-
-        // Single chapter mode
-        examMode = 'single';
-        combinedQuestions = currentChapter.questions;
-        currentQuestionIndex = 0;
-        userAnswers = {};
-        examStartTime = Date.now();
-
-        closeChapterModal();
-        showPage('examPage');
-        startTimer();
-        renderQuestion();
-    } catch (error) {
-        console.error('Error loading chapter:', error);
-        alert('Failed to load chapter: ' + error.message);
-    }
-}
-
-// ===== Start Multiple Chapters =====
+// ===== Start Exam =====
 async function startMultipleChapters() {
     if (selectedChapters.length === 0) {
         alert('Please select at least one chapter');
