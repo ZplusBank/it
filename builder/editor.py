@@ -41,7 +41,8 @@ class ExamEngineEditor:
         
         file_menu = tk.Menu(menubar, tearoff=0)
         menubar.add_cascade(label="File", menu=file_menu)
-        file_menu.add_command(label="Save All Changes", command=self.save_all)
+        file_menu.add_command(label="Sync All Chapters", command=self.sync_all_chapters)
+        file_menu.add_command(label="Save Changes to JS", command=self.save_all)
         file_menu.add_command(label="Load from JS File", command=self.load_from_js)
         file_menu.add_separator()
         file_menu.add_command(label="Exit", command=self.root.quit)
@@ -49,6 +50,13 @@ class ExamEngineEditor:
         help_menu = tk.Menu(menubar, tearoff=0)
         menubar.add_cascade(label="Help", menu=help_menu)
         help_menu.add_command(label="About", command=self.show_about)
+        
+        # Status bar
+        self.status_frame = ttk.Frame(self.root)
+        self.status_frame.pack(fill=tk.X, padx=10, pady=5)
+        
+        self.status_label = ttk.Label(self.status_frame, text="Ready", relief=tk.SUNKEN)
+        self.status_label.pack(fill=tk.X)
         
         # Main container
         main_frame = ttk.Frame(self.root)
@@ -64,8 +72,13 @@ class ExamEngineEditor:
         # Section buttons frame
         button_frame = ttk.Frame(left_panel)
         button_frame.pack(fill=tk.X, pady=(5, 10))
-        ttk.Button(button_frame, text="+ Add Section", command=self.add_section).pack(side=tk.LEFT, padx=2)
+        ttk.Button(button_frame, text="Sync All", command=self.sync_all_chapters).pack(side=tk.LEFT, padx=2)
+        ttk.Button(button_frame, text="+ Add", command=self.add_section).pack(side=tk.LEFT, padx=2)
         ttk.Button(button_frame, text="- Delete", command=self.delete_section).pack(side=tk.LEFT, padx=2)
+        
+        # Info label
+        self.info_label = ttk.Label(left_panel, text="", font=("Arial", 9), foreground="blue")
+        self.info_label.pack(anchor=tk.W, pady=(0, 5))
         
         # Sections listbox
         self.sections_listbox = tk.Listbox(left_panel, height=15, width=35)
@@ -203,6 +216,7 @@ class ExamEngineEditor:
         java2_path = self.data_path / "java2"
         if java2_path.exists():
             chapters = []
+            # Scan ALL JSON files in the java2 folder
             for json_file in sorted(java2_path.glob("*.json")):
                 # Read totalQuestions from JSON file
                 try:
@@ -238,6 +252,11 @@ class ExamEngineEditor:
                 'status': 'not-started'
             }
             self.sections.append(section)
+            
+            # Update status
+            total_chapters = len(chapters)
+            total_questions = sum(c['questions'] for c in chapters)
+            self.update_status(f"Loaded: {total_chapters} chapters, {total_questions} total questions")
         
         self.refresh_sections_listbox()
         
@@ -247,6 +266,11 @@ class ExamEngineEditor:
         for section in self.sections:
             display_text = f"{section['title']} ({section['folder']}) - {section['totalQuestions']} questions"
             self.sections_listbox.insert(tk.END, display_text)
+        
+        # Update info label
+        if self.sections:
+            section = self.sections[0]
+            self.info_label.config(text=f"✓ {len(section['chapters'])} chapters available")
     
     def on_section_select(self, event):
         """Handle section selection"""
@@ -565,6 +589,27 @@ class ExamEngineEditor:
             "A GUI tool for managing exam sections and chapters.\n"
             "Easily edit the loadSections function and Java2 data.\n\n"
             "© 2024")
+    
+    def update_status(self, message):
+        """Update status bar"""
+        self.status_label.config(text=message)
+        self.root.update()
+    
+    def sync_all_chapters(self):
+        """Automatically sync all chapters from data folder"""
+        if not self.sections:
+            messagebox.showwarning("Warning", "No sections loaded")
+            return
+        
+        if messagebox.askyesno("Confirm", "Sync all chapters from data folder to exam-engine.js?"):
+            # Reload sections to ensure we have all chapters
+            self.load_sections()
+            self.refresh_sections_listbox()
+            
+            # Save to JS file
+            self.save_json()
+            self.update_status("All chapters synced successfully!")
+            messagebox.showinfo("Success", "All chapters have been synced to exam-engine.js!")
 
 def main():
     root = tk.Tk()
