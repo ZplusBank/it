@@ -275,6 +275,8 @@ function toggleChapterSelection(chapterId, isChecked, questionCount) {
     }
 
     updateMultiChapterUI();
+    // Re-render the chapters list to update the Start button
+    renderChaptersListForMode();
 }
 
 // ===== Update Multi-Chapter UI =====
@@ -288,6 +290,14 @@ function updateMultiChapterUI() {
     if (countElement) {
         countElement.textContent = totalQuestions;
     }
+}
+
+// ===== Render Chapters List For Current Mode =====
+function renderChaptersListForMode() {
+    const chaptersList = document.getElementById('chaptersList');
+    if (!chaptersList) return;
+
+    chaptersList.innerHTML = examMode === 'single' ? renderSingleChapters() : renderMultipleChapters();
 }
 
 // ===== Close Chapter Modal =====
@@ -429,6 +439,9 @@ function renderQuestion() {
     const savedAnswer = userAnswers[question.id] || (isMultipleChoice ? [] : '');
     const answerStatus = window.answerStatus || {}; // Track answer check status
 
+    // Check if answer has been selected (for checkbox, check length; for radio, check value)
+    const hasAnswer = isMultipleChoice ? (savedAnswer && savedAnswer.length > 0) : (savedAnswer !== '');
+
     // Build question header with chapter tag for multi-chapter
     let headerHtml = `<div class="question-number">Question ${currentQuestionIndex + 1} of ${currentChapter.questions.length}`;
     if (currentChapter.isMultiChapter && question.chapterTitle) {
@@ -462,7 +475,7 @@ function renderQuestion() {
     }).join('')}
         </div>
         
-        ${savedAnswer ? `
+        ${hasAnswer ? `
             <div class="answer-check-section">
                 <button class="check-answer-btn" onclick="checkAnswer('${question.id}')">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
