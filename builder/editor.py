@@ -55,8 +55,9 @@ class ExamEngineEditor:
         main_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
         
         # Left panel - Sections list
-        left_panel = ttk.Frame(main_frame)
-        left_panel.pack(side=tk.LEFT, fill=tk.BOTH, padx=(0, 10), min_width=300)
+        left_panel = ttk.Frame(main_frame, width=300)
+        left_panel.pack(side=tk.LEFT, fill=tk.BOTH, padx=(0, 10))
+        left_panel.pack_propagate(False)
         
         ttk.Label(left_panel, text="Sections", font=("Arial", 12, "bold")).pack(anchor=tk.W)
         
@@ -203,13 +204,17 @@ class ExamEngineEditor:
         if java2_path.exists():
             chapters = []
             for json_file in sorted(java2_path.glob("*.json")):
-                # Count questions in file
+                # Read totalQuestions from JSON file
                 try:
                     with open(json_file, 'r', encoding='utf-8') as f:
                         data = json.load(f)
                         if isinstance(data, list) and len(data) > 0:
-                            questions = data[0].get('questions', [])
-                            question_count = len(questions)
+                            # Try to get totalQuestions from the data
+                            question_count = data[0].get('totalQuestions', None)
+                            # Fallback to counting questions array if totalQuestions not found
+                            if question_count is None:
+                                questions = data[0].get('questions', [])
+                                question_count = len(questions)
                         else:
                             question_count = 0
                 except:
@@ -276,6 +281,12 @@ class ExamEngineEditor:
     def update_chapters_tab(self):
         """Update chapters tab with current section's chapters"""
         self.chapters_listbox.delete(0, tk.END)
+        # Clear chapter details
+        self.chapter_id.delete(0, tk.END)
+        self.chapter_title.delete(0, tk.END)
+        self.chapter_file.delete(0, tk.END)
+        self.chapter_questions.delete(0, tk.END)
+        
         if self.current_section:
             for chapter in self.current_section.get('chapters', []):
                 display_text = f"{chapter['title']} ({chapter['questions']} Q)"
@@ -284,10 +295,14 @@ class ExamEngineEditor:
     def update_json_tab(self):
         """Update JSON tab with current section"""
         if not self.current_section:
+            return=None):
+        """Handle chapter selection"""
+        selection = self.chapters_listbox.curselection()
+        if not selection:
             return
         
-        self.json_text.delete(1.0, tk.END)
-        json_str = json.dumps(self.current_section, indent=2, ensure_ascii=False)
+        if not self.current_section or not self.current_section.get('chapters'):
+            messagebox.showwarning("Warning", "No section selected. Please select a section first.")ndent=2, ensure_ascii=False)
         self.json_text.insert(1.0, json_str)
     
     def on_chapter_select(self, event):
