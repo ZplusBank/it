@@ -1,53 +1,157 @@
-# Exam Platform - Template 1
+# Exam Platform - Java 2 Edition
 
-A modern, fully-featured exam platform template with support for MCQ and multiple selection questions, code syntax highlighting, search/filter functionality, and comprehensive results tracking.
+A modern, fully-featured exam platform with **267 questions** across **6 chapters** (Chapter 9, 10, 11, 12, 13, 17). Features MCQ, code highlighting, smart answer checking, and comprehensive results tracking.
 
 ## 🎯 Features
 
 ### Core Functionality
-- ✅ **Multiple Question Types**: Support for both radio (MCQ) and checkbox (multiple selection) questions
-- ✅ **Code Syntax Highlighting**: Beautiful code rendering using Highlight.js with Atom One Dark theme
-- ✅ **Section-Based Organization**: Organize exams by sections and chapters
-- ✅ **Search & Filters**: Real-time search and filter by completion status
+- ✅ **Multiple Question Types**: Support for radio (MCQ) and checkbox (multiple selection) questions
+- ✅ **Answer Verification**: Check your answer BEFORE submitting - see if it's correct instantly
+- ✅ **Code Syntax Highlighting**: Beautiful code rendering using Highlight.js
+- ✅ **6 Complete Chapters**: 267 total questions (Ch 9-13, Ch 17)
 - ✅ **Progress Tracking**: Visual progress bar and question counter
-- ✅ **Timer**: Built-in exam timer with elapsed time tracking
-- ✅ **Results Dashboard**: Comprehensive results with score percentage, correct/incorrect counts, and time spent
-- ✅ **Review Mode**: Review all answers with correct/incorrect highlighting after submission
+- ✅ **Timer**: Exam timer with elapsed time tracking
+- ✅ **Results Dashboard**: Score, correct/incorrect counts, time spent
+- ✅ **Review Mode**: Review all answers with highlighting after exam
 
 ### UI/UX
 - 🎨 **Modern Dark Theme**: Premium dark mode with glassmorphism effects
-- 🌈 **Gradient Accents**: Beautiful gradient colors using HSL for vibrant visuals
-- ✨ **Smooth Animations**: Micro-animations and transitions for enhanced user experience
-- 📱 **Responsive Design**: Fully responsive layout that works on all devices
-- 🎯 **Accessible**: Semantic HTML and proper ARIA labels
+- 🌈 **Gradient Accents**: Beautiful HSL-based gradient colors
+- ✨ **Smooth Animations**: Micro-animations and transitions
+- 📱 **Responsive Design**: Works on desktop and mobile devices
+- 🎯 **Accessible**: Semantic HTML with ARIA labels
 
-## 📁 Directory Structure
+## 📊 Content
+
+### Available Chapters
+| Chapter | Title | Questions |
+|---------|-------|-----------|
+| 9 | Objects and Classes | 52 |
+| 10 | Object-Oriented Thinking | 47 |
+| 11 | Inheritance and Polymorphism | 65 |
+| 12 | Exception Handling and Text I/O | 48 |
+| 13 | Abstract Classes and Interfaces | 35 |
+| 17 | Binary I/O | 20 |
+| **Total** | | **267** |
+
+## 📁 Project Structure
 
 ```
-template1/
-├── index.html              # Main application file
+it/
+├── index.html                # Main exam platform
+├── README.md                 # This file
 ├── css/
-│   └── styles.css         # Comprehensive styling
+│   └── styles.css           # All styling
 ├── js/
-│   └── exam-engine.js     # Exam logic and functionality
-└── data/
-    └── [Section_Name]/    # Each section has its own folder
-        ├── chapter1.json  # Chapter data files
-        ├── chapter2.json
-        └── ...
+│   └── exam-engine.js       # Exam logic & answer checking
+├── data/
+│   └── java2/
+│       ├── chapter9.json    # Chapter data files
+│       ├── chapter10.json
+│       ├── chapter11.json
+│       ├── chapter12.json
+│       ├── chapter13.json
+│       └── chapter17.json
+└── builder/
+    └── editor.py            # GUI editor for managing questions
 ```
 
-## 🚀 Getting Started
+## 🚀 Quick Start
 
-### 1. Setup
+### 1. Open in Browser
+Simply open `index.html` in a modern web browser (Chrome, Firefox, Safari, Edge).
 
-Simply open `index.html` in a modern web browser. No build process or server required!
+### 2. How to Use
+1. Click on **"Java 2"** section to see available chapters
+2. Select a chapter to start the exam
+3. **Check your answer** before clicking "Next" to verify if it's correct
+4. Complete all questions
+5. View your results and review all answers
 
-### 2. Adding Sections
+### 3. Features Explained
 
-Create a new folder in the `data/` directory for each section:
+#### ✨ Answer Checking (NEW!)
+- After selecting an answer, a **"Check Answer"** button appears
+- Click it to see if your answer is correct BEFORE submitting
+- Helps you learn while taking the exam
+- No penalty for checking - learning is encouraged!
 
+#### ⏱️ Timer
+- Automatic timer starts when you begin
+- Tracks total time spent
+- Shows in results dashboard
+
+#### 📊 Results
+- Score percentage
+- Number of correct/incorrect answers
+- Time spent
+- Option to review all answers
+- Return to home to retake
+
+## 🛠️ Managing Questions
+
+### Using the Editor (GUI)
+
+Edit questions easily with the Python GUI editor:
+
+```bash
+cd builder
+python3 editor.py
 ```
+
+#### Features:
+- **View all chapters** in a user-friendly list
+- **Edit chapter details** (title, question count)
+- **See question count** from JSON files
+- **Sync all chapters** to exam-engine.js
+- **Generate JavaScript code** automatically
+- **Check HTML status** to ensure proper setup
+
+### Manual Editing
+
+Edit JSON files directly in `data/java2/` to modify questions, or use the editor for a point-and-click experience.
+
+## 💾 Data Format
+
+Each chapter file is a JSON object with:
+
+```json
+{
+  "id": "task-0",
+  "title": "Chapter 9 Objects and Classes",
+  "questions": [
+    {
+      "id": "9.1",
+      "number": "9.1",
+      "text": "Question text here...",
+      "choices": [
+        {"value": "A", "label": "A", "text": "Choice A"},
+        {"value": "B", "label": "B", "text": "Choice B"}
+      ],
+      "inputType": "radio",
+      "correctAnswer": "B"
+    }
+  ],
+  "totalQuestions": 52,
+  "status": "completed"
+}
+```
+
+## 🎓 Technologies Used
+
+- **HTML5** - Semantic structure
+- **CSS3** - Modern styling with gradients and animations
+- **JavaScript (Vanilla)** - No frameworks, pure JS
+- **Highlight.js** - Code syntax highlighting
+- **Python** - Editor GUI tool
+
+## 🔄 Workflow
+
+1. **Create/Edit Questions** → Use `builder/editor.py` or edit JSON directly
+2. **Verify Data** → Run `test_chapters.py` to check all chapters load correctly
+3. **Sync Changes** → Use editor to sync to `exam-engine.js`
+4. **Test in Browser** → Open `index.html` and test the exam
+5. **Review Results** → Check the results dashboard
 data/
 ├── Objects_and_Classes/
 ├── Data_Structures/

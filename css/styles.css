@@ -7,20 +7,20 @@
     --success: hsl(142, 71%, 45%);
     --danger: hsl(0, 84%, 60%);
     --warning: hsl(45, 93%, 47%);
-    
+
     --bg-primary: hsl(240, 21%, 15%);
     --bg-secondary: hsl(240, 17%, 20%);
     --bg-tertiary: hsl(240, 15%, 25%);
     --bg-hover: hsl(240, 15%, 30%);
-    
+
     --text-primary: hsl(0, 0%, 95%);
     --text-secondary: hsl(0, 0%, 70%);
     --text-tertiary: hsl(0, 0%, 50%);
-    
+
     --border: hsl(240, 15%, 30%);
     --shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.4);
-    
+
     --radius: 12px;
     --radius-lg: 16px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -298,6 +298,7 @@ body {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -319,6 +320,7 @@ body {
         transform: translateY(50px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -927,4 +929,102 @@ code {
 /* ===== SVG Gradient for Score Ring ===== */
 svg defs {
     display: none;
+}
+
+/* ===== Answer Check Feature ===== */
+.answer-check-section {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.check-answer-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--secondary), hsl(199, 89%, 38%));
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(31, 181, 255, 0.2);
+}
+
+.check-answer-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(31, 181, 255, 0.35);
+    background: linear-gradient(135deg, hsl(199, 89%, 58%), hsl(199, 89%, 48%));
+}
+
+.check-answer-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(31, 181, 255, 0.2);
+}
+
+.check-answer-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.answer-feedback {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    animation: slideInUp 0.3s ease-out;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.answer-feedback.correct {
+    background: rgba(34, 197, 94, 0.15);
+    color: var(--success);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.answer-feedback.incorrect {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--danger);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.feedback-icon {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.feedback-text {
+    font-size: 1rem;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .check-answer-btn {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.95rem;
+    }
+
+    .answer-feedback {
+        flex-direction: column;
+        text-align: center;
+        padding: 0.85rem 1.25rem;
+    }
 }
