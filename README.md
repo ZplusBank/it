@@ -1,386 +1,489 @@
-# Exam Platform - Java 2 Edition
+# 📚 Exam Platform - Java 2 Edition
 
-A modern, fully-featured exam platform with **267 questions** across **6 chapters** (Chapter 9, 10, 11, 12, 13, 17). Features MCQ, code highlighting, smart answer checking, and comprehensive results tracking.
+A modern, fully-featured exam platform with **267 questions** across **6 chapters**. Features smart answer checking for ALL question types, flexible study modes, code highlighting, and comprehensive results tracking.
 
-## 🎯 Features
+**Status**: ✅ Production Ready | **Version**: 2.0
 
-### Core Functionality
-- ✅ **Multiple Question Types**: Support for radio (MCQ) and checkbox (multiple selection) questions
-- ✅ **Answer Verification**: Check your answer BEFORE submitting - see if it's correct instantly
-- ✅ **Code Syntax Highlighting**: Beautiful code rendering using Highlight.js
-- ✅ **6 Complete Chapters**: 267 total questions (Ch 9-13, Ch 17)
-- ✅ **Progress Tracking**: Visual progress bar and question counter
-- ✅ **Timer**: Exam timer with elapsed time tracking
-- ✅ **Results Dashboard**: Score, correct/incorrect counts, time spent
-- ✅ **Review Mode**: Review all answers with highlighting after exam
+---
 
-### UI/UX
-- 🎨 **Modern Dark Theme**: Premium dark mode with glassmorphism effects
-- 🌈 **Gradient Accents**: Beautiful HSL-based gradient colors
-- ✨ **Smooth Animations**: Micro-animations and transitions
-- 📱 **Responsive Design**: Works on desktop and mobile devices
-- 🎯 **Accessible**: Semantic HTML with ARIA labels
+## ✨ Key Features
 
-## 📊 Content
+### 🎯 Answer Verification (NEW!)
+- Check any answer **BEFORE submitting** the exam
+- Instant feedback: ✓ Correct! or ✗ Incorrect (shows correct answer)
+- Works for **ALL question types**:
+  - ✅ Single choice (radio buttons)
+  - ✅ Multiple choice (checkboxes)
+- **Unlimited checks** - no penalties
+- Perfect for learning while testing!
 
-### Available Chapters
+### 📚 Study Modes (NEW!)
+- **Single Chapter**: Traditional focused learning on one chapter
+- **Multiple Chapters**: Select any combination of chapters for comprehensive testing
+- **Per-Chapter Scoring**: Detailed breakdown of performance by topic
+
+### 🎓 Learning Tools
+- Visual progress bar & live question counter
+- Exam timer with elapsed time tracking
+- Code syntax highlighting with Highlight.js
+- Detailed results dashboard
+- Answer review & study mode
+- Color-coded performance indicators
+
+### 🎨 Modern Experience
+- Dark theme with glassmorphic design
+- Smooth animations & responsive layout
+- Fully mobile-friendly (mobile/tablet/desktop)
+- Accessible interface with semantic HTML
+
+---
+
+## 📊 Content (267 Questions)
+
 | Chapter | Title | Questions |
 |---------|-------|-----------|
 | 9 | Objects and Classes | 52 |
 | 10 | Object-Oriented Thinking | 47 |
-| 11 | Inheritance and Polymorphism | 65 |
-| 12 | Exception Handling and Text I/O | 48 |
-| 13 | Abstract Classes and Interfaces | 35 |
+| 11 | Inheritance & Polymorphism | 65 |
+| 12 | Exception Handling & I/O | 48 |
+| 13 | Abstract Classes & Interfaces | 35 |
 | 17 | Binary I/O | 20 |
 | **Total** | | **267** |
+
+---
+
+## 🚀 Quick Start
+
+### For Students
+
+**Taking an Exam:**
+1. Open `index.html` in your browser
+2. Click "Java 2" section
+3. Choose exam mode:
+   - **Single Chapter** → Select one chapter → Start exam
+   - **Multiple Chapters** → Check chapters you want → Click "Start Exam"
+4. Answer questions and click "Check Answer" to verify
+5. Click "Next" to continue or "Submit Exam" when done
+6. Review your score and per-chapter breakdown
+
+**Example Sessions:**
+- Quick check: 5-10 minutes with 1 chapter
+- Study session: 30-45 minutes with deep learning
+- Full exam: 1-1.5 hours with 2-3 chapters
+
+### For Developers
+
+**Setup:**
+```bash
+# Simply open in browser - no build tools needed!
+open it/index.html
+# Or use any local web server
+python3 -m http.server 8000
+```
+
+---
 
 ## 📁 Project Structure
 
 ```
 it/
-├── index.html                # Main exam platform
-├── README.md                 # This file
+├── index.html              # Main interface (229 lines)
+├── README.md               # This file (you are here!)
 ├── css/
-│   └── styles.css           # All styling
+│   └── styles.css          # All styling (1100+ lines)
 ├── js/
-│   └── exam-engine.js       # Exam logic & answer checking
+│   └── exam-engine.js      # Core logic (871 lines)
 ├── data/
-│   └── java2/
-│       ├── chapter9.json    # Chapter data files
-│       ├── chapter10.json
-│       ├── chapter11.json
-│       ├── chapter12.json
-│       ├── chapter13.json
-│       └── chapter17.json
-└── builder/
-    └── editor.py            # GUI editor for managing questions
+│   └── java2/              # Question database
+│       ├── chapter9.json   # 52 questions
+│       ├── chapter10.json  # 47 questions
+│       ├── chapter11.json  # 65 questions
+│       ├── chapter12.json  # 48 questions
+│       ├── chapter13.json  # 35 questions
+│       └── chapter17.json  # 20 questions
+└── builder/                # Content management (optional)
+    ├── editor.py           # GUI editor for questions
+    ├── test_chapters.py    # Verification tool
+    └── __pycache__/
 ```
 
-## 🚀 Quick Start
+---
 
-### 1. Open in Browser
-Simply open `index.html` in a modern web browser (Chrome, Firefox, Safari, Edge).
+## 💡 How To Use
 
-### 2. How to Use
-1. Click on **"Java 2"** section to see available chapters
-2. Select a chapter to start the exam
-3. **Check your answer** before clicking "Next" to verify if it's correct
-4. Complete all questions
-5. View your results and review all answers
+### Single Choice Questions
+```
+1. Read the question carefully
+2. Select ONE option (radio button)
+3. Click "Check Answer" button
+4. See instant feedback:
+   ✓ Correct! - Your answer is right
+   ✗ Incorrect! - Shows correct answer
+5. Click "Next" to continue or try another answer
+```
 
-### 3. Features Explained
+### Multiple Choice Questions
+```
+1. Read the question carefully
+2. Select MULTIPLE options (checkboxes - select all that apply)
+3. Click "Check Answer" button
+4. System validates entire combination:
+   ✓ All correct!
+   ✗ Incorrect - Shows which are wrong
+5. Adjust answers and recheck, or click "Next"
+```
 
-#### ✨ Answer Checking (NEW!)
-- After selecting an answer, a **"Check Answer"** button appears
-- Click it to see if your answer is correct BEFORE submitting
-- Helps you learn while taking the exam
-- No penalty for checking - learning is encouraged!
+### Multi-Chapter Exam Example
+```
+Question 47 of 164
+[Chapter 10 OOP]  ← Chapter badge shows source
+Question text here...
+[Check Answer] [Next]
+```
 
-#### ⏱️ Timer
-- Automatic timer starts when you begin
-- Tracks total time spent
-- Shows in results dashboard
+---
 
-#### 📊 Results
-- Score percentage
-- Number of correct/incorrect answers
-- Time spent
-- Option to review all answers
-- Return to home to retake
+## 🎯 Features Explained
 
-## 🛠️ Managing Questions
+### Answer Checking System
+- ✅ Works for radio buttons (single choice questions)
+- ✅ Works for checkboxes (multiple choice questions)
+- ✅ Handles all answer formats (strings and arrays)
+- ✅ Shows correct answer when you're wrong
+- ✅ No submission penalty for checking
+- ✅ Supports unlimited checks per question
+
+### Study Modes
+- **Single Mode**: Pick one chapter at a time
+  - 52-65 questions per chapter
+  - Focus on specific topics
+  - Great for targeted learning
+  
+- **Multiple Mode**: Combine chapters
+  - 100-200 questions per exam
+  - Mix and match topics
+  - Great for comprehensive testing
+
+### Results & Scoring
+- Overall score percentage
+- Correct/Incorrect question counts
+- Time spent on exam
+- Per-chapter breakdown (multi-exam only):
+  - Score per chapter
+  - Questions per chapter
+  - Visual progress
+- Answer review with highlighting
+
+### Mobile Support
+- Full responsive design
+- Touch-friendly interface
+- Optimized for all screen sizes
+- Keyboard navigation supported
+
+---
+
+## 🔧 Managing Content
 
 ### Using the Editor (GUI)
-
-Edit questions easily with the Python GUI editor:
+If you want to edit questions visually:
 
 ```bash
 cd builder
 python3 editor.py
 ```
 
-#### Features:
-- **View all chapters** in a user-friendly list
-- **Edit chapter details** (title, question count)
-- **See question count** from JSON files
-- **Sync all chapters** to exam-engine.js
-- **Generate JavaScript code** automatically
-- **Check HTML status** to ensure proper setup
+**Editor Features:**
+- View/edit all chapters
+- Update question counts
+- Verify JSON structure
+- Generate JavaScript code
+- Automatic sync
 
 ### Manual Editing
-
-Edit JSON files directly in `data/java2/` to modify questions, or use the editor for a point-and-click experience.
-
-## 💾 Data Format
-
-Each chapter file is a JSON object with:
-
-```json
-{
-  "id": "task-0",
-  "title": "Chapter 9 Objects and Classes",
-  "questions": [
-    {
-      "id": "9.1",
-      "number": "9.1",
-      "text": "Question text here...",
-      "choices": [
-        {"value": "A", "label": "A", "text": "Choice A"},
-        {"value": "B", "label": "B", "text": "Choice B"}
-      ],
-      "inputType": "radio",
-      "correctAnswer": "B"
-    }
-  ],
-  "totalQuestions": 52,
-  "status": "completed"
-}
-```
-
-## 🎓 Technologies Used
-
-- **HTML5** - Semantic structure
-- **CSS3** - Modern styling with gradients and animations
-- **JavaScript (Vanilla)** - No frameworks, pure JS
-- **Highlight.js** - Code syntax highlighting
-- **Python** - Editor GUI tool
-
-## 🔄 Workflow
-
-1. **Create/Edit Questions** → Use `builder/editor.py` or edit JSON directly
-2. **Verify Data** → Run `test_chapters.py` to check all chapters load correctly
-3. **Sync Changes** → Use editor to sync to `exam-engine.js`
-4. **Test in Browser** → Open `index.html` and test the exam
-5. **Review Results** → Check the results dashboard
-data/
-├── Objects_and_Classes/
-├── Data_Structures/
-└── Algorithms/
-```
-
-### 3. Creating Chapter Files
-
-Each chapter is a JSON file with the following structure:
+Edit JSON files directly in `data/java2/`. Each chapter file format:
 
 ```json
 [
   {
     "id": "task-0",
-    "label": "chapter=9, username=liang12e",
-    "params": {
-      "chapter": "9",
-      "username": "liang12e"
-    },
     "title": "Chapter 9 Objects and Classes",
     "questions": [
       {
         "id": "9.1",
         "number": "9.1",
-        "text": "Question text here with <strong>HTML</strong> support",
+        "text": "What does OOP stand for?",
         "choices": [
-          {
-            "value": "A",
-            "label": "A",
-            "text": "First choice"
-          },
-          {
-            "value": "B",
-            "label": "B",
-            "text": "Second choice"
-          }
+          {"value": "A", "label": "A", "text": "Object-Oriented Programming"},
+          {"value": "B", "label": "B", "text": "Only Object Programming"},
+          {"value": "C", "label": "C", "text": "Other Object Protocol"}
         ],
-        "inputName": "Q0",
-        "inputType": "radio",
-        "correctAnswer": "B"
+        "inputType": "radio",        // or "checkbox"
+        "correctAnswer": "A"         // or ["A", "B"] for multiple
+      },
+      {
+        "id": "9.7",
+        "number": "9.7",
+        "text": "Select all that apply: OOP benefits",
+        "choices": [
+          {"value": "A", "label": "A", "text": "Code Reusability"},
+          {"value": "B", "label": "B", "text": "Maintainability"},
+          {"value": "C", "label": "C", "text": "Modularity"},
+          {"value": "D", "label": "D", "text": "Complexity"}
+        ],
+        "inputType": "checkbox",
+        "correctAnswer": ["A", "B", "C"]  // Multiple correct answers
       }
     ],
-    "status": "completed",
-    "totalQuestions": 52
+    "totalQuestions": 52,
+    "status": "completed"
   }
 ]
 ```
 
-### 4. Registering Sections
-
-In `js/exam-engine.js`, update the `loadSections()` function:
-
-```javascript
-sections = [
-    {
-        id: 'objects-and-classes',
-        title: 'Objects and Classes',
-        icon: '🎯',
-        folder: 'Objects_and_Classes',
-        chapters: [
-            { 
-                id: 'chapter9', 
-                title: 'Chapter 9 Objects and Classes', 
-                file: 'chapter9.json', 
-                questions: 52 
-            }
-        ],
-        totalQuestions: 52,
-        status: 'not-started'
-    },
-    // Add more sections here...
-];
-```
-
-## 📝 Question Types
-
-### Radio (MCQ) - Single Selection
-
-```json
-{
-  "id": "9.1",
-  "number": "9.1",
-  "text": "Question text",
-  "choices": [...],
-  "inputName": "Q0",
-  "inputType": "radio",
-  "correctAnswer": "B"
-}
-```
-
-### Checkbox - Multiple Selection
-
-```json
-{
-  "id": "9.7",
-  "number": "9.7",
-  "text": "Select all that apply",
-  "choices": [...],
-  "inputName": "QD6",
-  "inputType": "checkbox",
-  "correctAnswer": "ABCD"
-}
-```
-
-For multiple selection, the `correctAnswer` is a string of all correct choice values concatenated (e.g., "ABCD" means A, B, C, and D are all correct).
-
-## 💻 Code Highlighting
-
-The template supports code blocks with syntax highlighting. Use HTML with proper class names:
-
-```html
-<span style="font-family:monospace; font-size: 109%;">
-  <span class="keyword">public</span> 
-  <span class="keyword">class</span> 
-  Test {
-    <span class="keyword">int</span> x = 
-    <span class="constant">5</span>;
-  }
-</span>
-```
-
-Supported classes:
-- `.keyword` - Programming keywords (purple)
-- `.constant` - Numbers and constants (orange)
-- `.literal` - String literals (green)
-
-## 🎨 Customization
-
-### Colors
-
-Edit CSS variables in `css/styles.css`:
-
-```css
-:root {
-    --primary: hsl(250, 84%, 54%);
-    --secondary: hsl(199, 89%, 48%);
-    --success: hsl(142, 71%, 45%);
-    --danger: hsl(0, 84%, 60%);
-    /* ... more colors */
-}
-```
-
-### Icons
-
-Section icons use emojis. Change them in the sections array:
-
-```javascript
-icon: '🎯',  // Change to any emoji
-```
-
-### Fonts
-
-The template uses Inter font from Google Fonts. To change:
-
-1. Update the `<link>` in `index.html`
-2. Update `font-family` in CSS
-
-## 🔧 Advanced Features
-
-### Status Tracking
-
-The system automatically tracks section status:
-- **Not Started**: No chapters attempted
-- **In Progress**: Score < 80%
-- **Completed**: Score ≥ 80%
-
-### Local Storage
-
-Currently, the template doesn't persist data. To add persistence:
-
-```javascript
-// Save answers
-localStorage.setItem('exam-answers', JSON.stringify(userAnswers));
-
-// Load answers
-const saved = localStorage.getItem('exam-answers');
-if (saved) userAnswers = JSON.parse(saved);
-```
-
-## 📱 Browser Support
-
-- ✅ Chrome/Edge (latest)
-- ✅ Firefox (latest)
-- ✅ Safari (latest)
-- ⚠️ IE11 (not supported)
-
-## 🤝 Contributing
-
-To add new features:
-
-1. **New Question Types**: Extend the `renderQuestion()` function
-2. **Analytics**: Add tracking in `submitExam()`
-3. **Export Results**: Add export functionality in results page
-
-## 📄 License
-
-This template is free to use for educational purposes.
-
-## 🎓 Example Usage
-
-1. **Educational Institutions**: Create course exams
-2. **Self-Study**: Build practice quizzes
-3. **Certification Prep**: Organize study materials
-4. **Code Challenges**: Technical interview preparation
-
-## 🐛 Troubleshooting
-
-### Questions not loading
-- Check JSON syntax in chapter files
-- Verify file paths in `loadSections()`
-- Check browser console for errors
-
-### Code not highlighting
-- Ensure Highlight.js CDN is accessible
-- Verify code block HTML structure
-- Check CSS class names
-
-### Styles not applying
-- Clear browser cache
-- Check CSS file path
-- Verify CSS variable names
-
-## 📞 Support
-
-For issues or questions, please check:
-1. JSON structure matches the example
-2. File paths are correct
-3. Browser console for errors
+### Adding New Chapter
+1. Create `data/java2/chapterXX.json` with questions in above format
+2. Update chapter list in `js/exam-engine.js` (search for `chapters = [...]`)
+3. Reload browser
+4. New chapter appears automatically!
 
 ---
 
-**Built with ❤️ for developers and learners**
+## 🐛 Troubleshooting
+
+**Problem: "Start Exam" button not appearing**
+- ✓ Make sure you selected at least one chapter
+- ✓ Refresh browser (Ctrl+F5 or Cmd+Shift+R)
+- ✓ Clear browser cache completely
+- ✓ Try different browser
+
+**Problem: "Check Answer" button not showing**
+- ✓ Select an answer first (radio or checkbox)
+- ✓ For multiple choice, select at least one option
+- ✓ Reload page if still missing
+- ✓ Check browser console (F12) for errors
+
+**Problem: Questions not loading**
+- ✓ Check JSON syntax (use JSONLint.com)
+- ✓ Verify files exist in `data/java2/`
+- ✓ Check file names exactly (case-sensitive)
+- ✓ Check browser console (F12) for 404 errors
+- ✓ Try different browser
+
+**Problem: Results page blank**
+- ✓ Make sure you answered ALL questions
+- ✓ Click "Submit Exam" button on last question
+- ✓ Wait for page to load (5-10 seconds)
+- ✓ Check browser console for errors
+
+**Problem: Mobile issues**
+- ✓ Refresh page (pull down to refresh)
+- ✓ Clear browser cache completely
+- ✓ Try landscape orientation
+- ✓ Use Chrome or Safari (best support)
+- ✓ Disable zoom if interface feels cramped
+
+**Problem: Code not highlighting**
+- ✓ Check internet connection (Highlight.js is from CDN)
+- ✓ Verify code HTML structure
+- ✓ Clear cache and reload
+
+---
+
+## 🎨 Customization
+
+### Change Colors
+Edit `css/styles.css` to modify theme:
+
+```css
+:root {
+    --primary: hsl(250, 84%, 54%);      /* Main purple */
+    --secondary: hsl(199, 89%, 48%);    /* Accent blue */
+    --success: hsl(142, 71%, 45%);      /* Green for correct */
+    --danger: hsl(0, 84%, 60%);         /* Red for incorrect */
+    --bg-primary: hsl(210, 20%, 10%);   /* Dark background */
+    --bg-secondary: hsl(210, 20%, 15%); /* Lighter background */
+    --bg-tertiary: hsl(210, 20%, 20%);  /* Even lighter */
+    --text-primary: #ffffff;            /* White text */
+    --text-secondary: #cccccc;          /* Gray text */
+}
+```
+
+### Change Fonts
+Update `<link>` in `index.html`:
+
+```html
+<!-- Current: Inter font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Change to: Roboto -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap" rel="stylesheet">
+```
+
+Then update in `css/styles.css`:
+```css
+body {
+    font-family: 'Roboto', sans-serif;  /* Changed from Inter */
+}
+```
+
+### Modify Icons
+In `js/exam-engine.js`, change section icons:
+
+```javascript
+chapters = [
+    { id: 'chapter9', title: 'Objects and Classes', icon: '🎯', ... }
+    // Change 🎯 to any emoji: 📘 📖 📝 🎓 etc.
+]
+```
+
+---
+
+## 📱 Browser Support
+
+| Browser | Status | Version |
+|---------|--------|---------|
+| Chrome | ✅ Excellent | 90+ |
+| Firefox | ✅ Excellent | 88+ |
+| Safari | ✅ Excellent | 14+ |
+| Edge | ✅ Excellent | 90+ |
+| Mobile Chrome | ✅ Excellent | Latest |
+| Mobile Safari | ✅ Excellent | Latest |
+| IE 11 | ❌ Not supported | - |
+
+---
+
+## 🚀 Deployment
+
+### Local Development
+```bash
+# Just open in browser
+open it/index.html
+
+# Or use Python server
+python3 -m http.server 8000
+# Visit: http://localhost:8000/it/
+```
+
+### Web Server
+```bash
+# Copy to web server directory
+cp -r it /var/www/html/exams/
+
+# Access: http://your-domain.com/exams/it/
+```
+
+### Docker
+```dockerfile
+FROM nginx:alpine
+COPY it /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+```bash
+docker build -t exam-platform .
+docker run -p 80:80 exam-platform
+```
+
+---
+
+## 📚 Example Usage Scenarios
+
+**Scenario 1: Quick Learning (20-30 min)**
+```
+1. Open platform
+2. Choose Single Chapter mode
+3. Select Chapter 9 (52 questions)
+4. Work through questions, check answers as you go
+5. Learn from instant feedback
+6. View score and review results
+```
+
+**Scenario 2: Full Review (1 hour)**
+```
+1. Open platform
+2. Choose Multiple Chapters mode
+3. Select Chapters 9, 10, 11 (164 questions total)
+4. Take comprehensive exam
+5. Submit and see per-chapter breakdown
+6. Identify weak areas
+```
+
+**Scenario 3: Focused Study (30-45 min)**
+```
+1. Open platform
+2. Select Multiple Chapters mode
+3. Pick just Chapters 11 & 13 (inheritance & interfaces)
+4. Deep dive into specific topics
+5. Review all answers
+6. Track progress over time
+```
+
+---
+
+## ✅ What's Included
+
+- ✅ 267 questions across 6 chapters
+- ✅ Modern responsive dark theme interface
+- ✅ Answer verification for ALL question types
+- ✅ Multi-chapter exam support
+- ✅ Per-chapter scoring
+- ✅ Detailed results tracking
+- ✅ Mobile-friendly design
+- ✅ Code syntax highlighting
+- ✅ Progress tracking
+- ✅ Exam timer
+- ✅ Answer review mode
+- ✅ NO external dependencies (except Highlight.js)
+- ✅ NO database required
+- ✅ NO registration/login needed
+
+---
+
+## 🛠️ Technologies
+
+| Technology | Purpose | Version |
+|-----------|---------|---------|
+| HTML5 | Structure | - |
+| CSS3 | Styling (Glassmorphism, Gradients) | - |
+| JavaScript | Logic & Interactivity | Vanilla (no frameworks) |
+| Highlight.js | Code Syntax Highlighting | 11+ |
+| JSON | Question Data | - |
+| Python | Editor Tool (optional) | 3.6+ |
+
+---
+
+## 📞 Support
+
+For issues:
+1. **Check Troubleshooting section above** - most common issues covered
+2. **Clear browser cache** - Ctrl+Shift+Delete
+3. **Try different browser** - rule out browser-specific issues
+4. **Check browser console** - F12 → Console tab for error messages
+5. **Verify JSON syntax** - use JSONLint.com for data files
+
+---
+
+## 🎓 Learning Tips
+
+1. **Use Check Answer**: Verify your understanding immediately - don't rush to "Next"
+2. **Try Combinations**: Take different chapter combinations to see which topics are strong
+3. **Review Results**: Study the per-chapter breakdown to identify weak areas
+4. **Retake Exams**: Repeat exams to improve scores and reinforce learning
+5. **Focus Learning**: Use single-chapter mode to deep-dive into specific topics
+
+---
+
+## 📄 License
+
+Free for educational use.
+
+---
+
+**Built for learners | Version 2.0 | Java 2 Curriculum | 267 Questions**
+
+**Ready to start learning?** 🎓
+
+---
+
+*Last Updated: January 2024*
