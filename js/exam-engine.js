@@ -170,7 +170,7 @@ function openSection(sectionId) {
     const chaptersList = document.getElementById('chaptersList');
 
     modalTitle.textContent = `${currentSection.title} - Select Chapter(s)`;
-    
+
     // Add mode selection
     const modeSelection = `
         <div class="mode-selection" style="margin-bottom: 20px; padding: 15px; background: #f5f5f5; border-radius: 8px;">
@@ -199,7 +199,7 @@ function openSection(sectionId) {
 function setExamMode(mode) {
     examMode = mode;
     selectedChapters = [];
-    document.getElementById('chaptersContainer').innerHTML = 
+    document.getElementById('chaptersContainer').innerHTML =
         mode === 'single' ? renderSingleChapters() : renderMultipleChapters();
 }
 
@@ -273,7 +273,7 @@ function toggleChapterSelection(chapterId, isChecked, questionCount) {
     } else {
         selectedChapters = selectedChapters.filter(id => id !== chapterId);
     }
-    
+
     updateMultiChapterUI();
 }
 
@@ -283,7 +283,7 @@ function updateMultiChapterUI() {
         const chapter = currentSection.chapters.find(c => c.id === chapterId);
         return sum + (chapter ? chapter.questions : 0);
     }, 0);
-    
+
     const countElement = document.getElementById('totalQuestionsCount');
     if (countElement) {
         countElement.textContent = totalQuestions;
@@ -347,9 +347,9 @@ async function startMultipleChapters() {
 
             const response = await fetch(`data/${currentSection.folder}/${chapter.file}`);
             const data = await response.json();
-            
+
             const chapterContent = Array.isArray(data) ? data[0] : data;
-            
+
             if (chapterContent.questions && Array.isArray(chapterContent.questions)) {
                 // Add chapter info to questions
                 chapterContent.questions.forEach(q => {
@@ -373,7 +373,7 @@ async function startMultipleChapters() {
             isMultiChapter: true,
             chapters: chapterData
         };
-        
+
         currentQuestionIndex = 0;
         userAnswers = {};
         examStartTime = Date.now();
@@ -418,7 +418,7 @@ function renderQuestion() {
     } else {
         document.getElementById('examTitle').textContent = currentChapter.title;
     }
-    
+
     document.getElementById('progressText').textContent =
         `${currentQuestionIndex + 1}/${currentChapter.questions.length}`;
 
@@ -514,30 +514,30 @@ function checkAnswer(questionId) {
             // Multiple selection - compare as sorted arrays
             const userAnswerArray = userAnswer || [];
             let correctAnswerArray = question.correctAnswer;
-            
+
             // Ensure correctAnswer is an array
             if (typeof correctAnswerArray === 'string') {
                 correctAnswerArray = [correctAnswerArray];
             } else if (!Array.isArray(correctAnswerArray)) {
                 correctAnswerArray = correctAnswerArray ? [correctAnswerArray] : [];
             }
-            
+
             const userAnswerSorted = (userAnswerArray || []).sort().join('');
             const correctAnswerSorted = correctAnswerArray.sort().join('');
             isCorrect = userAnswerSorted === correctAnswerSorted;
             displayCorrectAnswer = correctAnswerArray.join(', ');
-            
+
         } else if (question.inputType === 'radio') {
             // Single selection
             isCorrect = userAnswer === question.correctAnswer;
             displayCorrectAnswer = question.correctAnswer;
-            
+
         } else {
             // Unknown type - try to handle gracefully
             if (Array.isArray(userAnswer)) {
                 const userAnswerSorted = userAnswer.sort().join('');
-                const correct = Array.isArray(question.correctAnswer) 
-                    ? question.correctAnswer.sort().join('') 
+                const correct = Array.isArray(question.correctAnswer)
+                    ? question.correctAnswer.sort().join('')
                     : question.correctAnswer;
                 isCorrect = userAnswerSorted === correct;
                 displayCorrectAnswer = correct;
@@ -623,23 +623,61 @@ function submitExam() {
     const totalTime = Date.now() - examStartTime;
     let correct = 0;
     let incorrect = 0;
+    let scoreByChapter = {}; // Track scores by chapter for multi-chapter exams
 
     currentChapter.questions.forEach(question => {
         const userAnswer = userAnswers[question.id];
-        const correctAnswer = question.correctAnswer;
-
+        let correctAnswer = question.correctAnswer;
         let isCorrect = false;
-        if (question.inputType === 'checkbox') {
-            const userAnswerStr = (userAnswer || []).sort().join('');
-            isCorrect = userAnswerStr === correctAnswer;
-        } else {
-            isCorrect = userAnswer === correctAnswer;
+
+        try {
+            if (question.inputType === 'checkbox') {
+                // Handle multiple choice
+                const userAnswerArray = userAnswer || [];
+                let correctAnswerArray = correctAnswer;
+
+                if (typeof correctAnswerArray === 'string') {
+                    correctAnswerArray = [correctAnswerArray];
+                } else if (!Array.isArray(correctAnswerArray)) {
+                    correctAnswerArray = correctAnswerArray ? [correctAnswerArray] : [];
+                }
+
+                const userAnswerStr = (userAnswerArray || []).sort().join('');
+                const correctAnswerStr = correctAnswerArray.sort().join('');
+                isCorrect = userAnswerStr === correctAnswerStr;
+            } else if (question.inputType === 'radio') {
+                // Handle single choice
+                isCorrect = userAnswer === correctAnswer;
+            } else {
+                // Fallback for unknown types
+                if (Array.isArray(userAnswer)) {
+                    const userStr = userAnswer.sort().join('');
+                    const correct = Array.isArray(correctAnswer)
+                        ? correctAnswer.sort().join('')
+                        : correctAnswer;
+                    isCorrect = userStr === correct;
+                } else {
+                    isCorrect = userAnswer === correctAnswer;
+                }
+            }
+        } catch (error) {
+            console.error('Error scoring question:', question.id, error);
+            isCorrect = false;
         }
 
         if (isCorrect) {
             correct++;
         } else {
             incorrect++;
+        }
+
+        // Track scores by chapter for multi-chapter exams
+        if (currentChapter.isMultiChapter && question.chapterId) {
+            if (!scoreByChapter[question.chapterId]) {
+                scoreByChapter[question.chapterId] = { correct: 0, total: 0 };
+            }
+            scoreByChapter[question.chapterId].total++;
+            if (isCorrect) scoreByChapter[question.chapterId].correct++;
         }
     });
 
@@ -657,13 +695,34 @@ function submitExam() {
     document.getElementById('timeSpent').textContent =
         `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
+    // Add chapter breakdown for multi-chapter exams
+    if (currentChapter.isMultiChapter && Object.keys(scoreByChapter).length > 0) {
+        let chapterBredownHtml = '<div style="margin-top: 20px; padding: 15px; background: #f5f5f5; border-radius: 8px;"><h4 style="margin-top: 0;">Score by Chapter:</h4>';
+        Object.entries(scoreByChapter).forEach(([chapterId, scores]) => {
+            const chapterTitle = currentChapter.chapters.find(c => c.id === chapterId)?.title || chapterId;
+            const chapterPercentage = Math.round((scores.correct / scores.total) * 100);
+            chapterBreakdownHtml += `
+                <div style="margin: 10px 0; padding: 8px; background: white; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
+                    <span>${chapterTitle}</span>
+                    <strong>${scores.correct}/${scores.total} (${chapterPercentage}%)</strong>
+                </div>
+            `;
+        });
+        chapterBreakdownHtml += '</div>';
+
+        const resultsContainer = document.querySelector('.results-body');
+        if (resultsContainer) {
+            resultsContainer.insertAdjacentHTML('beforeend', chapterBreakdownHtml);
+        }
+    }
+
     // Animate score ring
     const circumference = 2 * Math.PI * 90;
     const offset = circumference - (percentage / 100) * circumference;
 
     // Add SVG gradient
     const svg = document.querySelector('.score-ring');
-    if (!svg.querySelector('defs')) {
+    if (svg && !svg.querySelector('defs')) {
         const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
         const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
         gradient.setAttribute('id', 'scoreGradient');
@@ -676,7 +735,8 @@ function submitExam() {
     }
 
     setTimeout(() => {
-        document.getElementById('scoreRing').style.strokeDashoffset = offset;
+        const scoreRing = document.getElementById('scoreRing');
+        if (scoreRing) scoreRing.style.strokeDashoffset = offset;
     }, 300);
 
     // Update section status
@@ -703,18 +763,33 @@ function renderReviewQuestion() {
 
     const isMultipleChoice = question.inputType === 'checkbox';
     const userAnswer = userAnswers[question.id] || (isMultipleChoice ? [] : '');
-    const correctAnswer = question.correctAnswer;
+    let correctAnswer = question.correctAnswer;
+
+    // Ensure correctAnswer is properly formatted
+    let correctAnswerArray = correctAnswer;
+    if (typeof correctAnswerArray === 'string') {
+        correctAnswerArray = [correctAnswerArray];
+    } else if (!Array.isArray(correctAnswerArray)) {
+        correctAnswerArray = correctAnswerArray ? [correctAnswerArray] : [];
+    }
 
     let isCorrect = false;
     if (isMultipleChoice) {
         const userAnswerStr = (userAnswer || []).sort().join('');
-        isCorrect = userAnswerStr === correctAnswer;
+        const correctAnswerStr = correctAnswerArray.sort().join('');
+        isCorrect = userAnswerStr === correctAnswerStr;
     } else {
         isCorrect = userAnswer === correctAnswer;
     }
 
-    container.innerHTML = `
-        <div class="question-number">Question ${currentQuestionIndex + 1} of ${currentChapter.questions.length}</div>
+    // Build header with chapter tag for multi-chapter
+    let headerHtml = `<div class="question-number">Question ${currentQuestionIndex + 1} of ${currentChapter.questions.length}`;
+    if (currentChapter.isMultiChapter && question.chapterTitle) {
+        headerHtml += ` <span style="background: #e3f2fd; color: #1976d2; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-left: 10px; font-weight: 500;">${question.chapterTitle}</span>`;
+    }
+    headerHtml += `</div>`;
+
+    container.innerHTML = headerHtml + `
         <div class="question-text">${question.text}</div>
         <div class="choices">
             ${question.choices.map(choice => {
@@ -722,7 +797,7 @@ function renderReviewQuestion() {
             ? userAnswer.includes(choice.value)
             : userAnswer === choice.value;
 
-        const isCorrectChoice = correctAnswer.includes(choice.value);
+        const isCorrectChoice = correctAnswerArray.includes(choice.value);
 
         let choiceClass = '';
         if (isCorrectChoice) {
