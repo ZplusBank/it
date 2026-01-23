@@ -711,49 +711,58 @@ button.submit-btn {
 }
 
 /* Mobile Responsive Overhaul */
+/* Mobile Responsive Overhaul */
 @media (max-width: 768px) {
     body {
-        padding: 12px;
-        /* Reduce outer padding */
+        padding: 5px;
+        /* Minimal outer padding */
     }
 
     .container {
         width: 100%;
+        max-width: 100%;
     }
 
     header {
-        padding: 24px;
-        margin-bottom: 24px;
-        border-radius: 16px;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 12px;
     }
 
     .header-text h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .header-text p {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
     }
 
     .theme-toggle {
-        width: 40px;
-        /* Slightly smaller */
-        height: 40px;
+        width: 36px;
+        height: 36px;
     }
 
-    /* Cards */
+    /* Cards - Maximize width */
     .exam-view,
     .results-view,
     .subject-card {
-        padding: 20px;
-        /* Less padding to give content more room */
+        padding: 12px;
+        /* reduced from 20px */
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    .question-container {
+        padding: 12px;
+        /* Reduced from default 30px */
+        margin-bottom: 20px;
     }
 
     /* Question Numbers Bar */
     .question-numbers {
         gap: 8px;
-        margin-bottom: 20px;
-        padding-bottom: 10px;
+        margin-bottom: 15px;
+        padding-bottom: 5px;
     }
 
     .question-number {
@@ -765,40 +774,62 @@ button.submit-btn {
     /* Question Text */
     .question-text {
         font-size: 1rem;
-        /* Readable size */
         margin-bottom: 15px;
+        line-height: 1.5;
     }
 
     .code-block {
-        font-size: 0.8rem;
-        /* Prevent excessive wrapping */
-        padding: 15px;
-        padding-top: 40px;
-        /* Keep space for header */
+        font-size: 0.75rem;
+        /* slightly smaller for more code */
+        padding: 10px;
+        padding-top: 35px;
+        margin: 15px 0;
+    }
+
+    /* Choice List - Stretched */
+    .choices {
+        gap: 10px;
+        width: 100%;
+    }
+
+    .choice {
+        padding: 12px 10px;
+        /* Minimal horizontal padding */
+        gap: 10px;
+        width: 100%;
+        /* Force full width */
+    }
+
+    .choice label {
+        font-size: 0.95rem;
+        line-height: 1.4;
     }
 
     /* Controls */
     .exam-controls {
         flex-direction: column;
-        gap: 12px;
+        gap: 10px;
+        margin-top: 20px;
+        padding-top: 15px;
     }
 
     .nav-btn,
     .check-btn,
     .submit-btn {
         width: 100%;
-        padding: 16px;
-        /* Fat finger friendly */
-        font-size: 1.1rem;
+        padding: 14px;
+        font-size: 1rem;
     }
 
-    /* Order controls logical for thumb usually bottom right */
+    .score {
+        font-size: 2.5rem;
+    }
+
+    /* Custom stack order */
     .exam-controls {
         flex-direction: column-reverse;
-        /* Put primary actions closest to thumb if possible, or just stack */
     }
 
-    /* Custom stack order: Check/Submit first, then navs */
     .exam-controls button {
         order: 2;
     }
@@ -806,7 +837,6 @@ button.submit-btn {
     #checkBtn,
     #submitBtn {
         order: 1;
-        /* Primary action first */
     }
 
     .nav-btn {
