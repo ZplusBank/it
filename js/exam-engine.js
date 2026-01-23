@@ -60,6 +60,17 @@ const app = {
             }
 
             console.log(`📊 Total chapters loaded: ${this.allChapters.length}/6`);
+
+            // Group chapters into subject
+            this.subjects = [{
+                id: 'java2',
+                name: 'Java 2 - Objects and Classes',
+                description: 'Learn about objects, classes, and OOP principles',
+                icon: '☕',
+                chapters: this.allChapters
+            }];
+
+            console.log('Data loaded:', this.subjects);
         } catch (error) {
             console.error('Error loading data:', error);
             alert('Error loading exam data. Please check the file paths.');
