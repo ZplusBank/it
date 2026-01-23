@@ -697,22 +697,25 @@ function submitExam() {
 
     // Add chapter breakdown for multi-chapter exams
     if (currentChapter.isMultiChapter && Object.keys(scoreByChapter).length > 0) {
-        let chapterBredownHtml = '<div style="margin-top: 20px; padding: 15px; background: #f5f5f5; border-radius: 8px;"><h4 style="margin-top: 0;">Score by Chapter:</h4>';
+        let chapterBreakdownHtml = '<div style="margin-top: 20px; padding: 15px; background: var(--bg-tertiary); border-radius: var(--radius); border-left: 4px solid var(--primary);"><h4 style="margin-top: 0; color: var(--primary-light);">Score by Chapter:</h4>';
         Object.entries(scoreByChapter).forEach(([chapterId, scores]) => {
             const chapterTitle = currentChapter.chapters.find(c => c.id === chapterId)?.title || chapterId;
             const chapterPercentage = Math.round((scores.correct / scores.total) * 100);
             chapterBreakdownHtml += `
-                <div style="margin: 10px 0; padding: 8px; background: white; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
+                <div style="margin: 10px 0; padding: 8px; background: var(--bg-secondary); border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
                     <span>${chapterTitle}</span>
-                    <strong>${scores.correct}/${scores.total} (${chapterPercentage}%)</strong>
+                    <strong style="color: ${chapterPercentage >= 80 ? 'var(--success)' : chapterPercentage >= 60 ? 'var(--warning)' : 'var(--danger)'};">${scores.correct}/${scores.total} (${chapterPercentage}%)</strong>
                 </div>
             `;
         });
         chapterBreakdownHtml += '</div>';
 
-        const resultsContainer = document.querySelector('.results-body');
-        if (resultsContainer) {
-            resultsContainer.insertAdjacentHTML('beforeend', chapterBreakdownHtml);
+        // Insert after results-stats
+        const resultsStats = document.querySelector('.results-stats');
+        if (resultsStats && resultsStats.parentElement) {
+            const div = document.createElement('div');
+            div.innerHTML = chapterBreakdownHtml;
+            resultsStats.parentElement.insertBefore(div.firstChild, resultsStats.nextSibling);
         }
     }
 
