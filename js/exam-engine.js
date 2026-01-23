@@ -289,6 +289,8 @@ const app = {
             isCorrect = correctAnswers.length === userAnswers.length &&
                 correctAnswers.every(a => userAnswers.includes(a));
         } else {
+            console.log(userAnswer);
+            console.log(question.correctAnswer);
             isCorrect = userAnswer === question.correctAnswer;
         }
 
