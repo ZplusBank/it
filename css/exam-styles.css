@@ -504,13 +504,16 @@ header {
     display: flex;
     align-items: center;
     /* Center alignment */
-    gap: 16px;
-    padding: 20px;
+    gap: 12px;
+    padding: 12px 16px;
+    /* Decrease vertical padding */
     background: var(--bg-card);
     border: 2px solid var(--border-color);
     border-radius: 12px;
     cursor: pointer;
     transition: var(--transition);
+    width: 100%;
+    /* Ensure it takes full width */
 }
 
 .choice:hover {
