@@ -28,7 +28,7 @@ const app = {
         toggle.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
+
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
         });
@@ -305,6 +305,18 @@ const app = {
         this.currentQuestionIndex = index;
         this.renderCurrentQuestion();
         this.updateQuestionNumberStyles();
+        this.scrollToActiveQuestion();
+    },
+
+    scrollToActiveQuestion() {
+        const activeBtn = document.querySelector('.question-number.active');
+        if (activeBtn) {
+            activeBtn.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center'
+            });
+        }
     },
 
     nextQuestion() {

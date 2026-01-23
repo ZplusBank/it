@@ -328,16 +328,41 @@ header {
     border: 1px solid var(--border-color);
 }
 
+/* Pagination / Question Numbers */
 .question-numbers {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 30px;
-    flex-wrap: wrap;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    /* Space for scrollbar */
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
+    scrollbar-width: thin;
+    /* Firefox */
+    scrollbar-color: var(--secondary) transparent;
+}
+
+.question-numbers::-webkit-scrollbar {
+    height: 6px;
+}
+
+.question-numbers::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border-radius: 10px;
+}
+
+.question-numbers::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 .question-number {
-    width: 40px;
-    height: 40px;
+    flex: 0 0 auto;
+    /* Don't shrink */
+    width: 44px;
+    /* Larger touch target */
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -347,7 +372,7 @@ header {
     background: var(--bg-card);
     transition: var(--transition);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--text-muted);
 }
 
@@ -361,6 +386,7 @@ header {
     color: white;
     border-color: var(--secondary);
     transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(125, 101, 188, 0.4);
 }
 
 .question-number.answered {
@@ -379,23 +405,52 @@ header {
 }
 
 .question-text {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: var(--text-main);
     margin-bottom: 25px;
     line-height: 1.8;
 }
 
+/* Code Blocks & Syntax Highlighting */
 .code-block {
     background: #1e1e1e;
     color: #d4d4d4;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 8px;
     font-family: 'Fira Code', 'Courier New', monospace;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     line-height: 1.6;
     overflow-x: auto;
     margin: 20px 0;
-    border: 1px solid #333;
+    border-left: 4px solid var(--secondary);
+    /* Accent border */
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.keyword {
+    color: #569cd6;
+    font-weight: bold;
+}
+
+.literal {
+    color: #ce9178;
+}
+
+.constant {
+    color: #4ec9b0;
+}
+
+.comment {
+    color: #6a9955;
+    font-style: italic;
+}
+
+.type {
+    color: #4ec9b0;
+}
+
+.string {
+    color: #ce9178;
 }
 
 .choices {
@@ -406,7 +461,8 @@ header {
 
 .choice {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    /* Center alignment */
     gap: 16px;
     padding: 20px;
     background: var(--bg-card);
@@ -423,7 +479,6 @@ header {
 
 .choice.selected {
     background: rgba(125, 101, 188, 0.1);
-    /* Secondary with opacity */
     border-color: var(--secondary);
 }
 
@@ -433,17 +488,20 @@ header {
 
 .choice input[type="radio"],
 .choice input[type="checkbox"] {
-    margin-top: 4px;
-    width: 20px;
-    height: 20px;
+    margin: 0;
+    width: 24px;
+    /* Larger check */
+    height: 24px;
     accent-color: var(--secondary);
+    flex-shrink: 0;
 }
 
 .choice label {
     cursor: pointer;
     flex: 1;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     color: var(--text-main);
+    line-height: 1.5;
 }
 
 .exam-controls {
@@ -458,14 +516,18 @@ header {
 button.nav-btn,
 button.check-btn,
 button.submit-btn {
-    padding: 12px 30px;
-    border-radius: 10px;
+    padding: 14px 30px;
+    border-radius: 12px;
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 1.05rem;
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 .nav-btn {
@@ -487,6 +549,7 @@ button.submit-btn {
 .check-btn:hover {
     background: var(--primary);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(125, 101, 188, 0.3);
 }
 
 .submit-btn {
@@ -497,6 +560,7 @@ button.submit-btn {
 .submit-btn:hover {
     filter: brightness(1.1);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(237, 137, 54, 0.3);
 }
 
 /* Results View */
@@ -591,41 +655,115 @@ button.submit-btn {
 }
 
 .feedback.correct {
-    background: rgba(72, 187, 120, 0.2);
+    background: rgba(72, 187, 120, 0.15);
     color: var(--success);
     border: 1px solid var(--success);
 }
 
 .feedback.incorrect {
-    background: rgba(245, 101, 101, 0.2);
+    background: rgba(245, 101, 101, 0.15);
     color: var(--danger);
     border: 1px solid var(--danger);
 }
 
-/* Mobile Responsive */
+/* Mobile Responsive Overhaul */
 @media (max-width: 768px) {
+    body {
+        padding: 12px;
+        /* Reduce outer padding */
+    }
+
+    .container {
+        width: 100%;
+    }
+
     header {
-        padding: 20px;
-        border-radius: 0 0 20px 20px;
+        padding: 24px;
+        margin-bottom: 24px;
+        border-radius: 16px;
     }
 
     .header-text h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
+    .header-text p {
+        font-size: 0.95rem;
+    }
+
+    .theme-toggle {
+        width: 40px;
+        /* Slightly smaller */
+        height: 40px;
+    }
+
+    /* Cards */
     .exam-view,
     .results-view,
     .subject-card {
-        padding: 24px;
+        padding: 20px;
+        /* Less padding to give content more room */
     }
 
+    /* Question Numbers Bar */
+    .question-numbers {
+        gap: 8px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+
+    .question-number {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    /* Question Text */
+    .question-text {
+        font-size: 1.15rem;
+        /* Readable size */
+        margin-bottom: 20px;
+    }
+
+    .code-block {
+        font-size: 0.85rem;
+        /* Prevent excessive wrapping */
+        padding: 15px;
+    }
+
+    /* Controls */
     .exam-controls {
         flex-direction: column;
+        gap: 12px;
     }
 
     .nav-btn,
     .check-btn,
     .submit-btn {
         width: 100%;
+        padding: 16px;
+        /* Fat finger friendly */
+        font-size: 1.1rem;
+    }
+
+    /* Order controls logical for thumb usually bottom right */
+    .exam-controls {
+        flex-direction: column-reverse;
+        /* Put primary actions closest to thumb if possible, or just stack */
+    }
+
+    /* Custom stack order: Check/Submit first, then navs */
+    .exam-controls button {
+        order: 2;
+    }
+
+    #checkBtn,
+    #submitBtn {
+        order: 1;
+        /* Primary action first */
+    }
+
+    .nav-btn {
+        order: 3;
     }
 }
