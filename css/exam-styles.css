@@ -412,19 +412,60 @@ header {
 }
 
 /* Code Blocks & Syntax Highlighting */
+/* Code Blocks & Syntax Highlighting */
 .code-block {
     background: #1e1e1e;
     color: #d4d4d4;
     padding: 20px;
+    padding-top: 45px;
+    /* Extra space for window header */
     border-radius: 8px;
     font-family: 'Fira Code', 'Courier New', monospace;
     font-size: 0.95rem;
     line-height: 1.6;
     overflow-x: auto;
     margin: 20px 0;
-    border-left: 4px solid var(--secondary);
-    /* Accent border */
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    position: relative;
+    /* For pseudo-elements */
+    white-space: pre;
+    /* Don't wrap lines, scroll instead */
+}
+
+/* Mac-style Window Header */
+.code-block::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ff5f56;
+    /* Red */
+    box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
+    /* Yellow, Green */
+}
+
+/* Optional: Header bar background */
+.code-block::after {
+    content: "Code Snippet";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 0.8rem;
+    font-family: sans-serif;
+    pointer-events: none;
 }
 
 .keyword {
@@ -720,15 +761,17 @@ button.submit-btn {
 
     /* Question Text */
     .question-text {
-        font-size: 1.15rem;
+        font-size: 1rem;
         /* Readable size */
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     .code-block {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         /* Prevent excessive wrapping */
         padding: 15px;
+        padding-top: 40px;
+        /* Keep space for header */
     }
 
     /* Controls */
