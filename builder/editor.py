@@ -44,6 +44,7 @@ class ExamEngineEditor:
         file_menu.add_command(label="Sync All Chapters", command=self.sync_all_chapters)
         file_menu.add_command(label="Save Changes to JS", command=self.save_all)
         file_menu.add_command(label="Load from JS File", command=self.load_from_js)
+        file_menu.add_command(label="Check HTML Files", command=self.check_html_files)
         file_menu.add_separator()
         file_menu.add_command(label="Exit", command=self.root.quit)
         
@@ -222,15 +223,19 @@ class ExamEngineEditor:
                 try:
                     with open(json_file, 'r', encoding='utf-8') as f:
                         data = json.load(f)
-                        if isinstance(data, list) and len(data) > 0:
-                            # Try to get totalQuestions from the data
-                            question_count = data[0].get('totalQuestions', None)
-                            # Fallback to counting questions array if totalQuestions not found
-                            if question_count is None:
-                                questions = data[0].get('questions', [])
-                                question_count = len(questions)
+                        
+                        # Handle both array and object formats
+                        if isinstance(data, list):
+                            obj = data[0] if len(data) > 0 else {}
                         else:
-                            question_count = 0
+                            obj = data
+                        
+                        # Try to get totalQuestions from the data
+                        question_count = obj.get('totalQuestions', None)
+                        # Fallback to counting questions array if totalQuestions not found
+                        if question_count is None:
+                            questions = obj.get('questions', [])
+                            question_count = len(questions)
                 except:
                     question_count = 0
                 
@@ -589,6 +594,35 @@ class ExamEngineEditor:
             "A GUI tool for managing exam sections and chapters.\n"
             "Easily edit the loadSections function and Java2 data.\n\n"
             "© 2024")
+    
+    def check_html_files(self):
+        """Check which HTML files exist and need updating"""
+        html_files = [
+            self.base_path / "index.html",
+            self.base_path / "templates" / "template1" / "index.html"
+        ]
+        
+        existing = []
+        missing = []
+        
+        for html_file in html_files:
+            if html_file.exists():
+                existing.append(str(html_file.relative_to(self.base_path)))
+            else:
+                missing.append(str(html_file.relative_to(self.base_path)))
+        
+        msg = "📄 **HTML Files Found:**\n\n"
+        msg += "✓ Existing:\n"
+        for f in existing:
+            msg += f"  • {f}\n"
+        
+        msg += "\nℹ️ **What to Update in index.html:**\n"
+        msg += "1. Make sure <script src='js/exam-engine.js'></script> is loaded\n"
+        msg += "2. The loadSections() function will auto-populate sections\n"
+        msg += "3. No manual chapter list needed - it's dynamic!\n"
+        msg += "4. Index.html just provides the container and styling"
+        
+        messagebox.showinfo("HTML Files Status", msg)
     
     def update_status(self, message):
         """Update status bar"""

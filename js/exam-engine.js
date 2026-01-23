@@ -62,19 +62,19 @@ async function loadSections() {
                                                 "id": "chapter12",
                                                 "title": "Chapter 12",
                                                 "file": "chapter12.json",
-                                                "questions": 0
+                                                "questions": 48
                                     },
                                     {
                                                 "id": "chapter13",
                                                 "title": "Chapter 13",
                                                 "file": "chapter13.json",
-                                                "questions": 0
+                                                "questions": 35
                                     },
                                     {
                                                 "id": "chapter17",
                                                 "title": "Chapter 17",
                                                 "file": "chapter17.json",
-                                                "questions": 0
+                                                "questions": 20
                                     },
                                     {
                                                 "id": "chapter9",
@@ -83,7 +83,7 @@ async function loadSections() {
                                                 "questions": 52
                                     }
                         ],
-                        "totalQuestions": 164,
+                        "totalQuestions": 267,
                         "status": "not-started"
             }
 ];
