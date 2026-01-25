@@ -37,8 +37,6 @@ class ExamEditor:
         
         ttk.Button(toolbar, text="💾 Save All", command=self.save_all, 
                   width=15).pack(side=tk.LEFT, padx=5)
-        ttk.Button(toolbar, text="⚙️ Configure Engine", command=self.generate_js_config,
-                  width=18).pack(side=tk.LEFT, padx=5)
         ttk.Button(toolbar, text="🔄 Refresh", command=self.refresh_all,
                   width=12).pack(side=tk.LEFT, padx=5)
         
@@ -169,11 +167,18 @@ class ExamEditor:
         self.root.after(3000, lambda: self.status_label.config(text="Ready", foreground="green"))
     
     def refresh_all(self):
-        """Refresh all data"""
+        """Refresh all data and auto-configure engine"""
         self.load_sections()
         if self.current_section:
             self.load_chapters()
-        self.update_status("Refreshed", "blue")
+        
+        # Auto-configure engine on refresh
+        try:
+            self.generate_js_config()
+            self.update_status("✓ Refreshed & Configured", "green")
+        except Exception as e:
+            self.update_status("Refreshed (config failed)", "orange")
+            print(f"Auto-config error: {e}")
     
     def load_sections(self):
         """Load sections from config"""
@@ -530,9 +535,14 @@ class ExamEditor:
             with open(js_path, 'w', encoding='utf-8') as f:
                 json_str = json.dumps(full_config, indent=2)
                 f.write(f"const EXAM_CONFIG = {json_str};\n")
+            
+            # Refresh tables after configuration
+            self.load_sections()
+            if self.current_section:
+                self.load_chapters()
                 
             messagebox.showinfo("Success", 
-                              f"Engine Configured Successfully!\n\nGenerated: {js_path.relative_to(self.base_path)}")
+                              f"Engine Configured Successfully!\n\nGenerated: {js_path.relative_to(self.base_path)}\nTables refreshed with latest data.")
             self.update_status("✓ Engine configured", "green")
             
         except Exception as e:
