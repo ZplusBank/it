@@ -20,10 +20,16 @@
     - The editor creates a basic `chapters.json` entry for you.
     - You need to create the actual question file in `data/<section>/chapter<id>.json`.
     - You can copy an existing file (like `data/java2/chapter1.json`) and edit it.
+    - **Tip**: You can also just drop any `.json` file into the folder, and the next step will automatically find it!
 
-5.  **Configure the Engine**
-    - Click the **Configure Engine** button in the editor.
-    - This updates the website to include your new chapters.
+5.  **Configure and Sync**
+    - After you have added your question files:
+    - Go to **File > Save All** (optional, but good practice).
+    - Go to **Tools > Configure Engine**.
+    - This will:
+        1.  Scan your folder for new files.
+        2.  Update `chapters.json` automatically.
+        3.  Update the website configuration.
 
 6.  **Test**
     - Open `index.html` in your browser to see your changes.
