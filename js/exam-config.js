@@ -6,6 +6,12 @@ const EXAM_CONFIG = [
     "path": "data/java1",
     "chapters": [
       {
+        "id": "1",
+        "name": "Introduction to Computers, Programs, and Java",
+        "q": 45,
+        "file": "data/java1/chapter1.json"
+      },
+      {
         "id": "2",
         "name": "Elementary Programming",
         "q": 67,
@@ -61,12 +67,6 @@ const EXAM_CONFIG = [
     "description": "Advanced Java",
     "path": "data/java2",
     "chapters": [
-      {
-        "id": "1",
-        "name": "Introduction to Computers, Programs, and Java",
-        "q": 45,
-        "file": "data/java2/chapter1.json"
-      },
       {
         "id": "9",
         "name": "Objects and Classes",
