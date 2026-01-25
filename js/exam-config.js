@@ -4,7 +4,56 @@ const EXAM_CONFIG = [
     "name": "Java 1",
     "description": "Introduction to Java",
     "path": "data/java1",
-    "chapters": []
+    "chapters": [
+      {
+        "id": "2",
+        "name": "Elementary Programming",
+        "q": 67,
+        "file": "data/java1/chapter2.json"
+      },
+      {
+        "id": "3",
+        "name": "Selections",
+        "q": 44,
+        "file": "data/java1/chapter3.json"
+      },
+      {
+        "id": "4",
+        "name": "Mathematical Functions, Characters, and Strings",
+        "q": 48,
+        "file": "data/java1/chapter4.json"
+      },
+      {
+        "id": "5",
+        "name": "Loops",
+        "q": 37,
+        "file": "data/java1/chapter5.json"
+      },
+      {
+        "id": "6",
+        "name": "Methods",
+        "q": 27,
+        "file": "data/java1/chapter6.json"
+      },
+      {
+        "id": "7",
+        "name": "Single-Dimensional Arrays",
+        "q": 55,
+        "file": "data/java1/chapter7.json"
+      },
+      {
+        "id": "8",
+        "name": "Multidimensional Arrays",
+        "q": 19,
+        "file": "data/java1/chapter8.json"
+      },
+      {
+        "id": "9",
+        "name": "Objects and Classes",
+        "q": 52,
+        "file": "data/java1/chapter9.json"
+      }
+    ]
   },
   {
     "id": "java2",
@@ -17,6 +66,12 @@ const EXAM_CONFIG = [
         "name": "Introduction to Computers, Programs, and Java",
         "q": 45,
         "file": "data/java2/chapter1.json"
+      },
+      {
+        "id": "9",
+        "name": "Objects and Classes",
+        "q": 52,
+        "file": "data/java2/chapter9.json"
       },
       {
         "id": "10",
