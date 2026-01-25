@@ -295,7 +295,16 @@ const app = {
             ? `Correct answers: ${question.correctAnswer.split('').join(', ')}`
             : `Correct answer: ${question.correctAnswer}`;
 
-        feedbackEl.innerHTML = `<strong>${message}</strong><div class="correct-answer">${correctText}</div>`;
+        const explanationText = question.explanation || "Coming soon...";
+
+        feedbackEl.innerHTML = `
+            <strong>${message}</strong>
+            <div class="correct-answer">${correctText}</div>
+            <div class="explanation" style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(0,0,0,0.1);">
+                <strong>Explanation:</strong><br>
+                ${explanationText}
+            </div>
+        `;
     },
 
     goToQuestion(index) {
