@@ -15,6 +15,8 @@ chapters = []
 total_questions = 0
 
 for json_file in sorted(java2_path.glob("*.json")):
+    if json_file.name == "chapters.json":
+        continue
     try:
         with open(json_file, 'r', encoding='utf-8') as f:
             data = json.load(f)

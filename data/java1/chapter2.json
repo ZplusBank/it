@@ -1,0 +1,2158 @@
+{
+  "id": "task-0",
+  "label": "chapter=2, username=liang12e",
+  "params": {
+    "chapter": "2",
+    "username": "liang12e"
+  },
+  "title": "Chapter 2 Elementary Programming",
+  "questions": [
+    {
+      "id": "2.1",
+      "number": "2.1",
+      "text": "&nbsp; _______ is the code with natural language mixed with Java code.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Java program"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A Java statement"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Pseudocode"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A flowchart diagram"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "2.2",
+      "number": "2.2",
+      "text": "&nbsp;\tWhat is the exact output of the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>&nbsp;&nbsp;<span class=\"keyword\">double</span> area = <span class=\"constant\">3</span><span class=\"literal\">.</span><span class=\"constant\">5</span>;<br>&nbsp;&nbsp;System.out.print(<span class=\"literal\">\"area\"</span>);<br>&nbsp;&nbsp;System.out.print(area);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3.53.5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3.5 3.5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "area3.5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "area 3.5"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "2.3",
+      "number": "2.3",
+      "text": "&nbsp;\tSuppose a Scanner object is created as follows, what method do you use to read a real number?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>Scanner&nbsp;input&nbsp;=&nbsp;<span class=\"keyword\">new</span>&nbsp;Scanner(System.in);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "input.nextDouble();"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "input.nextdouble();"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "input.double();"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "input.Double();"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "2.4",
+      "number": "2.4",
+      "text": "&nbsp; The following code fragment reads in two numbers. What is the incorrect way to enter these two numbers?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>Scanner&nbsp;input&nbsp;=&nbsp;<span class=\"keyword\">new</span>&nbsp;Scanner(System.in);<br><span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;input.nextInt();<br><span class=\"keyword\">double</span>&nbsp;d&nbsp;=&nbsp;input.nextDouble();<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Enter an integer, a space, a double value, and then the Enter key."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Enter an integer, two spaces, a double value, and then the Enter key."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Enter an integer, an Enter key, a double value, and then the Enter key."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Enter a numeric value with a decimal point, a space, an integer, and then the Enter key."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.5",
+      "number": "2.5",
+      "text": "&nbsp; If you enter 1 2 3, when you run this program, what will be the output?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">import</span>&nbsp;java.util.Scanner;<br><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test1&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;Scanner input = <span class=\"keyword\">new</span> Scanner(System.in);<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(<span class=\"literal\">\"Enter three numbers: \"</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">double</span> number1 = input.nextDouble();<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">double</span> number2 = input.nextDouble();<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">double</span> number3 = input.nextDouble();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"comment\">// Compute average</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">double</span> average = (number1 + number2 + number3) / <span class=\"constant\">3</span>;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"comment\">// Display result</span><br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(average);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4.0"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "2.6",
+      "number": "2.6",
+      "text": "&nbsp; Every letter in a Java keyword is in lowercase?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "false"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "2.7",
+      "number": "2.7",
+      "text": "&nbsp; Which of the following is a valid identifier? Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "$343"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "class"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "9X"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "8+9"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "radius"
+        }
+      ],
+      "inputName": "QE6",
+      "inputType": "checkbox",
+      "correctAnswer": "AE"
+    },
+    {
+      "id": "2.8",
+      "number": "2.8",
+      "text": "&nbsp;\tWhich of the following are correct names for variables according to Java naming conventions? Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "radius"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Radius"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "RADIUS"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "findArea"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "FindArea"
+        }
+      ],
+      "inputName": "QE7",
+      "inputType": "checkbox",
+      "correctAnswer": "AD"
+    },
+    {
+      "id": "2.9",
+      "number": "2.9",
+      "text": "&nbsp;\tWhich of the following are correct ways to declare variables? Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "int length; int width;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "int length, width;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "int length; width;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "int length, int width;"
+        }
+      ],
+      "inputName": "QD8",
+      "inputType": "checkbox",
+      "correctAnswer": "AB"
+    },
+    {
+      "id": "2.10",
+      "number": "2.10",
+      "text": "&nbsp;\t____________ is the Java assignment operator.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "=="
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": ":="
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "="
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "=:"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "2.11",
+      "number": "2.11",
+      "text": "&nbsp;      To assign a value 1 to variable x, you write<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 = x;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x = 1;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x := 1;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1 := x;"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "x == 1;"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "2.12",
+      "number": "2.12",
+      "text": "&nbsp;      Which of the following assignment statements is incorrect? Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "i = j = k = 1;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "i = 1; j = 1; k = 1;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "i = 1 = j = 1 = k = 1;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "i == j == k == 1;"
+        }
+      ],
+      "inputName": "QD11",
+      "inputType": "checkbox",
+      "correctAnswer": "CD"
+    },
+    {
+      "id": "2.13",
+      "number": "2.13",
+      "text": "&nbsp;\tTo declare a constant MAX_LENGTH inside a method with value 99.98, you write<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "final MAX_LENGTH = 99.98;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "final int MAX_LENGTH = 99.98;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "double MAX_LENGTH = 99.98;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "final double MAX_LENGTH = 99.98;"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.14",
+      "number": "2.14",
+      "text": "&nbsp;\tWhich of the following is a constant, according to Java naming conventions? Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "MAX_VALUE"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Test"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "read"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "ReadInt"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "COUNT"
+        }
+      ],
+      "inputName": "QE13",
+      "inputType": "checkbox",
+      "correctAnswer": "AE"
+    },
+    {
+      "id": "2.15",
+      "number": "2.15",
+      "text": "&nbsp;\tTo improve readability and maintainability, you should declare a _________ for PI instead of using literal values such as 3.14159.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "variable"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "method"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "constant"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "class"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "2.16",
+      "number": "2.16",
+      "text": "&nbsp;\tAccording to Java naming convention, which of the following names can be variables? Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "FindArea"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "findArea"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "totalLength"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "TOTAL_LENGTH"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "class"
+        }
+      ],
+      "inputName": "QE15",
+      "inputType": "checkbox",
+      "correctAnswer": "BC"
+    },
+    {
+      "id": "2.17",
+      "number": "2.17",
+      "text": "&nbsp;\tWhich of these data types requires the most amount of memory?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "long"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "int"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "short"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "byte"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "2.18",
+      "number": "2.18",
+      "text": "&nbsp; What is the result of 45 / 4?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "10"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "11"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "11.25"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "12"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "2.19",
+      "number": "2.19",
+      "text": "&nbsp; Which of the following expression results in a value 1?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2 % 1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "15 % 4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "25 % 5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "37 % 6"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.20",
+      "number": "2.20",
+      "text": "&nbsp; 25 % 1 is _____<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "2.21",
+      "number": "2.21",
+      "text": "&nbsp; -25 % 5 is _____<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "2.22",
+      "number": "2.22",
+      "text": "&nbsp; 24 % 5 is _____<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.23",
+      "number": "2.23",
+      "text": "&nbsp; -24 % 5 is _____<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "-1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "-2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "-3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "-4"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.24",
+      "number": "2.24",
+      "text": "&nbsp; -24 % -5 is _____<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "-3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "-4"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.25",
+      "number": "2.25",
+      "text": "&nbsp;\tHow do you write 2.5 ^ 3.1 in Java?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2.5 * 3.1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Math.pow(2.5, 3.1)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Math.pow(3.1, 2.5)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2.5 ** 3.1"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "3.1 ** 2.5"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "2.26",
+      "number": "2.26",
+      "text": "&nbsp; Math.pow(2, 3) returns __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "8"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "9.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "8.0"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.27",
+      "number": "2.27",
+      "text": "&nbsp; Math.pow(4, 1 / 2) returns __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1.0"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "1"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.28",
+      "number": "2.28",
+      "text": "&nbsp; Math.pow(4, 1.0 / 2) returns __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1.0"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "1"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "2.29",
+      "number": "2.29",
+      "text": "&nbsp; The __________ method returns a raised to the power of b.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Math.power(a, b)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Math.exponent(a, b)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Math.pow(a, b)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Math.pow(b, a)"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "2.30",
+      "number": "2.30",
+      "text": "&nbsp; Analyze the following code.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> month = <span class=\"constant\">09</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"month is \"</span> + month);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays month is 09."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays month is 9."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays month is 9.0."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a syntax error, because 09 is an incorrect literal value."
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.31",
+      "number": "2.31",
+      "text": "&nbsp; Which of the following is incorrect?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1_2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0.4_56"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1_200_229"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "_4544"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.32",
+      "number": "2.32",
+      "text": "&nbsp; Which of the following are the same as 1545.534? Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1.545534e+3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0.1545534e+4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1545534.0e-3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "154553.4e-2"
+        }
+      ],
+      "inputName": "QD31",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD"
+    },
+    {
+      "id": "2.33",
+      "number": "2.33",
+      "text": "&nbsp;\tTo declare an int variable number with initial value 2, you write<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "int number = 2L;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "int number = 2l;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "int number = 2;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "int number = 2.0;"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "2.34",
+      "number": "2.34",
+      "text": "&nbsp; Which of the following is incorrect?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "int x = 9;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "long x = 9;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "float x = 1.0;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "double x = 1.0;"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "2.35",
+      "number": "2.35",
+      "text": "&nbsp;\tThe command to exit JShell is __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\quit"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\exit"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "/quit"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "/exit"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.36",
+      "number": "2.36",
+      "text": "&nbsp;\tThe command to view all variables in JShell is __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\vars"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\var"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "/vars"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "/var"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "2.37",
+      "number": "2.37",
+      "text": "&nbsp;     The expression 4 + 20 / (3 - 1) * 2 is evaluated to<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "20"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "24"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "9"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "25"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "2.38",
+      "number": "2.38",
+      "text": "&nbsp; The System.currentTimeMillis() returns ________________ .<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "the current time."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "the current time in milliseconds."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "the current time in milliseconds since midnight."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "the current time in milliseconds since midnight, January 1, 1970."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "the current time in milliseconds since midnight, January 1, 1970 GMT (the Unix time)."
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "2.39",
+      "number": "2.39",
+      "text": "&nbsp;     To obtain the current second, use _________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "System.currentTimeMillis() % 3600"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "System.currentTimeMillis() % 60"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "System.currentTimeMillis() / 1000 % 60"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "System.currentTimeMillis() / 1000 / 60 % 60"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "System.currentTimeMillis() / 1000 / 60 / 60 % 24"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "2.40",
+      "number": "2.40",
+      "text": "&nbsp;     To obtain the current minute, use _________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "System.currentTimeMillis() % 3600"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "System.currentTimeMillis() % 60"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "System.currentTimeMillis() / 1000 % 60"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "System.currentTimeMillis() / 1000 / 60 % 60"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "System.currentTimeMillis() / 1000 / 60 / 60 % 24"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.41",
+      "number": "2.41",
+      "text": "&nbsp;     To obtain the current hour in UTC, use _________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "System.currentTimeMillis() % 3600"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "System.currentTimeMillis() % 60"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "System.currentTimeMillis() / 1000 % 60"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "System.currentTimeMillis() / 1000 / 60 % 60"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "System.currentTimeMillis() / 1000 / 60 / 60 % 24"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "2.42",
+      "number": "2.42",
+      "text": "&nbsp;      Suppose x is 1. What is x after x += 2?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.43",
+      "number": "2.43",
+      "text": "&nbsp;      Suppose x is 1. What is x after x -= 1?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "-1"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "-2"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "2.44",
+      "number": "2.44",
+      "text": "&nbsp;\tWhat is x after the following statements?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;x&nbsp;=&nbsp;<span class=\"constant\">2</span>;<br><span class=\"keyword\">int</span>&nbsp;y&nbsp;=&nbsp;<span class=\"constant\">1</span>;<br>x&nbsp;*=&nbsp;y&nbsp;+&nbsp;<span class=\"constant\">1</span>;<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x is 1."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x is 2."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x is 3."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x is 4."
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.45",
+      "number": "2.45",
+      "text": "&nbsp;\tWhat is x after the following statements?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;x&nbsp;=&nbsp;<span class=\"constant\">1</span>;<br>x&nbsp;*=&nbsp;x&nbsp;+&nbsp;<span class=\"constant\">1</span>;<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x is 1."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x is 2."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x is 3."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x is 4."
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "2.46",
+      "number": "2.46",
+      "text": "&nbsp;\tWhich of the following statements are the same?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>(A)&nbsp;x&nbsp;-=&nbsp;x&nbsp;+&nbsp;<span class=\"constant\">4</span><br>(B)&nbsp;x&nbsp;=&nbsp;x&nbsp;+&nbsp;<span class=\"constant\">4</span>&nbsp;-&nbsp;x<br>(C)&nbsp;x&nbsp;=&nbsp;x&nbsp;-&nbsp;(x&nbsp;+&nbsp;<span class=\"constant\">4</span>)<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "(A) and (B) are the same"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "(A) and (C) are the same"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "(B) and (C) are the same"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "(A), (B), and (C) are the same"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "2.47",
+      "number": "2.47",
+      "text": "&nbsp;      To add a value 1 to variable x, you write ______________. Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 + x = x;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x += 1;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x := 1;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x = x + 1;"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "x = 1 + x;"
+        }
+      ],
+      "inputName": "QE46",
+      "inputType": "checkbox",
+      "correctAnswer": "BDE"
+    },
+    {
+      "id": "2.48",
+      "number": "2.48",
+      "text": "&nbsp;\tTo add number to sum, you write __________. (Note: Java is case-sensitive) Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "number += sum;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "number = sum + number;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "sum = Number + sum;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "sum += number;"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "sum = sum + number;"
+        }
+      ],
+      "inputName": "QE47",
+      "inputType": "checkbox",
+      "correctAnswer": "DE"
+    },
+    {
+      "id": "2.49",
+      "number": "2.49",
+      "text": "&nbsp; What is i printed?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> j = <span class=\"constant\">0</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> i = ++j + j * <span class=\"constant\">5</span>;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"What is i? \"</span> + i);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "6"
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.50",
+      "number": "2.50",
+      "text": "&nbsp; What is i printed in the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> j = <span class=\"constant\">0</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> i = j++ + j * <span class=\"constant\">5</span>;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"What is i? \"</span> + i);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "6"
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "2.51",
+      "number": "2.51",
+      "text": "&nbsp; What is y displayed in the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> x = <span class=\"constant\">1</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> y = x++ + x;<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"y is \"</span> + y);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "y is 1."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "y is 2."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "y is 3."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "y is 4."
+        }
+      ],
+      "inputName": "Q50",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "2.52",
+      "number": "2.52",
+      "text": "&nbsp; What is y displayed?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> x = <span class=\"constant\">1</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> y = x + x++;<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"y is \"</span> + y);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "y is 1."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "y is 2."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "y is 3."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "y is 4."
+        }
+      ],
+      "inputName": "Q51",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "2.53",
+      "number": "2.53",
+      "text": "&nbsp;\tAre the following four statements equivalent?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>&nbsp;&nbsp;number += <span class=\"constant\">1</span>;<br>&nbsp;&nbsp;number = number + <span class=\"constant\">1</span>;<br>&nbsp;&nbsp;number++;<br>&nbsp;&nbsp;++number;<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Yes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No"
+        }
+      ],
+      "inputName": "Q52",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "2.54",
+      "number": "2.54",
+      "text": "&nbsp;\tTo assign a double variable d to a float variable x, you write<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x = (long)d"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x = (int)d;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x = d;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x = (float)d;"
+        }
+      ],
+      "inputName": "Q53",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.55",
+      "number": "2.55",
+      "text": "&nbsp; Which of the following expressions will yield 0.5? Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 / 2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1.0 / 2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "(double) (1 / 2)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "(double) 1 / 2"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "1 / 2.0"
+        }
+      ],
+      "inputName": "QE54",
+      "inputType": "checkbox",
+      "correctAnswer": "BDE"
+    },
+    {
+      "id": "2.56",
+      "number": "2.56",
+      "text": "&nbsp; What is the output of the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">double</span>&nbsp;x&nbsp;=&nbsp;<span class=\"constant\">5</span><span class=\"literal\">.</span><span class=\"constant\">5</span>;<br><span class=\"keyword\">int</span>&nbsp;y&nbsp;=&nbsp;(<span class=\"keyword\">int</span>)x;<br>System.out.println(<span class=\"literal\">\"x&nbsp;is&nbsp;\"</span>&nbsp;+&nbsp;x&nbsp;+&nbsp;<span class=\"literal\">\"&nbsp;and&nbsp;y&nbsp;is&nbsp;\"</span>&nbsp;+&nbsp;y);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x is 5 and y is 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x is 6.0 and y is 6.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x is 6 and y is 6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x is 5.5 and y is 5"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "x is 5.5 and y is 5.0"
+        }
+      ],
+      "inputName": "Q55",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.57",
+      "number": "2.57",
+      "text": "&nbsp; Which of the following assignment statements is illegal?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "float f = -34;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "int t = 23;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "short s = 10;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "int t = 4.5;"
+        }
+      ],
+      "inputName": "Q56",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.58",
+      "number": "2.58",
+      "text": "&nbsp; What is the value of (double)5/2?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2.5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2.0"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "3.0"
+        }
+      ],
+      "inputName": "Q57",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "2.59",
+      "number": "2.59",
+      "text": "&nbsp; What is the value of (double)(5/2)?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2.5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2.0"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "3.0"
+        }
+      ],
+      "inputName": "Q58",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.60",
+      "number": "2.60",
+      "text": "&nbsp; Which of the following expression results in 45.37?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "(int)(45.378 * 100) / 100"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "(int)(45.378 * 100) / 100.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "(int)(45.378 * 100 / 100)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "(int)(45.378) * 100 / 100.0"
+        }
+      ],
+      "inputName": "Q59",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "2.61",
+      "number": "2.61",
+      "text": "&nbsp; The expression (int)(76.0252175 * 100) / 100 evaluates to _________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "76.02"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "76"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "76.0252175"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "76.03"
+        }
+      ],
+      "inputName": "Q60",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "2.62",
+      "number": "2.62",
+      "text": "&nbsp;\tIf you attempt to add an int, a byte, a long, and a double, the result will be a(n) __________ value.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "byte"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "int"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "long"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "double"
+        }
+      ],
+      "inputName": "Q61",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "2.63",
+      "number": "2.63",
+      "text": "&nbsp; _____________ is a formal process that seeks to understand the problem and document in detail what the software system needs to do. <br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Requirements specification"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Analysis"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Design"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Implementation"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Testing"
+        }
+      ],
+      "inputName": "Q62",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "2.64",
+      "number": "2.64",
+      "text": "&nbsp; _____________ seeks to analyze the data flow and to identify the system?s input and output. When you do analysis, it helps to identify what the output is first, and then figure out what input data you need in order to produce the output.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Requirements specification"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Analysis"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Design"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Implementation"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Testing"
+        }
+      ],
+      "inputName": "Q63",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "2.65",
+      "number": "2.65",
+      "text": "&nbsp; Suppose int x = 3264, what is the output of the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>&nbsp;&nbsp;<span class=\"keyword\">int</span> y = x % <span class=\"constant\">10</span>;<br>&nbsp;&nbsp;x = x / <span class=\"constant\">10</span>;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"x is \"</span> + x + <span class=\"literal\">\" and y is \"</span> + y);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x is 3264 and y is 326.4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x is 326 and y is 326"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x is 326 and y is 4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x is 3264 and y is 4"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "x is 4 and y is 326"
+        }
+      ],
+      "inputName": "Q64",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "2.66",
+      "number": "2.66",
+      "text": "&nbsp;\tAnalyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> n = <span class=\"constant\">10000</span> * <span class=\"constant\">10000</span> * <span class=\"constant\">10000</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"n is \"</span> + n);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays n is 1000000000000."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The result of 10000 * 10000 * 10000 is too large to be stored in an int variable n. This causes an overflow and the program is aborted."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The result of 10000 * 10000 * 10000 is too large to be stored in an int variable n. This causes an overflow and the program continues to execute because Java does not report errors on overflow."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The result of 10000 * 10000 * 10000 is too large to be stored in an int variable n. This causes an underflow and the program is aborted."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The result of 10000 * 10000 * 10000 is too large to be stored in an int variable n. This causes an underflow and the program continues to execute because Java does not report errors on underflow."
+        }
+      ],
+      "inputName": "Q65",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "2.67",
+      "number": "2.67",
+      "text": "&nbsp; When assigning a literal to a variable of the byte type, if the literal is too large to be stored as a byte value, it _____________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "causes overflow"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "causes underflow"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "causes no error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "cannot happen in Java"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "receives a compile error"
+        }
+      ],
+      "inputName": "Q66",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 67
+}

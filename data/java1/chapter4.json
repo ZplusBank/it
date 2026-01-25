@@ -1,0 +1,1483 @@
+{
+  "id": "task-2",
+  "label": "chapter=4, username=liang12e",
+  "params": {
+    "chapter": "4",
+    "username": "liang12e"
+  },
+  "title": "Chapter 4 Mathematical Functions, Characters, and Strings",
+  "questions": [
+    {
+      "id": "4.1",
+      "number": "4.1",
+      "text": "&nbsp;\tTo obtain the sine of 35 degrees, use _______.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Math.sin(35)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Math.sin(Math.toRadians(35))"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Math.sin(Math.toDegrees(35))"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Math.sin(Math.toRadian(35))"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Math.sin(Math.toDegree(35))"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "4.2",
+      "number": "4.2",
+      "text": "&nbsp;\tTo obtain the arc sine of 0.5, use _______.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Math.asin(0.5)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Math.asin(Math.toDegrees(0.5))"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Math.sin(Math.toRadians(0.5))"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Math.sin(0.5)"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "4.3",
+      "number": "4.3",
+      "text": "&nbsp;\tMath.asin(0.5) returns _______.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "30"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Math.toRadians(30)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Math.PI / 4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Math.PI / 2"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "4.4",
+      "number": "4.4",
+      "text": "&nbsp;\tMath.sin(Math.PI) returns _______.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0.5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0.4"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "4.5",
+      "number": "4.5",
+      "text": "&nbsp;\tMath.cos(Math.PI) returns _______.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "-1.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0.5"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "4.6",
+      "number": "4.6",
+      "text": "&nbsp; Which of the following is correct to obtain the square root of 5? Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Math.sqrt(5)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Math.sqrt(25)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Math.pow(5, 0.5)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Math.pow(5, 2)"
+        }
+      ],
+      "inputName": "QD5",
+      "inputType": "checkbox",
+      "correctAnswer": "AC"
+    },
+    {
+      "id": "4.7",
+      "number": "4.7",
+      "text": "&nbsp;\tWhat is Math.rint(3.6)?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5.0"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "4.8",
+      "number": "4.8",
+      "text": "&nbsp;\tWhat is Math.round(3.6)?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4.0"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "4.9",
+      "number": "4.9",
+      "text": "&nbsp;\tWhat is Math.rint(3.5)?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4.0"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "5.0"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "4.10",
+      "number": "4.10",
+      "text": "&nbsp;\tWhat is Math.ceil(3.6)?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5.0"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "4.11",
+      "number": "4.11",
+      "text": "&nbsp;\tWhat is Math.floor(3.6)?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5.0"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "4.12",
+      "number": "4.12",
+      "text": "&nbsp; Which of the following is correct to obtain the min of x, y, z? Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Math.min(x, Math.min(y, z))"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Math.min(Math.min(x, y), z)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Math.min(Math.min(y, z), x)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Math.min(z, Math.min(x, y))"
+        }
+      ],
+      "inputName": "QD11",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD"
+    },
+    {
+      "id": "4.13",
+      "number": "4.13",
+      "text": "&nbsp; Which of the following is correct to obtain a random integer between 5 and 10?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "5 + Math.random() * 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5 + (int)(Math.random() * 6)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5 + Math.random() * 5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5 + (int)(Math.random() * 5)"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "4.14",
+      "number": "4.14",
+      "text": "&nbsp;\tWhich of the following is the correct expression of character 4?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\"4\""
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "'\\0004'"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "'4'"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "4.15",
+      "number": "4.15",
+      "text": "&nbsp;\tA Java character is stored in __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "one byte"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "two bytes"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "three bytes"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "four bytes"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "4.16",
+      "number": "4.16",
+      "text": "&nbsp;\tThe Unicode of 'a' is 97. What is the Unicode for 'c'?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "96"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "97"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "98"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "99"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "4.17",
+      "number": "4.17",
+      "text": "&nbsp;\tWhich of the following statements prints smith\\exam1\\test.txt?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "System.out.println(\"smith\\exam1\\test.txt\");"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "System.out.println(\"smith\\\\exam1\\\\test.txt\");"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "System.out.println(\"smith\\\"exam1\\\"test.txt\");"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "System.out.println(\"smith\"\\exam1\"\\test.txt\");"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "4.18",
+      "number": "4.18",
+      "text": "&nbsp;\tSuppose x is a char variable with a value 'b'. What is the output of the statement System.out.println(++x)?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "b"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "c"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "d"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "4.19",
+      "number": "4.19",
+      "text": "&nbsp;\tSuppose i is an int type variable. Which of the following statements display the character whose Unicode is stored in variable i?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "System.out.println(i);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "System.out.println((char)i);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "System.out.println((int)i);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "System.out.println(i + \" \");"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "4.20",
+      "number": "4.20",
+      "text": "&nbsp;\tWill System.out.println((char)4) display 4?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Yes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "4.21",
+      "number": "4.21",
+      "text": "&nbsp;\tWhat is the output of System.out.println('z' - 'a')?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "25"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "26"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "a"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "z"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "4.22",
+      "number": "4.22",
+      "text": "&nbsp;\tAn int variable can hold __________. Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "'x'"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "120"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "120.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\"x\""
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "\"120\""
+        }
+      ],
+      "inputName": "QE21",
+      "inputType": "checkbox",
+      "correctAnswer": "AB"
+    },
+    {
+      "id": "4.23",
+      "number": "4.23",
+      "text": "&nbsp;\tWhich of the following assignment statements is correct? Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "char c = 'd';"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "char c = 100;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "char c =  \"d\";"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "char c = \"100\";"
+        }
+      ],
+      "inputName": "QD22",
+      "inputType": "checkbox",
+      "correctAnswer": "AB"
+    },
+    {
+      "id": "4.24",
+      "number": "4.24",
+      "text": "&nbsp;\t'3' - '2' + 'm' / 'n' is ______.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "4.25",
+      "number": "4.25",
+      "text": "&nbsp; To check whether a char variable ch is an uppercase letter, you write ___________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "(ch &gt;= 'A' &amp;&amp; ch &gt;= 'Z')"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "(ch &gt;= 'A' &amp;&amp; ch &lt;= 'Z')"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "(ch &gt;= 'A' || ch &lt;= 'Z')"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "('A' &lt;= ch &lt;= 'Z')"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "4.26",
+      "number": "4.26",
+      "text": "&nbsp;\tWhich of the following is not a correct method in the Character class? Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "isLetterOrDigit(char)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "isLetter(char)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "isDigit()"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "toLowerCase(char)"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "toUpperCase()"
+        }
+      ],
+      "inputName": "QE25",
+      "inputType": "checkbox",
+      "correctAnswer": "CE"
+    },
+    {
+      "id": "4.27",
+      "number": "4.27",
+      "text": "&nbsp; Suppose s is a string with the value \"java\". What will be assigned to x if you execute the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">char</span>&nbsp;x&nbsp;=&nbsp;s.charAt(<span class=\"constant\">4</span>);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "'a'"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "'v'"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Nothing will be assigned to x, because the execution causes the runtime error StringIndexOutofBoundsException."
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "4.28",
+      "number": "4.28",
+      "text": "&nbsp;\tThe expression \"Java \" + 1 + 2 + 3 evaluates to ________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Java123"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Java6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Java 123"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "java 123"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Illegal expression"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "4.29",
+      "number": "4.29",
+      "text": "&nbsp;\tNote that the Unicode for character A is 65. The expression \"A\" + 1 evaluates to ________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "66"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "B"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Illegal expression"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "4.30",
+      "number": "4.30",
+      "text": "&nbsp;\tNote that the Unicode for character A is 65. The expression 'A' + 1 evaluates to ________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "66"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "B"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Illegal expression"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "4.31",
+      "number": "4.31",
+      "text": "&nbsp;\tWhich of the following is the correct statement to return JAVA?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "toUpperCase(\"Java\")"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\"Java\".toUpperCase(\"Java\")"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\"Java\".toUpperCase()"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "String.toUpperCase(\"Java\")"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "4.32",
+      "number": "4.32",
+      "text": "&nbsp;\tSuppose s1 and s2 are two strings. Which of the following statements or expressions is incorrect? Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "String s3 = s1 - s2;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "boolean b = s1.compareTo(s2);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "char c = s1[0];"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "char c = s1.charAt(s1.length());"
+        }
+      ],
+      "inputName": "QD31",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD"
+    },
+    {
+      "id": "4.33",
+      "number": "4.33",
+      "text": "&nbsp;\tSuppose s1 and s2 are two strings. What is the result of the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>&nbsp;s1.equals(s2) == s2.equals(s1)<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "false"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "4.34",
+      "number": "4.34",
+      "text": "&nbsp;\t\"abc\".compareTo(\"aba\") returns ___________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "-1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "-2"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "4.35",
+      "number": "4.35",
+      "text": "&nbsp;\t\"AbA\".compareToIgnoreCase(\"abC\") returns ___________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "-1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "-2"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "4.36",
+      "number": "4.36",
+      "text": "&nbsp;\t____________________ returns true. Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\"peter\".compareToIgnoreCase(\"Peter\")"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\"peter\".compareToIgnoreCase(\"peter\")"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\"peter\".equalsIgnoreCase(\"Peter\")"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\"peter\".equalsIgnoreCase(\"peter\")"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "\"peter\".equals(\"peter\")"
+        }
+      ],
+      "inputName": "QE35",
+      "inputType": "checkbox",
+      "correctAnswer": "CDE"
+    },
+    {
+      "id": "4.37",
+      "number": "4.37",
+      "text": "&nbsp;\tWhat is the return value of \"SELECT\".substring(0, 5)?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\"SELECT\""
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\"SELEC\""
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\"SELE\""
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\"ELECT\""
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "4.38",
+      "number": "4.38",
+      "text": "&nbsp;\tWhat is the return value of \"SELECT\".substring(4, 4)?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "an empty string"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "C"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "T"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "E"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "4.39",
+      "number": "4.39",
+      "text": "&nbsp;\tTo check if a string s contains the prefix \"Java\", you may write _____________. Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "if (s.startsWith(\"Java\")) ..."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "if (s.indexOf(\"Java\") == 0) ..."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "if (s.substring(0, 4).equals(\"Java\")) ..."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "if (s.charAt(0) == 'J' &amp;&amp; s.charAt(1) == 'a' &amp;&amp; s.charAt(2) == 'v' &amp;&amp; s.charAt(3) == 'a') ..."
+        }
+      ],
+      "inputName": "QD38",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD"
+    },
+    {
+      "id": "4.40",
+      "number": "4.40",
+      "text": "&nbsp;\tTo check if a string s contains the suffix \"Java\", you may write _____________. Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "if (s.endsWith(\"Java\")) ..."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "if (s.lastIndexOf(\"Java\") &gt;= 0) ..."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "if (s.substring(s.length() - 4).equals(\"Java\")) ..."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "if (s.substring(s.length() - 5).equals(\"Java\")) ..."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "if (s.charAt(s.length() - 4) == 'J' &amp;&amp; s.charAt(s.length() - 3) == 'a' &amp;&amp; s.charAt(s.length() - 2) == 'v' &amp;&amp; s.charAt(s.length() - 1) == 'a') ..."
+        }
+      ],
+      "inputName": "QE39",
+      "inputType": "checkbox",
+      "correctAnswer": "ACE"
+    },
+    {
+      "id": "4.41",
+      "number": "4.41",
+      "text": "&nbsp; The __________ method parses a string s to an int value.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "integer.parseInt(s);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Integer.parseInt(s);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "integer.parseInteger(s);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Integer.parseInteger(s);"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "4.42",
+      "number": "4.42",
+      "text": "&nbsp; The __________ method parses a string s to a double value.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "double.parseDouble(s);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Double.parsedouble(s);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "double.parse(s);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Double.parseDouble(s);"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "4.43",
+      "number": "4.43",
+      "text": "&nbsp; Which of the following is an invalid specifier for the printf statement?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "%4c"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "%10b"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "%6d"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "%8.2d"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "%10.2e"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "4.44",
+      "number": "4.44",
+      "text": "&nbsp; The statement System.out.printf(\"%3.1f\", 1234.56) outputs ___________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "123.4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "123.5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1234.5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1234.56"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "1234.6"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "4.45",
+      "number": "4.45",
+      "text": "&nbsp; The statement System.out.printf(\"%3.1e\", 1234.56) outputs ___________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0.1e+04"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0.123456e+04"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0.123e+04"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1.2e+03"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "1.23+03"
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "4.46",
+      "number": "4.46",
+      "text": "&nbsp; The statement System.out.printf(\"%5d\", 123456) outputs ___________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "12345"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "23456"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "123456"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "12345.6"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "4.47",
+      "number": "4.47",
+      "text": "&nbsp; The statement System.out.printf(\"%10s\", 123456) outputs ___________. (Note: * represents a space)<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "123456****"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "23456*****"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "12345*****"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "****123456"
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "4.48",
+      "number": "4.48",
+      "text": "&nbsp; Analyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;<span class=\"constant\">3434</span>;&nbsp;<span class=\"keyword\">double</span>&nbsp;d&nbsp;=&nbsp;<span class=\"constant\">3434</span>;<br>System.out.printf(<span class=\"literal\">\"%5<span class=\"literal\">.</span>1f&nbsp;%5<span class=\"literal\">.</span>1f\"</span>,&nbsp;i,&nbsp;d);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code compiles and runs fine to display 3434.0 3434.0."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code compiles and runs fine to display 3434 3434.0."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "i is an integer, but the format specifier %5.1f specifies a format for double value. The code has an error."
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 48
+}

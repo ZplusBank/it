@@ -1,0 +1,1738 @@
+{
+  "id": "task-5",
+  "label": "chapter=7, username=liang12e",
+  "params": {
+    "chapter": "7",
+    "username": "liang12e"
+  },
+  "title": "Chapter 7 Single-Dimensional Arrays",
+  "questions": [
+    {
+      "id": "7.1",
+      "number": "7.1",
+      "text": "&nbsp;\tOnce an array is created, its size _______.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "can be changed"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "is fixed"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "is not determined"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "7.2",
+      "number": "7.2",
+      "text": "&nbsp;\tWhich of the following are correct to declare an array of int values?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "int[] a;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "int a[];"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "int a;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "double[] a;"
+        }
+      ],
+      "inputName": "QD1",
+      "inputType": "checkbox",
+      "correctAnswer": "AB"
+    },
+    {
+      "id": "7.3",
+      "number": "7.3",
+      "text": "&nbsp;\tWhich of the following are incorrect?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "int[] a = new int[2];"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "int a[] = new int[2];"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "int[] a = new int(2);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "int a = new int[2];"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "int a() = new int[2];"
+        }
+      ],
+      "inputName": "QE2",
+      "inputType": "checkbox",
+      "correctAnswer": "CDE"
+    },
+    {
+      "id": "7.4",
+      "number": "7.4",
+      "text": "&nbsp; If you declare an array double[] list = new double[5], the highest index in array list is __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "7.5",
+      "number": "7.5",
+      "text": "&nbsp; How many elements are in array double[] list = new double[5]?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "7.6",
+      "number": "7.6",
+      "text": "&nbsp;\tAnalyze the following code.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] x = <span class=\"keyword\">new</span> <span class=\"keyword\">int</span>[<span class=\"constant\">3</span>];<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"x[0] is \"</span> + x[<span class=\"constant\">0</span>]);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because the size of the array wasn't specified when declaring the array."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a runtime error because the array elements are not initialized."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program runs fine and displays x[0] is 0."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a runtime error because the array element x[0] is not defined."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "7.7",
+      "number": "7.7",
+      "text": "&nbsp;\tWhat is the correct term for numbers[99]?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "index"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "index variable"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "indexed variable"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "array variable"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "array"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "7.8",
+      "number": "7.8",
+      "text": "&nbsp;\tWhat is the representation of the third element in an array called a?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a[2]"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "a(2)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "a[3]"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "a(3)"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "7.9",
+      "number": "7.9",
+      "text": "&nbsp;\tSuppose int i = 5, which of the following can be used as an index for array double[] t = new double[100]?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "i"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "(int)(Math.random() * 100))"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "i + 10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "i + 6.5"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Math.random() * 100"
+        }
+      ],
+      "inputName": "QE8",
+      "inputType": "checkbox",
+      "correctAnswer": "ABC"
+    },
+    {
+      "id": "7.10",
+      "number": "7.10",
+      "text": "&nbsp;\tIf you declare an array double[] list = {3.4, 2.0, 3.5, 5.5}, list[1] is ________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3.4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3.5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5.5"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "undefined"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "7.11",
+      "number": "7.11",
+      "text": "&nbsp;\tWhich of the following statements are valid?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "int i = new int(30);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "double d[] = new double[30];"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "int[] i = {3, 4, 3, 2};"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "char[] c = new char();"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "char[] c = new char[4]{'a', 'b', 'c', 'd'};"
+        }
+      ],
+      "inputName": "QE10",
+      "inputType": "checkbox",
+      "correctAnswer": "BC"
+    },
+    {
+      "id": "7.12",
+      "number": "7.12",
+      "text": "&nbsp;\tHow can you initialize an array of two characters to 'a' and 'b'?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "char[] charArray = new char[2]; charArray = {'a', 'b'};"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "char[2] charArray = {'a', 'b'};"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "char[] charArray = {'a', 'b'};"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "char[] charArray = new char[2]; charArray[0] = 'a'; charArray[1] = 'b';"
+        }
+      ],
+      "inputName": "QD11",
+      "inputType": "checkbox",
+      "correctAnswer": "CD"
+    },
+    {
+      "id": "7.13",
+      "number": "7.13",
+      "text": "&nbsp; Assume int[] t = {1, 2, 3, 4}. What is t.length?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "7.14",
+      "number": "7.14",
+      "text": "&nbsp; What is the output of the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">double</span>[]&nbsp;myList&nbsp;=&nbsp;{<span class=\"constant\">1</span>,&nbsp;<span class=\"constant\">5</span>,&nbsp;<span class=\"constant\">5</span>,&nbsp;<span class=\"constant\">5</span>,&nbsp;<span class=\"constant\">5</span>,&nbsp;<span class=\"constant\">1</span>};<br><span class=\"keyword\">double</span>&nbsp;max&nbsp;=&nbsp;myList[<span class=\"constant\">0</span>];<br><span class=\"keyword\">int</span>&nbsp;indexOfMax&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;<span class=\"constant\">1</span>;&nbsp;i&nbsp;&lt;&nbsp;myList.length;&nbsp;i++)&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">if</span> (myList[i] &gt; max) {<br>&nbsp;&nbsp;&nbsp;&nbsp;max = myList[i];<br>&nbsp;&nbsp;&nbsp;&nbsp;indexOfMax = i;<br>&nbsp;&nbsp;}<br>}<br>System.out.println(indexOfMax);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "7.15",
+      "number": "7.15",
+      "text": "&nbsp; Analyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{&nbsp;<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] x = <span class=\"keyword\">new</span> <span class=\"keyword\">int</span>[<span class=\"constant\">5</span>];<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> i;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (i = <span class=\"constant\">0</span>; i &lt; x.length; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x[i] = i;<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(x[i]);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays 0 1 2 3 4."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays 4."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a runtime error because the last statement in the main method causes ArrayIndexOutOfBoundsException."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a compile error because i is not defined in the last statement in the main method."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "7.16",
+      "number": "7.16",
+      "text": "&nbsp; What is the output of the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>[]&nbsp;myList&nbsp;=&nbsp;{<span class=\"constant\">1</span>,&nbsp;<span class=\"constant\">2</span>,&nbsp;<span class=\"constant\">3</span>,&nbsp;<span class=\"constant\">4</span>,&nbsp;<span class=\"constant\">5</span>,&nbsp;<span class=\"constant\">6</span>};<br><br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;myList.length&nbsp;-&nbsp;<span class=\"constant\">2</span>;&nbsp;i&nbsp;&gt;=&nbsp;<span class=\"constant\">0</span>;&nbsp;i--)&nbsp;{<br>&nbsp;&nbsp;myList[i + <span class=\"constant\">1</span>] = myList[i];<br>}<br><br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;e:&nbsp;myList)&nbsp;<br>&nbsp;&nbsp;System.out.print(e + <span class=\"literal\">\" \"</span>);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 2 3 4 5 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6 1 2 3 4 5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6 2 3 4 5 1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1 1 2 3 4 5"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "2 3 4 5 6 1"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "7.17",
+      "number": "7.17",
+      "text": "&nbsp; Analyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">double</span>[] x = {<span class=\"constant\">2</span><span class=\"literal\">.</span><span class=\"constant\">5</span>, <span class=\"constant\">3</span>, <span class=\"constant\">4</span>};<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">double</span> value: x)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(value + <span class=\"literal\">\" \"</span>);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays 2.5, 3, 4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays 2.5 3 4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays 2.5 3.0 4.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program displays 2.5, 3.0 4.0"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The program has a syntax error because value is undefined."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "7.18",
+      "number": "7.18",
+      "text": "&nbsp; What is output of the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{&nbsp;<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] x = {<span class=\"constant\">120</span>, <span class=\"constant\">200</span>, <span class=\"constant\">16</span>};<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = x.length - <span class=\"constant\">1</span>; i &gt;= <span class=\"constant\">0</span>; i--)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(x[i] + <span class=\"literal\">\" \"</span>);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "120 200 16"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "16 200 120"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "120 16 200"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "200 16 120"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "7.19",
+      "number": "7.19",
+      "text": "&nbsp; What is output of the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{&nbsp;<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> list[] = {<span class=\"constant\">1</span>, <span class=\"constant\">2</span>, <span class=\"constant\">3</span>, <span class=\"constant\">4</span>, <span class=\"constant\">5</span>, <span class=\"constant\">6</span>};<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">1</span>; i &lt; list.length; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list[i] = list[i - <span class=\"constant\">1</span>];<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">0</span>; i &lt; list.length; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(list[i] + <span class=\"literal\">\" \"</span>);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 2 3 4 5 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2 3 4 5 6 6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2 3 4 5 6 1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1 1 1 1 1 1"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "7.20",
+      "number": "7.20",
+      "text": "&nbsp; In the following code, what is the output for list2?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] list1 = {<span class=\"constant\">1</span>, <span class=\"constant\">2</span>, <span class=\"constant\">3</span>};<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] list2 = {<span class=\"constant\">1</span>, <span class=\"constant\">2</span>, <span class=\"constant\">3</span>};<br>&nbsp;&nbsp;&nbsp;&nbsp;list2 = list1;<br>&nbsp;&nbsp;&nbsp;&nbsp;list1[<span class=\"constant\">0</span>] = <span class=\"constant\">0</span>; list1[<span class=\"constant\">1</span>] = <span class=\"constant\">1</span>; list2[<span class=\"constant\">2</span>] = <span class=\"constant\">2</span>;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">0</span>; i &lt; list2.length; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(list2[i] + <span class=\"literal\">\" \"</span>);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 2 3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1 1 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0 1 2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0 1 3"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "7.21",
+      "number": "7.21",
+      "text": "&nbsp; Analyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{&nbsp;<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] x = {<span class=\"constant\">1</span>, <span class=\"constant\">2</span>, <span class=\"constant\">3</span>, <span class=\"constant\">4</span>};<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] y = x;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;x = <span class=\"keyword\">new</span> <span class=\"keyword\">int</span>[<span class=\"constant\">2</span>];<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">0</span>; i &lt; y.length; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(y[i] + <span class=\"literal\">\" \"</span>);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays 1 2 3 4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays 0 0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays 0 0 3 4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program displays 0 0 0 0"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "7.22",
+      "number": "7.22",
+      "text": "&nbsp; Analyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{&nbsp;<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">final</span> <span class=\"keyword\">int</span>[] x = {<span class=\"constant\">1</span>, <span class=\"constant\">2</span>, <span class=\"constant\">3</span>, <span class=\"constant\">4</span>};<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] y = x;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;x = <span class=\"keyword\">new</span> <span class=\"keyword\">int</span>[<span class=\"constant\">2</span>];<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">0</span>; i &lt; y.length; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(y[i] + <span class=\"literal\">\" \"</span>);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays 1 2 3 4."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays 0 0."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error on the statement x = new int[2], because x is final and cannot be changed."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The elements in the array x cannot be changed, because x is final."
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "7.23",
+      "number": "7.23",
+      "text": "&nbsp; Analyze the following code.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>[]&nbsp;list&nbsp;=&nbsp;<span class=\"keyword\">new</span>&nbsp;<span class=\"keyword\">int</span>[<span class=\"constant\">5</span>];<br>list&nbsp;=&nbsp;<span class=\"keyword\">new</span>&nbsp;<span class=\"keyword\">int</span>[<span class=\"constant\">6</span>];<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code has compile errors because the variable list cannot be changed once it is assigned."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code has runtime errors because the variable list cannot be changed once it is assigned."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The code can compile and run fine. The second line assigns a new array to list."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The code has compile errors because you cannot assign a different size array to list."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "7.24",
+      "number": "7.24",
+      "text": "&nbsp; Analyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] a = <span class=\"keyword\">new</span> <span class=\"keyword\">int</span>[<span class=\"constant\">4</span>];<br>&nbsp;&nbsp;&nbsp;&nbsp;a[<span class=\"constant\">1</span>] = <span class=\"constant\">1</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;a = <span class=\"keyword\">new</span> <span class=\"keyword\">int</span>[<span class=\"constant\">2</span>];<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"a[1] is \"</span> + a[<span class=\"constant\">1</span>]);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because new int[2] is assigned to a."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a runtime error because a[1] is not initialized."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays a[1] is 0."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program displays a[1] is 1."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "7.25",
+      "number": "7.25",
+      "text": "&nbsp; The __________ method copies the sourceArray to the targetArray.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "System.copyArrays(sourceArray, 0, targetArray, 0, sourceArray.length);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "System.copyarrays(sourceArray, 0, targetArray, 0, sourceArray.length);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "System.arrayCopy(sourceArray, 0, targetArray, 0, sourceArray.length);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "System.arraycopy(sourceArray, 0, targetArray, 0, sourceArray.length);"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "7.26",
+      "number": "7.26",
+      "text": "&nbsp; In the following code, what is the output for list1?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] list1 = {<span class=\"constant\">1</span>, <span class=\"constant\">2</span>, <span class=\"constant\">3</span>};<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] list2 = {<span class=\"constant\">1</span>, <span class=\"constant\">2</span>, <span class=\"constant\">3</span>};<br>&nbsp;&nbsp;&nbsp;&nbsp;list2 = list1;<br>&nbsp;&nbsp;&nbsp;&nbsp;list1[<span class=\"constant\">0</span>] = <span class=\"constant\">0</span>; list1[<span class=\"constant\">1</span>] = <span class=\"constant\">1</span>; list2[<span class=\"constant\">2</span>] = <span class=\"constant\">2</span>;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">0</span>; i &lt; list1.length; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(list1[i] + <span class=\"literal\">\" \"</span>);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 2 3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1 1 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0 1 2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0 1 3"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "7.27",
+      "number": "7.27",
+      "text": "&nbsp; Analyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{&nbsp;<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] x = {<span class=\"constant\">1</span>, <span class=\"constant\">2</span>, <span class=\"constant\">3</span>, <span class=\"constant\">4</span>};<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] y = x;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;x = <span class=\"keyword\">new</span> <span class=\"keyword\">int</span>[<span class=\"constant\">2</span>];<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">0</span>; i &lt; x.length; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(x[i] + <span class=\"literal\">\" \"</span>);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays 1 2 3 4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays 0 0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays 0 0 3 4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program displays 0 0 0 0"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "7.28",
+      "number": "7.28",
+      "text": "&nbsp;\tShow the output of the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] x = {<span class=\"constant\">1</span>, <span class=\"constant\">2</span>, <span class=\"constant\">3</span>, <span class=\"constant\">4</span>, <span class=\"constant\">5</span>};<br>&nbsp;&nbsp;&nbsp;&nbsp;increase(x);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] y = {<span class=\"constant\">1</span>, <span class=\"constant\">2</span>, <span class=\"constant\">3</span>, <span class=\"constant\">4</span>, <span class=\"constant\">5</span>};<br>&nbsp;&nbsp;&nbsp;&nbsp;increase(y[<span class=\"constant\">0</span>]);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(x[<span class=\"constant\">0</span>] + <span class=\"literal\">\" \"</span> + y[<span class=\"constant\">0</span>]);<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> increase(<span class=\"keyword\">int</span>[] x) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">0</span>; i &lt; x.length; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x[i]++;<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> increase(<span class=\"keyword\">int</span> y) {<br>&nbsp;&nbsp;&nbsp;&nbsp;y++;<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0 0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2 2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2 1"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "1 2"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "7.29",
+      "number": "7.29",
+      "text": "&nbsp;\tAnalyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] oldList = {<span class=\"constant\">1</span>, <span class=\"constant\">2</span>, <span class=\"constant\">3</span>, <span class=\"constant\">4</span>, <span class=\"constant\">5</span>};<br>&nbsp;&nbsp;&nbsp;&nbsp;reverse(oldList);<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">0</span>; i &lt; oldList.length; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(oldList[i] + <span class=\"literal\">\" \"</span>);<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> reverse(<span class=\"keyword\">int</span>[] list) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] newList = <span class=\"keyword\">new</span> <span class=\"keyword\">int</span>[list.length];<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">0</span>; i &lt; list.length; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newList[i] = list[list.length - <span class=\"constant\">1</span> - i];<br><br>&nbsp;&nbsp;&nbsp;&nbsp;list = newList;<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays 1 2 3 4 5."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays 1 2 3 4 5 and then raises an ArrayIndexOutOfBoundsException."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays 5 4 3 2 1."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program displays 5 4 3 2 1 and then raises an ArrayIndexOutOfBoundsException."
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "7.30",
+      "number": "7.30",
+      "text": "&nbsp; Analyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test1&nbsp;{&nbsp;<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;xMethod(<span class=\"keyword\">new</span> <span class=\"keyword\">double</span>[]{<span class=\"constant\">3</span>, <span class=\"constant\">3</span>});<br>&nbsp;&nbsp;&nbsp;&nbsp;xMethod(<span class=\"keyword\">new</span> <span class=\"keyword\">double</span>[<span class=\"constant\">5</span>]);<br>&nbsp;&nbsp;&nbsp;&nbsp;xMethod(<span class=\"keyword\">new</span> <span class=\"keyword\">double</span>[<span class=\"constant\">3</span>]{<span class=\"constant\">1</span>, <span class=\"constant\">2</span>, <span class=\"constant\">3</span>});<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> xMethod(<span class=\"keyword\">double</span>[] a) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(a.length);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because xMethod(new double[]{3, 3}) is incorrect."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because xMethod(new double[5]) is incorrect."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error because xMethod(new double[3]{1, 2, 3}) is incorrect."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a runtime error because a is null."
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "7.31",
+      "number": "7.31",
+      "text": "&nbsp; \tWhat would be the result of attempting to compile and run the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">double</span>[] x = <span class=\"keyword\">new</span> <span class=\"keyword\">double</span>[]{<span class=\"constant\">1</span>, <span class=\"constant\">2</span>, <span class=\"constant\">3</span>};<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Value is \"</span> + x[<span class=\"constant\">1</span>]);<br>&nbsp;&nbsp;}<br>}&nbsp;<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because the syntax new double[]{1, 2, 3} is wrong and it should be replaced by {1, 2, 3}."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because the syntax new double[]{1, 2, 3} is wrong and it should be replaced by new double[3]{1, 2, 3};"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error because the syntax new double[]{1, 2, 3} is wrong and it should be replaced by new double[]{1.0, 2.0, 3.0};"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program compiles and runs fine and the output \"Value is 1.0\" is printed."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The program compiles and runs fine and the output \"Value is 2.0\" is printed."
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "7.32",
+      "number": "7.32",
+      "text": "&nbsp;\tDo the following two programs produce the same result?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>Program&nbsp;I:<br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] list = {<span class=\"constant\">1</span>, <span class=\"constant\">2</span>, <span class=\"constant\">3</span>, <span class=\"constant\">4</span>, <span class=\"constant\">5</span>};<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">0</span>; i &lt; list.length; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(list[i] + <span class=\"literal\">\" \"</span>);<br>&nbsp;&nbsp;}<br>}<br><br>Program&nbsp;II:<br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] oldList = {<span class=\"constant\">1</span>, <span class=\"constant\">2</span>, <span class=\"constant\">3</span>, <span class=\"constant\">4</span>, <span class=\"constant\">5</span>};<br>&nbsp;&nbsp;&nbsp;&nbsp;reverse(oldList);<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">0</span>; i &lt; oldList.length; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(oldList[i] + <span class=\"literal\">\" \"</span>);<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> reverse(<span class=\"keyword\">int</span>[] list) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[] newList = <span class=\"keyword\">new</span> <span class=\"keyword\">int</span>[list.length];<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">0</span>; i &lt; list.length; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newList[i] = list[list.length - <span class=\"constant\">1</span> - i];<br><br>&nbsp;&nbsp;&nbsp;&nbsp;list = newList;<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Yes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "7.33",
+      "number": "7.33",
+      "text": "&nbsp;\tWhen you pass an array to a method, the method receives __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a copy of the array"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "a copy of the first element"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "the reference of the array"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "the length of the array"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "7.34",
+      "number": "7.34",
+      "text": "&nbsp; The JVM stores the array in an area of memory, called _______, which is used for dynamic memory allocation where blocks of memory are allocated and freed in an arbitrary order.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "stack"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "heap"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "memory block"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "dynamic memory"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "7.35",
+      "number": "7.35",
+      "text": "&nbsp; Which of the following is correct?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "String[] list = new String{\"red\", \"yellow\", \"green\"};"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "String[] list = new String[]{\"red\", \"yellow\", \"green\"};"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "String[] list = {\"red\", \"yellow\", \"green\"};"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "String list = {\"red\", \"yellow\", \"green\"};"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "String list = new String{\"red\", \"yellow\", \"green\"};"
+        }
+      ],
+      "inputName": "QE34",
+      "inputType": "checkbox",
+      "correctAnswer": "BC"
+    },
+    {
+      "id": "7.36",
+      "number": "7.36",
+      "text": "&nbsp; When you return an array from a method, the method returns __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a copy of the array"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "a copy of the first element"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "the reference of the array"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "the length of the array"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "7.37",
+      "number": "7.37",
+      "text": "&nbsp; Suppose a method p has the following header:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">static</span>&nbsp;<span class=\"keyword\">int</span>[]&nbsp;p()<br><br>What&nbsp;<span class=\"keyword\">return</span>&nbsp;statement&nbsp;may&nbsp;be&nbsp;used&nbsp;in&nbsp;p()?<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "return 1;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "return {1, 2, 3};"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "return int[]{1, 2, 3};"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "return new int[]{1, 2, 3};"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "7.38",
+      "number": "7.38",
+      "text": "&nbsp; The reverse method is defined in the textbook. What is list1 after executing the following statements?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>[]&nbsp;list1&nbsp;=&nbsp;{<span class=\"constant\">1</span>,&nbsp;<span class=\"constant\">2</span>,&nbsp;<span class=\"constant\">3</span>,&nbsp;<span class=\"constant\">4</span>,&nbsp;<span class=\"constant\">5</span>,&nbsp;<span class=\"constant\">6</span>};<br>list1&nbsp;=&nbsp;reverse(list1);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "list1 is 1 2 3 4 5 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "list1 is 6 5 4 3 2 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "list1 is 0 0 0 0 0 0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "list1 is 6 6 6 6 6 6"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "7.39",
+      "number": "7.39",
+      "text": "&nbsp; The reverse method is defined in this section. What is list1 after executing the following statements?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>[]&nbsp;list1&nbsp;=&nbsp;{<span class=\"constant\">1</span>,&nbsp;<span class=\"constant\">2</span>,&nbsp;<span class=\"constant\">3</span>,&nbsp;<span class=\"constant\">4</span>,&nbsp;<span class=\"constant\">5</span>,&nbsp;<span class=\"constant\">6</span>};<br><span class=\"keyword\">int</span>[]&nbsp;list2&nbsp;=&nbsp;reverse(list1);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "list1 is 1 2 3 4 5 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "list1 is 6 5 4 3 2 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "list1 is 0 0 0 0 0 0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "list1 is 6 6 6 6 6 6"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "7.40",
+      "number": "7.40",
+      "text": "&nbsp; Which of the following declarations are correct?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "public static void print(String... strings, double... numbers)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "public static void print(double... numbers, String name)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "public static double... print(double d1, double d2)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "public static void print(double... numbers)"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "public static void print(int n, double... numbers)"
+        }
+      ],
+      "inputName": "QE39",
+      "inputType": "checkbox",
+      "correctAnswer": "DE"
+    },
+    {
+      "id": "7.41",
+      "number": "7.41",
+      "text": "&nbsp; Which of the following statements are correct to invoke the printMax method in Listing 7.5 in the textbook?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "printMax(1, 2, 2, 1, 4);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "printMax(new double[]{1, 2, 3});"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "printMax(1.0, 2.0, 2.0, 1.0, 4.0);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "printMax(new int[]{1, 2, 3});"
+        }
+      ],
+      "inputName": "QD40",
+      "inputType": "checkbox",
+      "correctAnswer": "ABC"
+    },
+    {
+      "id": "7.42",
+      "number": "7.42",
+      "text": "&nbsp; For the binarySearch method in Section 7.10.2, what is low and high after the first iteration of the while loop when invoking binarySearch(new int[]{1, 4, 6, 8, 10, 15, 20}, 11)?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "low is 0 and high is 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "low is 5 and high is 5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "low is 3 and high is 6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "low is 4 and high is 6"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "low is 6 and high is 5"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "7.43",
+      "number": "7.43",
+      "text": "&nbsp; If a key is not in the list, the binarySearch method returns _________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "insertion point"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "insertion point - 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "-(insertion point + 1)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "-insertion point"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "7.44",
+      "number": "7.44",
+      "text": "&nbsp; Use the selectionSort method presented in this section to answer this question. Assume list is {3.1, 3.1, 2.5, 6.4, 2.1}, what is the content of list after the first iteration of the outer loop in the method?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3.1, 3.1, 2.5, 6.4, 2.1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2.5, 3.1, 3.1, 6.4, 2.1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2.1, 2.5, 3.1, 3.1, 6.4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3.1, 3.1, 2.5, 2.1, 6.4"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "2.1, 3.1, 2.5, 6.4, 3.1"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "7.45",
+      "number": "7.45",
+      "text": "&nbsp; Use the selectionSort method presented in this section to answer this question. What is list1 after executing the following statements?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">double</span>[]&nbsp;list1&nbsp;=&nbsp;{<span class=\"constant\">3</span><span class=\"literal\">.</span><span class=\"constant\">1</span>,&nbsp;<span class=\"constant\">3</span><span class=\"literal\">.</span><span class=\"constant\">1</span>,&nbsp;<span class=\"constant\">2</span><span class=\"literal\">.</span><span class=\"constant\">5</span>,&nbsp;<span class=\"constant\">6</span><span class=\"literal\">.</span><span class=\"constant\">4</span>};<br>selectionSort(list1);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "list1 is 3.1, 3.1, 2.5, 6.4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "list1 is 2.5, 3.1, 3.1, 6.4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "list1 is 6.4, 3.1, 3.1, 2.5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "list1 is 3.1, 2.5, 3.1, 6.4"
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "7.46",
+      "number": "7.46",
+      "text": "&nbsp; The __________ method sorts the array scores of the double[] type.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "java.util.Arrays(scores)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "java.util.Arrays.sorts(scores)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "java.util.Arrays.sort(scores)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "java.util.Arrays.sortArray(scores)"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "7.47",
+      "number": "7.47",
+      "text": "&nbsp; Assume int[] scores = {1, 20, 30, 40, 50}, what value does java.util.Arrays.binarySearch(scores, 30) return?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "-1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "-2"
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "7.48",
+      "number": "7.48",
+      "text": "&nbsp; Assume int[] scores = {1, 20, 30, 40, 50}, what value does java.util.Arrays.binarySearch(scores, 3) return?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "-1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "-2"
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "7.49",
+      "number": "7.49",
+      "text": "&nbsp; Assume int[] scores = {1, 20, 30, 40, 50}, what is the output of System.out.println(java.util.Arrays.toString(scores))?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "{1, 20, 30, 40, 50}"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "[1, 20, 30, 40, 50]"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "{1 20 30 40 50}"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "[1 20 30 40 50]"
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "7.50",
+      "number": "7.50",
+      "text": "&nbsp;\tHow can you get the word \"abc\" in the main method from the following call?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>java&nbsp;Test&nbsp;<span class=\"literal\">\"+\"</span>&nbsp;<span class=\"constant\">3</span>&nbsp;<span class=\"literal\">\"abc\"</span>&nbsp;<span class=\"constant\">2</span><br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "args[0]"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "args[1]"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "args[2]"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "args[3]"
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "7.51",
+      "number": "7.51",
+      "text": "&nbsp; Given the following program:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">0</span>; i &lt; args.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(args[i] + <span class=\"literal\">\" \"</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>}<br><br>What&nbsp;is&nbsp;the&nbsp;output,&nbsp;<span class=\"keyword\">if</span>&nbsp;you&nbsp;run&nbsp;the&nbsp;program&nbsp;using&nbsp;<br><br>java&nbsp;Test&nbsp;<span class=\"constant\">1</span>&nbsp;<span class=\"constant\">2</span>&nbsp;<span class=\"constant\">3</span><br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1 2 3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1 2"
+        }
+      ],
+      "inputName": "Q50",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "7.52",
+      "number": "7.52",
+      "text": "&nbsp; \tWhich code fragment would correctly identify the number of arguments passed via the command line to a Java application, excluding the name of the class that is being invoked?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "int count = args.length;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "int count = args.length - 1;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "int count = 0; while (args[count] != null) count ++;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "int count=0; while (!(args[count].equals(\"\"))) count ++;"
+        }
+      ],
+      "inputName": "Q51",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "7.53",
+      "number": "7.53",
+      "text": "&nbsp; \tWhich correctly creates an array of five empty Strings?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "String[] a = new String [5];"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "String[] a = {\"\", \"\", \"\", \"\", \"\"};"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "String[5] a;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "String[ ] a = new String [5]; for (int i = 0; i &lt; 5; a[i++] = null);"
+        }
+      ],
+      "inputName": "Q52",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "7.54",
+      "number": "7.54",
+      "text": "&nbsp; Analyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String argv[]) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"argv.length is \"</span> + argv.length);<br>&nbsp;&nbsp;}<br>}&nbsp;<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because String argv[] is wrong and it should be replaced by String[] args."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because String argv[] is wrong and it should be replaced by String args[]."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "If you run this program without passing any arguments, the program would have a runtime error because argv is null."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "If you run this program without passing any arguments, the program would display argv.length is 0."
+        }
+      ],
+      "inputName": "Q53",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "7.55",
+      "number": "7.55",
+      "text": "&nbsp; Which of the following is the correct header of the main method?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "public static void main(String[] args)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "public static void main(String args[])"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "public static void main(String[] x)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "public static void main(String x[])"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "static void main(String[] args)"
+        }
+      ],
+      "inputName": "QE54",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD"
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 55
+}

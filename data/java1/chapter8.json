@@ -1,0 +1,633 @@
+{
+  "id": "task-6",
+  "label": "chapter=8, username=liang12e",
+  "params": {
+    "chapter": "8",
+    "username": "liang12e"
+  },
+  "title": "Chapter 8 Multidimensional Arrays",
+  "questions": [
+    {
+      "id": "8.1",
+      "number": "8.1",
+      "text": "&nbsp;\tWhich of the following statements are correct?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "char[][] charArray = {'a', 'b'};"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "char[2][2] charArray = {{'a', 'b'}, {'c', 'd'}};"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "char[2][] charArray = {{'a', 'b'}, {'c', 'd'}};"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "char[][] charArray = {{'a', 'b'}, {'c', 'd'}};"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "8.2",
+      "number": "8.2",
+      "text": "&nbsp;\tWhat is the indexed variable for the element at the first row and first column in array a?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a[0][0]"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "a[1][1]"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "a[0][1]"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "a[1][0]"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "8.3",
+      "number": "8.3",
+      "text": "&nbsp;\tWhen you create an array using the following statement, the element values are automatically initialized to 0.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>[][]&nbsp;matrix&nbsp;=&nbsp;<span class=\"keyword\">new</span>&nbsp;<span class=\"keyword\">int</span>[<span class=\"constant\">5</span>][<span class=\"constant\">5</span>];<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "8.4",
+      "number": "8.4",
+      "text": "&nbsp;\tAssume double[][] x = new double[4][5], what are x.length and x[2].length?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4 and 4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4 and 5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5 and 4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5 and 5"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "8.5",
+      "number": "8.5",
+      "text": "&nbsp; How many elements are in array matrix (int[][] matrix = new int[5][5])?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "14"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "20"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "25"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "30"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "8.6",
+      "number": "8.6",
+      "text": "&nbsp;\tAssume int[][] x = {{1, 2}, {3, 4}, {5, 6}}, what are x.length and x[0].length?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2 and 1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2 and 2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3 and 2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2 and 3"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "3 and 3"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "8.7",
+      "number": "8.7",
+      "text": "&nbsp; Analyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">boolean</span>[][] x = <span class=\"keyword\">new</span> <span class=\"keyword\">boolean</span>[<span class=\"constant\">3</span>][];<br>&nbsp;&nbsp;&nbsp;&nbsp;x[<span class=\"constant\">0</span>] = <span class=\"keyword\">new</span> <span class=\"keyword\">boolean</span>[<span class=\"constant\">1</span>]; x[<span class=\"constant\">1</span>] = <span class=\"keyword\">new</span> <span class=\"keyword\">boolean</span>[<span class=\"constant\">2</span>];<br>&nbsp;&nbsp;&nbsp;&nbsp;x[<span class=\"constant\">2</span>] = <span class=\"keyword\">new</span> <span class=\"keyword\">boolean</span>[<span class=\"constant\">3</span>];<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"x[2][2] is \"</span> + x[<span class=\"constant\">2</span>][<span class=\"constant\">2</span>]);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because new boolean[3][] is wrong."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a runtime error because x[2][2] is null."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program runs and displays x[2][2] is null."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program runs and displays x[2][2] is true."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The program runs and displays x[2][2] is false."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "8.8",
+      "number": "8.8",
+      "text": "&nbsp;\tAssume int[][] x = {{1, 2}, {3, 4, 5}, {5, 6, 5, 9}}, what are x[0].length, x[1].length, and x[2].length?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2, 3, and 3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2, 3, and 4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3, 3, and 3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3, 3, and 4"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "2, 2, and 2"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "8.9",
+      "number": "8.9",
+      "text": "&nbsp; What is the output of the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[][] matrix =<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{<span class=\"constant\">1</span>, <span class=\"constant\">2</span>, <span class=\"constant\">3</span>, <span class=\"constant\">4</span>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class=\"constant\">4</span>, <span class=\"constant\">5</span>, <span class=\"constant\">6</span>, <span class=\"constant\">7</span>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class=\"constant\">8</span>, <span class=\"constant\">9</span>, <span class=\"constant\">10</span>, <span class=\"constant\">11</span>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class=\"constant\">12</span>, <span class=\"constant\">13</span>, <span class=\"constant\">14</span>, <span class=\"constant\">15</span>}};<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">0</span>; i &lt; <span class=\"constant\">4</span>; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(matrix[i][<span class=\"constant\">1</span>] + <span class=\"literal\">\" \"</span>);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 2 3 4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4 5 6 7"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1 3 8 12"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2 5 9 13"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "3 6 10 14"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "8.10",
+      "number": "8.10",
+      "text": "&nbsp;\tWhat is the output of the following program?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[][] values = {{<span class=\"constant\">3</span>, <span class=\"constant\">4</span>, <span class=\"constant\">5</span>, <span class=\"constant\">1</span>}, {<span class=\"constant\">33</span>, <span class=\"constant\">6</span>, <span class=\"constant\">1</span>, <span class=\"constant\">2</span>}};<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> v = values[<span class=\"constant\">0</span>][<span class=\"constant\">0</span>];<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> row = <span class=\"constant\">0</span>; row &lt; values.length; row++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> column = <span class=\"constant\">0</span>; column &lt; values[row].length; column++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">if</span> (v &lt; values[row][column])<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v = values[row][column];<br><br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(v);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "6"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "33"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "8.11",
+      "number": "8.11",
+      "text": "&nbsp;\tWhat is the output of the following program?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[][] values = {{<span class=\"constant\">3</span>, <span class=\"constant\">4</span>, <span class=\"constant\">5</span>, <span class=\"constant\">1</span> }, {<span class=\"constant\">33</span>, <span class=\"constant\">6</span>, <span class=\"constant\">1</span>, <span class=\"constant\">2</span>}};<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> row = <span class=\"constant\">0</span>; row &lt; values.length; row++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;java.util.Arrays.sort(values[row]);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> column = <span class=\"constant\">0</span>; column &lt; values[row].length; column++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(values[row][column] + <span class=\"literal\">\" \"</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println();<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program prints two rows 3 4 5 1 followed by 33 6 1 2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program prints on row 3 4 5 1 33 6 1 2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program prints two rows 3 4 5 1 followed by 2 1 6 33"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program prints two rows 1 3 4 5 followed by 1 2 6 33"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The program prints one row 1 3 4 5 1 2 6 33"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "8.12",
+      "number": "8.12",
+      "text": "&nbsp; What is the output of the following code?<br><br><span style=\"font-family:monospace; font-size: 109%;\"><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test5&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[][] matrix =<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{<span class=\"constant\">1</span>, <span class=\"constant\">2</span>, <span class=\"constant\">3</span>, <span class=\"constant\">4</span>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class=\"constant\">4</span>, <span class=\"constant\">5</span>, <span class=\"constant\">6</span>, <span class=\"constant\">7</span>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class=\"constant\">8</span>, <span class=\"constant\">9</span>, <span class=\"constant\">10</span>, <span class=\"constant\">11</span>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class=\"constant\">12</span>, <span class=\"constant\">13</span>, <span class=\"constant\">14</span>, <span class=\"constant\">15</span>}};<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">0</span>; i &lt; <span class=\"constant\">4</span>; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(matrix[<span class=\"constant\">1</span>][i] + <span class=\"literal\">\" \"</span>);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 2 3 4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4 5 6 7"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1 3 8 12"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2 5 9 13"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "3 6 10 14"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "8.13",
+      "number": "8.13",
+      "text": "&nbsp;\tWhat is the output of the following program?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[][] values = {{<span class=\"constant\">3</span>, <span class=\"constant\">4</span>, <span class=\"constant\">5</span>, <span class=\"constant\">1</span>}, {<span class=\"constant\">33</span>, <span class=\"constant\">6</span>, <span class=\"constant\">1</span>, <span class=\"constant\">2</span>}};<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> v = values[<span class=\"constant\">0</span>][<span class=\"constant\">0</span>];<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span>[] list : values)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> element : list)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">if</span> (v &gt; element)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v = element;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(v);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "6"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "33"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "8.14",
+      "number": "8.14",
+      "text": "&nbsp; Suppose a method p has the following header. What return statement may be used in p()?<br><br><span style=\"font-family:monospace; font-size: 109%;\"><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">static</span>&nbsp;<span class=\"keyword\">int</span>[][]&nbsp;p()<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "return 1;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "return {1, 2, 3};"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "return int[]{1, 2, 3};"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "return new int[]{1, 2, 3};"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "return new int[][]{{1, 2, 3}, {2, 4, 5}};"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "8.15",
+      "number": "8.15",
+      "text": "&nbsp;\tWhat is the output of the following program?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[][] values = {{<span class=\"constant\">3</span>, <span class=\"constant\">4</span>, <span class=\"constant\">5</span>, <span class=\"constant\">1</span>}, {<span class=\"constant\">33</span>, <span class=\"constant\">6</span>, <span class=\"constant\">1</span>, <span class=\"constant\">2</span>}};<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> row = <span class=\"constant\">0</span>; row &lt; values.length; row++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(m(values[row]) + <span class=\"literal\">\" \"</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">int</span> m(<span class=\"keyword\">int</span>[] list) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> v = list[<span class=\"constant\">0</span>];<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">1</span>; i &lt; list.length; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">if</span> (v &lt; list[i])<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v = list[i];<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">return</span> v;<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3 33"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5 6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5 33"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "33 5"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "8.16",
+      "number": "8.16",
+      "text": "&nbsp;\tAssume double[][][] x = new double[4][5][6], what are x.length, x[2].length, and x[0][0].length?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4, 5, and 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6, 5, and 4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5, 5, and 5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4, 5, and 4"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "8.17",
+      "number": "8.17",
+      "text": "&nbsp; What is the output of the following code?<br><br><span style=\"font-family:monospace; font-size: 109%;\"><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[][][] data = {{{<span class=\"constant\">1</span>, <span class=\"constant\">2</span>}, {<span class=\"constant\">3</span>, <span class=\"constant\">4</span>}},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{<span class=\"constant\">5</span>, <span class=\"constant\">6</span>}, {<span class=\"constant\">7</span>, <span class=\"constant\">8</span>}}};<br><br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(data[<span class=\"constant\">1</span>][<span class=\"constant\">0</span>][<span class=\"constant\">0</span>]);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "6"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "8.18",
+      "number": "8.18",
+      "text": "&nbsp; What is the output of the following code?<br><br><span style=\"font-family:monospace; font-size: 109%;\"><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span>[][][] data = {{{<span class=\"constant\">1</span>, <span class=\"constant\">2</span>}, {<span class=\"constant\">3</span>, <span class=\"constant\">4</span>}},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{<span class=\"constant\">5</span>, <span class=\"constant\">6</span>}, {<span class=\"constant\">7</span>, <span class=\"constant\">8</span>}}};<br><br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(ttt(data[<span class=\"constant\">0</span>]));<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">int</span> ttt(<span class=\"keyword\">int</span>[][] m) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> v = m[<span class=\"constant\">0</span>][<span class=\"constant\">0</span>];<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">0</span>; i &lt; m.length; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> j = <span class=\"constant\">0</span>; j &lt; m[i].length; j++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">if</span> (v &lt; m[i][j])<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v = m[i][j];<br>&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">return</span> v;<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "6"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "8.19",
+      "number": "8.19",
+      "text": "&nbsp;\tWhich of the following statements are correct?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "char[][][] charArray = new char[2][2][];"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "char[2][2][] charArray = {'a', 'b'};"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "char[][][] charArray = {{'a', 'b'}, {'c', 'd'}, {'e', 'f'}};"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "char[][][] charArray = {{{'a', 'b'}, {'c', 'd'}, {'e', 'f'}}};"
+        }
+      ],
+      "inputName": "QD18",
+      "inputType": "checkbox",
+      "correctAnswer": "AD"
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 19
+}

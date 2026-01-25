@@ -36,65 +36,77 @@ const app = {
 
     async loadData() {
         try {
-            // Load all chapters
-            const chapters = ['chapter1', 'chapter9', 'chapter10', 'chapter11', 'chapter12', 'chapter13', 'chapter17'];
-
-            for (const chapter of chapters) {
-                try {
-                    const response = await fetch(`./data/java2/${chapter}.json`);
-                    if (response.ok) {
-                        const data = await response.json();
-
-                        // Handle JSON format variations:
-                        // Most chapters: Direct object {title, questions, totalQuestions, ...}
-                        // chapter10: Array [{title, questions, totalQuestions, ...}]
-                        let chapterData = null;
-
-                        if (Array.isArray(data)) {
-                            // Array format (chapter10)
-                            chapterData = data.length > 0 ? data[0] : null;
-                        } else if (typeof data === 'object' && data !== null) {
-                            // Direct object format (chapters 9, 11-17)
-                            chapterData = data;
-                        }
-
-                        // Validate chapter has required fields
-                        if (chapterData && chapterData.title && Array.isArray(chapterData.questions)) {
-                            const questionCount = chapterData.questions.length;
-                            this.allChapters.push({
-                                id: chapter,
-                                title: chapterData.title,
-                                questions: chapterData.questions,
-                                totalQuestions: questionCount
-                            });
-                            console.log(`✓ Loaded ${chapter}: ${chapterData.title} (${questionCount} questions)`);
-                        } else {
-                            console.warn(`✗ ${chapter}.json - Invalid structure: missing title or questions array`);
-                        }
-                    } else {
-                        console.warn(`✗ ${chapter}.json - HTTP ${response.status}`);
-                    }
-                } catch (e) {
-                    console.warn(`✗ ${chapter}.json - Load error:`, e.message);
-                }
+            // Check if config exists
+            if (typeof EXAM_CONFIG === 'undefined') {
+                console.error('EXAM_CONFIG not found in exam-config.js');
+                // Fallback or error
+                this.subjects = [];
+                return;
             }
 
-            console.log(`📊 Total chapters loaded: ${this.allChapters.length}/6`);
+            this.subjects = [];
 
-            // Group chapters into subject
-            this.subjects = [{
-                id: 'java2',
-                name: 'Java 2 - Objects and Classes',
-                description: 'Learn about objects, classes, and OOP principles',
-                icon: '☕',
-                chapters: this.allChapters
-            }];
+            // Process each subject from config
+            for (const subjectConfig of EXAM_CONFIG) {
+                const subject = {
+                    id: subjectConfig.id,
+                    name: subjectConfig.name,
+                    description: subjectConfig.description,
+                    icon: this.getIconForSubject(subjectConfig.id),
+                    chapters: []
+                };
+
+                // Load chapters
+                for (const chInfo of subjectConfig.chapters) {
+                    if (!chInfo.file) continue;
+
+                    try {
+                        const response = await fetch(`./${chInfo.file}`);
+                        if (response.ok) {
+                            const data = await response.json();
+
+                            // Normalize data
+                            let chapterData = null;
+                            if (Array.isArray(data)) {
+                                chapterData = data.length > 0 ? data[0] : null;
+                            } else if (typeof data === 'object') {
+                                chapterData = data;
+                            }
+
+                            if (chapterData && chapterData.title && Array.isArray(chapterData.questions)) {
+                                subject.chapters.push({
+                                    id: chInfo.id,
+                                    title: chInfo.name || chapterData.title, // Use config name if available
+                                    questions: chapterData.questions,
+                                    totalQuestions: chapterData.questions.length
+                                });
+                            }
+                        }
+                    } catch (e) {
+                        console.warn(`Failed to load ${chInfo.file}:`, e);
+                    }
+                }
+
+                // Only add subject if it has chapters or if we want to show empty ones
+                this.subjects.push(subject);
+            }
 
             console.log('Data loaded:', this.subjects);
         } catch (error) {
             console.error('Error loading data:', error);
-            alert('Error loading exam data. Please check the file paths.');
+            alert('Error loading exam data.');
         }
+    },
+
+    getIconForSubject(id) {
+        const icons = {
+            'java1': '☕',
+            'java2': '☕',
+            'algorithm': '🧮',
+            'data_structure': '🌲',
+            'java_advanced': '🚀'
+        };
+        return icons[id] || '📚';
     },
 
     showSubjectsView() {

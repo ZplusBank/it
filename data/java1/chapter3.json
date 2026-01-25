@@ -1,0 +1,1363 @@
+{
+  "id": "task-1",
+  "label": "chapter=3, username=liang12e",
+  "params": {
+    "chapter": "3",
+    "username": "liang12e"
+  },
+  "title": "Chapter 3 Selections",
+  "questions": [
+    {
+      "id": "3.1",
+      "number": "3.1",
+      "text": "&nbsp;\tThe \"less than or equal to\" comparison operator in Java is __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "&lt;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "&lt;="
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "=&lt;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "&lt;&lt;"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "!="
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "3.2",
+      "number": "3.2",
+      "text": "&nbsp;\tThe equal comparison operator in Java is __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "&lt;&gt;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "!="
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "=="
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "^="
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "3.3",
+      "number": "3.3",
+      "text": "&nbsp; What is 1 + 1 + 1 + 1 + 1 == 5?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "false"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "There is no guarantee that 1 + 1 + 1 + 1 + 1 == 5 is true."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "3.4",
+      "number": "3.4",
+      "text": "&nbsp; What is 1 - 0.1 - 0.1 - 0.1 - 0.1 - 0.1 == 0.5?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "false"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "There is no guarantee that 1 - 0.1 - 0.1 - 0.1 - 0.1 - 0.1 == 0.5 is true."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "3.5",
+      "number": "3.5",
+      "text": "&nbsp;\tIn Java, the word true is ________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a Java keyword"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "a Boolean literal"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "same as value 1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "same as value 0"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "3.6",
+      "number": "3.6",
+      "text": "&nbsp; Which of the following code displays the area of a circle if the radius is positive?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "if (radius != 0) System.out.println(radius * radius * 3.14159);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "if (radius &gt;= 0) System.out.println(radius * radius * 3.14159);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "if (radius &gt; 0) System.out.println(radius * radius * 3.14159);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "if (radius &lt;= 0) System.out.println(radius * radius * 3.14159);"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "3.7",
+      "number": "3.7",
+      "text": "&nbsp; What is the output of the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;x&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">if</span>&nbsp;(x&nbsp;&lt;&nbsp;<span class=\"constant\">4</span>)&nbsp;{<br>&nbsp;&nbsp;x = x + <span class=\"constant\">1</span>;<br>}<br>System.out.println(<span class=\"literal\">\"x&nbsp;is&nbsp;\"</span>&nbsp;+&nbsp;x);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x is 0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x is 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x is 2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x is 3"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "x is 4"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "3.8",
+      "number": "3.8",
+      "text": "&nbsp;  Suppose income is 4001, what is the output of the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">if</span>&nbsp;(income&nbsp;&gt;&nbsp;<span class=\"constant\">3000</span>)&nbsp;{<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Income is greater than 3000\"</span>);<br>}<br><span class=\"keyword\">else</span>&nbsp;<span class=\"keyword\">if</span>&nbsp;(income&nbsp;&gt;&nbsp;<span class=\"constant\">4000</span>)&nbsp;{<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Income is greater than 4000\"</span>);<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "no output"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Income is greater than 3000"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Income is greater than 3000 followed by Income is greater than 4000"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Income is greater than 4000"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Income is greater than 4000 followed by Income is greater than 3000"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "3.9",
+      "number": "3.9",
+      "text": "&nbsp; The following code displays ___________.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">double</span>&nbsp;temperature&nbsp;=&nbsp;<span class=\"constant\">50</span>;<br><br><span class=\"keyword\">if</span>&nbsp;(temperature&nbsp;&gt;=&nbsp;<span class=\"constant\">100</span>)<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"too hot\"</span>);<br><span class=\"keyword\">else</span>&nbsp;<span class=\"keyword\">if</span>&nbsp;(temperature&nbsp;&lt;=&nbsp;<span class=\"constant\">40</span>)<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"too cold\"</span>);<br><span class=\"keyword\">else</span><br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"just right\"</span>);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "too hot"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "too cold"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "just right"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "too hot too cold just right"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "3.10",
+      "number": "3.10",
+      "text": "&nbsp; Suppose x = 1, y = -1, and z = 1. What is the output of the following statement? (Please indent the statement correctly first.)<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">if</span>&nbsp;(x&nbsp;&gt;&nbsp;<span class=\"constant\">0</span>)<br>&nbsp;&nbsp;&nbsp;<span class=\"keyword\">if</span> (y &gt; <span class=\"constant\">0</span>)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"x &gt; 0 and y &gt; 0\"</span>);<br><span class=\"keyword\">else</span>&nbsp;<span class=\"keyword\">if</span>&nbsp;(z&nbsp;&gt;&nbsp;<span class=\"constant\">0</span>)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"x &lt; 0 and z &gt; 0\"</span>);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x &gt; 0 and y &gt; 0;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x &lt; 0 and z &gt; 0;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x &lt; 0 and z &lt; 0;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "no output."
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "3.11",
+      "number": "3.11",
+      "text": "&nbsp;\tAnalyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">boolean</span>&nbsp;even&nbsp;=&nbsp;<span class=\"keyword\">false</span>;<br><span class=\"keyword\">if</span>&nbsp;(even&nbsp;=&nbsp;<span class=\"keyword\">true</span>)&nbsp;{<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"It is even\"</span>);<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a runtime error."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program runs fine, but displays nothing."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program runs fine and displays It is even."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "3.12",
+      "number": "3.12",
+      "text": "&nbsp; Suppose isPrime is a boolean variable, which of the following is the correct and best statement for testing if isPrime is true?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "if (isPrime = true)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "if (isPrime == true)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "if (isPrime)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "if (!isPrime = false)"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "if (!isPrime == false)"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "3.13",
+      "number": "3.13",
+      "text": "&nbsp; Analyze the following code.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">boolean</span>&nbsp;even&nbsp;=&nbsp;<span class=\"keyword\">false</span>;<br><span class=\"keyword\">if</span>&nbsp;(even)&nbsp;{<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"It is even!\"</span>);<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code displays It is even!"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code displays nothing."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The code is wrong. You should replace if (even) with if (even == true)."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The code is wrong. You should replace if (even) with if (even = true)."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "3.14",
+      "number": "3.14",
+      "text": "&nbsp;\tAnalyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br>Code&nbsp;<span class=\"constant\">1</span>:<br><br><span class=\"keyword\">int</span>&nbsp;number&nbsp;=&nbsp;<span class=\"constant\">45</span>;<br><span class=\"keyword\">boolean</span>&nbsp;even;<br><br><span class=\"keyword\">if</span>&nbsp;(number&nbsp;%&nbsp;<span class=\"constant\">2</span>&nbsp;==&nbsp;<span class=\"constant\">0</span>)&nbsp;<br>&nbsp;&nbsp;even = <span class=\"keyword\">true</span>;<br><span class=\"keyword\">else</span>&nbsp;<br>&nbsp;&nbsp;even = <span class=\"keyword\">false</span>;<br><br>Code&nbsp;<span class=\"constant\">2</span>:<br><span class=\"keyword\">int</span>&nbsp;number&nbsp;=&nbsp;<span class=\"constant\">45</span>;<br><span class=\"keyword\">boolean</span>&nbsp;even&nbsp;=&nbsp;(number&nbsp;%&nbsp;<span class=\"constant\">2</span>&nbsp;==&nbsp;<span class=\"constant\">0</span>);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Code 1 has compile errors."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Code 2 has compile errors."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Both Code 1 and Code 2 have compile errors."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Both Code 1 and Code 2 are correct, but Code 2 is better."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "3.15",
+      "number": "3.15",
+      "text": "&nbsp;\tWhich of the following is a possible output from invoking Math.random()? Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3.43"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0.5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1.0"
+        }
+      ],
+      "inputName": "QD14",
+      "inputType": "checkbox",
+      "correctAnswer": "BC"
+    },
+    {
+      "id": "3.16",
+      "number": "3.16",
+      "text": "&nbsp;\tWhat is the output from System.out.println((int)Math.random() * 4)?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "3.17",
+      "number": "3.17",
+      "text": "&nbsp;\tWhat is the possible output from System.out.println((int)(Math.random() * 4))? Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "4"
+        }
+      ],
+      "inputName": "QE16",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD"
+    },
+    {
+      "id": "3.18",
+      "number": "3.18",
+      "text": "&nbsp; Suppose you write the code to display \"Cannot get a driver's license\" if age is less than 16 and \"Can get a driver's license\" if age is greater than or equal to 16. Which of the following code is correct? Please select all that apply.<br><span style=\"font-family:monospace; font-size: 109%;\"><br>I:&nbsp;<br><span class=\"keyword\">if</span>&nbsp;(age&nbsp;&lt;&nbsp;<span class=\"constant\">16</span>)&nbsp;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Cannot get a driver's license\"</span>);<br><span class=\"keyword\">if</span>&nbsp;(age&nbsp;&gt;=&nbsp;<span class=\"constant\">16</span>)&nbsp;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Can get a driver's license\"</span>);<br><br>II:<br><span class=\"keyword\">if</span>&nbsp;(age&nbsp;&lt;&nbsp;<span class=\"constant\">16</span>)&nbsp;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Cannot get a driver's license\"</span>);<br><span class=\"keyword\">else</span>&nbsp;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Can get a driver's license\"</span>);<br><br>III:<br><span class=\"keyword\">if</span>&nbsp;(age&nbsp;&lt;&nbsp;<span class=\"constant\">16</span>)&nbsp;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Cannot get a driver's license\"</span>);<br><span class=\"keyword\">else</span>&nbsp;<span class=\"keyword\">if</span>&nbsp;(age&nbsp;&gt;=&nbsp;<span class=\"constant\">16</span>)&nbsp;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Can get a driver's license\"</span>);<br><br>IV:<br><span class=\"keyword\">if</span>&nbsp;(age&nbsp;&lt;&nbsp;<span class=\"constant\">16</span>)&nbsp;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Cannot get a driver's license\"</span>);<br><span class=\"keyword\">else</span>&nbsp;<span class=\"keyword\">if</span>&nbsp;(age&nbsp;&gt;&nbsp;<span class=\"constant\">16</span>)&nbsp;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Can get a driver's license\"</span>);<br><span class=\"keyword\">else</span>&nbsp;<span class=\"keyword\">if</span>&nbsp;(age&nbsp;==&nbsp;<span class=\"constant\">16</span>)&nbsp;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Can get a driver's license\"</span>);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "I and II"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "II and III"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "I, II, and III"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "III and IV"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "I, II, III, and IV"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "3.19",
+      "number": "3.19",
+      "text": "&nbsp; Suppose you write the code to display \"Cannot get a driver's license\" if age is less than 16 and \"Can get a driver's license\" if age is greater than or equal to 16. Which of the following code is the best?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>I:&nbsp;<br><span class=\"keyword\">if</span>&nbsp;(age&nbsp;&lt;&nbsp;<span class=\"constant\">16</span>)&nbsp;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Cannot get a driver's license\"</span>);<br><span class=\"keyword\">if</span>&nbsp;(age&nbsp;&gt;=&nbsp;<span class=\"constant\">16</span>)&nbsp;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Can get a driver's license\"</span>);<br><br>II:<br><span class=\"keyword\">if</span>&nbsp;(age&nbsp;&lt;&nbsp;<span class=\"constant\">16</span>)&nbsp;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Cannot get a driver's license\"</span>);<br><span class=\"keyword\">else</span>&nbsp;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Can get a driver's license\"</span>);<br><br>III:<br><span class=\"keyword\">if</span>&nbsp;(age&nbsp;&lt;&nbsp;<span class=\"constant\">16</span>)&nbsp;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Cannot get a driver's license\"</span>);<br><span class=\"keyword\">else</span>&nbsp;<span class=\"keyword\">if</span>&nbsp;(age&nbsp;&gt;=&nbsp;<span class=\"constant\">16</span>)&nbsp;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Can get a driver's license\"</span>);<br><br>IV:<br><span class=\"keyword\">if</span>&nbsp;(age&nbsp;&lt;&nbsp;<span class=\"constant\">16</span>)&nbsp;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Cannot get a driver's license\"</span>);<br><span class=\"keyword\">else</span>&nbsp;<span class=\"keyword\">if</span>&nbsp;(age&nbsp;&gt;&nbsp;<span class=\"constant\">16</span>)&nbsp;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Can get a driver's license\"</span>);<br><span class=\"keyword\">else</span>&nbsp;<span class=\"keyword\">if</span>&nbsp;(age&nbsp;==&nbsp;<span class=\"constant\">16</span>)&nbsp;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Can get a driver's license\"</span>);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "I"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "II"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "III"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "IV"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "3.20",
+      "number": "3.20",
+      "text": "&nbsp;\tThe __________ method immediately terminates the program.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "System.terminate(0);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "System.halt(0);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "System.exit(0);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "System.quit(0);"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "System.stop(0);"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "3.21",
+      "number": "3.21",
+      "text": "&nbsp;\tWhich of the Boolean expressions below is incorrect? Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "(true) &amp;&amp; (3 =&gt; 4)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "!(x &gt; 0) &amp;&amp; (x &gt; 0)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "(x &gt; 0) || (x &lt; 0)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "(x != 0) || (x = 0)"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "(-10 &lt; x &lt; 0)"
+        }
+      ],
+      "inputName": "QE20",
+      "inputType": "checkbox",
+      "correctAnswer": "ADE"
+    },
+    {
+      "id": "3.22",
+      "number": "3.22",
+      "text": "&nbsp;\tWhich of the following is the correct expression that evaluates to true if the number x is between 1 and 100 or the number is negative?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 &lt; x &lt; 100 &amp;&amp; x &lt; 0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "((x &lt; 100) &amp;&amp; (x &gt; 1)) || (x &lt; 0)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "((x &lt; 100) &amp;&amp; (x &gt; 1)) &amp;&amp; (x &lt; 0)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "(1 &gt; x &gt; 100) || (x &lt; 0)"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "3.23",
+      "number": "3.23",
+      "text": "&nbsp;\tAssume x = 4 and y = 5, which of the following is true?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x &lt; 5 &amp;&amp; y &lt; 5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x &lt; 5 || y &lt; 5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x &gt; 5 &amp;&amp; y &gt; 5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x &gt; 5 || y &gt; 5"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "3.24",
+      "number": "3.24",
+      "text": "&nbsp;\tAssume x = 4, which of the following is true?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "!(x == 4)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x != 4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x == 5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x != 5"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "3.25",
+      "number": "3.25",
+      "text": "&nbsp;\tAssume x = 4 and y = 5, which of the following is true?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "!(x == 4) ^ y != 5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x != 4 ^ y == 5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x == 5 ^ y == 4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x != 5 ^ y != 4"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "3.26",
+      "number": "3.26",
+      "text": "&nbsp;\tGiven |x| &lt;= 4, which of the following is true?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x &lt;= 4 &amp;&amp; x &gt;= 4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x &lt;= 4 &amp;&amp; x &gt; -4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x &lt;= 4 &amp;&amp; x &gt;= -4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x &lt;= 4 || x &gt;= -4"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "3.27",
+      "number": "3.27",
+      "text": "&nbsp;\tGiven |x| &gt;= 4, which of the following is true?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x &gt;= 4 &amp;&amp; x &lt;= -4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x &gt;= 4 || x &lt;= -4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x &gt;= 4 &amp;&amp; x &lt; -4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x &gt;= 4 || x &lt; -4"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "3.28",
+      "number": "3.28",
+      "text": "&nbsp; Which of the following is equivalent to x != y? Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "! (x == y)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x &gt; y &amp;&amp; x &lt; y"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x &gt; y || x &lt; y"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x &gt;= y || x &lt;= y"
+        }
+      ],
+      "inputName": "QD27",
+      "inputType": "checkbox",
+      "correctAnswer": "AC"
+    },
+    {
+      "id": "3.29",
+      "number": "3.29",
+      "text": "&nbsp;\tSuppose x=10 and y=10. What is x after evaluating the expression (y &gt; 10) &amp;&amp; (x-- &gt; 10)? <br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "11"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "3.30",
+      "number": "3.30",
+      "text": "&nbsp;\tSuppose x=10 and y=10. What is x after evaluating the expression (y &gt; 10) &amp;&amp; (x++ &gt; 10).<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "11"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "3.31",
+      "number": "3.31",
+      "text": "&nbsp;\tSuppose x=10 and y=10. What is x after evaluating the expression (y &gt;= 10) || (x-- &gt; 10). <br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "11"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "3.32",
+      "number": "3.32",
+      "text": "&nbsp;\tSuppose x=10 and y=10. What is x after evaluating the expression (y &gt;= 10) || (x++ &gt; 10).<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "11"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "3.33",
+      "number": "3.33",
+      "text": "&nbsp; Analyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">if</span>&nbsp;(x&nbsp;&lt;&nbsp;<span class=\"constant\">100</span>)&nbsp;&amp;&amp;&nbsp;(x&nbsp;&gt;&nbsp;<span class=\"constant\">10</span>)<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"x is between 10 and 100\"</span>);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The statement has compile errors because (x&lt;100) &amp; (x &gt; 10) must be enclosed inside parentheses."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The statement has compile errors because (x&lt;100) &amp; (x &gt; 10) must be enclosed inside parentheses and the println(?) statement must be put inside a block."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The statement compiles fine."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The statement compiles fine, but has a runtime error."
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "3.34",
+      "number": "3.34",
+      "text": "&nbsp; Which of the following are so called short-circuit operators? Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "&amp;&amp;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "&amp;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "||"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "|"
+        }
+      ],
+      "inputName": "QD33",
+      "inputType": "checkbox",
+      "correctAnswer": "AC"
+    },
+    {
+      "id": "3.35",
+      "number": "3.35",
+      "text": "&nbsp; What is y after the following switch statement is executed?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;x&nbsp;=&nbsp;<span class=\"constant\">3</span>;&nbsp;<span class=\"keyword\">int</span>&nbsp;y&nbsp;=&nbsp;<span class=\"constant\">4</span>;<br><span class=\"keyword\">switch</span>&nbsp;(x&nbsp;+&nbsp;<span class=\"constant\">3</span>)&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">case</span> <span class=\"constant\">6</span>:  y = <span class=\"constant\">0</span>;<br>&nbsp;&nbsp;<span class=\"keyword\">case</span> <span class=\"constant\">7</span>:  y = <span class=\"constant\">1</span>;<br>&nbsp;&nbsp;<span class=\"keyword\">default</span>: y += <span class=\"constant\">1</span>;<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "3.36",
+      "number": "3.36",
+      "text": "&nbsp;\tAnalyze the following program fragment:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;x;<br><span class=\"keyword\">double</span>&nbsp;d&nbsp;=&nbsp;<span class=\"constant\">1</span><span class=\"literal\">.</span><span class=\"constant\">5</span>;<br><br><span class=\"keyword\">switch</span>&nbsp;(d)&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">case</span> <span class=\"constant\">1</span><span class=\"literal\">.</span><span class=\"constant\">0</span>: x = <span class=\"constant\">1</span>;<br>&nbsp;&nbsp;<span class=\"keyword\">case</span> <span class=\"constant\">1</span><span class=\"literal\">.</span><span class=\"constant\">5</span>: x = <span class=\"constant\">2</span>;<br>&nbsp;&nbsp;<span class=\"keyword\">case</span> <span class=\"constant\">2</span><span class=\"literal\">.</span><span class=\"constant\">0</span>: x = <span class=\"constant\">3</span>;<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because the required break statement is missing in the switch statement."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because the required default case is missing in the switch statement."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The switch control variable cannot be double."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No errors."
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "3.37",
+      "number": "3.37",
+      "text": "&nbsp;\tWhat is y after the following statement is executed?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>x&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br>y&nbsp;=&nbsp;(x&nbsp;&gt;&nbsp;<span class=\"constant\">0</span>)&nbsp;?&nbsp;<span class=\"constant\">10</span>&nbsp;:&nbsp;<span class=\"literal\">-</span><span class=\"constant\">10</span>;<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "-10"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "20"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Illegal expression"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "3.38",
+      "number": "3.38",
+      "text": "&nbsp;\tAnalyze the following code fragments that assign a boolean value to the variable even.<br><span style=\"font-family:monospace; font-size: 109%;\"><br>Code&nbsp;<span class=\"constant\">1</span>:&nbsp;<br><span class=\"keyword\">if</span>&nbsp;(number&nbsp;%&nbsp;<span class=\"constant\">2</span>&nbsp;==&nbsp;<span class=\"constant\">0</span>)<br>&nbsp;&nbsp;even = <span class=\"keyword\">true</span>;<br><span class=\"keyword\">else</span>&nbsp;<br>&nbsp;&nbsp;even = <span class=\"keyword\">false</span>;<br><br>Code&nbsp;<span class=\"constant\">2</span>:&nbsp;<br>even&nbsp;=&nbsp;(number&nbsp;%&nbsp;<span class=\"constant\">2</span>&nbsp;==&nbsp;<span class=\"constant\">0</span>)&nbsp;?&nbsp;<span class=\"keyword\">true</span>:&nbsp;<span class=\"keyword\">false</span>;<br><br>Code&nbsp;<span class=\"constant\">3</span>:<br>even&nbsp;=&nbsp;number&nbsp;%&nbsp;<span class=\"constant\">2</span>&nbsp;==&nbsp;<span class=\"constant\">0</span>;<br>&nbsp;<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Code 2 has a compile error, because you cannot have true and false literals in the conditional expression."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Code 3 has a compile error, because you attempt to assign number to even."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "All three are correct, but Code 1 is preferred."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All three are correct, but Code 2 is preferred."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All three are correct, but Code 3 is preferred."
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "3.39",
+      "number": "3.39",
+      "text": "&nbsp; What is the output of the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">boolean</span>&nbsp;even&nbsp;=&nbsp;<span class=\"keyword\">false</span>;<br>System.out.println(even&nbsp;?&nbsp;<span class=\"literal\">\"true\"</span>&nbsp;:&nbsp;<span class=\"literal\">\"false\"</span>);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "false"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "nothing"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "true false"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "3.40",
+      "number": "3.40",
+      "text": "&nbsp;\tThe order of the precedence (from high to low) of the operators binary +, *, &amp;&amp;, ||, ^ is:<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "&amp;&amp;, ||, ^, *, +"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "*, +, &amp;&amp;, ||, ^"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "*, +, ^, &amp;&amp;, ||"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "*, +, ^, ||, &amp;&amp;"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "^, ||, &amp;&amp;, *, +"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "3.41",
+      "number": "3.41",
+      "text": "&nbsp; What is y displayed in the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test1&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> x = <span class=\"constant\">1</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> y = x = x + <span class=\"constant\">1</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"y is \"</span> + y);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "y is 0."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "y is 1 because x is assigned to y first."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "y is 2 because x + 1 is assigned to x and then x is assigned to y."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a compile error since x is redeclared in the statement int y = x = x + 1."
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "3.42",
+      "number": "3.42",
+      "text": "&nbsp; Which of the following operators are right-associative. <br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "*"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "+ (binary +)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "%"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "&amp;&amp;"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "="
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "3.43",
+      "number": "3.43",
+      "text": "&nbsp;\tWhat is the value of the following expression?<br><br><span style=\"font-family:monospace; font-size: 109%;\"><span class=\"keyword\">true</span>&nbsp;||&nbsp;<span class=\"keyword\">true</span>&nbsp;&amp;&amp;&nbsp;<span class=\"keyword\">false</span><br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "false"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "3.44",
+      "number": "3.44",
+      "text": "&nbsp; Which of the following statements is false?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "(x &gt; 0 &amp;&amp; x &lt; 10) is same as ((x &gt; 0) &amp;&amp; (x &lt; 10))"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "(x &gt; 0 || x &lt; 10) is same as ((x &gt; 0) || (x &lt; 10))"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "(x &gt; 0 || x &lt; 10 &amp;&amp; y &lt; 0) is same as (x &gt; 0 || (x &lt; 10 &amp;&amp; y &lt; 0))"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "(x &gt; 0 || x &lt; 10 &amp;&amp; y &lt; 0) is same as ((x &gt; 0 || x &lt; 10) &amp;&amp; y &lt; 0)"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 44
+}

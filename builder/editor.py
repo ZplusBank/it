@@ -35,9 +35,12 @@ class ExamEditor:
         file_menu = tk.Menu(menubar, tearoff=0)
         menubar.add_cascade(label="File", menu=file_menu)
         file_menu.add_command(label="Save All", command=self.save_all)
-        file_menu.add_command(label="Reload", command=self.load_sections)
-        file_menu.add_separator()
         file_menu.add_command(label="Exit", command=self.root.quit)
+        
+        # Tools Menu
+        tools_menu = tk.Menu(menubar, tearoff=0)
+        menubar.add_cascade(label="Tools", menu=tools_menu)
+        tools_menu.add_command(label="Configure Engine", command=self.generate_js_config)
         
         # Main frame
         main = ttk.Frame(self.root, padding=10)
@@ -280,6 +283,59 @@ class ExamEditor:
         self.save_sections()
         self.save_chapter()
         messagebox.showinfo("Success", "All changes saved")
+        
+    def generate_js_config(self):
+        """Generate js/exam-config.js from current sections and chapters"""
+        try:
+            full_config = []
+            
+            for section in self.sections:
+                sec_data = {
+                    "id": section['id'],
+                    "name": section['name'],
+                    "description": section.get('description', ''),
+                    "path": section['path'],
+                    "chapters": []
+                }
+                
+                # Load chapters for this section
+                ch_file = self.base_path / section['path'] / "chapters.json"
+                if ch_file.exists():
+                    try:
+                        with open(ch_file) as f:
+                            chapters = json.load(f)
+                            # Add path prefix to chapter file
+                            for ch in chapters:
+                                ch['file'] = f"{section['path']}/{ch.get('file', '')}"
+                                # Calculate total questions if missing
+                                if 'q' not in ch or ch['q'] == 0:
+                                     # Try to read actual file
+                                     try:
+                                         q_path = self.base_path / section['path'] / ch.get('file', '')
+                                         with open(q_path) as qf:
+                                             q_data = json.load(qf)
+                                             if isinstance(q_data, list):
+                                                 q_data = q_data[0]
+                                             ch['q'] = len(q_data.get('questions', []))
+                                     except:
+                                         pass
+                            sec_data["chapters"] = chapters
+                    except:
+                        sec_data["chapters"] = []
+                
+                full_config.append(sec_data)
+            
+            # Write key to js/exam-config.js
+            js_path = self.base_path / "js" / "exam-config.js"
+            with open(js_path, 'w', encoding='utf-8') as f:
+                json_str = json.dumps(full_config, indent=2)
+                f.write(f"const EXAM_CONFIG = {json_str};\n")
+                
+            messagebox.showinfo("Success", f"Engine Configured!\nGenerated {js_path}")
+            
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to generate config: {e}")
+
 
 if __name__ == "__main__":
     root = tk.Tk()

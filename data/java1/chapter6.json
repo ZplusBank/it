@@ -1,0 +1,833 @@
+{
+  "id": "task-4",
+  "label": "chapter=6, username=liang12e",
+  "params": {
+    "chapter": "6",
+    "username": "liang12e"
+  },
+  "title": "Chapter 6 Methods",
+  "questions": [
+    {
+      "id": "6.1",
+      "number": "6.1",
+      "text": "&nbsp; Suppose your method does not return any value, which of the following keywords can be used as a return type?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "void"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "int"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "double"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "public"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "6.2",
+      "number": "6.2",
+      "text": "&nbsp;\tThe signature of a method consists of ____________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "method name"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "method name and parameter list"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "return type, method name, and parameter list"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "parameter list"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "6.3",
+      "number": "6.3",
+      "text": "&nbsp;\tAll Java applications must have a method __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "public static Main(String[] args)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "public static Main(String args[])"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "public static void main(String[] args)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "public void main(String[] args)"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "public static main(String[] args)"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "6.4",
+      "number": "6.4",
+      "text": "&nbsp;\tArguments to methods always appear within __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "brackets"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "parentheses"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "curly braces"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "quotation marks"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "6.5",
+      "number": "6.5",
+      "text": "&nbsp;\tDoes the method call in the following method cause compile errors?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">static</span>&nbsp;<span class=\"keyword\">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{<br>&nbsp;&nbsp;Math.pow(<span class=\"constant\">2</span>, <span class=\"constant\">4</span>);<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Yes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "6.6",
+      "number": "6.6",
+      "text": "&nbsp; Each time a method is invoked, the system stores parameters and local variables in an area of memory, known as _______, which stores elements in last-in first-out fashion.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a heap"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "storage area"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "a stack"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "an array"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "6.7",
+      "number": "6.7",
+      "text": "&nbsp; Which of the following should be defined as a void method?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Write a method that prints integers from 1 to 100."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Write a method that returns a random integer from 1 to 100."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Write a method that checks whether a number is from 1 to 100."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Write a method that converts an uppercase letter to lowercase."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "6.8",
+      "number": "6.8",
+      "text": "&nbsp; You should fill in the blank in the following code with ______________.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(<span class=\"literal\">\"The grade is \"</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;printGrade(<span class=\"constant\">78</span><span class=\"literal\">.</span><span class=\"constant\">5</span>);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(<span class=\"literal\">\"The grade is \"</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;printGrade(<span class=\"constant\">59</span><span class=\"literal\">.</span><span class=\"constant\">5</span>);<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> __________ printGrade(<span class=\"keyword\">double</span> score) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">if</span> (score &gt;= <span class=\"constant\">90</span><span class=\"literal\">.</span><span class=\"constant\">0</span>) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">'A'</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">else</span> <span class=\"keyword\">if</span> (score &gt;= <span class=\"constant\">80</span><span class=\"literal\">.</span><span class=\"constant\">0</span>) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">'B'</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">else</span> <span class=\"keyword\">if</span> (score &gt;= <span class=\"constant\">70</span><span class=\"literal\">.</span><span class=\"constant\">0</span>) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">'C'</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">else</span> <span class=\"keyword\">if</span> (score &gt;= <span class=\"constant\">60</span><span class=\"literal\">.</span><span class=\"constant\">0</span>) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">'D'</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">else</span> {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">'F'</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "int"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "double"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "boolean"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "char"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "void"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "6.9",
+      "number": "6.9",
+      "text": "&nbsp; You should fill in the blank in the following code with ______________.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(<span class=\"literal\">\"The grade is \"</span> + getGrade(<span class=\"constant\">78</span><span class=\"literal\">.</span><span class=\"constant\">5</span>));<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(<span class=\"literal\">\"\\nThe grade is \"</span> + getGrade(<span class=\"constant\">59</span><span class=\"literal\">.</span><span class=\"constant\">5</span>));<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> _________ getGrade(<span class=\"keyword\">double</span> score) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">if</span> (score &gt;= <span class=\"constant\">90</span><span class=\"literal\">.</span><span class=\"constant\">0</span>)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">return</span> <span class=\"literal\">'A'</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">else</span> <span class=\"keyword\">if</span> (score &gt;= <span class=\"constant\">80</span><span class=\"literal\">.</span><span class=\"constant\">0</span>)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">return</span> <span class=\"literal\">'B'</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">else</span> <span class=\"keyword\">if</span> (score &gt;= <span class=\"constant\">70</span><span class=\"literal\">.</span><span class=\"constant\">0</span>)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">return</span> <span class=\"literal\">'C'</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">else</span> <span class=\"keyword\">if</span> (score &gt;= <span class=\"constant\">60</span><span class=\"literal\">.</span><span class=\"constant\">0</span>)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">return</span> <span class=\"literal\">'D'</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">else</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">return</span> <span class=\"literal\">'F'</span>;<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "int"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "double"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "boolean"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "char"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "void"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "6.10",
+      "number": "6.10",
+      "text": "&nbsp;\tDoes the return statement in the following method cause compile errors?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">static</span>&nbsp;<span class=\"keyword\">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">int</span> max = <span class=\"constant\">0</span>;<br>&nbsp;&nbsp;<span class=\"keyword\">if</span> (max != <span class=\"constant\">0</span>)<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(max);<br>&nbsp;&nbsp;<span class=\"keyword\">else</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">return</span>;<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Yes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "6.11",
+      "number": "6.11",
+      "text": "&nbsp; Consider the following incomplete code. The missing method body should be ________.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(f(<span class=\"constant\">5</span>));<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">int</span> f(<span class=\"keyword\">int</span> number) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"comment\">// Missing body</span><br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "return \"number\";"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "System.out.println(number);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "System.out.println(\"number\");"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "return number;"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "6.12",
+      "number": "6.12",
+      "text": "&nbsp; When you invoke a method with a parameter, the value of the argument is passed to the parameter. This is referred to as _________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "method invocation"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "pass by value"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "pass by reference"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "pass by name"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "6.13",
+      "number": "6.13",
+      "text": "&nbsp; Given the following method, what is the output of the call nPrint('a', 4)?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">static</span>&nbsp;<span class=\"keyword\">void</span>&nbsp;nPrint(String&nbsp;message,&nbsp;<span class=\"keyword\">int</span>&nbsp;n)&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">while</span> (n &gt; <span class=\"constant\">0</span>) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(message);<br>&nbsp;&nbsp;&nbsp;&nbsp;n--;<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "aaaaa"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "aaaa"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "aaa"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "invalid call"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "6.14",
+      "number": "6.14",
+      "text": "&nbsp; Given the following method<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">static</span>&nbsp;<span class=\"keyword\">void</span>&nbsp;nPrint(String&nbsp;message,&nbsp;<span class=\"keyword\">int</span>&nbsp;n)&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">while</span> (n &gt; <span class=\"constant\">0</span>) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(message);<br>&nbsp;&nbsp;&nbsp;&nbsp;n--;<br>&nbsp;&nbsp;}<br>}<br><br>What&nbsp;is&nbsp;k&nbsp;after&nbsp;invoking&nbsp;nPrint(<span class=\"literal\">\"A&nbsp;message\"</span>,&nbsp;k)?<br><br><span class=\"keyword\">int</span>&nbsp;k&nbsp;=&nbsp;<span class=\"constant\">2</span>;<br>nPrint(<span class=\"literal\">\"A&nbsp;message\"</span>,&nbsp;k);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "6.15",
+      "number": "6.15",
+      "text": "&nbsp; Analyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(xMethod(<span class=\"constant\">5</span>, <span class=\"constant\">500L</span>));<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">int</span> xMethod(<span class=\"keyword\">int</span> n, <span class=\"keyword\">long</span> l) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"int, long\"</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">return</span> n;<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">long</span> xMethod(<span class=\"keyword\">long</span> n, <span class=\"keyword\">long</span> l) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"long, long\"</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">return</span> n;<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays int, long followed by 5."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays long, long followed by 5."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program runs fine but displays things other than 5."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program does not compile because the compiler cannot distinguish which xmethod to invoke."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "6.16",
+      "number": "6.16",
+      "text": "&nbsp;\tAnalyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(xmethod(<span class=\"constant\">5</span>));<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">int</span> xmethod(<span class=\"keyword\">int</span> n, <span class=\"keyword\">long</span> t) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"int\"</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">return</span> n;<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">long</span> xmethod(<span class=\"keyword\">long</span> n) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"long\"</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">return</span> n;<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays int followed by 5."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays long followed by 5."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program runs fine but displays things other than 5."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program does not compile because the compiler cannot distinguish which xmethod to invoke."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "6.17",
+      "number": "6.17",
+      "text": "&nbsp; Analyze the following code.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args)  {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(max(<span class=\"constant\">1</span>, <span class=\"constant\">2</span>));<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">double</span> max(<span class=\"keyword\">int</span> num1, <span class=\"keyword\">double</span> num2) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"max(int, double) is invoked\"</span>);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">if</span> (num1 &gt; num2)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">return</span> num1;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">else</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">return</span> num2;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">double</span> max(<span class=\"keyword\">double</span> num1, <span class=\"keyword\">int</span> num2) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"max(double, int) is invoked\"</span>);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">if</span> (num1 &gt; num2)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">return</span> num1;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">else</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">return</span> num2;<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program cannot compile because you cannot have the print statement in a non-void method."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program cannot compile because the compiler cannot determine which max method should be invoked."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program runs and prints 2 followed by \"max(int, double)\" is invoked."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program runs and prints 2 followed by \"max(double, int)\" is invoked."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The program runs and prints \"max(int, double) is invoked\" followed by 2."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "6.18",
+      "number": "6.18",
+      "text": "&nbsp; Analyze the following code.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args)  {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(m(<span class=\"constant\">2</span>));<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">int</span> m(<span class=\"keyword\">int</span> num) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">return</span> num;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> m(<span class=\"keyword\">int</span> num) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(num);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because the two methods m have the same signature."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because the second m method is defined, but not invoked in the main method."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program runs and prints 2 once."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program runs and prints 2 twice."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "6.19",
+      "number": "6.19",
+      "text": "&nbsp; A variable defined inside a method is referred to as __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a global variable"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "a method variable"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "a block variable"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "a local variable"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "6.20",
+      "number": "6.20",
+      "text": "&nbsp;\tWhat is k after the following block executes?<br><br><span style=\"font-family:monospace; font-size: 109%;\">{<br>&nbsp;&nbsp;<span class=\"keyword\">int</span> k = <span class=\"constant\">2</span>;<br>&nbsp;&nbsp;nPrint(<span class=\"literal\">\"A message\"</span>, k);<br>}<br>System.out.println(k);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "k is not defined outside the block. So, the program has a compile error"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "6.21",
+      "number": "6.21",
+      "text": "&nbsp; (int)(Math.random() * (65535 + 1)) returns a random number __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "between 1 and 65536"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "between 1 and 65535"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "between 0 and 65535"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "between 0 and 65536"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "6.22",
+      "number": "6.22",
+      "text": "&nbsp; (int)('a' + Math.random() * ('z' - 'a' + 1)) returns a random number __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "between 0 and (int)'z'"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "between (int)'a' and (int)'z'"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "between 'a' and 'z'"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "between 'a' and 'y'"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "6.23",
+      "number": "6.23",
+      "text": "&nbsp; (char)('a' + Math.random() * ('z' - 'a' + 1)) returns a random character __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "between 'a' and 'z'"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "between 'a' and 'y'"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "between 'b' and 'z'"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "between 'b' and 'y'"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "6.24",
+      "number": "6.24",
+      "text": "&nbsp; Which of the following is the best for generating random integer 0 or 1?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "(int)Math.random()"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "(int)Math.random() + 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "(int)(Math.random() + 0.5)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "(int)(Math.random() + 0.2)"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "(int)(Math.random() + 0.8)"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "6.25",
+      "number": "6.25",
+      "text": "&nbsp; The client can use a method without knowing how it is implemented. The details of the implementation are encapsulated in the method and hidden from the client who invokes the method. This is known as __________. Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "information hiding"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "encapsulation"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "method hiding"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "simplifying method"
+        }
+      ],
+      "inputName": "QD24",
+      "inputType": "checkbox",
+      "correctAnswer": "AB"
+    },
+    {
+      "id": "6.26",
+      "number": "6.26",
+      "text": "&nbsp; __________ is to implement one method in the structure chart at a time from the top to the bottom.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Bottom-up approach"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Top-down approach"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Bottom-up and top-down approach"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Stepwise refinement"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "6.27",
+      "number": "6.27",
+      "text": "&nbsp; __________ is a simple but incomplete version of a method.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A stub"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A main method"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A non-main method"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A method developed using top-down approach"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 27
+}

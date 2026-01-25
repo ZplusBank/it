@@ -1,0 +1,1153 @@
+{
+  "id": "task-3",
+  "label": "chapter=5, username=liang12e",
+  "params": {
+    "chapter": "5",
+    "username": "liang12e"
+  },
+  "title": "Chapter 5 Loops",
+  "questions": [
+    {
+      "id": "5.1",
+      "number": "5.1",
+      "text": "&nbsp;\tHow many times will the following code print \"Welcome to Java\"?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;count&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">while</span>&nbsp;(count&nbsp;&lt;&nbsp;<span class=\"constant\">10</span>)&nbsp;{<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Welcome to Java\"</span>);<br>&nbsp;&nbsp;count++;<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "8"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "9"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "11"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "5.2",
+      "number": "5.2",
+      "text": "&nbsp; Analyze the following code. Please select all that apply.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;count&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">while</span>&nbsp;(count&nbsp;&lt;&nbsp;<span class=\"constant\">100</span>)&nbsp;{<br>&nbsp;&nbsp;<span class=\"comment\">// Point A</span><br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Welcome to Java!\"</span>);<br>&nbsp;&nbsp;count++;<br>&nbsp;&nbsp;<span class=\"comment\">// Point B</span><br>}<br><br><span class=\"comment\">//&nbsp;Point&nbsp;C</span><br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "count &lt; 100 is always true at Point A"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "count &lt; 100 is always true at Point B"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "count &lt; 100 is always false at Point B"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "count &lt; 100 is always true at Point C"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "count &lt; 100 is always false at Point C"
+        }
+      ],
+      "inputName": "QE1",
+      "inputType": "checkbox",
+      "correctAnswer": "AE"
+    },
+    {
+      "id": "5.3",
+      "number": "5.3",
+      "text": "&nbsp;\tHow many times will the following code print \"Welcome to Java\"?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;count&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">while</span>&nbsp;(count++&nbsp;&lt;&nbsp;<span class=\"constant\">10</span>)&nbsp;{<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Welcome to Java\"</span>);<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "8"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "9"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "11"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "5.4",
+      "number": "5.4",
+      "text": "&nbsp; What is the output of the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;x&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">while</span>&nbsp;(x&nbsp;&lt;&nbsp;<span class=\"constant\">4</span>)&nbsp;{<br>&nbsp;&nbsp;x = x + <span class=\"constant\">1</span>;<br>}<br>System.out.println(<span class=\"literal\">\"x&nbsp;is&nbsp;\"</span>&nbsp;+&nbsp;x);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x is 0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x is 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x is 2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x is 3"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "x is 4"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "5.5",
+      "number": "5.5",
+      "text": "&nbsp;\tWhat will be displayed when the following code is executed?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;number&nbsp;=&nbsp;<span class=\"constant\">6</span>;<br><span class=\"keyword\">while</span>&nbsp;(number&nbsp;&gt;&nbsp;<span class=\"constant\">0</span>)&nbsp;{<br>&nbsp;&nbsp;number -= <span class=\"constant\">3</span>;<br>&nbsp;&nbsp;System.out.print(number + <span class=\"literal\">\" \"</span>);<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6 3 0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6 3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3 0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3 0 -3"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "0 -3"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "5.6",
+      "number": "5.6",
+      "text": "&nbsp;\tHow many times will the following code print \"Welcome to Java\"?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;count&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">do</span>&nbsp;{<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Welcome to Java\"</span>);<br>&nbsp;&nbsp;count++;<br>}&nbsp;<span class=\"keyword\">while</span>&nbsp;(count&nbsp;&lt;&nbsp;<span class=\"constant\">10</span>);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "8"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "9"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "11"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "5.7",
+      "number": "5.7",
+      "text": "&nbsp;\tHow many times will the following code print \"Welcome to Java\"?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;count&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">do</span>&nbsp;{<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Welcome to Java\"</span>);<br>}&nbsp;<span class=\"keyword\">while</span>&nbsp;(count++&nbsp;&lt;&nbsp;<span class=\"constant\">10</span>);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "8"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "9"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "11"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "5.8",
+      "number": "5.8",
+      "text": "&nbsp;\tHow many times will the following code print \"Welcome to Java\"?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;count&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">do</span>&nbsp;{<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Welcome to Java\"</span>);<br>}&nbsp;<span class=\"keyword\">while</span>&nbsp;(++count&nbsp;&lt;&nbsp;<span class=\"constant\">10</span>);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "8"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "9"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "11"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "5.9",
+      "number": "5.9",
+      "text": "&nbsp;\tWhat is the value in count after the following loop is executed?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;count&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">do</span>&nbsp;{<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Welcome to Java\"</span>);<br>}&nbsp;<span class=\"keyword\">while</span>&nbsp;(count++&nbsp;&lt;&nbsp;<span class=\"constant\">9</span>);<br>System.out.println(count);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "8"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "9"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "11"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "5.10",
+      "number": "5.10",
+      "text": "&nbsp;\tAnalyze the following statement:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">double</span>&nbsp;sum&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">double</span>&nbsp;d&nbsp;=&nbsp;<span class=\"constant\">0</span>;&nbsp;d&nbsp;&lt;&nbsp;<span class=\"constant\">10</span>;)&nbsp;{<br>&nbsp;&nbsp;d += <span class=\"constant\">0</span><span class=\"literal\">.</span><span class=\"constant\">1</span>;<br>&nbsp;&nbsp;sum += sum + d;<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because the adjustment is missing in the for loop."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because the control variable in the for loop cannot be of the double type."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program runs in an infinite loop because d &lt; 10 would always be true."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program compiles and runs fine."
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "5.11",
+      "number": "5.11",
+      "text": "&nbsp; Which of the following loops prints \"Welcome to Java\" 10 times?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>A:<br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;count&nbsp;=&nbsp;<span class=\"constant\">1</span>;&nbsp;count&nbsp;&lt;=&nbsp;<span class=\"constant\">10</span>;&nbsp;count++)&nbsp;{<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Welcome to Java\"</span>);<br>}<br><br>B:<br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;count&nbsp;=&nbsp;<span class=\"constant\">0</span>;&nbsp;count&nbsp;&lt;&nbsp;<span class=\"constant\">10</span>;&nbsp;count++)&nbsp;{<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Welcome to Java\"</span>);<br>}<br><br>C:<br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;count&nbsp;=&nbsp;<span class=\"constant\">1</span>;&nbsp;count&nbsp;&lt;&nbsp;<span class=\"constant\">10</span>;&nbsp;count++)&nbsp;{<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Welcome to Java\"</span>);<br>}<br><br>D:<br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;count&nbsp;=&nbsp;<span class=\"constant\">0</span>;&nbsp;count&nbsp;&lt;=&nbsp;<span class=\"constant\">10</span>;&nbsp;count++)&nbsp;{<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Welcome to Java\"</span>);<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "BD"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "ABC"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "AC"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "BC"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "AB"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "AB"
+    },
+    {
+      "id": "5.12",
+      "number": "5.12",
+      "text": "&nbsp; Which of the following loops correctly computes 1/2 + 2/3 + 3/4 + ... + 99/100?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>A:<br><span class=\"keyword\">double</span>&nbsp;sum&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;<span class=\"constant\">1</span>;&nbsp;i&nbsp;&lt;=&nbsp;<span class=\"constant\">99</span>;&nbsp;i++)&nbsp;{<br>&nbsp;&nbsp;sum = i / (i + <span class=\"constant\">1</span>);<br>}<br>System.out.println(<span class=\"literal\">\"Sum&nbsp;is&nbsp;\"</span>&nbsp;+&nbsp;sum);<br><br>B:<br><span class=\"keyword\">double</span>&nbsp;sum&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;<span class=\"constant\">1</span>;&nbsp;i&nbsp;&lt;&nbsp;<span class=\"constant\">99</span>;&nbsp;i++)&nbsp;{<br>&nbsp;&nbsp;sum += i / (i + <span class=\"constant\">1</span>);<br>}<br>System.out.println(<span class=\"literal\">\"Sum&nbsp;is&nbsp;\"</span>&nbsp;+&nbsp;sum);<br><br>C:<br><span class=\"keyword\">double</span>&nbsp;sum&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;<span class=\"constant\">1</span>;&nbsp;i&nbsp;&lt;=&nbsp;<span class=\"constant\">99</span>;&nbsp;i++)&nbsp;{<br>&nbsp;&nbsp;sum += <span class=\"constant\">1</span><span class=\"literal\">.</span><span class=\"constant\">0</span> * i / (i + <span class=\"constant\">1</span>);<br>}<br>System.out.println(<span class=\"literal\">\"Sum&nbsp;is&nbsp;\"</span>&nbsp;+&nbsp;sum);<br><br>D:<br><span class=\"keyword\">double</span>&nbsp;sum&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;<span class=\"constant\">1</span>;&nbsp;i&nbsp;&lt;=&nbsp;<span class=\"constant\">99</span>;&nbsp;i++)&nbsp;{<br>&nbsp;&nbsp;sum += i / (i + <span class=\"constant\">1</span><span class=\"literal\">.</span><span class=\"constant\">0</span>);<br>}<br>System.out.println(<span class=\"literal\">\"Sum&nbsp;is&nbsp;\"</span>&nbsp;+&nbsp;sum);<br><br>E:<br><span class=\"keyword\">double</span>&nbsp;sum&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;<span class=\"constant\">1</span>;&nbsp;i&nbsp;&lt;&nbsp;<span class=\"constant\">99</span>;&nbsp;i++)&nbsp;{<br>&nbsp;&nbsp;sum += i / (i + <span class=\"constant\">1</span><span class=\"literal\">.</span><span class=\"constant\">0</span>);<br>}<br>System.out.println(<span class=\"literal\">\"Sum&nbsp;is&nbsp;\"</span>&nbsp;+&nbsp;sum);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "BCD"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "ABCD"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "B"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "CDE"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "CD"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "CD"
+    },
+    {
+      "id": "5.13",
+      "number": "5.13",
+      "text": "&nbsp; The following loop displays _______________.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;<span class=\"constant\">1</span>;&nbsp;i&nbsp;&lt;=&nbsp;<span class=\"constant\">10</span>;&nbsp;i++)&nbsp;{<br>&nbsp;&nbsp;System.out.print(i + <span class=\"literal\">\" \"</span>);<br>&nbsp;&nbsp;i++;<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 2 3 4 5 6 7 8 9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1 2 3 4 5 6 7 8 9 10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1 2 3 4 5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1 3 5 7 9"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "2 4 6 8 10"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "5.14",
+      "number": "5.14",
+      "text": "&nbsp;\tDo the following two statements in (I) and (II) result in the same value in sum?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>(I):<br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;<span class=\"constant\">0</span>;&nbsp;i&nbsp;&lt;&nbsp;<span class=\"constant\">10</span>;&nbsp;++i)&nbsp;{<br>&nbsp;&nbsp;sum += i;<br>}<br><br>(II):<br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;<span class=\"constant\">0</span>;&nbsp;i&nbsp;&lt;&nbsp;<span class=\"constant\">10</span>;&nbsp;i++)&nbsp;{<br>&nbsp;&nbsp;sum += i;<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Yes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "5.15",
+      "number": "5.15",
+      "text": "&nbsp;\tWhat is the output for y?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;y&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;<span class=\"constant\">0</span>;&nbsp;i&nbsp;&lt;&nbsp;<span class=\"constant\">10</span>;&nbsp;++i)&nbsp;{<br>&nbsp;&nbsp;y += i;<br>}<br>System.out.println(y);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "10"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "11"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "12"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "13"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "45"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "5.16",
+      "number": "5.16",
+      "text": "&nbsp;\tWhat is i after the following for loop?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;y&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;<span class=\"constant\">0</span>;&nbsp;i&nbsp;&lt;&nbsp;<span class=\"constant\">10</span>;&nbsp;++i)&nbsp;{<br>&nbsp;&nbsp;y += i;<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "11"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "undefined"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "5.17",
+      "number": "5.17",
+      "text": "&nbsp;\tIs the following loop correct?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">for</span>&nbsp;(&nbsp;;&nbsp;&nbsp;;&nbsp;);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Yes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "5.18",
+      "number": "5.18",
+      "text": "&nbsp;\tAnalyze the following fragment:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">double</span>&nbsp;sum&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">double</span>&nbsp;d&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">while</span>&nbsp;(d&nbsp;!=&nbsp;<span class=\"constant\">10</span><span class=\"literal\">.</span><span class=\"constant\">0</span>)&nbsp;{<br>&nbsp;&nbsp;d += <span class=\"constant\">0</span><span class=\"literal\">.</span><span class=\"constant\">1</span>;<br>&nbsp;&nbsp;sum += sum + d;<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program does not compile because sum and d are declared double, but assigned with integer value 0."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program never stops because d is always 0.1 inside the loop."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program may not stop because of the phenomenon referred to as numerical inaccuracy for operating with floating-point numbers."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "After the loop, sum is 0 + 0.1 + 0.2 + 0.3 + ... + 1.9"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "5.19",
+      "number": "5.19",
+      "text": "&nbsp; Analyze the following code. Please select all that apply.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{&nbsp;&nbsp;<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main (String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> i = <span class=\"constant\">0</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (i = <span class=\"constant\">0</span>; i &lt; <span class=\"constant\">10</span>; i++);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(i + <span class=\"constant\">4</span>);<br>&nbsp;&nbsp;}<br>}\t<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because of the semicolon (;) on the for loop line."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program compiles despite the semicolon (;) on the for loop line, and displays 4."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program compiles despite the semicolon (;) on the for loop line, and displays 14."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The for loop in this program is same as for (i = 0; i &lt; 10; i++) { }; System.out.println(i + 4);"
+        }
+      ],
+      "inputName": "QD18",
+      "inputType": "checkbox",
+      "correctAnswer": "CD"
+    },
+    {
+      "id": "5.20",
+      "number": "5.20",
+      "text": "&nbsp;\tHow many times is the println statement executed?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;<span class=\"constant\">0</span>;&nbsp;i&nbsp;&lt;&nbsp;<span class=\"constant\">10</span>;&nbsp;i++)&nbsp;<br>&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> j = <span class=\"constant\">0</span>; j &lt; i; j++)<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(i * j)<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "100"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "20"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "45"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "5.21",
+      "number": "5.21",
+      "text": "&nbsp; Which pattern is produced by the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;<span class=\"constant\">1</span>;&nbsp;i&nbsp;&lt;=&nbsp;<span class=\"constant\">6</span>;&nbsp;i++)&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> j = <span class=\"constant\">6</span>; j &gt;= <span class=\"constant\">1</span>; j--)<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(j &lt;= i ? j + <span class=\"literal\">\" \"</span> : <span class=\"literal\">\" \"</span> + <span class=\"literal\">\" \"</span>);<br>&nbsp;&nbsp;System.out.println();<br>}<br><br>Pattern&nbsp;A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pattern&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pattern&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pattern&nbsp;D<br><span class=\"constant\">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"constant\">1</span>&nbsp;<span class=\"constant\">2</span>&nbsp;<span class=\"constant\">3</span>&nbsp;<span class=\"constant\">4</span>&nbsp;<span class=\"constant\">5</span>&nbsp;<span class=\"constant\">6</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"constant\">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"constant\">1</span>&nbsp;<span class=\"constant\">2</span>&nbsp;<span class=\"constant\">3</span>&nbsp;<span class=\"constant\">4</span>&nbsp;<span class=\"constant\">5</span>&nbsp;<span class=\"constant\">6</span><br><span class=\"constant\">1</span>&nbsp;<span class=\"constant\">2</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"constant\">1</span>&nbsp;<span class=\"constant\">2</span>&nbsp;<span class=\"constant\">3</span>&nbsp;<span class=\"constant\">4</span>&nbsp;<span class=\"constant\">5</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"constant\">2</span>&nbsp;<span class=\"constant\">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"constant\">1</span>&nbsp;<span class=\"constant\">2</span>&nbsp;<span class=\"constant\">3</span>&nbsp;<span class=\"constant\">4</span>&nbsp;<span class=\"constant\">5</span><br><span class=\"constant\">1</span>&nbsp;<span class=\"constant\">2</span>&nbsp;<span class=\"constant\">3</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"constant\">1</span>&nbsp;<span class=\"constant\">2</span>&nbsp;<span class=\"constant\">3</span>&nbsp;<span class=\"constant\">4</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"constant\">3</span>&nbsp;<span class=\"constant\">2</span>&nbsp;<span class=\"constant\">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"constant\">1</span>&nbsp;<span class=\"constant\">2</span>&nbsp;<span class=\"constant\">3</span>&nbsp;<span class=\"constant\">4</span><br><span class=\"constant\">1</span>&nbsp;<span class=\"constant\">2</span>&nbsp;<span class=\"constant\">3</span>&nbsp;<span class=\"constant\">4</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"constant\">1</span>&nbsp;<span class=\"constant\">2</span>&nbsp;<span class=\"constant\">3</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"constant\">4</span>&nbsp;<span class=\"constant\">3</span>&nbsp;<span class=\"constant\">2</span>&nbsp;<span class=\"constant\">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"constant\">1</span>&nbsp;<span class=\"constant\">2</span>&nbsp;<span class=\"constant\">3</span><br><span class=\"constant\">1</span>&nbsp;<span class=\"constant\">2</span>&nbsp;<span class=\"constant\">3</span>&nbsp;<span class=\"constant\">4</span>&nbsp;<span class=\"constant\">5</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"constant\">1</span>&nbsp;<span class=\"constant\">2</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"constant\">5</span>&nbsp;<span class=\"constant\">4</span>&nbsp;<span class=\"constant\">3</span>&nbsp;<span class=\"constant\">2</span>&nbsp;<span class=\"constant\">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"constant\">1</span>&nbsp;<span class=\"constant\">2</span><br><span class=\"constant\">1</span>&nbsp;<span class=\"constant\">2</span>&nbsp;<span class=\"constant\">3</span>&nbsp;<span class=\"constant\">4</span>&nbsp;<span class=\"constant\">5</span>&nbsp;<span class=\"constant\">6</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"constant\">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"constant\">6</span>&nbsp;<span class=\"constant\">5</span>&nbsp;<span class=\"constant\">4</span>&nbsp;<span class=\"constant\">3</span>&nbsp;<span class=\"constant\">2</span>&nbsp;<span class=\"constant\">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"constant\">1</span><br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Pattern A"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Pattern B"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Pattern C"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Pattern D"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "5.22",
+      "number": "5.22",
+      "text": "&nbsp;\tHow many times is the println statement executed?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;<span class=\"constant\">0</span>;&nbsp;i&nbsp;&lt;&nbsp;<span class=\"constant\">10</span>;&nbsp;i++)&nbsp;<br>&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> j = <span class=\"constant\">0</span>; j &lt; <span class=\"constant\">10</span>; j++)<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(i * j);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "100"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "20"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "45"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "5.23",
+      "number": "5.23",
+      "text": "&nbsp; To add 0.01 + 0.02 + ... + 1.00, what order should you use to add the numbers to get better accuracy?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "add 0.01, 0.02, ..., 1.00 in this order to a sum variable whose initial value is 0."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "add 1.00, 0.99, 0.98, ..., 0.02, 0.01 in this order to a sum variable whose initial value is 0."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "5.24",
+      "number": "5.24",
+      "text": "&nbsp;\tAnalyze the following code.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">double</span>&nbsp;sum&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">double</span>&nbsp;d&nbsp;=&nbsp;<span class=\"constant\">0</span>;&nbsp;d&nbsp;&lt;&nbsp;<span class=\"constant\">10</span>;&nbsp;sum&nbsp;+=&nbsp;sum&nbsp;+&nbsp;d)&nbsp;&nbsp;{&nbsp;&nbsp;<br>&nbsp;&nbsp;d += <span class=\"constant\">0</span><span class=\"literal\">.</span><span class=\"constant\">1</span>;<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a syntax error because the adjustment statement is incorrect in the for loop."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a syntax error because the control variable in the for loop cannot be of the double type."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program compiles but does not stop because d would always be less than 10."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program compiles and runs fine."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "5.25",
+      "number": "5.25",
+      "text": "&nbsp;\tWhat is y after the following for loop statement is executed?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;y&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">for</span>&nbsp;(<span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;<span class=\"constant\">0</span>;&nbsp;i&nbsp;&lt;&nbsp;<span class=\"constant\">10</span>;&nbsp;++i)&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;y += <span class=\"constant\">1</span>;<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "11"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "12"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "5.26",
+      "number": "5.26",
+      "text": "&nbsp;\tWill the following program terminate?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;balance&nbsp;=&nbsp;<span class=\"constant\">10</span>;<br><br><span class=\"keyword\">while</span>&nbsp;(<span class=\"keyword\">true</span>)&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">if</span> (balance &lt; <span class=\"constant\">9</span>)<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">break</span>;<br>&nbsp;&nbsp;balance = balance - <span class=\"constant\">9</span>;<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Yes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "5.27",
+      "number": "5.27",
+      "text": "&nbsp;\tWhat is sum after the following loop terminates?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;sum&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">int</span>&nbsp;item&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">do</span>&nbsp;{<br>&nbsp;&nbsp;item++;<br>&nbsp;&nbsp;sum += item;<br>&nbsp;&nbsp;<span class=\"keyword\">if</span> (sum &gt; <span class=\"constant\">4</span>)<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">break</span>;<br>}<br><span class=\"keyword\">while</span>&nbsp;(item&nbsp;&lt;&nbsp;<span class=\"constant\">5</span>);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "7"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "8"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "9"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "5.28",
+      "number": "5.28",
+      "text": "&nbsp;\tWhat is the output after the following loop terminates?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;number&nbsp;=&nbsp;<span class=\"constant\">25</span>;<br><span class=\"keyword\">int</span>&nbsp;i;<br><br><span class=\"keyword\">boolean</span>&nbsp;isPrime&nbsp;=&nbsp;<span class=\"keyword\">true</span>;<br><span class=\"keyword\">for</span>&nbsp;(i&nbsp;=&nbsp;<span class=\"constant\">2</span>;&nbsp;i&nbsp;&lt;&nbsp;number&nbsp;&amp;&amp;&nbsp;isPrime;&nbsp;i++)&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">if</span> (number % i == <span class=\"constant\">0</span>) {<br>&nbsp;&nbsp;&nbsp;&nbsp;isPrime = <span class=\"keyword\">false</span>;<br>&nbsp;&nbsp;}<br>}<br><br>System.out.println(<span class=\"literal\">\"i&nbsp;is&nbsp;\"</span>&nbsp;+&nbsp;i&nbsp;+&nbsp;<span class=\"literal\">\"&nbsp;isPrime&nbsp;is&nbsp;\"</span>&nbsp;+&nbsp;isPrime);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "i is 5 isPrime is true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "i is 5 isPrime is false"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "i is 6 isPrime is true"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "i is 6 isPrime is false"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "D"
+    },
+    {
+      "id": "5.29",
+      "number": "5.29",
+      "text": "&nbsp;\tWhat is the output after the following loop terminates?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;number&nbsp;=&nbsp;<span class=\"constant\">25</span>;<br><span class=\"keyword\">int</span>&nbsp;i;<br><br><span class=\"keyword\">boolean</span>&nbsp;isPrime&nbsp;=&nbsp;<span class=\"keyword\">true</span>;<br><span class=\"keyword\">for</span>&nbsp;(i&nbsp;=&nbsp;<span class=\"constant\">2</span>;&nbsp;i&nbsp;&lt;&nbsp;number;&nbsp;i++)&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">if</span> (number % i == <span class=\"constant\">0</span>) {<br>&nbsp;&nbsp;&nbsp;&nbsp;isPrime = <span class=\"keyword\">false</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">break</span>;<br>&nbsp;&nbsp;}<br>}<br><br>System.out.println(<span class=\"literal\">\"i&nbsp;is&nbsp;\"</span>&nbsp;+&nbsp;i&nbsp;+&nbsp;<span class=\"literal\">\"&nbsp;isPrime&nbsp;is&nbsp;\"</span>&nbsp;+&nbsp;isPrime);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "i is 5 isPrime is true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "i is 5 isPrime is false"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "i is 6 isPrime is true"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "i is 6 isPrime is false"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "5.30",
+      "number": "5.30",
+      "text": "&nbsp;\tWhat is sum after the following loop terminates?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;sum&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">int</span>&nbsp;item&nbsp;=&nbsp;<span class=\"constant\">0</span>;<br><span class=\"keyword\">do</span>&nbsp;{<br>&nbsp;&nbsp;item++;<br>&nbsp;&nbsp;<span class=\"keyword\">if</span> (sum &gt;= <span class=\"constant\">4</span>)<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">continue</span>;<br>&nbsp;&nbsp;sum += item;<br>}<br><span class=\"keyword\">while</span>&nbsp;(item&nbsp;&lt;&nbsp;<span class=\"constant\">5</span>);<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "7"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "8"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "9"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "10"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "A"
+    },
+    {
+      "id": "5.31",
+      "number": "5.31",
+      "text": "&nbsp;\tWill the following program terminate?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;balance&nbsp;=&nbsp;<span class=\"constant\">10</span>;<br><br><span class=\"keyword\">while</span>&nbsp;(<span class=\"keyword\">true</span>)&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">if</span> (balance &lt; <span class=\"constant\">9</span>)<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">continue</span>;<br>&nbsp;&nbsp;balance = balance - <span class=\"constant\">9</span>;<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Yes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "5.32",
+      "number": "5.32",
+      "text": "&nbsp;\tWhat balance after the following code is executed?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;balance&nbsp;=&nbsp;<span class=\"constant\">10</span>;<br><br><span class=\"keyword\">while</span>&nbsp;(balance&nbsp;&gt;=&nbsp;<span class=\"constant\">1</span>)&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">if</span> (balance &lt; <span class=\"constant\">9</span>)<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">continue</span>;<br>&nbsp;&nbsp;balance = balance - <span class=\"constant\">9</span>;<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "-1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The loop does not end"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "E"
+    },
+    {
+      "id": "5.33",
+      "number": "5.33",
+      "text": "&nbsp;\tWhat is the value of balance after the following code is executed?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;balance&nbsp;=&nbsp;<span class=\"constant\">10</span>;<br><br><span class=\"keyword\">while</span>&nbsp;(balance&nbsp;&gt;=&nbsp;<span class=\"constant\">1</span>)&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">if</span> (balance &lt; <span class=\"constant\">9</span>)<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">break</span>;<br>&nbsp;&nbsp;balance = balance - <span class=\"constant\">9</span>;<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "-1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "5.34",
+      "number": "5.34",
+      "text": "&nbsp; What is the number of iterations in the following loop?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">1</span>; i &lt; n; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"comment\">// iteration</span><br>&nbsp;&nbsp;}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2*n"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "n"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "n - 1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "n + 1"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    },
+    {
+      "id": "5.35",
+      "number": "5.35",
+      "text": "&nbsp; What is the number of iterations in the following loop?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">1</span>; i &lt;= n; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"comment\">// iteration</span><br>&nbsp;&nbsp;}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2*n"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "n"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "n - 1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "n + 1"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "B"
+    },
+    {
+      "id": "5.36",
+      "number": "5.36",
+      "text": "&nbsp; Suppose the input for number is 9. What is the output from running the following program?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">import</span>&nbsp;java.util.Scanner;<br><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;Scanner input = <span class=\"keyword\">new</span> Scanner(System.in);<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(<span class=\"literal\">\"Enter an integer: \"</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> number = input.nextInt();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> i;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">boolean</span> isPrime = <span class=\"keyword\">true</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (i = <span class=\"constant\">2</span>; i &lt; number &amp;&amp; isPrime; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">if</span> (number % i == <span class=\"constant\">0</span>) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isPrime = <span class=\"keyword\">false</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"i is \"</span> + i);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">if</span> (isPrime)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(number + <span class=\"literal\">\" is prime\"</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">else</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(number + <span class=\"literal\">\" is not prime\"</span>);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "i is 3 followed by 9 is prime"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "i is 3 followed by 9 is not prime"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "i is 4 followed by 9 is prime"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "i is 4 followed by 9 is not prime"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": ""
+    },
+    {
+      "id": "5.37",
+      "number": "5.37",
+      "text": "&nbsp; Analyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">import</span>&nbsp;java.util.Scanner;<br><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{&nbsp;<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> sum = <span class=\"constant\">0</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">for</span> (<span class=\"keyword\">int</span> i = <span class=\"constant\">0</span>; i &lt; <span class=\"constant\">100000</span>; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scanner input = <span class=\"keyword\">new</span> Scanner(System.in);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum += input.nextInt();<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program does not compile because the Scanner input = new Scanner(System.in); statement is inside the loop."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program compiles, but does not run because the Scanner input = new Scanner(System.in); statement is inside the loop."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program compiles and runs, but it is not efficient and unnecessary to execute the Scanner input = new Scanner(System.in); statement inside the loop. You should move the statement before the loop."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program compiles, but does not run because there is not prompting message for entering the input."
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "C"
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 37
+}
