@@ -133,6 +133,13 @@ const app = {
 
     selectSubject(subjectId) {
         const subject = this.subjects.find(s => s.id === subjectId);
+
+        // UX: Check if subject has chapters
+        if (!subject.chapters || subject.chapters.length === 0) {
+            alert("Coming soon... This subject has no chapters yet.");
+            return;
+        }
+
         this.showChaptersView(subject);
     },
 
