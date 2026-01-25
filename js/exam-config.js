@@ -110,7 +110,14 @@ const EXAM_CONFIG = [
     "name": "Algorithms",
     "description": "Algorithm Analysis",
     "path": "data/algorithm",
-    "chapters": []
+    "chapters": [
+      {
+        "id": "chapterintroduction-to-java-programming-and-data-structures-comprehensive-version-12-714-741.pdfDataInputStream and DataOutputStream",
+        "name": "DataInputStream and DataOutputStream",
+        "q": 5,
+        "file": "data/algorithm/chapterintroduction-to-java-programming-and-data-structures-comprehensive-version-12-714-741.pdfDataInputStream and DataOutputStream.json"
+      }
+    ]
   },
   {
     "id": "data_structure",
