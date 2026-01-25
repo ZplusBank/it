@@ -179,6 +179,19 @@ class ExamEditor:
                 "description": ""
             }
             
+            
+            # Create directory and init chapters.json
+            try:
+                full_path = self.base_path / new_section['path']
+                full_path.mkdir(parents=True, exist_ok=True)
+                ch_file = full_path / "chapters.json"
+                if not ch_file.exists():
+                    with open(ch_file, 'w') as f:
+                        json.dump([], f)
+            except Exception as e:
+                messagebox.showerror("Error", f"Failed to create directory: {e}")
+                return
+
             self.sections.append(new_section)
             self.save_sections()
             self.load_sections()
