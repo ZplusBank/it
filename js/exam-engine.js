@@ -168,6 +168,13 @@ const app = {
         this.questions = [];
         const selectedChapterIds = new Set(this.selectedChapters);
 
+        this.allChapters = []; // Re-populate for safety or just search in subjects
+
+        // Flatten all chapters from all subjects for easy lookup
+        this.subjects.forEach(s => {
+            this.allChapters.push(...s.chapters);
+        });
+
         this.allChapters.forEach(chapter => {
             if (selectedChapterIds.has(chapter.id)) {
                 this.questions.push(...chapter.questions);
