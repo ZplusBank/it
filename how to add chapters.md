@@ -58,7 +58,41 @@ Here is a template for a chapter file (e.g., `chapter1.json`):
 }
 ```
 
+## Handling Questions with Code
+
+When a question includes a code snippet, you must use HTML tags directly inside the `"text"` field of the JSON.
+
+### 1. Structure the Code Block
+Wrapped your code in a `span` with monospace styling:
+```json
+"text": "Analyze the following code:<br><span style=\"font-family:monospace;\"> ... </span>"
+```
+
+### 2. Layout & Colors
+- **New Lines**: Use `<br>` for every line break.
+- **Indentation**: Use `&nbsp;` for each lead space.
+- **Syntax Highlighting**: Wrap Java code in these specific classes:
+  - `<span class=\"keyword\">`: for keywords (`class`, `public`, `int`, `static`).
+  - `<span class=\"literal\">`: for string quotes or decimals.
+  - `<span class=\"constant\">`: for numbers.
+  - `<span class=\"string\">`: for string content.
+  - `<span class=\"comment\">`: for comments.
+
+### Full Example of a Code Question:
+```json
+{
+  "id": "1.2",
+  "text": "What is the output of the following code:<br><span style=\"font-family:monospace;\"><br><span class=\"keyword\">int</span> x = <span class=\"constant\">5</span>;<br>System.out.println(x);<br></span>",
+  "choices": [
+    { "value": "A", "text": "5" },
+    { "value": "B", "text": "x" }
+  ],
+  "inputType": "radio",
+  "correctAnswer": "A"
+}
+```
+
 ## Purpose of Files
-- **`chapterX.json`**: Contains the actual questions, choices, and answers for a specific chapter.
-- **`chapters.json`**: An index file inside each folder (e.g., `data/java1/chapters.json`). It lists all available chapters so the system knows they exist. The "Configure Engine" tool updates this automatically.
-- **`sections.json`**: Located in `config/sections.json`. It defines the main subjects (like Java 1, Java 2) available in the app.
+- **`chapterX.json`**: Contains the actual questions, choices, and answers.
+- **`chapters.json`**: Index file inside each data folder. Updated automatically by the engine tool.
+- **`sections.json`**: Global config in `config/sections.json` for main subjects.
