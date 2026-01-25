@@ -150,7 +150,7 @@ const app = {
                 <input type="checkbox" id="ch-${idx}" value="${chapter.id}" 
                        onchange="app.updateSelectedChapters()">
                 <label for="ch-${idx}">
-                    ${chapter.title}<br>
+                    <strong>Chapter ${chapter.id}:</strong> ${chapter.title}<br>
                     <span style="font-size: 0.8em; color: #999;">${chapter.totalQuestions} questions</span>
                 </label>
             </div>
