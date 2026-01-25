@@ -33,3 +33,32 @@
 
 6.  **Test**
     - Open `index.html` in your browser to see your changes.
+
+---
+
+## JSON Structure Example
+Here is a template for a chapter file (e.g., `chapter1.json`):
+
+```json
+{
+  "title": "Chapter 1: Introduction",
+  "questions": [
+    {
+      "id": "1.1",
+      "text": "What is the output of print('Hello')?",
+      "choices": [
+        { "value": "A", "text": "Hello" },
+        { "value": "B", "text": "Hi" }
+      ],
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The print function outputs the string to the console."
+    }
+  ]
+}
+```
+
+## Purpose of Files
+- **`chapterX.json`**: Contains the actual questions, choices, and answers for a specific chapter.
+- **`chapters.json`**: An index file inside each folder (e.g., `data/java1/chapters.json`). It lists all available chapters so the system knows they exist. The "Configure Engine" tool updates this automatically.
+- **`sections.json`**: Located in `config/sections.json`. It defines the main subjects (like Java 1, Java 2) available in the app.
