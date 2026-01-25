@@ -48,7 +48,7 @@ const app = {
                 name: subjectConfig.name,
                 description: subjectConfig.description,
                 icon: this.getIconForSubject(subjectConfig.id),
-                chaptersConfig: subjectConfig.chapters, // Save config for later loading
+                chaptersConfig: subjectConfig.chapters || [], // Save config for later loading
                 chapters: [], // Loaded data goes here
                 loaded: false // Track if chapters are loaded
             }));
@@ -58,6 +58,39 @@ const app = {
             console.error('Error loading initial data:', error);
             alert('Error initializing exam data.');
         }
+    },
+
+    getIconForSubject(id) {
+        const icons = {
+            'java1': '☕',
+            'java2': '☕',
+            'algorithm': '🧮',
+            'data_structure': '🌲',
+            'java_advanced': '🚀'
+        };
+        return icons[id] || '📚';
+    },
+
+    showSubjectsView() {
+        this.currentView = 'subjects';
+        this.resetExam();
+        this.hideAllViews();
+        document.getElementById('subjectsView').style.display = 'block';
+        this.renderSubjects();
+    },
+
+    renderSubjects() {
+        const grid = document.getElementById('subjectsGrid');
+        grid.innerHTML = this.subjects.map(subject => `
+            <div class="subject-card" onclick="app.selectSubject('${subject.id}')">
+                <div style="font-size: 2.5em; margin-bottom: 10px;">${subject.icon}</div>
+                <h2>${subject.name}</h2>
+                <p>${subject.description}</p>
+                <p style="margin-top: 15px; font-size: 0.85em; color: #999;">
+                    ${subject.chaptersConfig.length} Chapters Available
+                </p>
+            </div>
+        `).join('');
     },
 
     async selectSubject(subjectId) {
