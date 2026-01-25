@@ -36,111 +36,92 @@ const app = {
 
     async loadData() {
         try {
-            // Check if config exists
             if (typeof EXAM_CONFIG === 'undefined') {
                 console.error('EXAM_CONFIG not found in exam-config.js');
-                // Fallback or error
                 this.subjects = [];
                 return;
             }
 
-            this.subjects = [];
+            // Map basic subject info from config without loading chapter files yet
+            this.subjects = EXAM_CONFIG.map(subjectConfig => ({
+                id: subjectConfig.id,
+                name: subjectConfig.name,
+                description: subjectConfig.description,
+                icon: this.getIconForSubject(subjectConfig.id),
+                chaptersConfig: subjectConfig.chapters, // Save config for later loading
+                chapters: [], // Loaded data goes here
+                loaded: false // Track if chapters are loaded
+            }));
 
-            // Process each subject from config
-            for (const subjectConfig of EXAM_CONFIG) {
-                const subject = {
-                    id: subjectConfig.id,
-                    name: subjectConfig.name,
-                    description: subjectConfig.description,
-                    icon: this.getIconForSubject(subjectConfig.id),
-                    chapters: []
-                };
-
-                // Load chapters
-                for (const chInfo of subjectConfig.chapters) {
-                    if (!chInfo.file) continue;
-
-                    try {
-                        const response = await fetch(`./${chInfo.file}`);
-                        if (response.ok) {
-                            const data = await response.json();
-
-                            // Normalize data
-                            let chapterData = null;
-                            if (Array.isArray(data)) {
-                                chapterData = data.length > 0 ? data[0] : null;
-                            } else if (typeof data === 'object') {
-                                chapterData = data;
-                            }
-
-                            if (chapterData && chapterData.title && Array.isArray(chapterData.questions)) {
-                                subject.chapters.push({
-                                    id: chInfo.id,
-                                    title: chInfo.name || chapterData.title, // Use config name if available
-                                    questions: chapterData.questions,
-                                    totalQuestions: chapterData.questions.length
-                                });
-                            }
-                        }
-                    } catch (e) {
-                        console.warn(`Failed to load ${chInfo.file}:`, e);
-                    }
-                }
-
-                // Only add subject if it has chapters or if we want to show empty ones
-                this.subjects.push(subject);
-            }
-
-            console.log('Data loaded:', this.subjects);
+            console.log('App initialized with subjects:', this.subjects);
         } catch (error) {
-            console.error('Error loading data:', error);
-            alert('Error loading exam data.');
+            console.error('Error loading initial data:', error);
+            alert('Error initializing exam data.');
         }
     },
 
-    getIconForSubject(id) {
-        const icons = {
-            'java1': '☕',
-            'java2': '☕',
-            'algorithm': '🧮',
-            'data_structure': '🌲',
-            'java_advanced': '🚀'
-        };
-        return icons[id] || '📚';
-    },
-
-    showSubjectsView() {
-        this.currentView = 'subjects';
-        this.resetExam();
-        this.hideAllViews();
-        document.getElementById('subjectsView').style.display = 'block';
-        this.renderSubjects();
-    },
-
-    renderSubjects() {
-        const grid = document.getElementById('subjectsGrid');
-        grid.innerHTML = this.subjects.map(subject => `
-            <div class="subject-card" onclick="app.selectSubject('${subject.id}')">
-                <div style="font-size: 2.5em; margin-bottom: 10px;">${subject.icon}</div>
-                <h2>${subject.name}</h2>
-                <p>${subject.description}</p>
-                <p style="margin-top: 15px; font-size: 0.85em; color: #999;">
-                    ${subject.chapters.length} Chapters Available
-                </p>
-            </div>
-        `).join('');
-    },
-
-    selectSubject(subjectId) {
+    async selectSubject(subjectId) {
         const subject = this.subjects.find(s => s.id === subjectId);
 
-        // UX: Check if subject has chapters
-        if (!subject.chapters || subject.chapters.length === 0) {
+        if (!subject) return;
+
+        // If not loaded, fetch chapters now
+        if (!subject.loaded) {
+            // Show some loading state if possible, though it's usually fast
+            try {
+                // UX refinement: could show a "Loading chapters..." message here
+                await this.loadChaptersForSubject(subject);
+            } catch (error) {
+                console.error('Failed to load chapters:', error);
+                alert('Failed to load chapters for this subject.');
+                return;
+            }
+        }
+
+        // UX: Check if subject has chapters after loading
+        if (subject.chapters.length === 0) {
             alert("Coming soon... This subject has no chapters yet.");
             return;
         }
 
         this.showChaptersView(subject);
+    },
+
+    async loadChaptersForSubject(subject) {
+        if (!subject.chaptersConfig || subject.chaptersConfig.length === 0) {
+            subject.loaded = true;
+            return;
+        }
+
+        console.log(`Loading chapters for ${subject.name}...`);
+
+        const loadingPromises = subject.chaptersConfig.map(async (chInfo) => {
+            if (!chInfo.file) return null;
+            try {
+                const response = await fetch(`./${chInfo.file}`);
+                if (response.ok) {
+                    const data = await response.json();
+                    let chapterData = Array.isArray(data) ? data[0] : data;
+
+                    if (chapterData && chapterData.title && Array.isArray(chapterData.questions)) {
+                        return {
+                            id: chInfo.id,
+                            title: chInfo.name || chapterData.title,
+                            questions: chapterData.questions,
+                            totalQuestions: chapterData.questions.length
+                        };
+                    }
+                }
+            } catch (e) {
+                console.warn(`Failed to load ${chInfo.file}:`, e);
+            }
+            return null;
+        });
+
+        const results = await Promise.all(loadingPromises);
+        subject.chapters = results.filter(ch => ch !== null);
+        subject.loaded = true;
+        console.log(`Loaded ${subject.chapters.length} chapters for ${subject.name}`);
     },
 
     showChaptersView(subject) {
