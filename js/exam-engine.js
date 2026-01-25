@@ -26,7 +26,7 @@ const app = {
         }
 
         toggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
             document.documentElement.setAttribute('data-theme', newTheme);
@@ -196,6 +196,7 @@ const app = {
     showExamView() {
         this.currentView = 'exam';
         this.hideAllViews();
+        document.querySelector('header').style.display = 'none'; // Hide header
         document.getElementById('examView').style.display = 'block';
 
         // Update title
@@ -451,6 +452,7 @@ const app = {
     },
 
     hideAllViews() {
+        document.querySelector('header').style.display = 'block'; // Show header by default
         document.getElementById('subjectsView').style.display = 'none';
         document.getElementById('chaptersView').style.display = 'none';
         document.getElementById('examView').style.display = 'none';
