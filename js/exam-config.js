@@ -131,13 +131,6 @@ const EXAM_CONFIG = [
     "name": "Java Advanced",
     "description": "Enterprise Java",
     "path": "data/java_advanced",
-    "chapters": [
-      {
-        "id": "Java How To Program Ninth_Edition.pdf - Batch 1_3",
-        "name": "Introduction to Programming",
-        "q": 50,
-        "file": "data/java_advanced/Java How To Program Ninth_Edition.pdf - Batch 1_3.json"
-      }
-    ]
+    "chapters": []
   }
 ];
