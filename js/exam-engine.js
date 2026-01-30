@@ -53,7 +53,7 @@ const app = {
                 loaded: false // Track if chapters are loaded
             }));
 
-            console.log('App initialized with subjects:', this.subjects);
+            // subjects loaded
         } catch (error) {
             console.error('Error loading initial data:', error);
             alert('Error initializing exam data.');
@@ -136,7 +136,7 @@ const app = {
             return;
         }
 
-        console.log(`Loading chapters for ${subject.name}...`);
+        // loading chapters for subject
 
         const loadingPromises = subject.chaptersConfig.map(async (chInfo) => {
             if (!chInfo.file) return null;
@@ -164,7 +164,6 @@ const app = {
         const results = await Promise.all(loadingPromises);
         subject.chapters = results.filter(ch => ch !== null);
         subject.loaded = true;
-        console.log(`Loaded ${subject.chapters.length} chapters for ${subject.name}`);
     },
 
     showChaptersView(subject) {
