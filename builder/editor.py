@@ -189,9 +189,9 @@ class ExamEditor:
     def load_sections(self):
         """Load sections from config"""
         try:
-            config_file = self.config_path / "sections.json"
-            with open(config_file) as f:
-                self.sections = json.load(f)
+                config_file = self.config_path / "sections.json"
+                with open(config_file, encoding='utf-8') as f:
+                    self.sections = json.load(f)
         except:
             self.sections = []
         
@@ -230,9 +230,9 @@ class ExamEditor:
             return
         
         try:
-            ch_file = self.base_path / f"{section['path']}" / "chapters.json"
-            with open(ch_file) as f:
-                self.chapters = json.load(f)
+                ch_file = self.base_path / f"{section['path']}" / "chapters.json"
+                with open(ch_file, encoding='utf-8') as f:
+                    self.chapters = json.load(f)
         except:
             self.chapters = []
         
@@ -618,7 +618,7 @@ class ExamEditor:
         try:
             ch_file = self.base_path / f"{section['path']}" / "chapters.json"
             ch_file.parent.mkdir(parents=True, exist_ok=True)
-            with open(ch_file, 'w') as f:
+            with open(ch_file, 'w', encoding='utf-8') as f:
                 json.dump(self.chapters, f, indent=2)
             self.update_status("Chapters saved", "green")
         except Exception as e:
@@ -629,7 +629,7 @@ class ExamEditor:
         try:
             self.config_path.mkdir(parents=True, exist_ok=True)
             config_file = self.config_path / "sections.json"
-            with open(config_file, 'w') as f:
+            with open(config_file, 'w', encoding='utf-8') as f:
                 json.dump(self.sections, f, indent=2)
         except Exception as e:
             messagebox.showerror("Error", str(e))
@@ -658,74 +658,74 @@ class ExamEditor:
                 # AUTO-SYNC: Update chapters.json from directory content
                 sec_path = self.base_path / section['path']
                 if sec_path.exists():
-                     chapter_files = sorted(sec_path.glob("*.json"))
-                     
-                     # Sort helper
-                     def get_chapter_num(path):
+                    chapter_files = sorted(sec_path.glob("*.json"))
+
+                    # Sort helper
+                    def get_chapter_num(path):
                         match = re.search(r'chapter(\d+)', path.name)
                         return int(match.group(1)) if match else 999
-                     
-                     chapter_files.sort(key=get_chapter_num)
-                     
-                     synced_chapters = []
-                     for ch_file in chapter_files:
-                         if ch_file.name == "chapters.json":
-                             continue
-                             
-                         try:
-                             with open(ch_file, 'r', encoding='utf-8') as f:
-                                 content = json.load(f)
-                                 
-                             data_obj = content[0] if isinstance(content, list) and content else content
-                             if isinstance(content, list) and not content: 
-                                 data_obj = {}
-                             
-                             f_match = re.search(r'chapter(\d+)', ch_file.name)
-                             if f_match:
-                                 c_id = f_match.group(1)
-                             else:
-                                 c_id = str(data_obj.get("params", {}).get("chapter", ch_file.stem))
-                                 
-                             c_title = data_obj.get("title", ch_file.stem)
-                             c_title = c_title.replace(f"Chapter {c_id} ", "").strip()
-                             
-                             c_q = len(data_obj.get("questions", []))
-                             if not c_q and 'totalQuestions' in data_obj:
-                                 c_q = data_obj['totalQuestions']
-                                 
-                             synced_chapters.append({
-                                 "id": str(c_id),
-                                 "name": c_title,
-                                 "q": c_q,
-                                 "file": ch_file.name
-                             })
-                         except Exception as e:
-                             print(f"Skipping {ch_file}: {e}")
-                             
-                     ch_json_path = sec_path / "chapters.json"
-                     try:
-                         with open(ch_json_path, 'w', encoding='utf-8') as f:
-                             json.dump(synced_chapters, f, indent=2)
-                     except Exception as e:
-                         print(f"Failed to save chapters.json: {e}")
+
+                    chapter_files.sort(key=get_chapter_num)
+
+                    synced_chapters = []
+                    for ch_file in chapter_files:
+                        if ch_file.name == "chapters.json":
+                            continue
+
+                        try:
+                            with open(ch_file, 'r', encoding='utf-8') as f:
+                                content = json.load(f)
+
+                            data_obj = content[0] if isinstance(content, list) and content else content
+                            if isinstance(content, list) and not content:
+                                data_obj = {}
+
+                            f_match = re.search(r'chapter(\d+)', ch_file.name)
+                            if f_match:
+                                c_id = f_match.group(1)
+                            else:
+                                c_id = str(data_obj.get("params", {}).get("chapter", ch_file.stem))
+
+                            c_title = data_obj.get("title", ch_file.stem)
+                            c_title = c_title.replace(f"Chapter {c_id} ", "").strip()
+
+                            c_q = len(data_obj.get("questions", []))
+                            if not c_q and 'totalQuestions' in data_obj:
+                                c_q = data_obj['totalQuestions']
+
+                            synced_chapters.append({
+                                "id": str(c_id),
+                                "name": c_title,
+                                "q": c_q,
+                                "file": ch_file.name
+                            })
+                        except Exception as e:
+                            print(f"Skipping {ch_file}: {e}")
+
+                    ch_json_path = sec_path / "chapters.json"
+                    try:
+                        with open(ch_json_path, 'w', encoding='utf-8') as f:
+                            json.dump(synced_chapters, f, indent=2)
+                    except Exception as e:
+                        print(f"Failed to save chapters.json: {e}")
 
                 ch_file = self.base_path / section['path'] / "chapters.json"
                 if ch_file.exists():
                     try:
-                        with open(ch_file) as f:
+                        with open(ch_file, encoding='utf-8') as f:
                             chapters = json.load(f)
                             for ch in chapters:
                                 ch['file'] = f"{section['path']}/{ch.get('file', '')}"
                                 if 'q' not in ch or ch['q'] == 0:
-                                     try:
-                                         q_path = self.base_path / section['path'] / ch.get('file', '')
-                                         with open(q_path) as qf:
-                                             q_data = json.load(qf)
-                                             if isinstance(q_data, list):
-                                                 q_data = q_data[0]
-                                             ch['q'] = len(q_data.get('questions', []))
-                                     except:
-                                         pass
+                                    try:
+                                        q_path = self.base_path / section['path'] / ch.get('file', '')
+                                        with open(q_path, encoding='utf-8') as qf:
+                                            q_data = json.load(qf)
+                                            if isinstance(q_data, list):
+                                                q_data = q_data[0]
+                                            ch['q'] = len(q_data.get('questions', []))
+                                    except:
+                                        pass
                             sec_data["chapters"] = chapters
                     except:
                         sec_data["chapters"] = []

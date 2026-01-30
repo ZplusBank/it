@@ -60,6 +60,16 @@ const app = {
         }
     },
 
+    escapeHtml(text) {
+        if (!text && text !== 0) return '';
+        return String(text)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/\"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    },
+
     getIconForSubject(id) {
         const icons = {
             'java1': '☕',
@@ -84,8 +94,8 @@ const app = {
         grid.innerHTML = this.subjects.map(subject => `
             <div class="subject-card" onclick="app.selectSubject('${subject.id}')">
                 <div style="font-size: 2.5em; margin-bottom: 10px;">${subject.icon}</div>
-                <h2>${subject.name}</h2>
-                <p>${subject.description}</p>
+                <h2>${this.escapeHtml(subject.name)}</h2>
+                <p>${this.escapeHtml(subject.description)}</p>
                 <p style="margin-top: 15px; font-size: 0.85em; color: #999;">
                     ${subject.chaptersConfig.length} Chapters Available
                 </p>
@@ -171,7 +181,7 @@ const app = {
                 <input type="checkbox" id="ch-${idx}" value="${chapter.id}" 
                        onchange="app.updateSelectedChapters()">
                 <label for="ch-${idx}">
-                    <strong>Chapter ${chapter.id}:</strong> ${chapter.title}<br>
+                    <strong>Chapter ${chapter.id}:</strong> ${this.escapeHtml(chapter.title)}<br>
                     <span style="font-size: 0.8em; color: #999;">${chapter.totalQuestions} questions</span>
                 </label>
             </div>
