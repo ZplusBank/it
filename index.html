@@ -25,6 +25,7 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header role="banner">
             <div class="header-content">
@@ -112,6 +113,14 @@
 
     <script src="js/exam-config.js"></script>
     <script src="js/exam-engine.js"></script>
+    <script>
+        // Close menus/popups with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal.open, .dropdown.open, .menu.open').forEach(el => el.classList.remove('open'));
+            }
+        });
+    </script>
 </body>
 
 </html>
