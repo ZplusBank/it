@@ -110,14 +110,7 @@ const EXAM_CONFIG = [
     "name": "Algorithms",
     "description": "Algorithm Analysis",
     "path": "data/algorithm",
-    "chapters": [
-      {
-        "id": "chapterintroduction-to-java-programming-and-data-structures-comprehensive-version-12-714-741.pdfWorking with Binary Streams",
-        "name": "Working with Binary Streams",
-        "q": 6,
-        "file": "data/algorithm/chapterintroduction-to-java-programming-and-data-structures-comprehensive-version-12-714-741.pdfWorking with Binary Streams.json"
-      }
-    ]
+    "chapters": []
   },
   {
     "id": "data_structure",

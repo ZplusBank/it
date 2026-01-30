@@ -5,10 +5,12 @@ Manages multiple subjects/sections with chapters.json structure
 """
 
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk, messagebox, filedialog
 import json
 from pathlib import Path
 import re
+import shutil
+import zipfile
 
 class ExamEditor:
     def __init__(self, root):
@@ -60,6 +62,8 @@ class ExamEditor:
         
         ttk.Button(sections_header, text="➕", command=self.add_section,
                   width=3).pack(side=tk.RIGHT, padx=2)
+        ttk.Button(sections_header, text="⬆️", command=self.import_section,
+              width=3).pack(side=tk.RIGHT, padx=2)
         ttk.Button(sections_header, text="🗑️", command=self.delete_section,
                   width=3).pack(side=tk.RIGHT, padx=2)
         
@@ -101,6 +105,8 @@ class ExamEditor:
         
         ttk.Button(chapters_header, text="➕", command=self.add_chapter,
                   width=3).pack(side=tk.RIGHT, padx=2)
+        ttk.Button(chapters_header, text="⬆️", command=self.import_chapters,
+              width=3).pack(side=tk.RIGHT, padx=2)
         ttk.Button(chapters_header, text="🗑️", command=self.delete_chapter,
                   width=3).pack(side=tk.RIGHT, padx=2)
         
@@ -359,9 +365,41 @@ class ExamEditor:
             return
         
         section = self.sections[self.current_section_idx]
-        if messagebox.askyesno("Confirm Delete", 
-                              f"Delete section '{section['name']}'?\n\nThis will not delete files, only remove from config."):
-            del self.sections[self.current_section_idx]
+        # Custom dialog with optional checkbox to also delete files on disk
+        dlg = tk.Toplevel(self.root)
+        dlg.title("Delete Section")
+        dlg.geometry("480x180")
+        dlg.transient(self.root)
+        dlg.grab_set()
+
+        frame = ttk.Frame(dlg, padding=12)
+        frame.pack(fill=tk.BOTH, expand=True)
+
+        ttk.Label(frame, text=f"Delete section '{section['name']}'?", font=("", 10, "bold")).pack(anchor=tk.W, pady=(0,8))
+        ttk.Label(frame, text="This will remove the section from the config.").pack(anchor=tk.W)
+
+        del_var = tk.BooleanVar(value=False)
+        ttk.Checkbutton(frame, text="Also delete section files from disk (permanent)", variable=del_var).pack(anchor=tk.W, pady=8)
+
+        btn_frame = ttk.Frame(frame)
+        btn_frame.pack(fill=tk.X, pady=(10,0))
+
+        def do_delete():
+            # If user opted to delete files, attempt to remove directory
+            if del_var.get():
+                try:
+                    full_path = self.base_path / section.get('path', '')
+                    if full_path.exists():
+                        shutil.rmtree(full_path)
+                except Exception as e:
+                    messagebox.showerror("Error", f"Failed to delete section files: {e}")
+                    return
+
+            # Remove from config regardless
+            try:
+                del self.sections[self.current_section_idx]
+            except Exception:
+                pass
             self.current_section = None
             self.current_section_idx = None
             self.save_sections()
@@ -369,6 +407,13 @@ class ExamEditor:
             self.chapters = []
             self.refresh_chapters_tree()
             self.update_status("Section deleted", "orange")
+            dlg.destroy()
+
+        def cancel():
+            dlg.destroy()
+
+        ttk.Button(btn_frame, text="Delete", command=do_delete, width=12).pack(side=tk.RIGHT, padx=6)
+        ttk.Button(btn_frame, text="Cancel", command=cancel, width=12).pack(side=tk.RIGHT)
     
     def add_chapter(self):
         """Add new chapter"""
@@ -385,6 +430,122 @@ class ExamEditor:
         self.chapters.append(new_chapter)
         self.refresh_chapters_tree()
         self.update_status("Chapter added (click Save All)", "orange")
+
+    def _copy_source_to_dest(self, src_path, dest_path):
+        """Copy or extract src_path (dir or zip) into dest_path.
+        Handles copying 'theme' or 'themes' directories correctly."""
+        src = Path(src_path)
+        dest = Path(dest_path)
+        try:
+            dest.mkdir(parents=True, exist_ok=True)
+
+            # If zip file
+            if src.is_file() and zipfile.is_zipfile(src):
+                with zipfile.ZipFile(src, 'r') as z:
+                    z.extractall(dest)
+                return True, None
+
+            # If directory, copy contents
+            if src.is_dir():
+                for item in src.iterdir():
+                    target = dest / item.name
+                    if item.is_dir():
+                        # If target exists, merge by removing and replacing
+                        if target.exists():
+                            shutil.rmtree(target)
+                        shutil.copytree(item, target)
+                    else:
+                        shutil.copy2(item, target)
+                return True, None
+
+            # If single file, copy
+            if src.is_file():
+                shutil.copy2(src, dest / src.name)
+                return True, None
+
+            return False, 'Source not found'
+        except Exception as e:
+            return False, str(e)
+
+    def import_section(self):
+        """Import a section from a directory or zip. Copies theme if present."""
+        src_dir = filedialog.askdirectory(title="Select section folder to import")
+        if not src_dir:
+            # allow zip selection as alternative
+            src_file = filedialog.askopenfilename(title="Select section zip to import",
+                                                  filetypes=[("Zip Archives","*.zip")])
+            if not src_file:
+                return
+            src_dir = src_file
+
+        src = Path(src_dir)
+        sec_id = src.stem if src.is_file() else src.name
+        section_exists = any(s['id'] == sec_id for s in self.sections)
+        if section_exists:
+            if not messagebox.askyesno("Exists", f"Section '{sec_id}' already exists. Overwrite?"):
+                return
+
+        dest_rel = f"data/{sec_id}"
+        dest = self.base_path / dest_rel
+
+        ok, err = self._copy_source_to_dest(src, dest)
+        if not ok:
+            messagebox.showerror("Import Failed", f"Failed to import section: {err}")
+            return
+
+        # Add or update section entry
+        new_section = {
+            "id": sec_id,
+            "name": sec_id,
+            "path": dest_rel,
+            "description": ""
+        }
+
+        # remove existing section with same id
+        self.sections = [s for s in self.sections if s['id'] != sec_id]
+        self.sections.append(new_section)
+        self.save_sections()
+        self.load_sections()
+        self.update_status(f"Imported section: {sec_id}", "green")
+
+    def import_chapters(self):
+        """Import chapter files (JSON or ZIP) into the currently selected section."""
+        if not self.current_section:
+            messagebox.showwarning("Warning", "Select a section first")
+            return
+
+        files = filedialog.askopenfilenames(title="Select chapter files or zip",
+                                            filetypes=[("JSON","*.json"), ("Zip","*.zip"), ("All","*.*")])
+        if not files:
+            return
+
+        section = next((s for s in self.sections if s['id'] == self.current_section), None)
+        if not section:
+            messagebox.showerror("Error", "Selected section not found")
+            return
+
+        dest = self.base_path / section.get('path', '')
+        dest.mkdir(parents=True, exist_ok=True)
+
+        for f in files:
+            src = Path(f)
+            if src.is_file() and zipfile.is_zipfile(src):
+                ok, err = self._copy_source_to_dest(src, dest)
+                if not ok:
+                    messagebox.showerror("Import Failed", f"Failed to extract {src.name}: {err}")
+                    return
+            else:
+                try:
+                    # copy single file
+                    shutil.copy2(src, dest / src.name)
+                except Exception as e:
+                    messagebox.showerror("Import Failed", f"Failed to copy {src.name}: {e}")
+                    return
+
+        # Reload chapters and save
+        self.load_chapters()
+        self.save_chapter()
+        self.update_status("Chapters imported (and saved)", "green")
     
     def delete_chapter(self):
         """Delete chapter"""
@@ -393,9 +554,43 @@ class ExamEditor:
             return
         
         chapter = self.chapters[self.current_chapter_idx]
-        if messagebox.askyesno("Confirm Delete", 
-                              f"Delete chapter '{chapter['name']}'?\n\nThis will not delete the file."):
-            del self.chapters[self.current_chapter_idx]
+        # Custom dialog with optional checkbox to also delete the chapter file on disk
+        dlg = tk.Toplevel(self.root)
+        dlg.title("Delete Chapter")
+        dlg.geometry("480x160")
+        dlg.transient(self.root)
+        dlg.grab_set()
+
+        frame = ttk.Frame(dlg, padding=12)
+        frame.pack(fill=tk.BOTH, expand=True)
+
+        ttk.Label(frame, text=f"Delete chapter '{chapter.get('name','')}'?", font=("", 10, "bold")).pack(anchor=tk.W, pady=(0,8))
+        ttk.Label(frame, text="This will remove the chapter from the list.").pack(anchor=tk.W)
+
+        del_var = tk.BooleanVar(value=False)
+        ttk.Checkbutton(frame, text="Also delete chapter file from disk (permanent)", variable=del_var).pack(anchor=tk.W, pady=8)
+
+        btn_frame = ttk.Frame(frame)
+        btn_frame.pack(fill=tk.X, pady=(10,0))
+
+        def do_delete():
+            # If user chose to delete the file, attempt it
+            if del_var.get():
+                try:
+                    # Determine file path relative to the current section
+                    section = next((s for s in self.sections if s['id'] == self.current_section), None)
+                    if section:
+                        fpath = self.base_path / section.get('path', '') / chapter.get('file', '')
+                        if fpath.exists():
+                            fpath.unlink()
+                except Exception as e:
+                    messagebox.showerror("Error", f"Failed to delete chapter file: {e}")
+                    return
+
+            try:
+                del self.chapters[self.current_chapter_idx]
+            except Exception:
+                pass
             self.current_chapter_idx = None
             self.refresh_chapters_tree()
             self.ch_id.delete(0, tk.END)
@@ -403,7 +598,14 @@ class ExamEditor:
             self.ch_count.delete(0, tk.END)
             self.update_chapter_btn.config(state="disabled")
             self.update_status("Chapter deleted (click Save All)", "orange")
-    
+            dlg.destroy()
+
+        def cancel():
+            dlg.destroy()
+
+        ttk.Button(btn_frame, text="Delete", command=do_delete, width=12).pack(side=tk.RIGHT, padx=6)
+        ttk.Button(btn_frame, text="Cancel", command=cancel, width=12).pack(side=tk.RIGHT)
+            
     def save_chapter(self):
         """Save chapter changes"""
         if not self.current_section:
