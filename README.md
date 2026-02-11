@@ -61,4 +61,83 @@ The program automatically creates the folder and empty `chapters.json` file.
 
 **Example folder structure after adding/importing:**
 
+## JSON Structure
+
+### chapters.json
+Index file for a subject containing metadata about all chapters. Located in `data/<subject>/chapters.json`.
+
+**Structure:**
+```json
+[
+  {
+    "id": "1",
+    "name": "Chapter Name",
+    "q": 45,
+    "file": "chapter1.json"
+  }
+]
+```
+
+**Fields:**
+- **id** (string): Unique identifier for the chapter within the subject
+- **name** (string): Display name of the chapter
+- **q** (number): Total number of questions in this chapter
+- **file** (string): Filename of the chapter data file (e.g., `chapter1.json`)
+
+### Chapter File (chapterX.json)
+Contains all questions, answers, and explanations for a chapter. Located in `data/<subject>/chapterX.json`.
+
+**Structure:**
+```json
+{
+  "id": "task-0",
+  "label": "chapter=1, username=example",
+  "params": {
+    "chapter": "1",
+    "username": "example"
+  },
+  "title": "Chapter Title",
+  "questions": [
+    {
+      "id": "1.1",
+      "number": "1.1",
+      "text": "Question text here<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Choice text"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Answer explanation text"
+    }
+  ]
+}
+```
+
+**Root Fields:**
+- **id** (string): Unique identifier for the task/chapter
+- **label** (string): Human-readable label
+- **params** (object): Additional metadata parameters (chapter number, username, etc.)
+- **title** (string): Display title of the chapter
+- **questions** (array): Array of question objects
+
+**Question Object Fields:**
+- **id** (string): Unique identifier for the question
+- **number** (string): Question number (e.g., "1.1")
+- **text** (string): Question content (supports HTML markup)
+- **choices** (array): Array of answer choice objects
+- **inputName** (string): Form input field name
+- **inputType** (string): Type of input (`radio` for multiple choice, etc.)
+- **correctAnswer** (string): Value of the correct choice
+- **explanation** (string): Explanation of the correct answer
+
+**Choice Object Fields:**
+- **value** (string): Internal value (e.g., "A", "B", "C", "D")
+- **label** (string): Display label for the choice
+- **text** (string): Display text for the choice
+
 
