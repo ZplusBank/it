@@ -1,7 +1,27 @@
 # IT Exam System
 
 ## Overview
-A static, client-side exam engine for IT subjects. It uses a JSON-based data structure and a Python builder tool for management.
+A client-side exam engine for IT subjects using JSON-based data. Users select a subject → select chapters → take an exam → view results.
+
+## How It Works
+1. **Load subjects** from `js/exam-config.js`
+2. **Select chapters** to study
+3. **Take exam** - answer questions one by one
+4. **View results** - score and explanations
+
+## File Structure
+```
+index.html                    # Main app
+js/exam-engine.js            # Exam logic & UI
+js/exam-config.js            # Subject & chapter config
+css/exam-styles.css          # Styles with dark/light theme
+data/<subject>/              # Subject folders
+  ├── chapter1.json          # Questions & answers
+  ├── chapter2.json
+  └── chapters.json          # Chapter index
+config/sections.json         # Subject registry
+builder/                      # Python tool to manage data
+```
 
 ## Project Structure
 
@@ -102,6 +122,7 @@ Contains all questions, answers, and explanations for a chapter. Located in `dat
       "id": "1.1",
       "number": "1.1",
       "text": "Question text here<br>",
+      "image": "path/to/image.png",
       "choices": [
         {
           "value": "A",
@@ -129,11 +150,12 @@ Contains all questions, answers, and explanations for a chapter. Located in `dat
 - **id** (string): Unique identifier for the question
 - **number** (string): Question number (e.g., "1.1")
 - **text** (string): Question content (supports HTML markup)
+- **image** (string, optional): URL to question illustration/diagram
 - **choices** (array): Array of answer choice objects
 - **inputName** (string): Form input field name
-- **inputType** (string): Type of input (`radio` for multiple choice, etc.)
-- **correctAnswer** (string): Value of the correct choice
-- **explanation** (string): Explanation of the correct answer
+- **inputType** (string): Type of input (`radio` for multiple choice, `checkbox` for multiple answers)
+- **correctAnswer** (string): Value of the correct choice (or space-separated letters for checkbox type)
+- **explanation** (string, optional): Explanation of the correct answer
 
 **Choice Object Fields:**
 - **value** (string): Internal value (e.g., "A", "B", "C", "D")
