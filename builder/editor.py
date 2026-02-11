@@ -33,6 +33,7 @@ class AdvancedChapterEditor:
         self.chapter_data = None
         self.current_question_idx = None
         self.questions = []
+        self.current_image_path = None
         
         self.load_chapter_data()
         self.setup_ui()
@@ -146,13 +147,22 @@ class AdvancedChapterEditor:
         img_frame = ttk.Frame(self.editor_frame)
         img_frame.pack(fill=tk.X, padx=10, pady=(0, 10))
         
-        self.q_image = ttk.Entry(img_frame)
+        self.q_image = ttk.Entry(img_frame, state="readonly")
         self.q_image.pack(side=tk.LEFT, fill=tk.X, expand=True)
         
         ttk.Button(img_frame, text="Browse", command=self.select_image,
                   width=10).pack(side=tk.LEFT, padx=(5, 0))
         ttk.Button(img_frame, text="Clear", command=self.clear_image,
                   width=8).pack(side=tk.LEFT, padx=2)
+        
+        # Image preview section
+        ttk.Label(self.editor_frame, text="Image Preview:", font=("", 9, "bold")).pack(
+            fill=tk.X, padx=10, pady=(10, 5))
+        self.image_preview_frame = ttk.Frame(self.editor_frame, relief=tk.SUNKEN, borderwidth=1)
+        self.image_preview_frame.pack(fill=tk.BOTH, padx=10, pady=(0, 10), height=80)
+        
+        self.image_preview_label = ttk.Label(self.image_preview_frame, text="No image selected")
+        self.image_preview_label.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
         
         # Input Type
         ttk.Label(self.editor_frame, text="Input Type:", font=("", 9, "bold")).pack(
@@ -236,8 +246,25 @@ class AdvancedChapterEditor:
         self.q_text.delete(1.0, tk.END)
         self.q_text.insert(1.0, q.get('text', ''))
         
+        # Update image field
+        image_path = q.get('image', '')
+        self.q_image.config(state="normal")
         self.q_image.delete(0, tk.END)
-        self.q_image.insert(0, q.get('image', ''))
+        self.q_image.insert(0, image_path)
+        self.q_image.config(state="readonly")
+        
+        # Update image preview
+        if image_path:
+            full_path = self.base_path / image_path
+            if full_path.exists():
+                img_size = full_path.stat().st_size / 1024
+                img_name = Path(image_path).name
+                preview_text = f"✓ Image: {img_name}\nSize: {img_size:.1f} KB"
+                self.image_preview_label.config(text=preview_text)
+            else:
+                self.image_preview_label.config(text=f"⚠️ Image file not found:\n{image_path}")
+        else:
+            self.image_preview_label.config(text="No image selected")
         
         self.q_input_type.set(q.get('inputType', 'radio'))
         
@@ -386,6 +413,10 @@ class AdvancedChapterEditor:
     
     def select_image(self):
         """Select image for current question"""
+        if self.current_question_idx is None:
+            messagebox.showwarning("Warning", "Select a question first")
+            return
+        
         file_path = filedialog.askopenfilename(
             title="Select Image",
             filetypes=[("Images", "*.jpg *.jpeg *.png *.gif"), ("All Files", "*.*")]
@@ -395,21 +426,65 @@ class AdvancedChapterEditor:
             return
         
         try:
-            # Copy image to images folder
             src = Path(file_path)
-            dest = self.images_folder / src.name
+            
+            # Get question number for image naming
+            q = self.questions[self.current_question_idx]
+            q_number = q.get('number', str(self.current_question_idx + 1))
+            file_ext = src.suffix.lower()  # Get extension like .jpg, .png
+            
+            # Rename image to imageN.ext format (replace . with _ in question number)
+            safe_q_number = q_number.replace('.', '_')
+            image_name = f"image{safe_q_number}{file_ext}"
+            dest = self.images_folder / image_name
+            
+            # Copy image to images folder
             shutil.copy2(src, dest)
             
-            # Update image path in question (relative path)
-            rel_path = f"data/{self.section_path.name}/images/{src.name}"
+            # Get the section name from section_path
+            section_name = Path(self.section_path).name
+            
+            # Update image path (relative path for web)
+            rel_path = f"data/{section_name}/images/{image_name}"
+            
+            # Store path and update entry field
+            self.current_image_path = rel_path
+            
+            # Update entry field (readonly, so use different method)
+            self.q_image.config(state="normal")
             self.q_image.delete(0, tk.END)
             self.q_image.insert(0, rel_path)
+            self.q_image.config(state="readonly")
+            
+            # Update preview
+            self.update_image_preview(dest, image_name)
+            
+            messagebox.showinfo("Success", f"Image saved as:\n{image_name}")
         except Exception as e:
             messagebox.showerror("Error", f"Failed to copy image: {e}")
+            self.image_preview_label.config(text=f"Error: {str(e)}")
     
     def clear_image(self):
         """Clear image for current question"""
+        self.q_image.config(state="normal")
         self.q_image.delete(0, tk.END)
+        self.q_image.config(state="readonly")
+        self.current_image_path = None
+        self.image_preview_label.config(text="No image selected")
+    
+    def update_image_preview(self, image_path, image_name):
+        """Update image preview in UI"""
+        try:
+            if not Path(image_path).exists():
+                self.image_preview_label.config(text="Image file not found ❌")
+                return
+            
+            # Show file info as text (file size and name)
+            img_size = Path(image_path).stat().st_size / 1024  # Size in KB
+            preview_text = f"✓ Image loaded: {image_name}\nSize: {img_size:.1f} KB"
+            self.image_preview_label.config(text=preview_text)
+        except Exception as e:
+            self.image_preview_label.config(text=f"Error: {str(e)}")
     
     def update_current_question(self):
         """Update current question with edited values"""
@@ -422,14 +497,22 @@ class AdvancedChapterEditor:
         q['id'] = self.q_id.get()
         q['number'] = self.q_number.get()
         q['text'] = self.q_text.get(1.0, tk.END).strip()
-        q['image'] = self.q_image.get()
+        
+        # Get image path from entry field and save it properly
+        image_path = self.q_image.get().strip()
+        if image_path:
+            q['image'] = image_path
+        else:
+            # Remove image key if empty
+            q.pop('image', None)
+        
         q['inputType'] = self.q_input_type.get()
         q['correctAnswer'] = self.q_correct.get()
         q['explanation'] = self.q_explanation.get(1.0, tk.END).strip()
         
         self.refresh_questions_list()
         self.questions_listbox.selection_set(self.current_question_idx)
-        messagebox.showinfo("Success", "Question updated")
+        messagebox.showinfo("Success", "Question updated ✓\n(Click 'Save Changes' to save to file)")
     
     def add_question(self):
         """Add new question"""
@@ -479,7 +562,14 @@ class AdvancedChapterEditor:
             with open(self.chapter_file, 'w', encoding='utf-8') as f:
                 json.dump(self.chapter_data, f, indent=2, ensure_ascii=False)
             
-            messagebox.showinfo("Success", "Chapter saved successfully!")
+            # Count questions with images
+            questions_with_images = sum(1 for q in self.questions if q.get('image'))
+            
+            messagebox.showinfo("Success", 
+                f"Chapter saved successfully! ✓\n\n"
+                f"Total questions: {len(self.questions)}\n"
+                f"Questions with images: {questions_with_images}\n"
+                f"File: {self.chapter_file.name}")
         except Exception as e:
             messagebox.showerror("Error", f"Failed to save chapter: {e}")
 
