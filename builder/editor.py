@@ -12,6 +12,477 @@ import re
 import shutil
 import zipfile
 
+class AdvancedChapterEditor:
+    """Advanced editor for chapter questions, choices, and images"""
+    def __init__(self, parent, chapter_file, section_path, base_path):
+        self.parent = parent
+        self.chapter_file = Path(chapter_file)
+        self.section_path = Path(section_path)
+        self.base_path = Path(base_path)
+        # Create images folder with correct absolute path
+        self.images_folder = self.base_path / self.section_path / "images"
+        
+        # Create images folder if it doesn't exist
+        self.images_folder.mkdir(parents=True, exist_ok=True)
+        
+        self.window = tk.Toplevel(parent)
+        self.window.title(f"Advanced Chapter Editor - {self.chapter_file.stem}")
+        self.window.geometry("1000x700")
+        self.window.transient(parent)
+        
+        self.chapter_data = None
+        self.current_question_idx = None
+        self.questions = []
+        
+        self.load_chapter_data()
+        self.setup_ui()
+        self.refresh_questions_list()
+        
+    def load_chapter_data(self):
+        """Load chapter JSON file"""
+        try:
+            with open(self.chapter_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            # Handle both list and dict formats
+            if isinstance(data, list) and data:
+                self.chapter_data = data[0]
+            else:
+                self.chapter_data = data
+            
+            if not self.chapter_data:
+                self.chapter_data = {"questions": [], "title": ""}
+            
+            self.questions = self.chapter_data.get("questions", [])
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to load chapter: {e}")
+            self.window.destroy()
+    
+    def setup_ui(self):
+        """Create the UI for advanced editor"""
+        # Top toolbar
+        toolbar = ttk.Frame(self.window)
+        toolbar.pack(side=tk.TOP, fill=tk.X, padx=10, pady=10)
+        
+        ttk.Button(toolbar, text="➕ Add Question", command=self.add_question,
+                  width=15).pack(side=tk.LEFT, padx=5)
+        ttk.Button(toolbar, text="🗑️ Delete Question", command=self.delete_question,
+                  width=18).pack(side=tk.LEFT, padx=5)
+        ttk.Button(toolbar, text="💾 Save Changes", command=self.save_chapter,
+                  width=15).pack(side=tk.RIGHT, padx=5)
+        
+        # Main container
+        container = ttk.PanedWindow(self.window, orient=tk.HORIZONTAL)
+        container.pack(fill=tk.BOTH, expand=True, padx=10, pady=(0, 10))
+        
+        # Left panel - Questions list
+        left_frame = ttk.Frame(container)
+        container.add(left_frame, weight=1)
+        
+        ttk.Label(left_frame, text="Questions", font=("", 10, "bold")).pack(
+            fill=tk.X, pady=(0, 5))
+        
+        list_scroll = ttk.Scrollbar(left_frame, orient=tk.VERTICAL)
+        self.questions_listbox = tk.Listbox(left_frame, yscrollcommand=list_scroll.set)
+        list_scroll.config(command=self.questions_listbox.yview)
+        
+        self.questions_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        list_scroll.pack(side=tk.RIGHT, fill=tk.Y)
+        
+        self.questions_listbox.bind("<<ListboxSelect>>", self.on_question_select)
+        
+        # Right panel - Question editor
+        right_frame = ttk.Frame(container)
+        container.add(right_frame, weight=2)
+        
+        ttk.Label(right_frame, text="Edit Question", font=("", 10, "bold")).pack(
+            fill=tk.X, pady=(0, 5))
+        
+        # Create scrollable frame for question editor
+        self.editor_scroll = ttk.Scrollbar(right_frame, orient=tk.VERTICAL)
+        self.editor_canvas = tk.Canvas(right_frame, yscrollcommand=self.editor_scroll.set)
+        self.editor_scroll.config(command=self.editor_canvas.yview)
+        
+        self.editor_frame = ttk.Frame(self.editor_canvas)
+        self.editor_frame.bind("<Configure>", lambda e: self.editor_canvas.configure(
+            scrollregion=self.editor_canvas.bbox("all")))
+        
+        self.canvas_window = self.editor_canvas.create_window((0, 0), window=self.editor_frame,
+                                                               anchor=tk.NW)
+        
+        self.editor_canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        self.editor_scroll.pack(side=tk.RIGHT, fill=tk.Y)
+        
+        # Initialize editor widgets (will be populated when question is selected)
+        self.init_editor_widgets()
+    
+    def init_editor_widgets(self):
+        """Initialize editor widget placeholders"""
+        for widget in self.editor_frame.winfo_children():
+            widget.destroy()
+        
+        # Question ID
+        ttk.Label(self.editor_frame, text="Question ID:", font=("", 9, "bold")).pack(
+            fill=tk.X, padx=10, pady=(10, 5))
+        self.q_id = ttk.Entry(self.editor_frame)
+        self.q_id.pack(fill=tk.X, padx=10, pady=(0, 10))
+        
+        # Question Number
+        ttk.Label(self.editor_frame, text="Question Number:", font=("", 9, "bold")).pack(
+            fill=tk.X, padx=10, pady=(0, 5))
+        self.q_number = ttk.Entry(self.editor_frame)
+        self.q_number.pack(fill=tk.X, padx=10, pady=(0, 10))
+        
+        # Question Text
+        ttk.Label(self.editor_frame, text="Question Text:", font=("", 9, "bold")).pack(
+            fill=tk.X, padx=10, pady=(0, 5))
+        self.q_text = tk.Text(self.editor_frame, height=6, wrap=tk.WORD)
+        self.q_text.pack(fill=tk.X, padx=10, pady=(0, 10))
+        
+        # Image
+        ttk.Label(self.editor_frame, text="Question Image:", font=("", 9, "bold")).pack(
+            fill=tk.X, padx=10, pady=(0, 5))
+        
+        img_frame = ttk.Frame(self.editor_frame)
+        img_frame.pack(fill=tk.X, padx=10, pady=(0, 10))
+        
+        self.q_image = ttk.Entry(img_frame)
+        self.q_image.pack(side=tk.LEFT, fill=tk.X, expand=True)
+        
+        ttk.Button(img_frame, text="Browse", command=self.select_image,
+                  width=10).pack(side=tk.LEFT, padx=(5, 0))
+        ttk.Button(img_frame, text="Clear", command=self.clear_image,
+                  width=8).pack(side=tk.LEFT, padx=2)
+        
+        # Input Type
+        ttk.Label(self.editor_frame, text="Input Type:", font=("", 9, "bold")).pack(
+            fill=tk.X, padx=10, pady=(0, 5))
+        self.q_input_type = ttk.Combobox(self.editor_frame, values=["radio", "checkbox"],
+                                        state="readonly", width=20)
+        self.q_input_type.pack(fill=tk.X, padx=10, pady=(0, 10))
+        
+        # Correct Answer
+        ttk.Label(self.editor_frame, text="Correct Answer(s):", font=("", 9, "bold")).pack(
+            fill=tk.X, padx=10, pady=(0, 5))
+        self.q_correct = ttk.Entry(self.editor_frame)
+        self.q_correct.pack(fill=tk.X, padx=10, pady=(0, 10))
+        
+        # Explanation
+        ttk.Label(self.editor_frame, text="Explanation:", font=("", 9, "bold")).pack(
+            fill=tk.X, padx=10, pady=(0, 5))
+        self.q_explanation = tk.Text(self.editor_frame, height=4, wrap=tk.WORD)
+        self.q_explanation.pack(fill=tk.X, padx=10, pady=(0, 10))
+        
+        # Choices section
+        ttk.Label(self.editor_frame, text="Choices:", font=("", 9, "bold")).pack(
+            fill=tk.X, padx=10, pady=(10, 5))
+        
+        # Choices listbox
+        choices_frame = ttk.Frame(self.editor_frame)
+        choices_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=(0, 10))
+        
+        choices_scroll = ttk.Scrollbar(choices_frame, orient=tk.VERTICAL)
+        self.choices_listbox = tk.Listbox(choices_frame, height=5,
+                                         yscrollcommand=choices_scroll.set)
+        choices_scroll.config(command=self.choices_listbox.yview)
+        
+        self.choices_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        choices_scroll.pack(side=tk.RIGHT, fill=tk.Y)
+        self.choices_listbox.bind("<<ListboxSelect>>", self.on_choice_select)
+        
+        # Choice edit buttons
+        choice_btn_frame = ttk.Frame(self.editor_frame)
+        choice_btn_frame.pack(fill=tk.X, padx=10, pady=(0, 10))
+        
+        ttk.Button(choice_btn_frame, text="➕ Add Choice", command=self.add_choice,
+                  width=12).pack(side=tk.LEFT, padx=2)
+        ttk.Button(choice_btn_frame, text="✏️ Edit Choice", command=self.edit_choice,
+                  width=12).pack(side=tk.LEFT, padx=2)
+        ttk.Button(choice_btn_frame, text="🗑️ Delete Choice", command=self.delete_choice,
+                  width=14).pack(side=tk.LEFT, padx=2)
+        
+        ttk.Button(choice_btn_frame, text="Update Question", command=self.update_current_question,
+                  width=16).pack(side=tk.RIGHT, padx=2)
+    
+    def refresh_questions_list(self):
+        """Refresh questions list"""
+        self.questions_listbox.delete(0, tk.END)
+        for idx, q in enumerate(self.questions):
+            display = f"{idx + 1}. {q.get('number', '')} - {q.get('text', '')[:60]}"
+            self.questions_listbox.insert(tk.END, display)
+    
+    def on_question_select(self, event):
+        """Handle question selection"""
+        selection = self.questions_listbox.curselection()
+        if not selection:
+            return
+        
+        self.current_question_idx = selection[0]
+        self.display_question()
+    
+    def display_question(self):
+        """Display current question in editor"""
+        if self.current_question_idx is None or self.current_question_idx >= len(self.questions):
+            return
+        
+        q = self.questions[self.current_question_idx]
+        
+        self.q_id.delete(0, tk.END)
+        self.q_id.insert(0, q.get('id', ''))
+        
+        self.q_number.delete(0, tk.END)
+        self.q_number.insert(0, q.get('number', ''))
+        
+        self.q_text.delete(1.0, tk.END)
+        self.q_text.insert(1.0, q.get('text', ''))
+        
+        self.q_image.delete(0, tk.END)
+        self.q_image.insert(0, q.get('image', ''))
+        
+        self.q_input_type.set(q.get('inputType', 'radio'))
+        
+        self.q_correct.delete(0, tk.END)
+        self.q_correct.insert(0, q.get('correctAnswer', ''))
+        
+        self.q_explanation.delete(1.0, tk.END)
+        self.q_explanation.insert(1.0, q.get('explanation', ''))
+        
+        # Load choices
+        self.refresh_choices_list()
+    
+    def refresh_choices_list(self):
+        """Refresh choices list"""
+        if self.current_question_idx is None:
+            return
+        
+        self.choices_listbox.delete(0, tk.END)
+        q = self.questions[self.current_question_idx]
+        choices = q.get('choices', [])
+        
+        for choice in choices:
+            display = f"{choice.get('value', '')} - {choice.get('text', '')}"
+            self.choices_listbox.insert(tk.END, display)
+    
+    def on_choice_select(self, event):
+        """Handle choice selection"""
+        pass  # Can add more features later
+    
+    def add_choice(self):
+        """Add new choice to current question"""
+        if self.current_question_idx is None:
+            messagebox.showwarning("Warning", "Select a question first")
+            return
+        
+        dialog = tk.Toplevel(self.window)
+        dialog.title("Add Choice")
+        dialog.geometry("400x200")
+        dialog.transient(self.window)
+        dialog.grab_set()
+        
+        frame = ttk.Frame(dialog, padding=15)
+        frame.pack(fill=tk.BOTH, expand=True)
+        
+        ttk.Label(frame, text="Choice Value (A, B, C, D):", font=("", 9, "bold")).pack(
+            fill=tk.X, pady=(0, 5))
+        val_entry = ttk.Entry(frame)
+        val_entry.pack(fill=tk.X, pady=(0, 10))
+        val_entry.focus()
+        
+        ttk.Label(frame, text="Choice Text:", font=("", 9, "bold")).pack(
+            fill=tk.X, pady=(0, 5))
+        text_entry = tk.Text(frame, height=4, wrap=tk.WORD)
+        text_entry.pack(fill=tk.BOTH, expand=True, pady=(0, 10))
+        
+        def save():
+            value = val_entry.get().strip()
+            text = text_entry.get(1.0, tk.END).strip()
+            
+            if not value or not text:
+                messagebox.showwarning("Warning", "Value and text are required")
+                return
+            
+            q = self.questions[self.current_question_idx]
+            new_choice = {
+                "value": value,
+                "label": value,
+                "text": text
+            }
+            
+            if "choices" not in q:
+                q["choices"] = []
+            
+            q["choices"].append(new_choice)
+            self.refresh_choices_list()
+            dialog.destroy()
+        
+        ttk.Button(frame, text="✓ Add", command=save, width=20).pack(pady=10)
+        dialog.bind('<Return>', lambda e: save())
+    
+    def edit_choice(self):
+        """Edit selected choice"""
+        if self.current_question_idx is None:
+            messagebox.showwarning("Warning", "Select a question first")
+            return
+        
+        selection = self.choices_listbox.curselection()
+        if not selection:
+            messagebox.showwarning("Warning", "Select a choice first")
+            return
+        
+        choice_idx = selection[0]
+        q = self.questions[self.current_question_idx]
+        choice = q.get('choices', [])[choice_idx]
+        
+        dialog = tk.Toplevel(self.window)
+        dialog.title("Edit Choice")
+        dialog.geometry("400x200")
+        dialog.transient(self.window)
+        dialog.grab_set()
+        
+        frame = ttk.Frame(dialog, padding=15)
+        frame.pack(fill=tk.BOTH, expand=True)
+        
+        ttk.Label(frame, text="Choice Value:", font=("", 9, "bold")).pack(
+            fill=tk.X, pady=(0, 5))
+        val_entry = ttk.Entry(frame)
+        val_entry.insert(0, choice.get('value', ''))
+        val_entry.pack(fill=tk.X, pady=(0, 10))
+        val_entry.focus()
+        
+        ttk.Label(frame, text="Choice Text:", font=("", 9, "bold")).pack(
+            fill=tk.X, pady=(0, 5))
+        text_entry = tk.Text(frame, height=4, wrap=tk.WORD)
+        text_entry.insert(1.0, choice.get('text', ''))
+        text_entry.pack(fill=tk.BOTH, expand=True, pady=(0, 10))
+        
+        def save():
+            value = val_entry.get().strip()
+            text = text_entry.get(1.0, tk.END).strip()
+            
+            if not value or not text:
+                messagebox.showwarning("Warning", "Value and text are required")
+                return
+            
+            choice["value"] = value
+            choice["label"] = value
+            choice["text"] = text
+            self.refresh_choices_list()
+            dialog.destroy()
+        
+        ttk.Button(frame, text="✓ Save", command=save, width=20).pack(pady=10)
+        dialog.bind('<Return>', lambda e: save())
+    
+    def delete_choice(self):
+        """Delete selected choice"""
+        selection = self.choices_listbox.curselection()
+        if not selection:
+            messagebox.showwarning("Warning", "Select a choice first")
+            return
+        
+        choice_idx = selection[0]
+        q = self.questions[self.current_question_idx]
+        del q.get('choices', [])[choice_idx]
+        self.refresh_choices_list()
+    
+    def select_image(self):
+        """Select image for current question"""
+        file_path = filedialog.askopenfilename(
+            title="Select Image",
+            filetypes=[("Images", "*.jpg *.jpeg *.png *.gif"), ("All Files", "*.*")]
+        )
+        
+        if not file_path:
+            return
+        
+        try:
+            # Copy image to images folder
+            src = Path(file_path)
+            dest = self.images_folder / src.name
+            shutil.copy2(src, dest)
+            
+            # Update image path in question (relative path)
+            rel_path = f"data/{self.section_path.name}/images/{src.name}"
+            self.q_image.delete(0, tk.END)
+            self.q_image.insert(0, rel_path)
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to copy image: {e}")
+    
+    def clear_image(self):
+        """Clear image for current question"""
+        self.q_image.delete(0, tk.END)
+    
+    def update_current_question(self):
+        """Update current question with edited values"""
+        if self.current_question_idx is None:
+            messagebox.showwarning("Warning", "No question selected")
+            return
+        
+        q = self.questions[self.current_question_idx]
+        
+        q['id'] = self.q_id.get()
+        q['number'] = self.q_number.get()
+        q['text'] = self.q_text.get(1.0, tk.END).strip()
+        q['image'] = self.q_image.get()
+        q['inputType'] = self.q_input_type.get()
+        q['correctAnswer'] = self.q_correct.get()
+        q['explanation'] = self.q_explanation.get(1.0, tk.END).strip()
+        
+        self.refresh_questions_list()
+        self.questions_listbox.selection_set(self.current_question_idx)
+        messagebox.showinfo("Success", "Question updated")
+    
+    def add_question(self):
+        """Add new question"""
+        new_q = {
+            "id": f"{len(self.questions) + 1}",
+            "number": f"{len(self.questions) + 1}",
+            "text": "New question",
+            "image": "",
+            "choices": [
+                {"value": "A", "label": "A", "text": "Choice A"},
+                {"value": "B", "label": "B", "text": "Choice B"}
+            ],
+            "inputName": f"Q{len(self.questions)}",
+            "inputType": "radio",
+            "correctAnswer": "A",
+            "explanation": ""
+        }
+        
+        self.questions.append(new_q)
+        self.refresh_questions_list()
+        self.questions_listbox.selection_set(len(self.questions) - 1)
+        self.current_question_idx = len(self.questions) - 1
+        self.display_question()
+        messagebox.showinfo("Success", "New question added")
+    
+    def delete_question(self):
+        """Delete current question"""
+        if self.current_question_idx is None:
+            messagebox.showwarning("Warning", "Select a question first")
+            return
+        
+        if messagebox.askyesno("Confirm", "Delete this question?"):
+            del self.questions[self.current_question_idx]
+            self.current_question_idx = None
+            self.refresh_questions_list()
+            self.init_editor_widgets()
+            messagebox.showinfo("Success", "Question deleted")
+    
+    def save_chapter(self):
+        """Save chapter data back to JSON file"""
+        try:
+            # Update chapter data
+            if self.chapter_data:
+                self.chapter_data["questions"] = self.questions
+            
+            # Save to file
+            with open(self.chapter_file, 'w', encoding='utf-8') as f:
+                json.dump(self.chapter_data, f, indent=2, ensure_ascii=False)
+            
+            messagebox.showinfo("Success", "Chapter saved successfully!")
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to save chapter: {e}")
+
 class ExamEditor:
     def __init__(self, root):
         self.root = root
@@ -136,6 +607,7 @@ class ExamEditor:
         chapters_scroll.pack(side=tk.RIGHT, fill=tk.Y)
         
         self.chapters_tree.bind("<<TreeviewSelect>>", self.on_chapter_select)
+        self.chapters_tree.bind("<Double-1>", self.on_chapter_double_click)
         
         # Chapter editor panel
         editor_frame = ttk.LabelFrame(right_frame, text="✏️ Edit Chapter", padding=15)
@@ -271,6 +743,34 @@ class ExamEditor:
         else:
             self.current_chapter_idx = None
             self.update_chapter_btn.config(state="disabled")
+    
+    def on_chapter_double_click(self, event):
+        """Open advanced chapter editor when double-clicking a chapter"""
+        selection = self.chapters_tree.selection()
+        if not selection:
+            return
+        
+        if not self.current_section:
+            messagebox.showwarning("Warning", "Select a section first")
+            return
+        
+        self.current_chapter_idx = int(selection[0])
+        chapter = self.chapters[self.current_chapter_idx]
+        
+        # Get the chapter file path
+        section = next((s for s in self.sections if s['id'] == self.current_section), None)
+        if not section:
+            messagebox.showerror("Error", "Section not found")
+            return
+        
+        chapter_file_path = self.base_path / section['path'] / chapter.get('file', '')
+        
+        if not chapter_file_path.exists():
+            messagebox.showerror("Error", f"Chapter file not found: {chapter_file_path}")
+            return
+        
+        # Open advanced editor
+        AdvancedChapterEditor(self.root, chapter_file_path, section['path'], self.base_path)
     
     def update_chapter(self):
         """Update the selected chapter"""
