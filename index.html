@@ -18,7 +18,7 @@
     <!-- Prism.js Theme (Tomorrow Night) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css">
 
-    <!-- MathJax 3 with mhchem extension -->
+    <!-- MathJax 3 with mhchem extension (SVG output) -->
     <script>
         window.MathJax = {
             tex: {
@@ -26,11 +26,14 @@
                 displayMath: [['$$', '$$']],
                 packages: { '[+]': ['mhchem'] }
             },
+            svg: {
+                fontCache: 'global'
+            },
             loader: { load: ['[tex]/mhchem'] },
             startup: { typeset: false }
         };
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
 
     <!-- Marked.js (Markdown parser) -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
