@@ -261,7 +261,11 @@ const app = {
             .replace(/<span class="literal">/g, '<span class="literal">')
             .replace(/<span class="constant">/g, '<span class="constant">');
 
-        let html = `<div class="question-text">${questionText}</div>`;
+        let imageHtml = '';
+        if (question.image) {
+            imageHtml = `<div class="question-image"><img src="${question.image}" alt="Question illustration"></div>`;
+        }
+        let html = `${imageHtml}<div class="question-text">${questionText}</div>`;
 
         const isCheckbox = question.inputType === 'checkbox';
         const inputType = isCheckbox ? 'checkbox' : 'radio';
