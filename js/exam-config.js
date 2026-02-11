@@ -110,7 +110,14 @@ const EXAM_CONFIG = [
     "name": "Algorithms",
     "description": "Algorithm Analysis",
     "path": "data/algorithm",
-    "chapters": []
+    "chapters": [
+      {
+        "id": "chapterlecture 9 Greedy Algorithms.pdf",
+        "name": "Principles of Greedy Algorithms and Activity Selection & The Knapsack Problems: Fractional and 0-1",
+        "q": 10,
+        "file": "data/algorithm/chapterlecture 9 Greedy Algorithms.pdf.json"
+      }
+    ]
   },
   {
     "id": "data_structure",

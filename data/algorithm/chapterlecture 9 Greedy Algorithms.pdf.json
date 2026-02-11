@@ -1,0 +1,322 @@
+{
+  "id": "upload-1770837815841",
+  "label": "lecture 9 Greedy Algorithms.pdf",
+  "params": {
+    "file": "lecture 9 Greedy Algorithms.pdf"
+  },
+  "title": "Principles of Greedy Algorithms and Activity Selection & The Knapsack Problems: Fractional and 0-1",
+  "questions": [
+    {
+      "id": "upload-1770837815841-0",
+      "number": "1",
+      "text": "What is the fundamental core idea behind a Greedy Algorithm?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It explores all possible solutions to find the global optimum.",
+          "text": "It explores all possible solutions to find the global optimum."
+        },
+        {
+          "value": "B",
+          "label": "It breaks the problem into overlapping subproblems and solves them bottom-up.",
+          "text": "It breaks the problem into overlapping subproblems and solves them bottom-up."
+        },
+        {
+          "value": "C",
+          "label": "It makes the locally optimal choice at each step in the hope of finding a global optimum.",
+          "text": "It makes the locally optimal choice at each step in the hope of finding a global optimum."
+        },
+        {
+          "value": "D",
+          "label": "It randomly selects a path and backtracks if the solution is invalid.",
+          "text": "It randomly selects a path and backtracks if the solution is invalid."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Greedy algorithms make a locally optimal choice at every step with the goal of reaching a globally optimal solution, though this is not always guaranteed for all problem types."
+    },
+    {
+      "id": "upload-1770837815841-1",
+      "number": "2",
+      "text": "Which property is required to prove that a greedy algorithm yields an optimal solution?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Greedy Choice Property",
+          "text": "Greedy Choice Property"
+        },
+        {
+          "value": "B",
+          "label": "Overlapping Subproblems",
+          "text": "Overlapping Subproblems"
+        },
+        {
+          "value": "C",
+          "label": "Memoization",
+          "text": "Memoization"
+        },
+        {
+          "value": "D",
+          "label": "Recursion Depth",
+          "text": "Recursion Depth"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To prove a greedy algorithm works, one must typically demonstrate the Greedy Choice Property (a global optimum can be arrived at by selecting a local optimum) and Optimal Substructure."
+    },
+    {
+      "id": "upload-1770837815841-2",
+      "number": "3",
+      "text": "In the Activity Selection Problem, how should activities be sorted to apply the greedy strategy effectively?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Decreasing order of start times",
+          "text": "Decreasing order of start times"
+        },
+        {
+          "value": "B",
+          "label": "Increasing order of duration",
+          "text": "Increasing order of duration"
+        },
+        {
+          "value": "C",
+          "label": "Increasing order of finish times",
+          "text": "Increasing order of finish times"
+        },
+        {
+          "value": "D",
+          "label": "Decreasing order of value",
+          "text": "Decreasing order of value"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The standard greedy approach for the Activity Selection Problem is to sort activities by increasing finish times and select the first compatible activity."
+    },
+    {
+      "id": "upload-1770837815841-3",
+      "number": "4",
+      "text": "What is the time complexity of the `GREEDY-ACTIVITY-SELECTOR` algorithm if the input activities are already sorted by finish time?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "O(n^2)",
+          "text": "O(n^2)"
+        },
+        {
+          "value": "B",
+          "label": "O(n log n)",
+          "text": "O(n log n)"
+        },
+        {
+          "value": "C",
+          "label": "O(n)",
+          "text": "O(n)"
+        },
+        {
+          "value": "D",
+          "label": "O(1)",
+          "text": "O(1)"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "If the activities are already sorted, the algorithm simply iterates through the list once, resulting in a linear time complexity of O(n)."
+    },
+    {
+      "id": "upload-1770837815841-4",
+      "number": "5",
+      "text": "Two activities $a_i$ and $a_j$ are considered compatible in the Activity Selection Problem if:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Their time intervals overlap completely.",
+          "text": "Their time intervals overlap completely."
+        },
+        {
+          "value": "B",
+          "label": "The start time of one is greater than or equal to the finish time of the other.",
+          "text": "The start time of one is greater than or equal to the finish time of the other."
+        },
+        {
+          "value": "C",
+          "label": "The difference between their durations is minimal.",
+          "text": "The difference between their durations is minimal."
+        },
+        {
+          "value": "D",
+          "label": "They share the same resource at the same time.",
+          "text": "They share the same resource at the same time."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Compatibility requires that the intervals $[s_i, f_i)$ and $[s_j, f_j)$ do not overlap, meaning $f_i \\le s_j$ or $f_j \\le s_i$."
+    },
+    {
+      "id": "upload-1770837815841-5",
+      "number": "6",
+      "text": "Which variant of the Knapsack problem can be solved optimally using a greedy strategy?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "0-1 Knapsack Problem",
+          "text": "0-1 Knapsack Problem"
+        },
+        {
+          "value": "B",
+          "label": "Fractional Knapsack Problem",
+          "text": "Fractional Knapsack Problem"
+        },
+        {
+          "value": "C",
+          "label": "Both 0-1 and Fractional",
+          "text": "Both 0-1 and Fractional"
+        },
+        {
+          "value": "D",
+          "label": "Neither",
+          "text": "Neither"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Fractional Knapsack Problem allows taking portions of items, which satisfies the greedy choice property. The 0-1 variant requires Dynamic Programming."
+    },
+    {
+      "id": "upload-1770837815841-6",
+      "number": "7",
+      "text": "What is the optimal greedy criteria for selecting items in the Fractional Knapsack Problem?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Maximum total value ($v_i$)",
+          "text": "Maximum total value ($v_i$)"
+        },
+        {
+          "value": "B",
+          "label": "Minimum total weight ($w_i$)",
+          "text": "Minimum total weight ($w_i$)"
+        },
+        {
+          "value": "C",
+          "label": "Maximum value per unit weight ($v_i / w_i$)",
+          "text": "Maximum value per unit weight ($v_i / w_i$)"
+        },
+        {
+          "value": "D",
+          "label": "Minimum value per unit weight ($v_i / w_i$)",
+          "text": "Minimum value per unit weight ($v_i / w_i$)"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "To maximize the total value in a Fractional Knapsack, one should always prioritize items with the highest value-to-weight ratio."
+    },
+    {
+      "id": "upload-1770837815841-7",
+      "number": "8",
+      "text": "Consider the following items for a Fractional Knapsack with Capacity W=50:\n*   Item 1: $60, 10 lbs\n*   Item 2: $100, 20 lbs\n*   Item 3: $120, 30 lbs\n\nWhat is the maximum value obtainable?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "$220",
+          "text": "$220"
+        },
+        {
+          "value": "B",
+          "label": "$240",
+          "text": "$240"
+        },
+        {
+          "value": "C",
+          "label": "$280",
+          "text": "$280"
+        },
+        {
+          "value": "D",
+          "label": "$160",
+          "text": "$160"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Ratios: I1=$6/lb, I2=$5/lb, I3=$4/lb. Take all I1 (10lb, $60), all I2 (20lb, $100). Remaining cap: 20lb. Take 20lb of I3 (20 * $4 = $80). Total = $60 + $100 + $80 = $240."
+    },
+    {
+      "id": "upload-1770837815841-8",
+      "number": "9",
+      "text": "Why does the greedy strategy fail for the 0-1 Knapsack Problem?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It is too slow to sort the items.",
+          "text": "It is too slow to sort the items."
+        },
+        {
+          "value": "B",
+          "label": "Choosing the best ratio locally may leave the knapsack with empty space that could have been better utilized by a different combination.",
+          "text": "Choosing the best ratio locally may leave the knapsack with empty space that could have been better utilized by a different combination."
+        },
+        {
+          "value": "C",
+          "label": "It violates the optimal substructure property.",
+          "text": "It violates the optimal substructure property."
+        },
+        {
+          "value": "D",
+          "label": "The problem size is usually too large for greedy algorithms.",
+          "text": "The problem size is usually too large for greedy algorithms."
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In 0-1 Knapsack, you cannot take fractions. A greedy choice might fill the bag such that the remaining space cannot accommodate other high-value items, resulting in a suboptimal total value compared to a combination found via DP."
+    },
+    {
+      "id": "upload-1770837815841-9",
+      "number": "10",
+      "text": "Which recurrence relation correctly represents the Dynamic Programming solution for the 0-1 Knapsack Problem?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "P(i, w) = max(v_i + P(i-1, w), P(i-1, w-w_i))",
+          "text": "P(i, w) = max(v_i + P(i-1, w), P(i-1, w-w_i))"
+        },
+        {
+          "value": "B",
+          "label": "P(i, w) = v_i / w_i * P(i-1, w)",
+          "text": "P(i, w) = v_i / w_i * P(i-1, w)"
+        },
+        {
+          "value": "C",
+          "label": "P(i, w) = max(v_i + P(i-1, w-w_i), P(i-1, w))",
+          "text": "P(i, w) = max(v_i + P(i-1, w-w_i), P(i-1, w))"
+        },
+        {
+          "value": "D",
+          "label": "P(i, w) = min(P(i-1, w), P(i-1, w-w_i))",
+          "text": "P(i, w) = min(P(i-1, w), P(i-1, w-w_i))"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The value at step `i` with weight `w` is the maximum of either: not taking item `i` (inheriting `P(i-1, w)`) or taking item `i` (adding `v_i` to the optimal solution of the remaining weight `w-w_i`)."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 10
+}
