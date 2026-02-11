@@ -15,6 +15,35 @@
 
     <link rel="stylesheet" href="css/exam-styles.css">
 
+    <!-- Prism.js Theme (Tomorrow Night) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css">
+
+    <!-- MathJax 3 with mhchem extension -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']],
+                packages: { '[+]': ['mhchem'] }
+            },
+            loader: { load: ['[tex]/mhchem'] },
+            startup: { typeset: false }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+    <!-- Marked.js (Markdown parser) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Prism.js (Syntax Highlighting) -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-c.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-cpp.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-sql.min.js"></script>
+
     <!-- Theme Script to prevent flash of wrong theme -->
     <script>
         (function () {
@@ -112,6 +141,7 @@
     </div>
 
     <script src="js/exam-config.js"></script>
+    <script src="js/content-renderer.js"></script>
     <script src="js/exam-engine.js"></script>
     <script>
         // Close menus/popups with Escape key

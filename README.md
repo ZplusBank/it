@@ -118,6 +118,44 @@ When you double-click a chapter:
 
 ---
 
+## Content Authoring Guide
+
+Question text, choices, and explanations support **Markdown**, **LaTeX math**, **chemistry formulas**, and **syntax-highlighted code blocks**. Use the standard syntax below when writing question content.
+
+### Syntax Reference
+
+| Syntax | Use Case | Example |
+|--------|----------|---------|
+| `$...$` | Inline math/physics | `$F = ma$`, `$E = mc^2$` |
+| `$$...$$` | Display math (centered) | `$$\int_0^\infty e^{-x} dx = 1$$` |
+| `\ce{...}` | Chemistry (mhchem) | `\ce{H2O}`, `\ce{2H2 + O2 -> 2H2O}` |
+| `` `code` `` | Inline code | `` `System.out.println()` `` |
+| ```` ```java ```` | Code block | Fenced code with language tag |
+| `**bold**` | Bold text | `**important**` |
+| `*italic*` | Italic text | `*emphasis*` |
+| `- item` | Bullet list | `- First item` |
+
+### Supported Code Languages
+`java`, `python`, `c`, `cpp`, `csharp`, `sql`, `javascript`
+
+### Example Question JSON
+```json
+{
+  "id": "phys.1",
+  "text": "If $F = ma$ and $m = 5\\text{kg}$, $a = 3\\text{m/s}^2$, what is $F$?",
+  "choices": [
+    {"value": "A", "label": "A", "text": "$15\\text{N}$"},
+    {"value": "B", "label": "B", "text": "$8\\text{N}$"}
+  ],
+  "inputType": "radio",
+  "correctAnswer": "A",
+  "explanation": "Using **Newton's second law**: $$F = ma = 5 \\times 3 = 15\\text{N}$$"
+}
+```
+
+
+---
+
 ## Tips & Tricks
 
 ✅ **DO:**

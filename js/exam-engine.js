@@ -253,19 +253,14 @@ const app = {
 
         document.getElementById('currentQuestion').textContent = this.currentQuestionIndex + 1;
 
-        // Clean and format question text
-        let questionText = question.text
-            .replace(/&nbsp;/g, ' ')
-            .replace(/<br>/g, '<br>')
-            .replace(/<span class="keyword">/g, '<span class="keyword">')
-            .replace(/<span class="literal">/g, '<span class="literal">')
-            .replace(/<span class="constant">/g, '<span class="constant">');
+        // Render question text through ContentRenderer (Markdown + Math + Code)
+        const renderedText = ContentRenderer.render(question.text);
 
         let imageHtml = '';
         if (question.image) {
             imageHtml = `<div class="question-image"><img src="${question.image}" alt="Question illustration"></div>`;
         }
-        let html = `${imageHtml}<div class="question-text">${questionText}</div>`;
+        let html = `${imageHtml}<div class="question-text">${renderedText}</div>`;
 
         const isCheckbox = question.inputType === 'checkbox';
         const inputType = isCheckbox ? 'checkbox' : 'radio';
@@ -277,6 +272,9 @@ const app = {
                 ? (Array.isArray(currentAnswer) && currentAnswer.includes(choice.value))
                 : currentAnswer === choice.value;
 
+            // Render choice text through ContentRenderer
+            const renderedChoice = ContentRenderer.render(choice.text);
+
             html += `
                 <div class="choice ${isSelected ? 'selected' : ''}">
                     <input type="${inputType}" 
@@ -285,13 +283,16 @@ const app = {
                            value="${choice.value}"
                            ${isSelected ? 'checked' : ''}
                            onchange="app.selectAnswer('${choice.value}', ${isCheckbox})">
-                    <label for="choice-${choice.value}">${choice.text}</label>
+                    <label for="choice-${choice.value}">${renderedChoice}</label>
                 </div>
             `;
         });
         html += '</div>';
 
         container.innerHTML = html;
+
+        // Typeset MathJax on the question container
+        ContentRenderer.typeset(container);
 
         // Update button states
         document.getElementById('prevBtn').disabled = this.currentQuestionIndex === 0;
@@ -349,16 +350,20 @@ const app = {
             ? `Correct answers: ${question.correctAnswer.split('').join(', ')}`
             : `Correct answer: ${question.correctAnswer}`;
 
-        const explanationText = question.explanation || "Coming soon...";
+        const explanationRaw = question.explanation || "Coming soon...";
+        const renderedExplanation = ContentRenderer.render(explanationRaw);
 
         feedbackEl.innerHTML = `
             <strong>${message}</strong>
             <div class="correct-answer">${correctText}</div>
             <div class="explanation" style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(0,0,0,0.1);">
                 <strong>Explanation:</strong><br>
-                ${explanationText}
+                ${renderedExplanation}
             </div>
         `;
+
+        // Typeset MathJax on the feedback element
+        ContentRenderer.typeset(feedbackEl);
     },
 
     goToQuestion(index) {

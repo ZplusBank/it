@@ -536,6 +536,143 @@ header {
     color: #ce9178;
 }
 
+/* Prism.js Code Block Integration */
+.question-text pre[class*="language-"],
+.explanation pre[class*="language-"],
+.choice label pre[class*="language-"] {
+    background: #1e1e1e;
+    padding: 20px;
+    padding-top: 45px;
+    border-radius: 8px;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    overflow-x: auto;
+    margin: 20px 0;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    position: relative;
+    white-space: pre;
+}
+
+.question-text pre[class*="language-"]::before,
+.explanation pre[class*="language-"]::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ff5f56;
+    box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
+}
+
+.question-text pre[class*="language-"]::after,
+.explanation pre[class*="language-"]::after {
+    content: "Code";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 0.8rem;
+    font-family: sans-serif;
+    pointer-events: none;
+}
+
+/* Markdown Content Styles */
+.question-text p,
+.explanation p {
+    margin-bottom: 0.5em;
+}
+
+.question-text p:last-child,
+.explanation p:last-child {
+    margin-bottom: 0;
+}
+
+.question-text ul,
+.question-text ol,
+.explanation ul,
+.explanation ol {
+    margin: 8px 0 8px 20px;
+    padding: 0;
+}
+
+.question-text li,
+.explanation li {
+    margin-bottom: 4px;
+}
+
+.question-text blockquote,
+.explanation blockquote {
+    border-left: 4px solid var(--secondary);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: rgba(125, 101, 188, 0.05);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-muted);
+}
+
+.question-text table,
+.explanation table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.95rem;
+}
+
+.question-text th,
+.question-text td,
+.explanation th,
+.explanation td {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.question-text th,
+.explanation th {
+    background: rgba(125, 101, 188, 0.1);
+    font-weight: 600;
+}
+
+/* Inline Code */
+.question-text code:not([class*="language-"]),
+.explanation code:not([class*="language-"]),
+.choice label code:not([class*="language-"]) {
+    background: rgba(125, 101, 188, 0.12);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.9em;
+    color: var(--secondary);
+}
+
+[data-theme="dark"] .question-text code:not([class*="language-"]),
+[data-theme="dark"] .explanation code:not([class*="language-"]),
+[data-theme="dark"] .choice label code:not([class*="language-"]) {
+    background: rgba(167, 139, 250, 0.15);
+}
+
+/* MathJax Overflow Handling */
+.question-text mjx-container,
+.explanation mjx-container,
+.choice label mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
+
+
 .choices {
     display: flex;
     flex-direction: column;
