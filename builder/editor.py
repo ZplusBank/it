@@ -55,6 +55,12 @@ class AdvancedChapterEditor:
                 self.chapter_data = {"questions": [], "title": ""}
             
             self.questions = self.chapter_data.get("questions", [])
+            
+            # Debug: Show how many questions loaded and if they have images
+            print(f"DEBUG: Loaded {len(self.questions)} questions from {self.chapter_file.name}")
+            questions_with_images = sum(1 for q in self.questions if q.get('image'))
+            print(f"DEBUG: {questions_with_images} questions have image paths")
+            
         except Exception as e:
             messagebox.showerror("Error", f"Failed to load chapter: {e}")
             self.window.destroy()
@@ -159,7 +165,7 @@ class AdvancedChapterEditor:
         ttk.Label(self.editor_frame, text="Image Preview:", font=("", 9, "bold")).pack(
             fill=tk.X, padx=10, pady=(10, 5))
         self.image_preview_frame = ttk.Frame(self.editor_frame, relief=tk.SUNKEN, borderwidth=1)
-        self.image_preview_frame.pack(fill=tk.BOTH, padx=10, pady=(0, 10), height=80)
+        self.image_preview_frame.pack(fill=tk.BOTH, padx=10, pady=(0, 10), ipady=20, expand=False)
         
         self.image_preview_label = ttk.Label(self.image_preview_frame, text="No image selected")
         self.image_preview_label.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
@@ -246,23 +252,38 @@ class AdvancedChapterEditor:
         self.q_text.delete(1.0, tk.END)
         self.q_text.insert(1.0, q.get('text', ''))
         
-        # Update image field
+        # Update image field and preview
         image_path = q.get('image', '')
         self.q_image.config(state="normal")
         self.q_image.delete(0, tk.END)
-        self.q_image.insert(0, image_path)
+        if image_path:
+            self.q_image.insert(0, str(image_path))  # Ensure it's a string
         self.q_image.config(state="readonly")
         
-        # Update image preview
-        if image_path:
-            full_path = self.base_path / image_path
+        # Update image preview - with better path handling
+        if image_path and str(image_path).strip():
+            image_path_str = str(image_path).strip()
+            # Convert forward slashes to backslashes for Windows
+            normalized_path = image_path_str.replace('/', '\\')
+            full_path = self.base_path / normalized_path
+            
+            print(f"DEBUG: Checking image path")
+            print(f"  Stored path: {image_path_str}")
+            print(f"  Normalized: {normalized_path}")
+            print(f"  Full path: {full_path}")
+            print(f"  Exists: {full_path.exists()}")
+            
             if full_path.exists():
-                img_size = full_path.stat().st_size / 1024
-                img_name = Path(image_path).name
-                preview_text = f"✓ Image: {img_name}\nSize: {img_size:.1f} KB"
-                self.image_preview_label.config(text=preview_text)
+                try:
+                    img_size = full_path.stat().st_size / 1024
+                    img_name = Path(image_path_str).name
+                    preview_text = f"✓ Image: {img_name}\nSize: {img_size:.1f} KB"
+                    self.image_preview_label.config(text=preview_text)
+                except Exception as e:
+                    self.image_preview_label.config(text=f"Error: {str(e)}")
             else:
-                self.image_preview_label.config(text=f"⚠️ Image file not found:\n{image_path}")
+                # File not found - show diagnostic info
+                self.image_preview_label.config(text=f"⚠️ Image not found\n\nPath: {image_path_str}\n\n(Checked: {full_path})")
         else:
             self.image_preview_label.config(text="No image selected")
         
@@ -512,6 +533,8 @@ class AdvancedChapterEditor:
         
         self.refresh_questions_list()
         self.questions_listbox.selection_set(self.current_question_idx)
+        # Force display refresh to show updated data including image path
+        self.display_question()
         messagebox.showinfo("Success", "Question updated ✓\n(Click 'Save Changes' to save to file)")
     
     def add_question(self):
@@ -533,8 +556,9 @@ class AdvancedChapterEditor:
         
         self.questions.append(new_q)
         self.refresh_questions_list()
-        self.questions_listbox.selection_set(len(self.questions) - 1)
         self.current_question_idx = len(self.questions) - 1
+        self.questions_listbox.selection_set(self.current_question_idx)
+        # Force display of the new question
         self.display_question()
         messagebox.showinfo("Success", "New question added")
     
@@ -554,6 +578,33 @@ class AdvancedChapterEditor:
     def save_chapter(self):
         """Save chapter data back to JSON file"""
         try:
+            # First, make sure current question is updated
+            if self.current_question_idx is not None:
+                q = self.questions[self.current_question_idx]
+                
+                print(f"DEBUG: Updating question #{self.current_question_idx}: {q.get('number', 'N/A')}")
+                
+                # Update all fields from the editor
+                q['id'] = self.q_id.get()
+                q['number'] = self.q_number.get()
+                q['text'] = self.q_text.get(1.0, tk.END).strip()
+                
+                # Save image path
+                image_path = self.q_image.get().strip()
+                print(f"DEBUG: Entry field contains: '{image_path}'")
+                print(f"DEBUG: Entry field state: {self.q_image.cget('state')}")
+                
+                if image_path:
+                    q['image'] = image_path
+                    print(f"DEBUG: Saving image path for question {q['number']}: {image_path}")
+                else:
+                    print(f"DEBUG: Image path is empty, removing from question")
+                    q.pop('image', None)
+                
+                q['inputType'] = self.q_input_type.get()
+                q['correctAnswer'] = self.q_correct.get()
+                q['explanation'] = self.q_explanation.get(1.0, tk.END).strip()
+            
             # Update chapter data
             if self.chapter_data:
                 self.chapter_data["questions"] = self.questions
@@ -564,6 +615,11 @@ class AdvancedChapterEditor:
             
             # Count questions with images
             questions_with_images = sum(1 for q in self.questions if q.get('image'))
+            print(f"DEBUG: Saved chapter with {len(self.questions)} questions ({questions_with_images} with images)")
+            
+            # Debug: Print first 3 questions to see what was saved
+            for idx, q in enumerate(self.questions[:3]):
+                print(f"  Q{idx}: id={q.get('id')}, image='{q.get('image', 'N/A')}'")
             
             messagebox.showinfo("Success", 
                 f"Chapter saved successfully! ✓\n\n"
@@ -571,6 +627,7 @@ class AdvancedChapterEditor:
                 f"Questions with images: {questions_with_images}\n"
                 f"File: {self.chapter_file.name}")
         except Exception as e:
+            print(f"DEBUG: Error saving chapter: {e}")
             messagebox.showerror("Error", f"Failed to save chapter: {e}")
 
 class ExamEditor:
