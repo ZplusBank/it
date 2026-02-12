@@ -116,6 +116,12 @@ const EXAM_CONFIG = [
         "name": "Principles of Greedy Algorithms and Activity Selection & The Knapsack Problems: Fractional and 0-1",
         "q": 10,
         "file": "data/algorithm/chapterlecture 9 Greedy Algorithms.pdf.json"
+      },
+      {
+        "id": "chapterlecture2 Asymptotic Notations.pdf",
+        "name": "Asymptotic Notations and Logarithms & Analysis Examples and Comparisons",
+        "q": 10,
+        "file": "data/algorithm/chapterlecture2 Asymptotic Notations.pdf.json"
       }
     ]
   },

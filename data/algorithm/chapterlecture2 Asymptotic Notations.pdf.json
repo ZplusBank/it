@@ -1,0 +1,322 @@
+{
+  "id": "upload-1770900727964",
+  "label": "lecture2 Asymptotic Notations.pdf",
+  "params": {
+    "file": "lecture2 Asymptotic Notations.pdf"
+  },
+  "title": "Asymptotic Notations and Logarithms & Analysis Examples and Comparisons",
+  "questions": [
+    {
+      "id": "upload-1770900727964-0",
+      "number": "1",
+      "text": "Which asymptotic notation is used to describe the set of functions with a smaller or same order of growth as \\( g(n) \\) (asymptotic \"less than or equal\")?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( \\Theta(g(n)) \\)",
+          "text": "\\( \\Theta(g(n)) \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( \\Omega(g(n)) \\)",
+          "text": "\\( \\Omega(g(n)) \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( O(g(n)) \\)",
+          "text": "\\( O(g(n)) \\)"
+        },
+        {
+          "value": "D",
+          "label": "\\( \\lg(g(n)) \\)",
+          "text": "\\( \\lg(g(n)) \\)"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The \\( O \\)-notation (Big O) represents the asymptotic upper bound, meaning \\( f(n) \\leq c \\cdot g(n) \\) for large \\( n \\)."
+    },
+    {
+      "id": "upload-1770900727964-1",
+      "number": "2",
+      "text": "In algorithm analysis, what does the specific notation \\( \\lg n \\) typically represent?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Natural logarithm (\\( \\ln n \\))",
+          "text": "Natural logarithm (\\( \\ln n \\))"
+        },
+        {
+          "value": "B",
+          "label": "Binary logarithm (\\( \\log_2 n \\))",
+          "text": "Binary logarithm (\\( \\log_2 n \\))"
+        },
+        {
+          "value": "C",
+          "label": "Common logarithm (\\( \\log_{10} n \\))",
+          "text": "Common logarithm (\\( \\log_{10} n \\))"
+        },
+        {
+          "value": "D",
+          "label": "Logarithm squared (\\( (\\log n)^2 \\))",
+          "text": "Logarithm squared (\\( (\\log n)^2 \\))"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In computer science and algorithm analysis, \\( \\lg n \\) is standard shorthand for the binary logarithm, \\( \\log_2 n \\)."
+    },
+    {
+      "id": "upload-1770900727964-2",
+      "number": "3",
+      "text": "Which notation represents the set of functions with the **same** order of growth as \\( g(n) \\) (asymptotic equality)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( \\Theta(g(n)) \\)",
+          "text": "\\( \\Theta(g(n)) \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( O(g(n)) \\)",
+          "text": "\\( O(g(n)) \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( \\Omega(g(n)) \\)",
+          "text": "\\( \\Omega(g(n)) \\)"
+        },
+        {
+          "value": "D",
+          "label": "\\( \\approx g(n) \\)",
+          "text": "\\( \\approx g(n) \\)"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The \\( \\Theta \\)-notation (Big Theta) bounds a function from above and below, representing the same order of growth."
+    },
+    {
+      "id": "upload-1770900727964-3",
+      "number": "4",
+      "text": "Which of the following logarithmic properties is correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( \\log(xy) = \\log x + \\log y \\)",
+          "text": "\\( \\log(xy) = \\log x + \\log y \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( \\log(xy) = \\log x \\cdot \\log y \\)",
+          "text": "\\( \\log(xy) = \\log x \\cdot \\log y \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( \\log(x+y) = \\log x + \\log y \\)",
+          "text": "\\( \\log(x+y) = \\log x + \\log y \\)"
+        },
+        {
+          "value": "D",
+          "label": "\\( \\log(x^k) = \\log x + k \\)",
+          "text": "\\( \\log(x^k) = \\log x + k \\)"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The logarithm of a product is the sum of the logarithms of the factors: \\( \\log(xy) = \\log x + \\log y \\)."
+    },
+    {
+      "id": "upload-1770900727964-4",
+      "number": "5",
+      "text": "If \\( f(n) = \\Omega(g(n)) \\), what does this imply about the growth of \\( f(n) \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( f(n) \\) grows slower than \\( g(n) \\)",
+          "text": "\\( f(n) \\) grows slower than \\( g(n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( f(n) \\) grows at the same rate as \\( g(n) \\)",
+          "text": "\\( f(n) \\) grows at the same rate as \\( g(n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( f(n) \\) grows at least as fast as \\( g(n) \\)",
+          "text": "\\( f(n) \\) grows at least as fast as \\( g(n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "\\( f(n) \\) is a constant function",
+          "text": "\\( f(n) \\) is a constant function"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "\\( \\Omega \\)-notation represents the asymptotic lower bound, meaning \\( f(n) \\) is \"greater than or equal to\" \\( g(n) \\) in terms of growth."
+    },
+    {
+      "id": "upload-1770900727964-5",
+      "number": "6",
+      "text": "Determine the correct asymptotic relationship for the functions \\( f(n) = 2^n \\) and \\( g(n) = 3^n \\).",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( f(n) = \\Omega(g(n)) \\)",
+          "text": "\\( f(n) = \\Omega(g(n)) \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( f(n) = O(g(n)) \\)",
+          "text": "\\( f(n) = O(g(n)) \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( f(n) = \\Theta(g(n)) \\)",
+          "text": "\\( f(n) = \\Theta(g(n)) \\)"
+        },
+        {
+          "value": "D",
+          "label": "\\( f(n) = g(n) \\)",
+          "text": "\\( f(n) = g(n) \\)"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Because \\( 2 < 3 \\), \\( 2^n \\) grows strictly slower than \\( 3^n \\). Therefore, \\( f(n) \\) is \\( O(g(n)) \\)."
+    },
+    {
+      "id": "upload-1770900727964-6",
+      "number": "7",
+      "text": "What is the relationship between \\( f(n) = \\log(n^2) \\) and \\( g(n) = \\log n + 5 \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( f(n) = \\Theta(g(n)) \\)",
+          "text": "\\( f(n) = \\Theta(g(n)) \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( f(n) = \\Omega(g(n)) \\) but not \\( \\Theta(g(n)) \\)",
+          "text": "\\( f(n) = \\Omega(g(n)) \\) but not \\( \\Theta(g(n)) \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( f(n) = O(g(n)) \\) but not \\( \\Theta(g(n)) \\)",
+          "text": "\\( f(n) = O(g(n)) \\) but not \\( \\Theta(g(n)) \\)"
+        },
+        {
+          "value": "D",
+          "label": "They are incomparable",
+          "text": "They are incomparable"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "\\( f(n) = 2\\log n \\) and \\( g(n) = \\log n + 5 \\). Ignoring constants and lower-order terms, both grow as \\( \\log n \\), so \\( f(n) = \\Theta(g(n)) \\)."
+    },
+    {
+      "id": "upload-1770900727964-7",
+      "number": "8",
+      "text": "Why is \\( 100n + 5 \\neq \\Omega(n^2) \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Because the constant 100 is too large.",
+          "text": "Because the constant 100 is too large."
+        },
+        {
+          "value": "B",
+          "label": "Because linear functions grow slower than quadratic functions.",
+          "text": "Because linear functions grow slower than quadratic functions."
+        },
+        {
+          "value": "C",
+          "label": "Because \\( n \\) can be negative.",
+          "text": "Because \\( n \\) can be negative."
+        },
+        {
+          "value": "D",
+          "label": "Because \\( 100n + 5 \\) is not a polynomial.",
+          "text": "Because \\( 100n + 5 \\) is not a polynomial."
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "For \\( f(n) = \\Omega(n^2) \\), \\( f(n) \\) must grow at least as fast as \\( n^2 \\). Since \\( n \\) (linear) grows slower than \\( n^2 \\) (quadratic), the condition cannot hold for large \\( n \\)."
+    },
+    {
+      "id": "upload-1770900727964-8",
+      "number": "9",
+      "text": "Analyze the relationship between \\( f(n) = 2^n \\) and \\( g(n) = 10n^2 \\).",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( f(n) = O(g(n)) \\)",
+          "text": "\\( f(n) = O(g(n)) \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( f(n) = \\Theta(g(n)) \\)",
+          "text": "\\( f(n) = \\Theta(g(n)) \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( f(n) = \\Omega(g(n)) \\)",
+          "text": "\\( f(n) = \\Omega(g(n)) \\)"
+        },
+        {
+          "value": "D",
+          "label": "\\( f(n) \\) is constant",
+          "text": "\\( f(n) \\) is constant"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Exponential functions (\\( 2^n \\)) grow much faster than polynomial functions (\\( 10n^2 \\)). Thus, \\( 2^n \\) is asymptotically greater, or \\( \\Omega(10n^2) \\)."
+    },
+    {
+      "id": "upload-1770900727964-9",
+      "number": "10",
+      "text": "For the function \\( f(n) = n^2/2 - n/2 \\), which of the following is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( f(n) = \\Theta(n) \\)",
+          "text": "\\( f(n) = \\Theta(n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( f(n) = \\Theta(n^2) \\)",
+          "text": "\\( f(n) = \\Theta(n^2) \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( f(n) = \\Theta(n^3) \\)",
+          "text": "\\( f(n) = \\Theta(n^3) \\)"
+        },
+        {
+          "value": "D",
+          "label": "\\( f(n) = \\Theta(1) \\)",
+          "text": "\\( f(n) = \\Theta(1) \\)"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "When analyzing asymptotic growth, we focus on the highest order term. Here, \\( n^2 \\) dominates \\( n \\), so the function behaves like \\( n^2 \\)."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 10
+}
