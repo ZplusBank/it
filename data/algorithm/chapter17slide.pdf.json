@@ -1,0 +1,260 @@
+{
+  "id": "upload-1770901395545",
+  "label": "17slide.pdf",
+  "params": {
+    "file": "17slide.pdf"
+  },
+  "title": "Chapter 17: Binary I/O",
+  "questions": [
+    {
+      "id": "upload-1770901395545-0",
+      "number": "1",
+      "text": "According to the text, what is a primary advantage of binary files over text files?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Binary files are human-readable.",
+          "text": "Binary files are human-readable."
+        },
+        {
+          "value": "B",
+          "label": "Binary files are more efficient to process because they do not require encoding and decoding conversions.",
+          "text": "Binary files are more efficient to process because they do not require encoding and decoding conversions."
+        },
+        {
+          "value": "C",
+          "label": "Binary files automatically compress data to save space.",
+          "text": "Binary files automatically compress data to save space."
+        },
+        {
+          "value": "D",
+          "label": "Binary files can be read by any text editor.",
+          "text": "Binary files can be read by any text editor."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text states that the advantage of binary files is that they are more efficient to process than text files because binary I/O does not require conversions (encoding/decoding)."
+    },
+    {
+      "id": "upload-1770901395545-1",
+      "number": "2",
+      "text": "How is the decimal integer `199` represented in a binary file compared to a text file?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "As the characters '1', '9', '9' in both files.",
+          "text": "As the characters '1', '9', '9' in both files."
+        },
+        {
+          "value": "B",
+          "label": "As the characters '1', '9', '9' in the binary file and hex value C7 in the text file.",
+          "text": "As the characters '1', '9', '9' in the binary file and hex value C7 in the text file."
+        },
+        {
+          "value": "C",
+          "label": "As the characters '1', '9', '9' in the text file and as a single byte value (hex C7) in the binary file.",
+          "text": "As the characters '1', '9', '9' in the text file and as a single byte value (hex C7) in the binary file."
+        },
+        {
+          "value": "D",
+          "label": "As 32 bits of zeros and ones in the text file and hex C7 in the binary file.",
+          "text": "As 32 bits of zeros and ones in the text file and hex C7 in the binary file."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The text explains that `199` is stored as three characters ('1', '9', '9') in a text file, but as a byte-type value C7 in a binary file."
+    },
+    {
+      "id": "upload-1770901395545-2",
+      "number": "3",
+      "text": "Which `FileOutputStream` constructor should be used to append data to an existing file without deleting its current contents?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`new FileOutputStream(\"file.dat\")`",
+          "text": "`new FileOutputStream(\"file.dat\")`"
+        },
+        {
+          "value": "B",
+          "label": "`new FileOutputStream(\"file.dat\", true)`",
+          "text": "`new FileOutputStream(\"file.dat\", true)`"
+        },
+        {
+          "value": "C",
+          "label": "`new FileOutputStream(new File(\"file.dat\"), false)`",
+          "text": "`new FileOutputStream(new File(\"file.dat\"), false)`"
+        },
+        {
+          "value": "D",
+          "label": "`new FileOutputStream(\"file.dat\", \"append\")`",
+          "text": "`new FileOutputStream(\"file.dat\", \"append\")`"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "To retain the current content and append new data into the file, the text instructs to use the constructor accepting a boolean `append` parameter passing `true`."
+    },
+    {
+      "id": "upload-1770901395545-3",
+      "number": "4",
+      "text": "Which class is designed to read primitive data types (such as `int`, `double`) and strings directly from a stream?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`FileInputStream`",
+          "text": "`FileInputStream`"
+        },
+        {
+          "value": "B",
+          "label": "`ObjectOutputStream`",
+          "text": "`ObjectOutputStream`"
+        },
+        {
+          "value": "C",
+          "label": "`DataInputStream`",
+          "text": "`DataInputStream`"
+        },
+        {
+          "value": "D",
+          "label": "`BufferedInputStream`",
+          "text": "`BufferedInputStream`"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The text states that `DataInputStream` reads bytes from the stream and converts them into appropriate primitive type values or strings."
+    },
+    {
+      "id": "upload-1770901395545-4",
+      "number": "5",
+      "text": "When reading data using `DataInputStream`, what is the suggested method to check for the end of the file to avoid an `EOFException`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Check if `read()` returns `null`.",
+          "text": "Check if `read()` returns `null`."
+        },
+        {
+          "value": "B",
+          "label": "Use a try-catch block to catch `IOException`.",
+          "text": "Use a try-catch block to catch `IOException`."
+        },
+        {
+          "value": "C",
+          "label": "Check if `input.available() == 0`.",
+          "text": "Check if `input.available() == 0`."
+        },
+        {
+          "value": "D",
+          "label": "Check if `input.hasNext()` returns `false`.",
+          "text": "Check if `input.hasNext()` returns `false`."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The text provides a TIP stating that `input.available() == 0` indicates the end of a file, which helps avoid an `EOFException`."
+    },
+    {
+      "id": "upload-1770901395545-5",
+      "number": "6",
+      "text": "What is required for a Java class to be serializable?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It must extend `DataInputStream`.",
+          "text": "It must extend `DataInputStream`."
+        },
+        {
+          "value": "B",
+          "label": "It must implement the `java.io.Serializable` interface.",
+          "text": "It must implement the `java.io.Serializable` interface."
+        },
+        {
+          "value": "C",
+          "label": "It must contain only primitive data types.",
+          "text": "It must contain only primitive data types."
+        },
+        {
+          "value": "D",
+          "label": "It must implement the `Externalizable` interface and override `write()`.",
+          "text": "It must implement the `Externalizable` interface and override `write()`."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A serializable object must be an instance of the `java.io.Serializable` interface. This is a marker interface with no methods."
+    },
+    {
+      "id": "upload-1770901395545-6",
+      "number": "7",
+      "text": "Consider the following class definition. When an object of `Foo` is serialized, which variables are written to the output stream?\n\n```java\npublic class Foo implements java.io.Serializable {\n  private int v1;\n  private static double v2;\n  private transient A v3 = new A();\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "All variables (`v1`, `v2`, and `v3`).",
+          "text": "All variables (`v1`, `v2`, and `v3`)."
+        },
+        {
+          "value": "B",
+          "label": "Only `v1`.",
+          "text": "Only `v1`."
+        },
+        {
+          "value": "C",
+          "label": "`v1` and `v2`.",
+          "text": "`v1` and `v2`."
+        },
+        {
+          "value": "D",
+          "label": "`v1` and `v3`.",
+          "text": "`v1` and `v3`."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text explains that `v2` is not serialized because it is a static variable, and `v3` is not serialized because it is marked `transient`. Only `v1` is serialized."
+    },
+    {
+      "id": "upload-1770901395545-7",
+      "number": "8",
+      "text": "What does the `seek(long pos)` method do in the `RandomAccessFile` class?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It searches for a specific character in the file.",
+          "text": "It searches for a specific character in the file."
+        },
+        {
+          "value": "B",
+          "label": "It returns the current length of the file.",
+          "text": "It returns the current length of the file."
+        },
+        {
+          "value": "C",
+          "label": "It sets the file pointer offset from the beginning of the stream.",
+          "text": "It sets the file pointer offset from the beginning of the stream."
+        },
+        {
+          "value": "D",
+          "label": "It resets the file content to empty.",
+          "text": "It resets the file content to empty."
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "According to the text, `seek(long pos)` sets the offset from the beginning of the `RandomAccessFile` stream to where the next read or write occurs."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 8
+}

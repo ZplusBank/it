@@ -112,8 +112,14 @@ const EXAM_CONFIG = [
     "path": "data/algorithm",
     "chapters": [
       {
+        "id": "17",
+        "name": "Chapter 17: Binary I/O",
+        "q": 8,
+        "file": "data/algorithm/chapter17slide.pdf.json"
+      },
+      {
         "id": "chapterlecture 9 Greedy Algorithms.pdf",
-        "name": "Principles of Greedy Algorithms and Activity Selection & The Knapsack Problems: Fractional and 0-1",
+        "name": "Greedy Algorithms and Activity Selection & Knapsack Problems (Fractional and 0-1)",
         "q": 10,
         "file": "data/algorithm/chapterlecture 9 Greedy Algorithms.pdf.json"
       },
