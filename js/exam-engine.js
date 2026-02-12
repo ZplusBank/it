@@ -506,6 +506,12 @@ const app = {
 
             const renderedText = ContentRenderer.render(question.text);
 
+            // Question image
+            let imageHtml = '';
+            if (question.image) {
+                imageHtml = `<div class="question-image"><img src="${question.image}" alt="Question illustration"></div>`;
+            }
+
             // Build choices list
             let choicesHtml = '';
             const correctAnswers = question.inputType === 'checkbox'
@@ -534,9 +540,9 @@ const app = {
                 const renderedChoice = ContentRenderer.render(choice.text);
                 choicesHtml += `
                     <div class="results-choice ${choiceClass}">
-                        <span class="results-choice-letter">${choice.label}</span>
-                        <span class="results-choice-text">${renderedChoice}</span>
-                        ${choiceIcon ? `<span class="results-choice-icon">${choiceIcon}</span>` : ''}
+                        <div class="results-choice-letter">${choice.label}</div>
+                        <div class="results-choice-text">${renderedChoice}</div>
+                        ${choiceIcon ? `<div class="results-choice-icon">${choiceIcon}</div>` : ''}
                     </div>
                 `;
             });
@@ -560,6 +566,7 @@ const app = {
                         <span class="results-q-number">Question ${idx + 1}</span>
                         <span class="results-q-badge ${statusClass}">${statusIcon} ${statusText}</span>
                     </div>
+                    ${imageHtml}
                     <div class="results-q-text question-text">${renderedText}</div>
                     <div class="results-choices-list">${choicesHtml}</div>
                     ${explanationHtml}
