@@ -426,31 +426,34 @@ const app = {
     },
 
     calculateAndDisplayResults() {
+        const totalCount = this.questions.length;
         let correctCount = 0;
-        let totalCount = this.questions.length;
-        let details = '';
+        let wrongCount = 0;
+        let skippedCount = 0;
+        const questionResults = [];
 
         this.questions.forEach((question, idx) => {
             const userAnswer = this.userAnswers[idx];
+            const wasSkipped = userAnswer === undefined || userAnswer === '' ||
+                (Array.isArray(userAnswer) && userAnswer.length === 0);
             let isCorrect = false;
 
-            if (question.inputType === 'checkbox') {
-                const correctAnswers = question.correctAnswer.split('');
-                const userAnswers = Array.isArray(userAnswer) ? userAnswer : [];
-                isCorrect = correctAnswers.length === userAnswers.length &&
-                    correctAnswers.every(a => userAnswers.includes(a));
-            } else {
-                isCorrect = userAnswer === question.correctAnswer;
+            if (!wasSkipped) {
+                if (question.inputType === 'checkbox') {
+                    const correctAnswers = question.correctAnswer.split('');
+                    const userAnswers = Array.isArray(userAnswer) ? userAnswer : [];
+                    isCorrect = correctAnswers.length === userAnswers.length &&
+                        correctAnswers.every(a => userAnswers.includes(a));
+                } else {
+                    isCorrect = userAnswer === question.correctAnswer;
+                }
             }
 
-            if (isCorrect) correctCount++;
+            if (wasSkipped) skippedCount++;
+            else if (isCorrect) correctCount++;
+            else wrongCount++;
 
-            details += `
-                <div class="result-item">
-                    <span>Question ${idx + 1}</span>
-                    <span>${isCorrect ? '✓' : '✗'}</span>
-                </div>
-            `;
+            questionResults.push({ question, idx, userAnswer, isCorrect, wasSkipped });
         });
 
         const percentage = Math.round((correctCount / totalCount) * 100);
@@ -458,6 +461,7 @@ const app = {
         document.getElementById('scoreDisplay').textContent = `${correctCount} / ${totalCount}`;
         document.getElementById('scoreText').textContent = `Score: ${percentage}%`;
 
+        // Result message
         let resultMessage = '';
         if (percentage >= 90) {
             resultMessage = '🌟 Outstanding! You have mastered this material!';
@@ -471,14 +475,105 @@ const app = {
             resultMessage = '💪 Keep practicing! Review the material and try again.';
         }
 
-        document.getElementById('resultDetails').innerHTML = `
-            <div style="text-align: center; margin-bottom: 20px; font-size: 1.1em; color: #667eea; font-weight: 600;">
-                ${resultMessage}
-            </div>
-            <div style="max-height: 300px; overflow-y: auto;">
-                ${details}
+        // Stats bar
+        const statsHtml = `
+            <div class="results-message">${resultMessage}</div>
+            <div class="results-stats">
+                <div class="results-stat-card stat-correct">
+                    <div class="stat-icon">✓</div>
+                    <div class="stat-number">${correctCount}</div>
+                    <div class="stat-label">Correct</div>
+                </div>
+                <div class="results-stat-card stat-wrong">
+                    <div class="stat-icon">✗</div>
+                    <div class="stat-number">${wrongCount}</div>
+                    <div class="stat-label">Wrong</div>
+                </div>
+                <div class="results-stat-card stat-skipped">
+                    <div class="stat-icon">○</div>
+                    <div class="stat-number">${skippedCount}</div>
+                    <div class="stat-label">Skipped</div>
+                </div>
             </div>
         `;
+
+        // Question review cards
+        let cardsHtml = '';
+        questionResults.forEach(({ question, idx, userAnswer, isCorrect, wasSkipped }) => {
+            const statusClass = wasSkipped ? 'skipped' : (isCorrect ? 'correct' : 'wrong');
+            const statusText = wasSkipped ? 'Skipped' : (isCorrect ? 'Correct' : 'Wrong');
+            const statusIcon = wasSkipped ? '○' : (isCorrect ? '✓' : '✗');
+
+            const renderedText = ContentRenderer.render(question.text);
+
+            // Build choices list
+            let choicesHtml = '';
+            const correctAnswers = question.inputType === 'checkbox'
+                ? question.correctAnswer.split('')
+                : [question.correctAnswer];
+            const userAnswers = wasSkipped ? []
+                : (Array.isArray(userAnswer) ? userAnswer : [userAnswer]);
+
+            question.choices.forEach(choice => {
+                const isThisCorrect = correctAnswers.includes(choice.value);
+                const isUserPick = userAnswers.includes(choice.value);
+
+                let choiceClass = '';
+                let choiceIcon = '';
+                if (isThisCorrect && isUserPick) {
+                    choiceClass = 'correct';
+                    choiceIcon = '✓';
+                } else if (isThisCorrect) {
+                    choiceClass = 'correct';
+                    choiceIcon = '✓';
+                } else if (isUserPick) {
+                    choiceClass = 'user-wrong';
+                    choiceIcon = '✗';
+                }
+
+                const renderedChoice = ContentRenderer.render(choice.text);
+                choicesHtml += `
+                    <div class="results-choice ${choiceClass}">
+                        <span class="results-choice-letter">${choice.label}</span>
+                        <span class="results-choice-text">${renderedChoice}</span>
+                        ${choiceIcon ? `<span class="results-choice-icon">${choiceIcon}</span>` : ''}
+                    </div>
+                `;
+            });
+
+            // Explanation
+            const explanationRaw = question.explanation || '';
+            let explanationHtml = '';
+            if (explanationRaw) {
+                const renderedExplanation = ContentRenderer.render(explanationRaw);
+                explanationHtml = `
+                    <div class="results-explanation">
+                        <strong>💡 Explanation:</strong>
+                        <div class="results-explanation-text">${renderedExplanation}</div>
+                    </div>
+                `;
+            }
+
+            cardsHtml += `
+                <div class="results-question-card ${statusClass}">
+                    <div class="results-q-header">
+                        <span class="results-q-number">Question ${idx + 1}</span>
+                        <span class="results-q-badge ${statusClass}">${statusIcon} ${statusText}</span>
+                    </div>
+                    <div class="results-q-text question-text">${renderedText}</div>
+                    <div class="results-choices-list">${choicesHtml}</div>
+                    ${explanationHtml}
+                </div>
+            `;
+        });
+
+        document.getElementById('resultDetails').innerHTML = `
+            ${statsHtml}
+            <div class="results-questions-list">${cardsHtml}</div>
+        `;
+
+        // Typeset MathJax on the entire results container
+        ContentRenderer.typeset(document.getElementById('resultDetails'));
     },
 
     goBackToSubjects() {
