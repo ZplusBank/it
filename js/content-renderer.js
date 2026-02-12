@@ -3,7 +3,7 @@
  * Processes question text through: Markdown → Code Highlighting → Math Typesetting
  * 
  * Supports:
- *   - LaTeX math/physics: $...$ (inline), $$...$$ (display)
+ *   - LaTeX math/physics: \(...\) (inline), \[...\] (display)
  *   - Chemistry (mhchem): \ce{...}
  *   - Markdown: bold, italic, lists, tables, etc.
  *   - Fenced code blocks: ```java ... ``` with Prism.js highlighting
@@ -25,9 +25,10 @@ const ContentRenderer = {
 
         const renderer = new marked.Renderer();
 
-        // Override code block renderer to use Prism.js
+        // Override code block renderer to use Prism.js with line numbers, language badge, and copy button
         renderer.code = function ({ text, lang }) {
             const language = lang && Prism.languages[lang] ? lang : 'plaintext';
+            const displayLang = language.charAt(0).toUpperCase() + language.slice(1);
             let highlighted;
             try {
                 highlighted = Prism.languages[language]
@@ -36,13 +37,41 @@ const ContentRenderer = {
             } catch (e) {
                 highlighted = ContentRenderer._escapeHtml(text);
             }
-            return `<pre class="code-block language-${language}"><code class="language-${language}">${highlighted}</code></pre>`;
+            return `<div class="code-block-wrapper">
+                <div class="code-block-header">
+                    <span class="code-block-dots"><span></span><span></span><span></span></span>
+                    <span class="code-block-lang">${displayLang}</span>
+                    <button class="code-copy-btn" onclick="ContentRenderer.copyCode(this)" title="Copy code">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        <span class="copy-label">Copy</span>
+                    </button>
+                </div>
+                <pre class="code-block language-${language} line-numbers"><code class="language-${language}">${highlighted}</code></pre>
+            </div>`;
         };
 
         marked.setOptions({
             renderer: renderer,
             gfm: true,
             breaks: true
+        });
+    },
+
+    /**
+     * Copy code content to clipboard
+     */
+    copyCode(button) {
+        const wrapper = button.closest('.code-block-wrapper');
+        const codeEl = wrapper.querySelector('code');
+        const text = codeEl.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+            const label = button.querySelector('.copy-label');
+            label.textContent = 'Copied!';
+            button.classList.add('copied');
+            setTimeout(() => {
+                label.textContent = 'Copy';
+                button.classList.remove('copied');
+            }, 2000);
         });
     },
 
@@ -93,13 +122,14 @@ const ContentRenderer = {
     },
 
     /**
-     * Replace math delimiters with placeholders so Marked doesn't mangle them
+     * Replace math delimiters with placeholders so Marked doesn't mangle them.
+     * Protects: \[...\] (display), \ce{...} (chemistry), \(...\) (inline)
      */
     _protectMath(text) {
         const blocks = [];
 
-        // Protect display math: $$...$$
-        text = text.replace(/\$\$([\s\S]*?)\$\$/g, (match) => {
+        // Protect display math: \[...\]
+        text = text.replace(/\\\[[\s\S]*?\\\]/g, (match) => {
             const id = this._placeholder + (this._counter++) + '%%';
             blocks.push({ id, content: match });
             return id;
@@ -112,8 +142,8 @@ const ContentRenderer = {
             return id;
         });
 
-        // Protect inline math: $...$  (but not $$)
-        text = text.replace(/(?<!\$)\$(?!\$)((?:[^$\\]|\\.)+?)\$/g, (match) => {
+        // Protect inline math: \(...\)
+        text = text.replace(/\\\([\s\S]*?\\\)/g, (match) => {
             const id = this._placeholder + (this._counter++) + '%%';
             blocks.push({ id, content: match });
             return id;

@@ -15,15 +15,17 @@
 
     <link rel="stylesheet" href="css/exam-styles.css">
 
-    <!-- Prism.js Theme (Tomorrow Night) -->
+    <!-- Prism.js Theme (Tomorrow Night) + Line Numbers Plugin -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css">
 
     <!-- MathJax 3 with mhchem extension (SVG output) -->
     <script>
         window.MathJax = {
             tex: {
-                inlineMath: [['$', '$']],
-                displayMath: [['$$', '$$']],
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
                 packages: { '[+]': ['mhchem'] }
             },
             svg: {
@@ -46,6 +48,7 @@
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-cpp.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-sql.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
     <!-- Theme Script to prevent flash of wrong theme -->
     <script>

@@ -453,139 +453,227 @@ header {
     transform: scale(1.02);
 }
 
-/* Code Blocks & Syntax Highlighting */
-/* Code Blocks & Syntax Highlighting */
-.code-block {
-    background: #1e1e1e;
-    color: #d4d4d4;
-    padding: 20px;
-    padding-top: 45px;
-    /* Extra space for window header */
-    border-radius: 8px;
-    font-family: 'Fira Code', 'Courier New', monospace;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    overflow-x: auto;
+/* ==============================
+   Code Blocks & Syntax Highlighting
+   ============================== */
+
+/* --- Wrapper --- */
+.code-block-wrapper {
     margin: 20px 0;
-    border: 1px solid #333;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    position: relative;
-    /* For pseudo-elements */
-    white-space: pre;
-    /* Don't wrap lines, scroll instead */
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.18);
+    background: #1e1e2e;
 }
 
-/* Mac-style Window Header */
-.code-block::before {
-    content: "";
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #ff5f56;
-    /* Red */
-    box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
-    /* Yellow, Green */
-}
-
-/* Optional: Header bar background */
-.code-block::after {
-    content: "Code Snippet";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 38px;
-    background: rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px 8px 0 0;
+/* --- Header (dots + language + copy) --- */
+.code-block-header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: #666;
-    font-size: 0.8rem;
-    font-family: sans-serif;
-    pointer-events: none;
+    padding: 10px 16px;
+    background: #181825;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    gap: 12px;
+    min-height: 42px;
 }
 
+.code-block-dots {
+    display: flex;
+    gap: 7px;
+}
+
+.code-block-dots span {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    display: block;
+}
+
+.code-block-dots span:nth-child(1) {
+    background: #ff5f57;
+}
+
+.code-block-dots span:nth-child(2) {
+    background: #febc2e;
+}
+
+.code-block-dots span:nth-child(3) {
+    background: #28c840;
+}
+
+.code-block-lang {
+    flex: 1;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #7f849c;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.code-copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #7f849c;
+    padding: 4px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.code-copy-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #cdd6f4;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.code-copy-btn.copied {
+    background: rgba(40, 200, 64, 0.15);
+    color: #a6e3a1;
+    border-color: rgba(40, 200, 64, 0.25);
+}
+
+.code-copy-btn svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+/* --- Code Area --- */
+.code-block {
+    background: #1e1e2e;
+    color: #cdd6f4;
+    padding: 20px;
+    border-radius: 0;
+    font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace;
+    font-size: 0.9rem;
+    line-height: 1.75;
+    overflow-x: auto;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    position: relative;
+    white-space: pre;
+    tab-size: 4;
+    -moz-tab-size: 4;
+}
+
+/* Remove old pseudo-elements (header is now in markup) */
+.code-block::before,
+.code-block::after {
+    content: none;
+    display: none;
+}
+
+/* --- Line Numbers (Prism plugin) --- */
+.code-block.line-numbers {
+    padding-left: 4em;
+}
+
+.code-block .line-numbers-rows {
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    padding-right: 10px;
+    top: 20px;
+    left: 0;
+    width: 3.2em;
+}
+
+.code-block .line-numbers-rows>span::before {
+    color: #45475a;
+    font-size: 0.82em;
+}
+
+/* --- Custom Scrollbar --- */
+.code-block::-webkit-scrollbar {
+    height: 8px;
+    background: transparent;
+}
+
+.code-block::-webkit-scrollbar-thumb {
+    background: rgba(127, 132, 156, 0.35);
+    border-radius: 10px;
+}
+
+.code-block::-webkit-scrollbar-thumb:hover {
+    background: rgba(127, 132, 156, 0.55);
+}
+
+.code-block {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(127, 132, 156, 0.35) transparent;
+}
+
+/* --- Text Selection --- */
+.code-block ::selection {
+    background: rgba(137, 180, 250, 0.3);
+    color: inherit;
+}
+
+/* --- Legacy Inline Keyword Classes --- */
 .keyword {
-    color: #569cd6;
+    color: #cba6f7;
     font-weight: bold;
 }
 
 .literal {
-    color: #ce9178;
+    color: #f9e2af;
 }
 
 .constant {
-    color: #4ec9b0;
+    color: #94e2d5;
 }
 
 .comment {
-    color: #6a9955;
+    color: #6c7086;
     font-style: italic;
 }
 
 .type {
-    color: #4ec9b0;
+    color: #89dceb;
 }
 
 .string {
-    color: #ce9178;
+    color: #a6e3a1;
 }
 
-/* Prism.js Code Block Integration */
+/* --- Prism.js Scoped Overrides (for pre inside questions / explanations / choices) --- */
 .question-text pre[class*="language-"],
 .explanation pre[class*="language-"],
 .choice label pre[class*="language-"] {
-    background: #1e1e1e;
+    background: #1e1e2e;
+    color: #cdd6f4;
     padding: 20px;
-    padding-top: 45px;
-    border-radius: 8px;
-    font-family: 'Fira Code', 'Courier New', monospace;
-    font-size: 0.95rem;
-    line-height: 1.6;
+    border-radius: 0;
+    font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace;
+    font-size: 0.9rem;
+    line-height: 1.75;
     overflow-x: auto;
-    margin: 20px 0;
-    border: 1px solid #333;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    margin: 0;
+    border: none;
+    box-shadow: none;
     position: relative;
     white-space: pre;
+    tab-size: 4;
+    -moz-tab-size: 4;
 }
 
+/* Remove old ::before / ::after on scoped pres (header is in markup now) */
 .question-text pre[class*="language-"]::before,
-.explanation pre[class*="language-"]::before {
-    content: "";
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #ff5f56;
-    box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
-}
-
+.explanation pre[class*="language-"]::before,
 .question-text pre[class*="language-"]::after,
 .explanation pre[class*="language-"]::after {
-    content: "Code";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 38px;
-    background: rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px 8px 0 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #666;
-    font-size: 0.8rem;
-    font-family: sans-serif;
-    pointer-events: none;
+    content: none;
+    display: none;
 }
 
 /* Markdown Content Styles */
@@ -966,12 +1054,22 @@ button.submit-btn {
         max-height: 280px;
     }
 
+    .code-block-wrapper {
+        margin: 12px 0;
+    }
+
     .code-block {
         font-size: 0.75rem;
-        /* slightly smaller for more code */
         padding: 10px;
-        padding-top: 35px;
-        margin: 15px 0;
+        margin: 0;
+    }
+
+    .code-block-header {
+        padding: 8px 12px;
+    }
+
+    .code-copy-btn .copy-label {
+        display: none;
     }
 
     /* Choice List - Stretched */
