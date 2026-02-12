@@ -27,13 +27,15 @@ A client-side exam engine for IT subjects using JSON-based data. Users select a 
 - **Interactive Exams**: Answer questions with instant feedback
 - **Results**: View score and explanations
 - **Dark/Light Theme**: Toggle theme preference
+- **Rich Code Blocks**: Line numbers, copy button, language badge
+- **Math & Chemistry**: MathJax with `\(...\)` / `\[...\]` delimiters
 
 ### ⚙️ Admin Editor (Python Tool)
 - **Section Management**: Add, import, delete sections
 - **Chapter Management**: Organize chapters per section
 - **Advanced Chapter Editor**: Double-click to edit questions
 
-### ✨ Advanced Chapter Editor (NEW!)
+### ✨ Advanced Chapter Editor
 **Access**: Double-click any chapter in the editor
 
 **Features:**
@@ -42,6 +44,7 @@ A client-side exam engine for IT subjects using JSON-based data. Users select a 
 - ➕ Add/edit/delete answer choices
 - 📝 Write explanations
 - 💾 Save changes directly to chapter files
+- 🗑️ Delete chapters/questions with optional image cleanup
 
 ---
 
@@ -51,7 +54,8 @@ A client-side exam engine for IT subjects using JSON-based data. Users select a 
 index.html                             # Exam web app
 js/
   ├── exam-engine.js                   # Exam logic
-  └── exam-config.js                   # Subject config (auto-generated)
+  ├── exam-config.js                   # Subject config (auto-generated)
+  └── content-renderer.js             # Markdown, Math & Code renderer
 css/
   └── exam-styles.css                  # Styling
 data/
@@ -126,11 +130,11 @@ Question text, choices, and explanations support **Markdown**, **LaTeX math**, *
 
 | Syntax | Use Case | Example |
 |--------|----------|---------|
-| `$...$` | Inline math/physics | `$F = ma$`, `$E = mc^2$` |
-| `$$...$$` | Display math (centered) | `$$\int_0^\infty e^{-x} dx = 1$$` |
+| `\(...\)` | Inline math/physics | `\(F = ma\)`, `\(E = mc^2\)` |
+| `\[...\]` | Display math (centered) | `\[\int_0^\infty e^{-x} dx = 1\]` |
 | `\ce{...}` | Chemistry (mhchem) | `\ce{H2O}`, `\ce{2H2 + O2 -> 2H2O}` |
 | `` `code` `` | Inline code | `` `System.out.println()` `` |
-| ```` ```java ```` | Code block | Fenced code with language tag |
+| ```` ```java ```` | Code block (with line numbers & copy button) | Fenced code with language tag |
 | `**bold**` | Bold text | `**important**` |
 | `*italic*` | Italic text | `*emphasis*` |
 | `- item` | Bullet list | `- First item` |
@@ -142,14 +146,14 @@ Question text, choices, and explanations support **Markdown**, **LaTeX math**, *
 ```json
 {
   "id": "phys.1",
-  "text": "If $F = ma$ and $m = 5\\text{kg}$, $a = 3\\text{m/s}^2$, what is $F$?",
+  "text": "If \\(F = ma\\) and \\(m = 5\\text{kg}\\), \\(a = 3\\text{m/s}^2\\), what is \\(F\\)?",
   "choices": [
-    {"value": "A", "label": "A", "text": "$15\\text{N}$"},
-    {"value": "B", "label": "B", "text": "$8\\text{N}$"}
+    {"value": "A", "label": "A", "text": "\\(15\\text{N}\\)"},
+    {"value": "B", "label": "B", "text": "\\(8\\text{N}\\)"}
   ],
   "inputType": "radio",
   "correctAnswer": "A",
-  "explanation": "Using **Newton's second law**: $$F = ma = 5 \\times 3 = 15\\text{N}$$"
+  "explanation": "Using **Newton's second law**: \\[F = ma = 5 \\times 3 = 15\\text{N}\\]"
 }
 ```
 
@@ -162,6 +166,7 @@ Question text, choices, and explanations support **Markdown**, **LaTeX math**, *
 - Save frequently with **💾 Save All**
 - Use the Advanced Editor for full control
 - Keep image files in the auto-created `images/` folder
+- Use `\(...\)` for inline math, `\[...\]` for display math (not `$`)
 - Use simple choice values (A, B, C, D)
 
 ❌ **DON'T:**
@@ -189,6 +194,7 @@ Question text, choices, and explanations support **Markdown**, **LaTeX math**, *
 - **index.html**: Main application interface
 - **exam-engine.js**: All exam logic and UI rendering
 - **exam-config.js**: Auto-generated subject/chapter config
+- **content-renderer.js**: Markdown, MathJax & Prism.js rendering pipeline
 - **exam-styles.css**: Responsive design with themes
 
 ### Data Management

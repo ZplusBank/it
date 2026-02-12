@@ -567,13 +567,54 @@ class AdvancedChapterEditor:
         if self.current_question_idx is None:
             messagebox.showwarning("Warning", "Select a question first")
             return
-        
-        if messagebox.askyesno("Confirm", "Delete this question?"):
+
+        question = self.questions[self.current_question_idx]
+        image_path = question.get('image', '')
+
+        # Custom dialog with optional image deletion
+        dlg = tk.Toplevel(self.window)
+        dlg.title("Delete Question")
+        dlg.geometry("480x180" if image_path else "480x140")
+        dlg.transient(self.window)
+        dlg.grab_set()
+
+        frame = ttk.Frame(dlg, padding=12)
+        frame.pack(fill=tk.BOTH, expand=True)
+
+        q_num = question.get('number', str(self.current_question_idx + 1))
+        ttk.Label(frame, text=f"Delete question {q_num}?", font=("", 10, "bold")).pack(anchor=tk.W, pady=(0, 8))
+
+        del_image_var = tk.BooleanVar(value=False)
+        if image_path:
+            ttk.Label(frame, text=f"This question has an image: {image_path}").pack(anchor=tk.W)
+            ttk.Checkbutton(frame, text="Also delete image file from disk (permanent)", variable=del_image_var).pack(anchor=tk.W, pady=(4, 8))
+
+        btn_frame = ttk.Frame(frame)
+        btn_frame.pack(fill=tk.X, pady=(10, 0))
+
+        def do_delete():
+            # Delete the image file if the user opted in
+            if del_image_var.get() and image_path:
+                try:
+                    img_path = self.base_path / image_path
+                    if img_path.exists():
+                        img_path.unlink()
+                        print(f"Deleted image: {image_path}")
+                except Exception as e:
+                    print(f"Warning: Failed to delete image {image_path}: {e}")
+
             del self.questions[self.current_question_idx]
             self.current_question_idx = None
             self.refresh_questions_list()
             self.init_editor_widgets()
+            dlg.destroy()
             messagebox.showinfo("Success", "Question deleted")
+
+        def cancel():
+            dlg.destroy()
+
+        ttk.Button(btn_frame, text="Delete", command=do_delete, width=12).pack(side=tk.RIGHT, padx=6)
+        ttk.Button(btn_frame, text="Cancel", command=cancel, width=12).pack(side=tk.RIGHT)
     
     def save_chapter(self):
         """Save chapter data back to JSON file"""
@@ -1201,10 +1242,10 @@ class ExamEditor:
             return
         
         chapter = self.chapters[self.current_chapter_idx]
-        # Custom dialog with optional checkbox to also delete the chapter file on disk
+        # Custom dialog with optional checkboxes to also delete file and images on disk
         dlg = tk.Toplevel(self.root)
         dlg.title("Delete Chapter")
-        dlg.geometry("480x160")
+        dlg.geometry("500x200")
         dlg.transient(self.root)
         dlg.grab_set()
 
@@ -1215,17 +1256,52 @@ class ExamEditor:
         ttk.Label(frame, text="This will remove the chapter from the list.").pack(anchor=tk.W)
 
         del_var = tk.BooleanVar(value=False)
-        ttk.Checkbutton(frame, text="Also delete chapter file from disk (permanent)", variable=del_var).pack(anchor=tk.W, pady=8)
+        ttk.Checkbutton(frame, text="Also delete chapter file from disk (permanent)", variable=del_var).pack(anchor=tk.W, pady=(8, 0))
+
+        del_images_var = tk.BooleanVar(value=False)
+        ttk.Checkbutton(frame, text="Also delete chapter images from disk (permanent)", variable=del_images_var).pack(anchor=tk.W, pady=(4, 8))
 
         btn_frame = ttk.Frame(frame)
         btn_frame.pack(fill=tk.X, pady=(10,0))
 
         def do_delete():
+            section = next((s for s in self.sections if s['id'] == self.current_section), None)
+
+            # Collect image paths from the chapter JSON before deleting it
+            image_paths = []
+            if section and (del_var.get() or del_images_var.get()):
+                try:
+                    fpath = self.base_path / section.get('path', '') / chapter.get('file', '')
+                    if fpath.exists():
+                        with open(fpath, 'r', encoding='utf-8') as f:
+                            data = json.load(f)
+                        # Handle both list and dict formats
+                        chapter_data = data[0] if isinstance(data, list) and data else data
+                        if isinstance(chapter_data, dict):
+                            for q in chapter_data.get('questions', []):
+                                img = q.get('image', '')
+                                if img:
+                                    image_paths.append(img)
+                except Exception as e:
+                    print(f"Warning: Could not read chapter images: {e}")
+
+            # Delete image files if the user opted in
+            if del_images_var.get() and image_paths:
+                deleted_count = 0
+                for img_rel in image_paths:
+                    try:
+                        img_path = self.base_path / img_rel
+                        if img_path.exists():
+                            img_path.unlink()
+                            deleted_count += 1
+                    except Exception as e:
+                        print(f"Warning: Failed to delete image {img_rel}: {e}")
+                if deleted_count:
+                    print(f"Deleted {deleted_count} image(s) for chapter '{chapter.get('name', '')}'")
+
             # If user chose to delete the file, attempt it
             if del_var.get():
                 try:
-                    # Determine file path relative to the current section
-                    section = next((s for s in self.sections if s['id'] == self.current_section), None)
                     if section:
                         fpath = self.base_path / section.get('path', '') / chapter.get('file', '')
                         if fpath.exists():
