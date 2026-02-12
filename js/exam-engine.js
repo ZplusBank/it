@@ -540,7 +540,7 @@ const app = {
                 const renderedChoice = ContentRenderer.render(choice.text);
                 choicesHtml += `
                     <div class="results-choice ${choiceClass}">
-                        <div class="results-choice-letter">${choice.label}</div>
+                        <div class="results-choice-letter">${choice.value}</div>
                         <div class="results-choice-text">${renderedChoice}</div>
                         ${choiceIcon ? `<div class="results-choice-icon">${choiceIcon}</div>` : ''}
                     </div>
