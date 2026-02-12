@@ -1062,6 +1062,18 @@ button.submit-btn {
         font-size: 0.75rem;
         padding: 10px;
         margin: 0;
+        white-space: pre-wrap;
+        word-break: break-all;
+        overflow-x: hidden;
+    }
+
+    /* Line numbers are misleading with wrapped lines, hide on mobile */
+    .code-block.line-numbers {
+        padding-left: 10px;
+    }
+
+    .code-block .line-numbers-rows {
+        display: none;
     }
 
     .code-block-header {
