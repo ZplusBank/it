@@ -1,7 +1,7 @@
 /**
  * ElectricBorder — Vanilla JS animated neon border effect on hover
- * Adapted from reactbits.dev/animations/electric-border (React component)
- * Performance-optimized: hover-only animation, event delegation, lazy canvas creation
+ * Faithful port of reactbits.dev/animations/electric-border
+ * Performance: hover-only rAF, event delegation, lazy DOM, skip touch devices
  */
 (function () {
   'use strict';
@@ -9,233 +9,271 @@
   // Skip on touch-only devices
   if (window.matchMedia('(hover: none)').matches) return;
 
-  // --- Noise functions (procedural, no dependencies) ---
-  function pseudoRandom(x, y) {
-    const n = Math.sin(x * 12.9898 + y * 78.233) * 43758.5453;
-    return n - Math.floor(n);
+  // --- Noise functions (exact match to React source) ---
+  function random(x) {
+    return (Math.sin(x * 12.9898) * 43758.5453) % 1;
   }
 
   function noise2D(x, y) {
-    const ix = Math.floor(x), iy = Math.floor(y);
-    const fx = x - ix, fy = y - iy;
-    const ux = fx * fx * (3 - 2 * fx), uy = fy * fy * (3 - 2 * fy);
-    const a = pseudoRandom(ix, iy);
-    const b = pseudoRandom(ix + 1, iy);
-    const c = pseudoRandom(ix, iy + 1);
-    const d = pseudoRandom(ix + 1, iy + 1);
-    return a + (b - a) * ux + (c - a) * uy + (a - b - c + d) * ux * uy;
+    var i = Math.floor(x);
+    var j = Math.floor(y);
+    var fx = x - i;
+    var fy = y - j;
+
+    var a = random(i + j * 57);
+    var b = random(i + 1 + j * 57);
+    var c = random(i + (j + 1) * 57);
+    var d = random(i + 1 + (j + 1) * 57);
+
+    var ux = fx * fx * (3.0 - 2.0 * fx);
+    var uy = fy * fy * (3.0 - 2.0 * fy);
+
+    return a * (1 - ux) * (1 - uy) + b * ux * (1 - uy) + c * (1 - ux) * uy + d * ux * uy;
   }
 
-  function fractalNoise(x, y, octaves) {
-    let val = 0, amp = 0.5, freq = 1;
-    for (let i = 0; i < octaves; i++) {
-      val += noise2D(x * freq, y * freq) * amp;
-      amp *= 0.5;
-      freq *= 2;
+  function octavedNoise(x, octaves, lacunarity, gain, baseAmplitude, baseFrequency, time, seed, baseFlatness) {
+    var y = 0;
+    var amplitude = baseAmplitude;
+    var frequency = baseFrequency;
+
+    for (var i = 0; i < octaves; i++) {
+      var octaveAmplitude = amplitude;
+      if (i === 0) {
+        octaveAmplitude *= baseFlatness;
+      }
+      y += octaveAmplitude * noise2D(frequency * x + seed * 100, time * frequency * 0.3);
+      frequency *= lacunarity;
+      amplitude *= gain;
     }
-    return val;
+
+    return y;
   }
 
-  // --- Rounded rect path sampling ---
-  function roundedRectPerimeter(w, h, r) {
-    return 2 * (w - 2 * r) + 2 * (h - 2 * r) + 2 * Math.PI * r;
+  // --- Rounded rect point (exact match to React source) ---
+  function getCornerPoint(centerX, centerY, radius, startAngle, arcLength, progress) {
+    var angle = startAngle + progress * arcLength;
+    return {
+      x: centerX + radius * Math.cos(angle),
+      y: centerY + radius * Math.sin(angle)
+    };
   }
 
-  function pointOnRoundedRect(w, h, r, t) {
-    // t is 0..1 around the perimeter
-    const p = roundedRectPerimeter(w, h, r);
-    let d = ((t % 1) + 1) % 1 * p;
-
-    const top = w - 2 * r;
-    const right = h - 2 * r;
-    const bottom = w - 2 * r;
-    const left = h - 2 * r;
-    const cornerLen = (Math.PI / 2) * r;
+  function getRoundedRectPoint(t, left, top, width, height, radius) {
+    var straightWidth = width - 2 * radius;
+    var straightHeight = height - 2 * radius;
+    var cornerArc = (Math.PI * radius) / 2;
+    var totalPerimeter = 2 * straightWidth + 2 * straightHeight + 4 * cornerArc;
+    var distance = t * totalPerimeter;
+    var accumulated = 0;
+    var progress;
 
     // Top edge
-    if (d < top) return { x: r + d, y: 0 };
-    d -= top;
+    if (distance <= accumulated + straightWidth) {
+      progress = (distance - accumulated) / straightWidth;
+      return { x: left + radius + progress * straightWidth, y: top };
+    }
+    accumulated += straightWidth;
+
     // Top-right corner
-    if (d < cornerLen) {
-      const a = d / r;
-      return { x: w - r + Math.sin(a) * r, y: r - Math.cos(a) * r };
+    if (distance <= accumulated + cornerArc) {
+      progress = (distance - accumulated) / cornerArc;
+      return getCornerPoint(left + width - radius, top + radius, radius, -Math.PI / 2, Math.PI / 2, progress);
     }
-    d -= cornerLen;
+    accumulated += cornerArc;
+
     // Right edge
-    if (d < right) return { x: w, y: r + d };
-    d -= right;
+    if (distance <= accumulated + straightHeight) {
+      progress = (distance - accumulated) / straightHeight;
+      return { x: left + width, y: top + radius + progress * straightHeight };
+    }
+    accumulated += straightHeight;
+
     // Bottom-right corner
-    if (d < cornerLen) {
-      const a = d / r;
-      return { x: w - r + Math.cos(a) * r, y: h - r + Math.sin(a) * r };
+    if (distance <= accumulated + cornerArc) {
+      progress = (distance - accumulated) / cornerArc;
+      return getCornerPoint(left + width - radius, top + height - radius, radius, 0, Math.PI / 2, progress);
     }
-    d -= cornerLen;
+    accumulated += cornerArc;
+
     // Bottom edge
-    if (d < bottom) return { x: w - r - d, y: h };
-    d -= bottom;
+    if (distance <= accumulated + straightWidth) {
+      progress = (distance - accumulated) / straightWidth;
+      return { x: left + width - radius - progress * straightWidth, y: top + height };
+    }
+    accumulated += straightWidth;
+
     // Bottom-left corner
-    if (d < cornerLen) {
-      const a = d / r;
-      return { x: r - Math.sin(a) * r, y: h - r + Math.cos(a) * r };
+    if (distance <= accumulated + cornerArc) {
+      progress = (distance - accumulated) / cornerArc;
+      return getCornerPoint(left + radius, top + height - radius, radius, Math.PI / 2, Math.PI / 2, progress);
     }
-    d -= cornerLen;
+    accumulated += cornerArc;
+
     // Left edge
-    if (d < left) return { x: 0, y: h - r - d };
-    d -= left;
-    // Top-left corner
-    {
-      const a = d / r;
-      return { x: r - Math.cos(a) * r, y: r - Math.sin(a) * r };
+    if (distance <= accumulated + straightHeight) {
+      progress = (distance - accumulated) / straightHeight;
+      return { x: left, y: top + height - radius - progress * straightHeight };
     }
+    accumulated += straightHeight;
+
+    // Top-left corner
+    progress = (distance - accumulated) / cornerArc;
+    return getCornerPoint(left + radius, top + radius, radius, Math.PI, Math.PI / 2, progress);
   }
 
-  // --- Config ---
-  var OCTAVES = 6;         // Reduced from 10 — still visually rich
-  var SPEED = 0.012;
-  var NOISE_SCALE = 0.08;
-  var INTENSITY = 1.2;
-  var LINE_WIDTH = 1.5;
-  var PADDING = 4;         // px outside element boundary
+  // --- Config (matching React defaults / user example) ---
+  var COLOR = '#7df9ff';
+  var SPEED = 1;
+  var CHAOS = 0.5;
+  var OCTAVES = 10;
+  var LACUNARITY = 1.6;
+  var GAIN = 0.7;
+  var FREQUENCY = 10;
+  var BASE_FLATNESS = 0;
+  var DISPLACEMENT = 60;
+  var BORDER_OFFSET = 60;
 
   // --- Per-element state ---
   var activeElements = new WeakMap();
 
-  function getColor() {
-    // Read from CSS custom property for theme compatibility
-    var root = getComputedStyle(document.documentElement);
-    var primary = root.getPropertyValue('--primary').trim() ||
-      root.getPropertyValue('--accent-color').trim() ||
-      '#6366f1';
-    return primary;
-  }
-
-  function hexToRgb(hex) {
-    hex = hex.replace('#', '');
-    if (hex.length === 3) hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
-    return {
-      r: parseInt(hex.slice(0, 2), 16),
-      g: parseInt(hex.slice(2, 4), 16),
-      b: parseInt(hex.slice(4, 6), 16)
-    };
-  }
-
   function setupElement(el) {
-    if (activeElements.has(el)) return; // Already active
+    if (activeElements.has(el)) return;
 
     var rect = el.getBoundingClientRect();
-    var w = rect.width + PADDING * 2;
-    var h = rect.height + PADDING * 2;
-
-    // Get border-radius from computed styles
     var cs = getComputedStyle(el);
-    var rawRadius = parseFloat(cs.borderRadius) || 0;
-    var radius = Math.min(rawRadius + 2, Math.min(w, h) / 2);
+    var rawRadius = parseFloat(cs.borderRadius) || 16;
 
-    // Create canvas
-    var canvas = document.createElement('canvas');
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = w * dpr;
-    canvas.height = h * dpr;
-    canvas.style.cssText =
-      'position:absolute;pointer-events:none;z-index:1;' +
-      'top:' + (-PADDING) + 'px;left:' + (-PADDING) + 'px;' +
-      'width:' + w + 'px;height:' + h + 'px;';
-
-    var ctx = canvas.getContext('2d');
-    ctx.scale(dpr, dpr);
-
-    // Ensure parent is positioned
+    // Ensure positioned
     if (cs.position === 'static') {
       el.style.position = 'relative';
     }
 
-    // Handle overflow — need visible for border to show
+    // Handle overflow
     var origOverflow = cs.overflow;
     if (origOverflow === 'hidden') {
       el.style.overflow = 'visible';
     }
 
-    el.appendChild(canvas);
+    // Set color variable for CSS glow layers
+    el.style.setProperty('--electric-border-color', COLOR);
+    el.classList.add('electric-border');
 
-    var perimeter = roundedRectPerimeter(w, h, radius);
-    var sampleCount = Math.max(60, Math.round(perimeter / 3));
+    // Create glow layers (CSS-driven, matching React structure)
+    var layers = document.createElement('div');
+    layers.className = 'eb-layers';
+    layers.innerHTML =
+      '<div class="eb-glow-1"></div>' +
+      '<div class="eb-glow-2"></div>' +
+      '<div class="eb-background-glow"></div>';
 
-    var color = getColor();
-    var rgb = hexToRgb(color);
+    // Create canvas container (centered, extends beyond element)
+    var canvasContainer = document.createElement('div');
+    canvasContainer.className = 'eb-canvas-container';
+
+    var canvas = document.createElement('canvas');
+    canvas.className = 'eb-canvas';
+    canvasContainer.appendChild(canvas);
+
+    el.appendChild(layers);
+    el.appendChild(canvasContainer);
+
+    // Size canvas
+    var elWidth = rect.width;
+    var elHeight = rect.height;
+    var canvasW = elWidth + BORDER_OFFSET * 2;
+    var canvasH = elHeight + BORDER_OFFSET * 2;
+
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = canvasW * dpr;
+    canvas.height = canvasH * dpr;
+    canvas.style.width = canvasW + 'px';
+    canvas.style.height = canvasH + 'px';
+
+    var ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+
+    // Compute border geometry
+    var borderWidth = elWidth;
+    var borderHeight = elHeight;
+    var maxRadius = Math.min(borderWidth, borderHeight) / 2;
+    var radius = Math.min(rawRadius, maxRadius);
+    var approxPerimeter = 2 * (borderWidth + borderHeight) + 2 * Math.PI * radius;
+    var sampleCount = Math.floor(approxPerimeter / 2);
 
     var state = {
+      canvasContainer: canvasContainer,
       canvas: canvas,
       ctx: ctx,
-      w: w,
-      h: h,
+      layers: layers,
+      canvasW: canvasW,
+      canvasH: canvasH,
+      borderWidth: borderWidth,
+      borderHeight: borderHeight,
       radius: radius,
-      perimeter: perimeter,
       sampleCount: sampleCount,
-      rgb: rgb,
+      dpr: dpr,
+      timeVal: 0,
+      lastFrameTime: 0,
       rafId: null,
-      startTime: performance.now(),
       origOverflow: origOverflow
     };
 
     activeElements.set(el, state);
 
-    // Start animation loop
-    function draw() {
+    // Animation loop (matching React's drawElectricBorder)
+    function draw(currentTime) {
       var s = activeElements.get(el);
       if (!s) return;
 
-      var elapsed = (performance.now() - s.startTime) * 0.001;
-      var c = s.ctx;
-      c.clearRect(0, 0, s.w, s.h);
+      var deltaTime = s.lastFrameTime === 0 ? 0.016 : (currentTime - s.lastFrameTime) / 1000;
+      s.timeVal += deltaTime * SPEED;
+      s.lastFrameTime = currentTime;
 
-      c.lineWidth = LINE_WIDTH;
+      var c = s.ctx;
+      c.setTransform(1, 0, 0, 1, 0, 0);
+      c.clearRect(0, 0, s.canvas.width, s.canvas.height);
+      c.scale(s.dpr, s.dpr);
+
+      c.strokeStyle = COLOR;
+      c.lineWidth = 1;
       c.lineCap = 'round';
       c.lineJoin = 'round';
 
-      // Build path
       c.beginPath();
+
       for (var i = 0; i <= s.sampleCount; i++) {
-        var t = i / s.sampleCount;
-        var pt = pointOnRoundedRect(s.w, s.h, s.radius, t);
+        var progress = i / s.sampleCount;
 
-        // Compute noise displacement
-        var n = fractalNoise(t * s.perimeter * NOISE_SCALE, elapsed * SPEED * 100, OCTAVES);
-        var displacement = (n - 0.5) * 2 * INTENSITY;
+        var point = getRoundedRectPoint(
+          progress,
+          BORDER_OFFSET,
+          BORDER_OFFSET,
+          s.borderWidth,
+          s.borderHeight,
+          s.radius
+        );
 
-        // Normal direction (approximate)
-        var tNext = (i + 1) / s.sampleCount;
-        var ptNext = pointOnRoundedRect(s.w, s.h, s.radius, tNext);
-        var dx = ptNext.x - pt.x;
-        var dy = ptNext.y - pt.y;
-        var len = Math.sqrt(dx * dx + dy * dy) || 1;
-        var nx = -dy / len;
-        var ny = dx / len;
+        var xNoise = octavedNoise(
+          progress * 8, OCTAVES, LACUNARITY, GAIN,
+          CHAOS, FREQUENCY, s.timeVal, 0, BASE_FLATNESS
+        );
 
-        var px = pt.x + nx * displacement;
-        var py = pt.y + ny * displacement;
+        var yNoise = octavedNoise(
+          progress * 8, OCTAVES, LACUNARITY, GAIN,
+          CHAOS, FREQUENCY, s.timeVal, 1, BASE_FLATNESS
+        );
 
-        if (i === 0) c.moveTo(px, py);
-        else c.lineTo(px, py);
+        var displacedX = point.x + xNoise * DISPLACEMENT;
+        var displacedY = point.y + yNoise * DISPLACEMENT;
+
+        if (i === 0) {
+          c.moveTo(displacedX, displacedY);
+        } else {
+          c.lineTo(displacedX, displacedY);
+        }
       }
+
       c.closePath();
-
-      // Glow layers (3 passes for glow effect)
-      var r = s.rgb.r, g = s.rgb.g, b = s.rgb.b;
-
-      c.shadowColor = 'rgba(' + r + ',' + g + ',' + b + ',0.6)';
-      c.shadowBlur = 15;
-      c.strokeStyle = 'rgba(' + r + ',' + g + ',' + b + ',0.25)';
-      c.lineWidth = 4;
-      c.stroke();
-
-      c.shadowBlur = 8;
-      c.strokeStyle = 'rgba(' + r + ',' + g + ',' + b + ',0.5)';
-      c.lineWidth = 2;
-      c.stroke();
-
-      c.shadowBlur = 0;
-      c.strokeStyle = 'rgba(' + r + ',' + g + ',' + b + ',0.9)';
-      c.lineWidth = LINE_WIDTH;
       c.stroke();
 
       s.rafId = requestAnimationFrame(draw);
@@ -249,9 +287,12 @@
     if (!state) return;
 
     if (state.rafId) cancelAnimationFrame(state.rafId);
-    if (state.canvas.parentNode === el) el.removeChild(state.canvas);
+    if (state.canvasContainer.parentNode === el) el.removeChild(state.canvasContainer);
+    if (state.layers.parentNode === el) el.removeChild(state.layers);
 
-    // Restore overflow
+    el.classList.remove('electric-border');
+    el.style.removeProperty('--electric-border-color');
+
     if (state.origOverflow === 'hidden') {
       el.style.overflow = 'hidden';
     }
@@ -259,7 +300,7 @@
     activeElements.delete(el);
   }
 
-  // --- Event delegation ---
+  // --- Event delegation (IT project selectors) ---
   var SELECTORS = [
     '.subject-card',
     '.chapter-card',
