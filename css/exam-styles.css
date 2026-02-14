@@ -143,17 +143,6 @@
     }
 }
 
-@keyframes glowPulse {
-
-    0%,
-    100% {
-        box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
-    }
-
-    50% {
-        box-shadow: 0 0 40px rgba(99, 102, 241, 0.2);
-    }
-}
 
 @keyframes gradientShift {
     0% {
@@ -290,66 +279,17 @@ header::before {
     display: inline-block;
     border: 2px solid rgba(167, 139, 250, 0.6);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    text-shadow:
-        0 0 7px rgba(167, 139, 250, 0.8),
-        0 0 20px rgba(167, 139, 250, 0.5),
-        0 0 40px rgba(139, 92, 246, 0.3);
-    box-shadow:
-        inset 0 0 15px rgba(167, 139, 250, 0.08),
-        0 0 15px rgba(167, 139, 250, 0.15);
-    animation: neonPulse 3s ease-in-out infinite;
-    will-change: text-shadow;
     letter-spacing: 0.08em;
 }
 
-@keyframes neonPulse {
-
-    0%,
-    100% {
-        text-shadow:
-            0 0 7px rgba(167, 139, 250, 0.8),
-            0 0 20px rgba(167, 139, 250, 0.5),
-            0 0 40px rgba(139, 92, 246, 0.3);
-    }
-
-    50% {
-        text-shadow:
-            0 0 10px rgba(167, 139, 250, 1),
-            0 0 30px rgba(167, 139, 250, 0.7),
-            0 0 60px rgba(139, 92, 246, 0.4);
-    }
-}
-
-@keyframes neonPulseGlow {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
-}
 
 .logo-mark {
     position: relative;
 }
 
-.logo-mark::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    box-shadow:
-        inset 0 0 20px rgba(167, 139, 250, 0.12),
-        0 0 25px rgba(167, 139, 250, 0.25);
-    animation: neonPulseGlow 3s ease-in-out infinite;
-    pointer-events: none;
-    will-change: opacity;
-}
-
 .logo-mark:hover {
     color: #c4b5fd;
     transform: scale(1.08);
-    text-shadow:
-        0 0 10px rgba(196, 181, 253, 1),
-        0 0 30px rgba(167, 139, 250, 0.8),
-        0 0 60px rgba(139, 92, 246, 0.5),
-        0 0 90px rgba(99, 102, 241, 0.3);
     border-color: rgba(196, 181, 253, 0.6);
 }
 
@@ -357,10 +297,6 @@ header::before {
     background: rgba(0, 0, 0, 0.5);
     color: #c4b5fd;
     border-color: rgba(196, 181, 253, 0.4);
-    text-shadow:
-        0 0 7px rgba(196, 181, 253, 0.9),
-        0 0 20px rgba(167, 139, 250, 0.6),
-        0 0 50px rgba(139, 92, 246, 0.4);
 }
 
 /* ============= Back to Home Button ============= */
@@ -408,7 +344,6 @@ header::before {
 
 .back-home-btn:hover .btn-icon {
     transform: translateX(-3px);
-    box-shadow: 0 0 16px rgba(99, 102, 241, 0.3);
 }
 
 /* ============= Theme Toggle ============= */
@@ -744,8 +679,6 @@ header::before {
 
 .start-exam-btn:hover:not(:disabled) {
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.35);
-    filter: brightness(1.08);
 }
 
 .start-exam-btn:disabled {
@@ -801,7 +734,6 @@ header::before {
 .exit-btn:hover {
     background: var(--danger);
     color: white;
-    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
 }
 
 .exam-title {
@@ -874,7 +806,6 @@ header::before {
     color: white;
     border-color: transparent;
     transform: scale(1.08);
-    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
 }
 
 .question-number.answered {
@@ -1413,8 +1344,6 @@ button.submit-btn {
 
 .check-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
-    filter: brightness(1.05);
 }
 
 .submit-btn {
@@ -1424,9 +1353,7 @@ button.submit-btn {
 }
 
 .submit-btn:hover {
-    filter: brightness(1.1);
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
 }
 
 /* ============= Results View ============= */
@@ -1513,7 +1440,6 @@ button.submit-btn {
 
 .restart-btn:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
 }
 
 /* ============================================================
