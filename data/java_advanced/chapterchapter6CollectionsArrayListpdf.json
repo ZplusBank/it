@@ -1,0 +1,2058 @@
+{
+  "id": "upload-1771104561550",
+  "label": "chapter_6_Collections_ArrayList_.pdf",
+  "params": {
+    "file": "chapter_6_Collections_ArrayList_.pdf"
+  },
+  "title": "Introduction to Arrays and Data Structures & Array Initialization and Manipulation & Exception Handling and Objects & Card Shuffling and Dealing Simulation & Enhanced for Statement & Passing Arrays to Methods & Case Study: Class GradeBook & Multidimensional Arrays & Two-Dimensional Arrays: GradeBook Case Study & Variable-Length Argument Lists and Command-Line Arguments & The Arrays Class and Utility Methods & Introduction to Collections and ArrayList & GUI and Graphics Case Study: Drawing Arcs",
+  "questions": [
+    {
+      "id": "upload-1771104561550-0",
+      "number": "1",
+      "text": "What is the primary characteristic of an array's length in Java once it has been created?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It can be resized dynamically using the 'resize' keyword.",
+          "text": "It can be resized dynamically using the 'resize' keyword."
+        },
+        {
+          "value": "B",
+          "label": "It remains the same length once created.",
+          "text": "It remains the same length once created."
+        },
+        {
+          "value": "C",
+          "label": "It automatically shrinks when elements are removed.",
+          "text": "It automatically shrinks when elements are removed."
+        },
+        {
+          "value": "D",
+          "label": "It can only be modified by the JVM at runtime.",
+          "text": "It can only be modified by the JVM at runtime."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Arrays in Java are fixed-length data structures; once created, their length cannot be changed, although the variable can be reassigned to a new array object of a different length."
+    },
+    {
+      "id": "upload-1771104561550-1",
+      "number": "2",
+      "text": "In an array named `c` with 12 elements, what is the array-access expression for the last element?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "c[12]",
+          "text": "c[12]"
+        },
+        {
+          "value": "B",
+          "label": "c[last]",
+          "text": "c[last]"
+        },
+        {
+          "value": "C",
+          "label": "c[11]",
+          "text": "c[11]"
+        },
+        {
+          "value": "D",
+          "label": "c.length",
+          "text": "c.length"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Java arrays use zero-based indexing. The first element is at index 0, so the highest index is one less than the number of elements (length - 1)."
+    },
+    {
+      "id": "upload-1771104561550-2",
+      "number": "3",
+      "text": "Which field is used to determine the number of elements in a Java array named `myArray`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "myArray.size()",
+          "text": "myArray.size()"
+        },
+        {
+          "value": "B",
+          "label": "myArray.length()",
+          "text": "myArray.length()"
+        },
+        {
+          "value": "C",
+          "label": "myArray.length",
+          "text": "myArray.length"
+        },
+        {
+          "value": "D",
+          "label": "myArray.elements",
+          "text": "myArray.elements"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Every array object knows its own length and stores it in a final instance variable named 'length'."
+    },
+    {
+      "id": "upload-1771104561550-3",
+      "number": "4",
+      "text": "What are the default values for `int`, `boolean`, and reference type elements in a newly created array?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "0, false, null",
+          "text": "0, false, null"
+        },
+        {
+          "value": "B",
+          "label": "0, null, false",
+          "text": "0, null, false"
+        },
+        {
+          "value": "C",
+          "label": "-1, true, null",
+          "text": "-1, true, null"
+        },
+        {
+          "value": "D",
+          "label": "null, false, 0",
+          "text": "null, false, 0"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "When an array is created, numeric primitive elements default to zero, boolean elements to false, and references to null."
+    },
+    {
+      "id": "upload-1771104561550-4",
+      "number": "5",
+      "text": "Which of the following is a common programming error when declaring an array?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Declaring an array variable without initializing it.",
+          "text": "Declaring an array variable without initializing it."
+        },
+        {
+          "value": "B",
+          "label": "Placing the number of elements inside the square brackets of the declaration (e.g., `int[12] c;`).",
+          "text": "Placing the number of elements inside the square brackets of the declaration (e.g., `int[12] c;`)."
+        },
+        {
+          "value": "C",
+          "label": "Using a variable as an array index.",
+          "text": "Using a variable as an array index."
+        },
+        {
+          "value": "D",
+          "label": "Initializing an array with a comma-separated list.",
+          "text": "Initializing an array with a comma-separated list."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In an array declaration, specifying the number of elements in the square brackets (e.g., `int[12] c;`) is a syntax error. The size is specified during array creation with the 'new' keyword."
+    },
+    {
+      "id": "upload-1771104561550-0",
+      "number": "6",
+      "text": "How does an array initializer determine the size of the array it creates?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By the value of a final constant variable.",
+          "text": "By the value of a final constant variable."
+        },
+        {
+          "value": "B",
+          "label": "By the number of elements in the comma-separated list within braces.",
+          "text": "By the number of elements in the comma-separated list within braces."
+        },
+        {
+          "value": "C",
+          "label": "By the default size of 10.",
+          "text": "By the default size of 10."
+        },
+        {
+          "value": "D",
+          "label": "By the value specified in the square brackets before the braces.",
+          "text": "By the value specified in the square brackets before the braces."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "When using an initializer list (e.g., `int[] n = {10, 20, 30};`), the compiler counts the items to determine the array's length."
+    },
+    {
+      "id": "upload-1771104561550-1",
+      "number": "7",
+      "text": "Consider the following code snippet:\n```java\nfinal int ARRAY_LENGTH = 5;\nint[] items = new int[ARRAY_LENGTH];\nitems[0] = 10;\nARRAY_LENGTH = 10;\n```\nWhat is the result?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The array 'items' is resized to 10 elements.",
+          "text": "The array 'items' is resized to 10 elements."
+        },
+        {
+          "value": "B",
+          "label": "The code compiles but throws a RuntimeException.",
+          "text": "The code compiles but throws a RuntimeException."
+        },
+        {
+          "value": "C",
+          "label": "A compilation error occurs because a final variable cannot be modified.",
+          "text": "A compilation error occurs because a final variable cannot be modified."
+        },
+        {
+          "value": "D",
+          "label": "The code runs and 'ARRAY_LENGTH' becomes 10.",
+          "text": "The code runs and 'ARRAY_LENGTH' becomes 10."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Variables marked as 'final' are constants and cannot be modified after they are initialized."
+    },
+    {
+      "id": "upload-1771104561550-2",
+      "number": "8",
+      "text": "In the die-rolling example (Fig 7.7), how is the array `frequency` used to eliminate a `switch` statement?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By using the die face value directly as the index for the frequency array.",
+          "text": "By using the die face value directly as the index for the frequency array."
+        },
+        {
+          "value": "B",
+          "label": "By sorting the random numbers as they are generated.",
+          "text": "By sorting the random numbers as they are generated."
+        },
+        {
+          "value": "C",
+          "label": "By using a while loop to check every possible face value.",
+          "text": "By using a while loop to check every possible face value."
+        },
+        {
+          "value": "D",
+          "label": "By creating a separate array for every possible die roll.",
+          "text": "By creating a separate array for every possible die roll."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The program uses the value produced by the random number generator (1–6) as an index to increment the corresponding element in the frequency array."
+    },
+    {
+      "id": "upload-1771104561550-3",
+      "number": "9",
+      "text": "What flag is used in a format specifier (like `%02d`) to display a leading zero for values with fewer digits than the field width?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "#",
+          "text": "#"
+        },
+        {
+          "value": "B",
+          "label": "+",
+          "text": "+"
+        },
+        {
+          "value": "C",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "-",
+          "text": "-"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The '0' flag in a format specifier indicates that leading zeros should be used to pad the output to the specified field width."
+    },
+    {
+      "id": "upload-1771104561550-4",
+      "number": "10",
+      "text": "What happens if a program attempts to access an index of -1 or an index equal to the array's length?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The program returns 'null'.",
+          "text": "The program returns 'null'."
+        },
+        {
+          "value": "B",
+          "label": "The program crashes without any error message.",
+          "text": "The program crashes without any error message."
+        },
+        {
+          "value": "C",
+          "label": "An ArrayIndexOutOfBoundsException is thrown at runtime.",
+          "text": "An ArrayIndexOutOfBoundsException is thrown at runtime."
+        },
+        {
+          "value": "D",
+          "label": "The JVM automatically wraps the index back to 0.",
+          "text": "The JVM automatically wraps the index back to 0."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Java performs bounds checking at execution time. Any index outside the range 0 to (length - 1) results in an ArrayIndexOutOfBoundsException."
+    },
+    {
+      "id": "upload-1771104561550-0",
+      "number": "11",
+      "text": "In a `try-catch` statement, which block contains the code that might cause a problem?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The catch block",
+          "text": "The catch block"
+        },
+        {
+          "value": "B",
+          "label": "The try block",
+          "text": "The try block"
+        },
+        {
+          "value": "C",
+          "label": "The exception block",
+          "text": "The exception block"
+        },
+        {
+          "value": "D",
+          "label": "The final block",
+          "text": "The final block"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The 'try' block encloses the code that might throw an exception, while the 'catch' block handles the exception if it occurs."
+    },
+    {
+      "id": "upload-1771104561550-1",
+      "number": "12",
+      "text": "What occurs if an exception is thrown inside a `try` block regarding the variables declared within that same `try` block?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "They remain accessible in the catch block.",
+          "text": "They remain accessible in the catch block."
+        },
+        {
+          "value": "B",
+          "label": "They are moved to global scope.",
+          "text": "They are moved to global scope."
+        },
+        {
+          "value": "C",
+          "label": "They go out of scope and are not accessible in the catch block.",
+          "text": "They go out of scope and are not accessible in the catch block."
+        },
+        {
+          "value": "D",
+          "label": "They are automatically saved to disk.",
+          "text": "They are automatically saved to disk."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Variables declared inside a 'try' block are local to that block. Once the block terminates (due to completion or an exception), those variables are out of scope."
+    },
+    {
+      "id": "upload-1771104561550-2",
+      "number": "13",
+      "text": "When is an object's `toString` method called implicitly?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Every time a variable is declared.",
+          "text": "Every time a variable is declared."
+        },
+        {
+          "value": "B",
+          "label": "Only when the user calls it explicitly using 'object.toString()'.",
+          "text": "Only when the user calls it explicitly using 'object.toString()'."
+        },
+        {
+          "value": "C",
+          "label": "When the object is used where a String is expected, such as in concatenation or %s in printf.",
+          "text": "When the object is used where a String is expected, such as in concatenation or %s in printf."
+        },
+        {
+          "value": "D",
+          "label": "When the object is deleted by the garbage collector.",
+          "text": "When the object is deleted by the garbage collector."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Java implicitly calls toString() when an object needs to be represented as a string, such as during string concatenation (+) or when passed to a %s format specifier."
+    },
+    {
+      "id": "upload-1771104561550-3",
+      "number": "14",
+      "text": "In the `DeckOfCards` class, how is the `deck` instance variable initialized?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "As an array of primitive integers.",
+          "text": "As an array of primitive integers."
+        },
+        {
+          "value": "B",
+          "label": "As an array of Card object references.",
+          "text": "As an array of Card object references."
+        },
+        {
+          "value": "C",
+          "label": "As a single Card object.",
+          "text": "As a single Card object."
+        },
+        {
+          "value": "D",
+          "label": "As a dynamically resizable ArrayList.",
+          "text": "As a dynamically resizable ArrayList."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The 'deck' variable is declared as `private Card[] deck;`, which means it is an array where each element is a reference to a Card object."
+    },
+    {
+      "id": "upload-1771104561550-4",
+      "number": "15",
+      "text": "How can a program determine which specific error occurred inside a `catch` block?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By using the exception parameter's 'toString' method or implicitly printing the object.",
+          "text": "By using the exception parameter's 'toString' method or implicitly printing the object."
+        },
+        {
+          "value": "B",
+          "label": "By checking the 'error_code' global variable.",
+          "text": "By checking the 'error_code' global variable."
+        },
+        {
+          "value": "C",
+          "label": "By restarting the JVM.",
+          "text": "By restarting the JVM."
+        },
+        {
+          "value": "D",
+          "label": "By using the 'retry' keyword.",
+          "text": "By using the 'retry' keyword."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The catch block defines an exception parameter (like 'e') which contains information about the exception. Calling its toString method provides the error description."
+    },
+    {
+      "id": "upload-1771104561550-15",
+      "number": "16",
+      "text": "In the `DeckOfCards` constructor, which expression is used to determine the index for the faces array (0 to 12) given a control variable `count` from 0 to 51?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "count / 13",
+          "text": "count / 13"
+        },
+        {
+          "value": "B",
+          "label": "count % 13",
+          "text": "count % 13"
+        },
+        {
+          "value": "C",
+          "label": "count / 4",
+          "text": "count / 4"
+        },
+        {
+          "value": "D",
+          "label": "count % 4",
+          "text": "count % 4"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The expression `count % 13` results in values from 0 to 12, corresponding to the 13 faces in a suit."
+    },
+    {
+      "id": "upload-1771104561550-16",
+      "number": "17",
+      "text": "During the `shuffle` method implementation, why is a `temp` variable required?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To store the index of the random card.",
+          "text": "To store the index of the random card."
+        },
+        {
+          "value": "B",
+          "label": "To prevent the 'Ace' of 'Spades' from being lost during the swap of two array elements.",
+          "text": "To prevent the 'Ace' of 'Spades' from being lost during the swap of two array elements."
+        },
+        {
+          "value": "C",
+          "label": "To calculate the total number of swaps performed.",
+          "text": "To calculate the total number of swaps performed."
+        },
+        {
+          "value": "D",
+          "label": "To ensure the random number generator stays within bounds.",
+          "text": "To ensure the random number generator stays within bounds."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Without a temp variable, assigning one element to another overwrites the original value, causing it to be lost before it can be moved to the new position."
+    },
+    {
+      "id": "upload-1771104561550-17",
+      "number": "18",
+      "text": "What does the `dealCard` method return when all 52 cards have been dealt?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A new Card object with empty strings.",
+          "text": "A new Card object with empty strings."
+        },
+        {
+          "value": "B",
+          "label": "An IndexOutOfBoundsException.",
+          "text": "An IndexOutOfBoundsException."
+        },
+        {
+          "value": "C",
+          "label": "null",
+          "text": "null"
+        },
+        {
+          "value": "D",
+          "label": "The first card in the deck (index 0).",
+          "text": "The first card in the deck (index 0)."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The method checks if `currentCard < deck.length`; if not, it returns `null` to indicate the deck is empty."
+    },
+    {
+      "id": "upload-1771104561550-18",
+      "number": "19",
+      "text": "How many swaps are performed in the single-pass shuffling algorithm described in the text?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "13",
+          "text": "13"
+        },
+        {
+          "value": "B",
+          "label": "26",
+          "text": "26"
+        },
+        {
+          "value": "C",
+          "label": "52",
+          "text": "52"
+        },
+        {
+          "value": "D",
+          "label": "104",
+          "text": "104"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The method loops through all 52 cards (indices 0 to 51) once, performing one swap per iteration."
+    },
+    {
+      "id": "upload-1771104561550-19",
+      "number": "20",
+      "text": "In the provided `DeckOfCards` implementation, what is the default value of the `deck` array elements before the constructor fills them?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "null",
+          "text": "null"
+        },
+        {
+          "value": "C",
+          "label": "Empty Card objects",
+          "text": "Empty Card objects"
+        },
+        {
+          "value": "D",
+          "label": "Random Card objects",
+          "text": "Random Card objects"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Elements of an array of reference types (like `Card`) are initialized to `null` by default."
+    },
+    {
+      "id": "upload-1771104561550-15",
+      "number": "21",
+      "text": "Which of the following is a primary limitation of the enhanced `for` statement?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It cannot iterate through arrays of primitive types.",
+          "text": "It cannot iterate through arrays of primitive types."
+        },
+        {
+          "value": "B",
+          "label": "It is significantly slower than a traditional for loop.",
+          "text": "It is significantly slower than a traditional for loop."
+        },
+        {
+          "value": "C",
+          "label": "It cannot be used to modify elements in the array.",
+          "text": "It cannot be used to modify elements in the array."
+        },
+        {
+          "value": "D",
+          "label": "It requires the array size to be explicitly stated in the header.",
+          "text": "It requires the array size to be explicitly stated in the header."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The enhanced for statement can only be used to obtain array elements; if you need to modify elements, you must use a traditional counter-controlled for loop."
+    },
+    {
+      "id": "upload-1771104561550-16",
+      "number": "22",
+      "text": "What is the correct syntax for an enhanced `for` statement to total an array named `items` of type `int[]`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`for (int i = 0; i < items.length; i++)`",
+          "text": "`for (int i = 0; i < items.length; i++)`"
+        },
+        {
+          "value": "B",
+          "label": "`for (int x : items)`",
+          "text": "`for (int x : items)`"
+        },
+        {
+          "value": "C",
+          "label": "`for (items : int x)`",
+          "text": "`for (items : int x)`"
+        },
+        {
+          "value": "D",
+          "label": "`for (int x in items)`",
+          "text": "`for (int x in items)`"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The syntax is `for (parameter : arrayName)`."
+    },
+    {
+      "id": "upload-1771104561550-17",
+      "number": "23",
+      "text": "When should you prefer a traditional `for` loop over an enhanced `for` loop?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "When you need to access the index of the current element.",
+          "text": "When you need to access the index of the current element."
+        },
+        {
+          "value": "B",
+          "label": "When you only need to read values from the array.",
+          "text": "When you only need to read values from the array."
+        },
+        {
+          "value": "C",
+          "label": "When the array contains objects rather than primitives.",
+          "text": "When the array contains objects rather than primitives."
+        },
+        {
+          "value": "D",
+          "label": "When you want to avoid 'stepping outside' the array.",
+          "text": "When you want to avoid 'stepping outside' the array."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The enhanced for loop does not provide access to the counter/index; if the index is needed (e.g., for printing labels like 'Student 1'), a traditional loop is required."
+    },
+    {
+      "id": "upload-1771104561550-18",
+      "number": "24",
+      "text": "Given `int[] grades = {10, 20, 30};`, what happens in the first iteration of `for (int g : grades)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The variable `g` is assigned the value 0.",
+          "text": "The variable `g` is assigned the value 0."
+        },
+        {
+          "value": "B",
+          "label": "The variable `g` is assigned the value 10.",
+          "text": "The variable `g` is assigned the value 10."
+        },
+        {
+          "value": "C",
+          "label": "The variable `g` is assigned the reference to the whole array.",
+          "text": "The variable `g` is assigned the reference to the whole array."
+        },
+        {
+          "value": "D",
+          "label": "The loop fails because `g` is not a counter.",
+          "text": "The loop fails because `g` is not a counter."
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In an enhanced for loop, the identifier represents successive element values from the array."
+    },
+    {
+      "id": "upload-1771104561550-19",
+      "number": "25",
+      "text": "The enhanced `for` statement header `for (int number : array)` can be read as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "For each iteration, assign the index to number.",
+          "text": "For each iteration, assign the index to number."
+        },
+        {
+          "value": "B",
+          "label": "While number is in array, execute.",
+          "text": "While number is in array, execute."
+        },
+        {
+          "value": "C",
+          "label": "For each iteration, assign the next element of array to int variable number.",
+          "text": "For each iteration, assign the next element of array to int variable number."
+        },
+        {
+          "value": "D",
+          "label": "Repeat the loop for the length of number.",
+          "text": "Repeat the loop for the length of number."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "This accurately describes the 'for-each' behavior of the enhanced for statement."
+    },
+    {
+      "id": "upload-1771104561550-15",
+      "number": "26",
+      "text": "What is passed to a method when an entire array is used as an argument?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A deep copy of the array.",
+          "text": "A deep copy of the array."
+        },
+        {
+          "value": "B",
+          "label": "A copy of the reference to the array object.",
+          "text": "A copy of the reference to the array object."
+        },
+        {
+          "value": "C",
+          "label": "The value of the first element only.",
+          "text": "The value of the first element only."
+        },
+        {
+          "value": "D",
+          "label": "The length of the array.",
+          "text": "The length of the array."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, all arguments are passed by value. For objects (including arrays), the 'value' passed is a copy of the reference."
+    },
+    {
+      "id": "upload-1771104561550-16",
+      "number": "27",
+      "text": "Consider the following code:\n```java\nvoid modifyElement(int element) {\n    element *= 2;\n}\n// In main:\nint[] nums = {1, 2, 3};\nmodifyElement(nums[0]);\n```\nWhat is the value of `nums[0]` after the method call?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "null",
+          "text": "null"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "When a primitive-type array element (a scalar) is passed, the method receives a copy of the value. Modifying the copy in the method does not affect the original array."
+    },
+    {
+      "id": "upload-1771104561550-17",
+      "number": "28",
+      "text": "If a method receives an array reference, such as `void myMethod(int[] b)`, and modifies an element inside the array (e.g., `b[0] = 5`), what happens to the original array in the caller?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It remains unchanged.",
+          "text": "It remains unchanged."
+        },
+        {
+          "value": "B",
+          "label": "The original array is modified because both the parameter and the argument refer to the same object.",
+          "text": "The original array is modified because both the parameter and the argument refer to the same object."
+        },
+        {
+          "value": "C",
+          "label": "A compilation error occurs.",
+          "text": "A compilation error occurs."
+        },
+        {
+          "value": "D",
+          "label": "The original array is modified only if the method is static.",
+          "text": "The original array is modified only if the method is static."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Since both the parameter and the argument variable refer to the same array object in memory, changes made via the parameter affect the original object."
+    },
+    {
+      "id": "upload-1771104561550-18",
+      "number": "29",
+      "text": "Why does Java not require the length of an array to be passed as an additional argument to a method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The length is always 52 by default.",
+          "text": "The length is always 52 by default."
+        },
+        {
+          "value": "B",
+          "label": "Methods automatically calculate length by iterating until null.",
+          "text": "Methods automatically calculate length by iterating until null."
+        },
+        {
+          "value": "C",
+          "label": "Every array object 'knows' its own length via its `length` field.",
+          "text": "Every array object 'knows' its own length via its `length` field."
+        },
+        {
+          "value": "D",
+          "label": "Array length is passed implicitly as a second hidden argument.",
+          "text": "Array length is passed implicitly as a second hidden argument."
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Because arrays are objects in Java, they have a built-in `length` property that can be accessed within any method receiving the array reference."
+    },
+    {
+      "id": "upload-1771104561550-19",
+      "number": "30",
+      "text": "What happens if a method modifies a reference-type parameter so that it refers to a *different* object?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The caller's variable also refers to the new object.",
+          "text": "The caller's variable also refers to the new object."
+        },
+        {
+          "value": "B",
+          "label": "The caller's variable still refers to the original object.",
+          "text": "The caller's variable still refers to the original object."
+        },
+        {
+          "value": "C",
+          "label": "The program throws a NullPointerException.",
+          "text": "The program throws a NullPointerException."
+        },
+        {
+          "value": "D",
+          "label": "The original object is deleted from memory.",
+          "text": "The original object is deleted from memory."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Only the local parameter is changed to point to the new object; the reference stored in the caller remains unchanged because only a copy of the reference was passed."
+    },
+    {
+      "id": "upload-1771104561550-15",
+      "number": "31",
+      "text": "In the `GradeBook` example, how is the frequency of a grade (e.g., 85) mapped to the `frequency` array index?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "grade % 10",
+          "text": "grade % 10"
+        },
+        {
+          "value": "B",
+          "label": "grade - 10",
+          "text": "grade - 10"
+        },
+        {
+          "value": "C",
+          "label": "grade / 10",
+          "text": "grade / 10"
+        },
+        {
+          "value": "D",
+          "label": "grade * 10",
+          "text": "grade * 10"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Using integer division, `85 / 10` results in 8, which corresponds to the 80-89 category in the frequency array."
+    },
+    {
+      "id": "upload-1771104561550-16",
+      "number": "32",
+      "text": "Which method in the `GradeBook` class uses a traditional counter-controlled `for` loop and why?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`getAverage`, to calculate the sum precisely.",
+          "text": "`getAverage`, to calculate the sum precisely."
+        },
+        {
+          "value": "B",
+          "label": "`getMinimum`, to track the index of the lowest grade.",
+          "text": "`getMinimum`, to track the index of the lowest grade."
+        },
+        {
+          "value": "C",
+          "label": "`outputGrades`, to display student numbers (e.g., Student 1, Student 2).",
+          "text": "`outputGrades`, to display student numbers (e.g., Student 1, Student 2)."
+        },
+        {
+          "value": "D",
+          "label": "`processGrades`, to call other methods.",
+          "text": "`processGrades`, to call other methods."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Student numbers are derived from the array index (index + 1), which is only available in a traditional for loop."
+    },
+    {
+      "id": "upload-1771104561550-17",
+      "number": "33",
+      "text": "When calculating the average in `GradeBook`, why is `total` cast to a `double`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To allow the average to exceed 100.",
+          "text": "To allow the average to exceed 100."
+        },
+        {
+          "value": "B",
+          "label": "To ensure the division performs floating-point math rather than integer truncation.",
+          "text": "To ensure the division performs floating-point math rather than integer truncation."
+        },
+        {
+          "value": "C",
+          "label": "Because `grades.length` is a double.",
+          "text": "Because `grades.length` is a double."
+        },
+        {
+          "value": "D",
+          "label": "Because the `total` variable was originally declared as a double.",
+          "text": "Because the `total` variable was originally declared as a double."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Casting one operand to `double` ensures a floating-point result for the average, preventing the decimal portion from being lost."
+    },
+    {
+      "id": "upload-1771104561550-18",
+      "number": "34",
+      "text": "How does a `GradeBook` object determine how many grades it can process?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It is hard-coded to 10 grades.",
+          "text": "It is hard-coded to 10 grades."
+        },
+        {
+          "value": "B",
+          "label": "By the length of the array passed to the constructor.",
+          "text": "By the length of the array passed to the constructor."
+        },
+        {
+          "value": "C",
+          "label": "By asking the user for the number of students.",
+          "text": "By asking the user for the number of students."
+        },
+        {
+          "value": "D",
+          "label": "By the number of lines in the input file.",
+          "text": "By the number of lines in the input file."
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The constructor receives an array and assigns its reference; the size of that specific array determines the capacity for that instance."
+    },
+    {
+      "id": "upload-1771104561550-19",
+      "number": "35",
+      "text": "In the `getMinimum` method, what is the initial value of `lowGrade`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "100",
+          "text": "100"
+        },
+        {
+          "value": "C",
+          "label": "grades[0]",
+          "text": "grades[0]"
+        },
+        {
+          "value": "D",
+          "label": "Integer.MAX_VALUE",
+          "text": "Integer.MAX_VALUE"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The method assumes the first element (`grades[0]`) is the smallest and then compares it against the rest of the array."
+    },
+    {
+      "id": "upload-1771104561550-15",
+      "number": "36",
+      "text": "How is an element in a two-dimensional array named `a` identified by convention?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "a[column][row]",
+          "text": "a[column][row]"
+        },
+        {
+          "value": "B",
+          "label": "a[row, column]",
+          "text": "a[row, column]"
+        },
+        {
+          "value": "C",
+          "label": "a[row][column]",
+          "text": "a[row][column]"
+        },
+        {
+          "value": "D",
+          "label": "a{row}{column}",
+          "text": "a{row}{column}"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "By convention, the first index identifies the row and the second identifies the column."
+    },
+    {
+      "id": "upload-1771104561550-16",
+      "number": "37",
+      "text": "Which of the following describes a 'jagged' or 'ragged' array in Java?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "An array with negative indices.",
+          "text": "An array with negative indices."
+        },
+        {
+          "value": "B",
+          "label": "A two-dimensional array where rows have different lengths.",
+          "text": "A two-dimensional array where rows have different lengths."
+        },
+        {
+          "value": "C",
+          "label": "An array that contains both ints and doubles.",
+          "text": "An array that contains both ints and doubles."
+        },
+        {
+          "value": "D",
+          "label": "An array that has not been initialized.",
+          "text": "An array that has not been initialized."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Since Java multidimensional arrays are arrays of arrays, each row can be a one-dimensional array of a different length."
+    },
+    {
+      "id": "upload-1771104561550-17",
+      "number": "38",
+      "text": "Given `int[][] b = new int[3][4];`, what does `b.length` represent?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The total number of elements (12).",
+          "text": "The total number of elements (12)."
+        },
+        {
+          "value": "B",
+          "label": "The number of columns (4).",
+          "text": "The number of columns (4)."
+        },
+        {
+          "value": "C",
+          "label": "The number of rows (3).",
+          "text": "The number of rows (3)."
+        },
+        {
+          "value": "D",
+          "label": "The size of the first element in the first row.",
+          "text": "The size of the first element in the first row."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "For a 2D array, `.length` refers to the number of rows (the number of one-dimensional arrays it contains)."
+    },
+    {
+      "id": "upload-1771104561550-18",
+      "number": "39",
+      "text": "What is the correct way to initialize a 2D array with 2 rows, where the first row has 1, 2 and the second has 3, 4, 5?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`int[][] b = { {1, 2, 3, 4, 5} };`",
+          "text": "`int[][] b = { {1, 2, 3, 4, 5} };`"
+        },
+        {
+          "value": "B",
+          "label": "`int[][] b = { {1, 2}, {3, 4, 5} };`",
+          "text": "`int[][] b = { {1, 2}, {3, 4, 5} };`"
+        },
+        {
+          "value": "C",
+          "label": "`int[][] b = { 1, 2; 3, 4, 5 };`",
+          "text": "`int[][] b = { 1, 2; 3, 4, 5 };`"
+        },
+        {
+          "value": "D",
+          "label": "`int[][] b = new int[2][3] {1, 2, 3, 4, 5};`",
+          "text": "`int[][] b = new int[2][3] {1, 2, 3, 4, 5};`"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Nested array initializers (braces within braces) are used to define the contents of each row."
+    },
+    {
+      "id": "upload-1771104561550-19",
+      "number": "40",
+      "text": "In the `outputArray` method of Fig 7.17, which loop control condition is used to traverse columns of the current row?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "column < array.length",
+          "text": "column < array.length"
+        },
+        {
+          "value": "B",
+          "label": "column < array[row].length",
+          "text": "column < array[row].length"
+        },
+        {
+          "value": "C",
+          "label": "column < array[column].length",
+          "text": "column < array[column].length"
+        },
+        {
+          "value": "D",
+          "label": "column < 10",
+          "text": "column < 10"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "To handle rows of different lengths, you must check the length of the specific row being processed: `array[row].length`."
+    },
+    {
+      "id": "upload-1771104561550-40",
+      "number": "41",
+      "text": "In a two-dimensional array `int[][] grades`, what does the expression `grades[i].length` represent?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The total number of elements in the entire two-dimensional array.",
+          "text": "The total number of elements in the entire two-dimensional array."
+        },
+        {
+          "value": "B",
+          "label": "The number of rows in the two-dimensional array.",
+          "text": "The number of rows in the two-dimensional array."
+        },
+        {
+          "value": "C",
+          "label": "The number of columns in row i of the two-dimensional array.",
+          "text": "The number of columns in row i of the two-dimensional array."
+        },
+        {
+          "value": "D",
+          "label": "The value stored at the first index of row i.",
+          "text": "The value stored at the first index of row i."
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, a two-dimensional array is an array of arrays. `grades.length` returns the number of rows, while `grades[i].length` returns the number of elements (columns) in that specific row."
+    },
+    {
+      "id": "upload-1771104561550-41",
+      "number": "42",
+      "text": "Which of the following is the correct syntax for an enhanced `for` statement to iterate through a two-dimensional array `int[][] matrix`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "```java\nfor (int row : matrix) { ... }\n```",
+          "text": "```java\nfor (int row : matrix) { ... }\n```"
+        },
+        {
+          "value": "B",
+          "label": "```java\nfor (int[] row : matrix) { \n    for (int element : row) { ... } \n}\n```",
+          "text": "```java\nfor (int[] row : matrix) { \n    for (int element : row) { ... } \n}\n```"
+        },
+        {
+          "value": "C",
+          "label": "```java\nfor (int row[][] : matrix) { ... }\n```",
+          "text": "```java\nfor (int row[][] : matrix) { ... }\n```"
+        },
+        {
+          "value": "D",
+          "label": "```java\nfor (int row, col : matrix) { ... }\n```",
+          "text": "```java\nfor (int row, col : matrix) { ... }\n```"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The outer loop of an enhanced for statement must iterate through the rows, which are themselves one-dimensional arrays (`int[]`). The inner loop then iterates through the individual `int` elements of those rows."
+    },
+    {
+      "id": "upload-1771104561550-42",
+      "number": "43",
+      "text": "In the `GradeBook` case study, how is a single student's set of grades passed from the two-dimensional array `grades` to the method `getAverage(int[] setOfGrades)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`getAverage(grades[student][test])`",
+          "text": "`getAverage(grades[student][test])`"
+        },
+        {
+          "value": "B",
+          "label": "`getAverage(grades.row(student))`",
+          "text": "`getAverage(grades.row(student))`"
+        },
+        {
+          "value": "C",
+          "label": "`getAverage(grades[student])`",
+          "text": "`getAverage(grades[student])`"
+        },
+        {
+          "value": "D",
+          "label": "`getAverage(student.grades)`",
+          "text": "`getAverage(student.grades)`"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Since a 2D array is an array of arrays, `grades[student]` refers to the one-dimensional array representing a specific student's row of grades."
+    },
+    {
+      "id": "upload-1771104561550-43",
+      "number": "44",
+      "text": "What is the result of the following code snippet?\n```java\nint[][] a = {{1, 2}, {3, 4, 5}};\nSystem.out.println(a.length + \" \" + a[1].length);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "2 3",
+          "text": "2 3"
+        },
+        {
+          "value": "B",
+          "label": "5 3",
+          "text": "5 3"
+        },
+        {
+          "value": "C",
+          "label": "2 2",
+          "text": "2 2"
+        },
+        {
+          "value": "D",
+          "label": "3 2",
+          "text": "3 2"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "`a.length` is 2 because there are two subarrays (rows). `a[1].length` is 3 because the second row (index 1) contains three elements: 3, 4, and 5."
+    },
+    {
+      "id": "upload-1771104561550-44",
+      "number": "45",
+      "text": "When initializing a two-dimensional array as `int[][] grades = { {87, 96}, {68, 87} };`, how would you access the second score of the first student?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`grades[1][1]`",
+          "text": "`grades[1][1]`"
+        },
+        {
+          "value": "B",
+          "label": "`grades[0][1]`",
+          "text": "`grades[0][1]`"
+        },
+        {
+          "value": "C",
+          "label": "`grades[1][0]`",
+          "text": "`grades[1][0]`"
+        },
+        {
+          "value": "D",
+          "label": "`grades[2][1]`",
+          "text": "`grades[2][1]`"
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Indices start at 0. The first student is at index 0, and their second score is at column index 1."
+    },
+    {
+      "id": "upload-1771104561550-40",
+      "number": "46",
+      "text": "Which of the following method headers correctly uses a variable-length argument list?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "```java\npublic static void myMethod(int... numbers, String label)\n```",
+          "text": "```java\npublic static void myMethod(int... numbers, String label)\n```"
+        },
+        {
+          "value": "B",
+          "label": "```java\npublic static void myMethod(double... x, double... y)\n```",
+          "text": "```java\npublic static void myMethod(double... x, double... y)\n```"
+        },
+        {
+          "value": "C",
+          "label": "```java\npublic static void myMethod(String label, int... numbers)\n```",
+          "text": "```java\npublic static void myMethod(String label, int... numbers)\n```"
+        },
+        {
+          "value": "D",
+          "label": "```java\npublic static void myMethod(...int numbers)\n```",
+          "text": "```java\npublic static void myMethod(...int numbers)\n```"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A variable-length argument list (ellipsis) must be the last parameter in the method's parameter list, and there can only be one ellipsis per method."
+    },
+    {
+      "id": "upload-1771104561550-41",
+      "number": "47",
+      "text": "Inside a method with the header `public static double average(double... numbers)`, how is the parameter `numbers` treated?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "As a single double value.",
+          "text": "As a single double value."
+        },
+        {
+          "value": "B",
+          "label": "As an array of doubles.",
+          "text": "As an array of doubles."
+        },
+        {
+          "value": "C",
+          "label": "As a String of values separated by commas.",
+          "text": "As a String of values separated by commas."
+        },
+        {
+          "value": "D",
+          "label": "As a Collection object.",
+          "text": "As a Collection object."
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Java treats the variable-length argument list as an array of the specified type, allowing the use of array attributes like `.length` and array indexing."
+    },
+    {
+      "id": "upload-1771104561550-42",
+      "number": "48",
+      "text": "If an application is executed using the command `java MyClass 10 20 30`, what will be the value of `args.length` and `args[1]` in the `main` method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`args.length` is 4, `args[1]` is \"MyClass\"",
+          "text": "`args.length` is 4, `args[1]` is \"MyClass\""
+        },
+        {
+          "value": "B",
+          "label": "`args.length` is 3, `args[1]` is \"20\"",
+          "text": "`args.length` is 3, `args[1]` is \"20\""
+        },
+        {
+          "value": "C",
+          "label": "`args.length` is 3, `args[1]` is 20 (as an int)",
+          "text": "`args.length` is 3, `args[1]` is 20 (as an int)"
+        },
+        {
+          "value": "D",
+          "label": "`args.length` is 2, `args[1]` is \"30\"",
+          "text": "`args.length` is 2, `args[1]` is \"30\""
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Command-line arguments are stored as Strings in the `args` array. The class name is not included in the array. `args[0]` is \"10\", `args[1]` is \"20\", and `args[2]` is \"30\"."
+    },
+    {
+      "id": "upload-1771104561550-43",
+      "number": "49",
+      "text": "Which method is commonly used to convert a command-line argument from a `String` to an `int`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`Integer.toInteger()`",
+          "text": "`Integer.toInteger()`"
+        },
+        {
+          "value": "B",
+          "label": "`String.toInt()`",
+          "text": "`String.toInt()`"
+        },
+        {
+          "value": "C",
+          "label": "`Integer.parseInt()`",
+          "text": "`Integer.parseInt()`"
+        },
+        {
+          "value": "D",
+          "label": "`Arrays.convertToInt()`",
+          "text": "`Arrays.convertToInt()`"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The static method `Integer.parseInt()` takes a `String` argument and returns its `int` equivalent."
+    },
+    {
+      "id": "upload-1771104561550-44",
+      "number": "50",
+      "text": "What is the result if you try to place an ellipsis in the middle of a parameter list, such as `void test(int... values, int x)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The code will compile but throw a runtime error.",
+          "text": "The code will compile but throw a runtime error."
+        },
+        {
+          "value": "B",
+          "label": "The compiler will ignore it.",
+          "text": "The compiler will ignore it."
+        },
+        {
+          "value": "C",
+          "label": "It is a syntax error.",
+          "text": "It is a syntax error."
+        },
+        {
+          "value": "D",
+          "label": "The first argument will be assigned to `x` and the rest to `values`.",
+          "text": "The first argument will be assigned to `x` and the rest to `values`."
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Common Programming Error 7.6 states that placing an ellipsis in the middle of a parameter list is a syntax error; it must be at the end."
+    },
+    {
+      "id": "upload-1771104561550-40",
+      "number": "51",
+      "text": "Which of the following is a requirement for using the `Arrays.binarySearch` method to produce a defined, correct result?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The array must be empty.",
+          "text": "The array must be empty."
+        },
+        {
+          "value": "B",
+          "label": "The array must be sorted in ascending order.",
+          "text": "The array must be sorted in ascending order."
+        },
+        {
+          "value": "C",
+          "label": "The array must contain only Strings.",
+          "text": "The array must contain only Strings."
+        },
+        {
+          "value": "D",
+          "label": "The array must be multidimensional.",
+          "text": "The array must be multidimensional."
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Passing an unsorted array to `binarySearch` is a logic error, and the value returned is undefined. The array must be sorted first, typically using `Arrays.sort()`."
+    },
+    {
+      "id": "upload-1771104561550-41",
+      "number": "52",
+      "text": "If `Arrays.binarySearch` does not find a value in a sorted array, what does it return?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "A positive integer representing where it should be.",
+          "text": "A positive integer representing where it should be."
+        },
+        {
+          "value": "C",
+          "label": "A negative value representing the insertion point minus 1.",
+          "text": "A negative value representing the insertion point minus 1."
+        },
+        {
+          "value": "D",
+          "label": "The value `null`.",
+          "text": "The value `null`."
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "If the key is not found, it returns a negative value. This value is calculated as `-(insertion point) - 1`, ensuring that the return value is only positive if the key is actually found."
+    },
+    {
+      "id": "upload-1771104561550-42",
+      "number": "53",
+      "text": "What does the method `Arrays.fill(myArray, 7)` do?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It adds the value 7 to the end of the array.",
+          "text": "It adds the value 7 to the end of the array."
+        },
+        {
+          "value": "B",
+          "label": "It removes all elements from the array except those equal to 7.",
+          "text": "It removes all elements from the array except those equal to 7."
+        },
+        {
+          "value": "C",
+          "label": "It populates every element of the array with the value 7.",
+          "text": "It populates every element of the array with the value 7."
+        },
+        {
+          "value": "D",
+          "label": "It checks if the array contains 7 elements.",
+          "text": "It checks if the array contains 7 elements."
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`Arrays.fill` is a static method used to assign a specific value to every element (or a range of elements) in an array."
+    },
+    {
+      "id": "upload-1771104561550-43",
+      "number": "54",
+      "text": "In `System.arraycopy(source, 0, destination, 0, source.length)`, what does the second argument represent?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The number of elements to copy.",
+          "text": "The number of elements to copy."
+        },
+        {
+          "value": "B",
+          "label": "The starting index in the source array to begin copying from.",
+          "text": "The starting index in the source array to begin copying from."
+        },
+        {
+          "value": "C",
+          "label": "The starting index in the destination array.",
+          "text": "The starting index in the destination array."
+        },
+        {
+          "value": "D",
+          "label": "A boolean flag for deep copying.",
+          "text": "A boolean flag for deep copying."
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The signature for `arraycopy` is `(Object src, int srcPos, Object dest, int destPos, int length)`. The second argument is the position/index in the source array."
+    },
+    {
+      "id": "upload-1771104561550-44",
+      "number": "55",
+      "text": "Under what condition does `Arrays.equals(array1, array2)` return `true`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "If both arrays have the same memory address.",
+          "text": "If both arrays have the same memory address."
+        },
+        {
+          "value": "B",
+          "label": "If both arrays have the same length.",
+          "text": "If both arrays have the same length."
+        },
+        {
+          "value": "C",
+          "label": "If both arrays contain the same elements in the same order.",
+          "text": "If both arrays contain the same elements in the same order."
+        },
+        {
+          "value": "D",
+          "label": "If the sum of elements in both arrays is equal.",
+          "text": "If the sum of elements in both arrays is equal."
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`Arrays.equals` performs a content comparison, checking that every corresponding pair of elements is equal and that the arrays have the same length."
+    },
+    {
+      "id": "upload-1771104561550-40",
+      "number": "56",
+      "text": "Which of the following is a key difference between a standard array and an `ArrayList`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Arrays can store objects, while `ArrayList` can only store primitives.",
+          "text": "Arrays can store objects, while `ArrayList` can only store primitives."
+        },
+        {
+          "value": "B",
+          "label": "`ArrayList` can dynamically change its size, whereas arrays have a fixed size.",
+          "text": "`ArrayList` can dynamically change its size, whereas arrays have a fixed size."
+        },
+        {
+          "value": "C",
+          "label": "Arrays are part of the `java.util` package, while `ArrayList` is built-in.",
+          "text": "Arrays are part of the `java.util` package, while `ArrayList` is built-in."
+        },
+        {
+          "value": "D",
+          "label": "`ArrayList` does not support indexing.",
+          "text": "`ArrayList` does not support indexing."
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Arrays are fixed-length data structures. `ArrayList` is a collection that grows and shrinks dynamically as elements are added or removed."
+    },
+    {
+      "id": "upload-1771104561550-41",
+      "number": "57",
+      "text": "What happens to the remaining elements in an `ArrayList` when an element is removed using `remove(index)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The index becomes `null` and the other indices remain the same.",
+          "text": "The index becomes `null` and the other indices remain the same."
+        },
+        {
+          "value": "B",
+          "label": "The `ArrayList` is deleted from memory.",
+          "text": "The `ArrayList` is deleted from memory."
+        },
+        {
+          "value": "C",
+          "label": "The indices of all elements following the removed element decrease by one.",
+          "text": "The indices of all elements following the removed element decrease by one."
+        },
+        {
+          "value": "D",
+          "label": "The indices of all elements following the removed element increase by one.",
+          "text": "The indices of all elements following the removed element increase by one."
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "When an element is removed from the middle of an `ArrayList`, the collection shifts all subsequent elements to the left to close the gap, decreasing their indices."
+    },
+    {
+      "id": "upload-1771104561550-42",
+      "number": "58",
+      "text": "Which `ArrayList` method returns the number of elements currently stored in the collection?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`length()`",
+          "text": "`length()`"
+        },
+        {
+          "value": "B",
+          "label": "`capacity()`",
+          "text": "`capacity()`"
+        },
+        {
+          "value": "C",
+          "label": "`size()`",
+          "text": "`size()`"
+        },
+        {
+          "value": "D",
+          "label": "`count()`",
+          "text": "`count()`"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `size()` method returns the number of elements in the `ArrayList`. Note that this is different from its 'capacity', which is the internal array size."
+    },
+    {
+      "id": "upload-1771104561550-43",
+      "number": "59",
+      "text": "Which of the following declarations is invalid for an `ArrayList`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`ArrayList<String> list = new ArrayList<String>();`",
+          "text": "`ArrayList<String> list = new ArrayList<String>();`"
+        },
+        {
+          "value": "B",
+          "label": "`ArrayList<Integer> list = new ArrayList<Integer>();`",
+          "text": "`ArrayList<Integer> list = new ArrayList<Integer>();`"
+        },
+        {
+          "value": "C",
+          "label": "`ArrayList<int> list = new ArrayList<int>();`",
+          "text": "`ArrayList<int> list = new ArrayList<int>();`"
+        },
+        {
+          "value": "D",
+          "label": "`ArrayList<Object> list = new ArrayList<Object>();`",
+          "text": "`ArrayList<Object> list = new ArrayList<Object>();`"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Collection classes like `ArrayList` can only store non-primitive types (objects). To store integers, you must use the wrapper class `Integer` instead of the primitive `int`."
+    },
+    {
+      "id": "upload-1771104561550-44",
+      "number": "60",
+      "text": "How does the `add(index, element)` method in `ArrayList` behave when the index is already occupied?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It overwrites the existing element.",
+          "text": "It overwrites the existing element."
+        },
+        {
+          "value": "B",
+          "label": "It throws a compiler error.",
+          "text": "It throws a compiler error."
+        },
+        {
+          "value": "C",
+          "label": "It inserts the new element and shifts existing elements (at that index and subsequent ones) to the right.",
+          "text": "It inserts the new element and shifts existing elements (at that index and subsequent ones) to the right."
+        },
+        {
+          "value": "D",
+          "label": "It adds the element to the very end of the list instead.",
+          "text": "It adds the element to the very end of the list instead."
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `add` method with an index parameter is an insertion operation. It moves the current element at that position and all subsequent elements one position to the right."
+    },
+    {
+      "id": "upload-1771104561550-60",
+      "number": "61",
+      "text": "In the `fillArc` method used in the `DrawRainbow` example, what do the fifth and sixth parameters represent?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The x and y coordinates of the arc's center.",
+          "text": "The x and y coordinates of the arc's center."
+        },
+        {
+          "value": "B",
+          "label": "The width and height of the bounding rectangle.",
+          "text": "The width and height of the bounding rectangle."
+        },
+        {
+          "value": "C",
+          "label": "The starting angle and the sweep angle in degrees.",
+          "text": "The starting angle and the sweep angle in degrees."
+        },
+        {
+          "value": "D",
+          "label": "The color index and the transparency level.",
+          "text": "The color index and the transparency level."
+        }
+      ],
+      "inputName": "Q60",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "According to the text, the fifth parameter is the starting angle on the oval, and the sixth specifies the sweep (the amount of arc to cover), both measured in degrees."
+    },
+    {
+      "id": "upload-1771104561550-61",
+      "number": "62",
+      "text": "Why does the `DrawRainbow` class iterate backward through the `colors` array using `for (int counter = colors.length; counter > 0; counter--)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To ensure the smallest arcs are drawn first.",
+          "text": "To ensure the smallest arcs are drawn first."
+        },
+        {
+          "value": "B",
+          "label": "To draw the largest arcs first, so that smaller arcs are drawn on top of them.",
+          "text": "To draw the largest arcs first, so that smaller arcs are drawn on top of them."
+        },
+        {
+          "value": "C",
+          "label": "Because the Graphics object requires elements to be processed in reverse order.",
+          "text": "Because the Graphics object requires elements to be processed in reverse order."
+        },
+        {
+          "value": "D",
+          "label": "To reverse the RGB values of the Color objects.",
+          "text": "To reverse the RGB values of the Color objects."
+        }
+      ],
+      "inputName": "Q61",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text states that the loop counts backward to draw the largest arcs first, placing each successive smaller arc on top of the previous one to create the concentric rainbow effect."
+    },
+    {
+      "id": "upload-1771104561550-62",
+      "number": "63",
+      "text": "Which of the following is true regarding the coordinate system for angles in the `fillArc` method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Zero degrees points upward.",
+          "text": "Zero degrees points upward."
+        },
+        {
+          "value": "B",
+          "label": "A positive sweep draws the arc clockwise.",
+          "text": "A positive sweep draws the arc clockwise."
+        },
+        {
+          "value": "C",
+          "label": "Zero degrees points to the right.",
+          "text": "Zero degrees points to the right."
+        },
+        {
+          "value": "D",
+          "label": "Angles are measured in radians.",
+          "text": "Angles are measured in radians."
+        }
+      ],
+      "inputName": "Q62",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The text specifies that zero degrees points right, and a positive sweep draws the arc counterclockwise."
+    },
+    {
+      "id": "upload-1771104561550-63",
+      "number": "64",
+      "text": "In the following code snippet from the text, what is the purpose of the first two elements in the `colors` array?\n\n```java\nprivate Color[] colors = \n{ Color.WHITE, Color.WHITE, VIOLET, INDIGO, Color.BLUE, \n  Color.GREEN, Color.YELLOW, Color.ORANGE, Color.RED };\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To set the background color of the JFrame.",
+          "text": "To set the background color of the JFrame."
+        },
+        {
+          "value": "B",
+          "label": "To provide a border for the rainbow.",
+          "text": "To provide a border for the rainbow."
+        },
+        {
+          "value": "C",
+          "label": "To create an empty (white) arc in the center of the rainbow.",
+          "text": "To create an empty (white) arc in the center of the rainbow."
+        },
+        {
+          "value": "D",
+          "label": "They are placeholder values that are ignored by the loop.",
+          "text": "They are placeholder values that are ignored by the loop."
+        }
+      ],
+      "inputName": "Q63",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The text explains that the `Color.WHITE` entries at the beginning of the array create the empty arc in the center; otherwise, the center would be a solid violet semicircle."
+    },
+    {
+      "id": "upload-1771104561550-64",
+      "number": "65",
+      "text": "How does `drawArc` differ from `fillArc`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It takes different parameters.",
+          "text": "It takes different parameters."
+        },
+        {
+          "value": "B",
+          "label": "It draws only the edge of the arc rather than a solid filled shape.",
+          "text": "It draws only the edge of the arc rather than a solid filled shape."
+        },
+        {
+          "value": "C",
+          "label": "It can only draw full circles.",
+          "text": "It can only draw full circles."
+        },
+        {
+          "value": "D",
+          "label": "It is a method of the JFrame class, not the Graphics class.",
+          "text": "It is a method of the JFrame class, not the Graphics class."
+        }
+      ],
+      "inputName": "Q64",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text mentions that `drawArc` requires the same parameters as `fillArc` but draws the edge of the arc rather than filling it."
+    },
+    {
+      "id": "upload-1771104561550-65",
+      "number": "66",
+      "text": "Which method is responsible for setting the background color of the `DrawRainbow` panel?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`paintComponent`",
+          "text": "`paintComponent`"
+        },
+        {
+          "value": "B",
+          "label": "`fillArc`",
+          "text": "`fillArc`"
+        },
+        {
+          "value": "C",
+          "label": "`setBackground`",
+          "text": "`setBackground`"
+        },
+        {
+          "value": "D",
+          "label": "`setVisible`",
+          "text": "`setVisible`"
+        }
+      ],
+      "inputName": "Q65",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The text states the constructor calls `setBackground(Color.WHITE)`, a method inherited from `JPanel`, to set the background of the component."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 66
+}

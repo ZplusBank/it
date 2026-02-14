@@ -1,0 +1,1862 @@
+{
+  "id": "upload-1771105147566",
+  "label": "chapter_8_JDBC__.pdf",
+  "params": {
+    "file": "chapter_8_JDBC__.pdf"
+  },
+  "title": "Relational Database Fundamentals & SQL (Structured Query Language) & JDBC and System Setup & Connecting to and Querying a Database with JDBC & ResultSet Metadata and Result Properties & Displaying Results with JTable and TableModels & Manipulating Databases with JDBC and JTable & RowSet Interface & PreparedStatements & JDBC GUI Application Implementation & Stored Procedures and CallableStatements & Transaction Processing",
+  "questions": [
+    {
+      "id": "upload-1771105147566-0",
+      "number": "1",
+      "text": "What is the primary purpose of a database management system (DBMS)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To provide the physical structure of how data is stored on a disk.",
+          "text": "To provide the physical structure of how data is stored on a disk."
+        },
+        {
+          "value": "B",
+          "label": "To provide mechanisms for storing, organizing, retrieving, and modifying data for many users.",
+          "text": "To provide mechanisms for storing, organizing, retrieving, and modifying data for many users."
+        },
+        {
+          "value": "C",
+          "label": "To translate Java code directly into machine language for hardware.",
+          "text": "To translate Java code directly into machine language for hardware."
+        },
+        {
+          "value": "D",
+          "label": "To act as a web server for hosting Java applications.",
+          "text": "To act as a web server for hosting Java applications."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "As defined in the text, a DBMS provides mechanisms for storing, organizing, retrieving, and modifying data without the user needing concern for the internal representation."
+    },
+    {
+      "id": "upload-1771105147566-1",
+      "number": "2",
+      "text": "Which rule ensures that every row in a table can be identified by a unique primary-key value and that the value cannot be null?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Rule of Referential Integrity",
+          "text": "Rule of Referential Integrity"
+        },
+        {
+          "value": "B",
+          "label": "Rule of Data Consistency",
+          "text": "Rule of Data Consistency"
+        },
+        {
+          "value": "C",
+          "label": "Rule of Entity Integrity",
+          "text": "Rule of Entity Integrity"
+        },
+        {
+          "value": "D",
+          "label": "Rule of Relational Logic",
+          "text": "Rule of Relational Logic"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The Rule of Entity Integrity states that every row must have a primary-key value, and that value must be unique in the table."
+    },
+    {
+      "id": "upload-1771105147566-2",
+      "number": "3",
+      "text": "A column in one table that matches the primary-key column in another table is known as a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Foreign key",
+          "text": "Foreign key"
+        },
+        {
+          "value": "B",
+          "label": "Secondary key",
+          "text": "Secondary key"
+        },
+        {
+          "value": "C",
+          "label": "Composite key",
+          "text": "Composite key"
+        },
+        {
+          "value": "D",
+          "label": "Candidate key",
+          "text": "Candidate key"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A foreign key is a column that matches the primary-key column in another table, helping maintain referential integrity."
+    },
+    {
+      "id": "upload-1771105147566-3",
+      "number": "4",
+      "text": "In an Entity-Relationship (ER) diagram, what does an infinity symbol (∞) at one end of a relationship line indicate?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The data is infinite and cannot be counted.",
+          "text": "The data is infinite and cannot be counted."
+        },
+        {
+          "value": "B",
+          "label": "The primary key is autoincremented.",
+          "text": "The primary key is autoincremented."
+        },
+        {
+          "value": "C",
+          "label": "A one-to-many relationship.",
+          "text": "A one-to-many relationship."
+        },
+        {
+          "value": "D",
+          "label": "The table is currently empty.",
+          "text": "The table is currently empty."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "An infinity symbol on a relationship line indicates the 'many' side of a one-to-many relationship."
+    },
+    {
+      "id": "upload-1771105147566-4",
+      "number": "5",
+      "text": "Which rule is broken if a foreign-key value does not appear as a primary-key value in the table it references?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Rule of Entity Integrity",
+          "text": "Rule of Entity Integrity"
+        },
+        {
+          "value": "B",
+          "label": "Rule of Duplicate Entries",
+          "text": "Rule of Duplicate Entries"
+        },
+        {
+          "value": "C",
+          "label": "Rule of Referential Integrity",
+          "text": "Rule of Referential Integrity"
+        },
+        {
+          "value": "D",
+          "label": "Rule of Data Normalization",
+          "text": "Rule of Data Normalization"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The Rule of Referential Integrity states that every foreign-key value must appear as another table's primary-key value."
+    },
+    {
+      "id": "upload-1771105147566-0",
+      "number": "6",
+      "text": "Which SQL keyword is used to specify the criteria for selecting rows from a table?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "FROM",
+          "text": "FROM"
+        },
+        {
+          "value": "B",
+          "label": "ORDER BY",
+          "text": "ORDER BY"
+        },
+        {
+          "value": "C",
+          "label": "WHERE",
+          "text": "WHERE"
+        },
+        {
+          "value": "D",
+          "label": "SELECT",
+          "text": "SELECT"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The WHERE clause is used to specify selection criteria (predicates) to determine which rows are retrieved."
+    },
+    {
+      "id": "upload-1771105147566-1",
+      "number": "7",
+      "text": "In SQL pattern matching with the `LIKE` operator, which character represents a single wildcard character?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Percent (%)",
+          "text": "Percent (%)"
+        },
+        {
+          "value": "B",
+          "label": "Asterisk (*)",
+          "text": "Asterisk (*)"
+        },
+        {
+          "value": "C",
+          "label": "Underscore (_)",
+          "text": "Underscore (_)"
+        },
+        {
+          "value": "D",
+          "label": "Question mark (?)",
+          "text": "Question mark (?)"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "An underscore (_) in a pattern string indicates a single wildcard character at that position."
+    },
+    {
+      "id": "upload-1771105147566-2",
+      "number": "8",
+      "text": "Which clause is used to merge rows from multiple tables by matching values in common columns?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "MERGE TABLE",
+          "text": "MERGE TABLE"
+        },
+        {
+          "value": "B",
+          "label": "INNER JOIN",
+          "text": "INNER JOIN"
+        },
+        {
+          "value": "C",
+          "label": "COMBINE",
+          "text": "COMBINE"
+        },
+        {
+          "value": "D",
+          "label": "GROUP BY",
+          "text": "GROUP BY"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An INNER JOIN operator merges rows from two tables by matching values in columns that are common to the tables."
+    },
+    {
+      "id": "upload-1771105147566-3",
+      "number": "9",
+      "text": "How should a string containing a single quote (e.g., O'Malley) be formatted in a SQL statement to avoid a syntax error?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Use double quotes around the name: \"O'Malley\"",
+          "text": "Use double quotes around the name: \"O'Malley\""
+        },
+        {
+          "value": "B",
+          "label": "Use a backslash: 'O\\'Malley'",
+          "text": "Use a backslash: 'O\\'Malley'"
+        },
+        {
+          "value": "C",
+          "label": "Use two single quotes: 'O''Malley'",
+          "text": "Use two single quotes: 'O''Malley'"
+        },
+        {
+          "value": "D",
+          "label": "Remove the quote entirely: 'OMalley'",
+          "text": "Remove the quote entirely: 'OMalley'"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In SQL, a string containing a single quote must have two single quotes in that position; the first acts as an escape character for the second."
+    },
+    {
+      "id": "upload-1771105147566-4",
+      "number": "10",
+      "text": "What happens if a `DELETE` statement is executed without a `WHERE` clause?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Nothing happens; SQL requires a WHERE clause for safety.",
+          "text": "Nothing happens; SQL requires a WHERE clause for safety."
+        },
+        {
+          "value": "B",
+          "label": "Only the first row of the table is deleted.",
+          "text": "Only the first row of the table is deleted."
+        },
+        {
+          "value": "C",
+          "label": "All rows in the table are deleted.",
+          "text": "All rows in the table are deleted."
+        },
+        {
+          "value": "D",
+          "label": "The table structure is deleted (dropped).",
+          "text": "The table structure is deleted (dropped)."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "If the WHERE clause is omitted in a DELETE statement, all the table's rows are deleted."
+    },
+    {
+      "id": "upload-1771105147566-0",
+      "number": "11",
+      "text": "What is the primary benefit of using the JDBC API according to the text?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It makes SQL queries execute faster than native code.",
+          "text": "It makes SQL queries execute faster than native code."
+        },
+        {
+          "value": "B",
+          "label": "It allows developers to change the underlying DBMS without modifying the Java code that accesses the database.",
+          "text": "It allows developers to change the underlying DBMS without modifying the Java code that accesses the database."
+        },
+        {
+          "value": "C",
+          "label": "It automatically designs the database schema for the developer.",
+          "text": "It automatically designs the database schema for the developer."
+        },
+        {
+          "value": "D",
+          "label": "It replaces the need for SQL knowledge.",
+          "text": "It replaces the need for SQL knowledge."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Software Engineering Observation 28.1 states that JDBC enables changing the DBMS without modifying the application code."
+    },
+    {
+      "id": "upload-1771105147566-1",
+      "number": "12",
+      "text": "Which component enables a Java application to connect to a specific DBMS?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "JDBC Driver",
+          "text": "JDBC Driver"
+        },
+        {
+          "value": "B",
+          "label": "SQL Parser",
+          "text": "SQL Parser"
+        },
+        {
+          "value": "C",
+          "label": "Database Script",
+          "text": "Database Script"
+        },
+        {
+          "value": "D",
+          "label": "Entity-Relationship Manager",
+          "text": "Entity-Relationship Manager"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A JDBC driver enables Java applications to connect to a database in a particular DBMS."
+    },
+    {
+      "id": "upload-1771105147566-2",
+      "number": "13",
+      "text": "What is Java DB?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A special SQL syntax unique to Java.",
+          "text": "A special SQL syntax unique to Java."
+        },
+        {
+          "value": "B",
+          "label": "A pure-Java RDBMS based on Apache Derby that comes with the JDK.",
+          "text": "A pure-Java RDBMS based on Apache Derby that comes with the JDK."
+        },
+        {
+          "value": "C",
+          "label": "The command-line tool used to install MySQL.",
+          "text": "The command-line tool used to install MySQL."
+        },
+        {
+          "value": "D",
+          "label": "A JDBC driver for Microsoft SQL Server.",
+          "text": "A JDBC driver for Microsoft SQL Server."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text states the JDK comes with a pure-Java RDBMS called Java DB, which is Oracle's version of Apache Derby."
+    },
+    {
+      "id": "upload-1771105147566-3",
+      "number": "14",
+      "text": "When using `SELECT *`, what risk is introduced regarding program stability?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The database will lock and prevent other users from accessing it.",
+          "text": "The database will lock and prevent other users from accessing it."
+        },
+        {
+          "value": "B",
+          "label": "The program may process results incorrectly if the column order in the table changes or if new columns are added.",
+          "text": "The program may process results incorrectly if the column order in the table changes or if new columns are added."
+        },
+        {
+          "value": "C",
+          "label": "The SQL query will only return the primary key.",
+          "text": "The SQL query will only return the primary key."
+        },
+        {
+          "value": "D",
+          "label": "It is a syntax error in most modern RDBMS.",
+          "text": "It is a syntax error in most modern RDBMS."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Common Programming Error 28.4 warns that assuming column order with '*' can lead to errors if the table structure changes."
+    },
+    {
+      "id": "upload-1771105147566-4",
+      "number": "15",
+      "text": "In the context of MySQL setup in the text, what is the purpose of the `grant` command?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To pay for the database license.",
+          "text": "To pay for the database license."
+        },
+        {
+          "value": "B",
+          "label": "To give a specific user account privileges like select, insert, and update on the server.",
+          "text": "To give a specific user account privileges like select, insert, and update on the server."
+        },
+        {
+          "value": "C",
+          "label": "To create a new table in the database.",
+          "text": "To create a new table in the database."
+        },
+        {
+          "value": "D",
+          "label": "To download the JDBC driver automatically.",
+          "text": "To download the JDBC driver automatically."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The grant command is used to assign specific privileges (select, insert, etc.) to a user account like 'deitel'."
+    },
+    {
+      "id": "upload-1771105147566-15",
+      "number": "16",
+      "text": "Which class is used to establish a connection to a database in JDBC 4.0 and later?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "java.sql.ConnectionManager",
+          "text": "java.sql.ConnectionManager"
+        },
+        {
+          "value": "B",
+          "label": "java.sql.DriverManager",
+          "text": "java.sql.DriverManager"
+        },
+        {
+          "value": "C",
+          "label": "java.sql.Statement",
+          "text": "java.sql.Statement"
+        },
+        {
+          "value": "D",
+          "label": "java.sql.DatabaseConnector",
+          "text": "java.sql.DatabaseConnector"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `DriverManager.getConnection` method is used to attempt a connection to the database specified by its URL."
+    },
+    {
+      "id": "upload-1771105147566-16",
+      "number": "17",
+      "text": "What is the standard format for a MySQL database URL as described in the text?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "mysql:jdbc://hostname:port/databaseName",
+          "text": "mysql:jdbc://hostname:port/databaseName"
+        },
+        {
+          "value": "B",
+          "label": "jdbc:mysql://hostname:port/databaseName",
+          "text": "jdbc:mysql://hostname:port/databaseName"
+        },
+        {
+          "value": "C",
+          "label": "db:mysql://hostname:port/databaseName",
+          "text": "db:mysql://hostname:port/databaseName"
+        },
+        {
+          "value": "D",
+          "label": "connect:mysql://hostname:port/databaseName",
+          "text": "connect:mysql://hostname:port/databaseName"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The format is `jdbc:protocol://hostname:port/databaseName`, which for MySQL translates to `jdbc:mysql://hostname:port/databaseName`."
+    },
+    {
+      "id": "upload-1771105147566-17",
+      "number": "18",
+      "text": "Which interface is returned by the `Statement` method `executeQuery`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Connection",
+          "text": "Connection"
+        },
+        {
+          "value": "B",
+          "label": "Statement",
+          "text": "Statement"
+        },
+        {
+          "value": "C",
+          "label": "ResultSet",
+          "text": "ResultSet"
+        },
+        {
+          "value": "D",
+          "label": "ResultSetMetaData",
+          "text": "ResultSetMetaData"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `executeQuery` method returns a `ResultSet` object that contains the results of the query."
+    },
+    {
+      "id": "upload-1771105147566-18",
+      "number": "19",
+      "text": "What is the result of the following code if the `ResultSet` contains rows but `next()` has not been called yet?\n\n```java\nResultSet resultSet = statement.executeQuery(\"SELECT * FROM Authors\");\nObject value = resultSet.getObject(1);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It returns the first row's first column.",
+          "text": "It returns the first row's first column."
+        },
+        {
+          "value": "B",
+          "label": "It returns null.",
+          "text": "It returns null."
+        },
+        {
+          "value": "C",
+          "label": "It throws a SQLException.",
+          "text": "It throws a SQLException."
+        },
+        {
+          "value": "D",
+          "label": "It returns an empty string.",
+          "text": "It returns an empty string."
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A `ResultSet` cursor is initially positioned before the first row. Attempting to access data before calling `next()` results in a `SQLException`."
+    },
+    {
+      "id": "upload-1771105147566-19",
+      "number": "20",
+      "text": "In JDBC, column indices for `ResultSet` objects begin at which value?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "-1",
+          "text": "-1"
+        },
+        {
+          "value": "D",
+          "label": "Indices are based on the primary key value.",
+          "text": "Indices are based on the primary key value."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Unlike Java arrays, `ResultSet` column numbers start at 1."
+    },
+    {
+      "id": "upload-1771105147566-15",
+      "number": "21",
+      "text": "Which object provides information about the number of columns and the names of columns in a `ResultSet`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "DatabaseMetaData",
+          "text": "DatabaseMetaData"
+        },
+        {
+          "value": "B",
+          "label": "ResultSetMetaData",
+          "text": "ResultSetMetaData"
+        },
+        {
+          "value": "C",
+          "label": "StatementInfo",
+          "text": "StatementInfo"
+        },
+        {
+          "value": "D",
+          "label": "TableInfo",
+          "text": "TableInfo"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `ResultSetMetaData` object describes the `ResultSet`'s contents, including column names, types, and counts."
+    },
+    {
+      "id": "upload-1771105147566-16",
+      "number": "22",
+      "text": "What does the constant `ResultSet.TYPE_SCROLL_INSENSITIVE` specify?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The cursor can only move forward.",
+          "text": "The cursor can only move forward."
+        },
+        {
+          "value": "B",
+          "label": "The cursor can scroll in both directions, but changes to the underlying data are not reflected.",
+          "text": "The cursor can scroll in both directions, but changes to the underlying data are not reflected."
+        },
+        {
+          "value": "C",
+          "label": "The cursor can scroll in both directions, and changes to the underlying data are reflected immediately.",
+          "text": "The cursor can scroll in both directions, and changes to the underlying data are reflected immediately."
+        },
+        {
+          "value": "D",
+          "label": "The ResultSet is read-only and cannot be moved.",
+          "text": "The ResultSet is read-only and cannot be moved."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "This type specifies that the cursor is scrollable but insensitive to changes made to the underlying data during processing."
+    },
+    {
+      "id": "upload-1771105147566-17",
+      "number": "23",
+      "text": "As of Java SE 7, which feature can be used to ensure that `Connection`, `Statement`, and `ResultSet` objects are closed automatically?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The finalizer method",
+          "text": "The finalizer method"
+        },
+        {
+          "value": "B",
+          "label": "The AutoClose garbage collector",
+          "text": "The AutoClose garbage collector"
+        },
+        {
+          "value": "C",
+          "label": "The try-with-resources statement",
+          "text": "The try-with-resources statement"
+        },
+        {
+          "value": "D",
+          "label": "The closeAll() static method",
+          "text": "The closeAll() static method"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Because these interfaces extend `AutoCloseable`, they can be used with `try-with-resources` to ensure they are closed at the end of the block."
+    },
+    {
+      "id": "upload-1771105147566-18",
+      "number": "24",
+      "text": "Which `ResultSet` constant allows the database to be updated using `ResultSet` update methods?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "CONCUR_UPDATABLE",
+          "text": "CONCUR_UPDATABLE"
+        },
+        {
+          "value": "B",
+          "label": "CONCUR_READ_ONLY",
+          "text": "CONCUR_READ_ONLY"
+        },
+        {
+          "value": "C",
+          "label": "TYPE_SCROLL_SENSITIVE",
+          "text": "TYPE_SCROLL_SENSITIVE"
+        },
+        {
+          "value": "D",
+          "label": "CONCUR_WRITE_SYNC",
+          "text": "CONCUR_WRITE_SYNC"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `CONCUR_UPDATABLE` constant specifies that a `ResultSet` can be updated and reflected in the database."
+    },
+    {
+      "id": "upload-1771105147566-19",
+      "number": "25",
+      "text": "What happens if you attempt to use a `ResultSet` after the `Statement` that created it has been closed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The ResultSet remains open until specifically closed.",
+          "text": "The ResultSet remains open until specifically closed."
+        },
+        {
+          "value": "B",
+          "label": "A NullPointerException is thrown.",
+          "text": "A NullPointerException is thrown."
+        },
+        {
+          "value": "C",
+          "label": "A SQLException occurs because the ResultSet is discarded when the Statement closes.",
+          "text": "A SQLException occurs because the ResultSet is discarded when the Statement closes."
+        },
+        {
+          "value": "D",
+          "label": "The program crashes with a JVM error.",
+          "text": "The program crashes with a JVM error."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A `ResultSet` is automatically discarded when the `Statement` that created it is closed; attempting to manipulate it afterward results in a `SQLException`."
+    },
+    {
+      "id": "upload-1771105147566-15",
+      "number": "26",
+      "text": "Which class should be extended to create a custom `TableModel` that provides `ResultSet` data to a `JTable`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "DefaultTableModel",
+          "text": "DefaultTableModel"
+        },
+        {
+          "value": "B",
+          "label": "AbstractTableModel",
+          "text": "AbstractTableModel"
+        },
+        {
+          "value": "C",
+          "label": "JTableModel",
+          "text": "JTableModel"
+        },
+        {
+          "value": "D",
+          "label": "TableDataModel",
+          "text": "TableDataModel"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text demonstrates extending `AbstractTableModel` to create a `ResultSetTableModel`."
+    },
+    {
+      "id": "upload-1771105147566-16",
+      "number": "27",
+      "text": "In the context of a `JTable` and a `ResultSet`, why is it often necessary to add 1 to a column index?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "JTable indices start at 1 while ResultSet indices start at 0.",
+          "text": "JTable indices start at 1 while ResultSet indices start at 0."
+        },
+        {
+          "value": "B",
+          "label": "JTable indices start at 0 while ResultSet indices start at 1.",
+          "text": "JTable indices start at 0 while ResultSet indices start at 1."
+        },
+        {
+          "value": "C",
+          "label": "To account for the hidden row ID column in MySQL.",
+          "text": "To account for the hidden row ID column in MySQL."
+        },
+        {
+          "value": "D",
+          "label": "To skip the header row.",
+          "text": "To skip the header row."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Swing components like `JTable` use 0-based indexing, whereas `ResultSet` use 1-based indexing for rows and columns."
+    },
+    {
+      "id": "upload-1771105147566-17",
+      "number": "28",
+      "text": "Which method from `AbstractTableModel` must be called to notify a `JTable` that its entire structure has changed (e.g., after a new query)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "refreshTable()",
+          "text": "refreshTable()"
+        },
+        {
+          "value": "B",
+          "label": "updateData()",
+          "text": "updateData()"
+        },
+        {
+          "value": "C",
+          "label": "fireTableStructureChanged()",
+          "text": "fireTableStructureChanged()"
+        },
+        {
+          "value": "D",
+          "label": "notifyStructureUpdate()",
+          "text": "notifyStructureUpdate()"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Calling `fireTableStructureChanged()` notifies the `JTable` that the model's structure is different, prompting it to repopulate."
+    },
+    {
+      "id": "upload-1771105147566-18",
+      "number": "29",
+      "text": "What is the purpose of the `TableRowSorter` class used in the example?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To reorder rows in the database table.",
+          "text": "To reorder rows in the database table."
+        },
+        {
+          "value": "B",
+          "label": "To provide sorting and filtering capabilities for a JTable.",
+          "text": "To provide sorting and filtering capabilities for a JTable."
+        },
+        {
+          "value": "C",
+          "label": "To optimize the execution of SQL SELECT statements.",
+          "text": "To optimize the execution of SQL SELECT statements."
+        },
+        {
+          "value": "D",
+          "label": "To convert SQL data types to Java data types.",
+          "text": "To convert SQL data types to Java data types."
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `TableRowSorter` is used to allow the user to sort and filter the data displayed in the GUI's `JTable`."
+    },
+    {
+      "id": "upload-1771105147566-19",
+      "number": "30",
+      "text": "Which method is used to filter `JTable` data based on a regular expression?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "sorter.setFilter(regex)",
+          "text": "sorter.setFilter(regex)"
+        },
+        {
+          "value": "B",
+          "label": "sorter.setRowFilter(RowFilter.regexFilter(text))",
+          "text": "sorter.setRowFilter(RowFilter.regexFilter(text))"
+        },
+        {
+          "value": "C",
+          "label": "table.applyPattern(text)",
+          "text": "table.applyPattern(text)"
+        },
+        {
+          "value": "D",
+          "label": "model.filterRows(text)",
+          "text": "model.filterRows(text)"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `setRowFilter` method combined with `RowFilter.regexFilter` is used to apply a text-based filter to the table view."
+    },
+    {
+      "id": "upload-1771105147566-30",
+      "number": "31",
+      "text": "In the provided `DisplayQueryResults` example, why are local variables like `filterText` and `sorter` declared as `final`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To improve the performance of the JTable rendering.",
+          "text": "To improve the performance of the JTable rendering."
+        },
+        {
+          "value": "B",
+          "label": "Because they are used within an anonymous inner class.",
+          "text": "Because they are used within an anonymous inner class."
+        },
+        {
+          "value": "C",
+          "label": "To prevent the database connection from being closed prematurely.",
+          "text": "To prevent the database connection from being closed prematurely."
+        },
+        {
+          "value": "D",
+          "label": "To ensure they can be accessed by the static main method.",
+          "text": "To ensure they can be accessed by the static main method."
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Any local variable used in an anonymous inner class must be declared final; otherwise, a compilation error occurs."
+    },
+    {
+      "id": "upload-1771105147566-31",
+      "number": "32",
+      "text": "Which class is used to enable row sorting in a `JTable` based on the data in its columns?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "TableColumnSorter",
+          "text": "TableColumnSorter"
+        },
+        {
+          "value": "B",
+          "label": "JTableSortHandler",
+          "text": "JTableSortHandler"
+        },
+        {
+          "value": "C",
+          "label": "TableRowSorter",
+          "text": "TableRowSorter"
+        },
+        {
+          "value": "D",
+          "label": "RowDataManager",
+          "text": "RowDataManager"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The TableRowSorter class (from package javax.swing.table) is used to create an object that interacts with the underlying TableModel to reorder rows."
+    },
+    {
+      "id": "upload-1771105147566-32",
+      "number": "33",
+      "text": "How can a developer remove a previously applied filter from a `JTable` using the `setRowFilter` method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Pass an empty String to the method.",
+          "text": "Pass an empty String to the method."
+        },
+        {
+          "value": "B",
+          "label": "Pass `null` to the method.",
+          "text": "Pass `null` to the method."
+        },
+        {
+          "value": "C",
+          "label": "Call the `clearFilter()` method instead.",
+          "text": "Call the `clearFilter()` method instead."
+        },
+        {
+          "value": "D",
+          "label": "Re-instantiate the JTable object.",
+          "text": "Re-instantiate the JTable object."
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Using JTable method `setRowFilter` and passing `null` removes any prior filter."
+    },
+    {
+      "id": "upload-1771105147566-33",
+      "number": "34",
+      "text": "Which `RowFilter` method is used to create a filter based on a regular expression?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "matchFilter",
+          "text": "matchFilter"
+        },
+        {
+          "value": "B",
+          "label": "regexFilter",
+          "text": "regexFilter"
+        },
+        {
+          "value": "C",
+          "label": "patternFilter",
+          "text": "patternFilter"
+        },
+        {
+          "value": "D",
+          "label": "expressionFilter",
+          "text": "expressionFilter"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The static method `regexFilter` receives a String containing a regular expression pattern to filter the table data."
+    },
+    {
+      "id": "upload-1771105147566-34",
+      "number": "35",
+      "text": "When handling several window events but only needing to override one, which class is best to extend to avoid implementing every method of the `WindowListener` interface?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "WindowHandler",
+          "text": "WindowHandler"
+        },
+        {
+          "value": "B",
+          "label": "WindowEventHelper",
+          "text": "WindowEventHelper"
+        },
+        {
+          "value": "C",
+          "label": "WindowAdapter",
+          "text": "WindowAdapter"
+        },
+        {
+          "value": "D",
+          "label": "WindowBase",
+          "text": "WindowBase"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "We extend class `WindowAdapter` to override only the specific event handlers we need, such as `windowClosed`."
+    },
+    {
+      "id": "upload-1771105147566-30",
+      "number": "36",
+      "text": "What is the primary difference between a `JdbcRowSet` and a `CachedRowSet`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "JdbcRowSet is for Oracle databases; CachedRowSet is for MySQL.",
+          "text": "JdbcRowSet is for Oracle databases; CachedRowSet is for MySQL."
+        },
+        {
+          "value": "B",
+          "label": "JdbcRowSet is connected; CachedRowSet is disconnected.",
+          "text": "JdbcRowSet is connected; CachedRowSet is disconnected."
+        },
+        {
+          "value": "C",
+          "label": "JdbcRowSet is read-only; CachedRowSet is updatable.",
+          "text": "JdbcRowSet is read-only; CachedRowSet is updatable."
+        },
+        {
+          "value": "D",
+          "label": "JdbcRowSet is non-scrollable; CachedRowSet is scrollable.",
+          "text": "JdbcRowSet is non-scrollable; CachedRowSet is scrollable."
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A connected RowSet (JdbcRowSet) remains connected while in use, while a disconnected RowSet (CachedRowSet) connects to retrieve data and then closes the connection."
+    },
+    {
+      "id": "upload-1771105147566-31",
+      "number": "37",
+      "text": "Which `RowSet` method is used to specify the SQL query used to populate the RowSet?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "setQuery",
+          "text": "setQuery"
+        },
+        {
+          "value": "B",
+          "label": "setSQL",
+          "text": "setSQL"
+        },
+        {
+          "value": "C",
+          "label": "setCommand",
+          "text": "setCommand"
+        },
+        {
+          "value": "D",
+          "label": "setStatement",
+          "text": "setStatement"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `setCommand` method is used to specify the SQL query string for the RowSet."
+    },
+    {
+      "id": "upload-1771105147566-32",
+      "number": "38",
+      "text": "What are the default characteristics of a `JdbcRowSet` regarding scrolling and updates?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Nonscrollable and read-only",
+          "text": "Nonscrollable and read-only"
+        },
+        {
+          "value": "B",
+          "label": "Scrollable and read-only",
+          "text": "Scrollable and read-only"
+        },
+        {
+          "value": "C",
+          "label": "Nonscrollable and updatable",
+          "text": "Nonscrollable and updatable"
+        },
+        {
+          "value": "D",
+          "label": "Scrollable and updatable",
+          "text": "Scrollable and updatable"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Unlike a default `ResultSet`, a `JdbcRowSet` object is scrollable and updatable by default."
+    },
+    {
+      "id": "upload-1771105147566-33",
+      "number": "39",
+      "text": "The `execute()` method of a `JdbcRowSet` performs which of the following actions?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Establishes a connection to the database",
+          "text": "Establishes a connection to the database"
+        },
+        {
+          "value": "B",
+          "label": "Prepares the query Statement",
+          "text": "Prepares the query Statement"
+        },
+        {
+          "value": "C",
+          "label": "Executes the query and stores the ResultSet",
+          "text": "Executes the query and stores the ResultSet"
+        },
+        {
+          "value": "D",
+          "label": "All of the above",
+          "text": "All of the above"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The `execute()` method performs four actions: establishes a connection, prepares the query, executes it, and stores the results."
+    },
+    {
+      "id": "upload-1771105147566-34",
+      "number": "40",
+      "text": "Why is a `CachedRowSet` particularly useful for distributed applications?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It does not require a database.",
+          "text": "It does not require a database."
+        },
+        {
+          "value": "B",
+          "label": "It is serializable and can be passed through a network.",
+          "text": "It is serializable and can be passed through a network."
+        },
+        {
+          "value": "C",
+          "label": "It automatically encrypts all data.",
+          "text": "It automatically encrypts all data."
+        },
+        {
+          "value": "D",
+          "label": "It has unlimited memory storage.",
+          "text": "It has unlimited memory storage."
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A `CachedRowSet` object is serializable, allowing it to be passed between Java applications through a network such as the Internet."
+    },
+    {
+      "id": "upload-1771105147566-30",
+      "number": "41",
+      "text": "Which method is used to specify parameter values in a `PreparedStatement`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "putParameter",
+          "text": "putParameter"
+        },
+        {
+          "value": "B",
+          "label": "set",
+          "text": "set"
+        },
+        {
+          "value": "C",
+          "label": "set methods (e.g., setString, setInt)",
+          "text": "set methods (e.g., setString, setInt)"
+        },
+        {
+          "value": "D",
+          "label": "assignValue",
+          "text": "assignValue"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `PreparedStatement` interface provides specific set methods for each supported SQL type (like `setString` or `setInt`) to specify parameter values."
+    },
+    {
+      "id": "upload-1771105147566-31",
+      "number": "42",
+      "text": "When using placeholders (`?`) in a `PreparedStatement`, what is the index of the first parameter?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "-1",
+          "text": "-1"
+        },
+        {
+          "value": "D",
+          "label": "The column index in the database table",
+          "text": "The column index in the database table"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Parameter numbers in a `PreparedStatement` are counted starting from 1."
+    },
+    {
+      "id": "upload-1771105147566-32",
+      "number": "43",
+      "text": "Which method should be used to execute an SQL INSERT statement using a `PreparedStatement`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "executeQuery",
+          "text": "executeQuery"
+        },
+        {
+          "value": "B",
+          "label": "executeInsert",
+          "text": "executeInsert"
+        },
+        {
+          "value": "C",
+          "label": "executeUpdate",
+          "text": "executeUpdate"
+        },
+        {
+          "value": "D",
+          "label": "executeCommit",
+          "text": "executeCommit"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Method `executeUpdate` is used to execute statements that modify the database (INSERT, UPDATE, DELETE). It returns the number of rows updated."
+    },
+    {
+      "id": "upload-1771105147566-33",
+      "number": "44",
+      "text": "What is a key security and functional benefit of using `PreparedStatement` over a regular `Statement` for user-provided input?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It executes on the client-side instead of the server.",
+          "text": "It executes on the client-side instead of the server."
+        },
+        {
+          "value": "B",
+          "label": "It automatically escapes special characters (like single quotes) in Strings.",
+          "text": "It automatically escapes special characters (like single quotes) in Strings."
+        },
+        {
+          "value": "C",
+          "label": "It prevents the database from closing unexpectedly.",
+          "text": "It prevents the database from closing unexpectedly."
+        },
+        {
+          "value": "D",
+          "label": "It ignores all SQL syntax errors.",
+          "text": "It ignores all SQL syntax errors."
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "PreparedStatement methods like `setString` automatically escape characters such as single quotes, ensuring the SQL statement is formed correctly and helping prevent injection issues."
+    },
+    {
+      "id": "upload-1771105147566-34",
+      "number": "45",
+      "text": "In the context of the Address Book application database, what is an 'identity column'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A column that stores the user's login ID.",
+          "text": "A column that stores the user's login ID."
+        },
+        {
+          "value": "B",
+          "label": "A column that must match the primary key of another table.",
+          "text": "A column that must match the primary key of another table."
+        },
+        {
+          "value": "C",
+          "label": "The SQL standard way to represent an autoincremented column.",
+          "text": "The SQL standard way to represent an autoincremented column."
+        },
+        {
+          "value": "D",
+          "label": "A column that cannot be edited via JDBC.",
+          "text": "A column that cannot be edited via JDBC."
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "An identity column is the SQL standard way to represent an autoincremented column, as used for the `addressID` in the example."
+    },
+    {
+      "id": "upload-1771105147566-45",
+      "number": "46",
+      "text": "In the provided code snippet for `nextButtonActionPerformed`, how is the index handled when it reaches the end of the results list?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The program throws an IndexOutOfBoundsException.",
+          "text": "The program throws an IndexOutOfBoundsException."
+        },
+        {
+          "value": "B",
+          "label": "The nextButton is automatically disabled.",
+          "text": "The nextButton is automatically disabled."
+        },
+        {
+          "value": "C",
+          "label": "The currentEntryIndex is reset to 0 to wrap around to the first entry.",
+          "text": "The currentEntryIndex is reset to 0 to wrap around to the first entry."
+        },
+        {
+          "value": "D",
+          "label": "The application terminates via System.exit(0).",
+          "text": "The application terminates via System.exit(0)."
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "According to lines 257-258, if currentEntryIndex is greater than or equal to numberOfEntries, it is set back to 0."
+    },
+    {
+      "id": "upload-1771105147566-46",
+      "number": "47",
+      "text": "What action does the application take immediately after successfully inserting a new person via `insertButtonActionPerformed`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It closes the database connection.",
+          "text": "It closes the database connection."
+        },
+        {
+          "value": "B",
+          "label": "It calls browseButtonActionPerformed to refresh the GUI with the updated data.",
+          "text": "It calls browseButtonActionPerformed to refresh the GUI with the updated data."
+        },
+        {
+          "value": "C",
+          "label": "It increments the AddressID manually in the text field.",
+          "text": "It increments the AddressID manually in the text field."
+        },
+        {
+          "value": "D",
+          "label": "It clears all text fields without updating the display.",
+          "text": "It clears all text fields without updating the display."
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Line 351 shows that browseButtonActionPerformed(evt) is called after the insertion logic to refresh the view."
+    },
+    {
+      "id": "upload-1771105147566-47",
+      "number": "48",
+      "text": "Consider the following method from the text:\n```java\nprivate void indexTextFieldActionPerformed( ActionEvent evt )\n{\n  currentEntryIndex = ( Integer.parseInt( indexTextField.getText() ) - 1 );\n  // ... code to update text fields ...\n}\n```\nWhy is 1 subtracted from the parsed integer?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To account for the header row in the database.",
+          "text": "To account for the header row in the database."
+        },
+        {
+          "value": "B",
+          "label": "To convert the 1-based user input index to a 0-based List index.",
+          "text": "To convert the 1-based user input index to a 0-based List index."
+        },
+        {
+          "value": "C",
+          "label": "To ensure the ID always starts at zero.",
+          "text": "To ensure the ID always starts at zero."
+        },
+        {
+          "value": "D",
+          "label": "It is a requirement of the PreparedStatement interface.",
+          "text": "It is a requirement of the PreparedStatement interface."
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Users typically think in 1-based indexing, while Java Lists (the 'results' object) use 0-based indexing."
+    },
+    {
+      "id": "upload-1771105147566-48",
+      "number": "49",
+      "text": "What does the code do if a query by last name returns no results in `queryButtonActionPerformed`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Displays an error dialog saying 'No results found'.",
+          "text": "Displays an error dialog saying 'No results found'."
+        },
+        {
+          "value": "B",
+          "label": "Deletes the current entry from the database.",
+          "text": "Deletes the current entry from the database."
+        },
+        {
+          "value": "C",
+          "label": "Calls browseButtonActionPerformed to show all entries instead.",
+          "text": "Calls browseButtonActionPerformed to show all entries instead."
+        },
+        {
+          "value": "D",
+          "label": "Disables the query button.",
+          "text": "Disables the query button."
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Lines 285-286 state that if numberOfEntries is 0, the 'else' block calls browseButtonActionPerformed(evt)."
+    },
+    {
+      "id": "upload-1771105147566-49",
+      "number": "50",
+      "text": "Which method is used to retrieve all records from the database in the address book example?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "personQueries.getAllPeople()",
+          "text": "personQueries.getAllPeople()"
+        },
+        {
+          "value": "B",
+          "label": "personQueries.fetchAll()",
+          "text": "personQueries.fetchAll()"
+        },
+        {
+          "value": "C",
+          "label": "personQueries.getPeopleByLastName()",
+          "text": "personQueries.getPeopleByLastName()"
+        },
+        {
+          "value": "D",
+          "label": "personQueries.addPerson()",
+          "text": "personQueries.addPerson()"
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The text associated with Fig 28.32 (Part 7) indicates that results are populated by personQueries.getAllPeople()."
+    },
+    {
+      "id": "upload-1771105147566-45",
+      "number": "51",
+      "text": "Which JDBC interface is specifically designed to invoke stored procedures?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Statement",
+          "text": "Statement"
+        },
+        {
+          "value": "B",
+          "label": "PreparedStatement",
+          "text": "PreparedStatement"
+        },
+        {
+          "value": "C",
+          "label": "CallableStatement",
+          "text": "CallableStatement"
+        },
+        {
+          "value": "D",
+          "label": "StoredStatement",
+          "text": "StoredStatement"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "JDBC enables programs to invoke stored procedures using objects that implement the interface CallableStatement."
+    },
+    {
+      "id": "upload-1771105147566-46",
+      "number": "52",
+      "text": "What feature distinguishes CallableStatement from PreparedStatement?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The ability to execute SELECT queries.",
+          "text": "The ability to execute SELECT queries."
+        },
+        {
+          "value": "B",
+          "label": "The ability to specify output parameters for return values.",
+          "text": "The ability to specify output parameters for return values."
+        },
+        {
+          "value": "C",
+          "label": "The ability to use positional parameters (?).",
+          "text": "The ability to use positional parameters (?)."
+        },
+        {
+          "value": "D",
+          "label": "The ability to connect to MySQL databases.",
+          "text": "The ability to connect to MySQL databases."
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "CallableStatements can specify output parameters in which a stored procedure can place return values."
+    },
+    {
+      "id": "upload-1771105147566-47",
+      "number": "53",
+      "text": "According to Portability Tip 28.7, what should a program do before obtaining values of output parameters from a CallableStatement?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Commit the transaction.",
+          "text": "Commit the transaction."
+        },
+        {
+          "value": "B",
+          "label": "Close the connection.",
+          "text": "Close the connection."
+        },
+        {
+          "value": "C",
+          "label": "Process the update counts or ResultSets returned.",
+          "text": "Process the update counts or ResultSets returned."
+        },
+        {
+          "value": "D",
+          "label": "Call setAutoCommit(true).",
+          "text": "Call setAutoCommit(true)."
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "For maximum portability, programs should process results (ResultSets or update counts) before accessing output parameters."
+    },
+    {
+      "id": "upload-1771105147566-48",
+      "number": "54",
+      "text": "What is a 'stored procedure' as defined in the text?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A Java method that runs in the JVM.",
+          "text": "A Java method that runs in the JVM."
+        },
+        {
+          "value": "B",
+          "label": "A named collection of SQL statements stored in the database.",
+          "text": "A named collection of SQL statements stored in the database."
+        },
+        {
+          "value": "A serialized Java object stored in a BLOB field.",
+          "label": "C",
+          "text": "C"
+        },
+        {
+          "value": "D",
+          "label": "A backup of the database schema.",
+          "text": "A backup of the database schema."
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Stored procedures are named collections of SQL statements stored in a database so programs can invoke them."
+    },
+    {
+      "id": "upload-1771105147566-49",
+      "number": "55",
+      "text": "True or False: The syntax for creating stored procedures is identical across all database management systems.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Portability Tip 28.6 notes that the syntax for creating stored procedures differs across systems, though CallableStatement provides a uniform interface for invoking them."
+    },
+    {
+      "id": "upload-1771105147566-45",
+      "number": "56",
+      "text": "What is an 'atomic operation' in the context of database processing?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "An operation that uses radioactive data types.",
+          "text": "An operation that uses radioactive data types."
+        },
+        {
+          "value": "B",
+          "label": "A single SQL statement that cannot be divided.",
+          "text": "A single SQL statement that cannot be divided."
+        },
+        {
+          "value": "C",
+          "label": "A set of operations treated as a single unit (transaction).",
+          "text": "A set of operations treated as a single unit (transaction)."
+        },
+        {
+          "value": "D",
+          "label": "An operation that automatically deletes data after reading.",
+          "text": "An operation that automatically deletes data after reading."
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Transaction processing enables a program to treat a set of operations as a single operation, also known as an atomic operation."
+    },
+    {
+      "id": "upload-1771105147566-46",
+      "number": "57",
+      "text": "Which method is used to turn off the automatic finalization of every SQL statement in JDBC?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Connection.commit(false)",
+          "text": "Connection.commit(false)"
+        },
+        {
+          "value": "B",
+          "label": "Connection.setAutoCommit(false)",
+          "text": "Connection.setAutoCommit(false)"
+        },
+        {
+          "value": "C",
+          "label": "Statement.setTransaction(false)",
+          "text": "Statement.setTransaction(false)"
+        },
+        {
+          "value": "D",
+          "label": "Connection.rollback(true)",
+          "text": "Connection.rollback(true)"
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Method setAutoCommit specifies whether statements commit automatically (true) or should be grouped as a transaction (false)."
+    },
+    {
+      "id": "upload-1771105147566-47",
+      "number": "58",
+      "text": "What happens when a transaction is 'rolled back'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The database is deleted.",
+          "text": "The database is deleted."
+        },
+        {
+          "value": "B",
+          "label": "The database is returned to its state prior to the transaction.",
+          "text": "The database is returned to its state prior to the transaction."
+        },
+        {
+          "value": "C",
+          "label": "The database is updated with temporary values.",
+          "text": "The database is updated with temporary values."
+        },
+        {
+          "value": "D",
+          "label": "The program exits with an error code.",
+          "text": "The program exits with an error code."
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Rolling back the transaction leaves the database in its state prior to the database operation."
+    },
+    {
+      "id": "upload-1771105147566-48",
+      "number": "59",
+      "text": "In the bank transfer example, why would a rollback be necessary?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "If the destination account does not exist or the deposit fails.",
+          "text": "If the destination account does not exist or the deposit fails."
+        },
+        {
+          "value": "B",
+          "label": "If the source account has too much money.",
+          "text": "If the source account has too much money."
+        },
+        {
+          "value": "C",
+          "label": "If the user wants to check their balance.",
+          "text": "If the user wants to check their balance."
+        },
+        {
+          "value": "D",
+          "label": "To finalize the deposit into the destination account.",
+          "text": "To finalize the deposit into the destination account."
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "If a portion of the transaction (like the deposit) fails, the withdrawal must be undone to prevent money from 'disappearing'."
+    },
+    {
+      "id": "upload-1771105147566-49",
+      "number": "60",
+      "text": "Which interface provides the methods commit() and rollback()?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Statement",
+          "text": "Statement"
+        },
+        {
+          "value": "B",
+          "label": "ResultSet",
+          "text": "ResultSet"
+        },
+        {
+          "value": "C",
+          "label": "DriverManager",
+          "text": "DriverManager"
+        },
+        {
+          "value": "D",
+          "label": "Connection",
+          "text": "Connection"
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Java provides transaction processing via methods of interface Connection, including commit, rollback, and setAutoCommit."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 60
+}

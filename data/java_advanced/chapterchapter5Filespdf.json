@@ -1,0 +1,1376 @@
+{
+  "id": "upload-1771101362139",
+  "label": "chapter_5_Files_.pdf",
+  "params": {
+    "file": "chapter_5_Files_.pdf"
+  },
+  "title": "Files and Streams Fundamentals & The File Class & Sequential-Access Text Files & Updating Sequential-Access Files & Object Serialization & Additional java.io Classes & Data and Buffered Streams & Character-Based and Memory-Based Streams & JFileChooser and File Selection",
+  "questions": [
+    {
+      "id": "upload-1771101362139-0",
+      "number": "1",
+      "text": "How does Java view a file in its most basic architectural form?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "As a structured database of records",
+          "text": "As a structured database of records"
+        },
+        {
+          "value": "B",
+          "label": "As a sequential stream of bytes",
+          "text": "As a sequential stream of bytes"
+        },
+        {
+          "value": "C",
+          "label": "As a collection of objects organized in a tree",
+          "text": "As a collection of objects organized in a tree"
+        },
+        {
+          "value": "D",
+          "label": "As a random-access array of integers",
+          "text": "As a random-access array of integers"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Java views each file as a sequential stream of bytes, allowing programs to process data without needing to know the specific underlying platform representation."
+    },
+    {
+      "id": "upload-1771101362139-1",
+      "number": "2",
+      "text": "What is the difference between how a byte-based stream and a character-based stream would store the numeric value 5?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Byte-based stores it as 101; Character-based stores it as the Unicode value for '5' (53).",
+          "text": "Byte-based stores it as 101; Character-based stores it as the Unicode value for '5' (53)."
+        },
+        {
+          "value": "B",
+          "label": "Byte-based stores it as a String; Character-based stores it as a literal 5.",
+          "text": "Byte-based stores it as a String; Character-based stores it as a literal 5."
+        },
+        {
+          "value": "C",
+          "label": "Both store it as 101, but character-based streams add a null terminator.",
+          "text": "Both store it as 101, but character-based streams add a null terminator."
+        },
+        {
+          "value": "D",
+          "label": "Character-based streams cannot store numeric values.",
+          "text": "Character-based streams cannot store numeric values."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Byte-based streams store data in binary format (5 = 101), while character-based streams store the character representation (Unicode '5' is decimal 53)."
+    },
+    {
+      "id": "upload-1771101362139-2",
+      "number": "3",
+      "text": "Which object is used by a Java program to output character-based error messages to the screen by default?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "System.in",
+          "text": "System.in"
+        },
+        {
+          "value": "B",
+          "label": "System.out",
+          "text": "System.out"
+        },
+        {
+          "value": "C",
+          "label": "System.err",
+          "text": "System.err"
+        },
+        {
+          "value": "D",
+          "label": "System.exit",
+          "text": "System.exit"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "System.err is the standard error stream object, normally used for outputting character-based error messages to the screen."
+    },
+    {
+      "id": "upload-1771101362139-3",
+      "number": "4",
+      "text": "Which classes serve as the base for byte-based input and output in the `java.io` package?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Reader and Writer",
+          "text": "Reader and Writer"
+        },
+        {
+          "value": "B",
+          "label": "Scanner and Formatter",
+          "text": "Scanner and Formatter"
+        },
+        {
+          "value": "C",
+          "label": "File and Directory",
+          "text": "File and Directory"
+        },
+        {
+          "value": "D",
+          "label": "InputStream and OutputStream",
+          "text": "InputStream and OutputStream"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "FileInputStream and FileOutputStream inherit from the abstract classes InputStream and OutputStream, which handle byte-based I/O."
+    },
+    {
+      "id": "upload-1771101362139-4",
+      "number": "5",
+      "text": "What happens to the data stored in a variable when a local variable goes out of scope or the program terminates?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It is automatically saved to a backup file.",
+          "text": "It is automatically saved to a backup file."
+        },
+        {
+          "value": "B",
+          "label": "It is considered persistent data.",
+          "text": "It is considered persistent data."
+        },
+        {
+          "value": "C",
+          "label": "It is temporary and lost.",
+          "text": "It is temporary and lost."
+        },
+        {
+          "value": "D",
+          "label": "It is moved to secondary storage.",
+          "text": "It is moved to secondary storage."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Data in variables is temporary. For long-term (persistent) retention, data must be stored in files on secondary storage devices."
+    },
+    {
+      "id": "upload-1771101362139-0",
+      "number": "6",
+      "text": "Which of the following is TRUE regarding objects of class `java.io.File`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "They are used to read and write bytes to a file.",
+          "text": "They are used to read and write bytes to a file."
+        },
+        {
+          "value": "B",
+          "label": "They can be used to retrieve information such as file size and modification time.",
+          "text": "They can be used to retrieve information such as file size and modification time."
+        },
+        {
+          "value": "C",
+          "label": "They automatically open a file for processing upon instantiation.",
+          "text": "They automatically open a file for processing upon instantiation."
+        },
+        {
+          "value": "D",
+          "label": "They are only used for text files, not binary files.",
+          "text": "They are only used for text files, not binary files."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "File objects provide information about files and directories (like length and modification date) but do not provide file-processing (read/write) capabilities themselves."
+    },
+    {
+      "id": "upload-1771101362139-1",
+      "number": "7",
+      "text": "What is the purpose of the `File.separator` constant?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To separate different files in a comma-separated list.",
+          "text": "To separate different files in a comma-separated list."
+        },
+        {
+          "value": "B",
+          "label": "To provide the platform-specific character used to separate directories in a path.",
+          "text": "To provide the platform-specific character used to separate directories in a path."
+        },
+        {
+          "value": "C",
+          "label": "To delete files from a directory.",
+          "text": "To delete files from a directory."
+        },
+        {
+          "value": "D",
+          "label": "To act as an end-of-file marker.",
+          "text": "To act as an end-of-file marker."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Different operating systems use different characters (\\ for Windows, / for Unix). File.separator returns the correct character for the local system."
+    },
+    {
+      "id": "upload-1771101362139-2",
+      "number": "8",
+      "text": "What does the `File` method `list()` return if the object represents a directory?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A long value representing total bytes.",
+          "text": "A long value representing total bytes."
+        },
+        {
+          "value": "B",
+          "label": "A boolean indicating if the directory is empty.",
+          "text": "A boolean indicating if the directory is empty."
+        },
+        {
+          "value": "C",
+          "label": "An array of Strings representing the directory's contents.",
+          "text": "An array of Strings representing the directory's contents."
+        },
+        {
+          "value": "D",
+          "label": "A URI object.",
+          "text": "A URI object."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The list() method returns a String array containing the names of the files and directories within the directory represented by the File object."
+    },
+    {
+      "id": "upload-1771101362139-3",
+      "number": "9",
+      "text": "Which `File` method would you use to determine if a specific path exists on the disk?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "isAbsolute()",
+          "text": "isAbsolute()"
+        },
+        {
+          "value": "B",
+          "label": "canRead()",
+          "text": "canRead()"
+        },
+        {
+          "value": "C",
+          "label": "exists()",
+          "text": "exists()"
+        },
+        {
+          "value": "D",
+          "label": "getPath()",
+          "text": "getPath()"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The exists() method returns true if the file or directory represented by the File object actually exists on the disk."
+    },
+    {
+      "id": "upload-1771101362139-4",
+      "number": "10",
+      "text": "Consider the following code snippet:\n```java\nFile name = new File(\"C:\\\\data\\\\test.txt\");\nSystem.out.println(name.getParent());\n```\nWhat would be the expected output?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "test.txt",
+          "text": "test.txt"
+        },
+        {
+          "value": "B",
+          "label": "C:\\data",
+          "text": "C:\\data"
+        },
+        {
+          "value": "C",
+          "label": "C:\\data\\test.txt",
+          "text": "C:\\data\\test.txt"
+        },
+        {
+          "value": "D",
+          "label": "null",
+          "text": "null"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The getParent() method returns a String representing the parent directory of the file or directory specified in the File object."
+    },
+    {
+      "id": "upload-1771101362139-0",
+      "number": "11",
+      "text": "What happens when you use the `Formatter` constructor `new Formatter(\"clients.txt\")` if the file 'clients.txt' already exists?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "An exception is thrown.",
+          "text": "An exception is thrown."
+        },
+        {
+          "value": "B",
+          "label": "New data is appended to the end of the file.",
+          "text": "New data is appended to the end of the file."
+        },
+        {
+          "value": "C",
+          "label": "The file's contents are truncated (discarded).",
+          "text": "The file's contents are truncated (discarded)."
+        },
+        {
+          "value": "D",
+          "label": "The constructor fails and returns null.",
+          "text": "The constructor fails and returns null."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "When an existing file is opened with class Formatter, its contents are truncated, meaning all existing data in the file is deleted."
+    },
+    {
+      "id": "upload-1771101362139-1",
+      "number": "12",
+      "text": "Which exception is thrown if a program tries to write to a file using a `Formatter` object that has already been closed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "NoSuchElementException",
+          "text": "NoSuchElementException"
+        },
+        {
+          "value": "B",
+          "label": "SecurityException",
+          "text": "SecurityException"
+        },
+        {
+          "value": "C",
+          "label": "FormatterClosedException",
+          "text": "FormatterClosedException"
+        },
+        {
+          "value": "D",
+          "label": "IOException",
+          "text": "IOException"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "As noted in the text, if the Formatter object is closed and a format operation is attempted, a FormatterClosedException is thrown."
+    },
+    {
+      "id": "upload-1771101362139-2",
+      "number": "13",
+      "text": "To signal the end of input (EOF) when running a console-based Java program on Windows, which key combination should be used?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<Ctrl> d",
+          "text": "<Ctrl> d"
+        },
+        {
+          "value": "B",
+          "label": "<Ctrl> z",
+          "text": "<Ctrl> z"
+        },
+        {
+          "value": "C",
+          "label": "<Alt> f4",
+          "text": "<Alt> f4"
+        },
+        {
+          "value": "D",
+          "label": "<Shift> <Esc>",
+          "text": "<Shift> <Esc>"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "On Windows systems, the end-of-file indicator is <Ctrl> z. On Unix/Linux/Mac systems, it is <Ctrl> d."
+    },
+    {
+      "id": "upload-1771101362139-3",
+      "number": "14",
+      "text": "In the provided example of `ReadTextFile.java`, what object is passed to the `Scanner` constructor to allow it to read from a file?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A String containing the file path.",
+          "text": "A String containing the file path."
+        },
+        {
+          "value": "B",
+          "label": "System.in",
+          "text": "System.in"
+        },
+        {
+          "value": "C",
+          "label": "A File object.",
+          "text": "A File object."
+        },
+        {
+          "value": "D",
+          "label": "A Formatter object.",
+          "text": "A Formatter object."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "To read from a file, the Scanner is instantiated with a File object, e.g., `new Scanner(new File(\"clients.txt\"))`."
+    },
+    {
+      "id": "upload-1771101362139-4",
+      "number": "15",
+      "text": "What does the `%n` format specifier represent in a format control string?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A null character.",
+          "text": "A null character."
+        },
+        {
+          "value": "B",
+          "label": "A platform-independent newline.",
+          "text": "A platform-independent newline."
+        },
+        {
+          "value": "C",
+          "label": "The name of the file.",
+          "text": "The name of the file."
+        },
+        {
+          "value": "D",
+          "label": "A numeric integer.",
+          "text": "A numeric integer."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "%n outputs a platform-specific line separator, ensuring the file is readable in native text editors (like Notepad vs. vi)."
+    },
+    {
+      "id": "upload-1771101362139-15",
+      "number": "16",
+      "text": "Which exception is thrown by the `Scanner` method `nextInt` if the data being read is not a valid integer?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "IOException",
+          "text": "IOException"
+        },
+        {
+          "value": "B",
+          "label": "NoSuchElementException",
+          "text": "NoSuchElementException"
+        },
+        {
+          "value": "C",
+          "label": "IllegalStateException",
+          "text": "IllegalStateException"
+        },
+        {
+          "value": "D",
+          "label": "FileNotFoundException",
+          "text": "FileNotFoundException"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If the information in the file is not properly formed (e.g., a String is found where an int is expected), a NoSuchElementException occurs."
+    },
+    {
+      "id": "upload-1771101362139-16",
+      "number": "17",
+      "text": "How can a program reposition a `Scanner` to the beginning of a file to read it again?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Call the reset() method on the Scanner object.",
+          "text": "Call the reset() method on the Scanner object."
+        },
+        {
+          "value": "B",
+          "label": "Use the seek(0) method.",
+          "text": "Use the seek(0) method."
+        },
+        {
+          "value": "C",
+          "label": "The program must close the file and reopen it.",
+          "text": "The program must close the file and reopen it."
+        },
+        {
+          "value": "D",
+          "label": "Call the hasNext() method twice.",
+          "text": "Call the hasNext() method twice."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Class Scanner does not allow repositioning to the beginning of a file. To read it again, the program must close and reopen the file."
+    },
+    {
+      "id": "upload-1771101362139-17",
+      "number": "18",
+      "text": "What does the method `hasNext()` return when the end-of-file marker is reached?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "true",
+          "text": "true"
+        },
+        {
+          "value": "B",
+          "label": "null",
+          "text": "null"
+        },
+        {
+          "value": "C",
+          "label": "false",
+          "text": "false"
+        },
+        {
+          "value": "D",
+          "label": "An EOFException is thrown.",
+          "text": "An EOFException is thrown."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Method hasNext returns false when the end-of-file marker is reached."
+    },
+    {
+      "id": "upload-1771101362139-18",
+      "number": "19",
+      "text": "Which exception occurs if a `Scanner` method is called after the `Scanner` has been closed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "NullPointerException",
+          "text": "NullPointerException"
+        },
+        {
+          "value": "B",
+          "label": "IllegalStateException",
+          "text": "IllegalStateException"
+        },
+        {
+          "value": "C",
+          "label": "IOException",
+          "text": "IOException"
+        },
+        {
+          "value": "D",
+          "label": "NoSuchElementException",
+          "text": "NoSuchElementException"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If the Scanner was closed before data was input, an IllegalStateException occurs."
+    },
+    {
+      "id": "upload-1771101362139-19",
+      "number": "20",
+      "text": "In the provided credit-inquiry case study, how are credit balances defined?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A balance equal to zero.",
+          "text": "A balance equal to zero."
+        },
+        {
+          "value": "B",
+          "label": "A positive amount.",
+          "text": "A positive amount."
+        },
+        {
+          "value": "C",
+          "label": "A negative amount.",
+          "text": "A negative amount."
+        },
+        {
+          "value": "D",
+          "label": "Any amount over 1000.",
+          "text": "Any amount over 1000."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "According to the text, a credit balance is a negative amount, and a debit balance is a positive amount."
+    },
+    {
+      "id": "upload-1771101362139-15",
+      "number": "21",
+      "text": "Why is it generally avoided to update a record in place within a sequential text file?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Text files are read-only by default.",
+          "text": "Text files are read-only by default."
+        },
+        {
+          "value": "B",
+          "label": "Java does not support writing to text files.",
+          "text": "Java does not support writing to text files."
+        },
+        {
+          "value": "C",
+          "label": "Because fields can vary in size, a longer new record might overwrite the start of the next record.",
+          "text": "Because fields can vary in size, a longer new record might overwrite the start of the next record."
+        },
+        {
+          "value": "D",
+          "label": "Because records are always encrypted.",
+          "text": "Because records are always encrypted."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Fields in text files vary in size. If a new record is larger than the original, it will overwrite the data belonging to the next sequential record."
+    },
+    {
+      "id": "upload-1771101362139-16",
+      "number": "22",
+      "text": "What is the standard procedure for updating records in a sequential-access file?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Use a specialized 'Update' stream.",
+          "text": "Use a specialized 'Update' stream."
+        },
+        {
+          "value": "B",
+          "label": "Rewrite the entire file, copying old records and inserting new ones.",
+          "text": "Rewrite the entire file, copying old records and inserting new ones."
+        },
+        {
+          "value": "C",
+          "label": "Delete the file and prompt the user to re-enter all data.",
+          "text": "Delete the file and prompt the user to re-enter all data."
+        },
+        {
+          "value": "D",
+          "label": "Append the updated record to the end of the file and leave the old one.",
+          "text": "Append the updated record to the end of the file and leave the old one."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "To make a change, records before the target are copied to a new file, the updated record is written, and the subsequent records are copied over."
+    },
+    {
+      "id": "upload-1771101362139-15",
+      "number": "23",
+      "text": "What is required for a class to be used with `ObjectOutputStream` for serialization?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It must override the toString() method.",
+          "text": "It must override the toString() method."
+        },
+        {
+          "value": "B",
+          "label": "It must implement the Serializable interface.",
+          "text": "It must implement the Serializable interface."
+        },
+        {
+          "value": "C",
+          "label": "It must be declared as static.",
+          "text": "It must be declared as static."
+        },
+        {
+          "value": "D",
+          "label": "It must inherit from class File.",
+          "text": "It must inherit from class File."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An ObjectOutputStream will not output an object unless it implements the Serializable interface."
+    },
+    {
+      "id": "upload-1771101362139-16",
+      "number": "24",
+      "text": "Which interface is known as a 'tagging interface' because it contains no methods?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "ObjectInput",
+          "text": "ObjectInput"
+        },
+        {
+          "value": "B",
+          "label": "ObjectOutput",
+          "text": "ObjectOutput"
+        },
+        {
+          "value": "C",
+          "label": "Serializable",
+          "text": "Serializable"
+        },
+        {
+          "value": "D",
+          "label": "Runnable",
+          "text": "Runnable"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Interface Serializable is a tagging interface because it does not contain methods; it simply 'tags' a class as being serializable."
+    },
+    {
+      "id": "upload-1771101362139-17",
+      "number": "25",
+      "text": "Which keyword is used to indicate that a specific instance variable should be ignored during the serialization process?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "volatile",
+          "text": "volatile"
+        },
+        {
+          "value": "B",
+          "label": "static",
+          "text": "static"
+        },
+        {
+          "value": "C",
+          "label": "transient",
+          "text": "transient"
+        },
+        {
+          "value": "D",
+          "label": "opaque",
+          "text": "opaque"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Non-Serializable instance variables must be declared transient to indicate that they should be ignored during serialization."
+    },
+    {
+      "id": "upload-1771101362139-18",
+      "number": "26",
+      "text": "What is 'wrapping' in the context of Java I/O streams?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Encoding data into a ZIP format.",
+          "text": "Encoding data into a ZIP format."
+        },
+        {
+          "value": "B",
+          "label": "Initializing a stream object using another stream object in the constructor.",
+          "text": "Initializing a stream object using another stream object in the constructor."
+        },
+        {
+          "value": "C",
+          "label": "Hiding a private stream inside a public class.",
+          "text": "Hiding a private stream inside a public class."
+        },
+        {
+          "value": "D",
+          "label": "Closing a stream automatically using a try-with-resources block.",
+          "text": "Closing a stream automatically using a try-with-resources block."
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Wrapping occurs when a new stream object is created by passing another stream object as a constructor argument, such as wrapping a FileInputStream in an ObjectInputStream."
+    },
+    {
+      "id": "upload-1771101362139-19",
+      "number": "27",
+      "text": "Which exception is used to signal that the end of a file has been reached during an `ObjectInputStream` read operation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "NoSuchElementException",
+          "text": "NoSuchElementException"
+        },
+        {
+          "value": "B",
+          "label": "FileNotFoundException",
+          "text": "FileNotFoundException"
+        },
+        {
+          "value": "C",
+          "label": "EOFException",
+          "text": "EOFException"
+        },
+        {
+          "value": "D",
+          "label": "ClassNotFoundException",
+          "text": "ClassNotFoundException"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Method readObject throws an EOFException if an attempt is made to read beyond the end of the file."
+    },
+    {
+      "id": "upload-1771101362139-15",
+      "number": "28",
+      "text": "Which classes are used to establish synchronized communication channels between two threads?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "ObjectInputStream / ObjectOutputStream",
+          "text": "ObjectInputStream / ObjectOutputStream"
+        },
+        {
+          "value": "B",
+          "label": "PipedInputStream / PipedOutputStream",
+          "text": "PipedInputStream / PipedOutputStream"
+        },
+        {
+          "value": "C",
+          "label": "FileInputStream / FileOutputStream",
+          "text": "FileInputStream / FileOutputStream"
+        },
+        {
+          "value": "D",
+          "label": "FilterInputStream / FilterOutputStream",
+          "text": "FilterInputStream / FilterOutputStream"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Java provides PipedOutputStream and PipedInputStream to establish pipes (communication channels) between two threads."
+    },
+    {
+      "id": "upload-1771101362139-16",
+      "number": "29",
+      "text": "What type of objects are `System.out` and `System.err`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "ObjectOutputStream",
+          "text": "ObjectOutputStream"
+        },
+        {
+          "value": "B",
+          "label": "Scanner",
+          "text": "Scanner"
+        },
+        {
+          "value": "C",
+          "label": "PrintStream",
+          "text": "PrintStream"
+        },
+        {
+          "value": "D",
+          "label": "FileOutputStream",
+          "text": "FileOutputStream"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "System.out and System.err are concrete examples of PrintStream objects, which perform text output to a stream."
+    },
+    {
+      "id": "upload-1771101362139-29",
+      "number": "30",
+      "text": "Which interface describes methods for reading primitive types from an input stream and is implemented by both `DataInputStream` and `RandomAccessFile`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "InputStream",
+          "text": "InputStream"
+        },
+        {
+          "value": "B",
+          "label": "DataInput",
+          "text": "DataInput"
+        },
+        {
+          "value": "C",
+          "label": "PrimitiveReader",
+          "text": "PrimitiveReader"
+        },
+        {
+          "value": "D",
+          "label": "ObjectInput",
+          "text": "ObjectInput"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Interface DataInput describes methods like readInt and readDouble for reading primitive types. It is implemented by DataInputStream and RandomAccessFile."
+    },
+    {
+      "id": "upload-1771101362139-30",
+      "number": "31",
+      "text": "What is the primary purpose of using `BufferedOutputStream`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To convert byte data into Unicode characters",
+          "text": "To convert byte data into Unicode characters"
+        },
+        {
+          "value": "B",
+          "label": "To ensure data is written to the disk immediately after every write statement",
+          "text": "To ensure data is written to the disk immediately after every write statement"
+        },
+        {
+          "value": "C",
+          "label": "To reduce the number of physical output operations by using a memory buffer",
+          "text": "To reduce the number of physical output operations by using a memory buffer"
+        },
+        {
+          "value": "D",
+          "label": "To encrypt data before it is sent to the physical device",
+          "text": "To encrypt data before it is sent to the physical device"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Buffering is a performance-enhancement technique that reduces physical I/O operations by storing data in a memory buffer and performing physical transfers in larger blocks."
+    },
+    {
+      "id": "upload-1771101362139-31",
+      "number": "32",
+      "text": "Which method should be called to force a partially filled buffer to be written to the output device?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "clear()",
+          "text": "clear()"
+        },
+        {
+          "value": "B",
+          "label": "close()",
+          "text": "close()"
+        },
+        {
+          "value": "C",
+          "label": "push()",
+          "text": "push()"
+        },
+        {
+          "value": "D",
+          "label": "flush()",
+          "text": "flush()"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The flush method is used to force out any data remaining in a BufferedOutputStream's memory buffer to the physical device."
+    },
+    {
+      "id": "upload-1771101362139-32",
+      "number": "33",
+      "text": "In the context of buffered I/O, what is a 'logical input operation'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The act of reading a large block of data from a disk into a buffer",
+          "text": "The act of reading a large block of data from a disk into a buffer"
+        },
+        {
+          "value": "B",
+          "label": "A request from a program to take a chunk of data from the memory buffer",
+          "text": "A request from a program to take a chunk of data from the memory buffer"
+        },
+        {
+          "value": "C",
+          "label": "The validation routine performed on raw bytes",
+          "text": "The validation routine performed on raw bytes"
+        },
+        {
+          "value": "D",
+          "label": "The conversion of binary data into human-readable text",
+          "text": "The conversion of binary data into human-readable text"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A logical input operation occurs when the program requests data and it is retrieved from the buffer rather than the physical device."
+    },
+    {
+      "id": "upload-1771101362139-33",
+      "number": "34",
+      "text": "Which of these classes is a subclass of `FilterOutputStream`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "DataOutputStream",
+          "text": "DataOutputStream"
+        },
+        {
+          "value": "B",
+          "label": "ByteArrayOutputStream",
+          "text": "ByteArrayOutputStream"
+        },
+        {
+          "value": "C",
+          "label": "FileOutputStream",
+          "text": "FileOutputStream"
+        },
+        {
+          "value": "D",
+          "label": "RandomAccessFile",
+          "text": "RandomAccessFile"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The text explicitly mentions that DataOutputStream is a subclass of FilterOutputStream."
+    },
+    {
+      "id": "upload-1771101362139-29",
+      "number": "35",
+      "text": "Which abstract classes serve as the base for Unicode character-based streams in Java?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "InputStream and OutputStream",
+          "text": "InputStream and OutputStream"
+        },
+        {
+          "value": "B",
+          "label": "ByteReader and ByteWriter",
+          "text": "ByteReader and ByteWriter"
+        },
+        {
+          "value": "C",
+          "label": "Reader and Writer",
+          "text": "Reader and Writer"
+        },
+        {
+          "value": "D",
+          "label": "UnicodeInput and UnicodeOutput",
+          "text": "UnicodeInput and UnicodeOutput"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Reader and Writer are the abstract classes for two-byte, character-based (Unicode) streams."
+    },
+    {
+      "id": "upload-1771101362139-30",
+      "number": "36",
+      "text": "Which class can be used to convert an `InputStream` into a character-based `Reader`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "StreamConverter",
+          "text": "StreamConverter"
+        },
+        {
+          "value": "B",
+          "label": "InputStreamReader",
+          "text": "InputStreamReader"
+        },
+        {
+          "value": "C",
+          "label": "BufferedReader",
+          "text": "BufferedReader"
+        },
+        {
+          "value": "D",
+          "label": "StringReader",
+          "text": "StringReader"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Class InputStreamReader acts as a bridge, converting an InputStream (bytes) into a Reader (characters)."
+    },
+    {
+      "id": "upload-1771101362139-31",
+      "number": "37",
+      "text": "What is the specific functionality provided by `LineNumberReader`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It sorts lines alphabetically as they are read",
+          "text": "It sorts lines alphabetically as they are read"
+        },
+        {
+          "value": "B",
+          "label": "It limits the number of lines a program can read from a file",
+          "text": "It limits the number of lines a program can read from a file"
+        },
+        {
+          "value": "C",
+          "label": "It keeps track of the number of lines read by monitoring newlines and carriage returns",
+          "text": "It keeps track of the number of lines read by monitoring newlines and carriage returns"
+        },
+        {
+          "value": "D",
+          "label": "It automatically formats output to fit within a specific line length",
+          "text": "It automatically formats output to fit within a specific line length"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "LineNumberReader is a subclass of BufferedReader that increments a line count based on newline, return, or carriage-return-line-feed combinations."
+    },
+    {
+      "id": "upload-1771101362139-32",
+      "number": "38",
+      "text": "Which class allows a program to logically concatenate several `InputStream` objects and treat them as a single continuous stream?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "CombinedInputStream",
+          "text": "CombinedInputStream"
+        },
+        {
+          "value": "B",
+          "label": "ByteArrayInputStream",
+          "text": "ByteArrayInputStream"
+        },
+        {
+          "value": "C",
+          "label": "SequenceInputStream",
+          "text": "SequenceInputStream"
+        },
+        {
+          "value": "D",
+          "label": "PipedInputStream",
+          "text": "PipedInputStream"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "SequenceInputStream logically concatenates several input streams into one."
+    },
+    {
+      "id": "upload-1771101362139-33",
+      "number": "39",
+      "text": "Which pair of classes is used for transferring character data between threads?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "ThreadReader and ThreadWriter",
+          "text": "ThreadReader and ThreadWriter"
+        },
+        {
+          "value": "B",
+          "label": "StringReader and StringWriter",
+          "text": "StringReader and StringWriter"
+        },
+        {
+          "value": "C",
+          "label": "PipedReader and PipedWriter",
+          "text": "PipedReader and PipedWriter"
+        },
+        {
+          "value": "D",
+          "label": "BufferedReader and BufferedWriter",
+          "text": "BufferedReader and BufferedWriter"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "PipedReader and PipedWriter implement piped-character streams specifically for transferring data between threads."
+    },
+    {
+      "id": "upload-1771101362139-29",
+      "number": "40",
+      "text": "Which `JFileChooser` constant should be used if the user needs to select either a single file or an entire directory?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "JFileChooser.FILES_ONLY",
+          "text": "JFileChooser.FILES_ONLY"
+        },
+        {
+          "value": "B",
+          "label": "JFileChooser.DIRECTORIES_ONLY",
+          "text": "JFileChooser.DIRECTORIES_ONLY"
+        },
+        {
+          "value": "C",
+          "label": "JFileChooser.FILES_AND_DIRECTORIES",
+          "text": "JFileChooser.FILES_AND_DIRECTORIES"
+        },
+        {
+          "value": "D",
+          "label": "JFileChooser.ALL_SELECT",
+          "text": "JFileChooser.ALL_SELECT"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The constant FILES_AND_DIRECTORIES indicates that both files and directories can be selected in the dialog."
+    },
+    {
+      "id": "upload-1771101362139-30",
+      "number": "41",
+      "text": "What does it mean that a `JFileChooser` dialog is 'modal'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It can only be used once per program execution",
+          "text": "It can only be used once per program execution"
+        },
+        {
+          "value": "B",
+          "label": "It does not allow interaction with other windows in the program until it is closed",
+          "text": "It does not allow interaction with other windows in the program until it is closed"
+        },
+        {
+          "value": "C",
+          "label": "It can only display files of a specific 'mode' or extension",
+          "text": "It can only display files of a specific 'mode' or extension"
+        },
+        {
+          "value": "D",
+          "label": "It automatically selects the most frequently used file",
+          "text": "It automatically selects the most frequently used file"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A modal dialog prevents the user from interacting with other parts of the application until the dialog is dismissed."
+    },
+    {
+      "id": "upload-1771101362139-31",
+      "number": "42",
+      "text": "Which method is called to display the `JFileChooser` dialog with an 'Open' button?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "display()",
+          "text": "display()"
+        },
+        {
+          "value": "B",
+          "label": "openDialog()",
+          "text": "openDialog()"
+        },
+        {
+          "value": "C",
+          "label": "setVisible(true)",
+          "text": "setVisible(true)"
+        },
+        {
+          "value": "D",
+          "label": "showOpenDialog(parent)",
+          "text": "showOpenDialog(parent)"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The method showOpenDialog(Component parent) is used to display the dialog."
+    },
+    {
+      "id": "upload-1771101362139-32",
+      "number": "43",
+      "text": "How does a program determine if the user clicked the 'Cancel' button on a `JFileChooser`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By checking if the return value of the dialog is JFileChooser.CANCEL_OPTION",
+          "text": "By checking if the return value of the dialog is JFileChooser.CANCEL_OPTION"
+        },
+        {
+          "value": "B",
+          "label": "By catching a CancelException",
+          "text": "By catching a CancelException"
+        },
+        {
+          "value": "C",
+          "label": "By checking if the getSelectedFile() method returns null",
+          "text": "By checking if the getSelectedFile() method returns null"
+        },
+        {
+          "value": "D",
+          "label": "By checking if the dialog's visibility is set to false",
+          "text": "By checking if the dialog's visibility is set to false"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The showOpenDialog method returns an integer; comparing this to JFileChooser.CANCEL_OPTION identifies if the user canceled the operation."
+    },
+    {
+      "id": "upload-1771101362139-33",
+      "number": "44",
+      "text": "Which method of `JFileChooser` retrieves the `File` object selected by the user?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "getFile()",
+          "text": "getFile()"
+        },
+        {
+          "value": "B",
+          "label": "getSelectedFile()",
+          "text": "getSelectedFile()"
+        },
+        {
+          "value": "C",
+          "label": "getPath()",
+          "text": "getPath()"
+        },
+        {
+          "value": "D",
+          "label": "getTarget()",
+          "text": "getTarget()"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The getSelectedFile() method returns the File object representing the selection made by the user in the dialog."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 44
+}

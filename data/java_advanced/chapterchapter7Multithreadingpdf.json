@@ -1,0 +1,2182 @@
+{
+  "id": "upload-1771104737848",
+  "label": "chapter_7_Multithreading_.pdf",
+  "params": {
+    "file": "chapter_7_Multithreading_.pdf"
+  },
+  "title": "Introduction to Multithreading and Thread States & Executing Threads and Synchronization & Thread Synchronization and Atomicity & Producer/Consumer Relationship & Producer/Consumer with ArrayBlockingQueue & Monitor Locks and Object Methods & Producer/Consumer Relationship with Synchronization & Bounded Buffers and Circular Buffers & The Lock and Condition Interfaces & Lock and Condition Interfaces & Concurrent Collections Overview & Multithreading with GUI and SwingWorker & Callable, Future, and Advanced Concurrency",
+  "questions": [
+    {
+      "id": "upload-1771104737848-0",
+      "number": "1",
+      "text": "How does a single-processor computer create the illusion of concurrent execution?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By physically executing multiple instructions at the exact same nanosecond.",
+          "text": "By physically executing multiple instructions at the exact same nanosecond."
+        },
+        {
+          "value": "B",
+          "label": "By rapidly switching between activities, allowing only one instruction to execute at once.",
+          "text": "By rapidly switching between activities, allowing only one instruction to execute at once."
+        },
+        {
+          "value": "C",
+          "label": "By using multiple cores to distribute the workload.",
+          "text": "By using multiple cores to distribute the workload."
+        },
+        {
+          "value": "D",
+          "label": "By increasing the clock speed of the processor for specific tasks.",
+          "text": "By increasing the clock speed of the processor for specific tasks."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Operating systems on single-processor computers simulate concurrency by rapidly switching between activities, although only one instruction can execute at any given time."
+    },
+    {
+      "id": "upload-1771104737848-1",
+      "number": "2",
+      "text": "Which thread state is a thread in immediately after it is created but before the program starts it?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Runnable",
+          "text": "Runnable"
+        },
+        {
+          "value": "B",
+          "label": "Waiting",
+          "text": "Waiting"
+        },
+        {
+          "value": "C",
+          "label": "New",
+          "text": "New"
+        },
+        {
+          "value": "D",
+          "label": "Blocked",
+          "text": "Blocked"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A thread begins its life cycle in the 'new' state and remains there until the program starts it, moving it to the 'runnable' state."
+    },
+    {
+      "id": "upload-1771104737848-2",
+      "number": "3",
+      "text": "What happens at the operating system level when a thread's 'quantum' or 'timeslice' expires?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The thread enters the 'terminated' state.",
+          "text": "The thread enters the 'terminated' state."
+        },
+        {
+          "value": "B",
+          "label": "The thread enters the 'waiting' state until it is notified.",
+          "text": "The thread enters the 'waiting' state until it is notified."
+        },
+        {
+          "value": "C",
+          "label": "The thread returns to the 'ready' state to wait for the processor again.",
+          "text": "The thread returns to the 'ready' state to wait for the processor again."
+        },
+        {
+          "value": "D",
+          "label": "The thread's priority is immediately decreased to prevent starvation.",
+          "text": "The thread's priority is immediately decreased to prevent starvation."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "When a quantum expires, the operating system takes the processor away and returns the thread to the 'ready' state (within the Java 'runnable' state) to allow another thread of equal priority to run."
+    },
+    {
+      "id": "upload-1771104737848-3",
+      "number": "4",
+      "text": "Which technique is used by operating systems to prevent 'starvation' (indefinite postponement)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Preemptive scheduling",
+          "text": "Preemptive scheduling"
+        },
+        {
+          "value": "B",
+          "label": "Round-robin scheduling",
+          "text": "Round-robin scheduling"
+        },
+        {
+          "value": "C",
+          "label": "Aging",
+          "text": "Aging"
+        },
+        {
+          "value": "D",
+          "label": "Time-slicing",
+          "text": "Time-slicing"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Aging is a technique where the operating system gradually increases the priority of a thread waiting in the 'ready' state to ensure it eventually runs."
+    },
+    {
+      "id": "upload-1771104737848-4",
+      "number": "5",
+      "text": "A thread that issues an input/output (I/O) request transitions to which state until the request is completed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Waiting",
+          "text": "Waiting"
+        },
+        {
+          "value": "B",
+          "label": "Timed Waiting",
+          "text": "Timed Waiting"
+        },
+        {
+          "value": "C",
+          "label": "Terminated",
+          "text": "Terminated"
+        },
+        {
+          "value": "D",
+          "label": "Blocked",
+          "text": "Blocked"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "A thread transitions to the 'blocked' state when it performs a task that cannot be completed immediately, such as an I/O request, and must wait for the task to finish."
+    },
+    {
+      "id": "upload-1771104737848-0",
+      "number": "6",
+      "text": "What is the primary benefit of using the `Executor` framework over creating and managing `Thread` objects manually?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It is the only way to run tasks concurrently.",
+          "text": "It is the only way to run tasks concurrently."
+        },
+        {
+          "value": "B",
+          "label": "It can reuse existing threads and optimize the number of threads to prevent resource exhaustion.",
+          "text": "It can reuse existing threads and optimize the number of threads to prevent resource exhaustion."
+        },
+        {
+          "value": "C",
+          "label": "It guarantees the exact order of execution for all tasks.",
+          "text": "It guarantees the exact order of execution for all tasks."
+        },
+        {
+          "value": "D",
+          "label": "It eliminates the need for the `Runnable` interface.",
+          "text": "It eliminates the need for the `Runnable` interface."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Executor framework manages thread pools, allowing threads to be reused and optimizing performance by preventing the overhead of creating new threads for every task."
+    },
+    {
+      "id": "upload-1771104737848-1",
+      "number": "7",
+      "text": "Consider the following code snippet. What is the purpose of line 3?\n\n```java\nExecutorService executor = Executors.newCachedThreadPool();\nexecutor.execute(task1);\nexecutor.shutdown();\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Immediately terminates all currently running tasks.",
+          "text": "Immediately terminates all currently running tasks."
+        },
+        {
+          "value": "B",
+          "label": "Prevents the executor from starting any new tasks, but allows existing tasks to finish.",
+          "text": "Prevents the executor from starting any new tasks, but allows existing tasks to finish."
+        },
+        {
+          "value": "C",
+          "label": "Blocks the main thread until all tasks in the pool have completed.",
+          "text": "Blocks the main thread until all tasks in the pool have completed."
+        },
+        {
+          "value": "D",
+          "label": "Deletes the thread pool from memory immediately.",
+          "text": "Deletes the thread pool from memory immediately."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `shutdown` method notifies the ExecutorService to stop accepting new tasks while continuing to execute those that were already submitted."
+    },
+    {
+      "id": "upload-1771104737848-2",
+      "number": "8",
+      "text": "In the context of Java monitors, what is required for a thread to execute a block of code within a `synchronized` statement?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The thread must be in the 'waiting' state.",
+          "text": "The thread must be in the 'waiting' state."
+        },
+        {
+          "value": "B",
+          "label": "The thread must have the highest priority in the JVM.",
+          "text": "The thread must have the highest priority in the JVM."
+        },
+        {
+          "value": "C",
+          "label": "The thread must acquire the monitor lock (intrinsic lock) for the specified object.",
+          "text": "The thread must acquire the monitor lock (intrinsic lock) for the specified object."
+        },
+        {
+          "value": "D",
+          "label": "The thread must be the 'main' thread.",
+          "text": "The thread must be the 'main' thread."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Java monitors use locks to enforce mutual exclusion. A thread must acquire the object's monitor lock to enter a synchronized block; if another thread holds the lock, the current thread is blocked."
+    },
+    {
+      "id": "upload-1771104737848-3",
+      "number": "9",
+      "text": "Why did the `SimpleArray` example in the text produce incorrect results (like overwriting element 0)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The array was not large enough to hold all values.",
+          "text": "The array was not large enough to hold all values."
+        },
+        {
+          "value": "B",
+          "label": "The `writeIndex` was shared across threads without synchronization, leading to race conditions.",
+          "text": "The `writeIndex` was shared across threads without synchronization, leading to race conditions."
+        },
+        {
+          "value": "C",
+          "label": "The JVM automatically shuts down if two threads access the same object.",
+          "text": "The JVM automatically shuts down if two threads access the same object."
+        },
+        {
+          "value": "D",
+          "label": "The `Thread.sleep()` method caused the array to become corrupted.",
+          "text": "The `Thread.sleep()` method caused the array to become corrupted."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Without synchronization, multiple threads could read and act upon a 'stale' value of `writeIndex`. For example, one thread could read the index, but another could increment it before the first thread finished writing, resulting in data loss or corruption."
+    },
+    {
+      "id": "upload-1771104737848-4",
+      "number": "10",
+      "text": "Which method of `ExecutorService` can be used to wait for tasks to finish, returning `true` if they complete within a specified timeframe and `false` otherwise?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "execute()",
+          "text": "execute()"
+        },
+        {
+          "value": "B",
+          "label": "shutdownNow()",
+          "text": "shutdownNow()"
+        },
+        {
+          "value": "C",
+          "label": "awaitTermination()",
+          "text": "awaitTermination()"
+        },
+        {
+          "value": "D",
+          "label": "sleep()",
+          "text": "sleep()"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `awaitTermination` method blocks until all tasks have completed, the timeout occurs, or the current thread is interrupted."
+    },
+    {
+      "id": "upload-1771104737848-10",
+      "number": "11",
+      "text": "What does it mean for an operation to be 'atomic' in the context of multithreading?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The operation can be divided into smaller suboperations by the scheduler.",
+          "text": "The operation can be divided into smaller suboperations by the scheduler."
+        },
+        {
+          "value": "B",
+          "label": "The operation cannot be divided and completes in its entirety without interference.",
+          "text": "The operation cannot be divided and completes in its entirety without interference."
+        },
+        {
+          "value": "C",
+          "label": "The operation is executed by multiple threads simultaneously.",
+          "text": "The operation is executed by multiple threads simultaneously."
+        },
+        {
+          "value": "D",
+          "label": "The operation is only performed on immutable data.",
+          "text": "The operation is only performed on immutable data."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An atomic operation is one that cannot be divided into smaller suboperations; it must be completed fully by a single thread without other threads modifying the shared data in between."
+    },
+    {
+      "id": "upload-1771104737848-11",
+      "number": "12",
+      "text": "According to the text, why should you typically avoid performing I/O operations inside a `synchronized` block?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "I/O operations automatically release the monitor lock.",
+          "text": "I/O operations automatically release the monitor lock."
+        },
+        {
+          "value": "B",
+          "label": "I/O operations are already thread-safe by default.",
+          "text": "I/O operations are already thread-safe by default."
+        },
+        {
+          "value": "C",
+          "label": "It is important to minimize the time an object is 'locked' to avoid blocking other threads.",
+          "text": "It is important to minimize the time an object is 'locked' to avoid blocking other threads."
+        },
+        {
+          "value": "D",
+          "label": "The JVM cannot perform I/O while holding a monitor lock.",
+          "text": "The JVM cannot perform I/O while holding a monitor lock."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "I/O operations are slow. Holding a lock during a lengthy I/O operation increases the wait time for other threads that need access to the same lock."
+    },
+    {
+      "id": "upload-1771104737848-12",
+      "number": "13",
+      "text": "How does labeling an object reference as `final` contribute to thread safety?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It guarantees the object referred to becomes immutable.",
+          "text": "It guarantees the object referred to becomes immutable."
+        },
+        {
+          "value": "B",
+          "label": "It ensures the reference cannot change after initialization and forces atomic construction.",
+          "text": "It ensures the reference cannot change after initialization and forces atomic construction."
+        },
+        {
+          "value": "C",
+          "label": "It automatically synchronizes all methods within the object.",
+          "text": "It automatically synchronizes all methods within the object."
+        },
+        {
+          "value": "D",
+          "label": "It prevents the object from being garbage collected.",
+          "text": "It prevents the object from being garbage collected."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Marking a reference final prevents it from pointing to another object and helps ensure the object is fully constructed before being accessed by other threads."
+    },
+    {
+      "id": "upload-1771104737848-13",
+      "number": "14",
+      "text": "In the provided `SimpleArray` example, what was required to make the `add` method thread-safe?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Using a `while` loop to check for the write index.",
+          "text": "Using a `while` loop to check for the write index."
+        },
+        {
+          "value": "B",
+          "label": "Adding the `volatile` keyword to the array declaration.",
+          "text": "Adding the `volatile` keyword to the array declaration."
+        },
+        {
+          "value": "C",
+          "label": "Declaring the `add` method with the `synchronized` keyword.",
+          "text": "Declaring the `add` method with the `synchronized` keyword."
+        },
+        {
+          "value": "D",
+          "label": "Removing the `Thread.sleep` call.",
+          "text": "Removing the `Thread.sleep` call."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Declaring the method as synchronized ensures that only one thread can execute the add operation at a time, protecting the shared writeIndex and array contents."
+    },
+    {
+      "id": "upload-1771104737848-14",
+      "number": "15",
+      "text": "What is the effect of a thread calling `Thread.sleep` while holding a lock in a real application?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It releases the lock so other threads can proceed.",
+          "text": "It releases the lock so other threads can proceed."
+        },
+        {
+          "value": "B",
+          "label": "It prevents other threads from acquiring the lock for the duration of the sleep.",
+          "text": "It prevents other threads from acquiring the lock for the duration of the sleep."
+        },
+        {
+          "value": "C",
+          "label": "It causes an `IllegalMonitorStateException`.",
+          "text": "It causes an `IllegalMonitorStateException`."
+        },
+        {
+          "value": "D",
+          "label": "It terminates the thread immediately.",
+          "text": "It terminates the thread immediately."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Sleeping while holding a lock is a poor practice because the thread keeps the lock, preventing any other thread from accessing the synchronized resource while it is inactive."
+    },
+    {
+      "id": "upload-1771104737848-10",
+      "number": "16",
+      "text": "In a Producer/Consumer relationship, what is the role of the 'buffer'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It is a thread that reads data from the producer.",
+          "text": "It is a thread that reads data from the producer."
+        },
+        {
+          "value": "B",
+          "label": "It is a shared object where the producer places data and the consumer reads data.",
+          "text": "It is a shared object where the producer places data and the consumer reads data."
+        },
+        {
+          "value": "C",
+          "label": "It is a method used to synchronize the main thread.",
+          "text": "It is a method used to synchronize the main thread."
+        },
+        {
+          "value": "D",
+          "label": "It is an interface that terminates threads.",
+          "text": "It is an interface that terminates threads."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The buffer serves as the shared communication point between the producer thread (which adds data) and the consumer thread (which removes data)."
+    },
+    {
+      "id": "upload-1771104737848-11",
+      "number": "17",
+      "text": "Which of the following describes a 'state-dependent' operation in a producer/consumer scenario?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The producer producing data regardless of buffer capacity.",
+          "text": "The producer producing data regardless of buffer capacity."
+        },
+        {
+          "value": "B",
+          "label": "The consumer reading the same value multiple times.",
+          "text": "The consumer reading the same value multiple times."
+        },
+        {
+          "value": "C",
+          "label": "The producer waiting if the buffer is full; the consumer waiting if the buffer is empty.",
+          "text": "The producer waiting if the buffer is full; the consumer waiting if the buffer is empty."
+        },
+        {
+          "value": "D",
+          "label": "The threads executing in a specific, fixed order.",
+          "text": "The threads executing in a specific, fixed order."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Operations are state-dependent because they should only proceed if the buffer is in the correct state (not full for producing, not empty for consuming)."
+    },
+    {
+      "id": "upload-1771104737848-12",
+      "number": "18",
+      "text": "What occurs in an 'unsynchronized' producer/consumer relationship when the consumer is faster than the producer?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The producer automatically speeds up.",
+          "text": "The producer automatically speeds up."
+        },
+        {
+          "value": "B",
+          "label": "The consumer may read duplicate data or 'garbage' values.",
+          "text": "The consumer may read duplicate data or 'garbage' values."
+        },
+        {
+          "value": "C",
+          "label": "The program throws a `BufferOverflowException`.",
+          "text": "The program throws a `BufferOverflowException`."
+        },
+        {
+          "value": "D",
+          "label": "Data is guaranteed to be processed exactly once.",
+          "text": "Data is guaranteed to be processed exactly once."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Without synchronization, a fast consumer might read the buffer before the producer has updated it with a new value, leading to duplicate reads of the old value."
+    },
+    {
+      "id": "upload-1771104737848-13",
+      "number": "19",
+      "text": "In the `UnsynchronizedBuffer` example (Fig. 26.12), what value was used to initialize the buffer to demonstrate a consumer reading before a producer writes?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "null",
+          "text": "null"
+        },
+        {
+          "value": "C",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "D",
+          "label": "-1",
+          "text": "-1"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The code initializes the buffer to -1. If the consumer reads before the producer writes, it will receive -1, indicating 'bad' or uninitialized data."
+    },
+    {
+      "id": "upload-1771104737848-14",
+      "number": "20",
+      "text": "Why did the sum in the `SharedBufferTest` (Fig. 26.13) often fail to equal 55?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The buffer size was too small for the integers 1-10.",
+          "text": "The buffer size was too small for the integers 1-10."
+        },
+        {
+          "value": "B",
+          "label": "Lack of synchronization caused values to be lost or duplicated.",
+          "text": "Lack of synchronization caused values to be lost or duplicated."
+        },
+        {
+          "value": "C",
+          "label": "The `ExecutorService` terminated the threads prematurely.",
+          "text": "The `ExecutorService` terminated the threads prematurely."
+        },
+        {
+          "value": "D",
+          "label": "The producer used a random number generator for the values.",
+          "text": "The producer used a random number generator for the values."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Because access was unsynchronized, the producer might overwrite a value before it was read (data loss), or the consumer might read a value twice before it was updated (duplication)."
+    },
+    {
+      "id": "upload-1771104737848-10",
+      "number": "21",
+      "text": "Which methods are provided by `ArrayBlockingQueue` to handle blocking operations for adding and removing elements?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`add` and `remove`",
+          "text": "`add` and `remove`"
+        },
+        {
+          "value": "B",
+          "label": "`offer` and `poll`",
+          "text": "`offer` and `poll`"
+        },
+        {
+          "value": "C",
+          "label": "`put` and `take`",
+          "text": "`put` and `take`"
+        },
+        {
+          "value": "D",
+          "label": "`push` and `pop`",
+          "text": "`push` and `pop`"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`put` blocks if the queue is full, and `take` blocks if the queue is empty, making them the blocking equivalents of `offer` and `poll`."
+    },
+    {
+      "id": "upload-1771104737848-11",
+      "number": "22",
+      "text": "What happens to the size of an `ArrayBlockingQueue` once it is created?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It is fixed and will not expand.",
+          "text": "It is fixed and will not expand."
+        },
+        {
+          "value": "B",
+          "label": "It doubles in size every time it reaches capacity.",
+          "text": "It doubles in size every time it reaches capacity."
+        },
+        {
+          "value": "C",
+          "label": "It shrinks when elements are removed to save memory.",
+          "text": "It shrinks when elements are removed to save memory."
+        },
+        {
+          "value": "D",
+          "label": "It is determined dynamically by the JVM at runtime.",
+          "text": "It is determined dynamically by the JVM at runtime."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "An `ArrayBlockingQueue` has a fixed size specified at construction; it does not grow or shrink."
+    },
+    {
+      "id": "upload-1771104737848-12",
+      "number": "23",
+      "text": "Why might console outputs in the `BlockingBuffer` example still appear out of order?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The `ArrayBlockingQueue` is not actually thread-safe.",
+          "text": "The `ArrayBlockingQueue` is not actually thread-safe."
+        },
+        {
+          "value": "B",
+          "label": "The `put` and `take` operations are not synchronized.",
+          "text": "The `put` and `take` operations are not synchronized."
+        },
+        {
+          "value": "C",
+          "label": "The `set` and `get` methods in `BlockingBuffer` are not synchronized themselves, making the combination of the queue operation and the print statement non-atomic.",
+          "text": "The `set` and `get` methods in `BlockingBuffer` are not synchronized themselves, making the combination of the queue operation and the print statement non-atomic."
+        },
+        {
+          "value": "D",
+          "label": "The `ExecutorService` uses only one thread.",
+          "text": "The `ExecutorService` uses only one thread."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "While the queue itself is thread-safe, the code in the `set` method performs a queue operation and then a print statement. These two distinct steps are not together in a synchronized block, so another thread can perform its own operation and print in between them."
+    },
+    {
+      "id": "upload-1771104737848-13",
+      "number": "24",
+      "text": "Which interface does `ArrayBlockingQueue` implement that provides the blocking functionality?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`SynchronizedQueue`",
+          "text": "`SynchronizedQueue`"
+        },
+        {
+          "value": "B",
+          "label": "`BlockingQueue`",
+          "text": "`BlockingQueue`"
+        },
+        {
+          "value": "C",
+          "label": "`LockableQueue`",
+          "text": "`LockableQueue`"
+        },
+        {
+          "value": "D",
+          "label": "`ThreadSafeQueue`",
+          "text": "`ThreadSafeQueue`"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "`ArrayBlockingQueue` implements the `BlockingQueue` interface, which defines methods that wait for the queue to become non-empty when retrieving or non-full when storing."
+    },
+    {
+      "id": "upload-1771104737848-14",
+      "number": "25",
+      "text": "In the `BlockingBuffer` code, how is synchronization achieved?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By manually using `synchronized` blocks inside `run`.",
+          "text": "By manually using `synchronized` blocks inside `run`."
+        },
+        {
+          "value": "B",
+          "label": "By the `ArrayBlockingQueue` encapsulating the synchronization logic internally.",
+          "text": "By the `ArrayBlockingQueue` encapsulating the synchronization logic internally."
+        },
+        {
+          "value": "C",
+          "label": "By calling `Thread.wait()` manually.",
+          "text": "By calling `Thread.wait()` manually."
+        },
+        {
+          "value": "D",
+          "label": "By declaring the `Producer` and `Consumer` classes as `final`.",
+          "text": "By declaring the `Producer` and `Consumer` classes as `final`."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text states that using classes from the concurrency package encapsulates synchronization for you, so the developer does not need to implement the locking logic manually."
+    },
+    {
+      "id": "upload-1771104737848-10",
+      "number": "26",
+      "text": "Which class defines the methods `wait`, `notify`, and `notifyAll`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`Thread`",
+          "text": "`Thread`"
+        },
+        {
+          "value": "B",
+          "label": "`Runnable`",
+          "text": "`Runnable`"
+        },
+        {
+          "value": "C",
+          "label": "`Object`",
+          "text": "`Object`"
+        },
+        {
+          "value": "D",
+          "label": "`System`",
+          "text": "`System`"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "These methods are defined in class `Object` and are therefore inherited by every class in Java."
+    },
+    {
+      "id": "upload-1771104737848-11",
+      "number": "27",
+      "text": "What happens to a thread's lock when it calls the `wait` method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The thread keeps the lock while waiting.",
+          "text": "The thread keeps the lock while waiting."
+        },
+        {
+          "value": "B",
+          "label": "The lock is automatically released.",
+          "text": "The lock is automatically released."
+        },
+        {
+          "value": "C",
+          "label": "The lock is transferred to the JVM.",
+          "text": "The lock is transferred to the JVM."
+        },
+        {
+          "value": "D",
+          "label": "The thread is terminated if it holds a lock.",
+          "text": "The thread is terminated if it holds a lock."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Calling `wait` releases the monitor lock, allowing other threads to enter `synchronized` blocks on that object while the first thread is in the waiting state."
+    },
+    {
+      "id": "upload-1771104737848-12",
+      "number": "28",
+      "text": "What is the difference between `notify` and `notifyAll`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`notify` wakes all threads; `notifyAll` wakes only one.",
+          "text": "`notify` wakes all threads; `notifyAll` wakes only one."
+        },
+        {
+          "value": "B",
+          "label": "`notify` transitions a thread to the terminated state.",
+          "text": "`notify` transitions a thread to the terminated state."
+        },
+        {
+          "value": "C",
+          "label": "`notify` transitions one waiting thread to the runnable state; `notifyAll` transitions all waiting threads to the runnable state.",
+          "text": "`notify` transitions one waiting thread to the runnable state; `notifyAll` transitions all waiting threads to the runnable state."
+        },
+        {
+          "value": "D",
+          "label": "`notifyAll` is only used for consumer threads.",
+          "text": "`notifyAll` is only used for consumer threads."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`notify` picks a single waiting thread to become eligible for the lock, whereas `notifyAll` wakes up all threads currently waiting for that monitor lock."
+    },
+    {
+      "id": "upload-1771104737848-13",
+      "number": "29",
+      "text": "What exception is thrown if a thread calls `wait` without having acquired the object's monitor lock?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`IllegalMonitorStateException`",
+          "text": "`IllegalMonitorStateException`"
+        },
+        {
+          "value": "B",
+          "label": "`InterruptedException`",
+          "text": "`InterruptedException`"
+        },
+        {
+          "value": "C",
+          "label": "`NoSuchMethodException`",
+          "text": "`NoSuchMethodException`"
+        },
+        {
+          "value": "D",
+          "label": "`NullPointerException`",
+          "text": "`NullPointerException`"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A thread must own the object's monitor (be inside a synchronized block/method) to call `wait`, `notify`, or `notifyAll`; otherwise, an `IllegalMonitorStateException` is thrown."
+    },
+    {
+      "id": "upload-1771104737848-14",
+      "number": "30",
+      "text": "When a thread is transitioned from the `waiting` state back to the `runnable` state via a `notify` call, what must it do before it can execute again?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Restart its `run` method from the beginning.",
+          "text": "Restart its `run` method from the beginning."
+        },
+        {
+          "value": "B",
+          "label": "Reacquire the monitor lock on the object.",
+          "text": "Reacquire the monitor lock on the object."
+        },
+        {
+          "value": "C",
+          "label": "Call `Thread.sleep` for a random interval.",
+          "text": "Call `Thread.sleep` for a random interval."
+        },
+        {
+          "value": "D",
+          "label": "Create a new `ExecutorService`.",
+          "text": "Create a new `ExecutorService`."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Even after being notified, a thread cannot proceed until it successfully reacquires the lock that it released when it called `wait`."
+    },
+    {
+      "id": "upload-1771104737848-30",
+      "number": "31",
+      "text": "According to Error-Prevention Tip 26.2, why is it considered good practice to use `notifyAll` rather than `notify`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It is faster than notify.",
+          "text": "It is faster than notify."
+        },
+        {
+          "value": "B",
+          "label": "It ensures that only the longest-waiting thread is awakened.",
+          "text": "It ensures that only the longest-waiting thread is awakened."
+        },
+        {
+          "value": "C",
+          "label": "It avoids the possibility of forgetting about waiting threads, which could cause starvation.",
+          "text": "It avoids the possibility of forgetting about waiting threads, which could cause starvation."
+        },
+        {
+          "value": "D",
+          "label": "It automatically releases the monitor lock of the object.",
+          "text": "It automatically releases the monitor lock of the object."
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Using notifyAll ensures all waiting threads become runnable, preventing a situation where a specific thread is forgotten and remains in the waiting state indefinitely (starvation)."
+    },
+    {
+      "id": "upload-1771104737848-31",
+      "number": "32",
+      "text": "What happens to a thread's monitor lock when it invokes the `wait` method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The thread retains the lock while waiting.",
+          "text": "The thread retains the lock while waiting."
+        },
+        {
+          "value": "B",
+          "label": "The thread implicitly releases the lock.",
+          "text": "The thread implicitly releases the lock."
+        },
+        {
+          "value": "C",
+          "label": "The lock is transferred to the next thread in the runnable state.",
+          "text": "The lock is transferred to the next thread in the runnable state."
+        },
+        {
+          "value": "D",
+          "label": "The lock is permanently destroyed.",
+          "text": "The lock is permanently destroyed."
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Calling wait() causes the thread to implicitly release the lock so that other threads can access the synchronized object and potentially change the condition the waiting thread is pending on."
+    },
+    {
+      "id": "upload-1771104737848-32",
+      "number": "33",
+      "text": "Why should the `wait` method always be invoked in a loop that tests the condition?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To prevent the thread from terminating prematurely.",
+          "text": "To prevent the thread from terminating prematurely."
+        },
+        {
+          "value": "B",
+          "label": "Because wait() only pauses for one millisecond by default.",
+          "text": "Because wait() only pauses for one millisecond by default."
+        },
+        {
+          "value": "C",
+          "label": "To ensure the condition is still satisfied, as a thread might reenter the runnable state before the condition is met.",
+          "text": "To ensure the condition is still satisfied, as a thread might reenter the runnable state before the condition is met."
+        },
+        {
+          "value": "D",
+          "label": "To improve the performance of the Java Virtual Machine.",
+          "text": "To improve the performance of the Java Virtual Machine."
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A thread might be awakened (e.g., via notifyAll) before its specific condition is met; re-testing in a loop ensures it doesn't execute erroneously."
+    },
+    {
+      "id": "upload-1771104737848-33",
+      "number": "34",
+      "text": "In the `SynchronizedBuffer` example, what is the purpose of the `occupied` boolean field?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To count how many threads are currently waiting.",
+          "text": "To count how many threads are currently waiting."
+        },
+        {
+          "value": "B",
+          "label": "To determine if it is the Producer's or Consumer's turn to perform a task.",
+          "text": "To determine if it is the Producer's or Consumer's turn to perform a task."
+        },
+        {
+          "value": "C",
+          "label": "To prevent the buffer from being deleted by the garbage collector.",
+          "text": "To prevent the buffer from being deleted by the garbage collector."
+        },
+        {
+          "value": "D",
+          "label": "To indicate if the monitor lock is currently held.",
+          "text": "To indicate if the monitor lock is currently held."
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The occupied field indicates if the buffer contains data (true) or is empty (false), which dictates whether the Producer can write or the Consumer can read."
+    },
+    {
+      "id": "upload-1771104737848-34",
+      "number": "35",
+      "text": "In the `SynchronizedBuffer.java` code, which method transitions waiting threads back to the runnable state?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`wait()`",
+          "text": "`wait()`"
+        },
+        {
+          "value": "B",
+          "label": "`displayState()`",
+          "text": "`displayState()`"
+        },
+        {
+          "value": "C",
+          "label": "`notifyAll()`",
+          "text": "`notifyAll()`"
+        },
+        {
+          "value": "D",
+          "label": "`synchronized()`",
+          "text": "`synchronized()`"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The notifyAll() method, inherited from Object, tells all waiting threads to enter the runnable state."
+    },
+    {
+      "id": "upload-1771104737848-30",
+      "number": "36",
+      "text": "What is the primary benefit of using a bounded buffer over a single-variable buffer in a Producer/Consumer relationship?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It uses less memory than a single variable.",
+          "text": "It uses less memory than a single variable."
+        },
+        {
+          "value": "B",
+          "label": "It allows threads to work at different speeds with less frequent waiting.",
+          "text": "It allows threads to work at different speeds with less frequent waiting."
+        },
+        {
+          "value": "C",
+          "label": "It eliminates the need for the synchronized keyword.",
+          "text": "It eliminates the need for the synchronized keyword."
+        },
+        {
+          "value": "D",
+          "label": "It prevents the Consumer from ever having to wait.",
+          "text": "It prevents the Consumer from ever having to wait."
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A bounded buffer provides extra cells that act as a cushion, allowing a faster producer to keep working even if the consumer is temporarily slower, and vice versa."
+    },
+    {
+      "id": "upload-1771104737848-31",
+      "number": "37",
+      "text": "In the provided `CircularBuffer` implementation, how is the 'circularity' of the `writeIndex` maintained? \n\n```java\nwriteIndex = (writeIndex + 1) % buffer.length;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Using a recursive call to the set method.",
+          "text": "Using a recursive call to the set method."
+        },
+        {
+          "value": "B",
+          "label": "Using the modulo operator to wrap the index back to zero.",
+          "text": "Using the modulo operator to wrap the index back to zero."
+        },
+        {
+          "value": "C",
+          "label": "By clearing the array when the index reaches the end.",
+          "text": "By clearing the array when the index reaches the end."
+        },
+        {
+          "value": "D",
+          "label": "By doubling the size of the array automatically.",
+          "text": "By doubling the size of the array automatically."
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The modulo operator (%) ensures that when the index is incremented past the last element (index 2 in a 3-element array), it returns to 0."
+    },
+    {
+      "id": "upload-1771104737848-32",
+      "number": "38",
+      "text": "Under what condition must the Producer wait in a `CircularBuffer` with a 3-element array?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`occupiedCells == 0`",
+          "text": "`occupiedCells == 0`"
+        },
+        {
+          "value": "B",
+          "label": "`writeIndex == readIndex`",
+          "text": "`writeIndex == readIndex`"
+        },
+        {
+          "value": "C",
+          "label": "`occupiedCells == 3`",
+          "text": "`occupiedCells == 3`"
+        },
+        {
+          "value": "D",
+          "label": "`buffer[writeIndex] == -1`",
+          "text": "`buffer[writeIndex] == -1`"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "When occupiedCells is equal to the buffer length (3), the buffer is full, and the Producer must wait until a cell is freed by the Consumer."
+    },
+    {
+      "id": "upload-1771104737848-33",
+      "number": "39",
+      "text": "What is the consequence of making a bounded buffer too large?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It causes the threads to crash.",
+          "text": "It causes the threads to crash."
+        },
+        {
+          "value": "B",
+          "label": "It wastes memory.",
+          "text": "It wastes memory."
+        },
+        {
+          "value": "C",
+          "label": "It forces the Producer to wait longer.",
+          "text": "It forces the Producer to wait longer."
+        },
+        {
+          "value": "D",
+          "label": "It decreases the speed of the Consumer.",
+          "text": "It decreases the speed of the Consumer."
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "According to the text, making a buffer too small causes threads to wait longer, while making it too large wastes memory."
+    },
+    {
+      "id": "upload-1771104737848-34",
+      "number": "40",
+      "text": "Which class from the `java.util.concurrent` package is mentioned as the simplest way to implement a bounded buffer because it handles synchronization details for you?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`CircularBuffer`",
+          "text": "`CircularBuffer`"
+        },
+        {
+          "value": "B",
+          "label": "`SynchronizedBuffer`",
+          "text": "`SynchronizedBuffer`"
+        },
+        {
+          "value": "C",
+          "label": "`ArrayBlockingQueue`",
+          "text": "`ArrayBlockingQueue`"
+        },
+        {
+          "value": "D",
+          "label": "`ArrayList`",
+          "text": "`ArrayList`"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The text states that ArrayBlockingQueue is the simplest way to implement a bounded buffer because it manages all synchronization details internally."
+    },
+    {
+      "id": "upload-1771104737848-30",
+      "number": "41",
+      "text": "Which method of the `Lock` interface is used to acquire a lock, similar to entering a `synchronized` block?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`await()`",
+          "text": "`await()`"
+        },
+        {
+          "value": "B",
+          "label": "`unlock()`",
+          "text": "`unlock()`"
+        },
+        {
+          "value": "C",
+          "label": "`lock()`",
+          "text": "`lock()`"
+        },
+        {
+          "value": "D",
+          "label": "`newCondition()`",
+          "text": "`newCondition()`"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A thread calls the Lock's lock() method to acquire the lock. If it's unavailable, the thread is placed in the waiting state."
+    },
+    {
+      "id": "upload-1771104737848-31",
+      "number": "42",
+      "text": "What does a 'fairness policy' set to `true` in a `ReentrantLock` constructor guarantee?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The program will run faster.",
+          "text": "The program will run faster."
+        },
+        {
+          "value": "B",
+          "label": "The longest-waiting thread will acquire the lock when it becomes available.",
+          "text": "The longest-waiting thread will acquire the lock when it becomes available."
+        },
+        {
+          "value": "C",
+          "label": "The lock will be released automatically after a timeout.",
+          "text": "The lock will be released automatically after a timeout."
+        },
+        {
+          "value": "D",
+          "label": "The Consumer will always have priority over the Producer.",
+          "text": "The Consumer will always have priority over the Producer."
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A fairness policy ensures that threads are served in the order they requested the lock, preventing starvation (indefinite postponement)."
+    },
+    {
+      "id": "upload-1771104737848-32",
+      "number": "43",
+      "text": "When using `Condition` objects, which method is used to transition a single waiting thread back to the runnable state?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`notify()`",
+          "text": "`notify()`"
+        },
+        {
+          "value": "B",
+          "label": "`signal()`",
+          "text": "`signal()`"
+        },
+        {
+          "value": "C",
+          "label": "`resume()`",
+          "text": "`resume()`"
+        },
+        {
+          "value": "D",
+          "label": "`await()`",
+          "text": "`await()`"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In the Condition interface, signal() is analogous to Object method notify(), and signalAll() is analogous to notifyAll()."
+    },
+    {
+      "id": "upload-1771104737848-33",
+      "number": "44",
+      "text": "What is one major advantage of using explicit `Lock` and `Condition` objects over the `synchronized` keyword?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "They are easier to write and less code-intensive.",
+          "text": "They are easier to write and less code-intensive."
+        },
+        {
+          "value": "B",
+          "label": "They do not require the use of loops for waiting.",
+          "text": "They do not require the use of loops for waiting."
+        },
+        {
+          "value": "C",
+          "label": "They allow threads to wait on different condition objects within the same lock.",
+          "text": "They allow threads to wait on different condition objects within the same lock."
+        },
+        {
+          "value": "D",
+          "label": "They automatically handle all exceptions.",
+          "text": "They automatically handle all exceptions."
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Using Lock objects allows you to declare multiple Condition objects (e.g., one for 'buffer full' and one for 'buffer empty'), which is not possible with built-in monitor locks."
+    },
+    {
+      "id": "upload-1771104737848-34",
+      "number": "45",
+      "text": "Which interface provides the `await` method used to release a lock and place a thread in the waiting state?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`Lock`",
+          "text": "`Lock`"
+        },
+        {
+          "value": "B",
+          "label": "`Executor`",
+          "text": "`Executor`"
+        },
+        {
+          "value": "C",
+          "label": "`Condition`",
+          "text": "`Condition`"
+        },
+        {
+          "value": "D",
+          "label": "`Runnable`",
+          "text": "`Runnable`"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The await() method belongs to the Condition interface. Calling it releases the associated lock and puts the thread in a waiting state for that specific condition."
+    },
+    {
+      "id": "upload-1771104737848-45",
+      "number": "46",
+      "text": "Which of the following is an advantage of using `Lock` objects over the `synchronized` keyword in Java?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Lock objects are automatically released when a block of code finishes.",
+          "text": "Lock objects are automatically released when a block of code finishes."
+        },
+        {
+          "value": "B",
+          "label": "Locks allow you to specify a timeout for waiting to acquire a lock.",
+          "text": "Locks allow you to specify a timeout for waiting to acquire a lock."
+        },
+        {
+          "value": "C",
+          "label": "Locks are less error-prone than the synchronized keyword.",
+          "text": "Locks are less error-prone than the synchronized keyword."
+        },
+        {
+          "value": "D",
+          "label": "Locks cannot be interrupted while waiting.",
+          "text": "Locks cannot be interrupted while waiting."
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "According to the text, Lock objects allow you to specify a timeout or interrupt waiting threads, which is not possible with the synchronized keyword."
+    },
+    {
+      "id": "upload-1771104737848-46",
+      "number": "47",
+      "text": "What happens when a thread calls the `await` method on a `Condition` object?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The thread immediately terminates.",
+          "text": "The thread immediately terminates."
+        },
+        {
+          "value": "B",
+          "label": "The thread acquires the lock and proceeds.",
+          "text": "The thread acquires the lock and proceeds."
+        },
+        {
+          "value": "C",
+          "label": "The thread temporarily releases the Lock and waits for a signal.",
+          "text": "The thread temporarily releases the Lock and waits for a signal."
+        },
+        {
+          "value": "D",
+          "label": "The thread enters a busy-wait loop until the condition is true.",
+          "text": "The thread enters a busy-wait loop until the condition is true."
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Calling `await` releases the associated Lock and places the thread in the waiting state for that condition."
+    },
+    {
+      "id": "upload-1771104737848-47",
+      "number": "48",
+      "text": "Which exception is thrown if a thread calls `await` or `signal` on a `Condition` object without first acquiring the associated `Lock`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "IllegalMonitorStateException",
+          "text": "IllegalMonitorStateException"
+        },
+        {
+          "value": "B",
+          "label": "InterruptedException",
+          "text": "InterruptedException"
+        },
+        {
+          "value": "C",
+          "label": "NullPointerException",
+          "text": "NullPointerException"
+        },
+        {
+          "value": "D",
+          "label": "LockAcquisitionException",
+          "text": "LockAcquisitionException"
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The text states that an `IllegalMonitorStateException` occurs if a thread issues an await, signal, or signalAll on a Condition without having acquired the lock."
+    },
+    {
+      "id": "upload-1771104737848-48",
+      "number": "49",
+      "text": "Why does the text recommend placing the `unlock` method call within a `finally` block?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To ensure the lock is released even if an exception occurs.",
+          "text": "To ensure the lock is released even if an exception occurs."
+        },
+        {
+          "value": "B",
+          "label": "To improve the performance of the lock acquisition.",
+          "text": "To improve the performance of the lock acquisition."
+        },
+        {
+          "value": "C",
+          "label": "Because the unlock method returns a boolean value used by finally.",
+          "text": "Because the unlock method returns a boolean value used by finally."
+        },
+        {
+          "value": "D",
+          "label": "To prevent the thread from being interrupted.",
+          "text": "To prevent the thread from being interrupted."
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Error-Prevention Tip 26.6 states that unlock must still be called if an exception is thrown, otherwise deadlock could occur."
+    },
+    {
+      "id": "upload-1771104737848-49",
+      "number": "50",
+      "text": "In the `SynchronizedBuffer` code example, what is the purpose of the `occupied` boolean variable?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To determine if the Lock is currently held by a thread.",
+          "text": "To determine if the Lock is currently held by a thread."
+        },
+        {
+          "value": "B",
+          "label": "To keep track of whether the buffer currently holds data to be read.",
+          "text": "To keep track of whether the buffer currently holds data to be read."
+        },
+        {
+          "value": "C",
+          "label": "To signal all threads to stop execution.",
+          "text": "To signal all threads to stop execution."
+        },
+        {
+          "value": "D",
+          "label": "To prevent IllegalMonitorStateException.",
+          "text": "To prevent IllegalMonitorStateException."
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text explains that the `occupied` variable keeps track of whether the buffer currently holds data that the Consumer should read."
+    },
+    {
+      "id": "upload-1771104737848-45",
+      "number": "51",
+      "text": "Which concurrent collection is specifically designed for situations where the collection is traversed much more frequently than it is modified?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "ArrayBlockingQueue",
+          "text": "ArrayBlockingQueue"
+        },
+        {
+          "value": "B",
+          "label": "ConcurrentHashMap",
+          "text": "ConcurrentHashMap"
+        },
+        {
+          "value": "C",
+          "label": "CopyOnWriteArrayList",
+          "text": "CopyOnWriteArrayList"
+        },
+        {
+          "value": "D",
+          "label": "SynchronousQueue",
+          "text": "SynchronousQueue"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The text describes `CopyOnWriteArrayList` as being used when the collection is traversed much more frequently than it is modified, because each modification creates a new copy."
+    },
+    {
+      "id": "upload-1771104737848-46",
+      "number": "52",
+      "text": "How does `ConcurrentHashMap` handle thread safety compared to a standard synchronized map?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It allows only one thread to access the map at a time.",
+          "text": "It allows only one thread to access the map at a time."
+        },
+        {
+          "value": "B",
+          "label": "It allows an arbitrary number of readers and a limited number of writers.",
+          "text": "It allows an arbitrary number of readers and a limited number of writers."
+        },
+        {
+          "value": "C",
+          "label": "It prevents all write operations after the map is initialized.",
+          "text": "It prevents all write operations after the map is initialized."
+        },
+        {
+          "value": "D",
+          "label": "It uses a single lock for the entire map structure.",
+          "text": "It uses a single lock for the entire map structure."
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "As listed in Figure 26.22, `ConcurrentHashMap` is a hash-based map that allows an arbitrary number of reader threads and a limited number of writer threads."
+    },
+    {
+      "id": "upload-1771104737848-47",
+      "number": "53",
+      "text": "Which collection added in Java SE 7 allows a producer to wait for a consumer to take an element via a `transfer` method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "LinkedTransferQueue",
+          "text": "LinkedTransferQueue"
+        },
+        {
+          "value": "B",
+          "label": "ConcurrentLinkedDeque",
+          "text": "ConcurrentLinkedDeque"
+        },
+        {
+          "value": "C",
+          "label": "PriorityBlockingQueue",
+          "text": "PriorityBlockingQueue"
+        },
+        {
+          "value": "D",
+          "label": "DelayQueue",
+          "text": "DelayQueue"
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The text identifies `LinkedTransferQueue` as having the `transfer` method which allows producers to wait for a consumer to take the element."
+    },
+    {
+      "id": "upload-1771104737848-48",
+      "number": "54",
+      "text": "What is the primary characteristic of a `SynchronousQueue`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It has an infinite internal capacity.",
+          "text": "It has an infinite internal capacity."
+        },
+        {
+          "value": "B",
+          "label": "It is sorted based on the natural ordering of elements.",
+          "text": "It is sorted based on the natural ordering of elements."
+        },
+        {
+          "value": "C",
+          "label": "It does not have an internal capacity; inserts must wait for removes.",
+          "text": "It does not have an internal capacity; inserts must wait for removes."
+        },
+        {
+          "value": "D",
+          "label": "It is implemented using a circular array.",
+          "text": "It is implemented using a circular array."
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Figure 26.22 defines `SynchronousQueue` as a blocking queue implementation that does not have an internal capacity."
+    },
+    {
+      "id": "upload-1771104737848-49",
+      "number": "55",
+      "text": "Which of the following is a fixed-size queue that supports the producer/consumer relationship?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "ConcurrentLinkedQueue",
+          "text": "ConcurrentLinkedQueue"
+        },
+        {
+          "value": "B",
+          "label": "ArrayBlockingQueue",
+          "text": "ArrayBlockingQueue"
+        },
+        {
+          "value": "C",
+          "label": "CopyOnWriteArraySet",
+          "text": "CopyOnWriteArraySet"
+        },
+        {
+          "value": "D",
+          "label": "ConcurrentSkipListSet",
+          "text": "ConcurrentSkipListSet"
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The table in the text defines `ArrayBlockingQueue` as a fixed-size queue that supports the producer/consumer relationship."
+    },
+    {
+      "id": "upload-1771104737848-45",
+      "number": "56",
+      "text": "What is the name of the single thread responsible for handling GUI interactions in Swing applications?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The Worker Thread",
+          "text": "The Worker Thread"
+        },
+        {
+          "value": "B",
+          "label": "The Main Application Thread",
+          "text": "The Main Application Thread"
+        },
+        {
+          "value": "C",
+          "label": "The Event Dispatch Thread",
+          "text": "The Event Dispatch Thread"
+        },
+        {
+          "value": "D",
+          "label": "The System Management Thread",
+          "text": "The System Management Thread"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The text states that all Swing applications have a single thread called the 'event dispatch thread' to handle interactions with GUI components."
+    },
+    {
+      "id": "upload-1771104737848-46",
+      "number": "57",
+      "text": "Why should long-running computations be performed in a separate worker thread rather than the event dispatch thread?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Swing components are not thread-safe.",
+          "text": "Swing components are not thread-safe."
+        },
+        {
+          "value": "B",
+          "label": "To prevent the GUI from becoming unresponsive.",
+          "text": "To prevent the GUI from becoming unresponsive."
+        },
+        {
+          "value": "C",
+          "label": "The event dispatch thread is not capable of performing calculations.",
+          "text": "The event dispatch thread is not capable of performing calculations."
+        },
+        {
+          "value": "D",
+          "label": "To avoid a NumberFormatException.",
+          "text": "To avoid a NumberFormatException."
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If the event dispatch thread is tied up in a lengthy computation, it cannot attend to the event queue, causing GUI components to become unresponsive."
+    },
+    {
+      "id": "upload-1771104737848-47",
+      "number": "58",
+      "text": "In the class declaration `public class MyTask extends SwingWorker<Long, Object>`, what does the first type parameter (`Long`) represent?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The type of intermediate results passed to process.",
+          "text": "The type of intermediate results passed to process."
+        },
+        {
+          "value": "B",
+          "label": "The type returned by the doInBackground method.",
+          "text": "The type returned by the doInBackground method."
+        },
+        {
+          "value": "C",
+          "label": "The type of the progress bar units.",
+          "text": "The type of the progress bar units."
+        },
+        {
+          "value": "D",
+          "label": "The maximum time allowed for the computation.",
+          "text": "The maximum time allowed for the computation."
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text explains that the first type parameter indicates the type returned by the `doInBackground` method."
+    },
+    {
+      "id": "upload-1771104737848-48",
+      "number": "59",
+      "text": "Which `SwingWorker` method is used to send intermediate results from a worker thread to the event dispatch thread for processing?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "publish",
+          "text": "publish"
+        },
+        {
+          "value": "B",
+          "label": "get",
+          "text": "get"
+        },
+        {
+          "value": "C",
+          "label": "done",
+          "text": "done"
+        },
+        {
+          "value": "D",
+          "label": "execute",
+          "text": "execute"
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Method `publish` sends intermediate results from the `doInBackground` method to the `process` method."
+    },
+    {
+      "id": "upload-1771104737848-49",
+      "number": "60",
+      "text": "Which `SwingWorker` method is called on the event dispatch thread after the `doInBackground` method completes?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "execute",
+          "text": "execute"
+        },
+        {
+          "value": "B",
+          "label": "done",
+          "text": "done"
+        },
+        {
+          "value": "C",
+          "label": "publish",
+          "text": "publish"
+        },
+        {
+          "value": "D",
+          "label": "setProgress",
+          "text": "setProgress"
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `done` method executes on the event dispatch thread when `doInBackground` returns."
+    },
+    {
+      "id": "upload-1771104737848-60",
+      "number": "61",
+      "text": "In the declaration `class PrimeCalculator extends SwingWorker<Integer, Integer>`, what does the first type parameter represent?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The type of intermediate results passed to the process method.",
+          "text": "The type of intermediate results passed to the process method."
+        },
+        {
+          "value": "B",
+          "label": "The type of the progress update value.",
+          "text": "The type of the progress update value."
+        },
+        {
+          "value": "C",
+          "label": "The return type of the doInBackground method.",
+          "text": "The return type of the doInBackground method."
+        },
+        {
+          "value": "D",
+          "label": "The type of exceptions thrown by the worker thread.",
+          "text": "The type of exceptions thrown by the worker thread."
+        }
+      ],
+      "inputName": "Q60",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The first type parameter of SwingWorker defines the return type of doInBackground, and the second defines the type of intermediate results passed between publish and process."
+    },
+    {
+      "id": "upload-1771104737848-61",
+      "number": "62",
+      "text": "Which method in a `SwingWorker` class is specifically designed to execute in the event dispatch thread to handle intermediate results?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "doInBackground",
+          "text": "doInBackground"
+        },
+        {
+          "value": "B",
+          "label": "publish",
+          "text": "publish"
+        },
+        {
+          "value": "C",
+          "label": "process",
+          "text": "process"
+        },
+        {
+          "value": "D",
+          "label": "execute",
+          "text": "execute"
+        }
+      ],
+      "inputName": "Q61",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The process method executes in the event dispatch thread and receives values passed from the publish method, which is called in the worker thread."
+    },
+    {
+      "id": "upload-1771104737848-62",
+      "number": "63",
+      "text": "Why might a programmer call `Thread.sleep` within the `doInBackground` method when updating a GUI frequently?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To allow the JVM to perform garbage collection.",
+          "text": "To allow the JVM to perform garbage collection."
+        },
+        {
+          "value": "B",
+          "label": "To prevent the event dispatch thread from running out of memory in its event queue due to rapid update requests.",
+          "text": "To prevent the event dispatch thread from running out of memory in its event queue due to rapid update requests."
+        },
+        {
+          "value": "C",
+          "label": "To ensure the SwingWorker terminates correctly.",
+          "text": "To ensure the SwingWorker terminates correctly."
+        },
+        {
+          "value": "D",
+          "label": "To force the calculation to run on the main thread.",
+          "text": "To force the calculation to run on the main thread."
+        }
+      ],
+      "inputName": "Q62",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If doInBackground publishes results too quickly, the event dispatch thread can become overwhelmed or run out of memory. Slowing down the worker thread allows the GUI to remain responsive."
+    },
+    {
+      "id": "upload-1771104737848-63",
+      "number": "64",
+      "text": "How is a `JProgressBar` typically updated when using a `SwingWorker`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By calling setProgress in doInBackground and using a PropertyChangeListener to listen for 'progress' changes.",
+          "text": "By calling setProgress in doInBackground and using a PropertyChangeListener to listen for 'progress' changes."
+        },
+        {
+          "value": "B",
+          "label": "By calling setValue on the JProgressBar directly from doInBackground.",
+          "text": "By calling setValue on the JProgressBar directly from doInBackground."
+        },
+        {
+          "value": "C",
+          "label": "By passing the JProgressBar to the publish method.",
+          "text": "By passing the JProgressBar to the publish method."
+        },
+        {
+          "value": "D",
+          "label": "By updating the progress bar inside the main method.",
+          "text": "By updating the progress bar inside the main method."
+        }
+      ],
+      "inputName": "Q63",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "SwingWorker provides a setProgress method that triggers a PropertyChangeEvent. A PropertyChangeListener can then update the JProgressBar on the event dispatch thread."
+    },
+    {
+      "id": "upload-1771104737848-64",
+      "number": "65",
+      "text": "What happens when `isCancelled()` returns true in the `doInBackground` method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The JVM immediately terminates the thread.",
+          "text": "The JVM immediately terminates the thread."
+        },
+        {
+          "value": "B",
+          "label": "The program throws a CancellationException automatically.",
+          "text": "The program throws a CancellationException automatically."
+        },
+        {
+          "value": "C",
+          "label": "The developer should return from the method to stop the computation early.",
+          "text": "The developer should return from the method to stop the computation early."
+        },
+        {
+          "value": "D",
+          "label": "The done() method is skipped.",
+          "text": "The done() method is skipped."
+        }
+      ],
+      "inputName": "Q64",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The isCancelled() method checks if the task was cancelled via the cancel() method. If it returns true, the developer should handle it by returning from doInBackground to stop the task."
+    },
+    {
+      "id": "upload-1771104737848-60",
+      "number": "66",
+      "text": "Which of the following is a limitation of the `Runnable` interface?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It cannot be used with an ExecutorService.",
+          "text": "It cannot be used with an ExecutorService."
+        },
+        {
+          "value": "B",
+          "label": "Its run method cannot return a value or throw checked exceptions.",
+          "text": "Its run method cannot return a value or throw checked exceptions."
+        },
+        {
+          "value": "C",
+          "label": "It cannot be used in GUI applications.",
+          "text": "It cannot be used in GUI applications."
+        },
+        {
+          "value": "D",
+          "label": "It requires a synchronized block to be executed.",
+          "text": "It requires a synchronized block to be executed."
+        }
+      ],
+      "inputName": "Q60",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Runnable interface's run method has a void return type and does not include a 'throws' clause for checked exceptions, necessitating the Callable interface for such needs."
+    },
+    {
+      "id": "upload-1771104737848-61",
+      "number": "67",
+      "text": "What does the `submit` method of an `ExecutorService` return when a `Callable` is passed to it?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "void",
+          "text": "void"
+        },
+        {
+          "value": "B",
+          "label": "A Thread object.",
+          "text": "A Thread object."
+        },
+        {
+          "value": "C",
+          "label": "A Future object.",
+          "text": "A Future object."
+        },
+        {
+          "value": "D",
+          "label": "The result of the calculation immediately.",
+          "text": "The result of the calculation immediately."
+        }
+      ],
+      "inputName": "Q61",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "ExecutorService.submit returns a Future object, which represents the pending result of the Callable and can be used to retrieve the result or check the status."
+    },
+    {
+      "id": "upload-1771104737848-62",
+      "number": "68",
+      "text": "Which Java SE 7 framework is specifically designed for parallelizing divide-and-conquer algorithms like merge sort?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The Sieve Framework",
+          "text": "The Sieve Framework"
+        },
+        {
+          "value": "B",
+          "label": "The Fork/Join Framework",
+          "text": "The Fork/Join Framework"
+        },
+        {
+          "value": "C",
+          "label": "The SwingWorker API",
+          "text": "The SwingWorker API"
+        },
+        {
+          "value": "D",
+          "label": "The Collection Framework",
+          "text": "The Collection Framework"
+        }
+      ],
+      "inputName": "Q62",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The fork/join framework is designed to help parallelize algorithms by splitting tasks into smaller subtasks (forking) and merging results (joining)."
+    },
+    {
+      "id": "upload-1771104737848-63",
+      "number": "69",
+      "text": "How can a program retrieve the result of a task managed by a `Future` object?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By calling future.getResult()",
+          "text": "By calling future.getResult()"
+        },
+        {
+          "value": "B",
+          "label": "By calling future.get()",
+          "text": "By calling future.get()"
+        },
+        {
+          "value": "C",
+          "label": "By calling future.run()",
+          "text": "By calling future.run()"
+        },
+        {
+          "value": "D",
+          "label": "The result is automatically injected into the calling thread.",
+          "text": "The result is automatically injected into the calling thread."
+        }
+      ],
+      "inputName": "Q63",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The get() method of the Future interface is used to retrieve the result of the computation. It will block if the calculation is not yet complete."
+    },
+    {
+      "id": "upload-1771104737848-64",
+      "number": "70",
+      "text": "In the Sieve of Eratosthenes algorithm described in the text, how is a number identified as non-prime in the boolean array?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By setting its array index value to true.",
+          "text": "By setting its array index value to true."
+        },
+        {
+          "value": "B",
+          "label": "By setting its array index value to false.",
+          "text": "By setting its array index value to false."
+        },
+        {
+          "value": "C",
+          "label": "By removing the index from the array.",
+          "text": "By removing the index from the array."
+        },
+        {
+          "value": "D",
+          "label": "By incrementing a counter at that index.",
+          "text": "By incrementing a counter at that index."
+        }
+      ],
+      "inputName": "Q64",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The algorithm initializes all elements to true and sets the multiples of prime numbers to false to indicate they are divisible and thus not prime."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 70
+}

@@ -1,0 +1,787 @@
+{
+  "id": "upload-1771100344684",
+  "label": "chapter_1_classes_objects.pdf",
+  "params": {
+    "file": "chapter_1_classes_objects.pdf"
+  },
+  "title": "Introduction to Classes, Objects, Methods and Strings & 3.6 Initializing Objects with Constructors & 3.7 Floating-Point Numbers and Type double & 3.8 (Optional) GUI and Graphics Case Study: Using Dialog Boxes",
+  "questions": [
+    {
+      "id": "upload-1771100344685-0",
+      "number": "1",
+      "text": "Which keyword is used to create a new object of a specific class?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "class",
+          "text": "class"
+        },
+        {
+          "value": "B",
+          "label": "new",
+          "text": "new"
+        },
+        {
+          "value": "C",
+          "label": "public",
+          "text": "public"
+        },
+        {
+          "value": "D",
+          "label": "void",
+          "text": "void"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Keyword 'new' creates a new object of the class specified to its right (a class instance creation expression)."
+    },
+    {
+      "id": "upload-1771100344685-1",
+      "number": "2",
+      "text": "In the context of the Java Virtual Machine (JVM), why is the `static` keyword required for the `main` method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It allows the method to return a value to the operating system.",
+          "text": "It allows the method to return a value to the operating system."
+        },
+        {
+          "value": "B",
+          "label": "It specifies that the method can be called without first creating an object of the class.",
+          "text": "It specifies that the method can be called without first creating an object of the class."
+        },
+        {
+          "value": "C",
+          "label": "It ensures the method is hidden from other classes in the package.",
+          "text": "It ensures the method is hidden from other classes in the package."
+        },
+        {
+          "value": "D",
+          "label": "It allows the method to access private instance variables of the class.",
+          "text": "It allows the method to access private instance variables of the class."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A static method is special because it can be called without first creating an object of the class in which the method is declared, which is necessary for the entry point of the application."
+    },
+    {
+      "id": "upload-1771100344685-2",
+      "number": "3",
+      "text": "What is the difference between the `Scanner` methods `next()` and `nextLine()`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "next() reads a whole line; nextLine() reads a single character.",
+          "text": "next() reads a whole line; nextLine() reads a single character."
+        },
+        {
+          "value": "B",
+          "label": "next() reads an integer; nextLine() reads a string.",
+          "text": "next() reads an integer; nextLine() reads a string."
+        },
+        {
+          "value": "C",
+          "label": "next() reads characters until it encounters white space; nextLine() reads until a newline is encountered.",
+          "text": "next() reads characters until it encounters white space; nextLine() reads until a newline is encountered."
+        },
+        {
+          "value": "D",
+          "label": "There is no difference; they are aliases for the same operation.",
+          "text": "There is no difference; they are aliases for the same operation."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "next() reads characters until a white-space character is found, while nextLine() reads all characters until a newline character is encountered."
+    },
+    {
+      "id": "upload-1771100344685-3",
+      "number": "4",
+      "text": "Consider the following class structure. What will be the output of the first call to `getCourseName()` if no setter has been called yet?\n\n```java\npublic class GradeBook {\n    private String courseName;\n    public String getCourseName() {\n        return courseName;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "An empty string \"\"",
+          "text": "An empty string \"\""
+        },
+        {
+          "value": "B",
+          "label": "A compilation error",
+          "text": "A compilation error"
+        },
+        {
+          "value": "C",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "null",
+          "text": "null"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Reference-type instance variables (like String) are initialized by default to the value 'null', which represents a reference to nothing."
+    },
+    {
+      "id": "upload-1771100344685-4",
+      "number": "5",
+      "text": "Which of the following is true regarding local variables in Java?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "They are automatically initialized to zero or null.",
+          "text": "They are automatically initialized to zero or null."
+        },
+        {
+          "value": "B",
+          "label": "They can be used by any method within the same class.",
+          "text": "They can be used by any method within the same class."
+        },
+        {
+          "value": "C",
+          "label": "They lose their values when the method in which they are declared terminates.",
+          "text": "They lose their values when the method in which they are declared terminates."
+        },
+        {
+          "value": "D",
+          "label": "They must be declared with an access modifier like public or private.",
+          "text": "They must be declared with an access modifier like public or private."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Local variables are declared in the body of a method, can only be used in that method, and are lost once the method terminates. They are not automatically initialized."
+    },
+    {
+      "id": "upload-1771100344685-5",
+      "number": "6",
+      "text": "In a UML class diagram, what does a minus sign (-) preceding an attribute name signify?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The attribute is a static constant.",
+          "text": "The attribute is a static constant."
+        },
+        {
+          "value": "B",
+          "label": "The attribute is public (+).",
+          "text": "The attribute is public (+)."
+        },
+        {
+          "value": "C",
+          "label": "The attribute is private.",
+          "text": "The attribute is private."
+        },
+        {
+          "value": "D",
+          "label": "The attribute is a method rather than a variable.",
+          "text": "The attribute is a method rather than a variable."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The UML uses the minus sign (-) to indicate a private access modifier, whereas a plus sign (+) indicates public."
+    },
+    {
+      "id": "upload-1771100344685-6",
+      "number": "7",
+      "text": "Which of the following is a primitive type in Java?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "String",
+          "text": "String"
+        },
+        {
+          "value": "B",
+          "label": "Scanner",
+          "text": "Scanner"
+        },
+        {
+          "value": "C",
+          "label": "double",
+          "text": "double"
+        },
+        {
+          "value": "D",
+          "label": "GradeBook",
+          "text": "GradeBook"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Java's primitive types include boolean, byte, char, short, int, long, float, and double. String and Scanner are reference types (classes)."
+    },
+    {
+      "id": "upload-1771100344685-7",
+      "number": "8",
+      "text": "What is the purpose of a constructor in a class?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To delete an object from memory once it is no longer needed.",
+          "text": "To delete an object from memory once it is no longer needed."
+        },
+        {
+          "value": "B",
+          "label": "To initialize an object’s data at the time the object is created.",
+          "text": "To initialize an object’s data at the time the object is created."
+        },
+        {
+          "value": "C",
+          "label": "To provide a way to call private methods from other classes.",
+          "text": "To provide a way to call private methods from other classes."
+        },
+        {
+          "value": "D",
+          "label": "To define the return type of all methods in the class.",
+          "text": "To define the return type of all methods in the class."
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A constructor is similar to a method but is used specifically at the time an object is created to initialize its data."
+    },
+    {
+      "id": "upload-1771100344685-8",
+      "number": "9",
+      "text": "How does a class become 'extensible' in Java?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By using the *.java extension during compilation.",
+          "text": "By using the *.java extension during compilation."
+        },
+        {
+          "value": "B",
+          "label": "Because every new class created becomes a new type that can be used to declare variables.",
+          "text": "Because every new class created becomes a new type that can be used to declare variables."
+        },
+        {
+          "value": "C",
+          "label": "By ensuring all instance variables are declared as public.",
+          "text": "By ensuring all instance variables are declared as public."
+        },
+        {
+          "value": "D",
+          "label": "By importing the java.lang package explicitly.",
+          "text": "By importing the java.lang package explicitly."
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Java is an extensible language because you can declare new class types (like GradeBook or Scanner) as needed to create objects and variables."
+    },
+    {
+      "id": "upload-1771100344685-9",
+      "number": "10",
+      "text": "What happens if you attempt to use an uninitialized local variable in a Java program?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The variable defaults to 0 or null.",
+          "text": "The variable defaults to 0 or null."
+        },
+        {
+          "value": "B",
+          "label": "The program crashes at runtime with a NullPointerException.",
+          "text": "The program crashes at runtime with a NullPointerException."
+        },
+        {
+          "value": "C",
+          "label": "A compilation error occurs.",
+          "text": "A compilation error occurs."
+        },
+        {
+          "value": "D",
+          "label": "The JVM assigns a random memory address to the variable.",
+          "text": "The JVM assigns a random memory address to the variable."
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Unlike fields (instance variables), local variables are not initialized by default. An attempt to use an uninitialized local variable causes a compilation error."
+    },
+    {
+      "id": "upload-1771100344685-10",
+      "number": "11",
+      "text": "What is the return type specified for a Java constructor?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "void",
+          "text": "void"
+        },
+        {
+          "value": "B",
+          "label": "The type of the class it belongs to",
+          "text": "The type of the class it belongs to"
+        },
+        {
+          "value": "C",
+          "label": "int",
+          "text": "int"
+        },
+        {
+          "value": "D",
+          "label": "Constructors do not specify a return type, not even void",
+          "text": "Constructors do not specify a return type, not even void"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Constructors cannot return values and thus do not specify a return type. Specifying even 'void' would make it a method rather than a constructor."
+    },
+    {
+      "id": "upload-1771100344685-11",
+      "number": "12",
+      "text": "Which of the following statements about default constructors is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The compiler always provides a default constructor for every class.",
+          "text": "The compiler always provides a default constructor for every class."
+        },
+        {
+          "value": "B",
+          "label": "If you declare any constructor for a class, the compiler will not provide a default constructor.",
+          "text": "If you declare any constructor for a class, the compiler will not provide a default constructor."
+        },
+        {
+          "value": "C",
+          "label": "Default constructors must be explicitly called using the 'default' keyword.",
+          "text": "Default constructors must be explicitly called using the 'default' keyword."
+        },
+        {
+          "value": "D",
+          "label": "A default constructor can have multiple parameters.",
+          "text": "A default constructor can have multiple parameters."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If a class has no explicit constructors, the compiler provides a default one. However, if the programmer defines any constructor, the compiler-generated default constructor is removed."
+    },
+    {
+      "id": "upload-1771100344685-12",
+      "number": "13",
+      "text": "How does the UML represent a constructor in a class diagram?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By placing the name in italics.",
+          "text": "By placing the name in italics."
+        },
+        {
+          "value": "B",
+          "label": "By adding the word «constructor» between guillemets before the name.",
+          "text": "By adding the word «constructor» between guillemets before the name."
+        },
+        {
+          "value": "C",
+          "label": "By underlining the constructor's name.",
+          "text": "By underlining the constructor's name."
+        },
+        {
+          "value": "D",
+          "label": "By listing it in the first compartment with the class name.",
+          "text": "By listing it in the first compartment with the class name."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In UML, constructors are placed in the third compartment (operations) and distinguished by the stereotype «constructor»."
+    },
+    {
+      "id": "upload-1771100344685-13",
+      "number": "14",
+      "text": "What happens when the keyword `new` is used in an expression like `new GradeBook()`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It deletes an existing object.",
+          "text": "It deletes an existing object."
+        },
+        {
+          "value": "B",
+          "label": "It requests memory for a new object and then calls the class's constructor.",
+          "text": "It requests memory for a new object and then calls the class's constructor."
+        },
+        {
+          "value": "C",
+          "label": "It initializes the class's static variables.",
+          "text": "It initializes the class's static variables."
+        },
+        {
+          "value": "D",
+          "label": "It declares a reference variable but does not create an object.",
+          "text": "It declares a reference variable but does not create an object."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Keyword 'new' requests memory from the system to store the object and then calls the corresponding constructor to initialize that object."
+    },
+    {
+      "id": "upload-1771100344685-14",
+      "number": "15",
+      "text": "If a `GradeBook` class is declared with a single constructor: `public GradeBook(String name)`, which of the following is a valid instantiation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "GradeBook myGB = new GradeBook();",
+          "text": "GradeBook myGB = new GradeBook();"
+        },
+        {
+          "value": "B",
+          "label": "GradeBook myGB = new GradeBook(\"Java 101\");",
+          "text": "GradeBook myGB = new GradeBook(\"Java 101\");"
+        },
+        {
+          "value": "C",
+          "label": "GradeBook myGB = GradeBook(\"Java 101\");",
+          "text": "GradeBook myGB = GradeBook(\"Java 101\");"
+        },
+        {
+          "value": "D",
+          "label": "GradeBook myGB = new \"Java 101\";",
+          "text": "GradeBook myGB = new \"Java 101\";"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Because a custom constructor with a String parameter was defined, the default no-argument constructor is no longer available. You must provide a String argument when using 'new'."
+    },
+    {
+      "id": "upload-1771100344685-10",
+      "number": "16",
+      "text": "What is the difference between `float` and `double` in Java?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "float stores whole numbers; double stores decimals.",
+          "text": "float stores whole numbers; double stores decimals."
+        },
+        {
+          "value": "B",
+          "label": "double provides approximately 15 significant digits, while float provides approximately 7.",
+          "text": "double provides approximately 15 significant digits, while float provides approximately 7."
+        },
+        {
+          "value": "C",
+          "label": "float requires twice as much memory as double.",
+          "text": "float requires twice as much memory as double."
+        },
+        {
+          "value": "D",
+          "label": "Java treats all floating-point literals as float by default.",
+          "text": "Java treats all floating-point literals as float by default."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Variables of type double (double-precision) require twice as much memory as float (single-precision) and provide about 15 significant digits compared to 7 for float."
+    },
+    {
+      "id": "upload-1771100344685-11",
+      "number": "17",
+      "text": "How does Java treat a floating-point literal such as `7.33` in source code?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "As a float value.",
+          "text": "As a float value."
+        },
+        {
+          "value": "B",
+          "label": "As a BigDecimal value.",
+          "text": "As a BigDecimal value."
+        },
+        {
+          "value": "C",
+          "label": "As a double value.",
+          "text": "As a double value."
+        },
+        {
+          "value": "D",
+          "label": "As an int value.",
+          "text": "As an int value."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Java treats all floating-point numbers typed in source code as double values by default."
+    },
+    {
+      "id": "upload-1771100344685-12",
+      "number": "18",
+      "text": "Which format specifier is used to display a `double` value rounded to two decimal places?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "%d",
+          "text": "%d"
+        },
+        {
+          "value": "B",
+          "label": "%s",
+          "text": "%s"
+        },
+        {
+          "value": "C",
+          "label": "%.2f",
+          "text": "%.2f"
+        },
+        {
+          "value": "D",
+          "label": "%f.2",
+          "text": "%f.2"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The format specifier %f is for floating-point numbers. Adding .2 between the % and f specifies the precision (number of decimal places)."
+    },
+    {
+      "id": "upload-1771100344685-13",
+      "number": "19",
+      "text": "Which class should be used if a program requires 100% precise floating-point numbers, such as for financial calculations?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Double",
+          "text": "Double"
+        },
+        {
+          "value": "B",
+          "label": "java.math.BigDecimal",
+          "text": "java.math.BigDecimal"
+        },
+        {
+          "value": "C",
+          "label": "PrecisionFloat",
+          "text": "PrecisionFloat"
+        },
+        {
+          "value": "D",
+          "label": "java.util.Scanner",
+          "text": "java.util.Scanner"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Floating-point numbers (float and double) are often approximations. For applications requiring exact precision, Java provides the BigDecimal class."
+    },
+    {
+      "id": "upload-1771100344685-14",
+      "number": "20",
+      "text": "Which `Scanner` method is used to read a floating-point value from the user?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "next()",
+          "text": "next()"
+        },
+        {
+          "value": "B",
+          "label": "nextFloatPoint()",
+          "text": "nextFloatPoint()"
+        },
+        {
+          "value": "C",
+          "label": "nextInt()",
+          "text": "nextInt()"
+        },
+        {
+          "value": "D",
+          "label": "nextDouble()",
+          "text": "nextDouble()"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The Scanner method nextDouble() obtains a double value from the input stream."
+    },
+    {
+      "id": "upload-1771100344685-10",
+      "number": "21",
+      "text": "Which package contains the `JOptionPane` class?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "java.util",
+          "text": "java.util"
+        },
+        {
+          "value": "B",
+          "label": "java.awt",
+          "text": "java.awt"
+        },
+        {
+          "value": "C",
+          "label": "javax.swing",
+          "text": "javax.swing"
+        },
+        {
+          "value": "D",
+          "label": "java.lang",
+          "text": "java.lang"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "JOptionPane is part of the javax.swing package, which contains many GUI component classes."
+    },
+    {
+      "id": "upload-1771100344685-11",
+      "number": "22",
+      "text": "When calling `JOptionPane.showMessageDialog(null, \"Message\")`, what does the `null` argument signify?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The message text is empty.",
+          "text": "The message text is empty."
+        },
+        {
+          "value": "B",
+          "label": "The dialog box should be displayed at the center of the screen.",
+          "text": "The dialog box should be displayed at the center of the screen."
+        },
+        {
+          "value": "C",
+          "label": "The dialog box should not have a title.",
+          "text": "The dialog box should not have a title."
+        },
+        {
+          "value": "D",
+          "label": "The dialog box is modal.",
+          "text": "The dialog box is modal."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If the first argument (parent window) is null, the dialog box is centered on the screen."
+    },
+    {
+      "id": "upload-1771100344685-12",
+      "number": "23",
+      "text": "What type of data does `JOptionPane.showInputDialog` return?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "int",
+          "text": "int"
+        },
+        {
+          "value": "B",
+          "label": "double",
+          "text": "double"
+        },
+        {
+          "value": "C",
+          "label": "String",
+          "text": "String"
+        },
+        {
+          "value": "D",
+          "label": "void",
+          "text": "void"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "showInputDialog returns a String containing the characters typed by the user. If the user cancels, it returns null."
+    },
+    {
+      "id": "upload-1771100344685-13",
+      "number": "24",
+      "text": "How does `String.format` differ from `System.out.printf`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "String.format can only format integers.",
+          "text": "String.format can only format integers."
+        },
+        {
+          "value": "B",
+          "label": "System.out.printf returns a String, whereas String.format displays it.",
+          "text": "System.out.printf returns a String, whereas String.format displays it."
+        },
+        {
+          "value": "C",
+          "label": "String.format returns a formatted String rather than displaying it in the command window.",
+          "text": "String.format returns a formatted String rather than displaying it in the command window."
+        },
+        {
+          "value": "D",
+          "label": "There is no difference; they are aliases for each other.",
+          "text": "There is no difference; they are aliases for each other."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Both use similar format specifiers, but printf outputs directly to the console, while String.format creates and returns a String object for later use."
+    },
+    {
+      "id": "upload-1771100344685-14",
+      "number": "25",
+      "text": "What method is used to convert a `String` from a dialog box into an integer for calculations?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Integer.parseInt",
+          "text": "Integer.parseInt"
+        },
+        {
+          "value": "B",
+          "label": "String.toInt",
+          "text": "String.toInt"
+        },
+        {
+          "value": "C",
+          "label": "JOptionPane.getInt",
+          "text": "JOptionPane.getInt"
+        },
+        {
+          "value": "D",
+          "label": "Scanner.nextInt",
+          "text": "Scanner.nextInt"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Integer.parseInt is a static method of the Integer class that takes a String and returns its equivalent int value."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}

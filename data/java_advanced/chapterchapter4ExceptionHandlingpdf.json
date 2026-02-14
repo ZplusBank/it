@@ -1,0 +1,1097 @@
+{
+  "id": "upload-1771101108132",
+  "label": "chapter_4_Exception_Handling_.pdf",
+  "params": {
+    "file": "chapter_4_Exception_Handling_.pdf"
+  },
+  "title": "Introduction to Java Exception Handling & The Java Exception Hierarchy and Types & Blocks, Clauses, and Keywords & The finally Block and Throwing Exceptions & Stack Unwinding and Throwable Information & Chained and Custom Exception Types & Assertions, Multi-catch, and try-with-resources",
+  "questions": [
+    {
+      "id": "upload-1771101108132-0",
+      "number": "1",
+      "text": "What is the definition of an exception in Java as described in the text?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A syntax error that prevents the code from compiling.",
+          "text": "A syntax error that prevents the code from compiling."
+        },
+        {
+          "value": "B",
+          "label": "An indication of a problem that occurs during a program’s execution.",
+          "text": "An indication of a problem that occurs during a program’s execution."
+        },
+        {
+          "value": "C",
+          "label": "A method that specifically handles arithmetic errors.",
+          "text": "A method that specifically handles arithmetic errors."
+        },
+        {
+          "value": "D",
+          "label": "A logic error that always causes the computer to crash.",
+          "text": "A logic error that always causes the computer to crash."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An exception is an indication of a problem that occurs during a program's execution, allowing for robust and fault-tolerant program design."
+    },
+    {
+      "id": "upload-1771101108132-1",
+      "number": "2",
+      "text": "What information is typically included in a 'stack trace' when an exception occurs?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The name of the exception and the method-call stack at the time of the error.",
+          "text": "The name of the exception and the method-call stack at the time of the error."
+        },
+        {
+          "value": "B",
+          "label": "A list of all variables currently in memory.",
+          "text": "A list of all variables currently in memory."
+        },
+        {
+          "value": "C",
+          "label": "The compiled bytecode of the failing method.",
+          "text": "The compiled bytecode of the failing method."
+        },
+        {
+          "value": "D",
+          "label": "The operating system's kernel log.",
+          "text": "The operating system's kernel log."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A stack trace includes the name of the exception, a descriptive message, and the call chain that led to the exception, helping developers debug the program."
+    },
+    {
+      "id": "upload-1771101108132-2",
+      "number": "3",
+      "text": "In Java integer arithmetic, what happens when an attempt is made to divide by zero?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The program returns the value 'Infinity'.",
+          "text": "The program returns the value 'Infinity'."
+        },
+        {
+          "value": "B",
+          "label": "The program returns the value 'NaN'.",
+          "text": "The program returns the value 'NaN'."
+        },
+        {
+          "value": "C",
+          "label": "An ArithmeticException is thrown.",
+          "text": "An ArithmeticException is thrown."
+        },
+        {
+          "value": "D",
+          "label": "An InputMismatchException is thrown.",
+          "text": "An InputMismatchException is thrown."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Java does not allow division by zero in integer arithmetic and throws an ArithmeticException. Floating-point arithmetic, however, would result in Infinity or NaN."
+    },
+    {
+      "id": "upload-1771101108132-3",
+      "number": "4",
+      "text": "What is the result of the following code if the user inputs the string 'hello' when an integer is expected?\n\n```java\nScanner scanner = new Scanner(System.in);\nint numerator = scanner.nextInt();\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The numerator is assigned a value of 0.",
+          "text": "The numerator is assigned a value of 0."
+        },
+        {
+          "value": "B",
+          "label": "An InputMismatchException is thrown.",
+          "text": "An InputMismatchException is thrown."
+        },
+        {
+          "value": "C",
+          "label": "A NoSuchElementException is thrown.",
+          "text": "A NoSuchElementException is thrown."
+        },
+        {
+          "value": "D",
+          "label": "The code fails to compile.",
+          "text": "The code fails to compile."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An InputMismatchException occurs when Scanner method nextInt receives a string that does not represent a valid integer."
+    },
+    {
+      "id": "upload-1771101108132-4",
+      "number": "5",
+      "text": "According to the 'termination model' of exception handling, where does control resume after an exception is handled by a catch block?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "At the statement immediately following the throw point.",
+          "text": "At the statement immediately following the throw point."
+        },
+        {
+          "value": "B",
+          "label": "At the beginning of the try block.",
+          "text": "At the beginning of the try block."
+        },
+        {
+          "value": "C",
+          "label": "After the last catch block (or finally block if present).",
+          "text": "After the last catch block (or finally block if present)."
+        },
+        {
+          "value": "D",
+          "label": "The program always terminates immediately.",
+          "text": "The program always terminates immediately."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Under the termination model, once an exception is handled, control resumes after the last catch block because the try block has expired."
+    },
+    {
+      "id": "upload-1771101108132-0",
+      "number": "6",
+      "text": "Which class is the direct superclass of both Exception and Error?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Object",
+          "text": "Object"
+        },
+        {
+          "value": "B",
+          "label": "Throwable",
+          "text": "Throwable"
+        },
+        {
+          "value": "C",
+          "label": "RuntimeException",
+          "text": "RuntimeException"
+        },
+        {
+          "value": "D",
+          "label": "StandardException",
+          "text": "StandardException"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Class Throwable is the superclass of both Exception and Error, and only Throwable objects can be used with the exception-handling mechanism."
+    },
+    {
+      "id": "upload-1771101108132-1",
+      "number": "7",
+      "text": "Which of the following describes 'unchecked exceptions'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Exceptions that must be listed in a method's throws clause.",
+          "text": "Exceptions that must be listed in a method's throws clause."
+        },
+        {
+          "value": "B",
+          "label": "Subclasses of Exception but not RuntimeException.",
+          "text": "Subclasses of Exception but not RuntimeException."
+        },
+        {
+          "value": "C",
+          "label": "Direct or indirect subclasses of RuntimeException and Error.",
+          "text": "Direct or indirect subclasses of RuntimeException and Error."
+        },
+        {
+          "value": "D",
+          "label": "Exceptions that are checked by the compiler at compile-time.",
+          "text": "Exceptions that are checked by the compiler at compile-time."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Unchecked exceptions include subclasses of RuntimeException and Error. The compiler does not force the programmer to catch or declare them."
+    },
+    {
+      "id": "upload-1771101108132-2",
+      "number": "8",
+      "text": "What is the 'catch-or-declare' requirement in Java?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A rule stating all exceptions must be caught using a try-catch block.",
+          "text": "A rule stating all exceptions must be caught using a try-catch block."
+        },
+        {
+          "value": "B",
+          "label": "A requirement that checked exceptions must be either caught or declared in a throws clause.",
+          "text": "A requirement that checked exceptions must be either caught or declared in a throws clause."
+        },
+        {
+          "value": "C",
+          "label": "A requirement that all methods must return a value or throw an error.",
+          "text": "A requirement that all methods must return a value or throw an error."
+        },
+        {
+          "value": "D",
+          "label": "A rule that prevents more than one catch block per try block.",
+          "text": "A rule that prevents more than one catch block per try block."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Java compiler enforces a catch-or-declare requirement for checked exceptions, ensuring they are either handled locally or passed up the call stack."
+    },
+    {
+      "id": "upload-1771101108132-3",
+      "number": "9",
+      "text": "What happens if a catch block for a superclass type (e.g., Exception) is placed before a catch block for one of its subclasses (e.g., ArithmeticException)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The program will run normally and pick the most specific match.",
+          "text": "The program will run normally and pick the most specific match."
+        },
+        {
+          "value": "B",
+          "label": "The subclass catch block will execute if an exact match is found.",
+          "text": "The subclass catch block will execute if an exact match is found."
+        },
+        {
+          "value": "C",
+          "label": "A compilation error occurs.",
+          "text": "A compilation error occurs."
+        },
+        {
+          "value": "D",
+          "label": "The superclass catch block will be ignored.",
+          "text": "The superclass catch block will be ignored."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Placing a superclass catch block before a subclass catch block results in a compilation error because the subclass block becomes unreachable."
+    },
+    {
+      "id": "upload-1771101108132-4",
+      "number": "10",
+      "text": "Which of the following is typically used for problems that are beyond the control of the application and from which it is usually not possible to recover?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "RuntimeException",
+          "text": "RuntimeException"
+        },
+        {
+          "value": "B",
+          "label": "Exception",
+          "text": "Exception"
+        },
+        {
+          "value": "C",
+          "label": "Error",
+          "text": "Error"
+        },
+        {
+          "value": "D",
+          "label": "IOException",
+          "text": "IOException"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Class Error and its subclasses represent abnormal situations that happen in the JVM, and applications usually cannot recover from them."
+    },
+    {
+      "id": "upload-1771101108132-0",
+      "number": "11",
+      "text": "Where must the `throws` clause be located in a method declaration?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Inside the method body, before the first statement.",
+          "text": "Inside the method body, before the first statement."
+        },
+        {
+          "value": "B",
+          "label": "Before the method's return type.",
+          "text": "Before the method's return type."
+        },
+        {
+          "value": "C",
+          "label": "After the method's parameter list and before its body.",
+          "text": "After the method's parameter list and before its body."
+        },
+        {
+          "value": "D",
+          "label": "Immediately following the class name.",
+          "text": "Immediately following the class name."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The throws clause appears after the method's parameter list and before the method's body."
+    },
+    {
+      "id": "upload-1771101108132-1",
+      "number": "12",
+      "text": "Under what condition will a `finally` block NOT execute?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "When an exception is caught in a catch block.",
+          "text": "When an exception is caught in a catch block."
+        },
+        {
+          "value": "B",
+          "label": "When a return statement is executed in the try block.",
+          "text": "When a return statement is executed in the try block."
+        },
+        {
+          "value": "C",
+          "label": "When the application exits early via System.exit.",
+          "text": "When the application exits early via System.exit."
+        },
+        {
+          "value": "D",
+          "label": "When no exception occurs in the try block.",
+          "text": "When no exception occurs in the try block."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The finally block will not execute if the application terminates early using System.exit."
+    },
+    {
+      "id": "upload-1771101108132-2",
+      "number": "13",
+      "text": "What is the primary purpose of the `finally` block?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To catch exceptions that the catch blocks missed.",
+          "text": "To catch exceptions that the catch blocks missed."
+        },
+        {
+          "value": "B",
+          "label": "To release resources, such as files or database connections.",
+          "text": "To release resources, such as files or database connections."
+        },
+        {
+          "value": "C",
+          "label": "To retry the code in the try block if it fails.",
+          "text": "To retry the code in the try block if it fails."
+        },
+        {
+          "value": "D",
+          "label": "To print the stack trace to the console.",
+          "text": "To print the stack trace to the console."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Because a finally block almost always executes, it is the ideal place for resource-release code to avoid resource leaks."
+    },
+    {
+      "id": "upload-1771101108132-3",
+      "number": "14",
+      "text": "Which statement regarding try blocks is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Local variables declared in a try block can be accessed in its catch blocks.",
+          "text": "Local variables declared in a try block can be accessed in its catch blocks."
+        },
+        {
+          "value": "B",
+          "label": "A try block must be followed by at least one catch block or a finally block.",
+          "text": "A try block must be followed by at least one catch block or a finally block."
+        },
+        {
+          "value": "C",
+          "label": "A try block can catch exceptions without needing catch blocks.",
+          "text": "A try block can catch exceptions without needing catch blocks."
+        },
+        {
+          "value": "D",
+          "label": "Code can be placed between a try block and its catch blocks.",
+          "text": "Code can be placed between a try block and its catch blocks."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A try block must be followed by at least one catch block or a finally block. Local variables in the try block go out of scope when the block finishes."
+    },
+    {
+      "id": "upload-1771101108132-4",
+      "number": "15",
+      "text": "Which stream is specifically recommended for outputting error messages in Java?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "System.out",
+          "text": "System.out"
+        },
+        {
+          "value": "B",
+          "label": "System.in",
+          "text": "System.in"
+        },
+        {
+          "value": "C",
+          "label": "System.err",
+          "text": "System.err"
+        },
+        {
+          "value": "D",
+          "label": "System.log",
+          "text": "System.log"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The text demonstrates using System.err (standard error stream) to output error messages."
+    },
+    {
+      "id": "upload-1771101108132-15",
+      "number": "16",
+      "text": "What is the primary characteristic of the `finally` block in Java exception handling?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It executes only if an exception occurs.",
+          "text": "It executes only if an exception occurs."
+        },
+        {
+          "value": "B",
+          "label": "It executes only if no exception occurs.",
+          "text": "It executes only if no exception occurs."
+        },
+        {
+          "value": "C",
+          "label": "It executes regardless of whether an exception occurs or is caught.",
+          "text": "It executes regardless of whether an exception occurs or is caught."
+        },
+        {
+          "value": "D",
+          "label": "It is used to catch checked exceptions specifically.",
+          "text": "It is used to catch checked exceptions specifically."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The finally block is designed to execute regardless of whether an exception is thrown or caught, making it ideal for resource deallocation."
+    },
+    {
+      "id": "upload-1771101108132-16",
+      "number": "17",
+      "text": "According to the text, what happens if an exception is thrown in a `finally` block while another exception is already pending (not yet caught)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The original exception is preserved and the new one is suppressed.",
+          "text": "The original exception is preserved and the new one is suppressed."
+        },
+        {
+          "value": "B",
+          "label": "Both exceptions are combined into a Multi-Exception object.",
+          "text": "Both exceptions are combined into a Multi-Exception object."
+        },
+        {
+          "value": "C",
+          "label": "The original exception is lost and the new exception is returned to the calling method.",
+          "text": "The original exception is lost and the new exception is returned to the calling method."
+        },
+        {
+          "value": "D",
+          "label": "The program enters an infinite loop.",
+          "text": "The program enters an infinite loop."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Common Programming Error 11.6 states that if the finally block throws an exception that is not caught, the first exception will be lost."
+    },
+    {
+      "id": "upload-1771101108132-17",
+      "number": "18",
+      "text": "How do you rethrow an exception in Java?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By calling `exception.rethrow()`.",
+          "text": "By calling `exception.rethrow()`."
+        },
+        {
+          "value": "B",
+          "label": "By using the `throw` keyword followed by the exception object reference inside a `catch` block.",
+          "text": "By using the `throw` keyword followed by the exception object reference inside a `catch` block."
+        },
+        {
+          "value": "C",
+          "label": "By placing the exception object in the `finally` block.",
+          "text": "By placing the exception object in the `finally` block."
+        },
+        {
+          "value": "D",
+          "label": "Exceptions cannot be rethrown once caught.",
+          "text": "Exceptions cannot be rethrown once caught."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An exception is rethrown using the `throw` keyword followed by the reference to the exception object caught in the catch block."
+    },
+    {
+      "id": "upload-1771101108132-18",
+      "number": "19",
+      "text": "Which stream is specifically designed to display a program's errors, allowing them to be redirected independently of standard output?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "System.out",
+          "text": "System.out"
+        },
+        {
+          "value": "B",
+          "label": "System.in",
+          "text": "System.in"
+        },
+        {
+          "value": "C",
+          "label": "System.err",
+          "text": "System.err"
+        },
+        {
+          "value": "D",
+          "label": "System.log",
+          "text": "System.log"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "System.err is the standard error stream, which allows error messages to be separated from standard output (System.out)."
+    },
+    {
+      "id": "upload-1771101108132-19",
+      "number": "20",
+      "text": "What can be the operand of a `throw` statement?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Any String message.",
+          "text": "Any String message."
+        },
+        {
+          "value": "B",
+          "label": "Any object of a class derived from Throwable.",
+          "text": "Any object of a class derived from Throwable."
+        },
+        {
+          "value": "C",
+          "label": "Only objects of the class Exception.",
+          "text": "Only objects of the class Exception."
+        },
+        {
+          "value": "D",
+          "label": "Any primitive data type.",
+          "text": "Any primitive data type."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The operand of a throw statement must be an instance of Throwable or one of its subclasses."
+    },
+    {
+      "id": "upload-1771101108132-15",
+      "number": "21",
+      "text": "What is 'stack unwinding'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The process of allocating memory for a new method call.",
+          "text": "The process of allocating memory for a new method call."
+        },
+        {
+          "value": "B",
+          "label": "The process where a method terminates and control returns to the caller when an exception is not caught in the current scope.",
+          "text": "The process where a method terminates and control returns to the caller when an exception is not caught in the current scope."
+        },
+        {
+          "value": "C",
+          "label": "A technique to optimize recursive method calls.",
+          "text": "A technique to optimize recursive method calls."
+        },
+        {
+          "value": "D",
+          "label": "Clearing the stack trace to hide error details.",
+          "text": "Clearing the stack trace to hide error details."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Stack unwinding occurs when an exception is thrown but not caught in a scope; the current method terminates, local variables go out of scope, and the stack is searched for an outer try block."
+    },
+    {
+      "id": "upload-1771101108132-16",
+      "number": "22",
+      "text": "Which method of class `Throwable` returns an array of objects representing the method-call stack?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`getMessage()`",
+          "text": "`getMessage()`"
+        },
+        {
+          "value": "B",
+          "label": "`printStackTrace()`",
+          "text": "`printStackTrace()`"
+        },
+        {
+          "value": "C",
+          "label": "`getStackTrace()`",
+          "text": "`getStackTrace()`"
+        },
+        {
+          "value": "D",
+          "label": "`getStackTraceArray()`",
+          "text": "`getStackTraceArray()`"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `getStackTrace()` method retrieves stack-trace information as an array of StackTraceElement objects."
+    },
+    {
+      "id": "upload-1771101108132-17",
+      "number": "23",
+      "text": "What information is typically provided by Java's default exception handler when an exception is not caught?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Only the line number of the error.",
+          "text": "Only the line number of the error."
+        },
+        {
+          "value": "B",
+          "label": "The name of the exception, a descriptive message, and a complete stack trace.",
+          "text": "The name of the exception, a descriptive message, and a complete stack trace."
+        },
+        {
+          "value": "C",
+          "label": "A prompt for the user to debug the code manually.",
+          "text": "A prompt for the user to debug the code manually."
+        },
+        {
+          "value": "D",
+          "label": "The values of all local variables at the time of the error.",
+          "text": "The values of all local variables at the time of the error."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "As per Error-Prevention Tip 11.6, the default handler displays the exception name, a descriptive message, and the stack trace."
+    },
+    {
+      "id": "upload-1771101108132-18",
+      "number": "24",
+      "text": "In the following code, what is the 'throw point'?\n\n```java\npublic void method3() {\n    throw new Exception(\"Error\"); // Line 49\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The main method that calls method3.",
+          "text": "The main method that calls method3."
+        },
+        {
+          "value": "B",
+          "label": "The catch block in the main method.",
+          "text": "The catch block in the main method."
+        },
+        {
+          "value": "C",
+          "label": "Line 49, where the exception is instantiated and thrown.",
+          "text": "Line 49, where the exception is instantiated and thrown."
+        },
+        {
+          "value": "D",
+          "label": "The finally block associated with method3.",
+          "text": "The finally block associated with method3."
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The throw point is the specific statement where the exception occurs or is explicitly thrown."
+    },
+    {
+      "id": "upload-1771101108132-19",
+      "number": "25",
+      "text": "Which `StackTraceElement` method returns the name of the method containing the execution point represented by the element?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`getClassName()`",
+          "text": "`getClassName()`"
+        },
+        {
+          "value": "B",
+          "label": "`getFileName()`",
+          "text": "`getFileName()`"
+        },
+        {
+          "value": "C",
+          "label": "`getLineNumber()`",
+          "text": "`getLineNumber()`"
+        },
+        {
+          "value": "D",
+          "label": "`getMethodName()`",
+          "text": "`getMethodName()`"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The `getMethodName()` method of the StackTraceElement class returns the name of the method."
+    },
+    {
+      "id": "upload-1771101108132-15",
+      "number": "26",
+      "text": "What is the purpose of 'Chained Exceptions'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To allow a single catch block to handle multiple unrelated exceptions.",
+          "text": "To allow a single catch block to handle multiple unrelated exceptions."
+        },
+        {
+          "value": "B",
+          "label": "To maintain the complete stack-trace information of an original exception when a new exception type is thrown.",
+          "text": "To maintain the complete stack-trace information of an original exception when a new exception type is thrown."
+        },
+        {
+          "value": "C",
+          "label": "To force a finally block to execute multiple times.",
+          "text": "To force a finally block to execute multiple times."
+        },
+        {
+          "value": "D",
+          "label": "To link multiple catch blocks together for better performance.",
+          "text": "To link multiple catch blocks together for better performance."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Chained exceptions allow an exception to wrap an underlying cause, preserving the original stack trace for debugging."
+    },
+    {
+      "id": "upload-1771101108132-16",
+      "number": "27",
+      "text": "When creating a custom exception class, what is the recommended naming convention?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Start the name with 'Error'.",
+          "text": "Start the name with 'Error'."
+        },
+        {
+          "value": "B",
+          "label": "The name should end with the word 'Exception'.",
+          "text": "The name should end with the word 'Exception'."
+        },
+        {
+          "value": "C",
+          "label": "The name should be all capital letters.",
+          "text": "The name should be all capital letters."
+        },
+        {
+          "value": "D",
+          "label": "Use the prefix 'Java'.",
+          "text": "Use the prefix 'Java'."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Good Programming Practice 11.4 states that by convention, all exception-class names should end with the word Exception."
+    },
+    {
+      "id": "upload-1771101108132-17",
+      "number": "28",
+      "text": "A new exception class should extend `RuntimeException` if:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The client application should be required to handle it.",
+          "text": "The client application should be required to handle it."
+        },
+        {
+          "value": "B",
+          "label": "The exception is a checked exception.",
+          "text": "The exception is a checked exception."
+        },
+        {
+          "value": "C",
+          "label": "The client code should be able to ignore the exception (unchecked exception).",
+          "text": "The client code should be able to ignore the exception (unchecked exception)."
+        },
+        {
+          "value": "D",
+          "label": "It occurs due to external factors like file system errors.",
+          "text": "It occurs due to external factors like file system errors."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Extending RuntimeException creates an unchecked exception, which the compiler does not force the programmer to catch or declare."
+    },
+    {
+      "id": "upload-1771101108132-18",
+      "number": "29",
+      "text": "Why should you avoid an empty `catch` handler body?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It will cause a compilation error.",
+          "text": "It will cause a compilation error."
+        },
+        {
+          "value": "B",
+          "label": "It slows down the program's execution.",
+          "text": "It slows down the program's execution."
+        },
+        {
+          "value": "C",
+          "label": "It effectively ignores the exception, making debugging very difficult.",
+          "text": "It effectively ignores the exception, making debugging very difficult."
+        },
+        {
+          "value": "D",
+          "label": "Empty catch blocks are only allowed for checked exceptions.",
+          "text": "Empty catch blocks are only allowed for checked exceptions."
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Software Engineering Observation 11.10 warns that an empty catch block swallows the error, hiding problems from the developer."
+    },
+    {
+      "id": "upload-1771101108132-19",
+      "number": "30",
+      "text": "Which constructor is NOT typically found in a custom exception class?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "One that takes no arguments and uses a default message.",
+          "text": "One that takes no arguments and uses a default message."
+        },
+        {
+          "value": "B",
+          "label": "One that takes a String message and a Throwable cause.",
+          "text": "One that takes a String message and a Throwable cause."
+        },
+        {
+          "value": "C",
+          "label": "One that takes a Throwable cause only.",
+          "text": "One that takes a Throwable cause only."
+        },
+        {
+          "value": "D",
+          "label": "One that takes an integer error code only.",
+          "text": "One that takes an integer error code only."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Standard custom exceptions typically provide constructors for no-args, String message, String + Throwable, and Throwable."
+    },
+    {
+      "id": "upload-1771101108132-15",
+      "number": "31",
+      "text": "What happens when an `assert` statement evaluates to `false`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A message is printed to System.out, but the program continues.",
+          "text": "A message is printed to System.out, but the program continues."
+        },
+        {
+          "value": "B",
+          "label": "A checked exception is thrown.",
+          "text": "A checked exception is thrown."
+        },
+        {
+          "value": "C",
+          "label": "An `AssertionError` is thrown.",
+          "text": "An `AssertionError` is thrown."
+        },
+        {
+          "value": "D",
+          "label": "The JVM automatically restarts the method.",
+          "text": "The JVM automatically restarts the method."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The assert statement evaluates a boolean and throws an AssertionError if it is false."
+    },
+    {
+      "id": "upload-1771101108132-16",
+      "number": "32",
+      "text": "Which command-line option is used to enable assertions at runtime?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`-assertions:on`",
+          "text": "`-assertions:on`"
+        },
+        {
+          "value": "B",
+          "label": "`-ea`",
+          "text": "`-ea`"
+        },
+        {
+          "value": "C",
+          "label": "`-debug`",
+          "text": "`-debug`"
+        },
+        {
+          "value": "D",
+          "label": "`-check`",
+          "text": "`-check`"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `-ea` (enable assertions) flag must be passed to the java command to process assert statements."
+    },
+    {
+      "id": "upload-1771101108132-17",
+      "number": "33",
+      "text": "What is a 'precondition' in method design?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A condition that is true after the method finishes.",
+          "text": "A condition that is true after the method finishes."
+        },
+        {
+          "value": "B",
+          "label": "A constraint on parameters or the program state that must be true before the method is invoked.",
+          "text": "A constraint on parameters or the program state that must be true before the method is invoked."
+        },
+        {
+          "value": "C",
+          "label": "A block of code that runs before the try block.",
+          "text": "A block of code that runs before the try block."
+        },
+        {
+          "value": "D",
+          "label": "A requirement for compiling the class.",
+          "text": "A requirement for compiling the class."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Preconditions describe expectations about the program state just before a method begins execution."
+    },
+    {
+      "id": "upload-1771101108132-18",
+      "number": "34",
+      "text": "Which of the following is the correct syntax for the Java SE 7 multi-catch feature?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`catch (Type1, Type2 e)`",
+          "text": "`catch (Type1, Type2 e)`"
+        },
+        {
+          "value": "B",
+          "label": "`catch (Type1 e1, Type2 e2)`",
+          "text": "`catch (Type1 e1, Type2 e2)`"
+        },
+        {
+          "value": "C",
+          "label": "`catch (Type1 | Type2 e)`",
+          "text": "`catch (Type1 | Type2 e)`"
+        },
+        {
+          "value": "D",
+          "label": "`catch (Type1 : Type2 e)`",
+          "text": "`catch (Type1 : Type2 e)`"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In a multi-catch, exception types are separated by a vertical bar (|)."
+    },
+    {
+      "id": "upload-1771101108132-19",
+      "number": "35",
+      "text": "What requirement must an object meet to be used in a `try-with-resources` statement?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It must be a primitive type.",
+          "text": "It must be a primitive type."
+        },
+        {
+          "value": "B",
+          "label": "It must implement the `AutoCloseable` interface.",
+          "text": "It must implement the `AutoCloseable` interface."
+        },
+        {
+          "value": "C",
+          "label": "It must be declared as `final`.",
+          "text": "It must be declared as `final`."
+        },
+        {
+          "value": "D",
+          "label": "It must have a constructor that takes no arguments.",
+          "text": "It must have a constructor that takes no arguments."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Each resource in a try-with-resources statement must implement AutoCloseable, which defines the `close()` method called automatically."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 35
+}

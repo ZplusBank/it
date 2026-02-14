@@ -1,0 +1,3143 @@
+{
+  "id": "upload-1771100549126",
+  "label": "chapter_2_inheritance_.pdf",
+  "params": {
+    "file": "chapter_2_inheritance_.pdf"
+  },
+  "title": "Classes and Objects: Introduction and Case Study & Access Control and Encapsulation & The 'this' Reference & Constructors and Overloading & 8.6 Default and No-Argument Constructors & 8.7 Notes on Set and Get Methods & 8.11 static Class Members & 8.8 Composition & 8.9 Enumerations & 8.10 Garbage Collection & 8.13 final Variables & 8.14 Time Class Case Study: Creating Packages & 8.15 Package Access and Classpath & 8.16 GUI and Graphics Case Study & 8.17 Wrap-Up and Chapter Summary & Classes and Objects: A Deeper Look & Object-Oriented Programming: Inheritance & Relationship between Superclasses and Subclasses & Inheritance and Method Overriding & Constructors and Class Object & GUI Components and Layout",
+  "questions": [
+    {
+      "id": "upload-1771100549126-0",
+      "number": "1",
+      "text": "According to Section 8.2, if a class does not declare any constructors, how are `int` instance variables initialized?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "They are initialized to a random value.",
+          "text": "They are initialized to a random value."
+        },
+        {
+          "value": "B",
+          "label": "The compiler leaves them uninitialized, causing a compilation error if used.",
+          "text": "The compiler leaves them uninitialized, causing a compilation error if used."
+        },
+        {
+          "value": "C",
+          "label": "They implicitly receive the default value 0.",
+          "text": "They implicitly receive the default value 0."
+        },
+        {
+          "value": "D",
+          "label": "They must be initialized manually in the main method.",
+          "text": "They must be initialized manually in the main method."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, instance variables that are not explicitly initialized receive a default value. For numeric types like int, this value is 0."
+    },
+    {
+      "id": "upload-1771100549126-1",
+      "number": "2",
+      "text": "What is the primary difference between `String.format` and `System.out.printf` as described in the text?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "String.format is used for integers only.",
+          "text": "String.format is used for integers only."
+        },
+        {
+          "value": "B",
+          "label": "String.format returns a formatted String, while printf displays it in the command window.",
+          "text": "String.format returns a formatted String, while printf displays it in the command window."
+        },
+        {
+          "value": "C",
+          "label": "printf is a static method of class String.",
+          "text": "printf is a static method of class String."
+        },
+        {
+          "value": "D",
+          "label": "There is no difference; they are aliases for the same method.",
+          "text": "There is no difference; they are aliases for the same method."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "As noted in the description of method toUniversalString, format returns a formatted String rather than displaying it directly."
+    },
+    {
+      "id": "upload-1771100549126-2",
+      "number": "3",
+      "text": "When is the `toString` method of an object called implicitly?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Only when the object is assigned to null.",
+          "text": "Only when the object is assigned to null."
+        },
+        {
+          "value": "B",
+          "label": "Whenever the object appears where a String is needed, such as in a %s format specifier.",
+          "text": "Whenever the object appears where a String is needed, such as in a %s format specifier."
+        },
+        {
+          "value": "C",
+          "label": "Every time a private variable is accessed.",
+          "text": "Every time a private variable is accessed."
+        },
+        {
+          "value": "D",
+          "label": "Only when the developer calls it explicitly using objectName.toString().",
+          "text": "Only when the developer calls it explicitly using objectName.toString()."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text states that toString is called implicitly whenever an object appears in code where a String is needed, such as with a %s format specifier."
+    },
+    {
+      "id": "upload-1771100549126-3",
+      "number": "4",
+      "text": "In the `Time1` class example, what happens if an invalid hour (e.g., 99) is passed to `setTime`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The hour is automatically set to 0.",
+          "text": "The hour is automatically set to 0."
+        },
+        {
+          "value": "B",
+          "label": "The program crashes without any error message.",
+          "text": "The program crashes without any error message."
+        },
+        {
+          "value": "C",
+          "label": "It throws an IllegalArgumentException.",
+          "text": "It throws an IllegalArgumentException."
+        },
+        {
+          "value": "D",
+          "label": "The value 99 is stored, but the toString method will fail.",
+          "text": "The value 99 is stored, but the toString method will fail."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Lines 23–24 of Fig 8.1 show that the method throws a new IllegalArgumentException if the values are out of range."
+    },
+    {
+      "id": "upload-1771100549126-4",
+      "number": "5",
+      "text": "Which of the following describes the 'public interface' of a class?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The private data members and helper methods.",
+          "text": "The private data members and helper methods."
+        },
+        {
+          "value": "B",
+          "label": "The public methods that a class provides to its clients.",
+          "text": "The public methods that a class provides to its clients."
+        },
+        {
+          "value": "C",
+          "label": "The source code inside the .java file.",
+          "text": "The source code inside the .java file."
+        },
+        {
+          "value": "D",
+          "label": "The comments documenting the class implementation.",
+          "text": "The comments documenting the class implementation."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text refers to the public methods (like setTime, toString) as the public services or the public interface provided to clients."
+    },
+    {
+      "id": "upload-1771100549126-0",
+      "number": "6",
+      "text": "What is the result of a method that is NOT a member of a class attempting to access a `private` member of that class?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A runtime exception is thrown.",
+          "text": "A runtime exception is thrown."
+        },
+        {
+          "value": "B",
+          "label": "The program compiles but returns null for that member.",
+          "text": "The program compiles but returns null for that member."
+        },
+        {
+          "value": "C",
+          "label": "A compilation error occurs.",
+          "text": "A compilation error occurs."
+        },
+        {
+          "value": "D",
+          "label": "Access is granted if the class is in the same package.",
+          "text": "Access is granted if the class is in the same package."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Common Programming Error 8.1 and Fig 8.3 demonstrate that attempting to access private members from outside the class results in a compilation error."
+    },
+    {
+      "id": "upload-1771100549126-1",
+      "number": "7",
+      "text": "Why does Software Engineering Observation 8.2 suggest that implementation details should be hidden?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To make the code run faster.",
+          "text": "To make the code run faster."
+        },
+        {
+          "value": "B",
+          "label": "Because implementations change more frequently than interfaces.",
+          "text": "Because implementations change more frequently than interfaces."
+        },
+        {
+          "value": "C",
+          "label": "To prevent other developers from stealing the logic.",
+          "text": "To prevent other developers from stealing the logic."
+        },
+        {
+          "value": "D",
+          "label": "To ensure that all variables are static.",
+          "text": "To ensure that all variables are static."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The observation states that interfaces change less frequently than implementations, and hiding details reduces the chance that other program parts become dependent on those details."
+    },
+    {
+      "id": "upload-1771100549126-2",
+      "number": "8",
+      "text": "How many `public` classes can a single source-code (.java) file contain?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "As many as needed.",
+          "text": "As many as needed."
+        },
+        {
+          "value": "B",
+          "label": "Exactly two.",
+          "text": "Exactly two."
+        },
+        {
+          "value": "C",
+          "label": "Only one.",
+          "text": "Only one."
+        },
+        {
+          "value": "D",
+          "label": "None; public classes must be in .class files.",
+          "text": "None; public classes must be in .class files."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Section 8.4 notes that a source-code file can contain only one public class; otherwise, a compilation error occurs."
+    },
+    {
+      "id": "upload-1771100549126-3",
+      "number": "9",
+      "text": "What is the primary purpose of `private` variables and methods according to Section 8.3?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To allow the compiler to optimize memory usage.",
+          "text": "To allow the compiler to optimize memory usage."
+        },
+        {
+          "value": "B",
+          "label": "To act as the implementation details not accessible to clients.",
+          "text": "To act as the implementation details not accessible to clients."
+        },
+        {
+          "value": "C",
+          "label": "To allow subclasses to override them easily.",
+          "text": "To allow subclasses to override them easily."
+        },
+        {
+          "value": "D",
+          "label": "To define the public interface of the class.",
+          "text": "To define the public interface of the class."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text explains that private members are implementation details and are not accessible to the class's clients."
+    },
+    {
+      "id": "upload-1771100549126-4",
+      "number": "10",
+      "text": "Which access modifier is mentioned as being introduced in Chapter 9?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "internal",
+          "text": "internal"
+        },
+        {
+          "value": "B",
+          "label": "protected",
+          "text": "protected"
+        },
+        {
+          "value": "C",
+          "label": "friend",
+          "text": "friend"
+        },
+        {
+          "value": "D",
+          "label": "synchronized",
+          "text": "synchronized"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Section 8.3 states, 'In Chapter 9, we’ll introduce the additional access modifier protected.'"
+    },
+    {
+      "id": "upload-1771100549126-0",
+      "number": "11",
+      "text": "What is 'shadowing' in the context of Java classes?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "When a subclass has the same name as a superclass.",
+          "text": "When a subclass has the same name as a superclass."
+        },
+        {
+          "value": "B",
+          "label": "When a local variable or parameter has the same name as a class field.",
+          "text": "When a local variable or parameter has the same name as a class field."
+        },
+        {
+          "value": "C",
+          "label": "When two methods have the same name but different parameters.",
+          "text": "When two methods have the same name but different parameters."
+        },
+        {
+          "value": "D",
+          "label": "When a private method is called by a public method.",
+          "text": "When a private method is called by a public method."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "As explained in Section 8.4, shadowing occurs when a method contains a local variable with the same name as a field, hiding the field in the method's scope."
+    },
+    {
+      "id": "upload-1771100549126-1",
+      "number": "12",
+      "text": "Consider the following code snippet from the text. Why is `this` required in the constructor?\n\n```java\npublic SimpleTime(int hour, int minute, int second) {\n    this.hour = hour;\n    this.minute = minute;\n    this.second = second;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To tell the compiler that the variables are static.",
+          "text": "To tell the compiler that the variables are static."
+        },
+        {
+          "value": "B",
+          "label": "To distinguish between the parameter names and the instance variable names.",
+          "text": "To distinguish between the parameter names and the instance variable names."
+        },
+        {
+          "value": "C",
+          "label": "Because constructors cannot access instance variables directly.",
+          "text": "Because constructors cannot access instance variables directly."
+        },
+        {
+          "value": "D",
+          "label": "To ensure the variables are stored in the heap.",
+          "text": "To ensure the variables are stored in the heap."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "When parameter names are identical to instance variable names, the 'this' reference is required to refer to the instance variables explicitly, as they are shadowed by the parameters."
+    },
+    {
+      "id": "upload-1771100549126-2",
+      "number": "13",
+      "text": "According to Performance Tip 8.1, how does Java conserve storage regarding methods?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It maintains only one copy of each method per class, shared by all objects.",
+          "text": "It maintains only one copy of each method per class, shared by all objects."
+        },
+        {
+          "value": "B",
+          "label": "It deletes methods from memory after they are executed.",
+          "text": "It deletes methods from memory after they are executed."
+        },
+        {
+          "value": "C",
+          "label": "It converts all methods to static at runtime.",
+          "text": "It converts all methods to static at runtime."
+        },
+        {
+          "value": "D",
+          "label": "It compresses the method code into a zip format.",
+          "text": "It compresses the method code into a zip format."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Performance Tip 8.1 states that Java maintains only one copy of each method per class, while each object has its own copy of instance variables."
+    },
+    {
+      "id": "upload-1771100549126-3",
+      "number": "14",
+      "text": "Can the `this` reference be used inside a `static` method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Yes, but only to access other static members.",
+          "text": "Yes, but only to access other static members."
+        },
+        {
+          "value": "B",
+          "label": "Yes, but it must be the first statement.",
+          "text": "Yes, but it must be the first statement."
+        },
+        {
+          "value": "C",
+          "label": "No, it cannot be used in a static method.",
+          "text": "No, it cannot be used in a static method."
+        },
+        {
+          "value": "D",
+          "label": "Only if the static method is public.",
+          "text": "Only if the static method is public."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Section 8.4 mentions that Section 8.11 will explain why keyword 'this' cannot be used in a static method (because static methods are not associated with a specific object)."
+    },
+    {
+      "id": "upload-1771100549126-4",
+      "number": "15",
+      "text": "In the `buildString` method of class `SimpleTime`, which of the following is true about calling `toUniversalString()`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It must be called using this.toUniversalString().",
+          "text": "It must be called using this.toUniversalString()."
+        },
+        {
+          "value": "B",
+          "label": "It can be called implicitly or explicitly using the this reference.",
+          "text": "It can be called implicitly or explicitly using the this reference."
+        },
+        {
+          "value": "C",
+          "label": "It cannot be called from within buildString.",
+          "text": "It cannot be called from within buildString."
+        },
+        {
+          "value": "D",
+          "label": "It requires a new object of SimpleTime to be called.",
+          "text": "It requires a new object of SimpleTime to be called."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Lines 34–35 of Fig 8.4 show that both this.toUniversalString() and toUniversalString() can be used to perform the same task."
+    },
+    {
+      "id": "upload-1771100549126-0",
+      "number": "16",
+      "text": "When using `this()` to call one constructor from another in the same class, where must that call be placed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "As the last statement in the constructor.",
+          "text": "As the last statement in the constructor."
+        },
+        {
+          "value": "B",
+          "label": "Anywhere in the constructor body.",
+          "text": "Anywhere in the constructor body."
+        },
+        {
+          "value": "C",
+          "label": "As the first statement in the constructor body.",
+          "text": "As the first statement in the constructor body."
+        },
+        {
+          "value": "D",
+          "label": "In a separate static helper method.",
+          "text": "In a separate static helper method."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Common Programming Error 8.3 and the text for Section 8.5 state that calling another constructor via this() must be the first statement in the constructor body."
+    },
+    {
+      "id": "upload-1771100549126-1",
+      "number": "17",
+      "text": "According to Software Engineering Observation 8.3, what is special about the relationship between two objects of the same class?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "They share the same memory address for instance variables.",
+          "text": "They share the same memory address for instance variables."
+        },
+        {
+          "value": "B",
+          "label": "One object can access the private members of another object of that same class.",
+          "text": "One object can access the private members of another object of that same class."
+        },
+        {
+          "value": "C",
+          "label": "They are automatically synchronized by the JVM.",
+          "text": "They are automatically synchronized by the JVM."
+        },
+        {
+          "value": "D",
+          "label": "They cannot exist in the same package.",
+          "text": "They cannot exist in the same package."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Software Engineering Observation 8.3 states that when one object of a class has a reference to another object of the same class, it can access all the second object's data and methods, including private ones."
+    },
+    {
+      "id": "upload-1771100549126-2",
+      "number": "18",
+      "text": "What happens to the default constructor once you declare at least one constructor for a class?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The compiler still provides the default constructor.",
+          "text": "The compiler still provides the default constructor."
+        },
+        {
+          "value": "B",
+          "label": "The compiler will no longer provide a default constructor.",
+          "text": "The compiler will no longer provide a default constructor."
+        },
+        {
+          "value": "C",
+          "label": "The default constructor becomes private.",
+          "text": "The default constructor becomes private."
+        },
+        {
+          "value": "D",
+          "label": "You must use the 'default' keyword to keep it.",
+          "text": "You must use the 'default' keyword to keep it."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Section 8.5 states, 'Once you declare any constructors in a class, the compiler will not provide a default constructor.'"
+    },
+    {
+      "id": "upload-1771100549126-3",
+      "number": "19",
+      "text": "Why does the text recommend calling `set` methods within a constructor instead of direct assignment?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It is significantly faster for the JVM.",
+          "text": "It is significantly faster for the JVM."
+        },
+        {
+          "value": "B",
+          "label": "It simplifies code maintenance and centralizes data validation.",
+          "text": "It simplifies code maintenance and centralizes data validation."
+        },
+        {
+          "value": "C",
+          "label": "Constructors are not allowed to use the assignment operator (=).",
+          "text": "Constructors are not allowed to use the assignment operator (=)."
+        },
+        {
+          "value": "D",
+          "label": "It prevents the object from being garbage collected.",
+          "text": "It prevents the object from being garbage collected."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Software Engineering Observation 8.4 and related text suggest that using set methods simplifies maintenance and reduces errors by ensuring validation logic is not duplicated."
+    },
+    {
+      "id": "upload-1771100549126-4",
+      "number": "20",
+      "text": "What does 'inlining the code' refer to in the context of compiler optimization?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Moving all code into a single line to reduce file size.",
+          "text": "Moving all code into a single line to reduce file size."
+        },
+        {
+          "value": "B",
+          "label": "Replacing a method call with the actual code of the method to improve performance.",
+          "text": "Replacing a method call with the actual code of the method to improve performance."
+        },
+        {
+          "value": "C",
+          "label": "Converting Java code into C++ code.",
+          "text": "Converting Java code into C++ code."
+        },
+        {
+          "value": "D",
+          "label": "Automatically adding comments to the code.",
+          "text": "Automatically adding comments to the code."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text defines 'inlining the code' as a technique where the compiler removes calls to simple methods and replaces them with the expanded code of their declarations."
+    },
+    {
+      "id": "upload-1771100549126-20",
+      "number": "21",
+      "text": "What happens if you do not provide any constructors in a Java class's declaration?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A compilation error occurs.",
+          "text": "A compilation error occurs."
+        },
+        {
+          "value": "B",
+          "label": "The class cannot be instantiated.",
+          "text": "The class cannot be instantiated."
+        },
+        {
+          "value": "C",
+          "label": "The compiler creates a default constructor that takes no arguments.",
+          "text": "The compiler creates a default constructor that takes no arguments."
+        },
+        {
+          "value": "D",
+          "label": "The compiler creates a default constructor that requires arguments for all instance variables.",
+          "text": "The compiler creates a default constructor that requires arguments for all instance variables."
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "If no constructor is provided, the compiler creates a default constructor that takes no arguments and initializes instance variables to their default values."
+    },
+    {
+      "id": "upload-1771100549126-21",
+      "number": "22",
+      "text": "What is the default value for an instance variable of type `boolean` when initialized by a default constructor?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "true",
+          "text": "true"
+        },
+        {
+          "value": "B",
+          "label": "false",
+          "text": "false"
+        },
+        {
+          "value": "C",
+          "label": "null",
+          "text": "null"
+        },
+        {
+          "value": "D",
+          "label": "0",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, the default value for a primitive boolean instance variable is false."
+    },
+    {
+      "id": "upload-1771100549126-22",
+      "number": "23",
+      "text": "If a class explicitly declares at least one constructor, which of the following is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The compiler still generates a default constructor.",
+          "text": "The compiler still generates a default constructor."
+        },
+        {
+          "value": "B",
+          "label": "The compiler will not create a default constructor.",
+          "text": "The compiler will not create a default constructor."
+        },
+        {
+          "value": "C",
+          "label": "The program will not compile unless the constructor is public.",
+          "text": "The program will not compile unless the constructor is public."
+        },
+        {
+          "value": "D",
+          "label": "All instance variables must be final.",
+          "text": "All instance variables must be final."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "As soon as you declare any constructor, the compiler stops providing the automatic default constructor. You must then manually define a no-argument constructor if needed."
+    },
+    {
+      "id": "upload-1771100549126-23",
+      "number": "24",
+      "text": "Consider the following class snippet. If a client calls `new Time2()`, which constructor will be invoked?\n\n```java\npublic class Time2 {\n    public Time2() { this(0, 0, 0); }\n    public Time2(int h, int m, int s) { /* initialization */ }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The compiler-generated default constructor.",
+          "text": "The compiler-generated default constructor."
+        },
+        {
+          "value": "B",
+          "label": "The no-argument constructor provided by the programmer.",
+          "text": "The no-argument constructor provided by the programmer."
+        },
+        {
+          "value": "C",
+          "label": "The three-argument constructor directly.",
+          "text": "The three-argument constructor directly."
+        },
+        {
+          "value": "D",
+          "label": "None; this code results in a syntax error.",
+          "text": "None; this code results in a syntax error."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The expression `new Time2()` invokes the user-defined no-argument constructor."
+    },
+    {
+      "id": "upload-1771100549126-24",
+      "number": "25",
+      "text": "What are the default values for primitive numeric types and object references respectively?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1 and null",
+          "text": "1 and null"
+        },
+        {
+          "value": "B",
+          "label": "0 and void",
+          "text": "0 and void"
+        },
+        {
+          "value": "C",
+          "label": "0 and null",
+          "text": "0 and null"
+        },
+        {
+          "value": "D",
+          "label": "null and 0",
+          "text": "null and 0"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Primitive numeric types default to 0, and reference types default to null."
+    },
+    {
+      "id": "upload-1771100549126-20",
+      "number": "26",
+      "text": "What are 'mutator' methods more commonly known as?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Accessor methods",
+          "text": "Accessor methods"
+        },
+        {
+          "value": "B",
+          "label": "Query methods",
+          "text": "Query methods"
+        },
+        {
+          "value": "C",
+          "label": "Predicate methods",
+          "text": "Predicate methods"
+        },
+        {
+          "value": "D",
+          "label": "Set methods",
+          "text": "Set methods"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Set methods are called mutator methods because they typically change (mutate) an object's state."
+    },
+    {
+      "id": "upload-1771100549126-21",
+      "number": "27",
+      "text": "Which type of method is specifically used to test whether a condition is true or false?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Accessor method",
+          "text": "Accessor method"
+        },
+        {
+          "value": "B",
+          "label": "Predicate method",
+          "text": "Predicate method"
+        },
+        {
+          "value": "C",
+          "label": "Mutator method",
+          "text": "Mutator method"
+        },
+        {
+          "value": "D",
+          "label": "Static method",
+          "text": "Static method"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Methods that return boolean values to test conditions, like ArrayList's `isEmpty`, are called predicate methods."
+    },
+    {
+      "id": "upload-1771100549126-22",
+      "number": "28",
+      "text": "Why is it better to use set methods instead of making instance variables public?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Set methods execute faster than direct variable access.",
+          "text": "Set methods execute faster than direct variable access."
+        },
+        {
+          "value": "B",
+          "label": "Set methods can perform validity checking to ensure data integrity.",
+          "text": "Set methods can perform validity checking to ensure data integrity."
+        },
+        {
+          "value": "C",
+          "label": "Set methods are required by the Java compiler for all private data.",
+          "text": "Set methods are required by the Java compiler for all private data."
+        },
+        {
+          "value": "D",
+          "label": "Public variables cannot be accessed by other classes.",
+          "text": "Public variables cannot be accessed by other classes."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Set methods allow the class to scrutinize attempts to modify data, throwing exceptions or rejecting invalid values (e.g., negative weight)."
+    },
+    {
+      "id": "upload-1771100549126-23",
+      "number": "29",
+      "text": "What is the typical return type of a 'set' method that uses exception handling to signal invalid data?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "int",
+          "text": "int"
+        },
+        {
+          "value": "B",
+          "label": "boolean",
+          "text": "boolean"
+        },
+        {
+          "value": "C",
+          "label": "void",
+          "text": "void"
+        },
+        {
+          "value": "D",
+          "label": "String",
+          "text": "String"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Typically, set methods have a void return type and use exceptions to handle errors, though they can also return status codes."
+    },
+    {
+      "id": "upload-1771100549126-24",
+      "number": "30",
+      "text": "How do get methods help promote program modifiability?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By providing a way to delete instance variables at runtime.",
+          "text": "By providing a way to delete instance variables at runtime."
+        },
+        {
+          "value": "B",
+          "label": "By allowing clients to directly modify the internal storage format.",
+          "text": "By allowing clients to directly modify the internal storage format."
+        },
+        {
+          "value": "C",
+          "label": "By shielding client code from the actual data representation.",
+          "text": "By shielding client code from the actual data representation."
+        },
+        {
+          "value": "D",
+          "label": "By making the class static.",
+          "text": "By making the class static."
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A get method can control the format of the data it returns, allowing the internal implementation to change without affecting the client."
+    },
+    {
+      "id": "upload-1771100549126-20",
+      "number": "31",
+      "text": "How many copies of a `static` variable are maintained in memory, regardless of how many objects of that class are instantiated?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "One for every object",
+          "text": "One for every object"
+        },
+        {
+          "value": "B",
+          "label": "Two: one for the class and one for the current object",
+          "text": "Two: one for the class and one for the current object"
+        },
+        {
+          "value": "C",
+          "label": "Zero, until the first object is created",
+          "text": "Zero, until the first object is created"
+        },
+        {
+          "value": "D",
+          "label": "Exactly one",
+          "text": "Exactly one"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "A static variable (class variable) represents classwide information; only one copy of the data is shared by all objects of the class."
+    },
+    {
+      "id": "upload-1771100549126-21",
+      "number": "32",
+      "text": "Which of the following is NOT allowed in a `static` method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Accessing public static variables",
+          "text": "Accessing public static variables"
+        },
+        {
+          "value": "B",
+          "label": "Using the `this` reference",
+          "text": "Using the `this` reference"
+        },
+        {
+          "value": "C",
+          "label": "Calling other static methods",
+          "text": "Calling other static methods"
+        },
+        {
+          "value": "D",
+          "label": "Declaring local variables",
+          "text": "Declaring local variables"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `this` reference refers to a specific object instance. Since static methods can be called without any instance existing, `this` is unavailable."
+    },
+    {
+      "id": "upload-1771100549126-22",
+      "number": "33",
+      "text": "What is the correct way to call a public static method named `getCount()` in a class named `Employee`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Employee.getCount()",
+          "text": "Employee.getCount()"
+        },
+        {
+          "value": "B",
+          "label": "Employee->getCount()",
+          "text": "Employee->getCount()"
+        },
+        {
+          "value": "C",
+          "label": "new Employee().getCount() only",
+          "text": "new Employee().getCount() only"
+        },
+        {
+          "value": "D",
+          "label": "getCount(Employee)",
+          "text": "getCount(Employee)"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Public static members should be accessed by qualifying the member name with the class name and a dot."
+    },
+    {
+      "id": "upload-1771100549126-23",
+      "number": "34",
+      "text": "A static method attempts to access a non-static instance variable in the same class. What is the result?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A runtime exception is thrown.",
+          "text": "A runtime exception is thrown."
+        },
+        {
+          "value": "B",
+          "label": "The variable's default value (0 or null) is returned.",
+          "text": "The variable's default value (0 or null) is returned."
+        },
+        {
+          "value": "C",
+          "label": "A compilation error occurs.",
+          "text": "A compilation error occurs."
+        },
+        {
+          "value": "D",
+          "label": "The program runs normally if an object exists.",
+          "text": "The program runs normally if an object exists."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Static methods cannot access non-static class members (instance variables or instance methods) directly because those require a specific object instance."
+    },
+    {
+      "id": "upload-1771100549126-24",
+      "number": "35",
+      "text": "When do `static` class members become available in memory?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Only after the first object is instantiated.",
+          "text": "Only after the first object is instantiated."
+        },
+        {
+          "value": "B",
+          "label": "As soon as the class is loaded into memory at execution time.",
+          "text": "As soon as the class is loaded into memory at execution time."
+        },
+        {
+          "value": "C",
+          "label": "When the program's main method terminates.",
+          "text": "When the program's main method terminates."
+        },
+        {
+          "value": "D",
+          "label": "When the garbage collector runs.",
+          "text": "When the garbage collector runs."
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Static members exist even when no objects of the class exist; they are initialized as soon as the class is loaded."
+    },
+    {
+      "id": "upload-1771100549126-20",
+      "number": "36",
+      "text": "What is 'composition' in Java?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A relationship where a class inherits from another class.",
+          "text": "A relationship where a class inherits from another class."
+        },
+        {
+          "value": "B",
+          "label": "The process of compiling multiple source files at once.",
+          "text": "The process of compiling multiple source files at once."
+        },
+        {
+          "value": "C",
+          "label": "A relationship where a class has references to objects of other classes as members.",
+          "text": "A relationship where a class has references to objects of other classes as members."
+        },
+        {
+          "value": "D",
+          "label": "The ability of a method to return different types.",
+          "text": "The ability of a method to return different types."
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Composition is a 'has-a' relationship where one class contains references to objects of other classes as fields."
+    },
+    {
+      "id": "upload-1771100549126-21",
+      "number": "37",
+      "text": "Which keyword is used to define a set of constants represented as unique identifiers?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "constant",
+          "text": "constant"
+        },
+        {
+          "value": "B",
+          "label": "enum",
+          "text": "enum"
+        },
+        {
+          "value": "C",
+          "label": "final",
+          "text": "final"
+        },
+        {
+          "value": "D",
+          "label": "static",
+          "text": "static"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `enum` keyword is used to declare an enumeration, which defines a group of named constants."
+    },
+    {
+      "id": "upload-1771100549126-22",
+      "number": "38",
+      "text": "What is the restriction regarding creating objects of an `enum` type?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "You must use the `new` operator.",
+          "text": "You must use the `new` operator."
+        },
+        {
+          "value": "B",
+          "label": "Any attempt to use the `new` operator results in a compilation error.",
+          "text": "Any attempt to use the `new` operator results in a compilation error."
+        },
+        {
+          "value": "C",
+          "label": "Enums can only be instantiated inside static methods.",
+          "text": "Enums can only be instantiated inside static methods."
+        },
+        {
+          "value": "D",
+          "label": "Enums cannot have constructors.",
+          "text": "Enums cannot have constructors."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Enum constants are created by the system; manual instantiation using `new` is strictly forbidden and results in a compilation error."
+    },
+    {
+      "id": "upload-1771100549126-23",
+      "number": "39",
+      "text": "Which static method is automatically generated by the compiler for every `enum` to return an array of its constants?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "getConstants()",
+          "text": "getConstants()"
+        },
+        {
+          "value": "B",
+          "label": "range()",
+          "text": "range()"
+        },
+        {
+          "value": "C",
+          "label": "values()",
+          "text": "values()"
+        },
+        {
+          "value": "D",
+          "label": "toString()",
+          "text": "toString()"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The compiler generates the `static values()` method for all enums, returning an array of constants in their declared order."
+    },
+    {
+      "id": "upload-1771100549126-24",
+      "number": "40",
+      "text": "What are the implicit modifiers for enum constants?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "private and final",
+          "text": "private and final"
+        },
+        {
+          "value": "B",
+          "label": "public and volatile",
+          "text": "public and volatile"
+        },
+        {
+          "value": "C",
+          "label": "static and final",
+          "text": "static and final"
+        },
+        {
+          "value": "D",
+          "label": "abstract and static",
+          "text": "abstract and static"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Enum constants are implicitly static and final because they represent fixed, shared constants."
+    },
+    {
+      "id": "upload-1771100549126-20",
+      "number": "41",
+      "text": "When is an object considered 'eligible' for garbage collection?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "When the program finishes execution.",
+          "text": "When the program finishes execution."
+        },
+        {
+          "value": "B",
+          "label": "When there are no more references to the object.",
+          "text": "When there are no more references to the object."
+        },
+        {
+          "value": "C",
+          "label": "As soon as the object's `finalize` method is called.",
+          "text": "As soon as the object's `finalize` method is called."
+        },
+        {
+          "value": "D",
+          "label": "When it contains only null values.",
+          "text": "When it contains only null values."
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The JVM identifies objects that are no longer referenced as eligible for reclamation by the garbage collector."
+    },
+    {
+      "id": "upload-1771100549126-21",
+      "number": "42",
+      "text": "Why is the `finalize` method generally avoided by Java programmers?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It can only be called manually.",
+          "text": "It can only be called manually."
+        },
+        {
+          "value": "B",
+          "label": "It causes the program to crash immediately.",
+          "text": "It causes the program to crash immediately."
+        },
+        {
+          "value": "C",
+          "label": "There is no guarantee as to when, or even if, it will be called.",
+          "text": "There is no guarantee as to when, or even if, it will be called."
+        },
+        {
+          "value": "D",
+          "label": "It requires the class to be static.",
+          "text": "It requires the class to be static."
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The garbage collector's execution is non-deterministic; it may never run before the program terminates, making `finalize` unreliable for critical resource cleanup."
+    },
+    {
+      "id": "upload-1771100549126-22",
+      "number": "43",
+      "text": "If a `final` instance variable is NOT initialized in its declaration, where MUST it be initialized?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "In the main method.",
+          "text": "In the main method."
+        },
+        {
+          "value": "B",
+          "label": "In every constructor of the class.",
+          "text": "In every constructor of the class."
+        },
+        {
+          "value": "C",
+          "label": "In at least one static method.",
+          "text": "In at least one static method."
+        },
+        {
+          "value": "D",
+          "label": "It doesn't need to be initialized; it defaults to 0.",
+          "text": "It doesn't need to be initialized; it defaults to 0."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Final instance variables that are not initialized at declaration must be initialized in every constructor to ensure they have a value upon object creation."
+    },
+    {
+      "id": "upload-1771100549126-23",
+      "number": "44",
+      "text": "What happens if a program attempts to modify a `final` instance variable after it has been initialized?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A runtime exception is thrown.",
+          "text": "A runtime exception is thrown."
+        },
+        {
+          "value": "B",
+          "label": "The value remains unchanged and the program continues silently.",
+          "text": "The value remains unchanged and the program continues silently."
+        },
+        {
+          "value": "C",
+          "label": "A compilation error occurs.",
+          "text": "A compilation error occurs."
+        },
+        {
+          "value": "D",
+          "label": "The variable is deleted from memory.",
+          "text": "The variable is deleted from memory."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The keyword `final` makes a variable a constant; the compiler prevents any reassignment."
+    },
+    {
+      "id": "upload-1771100549126-24",
+      "number": "45",
+      "text": "Which principle states that code should be granted only the amount of privilege and access it needs to accomplish its task?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The Principle of Least Privilege",
+          "text": "The Principle of Least Privilege"
+        },
+        {
+          "value": "B",
+          "label": "The Principle of Encapsulation",
+          "text": "The Principle of Encapsulation"
+        },
+        {
+          "value": "C",
+          "label": "The Rule of Finality",
+          "text": "The Rule of Finality"
+        },
+        {
+          "value": "D",
+          "label": "The Static Access Principle",
+          "text": "The Static Access Principle"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The principle of least privilege is a fundamental software engineering concept that advocates for restricted access to improve robustness."
+    },
+    {
+      "id": "upload-1771100549126-45",
+      "number": "46",
+      "text": "What is the correct order of declarations in a Java source-code file?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "import declarations, package declaration, class declarations",
+          "text": "import declarations, package declaration, class declarations"
+        },
+        {
+          "value": "B",
+          "label": "package declaration, import declarations, class declarations",
+          "text": "package declaration, import declarations, class declarations"
+        },
+        {
+          "value": "C",
+          "label": "class declarations, package declaration, import declarations",
+          "text": "class declarations, package declaration, import declarations"
+        },
+        {
+          "value": "D",
+          "label": "import declarations, class declarations, package declaration",
+          "text": "import declarations, class declarations, package declaration"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A Java source-code file must follow the order: 1. package declaration (if any), 2. import declarations (if any), then 3. class declarations."
+    },
+    {
+      "id": "upload-1771100549126-46",
+      "number": "47",
+      "text": "Which `javac` command-line option is used to specify where the compiler should create the directories for a package?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "-p",
+          "text": "-p"
+        },
+        {
+          "value": "B",
+          "label": "-classpath",
+          "text": "-classpath"
+        },
+        {
+          "value": "C",
+          "label": "-d",
+          "text": "-d"
+        },
+        {
+          "value": "D",
+          "label": "-dir",
+          "text": "-dir"
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The -d option causes the javac compiler to create appropriate directories based on the class’s package declaration."
+    },
+    {
+      "id": "upload-1771100549126-47",
+      "number": "48",
+      "text": "According to the text, how should unique package names be formed to avoid naming conflicts?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Start with the project name followed by the class name.",
+          "text": "Start with the project name followed by the class name."
+        },
+        {
+          "value": "B",
+          "label": "Use a random UUID as the package prefix.",
+          "text": "Use a random UUID as the package prefix."
+        },
+        {
+          "value": "C",
+          "label": "Start with your Internet domain name in reverse order.",
+          "text": "Start with your Internet domain name in reverse order."
+        },
+        {
+          "value": "D",
+          "label": "Use the keyword 'package' followed by the local directory name.",
+          "text": "Use the keyword 'package' followed by the local directory name."
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "To provide unique package names, it is a convention to start each one with your Internet domain name in reverse order (e.g., com.deitel)."
+    },
+    {
+      "id": "upload-1771100549126-48",
+      "number": "49",
+      "text": "If a class `Time1` is in the package `com.deitel.jhtp.ch08`, what is its 'fully qualified class name'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Time1",
+          "text": "Time1"
+        },
+        {
+          "value": "B",
+          "label": "com.deitel.Time1",
+          "text": "com.deitel.Time1"
+        },
+        {
+          "value": "C",
+          "label": "com.deitel.jhtp.ch08.Time1",
+          "text": "com.deitel.jhtp.ch08.Time1"
+        },
+        {
+          "value": "D",
+          "label": "ch08.Time1",
+          "text": "ch08.Time1"
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The package name is part of the fully qualified class name; hence it is the full dot-separated path including the class name."
+    },
+    {
+      "id": "upload-1771100549126-49",
+      "number": "50",
+      "text": "Which statement regarding the import declaration `import java.util.*;` is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It is a single-type-import declaration.",
+          "text": "It is a single-type-import declaration."
+        },
+        {
+          "value": "B",
+          "label": "It is a type-import-on-demand declaration.",
+          "text": "It is a type-import-on-demand declaration."
+        },
+        {
+          "value": "C",
+          "label": "It imports all classes in the Java API.",
+          "text": "It imports all classes in the Java API."
+        },
+        {
+          "value": "D",
+          "label": "It causes all classes in the util package to be loaded by the JVM immediately.",
+          "text": "It causes all classes in the util package to be loaded by the JVM immediately."
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An import with an asterisk is a type-import-on-demand declaration. Only the classes actually used in the program are loaded by the JVM."
+    },
+    {
+      "id": "upload-1771100549126-45",
+      "number": "51",
+      "text": "What happens if you do not specify an access modifier (public, private, or protected) for a class member?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The member is public by default.",
+          "text": "The member is public by default."
+        },
+        {
+          "value": "B",
+          "label": "The member is private by default.",
+          "text": "The member is private by default."
+        },
+        {
+          "value": "C",
+          "label": "The member has package access.",
+          "text": "The member has package access."
+        },
+        {
+          "value": "D",
+          "label": "The compiler throws an error.",
+          "text": "The compiler throws an error."
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "If no access modifier is specified, the method or variable is considered to have package access, meaning it can be accessed by other classes in the same package."
+    },
+    {
+      "id": "upload-1771100549126-46",
+      "number": "52",
+      "text": "What is a side effect of specifying an explicit classpath using the `-classpath` option?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It includes the current directory by default.",
+          "text": "It includes the current directory by default."
+        },
+        {
+          "value": "B",
+          "label": "It eliminates the current directory from the search path unless it is explicitly included.",
+          "text": "It eliminates the current directory from the search path unless it is explicitly included."
+        },
+        {
+          "value": "C",
+          "label": "It causes the compiler to ignore standard Java libraries.",
+          "text": "It causes the compiler to ignore standard Java libraries."
+        },
+        {
+          "value": "D",
+          "label": "It only works for .jar files, not directories.",
+          "text": "It only works for .jar files, not directories."
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Common Programming Error 8.12 notes that specifying an explicit classpath eliminates the current directory from the search path. To include it, a dot (.) must be added to the classpath."
+    },
+    {
+      "id": "upload-1771100549126-47",
+      "number": "53",
+      "text": "Which object does the compiler use to locate the classes it needs?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Class loader",
+          "text": "Class loader"
+        },
+        {
+          "value": "B",
+          "label": "Package manager",
+          "text": "Package manager"
+        },
+        {
+          "value": "C",
+          "label": "Garbage collector",
+          "text": "Garbage collector"
+        },
+        {
+          "value": "D",
+          "label": "Classpath runner",
+          "text": "Classpath runner"
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The compiler uses a special object called a class loader to search standard classes, extension packages, and the classpath."
+    },
+    {
+      "id": "upload-1771100549126-48",
+      "number": "54",
+      "text": "In the context of the classpath, what character is used as a directory separator on Windows systems?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Colon (:)",
+          "text": "Colon (:)"
+        },
+        {
+          "value": "B",
+          "label": "Comma (,)",
+          "text": "Comma (,)"
+        },
+        {
+          "value": "C",
+          "label": "Semicolon (;)",
+          "text": "Semicolon (;)"
+        },
+        {
+          "value": "D",
+          "label": "Dot (.)",
+          "text": "Dot (.)"
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "On Windows, the semicolon (;) is used as a directory separator, while the colon (:) is used on UNIX/Linux/Mac systems."
+    },
+    {
+      "id": "upload-1771100549126-49",
+      "number": "55",
+      "text": "Why is it generally considered better practice to use the `-classpath` compiler option rather than the `CLASSPATH` environment variable?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Environment variables are faster to process.",
+          "text": "Environment variables are faster to process."
+        },
+        {
+          "value": "B",
+          "label": "The -classpath option allows each application to have its own specific classpath.",
+          "text": "The -classpath option allows each application to have its own specific classpath."
+        },
+        {
+          "value": "C",
+          "label": "The CLASSPATH variable only supports .zip files.",
+          "text": "The CLASSPATH variable only supports .zip files."
+        },
+        {
+          "value": "D",
+          "label": "The -classpath option automatically includes the Java standard library.",
+          "text": "The -classpath option automatically includes the Java standard library."
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Using the command-line option ensures that the classpath is specific to that run, avoiding conflicts between programs that might require different versions of the same package."
+    },
+    {
+      "id": "upload-1771100549126-45",
+      "number": "56",
+      "text": "In the `DrawPanel` example, why are shape coordinates stored in an array rather than just generated randomly during the `paintComponent` call?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To improve rendering performance.",
+          "text": "To improve rendering performance."
+        },
+        {
+          "value": "B",
+          "label": "To ensure the drawing remains consistent every time the system redraws the panel.",
+          "text": "To ensure the drawing remains consistent every time the system redraws the panel."
+        },
+        {
+          "value": "C",
+          "label": "Because the Graphics object cannot generate random numbers.",
+          "text": "Because the Graphics object cannot generate random numbers."
+        },
+        {
+          "value": "D",
+          "label": "To comply with JPanel's internal requirements.",
+          "text": "To comply with JPanel's internal requirements."
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Storing shape data in objects (like MyLine) ensures that the drawing stays the same each time paintComponent is called to refresh the screen."
+    },
+    {
+      "id": "upload-1771100549126-46",
+      "number": "57",
+      "text": "What does the `paintComponent` method of `DrawPanel` use to iterate through and draw the lines?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A while loop",
+          "text": "A while loop"
+        },
+        {
+          "value": "B",
+          "label": "An enhanced for statement",
+          "text": "An enhanced for statement"
+        },
+        {
+          "value": "C",
+          "label": "A recursive call",
+          "text": "A recursive call"
+        },
+        {
+          "value": "D",
+          "label": "The System.out.println method",
+          "text": "The System.out.println method"
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text explains that paintComponent iterates through the MyLine objects in the array using an enhanced for statement (lines 45–46)."
+    },
+    {
+      "id": "upload-1771100549126-47",
+      "number": "58",
+      "text": "In the GUI Exercise 8.1, how is the 'width' of a rectangle or oval calculated given two coordinates (x1, y1) and (x2, y2)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "x1 + x2",
+          "text": "x1 + x2"
+        },
+        {
+          "value": "B",
+          "label": "The average of x1 and x2",
+          "text": "The average of x1 and x2"
+        },
+        {
+          "value": "C",
+          "label": "The absolute value of the difference between x1 and x2",
+          "text": "The absolute value of the difference between x1 and x2"
+        },
+        {
+          "value": "D",
+          "label": "The larger value between x1 and x2",
+          "text": "The larger value between x1 and x2"
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The instructions specify that the width is the absolute value of the difference between the two x-coordinate values."
+    },
+    {
+      "id": "upload-1771100549126-48",
+      "number": "59",
+      "text": "Which method must be called to actually render a line using a `Graphics` object in Java?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`g.renderLine()`",
+          "text": "`g.renderLine()`"
+        },
+        {
+          "value": "B",
+          "label": "`g.drawLine()`",
+          "text": "`g.drawLine()`"
+        },
+        {
+          "value": "C",
+          "label": "`g.paint()`",
+          "text": "`g.paint()`"
+        },
+        {
+          "value": "D",
+          "label": "`g.setCoordinates()`",
+          "text": "`g.setCoordinates()`"
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "As seen in the MyLine class (Fig 8.18), `g.drawLine(x1, y1, x2, y2)` is the Graphics method used to draw the line."
+    },
+    {
+      "id": "upload-1771100549126-49",
+      "number": "60",
+      "text": "What is the purpose of the `TestDraw` class in Fig. 8.20?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To define the shape coordinate logic.",
+          "text": "To define the shape coordinate logic."
+        },
+        {
+          "value": "B",
+          "label": "To handle the garbage collection of graphics objects.",
+          "text": "To handle the garbage collection of graphics objects."
+        },
+        {
+          "value": "C",
+          "label": "To create a JFrame window and display the DrawPanel.",
+          "text": "To create a JFrame window and display the DrawPanel."
+        },
+        {
+          "value": "D",
+          "label": "To serve as the parent class for all shapes.",
+          "text": "To serve as the parent class for all shapes."
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "TestDraw sets up a JFrame, adds the DrawPanel to it, sets its size, and makes it visible."
+    },
+    {
+      "id": "upload-1771100549126-45",
+      "number": "61",
+      "text": "What is the result of using a single `static` import on demand (e.g., `import static myPackage.MyClass.*;`)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It imports all classes within a package.",
+          "text": "It imports all classes within a package."
+        },
+        {
+          "value": "B",
+          "label": "It imports all static members of a specific class.",
+          "text": "It imports all static members of a specific class."
+        },
+        {
+          "value": "C",
+          "label": "It allows access to private static members of the class.",
+          "text": "It allows access to private static members of the class."
+        },
+        {
+          "value": "D",
+          "label": "It prevents the class from being instantiated.",
+          "text": "It prevents the class from being instantiated."
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A static import on demand imports all static members of a class, allowing you to refer to them without the class name and a dot."
+    },
+    {
+      "id": "upload-1771100549126-46",
+      "number": "62",
+      "text": "Which principle states that code should be granted only the amount of privilege and access that it needs to accomplish its designated task?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The Principle of Least Privilege",
+          "text": "The Principle of Least Privilege"
+        },
+        {
+          "value": "B",
+          "label": "The Rule of Private Access",
+          "text": "The Rule of Private Access"
+        },
+        {
+          "value": "C",
+          "label": "The Encapsulation Law",
+          "text": "The Encapsulation Law"
+        },
+        {
+          "value": "D",
+          "label": "The Garbage Collection Principle",
+          "text": "The Garbage Collection Principle"
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "As defined in Section 8.13, the principle of least privilege states that code should only have necessary access levels."
+    },
+    {
+      "id": "upload-1771100549126-47",
+      "number": "63",
+      "text": "What is true about `enum` constants?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "They are mutable at runtime.",
+          "text": "They are mutable at runtime."
+        },
+        {
+          "value": "B",
+          "label": "They are implicitly static and final.",
+          "text": "They are implicitly static and final."
+        },
+        {
+          "value": "C",
+          "label": "They can be instantiated using the 'new' keyword.",
+          "text": "They can be instantiated using the 'new' keyword."
+        },
+        {
+          "value": "D",
+          "label": "They cannot have constructors or methods.",
+          "text": "They cannot have constructors or methods."
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Enum constants are constants that should not be modified (final) and are class-level members (static)."
+    },
+    {
+      "id": "upload-1771100549126-48",
+      "number": "64",
+      "text": "What happens when a local variable in a method has the same name as a field of the class?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The compiler throws a name-conflict error.",
+          "text": "The compiler throws a name-conflict error."
+        },
+        {
+          "value": "B",
+          "label": "The local variable shadows the field.",
+          "text": "The local variable shadows the field."
+        },
+        {
+          "value": "C",
+          "label": "The field takes precedence over the local variable.",
+          "text": "The field takes precedence over the local variable."
+        },
+        {
+          "value": "D",
+          "label": "The local variable is automatically renamed.",
+          "text": "The local variable is automatically renamed."
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If a local variable has the same name as a field, it shadows the field. The 'this' reference must be used to access the shadowed field explicitly."
+    },
+    {
+      "id": "upload-1771100549126-49",
+      "number": "65",
+      "text": "When can a `final` instance variable be initialized?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Only at the time of declaration.",
+          "text": "Only at the time of declaration."
+        },
+        {
+          "value": "B",
+          "label": "Only in the class constructor.",
+          "text": "Only in the class constructor."
+        },
+        {
+          "value": "C",
+          "label": "At declaration or by each of a class's constructors.",
+          "text": "At declaration or by each of a class's constructors."
+        },
+        {
+          "value": "D",
+          "label": "Any time before the object is garbage collected.",
+          "text": "Any time before the object is garbage collected."
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A final variable must be initialized either when it is declared or within the constructors of the class."
+    },
+    {
+      "id": "upload-1771100549126-65",
+      "number": "66",
+      "text": "In the context of class relationships, what does a 'has-a' relationship represent?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Inheritance",
+          "text": "Inheritance"
+        },
+        {
+          "value": "B",
+          "label": "Composition",
+          "text": "Composition"
+        },
+        {
+          "value": "C",
+          "label": "Polymorphism",
+          "text": "Polymorphism"
+        },
+        {
+          "value": "D",
+          "label": "Encapsulation",
+          "text": "Encapsulation"
+        }
+      ],
+      "inputName": "Q65",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A 'has-a' relationship represents composition, where an object contains references to other objects as members."
+    },
+    {
+      "id": "upload-1771100549126-66",
+      "number": "67",
+      "text": "What occurs if a programmer specifies a return type (even `void`) for a constructor in Java?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It remains a valid constructor.",
+          "text": "It remains a valid constructor."
+        },
+        {
+          "value": "B",
+          "label": "It results in a compilation error.",
+          "text": "It results in a compilation error."
+        },
+        {
+          "value": "C",
+          "label": "The compiler treats it as a regular method rather than a constructor.",
+          "text": "The compiler treats it as a regular method rather than a constructor."
+        },
+        {
+          "value": "D",
+          "label": "The return type is ignored by the JVM.",
+          "text": "The return type is ignored by the JVM."
+        }
+      ],
+      "inputName": "Q66",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Constructors must not have a return type. If one is specified, Java treats the declaration as a method, which can lead to logic errors when attempting to instantiate the class."
+    },
+    {
+      "id": "upload-1771100549126-67",
+      "number": "68",
+      "text": "In Exercise 8.6, why is the `annualInterestRate` variable declared as `static`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To ensure it cannot be modified after initialization.",
+          "text": "To ensure it cannot be modified after initialization."
+        },
+        {
+          "value": "B",
+          "label": "To allow each object to have its own unique interest rate.",
+          "text": "To allow each object to have its own unique interest rate."
+        },
+        {
+          "value": "C",
+          "label": "To store a single value that is shared by all account holders/objects of the class.",
+          "text": "To store a single value that is shared by all account holders/objects of the class."
+        },
+        {
+          "value": "D",
+          "label": "To make the variable accessible to other packages.",
+          "text": "To make the variable accessible to other packages."
+        }
+      ],
+      "inputName": "Q67",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Static variables are class-level variables shared by all instances of the class, which is appropriate for a value like a global interest rate."
+    },
+    {
+      "id": "upload-1771100549126-68",
+      "number": "69",
+      "text": "Which type of method is used to return a `boolean` value to test if a specific condition is true or false?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Mutator method",
+          "text": "Mutator method"
+        },
+        {
+          "value": "B",
+          "label": "Accessor method",
+          "text": "Accessor method"
+        },
+        {
+          "value": "C",
+          "label": "Predicate method",
+          "text": "Predicate method"
+        },
+        {
+          "value": "D",
+          "label": "Static method",
+          "text": "Static method"
+        }
+      ],
+      "inputName": "Q68",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Predicate methods (like `isEqualTo` or `isZero`) are designed to return a boolean result based on a condition."
+    },
+    {
+      "id": "upload-1771100549126-69",
+      "number": "70",
+      "text": "Which method is called implicitly whenever an object must be converted to a `String` representation, such as in `System.out.printf`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "format()",
+          "text": "format()"
+        },
+        {
+          "value": "B",
+          "label": "toString()",
+          "text": "toString()"
+        },
+        {
+          "value": "C",
+          "label": "printString()",
+          "text": "printString()"
+        },
+        {
+          "value": "D",
+          "label": "convertToString()",
+          "text": "convertToString()"
+        }
+      ],
+      "inputName": "Q69",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `toString` method, inherited from class `Object`, is called implicitly for string conversions."
+    },
+    {
+      "id": "upload-1771100549126-65",
+      "number": "71",
+      "text": "Which keyword is used in Java to create a subclass that inherits from a superclass?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "inherits",
+          "text": "inherits"
+        },
+        {
+          "value": "B",
+          "label": "implements",
+          "text": "implements"
+        },
+        {
+          "value": "C",
+          "label": "extends",
+          "text": "extends"
+        },
+        {
+          "value": "D",
+          "label": "super",
+          "text": "super"
+        }
+      ],
+      "inputName": "Q65",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `extends` keyword is used in a class declaration to specify the superclass from which the new class inherits."
+    },
+    {
+      "id": "upload-1771100549126-66",
+      "number": "72",
+      "text": "Which of the following statements about inheritance in Java is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Java supports multiple inheritance of classes.",
+          "text": "Java supports multiple inheritance of classes."
+        },
+        {
+          "value": "B",
+          "label": "A subclass can access the private members of its superclass directly.",
+          "text": "A subclass can access the private members of its superclass directly."
+        },
+        {
+          "value": "C",
+          "label": "Every class in Java directly or indirectly extends class Object.",
+          "text": "Every class in Java directly or indirectly extends class Object."
+        },
+        {
+          "value": "D",
+          "label": "Constructors are inherited by subclasses.",
+          "text": "Constructors are inherited by subclasses."
+        }
+      ],
+      "inputName": "Q66",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, all classes inherit from the `java.lang.Object` class. Java only supports single inheritance, and private members remain hidden from subclasses."
+    },
+    {
+      "id": "upload-1771100549126-67",
+      "number": "73",
+      "text": "What is the primary purpose of the `protected` access modifier?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To make members accessible only within the same class.",
+          "text": "To make members accessible only within the same class."
+        },
+        {
+          "value": "B",
+          "label": "To make members accessible to the class, its subclasses, and other classes in the same package.",
+          "text": "To make members accessible to the class, its subclasses, and other classes in the same package."
+        },
+        {
+          "value": "C",
+          "label": "To prevent a method from being overridden.",
+          "text": "To prevent a method from being overridden."
+        },
+        {
+          "value": "D",
+          "label": "To allow access only to classes in different packages.",
+          "text": "To allow access only to classes in different packages."
+        }
+      ],
+      "inputName": "Q67",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Protected access provides an intermediate level of security, allowing subclasses and package-level classes to access members while hiding them from the general public."
+    },
+    {
+      "id": "upload-1771100549126-68",
+      "number": "74",
+      "text": "When a subclass method has the same signature as a superclass method, it is said to ______ the superclass method.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Overload",
+          "text": "Overload"
+        },
+        {
+          "value": "B",
+          "label": "Shadow",
+          "text": "Shadow"
+        },
+        {
+          "value": "C",
+          "label": "Override",
+          "text": "Override"
+        },
+        {
+          "value": "D",
+          "label": "Encapsulate",
+          "text": "Encapsulate"
+        }
+      ],
+      "inputName": "Q68",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Overriding occurs when a subclass provides a specific implementation for a method that is already defined in its superclass with the same signature."
+    },
+    {
+      "id": "upload-1771100549126-69",
+      "number": "75",
+      "text": "What happens if a subclass constructor does not explicitly call a superclass constructor using `super()`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A compilation error occurs.",
+          "text": "A compilation error occurs."
+        },
+        {
+          "value": "B",
+          "label": "The compiler implicitly calls the superclass's default or no-argument constructor.",
+          "text": "The compiler implicitly calls the superclass's default or no-argument constructor."
+        },
+        {
+          "value": "C",
+          "label": "The superclass variables remain uninitialized.",
+          "text": "The superclass variables remain uninitialized."
+        },
+        {
+          "value": "D",
+          "label": "The program crashes at runtime.",
+          "text": "The program crashes at runtime."
+        }
+      ],
+      "inputName": "Q69",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The first task of any subclass constructor is to call its superclass constructor. If not done explicitly, Java attempts an implicit call to the superclass's no-argument constructor."
+    },
+    {
+      "id": "upload-1771100549126-70",
+      "number": "76",
+      "text": "What is the benefit of using the `@Override` annotation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It makes the code run faster.",
+          "text": "It makes the code run faster."
+        },
+        {
+          "value": "B",
+          "label": "It allows the method to access private variables.",
+          "text": "It allows the method to access private variables."
+        },
+        {
+          "value": "C",
+          "label": "It forces the compiler to check that the method signature matches a method in the superclass.",
+          "text": "It forces the compiler to check that the method signature matches a method in the superclass."
+        },
+        {
+          "value": "D",
+          "label": "It is required to make a method public.",
+          "text": "It is required to make a method public."
+        }
+      ],
+      "inputName": "Q70",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `@Override` annotation prevents accidental overloading by ensuring the compiler verifies that a method with that exact signature exists in the superclass."
+    },
+    {
+      "id": "upload-1771100549126-76",
+      "number": "77",
+      "text": "What keyword is used in Java to indicate that one class inherits from another?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "inherits",
+          "text": "inherits"
+        },
+        {
+          "value": "B",
+          "label": "implements",
+          "text": "implements"
+        },
+        {
+          "value": "C",
+          "label": "extends",
+          "text": "extends"
+        },
+        {
+          "value": "D",
+          "label": "super",
+          "text": "super"
+        }
+      ],
+      "inputName": "Q76",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Keyword 'extends' indicates inheritance, passing on the capabilities of the superclass to the subclass."
+    },
+    {
+      "id": "upload-1771100549126-77",
+      "number": "78",
+      "text": "In a subclass constructor, what is the requirement for using the `super` keyword to call a superclass constructor?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It must be the last statement in the constructor.",
+          "text": "It must be the last statement in the constructor."
+        },
+        {
+          "value": "B",
+          "label": "It must be the first statement in the constructor.",
+          "text": "It must be the first statement in the constructor."
+        },
+        {
+          "value": "C",
+          "label": "It can be placed anywhere in the constructor.",
+          "text": "It can be placed anywhere in the constructor."
+        },
+        {
+          "value": "D",
+          "label": "It is only required if the superclass has no constructors at all.",
+          "text": "It is only required if the superclass has no constructors at all."
+        }
+      ],
+      "inputName": "Q77",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The explicit superclass constructor call must be the first statement in the subclass constructor's body."
+    },
+    {
+      "id": "upload-1771100549126-78",
+      "number": "79",
+      "text": "Based on the text, what happens if a subclass constructor does not explicitly invoke a superclass constructor and the superclass does not have a no-argument constructor?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The program will run but fail at runtime.",
+          "text": "The program will run but fail at runtime."
+        },
+        {
+          "value": "B",
+          "label": "Java automatically creates a default constructor in the superclass.",
+          "text": "Java automatically creates a default constructor in the superclass."
+        },
+        {
+          "value": "C",
+          "label": "The compiler issues an error.",
+          "text": "The compiler issues an error."
+        },
+        {
+          "value": "D",
+          "label": "The subclass members are initialized to null.",
+          "text": "The subclass members are initialized to null."
+        }
+      ],
+      "inputName": "Q78",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "If the superclass lacks a no-argument constructor and the subclass doesn't explicitly call a specific superclass constructor, the compiler issues an error."
+    },
+    {
+      "id": "upload-1771100549126-79",
+      "number": "80",
+      "text": "Why is declaring superclass instance variables as `protected` considered a potential problem for 'fragile' or 'brittle' software?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Because subclasses cannot access protected variables.",
+          "text": "Because subclasses cannot access protected variables."
+        },
+        {
+          "value": "B",
+          "label": "Because changes to the superclass data implementation may require modifying all subclasses.",
+          "text": "Because changes to the superclass data implementation may require modifying all subclasses."
+        },
+        {
+          "value": "C",
+          "label": "Because protected variables are slower than private variables.",
+          "text": "Because protected variables are slower than private variables."
+        },
+        {
+          "value": "D",
+          "label": "Because protected variables cannot be used in methods that override superclass methods.",
+          "text": "Because protected variables cannot be used in methods that override superclass methods."
+        }
+      ],
+      "inputName": "Q79",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Software is 'fragile' when a small change in the superclass (like renaming a variable) can 'break' the implementation of all subclasses that reference that variable directly."
+    },
+    {
+      "id": "upload-1771100549126-80",
+      "number": "81",
+      "text": "Which access modifier allows a subclass to directly access superclass members but keeps them hidden from classes outside the package that are not subclasses?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "public",
+          "text": "public"
+        },
+        {
+          "value": "B",
+          "label": "private",
+          "text": "private"
+        },
+        {
+          "value": "C",
+          "label": "protected",
+          "text": "protected"
+        },
+        {
+          "value": "D",
+          "label": "static",
+          "text": "static"
+        }
+      ],
+      "inputName": "Q80",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Protected members are accessible by all subclasses and other classes in the same package, but not by unrelated classes in other packages."
+    },
+    {
+      "id": "upload-1771100549126-81",
+      "number": "82",
+      "text": "What is the primary software engineering benefit of using `private` instance variables in a superclass and accessing them via `public` methods in the subclass?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It makes the code execute faster.",
+          "text": "It makes the code execute faster."
+        },
+        {
+          "value": "B",
+          "label": "It allows the superclass implementation to change without affecting subclass implementations.",
+          "text": "It allows the superclass implementation to change without affecting subclass implementations."
+        },
+        {
+          "value": "C",
+          "label": "It prevents the subclass from inheriting any methods.",
+          "text": "It prevents the subclass from inheriting any methods."
+        },
+        {
+          "value": "D",
+          "label": "It eliminates the need for constructors in the subclass.",
+          "text": "It eliminates the need for constructors in the subclass."
+        }
+      ],
+      "inputName": "Q81",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Localizing the effects of changes to the superclass (by using private variables and public getters/setters) prevents the 'brittle' code problem where changes break subclasses."
+    },
+    {
+      "id": "upload-1771100549126-82",
+      "number": "83",
+      "text": "If a class header is declared as `public class CommissionEmployee`, which class does it implicitly extend?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The class does not extend anything.",
+          "text": "The class does not extend anything."
+        },
+        {
+          "value": "B",
+          "label": "Object",
+          "text": "Object"
+        },
+        {
+          "value": "C",
+          "label": "Employee",
+          "text": "Employee"
+        },
+        {
+          "value": "D",
+          "label": "System",
+          "text": "System"
+        }
+      ],
+      "inputName": "Q82",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If a class does not explicitly specify 'extends', it implicitly extends the class 'Object'."
+    },
+    {
+      "id": "upload-1771100549126-83",
+      "number": "84",
+      "text": "What is the purpose of the `@Override` annotation in the code examples provided?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To indicate a new method that is unique to the subclass.",
+          "text": "To indicate a new method that is unique to the subclass."
+        },
+        {
+          "value": "B",
+          "label": "To signal the compiler that the method is intended to replace a method from the superclass.",
+          "text": "To signal the compiler that the method is intended to replace a method from the superclass."
+        },
+        {
+          "value": "C",
+          "label": "To prevent a subclass from changing a method's logic.",
+          "text": "To prevent a subclass from changing a method's logic."
+        },
+        {
+          "value": "D",
+          "label": "To allow private variables to be accessed from other packages.",
+          "text": "To allow private variables to be accessed from other packages."
+        }
+      ],
+      "inputName": "Q83",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `@Override` annotation indicates that a method overrides a superclass method, such as overriding the `toString` or `earnings` methods."
+    },
+    {
+      "id": "upload-1771100549126-84",
+      "number": "85",
+      "text": "In the code snippet below, what happens when `employee` is printed?\n\n```java\nSystem.out.printf(\"\\n%s:\\n\\n%s\\n\", \"Updated employee information\", employee);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The memory address of the object is printed.",
+          "text": "The memory address of the object is printed."
+        },
+        {
+          "value": "B",
+          "label": "A compilation error occurs because a string is expected.",
+          "text": "A compilation error occurs because a string is expected."
+        },
+        {
+          "value": "C",
+          "label": "The object's `toString` method is invoked implicitly.",
+          "text": "The object's `toString` method is invoked implicitly."
+        },
+        {
+          "value": "D",
+          "label": "Only the class name is printed.",
+          "text": "Only the class name is printed."
+        }
+      ],
+      "inputName": "Q84",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "When an object is output using the %s format specifier, the object's `toString` method is invoked implicitly to obtain its String representation."
+    },
+    {
+      "id": "upload-1771100549126-85",
+      "number": "86",
+      "text": "What logic error is common when a programmer decides not to use inheritance and instead 'copies and pastes' code from one class to another?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It makes the code run too quickly for the processor to handle.",
+          "text": "It makes the code run too quickly for the processor to handle."
+        },
+        {
+          "value": "B",
+          "label": "It spreads copies of the same code throughout a system, creating a code-maintenance nightmare.",
+          "text": "It spreads copies of the same code throughout a system, creating a code-maintenance nightmare."
+        },
+        {
+          "value": "C",
+          "label": "It prevents the use of the `public` access modifier.",
+          "text": "It prevents the use of the `public` access modifier."
+        },
+        {
+          "value": "D",
+          "label": "It forces all instance variables to be `static`.",
+          "text": "It forces all instance variables to be `static`."
+        }
+      ],
+      "inputName": "Q85",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Copy-pasting code is error-prone, time-consuming, and makes maintenance difficult because changes must be applied to every copy of the code."
+    },
+    {
+      "id": "upload-1771100549126-86",
+      "number": "87",
+      "text": "When overriding a method in a subclass, what keyword is used to invoke the superclass version of that same method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "this",
+          "text": "this"
+        },
+        {
+          "value": "B",
+          "label": "base",
+          "text": "base"
+        },
+        {
+          "value": "C",
+          "label": "super",
+          "text": "super"
+        },
+        {
+          "value": "D",
+          "label": "parent",
+          "text": "parent"
+        }
+      ],
+      "inputName": "Q86",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "To invoke an overridden superclass method from a subclass, you use the keyword 'super' followed by a dot (.) and the method name (e.g., super.earnings())."
+    },
+    {
+      "id": "upload-1771100549126-87",
+      "number": "88",
+      "text": "What is the likely result if an overridden method in a subclass calls itself without using the `super` keyword?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A compilation error occurs.",
+          "text": "A compilation error occurs."
+        },
+        {
+          "value": "B",
+          "label": "Infinite recursion leading to a StackOverflowError.",
+          "text": "Infinite recursion leading to a StackOverflowError."
+        },
+        {
+          "value": "C",
+          "label": "The superclass method is called by default.",
+          "text": "The superclass method is called by default."
+        },
+        {
+          "value": "D",
+          "label": "The program executes successfully but ignores the call.",
+          "text": "The program executes successfully but ignores the call."
+        }
+      ],
+      "inputName": "Q87",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If the subclass method calls the method name without 'super.', it calls itself, creating infinite recursion which eventually causes the method-call stack to overflow."
+    },
+    {
+      "id": "upload-1771100549126-88",
+      "number": "89",
+      "text": "Which annotation is used to indicate that a method is intended to override a method in a superclass?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "@Overload",
+          "text": "@Overload"
+        },
+        {
+          "value": "B",
+          "label": "@Inherit",
+          "text": "@Inherit"
+        },
+        {
+          "value": "C",
+          "label": "@Override",
+          "text": "@Override"
+        },
+        {
+          "value": "D",
+          "label": "@Replace",
+          "text": "@Replace"
+        }
+      ],
+      "inputName": "Q88",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The @Override annotation tells the compiler that the method is meant to override a superclass method, helping to prevent errors like accidental overloading."
+    },
+    {
+      "id": "upload-1771100549126-89",
+      "number": "90",
+      "text": "In the provided text, why does `BasePlusCommissionEmployee` call `super.earnings()` inside its own `earnings` method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Because it is required by the Java compiler.",
+          "text": "Because it is required by the Java compiler."
+        },
+        {
+          "value": "B",
+          "label": "To avoid duplicating the code that calculates commission-based earnings.",
+          "text": "To avoid duplicating the code that calculates commission-based earnings."
+        },
+        {
+          "value": "C",
+          "label": "To reset the base salary to zero.",
+          "text": "To reset the base salary to zero."
+        },
+        {
+          "value": "D",
+          "label": "To access private instance variables directly.",
+          "text": "To access private instance variables directly."
+        }
+      ],
+      "inputName": "Q89",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Calling the superclass method is good software engineering because it allows the subclass to reuse the existing logic for calculating commission without duplicating code."
+    },
+    {
+      "id": "upload-1771100549126-90",
+      "number": "91",
+      "text": "Which statement regarding `protected` members is true based on the text?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "They are only accessible within the class they are declared.",
+          "text": "They are only accessible within the class they are declared."
+        },
+        {
+          "value": "B",
+          "label": "They cannot be accessed by subclasses.",
+          "text": "They cannot be accessed by subclasses."
+        },
+        {
+          "value": "C",
+          "label": "They provide a level of protection between public and private.",
+          "text": "They provide a level of protection between public and private."
+        },
+        {
+          "value": "D",
+          "label": "They are accessible to every class in any package.",
+          "text": "They are accessible to every class in any package."
+        }
+      ],
+      "inputName": "Q90",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Protected members can be accessed by members of the superclass, its subclasses, and other classes in the same package, offering intermediate protection."
+    },
+    {
+      "id": "upload-1771100549126-86",
+      "number": "92",
+      "text": "When a subclass object is instantiated, which constructor in the inheritance chain finishes executing last?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The Object class constructor.",
+          "text": "The Object class constructor."
+        },
+        {
+          "value": "B",
+          "label": "The direct superclass constructor.",
+          "text": "The direct superclass constructor."
+        },
+        {
+          "value": "C",
+          "label": "The original subclass constructor.",
+          "text": "The original subclass constructor."
+        },
+        {
+          "value": "D",
+          "label": "The first indirect superclass constructor.",
+          "text": "The first indirect superclass constructor."
+        }
+      ],
+      "inputName": "Q86",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The chain of constructor calls goes up to the Object class first. The Object constructor completes first, and the original subclass constructor's body finishes last."
+    },
+    {
+      "id": "upload-1771100549126-87",
+      "number": "93",
+      "text": "Which of these is NOT a method of the Java `Object` class as described in the text?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "getClass",
+          "text": "getClass"
+        },
+        {
+          "value": "B",
+          "label": "toString",
+          "text": "toString"
+        },
+        {
+          "value": "C",
+          "label": "hashCode",
+          "text": "hashCode"
+        },
+        {
+          "value": "D",
+          "label": "setText",
+          "text": "setText"
+        }
+      ],
+      "inputName": "Q87",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "setText is a method associated with GUI components like JLabel, whereas getClass, toString, and hashCode are part of the Object class inherited by all objects."
+    },
+    {
+      "id": "upload-1771100549126-88",
+      "number": "94",
+      "text": "What is the default implementation of the `equals` method in class `Object`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It compares the contents of two objects.",
+          "text": "It compares the contents of two objects."
+        },
+        {
+          "value": "B",
+          "label": "It uses the == operator to see if two references refer to the same object.",
+          "text": "It uses the == operator to see if two references refer to the same object."
+        },
+        {
+          "value": "C",
+          "label": "It always returns true if the objects are of the same type.",
+          "text": "It always returns true if the objects are of the same type."
+        },
+        {
+          "value": "D",
+          "label": "It compares the hash codes of the two objects.",
+          "text": "It compares the hash codes of the two objects."
+        }
+      ],
+      "inputName": "Q88",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The default 'equals' implementation in class Object uses the == operator to determine if two references refer to the exact same object in memory."
+    },
+    {
+      "id": "upload-1771100549126-89",
+      "number": "95",
+      "text": "Why is the use of the `clone` method often discouraged by industry experts?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It is too slow for modern applications.",
+          "text": "It is too slow for modern applications."
+        },
+        {
+          "value": "B",
+          "label": "It can only copy primitive types.",
+          "text": "It can only copy primitive types."
+        },
+        {
+          "value": "C",
+          "label": "Implementing it correctly is difficult; object serialization is often preferred.",
+          "text": "Implementing it correctly is difficult; object serialization is often preferred."
+        },
+        {
+          "value": "D",
+          "label": "It automatically performs a deep copy which is memory intensive.",
+          "text": "It automatically performs a deep copy which is memory intensive."
+        }
+      ],
+      "inputName": "Q89",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The text notes that implementing 'clone' correctly is difficult and its use is discouraged in favor of object serialization."
+    },
+    {
+      "id": "upload-1771100549126-90",
+      "number": "96",
+      "text": "What happens if a subclass constructor does not explicitly call a superclass constructor?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The program will not compile.",
+          "text": "The program will not compile."
+        },
+        {
+          "value": "B",
+          "label": "Java implicitly calls the superclass's default or no-argument constructor.",
+          "text": "Java implicitly calls the superclass's default or no-argument constructor."
+        },
+        {
+          "value": "C",
+          "label": "No superclass constructor is ever called.",
+          "text": "No superclass constructor is ever called."
+        },
+        {
+          "value": "D",
+          "label": "The object is created without superclass instance variables.",
+          "text": "The object is created without superclass instance variables."
+        }
+      ],
+      "inputName": "Q90",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If not called explicitly via 'super', Java implicitly calls the superclass's default or no-argument constructor."
+    },
+    {
+      "id": "upload-1771100549126-86",
+      "number": "97",
+      "text": "Which class is used in Java Swing to display text, an image, or both?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "JFrame",
+          "text": "JFrame"
+        },
+        {
+          "value": "B",
+          "label": "JLabel",
+          "text": "JLabel"
+        },
+        {
+          "value": "C",
+          "label": "ImageIcon",
+          "text": "ImageIcon"
+        },
+        {
+          "value": "D",
+          "label": "BorderLayout",
+          "text": "BorderLayout"
+        }
+      ],
+      "inputName": "Q86",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In package javax.swing, an object of class JLabel can display text, an image, or both."
+    },
+    {
+      "id": "upload-1771100549126-87",
+      "number": "98",
+      "text": "What is the default layout manager for a `JFrame`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "FlowLayout",
+          "text": "FlowLayout"
+        },
+        {
+          "value": "B",
+          "label": "GridLayout",
+          "text": "GridLayout"
+        },
+        {
+          "value": "C",
+          "label": "BorderLayout",
+          "text": "BorderLayout"
+        },
+        {
+          "value": "D",
+          "label": "BoxLayaout",
+          "text": "BoxLayaout"
+        }
+      ],
+      "inputName": "Q87",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The text states that the default layout for a JFrame is known as a BorderLayout."
+    },
+    {
+      "id": "upload-1771100549126-88",
+      "number": "99",
+      "text": "If you call `application.add(component)` on a JFrame without a second argument, where is the component placed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "NORTH",
+          "text": "NORTH"
+        },
+        {
+          "value": "B",
+          "label": "SOUTH",
+          "text": "SOUTH"
+        },
+        {
+          "value": "C",
+          "label": "CENTER",
+          "text": "CENTER"
+        },
+        {
+          "value": "D",
+          "label": "WEST",
+          "text": "WEST"
+        }
+      ],
+      "inputName": "Q88",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "When calling method add with one argument, the JFrame places the component in the CENTER automatically."
+    },
+    {
+      "id": "upload-1771100549126-89",
+      "number": "100",
+      "text": "Which method is used to update the text displayed by a `JLabel` after it has been created?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "updateText",
+          "text": "updateText"
+        },
+        {
+          "value": "B",
+          "label": "setText",
+          "text": "setText"
+        },
+        {
+          "value": "C",
+          "label": "drawString",
+          "text": "drawString"
+        },
+        {
+          "value": "D",
+          "label": "setLabel",
+          "text": "setLabel"
+        }
+      ],
+      "inputName": "Q89",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Method setText can be called on any JLabel to change its text."
+    },
+    {
+      "id": "upload-1771100549126-90",
+      "number": "101",
+      "text": "Which of the following is NOT one of the five regions of a `BorderLayout`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "NORTH",
+          "text": "NORTH"
+        },
+        {
+          "value": "B",
+          "label": "MIDDLE",
+          "text": "MIDDLE"
+        },
+        {
+          "value": "C",
+          "label": "EAST",
+          "text": "EAST"
+        },
+        {
+          "value": "D",
+          "label": "CENTER",
+          "text": "CENTER"
+        }
+      ],
+      "inputName": "Q90",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "BorderLayout has five regions: NORTH, SOUTH, EAST, WEST, and CENTER. 'MIDDLE' is not a region."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 101
+}
