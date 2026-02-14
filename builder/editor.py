@@ -186,8 +186,7 @@ class FormattedTextEditor(ttk.Frame):
         self.text.pack(fill=tk.BOTH, expand=True)
 
     def _build_preview(self):
-        self._preview_frame = ttk.LabelFrame(self, text="Preview", padding=3,
-                                              bootstyle="info")
+        self._preview_frame = ttk.LabelFrame(self, text="Preview")
         self._preview_frame.pack(fill=tk.X, pady=(3, 0))
         self._preview_text = tk.Text(
             self._preview_frame, height=3, wrap=tk.WORD,
@@ -1241,8 +1240,7 @@ class ExamEditor:
         self.chapters_tree.bind("<Double-1>", self.on_chapter_double_click)
 
         # Chapter editor panel
-        editor_frame = ttk.LabelFrame(right_frame, text="Edit Chapter",
-                                       padding=15, bootstyle="primary")
+        editor_frame = ttk.LabelFrame(right_frame, text="Edit Chapter")
         editor_frame.pack(fill=tk.X, pady=(10, 0))
 
         # ID
