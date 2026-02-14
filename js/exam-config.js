@@ -6,58 +6,58 @@ const EXAM_CONFIG = [
     "path": "data/java1",
     "chapters": [
       {
-        "id": "1",
+        "id": "Chapter 1",
         "name": "Introduction to Computers, Programs, and Java",
         "q": 45,
-        "file": "data/java1/chapter1.json"
+        "file": "data/java1/chapterChapter 1.json"
       },
       {
-        "id": "2",
+        "id": "Chapter 2",
         "name": "Elementary Programming",
         "q": 67,
-        "file": "data/java1/chapter2.json"
+        "file": "data/java1/chapterChapter 2.json"
       },
       {
-        "id": "3",
+        "id": "Chapter 3",
         "name": "Selections",
         "q": 44,
-        "file": "data/java1/chapter3.json"
+        "file": "data/java1/chapterChapter 3.json"
       },
       {
-        "id": "4",
+        "id": "Chapter 4",
         "name": "Mathematical Functions, Characters, and Strings",
         "q": 48,
-        "file": "data/java1/chapter4.json"
+        "file": "data/java1/chapterChapter 4.json"
       },
       {
-        "id": "5",
+        "id": "Chapter 5",
         "name": "Loops",
         "q": 37,
-        "file": "data/java1/chapter5.json"
+        "file": "data/java1/chapterChapter 5.json"
       },
       {
-        "id": "6",
+        "id": "Chapter 6",
         "name": "Methods",
         "q": 27,
-        "file": "data/java1/chapter6.json"
+        "file": "data/java1/chapterChapter 6.json"
       },
       {
-        "id": "7",
+        "id": "Chapter 7",
         "name": "Single-Dimensional Arrays",
         "q": 55,
-        "file": "data/java1/chapter7.json"
+        "file": "data/java1/chapterChapter 7.json"
       },
       {
-        "id": "8",
+        "id": "Chapter 8",
         "name": "Multidimensional Arrays",
         "q": 19,
-        "file": "data/java1/chapter8.json"
+        "file": "data/java1/chapterChapter 8.json"
       },
       {
-        "id": "9",
+        "id": "Chapter 9",
         "name": "Objects and Classes",
         "q": 52,
-        "file": "data/java1/chapter9.json"
+        "file": "data/java1/chapterChapter 9.json"
       }
     ]
   },
@@ -68,40 +68,40 @@ const EXAM_CONFIG = [
     "path": "data/java2",
     "chapters": [
       {
-        "id": "9",
-        "name": "Objects and Classes",
-        "q": 52,
-        "file": "data/java2/chapter9.json"
-      },
-      {
-        "id": "10",
+        "id": "Chapter 10",
         "name": "Object-Oriented Thinking",
         "q": 47,
-        "file": "data/java2/chapter10.json"
+        "file": "data/java2/chapterChapter 10.json"
       },
       {
-        "id": "11",
+        "id": "Chapter 11",
         "name": "Inheritance and Polymorphism",
         "q": 65,
-        "file": "data/java2/chapter11.json"
+        "file": "data/java2/chapterChapter 11.json"
       },
       {
-        "id": "12",
+        "id": "Chapter 12",
         "name": "Exception Handling and Text I/O",
         "q": 48,
-        "file": "data/java2/chapter12.json"
+        "file": "data/java2/chapterChapter 12.json"
       },
       {
-        "id": "13",
+        "id": "Chapter 13",
         "name": "Abstract Classes and Interfaces",
         "q": 35,
-        "file": "data/java2/chapter13.json"
+        "file": "data/java2/chapterChapter 13.json"
       },
       {
-        "id": "17",
+        "id": "Chapter 17",
         "name": "Binary I/O",
         "q": 20,
-        "file": "data/java2/chapter17.json"
+        "file": "data/java2/chapterChapter 17.json"
+      },
+      {
+        "id": "Chapter 9",
+        "name": "Objects and Classes",
+        "q": 52,
+        "file": "data/java2/chapterChapter 9.json"
       }
     ]
   },
@@ -128,6 +128,12 @@ const EXAM_CONFIG = [
         "name": "Final",
         "q": 14,
         "file": "data/algorithm/chapterData Structures - Final.pdfvisual_extractor (1).json"
+      },
+      {
+        "id": "Database",
+        "name": "First",
+        "q": 37,
+        "file": "data/algorithm/chapterDatabase - First.pdfvisual_extractor.json"
       },
       {
         "id": "chapterlecture 9 Greedy Algorithms.pdf",
