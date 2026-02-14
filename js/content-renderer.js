@@ -103,8 +103,15 @@ const ContentRenderer = {
         // Step 1: Protect math/chemistry delimiters from Markdown processing
         const { text: safeText, blocks } = this._protectMath(text);
 
+        // Step 1.5: Escape lone asterisks that Marked would misinterpret
+        // *** on its own line → literal asterisks (not <hr>)
+        // * on its own line → literal asterisk (not empty <li>)
+        let processedText = safeText
+            .replace(/^\*{3,}\s*$/gm, (m) => m.replace(/\*/g, '\\*'))
+            .replace(/^\*\s*$/gm, '\\*');
+
         // Step 2: Run through Marked.js (Markdown → HTML)
-        let html = marked.parse(safeText);
+        let html = marked.parse(processedText);
 
         // Step 3: Restore math blocks
         html = this._restoreMath(html, blocks);
