@@ -118,14 +118,14 @@ const EXAM_CONFIG = [
         "file": "data/algorithm/chapter17slide.pdf.json"
       },
       {
-        "id": "chapterc++ Second(3).pdfvisual_extractor",
-        "name": "Extracted: c++ Second(3).pdf",
+        "id": "c++",
+        "name": "Second",
         "q": 16,
         "file": "data/algorithm/chapterc++ Second(3).pdfvisual_extractor.json"
       },
       {
-        "id": "chapterData Structures - Final.pdfvisual_extractor (1)",
-        "name": "Extracted: Data Structures - Final.pdf",
+        "id": "Data Structures",
+        "name": "Final",
         "q": 14,
         "file": "data/algorithm/chapterData Structures - Final.pdfvisual_extractor (1).json"
       },

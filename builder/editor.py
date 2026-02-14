@@ -978,7 +978,89 @@ class ExamEditor:
         
         self.refresh_chapters_tree()
         self.chapters_tree.selection_set(str(self.current_chapter_idx))
-        self.update_status("Chapter updated (not saved yet)", "orange")
+        
+        # Sync changes to the actual file
+        try:
+            self._sync_chapter_file(chapter)
+            self.update_status("Chapter updated and file synced", "orange")
+        except Exception as e:
+            messagebox.showerror("Sync Error", f"Failed to sync to file: {e}")
+            self.update_status("Chapter updated in list (Sync Failed)", "red")
+
+    def _sync_chapter_file(self, chapter_data):
+        """Sync chapter metadata to the actual JSON file and rename if ID changed"""
+        section = next((s for s in self.sections if s['id'] == self.current_section), None)
+        if not section:
+            return
+
+        old_file_name = chapter_data.get('file', '')
+        if not old_file_name:
+            return
+
+        section_path = self.base_path / section['path']
+        old_file_path = section_path / old_file_name
+
+        if not old_file_path.exists():
+            return
+
+        # 1. Load content
+        with open(old_file_path, 'r', encoding='utf-8') as f:
+            content = json.load(f)
+
+        data = content[0] if isinstance(content, list) and content else content
+        if isinstance(content, list) and not content:
+            data = {}
+            content = [data]
+
+        # 2. Update Content
+        new_id = chapter_data['id']
+        new_name = chapter_data['name']
+        
+        # Update params.chapter
+        if 'params' not in data:
+            data['params'] = {}
+        data['params']['chapter'] = new_id
+        
+        # Update title - preserve format if possible or just set it
+        # Try to construct "Chapter {ID} {Name}" if it looks like that pattern was used
+        if data.get('title', '').startswith('Chapter'):
+             data['title'] = f"Chapter {new_id} {new_name}"
+        else:
+             data['title'] = new_name
+
+        # 3. Determine new filename
+        # If the file follows the pattern chapterN.json, rename it to match new ID
+        new_file_name = old_file_name
+        if re.match(r'chapter\d+\.json', old_file_name):
+            new_file_name = f"chapter{new_id}.json"
+        
+        # 4. Save file
+        # If renaming, we write to new path and remove old one (or git mv equivalent)
+        new_file_path = section_path / new_file_name
+        
+        # If target exists and it's not the same file, warn? 
+        # For now, just overwrite if it's a rename
+        
+        if new_file_name != old_file_name:
+            # Rename logic
+            if new_file_path.exists():
+                 # basic collision avoidance
+                 pass 
+            
+            with open(new_file_path, 'w', encoding='utf-8') as f:
+                json.dump(content, f, indent=2, ensure_ascii=False)
+            
+            try:
+                old_file_path.unlink()
+            except:
+                pass
+            
+            # Update chapter data with new filename
+            chapter_data['file'] = new_file_name
+        else:
+            # Just save content
+            with open(old_file_path, 'w', encoding='utf-8') as f:
+                json.dump(content, f, indent=2, ensure_ascii=False)
     
     def add_section(self):
         """Add new section"""
