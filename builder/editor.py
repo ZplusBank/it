@@ -694,29 +694,26 @@ class AdvancedChapterEditor:
         question = self.questions[self.current_question_idx]
         image_path = question.get('image', '')
 
-        # Custom dialog with optional image deletion
         dlg = tk.Toplevel(self.window)
-        dlg.title("Delete Question")
-        dlg.geometry("480x180" if image_path else "480x140")
+        _style_dialog(dlg, "Delete Question", "480x180" if image_path else "480x140")
         dlg.transient(self.window)
         dlg.grab_set()
 
-        frame = ttk.Frame(dlg, padding=12)
+        frame = ttk.Frame(dlg, padding=12, bootstyle="dark")
         frame.pack(fill=tk.BOTH, expand=True)
 
         q_num = question.get('number', str(self.current_question_idx + 1))
-        ttk.Label(frame, text=f"Delete question {q_num}?", font=("", 10, "bold")).pack(anchor=tk.W, pady=(0, 8))
+        ttk.Label(frame, text=f"Delete question {q_num}?", style="Header.TLabel").pack(anchor=tk.W, pady=(0, 8))
 
         del_image_var = tk.BooleanVar(value=False)
         if image_path:
             ttk.Label(frame, text=f"This question has an image: {image_path}").pack(anchor=tk.W)
-            ttk.Checkbutton(frame, text="Also delete image file from disk (permanent)", variable=del_image_var).pack(anchor=tk.W, pady=(4, 8))
+            ttk.Checkbutton(frame, text="Also delete image file from disk (permanent)", variable=del_image_var, bootstyle="warning").pack(anchor=tk.W, pady=(4, 8))
 
         btn_frame = ttk.Frame(frame)
         btn_frame.pack(fill=tk.X, pady=(10, 0))
 
         def do_delete():
-            # Delete the image file if the user opted in
             if del_image_var.get() and image_path:
                 try:
                     img_path = self.base_path / image_path
@@ -736,8 +733,8 @@ class AdvancedChapterEditor:
         def cancel():
             dlg.destroy()
 
-        ttk.Button(btn_frame, text="Delete", command=do_delete, width=12).pack(side=tk.RIGHT, padx=6)
-        ttk.Button(btn_frame, text="Cancel", command=cancel, width=12).pack(side=tk.RIGHT)
+        ttk.Button(btn_frame, text="Delete", command=do_delete, width=12, bootstyle="danger").pack(side=tk.RIGHT, padx=6)
+        ttk.Button(btn_frame, text="Cancel", command=cancel, width=12, bootstyle="secondary-outline").pack(side=tk.RIGHT)
     
     def save_chapter(self):
         """Save chapter data back to JSON file"""
