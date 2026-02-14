@@ -306,11 +306,7 @@ void main() {
   }
   setSize();
 
-  if (typeof ResizeObserver !== 'undefined') {
-    new ResizeObserver(setSize).observe(container);
-  } else {
-    window.addEventListener('resize', setSize);
-  }
+  // (Resize observer moved to bottom to handle loop restart)
 
   // --- Mouse interactivity ---
   const targetMouse = new THREE.Vector2(-1000, -1000);
@@ -345,8 +341,16 @@ void main() {
 
   // --- Render Loop ---
   const clock = new THREE.Clock();
+  let animationId = null;
 
   function renderLoop() {
+    // Mobile optimization: Render only once, then stop loop
+    // But we still want to render at least one frame so the background appears
+    if (window.innerWidth < 768) {
+      renderer.render(scene, camera);
+      return; // Stop the loop
+    }
+
     uniforms.iTime.value = clock.getElapsedTime();
 
     currentMouse.lerp(targetMouse, damping);
@@ -358,7 +362,63 @@ void main() {
     uniforms.parallaxOffset.value.copy(currentParallax);
 
     renderer.render(scene, camera);
-    requestAnimationFrame(renderLoop);
+    animationId = requestAnimationFrame(renderLoop);
   }
+
+  // Initial render
   renderLoop();
+
+  // Resize logic to restart loop if moving from mobile -> desktop
+  const originalSetSize = setSize;
+  // We need to override or augment the setSize function or the resize listener
+  // The original code defined setSize and added the listener. 
+  // Let's modify how we handle the resize to ensure loop restarts if needed.
+
+  // Re-attach our own resize listener that handles the loop restart
+  function handleResize() {
+    setSize(); // Call original sizing logic (which updates uniforms)
+
+    const isNowMobile = window.innerWidth < 768;
+    if (!isNowMobile && !animationId) {
+      // Restart loop if we are now desktop and loop wasn't running
+      clock.start();
+      renderLoop();
+    } else if (isNowMobile && animationId) {
+      // Stop loop if we are now mobile (renderLoop will check condition and return, but we can also cancel here)
+      cancelAnimationFrame(animationId);
+      animationId = null;
+      // Render one static frame for the new size
+      renderer.render(scene, camera);
+    } else if (isNowMobile) {
+      // Just re-render static frame on resize
+      renderer.render(scene, camera);
+    }
+  }
+
+  // Remove the old listener if possible, or just overwrite the behavior.
+  // Since we are inside the IIFE and 'setSize' is local, we can't easily remove the specific listener added before 
+  // without cleaner code structure, but since we are REPLACING the bottom part of the file, we can just redefine the listener logic.
+
+  // NOTE: The previous code block had `new ResizeObserver(setSize).observe(container)`. 
+  // We should replace that part too if we want to be clean, but replacing just the renderLoop area is safer if we want to minimize diff.
+  // However, to do this correctly, I should probably replace the ResizeObserver part too or just hook into `setSize`.
+
+  // Let's look at the previous `setSize`... it was defined above this block.
+  // I will just add the loop management to the `setSize` function if I could, but it is out of scope of this replace block.
+  // Actually, I can just wrap the resize behavior here.
+
+  if (typeof ResizeObserver !== 'undefined') {
+    // Disconnect old one? We can't reach it. 
+    // But we can just add our new logic. 
+    // Actually, the previous code block ends with `renderLoop();`.
+    // I will replace `renderLoop();` and the end of file with the new logic.
+
+    // Let's attach the new resize handler that manages the loop.
+    const resizeObserver = new ResizeObserver(() => {
+      handleResize();
+    });
+    resizeObserver.observe(container);
+  } else {
+    window.addEventListener('resize', handleResize);
+  }
 })();
