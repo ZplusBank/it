@@ -8,6 +8,7 @@ const app = {
     userAnswers: {},
     checkedAnswers: {},
     currentView: 'subjects',
+    currentSubject: null,
 
     async init() {
         this.initTheme();
@@ -160,6 +161,7 @@ const app = {
 
     async selectSubject(subjectId) {
         const subject = this.subjects.find(s => s.id === subjectId);
+        this.currentSubject = subject;
 
         if (!subject) return;
 
@@ -290,7 +292,8 @@ const app = {
         document.getElementById('examView').style.display = 'block';
 
         // Update title
-        document.getElementById('examTitle').textContent = `Java 2 - Chapter Exam (${this.questions.length} questions)`;
+        const subjectName = this.currentSubject ? this.currentSubject.name : 'Exam';
+        document.getElementById('examTitle').textContent = `${subjectName} - Chapter Exam (${this.questions.length} questions)`;
         document.getElementById('totalQuestions').textContent = this.questions.length;
 
         this.renderQuestionNumbers();
@@ -539,21 +542,26 @@ const app = {
         const statsHtml = `
             <div class="results-message">${resultMessage}</div>
             <div class="results-stats">
-                <div class="results-stat-card stat-correct">
+                <div class="results-stat-card stat-correct" onclick="app.filterResults('correct')" title="Show only correct answers">
                     <div class="stat-icon">✓</div>
                     <div class="stat-number">${correctCount}</div>
                     <div class="stat-label">Correct</div>
                 </div>
-                <div class="results-stat-card stat-wrong">
+                <div class="results-stat-card stat-wrong" onclick="app.filterResults('wrong')" title="Show only wrong answers">
                     <div class="stat-icon">✗</div>
                     <div class="stat-number">${wrongCount}</div>
                     <div class="stat-label">Wrong</div>
                 </div>
-                <div class="results-stat-card stat-skipped">
+                <div class="results-stat-card stat-skipped" onclick="app.filterResults('skipped')" title="Show only skipped answers">
                     <div class="stat-icon">○</div>
                     <div class="stat-number">${skippedCount}</div>
                     <div class="stat-label">Skipped</div>
                 </div>
+            </div>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <button class="nav-btn" onclick="app.filterResults('all')" style="display: inline-block; width: auto; padding: 8px 16px; font-size: 0.9rem; opacity: 0.8;">
+                    Show All Questions
+                </button>
             </div>
         `;
 
@@ -665,6 +673,63 @@ const app = {
         this.questions = [];
         this.userAnswers = {};
         this.checkedAnswers = {};
+    },
+
+    handleHomeClick() {
+        if (this.currentView === 'exam' || this.currentView === 'results') {
+            if (confirm("Are you sure you want to go to the Home screen? Your current exam progress will be lost.")) {
+                this.restart();
+            }
+        } else {
+            this.showSubjectsView();
+        }
+    },
+
+    filterResults(status) {
+        // status: 'correct', 'wrong', 'skipped', 'all'
+        const cards = document.querySelectorAll('.results-question-card');
+
+        // Update visual state of filters
+        document.querySelectorAll('.results-stat-card').forEach(c => c.style.opacity = '0.5');
+        document.querySelectorAll('.results-stat-card').forEach(c => c.style.transform = 'scale(0.95)');
+
+        if (status === 'all') {
+            document.querySelectorAll('.results-stat-card').forEach(c => {
+                c.style.opacity = '1';
+                c.style.transform = '';
+            });
+        } else {
+            const activeCard = document.querySelector(`.results-stat-card.stat-${status}`);
+            if (activeCard) {
+                activeCard.style.opacity = '1';
+                activeCard.style.transform = 'scale(1.05)';
+            }
+        }
+
+        cards.forEach(card => {
+            if (status === 'all') {
+                card.style.display = 'block';
+            } else {
+                if (card.classList.contains(status)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+        });
+    },
+
+    confirmExit() {
+        document.getElementById('confirmModal').style.display = 'flex';
+    },
+
+    closeConfirmModal() {
+        document.getElementById('confirmModal').style.display = 'none';
+    },
+
+    exitExam() {
+        this.closeConfirmModal();
+        this.restart();
     }
 };
 

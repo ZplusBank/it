@@ -70,7 +70,8 @@
         <header role="banner">
             <div class="header-content">
                 <div class="header-text">
-                    <h1><span class="logo-mark">Z+</span> Information Technology</h1>
+                    <h1><span class="logo-mark" onclick="app.handleHomeClick()" style="cursor: pointer;"
+                            title="Go to Home">Z+</span> Information Technology</h1>
                     <p>Master your skills with interactive exams</p>
                 </div>
                 <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
@@ -130,7 +131,10 @@
             <!-- EXAM VIEW -->
             <div class="exam-view" id="examView">
                 <div class="exam-header">
-                    <div class="exam-title" id="examTitle"></div>
+                    <div class="exam-header-left">
+                        <button class="exit-btn" onclick="app.confirmExit()" title="Exit Exam">✕ Exit</button>
+                        <div class="exam-title" id="examTitle"></div>
+                    </div>
                     <div class="question-counter">
                         <span id="currentQuestion">1</span> / <span id="totalQuestions">0</span>
                     </div>
@@ -188,6 +192,23 @@
     <!-- Three.js + Floating Lines Background -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="js/floating-lines.js"></script>
+</body>
+
+<!-- Custom Confirmation Modal -->
+<div id="confirmModal" class="modal-overlay" style="display: none;">
+    <div class="modal">
+        <div class="modal-header">
+            <h3>Exit Exam?</h3>
+        </div>
+        <div class="modal-body">
+            <p>Are you sure you want to exit? Your current progress will be lost.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-cancel" onclick="app.closeConfirmModal()">Cancel</button>
+            <button class="btn-confirm" onclick="app.exitExam()">Yes, Exit</button>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>
