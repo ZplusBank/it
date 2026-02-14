@@ -6,12 +6,126 @@ Manages multiple subjects/sections with chapters.json structure
 
 import uuid
 import tkinter as tk
-from tkinter import ttk, messagebox, filedialog
+from tkinter import messagebox, filedialog
+import ttkbootstrap as ttk
+from ttkbootstrap.constants import *
 import json
 from pathlib import Path
 import re
 import shutil
 import zipfile
+
+# -- Dark Theme Color Constants (matches web app CSS dark theme) --
+COLORS = {
+    "bg_body": "#0f172a",
+    "bg_card": "#1e293b",
+    "bg_input": "#0f172a",
+    "bg_input_alt": "#1a2332",
+    "text_main": "#f1f5f9",
+    "text_muted": "#94a3b8",
+    "text_secondary": "#cbd5e1",
+    "border": "#334155",
+    "primary": "#6366f1",
+    "primary_light": "#818cf8",
+    "secondary": "#8b5cf6",
+    "accent": "#06b6d4",
+    "success": "#10b981",
+    "warning": "#f59e0b",
+    "danger": "#ef4444",
+    "selection_bg": "#6366f1",
+    "selection_fg": "#ffffff",
+    "treeview_row_odd": "#1e293b",
+    "treeview_row_even": "#172033",
+}
+
+
+def _configure_custom_styles(style):
+    """Override ttkbootstrap darkly theme to match web app indigo/purple palette."""
+    style.configure("Treeview",
+                     background=COLORS["bg_card"],
+                     foreground=COLORS["text_main"],
+                     fieldbackground=COLORS["bg_card"],
+                     rowheight=28,
+                     borderwidth=0,
+                     font=("Segoe UI", 10))
+    style.configure("Treeview.Heading",
+                     background=COLORS["bg_body"],
+                     foreground=COLORS["text_muted"],
+                     font=("Segoe UI", 10, "bold"),
+                     borderwidth=0,
+                     relief="flat")
+    style.map("Treeview",
+              background=[("selected", COLORS["primary"])],
+              foreground=[("selected", COLORS["selection_fg"])])
+
+    style.configure("TLabelframe",
+                     background=COLORS["bg_card"],
+                     foreground=COLORS["primary_light"],
+                     bordercolor=COLORS["border"])
+    style.configure("TLabelframe.Label",
+                     background=COLORS["bg_card"],
+                     foreground=COLORS["primary_light"],
+                     font=("Segoe UI", 10, "bold"))
+
+    style.configure("Header.TLabel",
+                     font=("Segoe UI", 12, "bold"),
+                     foreground=COLORS["text_main"])
+    style.configure("SubHeader.TLabel",
+                     font=("Segoe UI", 10, "bold"),
+                     foreground=COLORS["text_secondary"])
+    style.configure("Muted.TLabel",
+                     foreground=COLORS["text_muted"])
+    style.configure("Status.TLabel",
+                     font=("Segoe UI", 9))
+
+    style.configure("TPanedwindow",
+                     background=COLORS["bg_body"],
+                     sashthickness=6)
+
+
+def _style_tk_text(widget, height=None):
+    """Apply dark theme to a tk.Text widget."""
+    widget.configure(
+        bg=COLORS["bg_input"],
+        fg=COLORS["text_main"],
+        insertbackground=COLORS["text_main"],
+        selectbackground=COLORS["selection_bg"],
+        selectforeground=COLORS["selection_fg"],
+        relief="flat",
+        borderwidth=1,
+        highlightbackground=COLORS["border"],
+        highlightcolor=COLORS["primary"],
+        highlightthickness=1,
+        font=("Segoe UI", 10),
+        padx=8,
+        pady=6,
+    )
+    if height is not None:
+        widget.configure(height=height)
+
+
+def _style_tk_listbox(widget):
+    """Apply dark theme to a tk.Listbox widget."""
+    widget.configure(
+        bg=COLORS["bg_card"],
+        fg=COLORS["text_main"],
+        selectbackground=COLORS["primary"],
+        selectforeground=COLORS["selection_fg"],
+        relief="flat",
+        borderwidth=0,
+        highlightbackground=COLORS["border"],
+        highlightcolor=COLORS["primary"],
+        highlightthickness=1,
+        font=("Segoe UI", 10),
+        activestyle="none",
+    )
+
+
+def _style_dialog(dialog, title, geometry):
+    """Apply dark theme to a tk.Toplevel dialog."""
+    dialog.title(title)
+    dialog.geometry(geometry)
+    dialog.configure(bg=COLORS["bg_body"])
 
 class AdvancedChapterEditor:
     """Advanced editor for chapter questions, choices, and images"""
@@ -29,6 +143,7 @@ class AdvancedChapterEditor:
         self.window = tk.Toplevel(parent)
         self.window.title(f"Advanced Chapter Editor - {self.chapter_file.stem}")
         self.window.geometry("1000x700")
+        self.window.configure(bg=COLORS["bg_body"])
         self.window.transient(parent)
         
         self.chapter_data = None
@@ -71,56 +186,58 @@ class AdvancedChapterEditor:
         # Top toolbar
         toolbar = ttk.Frame(self.window)
         toolbar.pack(side=tk.TOP, fill=tk.X, padx=10, pady=10)
-        
-        ttk.Button(toolbar, text="➕ Add Question", command=self.add_question,
-                  width=15).pack(side=tk.LEFT, padx=5)
-        ttk.Button(toolbar, text="🗑️ Delete Question", command=self.delete_question,
-                  width=18).pack(side=tk.LEFT, padx=5)
-        ttk.Button(toolbar, text="💾 Save Changes", command=self.save_chapter,
-                  width=15).pack(side=tk.RIGHT, padx=5)
-        
+
+        ttk.Button(toolbar, text="Add Question", command=self.add_question,
+                  width=15, bootstyle="success").pack(side=tk.LEFT, padx=5)
+        ttk.Button(toolbar, text="Delete Question", command=self.delete_question,
+                  width=18, bootstyle="danger-outline").pack(side=tk.LEFT, padx=5)
+        ttk.Button(toolbar, text="Save Changes", command=self.save_chapter,
+                  width=15, bootstyle="primary").pack(side=tk.RIGHT, padx=5)
+
         # Main container
         container = ttk.PanedWindow(self.window, orient=tk.HORIZONTAL)
         container.pack(fill=tk.BOTH, expand=True, padx=10, pady=(0, 10))
-        
+
         # Left panel - Questions list
         left_frame = ttk.Frame(container)
         container.add(left_frame, weight=1)
-        
-        ttk.Label(left_frame, text="Questions", font=("", 10, "bold")).pack(
+
+        ttk.Label(left_frame, text="Questions", style="Header.TLabel").pack(
             fill=tk.X, pady=(0, 5))
-        
+
         list_scroll = ttk.Scrollbar(left_frame, orient=tk.VERTICAL)
         self.questions_listbox = tk.Listbox(left_frame, yscrollcommand=list_scroll.set)
+        _style_tk_listbox(self.questions_listbox)
         list_scroll.config(command=self.questions_listbox.yview)
-        
+
         self.questions_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         list_scroll.pack(side=tk.RIGHT, fill=tk.Y)
-        
+
         self.questions_listbox.bind("<<ListboxSelect>>", self.on_question_select)
-        
+
         # Right panel - Question editor
         right_frame = ttk.Frame(container)
         container.add(right_frame, weight=2)
-        
-        ttk.Label(right_frame, text="Edit Question", font=("", 10, "bold")).pack(
+
+        ttk.Label(right_frame, text="Edit Question", style="Header.TLabel").pack(
             fill=tk.X, pady=(0, 5))
-        
+
         # Create scrollable frame for question editor
         self.editor_scroll = ttk.Scrollbar(right_frame, orient=tk.VERTICAL)
-        self.editor_canvas = tk.Canvas(right_frame, yscrollcommand=self.editor_scroll.set)
+        self.editor_canvas = tk.Canvas(right_frame, yscrollcommand=self.editor_scroll.set,
+                                        bg=COLORS["bg_card"], highlightthickness=0)
         self.editor_scroll.config(command=self.editor_canvas.yview)
-        
+
         self.editor_frame = ttk.Frame(self.editor_canvas)
         self.editor_frame.bind("<Configure>", lambda e: self.editor_canvas.configure(
             scrollregion=self.editor_canvas.bbox("all")))
-        
+
         self.canvas_window = self.editor_canvas.create_window((0, 0), window=self.editor_frame,
                                                                anchor=tk.NW)
-        
+
         self.editor_canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         self.editor_scroll.pack(side=tk.RIGHT, fill=tk.Y)
-        
+
         # Initialize editor widgets (will be populated when question is selected)
         self.init_editor_widgets()
     
@@ -128,98 +245,102 @@ class AdvancedChapterEditor:
         """Initialize editor widget placeholders"""
         for widget in self.editor_frame.winfo_children():
             widget.destroy()
-        
+
         # Question ID
-        ttk.Label(self.editor_frame, text="Question ID:", font=("", 9, "bold")).pack(
+        ttk.Label(self.editor_frame, text="Question ID:", style="SubHeader.TLabel").pack(
             fill=tk.X, padx=10, pady=(10, 5))
-        self.q_id = ttk.Entry(self.editor_frame)
+        self.q_id = ttk.Entry(self.editor_frame, bootstyle="info")
         self.q_id.pack(fill=tk.X, padx=10, pady=(0, 10))
-        
+
         # Question Number
-        ttk.Label(self.editor_frame, text="Question Number:", font=("", 9, "bold")).pack(
+        ttk.Label(self.editor_frame, text="Question Number:", style="SubHeader.TLabel").pack(
             fill=tk.X, padx=10, pady=(0, 5))
-        self.q_number = ttk.Entry(self.editor_frame)
+        self.q_number = ttk.Entry(self.editor_frame, bootstyle="info")
         self.q_number.pack(fill=tk.X, padx=10, pady=(0, 10))
-        
+
         # Question Text
-        ttk.Label(self.editor_frame, text="Question Text:", font=("", 9, "bold")).pack(
+        ttk.Label(self.editor_frame, text="Question Text:", style="SubHeader.TLabel").pack(
             fill=tk.X, padx=10, pady=(0, 5))
         self.q_text = tk.Text(self.editor_frame, height=6, wrap=tk.WORD)
+        _style_tk_text(self.q_text, height=6)
         self.q_text.pack(fill=tk.X, padx=10, pady=(0, 10))
-        
+
         # Image
-        ttk.Label(self.editor_frame, text="Question Image:", font=("", 9, "bold")).pack(
+        ttk.Label(self.editor_frame, text="Question Image:", style="SubHeader.TLabel").pack(
             fill=tk.X, padx=10, pady=(0, 5))
-        
+
         img_frame = ttk.Frame(self.editor_frame)
         img_frame.pack(fill=tk.X, padx=10, pady=(0, 10))
-        
-        self.q_image = ttk.Entry(img_frame, state="readonly")
+
+        self.q_image = ttk.Entry(img_frame, state="readonly", bootstyle="info")
         self.q_image.pack(side=tk.LEFT, fill=tk.X, expand=True)
-        
+
         ttk.Button(img_frame, text="Browse", command=self.select_image,
-                  width=10).pack(side=tk.LEFT, padx=(5, 0))
+                  width=10, bootstyle="info-outline").pack(side=tk.LEFT, padx=(5, 0))
         ttk.Button(img_frame, text="Clear", command=self.clear_image,
-                  width=8).pack(side=tk.LEFT, padx=2)
-        
+                  width=8, bootstyle="warning-outline").pack(side=tk.LEFT, padx=2)
+
         # Image preview section
-        ttk.Label(self.editor_frame, text="Image Preview:", font=("", 9, "bold")).pack(
+        ttk.Label(self.editor_frame, text="Image Preview:", style="SubHeader.TLabel").pack(
             fill=tk.X, padx=10, pady=(10, 5))
-        self.image_preview_frame = ttk.Frame(self.editor_frame, relief=tk.SUNKEN, borderwidth=1)
+        self.image_preview_frame = ttk.Frame(self.editor_frame, bootstyle="dark")
         self.image_preview_frame.pack(fill=tk.BOTH, padx=10, pady=(0, 10), ipady=20, expand=False)
-        
-        self.image_preview_label = ttk.Label(self.image_preview_frame, text="No image selected")
+
+        self.image_preview_label = ttk.Label(self.image_preview_frame, text="No image selected",
+                                              style="Muted.TLabel")
         self.image_preview_label.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
-        
+
         # Input Type
-        ttk.Label(self.editor_frame, text="Input Type:", font=("", 9, "bold")).pack(
+        ttk.Label(self.editor_frame, text="Input Type:", style="SubHeader.TLabel").pack(
             fill=tk.X, padx=10, pady=(0, 5))
         self.q_input_type = ttk.Combobox(self.editor_frame, values=["radio", "checkbox"],
-                                        state="readonly", width=20)
+                                        state="readonly", width=20, bootstyle="info")
         self.q_input_type.pack(fill=tk.X, padx=10, pady=(0, 10))
-        
+
         # Correct Answer
-        ttk.Label(self.editor_frame, text="Correct Answer(s):", font=("", 9, "bold")).pack(
+        ttk.Label(self.editor_frame, text="Correct Answer(s):", style="SubHeader.TLabel").pack(
             fill=tk.X, padx=10, pady=(0, 5))
-        self.q_correct = ttk.Entry(self.editor_frame)
+        self.q_correct = ttk.Entry(self.editor_frame, bootstyle="info")
         self.q_correct.pack(fill=tk.X, padx=10, pady=(0, 10))
-        
+
         # Explanation
-        ttk.Label(self.editor_frame, text="Explanation:", font=("", 9, "bold")).pack(
+        ttk.Label(self.editor_frame, text="Explanation:", style="SubHeader.TLabel").pack(
             fill=tk.X, padx=10, pady=(0, 5))
         self.q_explanation = tk.Text(self.editor_frame, height=4, wrap=tk.WORD)
+        _style_tk_text(self.q_explanation, height=4)
         self.q_explanation.pack(fill=tk.X, padx=10, pady=(0, 10))
-        
+
         # Choices section
-        ttk.Label(self.editor_frame, text="Choices:", font=("", 9, "bold")).pack(
+        ttk.Label(self.editor_frame, text="Choices:", style="SubHeader.TLabel").pack(
             fill=tk.X, padx=10, pady=(10, 5))
-        
+
         # Choices listbox
         choices_frame = ttk.Frame(self.editor_frame)
         choices_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=(0, 10))
-        
+
         choices_scroll = ttk.Scrollbar(choices_frame, orient=tk.VERTICAL)
         self.choices_listbox = tk.Listbox(choices_frame, height=5,
                                          yscrollcommand=choices_scroll.set)
+        _style_tk_listbox(self.choices_listbox)
         choices_scroll.config(command=self.choices_listbox.yview)
-        
+
         self.choices_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         choices_scroll.pack(side=tk.RIGHT, fill=tk.Y)
         self.choices_listbox.bind("<<ListboxSelect>>", self.on_choice_select)
-        
+
         # Choice edit buttons
         choice_btn_frame = ttk.Frame(self.editor_frame)
         choice_btn_frame.pack(fill=tk.X, padx=10, pady=(0, 10))
-        
-        ttk.Button(choice_btn_frame, text="➕ Add Choice", command=self.add_choice,
-                  width=12).pack(side=tk.LEFT, padx=2)
-        ttk.Button(choice_btn_frame, text="✏️ Edit Choice", command=self.edit_choice,
-                  width=12).pack(side=tk.LEFT, padx=2)
-        ttk.Button(choice_btn_frame, text="🗑️ Delete Choice", command=self.delete_choice,
-                  width=14).pack(side=tk.LEFT, padx=2)
-        
+
+        ttk.Button(choice_btn_frame, text="Add Choice", command=self.add_choice,
+                  width=12, bootstyle="success-outline").pack(side=tk.LEFT, padx=2)
+        ttk.Button(choice_btn_frame, text="Edit Choice", command=self.edit_choice,
+                  width=12, bootstyle="info-outline").pack(side=tk.LEFT, padx=2)
+        ttk.Button(choice_btn_frame, text="Delete Choice", command=self.delete_choice,
+                  width=14, bootstyle="danger-outline").pack(side=tk.LEFT, padx=2)
+
         ttk.Button(choice_btn_frame, text="Update Question", command=self.update_current_question,
-                  width=16).pack(side=tk.RIGHT, padx=2)
+                  width=16, bootstyle="primary").pack(side=tk.RIGHT, padx=2)
     
     def refresh_questions_list(self):
         """Refresh questions list"""
@@ -321,50 +442,50 @@ class AdvancedChapterEditor:
         if self.current_question_idx is None:
             messagebox.showwarning("Warning", "Select a question first")
             return
-        
+
         dialog = tk.Toplevel(self.window)
-        dialog.title("Add Choice")
-        dialog.geometry("400x200")
+        _style_dialog(dialog, "Add Choice", "400x250")
         dialog.transient(self.window)
         dialog.grab_set()
-        
-        frame = ttk.Frame(dialog, padding=15)
+
+        frame = ttk.Frame(dialog, padding=15, bootstyle="dark")
         frame.pack(fill=tk.BOTH, expand=True)
-        
-        ttk.Label(frame, text="Choice Value (A, B, C, D):", font=("", 9, "bold")).pack(
+
+        ttk.Label(frame, text="Choice Value (A, B, C, D):", style="SubHeader.TLabel").pack(
             fill=tk.X, pady=(0, 5))
-        val_entry = ttk.Entry(frame)
+        val_entry = ttk.Entry(frame, bootstyle="info")
         val_entry.pack(fill=tk.X, pady=(0, 10))
         val_entry.focus()
-        
-        ttk.Label(frame, text="Choice Text:", font=("", 9, "bold")).pack(
+
+        ttk.Label(frame, text="Choice Text:", style="SubHeader.TLabel").pack(
             fill=tk.X, pady=(0, 5))
         text_entry = tk.Text(frame, height=4, wrap=tk.WORD)
+        _style_tk_text(text_entry, height=4)
         text_entry.pack(fill=tk.BOTH, expand=True, pady=(0, 10))
-        
+
         def save():
             value = val_entry.get().strip()
             text = text_entry.get(1.0, tk.END).strip()
-            
+
             if not value or not text:
                 messagebox.showwarning("Warning", "Value and text are required")
                 return
-            
+
             q = self.questions[self.current_question_idx]
             new_choice = {
                 "value": value,
                 "label": value,
                 "text": text
             }
-            
+
             if "choices" not in q:
                 q["choices"] = []
-            
+
             q["choices"].append(new_choice)
             self.refresh_choices_list()
             dialog.destroy()
-        
-        ttk.Button(frame, text="✓ Add", command=save, width=20).pack(pady=10)
+
+        ttk.Button(frame, text="Add", command=save, width=20, bootstyle="success").pack(pady=10)
         dialog.bind('<Return>', lambda e: save())
     
     def edit_choice(self):
@@ -372,53 +493,53 @@ class AdvancedChapterEditor:
         if self.current_question_idx is None:
             messagebox.showwarning("Warning", "Select a question first")
             return
-        
+
         selection = self.choices_listbox.curselection()
         if not selection:
             messagebox.showwarning("Warning", "Select a choice first")
             return
-        
+
         choice_idx = selection[0]
         q = self.questions[self.current_question_idx]
         choice = q.get('choices', [])[choice_idx]
-        
+
         dialog = tk.Toplevel(self.window)
-        dialog.title("Edit Choice")
-        dialog.geometry("400x200")
+        _style_dialog(dialog, "Edit Choice", "400x250")
         dialog.transient(self.window)
         dialog.grab_set()
-        
-        frame = ttk.Frame(dialog, padding=15)
+
+        frame = ttk.Frame(dialog, padding=15, bootstyle="dark")
         frame.pack(fill=tk.BOTH, expand=True)
-        
-        ttk.Label(frame, text="Choice Value:", font=("", 9, "bold")).pack(
+
+        ttk.Label(frame, text="Choice Value:", style="SubHeader.TLabel").pack(
             fill=tk.X, pady=(0, 5))
-        val_entry = ttk.Entry(frame)
+        val_entry = ttk.Entry(frame, bootstyle="info")
         val_entry.insert(0, choice.get('value', ''))
         val_entry.pack(fill=tk.X, pady=(0, 10))
         val_entry.focus()
-        
-        ttk.Label(frame, text="Choice Text:", font=("", 9, "bold")).pack(
+
+        ttk.Label(frame, text="Choice Text:", style="SubHeader.TLabel").pack(
             fill=tk.X, pady=(0, 5))
         text_entry = tk.Text(frame, height=4, wrap=tk.WORD)
+        _style_tk_text(text_entry, height=4)
         text_entry.insert(1.0, choice.get('text', ''))
         text_entry.pack(fill=tk.BOTH, expand=True, pady=(0, 10))
-        
+
         def save():
             value = val_entry.get().strip()
             text = text_entry.get(1.0, tk.END).strip()
-            
+
             if not value or not text:
                 messagebox.showwarning("Warning", "Value and text are required")
                 return
-            
+
             choice["value"] = value
             choice["label"] = value
             choice["text"] = text
             self.refresh_choices_list()
             dialog.destroy()
-        
-        ttk.Button(frame, text="✓ Save", command=save, width=20).pack(pady=10)
+
+        ttk.Button(frame, text="Save", command=save, width=20, bootstyle="success").pack(pady=10)
         dialog.bind('<Return>', lambda e: save())
     
     def delete_choice(self):
@@ -676,9 +797,7 @@ class AdvancedChapterEditor:
 class ExamEditor:
     def __init__(self, root):
         self.root = root
-        self.root.title("Exam Engine Editor")
-        self.root.geometry("1200x700")
-        
+
         self.base_path = Path(__file__).parent.parent
         self.data_path = self.base_path / "data"
         self.config_path = self.base_path / "config"
@@ -697,142 +816,160 @@ class ExamEditor:
         # Top toolbar
         toolbar = ttk.Frame(self.root)
         toolbar.pack(side=tk.TOP, fill=tk.X, padx=10, pady=10)
-        
-        ttk.Button(toolbar, text="💾 Save All", command=self.save_all, 
-                  width=15).pack(side=tk.LEFT, padx=5)
-        ttk.Button(toolbar, text="🔄 Refresh", command=self.refresh_all,
-                  width=12).pack(side=tk.LEFT, padx=5)
-        
-        self.status_label = ttk.Label(toolbar, text="Ready", foreground="green")
+
+        ttk.Button(toolbar, text="Save All", command=self.save_all,
+                  width=15, bootstyle="primary").pack(side=tk.LEFT, padx=5)
+        ttk.Button(toolbar, text="Refresh", command=self.refresh_all,
+                  width=12, bootstyle="info-outline").pack(side=tk.LEFT, padx=5)
+
+        self.status_label = ttk.Label(toolbar, text="Ready",
+                                       foreground=COLORS["success"],
+                                       style="Status.TLabel")
         self.status_label.pack(side=tk.RIGHT, padx=10)
-        
+
         # Main container with PanedWindow
         paned = ttk.PanedWindow(self.root, orient=tk.HORIZONTAL)
         paned.pack(fill=tk.BOTH, expand=True, padx=10, pady=(0, 10))
-        
+
         # Left Panel - Sections
         left_frame = ttk.Frame(paned)
         paned.add(left_frame, weight=1)
-        
+
         # Sections header
         sections_header = ttk.Frame(left_frame)
         sections_header.pack(fill=tk.X, pady=(0, 5))
-        
-        ttk.Label(sections_header, text="📚 Sections", 
-                 font=("", 11, "bold")).pack(side=tk.LEFT)
-        
-        ttk.Button(sections_header, text="➕", command=self.add_section,
-                  width=3).pack(side=tk.RIGHT, padx=2)
-        ttk.Button(sections_header, text="⬆️", command=self.import_section,
-              width=3).pack(side=tk.RIGHT, padx=2)
-        ttk.Button(sections_header, text="🗑️", command=self.delete_section,
-                  width=3).pack(side=tk.RIGHT, padx=2)
-        
+
+        ttk.Label(sections_header, text="Sections",
+                 style="Header.TLabel").pack(side=tk.LEFT)
+
+        ttk.Button(sections_header, text="+", command=self.add_section,
+                  width=3, bootstyle="success-outline").pack(side=tk.RIGHT, padx=2)
+        ttk.Button(sections_header, text="Import", command=self.import_section,
+              width=6, bootstyle="info-outline").pack(side=tk.RIGHT, padx=2)
+        ttk.Button(sections_header, text="Del", command=self.delete_section,
+                  width=3, bootstyle="danger-outline").pack(side=tk.RIGHT, padx=2)
+
         # Sections table
         sections_scroll = ttk.Scrollbar(left_frame, orient=tk.VERTICAL)
-        
-        self.sections_tree = ttk.Treeview(left_frame, 
+
+        self.sections_tree = ttk.Treeview(left_frame,
                                          columns=("Name", "ID", "Path"),
                                          show="headings",
                                          yscrollcommand=sections_scroll.set,
                                          selectmode="browse",
                                          height=15)
-        
+
         sections_scroll.config(command=self.sections_tree.yview)
-        
+
         self.sections_tree.heading("Name", text="Name")
         self.sections_tree.heading("ID", text="ID")
         self.sections_tree.heading("Path", text="Path")
-        
+
         self.sections_tree.column("Name", width=150)
         self.sections_tree.column("ID", width=80)
         self.sections_tree.column("Path", width=120)
-        
+
+        self.sections_tree.tag_configure("oddrow", background=COLORS["treeview_row_odd"])
+        self.sections_tree.tag_configure("evenrow", background=COLORS["treeview_row_even"])
+
         self.sections_tree.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         sections_scroll.pack(side=tk.RIGHT, fill=tk.Y)
-        
+
         self.sections_tree.bind("<<TreeviewSelect>>", self.on_section_select)
-        
+
         # Right Panel - Chapters
         right_frame = ttk.Frame(paned)
         paned.add(right_frame, weight=2)
-        
+
         # Chapters header
         chapters_header = ttk.Frame(right_frame)
         chapters_header.pack(fill=tk.X, pady=(0, 5))
-        
-        ttk.Label(chapters_header, text="📖 Chapters", 
-                 font=("", 11, "bold")).pack(side=tk.LEFT)
-        
-        ttk.Button(chapters_header, text="➕", command=self.add_chapter,
-                  width=3).pack(side=tk.RIGHT, padx=2)
-        ttk.Button(chapters_header, text="⬆️", command=self.import_chapters,
-              width=3).pack(side=tk.RIGHT, padx=2)
-        ttk.Button(chapters_header, text="🗑️", command=self.delete_chapter,
-                  width=3).pack(side=tk.RIGHT, padx=2)
-        
+
+        ttk.Label(chapters_header, text="Chapters",
+                 style="Header.TLabel").pack(side=tk.LEFT)
+
+        ttk.Button(chapters_header, text="+", command=self.add_chapter,
+                  width=3, bootstyle="success-outline").pack(side=tk.RIGHT, padx=2)
+        ttk.Button(chapters_header, text="Import", command=self.import_chapters,
+              width=6, bootstyle="info-outline").pack(side=tk.RIGHT, padx=2)
+        ttk.Button(chapters_header, text="Del", command=self.delete_chapter,
+                  width=3, bootstyle="danger-outline").pack(side=tk.RIGHT, padx=2)
+
         # Chapters table
         chapters_scroll = ttk.Scrollbar(right_frame, orient=tk.VERTICAL)
-        
+
         self.chapters_tree = ttk.Treeview(right_frame,
                                          columns=("ID", "Name", "Questions", "File"),
                                          show="headings",
                                          yscrollcommand=chapters_scroll.set,
                                          selectmode="browse",
                                          height=10)
-        
+
         chapters_scroll.config(command=self.chapters_tree.yview)
-        
+
         self.chapters_tree.heading("ID", text="ID")
         self.chapters_tree.heading("Name", text="Chapter Name")
         self.chapters_tree.heading("Questions", text="Questions")
         self.chapters_tree.heading("File", text="File")
-        
+
         self.chapters_tree.column("ID", width=50)
         self.chapters_tree.column("Name", width=250)
         self.chapters_tree.column("Questions", width=80)
         self.chapters_tree.column("File", width=150)
-        
+
+        self.chapters_tree.tag_configure("oddrow", background=COLORS["treeview_row_odd"])
+        self.chapters_tree.tag_configure("evenrow", background=COLORS["treeview_row_even"])
+
         self.chapters_tree.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         chapters_scroll.pack(side=tk.RIGHT, fill=tk.Y)
-        
+
         self.chapters_tree.bind("<<TreeviewSelect>>", self.on_chapter_select)
         self.chapters_tree.bind("<Double-1>", self.on_chapter_double_click)
-        
+
         # Chapter editor panel
-        editor_frame = ttk.LabelFrame(right_frame, text="✏️ Edit Chapter", padding=15)
+        editor_frame = ttk.LabelFrame(right_frame, text="Edit Chapter",
+                                       padding=15, bootstyle="primary")
         editor_frame.pack(fill=tk.X, pady=(10, 0))
-        
+
         # ID
-        ttk.Label(editor_frame, text="ID:", font=("", 9, "bold")).grid(
+        ttk.Label(editor_frame, text="ID:", style="SubHeader.TLabel").grid(
             row=0, column=0, sticky=tk.W, pady=8)
-        self.ch_id = ttk.Entry(editor_frame, width=15)
+        self.ch_id = ttk.Entry(editor_frame, width=15, bootstyle="info")
         self.ch_id.grid(row=0, column=1, sticky=tk.W, padx=10, pady=8)
-        
+
         # Name
-        ttk.Label(editor_frame, text="Name:", font=("", 9, "bold")).grid(
+        ttk.Label(editor_frame, text="Name:", style="SubHeader.TLabel").grid(
             row=0, column=2, sticky=tk.W, pady=8, padx=(20, 0))
-        self.ch_name = ttk.Entry(editor_frame, width=40)
+        self.ch_name = ttk.Entry(editor_frame, width=40, bootstyle="info")
         self.ch_name.grid(row=0, column=3, sticky=(tk.W, tk.E), padx=10, pady=8)
-        
+
         # Questions count
-        ttk.Label(editor_frame, text="Questions:", font=("", 9, "bold")).grid(
+        ttk.Label(editor_frame, text="Questions:", style="SubHeader.TLabel").grid(
             row=1, column=0, sticky=tk.W, pady=8)
-        self.ch_count = ttk.Entry(editor_frame, width=15)
+        self.ch_count = ttk.Entry(editor_frame, width=15, bootstyle="info")
         self.ch_count.grid(row=1, column=1, sticky=tk.W, padx=10, pady=8)
-        
+
         # Update button
-        self.update_chapter_btn = ttk.Button(editor_frame, text="✓ Update Chapter",
+        self.update_chapter_btn = ttk.Button(editor_frame, text="Update Chapter",
                                             command=self.update_chapter,
-                                            state="disabled")
+                                            state="disabled",
+                                            bootstyle="primary")
         self.update_chapter_btn.grid(row=1, column=3, sticky=tk.E, padx=10, pady=8)
-        
+
         editor_frame.columnconfigure(3, weight=1)
-    
+
     def update_status(self, message, color="green"):
         """Update status message"""
-        self.status_label.config(text=message, foreground=color)
-        self.root.after(3000, lambda: self.status_label.config(text="Ready", foreground="green"))
+        color_map = {
+            "green": COLORS["success"],
+            "blue": COLORS["primary_light"],
+            "orange": COLORS["warning"],
+            "red": COLORS["danger"],
+        }
+        mapped = color_map.get(color, color)
+        self.status_label.config(text=message, foreground=mapped)
+        self.root.after(3000, lambda: self.status_label.config(
+            text="Ready", foreground=COLORS["success"]))
     
     def refresh_all(self):
         """Refresh all data and auto-configure engine"""
@@ -863,13 +1000,14 @@ class ExamEditor:
         """Refresh sections tree"""
         for item in self.sections_tree.get_children():
             self.sections_tree.delete(item)
-        
+
         for idx, section in enumerate(self.sections):
+            tag = "evenrow" if idx % 2 == 0 else "oddrow"
             self.sections_tree.insert("", tk.END, iid=str(idx), values=(
                 section['name'],
                 section['id'],
                 section.get('path', '')
-            ))
+            ), tags=(tag,))
     
     def on_section_select(self, event):
         """Handle section selection"""
@@ -904,14 +1042,15 @@ class ExamEditor:
         """Refresh chapters tree"""
         for item in self.chapters_tree.get_children():
             self.chapters_tree.delete(item)
-        
+
         for idx, chapter in enumerate(self.chapters):
+            tag = "evenrow" if idx % 2 == 0 else "oddrow"
             self.chapters_tree.insert("", tk.END, iid=str(idx), values=(
                 chapter.get('id', ''),
                 chapter.get('name', ''),
                 chapter.get('q', 0),
                 chapter.get('file', '')
-            ))
+            ), tags=(tag,))
     
     def on_chapter_select(self, event):
         """Handle chapter selection"""
@@ -1065,48 +1204,47 @@ class ExamEditor:
     def add_section(self):
         """Add new section"""
         dialog = tk.Toplevel(self.root)
-        dialog.title("Add New Section")
-        dialog.geometry("450x280")
+        _style_dialog(dialog, "Add New Section", "450x320")
         dialog.transient(self.root)
         dialog.grab_set()
-        
-        frame = ttk.Frame(dialog, padding=20)
+
+        frame = ttk.Frame(dialog, padding=20, bootstyle="dark")
         frame.pack(fill=tk.BOTH, expand=True)
-        
-        ttk.Label(frame, text="Section ID:", font=("", 10, "bold")).grid(
+
+        ttk.Label(frame, text="Section ID:", style="SubHeader.TLabel").grid(
             row=0, column=0, sticky=tk.W, pady=10)
-        sec_id = ttk.Entry(frame, width=30)
+        sec_id = ttk.Entry(frame, width=30, bootstyle="info")
         sec_id.grid(row=0, column=1, pady=10, padx=10)
         sec_id.focus()
-        
-        ttk.Label(frame, text="Section Name:", font=("", 10, "bold")).grid(
+
+        ttk.Label(frame, text="Section Name:", style="SubHeader.TLabel").grid(
             row=1, column=0, sticky=tk.W, pady=10)
-        sec_name = ttk.Entry(frame, width=30)
+        sec_name = ttk.Entry(frame, width=30, bootstyle="info")
         sec_name.grid(row=1, column=1, pady=10, padx=10)
-        
-        ttk.Label(frame, text="Data Path:", font=("", 10, "bold")).grid(
+
+        ttk.Label(frame, text="Data Path:", style="SubHeader.TLabel").grid(
             row=2, column=0, sticky=tk.W, pady=10)
-        sec_path = ttk.Entry(frame, width=30)
+        sec_path = ttk.Entry(frame, width=30, bootstyle="info")
         sec_path.insert(0, "data/")
         sec_path.grid(row=2, column=1, pady=10, padx=10)
-        
-        ttk.Label(frame, text="Description:", font=("", 10, "bold")).grid(
+
+        ttk.Label(frame, text="Description:", style="SubHeader.TLabel").grid(
             row=3, column=0, sticky=tk.W, pady=10)
-        sec_desc = ttk.Entry(frame, width=30)
+        sec_desc = ttk.Entry(frame, width=30, bootstyle="info")
         sec_desc.grid(row=3, column=1, pady=10, padx=10)
-        
+
         def save():
             if not sec_id.get() or not sec_name.get():
                 messagebox.showerror("Error", "ID and Name are required")
                 return
-            
+
             new_section = {
                 "id": sec_id.get(),
                 "name": sec_name.get(),
                 "path": sec_path.get() + sec_id.get(),
                 "description": sec_desc.get()
             }
-            
+
             # Create directory and init chapters.json
             try:
                 full_path = self.base_path / new_section['path']
@@ -1124,10 +1262,10 @@ class ExamEditor:
             self.load_sections()
             self.update_status(f"Added section: {sec_id.get()}", "green")
             dialog.destroy()
-        
-        ttk.Button(frame, text="✓ Create Section", command=save, 
-                  width=20).grid(row=4, column=0, columnspan=2, pady=20)
-        
+
+        ttk.Button(frame, text="Create Section", command=save,
+                  width=20, bootstyle="success").grid(row=4, column=0, columnspan=2, pady=20)
+
         dialog.bind('<Return>', lambda e: save())
     
     def delete_section(self):
@@ -1135,29 +1273,26 @@ class ExamEditor:
         if self.current_section_idx is None:
             messagebox.showwarning("Warning", "Select a section first")
             return
-        
+
         section = self.sections[self.current_section_idx]
-        # Custom dialog with optional checkbox to also delete files on disk
         dlg = tk.Toplevel(self.root)
-        dlg.title("Delete Section")
-        dlg.geometry("480x180")
+        _style_dialog(dlg, "Delete Section", "480x180")
         dlg.transient(self.root)
         dlg.grab_set()
 
-        frame = ttk.Frame(dlg, padding=12)
+        frame = ttk.Frame(dlg, padding=12, bootstyle="dark")
         frame.pack(fill=tk.BOTH, expand=True)
 
-        ttk.Label(frame, text=f"Delete section '{section['name']}'?", font=("", 10, "bold")).pack(anchor=tk.W, pady=(0,8))
+        ttk.Label(frame, text=f"Delete section '{section['name']}'?", style="Header.TLabel").pack(anchor=tk.W, pady=(0,8))
         ttk.Label(frame, text="This will remove the section from the config.").pack(anchor=tk.W)
 
         del_var = tk.BooleanVar(value=False)
-        ttk.Checkbutton(frame, text="Also delete section files from disk (permanent)", variable=del_var).pack(anchor=tk.W, pady=8)
+        ttk.Checkbutton(frame, text="Also delete section files from disk (permanent)", variable=del_var, bootstyle="warning").pack(anchor=tk.W, pady=8)
 
         btn_frame = ttk.Frame(frame)
         btn_frame.pack(fill=tk.X, pady=(10,0))
 
         def do_delete():
-            # If user opted to delete files, attempt to remove directory
             if del_var.get():
                 try:
                     full_path = self.base_path / section.get('path', '')
@@ -1167,7 +1302,6 @@ class ExamEditor:
                     messagebox.showerror("Error", f"Failed to delete section files: {e}")
                     return
 
-            # Remove from config regardless
             try:
                 del self.sections[self.current_section_idx]
             except Exception:
@@ -1184,8 +1318,8 @@ class ExamEditor:
         def cancel():
             dlg.destroy()
 
-        ttk.Button(btn_frame, text="Delete", command=do_delete, width=12).pack(side=tk.RIGHT, padx=6)
-        ttk.Button(btn_frame, text="Cancel", command=cancel, width=12).pack(side=tk.RIGHT)
+        ttk.Button(btn_frame, text="Delete", command=do_delete, width=12, bootstyle="danger").pack(side=tk.RIGHT, padx=6)
+        ttk.Button(btn_frame, text="Cancel", command=cancel, width=12, bootstyle="secondary-outline").pack(side=tk.RIGHT)
     
     def add_chapter(self):
         """Add new chapter"""
@@ -1326,24 +1460,22 @@ class ExamEditor:
             return
         
         chapter = self.chapters[self.current_chapter_idx]
-        # Custom dialog with optional checkboxes to also delete file and images on disk
         dlg = tk.Toplevel(self.root)
-        dlg.title("Delete Chapter")
-        dlg.geometry("500x200")
+        _style_dialog(dlg, "Delete Chapter", "500x200")
         dlg.transient(self.root)
         dlg.grab_set()
 
-        frame = ttk.Frame(dlg, padding=12)
+        frame = ttk.Frame(dlg, padding=12, bootstyle="dark")
         frame.pack(fill=tk.BOTH, expand=True)
 
-        ttk.Label(frame, text=f"Delete chapter '{chapter.get('name','')}'?", font=("", 10, "bold")).pack(anchor=tk.W, pady=(0,8))
+        ttk.Label(frame, text=f"Delete chapter '{chapter.get('name','')}'?", style="Header.TLabel").pack(anchor=tk.W, pady=(0,8))
         ttk.Label(frame, text="This will remove the chapter from the list.").pack(anchor=tk.W)
 
         del_var = tk.BooleanVar(value=False)
-        ttk.Checkbutton(frame, text="Also delete chapter file from disk (permanent)", variable=del_var).pack(anchor=tk.W, pady=(8, 0))
+        ttk.Checkbutton(frame, text="Also delete chapter file from disk (permanent)", variable=del_var, bootstyle="warning").pack(anchor=tk.W, pady=(8, 0))
 
         del_images_var = tk.BooleanVar(value=False)
-        ttk.Checkbutton(frame, text="Also delete chapter images from disk (permanent)", variable=del_images_var).pack(anchor=tk.W, pady=(4, 8))
+        ttk.Checkbutton(frame, text="Also delete chapter images from disk (permanent)", variable=del_images_var, bootstyle="warning").pack(anchor=tk.W, pady=(4, 8))
 
         btn_frame = ttk.Frame(frame)
         btn_frame.pack(fill=tk.X, pady=(10,0))
@@ -1410,9 +1542,9 @@ class ExamEditor:
         def cancel():
             dlg.destroy()
 
-        ttk.Button(btn_frame, text="Delete", command=do_delete, width=12).pack(side=tk.RIGHT, padx=6)
-        ttk.Button(btn_frame, text="Cancel", command=cancel, width=12).pack(side=tk.RIGHT)
-            
+        ttk.Button(btn_frame, text="Delete", command=do_delete, width=12, bootstyle="danger").pack(side=tk.RIGHT, padx=6)
+        ttk.Button(btn_frame, text="Cancel", command=cancel, width=12, bootstyle="secondary-outline").pack(side=tk.RIGHT)
+
     def save_chapter(self):
         """Save chapter changes"""
         if not self.current_section:
@@ -1559,6 +1691,12 @@ class ExamEditor:
 
 
 if __name__ == "__main__":
-    root = tk.Tk()
+    root = ttk.Window(
+        title="Exam Engine Editor",
+        themename="darkly",
+        size=(1200, 700),
+    )
+    style = ttk.Style()
+    _configure_custom_styles(style)
     app = ExamEditor(root)
     root.mainloop()
