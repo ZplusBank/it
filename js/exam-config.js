@@ -128,6 +128,12 @@ const EXAM_CONFIG = [
         "name": "Asymptotic Notations and Logarithms & Analysis Examples and Comparisons",
         "q": 10,
         "file": "data/algorithm/chapterlecture2 Asymptotic Notations.pdf.json"
+      },
+      {
+        "id": "chapterScreenshot 2025-06-14 024536.pngvisual_extractor",
+        "name": "Extracted: Screenshot 2025-06-14 024536.png",
+        "q": 1,
+        "file": "data/algorithm/chapterScreenshot 2025-06-14 024536.pngvisual_extractor.json"
       }
     ]
   },

@@ -1,0 +1,45 @@
+{
+  "id": "extract-1771027921993-kv11p",
+  "label": "Screenshot 2025-06-14 024536.png",
+  "params": {
+    "file": "Screenshot 2025-06-14 024536.png",
+    "type": "visual_extractor"
+  },
+  "title": "Extracted: Screenshot 2025-06-14 024536.png",
+  "questions": [
+    {
+      "id": "extract-1771027921993-kv11p-0",
+      "number": "1",
+      "text": "Evaluate the following definite integral:\n\\[ \\int_{e}^{e^2} \\frac{\\log_{x} 3}{x \\ln 2} dx \\]",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( \\ln 3 \\)",
+          "text": "\\( \\ln 3 \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( \\ln 2 \\)",
+          "text": "\\( \\ln 2 \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( \\log_2 3 \\)",
+          "text": "\\( \\log_2 3 \\)"
+        },
+        {
+          "value": "D",
+          "label": "1",
+          "text": "1"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To solve the integral, we first apply the change of base formula for the logarithm in the numerator: \\( \\log_x 3 = \\frac{\\ln 3}{\\ln x} \\). \n\nSubstituting this into the original expression:\n\\[ I = \\int_{e}^{e^2} \\frac{\\frac{\\ln 3}{\\ln x}}{x \\ln 2} dx = \\frac{\\ln 3}{\\ln 2} \\int_{e}^{e^2} \\frac{1}{x \\ln x} dx \\]\n\nNext, use substitution by letting \\( u = \\ln x \\). Then, \\( du = \\frac{1}{x} dx \\).\n- When \\( x = e \\), \\( u = \\ln e = 1 \\).\n- When \\( x = e^2 \\), \\( u = \\ln(e^2) = 2 \\).\n\nThe integral becomes:\n\\[ I = \\frac{\\ln 3}{\\ln 2} \\int_{1}^{2} \\frac{1}{u} du = \\frac{\\ln 3}{\\ln 2} \\left[ \\ln |u| \\right]_1^2 \\]\n\\[ I = \\frac{\\ln 3}{\\ln 2} (\\ln 2 - \\ln 1) = \\frac{\\ln 3}{\\ln 2} (\\ln 2 - 0) = \\ln 3 \\]",
+      "image": "data/algorithm/images/image1.png"
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 1
+}

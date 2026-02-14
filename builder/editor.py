@@ -4,6 +4,7 @@ Exam Engine Editor - Multi-Section Version
 Manages multiple subjects/sections with chapters.json structure
 """
 
+import uuid
 import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
 import json
@@ -454,9 +455,10 @@ class AdvancedChapterEditor:
             q_number = q.get('number', str(self.current_question_idx + 1))
             file_ext = src.suffix.lower()  # Get extension like .jpg, .png
             
-            # Rename image to imageN.ext format (replace . with _ in question number)
+            # Rename image to imageN_UUID.ext format (unique to prevent overwrites)
             safe_q_number = q_number.replace('.', '_')
-            image_name = f"image{safe_q_number}{file_ext}"
+            unique_id = uuid.uuid4().hex[:8]
+            image_name = f"image{safe_q_number}_{unique_id}{file_ext}"
             dest = self.images_folder / image_name
             
             # Copy image to images folder
