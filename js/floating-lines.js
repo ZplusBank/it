@@ -209,7 +209,7 @@ void main() {
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
   camera.position.z = 1;
 
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+  const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: false });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.domElement.style.width = '100%';
   renderer.domElement.style.height = '100%';
@@ -283,15 +283,22 @@ void main() {
   const mesh = new THREE.Mesh(geometry, material);
   scene.add(mesh);
 
+  // --- Cached state for performance ---
+  let isMobileCached = window.innerWidth < 768;
+  let cachedRect = null;
+  const cachedDpr = renderer.getPixelRatio();
+
   // --- Resize Handler ---
   function setSize() {
     const w = container.clientWidth || 1;
     const h = container.clientHeight || 1;
     renderer.setSize(w, h, false);
     uniforms.iResolution.value.set(renderer.domElement.width, renderer.domElement.height, 1);
+    cachedRect = renderer.domElement.getBoundingClientRect();
 
     // Update mobile state on resize
     const newIsMobile = window.innerWidth < 768;
+    isMobileCached = newIsMobile;
     if (uniforms.interactive.value !== !newIsMobile) {
       // Update uniforms for mobile/desktop switch
       uniforms.interactive.value = !newIsMobile;
@@ -318,19 +325,18 @@ void main() {
   const damping = config.mouseDamping;
 
   document.addEventListener('pointermove', (e) => {
-    const rect = renderer.domElement.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const dpr = renderer.getPixelRatio();
-    targetMouse.set(x * dpr, (rect.height - y) * dpr);
+    if (!cachedRect) return;
+    const x = e.clientX - cachedRect.left;
+    const y = e.clientY - cachedRect.top;
+    targetMouse.set(x * cachedDpr, (cachedRect.height - y) * cachedDpr);
     targetInfluence = 1.0;
 
     if (config.parallax) {
-      const cx = rect.width / 2;
-      const cy = rect.height / 2;
+      const cx = cachedRect.width / 2;
+      const cy = cachedRect.height / 2;
       targetParallax.set(
-        ((x - cx) / rect.width) * config.parallaxStrength,
-        -((y - cy) / rect.height) * config.parallaxStrength
+        ((x - cx) / cachedRect.width) * config.parallaxStrength,
+        -((y - cy) / cachedRect.height) * config.parallaxStrength
       );
     }
   });
@@ -346,8 +352,9 @@ void main() {
   function renderLoop() {
     // Mobile optimization: Render only once, then stop loop
     // But we still want to render at least one frame so the background appears
-    if (window.innerWidth < 768) {
+    if (isMobileCached) {
       renderer.render(scene, camera);
+      animationId = null;
       return; // Stop the loop
     }
 
@@ -376,20 +383,19 @@ void main() {
 
   // Re-attach our own resize listener that handles the loop restart
   function handleResize() {
-    setSize(); // Call original sizing logic (which updates uniforms)
+    setSize(); // Call original sizing logic (which updates uniforms and isMobileCached)
 
-    const isNowMobile = window.innerWidth < 768;
-    if (!isNowMobile && !animationId) {
+    if (!isMobileCached && !animationId) {
       // Restart loop if we are now desktop and loop wasn't running
       clock.start();
       renderLoop();
-    } else if (isNowMobile && animationId) {
+    } else if (isMobileCached && animationId) {
       // Stop loop if we are now mobile (renderLoop will check condition and return, but we can also cancel here)
       cancelAnimationFrame(animationId);
       animationId = null;
       // Render one static frame for the new size
       renderer.render(scene, camera);
-    } else if (isNowMobile) {
+    } else if (isMobileCached) {
       // Just re-render static frame on resize
       renderer.render(scene, camera);
     }
