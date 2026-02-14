@@ -169,20 +169,21 @@ void main() {
 `;
 
   // --- Config ---
+  const isMobile = window.innerWidth < 768;
   const config = {
     linesGradient: ['#3730a3', '#4338ca', '#5b21b6', '#6d28d9'],
     enabledWaves: ['top', 'middle', 'bottom'],
-    lineCount: [6, 6, 6],
+    lineCount: isMobile ? [3, 2, 3] : [6, 6, 6],
     lineDistance: [5, 5, 5],
     topWavePosition: { x: 10.0, y: 0.5, rotate: -0.4 },
     middleWavePosition: { x: 5.0, y: 0.0, rotate: 0.2 },
     bottomWavePosition: { x: 2.0, y: -0.7, rotate: -1.0 },
     animationSpeed: 1,
-    interactive: true,
+    interactive: !isMobile,
     bendRadius: 5.0,
     bendStrength: -0.5,
     mouseDamping: 0.05,
-    parallax: true,
+    parallax: !isMobile,
     parallaxStrength: 0.2
   };
 
@@ -282,12 +283,26 @@ void main() {
   const mesh = new THREE.Mesh(geometry, material);
   scene.add(mesh);
 
-  // --- Sizing ---
+  // --- Resize Handler ---
   function setSize() {
     const w = container.clientWidth || 1;
     const h = container.clientHeight || 1;
     renderer.setSize(w, h, false);
     uniforms.iResolution.value.set(renderer.domElement.width, renderer.domElement.height, 1);
+
+    // Update mobile state on resize
+    const newIsMobile = window.innerWidth < 768;
+    if (uniforms.interactive.value !== !newIsMobile) {
+      // Update uniforms for mobile/desktop switch
+      uniforms.interactive.value = !newIsMobile;
+      uniforms.parallax.value = !newIsMobile;
+
+      // Update line counts
+      const newCounts = newIsMobile ? [3, 2, 3] : [6, 6, 6];
+      uniforms.topLineCount.value = config.enabledWaves.includes('top') ? getIdx(newCounts, 'top', 6) : 0;
+      uniforms.middleLineCount.value = config.enabledWaves.includes('middle') ? getIdx(newCounts, 'middle', 6) : 0;
+      uniforms.bottomLineCount.value = config.enabledWaves.includes('bottom') ? getIdx(newCounts, 'bottom', 6) : 0;
+    }
   }
   setSize();
 

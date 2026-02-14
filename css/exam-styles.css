@@ -1986,6 +1986,38 @@ button.submit-btn {
     .nav-btn {
         order: 3;
     }
+
+    /* Mobile Performance Overrides */
+    .exam-header,
+    .modal-overlay,
+    .modal {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    .modal-overlay {
+        background: rgba(0, 0, 0, 0.85);
+        /* Darker background since no blur */
+    }
+
+    /* Reduce shadow complexity */
+    .subject-card,
+    .chapter-card,
+    .results-question-card,
+    .exam-header {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Disable some hover effects on touch devices to prevent sticky states */
+    @media (hover: none) {
+
+        .subject-card:hover,
+        .chapter-card:hover,
+        .choice:hover {
+            transform: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    }
 }
 
 /* ============= Modals ============= */
