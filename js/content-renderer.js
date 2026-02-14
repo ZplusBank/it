@@ -50,6 +50,18 @@ const ContentRenderer = {
             </div>`;
         };
 
+        // Override em (italic) — skip if content is empty or whitespace-only
+        renderer.em = function ({ text }) {
+            if (!text || !text.trim()) return `*${text || ''}*`;
+            return `<em>${text}</em>`;
+        };
+
+        // Override strong (bold) — skip if content is empty or whitespace-only
+        renderer.strong = function ({ text }) {
+            if (!text || !text.trim()) return `**${text || ''}**`;
+            return `<strong>${text}</strong>`;
+        };
+
         marked.setOptions({
             renderer: renderer,
             gfm: true,

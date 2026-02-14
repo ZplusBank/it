@@ -760,6 +760,20 @@ header {
     max-width: 100%;
 }
 
+/* Hide scrollbar on display math blocks */
+.question-text mjx-container[display="true"],
+.explanation mjx-container[display="true"],
+.choice label mjx-container[display="true"] {
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+.question-text mjx-container[display="true"]::-webkit-scrollbar,
+.explanation mjx-container[display="true"]::-webkit-scrollbar,
+.choice label mjx-container[display="true"]::-webkit-scrollbar {
+    display: none;
+}
+
 
 .choices {
     display: flex;
