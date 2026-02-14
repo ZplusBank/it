@@ -512,7 +512,7 @@ class AdvancedChapterEditor:
                   width=15, bootstyle="primary").pack(side=tk.RIGHT, padx=5)
 
         # Main container
-        container = ttk.PanedWindow(self.window, orient=tk.HORIZONTAL)
+        container = ttk.Panedwindow(self.window, orient=tk.HORIZONTAL)
         container.pack(fill=tk.BOTH, expand=True, padx=10, pady=(0, 10))
 
         # Left panel - Questions list
@@ -1142,7 +1142,7 @@ class ExamEditor:
         self.status_label.pack(side=tk.RIGHT, padx=10)
 
         # Main container with PanedWindow
-        paned = ttk.PanedWindow(self.root, orient=tk.HORIZONTAL)
+        paned = ttk.Panedwindow(self.root, orient=tk.HORIZONTAL)
         paned.pack(fill=tk.BOTH, expand=True, padx=10, pady=(0, 10))
 
         # Left Panel - Sections
