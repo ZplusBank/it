@@ -127,6 +127,323 @@ def _style_dialog(dialog, title, geometry):
     dialog.geometry(geometry)
     dialog.configure(bg=COLORS["bg_body"])
 
+class FormattedTextEditor(ttk.Frame):
+    """Rich text editor with formatting toolbar, syntax highlighting, and live preview."""
+
+    FORMATS = [
+        # (label, prefix, suffix, bootstyle)
+        ("B", "**", "**", "warning-outline"),
+        ("I", "*", "*", "info-outline"),
+        ("SEP", None, None, None),
+        ("<>", "`", "`", "success-outline"),
+        ("{..}", "```java\n", "\n```", "success-outline"),
+        ("SEP", None, None, None),
+        ("f(x)", "\\(", "\\)", "primary-outline"),
+        ("[=]", "\\[", "\\]", "primary-outline"),
+        ("SEP", None, None, None),
+        ("BR", "<br>", "", "danger-outline"),
+        ("SP", "&nbsp;", "", "secondary-outline"),
+    ]
+
+    def __init__(self, parent, height=6, show_preview=True):
+        super().__init__(parent)
+        self.show_preview = show_preview
+        self._highlight_job = None
+        self._build_toolbar()
+        self._build_text(height)
+        if show_preview:
+            self._build_preview()
+        self._setup_tags()
+        self._bind_events()
+
+    def _build_toolbar(self):
+        tb = ttk.Frame(self)
+        tb.pack(fill=tk.X, pady=(0, 2))
+
+        for label, prefix, suffix, bstyle in self.FORMATS:
+            if label == "SEP":
+                sep = ttk.Separator(tb, orient=tk.VERTICAL)
+                sep.pack(side=tk.LEFT, fill=tk.Y, padx=4, pady=2)
+                continue
+            btn = ttk.Button(
+                tb, text=label, width=max(len(label) + 1, 4),
+                bootstyle=bstyle, takefocus=0,
+                command=lambda p=prefix, s=suffix: self._insert_format(p, s),
+            )
+            btn.pack(side=tk.LEFT, padx=1, pady=1)
+
+        if self.show_preview:
+            self._preview_var = tk.BooleanVar(value=True)
+            ttk.Checkbutton(
+                tb, text="Preview", variable=self._preview_var,
+                command=self._toggle_preview, bootstyle="info-round-toggle",
+            ).pack(side=tk.RIGHT, padx=4)
+
+    def _build_text(self, height):
+        self.text = tk.Text(self, height=height, wrap=tk.WORD, undo=True,
+                            exportselection=False)
+        _style_tk_text(self.text, height=height)
+        self.text.pack(fill=tk.BOTH, expand=True)
+
+    def _build_preview(self):
+        self._preview_frame = ttk.LabelFrame(self, text="Preview", padding=3,
+                                              bootstyle="info")
+        self._preview_frame.pack(fill=tk.X, pady=(3, 0))
+        self._preview_text = tk.Text(
+            self._preview_frame, height=3, wrap=tk.WORD,
+            state="disabled", cursor="arrow",
+        )
+        self._preview_text.configure(
+            bg=COLORS["bg_input_alt"], fg=COLORS["text_main"],
+            insertbackground=COLORS["text_main"],
+            selectbackground=COLORS["selection_bg"],
+            selectforeground=COLORS["selection_fg"],
+            relief="flat", borderwidth=0, highlightthickness=0,
+            font=("Segoe UI", 10), padx=8, pady=4,
+        )
+        self._preview_text.pack(fill=tk.BOTH, expand=True)
+
+        # Preview rendering tags
+        self._preview_text.tag_configure("bold", font=("Segoe UI", 10, "bold"))
+        self._preview_text.tag_configure("italic", font=("Segoe UI", 10, "italic"))
+        self._preview_text.tag_configure("code", font=("Consolas", 10),
+                                          foreground=COLORS["success"],
+                                          background="#1a2332")
+        self._preview_text.tag_configure("codeblock", font=("Consolas", 9),
+                                          foreground=COLORS["success"],
+                                          background="#1a2332")
+        self._preview_text.tag_configure("math", foreground=COLORS["accent"],
+                                          font=("Cambria Math", 10))
+
+    def _toggle_preview(self):
+        if self._preview_var.get():
+            self._preview_frame.pack(fill=tk.X, pady=(3, 0))
+            self._update_preview()
+        else:
+            self._preview_frame.pack_forget()
+
+    def _setup_tags(self):
+        """Configure syntax highlighting tags for the editor."""
+        t = self.text
+        t.tag_configure("fmt_bold_marker", foreground="#f59e0b")
+        t.tag_configure("fmt_bold_text", font=("Segoe UI", 10, "bold"),
+                         foreground="#fbbf24")
+        t.tag_configure("fmt_italic_marker", foreground="#38bdf8")
+        t.tag_configure("fmt_italic_text", font=("Segoe UI", 10, "italic"),
+                         foreground="#7dd3fc")
+        t.tag_configure("fmt_code_marker", foreground="#065f46")
+        t.tag_configure("fmt_code", font=("Consolas", 10),
+                         foreground=COLORS["success"])
+        t.tag_configure("fmt_codeblock", font=("Consolas", 9),
+                         foreground=COLORS["success"], background="#1a2332")
+        t.tag_configure("fmt_math_marker", foreground="#0e7490")
+        t.tag_configure("fmt_math", foreground=COLORS["accent"])
+        t.tag_configure("fmt_html", foreground=COLORS["warning"])
+        t.tag_configure("fmt_entity", foreground=COLORS["text_muted"],
+                         background="#1c1c2e")
+
+    def _bind_events(self):
+        self.text.bind("<KeyRelease>", self._schedule_highlight)
+
+        # Keyboard shortcuts
+        def make_handler(p, s):
+            def handler(event):
+                self._insert_format(p, s)
+                return "break"
+            return handler
+
+        for key, p, s in [("b", "**", "**"), ("i", "*", "*"),
+                           ("e", "`", "`"), ("m", "\\(", "\\)")]:
+            self.text.bind(f"<Control-{key}>", make_handler(p, s))
+            self.text.bind(f"<Control-{key.upper()}>", make_handler(p, s))
+
+    def _schedule_highlight(self, event=None):
+        if self._highlight_job:
+            self.after_cancel(self._highlight_job)
+        self._highlight_job = self.after(250, self._do_highlight)
+
+    def _do_highlight(self):
+        self._highlight_syntax()
+        if (self.show_preview and hasattr(self, '_preview_var')
+                and self._preview_var.get()):
+            self._update_preview()
+
+    def _char_to_index(self, content, pos):
+        """Convert character offset to tkinter text index."""
+        line = content[:pos].count('\n') + 1
+        col = pos - content[:pos].rfind('\n') - 1
+        return f"{line}.{col}"
+
+    def _highlight_syntax(self):
+        """Apply syntax highlighting to the editor text."""
+        content = self.text.get("1.0", "end-1c")
+        idx = lambda pos: self._char_to_index(content, pos)
+
+        # Clear existing formatting tags
+        for tag in list(self.text.tag_names()):
+            if tag.startswith("fmt_"):
+                self.text.tag_remove(tag, "1.0", tk.END)
+
+        # Code blocks (highest priority)
+        codeblock_ranges = []
+        for m in re.finditer(r'```[\w]*\n?([\s\S]*?)```', content):
+            s, e = m.start(), m.end()
+            codeblock_ranges.append((s, e))
+            self.text.tag_add("fmt_codeblock", idx(s), idx(e))
+
+        def in_codeblock(pos):
+            return any(s <= pos < e for s, e in codeblock_ranges)
+
+        # Bold **...**
+        for m in re.finditer(r'\*\*(.+?)\*\*', content):
+            if in_codeblock(m.start()):
+                continue
+            self.text.tag_add("fmt_bold_marker", idx(m.start()), idx(m.start() + 2))
+            self.text.tag_add("fmt_bold_text", idx(m.start() + 2), idx(m.end() - 2))
+            self.text.tag_add("fmt_bold_marker", idx(m.end() - 2), idx(m.end()))
+
+        # Italic *...*
+        for m in re.finditer(r'(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)', content):
+            if in_codeblock(m.start()):
+                continue
+            self.text.tag_add("fmt_italic_marker", idx(m.start()), idx(m.start() + 1))
+            self.text.tag_add("fmt_italic_text", idx(m.start() + 1), idx(m.end() - 1))
+            self.text.tag_add("fmt_italic_marker", idx(m.end() - 1), idx(m.end()))
+
+        # Inline code `...`
+        for m in re.finditer(r'(?<!`)`(?!`)([^`]+?)(?<!`)`(?!`)', content):
+            if in_codeblock(m.start()):
+                continue
+            self.text.tag_add("fmt_code_marker", idx(m.start()), idx(m.start() + 1))
+            self.text.tag_add("fmt_code", idx(m.start() + 1), idx(m.end() - 1))
+            self.text.tag_add("fmt_code_marker", idx(m.end() - 1), idx(m.end()))
+
+        # Math inline \(...\)
+        for m in re.finditer(r'\\\((.+?)\\\)', content, re.DOTALL):
+            if in_codeblock(m.start()):
+                continue
+            self.text.tag_add("fmt_math_marker", idx(m.start()), idx(m.start() + 2))
+            self.text.tag_add("fmt_math", idx(m.start() + 2), idx(m.end() - 2))
+            self.text.tag_add("fmt_math_marker", idx(m.end() - 2), idx(m.end()))
+
+        # Math display \[...\]
+        for m in re.finditer(r'\\\[(.+?)\\\]', content, re.DOTALL):
+            if in_codeblock(m.start()):
+                continue
+            self.text.tag_add("fmt_math_marker", idx(m.start()), idx(m.start() + 2))
+            self.text.tag_add("fmt_math", idx(m.start() + 2), idx(m.end() - 2))
+            self.text.tag_add("fmt_math_marker", idx(m.end() - 2), idx(m.end()))
+
+        # HTML tags
+        for m in re.finditer(r'<[^>]+>', content):
+            if in_codeblock(m.start()):
+                continue
+            self.text.tag_add("fmt_html", idx(m.start()), idx(m.end()))
+
+        # Entities &nbsp; etc
+        for m in re.finditer(r'&\w+;', content):
+            if in_codeblock(m.start()):
+                continue
+            self.text.tag_add("fmt_entity", idx(m.start()), idx(m.end()))
+
+    def _update_preview(self):
+        """Update the live preview panel."""
+        content = self.text.get("1.0", "end-1c")
+        self._preview_text.configure(state="normal")
+        self._preview_text.delete("1.0", tk.END)
+        self._render_preview(content)
+        self._preview_text.configure(state="disabled")
+
+    def _render_preview(self, content):
+        """Render simplified formatted preview."""
+        # Pre-process HTML line breaks and entities
+        text = re.sub(r'<br\s*/?>', '\n', content)
+        text = text.replace('&nbsp;', ' ')
+
+        all_matches = []
+
+        # Code blocks
+        for m in re.finditer(r'```\w*\n?([\s\S]*?)```', text):
+            all_matches.append((m.start(), m.end(), m.group(1).strip(), 'codeblock'))
+        # Bold
+        for m in re.finditer(r'\*\*(.+?)\*\*', text):
+            all_matches.append((m.start(), m.end(), m.group(1), 'bold'))
+        # Italic
+        for m in re.finditer(r'(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)', text):
+            all_matches.append((m.start(), m.end(), m.group(1), 'italic'))
+        # Inline code
+        for m in re.finditer(r'(?<!`)`(?!`)([^`]+?)(?<!`)`(?!`)', text):
+            all_matches.append((m.start(), m.end(), m.group(1), 'code'))
+        # Math inline
+        for m in re.finditer(r'\\\((.+?)\\\)', text):
+            all_matches.append((m.start(), m.end(), m.group(1), 'math'))
+        # Math display
+        for m in re.finditer(r'\\\[(.+?)\\\]', text):
+            all_matches.append((m.start(), m.end(), m.group(1), 'math'))
+        # Remaining HTML tags (remove from preview)
+        for m in re.finditer(r'<[^>]+>', text):
+            all_matches.append((m.start(), m.end(), '', '_skip'))
+        # Remaining entities
+        for m in re.finditer(r'&\w+;', text):
+            all_matches.append((m.start(), m.end(), '', '_skip'))
+
+        # Sort by position, longer matches first for same position
+        all_matches.sort(key=lambda x: (x[0], -(x[1] - x[0])))
+
+        # Remove overlapping matches
+        filtered = []
+        last_end = 0
+        for start, end, inner, tag in all_matches:
+            if start >= last_end:
+                filtered.append((start, end, inner, tag))
+                last_end = end
+
+        # Render segments into preview
+        pw = self._preview_text
+        pos = 0
+        for start, end, inner, tag in filtered:
+            if pos < start:
+                pw.insert(tk.END, text[pos:start])
+            if tag != '_skip':
+                pw.insert(tk.END, inner, tag)
+            pos = end
+        if pos < len(text):
+            pw.insert(tk.END, text[pos:])
+
+    def _insert_format(self, prefix, suffix):
+        """Insert formatting around selection or at cursor."""
+        try:
+            sel_start = self.text.index(tk.SEL_FIRST)
+            sel_end = self.text.index(tk.SEL_LAST)
+            selected = self.text.get(sel_start, sel_end)
+            self.text.delete(sel_start, sel_end)
+            self.text.insert(sel_start, f"{prefix}{selected}{suffix}")
+        except tk.TclError:
+            # No selection - insert at cursor
+            pos = self.text.index(tk.INSERT)
+            self.text.insert(pos, f"{prefix}{suffix}")
+            if suffix:
+                new_pos = f"{pos}+{len(prefix)}c"
+                self.text.mark_set(tk.INSERT, new_pos)
+        self.text.focus_set()
+        self._schedule_highlight()
+
+    # -- Compatibility proxy methods (match tk.Text interface) --
+
+    def get(self, *args, **kwargs):
+        return self.text.get(*args, **kwargs)
+
+    def insert(self, *args, **kwargs):
+        result = self.text.insert(*args, **kwargs)
+        self._schedule_highlight()
+        return result
+
+    def delete(self, *args, **kwargs):
+        result = self.text.delete(*args, **kwargs)
+        self._schedule_highlight()
+        return result
+
+
 class AdvancedChapterEditor:
     """Advanced editor for chapter questions, choices, and images"""
     def __init__(self, parent, chapter_file, section_path, base_path):
@@ -142,7 +459,7 @@ class AdvancedChapterEditor:
         
         self.window = tk.Toplevel(parent)
         self.window.title(f"Advanced Chapter Editor - {self.chapter_file.stem}")
-        self.window.geometry("1000x700")
+        self.window.geometry("1100x800")
         self.window.configure(bg=COLORS["bg_body"])
         self.window.transient(parent)
         
@@ -235,6 +552,10 @@ class AdvancedChapterEditor:
         self.canvas_window = self.editor_canvas.create_window((0, 0), window=self.editor_frame,
                                                                anchor=tk.NW)
 
+        # Stretch editor frame to fill canvas width
+        self.editor_canvas.bind('<Configure>',
+            lambda e: self.editor_canvas.itemconfigure(self.canvas_window, width=e.width))
+
         self.editor_canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         self.editor_scroll.pack(side=tk.RIGHT, fill=tk.Y)
 
@@ -261,8 +582,7 @@ class AdvancedChapterEditor:
         # Question Text
         ttk.Label(self.editor_frame, text="Question Text:", style="SubHeader.TLabel").pack(
             fill=tk.X, padx=10, pady=(0, 5))
-        self.q_text = tk.Text(self.editor_frame, height=6, wrap=tk.WORD)
-        _style_tk_text(self.q_text, height=6)
+        self.q_text = FormattedTextEditor(self.editor_frame, height=6, show_preview=True)
         self.q_text.pack(fill=tk.X, padx=10, pady=(0, 10))
 
         # Image
@@ -306,8 +626,7 @@ class AdvancedChapterEditor:
         # Explanation
         ttk.Label(self.editor_frame, text="Explanation:", style="SubHeader.TLabel").pack(
             fill=tk.X, padx=10, pady=(0, 5))
-        self.q_explanation = tk.Text(self.editor_frame, height=4, wrap=tk.WORD)
-        _style_tk_text(self.q_explanation, height=4)
+        self.q_explanation = FormattedTextEditor(self.editor_frame, height=4, show_preview=False)
         self.q_explanation.pack(fill=tk.X, padx=10, pady=(0, 10))
 
         # Choices section
@@ -444,7 +763,7 @@ class AdvancedChapterEditor:
             return
 
         dialog = tk.Toplevel(self.window)
-        _style_dialog(dialog, "Add Choice", "400x250")
+        _style_dialog(dialog, "Add Choice", "550x380")
         dialog.transient(self.window)
         dialog.grab_set()
 
@@ -459,8 +778,7 @@ class AdvancedChapterEditor:
 
         ttk.Label(frame, text="Choice Text:", style="SubHeader.TLabel").pack(
             fill=tk.X, pady=(0, 5))
-        text_entry = tk.Text(frame, height=4, wrap=tk.WORD)
-        _style_tk_text(text_entry, height=4)
+        text_entry = FormattedTextEditor(frame, height=4, show_preview=False)
         text_entry.pack(fill=tk.BOTH, expand=True, pady=(0, 10))
 
         def save():
@@ -504,7 +822,7 @@ class AdvancedChapterEditor:
         choice = q.get('choices', [])[choice_idx]
 
         dialog = tk.Toplevel(self.window)
-        _style_dialog(dialog, "Edit Choice", "400x250")
+        _style_dialog(dialog, "Edit Choice", "550x380")
         dialog.transient(self.window)
         dialog.grab_set()
 
@@ -520,8 +838,7 @@ class AdvancedChapterEditor:
 
         ttk.Label(frame, text="Choice Text:", style="SubHeader.TLabel").pack(
             fill=tk.X, pady=(0, 5))
-        text_entry = tk.Text(frame, height=4, wrap=tk.WORD)
-        _style_tk_text(text_entry, height=4)
+        text_entry = FormattedTextEditor(frame, height=4, show_preview=False)
         text_entry.insert(1.0, choice.get('text', ''))
         text_entry.pack(fill=tk.BOTH, expand=True, pady=(0, 10))
 
