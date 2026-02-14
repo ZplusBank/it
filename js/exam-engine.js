@@ -10,9 +10,59 @@ const app = {
     currentView: 'subjects',
 
     async init() {
-        this.initTheme(); // Initialize theme
+        this.initTheme();
         await this.loadData();
         this.showSubjectsView();
+        this.initSearch();
+    },
+
+    initSearch() {
+        const subjectInput = document.getElementById('subjectSearch');
+        const chapterInput = document.getElementById('chapterSearch');
+
+        if (subjectInput) {
+            subjectInput.addEventListener('input', (e) => {
+                this.filterSubjects(e.target.value);
+            });
+        }
+        if (chapterInput) {
+            chapterInput.addEventListener('input', (e) => {
+                this.filterChapters(e.target.value);
+            });
+        }
+    },
+
+    filterSubjects(query) {
+        const cards = document.querySelectorAll('#subjectsGrid .subject-card');
+        const q = query.toLowerCase().trim();
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            const name = (card.getAttribute('data-name') || '').toLowerCase();
+            const desc = (card.getAttribute('data-desc') || '').toLowerCase();
+            const match = !q || name.includes(q) || desc.includes(q);
+            card.style.display = match ? '' : 'none';
+            if (match) visibleCount++;
+        });
+
+        const noResults = document.getElementById('subjectNoResults');
+        if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    },
+
+    filterChapters(query) {
+        const cards = document.querySelectorAll('#chaptersGrid .chapter-card');
+        const q = query.toLowerCase().trim();
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            const name = (card.getAttribute('data-name') || '').toLowerCase();
+            const match = !q || name.includes(q);
+            card.style.display = match ? '' : 'none';
+            if (match) visibleCount++;
+        });
+
+        const noResults = document.getElementById('chapterNoResults');
+        if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
     },
 
     initTheme() {
@@ -87,18 +137,23 @@ const app = {
         this.hideAllViews();
         document.getElementById('subjectsView').style.display = 'block';
         this.renderSubjects();
+        // Clear search
+        const searchInput = document.getElementById('subjectSearch');
+        if (searchInput) { searchInput.value = ''; }
+        const noResults = document.getElementById('subjectNoResults');
+        if (noResults) noResults.style.display = 'none';
     },
 
     renderSubjects() {
         const grid = document.getElementById('subjectsGrid');
-        grid.innerHTML = this.subjects.map(subject => `
-            <div class="subject-card" onclick="app.selectSubject('${subject.id}')">
-                <div style="font-size: 2.5em; margin-bottom: 10px;">${subject.icon}</div>
+        grid.innerHTML = this.subjects.map((subject, i) => `
+            <div class="subject-card" onclick="app.selectSubject('${subject.id}')"
+                 data-name="${this.escapeHtml(subject.name)}" data-desc="${this.escapeHtml(subject.description)}"
+                 style="--i: ${i}">
+                <span class="subject-icon">${subject.icon}</span>
                 <h2>${this.escapeHtml(subject.name)}</h2>
                 <p>${this.escapeHtml(subject.description)}</p>
-                <p style="margin-top: 15px; font-size: 0.85em; color: #999;">
-                    ${subject.chaptersConfig.length} Chapters Available
-                </p>
+                <span class="chapter-count">${subject.chaptersConfig.length} Chapters</span>
             </div>
         `).join('');
     },
@@ -171,17 +226,22 @@ const app = {
         this.hideAllViews();
         document.getElementById('chaptersView').style.display = 'block';
         this.renderChapters(subject.chapters);
+        // Clear search
+        const searchInput = document.getElementById('chapterSearch');
+        if (searchInput) { searchInput.value = ''; }
+        const noResults = document.getElementById('chapterNoResults');
+        if (noResults) noResults.style.display = 'none';
     },
 
     renderChapters(chapters) {
         const grid = document.getElementById('chaptersGrid');
         grid.innerHTML = chapters.map((chapter, idx) => `
-            <div class="chapter-card">
+            <div class="chapter-card" data-name="${this.escapeHtml(chapter.title)}" style="--i: ${idx}">
                 <input type="checkbox" id="ch-${idx}" value="${chapter.id}" 
                        onchange="app.updateSelectedChapters()">
                 <label for="ch-${idx}">
                     <strong>Chapter ${chapter.id}:</strong> ${this.escapeHtml(chapter.title)}<br>
-                    <span style="font-size: 0.8em; color: #999;">${chapter.totalQuestions} questions</span>
+                    <span>${chapter.totalQuestions} questions</span>
                 </label>
             </div>
         `).join('');

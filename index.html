@@ -10,7 +10,8 @@
     <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/exam-styles.css">
@@ -61,6 +62,10 @@
 
 <body>
 
+    <!-- Floating Lines Background -->
+    <div id="floatingLinesBg" aria-hidden="true"
+        style="position:fixed;inset:0;z-index:-1;pointer-events:auto;mix-blend-mode:screen;"></div>
+
     <div class="container">
         <header role="banner">
             <div class="header-content">
@@ -79,23 +84,43 @@
 
             <!-- SUBJECTS VIEW -->
             <div class="subjects-view" id="subjectsView">
-                <div style="margin-bottom: 20px;">
-                    <a href="https://zplusbank.github.io" class="nav-btn"
-                        style="text-decoration: none; display: inline-flex;">
-                        ← Back to Home
-                    </a>
+                <a href="https://zplusbank.github.io" class="back-home-btn">
+                    <span class="btn-icon">←</span>
+                    Back to Home
+                </a>
+
+                <!-- Search Subjects -->
+                <div class="search-container">
+                    <input type="text" class="search-input" id="subjectSearch" placeholder="Search subjects..."
+                        autocomplete="off">
+                    <span class="search-icon">🔍</span>
                 </div>
+
                 <div class="subjects-grid" id="subjectsGrid">
                     <!-- Subjects will be generated here -->
+                </div>
+                <div class="search-no-results" id="subjectNoResults">
+                    No subjects match your search.
                 </div>
             </div>
 
             <!-- CHAPTERS VIEW -->
             <div class="chapters-view" id="chaptersView">
                 <button class="back-button" onclick="app.goBackToSubjects()">← Back to Subjects</button>
-                <h2 style="color: white; margin-bottom: 20px;">Select Chapters</h2>
+                <h2 style="color: var(--text-main); margin-bottom: 20px;">Select Chapters</h2>
+
+                <!-- Search Chapters -->
+                <div class="search-container">
+                    <input type="text" class="search-input" id="chapterSearch" placeholder="Search chapters..."
+                        autocomplete="off">
+                    <span class="search-icon">🔍</span>
+                </div>
+
                 <div class="chapters-grid" id="chaptersGrid">
                     <!-- Chapters will be generated here -->
+                </div>
+                <div class="search-no-results" id="chapterNoResults">
+                    No chapters match your search.
                 </div>
                 <button class="start-exam-btn" id="startExamBtn" onclick="app.startExam()" disabled>
                     Start Exam
@@ -159,6 +184,10 @@
             }
         });
     </script>
+
+    <!-- Three.js + Floating Lines Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/floating-lines.js"></script>
 </body>
 
 </html>
