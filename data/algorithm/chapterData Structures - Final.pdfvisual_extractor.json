@@ -1,0 +1,671 @@
+{
+  "id": "extract-1771031428327-fep0j",
+  "label": "Data Structures - Final.pdf",
+  "params": {
+    "file": "Data Structures - Final.pdf",
+    "type": "visual_extractor"
+  },
+  "title": "Extracted: Data Structures - Final.pdf",
+  "questions": [
+    {
+      "id": "extract-1771031428327-fep0j-0",
+      "number": "1",
+      "text": "Consider the code below, answer the following complexity questions.\n\n```java\nfor(int i=1 i< 100; i++)\n{\n    System.out.print (\"ONE\");\n    int y = n²;\n    while (y >= 6)\n    {\n        System.out.print (\"TWO\");\n        y -= 2;\n    }\n    for (int i = 1 ; i<=n; i *= 2)\n    System.out.print(\"THREE\");\n}\n```\n\nQ1) Complexity?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\(O(n^2)\\)",
+          "text": "\\(O(n^2)\\)"
+        },
+        {
+          "value": "B",
+          "label": "\\(O(n)\\)",
+          "text": "\\(O(n)\\)"
+        },
+        {
+          "value": "C",
+          "label": "\\(O(\\log n)\\)",
+          "text": "\\(O(\\log n)\\)"
+        },
+        {
+          "value": "D",
+          "label": "\\(O(1)\\)",
+          "text": "\\(O(1)\\)"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The outer loop runs a constant 99 times. Inside, the while loop runs approximately \\(n^2/2\\) times, which is \\(O(n^2)\\). The nested for loop runs \\(O(\\log n)\\) times. The overall complexity is dominated by the most significant term, which is \\(O(n^2)\\)."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-1",
+      "number": "2",
+      "text": "Consider the code below, answer the following complexity questions.\n\n```java\nfor(int i=1 i< 100; i++)\n{\n    System.out.print (\"ONE\");\n    int y = n²;\n    while (y >= 6)\n    {\n        System.out.print (\"TWO\");\n        y -= 2;\n    }\n    for (int i = 1 ; i<=n; i *= 2)\n    System.out.print(\"THREE\");\n}\n```\n\nQ2) ONE will be printed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "99 times",
+          "text": "99 times"
+        },
+        {
+          "value": "B",
+          "label": "100 times",
+          "text": "100 times"
+        },
+        {
+          "value": "C",
+          "label": "\\(n\\) times",
+          "text": "\\(n\\) times"
+        },
+        {
+          "value": "D",
+          "label": "1 time",
+          "text": "1 time"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The outer loop `for(int i=1; i < 100; i++)` iterates for values of `i` from 1 to 99. Since the instruction to print \"ONE\" is directly inside this loop, it executes exactly 99 times."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-2",
+      "number": "3",
+      "text": "Consider the code below, answer the following complexity questions.\n\n```java\nfor(int i=1 i< 100; i++)\n{\n    System.out.print (\"ONE\");\n    int y = n²;\n    while (y >= 6)\n    {\n        System.out.print (\"TWO\");\n        y -= 2;\n    }\n    for (int i = 1 ; i<=n; i *= 2)\n    System.out.print(\"THREE\");\n}\n```\n\nQ3) TWO will be printed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\(99 \\times (\\lfloor \\frac{n^2 - 6}{2} \\rfloor + 1)\\) times",
+          "text": "\\(99 \\times (\\lfloor \\frac{n^2 - 6}{2} \\rfloor + 1)\\) times"
+        },
+        {
+          "value": "B",
+          "label": "\\(99 \\times n^2\\) times",
+          "text": "\\(99 \\times n^2\\) times"
+        },
+        {
+          "value": "C",
+          "label": "\\(n^2\\) times",
+          "text": "\\(n^2\\) times"
+        },
+        {
+          "value": "D",
+          "label": "\\(100 \\times \\frac{n^2}{2}\\) times",
+          "text": "\\(100 \\times \\frac{n^2}{2}\\) times"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The while loop runs for each of the 99 iterations of the outer loop. In each iteration, `y` starts at \\(n^2\\) and decrements by 2 until it reaches a value less than 6. The number of iterations per outer loop is \\(\\lfloor (n^2 - 6) / 2 \\rfloor + 1\\)."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-3",
+      "number": "4",
+      "text": "Consider the code below, answer the following complexity questions.\n\n```java\nfor(int i=1 i< 100; i++)\n{\n    System.out.print (\"ONE\");\n    int y = n²;\n    while (y >= 6)\n    {\n        System.out.print (\"TWO\");\n        y -= 2;\n    }\n    for (int i = 1 ; i<=n; i *= 2)\n    System.out.print(\"THREE\");\n}\n```\n\nQ4) THREE will be printed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\(99 \\times (\\lfloor \\log_2 n \\rfloor + 1)\\) times",
+          "text": "\\(99 \\times (\\lfloor \\log_2 n \\rfloor + 1)\\) times"
+        },
+        {
+          "value": "B",
+          "label": "\\(99 \\times n\\) times",
+          "text": "\\(99 \\times n\\) times"
+        },
+        {
+          "value": "C",
+          "label": "\\(n \\log n\\) times",
+          "text": "\\(n \\log n\\) times"
+        },
+        {
+          "value": "D",
+          "label": "99 times",
+          "text": "99 times"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The inner loop `for (int i = 1 ; i<=n; i *= 2)` doubles the counter `i` in each step. This results in \\(\\lfloor \\log_2 n \\rfloor + 1\\) iterations per outer loop. Multiplying by the 99 outer loop iterations gives the total count."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-4",
+      "number": "5",
+      "text": "Consider the code below, answer the following complexity questions.\n\n```java\nfor(int i=1 i< 100; i++)\n{\n    System.out.print (\"ONE\");\n    int y = n²;\n    while (y >= 6)\n    {\n        System.out.print (\"TWO\");\n        y -= 2;\n    }\n    for (int i = 1 ; i<=n; i *= 2)\n    System.out.print(\"THREE\");\n}\n```\n\nQ5) y>=6 will be repeated?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\(99 \\times (\\lfloor \\frac{n^2 - 6}{2} \\rfloor + 2)\\) times",
+          "text": "\\(99 \\times (\\lfloor \\frac{n^2 - 6}{2} \\rfloor + 2)\\) times"
+        },
+        {
+          "value": "B",
+          "label": "\\(99 \\times (\\lfloor \\frac{n^2 - 6}{2} \\rfloor + 1)\\) times",
+          "text": "\\(99 \\times (\\lfloor \\frac{n^2 - 6}{2} \\rfloor + 1)\\) times"
+        },
+        {
+          "value": "C",
+          "label": "\\(n^2\\) times",
+          "text": "\\(n^2\\) times"
+        },
+        {
+          "value": "D",
+          "label": "99 times",
+          "text": "99 times"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The condition `y >= 6` is checked at the start of every iteration of the while loop, including one final check where it evaluates to false. Thus, it is checked (number of prints of \"TWO\" + 1) times for each of the 99 outer iterations."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-5",
+      "number": "6",
+      "text": "Q6) What is the output of the following code?\n\n```java\nStack S1 = new Stack();\nStack S2 = new Stack();\nQueue Q = new Queue();\n\nfor (int i = 3; i<=10; i+=2) {\n    Q.enq(i);\n    S1.push(Q.top()+i);\n    S2.push(i);\n}\n\nfor (int i = 1; i<=4; i++){\n    if (S2.pop() >= Q.deq())\n        System.out.println(S1.pop());\n    else\n        System.out.println(S1.top());\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "12, 10, 8, 8",
+          "text": "12, 10, 8, 8"
+        },
+        {
+          "value": "B",
+          "label": "12, 10, 8, 6",
+          "text": "12, 10, 8, 6"
+        },
+        {
+          "value": "C",
+          "label": "6, 8, 10, 12",
+          "text": "6, 8, 10, 12"
+        },
+        {
+          "value": "D",
+          "label": "12, 12, 10, 8",
+          "text": "12, 12, 10, 8"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Tracing the first loop (i = 3, 5, 7, 9):\n- i=3: Q=[3], S1=[3+3=6], S2=[3]\n- i=5: Q=[3,5], S1=[6, 3+5=8], S2=[3,5]\n- i=7: Q=[3,5,7], S1=[6, 8, 3+7=10], S2=[3,5,7]\n- i=9: Q=[3,5,7,9], S1=[6, 8, 10, 3+9=12], S2=[3,5,7,9]\n\nTracing the second loop (i = 1 to 4):\n1. i=1: pop S2(9) >= deq Q(3) is true; pop S1(12). S1 now [6, 8, 10].\n2. i=2: pop S2(7) >= deq Q(5) is true; pop S1(10). S1 now [6, 8].\n3. i=3: pop S2(5) >= deq Q(7) is false; top S1(8). S1 remains [6, 8].\n4. i=4: pop S2(3) >= deq Q(9) is false; top S1(8). S1 remains [6, 8].\nOutput sequence: 12, 10, 8, 8."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-6",
+      "number": "7",
+      "text": "Referencing the binary tree shown:\n- Root: 25\n- 25 has children 15 (left) and 35 (right)\n- 15 has child 5 (left)\n- 35 has children 30 (left) and 40 (right)\n- 30 has child 32 (right)\n\nQ7) What are the depth of node 30?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "3",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "0",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Depth is the number of edges from the root to the node. The path is 25 → 35 → 30, which is 2 edges deep."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-7",
+      "number": "8",
+      "text": "Referencing the binary tree shown:\n- Root: 25\n- 25 has children 15 (left) and 35 (right)\n- 15 has child 5 (left)\n- 35 has children 30 (left) and 40 (right)\n- 30 has child 32 (right)\n\nQ8) What are the internal nodes?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "25, 15, 35, 30",
+          "text": "25, 15, 35, 30"
+        },
+        {
+          "value": "B",
+          "label": "5, 32, 40",
+          "text": "5, 32, 40"
+        },
+        {
+          "value": "C",
+          "label": "25, 15, 35",
+          "text": "25, 15, 35"
+        },
+        {
+          "value": "D",
+          "label": "15, 35, 30, 40",
+          "text": "15, 35, 30, 40"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Internal nodes are non-leaf nodes (nodes that have at least one child). Here, nodes 25, 15, 35, and 30 all have children."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-8",
+      "number": "9",
+      "text": "Referencing the binary tree shown:\n- Root: 25\n- 25 has children 15 (left) and 35 (right)\n- 15 has child 5 (left)\n- 35 has children 30 (left) and 40 (right)\n- 30 has child 32 (right)\n\nQ9) If we delete the node 25, the new root of the tree is?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "30",
+          "text": "30"
+        },
+        {
+          "value": "B",
+          "label": "15",
+          "text": "15"
+        },
+        {
+          "value": "C",
+          "label": "5",
+          "text": "5"
+        },
+        {
+          "value": "D",
+          "label": "35",
+          "text": "35"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "When deleting the root (node with two children), it is typically replaced by its in-order successor (the smallest node in the right subtree, 30) or its in-order predecessor (the largest node in the left subtree, 15). 30 is the most common default successor."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-9",
+      "number": "10",
+      "text": "Q10) What is the output of the following code After calling XX(KK)?\n\nLinked List (kk): `B -> C -> E -> B -> F -> NULL`\n\n```java\nstatic void XX (node A){\n    if (A == null)\n        return;\n    System.out.println(A.data);\n    if (A.next != null)\n        XX (A.next.next);\n    System.out.println(A.data);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "B, E, F, F, E, B",
+          "text": "B, E, F, F, E, B"
+        },
+        {
+          "value": "B",
+          "label": "B, C, E, B, F, F, B, E, C, B",
+          "text": "B, C, E, B, F, F, B, E, C, B"
+        },
+        {
+          "value": "C",
+          "label": "B, E, F",
+          "text": "B, E, F"
+        },
+        {
+          "value": "D",
+          "label": "B, E, B",
+          "text": "B, E, B"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The function prints current data, recursively calls the function skipping the next node, then prints current data again after returning from recursion.\n- XX(B1) prints B, calls XX(E).\n- XX(E) prints E, calls XX(F).\n- XX(F) prints F, detects A.next is null, skips recursion, prints F again, and returns.\n- Returning to XX(E), it prints E and returns.\n- Returning to XX(B1), it prints B.\nFinal output: B, E, F, F, E, B."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-10",
+      "number": "11",
+      "text": "What is the output of the following recursive method if we call `yy(4)`?\n\n```java\nstatic void yy (int x){\n    if (x == 1)\n        return;\n\n    yy(x - 1);\n    yy(x - 1);\n\n    if (A.next != null)\n        System.out.println(x);\n}\n```\n*(Note: Assume the condition 'A.next != null' is satisfied to allow printing)*",
+      "choices": [
+        {
+          "value": "A",
+          "label": "2 2 3 2 2 3 4",
+          "text": "2 2 3 2 2 3 4"
+        },
+        {
+          "value": "B",
+          "label": "4 3 2 2 3 2 2",
+          "text": "4 3 2 2 3 2 2"
+        },
+        {
+          "value": "C",
+          "label": "2 3 4",
+          "text": "2 3 4"
+        },
+        {
+          "value": "D",
+          "label": "1 2 3 4",
+          "text": "1 2 3 4"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The method follows a post-order traversal pattern. For yy(4), it calls yy(3) twice before printing 4. Each yy(3) calls yy(2) twice before printing 3. Each yy(2) calls yy(1) (base case, returns) twice before printing 2. The sequence of execution for prints is: [yy(2) prints 2, yy(2) prints 2, yy(3) prints 3] repeated twice, then finally the outer call prints 4. Result: 2 2 3 2 2 3 4."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-11",
+      "number": "12",
+      "text": "Use the 11-entry hash table below to insert 16, 27, 62, 51, 35 using double hashing with the following functions:\n\n- \\( H1(k) = k \\mod 11 \\)\n- \\( H2(k) = k \\mod 9 + 2 \\)\n\n**Initial Table State:**\n\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|---|---|---|---|---|---|---|---|---|---|----|\n| | 24 | | | 15 | | | | 74 | | |\n\nWhat value will be at index 9 after all insertions?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "27",
+          "text": "27"
+        },
+        {
+          "value": "B",
+          "label": "62",
+          "text": "62"
+        },
+        {
+          "value": "C",
+          "label": "51",
+          "text": "51"
+        },
+        {
+          "value": "D",
+          "label": "35",
+          "text": "35"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "1. Insert 16: H1(16)=5 (empty), Table[5]=16.\n2. Insert 27: H1(27)=5 (collision). H2(27)=27%9+2=2. (5+2)%11=7 (empty), Table[7]=27.\n3. Insert 62: H1(62)=7 (collision). H2(62)=62%9+2=10. (7+10)%11=6 (empty), Table[6]=62.\n4. Insert 51: H1(51)=7 (collision). H2(51)=51%9+2=8. Probes: (7+8)%11=4 (collision), (7+16)%11=1 (collision), (7+24)%11=9 (empty), Table[9]=51.\n5. Insert 35: H1(35)=2 (empty), Table[2]=35."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-12",
+      "number": "13",
+      "text": "Draw the linked list after executing the following code :\n\n**Initial Linked List:** Head → [4] → [7] → [8] → [6] → [3] → NULL\n\n```java\npublic void DoSomthing3() {\n    node t1 Head;\n    while (tl!=NULL) {\n        if (tl.data %3 == 0) {\n            node nn new node();\n            nn.data tl.data - 1;\n            nn.next = tl.next;\n            t1.next nn;\n        }\n        t1 = t1.next;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "4 → 7 → 8 → 6 → 5 → 3 → 2 → NULL",
+          "text": "4 → 7 → 8 → 6 → 5 → 3 → 2 → NULL"
+        },
+        {
+          "value": "B",
+          "label": "4 → 7 → 8 → 5 → 6 → 2 → 3 → NULL",
+          "text": "4 → 7 → 8 → 5 → 6 → 2 → 3 → NULL"
+        },
+        {
+          "value": "C",
+          "label": "4 → 7 → 8 → 6 → 3 → NULL",
+          "text": "4 → 7 → 8 → 6 → 3 → NULL"
+        },
+        {
+          "value": "D",
+          "label": "5 → 2 → NULL",
+          "text": "5 → 2 → NULL"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The logic iterates through the list and for every node whose data is divisible by 3 (values 6 and 3), it inserts a new node immediately after it with value (data - 1). Thus, 5 is inserted after 6, and 2 is inserted after 3. The final list is 4 → 7 → 8 → 6 → 5 → 3 → 2 → NULL."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-13",
+      "number": "14",
+      "text": "An algorithm takes 10 seconds for a data set of size 50, and takes 40 seconds for a data set of size 100, the complexity of this algorithm is :",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( n^2 \\)",
+          "text": "\\( n^2 \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( 2^n \\)",
+          "text": "\\( 2^n \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( \\log_2 n \\)",
+          "text": "\\( \\log_2 n \\)"
+        },
+        {
+          "value": "D",
+          "label": "n",
+          "text": "n"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "When the input size doubles (from 50 to 100), the time increases by a factor of 4 (from 10 to 40). Since \\( 2^2 = 4 \\), this indicates that the running time is proportional to the square of the input size, which is \\( O(n^2) \\)."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-14",
+      "number": "15",
+      "text": "Based on the provided answer key, identify the expression for Question 1.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\(n^2\\)",
+          "text": "\\(n^2\\)"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Extracted directly from the answer key table cell 1."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-15",
+      "number": "16",
+      "text": "Based on the provided answer key, identify the value for Question 2.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "99",
+          "text": "99"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Extracted directly from the answer key table cell 2."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-16",
+      "number": "17",
+      "text": "Based on the provided answer key, identify the expression for Question 3.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\[ \\frac{99 * n^2 - 5}{2} \\]",
+          "text": "\\[ \\frac{99 * n^2 - 5}{2} \\]"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Extracted directly from the answer key table cell 3."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-17",
+      "number": "18",
+      "text": "Based on the provided answer key, identify the expression for Question 4.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\[ \\frac{99 * n^2 - 5}{2} \\]",
+          "text": "\\[ \\frac{99 * n^2 - 5}{2} \\]"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Extracted directly from the answer key table cell 4."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-18",
+      "number": "19",
+      "text": "Based on the provided answer key, identify the expression for Question 5.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\[ \\frac{99 * (n^2 - 5 + 1)}{2} \\]",
+          "text": "\\[ \\frac{99 * (n^2 - 5 + 1)}{2} \\]"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Extracted directly from the answer key table cell 5."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-19",
+      "number": "20",
+      "text": "Q6)\n\nIdentify the sequence of values shown in the diagram for Question 6:\n- 12\n- 10\n- 8\n- 8",
+      "choices": [
+        {
+          "value": "A",
+          "label": "12, 10, 8, 8",
+          "text": "12, 10, 8, 8"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Extracted from the supplementary content for Q6 linked in the answer key."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-20",
+      "number": "21",
+      "text": "Based on the provided answer key, identify the value for Question 7.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "2",
+          "text": "2"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Extracted directly from the answer key table cell 7."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-21",
+      "number": "22",
+      "text": "Based on the provided answer key, identify the sequence of values for Question 8.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "25,15,35,30",
+          "text": "25,15,35,30"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Extracted directly from the answer key table cell 8."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-22",
+      "number": "23",
+      "text": "Based on the provided answer key, identify the value for Question 9.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "30",
+          "text": "30"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Extracted directly from the answer key table cell 9."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-23",
+      "number": "24",
+      "text": "Q10)\n\nIdentify the sequence of characters shown in the diagram for Question 10:\n- B\n- E\n- F\n- F\n- E\n- B",
+      "choices": [
+        {
+          "value": "A",
+          "label": "B, E, F, F, E, B",
+          "text": "B, E, F, F, E, B"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Extracted from the supplementary content for Q10 linked in the answer key."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-24",
+      "number": "25",
+      "text": "Q11)\n\nIdentify the sequence of values shown in the diagram for Question 11:\n- 2\n- 2\n- 3\n- 2\n- 2\n- 3\n- 4",
+      "choices": [
+        {
+          "value": "A",
+          "label": "2, 2, 3, 2, 2, 3, 4",
+          "text": "2, 2, 3, 2, 2, 3, 4"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Extracted from the supplementary content for Q11 linked in the answer key."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-25",
+      "number": "26",
+      "text": "Q12)\n\nBased on the table provided, identify the mapped values for the indices 0 through 10:\n\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|---|----|----|---|----|----|----|----|----|----|----|\n|   | 24 | 35 |   | 15 | 16 | 62 | 27 | 74 | 51 |    |",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1: 24, 2: 35, 4: 15, 5: 16, 6: 62, 7: 27, 8: 74, 9: 51",
+          "text": "1: 24, 2: 35, 4: 15, 5: 16, 6: 62, 7: 27, 8: 74, 9: 51"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Extracted from the table labeled Q12."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-26",
+      "number": "27",
+      "text": "Q13)\n\nIdentify the numerical sequence provided for Question 13:\n4-7-8-6-5-3-2",
+      "choices": [
+        {
+          "value": "A",
+          "label": "4-7-8-6-5-3-2",
+          "text": "4-7-8-6-5-3-2"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Extracted from the sequence labeled Q13."
+    },
+    {
+      "id": "extract-1771031428327-fep0j-27",
+      "number": "28",
+      "text": "Based on the provided answer key, identify the correct choice for Question 14.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Extracted directly from the answer key table cell 14."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 28
+}
