@@ -118,6 +118,12 @@ const EXAM_CONFIG = [
         "file": "data/algorithm/chapter17slide.pdf.json"
       },
       {
+        "id": "chapterc++ Second(3).pdfvisual_extractor",
+        "name": "Extracted: c++ Second(3).pdf",
+        "q": 16,
+        "file": "data/algorithm/chapterc++ Second(3).pdfvisual_extractor.json"
+      },
+      {
         "id": "chapterlecture 9 Greedy Algorithms.pdf",
         "name": "Greedy Algorithms and Activity Selection & Knapsack Problems (Fractional and 0-1)",
         "q": 10,
@@ -134,6 +140,12 @@ const EXAM_CONFIG = [
         "name": "Extracted: Screenshot 2025-06-14 024536.png",
         "q": 1,
         "file": "data/algorithm/chapterScreenshot 2025-06-14 024536.pngvisual_extractor.json"
+      },
+      {
+        "id": "chapterScreenshot 2025-06-14 144736.pngvisual_extractor",
+        "name": "Extracted: Screenshot 2025-06-14 144736.png",
+        "q": 1,
+        "file": "data/algorithm/chapterScreenshot 2025-06-14 144736.pngvisual_extractor.json"
       }
     ]
   },
