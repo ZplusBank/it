@@ -12,13 +12,13 @@
   // =============================================
   // ✦ CONFIGURATION — edit these values to tweak
   // =============================================
-  var COLOR        = '#7df9ff';   // Border glow color
-  var SPEED        = 1;           // Animation speed multiplier
-  var CHAOS        = 0.5;         // Noise amplitude (wigglyness)
-  var OCTAVES      = 10;          // Noise detail layers
-  var LACUNARITY   = 1.6;         // Frequency multiplier per octave
-  var GAIN         = 0.7;         // Amplitude multiplier per octave
-  var FREQUENCY    = 10;          // Base noise frequency
+  var COLOR = '#7560ddff';   // Border glow color
+  var SPEED = 0.2;           // Animation speed multiplier
+  var CHAOS = 0.14;         // Noise amplitude (wigglyness)
+  var OCTAVES = 10;          // Noise detail layers
+  var LACUNARITY = 1.6;         // Frequency multiplier per octave
+  var GAIN = 0.7;         // Amplitude multiplier per octave
+  var FREQUENCY = 10;          // Base noise frequency
   var BASE_FLATNESS = 0;          // First-octave damping (0 = none)
   var DISPLACEMENT = 60;          // Max pixel displacement from border
   var BORDER_OFFSET = 60;         // Canvas padding around element (px)
