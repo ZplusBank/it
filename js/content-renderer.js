@@ -57,10 +57,12 @@ const ContentRenderer = {
         };
 
         // Override strong (bold) — skip if content is empty or whitespace-only
+        // Override strong (bold) — skip if content is empty or whitespace-only
         renderer.strong = function ({ text }) {
             if (!text || !text.trim()) return `**${text || ''}**`;
             return `<strong>${text}</strong>`;
         };
+
 
         marked.setOptions({
             renderer: renderer,
@@ -112,6 +114,9 @@ const ContentRenderer = {
 
         // Step 2: Run through Marked.js (Markdown → HTML)
         let html = marked.parse(processedText);
+
+        // Step 2.5: Wrap tables in scrolling container
+        html = html.replace(/(<table\b[^>]*>[\s\S]*?<\/table>)/g, '<div class="table-overflow">$1</div>');
 
         // Step 3: Restore math blocks
         html = this._restoreMath(html, blocks);
@@ -176,7 +181,12 @@ const ContentRenderer = {
      */
     _restoreMath(html, blocks) {
         for (const block of blocks) {
-            html = html.replace(block.id, block.content);
+            let content = block.content;
+            // Wrap inline math in scrollable container
+            if (content.startsWith('\\(')) {
+                content = `<span class="math-scroll-wrapper">${content}</span>`;
+            }
+            html = html.replace(block.id, content);
         }
         return html;
     },

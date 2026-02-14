@@ -227,6 +227,15 @@ const app = {
         this.currentView = 'chapters';
         this.hideAllViews();
         document.getElementById('chaptersView').style.display = 'block';
+
+        // Reset selection and button state
+        this.selectedChapters = [];
+        const startBtn = document.getElementById('startExamBtn');
+        if (startBtn) {
+            startBtn.disabled = true;
+            startBtn.style.display = 'none'; // Initially hidden
+        }
+
         this.renderChapters(subject.chapters);
         // Clear search
         const searchInput = document.getElementById('chapterSearch');
@@ -252,7 +261,13 @@ const app = {
     updateSelectedChapters() {
         const checkboxes = document.querySelectorAll('#chaptersGrid input[type="checkbox"]:checked');
         this.selectedChapters = Array.from(checkboxes).map(cb => cb.value);
-        document.getElementById('startExamBtn').disabled = this.selectedChapters.length === 0;
+
+        const startBtn = document.getElementById('startExamBtn');
+        if (startBtn) {
+            const hasSelection = this.selectedChapters.length > 0;
+            startBtn.disabled = !hasSelection;
+            startBtn.style.display = hasSelection ? 'block' : 'none';
+        }
     },
 
     startExam() {

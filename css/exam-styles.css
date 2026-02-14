@@ -513,7 +513,7 @@ header::before {
 /* ============= Subjects View ============= */
 .subjects-view {
     display: none;
-    animation: fadeIn var(--anim-duration) ease;
+    animation: fadeInOpacity var(--anim-duration) ease;
 }
 
 .subjects-grid {
@@ -589,7 +589,7 @@ header::before {
 /* ============= Chapters View ============= */
 .chapters-view {
     display: none;
-    animation: fadeIn var(--anim-duration) ease;
+    animation: fadeInOpacity var(--anim-duration) ease;
 }
 
 .back-button {
@@ -606,6 +606,11 @@ header::before {
     transition: var(--transition);
     font-family: inherit;
     font-size: 0.95rem;
+}
+
+.chapters-view {
+    padding-bottom: 120px;
+    /* Space for the sticky button */
 }
 
 .back-button:hover {
@@ -708,6 +713,15 @@ header::before {
     letter-spacing: 0.02em;
     text-transform: uppercase;
     font-family: inherit;
+    position: fixed;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 1000;
+    width: min(90%, 500px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    animation: fadeInUpCenter 0.5s ease 0.2s backwards;
 }
 
 .start-exam-btn:hover:not(:disabled) {
@@ -1142,8 +1156,26 @@ header::before {
 .explanation table {
     width: 100%;
     border-collapse: collapse;
-    margin: 12px 0;
+    margin: 0;
+    /* Margin handled by wrapper */
     font-size: 0.95rem;
+}
+
+.table-overflow {
+    overflow-x: auto;
+    margin: 12px 0;
+    max-width: 100%;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+}
+
+.table-overflow::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
 }
 
 .question-text th,
@@ -1164,6 +1196,7 @@ header::before {
 /* Inline Code */
 .question-text code:not([class*="language-"]),
 .explanation code:not([class*="language-"]),
+.results-explanation-text code:not([class*="language-"]),
 .choice label code:not([class*="language-"]) {
     background: rgba(99, 102, 241, 0.1);
     padding: 2px 7px;
@@ -1175,30 +1208,79 @@ header::before {
 
 [data-theme="dark"] .question-text code:not([class*="language-"]),
 [data-theme="dark"] .explanation code:not([class*="language-"]),
+[data-theme="dark"] .results-explanation-text code:not([class*="language-"]),
 [data-theme="dark"] .choice label code:not([class*="language-"]) {
     background: rgba(129, 140, 248, 0.15);
 }
 
+.question-text code:not([class*="language-"]),
+.explanation code:not([class*="language-"]),
+.results-explanation-text code:not([class*="language-"]),
+.choice label code:not([class*="language-"]) {
+    overflow-x: auto;
+    white-space: nowrap;
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.question-text code:not([class*="language-"])::-webkit-scrollbar,
+.explanation code:not([class*="language-"])::-webkit-scrollbar,
+.results-explanation-text code:not([class*="language-"])::-webkit-scrollbar,
+.choice label code:not([class*="language-"])::-webkit-scrollbar {
+    display: none;
+}
+
 /* ============= MathJax Overflow ============= */
-.question-text mjx-container,
-.explanation mjx-container,
-.choice label mjx-container {
+.math-scroll-wrapper {
     overflow-x: auto;
     overflow-y: hidden;
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.math-scroll-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.question-text mjx-container,
+.explanation mjx-container,
+.results-explanation-text mjx-container,
+.choice label mjx-container {
+    /* Let the wrapper handle overflow for inline */
     max-width: 100%;
 }
 
 .question-text mjx-container[display="true"],
 .explanation mjx-container[display="true"],
+.results-explanation-text mjx-container[display="true"],
 .choice label mjx-container[display="true"] {
-    overflow-x: hidden;
+    display: block !important;
+    margin: 10px 0;
+    overflow-x: auto;
+    /* Display math should still scroll if needed */
     scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .question-text mjx-container[display="true"]::-webkit-scrollbar,
 .explanation mjx-container[display="true"]::-webkit-scrollbar,
+.results-explanation-text mjx-container[display="true"]::-webkit-scrollbar,
 .choice label mjx-container[display="true"]::-webkit-scrollbar {
     display: none;
+}
+
+.question-text mjx-container[display="true"],
+.explanation mjx-container[display="true"],
+.results-explanation-text mjx-container[display="true"],
+.choice label mjx-container[display="true"] {
+    display: block !important;
+    margin: 10px 0;
 }
 
 /* ============= Choices ============= */
@@ -1339,7 +1421,10 @@ button.submit-btn {
     max-width: 900px;
     margin: 0 auto;
     box-shadow: var(--shadow-lg);
-    animation: scaleIn 0.5s ease;
+    box-shadow: var(--shadow-lg);
+    animation: fadeInOpacity 0.5s ease;
+    padding-bottom: 120px;
+    /* Space for sticky button */
 }
 
 .results-title {
@@ -1388,7 +1473,7 @@ button.submit-btn {
     background: var(--accent-gradient);
     color: white;
     border: none;
-    padding: 18px 50px;
+    padding: 16px 32px;
     border-radius: var(--radius-full);
     font-size: 1.15rem;
     cursor: pointer;
@@ -1397,6 +1482,15 @@ button.submit-btn {
     box-shadow: 0 4px 20px rgba(99, 102, 241, 0.25);
     letter-spacing: 0.01em;
     font-family: inherit;
+    position: fixed;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 1000;
+    width: min(85%, 400px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    animation: fadeInUpCenter 0.5s ease 0.2s backwards;
 }
 
 .restart-btn:hover {
@@ -1859,6 +1953,8 @@ button.submit-btn {
     .results-view {
         padding: 24px 14px;
         border-radius: var(--radius-md);
+        padding-bottom: 120px;
+        /* Space for sticky button */
     }
 
     .results-title {
@@ -2093,4 +2189,26 @@ button.submit-btn {
     filter: brightness(1.1);
     box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
     transform: translateY(-1px);
+}
+
+@keyframes fadeInUpCenter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInOpacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
