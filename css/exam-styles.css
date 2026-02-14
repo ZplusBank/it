@@ -186,7 +186,7 @@
 
 /* ============= Base ============= */
 * {
-    margin: 0;
+    margin: 2px;
     padding: 0;
     box-sizing: border-box;
 }
@@ -759,7 +759,7 @@ header::before {
 /* ============= Question Numbers Bar ============= */
 .question-numbers {
     display: flex;
-    gap: 6px;
+    gap: 2px;
     margin-bottom: 28px;
     overflow-x: auto;
     padding-bottom: 12px;
@@ -1187,6 +1187,8 @@ header::before {
     cursor: pointer;
     transition: var(--transition);
     width: 100%;
+    overflow: hidden;
+    min-width: 0;
 }
 
 .choice:hover {
@@ -1219,6 +1221,17 @@ header::before {
     font-size: 1.05rem;
     color: var(--text-main);
     line-height: 1.55;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.choice label .code-block-wrapper {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.choice label pre[class*="language-"] {
+    max-width: 100%;
 }
 
 /* ============= Exam Controls ============= */
@@ -1760,6 +1773,23 @@ button.submit-btn {
     .choice label {
         font-size: 0.9rem;
         line-height: 1.45;
+        overflow: hidden;
+    }
+
+    .choice label .code-block-wrapper {
+        max-width: 100%;
+        margin: 8px 0;
+    }
+
+    .choice label pre[class*="language-"] {
+        font-size: 0.75rem;
+        padding: 12px;
+        max-width: 100%;
+    }
+
+    .choice label .code-block-header {
+        padding: 6px 10px;
+        font-size: 0.7rem;
     }
 
     .exam-controls {

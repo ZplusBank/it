@@ -124,10 +124,10 @@ const EXAM_CONFIG = [
         "file": "data/algorithm/chapterc++ Second(3).pdfvisual_extractor.json"
       },
       {
-        "id": "chapterData Structures - Final.pdfvisual_extractor",
+        "id": "chapterData Structures - Final.pdfvisual_extractor (1)",
         "name": "Extracted: Data Structures - Final.pdf",
-        "q": 28,
-        "file": "data/algorithm/chapterData Structures - Final.pdfvisual_extractor.json"
+        "q": 14,
+        "file": "data/algorithm/chapterData Structures - Final.pdfvisual_extractor (1).json"
       },
       {
         "id": "chapterlecture 9 Greedy Algorithms.pdf",
