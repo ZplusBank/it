@@ -371,6 +371,11 @@ const app = {
 
         // Typeset MathJax on the question container
         ContentRenderer.typeset(container);
+        if (typeof ContentRenderer.attachImageListeners === 'function') {
+            ContentRenderer.attachImageListeners(container);
+        } else {
+            console.error('ContentRenderer.attachImageListeners is not a function');
+        }
 
         // Update button states
         document.getElementById('prevBtn').disabled = this.currentQuestionIndex === 0;
@@ -442,6 +447,9 @@ const app = {
 
         // Typeset MathJax on the feedback element
         ContentRenderer.typeset(feedbackEl);
+        if (typeof ContentRenderer.attachImageListeners === 'function') {
+            ContentRenderer.attachImageListeners(feedbackEl);
+        }
     },
 
     goToQuestion(index) {
@@ -664,6 +672,9 @@ const app = {
 
         // Typeset MathJax on the entire results container
         ContentRenderer.typeset(document.getElementById('resultDetails'));
+        if (typeof ContentRenderer.attachImageListeners === 'function') {
+            ContentRenderer.attachImageListeners(document.getElementById('resultDetails'));
+        }
     },
 
     goBackToSubjects() {

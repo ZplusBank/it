@@ -137,12 +137,162 @@ const ContentRenderer = {
         }
     },
 
+
     /**
      * Render text and typeset in one step — sets innerHTML then typesets
      */
+
     async renderAndTypeset(element, text) {
         element.innerHTML = this.render(text);
         await this.typeset(element);
+        this.attachImageListeners(element);
+    },
+
+    /**
+     * Attach click listeners to images for lightbox
+     */
+    attachImageListeners(element) {
+        console.log('ContentRenderer: attachImageListeners called', element);
+        const images = element.querySelectorAll('img');
+        console.log('ContentRenderer: Found images', images.length);
+        images.forEach(img => {
+            if (img.classList.contains('lightbox-image')) return; // Skip lightbox images
+            img.classList.add('content-image');
+            img.addEventListener('click', () => {
+                console.log('ContentRenderer: Image clicked', img.src);
+                this._openLightbox(img.src, img.alt);
+            });
+        });
+    },
+
+    /**
+     * Open lightbox with zoom functionality
+     */
+    _openLightbox(src, alt) {
+        // Create overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'lightbox-overlay';
+
+        // Create content wrapper
+        const content = document.createElement('div');
+        content.className = 'lightbox-content';
+
+        // Create image
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = alt || 'Preview';
+        img.className = 'lightbox-image';
+
+        // Zoom state
+        let scale = 1;
+        let isDragging = false;
+        let startX, startY, translateX = 0, translateY = 0;
+
+        // Apply transform
+        const updateTransform = () => {
+            img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+        };
+
+        // Scroll zoom event
+        overlay.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            if (e.deltaY < 0) {
+                scale = Math.min(scale + 0.1, 5); // Max zoom 5x
+            } else {
+                scale = Math.max(scale - 0.1, 0.5); // Min zoom 0.5x
+            }
+            updateTransform();
+        });
+
+        // Drag functionality
+        img.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.clientX - translateX;
+            startY = e.clientY - translateY;
+            img.style.cursor = 'grabbing';
+            e.preventDefault(); // Prevent default drag behavior
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            translateX = e.clientX - startX;
+            translateY = e.clientY - startY;
+            updateTransform();
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            img.style.cursor = 'grab';
+        });
+
+        // Close button
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'lightbox-close';
+        closeBtn.innerHTML = '&times;';
+        closeBtn.onclick = () => {
+            document.body.removeChild(overlay);
+            document.body.style.overflow = '';
+        };
+
+        // Controls (Zoom In/Out/Reset)
+        const controls = document.createElement('div');
+        controls.className = 'lightbox-controls';
+
+        const btnZoomIn = document.createElement('button');
+        btnZoomIn.className = 'lightbox-btn';
+        btnZoomIn.innerHTML = '+';
+        btnZoomIn.onclick = (e) => {
+            e.stopPropagation();
+            scale = Math.min(scale + 0.5, 5);
+            updateTransform();
+        };
+
+        const btnZoomOut = document.createElement('button');
+        btnZoomOut.className = 'lightbox-btn';
+        btnZoomOut.innerHTML = '-';
+        btnZoomOut.onclick = (e) => {
+            e.stopPropagation();
+            scale = Math.max(scale - 0.5, 0.5);
+            updateTransform();
+        };
+
+        const btnReset = document.createElement('button');
+        btnReset.className = 'lightbox-btn';
+        btnReset.innerHTML = '&#x21bb;'; // Refresh icon
+        btnReset.onclick = (e) => {
+            e.stopPropagation();
+            scale = 1;
+            translateX = 0;
+            translateY = 0;
+            updateTransform();
+        };
+
+        controls.appendChild(btnZoomOut);
+        controls.appendChild(btnReset);
+        controls.appendChild(btnZoomIn);
+
+        // Append everything
+        content.appendChild(img);
+        overlay.appendChild(content);
+        overlay.appendChild(closeBtn);
+        overlay.appendChild(controls);
+        document.body.appendChild(overlay);
+
+        // Prevent body scroll
+        document.body.style.overflow = 'hidden';
+
+        // Animate in
+        requestAnimationFrame(() => {
+            overlay.classList.add('active');
+        });
+
+        // Close on overlay click (if not clicking content)
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay || e.target === content) {
+                document.body.removeChild(overlay);
+                document.body.style.overflow = '';
+            }
+        });
     },
 
     /**
