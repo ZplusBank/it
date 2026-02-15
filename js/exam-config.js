@@ -136,8 +136,8 @@ const EXAM_CONFIG = [
         "file": "data/algorithm/chapterDatabase - First.pdfvisual_extractor.json"
       },
       {
-        "id": "chapterfinal.pdfvisual_extractor",
-        "name": "Extracted: final.pdf",
+        "id": "Final",
+        "name": "#1",
         "q": 32,
         "file": "data/algorithm/chapterfinal.pdfvisual_extractor.json"
       },
