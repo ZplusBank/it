@@ -1,0 +1,1006 @@
+{
+  "id": "extract-1771163073115-nvvv3",
+  "label": "final.pdf",
+  "params": {
+    "file": "final.pdf",
+    "type": "visual_extractor",
+    "chapter": "Final"
+  },
+  "title": "#1",
+  "questions": [
+    {
+      "id": "extract-1771163073115-nvvv3-0",
+      "number": "1",
+      "text": "The running time of the Max-Heapify operation used to maintain the max-heap property in a Max-Heap of size \\(n\\) is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\(O(n)\\)",
+          "text": "\\(O(n)\\)"
+        },
+        {
+          "value": "B",
+          "label": "\\(O(\\lg n)\\)",
+          "text": "\\(O(\\lg n)\\)"
+        },
+        {
+          "value": "C",
+          "label": "\\(O(n^2)\\)",
+          "text": "\\(O(n^2)\\)"
+        },
+        {
+          "value": "D",
+          "label": "None of the above",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `Max-Heapify` procedure maintains the heap property by moving an element down the tree. Its running time is proportional to the height of the node in the tree. For a heap of size \\(n\\), the maximum height is \\(\\lfloor \\lg n \\rfloor\\). Therefore, the worst-case running time is \\(O(\\lg n)\\)."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-1",
+      "number": "2",
+      "text": "If \\(w(n) = O(q(n))\\), which of the following statements is always true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\(q(n) = O(w(n))\\)",
+          "text": "\\(q(n) = O(w(n))\\)"
+        },
+        {
+          "value": "B",
+          "label": "\\(q(n) = \\Omega(w(n))\\)",
+          "text": "\\(q(n) = \\Omega(w(n))\\)"
+        },
+        {
+          "value": "C",
+          "label": "\\(q(n) = \\Theta(w(n))\\)",
+          "text": "\\(q(n) = \\Theta(w(n))\\)"
+        },
+        {
+          "value": "D",
+          "label": "\\(w(n) = \\Omega(q(n))\\)",
+          "text": "\\(w(n) = \\Omega(q(n))\\)"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Based on the formal definitions of asymptotic notation, there is a transpose symmetry: \\(f(n) = O(g(n))\\) if and only if \\(g(n) = \\Omega(f(n))\\). Thus, if \\(w(n)\\) is upper-bounded by \\(q(n)\\), it follows that \\(q(n)\\) is lower-bounded by \\(w(n)\\)."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-2",
+      "number": "3",
+      "text": "The running time complexity required for printing the leaves in a Binary Min Heap is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\(O(n)\\)",
+          "text": "\\(O(n)\\)"
+        },
+        {
+          "value": "B",
+          "label": "\\(O(n \\log n)\\)",
+          "text": "\\(O(n \\log n)\\)"
+        },
+        {
+          "value": "C",
+          "label": "\\(O(n^2)\\)",
+          "text": "\\(O(n^2)\\)"
+        },
+        {
+          "value": "D",
+          "label": "None of the above",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In a binary heap of size \\(n\\) implemented as an array, the leaves are located in the second half of the array, specifically at indices \\(\\lfloor n/2 \\rfloor + 1\\) through \\(n\\). Since there are approximately \\(n/2\\) leaves, iterating through and printing them takes linear time, \\(O(n)\\)."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-3",
+      "number": "4",
+      "text": "Which of the following sorting algorithms has the highest worst-case complexity for \\( n > 1 \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Insertion sort",
+          "text": "Insertion sort"
+        },
+        {
+          "value": "B",
+          "label": "Merge sort",
+          "text": "Merge sort"
+        },
+        {
+          "value": "C",
+          "label": "Heap sort",
+          "text": "Heap sort"
+        },
+        {
+          "value": "D",
+          "label": "All have the same worst complexity",
+          "text": "All have the same worst complexity"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Insertion sort has a worst-case time complexity of \\( O(n^2) \\). In contrast, both Merge sort and Heap sort have a guaranteed worst-case time complexity of \\( O(n \\log n) \\). Since \\( n^2 \\) grows faster than \\( n \\log n \\) for \\( n > 1 \\), Insertion sort is the least efficient in the worst case among the options provided."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-4",
+      "number": "5",
+      "text": "Which of the following design techniques is/are used in quick sort?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Incremental",
+          "text": "Incremental"
+        },
+        {
+          "value": "B",
+          "label": "Heap data structure",
+          "text": "Heap data structure"
+        },
+        {
+          "value": "C",
+          "label": "Divide and Conquer",
+          "text": "Divide and Conquer"
+        },
+        {
+          "value": "D",
+          "label": "All of the above",
+          "text": "All of the above"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Quick sort is a classic **Divide and Conquer** algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays (those less than the pivot and those greater than the pivot). It then recursively sorts the sub-arrays."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-5",
+      "number": "6",
+      "text": "The running time complexity required for solving the recurrence relation \\( T(n) = T(n/2) + c \\) in \\( \\theta \\) notation is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( n \\)",
+          "text": "\\( n \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( n \\log n \\)",
+          "text": "\\( n \\log n \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( c \\)",
+          "text": "\\( c \\)"
+        },
+        {
+          "value": "D",
+          "label": "\\( \\log n \\)",
+          "text": "\\( \\log n \\)"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Using the Master Theorem for the recurrence \\( T(n) = aT(n/b) + f(n) \\), we have \\( a=1, b=2, \\) and \\( f(n)=c \\). Calculating \\( n^{\\log_b a} = n^{\\log_2 1} = n^0 = 1 \\). Since \\( f(n) = \\theta(1) \\), this falls under Case 2 of the Master Theorem. Thus, \\( T(n) = \\theta(n^{\\log_b a} \\log n) = \\theta(1 \\cdot \\log n) = \\theta(\\log n) \\). This recurrence is typical for binary search."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-6",
+      "number": "7",
+      "text": "Assume that the length of array \\( P \\), which represents the dimensions of a number of matrices in the matrix chain multiplication, is 11, what is the number of matrices in this chain?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "11",
+          "text": "11"
+        },
+        {
+          "value": "B",
+          "label": "10",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "12",
+          "text": "12"
+        },
+        {
+          "value": "D",
+          "label": "13",
+          "text": "13"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In matrix chain multiplication, a sequence of \\( n \\) matrices \\( A_1, A_2, \\dots, A_n \\) is represented by a dimension array \\( P \\) of length \\( n + 1 \\). If the length of \\( P \\) is 11, then \\( n + 1 = 11 \\), which implies there are \\( n = 10 \\) matrices."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-7",
+      "number": "8",
+      "text": "The following tree has a root node 8. Its left child is 7 and its right child is 4. Node 7 has two children: 5 (left) and 2 (right). This tree is a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Binary search tree",
+          "text": "Binary search tree"
+        },
+        {
+          "value": "B",
+          "label": "Max heap",
+          "text": "Max heap"
+        },
+        {
+          "value": "C",
+          "label": "Balanced binary search tree",
+          "text": "Balanced binary search tree"
+        },
+        {
+          "value": "D",
+          "label": "Min heap",
+          "text": "Min heap"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The tree satisfies the **max-heap property**, where every parent node is greater than or equal to its children (8 > 7, 4 and 7 > 5, 2). It is also a complete binary tree. It is not a Binary Search Tree because the right child of the root (4) is smaller than the root (8), violating the BST property."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-8",
+      "number": "9",
+      "text": "One main difference between greedy algorithms and dynamic programming is that dynamic programming use:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A top down solution",
+          "text": "A top down solution"
+        },
+        {
+          "value": "B",
+          "label": "A bottom up solution",
+          "text": "A bottom up solution"
+        },
+        {
+          "value": "C",
+          "label": "A tabular method",
+          "text": "A tabular method"
+        },
+        {
+          "value": "D",
+          "label": "A left right solution",
+          "text": "A left right solution"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A fundamental conceptual difference between the two is that dynamic programming typically employs a **bottom-up solution** by solving subproblems first and building up to the final solution. In contrast, greedy algorithms generally work in a **top-down** manner, making a locally optimal choice at each step."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-9",
+      "number": "10",
+      "text": "Which one of the following functions \\(f(n) = 2^n\\), \\(w(n) = n^3\\), \\(y(n) = n^{(n \\log n)}\\) has the highest asymptotic complexity?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "f(n)",
+          "text": "f(n)"
+        },
+        {
+          "value": "B",
+          "label": "w(n)",
+          "text": "w(n)"
+        },
+        {
+          "value": "C",
+          "label": "y(n)",
+          "text": "y(n)"
+        },
+        {
+          "value": "D",
+          "label": "All have the same complexity",
+          "text": "All have the same complexity"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "To compare the growth rates of these functions:\n1. \\(w(n) = n^3\\) is polynomial.\n2. \\(f(n) = 2^n\\) is exponential. Exponential functions grow faster than polynomial functions.\n3. \\(y(n) = n^{(n \\log n)}\\) can be rewritten as \\(2^{\\log_2(n) \\cdot n \\log_2 n} = 2^{n (\\log_2 n)^2}\\).\n\nComparing the exponents of \\(f(n)\\) and \\(y(n)\\), we compare \\(n\\) with \\(n (\\log_2 n)^2\\). Since \\(n (\\log_2 n)^2\\) grows significantly faster than \\(n\\), it follows that \\(y(n)\\) has the highest asymptotic complexity."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-10",
+      "number": "11",
+      "text": "Based on the red-black tree given below, can we set the color of node 12 as red?\n\n\n      10\n     /  \\\\\n    7    12\n   / \\\\\n  3   8\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Yes",
+          "text": "Yes"
+        },
+        {
+          "value": "B",
+          "label": "No",
+          "text": "No"
+        },
+        {
+          "value": "C",
+          "label": "It depends on the remaining nodes",
+          "text": "It depends on the remaining nodes"
+        },
+        {
+          "value": "D",
+          "label": "Only if node 10 is also red",
+          "text": "Only if node 10 is also red"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In a Red-Black Tree, all simple paths from any node to its descendant NIL leaves must contain the same number of black nodes (the black-height property). The root (node 10) is black. If node 12 is colored red, its children (NIL) would be black, resulting in a black-height of 1 for that path. However, in the left subtree, regardless of whether node 7 is red or black, any path to a leaf will include at least two black nodes (e.g., node 7 if black, or its black children if node 7 is red). Since the black-height must be equal for all paths, node 12 cannot be red."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-11",
+      "number": "12",
+      "text": "Based on the red-black tree given below, what is the depth of node 8?\n\n\n      10\n     /  \\\\\n    7    12\n   / \\\\\n  3   8\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "3",
+          "text": "3"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The depth of a node is the number of edges on the path from the root to that node. Starting from the root (node 10) at depth 0, its child (node 7) is at depth 1. Node 8 is a child of node 7, placing it at depth 2."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-12",
+      "number": "13",
+      "text": "Based on the red-black tree shown (Root: 10, Left Child: 7, Right Child: 12, Children of 7: 3 and 8). Assume that node 7 is red and the remaining nodes are black, which case will be invoked after inserting node 5?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Case 1",
+          "text": "Case 1"
+        },
+        {
+          "value": "B",
+          "label": "Case 2",
+          "text": "Case 2"
+        },
+        {
+          "value": "C",
+          "label": "Case 3",
+          "text": "Case 3"
+        },
+        {
+          "value": "D",
+          "label": "None of the above",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "To maintain binary search tree order, node 5 is inserted as the right child of node 3. In the given configuration, node 7 is red and all other nodes (10, 12, 3, 8) are black. Since the parent of the newly inserted node 5 (node 3) is black, no Red-Black Tree properties are violated (no double-red situation). Therefore, none of the standard rebalancing cases (1, 2, or 3) are invoked."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-13",
+      "number": "14",
+      "text": "Based on the red-black tree shown (Root: 10, Left Child: 7, Right Child: 12, Children of 7: 3 and 8), what is the black height of node 10 after inserting node 5?\n\n**Note**: You must count nil nodes.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "3",
+          "text": "3"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The black height of a node is the number of black nodes on any path from that node to a leaf (including NIL nodes), excluding the node itself. After inserting node 5 as a red node under node 3:\n- Path 1: 10 \\(\\rightarrow\\) 12(Black) \\(\\rightarrow\\) NIL(Black). Count: 2.\n- Path 2: 10 \\(\\rightarrow\\) 7(Red) \\(\\rightarrow\\) 8(Black) \\(\\rightarrow\\) NIL(Black). Count: 2.\n- Path 3: 10 \\(\\rightarrow\\) 7(Red) \\(\\rightarrow\\) 3(Black) \\(\\rightarrow\\) 5(Red) \\(\\rightarrow\\) NIL(Black). Count: 2.\nIn all paths, the number of black nodes encountered after node 10 is 2."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-14",
+      "number": "15",
+      "text": "Given the following two matrices with their dimensions: \\( A_1 (2, 5) \\) and \\( A_2 (5, 10) \\), what is the minimum number of scalar multiplications for \\( A_1 \\times A_2 \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "100",
+          "text": "100"
+        },
+        {
+          "value": "B",
+          "label": "200",
+          "text": "200"
+        },
+        {
+          "value": "C",
+          "label": "250",
+          "text": "250"
+        },
+        {
+          "value": "D",
+          "label": "50",
+          "text": "50"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The number of scalar multiplications required to multiply a matrix of dimension \\( p \\times q \\) by a matrix of dimension \\( q \\times r \\) is given by the formula \\( p \\times q \\times r \\). For matrices \\( A_1 \\) and \\( A_2 \\), the calculation is \\( 2 \\times 5 \\times 10 = 100 \\)."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-15",
+      "number": "16",
+      "text": "What is the total running time of the breadth first search algorithm?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( O(|V|) \\)",
+          "text": "\\( O(|V|) \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( O(|E|) \\)",
+          "text": "\\( O(|E|) \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( \\Theta(|V| + |E|) \\)",
+          "text": "\\( \\Theta(|V| + |E|) \\)"
+        },
+        {
+          "value": "D",
+          "label": "\\( O(|V| + |E|) \\)",
+          "text": "\\( O(|V| + |E|) \\)"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The time complexity of Breadth-First Search (BFS) is \\( O(V + E) \\), where \\( V \\) is the number of vertices and \\( E \\) is the number of edges. This is because every vertex is processed once and every edge is explored once in an adjacency list representation."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-16",
+      "number": "17",
+      "text": "Which of the following is not a graph type?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Directed graph",
+          "text": "Directed graph"
+        },
+        {
+          "value": "B",
+          "label": "Acyclic graph",
+          "text": "Acyclic graph"
+        },
+        {
+          "value": "C",
+          "label": "Connected graph",
+          "text": "Connected graph"
+        },
+        {
+          "value": "D",
+          "label": "Virtual graph",
+          "text": "Virtual graph"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Directed, Acyclic, and Connected are all standard ways to classify or describe graphs in computer science. 'Virtual graph' is not a standard fundamental type of graph."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-17",
+      "number": "18",
+      "text": "Which of the following is not a property of greedy algorithms?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "don't always yield an optimal solution",
+          "text": "don't always yield an optimal solution"
+        },
+        {
+          "value": "B",
+          "label": "Used for optimization problems",
+          "text": "Used for optimization problems"
+        },
+        {
+          "value": "C",
+          "label": "Use a top down solution",
+          "text": "Use a top down solution"
+        },
+        {
+          "value": "D",
+          "label": "Use a bottom up solution",
+          "text": "Use a bottom up solution"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Greedy algorithms typically use a top-down approach by making the best local choice at each step. In contrast, bottom-up solutions are a hallmark of dynamic programming, which solves subproblems first and combines them to solve larger problems."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-18",
+      "number": "19",
+      "text": "The running time complexity required for finding the maximum value in a Binary Max Heap of size N:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\(O(\\log n)\\)",
+          "text": "\\(O(\\log n)\\)"
+        },
+        {
+          "value": "B",
+          "label": "\\(O(n \\log n)\\)",
+          "text": "\\(O(n \\log n)\\)"
+        },
+        {
+          "value": "C",
+          "label": "\\(O(1)\\)",
+          "text": "\\(O(1)\\)"
+        },
+        {
+          "value": "D",
+          "label": "None of the above",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In a **Binary Max Heap**, the property of the heap ensures that the maximum element is always located at the root. Accessing the root of a heap is a constant-time operation, resulting in a time complexity of \\(O(1)\\)."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-19",
+      "number": "20",
+      "text": "Which of the following techniques is/are used for designing algorithms?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Dynamic programming",
+          "text": "Dynamic programming"
+        },
+        {
+          "value": "B",
+          "label": "Divide and conquer",
+          "text": "Divide and conquer"
+        },
+        {
+          "value": "C",
+          "label": "Greedy approach",
+          "text": "Greedy approach"
+        },
+        {
+          "value": "D",
+          "label": "All of the above",
+          "text": "All of the above"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "**Dynamic programming**, **Divide and conquer**, and **Greedy approach** are all fundamental algorithmic paradigms used to solve complex problems by breaking them down into simpler sub-problems or making locally optimal choices."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-20",
+      "number": "21",
+      "text": "Given an adjacency matrix representation for a graph with \\(V\\) vertices, what are the time complexities for: (a) listing all adjacent vertices to a specific vertex \\(i\\), and (b) checking whether a vertex \\(i\\) is adjacent to vertex \\(j\\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "(a) \\(O(V)\\), (b) \\(O(1)\\)",
+          "text": "(a) \\(O(V)\\), (b) \\(O(1)\\)"
+        },
+        {
+          "value": "B",
+          "label": "(a) \\(O(1)\\), (b) \\(O(V)\\)",
+          "text": "(a) \\(O(1)\\), (b) \\(O(V)\\)"
+        },
+        {
+          "value": "C",
+          "label": "(a) \\(O(V^2)\\), (b) \\(O(V)\\)",
+          "text": "(a) \\(O(V^2)\\), (b) \\(O(V)\\)"
+        },
+        {
+          "value": "D",
+          "label": "(a) \\(O(E)\\), (b) \\(O(1)\\)",
+          "text": "(a) \\(O(E)\\), (b) \\(O(1)\\)"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In an **adjacency matrix**:\n- To find all adjacent vertices for a vertex \\(i\\), you must scan the entire row \\(i\\) of the matrix, which has \\(V\\) elements, taking **\\(O(V)\\)** time.\n- To check if vertex \\(i\\) is adjacent to vertex \\(j\\), you simply look up the entry at `matrix[i][j]`, which is a constant-time operation **\\(O(1)\\)**."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-21",
+      "number": "22",
+      "text": "Based on the 0-1 knapsack problem with a total capacity of \\( W = 5 \\) and the item details provided in the table below, what are the values for the last row (item 4) of the dynamic programming table?\n\n| Item | Weight | Value |\n|---|---|---|\n| 1 | 2 | 12 |\n| 2 | 1 | 10 |\n| 3 | 3 | 20 |\n| 4 | 2 | 15 |\n\nPartial Table:\n| Item | 0 | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|---|\n| 0 | 0 | 0 | 0 | 0 | 0 | 0 |\n| 1 | 0 | 0 | 12 | 12 | 12 | 12 |\n| 2 | 0 | 10 | 12 | 22 | 22 | 22 |\n| 3 | 0 | 10 | 12 | 22 | 30 | 32 |\n| 4 | 0 | ? | ? | ? | ? | ? |",
+      "choices": [
+        {
+          "value": "A",
+          "label": "0, 10, 15, 25, 30, 37",
+          "text": "0, 10, 15, 25, 30, 37"
+        },
+        {
+          "value": "B",
+          "label": "0, 10, 12, 22, 30, 32",
+          "text": "0, 10, 12, 22, 30, 32"
+        },
+        {
+          "value": "C",
+          "label": "0, 10, 15, 22, 32, 37",
+          "text": "0, 10, 15, 22, 32, 37"
+        },
+        {
+          "value": "D",
+          "label": "0, 12, 15, 25, 30, 35",
+          "text": "0, 12, 15, 25, 30, 35"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "For item 4 with weight 2 and value 15:\n- At weight 1: \\( \\max(K[3,1], K[3, 1-2]+15) = 10 \\)\n- At weight 2: \\( \\max(K[3,2], K[3, 2-2]+15) = \\max(12, 15) = 15 \\)\n- At weight 3: \\( \\max(K[3,3], K[3, 3-2]+15) = \\max(22, 10+15) = 25 \\)\n- At weight 4: \\( \\max(K[3,4], K[3, 4-2]+15) = \\max(30, 12+15) = 30 \\)\n- At weight 5: \\( \\max(K[3,5], K[3, 5-2]+15) = \\max(32, 22+15) = 37 \\)\nSo the row is [0, 10, 15, 25, 30, 37]."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-22",
+      "number": "23",
+      "text": "Based on the completed 0-1 knapsack table from the previous question, which set of items should be selected to achieve the maximum profit of 37 with a capacity of 5?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Items {1, 2, 3}",
+          "text": "Items {1, 2, 3}"
+        },
+        {
+          "value": "B",
+          "label": "Items {1, 2, 4}",
+          "text": "Items {1, 2, 4}"
+        },
+        {
+          "value": "C",
+          "label": "Items {2, 3, 4}",
+          "text": "Items {2, 3, 4}"
+        },
+        {
+          "value": "D",
+          "label": "Items {3, 4}",
+          "text": "Items {3, 4}"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "To find the items, we backtrack: \n1. \\( K[4,5] = 37 \\) is greater than \\( K[3,5] = 32 \\), so Item 4 is selected. Remaining capacity: \\( 5 - 2 = 3 \\).\n2. Look at \\( K[3,3] = 22 \\). Since \\( K[3,3] = K[2,3] \\), Item 3 is NOT selected.\n3. Look at \\( K[2,3] = 22 \\). Since \\( K[2,3] > K[1,3] = 12 \\), Item 2 is selected. Remaining capacity: \\( 3 - 1 = 2 \\).\n4. Look at \\( K[1,2] = 12 \\). Since \\( K[1,2] > K[0,2] = 0 \\), Item 1 is selected.\nSelected items are {1, 2, 4} with total value 12 + 10 + 15 = 37."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-23",
+      "number": "24",
+      "text": "What is the adjacency list representation of the undirected graph with vertices {1, 2, 3, 4} and edges {(1,2), (1,3), (2,3), (2,4), (3,4)}?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1: [2, 3]; 2: [1, 3, 4]; 3: [1, 2, 4]; 4: [2, 3]",
+          "text": "1: [2, 3]; 2: [1, 3, 4]; 3: [1, 2, 4]; 4: [2, 3]"
+        },
+        {
+          "value": "B",
+          "label": "1: [2]; 2: [3, 4]; 3: [4]; 4: []",
+          "text": "1: [2]; 2: [3, 4]; 3: [4]; 4: []"
+        },
+        {
+          "value": "C",
+          "label": "1: [2, 3]; 2: [1, 4]; 3: [1, 4]; 4: [2, 3]",
+          "text": "1: [2, 3]; 2: [1, 4]; 3: [1, 4]; 4: [2, 3]"
+        },
+        {
+          "value": "D",
+          "label": "1: [2, 3, 4]; 2: [1, 3]; 3: [1, 2]; 4: [1]",
+          "text": "1: [2, 3, 4]; 2: [1, 3]; 3: [1, 2]; 4: [1]"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In an undirected graph, an adjacency list records all neighbors for each vertex. \nVertex 1 is connected to 2 and 3.\nVertex 2 is connected to 1, 3, and 4.\nVertex 3 is connected to 1, 2, and 4.\nVertex 4 is connected to 2 and 3."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-24",
+      "number": "25",
+      "text": "Given the following adjacency matrix for an undirected graph with 5 vertices, determine the degree of vertex 2.\n\n| | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|\n| 1 | 0 | 1 | 0 | 0 | 1 |\n| 2 | 1 | 0 | 1 | 1 | 1 |\n| 3 | 0 | 1 | 0 | 1 | 0 |\n| 4 | 0 | 1 | 1 | 0 | 1 |\n| 5 | 1 | 1 | 0 | 1 | 0 |",
+      "choices": [
+        {
+          "value": "A",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "3",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "4",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "5",
+          "text": "5"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In an adjacency matrix of an undirected graph, the degree of a vertex is the sum of the values in its corresponding row or column. For vertex 2, the row values are [1, 0, 1, 1, 1]. Summing these gives 1 + 0 + 1 + 1 + 1 = 4."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-25",
+      "number": "26",
+      "text": "Perform a Depth First Search (DFS) on the directed graph with edges: \\( u \\to v, v \\to y, w \\to v, w \\to y, x \\to u, x \\to y \\). Use vertex \\( w \\) as the first source. If multiple choices exist, visit neighbors in alphabetical order. What is the classification of the edges \\( (w, y) \\) and \\( (x, v) \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "(w, y): Forward edge; (x, v): Cross edge",
+          "text": "(w, y): Forward edge; (x, v): Cross edge"
+        },
+        {
+          "value": "B",
+          "label": "(w, y): Tree edge; (x, v): Back edge",
+          "text": "(w, y): Tree edge; (x, v): Back edge"
+        },
+        {
+          "value": "C",
+          "label": "(w, y): Back edge; (x, v): Forward edge",
+          "text": "(w, y): Back edge; (x, v): Forward edge"
+        },
+        {
+          "value": "D",
+          "label": "(w, y): Cross edge; (x, v): Tree edge",
+          "text": "(w, y): Cross edge; (x, v): Tree edge"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "DFS starting at \\( w \\):\n1. Visit \\( w \\), then its neighbor \\( v \\) (Tree edge), then \\( v \\)'s neighbor \\( y \\) (Tree edge).\n2. \\( y \\) is finished, then \\( v \\) is finished, then \\( w \\) is finished.\n3. The edge \\( (w, y) \\) connects an ancestor to a finished descendant that is not a child in the DFS tree, making it a **Forward edge**.\n4. Restart DFS at unvisited vertex \\( u \\). \\( u \\) points to \\( v \\), which is already finished and not an ancestor/descendant, so \\( (u, v) \\) is a cross edge. \\( u \\) finishes.\n5. Restart DFS at \\( x \\). \\( x \\) points to \\( u \\) and \\( y \\), both already finished, so these are cross edges. Since \\( v \\) was finished before \\( x \\) was even discovered, any hypothetical path or edge involving \\( x \\) reaching into the previously finished DFS tree (like reaching \\( v \\) through \\( u \\)) represents a **Cross edge** relation."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-26",
+      "number": "27",
+      "text": "What is the time complexity of finding all vertices adjacent to a vertex \\( i \\) in a graph represented by an adjacency matrix \\( E \\) with \\( |V| \\) vertices, using the following algorithm?\n\n\nadjacent(i){\n  for j ← 1 to |V|\n    if E[i, j] = 1\n      then add j to adj[i]\n}\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "O(1)",
+          "text": "O(1)"
+        },
+        {
+          "value": "B",
+          "label": "O(|V|)",
+          "text": "O(|V|)"
+        },
+        {
+          "value": "C",
+          "label": "O(|E|)",
+          "text": "O(|E|)"
+        },
+        {
+          "value": "D",
+          "label": "O(|V|^2)",
+          "text": "O(|V|^2)"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The algorithm uses a single loop that iterates from 1 to \\( |V| \\). Each check within the loop takes constant time \\( O(1) \\). Therefore, the total time complexity is \\( O(|V|) \\)."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-27",
+      "number": "28",
+      "text": "In a graph represented by an adjacency list, what is the worst-case time complexity of checking if vertex \\( i \\) is adjacent to vertex \\( j \\) using the following algorithm?\n\n\nis-adjacent(i, j){\n  for each v ∈ adj[j]\n    if v = i\n      then return true\n  return false\n}\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "O(1)",
+          "text": "O(1)"
+        },
+        {
+          "value": "B",
+          "label": "O(|V|)",
+          "text": "O(|V|)"
+        },
+        {
+          "value": "C",
+          "label": "O(|E|)",
+          "text": "O(|E|)"
+        },
+        {
+          "value": "D",
+          "label": "O(\\log |V|)",
+          "text": "O(\\log |V|)"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In an adjacency list, checking for adjacency requires traversing the list of neighbors for a specific vertex. In the worst case (e.g., a complete graph), a vertex can have up to \\( |V| - 1 \\) neighbors, resulting in a complexity of \\( O(|V|) \\)."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-28",
+      "number": "29",
+      "text": "Given the following set of items with values \\( V = [12, 10, 20, 15] \\) and weights \\( W = [2, 1, 3, 2] \\), what is the maximum total value that can be achieved in a 0/1 Knapsack with a capacity of 5?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "32",
+          "text": "32"
+        },
+        {
+          "value": "B",
+          "label": "35",
+          "text": "35"
+        },
+        {
+          "value": "C",
+          "label": "37",
+          "text": "37"
+        },
+        {
+          "value": "D",
+          "label": "42",
+          "text": "42"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Using dynamic programming, we find that the optimal selection of items is item 1 (val: 12, wt: 2), item 2 (val: 10, wt: 1), and item 4 (val: 15, wt: 2). The total weight is \\( 2 + 1 + 2 = 5 \\) and the total value is \\( 12 + 10 + 15 = 37 \\)."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-29",
+      "number": "30",
+      "text": "Based on the following adjacency list representation of an undirected graph, what is the degree of vertex 3?\n\n- 1: 2, 3\n- 2: 1, 3, 4\n- 3: 1, 2, 4\n- 4: 2, 3",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "3",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "4",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The degree of a vertex in an undirected graph is the number of edges incident to it. In an adjacency list, this is equivalent to the number of neighbors listed for that vertex. Vertex 3 is connected to vertices 1, 2, and 4, giving it a degree of 3."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-30",
+      "number": "31",
+      "text": "Analyze the graph shown in the diagram (labeled 4.b). Which vertices are directly adjacent to vertex 5?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1, 2, and 3",
+          "text": "1, 2, and 3"
+        },
+        {
+          "value": "B",
+          "label": "1, 2, and 4",
+          "text": "1, 2, and 4"
+        },
+        {
+          "value": "C",
+          "label": "2, 3, and 4",
+          "text": "2, 3, and 4"
+        },
+        {
+          "value": "D",
+          "label": "2 and 4 only",
+          "text": "2 and 4 only"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "By observing the edges connected to node 5 in the visual representation, we can see lines drawn to nodes 1, 2, and 4."
+    },
+    {
+      "id": "extract-1771163073115-nvvv3-31",
+      "number": "32",
+      "text": "Refer to the provided Depth-First Search (DFS) graph where nodes are labeled with discovery and finish times in the format \\( d/f \\). Based on the timing intervals and the provided legend, which of the following edge classifications is **incorrect**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Edge \\( (w, y) \\) is a Tree edge.",
+          "text": "Edge \\( (w, y) \\) is a Tree edge."
+        },
+        {
+          "value": "B",
+          "label": "Edge \\( (v, y) \\) is a Back edge.",
+          "text": "Edge \\( (v, y) \\) is a Back edge."
+        },
+        {
+          "value": "C",
+          "label": "Edge \\( (u, x) \\) is a Forward edge.",
+          "text": "Edge \\( (u, x) \\) is a Forward edge."
+        },
+        {
+          "value": "D",
+          "label": "Edge \\( (u, v) \\) is a Cross edge.",
+          "text": "Edge \\( (u, v) \\) is a Cross edge."
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In a DFS traversal, edge types are determined by the nesting of discovery (\\( d \\)) and finish (\\( f \\)) time intervals: \n- **Tree/Forward Edge**: The destination interval is contained within the source interval (\\( [d_{dest}, f_{dest}] \\subset [d_{src}, f_{src}] \\)). \n- **Back Edge**: The source interval is contained within the destination interval (\\( [d_{src}, f_{src}] \\subset [d_{dest}, f_{dest}] \\)). \n- **Cross Edge**: The intervals are disjoint and the destination was discovered before the source (\\( d_{dest} < d_{src} \\)). \n\nEvaluating the choices: \n- **A**: \\( (w, y) \\) has intervals \\( [1, 8] \\) and \\( [2, 7] \\). Since \\( [2, 7] \\subset [1, 8] \\), it is a tree edge. \n- **B**: \\( (v, y) \\) has intervals \\( [4, 5] \\) and \\( [2, 7] \\). Since \\( [4, 5] \\subset [2, 7] \\), it is a back edge. This matches the dashed line indicator in the legend. \n- **C**: \\( (u, x) \\) has intervals \\( [9, 10] \\) and \\( [3, 6] \\). These are disjoint and \\( 3 < 9 \\), making it a **Cross edge**, not a forward edge. \n- **D**: \\( (u, v) \\) has intervals \\( [9, 10] \\) and \\( [4, 5] \\). These are disjoint and \\( 4 < 9 \\), making it a cross edge. This matches the dotted line indicator in the legend."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 32
+}

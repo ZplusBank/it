@@ -136,6 +136,12 @@ const EXAM_CONFIG = [
         "file": "data/algorithm/chapterDatabase - First.pdfvisual_extractor.json"
       },
       {
+        "id": "chapterfinal.pdfvisual_extractor",
+        "name": "Extracted: final.pdf",
+        "q": 32,
+        "file": "data/algorithm/chapterfinal.pdfvisual_extractor.json"
+      },
+      {
         "id": "chapterlecture 9 Greedy Algorithms.pdf",
         "name": "Greedy Algorithms and Activity Selection & Knapsack Problems (Fractional and 0-1)",
         "q": 10,
