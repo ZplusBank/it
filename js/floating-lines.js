@@ -7,14 +7,14 @@
 
   // --- GLSL Shaders ---
   const vertexShader = `
-precision highp float;
+precision mediump float;
 void main() {
   gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
 }
 `;
 
   const fragmentShader = `
-precision highp float;
+precision mediump float;
 
 uniform float iTime;
 uniform vec3  iResolution;
@@ -50,54 +50,47 @@ uniform vec3 lineGradient[8];
 uniform int lineGradientCount;
 
 const vec3 BLACK = vec3(0.0);
-const vec3 PINK  = vec3(233.0, 71.0, 245.0) / 255.0;
-const vec3 BLUE  = vec3(47.0,  75.0, 162.0) / 255.0;
+const vec3 PINK  = vec3(0.9137, 0.2784, 0.9608);
+const vec3 BLUE  = vec3(0.1843, 0.2941, 0.6353);
 
 mat2 rotate(float r) {
-  return mat2(cos(r), sin(r), -sin(r), cos(r));
+  float c = cos(r), s = sin(r);
+  return mat2(c, s, -s, c);
 }
 
 vec3 background_color(vec2 uv) {
-  vec3 col = vec3(0.0);
   float y = sin(uv.x - 0.2) * 0.3 - 0.1;
   float m = uv.y - y;
-  col += mix(BLUE, BLACK, smoothstep(0.0, 1.0, abs(m)));
+  vec3 col = mix(BLUE, BLACK, smoothstep(0.0, 1.0, abs(m)));
   col += mix(PINK, BLACK, smoothstep(0.0, 1.0, abs(m - 0.8)));
   return col * 0.5;
 }
 
-vec3 getLineColor(float t, vec3 baseColor) {
-  if (lineGradientCount <= 0) { return baseColor; }
-  vec3 gradientColor;
-  if (lineGradientCount == 1) {
-    gradientColor = lineGradient[0];
-  } else {
-    float clampedT = clamp(t, 0.0, 0.9999);
-    float scaled = clampedT * float(lineGradientCount - 1);
-    int idx = int(floor(scaled));
-    float f = fract(scaled);
-    int idx2 = min(idx + 1, lineGradientCount - 1);
-    gradientColor = mix(lineGradient[idx], lineGradient[idx2], f);
+vec3 getLineColor(float t) {
+  if (lineGradientCount <= 1) {
+    return lineGradient[0] * 0.5;
   }
-  return gradientColor * 0.5;
+  float scaled = clamp(t, 0.0, 0.9999) * float(lineGradientCount - 1);
+  int idx = int(floor(scaled));
+  int idx2 = min(idx + 1, lineGradientCount - 1);
+  return mix(lineGradient[idx], lineGradient[idx2], fract(scaled)) * 0.5;
 }
 
-float wave(vec2 uv, float offset, vec2 screenUv, vec2 mouseUv, bool shouldBend) {
-  float time = iTime * animationSpeed;
-  float x_offset   = offset;
+// Precomputed time passed in to avoid recomputing per wave call
+float wave(vec2 uv, float offset, float time, vec2 screenUv, vec2 mouseUv, bool shouldBend) {
   float x_movement = time * 0.1;
-  float amp        = sin(offset + time * 0.2) * 0.3;
-  float y          = sin(uv.x + x_offset + x_movement) * amp;
+  float amp = sin(offset + time * 0.2) * 0.3;
+  float y = sin(uv.x + offset + x_movement) * amp;
 
-  if (shouldBend) {
+  // Skip expensive exp() when bend influence is negligible
+  if (shouldBend && bendInfluence > 0.001) {
     vec2 d = screenUv - mouseUv;
     float influence = exp(-dot(d, d) * bendRadius);
-    float bendOffset = (mouseUv.y - screenUv.y) * influence * bendStrength * bendInfluence;
-    y += bendOffset;
+    y += (mouseUv.y - screenUv.y) * influence * bendStrength * bendInfluence;
   }
 
   float m = uv.y - y;
-  return 0.0175 / max(abs(m) + 0.01, 1e-3) + 0.01;
+  return 0.0175 / (abs(m) + 0.01) + 0.01;
 }
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
@@ -106,54 +99,56 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
   if (parallax) { baseUv += parallaxOffset; }
 
+  // Precompute shared values once per pixel
+  float time = iTime * animationSpeed;
+  float logLen = log(length(baseUv) + 1.0);
+  bool doBend = interactive && bendInfluence > 0.001;
+
   vec3 col = vec3(0.0);
   vec3 b = lineGradientCount > 0 ? vec3(0.0) : background_color(baseUv);
 
   vec2 mouseUv = vec2(0.0);
-  if (interactive) {
+  if (doBend) {
     mouseUv = (2.0 * iMouse - iResolution.xy) / iResolution.y;
     mouseUv.y *= -1.0;
   }
 
   if (enableBottom) {
+    mat2 rot = rotate(bottomWavePosition.z * logLen);
+    vec2 ruv = baseUv * rot;
     for (int i = 0; i < bottomLineCount; ++i) {
       float fi = float(i);
-      float t = fi / max(float(bottomLineCount - 1), 1.0);
-      vec3 lineCol = getLineColor(t, b);
-      float angle = bottomWavePosition.z * log(length(baseUv) + 1.0);
-      vec2 ruv = baseUv * rotate(angle);
+      vec3 lineCol = lineGradientCount > 0 ? getLineColor(fi / max(float(bottomLineCount - 1), 1.0)) : b;
       col += lineCol * wave(
         ruv + vec2(bottomLineDistance * fi + bottomWavePosition.x, bottomWavePosition.y),
-        1.5 + 0.2 * fi, baseUv, mouseUv, interactive
+        1.5 + 0.2 * fi, time, baseUv, mouseUv, doBend
       ) * 0.2;
     }
   }
 
   if (enableMiddle) {
+    mat2 rot = rotate(middleWavePosition.z * logLen);
+    vec2 ruv = baseUv * rot;
     for (int i = 0; i < middleLineCount; ++i) {
       float fi = float(i);
-      float t = fi / max(float(middleLineCount - 1), 1.0);
-      vec3 lineCol = getLineColor(t, b);
-      float angle = middleWavePosition.z * log(length(baseUv) + 1.0);
-      vec2 ruv = baseUv * rotate(angle);
+      vec3 lineCol = lineGradientCount > 0 ? getLineColor(fi / max(float(middleLineCount - 1), 1.0)) : b;
       col += lineCol * wave(
         ruv + vec2(middleLineDistance * fi + middleWavePosition.x, middleWavePosition.y),
-        2.0 + 0.15 * fi, baseUv, mouseUv, interactive
+        2.0 + 0.15 * fi, time, baseUv, mouseUv, doBend
       );
     }
   }
 
   if (enableTop) {
+    mat2 rot = rotate(topWavePosition.z * logLen);
+    vec2 ruv = baseUv * rot;
+    ruv.x *= -1.0;
     for (int i = 0; i < topLineCount; ++i) {
       float fi = float(i);
-      float t = fi / max(float(topLineCount - 1), 1.0);
-      vec3 lineCol = getLineColor(t, b);
-      float angle = topWavePosition.z * log(length(baseUv) + 1.0);
-      vec2 ruv = baseUv * rotate(angle);
-      ruv.x *= -1.0;
+      vec3 lineCol = lineGradientCount > 0 ? getLineColor(fi / max(float(topLineCount - 1), 1.0)) : b;
       col += lineCol * wave(
         ruv + vec2(topLineDistance * fi + topWavePosition.x, topWavePosition.y),
-        1.0 + 0.2 * fi, baseUv, mouseUv, interactive
+        1.0 + 0.2 * fi, time, baseUv, mouseUv, doBend
       ) * 0.1;
     }
   }
@@ -162,9 +157,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 }
 
 void main() {
-  vec4 color = vec4(0.0);
-  mainImage(color, gl_FragCoord.xy);
-  gl_FragColor = color;
+  mainImage(gl_FragColor, gl_FragCoord.xy);
 }
 `;
 
@@ -210,7 +203,7 @@ void main() {
   camera.position.z = 1;
 
   const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: false, powerPreference: 'low-power' });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1));
   renderer.domElement.style.width = '100%';
   renderer.domElement.style.height = '100%';
   container.appendChild(renderer.domElement);
@@ -315,7 +308,7 @@ void main() {
 
   // (Resize observer moved to bottom to handle loop restart)
 
-  // --- Mouse interactivity ---
+  // --- Mouse interactivity (throttled) ---
   const targetMouse = new THREE.Vector2(-1000, -1000);
   const currentMouse = new THREE.Vector2(-1000, -1000);
   let targetInfluence = 0;
@@ -323,38 +316,56 @@ void main() {
   const targetParallax = new THREE.Vector2(0, 0);
   const currentParallax = new THREE.Vector2(0, 0);
   const damping = config.mouseDamping;
+  let pointerDirty = false;
 
   document.addEventListener('pointermove', (e) => {
-    if (!cachedRect) return;
+    if (!cachedRect || pointerDirty) return;
+    pointerDirty = true;
     const x = e.clientX - cachedRect.left;
     const y = e.clientY - cachedRect.top;
     targetMouse.set(x * cachedDpr, (cachedRect.height - y) * cachedDpr);
     targetInfluence = 1.0;
 
     if (config.parallax) {
-      const cx = cachedRect.width / 2;
-      const cy = cachedRect.height / 2;
+      const cx = cachedRect.width * 0.5;
+      const cy = cachedRect.height * 0.5;
       targetParallax.set(
         ((x - cx) / cachedRect.width) * config.parallaxStrength,
         -((y - cy) / cachedRect.height) * config.parallaxStrength
       );
     }
-  });
+  }, { passive: true });
 
   document.addEventListener('pointerleave', () => {
     targetInfluence = 0.0;
   });
 
-  // --- Render Loop (throttled to ~30fps for performance) ---
+  // --- Visibility API: pause when tab hidden ---
+  let tabHidden = document.hidden;
+  document.addEventListener('visibilitychange', () => {
+    tabHidden = document.hidden;
+    if (!tabHidden && !isMobileCached && !animationId) {
+      clock.start();
+      animationId = requestAnimationFrame(renderLoop);
+    }
+  });
+
+  // --- Render Loop (throttled to ~30fps) ---
   const clock = new THREE.Clock();
   let animationId = null;
   let lastRenderTime = 0;
-  const FRAME_INTERVAL = 1000 / 30; // 30fps cap
+  const FRAME_INTERVAL = 1000 / 30;
 
   function renderLoop(timestamp) {
     // Mobile optimization: Render only once, then stop loop
     if (isMobileCached) {
       renderer.render(scene, camera);
+      animationId = null;
+      return;
+    }
+
+    // Pause when tab is not visible
+    if (tabHidden) {
       animationId = null;
       return;
     }
@@ -368,6 +379,7 @@ void main() {
 
     uniforms.iTime.value = clock.getElapsedTime();
 
+    // Smooth mouse interpolation
     currentMouse.lerp(targetMouse, damping);
     uniforms.iMouse.value.copy(currentMouse);
     currentInfluence += (targetInfluence - currentInfluence) * damping;
@@ -376,6 +388,9 @@ void main() {
     currentParallax.lerp(targetParallax, damping);
     uniforms.parallaxOffset.value.copy(currentParallax);
 
+    // Allow next pointer event
+    pointerDirty = false;
+
     renderer.render(scene, camera);
     animationId = requestAnimationFrame(renderLoop);
   }
@@ -383,55 +398,28 @@ void main() {
   // Initial render
   renderLoop();
 
-  // Resize logic to restart loop if moving from mobile -> desktop
-  const originalSetSize = setSize;
-  // We need to override or augment the setSize function or the resize listener
-  // The original code defined setSize and added the listener. 
-  // Let's modify how we handle the resize to ensure loop restarts if needed.
-
-  // Re-attach our own resize listener that handles the loop restart
+  // --- Resize handler with loop management ---
+  let resizeTimer = 0;
   function handleResize() {
-    setSize(); // Call original sizing logic (which updates uniforms and isMobileCached)
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      setSize();
 
-    if (!isMobileCached && !animationId) {
-      // Restart loop if we are now desktop and loop wasn't running
-      clock.start();
-      renderLoop();
-    } else if (isMobileCached && animationId) {
-      // Stop loop if we are now mobile (renderLoop will check condition and return, but we can also cancel here)
-      cancelAnimationFrame(animationId);
-      animationId = null;
-      // Render one static frame for the new size
-      renderer.render(scene, camera);
-    } else if (isMobileCached) {
-      // Just re-render static frame on resize
-      renderer.render(scene, camera);
-    }
+      if (!isMobileCached && !animationId && !tabHidden) {
+        clock.start();
+        renderLoop();
+      } else if (isMobileCached && animationId) {
+        cancelAnimationFrame(animationId);
+        animationId = null;
+        renderer.render(scene, camera);
+      } else if (isMobileCached) {
+        renderer.render(scene, camera);
+      }
+    }, 100);
   }
 
-  // Remove the old listener if possible, or just overwrite the behavior.
-  // Since we are inside the IIFE and 'setSize' is local, we can't easily remove the specific listener added before 
-  // without cleaner code structure, but since we are REPLACING the bottom part of the file, we can just redefine the listener logic.
-
-  // NOTE: The previous code block had `new ResizeObserver(setSize).observe(container)`. 
-  // We should replace that part too if we want to be clean, but replacing just the renderLoop area is safer if we want to minimize diff.
-  // However, to do this correctly, I should probably replace the ResizeObserver part too or just hook into `setSize`.
-
-  // Let's look at the previous `setSize`... it was defined above this block.
-  // I will just add the loop management to the `setSize` function if I could, but it is out of scope of this replace block.
-  // Actually, I can just wrap the resize behavior here.
-
   if (typeof ResizeObserver !== 'undefined') {
-    // Disconnect old one? We can't reach it. 
-    // But we can just add our new logic. 
-    // Actually, the previous code block ends with `renderLoop();`.
-    // I will replace `renderLoop();` and the end of file with the new logic.
-
-    // Let's attach the new resize handler that manages the loop.
-    const resizeObserver = new ResizeObserver(() => {
-      handleResize();
-    });
-    resizeObserver.observe(container);
+    new ResizeObserver(handleResize).observe(container);
   } else {
     window.addEventListener('resize', handleResize);
   }
