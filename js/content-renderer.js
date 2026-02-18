@@ -36,11 +36,15 @@ const ContentRenderer = {
     _typesetController: null,
 
     /**
-     * Initialize Marked.js with Prism.js integration
+     * Initialize Marked.js with Prism.js integration.
+     * Safe to call multiple times — no-ops if already initialized or libs missing.
      */
+    _initialized: false,
+
     init() {
+        if (this._initialized) return;
         if (typeof marked === 'undefined') {
-            console.warn('Marked.js not loaded — Markdown rendering disabled');
+            // Will be called again after lazy load
             return;
         }
 
@@ -89,6 +93,8 @@ const ContentRenderer = {
             gfm: true,
             breaks: true
         });
+
+        this._initialized = true;
     },
 
     /**
@@ -157,10 +163,27 @@ const ContentRenderer = {
 
     /**
      * Trigger MathJax typesetting on a DOM element.
-     * Cancels any pending typeset for same element.
+     * Lazy-loads MathJax on first call. Cancels any pending typeset for same element.
      */
     async typeset(element) {
-        if (typeof MathJax === 'undefined' || !MathJax.typesetPromise) return;
+        // Check if element contains any math content before loading MathJax
+        const html = element.innerHTML;
+        const hasMath = html.indexOf('\\(') !== -1 || html.indexOf('\\[') !== -1 || html.indexOf('\\ce{') !== -1;
+        if (!hasMath) return;
+
+        // Lazy-load MathJax if not available
+        if (typeof MathJax === 'undefined' || !MathJax.typesetPromise) {
+            if (typeof LibLoader !== 'undefined') {
+                try {
+                    await LibLoader.loadMathJax();
+                } catch (e) {
+                    console.warn('Failed to load MathJax:', e);
+                    return;
+                }
+            } else {
+                return;
+            }
+        }
 
         // Cancel previous pending typeset
         if (this._typesetController) {
@@ -419,7 +442,8 @@ const ContentRenderer = {
     }
 };
 
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+// Try to initialize immediately if libs are already loaded (e.g. cached),
+// otherwise init() will be called by exam-engine before first render.
+if (typeof marked !== 'undefined') {
     ContentRenderer.init();
-});
+}

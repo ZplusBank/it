@@ -257,8 +257,6 @@ body.exam-active #floatingLinesBg {
 /* ============= Header ============= */
 header {
     background: var(--header-gradient);
-    background-size: 200% 200%;
-    animation: gradientShift 20s ease infinite;
     color: white;
     padding: 40px 48px;
     border-radius: var(--radius-xl);
@@ -269,22 +267,32 @@ header {
     contain: layout style paint;
 }
 
-/* Subtle shimmer overlay — optimized: reduced frequency, paused by default */
+/* Shimmer overlay using compositable transform instead of background-position */
 header::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
     background: linear-gradient(120deg,
             transparent 30%,
-            rgba(255, 255, 255, 0.05) 50%,
+            rgba(255, 255, 255, 0.04) 50%,
             transparent 70%);
-    background-size: 200% 100%;
-    animation: shimmer 12s ease-in-out infinite;
+    animation: shimmerTransform 12s ease-in-out infinite;
+    will-change: transform;
     pointer-events: none;
     contain: strict;
+}
+
+@keyframes shimmerTransform {
+    0% {
+        transform: translateX(-33%);
+    }
+
+    100% {
+        transform: translateX(33%);
+    }
 }
 
 .header-content {

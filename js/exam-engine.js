@@ -261,7 +261,7 @@ const app = {
 
             // Restore state
             this.selectedChapters = progress.selectedChapters;
-            this.startExam();
+            await this.startExam();
             this.currentQuestionIndex = progress.currentQuestionIndex;
             this.userAnswers = progress.userAnswers;
             this.checkedAnswers = progress.checkedAnswers;
@@ -618,7 +618,26 @@ const app = {
         this.updateSelectedChapters();
     },
 
-    startExam() {
+    // Track whether content libs are loaded
+    _contentLibsReady: false,
+
+    /**
+     * Load content-rendering libraries on demand (Marked, Prism).
+     * Called once before first question render.
+     */
+    async _ensureContentLibs() {
+        if (this._contentLibsReady) return;
+        if (typeof LibLoader !== 'undefined') {
+            await LibLoader.loadContentLibs();
+        }
+        // Re-initialize ContentRenderer now that libs are loaded
+        if (typeof ContentRenderer !== 'undefined') {
+            ContentRenderer.init();
+        }
+        this._contentLibsReady = true;
+    },
+
+    async startExam() {
         // Collect questions from selected chapters
         this.questions = [];
         const selectedChapterIds = new Set(this.selectedChapters);
@@ -645,6 +664,15 @@ const app = {
         this.userAnswers = {};
         this.checkedAnswers = {};
         this.clearProgress(); // Clear any old progress when starting new exam
+
+        // Lazy-load content rendering libs before showing exam
+        this.showLoading('Preparing exam...');
+        try {
+            await this._ensureContentLibs();
+        } catch (e) {
+            console.warn('Some content libs failed to load:', e);
+        }
+        this.hideLoading();
 
         this.showExamView();
     },

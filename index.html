@@ -34,8 +34,8 @@
         href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" media="print" onload="this.media='all'">
 
     <!-- Preload critical JS -->
+    <link rel="preload" href="js/lib-loader.js" as="script">
     <link rel="preload" href="js/exam-config.js" as="script">
-    <link rel="preload" href="js/content-renderer.js" as="script">
     <link rel="preload" href="js/exam-engine.js" as="script">
 
     <!-- MathJax config (just config object — no blocking script) -->
@@ -195,19 +195,11 @@
         </main>
     </div>
 
-    <!-- 3rd-party libs (deferred — loaded in parallel but executed in order after HTML parsing) -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-c.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-cpp.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-sql.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" defer></script>
+    <!-- 3rd-party libs loaded on-demand by LibLoader (zero TBT at page load) -->
+    <!-- Marked.js, Prism.js, MathJax all lazy-loaded when exam starts -->
 
-    <!-- Core app scripts (defer — execute AFTER 3rd-party libs above) -->
+    <!-- Core app scripts (lightweight — no heavy 3rd-party deps at load time) -->
+    <script src="js/lib-loader.js" defer></script>
     <script src="js/exam-config.js" defer></script>
     <script src="js/content-renderer.js" defer></script>
     <script src="js/exam-engine.js" defer></script>
