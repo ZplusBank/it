@@ -3541,6 +3541,8 @@ button.submit-btn {
     z-index: 10000;
     animation: confetti-fall 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     border-radius: 2px;
+    contain: strict;
+    will-change: transform, opacity;
 }
 
 @keyframes confetti-fall {
@@ -3748,8 +3750,13 @@ a:focus-visible {
 /* GPU-promote elements that animate frequently */
 .subject-card,
 .chapter-card {
-    will-change: transform;
     contain: layout style paint;
+}
+
+/* will-change only on hover to avoid permanent GPU memory reservation */
+.subject-card:hover,
+.chapter-card:hover {
+    will-change: transform;
 }
 
 /* Layout containment for heavy containers */
@@ -4037,11 +4044,17 @@ html {
 }
 
 /* ============= View transition effects ============= */
-.subjects-view,
-.chapters-view,
-.exam-view,
-.results-view {
+/* will-change applied only during transitions via .view-enter, not permanently */
+.view-enter {
     will-change: opacity, transform;
+}
+
+/* Lazy-loaded result card sentinels */
+.results-card-sentinel {
+    min-height: 200px;
+    contain: strict;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 200px;
 }
 
 /* Mobile toast/scroll overrides handled in main mobile section above */

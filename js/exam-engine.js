@@ -10,6 +10,9 @@ const app = {
     currentView: 'subjects',
     currentSubject: null,
     modalCallback: null,
+    _answeredCount: 0,       // Incremental answered-question counter
+    _saveTimer: null,        // Debounced save timer
+    _resultIO: null,         // IntersectionObserver for lazy results
 
     // === Toast Notification System ===
     showToast(message, type = 'info', duration = 3000) {
@@ -112,18 +115,41 @@ const app = {
         document.getElementById('keyboardHelp').style.display = 'none';
     },
 
-    // Local storage helpers
+    // Local storage helpers (debounced to avoid thrashing on rapid answer changes)
     saveProgress() {
-        if (this.currentView === 'exam' && this.questions.length > 0) {
-            const progress = {
-                subjectId: this.currentSubject?.id,
-                selectedChapters: this.selectedChapters,
-                currentQuestionIndex: this.currentQuestionIndex,
-                userAnswers: this.userAnswers,
-                checkedAnswers: this.checkedAnswers,
-                timestamp: Date.now()
-            };
-            localStorage.setItem('examProgress', JSON.stringify(progress));
+        if (this._saveTimer) return; // Already scheduled
+        this._saveTimer = setTimeout(() => {
+            this._saveTimer = null;
+            if (this.currentView === 'exam' && this.questions.length > 0) {
+                const progress = {
+                    subjectId: this.currentSubject?.id,
+                    selectedChapters: this.selectedChapters,
+                    currentQuestionIndex: this.currentQuestionIndex,
+                    userAnswers: this.userAnswers,
+                    checkedAnswers: this.checkedAnswers,
+                    timestamp: Date.now()
+                };
+                localStorage.setItem('examProgress', JSON.stringify(progress));
+            }
+        }, 2000);
+    },
+
+    /** Flush any pending save immediately (e.g. before exit) */
+    _flushSave() {
+        if (this._saveTimer) {
+            clearTimeout(this._saveTimer);
+            this._saveTimer = null;
+            if (this.currentView === 'exam' && this.questions.length > 0) {
+                const progress = {
+                    subjectId: this.currentSubject?.id,
+                    selectedChapters: this.selectedChapters,
+                    currentQuestionIndex: this.currentQuestionIndex,
+                    userAnswers: this.userAnswers,
+                    checkedAnswers: this.checkedAnswers,
+                    timestamp: Date.now()
+                };
+                localStorage.setItem('examProgress', JSON.stringify(progress));
+            }
         }
     },
 
@@ -153,7 +179,7 @@ const app = {
         const shapes = ['circle', 'rect'];
         const fragment = document.createDocumentFragment();
         const confettiElements = [];
-        for (let i = 0; i < 60; i++) {
+        for (let i = 0; i < 40; i++) {
             const confetti = document.createElement('div');
             confetti.className = 'confetti';
             const shape = shapes[Math.floor(Math.random() * shapes.length)];
@@ -308,6 +334,12 @@ const app = {
             this.userAnswers = progress.userAnswers;
             this.checkedAnswers = progress.checkedAnswers;
 
+            // Recalculate incremental answered count from restored state
+            this._answeredCount = 0;
+            for (const idx in this.userAnswers) {
+                if (!this._isSkipped(this.userAnswers[idx])) this._answeredCount++;
+            }
+
             this.renderCurrentQuestion();
             this.updateQuestionNumberStyles();
 
@@ -456,14 +488,13 @@ const app = {
         }
     },
 
+    // Single-pass HTML escape (faster than 5 chained .replace calls)
+    _escapeMap: { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' },
+    _escapeRe: /[&<>"']/g,
     escapeHtml(text) {
         if (!text && text !== 0) return '';
-        return String(text)
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/\"/g, '&quot;')
-            .replace(/'/g, '&#039;');
+        const map = this._escapeMap;
+        return String(text).replace(this._escapeRe, ch => map[ch]);
     },
 
     getIconForSubject(id) {
@@ -498,9 +529,24 @@ const app = {
         const totalQs = (subject) => {
             return subject.chaptersConfig.reduce((sum, ch) => sum + (ch.q || 0), 0);
         };
+
+        // Prefetch chapters on hover for faster navigation
+        grid.addEventListener('pointerenter', (e) => {
+            const card = e.target.closest('.subject-card');
+            if (!card) return;
+            const sid = card.getAttribute('data-sid');
+            const subject = this.subjects.find(s => s.id === sid);
+            if (subject && !subject.loaded && !subject._prefetching) {
+                subject._prefetching = true;
+                this.loadChaptersForSubject(subject).catch(() => { }).finally(() => {
+                    subject._prefetching = false;
+                });
+            }
+        }, { passive: true, capture: true });
         grid.innerHTML = this.subjects.map((subject, i) => `
             <div class="subject-card" onclick="app.selectSubject('${subject.id}')"
                  data-name="${this.escapeHtml(subject.name)}" data-desc="${this.escapeHtml(subject.description)}"
+                 data-sid="${subject.id}"
                  style="--i: ${i}">
                 <span class="subject-icon">${subject.icon}</span>
                 <h2>${this.escapeHtml(subject.name)}</h2>
@@ -721,6 +767,7 @@ const app = {
         this.currentQuestionIndex = 0;
         this.userAnswers = {};
         this.checkedAnswers = {};
+        this._answeredCount = 0;
         this.clearProgress(); // Clear any old progress when starting new exam
 
         // Lazy-load content rendering libs before showing exam
@@ -739,6 +786,8 @@ const app = {
         this.currentView = 'exam';
         this.hideAllViews();
         document.body.classList.add('exam-active');
+        // Pause WebGL background animation during exam to save GPU cycles
+        if (typeof window._floatingLinesPause === 'function') window._floatingLinesPause();
         document.querySelector('header').style.display = 'none'; // Hide header
         const view = document.getElementById('examView');
         view.style.display = 'block';
@@ -887,6 +936,8 @@ const app = {
 
     selectAnswer(value, isCheckbox) {
         const idx = this.currentQuestionIndex;
+        const wasPreviouslyAnswered = !this._isSkipped(this.userAnswers[idx]);
+
         if (isCheckbox) {
             const current = this.userAnswers[idx] || [];
             const pos = current.indexOf(value);
@@ -901,6 +952,11 @@ const app = {
             this.userAnswers[idx] = value;
         }
 
+        // Update incremental answered count
+        const isNowAnswered = !this._isSkipped(this.userAnswers[idx]);
+        if (!wasPreviouslyAnswered && isNowAnswered) this._answeredCount++;
+        else if (wasPreviouslyAnswered && !isNowAnswered) this._answeredCount--;
+
         // Update visual selected state on all choices
         const choices = document.querySelectorAll('.choice');
         choices.forEach(choice => {
@@ -908,7 +964,7 @@ const app = {
             choice.classList.toggle('selected', input && input.checked);
         });
 
-        // Auto-save on answer change
+        // Auto-save on answer change (debounced)
         this.saveProgress();
     },
 
@@ -1031,11 +1087,7 @@ const app = {
 
     updateProgressIndicator() {
         const totalQuestions = this.questions.length;
-        let answeredCount = 0;
-        for (const idx in this.userAnswers) {
-            if (!this._isSkipped(this.userAnswers[idx])) answeredCount++;
-        }
-
+        const answeredCount = this._answeredCount;
         const percentage = totalQuestions > 0 ? (answeredCount / totalQuestions) * 100 : 0;
 
         const progressBar = document.getElementById('examProgressBar');
@@ -1049,11 +1101,18 @@ const app = {
 
     showReviewModal() {
         const totalQuestions = this.questions.length;
-        let answeredCount = 0;
-        for (const idx in this.userAnswers) {
-            if (!this._isSkipped(this.userAnswers[idx])) answeredCount++;
-        }
+        let answeredCount = this._answeredCount;
         const unansweredCount = totalQuestions - answeredCount;
+
+        // Build review question grid with array push (faster than map+join for large arrays)
+        const gridParts = [];
+        for (let idx = 0; idx < totalQuestions; idx++) {
+            const isAnswered = !this._isSkipped(this.userAnswers[idx]);
+            gridParts.push(`<button class="review-q-btn ${isAnswered ? 'answered' : 'unanswered'}" 
+                                    onclick="app.closeReviewModal(); app.goToQuestion(${idx});">
+                                ${idx + 1}
+                            </button>`);
+        }
 
         // Create review modal content
         const modalHtml = `
@@ -1079,13 +1138,7 @@ const app = {
                         </div>
                         ${unansweredCount > 0 ? `<p style="color: var(--warning); text-align: center; margin-bottom: 16px;">⚠️ You have ${unansweredCount} unanswered question${unansweredCount > 1 ? 's' : ''}.</p>` : ''}
                         <div class="review-questions-grid">
-                            ${this.questions.map((q, idx) => {
-            const isAnswered = !this._isSkipped(this.userAnswers[idx]);
-            return `<button class="review-q-btn ${isAnswered ? 'answered' : 'unanswered'}" 
-                                        onclick="app.closeReviewModal(); app.goToQuestion(${idx});">
-                                    ${idx + 1}
-                                </button>`;
-        }).join('')}
+                            ${gridParts.join('')}
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -1216,77 +1269,28 @@ const app = {
         showAllWrap.appendChild(showAllBtn);
         mainFrag.appendChild(showAllWrap);
 
-        // Question cards list
+        // Question cards list — LAZY RENDERED via IntersectionObserver
         const listDiv = document.createElement('div');
         listDiv.className = 'results-questions-list';
 
+        // Create lightweight placeholder sentinel divs for each card
+        const INITIAL_RENDER_COUNT = 8; // Render first N cards immediately
+        const sentinels = [];
+
         for (let i = 0; i < questionResults.length; i++) {
-            const { question, idx, userAnswer, isCorrect, wasSkipped } = questionResults[i];
-            const statusClass = wasSkipped ? 'skipped' : (isCorrect ? 'correct' : 'wrong');
-            const statusText = wasSkipped ? 'Skipped' : (isCorrect ? 'Correct' : 'Wrong');
-            const statusIcon = wasSkipped ? '○' : (isCorrect ? '✓' : '✗');
-
-            const card = document.createElement('div');
-            card.className = `results-question-card ${statusClass}`;
-
-            // Header
-            const header = document.createElement('div');
-            header.className = 'results-q-header';
-            header.innerHTML = `<span class="results-q-number">Question ${idx + 1}</span><span class="results-q-badge ${statusClass}">${statusIcon} ${statusText}</span>`;
-            card.appendChild(header);
-
-            // Image
-            if (question.image) {
-                const imgWrap = document.createElement('div');
-                imgWrap.className = 'question-image';
-                const img = document.createElement('img');
-                img.src = question.image;
-                img.alt = 'Question illustration';
-                img.loading = 'lazy';
-                img.decoding = 'async';
-                imgWrap.appendChild(img);
-                card.appendChild(imgWrap);
+            if (i < INITIAL_RENDER_COUNT) {
+                // Render first batch immediately for instant LCP
+                const card = this._buildResultCard(questionResults[i]);
+                listDiv.appendChild(card);
+            } else {
+                // Create a lightweight sentinel placeholder
+                const sentinel = document.createElement('div');
+                sentinel.className = 'results-card-sentinel';
+                sentinel.style.minHeight = '200px'; // Approximate card height for scroll stability
+                sentinel.dataset.idx = i;
+                listDiv.appendChild(sentinel);
+                sentinels.push(sentinel);
             }
-
-            // Question text
-            const qText = document.createElement('div');
-            qText.className = 'results-q-text question-text';
-            qText.innerHTML = ContentRenderer.render(question.text);
-            card.appendChild(qText);
-
-            // Choices
-            const correctAnswers = question.inputType === 'checkbox'
-                ? question.correctAnswer.split('') : [question.correctAnswer];
-            const userAnswers = wasSkipped ? []
-                : (Array.isArray(userAnswer) ? userAnswer : [userAnswer]);
-
-            const choicesList = document.createElement('div');
-            choicesList.className = 'results-choices-list';
-
-            for (const choice of question.choices) {
-                const isThisCorrect = correctAnswers.includes(choice.value);
-                const isUserPick = userAnswers.includes(choice.value);
-
-                let choiceClass = '', choiceIcon = '';
-                if (isThisCorrect) { choiceClass = 'correct'; choiceIcon = '✓'; }
-                else if (isUserPick) { choiceClass = 'user-wrong'; choiceIcon = '✗'; }
-
-                const choiceDiv = document.createElement('div');
-                choiceDiv.className = `results-choice ${choiceClass}`;
-                choiceDiv.innerHTML = `<div class="results-choice-letter">${choice.value}</div><div class="results-choice-text">${ContentRenderer.render(choice.text)}</div>${choiceIcon ? `<div class="results-choice-icon">${choiceIcon}</div>` : ''}`;
-                choicesList.appendChild(choiceDiv);
-            }
-            card.appendChild(choicesList);
-
-            // Explanation
-            if (question.explanation) {
-                const expDiv = document.createElement('div');
-                expDiv.className = 'results-explanation';
-                expDiv.innerHTML = `<strong>💡 Explanation:</strong><div class="results-explanation-text">${ContentRenderer.render(question.explanation)}</div>`;
-                card.appendChild(expDiv);
-            }
-
-            listDiv.appendChild(card);
         }
         mainFrag.appendChild(listDiv);
 
@@ -1294,9 +1298,108 @@ const app = {
         resultDetails.textContent = '';
         resultDetails.appendChild(mainFrag);
 
-        // Batch typeset & image listeners on the whole container
-        ContentRenderer.typeset(resultDetails);
-        ContentRenderer.attachImageListeners(resultDetails);
+        // Typeset only the initially-rendered cards
+        const initialCards = listDiv.querySelectorAll('.results-question-card');
+        if (initialCards.length > 0) {
+            ContentRenderer.typeset(listDiv);
+            ContentRenderer.attachImageListeners(listDiv);
+        }
+
+        // Set up IntersectionObserver for lazy card rendering
+        this._cleanupResultIO();
+        if (sentinels.length > 0) {
+            this._resultIO = new IntersectionObserver((entries) => {
+                for (const entry of entries) {
+                    if (!entry.isIntersecting) continue;
+                    const sentinel = entry.target;
+                    const idx = parseInt(sentinel.dataset.idx, 10);
+                    if (isNaN(idx)) continue;
+
+                    // Replace sentinel with fully rendered card
+                    const card = this._buildResultCard(questionResults[idx]);
+                    sentinel.replaceWith(card);
+                    this._resultIO.unobserve(sentinel);
+
+                    // Typeset just this card
+                    ContentRenderer.typeset(card);
+                    ContentRenderer.attachImageListeners(card);
+                }
+            }, { rootMargin: '300px 0px' }); // Start rendering 300px before visible
+
+            for (const sentinel of sentinels) {
+                this._resultIO.observe(sentinel);
+            }
+        }
+    },
+
+    /** Build a single result question card DOM element */
+    _buildResultCard(result) {
+        const { question, idx, userAnswer, isCorrect, wasSkipped } = result;
+        const statusClass = wasSkipped ? 'skipped' : (isCorrect ? 'correct' : 'wrong');
+        const statusText = wasSkipped ? 'Skipped' : (isCorrect ? 'Correct' : 'Wrong');
+        const statusIcon = wasSkipped ? '○' : (isCorrect ? '✓' : '✗');
+
+        const card = document.createElement('div');
+        card.className = `results-question-card ${statusClass}`;
+
+        // Header
+        const header = document.createElement('div');
+        header.className = 'results-q-header';
+        header.innerHTML = `<span class="results-q-number">Question ${idx + 1}</span><span class="results-q-badge ${statusClass}">${statusIcon} ${statusText}</span>`;
+        card.appendChild(header);
+
+        // Image
+        if (question.image) {
+            const imgWrap = document.createElement('div');
+            imgWrap.className = 'question-image';
+            const img = document.createElement('img');
+            img.src = question.image;
+            img.alt = 'Question illustration';
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            imgWrap.appendChild(img);
+            card.appendChild(imgWrap);
+        }
+
+        // Question text
+        const qText = document.createElement('div');
+        qText.className = 'results-q-text question-text';
+        qText.innerHTML = ContentRenderer.render(question.text);
+        card.appendChild(qText);
+
+        // Choices
+        const correctAnswers = question.inputType === 'checkbox'
+            ? question.correctAnswer.split('') : [question.correctAnswer];
+        const userAnswers = wasSkipped ? []
+            : (Array.isArray(userAnswer) ? userAnswer : [userAnswer]);
+
+        const choicesList = document.createElement('div');
+        choicesList.className = 'results-choices-list';
+
+        for (const choice of question.choices) {
+            const isThisCorrect = correctAnswers.includes(choice.value);
+            const isUserPick = userAnswers.includes(choice.value);
+
+            let choiceClass = '', choiceIcon = '';
+            if (isThisCorrect) { choiceClass = 'correct'; choiceIcon = '✓'; }
+            else if (isUserPick) { choiceClass = 'user-wrong'; choiceIcon = '✗'; }
+
+            const choiceDiv = document.createElement('div');
+            choiceDiv.className = `results-choice ${choiceClass}`;
+            choiceDiv.innerHTML = `<div class="results-choice-letter">${choice.value}</div><div class="results-choice-text">${ContentRenderer.render(choice.text)}</div>${choiceIcon ? `<div class="results-choice-icon">${choiceIcon}</div>` : ''}`;
+            choicesList.appendChild(choiceDiv);
+        }
+        card.appendChild(choicesList);
+
+        // Explanation
+        if (question.explanation) {
+            const expDiv = document.createElement('div');
+            expDiv.className = 'results-explanation';
+            expDiv.innerHTML = `<strong>💡 Explanation:</strong><div class="results-explanation-text">${ContentRenderer.render(question.explanation)}</div>`;
+            card.appendChild(expDiv);
+        }
+
+        return card;
     },
 
     goBackToSubjects() {
@@ -1310,6 +1413,8 @@ const app = {
 
     hideAllViews() {
         document.body.classList.remove('exam-active');
+        // Resume WebGL background when leaving exam
+        if (typeof window._floatingLinesResume === 'function') window._floatingLinesResume();
         document.querySelector('header').style.display = 'block'; // Show header by default
         document.getElementById('subjectsView').style.display = 'none';
         document.getElementById('chaptersView').style.display = 'none';
@@ -1322,6 +1427,16 @@ const app = {
         this.questions = [];
         this.userAnswers = {};
         this.checkedAnswers = {};
+        this._answeredCount = 0;
+        this._cleanupResultIO();
+    },
+
+    /** Cleanup IntersectionObserver for results lazy rendering */
+    _cleanupResultIO() {
+        if (this._resultIO) {
+            this._resultIO.disconnect();
+            this._resultIO = null;
+        }
     },
 
     handleHomeClick() {
@@ -1340,38 +1455,34 @@ const app = {
     filterResults(status) {
         // status: 'correct', 'wrong', 'skipped', 'all'
         const cards = document.querySelectorAll('.results-question-card');
+        const statCards = document.querySelectorAll('.results-stat-card');
 
-        // Update visual state of filters
-        document.querySelectorAll('.results-stat-card').forEach(c => c.style.opacity = '0.5');
-        document.querySelectorAll('.results-stat-card').forEach(c => c.style.transform = 'scale(0.95)');
+        // Batch reads first, then writes (avoid layout thrashing)
+        const isAll = status === 'all';
 
-        if (status === 'all') {
-            document.querySelectorAll('.results-stat-card').forEach(c => {
+        // Write phase — stat card opacity/transform
+        for (let i = 0; i < statCards.length; i++) {
+            const c = statCards[i];
+            if (isAll) {
                 c.style.opacity = '1';
                 c.style.transform = '';
-            });
-        } else {
-            const activeCard = document.querySelector(`.results-stat-card.stat-${status}`);
-            if (activeCard) {
-                activeCard.style.opacity = '1';
-                activeCard.style.transform = 'scale(1.05)';
+            } else if (c.classList.contains(`stat-${status}`)) {
+                c.style.opacity = '1';
+                c.style.transform = 'scale(1.05)';
+            } else {
+                c.style.opacity = '0.5';
+                c.style.transform = 'scale(0.95)';
             }
         }
 
-        cards.forEach(card => {
-            if (status === 'all') {
-                card.style.display = 'block';
-            } else {
-                if (card.classList.contains(status)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            }
-        });
+        // Write phase — card visibility
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].style.display = (isAll || cards[i].classList.contains(status)) ? 'block' : 'none';
+        }
     },
 
     confirmExit() {
+        this._flushSave(); // Ensure progress is saved before exit dialog
         this.showModal(
             'Exit Exam?',
             'Are you sure you want to exit? Your current progress will be lost.',

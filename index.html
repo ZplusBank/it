@@ -15,18 +15,23 @@
         })();
     </script>
 
+    <!-- DNS prefetch for all CDN domains -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
     <!-- Critical CSS (preloaded) -->
-    <link rel="preload" href="css/exam-styles.css" as="style">
+    <link rel="preload" href="css/exam-styles.css" as="style" fetchpriority="high">
     <link rel="stylesheet" href="css/exam-styles.css">
 
-    <!-- Google Fonts: Non-blocking -->
+    <!-- Google Fonts: Non-blocking, reduced weight set -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600;700;900&display=swap">
     <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600;700;900&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600;700;900&display=swap"></noscript>
 
     <!-- Prism.js Theme (non-blocking — only needed when code is visible) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css" media="print" onload="this.media='all'">

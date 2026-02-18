@@ -342,13 +342,30 @@ void main() {
 
   // --- Visibility API: pause when tab hidden ---
   let tabHidden = document.hidden;
+  let appPaused = false; // External pause (e.g. during exam)
   document.addEventListener('visibilitychange', () => {
     tabHidden = document.hidden;
-    if (!tabHidden && !isMobileCached && !animationId) {
+    if (!tabHidden && !appPaused && !isMobileCached && !animationId) {
       clock.start();
       animationId = requestAnimationFrame(renderLoop);
     }
   });
+
+  // Expose pause/resume for exam mode (saves GPU cycles)
+  window._floatingLinesPause = function () {
+    appPaused = true;
+    if (animationId) {
+      cancelAnimationFrame(animationId);
+      animationId = null;
+    }
+  };
+  window._floatingLinesResume = function () {
+    appPaused = false;
+    if (!tabHidden && !isMobileCached && !animationId) {
+      clock.start();
+      animationId = requestAnimationFrame(renderLoop);
+    }
+  };
 
   // --- Render Loop (throttled to ~30fps) ---
   const clock = new THREE.Clock();
@@ -364,8 +381,8 @@ void main() {
       return;
     }
 
-    // Pause when tab is not visible
-    if (tabHidden) {
+    // Pause when tab is not visible or app explicitly paused
+    if (tabHidden || appPaused) {
       animationId = null;
       return;
     }

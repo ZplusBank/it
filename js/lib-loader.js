@@ -43,26 +43,37 @@ const LibLoader = {
 
     /**
      * Load Marked.js + Prism.js (needed for rendering question content)
+     * Only loads core language packs initially; others loaded on-demand.
      */
     async loadMarkdownAndPrism() {
         if (this._loaded._markdownPrism) return;
 
-        // Load Marked first, then Prism core, then language packs in parallel
+        // Load Marked first, then Prism core, then common language packs in parallel
         await this.loadScript('https://cdn.jsdelivr.net/npm/marked/marked.min.js');
         await this.loadScript('https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js');
 
-        // Language packs can load in parallel (they depend on Prism core only)
+        // Load only the most common language packs immediately; others loaded lazily
         await Promise.all([
             this.loadScript('https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js'),
-            this.loadScript('https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js'),
             this.loadScript('https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-c.min.js'),
             this.loadScript('https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-cpp.min.js'),
-            this.loadScript('https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js'),
-            this.loadScript('https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-sql.min.js'),
             this.loadScript('https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js'),
         ]);
 
         this._loaded._markdownPrism = true;
+    },
+
+    /**
+     * Load additional Prism language pack on-demand (e.g. 'python', 'csharp', 'sql')
+     */
+    async loadPrismLanguage(lang) {
+        const url = `https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-${lang}.min.js`;
+        if (this._loaded[url]) return;
+        try {
+            await this.loadScript(url);
+        } catch (e) {
+            console.warn(`Prism language "${lang}" not available:`, e);
+        }
     },
 
     /**
@@ -76,12 +87,16 @@ const LibLoader = {
         }
         await this.loadScript('https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js');
         // MathJax needs a moment to initialize after script load
-        await new Promise(resolve => {
+        await new Promise((resolve, reject) => {
+            let elapsed = 0;
             const check = () => {
                 if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
                     resolve();
+                } else if (elapsed > 10000) {
+                    reject(new Error('MathJax init timeout'));
                 } else {
-                    setTimeout(check, 50);
+                    elapsed += 100;
+                    setTimeout(check, 100);
                 }
             };
             check();
