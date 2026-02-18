@@ -624,6 +624,7 @@ const app = {
     showExamView() {
         this.currentView = 'exam';
         this.hideAllViews();
+        document.body.classList.add('exam-active');
         document.querySelector('header').style.display = 'none'; // Hide header
         document.getElementById('examView').style.display = 'block';
 
@@ -1111,6 +1112,7 @@ const app = {
     },
 
     hideAllViews() {
+        document.body.classList.remove('exam-active');
         document.querySelector('header').style.display = 'block'; // Show header by default
         document.getElementById('subjectsView').style.display = 'none';
         document.getElementById('chaptersView').style.display = 'none';
