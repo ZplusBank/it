@@ -9,27 +9,317 @@ const app = {
     checkedAnswers: {},
     currentView: 'subjects',
     currentSubject: null,
+    modalCallback: null,
+
+    // Show custom modal (replaces alert/confirm)
+    showModal(title, message, isConfirm = false, callback = null) {
+        const modal = document.getElementById('appModal');
+        const titleEl = document.getElementById('modalTitle');
+        const messageEl = document.getElementById('modalMessage');
+        const confirmBtn = document.getElementById('modalConfirmBtn');
+        const cancelBtn = document.getElementById('modalCancelBtn');
+
+        titleEl.textContent = title;
+        messageEl.textContent = message;
+        modal.style.display = 'flex';
+
+        if (isConfirm) {
+            cancelBtn.style.display = 'inline-block';
+            confirmBtn.textContent = 'Confirm';
+            confirmBtn.className = 'btn-confirm';
+            this.modalCallback = callback;
+        } else {
+            cancelBtn.style.display = 'none';
+            confirmBtn.textContent = 'OK';
+            confirmBtn.className = 'btn-confirm';
+            this.modalCallback = callback;
+        }
+
+        // Focus on confirm button
+        setTimeout(() => confirmBtn.focus(), 100);
+    },
+
+    closeModal() {
+        const modal = document.getElementById('appModal');
+        modal.style.display = 'none';
+        this.modalCallback = null;
+    },
+
+    handleModalConfirm() {
+        if (this.modalCallback) {
+            this.modalCallback();
+        }
+        this.closeModal();
+    },
+
+    // Loading overlay
+    showLoading(message = 'Loading...') {
+        const overlay = document.getElementById('loadingOverlay');
+        const text = overlay.querySelector('.loading-text');
+        text.textContent = message;
+        overlay.style.display = 'flex';
+    },
+
+    hideLoading() {
+        const overlay = document.getElementById('loadingOverlay');
+        overlay.style.display = 'none';
+    },
+
+    // Keyboard help
+    showKeyboardHelp() {
+        document.getElementById('keyboardHelp').style.display = 'flex';
+    },
+
+    closeKeyboardHelp() {
+        document.getElementById('keyboardHelp').style.display = 'none';
+    },
+
+    // Local storage helpers
+    saveProgress() {
+        if (this.currentView === 'exam' && this.questions.length > 0) {
+            const progress = {
+                subjectId: this.currentSubject?.id,
+                selectedChapters: this.selectedChapters,
+                currentQuestionIndex: this.currentQuestionIndex,
+                userAnswers: this.userAnswers,
+                checkedAnswers: this.checkedAnswers,
+                timestamp: Date.now()
+            };
+            localStorage.setItem('examProgress', JSON.stringify(progress));
+        }
+    },
+
+    loadProgress() {
+        const saved = localStorage.getItem('examProgress');
+        if (saved) {
+            try {
+                const progress = JSON.parse(saved);
+                // Check if progress is recent (within 24 hours)
+                if (Date.now() - progress.timestamp < 24 * 60 * 60 * 1000) {
+                    return progress;
+                }
+            } catch (e) {
+                console.error('Failed to parse saved progress:', e);
+            }
+        }
+        return null;
+    },
+
+    clearProgress() {
+        localStorage.removeItem('examProgress');
+    },
+
+    // Confetti animation
+    triggerConfetti() {
+        const colors = ['#6366f1', '#8b5cf6', '#06b6d4', '#10b981', '#f59e0b', '#ef4444'];
+        for (let i = 0; i < 100; i++) {
+            setTimeout(() => {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                confetti.style.animationDuration = (2 + Math.random() * 2) + 's';
+                document.body.appendChild(confetti);
+                setTimeout(() => confetti.remove(), 5000);
+            }, i * 30);
+        }
+    },
 
     async init() {
         this.initTheme();
+        this.initKeyboardShortcuts();
+        this.initModalHandlers();
         await this.loadData();
+        
+        // Check for saved progress
+        const progress = this.loadProgress();
+        if (progress) {
+            this.showModal(
+                'Resume Exam?',
+                'You have an unfinished exam. Would you like to continue where you left off?',
+                true,
+                () => this.resumeExam(progress)
+            );
+        }
+        
         this.showSubjectsView();
         this.initSearch();
+    },
+
+    initModalHandlers() {
+        // Set up modal button handlers
+        const confirmBtn = document.getElementById('modalConfirmBtn');
+        const cancelBtn = document.getElementById('modalCancelBtn');
+        
+        confirmBtn.onclick = () => this.handleModalConfirm();
+        cancelBtn.onclick = () => this.closeModal();
+
+        // Close modal on overlay click
+        document.getElementById('appModal').addEventListener('click', (e) => {
+            if (e.target.id === 'appModal') {
+                this.closeModal();
+            }
+        });
+
+        // Keyboard help button
+        const helpBtn = document.getElementById('keyboardHelpBtn');
+        if (helpBtn) {
+            helpBtn.onclick = () => this.showKeyboardHelp();
+        }
+
+        // Close keyboard help on overlay click
+        document.getElementById('keyboardHelp').addEventListener('click', (e) => {
+            if (e.target.id === 'keyboardHelp') {
+                this.closeKeyboardHelp();
+            }
+        });
+    },
+
+    initKeyboardShortcuts() {
+        document.addEventListener('keydown', (e) => {
+            // Ignore if typing in input
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+                return;
+            }
+
+            // Escape - Close modals
+            if (e.key === 'Escape') {
+                this.closeModal();
+                this.closeKeyboardHelp();
+                return;
+            }
+
+            // ? - Show keyboard help
+            if (e.key === '?' && this.currentView === 'exam') {
+                this.showKeyboardHelp();
+                return;
+            }
+
+            // Exam view shortcuts
+            if (this.currentView === 'exam') {
+                // Arrow keys for navigation
+                if (e.key === 'ArrowLeft' && !document.getElementById('prevBtn').disabled) {
+                    e.preventDefault();
+                    this.previousQuestion();
+                } else if (e.key === 'ArrowRight' && !document.getElementById('nextBtn').disabled) {
+                    e.preventDefault();
+                    this.nextQuestion();
+                }
+                // Enter - Check answer or next
+                else if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const checkBtn = document.getElementById('checkBtn');
+                    const nextBtn = document.getElementById('nextBtn');
+                    const submitBtn = document.getElementById('submitBtn');
+                    
+                    if (checkBtn.style.display !== 'none' && !this.checkedAnswers[this.currentQuestionIndex]) {
+                        this.checkAnswer();
+                    } else if (submitBtn.style.display !== 'none') {
+                        this.showReviewModal();
+                    } else if (!nextBtn.disabled) {
+                        this.nextQuestion();
+                    }
+                }
+                // A, B, C, D - Select answer
+                else if (['a', 'b', 'c', 'd', 'e', 'f'].includes(e.key.toLowerCase())) {
+                    e.preventDefault();
+                    const value = e.key.toUpperCase();
+                    const input = document.getElementById(`choice-${value}`);
+                    if (input) {
+                        input.click();
+                    }
+                }
+            }
+        });
+
+        // Auto-save progress periodically during exam
+        setInterval(() => {
+            if (this.currentView === 'exam') {
+                this.saveProgress();
+            }
+        }, 30000); // Every 30 seconds
+    },
+
+    async resumeExam(progress) {
+        try {
+            this.showLoading('Resuming exam...');
+            
+            // Find and select the subject
+            const subject = this.subjects.find(s => s.id === progress.subjectId);
+            if (!subject) {
+                throw new Error('Subject not found');
+            }
+            
+            this.currentSubject = subject;
+            
+            // Load chapters if needed
+            if (!subject.loaded) {
+                await this.loadChaptersForSubject(subject);
+            }
+            
+            // Restore state
+            this.selectedChapters = progress.selectedChapters;
+            this.startExam();
+            this.currentQuestionIndex = progress.currentQuestionIndex;
+            this.userAnswers = progress.userAnswers;
+            this.checkedAnswers = progress.checkedAnswers;
+            
+            this.renderCurrentQuestion();
+            this.updateQuestionNumberStyles();
+            
+            this.hideLoading();
+        } catch (error) {
+            console.error('Failed to resume exam:', error);
+            this.hideLoading();
+            this.showModal('Error', 'Failed to resume exam. Starting fresh.');
+            this.clearProgress();
+        }
     },
 
     initSearch() {
         const subjectInput = document.getElementById('subjectSearch');
         const chapterInput = document.getElementById('chapterSearch');
+        const subjectClear = document.getElementById('subjectSearchClear');
+        const chapterClear = document.getElementById('chapterSearchClear');
 
         if (subjectInput) {
             subjectInput.addEventListener('input', (e) => {
                 this.filterSubjects(e.target.value);
+                if (subjectClear) {
+                    subjectClear.style.display = e.target.value ? 'flex' : 'none';
+                }
             });
         }
         if (chapterInput) {
             chapterInput.addEventListener('input', (e) => {
                 this.filterChapters(e.target.value);
+                if (chapterClear) {
+                    chapterClear.style.display = e.target.value ? 'flex' : 'none';
+                }
             });
+        }
+    },
+
+    clearSearch(type) {
+        if (type === 'subject') {
+            const input = document.getElementById('subjectSearch');
+            const clearBtn = document.getElementById('subjectSearchClear');
+            if (input) {
+                input.value = '';
+                input.focus();
+                this.filterSubjects('');
+            }
+            if (clearBtn) clearBtn.style.display = 'none';
+        } else if (type === 'chapter') {
+            const input = document.getElementById('chapterSearch');
+            const clearBtn = document.getElementById('chapterSearchClear');
+            if (input) {
+                input.value = '';
+                input.focus();
+                this.filterChapters('');
+            }
+            if (clearBtn) clearBtn.style.display = 'none';
         }
     },
 
@@ -89,6 +379,7 @@ const app = {
         try {
             if (typeof EXAM_CONFIG === 'undefined') {
                 console.error('EXAM_CONFIG not found in exam-config.js');
+                this.showModal('Error', 'Exam configuration not found. Please contact support.');
                 this.subjects = [];
                 return;
             }
@@ -107,7 +398,7 @@ const app = {
             // subjects loaded
         } catch (error) {
             console.error('Error loading initial data:', error);
-            alert('Error initializing exam data.');
+            this.showModal('Error', 'Error initializing exam data. Please refresh the page.');
         }
     },
 
@@ -167,20 +458,21 @@ const app = {
 
         // If not loaded, fetch chapters now
         if (!subject.loaded) {
-            // Show some loading state if possible, though it's usually fast
+            this.showLoading('Loading chapters...');
             try {
-                // UX refinement: could show a "Loading chapters..." message here
                 await this.loadChaptersForSubject(subject);
+                this.hideLoading();
             } catch (error) {
                 console.error('Failed to load chapters:', error);
-                alert('Failed to load chapters for this subject.');
+                this.hideLoading();
+                this.showModal('Error', 'Failed to load chapters for this subject. Please try again.');
                 return;
             }
         }
 
         // UX: Check if subject has chapters after loading
         if (subject.chapters.length === 0) {
-            alert("Coming soon... This subject has no chapters yet.");
+            this.showModal('Coming Soon', 'This subject has no chapters yet. Please check back later!');
             return;
         }
 
@@ -270,6 +562,22 @@ const app = {
         }
     },
 
+    selectAllChapters() {
+        const checkboxes = document.querySelectorAll('#chaptersGrid input[type="checkbox"]');
+        checkboxes.forEach(cb => {
+            if (cb.closest('.chapter-card').style.display !== 'none') {
+                cb.checked = true;
+            }
+        });
+        this.updateSelectedChapters();
+    },
+
+    selectNoneChapters() {
+        const checkboxes = document.querySelectorAll('#chaptersGrid input[type="checkbox"]');
+        checkboxes.forEach(cb => cb.checked = false);
+        this.updateSelectedChapters();
+    },
+
     startExam() {
         // Collect questions from selected chapters
         this.questions = [];
@@ -289,13 +597,14 @@ const app = {
         });
 
         if (this.questions.length === 0) {
-            alert('Please select at least one chapter');
+            this.showModal('No Questions', 'Please select at least one chapter.');
             return;
         }
 
         this.currentQuestionIndex = 0;
         this.userAnswers = {};
         this.checkedAnswers = {};
+        this.clearProgress(); // Clear any old progress when starting new exam
 
         this.showExamView();
     },
@@ -405,6 +714,8 @@ const app = {
         } else {
             this.userAnswers[this.currentQuestionIndex] = value;
         }
+        // Auto-save on answer change
+        this.saveProgress();
     },
 
     checkAnswer() {
@@ -498,9 +809,102 @@ const app = {
                 btn.classList.remove('answered');
             }
         });
+        this.updateProgressIndicator();
+    },
+
+    updateProgressIndicator() {
+        const totalQuestions = this.questions.length;
+        const answeredCount = Object.keys(this.userAnswers).filter(idx => {
+            const answer = this.userAnswers[idx];
+            return answer !== undefined && answer !== '' && 
+                   (!Array.isArray(answer) || answer.length > 0);
+        }).length;
+
+        const percentage = totalQuestions > 0 ? (answeredCount / totalQuestions) * 100 : 0;
+
+        const progressBar = document.getElementById('examProgressBar');
+        const answeredCountEl = document.getElementById('answeredCount');
+        const totalAnswerableEl = document.getElementById('totalAnswerable');
+
+        if (progressBar) progressBar.style.width = `${percentage}%`;
+        if (answeredCountEl) answeredCountEl.textContent = answeredCount;
+        if (totalAnswerableEl) totalAnswerableEl.textContent = totalQuestions;
+    },
+
+    showReviewModal() {
+        const totalQuestions = this.questions.length;
+        const answeredCount = Object.keys(this.userAnswers).filter(idx => {
+            const answer = this.userAnswers[idx];
+            return answer !== undefined && answer !== '' && 
+                   (!Array.isArray(answer) || answer.length > 0);
+        }).length;
+        const unansweredCount = totalQuestions - answeredCount;
+
+        // Create review modal content
+        const modalHtml = `
+            <div class="modal-overlay" id="reviewModal" style="display: flex;">
+                <div class="modal review-modal">
+                    <div class="modal-header">
+                        <h3>📋 Review Your Exam</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="review-stats">
+                            <div class="review-stat">
+                                <div class="review-stat-number">${totalQuestions}</div>
+                                <div class="review-stat-label">Total</div>
+                            </div>
+                            <div class="review-stat">
+                                <div class="review-stat-number" style="color: var(--success);">${answeredCount}</div>
+                                <div class="review-stat-label">Answered</div>
+                            </div>
+                            <div class="review-stat">
+                                <div class="review-stat-number" style="color: var(--warning);">${unansweredCount}</div>
+                                <div class="review-stat-label">Unanswered</div>
+                            </div>
+                        </div>
+                        ${unansweredCount > 0 ? `<p style="color: var(--warning); text-align: center; margin-bottom: 16px;">⚠️ You have ${unansweredCount} unanswered question${unansweredCount > 1 ? 's' : ''}.</p>` : ''}
+                        <div class="review-questions-grid">
+                            ${this.questions.map((q, idx) => {
+                                const answer = this.userAnswers[idx];
+                                const isAnswered = answer !== undefined && answer !== '' && 
+                                                  (!Array.isArray(answer) || answer.length > 0);
+                                return `<button class="review-q-btn ${isAnswered ? 'answered' : 'unanswered'}" 
+                                        onclick="app.closeReviewModal(); app.goToQuestion(${idx});">
+                                    ${idx + 1}
+                                </button>`;
+                            }).join('')}
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn-cancel" onclick="app.closeReviewModal()">Continue Exam</button>
+                        <button class="btn-confirm" onclick="app.confirmSubmit()" style="background: var(--success);">✓ Submit Exam</button>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Add to body
+        const existingModal = document.getElementById('reviewModal');
+        if (existingModal) {
+            existingModal.remove();
+        }
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+    },
+
+    closeReviewModal() {
+        const modal = document.getElementById('reviewModal');
+        if (modal) {
+            modal.remove();
+        }
+    },
+
+    confirmSubmit() {
+        this.closeReviewModal();
+        this.submitExam();
     },
 
     submitExam() {
+        this.clearProgress(); // Clear saved progress on submit
         this.showResultsView();
     },
 
@@ -546,6 +950,11 @@ const app = {
 
         document.getElementById('scoreDisplay').textContent = `${correctCount} / ${totalCount}`;
         document.getElementById('scoreText').textContent = `Score: ${percentage}%`;
+
+        // Trigger confetti for high scores
+        if (percentage >= 90) {
+            this.triggerConfetti();
+        }
 
         // Result message
         let resultMessage = '';
@@ -703,9 +1112,12 @@ const app = {
 
     handleHomeClick() {
         if (this.currentView === 'exam' || this.currentView === 'results') {
-            if (confirm("Are you sure you want to go to the Home screen? Your current exam progress will be lost.")) {
-                this.restart();
-            }
+            this.showModal(
+                'Exit to Home?',
+                'Are you sure you want to go to the Home screen? Your current exam progress will be lost.',
+                true,
+                () => this.restart()
+            );
         } else {
             this.showSubjectsView();
         }
@@ -746,15 +1158,21 @@ const app = {
     },
 
     confirmExit() {
-        document.getElementById('confirmModal').style.display = 'flex';
+        this.showModal(
+            'Exit Exam?',
+            'Are you sure you want to exit? Your current progress will be lost.',
+            true,
+            () => this.exitExam()
+        );
     },
 
     closeConfirmModal() {
-        document.getElementById('confirmModal').style.display = 'none';
+        // Legacy function for compatibility
+        this.closeModal();
     },
 
     exitExam() {
-        this.closeConfirmModal();
+        this.clearProgress();
         this.restart();
     }
 };
