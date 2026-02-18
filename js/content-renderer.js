@@ -13,6 +13,8 @@ const ContentRenderer = {
 
     _placeholder: '%%MATH_BLOCK_',
     _counter: 0,
+    _renderCache: new Map(),
+    _cacheMaxSize: 200,
 
     /**
      * Initialize Marked.js with Prism.js integration
@@ -97,12 +99,18 @@ const ContentRenderer = {
         if (!text && text !== 0) return '';
         text = String(text);
 
+        // Check cache first
+        if (this._renderCache.has(text)) {
+            return this._renderCache.get(text);
+        }
+
         // If Marked is not available, just return the text as-is (backward compat)
         if (typeof marked === 'undefined') {
             return text;
         }
 
         // Step 1: Protect math/chemistry delimiters from Markdown processing
+        const originalText = text;
         const { text: safeText, blocks } = this._protectMath(text);
 
         // Step 1.5: Escape lone asterisks that Marked would misinterpret
@@ -120,6 +128,14 @@ const ContentRenderer = {
 
         // Step 3: Restore math blocks
         html = this._restoreMath(html, blocks);
+
+        // Cache the result
+        if (this._renderCache.size >= this._cacheMaxSize) {
+            // Evict oldest entry
+            const firstKey = this._renderCache.keys().next().value;
+            this._renderCache.delete(firstKey);
+        }
+        this._renderCache.set(originalText, html);
 
         return html;
     },
@@ -152,14 +168,13 @@ const ContentRenderer = {
      * Attach click listeners to images for lightbox
      */
     attachImageListeners(element) {
-        console.log('ContentRenderer: attachImageListeners called', element);
-        const images = element.querySelectorAll('img');
-        console.log('ContentRenderer: Found images', images.length);
+        const images = element.querySelectorAll('img:not(.lightbox-image):not(.content-image)');
+        if (images.length === 0) return;
         images.forEach(img => {
-            if (img.classList.contains('lightbox-image')) return; // Skip lightbox images
             img.classList.add('content-image');
+            img.loading = 'lazy';
+            img.decoding = 'async';
             img.addEventListener('click', () => {
-                console.log('ContentRenderer: Image clicked', img.src);
                 this._openLightbox(img.src, img.alt);
             });
         });

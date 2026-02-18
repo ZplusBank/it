@@ -55,13 +55,13 @@
     --radius-full: 9999px;
 
     /* Transitions */
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-fast: all 0.15s ease;
-    --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.08s ease;
+    --transition-spring: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     /* Animation */
-    --anim-duration: 0.5s;
-    --anim-stagger: 60ms;
+    --anim-duration: 0.25s;
+    --anim-stagger: 25ms;
 }
 
 /* ============= Dark Theme ============= */
@@ -182,6 +182,7 @@
 
 html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -190,9 +191,10 @@ body {
     color: var(--text-main);
     min-height: 100vh;
     padding: 16px;
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
 }
 
 .skip-link {
@@ -227,9 +229,10 @@ header {
     box-shadow: var(--shadow-lg);
     position: relative;
     overflow: hidden;
+    contain: layout style;
 }
 
-/* Subtle shimmer overlay */
+/* Subtle shimmer overlay — optimized: reduced frequency */
 header::before {
     content: '';
     position: absolute;
@@ -242,9 +245,10 @@ header::before {
             rgba(255, 255, 255, 0.05) 50%,
             transparent 70%);
     background-size: 200% 100%;
-    animation: shimmer 6s ease-in-out infinite;
+    animation: shimmer 8s ease-in-out infinite;
     will-change: background-position;
     pointer-events: none;
+    contain: strict;
 }
 
 .header-content {
@@ -282,7 +286,7 @@ header::before {
     font-size: 1.2em;
     display: inline-block;
     border: 2px solid rgba(167, 139, 250, 0.6);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     letter-spacing: 0.08em;
 }
 
@@ -320,7 +324,7 @@ header::before {
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     margin-bottom: 20px;
 }
 
@@ -480,7 +484,9 @@ header::before {
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    contain: layout style;
+    will-change: transform;
 }
 
 .subject-card:hover,
@@ -705,7 +711,7 @@ header::before {
 }
 
 .start-exam-btn:hover:not(:disabled) {
-    transform: translateY(-3px);
+    transform: translateY(-3px) translateZ(0);
 }
 
 .start-exam-btn:disabled {
@@ -720,7 +726,7 @@ header::before {
 .exam-view {
     display: none;
     padding: 40px;
-    animation: scaleIn 0.4s ease;
+    animation: scaleIn 0.2s ease;
 }
 
 .exam-header {
@@ -816,10 +822,11 @@ header::before {
     border-radius: var(--radius-sm);
     cursor: pointer;
     background: var(--bg-card);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1);
     font-weight: 600;
     font-size: 0.95rem;
     color: var(--text-muted);
+    contain: layout style;
 }
 
 .question-number:hover {
@@ -849,7 +856,8 @@ header::before {
     margin-bottom: 28px;
     min-height: 300px;
     border: 1px solid var(--border-color);
-    animation: fadeIn 0.3s ease;
+    animation: fadeIn 0.15s ease;
+    contain: layout style;
 }
 
 .question-text {
@@ -1297,10 +1305,12 @@ header::before {
     border: 2px solid var(--border-color);
     border-radius: var(--radius-md);
     cursor: pointer;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.12s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.12s cubic-bezier(0.4, 0, 0.2, 1), background 0.12s cubic-bezier(0.4, 0, 0.2, 1);
     width: 100%;
     overflow: hidden;
     min-width: 0;
+    contain: layout style;
+    will-change: transform;
 }
 
 .choice:hover {
@@ -1363,7 +1373,7 @@ button.submit-btn {
     border-radius: var(--radius-md);
     font-weight: 600;
     cursor: pointer;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.12s cubic-bezier(0.4, 0, 0.2, 1), background 0.12s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.12s cubic-bezier(0.4, 0, 0.2, 1), color 0.12s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: inherit;
     font-size: 1rem;
     border: 2px solid var(--border-color);
@@ -1371,6 +1381,7 @@ button.submit-btn {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    will-change: transform;
 }
 
 .nav-btn {
@@ -1415,10 +1426,10 @@ button.submit-btn {
     max-width: 900px;
     margin: 0 auto;
     box-shadow: var(--shadow-lg);
-    box-shadow: var(--shadow-lg);
-    animation: fadeInOpacity 0.5s ease;
+    animation: fadeInOpacity 0.25s ease;
     padding-bottom: 120px;
     /* Space for sticky button */
+    contain: layout style;
 }
 
 .results-title {
@@ -1581,6 +1592,9 @@ button.submit-btn {
     transition: var(--transition);
     overflow: hidden;
     min-width: 0;
+    contain: layout style;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 300px;
 }
 
 .results-stat-card {
@@ -1784,7 +1798,7 @@ button.submit-btn {
     border-radius: var(--radius-sm);
     font-weight: 500;
     display: none;
-    animation: fadeIn 0.3s ease;
+    animation: fadeIn 0.12s ease;
 }
 
 .feedback.correct {
@@ -2179,7 +2193,7 @@ button.submit-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeIn 0.2s ease-out;
+    animation: fadeIn 0.1s ease-out;
 }
 
 .modal {
@@ -2190,7 +2204,7 @@ button.submit-btn {
     max-width: 400px;
     padding: 24px;
     box-shadow: var(--shadow-xl);
-    animation: scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: scaleIn 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .modal-header h3 {
@@ -2280,7 +2294,7 @@ button.submit-btn {
     align-items: center;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
@@ -2382,12 +2396,12 @@ button.submit-btn {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(4px);
     z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeIn 0.2s ease-out;
+    animation: fadeIn 0.1s ease-out;
 }
 
 .spinner-container {
@@ -2555,7 +2569,7 @@ button.submit-btn {
 .progress-fill {
     height: 100%;
     background: var(--accent-gradient);
-    transition: width 0.3s ease;
+    transition: width 0.15s ease;
     border-radius: var(--radius-full);
 }
 

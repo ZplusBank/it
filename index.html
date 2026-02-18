@@ -21,6 +21,11 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css">
 
+    <!-- Preload critical JS -->
+    <link rel="preload" href="js/exam-config.js" as="script">
+    <link rel="preload" href="js/content-renderer.js" as="script">
+    <link rel="preload" href="js/exam-engine.js" as="script">
+
     <!-- MathJax 3 with mhchem extension (SVG output) -->
     <script>
         window.MathJax = {
@@ -212,9 +217,9 @@
         });
     </script>
 
-    <!-- Three.js + Floating Lines Background -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="js/floating-lines.js"></script>
+    <!-- Three.js + Floating Lines Background (deferred) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="js/floating-lines.js" defer></script>
 </body>
 
 <!-- General Purpose Modal -->

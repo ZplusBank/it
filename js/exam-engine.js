@@ -109,21 +109,22 @@ const app = {
         localStorage.removeItem('examProgress');
     },
 
-    // Confetti animation
+    // Confetti animation (optimized: fewer particles, batched DOM)
     triggerConfetti() {
         const colors = ['#6366f1', '#8b5cf6', '#06b6d4', '#10b981', '#f59e0b', '#ef4444'];
-        for (let i = 0; i < 100; i++) {
-            setTimeout(() => {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.animationDelay = Math.random() * 0.5 + 's';
-                confetti.style.animationDuration = (2 + Math.random() * 2) + 's';
-                document.body.appendChild(confetti);
-                setTimeout(() => confetti.remove(), 5000);
-            }, i * 30);
+        const fragment = document.createDocumentFragment();
+        const confettiElements = [];
+        for (let i = 0; i < 50; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.cssText = `left:${Math.random() * 100}vw;background:${colors[Math.floor(Math.random() * colors.length)]};animation-delay:${Math.random() * 0.5}s;animation-duration:${2 + Math.random() * 2}s`;
+            fragment.appendChild(confetti);
+            confettiElements.push(confetti);
         }
+        document.body.appendChild(fragment);
+        setTimeout(() => {
+            confettiElements.forEach(el => el.remove());
+        }, 5000);
     },
 
     async init() {
@@ -131,7 +132,7 @@ const app = {
         this.initKeyboardShortcuts();
         this.initModalHandlers();
         await this.loadData();
-        
+
         // Check for saved progress
         const progress = this.loadProgress();
         if (progress) {
@@ -142,7 +143,7 @@ const app = {
                 () => this.resumeExam(progress)
             );
         }
-        
+
         this.showSubjectsView();
         this.initSearch();
     },
@@ -151,7 +152,7 @@ const app = {
         // Set up modal button handlers
         const confirmBtn = document.getElementById('modalConfirmBtn');
         const cancelBtn = document.getElementById('modalCancelBtn');
-        
+
         confirmBtn.onclick = () => this.handleModalConfirm();
         cancelBtn.onclick = () => this.closeModal();
 
@@ -212,7 +213,7 @@ const app = {
                     const checkBtn = document.getElementById('checkBtn');
                     const nextBtn = document.getElementById('nextBtn');
                     const submitBtn = document.getElementById('submitBtn');
-                    
+
                     if (checkBtn.style.display !== 'none' && !this.checkedAnswers[this.currentQuestionIndex]) {
                         this.checkAnswer();
                     } else if (submitBtn.style.display !== 'none') {
@@ -244,30 +245,30 @@ const app = {
     async resumeExam(progress) {
         try {
             this.showLoading('Resuming exam...');
-            
+
             // Find and select the subject
             const subject = this.subjects.find(s => s.id === progress.subjectId);
             if (!subject) {
                 throw new Error('Subject not found');
             }
-            
+
             this.currentSubject = subject;
-            
+
             // Load chapters if needed
             if (!subject.loaded) {
                 await this.loadChaptersForSubject(subject);
             }
-            
+
             // Restore state
             this.selectedChapters = progress.selectedChapters;
             this.startExam();
             this.currentQuestionIndex = progress.currentQuestionIndex;
             this.userAnswers = progress.userAnswers;
             this.checkedAnswers = progress.checkedAnswers;
-            
+
             this.renderCurrentQuestion();
             this.updateQuestionNumberStyles();
-            
+
             this.hideLoading();
         } catch (error) {
             console.error('Failed to resume exam:', error);
@@ -283,17 +284,28 @@ const app = {
         const subjectClear = document.getElementById('subjectSearchClear');
         const chapterClear = document.getElementById('chapterSearchClear');
 
+        // Debounce helper for search performance
+        const debounce = (fn, delay) => {
+            let timer;
+            return (...args) => {
+                clearTimeout(timer);
+                timer = setTimeout(() => fn(...args), delay);
+            };
+        };
+
         if (subjectInput) {
+            const debouncedSubjectFilter = debounce((value) => this.filterSubjects(value), 80);
             subjectInput.addEventListener('input', (e) => {
-                this.filterSubjects(e.target.value);
+                debouncedSubjectFilter(e.target.value);
                 if (subjectClear) {
                     subjectClear.style.display = e.target.value ? 'flex' : 'none';
                 }
             });
         }
         if (chapterInput) {
+            const debouncedChapterFilter = debounce((value) => this.filterChapters(value), 80);
             chapterInput.addEventListener('input', (e) => {
-                this.filterChapters(e.target.value);
+                debouncedChapterFilter(e.target.value);
                 if (chapterClear) {
                     chapterClear.style.display = e.target.value ? 'flex' : 'none';
                 }
@@ -626,12 +638,16 @@ const app = {
 
     renderQuestionNumbers() {
         const container = document.getElementById('questionNumbers');
-        container.innerHTML = this.questions.map((q, idx) => `
-            <button class="question-number ${idx === 0 ? 'active' : ''} ${this.userAnswers[idx] ? 'answered' : ''}"
-                    onclick="app.goToQuestion(${idx})">
-                ${idx + 1}
-            </button>
-        `).join('');
+        const fragment = document.createDocumentFragment();
+        this.questions.forEach((q, idx) => {
+            const btn = document.createElement('button');
+            btn.className = `question-number${idx === 0 ? ' active' : ''}${this.userAnswers[idx] ? ' answered' : ''}`;
+            btn.textContent = idx + 1;
+            btn.onclick = () => this.goToQuestion(idx);
+            fragment.appendChild(btn);
+        });
+        container.textContent = '';
+        container.appendChild(fragment);
     },
 
     renderCurrentQuestion() {
@@ -774,7 +790,7 @@ const app = {
         const activeBtn = document.querySelector('.question-number.active');
         if (activeBtn) {
             activeBtn.scrollIntoView({
-                behavior: 'smooth',
+                behavior: 'auto',
                 block: 'nearest',
                 inline: 'center'
             });
@@ -798,17 +814,16 @@ const app = {
     },
 
     updateQuestionNumberStyles() {
-        document.querySelectorAll('.question-number').forEach((btn, idx) => {
-            btn.classList.remove('active');
-            if (idx === this.currentQuestionIndex) {
-                btn.classList.add('active');
-            }
-            if (this.userAnswers[idx]) {
-                btn.classList.add('answered');
-            } else {
-                btn.classList.remove('answered');
-            }
-        });
+        const buttons = document.querySelectorAll('.question-number');
+        const currentIdx = this.currentQuestionIndex;
+        const answers = this.userAnswers;
+        for (let idx = 0; idx < buttons.length; idx++) {
+            const btn = buttons[idx];
+            const isActive = idx === currentIdx;
+            const isAnswered = !!answers[idx];
+            btn.classList.toggle('active', isActive);
+            btn.classList.toggle('answered', isAnswered);
+        }
         this.updateProgressIndicator();
     },
 
@@ -816,8 +831,8 @@ const app = {
         const totalQuestions = this.questions.length;
         const answeredCount = Object.keys(this.userAnswers).filter(idx => {
             const answer = this.userAnswers[idx];
-            return answer !== undefined && answer !== '' && 
-                   (!Array.isArray(answer) || answer.length > 0);
+            return answer !== undefined && answer !== '' &&
+                (!Array.isArray(answer) || answer.length > 0);
         }).length;
 
         const percentage = totalQuestions > 0 ? (answeredCount / totalQuestions) * 100 : 0;
@@ -835,8 +850,8 @@ const app = {
         const totalQuestions = this.questions.length;
         const answeredCount = Object.keys(this.userAnswers).filter(idx => {
             const answer = this.userAnswers[idx];
-            return answer !== undefined && answer !== '' && 
-                   (!Array.isArray(answer) || answer.length > 0);
+            return answer !== undefined && answer !== '' &&
+                (!Array.isArray(answer) || answer.length > 0);
         }).length;
         const unansweredCount = totalQuestions - answeredCount;
 
@@ -865,14 +880,14 @@ const app = {
                         ${unansweredCount > 0 ? `<p style="color: var(--warning); text-align: center; margin-bottom: 16px;">⚠️ You have ${unansweredCount} unanswered question${unansweredCount > 1 ? 's' : ''}.</p>` : ''}
                         <div class="review-questions-grid">
                             ${this.questions.map((q, idx) => {
-                                const answer = this.userAnswers[idx];
-                                const isAnswered = answer !== undefined && answer !== '' && 
-                                                  (!Array.isArray(answer) || answer.length > 0);
-                                return `<button class="review-q-btn ${isAnswered ? 'answered' : 'unanswered'}" 
+            const answer = this.userAnswers[idx];
+            const isAnswered = answer !== undefined && answer !== '' &&
+                (!Array.isArray(answer) || answer.length > 0);
+            return `<button class="review-q-btn ${isAnswered ? 'answered' : 'unanswered'}" 
                                         onclick="app.closeReviewModal(); app.goToQuestion(${idx});">
                                     ${idx + 1}
                                 </button>`;
-                            }).join('')}
+        }).join('')}
                         </div>
                     </div>
                     <div class="modal-footer">

@@ -173,7 +173,7 @@ void main() {
   const config = {
     linesGradient: ['#3730a3', '#4338ca', '#5b21b6', '#6d28d9'],
     enabledWaves: ['top', 'middle', 'bottom'],
-    lineCount: isMobile ? [3, 2, 3] : [6, 6, 6],
+    lineCount: isMobile ? [2, 2, 2] : [4, 4, 4],
     lineDistance: [5, 5, 5],
     topWavePosition: { x: 10.0, y: 0.5, rotate: -0.4 },
     middleWavePosition: { x: 5.0, y: 0.0, rotate: 0.2 },
@@ -182,7 +182,7 @@ void main() {
     interactive: !isMobile,
     bendRadius: 5.0,
     bendStrength: -0.5,
-    mouseDamping: 0.05,
+    mouseDamping: 0.04,
     parallax: !isMobile,
     parallaxStrength: 0.2
   };
@@ -209,8 +209,8 @@ void main() {
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
   camera.position.z = 1;
 
-  const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: false });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: false, powerPreference: 'low-power' });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
   renderer.domElement.style.width = '100%';
   renderer.domElement.style.height = '100%';
   container.appendChild(renderer.domElement);
@@ -305,7 +305,7 @@ void main() {
       uniforms.parallax.value = !newIsMobile;
 
       // Update line counts
-      const newCounts = newIsMobile ? [3, 2, 3] : [6, 6, 6];
+      const newCounts = newIsMobile ? [2, 2, 2] : [4, 4, 4];
       uniforms.topLineCount.value = config.enabledWaves.includes('top') ? getIdx(newCounts, 'top', 6) : 0;
       uniforms.middleLineCount.value = config.enabledWaves.includes('middle') ? getIdx(newCounts, 'middle', 6) : 0;
       uniforms.bottomLineCount.value = config.enabledWaves.includes('bottom') ? getIdx(newCounts, 'bottom', 6) : 0;
@@ -345,18 +345,26 @@ void main() {
     targetInfluence = 0.0;
   });
 
-  // --- Render Loop ---
+  // --- Render Loop (throttled to ~30fps for performance) ---
   const clock = new THREE.Clock();
   let animationId = null;
+  let lastRenderTime = 0;
+  const FRAME_INTERVAL = 1000 / 30; // 30fps cap
 
-  function renderLoop() {
+  function renderLoop(timestamp) {
     // Mobile optimization: Render only once, then stop loop
-    // But we still want to render at least one frame so the background appears
     if (isMobileCached) {
       renderer.render(scene, camera);
       animationId = null;
-      return; // Stop the loop
+      return;
     }
+
+    // Throttle to ~30fps
+    if (timestamp - lastRenderTime < FRAME_INTERVAL) {
+      animationId = requestAnimationFrame(renderLoop);
+      return;
+    }
+    lastRenderTime = timestamp;
 
     uniforms.iTime.value = clock.getElapsedTime();
 
