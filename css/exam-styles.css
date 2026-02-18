@@ -173,6 +173,18 @@
     }
 }
 
+/* ============= Reduced Motion ============= */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 /* ============= Base ============= */
 * {
     margin: 2px;
@@ -201,21 +213,19 @@ body {
 /* Show only left/right edges, hide center behind exam card */
 body.exam-active #floatingLinesBg {
     -webkit-mask-image: linear-gradient(to right,
-        rgba(0,0,0,1) 0%,
-        rgba(0,0,0,1) 15%,
-        rgba(0,0,0,0) 22%,
-        rgba(0,0,0,0) 78%,
-        rgba(0,0,0,1) 85%,
-        rgba(0,0,0,1) 100%
-    );
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 1) 15%,
+            rgba(0, 0, 0, 0) 22%,
+            rgba(0, 0, 0, 0) 78%,
+            rgba(0, 0, 0, 1) 85%,
+            rgba(0, 0, 0, 1) 100%);
     mask-image: linear-gradient(to right,
-        rgba(0,0,0,1) 0%,
-        rgba(0,0,0,1) 15%,
-        rgba(0,0,0,0) 22%,
-        rgba(0,0,0,0) 78%,
-        rgba(0,0,0,1) 85%,
-        rgba(0,0,0,1) 100%
-    );
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 1) 15%,
+            rgba(0, 0, 0, 0) 22%,
+            rgba(0, 0, 0, 0) 78%,
+            rgba(0, 0, 0, 1) 85%,
+            rgba(0, 0, 0, 1) 100%);
     transition: -webkit-mask-image 0.6s ease, mask-image 0.6s ease;
 }
 
@@ -248,8 +258,7 @@ body.exam-active #floatingLinesBg {
 header {
     background: var(--header-gradient);
     background-size: 200% 200%;
-    animation: gradientShift 12s ease infinite;
-    will-change: background-position;
+    animation: gradientShift 20s ease infinite;
     color: white;
     padding: 40px 48px;
     border-radius: var(--radius-xl);
@@ -257,10 +266,10 @@ header {
     box-shadow: var(--shadow-lg);
     position: relative;
     overflow: hidden;
-    contain: layout style;
+    contain: layout style paint;
 }
 
-/* Subtle shimmer overlay — optimized: reduced frequency */
+/* Subtle shimmer overlay — optimized: reduced frequency, paused by default */
 header::before {
     content: '';
     position: absolute;
@@ -273,8 +282,7 @@ header::before {
             rgba(255, 255, 255, 0.05) 50%,
             transparent 70%);
     background-size: 200% 100%;
-    animation: shimmer 8s ease-in-out infinite;
-    will-change: background-position;
+    animation: shimmer 12s ease-in-out infinite;
     pointer-events: none;
     contain: strict;
 }
@@ -2907,4 +2915,34 @@ a:focus-visible {
     .results-explanation {
         font-size: 0.85rem;
     }
+}
+
+/* ============= Performance: Hidden views skip rendering ============= */
+.chapters-view[style*="display: none"],
+.exam-view[style*="display: none"],
+.results-view[style*="display: none"],
+.subjects-view[style*="display: none"] {
+    content-visibility: hidden;
+}
+
+/* GPU-promote elements that animate frequently */
+.subject-card,
+.chapter-card {
+    will-change: transform;
+    contain: layout style paint;
+}
+
+/* Layout containment for heavy containers */
+.question-container,
+.result-details,
+.results-questions-list {
+    contain: layout style;
+}
+
+/* Optimize text rendering in bulk content */
+.question-text,
+.results-q-text,
+.results-choice-text,
+.results-explanation-text {
+    text-rendering: optimizeSpeed;
 }
