@@ -491,40 +491,68 @@ const app = {
         this.showChaptersView(subject);
     },
 
+    // Active fetch controller — allows cancelling in-flight chapter loads
+    _chapterLoadController: null,
+
     async loadChaptersForSubject(subject) {
         if (!subject.chaptersConfig || subject.chaptersConfig.length === 0) {
             subject.loaded = true;
             return;
         }
 
-        // loading chapters for subject
+        // Cancel any previous in-flight load
+        if (this._chapterLoadController) {
+            this._chapterLoadController.abort();
+        }
+        this._chapterLoadController = new AbortController();
+        const signal = this._chapterLoadController.signal;
 
-        const loadingPromises = subject.chaptersConfig.map(async (chInfo) => {
-            if (!chInfo.file) return null;
-            try {
-                const response = await fetch(`./${chInfo.file}`);
-                if (response.ok) {
-                    const data = await response.json();
-                    let chapterData = Array.isArray(data) ? data[0] : data;
+        // Concurrency-limited parallel fetch (max 4 at once to avoid saturating network)
+        const MAX_CONCURRENT = 4;
+        const configs = subject.chaptersConfig.filter(ch => ch.file);
+        const chapters = [];
 
-                    if (chapterData && chapterData.title && Array.isArray(chapterData.questions)) {
-                        return {
-                            id: chInfo.id,
-                            title: chInfo.name || chapterData.title,
-                            questions: chapterData.questions,
-                            totalQuestions: chapterData.questions.length
-                        };
-                    }
+        for (let i = 0; i < configs.length; i += MAX_CONCURRENT) {
+            if (signal.aborted) break;
+            const batch = configs.slice(i, i + MAX_CONCURRENT);
+            const batchResults = await Promise.allSettled(
+                batch.map(chInfo => this._fetchChapter(chInfo, signal))
+            );
+            for (const result of batchResults) {
+                if (result.status === 'fulfilled' && result.value) {
+                    chapters.push(result.value);
                 }
-            } catch (e) {
+            }
+        }
+
+        subject.chapters = chapters;
+        subject.loaded = true;
+        this._chapterLoadController = null;
+    },
+
+    /** Fetch and parse a single chapter file */
+    async _fetchChapter(chInfo, signal) {
+        try {
+            const response = await fetch(`./${chInfo.file}`, { signal });
+            if (!response.ok) return null;
+
+            const data = await response.json();
+            const chapterData = Array.isArray(data) ? data[0] : data;
+
+            if (!chapterData?.title || !Array.isArray(chapterData.questions)) return null;
+
+            return {
+                id: chInfo.id,
+                title: chInfo.name || chapterData.title,
+                questions: chapterData.questions,
+                totalQuestions: chapterData.questions.length
+            };
+        } catch (e) {
+            if (e.name !== 'AbortError') {
                 console.warn(`Failed to load ${chInfo.file}:`, e);
             }
             return null;
-        });
-
-        const results = await Promise.all(loadingPromises);
-        subject.chapters = results.filter(ch => ch !== null);
-        subject.loaded = true;
+        }
     },
 
     showChaptersView(subject) {
@@ -637,99 +665,148 @@ const app = {
         this.renderCurrentQuestion();
     },
 
+    // Cached question number buttons for O(1) class updates
+    _questionBtns: [],
+
     renderQuestionNumbers() {
         const container = document.getElementById('questionNumbers');
         const fragment = document.createDocumentFragment();
-        this.questions.forEach((q, idx) => {
-            const btn = document.createElement('button');
-            btn.className = `question-number${idx === 0 ? ' active' : ''}${this.userAnswers[idx] ? ' answered' : ''}`;
-            btn.textContent = idx + 1;
-            btn.onclick = () => this.goToQuestion(idx);
-            fragment.appendChild(btn);
-        });
+        const count = this.questions.length;
+        this._questionBtns = new Array(count);
+
+        // Use event delegation instead of per-button onclick
         container.textContent = '';
+        container.onclick = (e) => {
+            const btn = e.target.closest('.question-number');
+            if (!btn) return;
+            const idx = parseInt(btn.dataset.idx, 10);
+            if (!isNaN(idx)) this.goToQuestion(idx);
+        };
+
+        for (let idx = 0; idx < count; idx++) {
+            const btn = document.createElement('button');
+            btn.className = 'question-number' + (idx === 0 ? ' active' : '') + (this.userAnswers[idx] ? ' answered' : '');
+            btn.textContent = idx + 1;
+            btn.dataset.idx = idx;
+            fragment.appendChild(btn);
+            this._questionBtns[idx] = btn;
+        }
         container.appendChild(fragment);
     },
 
     renderCurrentQuestion() {
-        const question = this.questions[this.currentQuestionIndex];
+        const idx = this.currentQuestionIndex;
+        const question = this.questions[idx];
         const container = document.getElementById('questionContainer');
-
-        document.getElementById('currentQuestion').textContent = this.currentQuestionIndex + 1;
-
-        // Render question text through ContentRenderer (Markdown + Math + Code)
-        const renderedText = ContentRenderer.render(question.text);
-
-        let imageHtml = '';
-        if (question.image) {
-            imageHtml = `<div class="question-image"><img src="${question.image}" alt="Question illustration"></div>`;
-        }
-        let html = `${imageHtml}<div class="question-text">${renderedText}</div>`;
-
         const isCheckbox = question.inputType === 'checkbox';
         const inputType = isCheckbox ? 'checkbox' : 'radio';
-        const currentAnswer = this.userAnswers[this.currentQuestionIndex] || (isCheckbox ? [] : '');
+        const currentAnswer = this.userAnswers[idx] || (isCheckbox ? [] : '');
+        const isLastQuestion = idx === this.questions.length - 1;
 
-        html += '<div class="choices">';
-        question.choices.forEach(choice => {
+        document.getElementById('currentQuestion').textContent = idx + 1;
+
+        // Build DOM with DocumentFragment for single reflow
+        const fragment = document.createDocumentFragment();
+
+        // Question image (lazy loaded with decode hints)
+        if (question.image) {
+            const imgWrapper = document.createElement('div');
+            imgWrapper.className = 'question-image';
+            const img = document.createElement('img');
+            img.src = question.image;
+            img.alt = 'Question illustration';
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            imgWrapper.appendChild(img);
+            fragment.appendChild(imgWrapper);
+        }
+
+        // Question text
+        const textDiv = document.createElement('div');
+        textDiv.className = 'question-text';
+        textDiv.innerHTML = ContentRenderer.render(question.text);
+        fragment.appendChild(textDiv);
+
+        // Choices container with event delegation
+        const choicesDiv = document.createElement('div');
+        choicesDiv.className = 'choices';
+        choicesDiv.addEventListener('change', (e) => {
+            const input = e.target;
+            if (input.name === 'answer') {
+                this.selectAnswer(input.value, isCheckbox);
+            }
+        });
+
+        for (let i = 0; i < question.choices.length; i++) {
+            const choice = question.choices[i];
             const isSelected = isCheckbox
                 ? (Array.isArray(currentAnswer) && currentAnswer.includes(choice.value))
                 : currentAnswer === choice.value;
 
-            // Render choice text through ContentRenderer
-            const renderedChoice = ContentRenderer.render(choice.text);
+            const choiceDiv = document.createElement('div');
+            choiceDiv.className = 'choice' + (isSelected ? ' selected' : '');
 
-            html += `
-                <div class="choice ${isSelected ? 'selected' : ''}">
-                    <input type="${inputType}" 
-                           id="choice-${choice.value}" 
-                           name="answer"
-                           value="${choice.value}"
-                           ${isSelected ? 'checked' : ''}
-                           onchange="app.selectAnswer('${choice.value}', ${isCheckbox})">
-                    <label for="choice-${choice.value}">${renderedChoice}</label>
-                </div>
-            `;
-        });
-        html += '</div>';
+            const input = document.createElement('input');
+            input.type = inputType;
+            input.id = `choice-${choice.value}`;
+            input.name = 'answer';
+            input.value = choice.value;
+            if (isSelected) input.checked = true;
 
-        container.innerHTML = html;
+            const label = document.createElement('label');
+            label.htmlFor = `choice-${choice.value}`;
+            label.innerHTML = ContentRenderer.render(choice.text);
 
-        // Typeset MathJax on the question container
-        ContentRenderer.typeset(container);
-        if (typeof ContentRenderer.attachImageListeners === 'function') {
-            ContentRenderer.attachImageListeners(container);
-        } else {
-            console.error('ContentRenderer.attachImageListeners is not a function');
+            choiceDiv.appendChild(input);
+            choiceDiv.appendChild(label);
+            choicesDiv.appendChild(choiceDiv);
         }
+        fragment.appendChild(choicesDiv);
 
-        // Update button states
-        document.getElementById('prevBtn').disabled = this.currentQuestionIndex === 0;
-        document.getElementById('nextBtn').disabled = false;
-        document.getElementById('checkBtn').style.display = this.currentQuestionIndex === this.questions.length - 1 ? 'none' : 'block';
-        document.getElementById('submitBtn').style.display = this.currentQuestionIndex === this.questions.length - 1 ? 'block' : 'none';
+        // Single DOM write
+        container.textContent = '';
+        container.appendChild(fragment);
+
+        // Typeset MathJax + attach image listeners
+        ContentRenderer.typeset(container);
+        ContentRenderer.attachImageListeners(container);
+
+        // Update button states (batch reads then writes to avoid layout thrashing)
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const checkBtn = document.getElementById('checkBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        const feedbackEl = document.getElementById('feedback');
+
+        prevBtn.disabled = idx === 0;
+        nextBtn.disabled = false;
+        checkBtn.style.display = isLastQuestion ? 'none' : 'block';
+        submitBtn.style.display = isLastQuestion ? 'block' : 'none';
 
         // Clear feedback
-        document.getElementById('feedback').className = 'feedback';
-        document.getElementById('feedback').innerHTML = '';
+        feedbackEl.className = 'feedback';
+        feedbackEl.textContent = '';
 
         // Restore check state if already checked
-        if (this.checkedAnswers[this.currentQuestionIndex]) {
-            this.showFeedback(this.currentQuestionIndex);
+        if (this.checkedAnswers[idx]) {
+            this.showFeedback(idx);
         }
     },
 
     selectAnswer(value, isCheckbox) {
+        const idx = this.currentQuestionIndex;
         if (isCheckbox) {
-            const currentSelection = this.userAnswers[this.currentQuestionIndex] || [];
-
-            if (currentSelection.includes(value)) {
-                this.userAnswers[this.currentQuestionIndex] = currentSelection.filter(v => v !== value);
+            const current = this.userAnswers[idx] || [];
+            const pos = current.indexOf(value);
+            if (pos !== -1) {
+                current.splice(pos, 1);
+                this.userAnswers[idx] = current;
             } else {
-                this.userAnswers[this.currentQuestionIndex] = [...currentSelection, value];
+                current.push(value);
+                this.userAnswers[idx] = current;
             }
         } else {
-            this.userAnswers[this.currentQuestionIndex] = value;
+            this.userAnswers[idx] = value;
         }
         // Auto-save on answer change
         this.saveProgress();
@@ -740,44 +817,54 @@ const app = {
         this.showFeedback(this.currentQuestionIndex);
     },
 
+    /** Check if an answer is correct (reusable helper) */
+    _isAnswerCorrect(question, userAnswer) {
+        if (question.inputType === 'checkbox') {
+            const correct = question.correctAnswer.split('');
+            const user = Array.isArray(userAnswer) ? userAnswer : [];
+            return correct.length === user.length && correct.every(a => user.includes(a));
+        }
+        return userAnswer === question.correctAnswer;
+    },
+
     showFeedback(index) {
         const question = this.questions[index];
         const userAnswer = this.userAnswers[index];
         const feedbackEl = document.getElementById('feedback');
-
-        let isCorrect = false;
-        if (question.inputType === 'checkbox') {
-            const correctAnswers = question.correctAnswer.split('');
-            const userAnswers = Array.isArray(userAnswer) ? userAnswer : [];
-            isCorrect = correctAnswers.length === userAnswers.length &&
-                correctAnswers.every(a => userAnswers.includes(a));
-        } else {
-            isCorrect = userAnswer === question.correctAnswer;
-        }
+        const isCorrect = this._isAnswerCorrect(question, userAnswer);
 
         feedbackEl.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+
         const message = isCorrect ? '✓ Correct!' : '✗ Incorrect';
         const correctText = question.inputType === 'checkbox'
             ? `Correct answers: ${question.correctAnswer.split('').join(', ')}`
             : `Correct answer: ${question.correctAnswer}`;
 
-        const explanationRaw = question.explanation || "Coming soon...";
-        const renderedExplanation = ContentRenderer.render(explanationRaw);
+        const explanationRaw = question.explanation || 'Coming soon...';
 
-        feedbackEl.innerHTML = `
-            <strong>${message}</strong>
-            <div class="correct-answer">${correctText}</div>
-            <div class="explanation" style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(0,0,0,0.1);">
-                <strong>Explanation:</strong><br>
-                ${renderedExplanation}
-            </div>
-        `;
+        // Build feedback DOM
+        const frag = document.createDocumentFragment();
 
-        // Typeset MathJax on the feedback element
+        const strong = document.createElement('strong');
+        strong.textContent = message;
+        frag.appendChild(strong);
+
+        const correctDiv = document.createElement('div');
+        correctDiv.className = 'correct-answer';
+        correctDiv.textContent = correctText;
+        frag.appendChild(correctDiv);
+
+        const explanationDiv = document.createElement('div');
+        explanationDiv.className = 'explanation';
+        explanationDiv.style.cssText = 'margin-top:10px;padding-top:10px;border-top:1px solid rgba(0,0,0,0.1)';
+        explanationDiv.innerHTML = `<strong>Explanation:</strong><br>${ContentRenderer.render(explanationRaw)}`;
+        frag.appendChild(explanationDiv);
+
+        feedbackEl.textContent = '';
+        feedbackEl.appendChild(frag);
+
         ContentRenderer.typeset(feedbackEl);
-        if (typeof ContentRenderer.attachImageListeners === 'function') {
-            ContentRenderer.attachImageListeners(feedbackEl);
-        }
+        ContentRenderer.attachImageListeners(feedbackEl);
     },
 
     goToQuestion(index) {
@@ -815,26 +902,24 @@ const app = {
     },
 
     updateQuestionNumberStyles() {
-        const buttons = document.querySelectorAll('.question-number');
+        const btns = this._questionBtns;
         const currentIdx = this.currentQuestionIndex;
         const answers = this.userAnswers;
-        for (let idx = 0; idx < buttons.length; idx++) {
-            const btn = buttons[idx];
-            const isActive = idx === currentIdx;
-            const isAnswered = !!answers[idx];
-            btn.classList.toggle('active', isActive);
-            btn.classList.toggle('answered', isAnswered);
+        for (let idx = 0; idx < btns.length; idx++) {
+            const btn = btns[idx];
+            if (!btn) continue;
+            btn.classList.toggle('active', idx === currentIdx);
+            btn.classList.toggle('answered', !!answers[idx]);
         }
         this.updateProgressIndicator();
     },
 
     updateProgressIndicator() {
         const totalQuestions = this.questions.length;
-        const answeredCount = Object.keys(this.userAnswers).filter(idx => {
-            const answer = this.userAnswers[idx];
-            return answer !== undefined && answer !== '' &&
-                (!Array.isArray(answer) || answer.length > 0);
-        }).length;
+        let answeredCount = 0;
+        for (const idx in this.userAnswers) {
+            if (!this._isSkipped(this.userAnswers[idx])) answeredCount++;
+        }
 
         const percentage = totalQuestions > 0 ? (answeredCount / totalQuestions) * 100 : 0;
 
@@ -849,11 +934,10 @@ const app = {
 
     showReviewModal() {
         const totalQuestions = this.questions.length;
-        const answeredCount = Object.keys(this.userAnswers).filter(idx => {
-            const answer = this.userAnswers[idx];
-            return answer !== undefined && answer !== '' &&
-                (!Array.isArray(answer) || answer.length > 0);
-        }).length;
+        let answeredCount = 0;
+        for (const idx in this.userAnswers) {
+            if (!this._isSkipped(this.userAnswers[idx])) answeredCount++;
+        }
         const unansweredCount = totalQuestions - answeredCount;
 
         // Create review modal content
@@ -881,9 +965,7 @@ const app = {
                         ${unansweredCount > 0 ? `<p style="color: var(--warning); text-align: center; margin-bottom: 16px;">⚠️ You have ${unansweredCount} unanswered question${unansweredCount > 1 ? 's' : ''}.</p>` : ''}
                         <div class="review-questions-grid">
                             ${this.questions.map((q, idx) => {
-            const answer = this.userAnswers[idx];
-            const isAnswered = answer !== undefined && answer !== '' &&
-                (!Array.isArray(answer) || answer.length > 0);
+            const isAnswered = !this._isSkipped(this.userAnswers[idx]);
             return `<button class="review-q-btn ${isAnswered ? 'answered' : 'unanswered'}" 
                                         onclick="app.closeReviewModal(); app.goToQuestion(${idx});">
                                     ${idx + 1}
@@ -931,175 +1013,167 @@ const app = {
         this.calculateAndDisplayResults();
     },
 
+    /** Check if answer was skipped */
+    _isSkipped(answer) {
+        return answer === undefined || answer === '' ||
+            (Array.isArray(answer) && answer.length === 0);
+    },
+
     calculateAndDisplayResults() {
         const totalCount = this.questions.length;
-        let correctCount = 0;
-        let wrongCount = 0;
-        let skippedCount = 0;
-        const questionResults = [];
+        let correctCount = 0, wrongCount = 0, skippedCount = 0;
+        const questionResults = new Array(totalCount);
 
-        this.questions.forEach((question, idx) => {
+        // Single pass classification
+        for (let idx = 0; idx < totalCount; idx++) {
+            const question = this.questions[idx];
             const userAnswer = this.userAnswers[idx];
-            const wasSkipped = userAnswer === undefined || userAnswer === '' ||
-                (Array.isArray(userAnswer) && userAnswer.length === 0);
-            let isCorrect = false;
-
-            if (!wasSkipped) {
-                if (question.inputType === 'checkbox') {
-                    const correctAnswers = question.correctAnswer.split('');
-                    const userAnswers = Array.isArray(userAnswer) ? userAnswer : [];
-                    isCorrect = correctAnswers.length === userAnswers.length &&
-                        correctAnswers.every(a => userAnswers.includes(a));
-                } else {
-                    isCorrect = userAnswer === question.correctAnswer;
-                }
-            }
+            const wasSkipped = this._isSkipped(userAnswer);
+            const isCorrect = wasSkipped ? false : this._isAnswerCorrect(question, userAnswer);
 
             if (wasSkipped) skippedCount++;
             else if (isCorrect) correctCount++;
             else wrongCount++;
 
-            questionResults.push({ question, idx, userAnswer, isCorrect, wasSkipped });
-        });
+            questionResults[idx] = { question, idx, userAnswer, isCorrect, wasSkipped };
+        }
 
-        const percentage = Math.round((correctCount / totalCount) * 100);
+        const percentage = totalCount > 0 ? Math.round((correctCount / totalCount) * 100) : 0;
 
         document.getElementById('scoreDisplay').textContent = `${correctCount} / ${totalCount}`;
         document.getElementById('scoreText').textContent = `Score: ${percentage}%`;
 
-        // Trigger confetti for high scores
-        if (percentage >= 90) {
-            this.triggerConfetti();
+        if (percentage >= 90) this.triggerConfetti();
+
+        // Result message lookup (avoids if-else chain)
+        const messages = [
+            [90, '🌟 Outstanding! You have mastered this material!'],
+            [80, '😊 Great job! You have a good understanding.'],
+            [70, '👍 Good effort! Keep practicing to improve.'],
+            [60, '📚 You\'re making progress. Study more and try again.'],
+            [0, '💪 Keep practicing! Review the material and try again.']
+        ];
+        const resultMessage = messages.find(([threshold]) => percentage >= threshold)[1];
+
+        // Build results DOM using DocumentFragment
+        const resultDetails = document.getElementById('resultDetails');
+        const mainFrag = document.createDocumentFragment();
+
+        // Stats section
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'results-message';
+        messageDiv.textContent = resultMessage;
+        mainFrag.appendChild(messageDiv);
+
+        const statsDiv = document.createElement('div');
+        statsDiv.className = 'results-stats';
+        const statDefs = [
+            { cls: 'stat-correct', icon: '✓', count: correctCount, label: 'Correct', filter: 'correct' },
+            { cls: 'stat-wrong', icon: '✗', count: wrongCount, label: 'Wrong', filter: 'wrong' },
+            { cls: 'stat-skipped', icon: '○', count: skippedCount, label: 'Skipped', filter: 'skipped' },
+        ];
+        for (const stat of statDefs) {
+            const card = document.createElement('div');
+            card.className = `results-stat-card ${stat.cls}`;
+            card.title = `Show only ${stat.label.toLowerCase()} answers`;
+            card.onclick = () => this.filterResults(stat.filter);
+            card.innerHTML = `<div class="stat-icon">${stat.icon}</div><div class="stat-number">${stat.count}</div><div class="stat-label">${stat.label}</div>`;
+            statsDiv.appendChild(card);
         }
+        mainFrag.appendChild(statsDiv);
 
-        // Result message
-        let resultMessage = '';
-        if (percentage >= 90) {
-            resultMessage = '🌟 Outstanding! You have mastered this material!';
-        } else if (percentage >= 80) {
-            resultMessage = '😊 Great job! You have a good understanding.';
-        } else if (percentage >= 70) {
-            resultMessage = '👍 Good effort! Keep practicing to improve.';
-        } else if (percentage >= 60) {
-            resultMessage = '📚 You\'re making progress. Study more and try again.';
-        } else {
-            resultMessage = '💪 Keep practicing! Review the material and try again.';
-        }
+        // Show All button
+        const showAllWrap = document.createElement('div');
+        showAllWrap.style.cssText = 'text-align:center;margin-bottom:20px';
+        const showAllBtn = document.createElement('button');
+        showAllBtn.className = 'nav-btn';
+        showAllBtn.style.cssText = 'display:inline-block;width:auto;padding:8px 16px;font-size:0.9rem;opacity:0.8';
+        showAllBtn.textContent = 'Show All Questions';
+        showAllBtn.onclick = () => this.filterResults('all');
+        showAllWrap.appendChild(showAllBtn);
+        mainFrag.appendChild(showAllWrap);
 
-        // Stats bar
-        const statsHtml = `
-            <div class="results-message">${resultMessage}</div>
-            <div class="results-stats">
-                <div class="results-stat-card stat-correct" onclick="app.filterResults('correct')" title="Show only correct answers">
-                    <div class="stat-icon">✓</div>
-                    <div class="stat-number">${correctCount}</div>
-                    <div class="stat-label">Correct</div>
-                </div>
-                <div class="results-stat-card stat-wrong" onclick="app.filterResults('wrong')" title="Show only wrong answers">
-                    <div class="stat-icon">✗</div>
-                    <div class="stat-number">${wrongCount}</div>
-                    <div class="stat-label">Wrong</div>
-                </div>
-                <div class="results-stat-card stat-skipped" onclick="app.filterResults('skipped')" title="Show only skipped answers">
-                    <div class="stat-icon">○</div>
-                    <div class="stat-number">${skippedCount}</div>
-                    <div class="stat-label">Skipped</div>
-                </div>
-            </div>
-            <div style="text-align: center; margin-bottom: 20px;">
-                <button class="nav-btn" onclick="app.filterResults('all')" style="display: inline-block; width: auto; padding: 8px 16px; font-size: 0.9rem; opacity: 0.8;">
-                    Show All Questions
-                </button>
-            </div>
-        `;
+        // Question cards list
+        const listDiv = document.createElement('div');
+        listDiv.className = 'results-questions-list';
 
-        // Question review cards
-        let cardsHtml = '';
-        questionResults.forEach(({ question, idx, userAnswer, isCorrect, wasSkipped }) => {
+        for (let i = 0; i < questionResults.length; i++) {
+            const { question, idx, userAnswer, isCorrect, wasSkipped } = questionResults[i];
             const statusClass = wasSkipped ? 'skipped' : (isCorrect ? 'correct' : 'wrong');
             const statusText = wasSkipped ? 'Skipped' : (isCorrect ? 'Correct' : 'Wrong');
             const statusIcon = wasSkipped ? '○' : (isCorrect ? '✓' : '✗');
 
-            const renderedText = ContentRenderer.render(question.text);
+            const card = document.createElement('div');
+            card.className = `results-question-card ${statusClass}`;
 
-            // Question image
-            let imageHtml = '';
+            // Header
+            const header = document.createElement('div');
+            header.className = 'results-q-header';
+            header.innerHTML = `<span class="results-q-number">Question ${idx + 1}</span><span class="results-q-badge ${statusClass}">${statusIcon} ${statusText}</span>`;
+            card.appendChild(header);
+
+            // Image
             if (question.image) {
-                imageHtml = `<div class="question-image"><img src="${question.image}" alt="Question illustration"></div>`;
+                const imgWrap = document.createElement('div');
+                imgWrap.className = 'question-image';
+                const img = document.createElement('img');
+                img.src = question.image;
+                img.alt = 'Question illustration';
+                img.loading = 'lazy';
+                img.decoding = 'async';
+                imgWrap.appendChild(img);
+                card.appendChild(imgWrap);
             }
 
-            // Build choices list
-            let choicesHtml = '';
+            // Question text
+            const qText = document.createElement('div');
+            qText.className = 'results-q-text question-text';
+            qText.innerHTML = ContentRenderer.render(question.text);
+            card.appendChild(qText);
+
+            // Choices
             const correctAnswers = question.inputType === 'checkbox'
-                ? question.correctAnswer.split('')
-                : [question.correctAnswer];
+                ? question.correctAnswer.split('') : [question.correctAnswer];
             const userAnswers = wasSkipped ? []
                 : (Array.isArray(userAnswer) ? userAnswer : [userAnswer]);
 
-            question.choices.forEach(choice => {
+            const choicesList = document.createElement('div');
+            choicesList.className = 'results-choices-list';
+
+            for (const choice of question.choices) {
                 const isThisCorrect = correctAnswers.includes(choice.value);
                 const isUserPick = userAnswers.includes(choice.value);
 
-                let choiceClass = '';
-                let choiceIcon = '';
-                if (isThisCorrect && isUserPick) {
-                    choiceClass = 'correct';
-                    choiceIcon = '✓';
-                } else if (isThisCorrect) {
-                    choiceClass = 'correct';
-                    choiceIcon = '✓';
-                } else if (isUserPick) {
-                    choiceClass = 'user-wrong';
-                    choiceIcon = '✗';
-                }
+                let choiceClass = '', choiceIcon = '';
+                if (isThisCorrect) { choiceClass = 'correct'; choiceIcon = '✓'; }
+                else if (isUserPick) { choiceClass = 'user-wrong'; choiceIcon = '✗'; }
 
-                const renderedChoice = ContentRenderer.render(choice.text);
-                choicesHtml += `
-                    <div class="results-choice ${choiceClass}">
-                        <div class="results-choice-letter">${choice.value}</div>
-                        <div class="results-choice-text">${renderedChoice}</div>
-                        ${choiceIcon ? `<div class="results-choice-icon">${choiceIcon}</div>` : ''}
-                    </div>
-                `;
-            });
+                const choiceDiv = document.createElement('div');
+                choiceDiv.className = `results-choice ${choiceClass}`;
+                choiceDiv.innerHTML = `<div class="results-choice-letter">${choice.value}</div><div class="results-choice-text">${ContentRenderer.render(choice.text)}</div>${choiceIcon ? `<div class="results-choice-icon">${choiceIcon}</div>` : ''}`;
+                choicesList.appendChild(choiceDiv);
+            }
+            card.appendChild(choicesList);
 
             // Explanation
-            const explanationRaw = question.explanation || '';
-            let explanationHtml = '';
-            if (explanationRaw) {
-                const renderedExplanation = ContentRenderer.render(explanationRaw);
-                explanationHtml = `
-                    <div class="results-explanation">
-                        <strong>💡 Explanation:</strong>
-                        <div class="results-explanation-text">${renderedExplanation}</div>
-                    </div>
-                `;
+            if (question.explanation) {
+                const expDiv = document.createElement('div');
+                expDiv.className = 'results-explanation';
+                expDiv.innerHTML = `<strong>💡 Explanation:</strong><div class="results-explanation-text">${ContentRenderer.render(question.explanation)}</div>`;
+                card.appendChild(expDiv);
             }
 
-            cardsHtml += `
-                <div class="results-question-card ${statusClass}">
-                    <div class="results-q-header">
-                        <span class="results-q-number">Question ${idx + 1}</span>
-                        <span class="results-q-badge ${statusClass}">${statusIcon} ${statusText}</span>
-                    </div>
-                    ${imageHtml}
-                    <div class="results-q-text question-text">${renderedText}</div>
-                    <div class="results-choices-list">${choicesHtml}</div>
-                    ${explanationHtml}
-                </div>
-            `;
-        });
-
-        document.getElementById('resultDetails').innerHTML = `
-            ${statsHtml}
-            <div class="results-questions-list">${cardsHtml}</div>
-        `;
-
-        // Typeset MathJax on the entire results container
-        ContentRenderer.typeset(document.getElementById('resultDetails'));
-        if (typeof ContentRenderer.attachImageListeners === 'function') {
-            ContentRenderer.attachImageListeners(document.getElementById('resultDetails'));
+            listDiv.appendChild(card);
         }
+        mainFrag.appendChild(listDiv);
+
+        // Single DOM write
+        resultDetails.textContent = '';
+        resultDetails.appendChild(mainFrag);
+
+        // Batch typeset & image listeners on the whole container
+        ContentRenderer.typeset(resultDetails);
+        ContentRenderer.attachImageListeners(resultDetails);
     },
 
     goBackToSubjects() {

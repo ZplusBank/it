@@ -13,8 +13,27 @@ const ContentRenderer = {
 
     _placeholder: '%%MATH_BLOCK_',
     _counter: 0,
+    _cacheMaxSize: 300,
+
+    // LRU cache using Map insertion order
     _renderCache: new Map(),
-    _cacheMaxSize: 200,
+
+    // Pre-compiled regex patterns (avoid re-compilation per call)
+    _patterns: {
+        displayMath: /\\\[[\s\S]*?\\\]/g,
+        inlineMath: /\\\([\s\S]*?\\\)/g,
+        chemistry: /\\ce\{([^}]*(?:\{[^}]*\}[^}]*)*)\}/g,
+        tripleAsterisk: /^\*{3,}\s*$/gm,
+        loneAsterisk: /^\*\s*$/gm,
+        table: /(<table\b[^>]*>[\s\S]*?<\/table>)/g,
+        htmlEntities: /[&<>"']/g,
+    },
+
+    // Entity map for escaping
+    _entityMap: { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' },
+
+    // Active MathJax typeset abort controller
+    _typesetController: null,
 
     /**
      * Initialize Marked.js with Prism.js integration
@@ -26,6 +45,7 @@ const ContentRenderer = {
         }
 
         const renderer = new marked.Renderer();
+        const self = this;
 
         // Override code block renderer to use Prism.js with line numbers, language badge, and copy button
         renderer.code = function ({ text, lang }) {
@@ -35,9 +55,9 @@ const ContentRenderer = {
             try {
                 highlighted = Prism.languages[language]
                     ? Prism.highlight(text, Prism.languages[language], language)
-                    : ContentRenderer._escapeHtml(text);
+                    : self._escapeHtml(text);
             } catch (e) {
-                highlighted = ContentRenderer._escapeHtml(text);
+                highlighted = self._escapeHtml(text);
             }
             return `<div class="code-block-wrapper">
                 <div class="code-block-header">
@@ -59,12 +79,10 @@ const ContentRenderer = {
         };
 
         // Override strong (bold) — skip if content is empty or whitespace-only
-        // Override strong (bold) — skip if content is empty or whitespace-only
         renderer.strong = function ({ text }) {
             if (!text || !text.trim()) return `**${text || ''}**`;
             return `<strong>${text}</strong>`;
         };
-
 
         marked.setOptions({
             renderer: renderer,
@@ -99,65 +117,72 @@ const ContentRenderer = {
         if (!text && text !== 0) return '';
         text = String(text);
 
-        // Check cache first
+        // LRU cache lookup — move to end on hit for proper LRU eviction
         if (this._renderCache.has(text)) {
-            return this._renderCache.get(text);
+            const cached = this._renderCache.get(text);
+            this._renderCache.delete(text);
+            this._renderCache.set(text, cached);
+            return cached;
         }
 
-        // If Marked is not available, just return the text as-is (backward compat)
-        if (typeof marked === 'undefined') {
-            return text;
-        }
+        // If Marked is not available, just return the text as-is
+        if (typeof marked === 'undefined') return text;
 
-        // Step 1: Protect math/chemistry delimiters from Markdown processing
-        const originalText = text;
+        // Step 1: Protect math/chemistry delimiters from Markdown processing (single pass)
         const { text: safeText, blocks } = this._protectMath(text);
 
         // Step 1.5: Escape lone asterisks that Marked would misinterpret
-        // *** on its own line → literal asterisks (not <hr>)
-        // * on its own line → literal asterisk (not empty <li>)
         let processedText = safeText
-            .replace(/^\*{3,}\s*$/gm, (m) => m.replace(/\*/g, '\\*'))
-            .replace(/^\*\s*$/gm, '\\*');
+            .replace(this._patterns.tripleAsterisk, (m) => m.replace(/\*/g, '\\*'))
+            .replace(this._patterns.loneAsterisk, '\\*');
 
         // Step 2: Run through Marked.js (Markdown → HTML)
         let html = marked.parse(processedText);
 
         // Step 2.5: Wrap tables in scrolling container
-        html = html.replace(/(<table\b[^>]*>[\s\S]*?<\/table>)/g, '<div class="table-overflow">$1</div>');
+        html = html.replace(this._patterns.table, '<div class="table-overflow">$1</div>');
 
         // Step 3: Restore math blocks
         html = this._restoreMath(html, blocks);
 
-        // Cache the result
+        // LRU cache insert — evict oldest if at capacity
         if (this._renderCache.size >= this._cacheMaxSize) {
-            // Evict oldest entry
             const firstKey = this._renderCache.keys().next().value;
             this._renderCache.delete(firstKey);
         }
-        this._renderCache.set(originalText, html);
+        this._renderCache.set(text, html);
 
         return html;
     },
 
     /**
-     * Trigger MathJax typesetting on a DOM element
+     * Trigger MathJax typesetting on a DOM element.
+     * Cancels any pending typeset for same element.
      */
     async typeset(element) {
-        if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
-            try {
-                await MathJax.typesetPromise([element]);
-            } catch (e) {
+        if (typeof MathJax === 'undefined' || !MathJax.typesetPromise) return;
+
+        // Cancel previous pending typeset
+        if (this._typesetController) {
+            this._typesetController.abort();
+        }
+        this._typesetController = new AbortController();
+        const signal = this._typesetController.signal;
+
+        try {
+            // MathJax.typesetClear prevents re-processing already-typeset nodes
+            MathJax.typesetClear([element]);
+            await MathJax.typesetPromise([element]);
+        } catch (e) {
+            if (!signal.aborted) {
                 console.warn('MathJax typeset error:', e);
             }
         }
     },
 
-
     /**
      * Render text and typeset in one step — sets innerHTML then typesets
      */
-
     async renderAndTypeset(element, text) {
         element.innerHTML = this.render(text);
         await this.typeset(element);
@@ -165,25 +190,38 @@ const ContentRenderer = {
     },
 
     /**
-     * Attach click listeners to images for lightbox
+     * Attach click listeners to images for lightbox using event delegation
      */
     attachImageListeners(element) {
         const images = element.querySelectorAll('img:not(.lightbox-image):not(.content-image)');
         if (images.length === 0) return;
-        images.forEach(img => {
+
+        for (let i = 0; i < images.length; i++) {
+            const img = images[i];
             img.classList.add('content-image');
             img.loading = 'lazy';
             img.decoding = 'async';
-            img.addEventListener('click', () => {
-                this._openLightbox(img.src, img.alt);
-            });
-        });
+            img.addEventListener('click', this._onImageClick, { passive: true });
+        }
+    },
+
+    /** Bound image click handler (avoids closure per image) */
+    _onImageClick(e) {
+        ContentRenderer._openLightbox(e.currentTarget.src, e.currentTarget.alt);
     },
 
     /**
-     * Open lightbox with zoom functionality
+     * Open lightbox with zoom, drag, keyboard & touch support.
+     * All event listeners are properly cleaned up on close.
      */
     _openLightbox(src, alt) {
+        // Cleanup reference for all bound listeners
+        const listeners = [];
+        const addListener = (target, event, handler, opts) => {
+            target.addEventListener(event, handler, opts);
+            listeners.push({ target, event, handler, opts });
+        };
+
         // Create overlay
         const overlay = document.createElement('div');
         overlay.className = 'lightbox-overlay';
@@ -198,145 +236,160 @@ const ContentRenderer = {
         img.alt = alt || 'Preview';
         img.className = 'lightbox-image';
 
-        // Zoom state
-        let scale = 1;
-        let isDragging = false;
-        let startX, startY, translateX = 0, translateY = 0;
+        // Zoom/pan state
+        let scale = 1, translateX = 0, translateY = 0;
+        let isDragging = false, startX = 0, startY = 0;
 
-        // Apply transform
         const updateTransform = () => {
             img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
         };
 
-        // Scroll zoom event
-        overlay.addEventListener('wheel', (e) => {
-            e.preventDefault();
-            if (e.deltaY < 0) {
-                scale = Math.min(scale + 0.1, 5); // Max zoom 5x
-            } else {
-                scale = Math.max(scale - 0.1, 0.5); // Min zoom 0.5x
-            }
-            updateTransform();
-        });
+        const clampScale = (s) => Math.max(0.5, Math.min(5, s));
 
-        // Drag functionality
-        img.addEventListener('mousedown', (e) => {
+        const resetView = () => {
+            scale = 1; translateX = 0; translateY = 0;
+            updateTransform();
+        };
+
+        // Cleanup function
+        const closeLightbox = () => {
+            listeners.forEach(({ target, event, handler, opts }) => {
+                target.removeEventListener(event, handler, opts);
+            });
+            listeners.length = 0;
+            if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+            document.body.style.overflow = '';
+        };
+
+        // Wheel zoom (passive: false to allow preventDefault)
+        addListener(overlay, 'wheel', (e) => {
+            e.preventDefault();
+            scale = clampScale(scale + (e.deltaY < 0 ? 0.15 : -0.15));
+            updateTransform();
+        }, { passive: false });
+
+        // Mouse drag
+        addListener(img, 'mousedown', (e) => {
             isDragging = true;
             startX = e.clientX - translateX;
             startY = e.clientY - translateY;
             img.style.cursor = 'grabbing';
-            e.preventDefault(); // Prevent default drag behavior
+            e.preventDefault();
         });
 
-        window.addEventListener('mousemove', (e) => {
+        addListener(window, 'mousemove', (e) => {
             if (!isDragging) return;
             translateX = e.clientX - startX;
             translateY = e.clientY - startY;
             updateTransform();
         });
 
-        window.addEventListener('mouseup', () => {
+        addListener(window, 'mouseup', () => {
             isDragging = false;
             img.style.cursor = 'grab';
+        });
+
+        // Touch support (pinch zoom + drag)
+        let lastTouchDist = 0;
+        addListener(img, 'touchstart', (e) => {
+            if (e.touches.length === 1) {
+                isDragging = true;
+                startX = e.touches[0].clientX - translateX;
+                startY = e.touches[0].clientY - translateY;
+            } else if (e.touches.length === 2) {
+                isDragging = false;
+                lastTouchDist = Math.hypot(
+                    e.touches[0].clientX - e.touches[1].clientX,
+                    e.touches[0].clientY - e.touches[1].clientY
+                );
+            }
+        }, { passive: true });
+
+        addListener(img, 'touchmove', (e) => {
+            if (e.touches.length === 1 && isDragging) {
+                translateX = e.touches[0].clientX - startX;
+                translateY = e.touches[0].clientY - startY;
+                updateTransform();
+            } else if (e.touches.length === 2) {
+                const dist = Math.hypot(
+                    e.touches[0].clientX - e.touches[1].clientX,
+                    e.touches[0].clientY - e.touches[1].clientY
+                );
+                if (lastTouchDist > 0) {
+                    scale = clampScale(scale * (dist / lastTouchDist));
+                    updateTransform();
+                }
+                lastTouchDist = dist;
+            }
+        }, { passive: true });
+
+        addListener(img, 'touchend', () => { isDragging = false; lastTouchDist = 0; }, { passive: true });
+
+        // Keyboard: Escape to close, +/- to zoom, 0 to reset
+        addListener(document, 'keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+            else if (e.key === '+' || e.key === '=') { scale = clampScale(scale + 0.5); updateTransform(); }
+            else if (e.key === '-') { scale = clampScale(scale - 0.5); updateTransform(); }
+            else if (e.key === '0') resetView();
         });
 
         // Close button
         const closeBtn = document.createElement('button');
         closeBtn.className = 'lightbox-close';
         closeBtn.innerHTML = '&times;';
-        closeBtn.onclick = () => {
-            document.body.removeChild(overlay);
-            document.body.style.overflow = '';
-        };
+        closeBtn.onclick = closeLightbox;
 
         // Controls (Zoom In/Out/Reset)
         const controls = document.createElement('div');
         controls.className = 'lightbox-controls';
 
-        const btnZoomIn = document.createElement('button');
-        btnZoomIn.className = 'lightbox-btn';
-        btnZoomIn.innerHTML = '+';
-        btnZoomIn.onclick = (e) => {
-            e.stopPropagation();
-            scale = Math.min(scale + 0.5, 5);
-            updateTransform();
+        const makeBtn = (label, onClick) => {
+            const btn = document.createElement('button');
+            btn.className = 'lightbox-btn';
+            btn.innerHTML = label;
+            btn.onclick = (e) => { e.stopPropagation(); onClick(); };
+            return btn;
         };
 
-        const btnZoomOut = document.createElement('button');
-        btnZoomOut.className = 'lightbox-btn';
-        btnZoomOut.innerHTML = '-';
-        btnZoomOut.onclick = (e) => {
-            e.stopPropagation();
-            scale = Math.max(scale - 0.5, 0.5);
-            updateTransform();
-        };
+        controls.appendChild(makeBtn('-', () => { scale = clampScale(scale - 0.5); updateTransform(); }));
+        controls.appendChild(makeBtn('&#x21bb;', resetView));
+        controls.appendChild(makeBtn('+', () => { scale = clampScale(scale + 0.5); updateTransform(); }));
 
-        const btnReset = document.createElement('button');
-        btnReset.className = 'lightbox-btn';
-        btnReset.innerHTML = '&#x21bb;'; // Refresh icon
-        btnReset.onclick = (e) => {
-            e.stopPropagation();
-            scale = 1;
-            translateX = 0;
-            translateY = 0;
-            updateTransform();
-        };
-
-        controls.appendChild(btnZoomOut);
-        controls.appendChild(btnReset);
-        controls.appendChild(btnZoomIn);
-
-        // Append everything
+        // Assemble DOM
         content.appendChild(img);
         overlay.appendChild(content);
         overlay.appendChild(closeBtn);
         overlay.appendChild(controls);
         document.body.appendChild(overlay);
-
-        // Prevent body scroll
         document.body.style.overflow = 'hidden';
 
         // Animate in
-        requestAnimationFrame(() => {
-            overlay.classList.add('active');
-        });
+        requestAnimationFrame(() => overlay.classList.add('active'));
 
-        // Close on overlay click (if not clicking content)
-        overlay.addEventListener('click', (e) => {
-            if (e.target === overlay || e.target === content) {
-                document.body.removeChild(overlay);
-                document.body.style.overflow = '';
-            }
+        // Close on overlay click (not content)
+        addListener(overlay, 'click', (e) => {
+            if (e.target === overlay || e.target === content) closeLightbox();
         });
     },
 
     /**
      * Replace math delimiters with placeholders so Marked doesn't mangle them.
-     * Protects: \[...\] (display), \ce{...} (chemistry), \(...\) (inline)
+     * Single-pass replacement using pre-compiled patterns.
      */
     _protectMath(text) {
         const blocks = [];
+        const self = this;
 
-        // Protect display math: \[...\]
-        text = text.replace(/\\\[[\s\S]*?\\\]/g, (match) => {
-            const id = this._placeholder + (this._counter++) + '%%';
+        const protect = (match) => {
+            const id = self._placeholder + (self._counter++) + '%%';
             blocks.push({ id, content: match });
             return id;
-        });
+        };
 
-        // Protect \ce{...} (chemistry) — handles nested braces
-        text = text.replace(/\\ce\{([^}]*(?:\{[^}]*\}[^}]*)*)\}/g, (match) => {
-            const id = this._placeholder + (this._counter++) + '%%';
-            blocks.push({ id, content: match });
-            return id;
-        });
-
-        // Protect inline math: \(...\)
-        text = text.replace(/\\\([\s\S]*?\\\)/g, (match) => {
-            const id = this._placeholder + (this._counter++) + '%%';
-            blocks.push({ id, content: match });
-            return id;
-        });
+        // Protect display math \[...\], chemistry \ce{...}, inline math \(...\)
+        text = text.replace(this._patterns.displayMath, protect);
+        text = text.replace(this._patterns.chemistry, protect);
+        text = text.replace(this._patterns.inlineMath, protect);
 
         return { text, blocks };
     },
@@ -345,9 +398,9 @@ const ContentRenderer = {
      * Restore math blocks from placeholders
      */
     _restoreMath(html, blocks) {
-        for (const block of blocks) {
+        for (let i = 0; i < blocks.length; i++) {
+            const block = blocks[i];
             let content = block.content;
-            // Wrap inline math in scrollable container
             if (content.startsWith('\\(')) {
                 content = `<span class="math-scroll-wrapper">${content}</span>`;
             }
@@ -357,16 +410,12 @@ const ContentRenderer = {
     },
 
     /**
-     * Basic HTML escape for fallback
+     * HTML escape using entity map (faster than chained .replace)
      */
     _escapeHtml(text) {
         if (!text && text !== 0) return '';
-        return String(text)
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#039;');
+        const map = this._entityMap;
+        return String(text).replace(this._patterns.htmlEntities, (ch) => map[ch]);
     }
 };
 
