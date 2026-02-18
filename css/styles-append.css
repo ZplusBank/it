@@ -111,3 +111,49 @@
 .content-image:hover {
     transform: scale(1.02);
 }
+
+/* ============= Lightbox Mobile Enhancements ============= */
+@media (max-width: 768px) {
+    .lightbox-overlay {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    .lightbox-content {
+        max-width: 98%;
+        max-height: 85vh;
+    }
+
+    .lightbox-image {
+        max-height: 80vh;
+        border-radius: 2px;
+    }
+
+    .lightbox-close {
+        top: 12px;
+        right: 12px;
+        width: 44px;
+        height: 44px;
+        font-size: 1.6rem;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-controls {
+        bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+        padding: 10px 20px;
+        gap: 20px;
+        border-radius: 24px;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .lightbox-btn {
+        font-size: 1.4rem;
+        padding: 8px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .content-image:hover {
+        transform: none;
+    }
+}

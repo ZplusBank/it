@@ -11,6 +11,44 @@ const app = {
     currentSubject: null,
     modalCallback: null,
 
+    // === Toast Notification System ===
+    showToast(message, type = 'info', duration = 3000) {
+        const container = document.getElementById('toastContainer');
+        if (!container) return;
+
+        const icons = { success: '✓', error: '✗', info: 'ℹ' };
+        const toast = document.createElement('div');
+        toast.className = `toast toast-${type}`;
+        toast.innerHTML = `<span class="toast-icon">${icons[type] || icons.info}</span><span>${message}</span>`;
+        container.appendChild(toast);
+
+        setTimeout(() => {
+            toast.classList.add('toast-exit');
+            toast.addEventListener('animationend', () => toast.remove());
+        }, duration);
+    },
+
+    // === Scroll to Top ===
+    initScrollToTop() {
+        const btn = document.getElementById('scrollTopBtn');
+        if (!btn) return;
+
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    btn.classList.toggle('visible', window.scrollY > 300);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        btn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    },
+
     // Show custom modal (replaces alert/confirm)
     showModal(title, message, isConfirm = false, callback = null) {
         const modal = document.getElementById('appModal');
@@ -111,13 +149,16 @@ const app = {
 
     // Confetti animation (optimized: fewer particles, batched DOM)
     triggerConfetti() {
-        const colors = ['#6366f1', '#8b5cf6', '#06b6d4', '#10b981', '#f59e0b', '#ef4444'];
+        const colors = ['#6366f1', '#8b5cf6', '#06b6d4', '#10b981', '#f59e0b', '#ef4444', '#a78bfa', '#22d3ee'];
+        const shapes = ['circle', 'rect'];
         const fragment = document.createDocumentFragment();
         const confettiElements = [];
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 60; i++) {
             const confetti = document.createElement('div');
             confetti.className = 'confetti';
-            confetti.style.cssText = `left:${Math.random() * 100}vw;background:${colors[Math.floor(Math.random() * colors.length)]};animation-delay:${Math.random() * 0.5}s;animation-duration:${2 + Math.random() * 2}s`;
+            const shape = shapes[Math.floor(Math.random() * shapes.length)];
+            const size = 6 + Math.random() * 8;
+            confetti.style.cssText = `left:${Math.random() * 100}vw;top:-10px;background:${colors[Math.floor(Math.random() * colors.length)]};animation-delay:${Math.random() * 0.8}s;animation-duration:${2.5 + Math.random() * 2}s;width:${size}px;height:${shape === 'rect' ? size * 0.6 : size}px;border-radius:${shape === 'circle' ? '50%' : '2px'};transform:rotate(${Math.random() * 360}deg)`;
             fragment.appendChild(confetti);
             confettiElements.push(confetti);
         }
@@ -131,6 +172,7 @@ const app = {
         this.initTheme();
         this.initKeyboardShortcuts();
         this.initModalHandlers();
+        this.initScrollToTop();
         await this.loadData();
 
         // Check for saved progress
@@ -439,7 +481,10 @@ const app = {
         this.currentView = 'subjects';
         this.resetExam();
         this.hideAllViews();
-        document.getElementById('subjectsView').style.display = 'block';
+        const view = document.getElementById('subjectsView');
+        view.style.display = 'block';
+        view.classList.add('view-enter');
+        setTimeout(() => view.classList.remove('view-enter'), 400);
         this.renderSubjects();
         // Clear search
         const searchInput = document.getElementById('subjectSearch');
@@ -450,6 +495,9 @@ const app = {
 
     renderSubjects() {
         const grid = document.getElementById('subjectsGrid');
+        const totalQs = (subject) => {
+            return subject.chaptersConfig.reduce((sum, ch) => sum + (ch.q || 0), 0);
+        };
         grid.innerHTML = this.subjects.map((subject, i) => `
             <div class="subject-card" onclick="app.selectSubject('${subject.id}')"
                  data-name="${this.escapeHtml(subject.name)}" data-desc="${this.escapeHtml(subject.description)}"
@@ -457,7 +505,7 @@ const app = {
                 <span class="subject-icon">${subject.icon}</span>
                 <h2>${this.escapeHtml(subject.name)}</h2>
                 <p>${this.escapeHtml(subject.description)}</p>
-                <span class="chapter-count">${subject.chaptersConfig.length} Chapters</span>
+                <span class="chapter-count">📚 ${subject.chaptersConfig.length} Chapters · ${totalQs(subject)} Questions</span>
             </div>
         `).join('');
     },
@@ -485,6 +533,7 @@ const app = {
         // UX: Check if subject has chapters after loading
         if (subject.chapters.length === 0) {
             this.showModal('Coming Soon', 'This subject has no chapters yet. Please check back later!');
+            this.showToast('No chapters available yet for this subject', 'info', 3000);
             return;
         }
 
@@ -558,7 +607,10 @@ const app = {
     showChaptersView(subject) {
         this.currentView = 'chapters';
         this.hideAllViews();
-        document.getElementById('chaptersView').style.display = 'block';
+        const view = document.getElementById('chaptersView');
+        view.style.display = 'block';
+        view.classList.add('view-enter');
+        setTimeout(() => view.classList.remove('view-enter'), 400);
 
         // Reset selection and button state
         this.selectedChapters = [];
@@ -593,6 +645,12 @@ const app = {
     updateSelectedChapters() {
         const checkboxes = document.querySelectorAll('#chaptersGrid input[type="checkbox"]:checked');
         this.selectedChapters = Array.from(checkboxes).map(cb => cb.value);
+
+        // Update visual selection state on chapter cards
+        document.querySelectorAll('#chaptersGrid .chapter-card').forEach(card => {
+            const cb = card.querySelector('input[type="checkbox"]');
+            card.classList.toggle('selected-chapter', cb && cb.checked);
+        });
 
         const startBtn = document.getElementById('startExamBtn');
         if (startBtn) {
@@ -682,15 +740,21 @@ const app = {
         this.hideAllViews();
         document.body.classList.add('exam-active');
         document.querySelector('header').style.display = 'none'; // Hide header
-        document.getElementById('examView').style.display = 'block';
+        const view = document.getElementById('examView');
+        view.style.display = 'block';
+        view.classList.add('view-enter');
+        setTimeout(() => view.classList.remove('view-enter'), 400);
 
         // Update title
         const subjectName = this.currentSubject ? this.currentSubject.name : 'Exam';
-        document.getElementById('examTitle').textContent = `${subjectName} - Chapter Exam (${this.questions.length} questions)`;
+        document.getElementById('examTitle').textContent = `${subjectName} — ${this.questions.length} questions`;
         document.getElementById('totalQuestions').textContent = this.questions.length;
 
         this.renderQuestionNumbers();
         this.renderCurrentQuestion();
+
+        // Toast notification
+        this.showToast(`Exam started with ${this.questions.length} questions. Good luck!`, 'info', 3500);
     },
 
     // Cached question number buttons for O(1) class updates
@@ -836,6 +900,14 @@ const app = {
         } else {
             this.userAnswers[idx] = value;
         }
+
+        // Update visual selected state on all choices
+        const choices = document.querySelectorAll('.choice');
+        choices.forEach(choice => {
+            const input = choice.querySelector('input');
+            choice.classList.toggle('selected', input && input.checked);
+        });
+
         // Auto-save on answer change
         this.saveProgress();
     },
@@ -843,6 +915,16 @@ const app = {
     checkAnswer() {
         this.checkedAnswers[this.currentQuestionIndex] = true;
         this.showFeedback(this.currentQuestionIndex);
+
+        // Toast feedback 
+        const question = this.questions[this.currentQuestionIndex];
+        const userAnswer = this.userAnswers[this.currentQuestionIndex];
+        const isCorrect = this._isAnswerCorrect(question, userAnswer);
+        this.showToast(
+            isCorrect ? 'Correct! Well done!' : 'Incorrect. Check the explanation below.',
+            isCorrect ? 'success' : 'error',
+            2500
+        );
     },
 
     /** Check if an answer is correct (reusable helper) */
@@ -900,6 +982,11 @@ const app = {
         this.renderCurrentQuestion();
         this.updateQuestionNumberStyles();
         this.scrollToActiveQuestion();
+        // Scroll question container into view smoothly
+        const container = document.getElementById('questionContainer');
+        if (container) {
+            container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
     },
 
     scrollToActiveQuestion() {
@@ -1037,8 +1124,13 @@ const app = {
     showResultsView() {
         this.currentView = 'results';
         this.hideAllViews();
-        document.getElementById('resultsView').style.display = 'block';
+        const view = document.getElementById('resultsView');
+        view.style.display = 'block';
+        view.classList.add('view-enter');
+        setTimeout(() => view.classList.remove('view-enter'), 400);
         this.calculateAndDisplayResults();
+        // Scroll to top of results
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     },
 
     /** Check if answer was skipped */
@@ -1069,7 +1161,10 @@ const app = {
         const percentage = totalCount > 0 ? Math.round((correctCount / totalCount) * 100) : 0;
 
         document.getElementById('scoreDisplay').textContent = `${correctCount} / ${totalCount}`;
-        document.getElementById('scoreText').textContent = `Score: ${percentage}%`;
+        document.getElementById('scoreText').textContent = `You answered ${correctCount} out of ${totalCount} questions correctly`;
+
+        // Animate score ring
+        this.animateScoreRing(percentage);
 
         if (percentage >= 90) this.triggerConfetti();
 
@@ -1293,6 +1388,36 @@ const app = {
     exitExam() {
         this.clearProgress();
         this.restart();
+    },
+
+    // === Score Ring Animation ===
+    animateScoreRing(percentage) {
+        const ring = document.getElementById('scoreRingProgress');
+        const percentText = document.getElementById('scorePercentage');
+        if (!ring || !percentText) return;
+
+        const circumference = 2 * Math.PI * 65; // r=65
+        const offset = circumference - (percentage / 100) * circumference;
+
+        // Start from full offset (empty)
+        ring.style.strokeDasharray = circumference;
+        ring.style.strokeDashoffset = circumference;
+
+        // Animate after a tiny delay for the transition to work
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                ring.style.strokeDashoffset = offset;
+            }, 100);
+        });
+
+        // Animate percentage counter
+        let current = 0;
+        const step = Math.max(1, Math.ceil(percentage / 60));
+        const timer = setInterval(() => {
+            current = Math.min(current + step, percentage);
+            percentText.textContent = `${current}%`;
+            if (current >= percentage) clearInterval(timer);
+        }, 20);
     }
 };
 

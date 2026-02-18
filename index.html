@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Interactive exam system for Java 2 - Objects and Classes">
     <title>Exam System - Java 2</title>
 
@@ -182,7 +182,26 @@
 
             <!-- RESULTS VIEW -->
             <div class="results-view" id="resultsView">
-                <div class="results-title">📊 Exam Results</div>
+                <div class="results-title">Exam Results</div>
+                
+                <!-- Score Ring -->
+                <div class="score-ring-wrapper">
+                    <svg class="score-ring" viewBox="0 0 140 140">
+                        <defs>
+                            <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color: #6366f1" />
+                                <stop offset="100%" style="stop-color: #8b5cf6" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="score-ring-bg" cx="70" cy="70" r="65" />
+                        <circle class="score-ring-progress" id="scoreRingProgress" cx="70" cy="70" r="65" />
+                    </svg>
+                    <div class="score-ring-text">
+                        <div class="percentage" id="scorePercentage">0%</div>
+                        <div class="label">Score</div>
+                    </div>
+                </div>
+
                 <div class="score" id="scoreDisplay"></div>
                 <div class="score-text" id="scoreText"></div>
 
@@ -231,6 +250,34 @@
                 document.querySelectorAll('.modal.open, .dropdown.open, .menu.open').forEach(function(el) { el.classList.remove('open'); });
             }
         });
+
+        // Mobile swipe navigation for exam questions
+        (function() {
+            var touchStartX = 0, touchStartY = 0, touchEndX = 0, touchEndY = 0;
+            var minSwipe = 60, maxVertical = 100;
+
+            document.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+            }, { passive: true });
+
+            document.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                touchEndY = e.changedTouches[0].screenY;
+                var dx = touchEndX - touchStartX;
+                var dy = Math.abs(touchEndY - touchStartY);
+                if (dy > maxVertical) return; // Ignore vertical swipes
+                var examView = document.getElementById('examView');
+                if (!examView || examView.style.display === 'none') return;
+                // Don't swipe if touching code blocks or scrollable areas
+                if (e.target.closest && (e.target.closest('.code-block-wrapper') || e.target.closest('.question-numbers'))) return;
+                if (dx > minSwipe && typeof app !== 'undefined' && app.previousQuestion) {
+                    app.previousQuestion();
+                } else if (dx < -minSwipe && typeof app !== 'undefined' && app.nextQuestion) {
+                    app.nextQuestion();
+                }
+            }, { passive: true });
+        })();
     </script>
 
     <!-- General Purpose Modal -->
@@ -264,6 +311,16 @@
             <path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h8M18 14h.01"/>
         </svg>
     </button>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top-btn" title="Scroll to top" aria-label="Scroll to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container" aria-live="polite"></div>
 
     <div id="keyboardHelp" class="modal-overlay" style="display: none;" role="dialog" aria-modal="true">
         <div class="modal keyboard-help-modal">
