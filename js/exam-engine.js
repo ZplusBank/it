@@ -701,8 +701,13 @@ const app = {
         const startBtn = document.getElementById('startExamBtn');
         if (startBtn) {
             const hasSelection = this.selectedChapters.length > 0;
+            const wasHidden = startBtn.style.display === 'none';
             startBtn.disabled = !hasSelection;
             startBtn.style.display = hasSelection ? 'block' : 'none';
+            // On mobile: scroll the button into view when it first becomes visible
+            if (hasSelection && wasHidden && window.innerWidth <= 768) {
+                setTimeout(() => startBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 150);
+            }
         }
     },
 

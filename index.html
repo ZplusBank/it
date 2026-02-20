@@ -119,12 +119,6 @@
                     <button class="search-clear" id="chapterSearchClear" style="display: none;" aria-label="Clear search" onclick="app.clearSearch('chapter')">✕</button>
                 </div>
 
-                <div class="chapters-grid" id="chaptersGrid">
-                    <!-- Chapters will be generated here -->
-                </div>
-                <div class="search-no-results" id="chapterNoResults">
-                    No chapters match your search.
-                </div>
                 <div class="chapters-actions">
                     <button class="action-btn" id="selectAllBtn" onclick="app.selectAllChapters()">
                         ✓ Select All
@@ -132,6 +126,13 @@
                     <button class="action-btn" id="selectNoneBtn" onclick="app.selectNoneChapters()">
                         ✕ Select None
                     </button>
+                </div>
+
+                <div class="chapters-grid" id="chaptersGrid">
+                    <!-- Chapters will be generated here -->
+                </div>
+                <div class="search-no-results" id="chapterNoResults">
+                    No chapters match your search.
                 </div>
                 <button class="start-exam-btn" id="startExamBtn" onclick="app.startExam()" disabled>
                     Start Exam
@@ -271,6 +272,7 @@
                 touchEndY = e.changedTouches[0].screenY;
                 var dx = touchEndX - touchStartX;
                 var dy = Math.abs(touchEndY - touchStartY);
+                if (window.innerWidth <= 768) return; // Disable swipe on phones
                 if (dy > maxVertical) return; // Ignore vertical swipes
                 var examView = document.getElementById('examView');
                 if (!examView || examView.style.display === 'none') return;
