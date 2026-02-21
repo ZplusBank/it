@@ -1,0 +1,541 @@
+{
+  "id": "extract-1771663241540-tzx8i",
+  "label": "Database - Second.pdf",
+  "params": {
+    "file": "Database - Second.pdf",
+    "type": "visual_extractor",
+    "chapter": "Second"
+  },
+  "title": "#1",
+  "questions": [
+    {
+      "id": "extract-1771663241540-tzx8i-0",
+      "number": "1",
+      "text": "In formal relational model terminology, a row is called:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Tuple",
+          "text": "Tuple"
+        },
+        {
+          "value": "B",
+          "label": "Attribute",
+          "text": "Attribute"
+        },
+        {
+          "value": "C",
+          "label": "Relation",
+          "text": "Relation"
+        },
+        {
+          "value": "D",
+          "label": "Domain",
+          "text": "Domain"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In the formal relational model, a **tuple** represents a row in a table (relation). An attribute represents a column, and a domain is the set of allowable values for an attribute."
+    },
+    {
+      "id": "extract-1771663241540-tzx8i-1",
+      "number": "2",
+      "text": "If a subclass has at most one superclass, then the EER (Enhanced Entity-Relationship) model structure is called:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Hierarchy",
+          "text": "Hierarchy"
+        },
+        {
+          "value": "B",
+          "label": "Lattice",
+          "text": "Lattice"
+        },
+        {
+          "value": "C",
+          "label": "Multiple inheritance",
+          "text": "Multiple inheritance"
+        },
+        {
+          "value": "D",
+          "label": "Lattice of single inheritance",
+          "text": "Lattice of single inheritance"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In EER modeling, a **hierarchy** is a specialization structure where every subclass has exactly one superclass (single inheritance). If a subclass can have more than one superclass, it is called a lattice."
+    },
+    {
+      "id": "extract-1771663241540-tzx8i-2",
+      "number": "3",
+      "text": "Which is the most correct statement regarding a Shared subclass?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Subclass member must exist in at least one of its super classes.",
+          "text": "Subclass member must exist in at least one of its super classes."
+        },
+        {
+          "value": "B",
+          "label": "Subclass member must exist in at most one of its super classes.",
+          "text": "Subclass member must exist in at most one of its super classes."
+        },
+        {
+          "value": "C",
+          "label": "Subclass member must exist in all of its super classes.",
+          "text": "Subclass member must exist in all of its super classes."
+        },
+        {
+          "value": "D",
+          "label": "None of the answers.",
+          "text": "None of the answers."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A **shared subclass** is a subclass with multiple superclasses (multiple inheritance). For an entity to be a member of a shared subclass, it must simultaneously be a member of **all** its parent superclasses."
+    },
+    {
+      "id": "extract-1771663241540-tzx8i-3",
+      "number": "4",
+      "text": "Given a specialization where the intersection of any two subclasses is an empty set, which of the following is correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It is total and disjoint.",
+          "text": "It is total and disjoint."
+        },
+        {
+          "value": "B",
+          "label": "It is partial and overlap.",
+          "text": "It is partial and overlap."
+        },
+        {
+          "value": "C",
+          "label": "It is total, but we do not have enough information about the disjointness constraint.",
+          "text": "It is total, but we do not have enough information about the disjointness constraint."
+        },
+        {
+          "value": "D",
+          "label": "It is disjoint, but we do not have enough information about the completeness.",
+          "text": "It is disjoint, but we do not have enough information about the completeness."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The condition that the intersection of any two subclasses is empty means that an entity can belong to at most one subclass, which defines the **disjointness** constraint. However, this definition does not provide information about whether every entity in the superclass must belong to a subclass (completeness constraint: total vs. partial)."
+    },
+    {
+      "id": "extract-1771663241540-tzx8i-4",
+      "number": "5",
+      "text": "In an ERD (Entity-Relationship Diagram), a double oval (Ellipses) represents:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Derived Attributes",
+          "text": "Derived Attributes"
+        },
+        {
+          "value": "B",
+          "label": "Multivalued Attributes",
+          "text": "Multivalued Attributes"
+        },
+        {
+          "value": "C",
+          "label": "Weak Entity Set",
+          "text": "Weak Entity Set"
+        },
+        {
+          "value": "D",
+          "label": "Weak Entity Relation",
+          "text": "Weak Entity Relation"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In standard ER notation, a **double oval** represents a **multivalued attribute**, which is an attribute that can contain more than one value for a specific entity instance (e.g., multiple phone numbers for an employee)."
+    },
+    {
+      "id": "extract-1771663241540-tzx8i-5",
+      "number": "6",
+      "text": "The data type of values that appear in each column is represented by a ________ of possible values.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Domain",
+          "text": "Domain"
+        },
+        {
+          "value": "B",
+          "label": "Attribute",
+          "text": "Attribute"
+        },
+        {
+          "value": "C",
+          "label": "Range",
+          "text": "Range"
+        },
+        {
+          "value": "D",
+          "label": "Current State",
+          "text": "Current State"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A **domain** is a set of atomic values used to model data. Every attribute in a relational schema is defined on a domain, which specifies the data type and valid range of values for that attribute."
+    },
+    {
+      "id": "extract-1771663241540-tzx8i-6",
+      "number": "7",
+      "text": "Let relation R2 have a foreign key that refers to the primary key of relation R1. Which of the following operations may cause a violation of referential integrity constraints?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Insert a tuple into R1",
+          "text": "Insert a tuple into R1"
+        },
+        {
+          "value": "B",
+          "label": "Delete a tuple from R2",
+          "text": "Delete a tuple from R2"
+        },
+        {
+          "value": "C",
+          "label": "Delete a tuple from R1",
+          "text": "Delete a tuple from R1"
+        },
+        {
+          "value": "D",
+          "label": "Delete a non-key attribute from R2",
+          "text": "Delete a non-key attribute from R2"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Referential integrity ensures that a foreign key value must match an existing primary key value in the referenced table. If you **delete a tuple from R1** (the referenced table), any rows in R2 that pointed to that specific primary key will now point to a non-existent value, causing a violation."
+    },
+    {
+      "id": "extract-1771663241540-tzx8i-7",
+      "number": "8",
+      "text": "Which of the following is **NOT** correct regarding a weak entity in an ER diagram?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Has a partial key",
+          "text": "Has a partial key"
+        },
+        {
+          "value": "B",
+          "label": "Has a primary key",
+          "text": "Has a primary key"
+        },
+        {
+          "value": "C",
+          "label": "Must be part of a one-to-many identifying relationship",
+          "text": "Must be part of a one-to-many identifying relationship"
+        },
+        {
+          "value": "D",
+          "label": "Must participate in a relationship with another strong entity",
+          "text": "Must participate in a relationship with another strong entity"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "By definition, a **weak entity** does not have enough attributes to form a **primary key** of its own. It relies on a partial key (discriminator) in conjunction with the primary key of its owner (strong) entity to be uniquely identified."
+    },
+    {
+      "id": "extract-1771663241540-tzx8i-8",
+      "number": "9",
+      "text": "Which of the following is **NOT** a superkey in the schema R1(C, A, D, F, B, E) with AB as the primary key?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "ABCD",
+          "text": "ABCD"
+        },
+        {
+          "value": "B",
+          "label": "ACDEB",
+          "text": "ACDEB"
+        },
+        {
+          "value": "C",
+          "label": "CAFE",
+          "text": "CAFE"
+        },
+        {
+          "value": "D",
+          "label": "CABE",
+          "text": "CABE"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A superkey is any set of attributes that contains the primary key. Since the primary key is {A, B}, any superkey must contain both A and B. The option **CAFE** contains A but lacks B, therefore it cannot uniquely identify a tuple and is not a superkey."
+    },
+    {
+      "id": "extract-1771663241540-tzx8i-9",
+      "number": "10",
+      "text": "Consider an EER diagram where **persons** is the superclass containing elements {P1, P2, P3, P4, P5}, while **students** containing {P1, P2, P3, P5} and **employees** containing {P1, P2, P4} are its subclasses. Which of the following constraints is applied for this relation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Partial overlapping generalization",
+          "text": "Partial overlapping generalization"
+        },
+        {
+          "value": "B",
+          "label": "Total overlapping generalization",
+          "text": "Total overlapping generalization"
+        },
+        {
+          "value": "C",
+          "label": "Partial disjoint generalization",
+          "text": "Partial disjoint generalization"
+        },
+        {
+          "value": "D",
+          "label": "Total disjoint generalization",
+          "text": "Total disjoint generalization"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A generalization is **Total** if the union of the subclasses equals the superclass. Here, {P1, P2, P3, P5} \\(\\cup\\) {P1, P2, P4} = {P1, P2, P3, P4, P5}, which is the superclass set. It is **Overlapping** because there are common elements (P1, P2) in both subclasses."
+    },
+    {
+      "id": "extract-1771663241540-tzx8i-10",
+      "number": "11",
+      "text": "Consider the relation `employee(ename, Empno, address, depno, location)` with `Empno` as the primary key. Which of the following operations is invalid?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Inserting an employee with only Empno",
+          "text": "Inserting an employee with only Empno"
+        },
+        {
+          "value": "B",
+          "label": "Inserting a record with a department number but without an Empno",
+          "text": "Inserting a record with a department number but without an Empno"
+        },
+        {
+          "value": "C",
+          "label": "Inserting an employee without ename or address",
+          "text": "Inserting an employee without ename or address"
+        },
+        {
+          "value": "D",
+          "label": "Inserting an employee without a department",
+          "text": "Inserting an employee without a department"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In a relational database, the primary key (`Empno`) uniquely identifies each record and cannot be null. Inserting a record without providing a value for the primary key violates entity integrity constraints."
+    },
+    {
+      "id": "extract-1771663241540-tzx8i-11",
+      "number": "12",
+      "text": "In a specialization hierarchy where the entity **OWNER** is defined as a subclass that inherits from multiple superclasses (**PERSON**, **BANK**, and **COMPANY**), which statement is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "All attributes of PERSON, BANK, and COMPANY are inherited by the OWNER entity",
+          "text": "All attributes of PERSON, BANK, and COMPANY are inherited by the OWNER entity"
+        },
+        {
+          "value": "B",
+          "label": "OWNER only inherits attributes from PERSON",
+          "text": "OWNER only inherits attributes from PERSON"
+        },
+        {
+          "value": "C",
+          "label": "Attributes are not inherited in multiple inheritance scenarios",
+          "text": "Attributes are not inherited in multiple inheritance scenarios"
+        },
+        {
+          "value": "D",
+          "label": "The OWNER entity loses its own attributes upon inheritance",
+          "text": "The OWNER entity loses its own attributes upon inheritance"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In EER modeling, a subclass resulting from multiple inheritance (often called a shared subclass) inherits all the attributes and relationships from all of its superclasses."
+    },
+    {
+      "id": "extract-1771663241540-tzx8i-12",
+      "number": "13",
+      "text": "After mapping an EERD using Option 8B (Multiple relations - Subclass relations only) for mapping Specialization, what is the primary key in the relation **Medicinal** if **Name** is the primary key of the superclass?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Healing and Name",
+          "text": "Healing and Name"
+        },
+        {
+          "value": "B",
+          "label": "Healing only",
+          "text": "Healing only"
+        },
+        {
+          "value": "C",
+          "label": "Name",
+          "text": "Name"
+        },
+        {
+          "value": "D",
+          "label": "There is no relation Medicinal",
+          "text": "There is no relation Medicinal"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In the mapping option where we create relations only for subclasses (Option 8B), each subclass relation contains all attributes of the superclass. The primary key of the subclass relation is the same as the primary key of the superclass."
+    },
+    {
+      "id": "extract-1771663241540-tzx8i-13",
+      "number": "14",
+      "text": "The entity set **person** is classified into specialized subclasses **student** and **employee**. This top-down process of identifying specific groups is called ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Generalization",
+          "text": "Generalization"
+        },
+        {
+          "value": "B",
+          "label": "Specialization",
+          "text": "Specialization"
+        },
+        {
+          "value": "C",
+          "label": "Inheritance",
+          "text": "Inheritance"
+        },
+        {
+          "value": "D",
+          "label": "Constraint generalization",
+          "text": "Constraint generalization"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Specialization is the top-down process of defining a set of subclasses of an entity type. Generalization is the reverse bottom-up process."
+    },
+    {
+      "id": "extract-1771663241540-tzx8i-14",
+      "number": "15",
+      "text": "Which of the following attributes is commonly modeled as a multi-valued attribute in an ER diagram?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Phone number",
+          "text": "Phone number"
+        },
+        {
+          "value": "B",
+          "label": "First Name",
+          "text": "First Name"
+        },
+        {
+          "value": "C",
+          "label": "Current Date",
+          "text": "Current Date"
+        },
+        {
+          "value": "D",
+          "label": "Date of birth",
+          "text": "Date of birth"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A multi-valued attribute can have a set of values for the same entity instance. A single person or business often has multiple phone numbers (e.g., mobile, office, home)."
+    },
+    {
+      "id": "extract-1771663241540-tzx8i-15",
+      "number": "16",
+      "text": "A relationship between a weak entity and its owner strong entity is represented by a double diamond box in an ER diagram and is called a(n):",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Weak entity set",
+          "text": "Weak entity set"
+        },
+        {
+          "value": "B",
+          "label": "Identifying relationship",
+          "text": "Identifying relationship"
+        },
+        {
+          "value": "C",
+          "label": "Derived attribute",
+          "text": "Derived attribute"
+        },
+        {
+          "value": "D",
+          "label": "Binary relationship",
+          "text": "Binary relationship"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The relationship that associates a weak entity with its identifying (owner) entity is called the identifying relationship. It is denoted by a double diamond in ER notation."
+    },
+    {
+      "id": "extract-1771663241540-tzx8i-16",
+      "number": "17",
+      "text": "An entity set that does not have sufficient attributes to form a primary key of its own is termed a ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Strong entity set",
+          "text": "Strong entity set"
+        },
+        {
+          "value": "B",
+          "label": "Variant set",
+          "text": "Variant set"
+        },
+        {
+          "value": "C",
+          "label": "Weak entity set",
+          "text": "Weak entity set"
+        },
+        {
+          "value": "D",
+          "label": "Variable set",
+          "text": "Variable set"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A weak entity set relies on a combination of its own partial key and the primary key of its owner entity to be uniquely identified, as it lacks a sufficient internal primary key."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 17
+}

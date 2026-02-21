@@ -1,0 +1,603 @@
+{
+  "id": "extract-1771663881868-tm57j",
+  "label": "Test bank  First.pdf",
+  "params": {
+    "file": "Test bank  First.pdf",
+    "type": "visual_extractor",
+    "chapter": "First"
+  },
+  "title": "#2",
+  "questions": [
+    {
+      "id": "extract-1771663881868-tm57j-0",
+      "number": "1",
+      "text": "What does `ON DELETE SET NULL` do?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Deletes all referencing rows",
+          "text": "Deletes all referencing rows"
+        },
+        {
+          "value": "B",
+          "label": "Prevents deletion",
+          "text": "Prevents deletion"
+        },
+        {
+          "value": "C",
+          "label": "Replaces foreign key with NULL",
+          "text": "Replaces foreign key with NULL"
+        },
+        {
+          "value": "D",
+          "label": "Updates primary key",
+          "text": "Updates primary key"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `ON DELETE SET NULL` referential action specifies that when a record in the parent table is deleted, the corresponding foreign key values in the child table should be set to `NULL` (provided the foreign key column allows nulls)."
+    },
+    {
+      "id": "extract-1771663881868-tm57j-1",
+      "number": "2",
+      "text": "What is the primary function of DBMS?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Encrypt database files",
+          "text": "Encrypt database files"
+        },
+        {
+          "value": "B",
+          "label": "Manage and manipulate data",
+          "text": "Manage and manipulate data"
+        },
+        {
+          "value": "C",
+          "label": "Generate machine code",
+          "text": "Generate machine code"
+        },
+        {
+          "value": "D",
+          "label": "Compile SQL into Java",
+          "text": "Compile SQL into Java"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A Database Management System (DBMS) is software designed to store, retrieve, manage, and manipulate data in a database efficiently."
+    },
+    {
+      "id": "extract-1771663881868-tm57j-2",
+      "number": "3",
+      "text": "What does the `CASCADE` option do on deletion?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Blocks the delete action",
+          "text": "Blocks the delete action"
+        },
+        {
+          "value": "B",
+          "label": "Sets foreign key to NULL",
+          "text": "Sets foreign key to NULL"
+        },
+        {
+          "value": "C",
+          "label": "Deletes referencing records",
+          "text": "Deletes referencing records"
+        },
+        {
+          "value": "D",
+          "label": "Ignores the foreign key",
+          "text": "Ignores the foreign key"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `CASCADE` option ensures referential integrity by automatically deleting any rows in a child table that reference a row being deleted in the parent table."
+    },
+    {
+      "id": "extract-1771663881868-tm57j-3",
+      "number": "4",
+      "text": "A set of attributes that uniquely identify a tuple is known as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Primary key",
+          "text": "Primary key"
+        },
+        {
+          "value": "B",
+          "label": "Super key",
+          "text": "Super key"
+        },
+        {
+          "value": "C",
+          "label": "Foreign key",
+          "text": "Foreign key"
+        },
+        {
+          "value": "D",
+          "label": "Composite key",
+          "text": "Composite key"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A **Super key** is defined as any set of one or more attributes which, taken collectively, allow us to identify uniquely a tuple in the relation. A Primary Key is a minimal super key selected for the table."
+    },
+    {
+      "id": "extract-1771663881868-tm57j-4",
+      "number": "5",
+      "text": "Which of the following is **NOT** a characteristic of the database approach?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Data abstraction",
+          "text": "Data abstraction"
+        },
+        {
+          "value": "B",
+          "label": "Insulation between programs and data",
+          "text": "Insulation between programs and data"
+        },
+        {
+          "value": "C",
+          "label": "Redundant data storage",
+          "text": "Redundant data storage"
+        },
+        {
+          "value": "D",
+          "label": "Support for multiple views",
+          "text": "Support for multiple views"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The database approach focuses on minimizing data redundancy through normalization. Redundant data storage is a characteristic of traditional file-based systems."
+    },
+    {
+      "id": "extract-1771663881868-tm57j-5",
+      "number": "6",
+      "text": "Which of the following is **TRUE** about domains?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "They are the rows in a relation",
+          "text": "They are the rows in a relation"
+        },
+        {
+          "value": "B",
+          "label": "They describe the type of values an attribute can take",
+          "text": "They describe the type of values an attribute can take"
+        },
+        {
+          "value": "C",
+          "label": "They are always numeric",
+          "text": "They are always numeric"
+        },
+        {
+          "value": "D",
+          "label": "They describe the schema",
+          "text": "They describe the schema"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A domain defines the set of all possible atomic values that can be assigned to an attribute, acting as a data type or constraint on that attribute."
+    },
+    {
+      "id": "extract-1771663881868-tm57j-6",
+      "number": "7",
+      "text": "In the relational model, a row is formally referred to as a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Attribute",
+          "text": "Attribute"
+        },
+        {
+          "value": "B",
+          "label": "Domain",
+          "text": "Domain"
+        },
+        {
+          "value": "C",
+          "label": "Tuple",
+          "text": "Tuple"
+        },
+        {
+          "value": "D",
+          "label": "Schema",
+          "text": "Schema"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In relational database terminology, a row in a table is formally called a **tuple**, a column is called an **attribute**, and the table itself is called a **relation**."
+    },
+    {
+      "id": "extract-1771663881868-tm57j-7",
+      "number": "8",
+      "text": "What happens during the logical design phase?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Building the physical hardware",
+          "text": "Building the physical hardware"
+        },
+        {
+          "value": "B",
+          "label": "Creating user views",
+          "text": "Creating user views"
+        },
+        {
+          "value": "C",
+          "label": "Designing the schema structure",
+          "text": "Designing the schema structure"
+        },
+        {
+          "value": "D",
+          "label": "Making backups",
+          "text": "Making backups"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "During logical design, high-level conceptual models (like ER diagrams) are mapped into the logical data model of the specific DBMS used, resulting in the design of the relational schema structure (tables, columns, and constraints)."
+    },
+    {
+      "id": "extract-1771663881868-tm57j-8",
+      "number": "9",
+      "text": "Which of these is an example of a domain constraint?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A course number must follow the format `CSxxxx`",
+          "text": "A course number must follow the format `CSxxxx`"
+        },
+        {
+          "value": "B",
+          "label": "A tuple must be unique",
+          "text": "A tuple must be unique"
+        },
+        {
+          "value": "C",
+          "label": "A table must have a primary key",
+          "text": "A table must have a primary key"
+        },
+        {
+          "value": "D",
+          "label": "All foreign keys must match primary keys",
+          "text": "All foreign keys must match primary keys"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Domain constraints restrict the set of values that can be stored in an attribute. Specifying a specific data format (like `CSxxxx`) for an attribute value is a domain constraint. Options B and C relate to entity integrity, and D relates to referential integrity."
+    },
+    {
+      "id": "extract-1771663881868-tm57j-9",
+      "number": "10",
+      "text": "Which term refers to a relation schema that cannot contain duplicate tuples?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Weak entity",
+          "text": "Weak entity"
+        },
+        {
+          "value": "B",
+          "label": "Candidate key",
+          "text": "Candidate key"
+        },
+        {
+          "value": "C",
+          "label": "Set constraint",
+          "text": "Set constraint"
+        },
+        {
+          "value": "D",
+          "label": "Key constraint",
+          "text": "Key constraint"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In a relational database, a **Key constraint** is used to ensure that no two tuples in a relation have the same values for all attributes, thereby preventing duplicate rows."
+    },
+    {
+      "id": "extract-1771663881868-tm57j-10",
+      "number": "11",
+      "text": "Which operation is used to reject a deletion if it's referenced elsewhere?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "ON DELETE CASCADE",
+          "text": "ON DELETE CASCADE"
+        },
+        {
+          "value": "B",
+          "label": "ON DELETE NO ACTION",
+          "text": "ON DELETE NO ACTION"
+        },
+        {
+          "value": "C",
+          "label": "ON UPDATE CASCADE",
+          "text": "ON UPDATE CASCADE"
+        },
+        {
+          "value": "D",
+          "label": "ON UPDATE NO ACTION",
+          "text": "ON UPDATE NO ACTION"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `ON DELETE NO ACTION` (or `RESTRICT`) constraint ensures that a row cannot be deleted from a parent table if there are rows in a child table that reference it through a foreign key."
+    },
+    {
+      "id": "extract-1771663881868-tm57j-11",
+      "number": "12",
+      "text": "Which type of user is likely to write complex queries and analysis programs?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Casual user",
+          "text": "Casual user"
+        },
+        {
+          "value": "B",
+          "label": "Naive user",
+          "text": "Naive user"
+        },
+        {
+          "value": "C",
+          "label": "Sophisticated user",
+          "text": "Sophisticated user"
+        },
+        {
+          "value": "D",
+          "label": "Standalone user",
+          "text": "Standalone user"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "**Sophisticated users** include engineers, scientists, and business analysts who are thoroughly familiar with the system's capabilities and use query languages like SQL or analysis tools to perform complex tasks."
+    },
+    {
+      "id": "extract-1771663881868-tm57j-12",
+      "number": "13",
+      "text": "What is a tuple in a relation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A set of foreign keys",
+          "text": "A set of foreign keys"
+        },
+        {
+          "value": "B",
+          "label": "A relation schema",
+          "text": "A relation schema"
+        },
+        {
+          "value": "C",
+          "label": "A row in a table",
+          "text": "A row in a table"
+        },
+        {
+          "value": "D",
+          "label": "A type of attribute",
+          "text": "A type of attribute"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In relational database terminology, a **tuple** is synonymous with a **row** or a record within a table."
+    },
+    {
+      "id": "extract-1771663881868-tm57j-13",
+      "number": "14",
+      "text": "Which property ensures that no primary key attribute has a NULL value?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Key constraint",
+          "text": "Key constraint"
+        },
+        {
+          "value": "B",
+          "label": "Referential integrity",
+          "text": "Referential integrity"
+        },
+        {
+          "value": "C",
+          "label": "Domain constraint",
+          "text": "Domain constraint"
+        },
+        {
+          "value": "D",
+          "label": "Entity integrity",
+          "text": "Entity integrity"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The **Entity Integrity** constraint requires that primary key attributes must not be null, as their purpose is to uniquely identify every tuple in a relation."
+    },
+    {
+      "id": "extract-1771663881868-tm57j-14",
+      "number": "15",
+      "text": "Which of the following is a relational integrity constraint?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Structure constraint",
+          "text": "Structure constraint"
+        },
+        {
+          "value": "B",
+          "label": "Foreign key",
+          "text": "Foreign key"
+        },
+        {
+          "value": "C",
+          "label": "Syntax constraint",
+          "text": "Syntax constraint"
+        },
+        {
+          "value": "D",
+          "label": "Formatting rule",
+          "text": "Formatting rule"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A **Foreign Key** is the standard mechanism for implementing **Referential Integrity**, which is one of the primary integrity constraints in the relational model."
+    },
+    {
+      "id": "extract-1771663881868-tm57j-15",
+      "number": "16",
+      "text": "What does the term 'self-describing' in a database system refer to?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Easy to learn",
+          "text": "Easy to learn"
+        },
+        {
+          "value": "B",
+          "label": "Database containing its own definition (meta-data)",
+          "text": "Database containing its own definition (meta-data)"
+        },
+        {
+          "value": "C",
+          "label": "Database built for self-use only",
+          "text": "Database built for self-use only"
+        },
+        {
+          "value": "D",
+          "label": "Automated updates",
+          "text": "Automated updates"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A database system is considered **self-describing** because it stores data descriptions (metadata) in a system catalog or data dictionary alongside the actual user data."
+    },
+    {
+      "id": "extract-1771663881868-tm57j-16",
+      "number": "17",
+      "text": "Which of the following operations may propagate automatically to preserve referential integrity?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "DROP TABLE",
+          "text": "DROP TABLE"
+        },
+        {
+          "value": "B",
+          "label": "INSERT VIEW",
+          "text": "INSERT VIEW"
+        },
+        {
+          "value": "C",
+          "label": "DELETE CASCADE",
+          "text": "DELETE CASCADE"
+        },
+        {
+          "value": "D",
+          "label": "CREATE INDEX",
+          "text": "CREATE INDEX"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `CASCADE` option (e.g., `ON DELETE CASCADE`) ensures that if a row is deleted in a parent table, all corresponding rows in child tables are automatically deleted as well."
+    },
+    {
+      "id": "extract-1771663881868-tm57j-17",
+      "number": "18",
+      "text": "A foreign key in a referencing relation must match:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Any value in the referenced table",
+          "text": "Any value in the referenced table"
+        },
+        {
+          "value": "B",
+          "label": "A primary key in the referenced relation",
+          "text": "A primary key in the referenced relation"
+        },
+        {
+          "value": "C",
+          "label": "A null value only",
+          "text": "A null value only"
+        },
+        {
+          "value": "D",
+          "label": "Any unique attribute",
+          "text": "Any unique attribute"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Referential integrity dictates that every value in a foreign key column must either match a value in the **primary key** column of the referenced table or be null."
+    },
+    {
+      "id": "extract-1771663881868-tm57j-18",
+      "number": "19",
+      "text": "What is a relation schema?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A stored procedure",
+          "text": "A stored procedure"
+        },
+        {
+          "value": "B",
+          "label": "A set of attributes describing a table",
+          "text": "A set of attributes describing a table"
+        },
+        {
+          "value": "C",
+          "label": "A type of query",
+          "text": "A type of query"
+        },
+        {
+          "value": "D",
+          "label": "A constraint rule",
+          "text": "A constraint rule"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A **relation schema** defines the logical structure of a database table. It includes the name of the table and the set of attributes (column names) associated with it, serving as a blueprint for the data."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 19
+}

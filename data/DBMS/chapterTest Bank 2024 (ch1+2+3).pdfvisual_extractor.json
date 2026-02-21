@@ -1,0 +1,655 @@
+{
+  "id": "extract-1771664053136-fg4y7",
+  "label": "Test Bank 2024 (ch1+2+3).pdf",
+  "params": {
+    "file": "Test Bank 2024 (ch1+2+3).pdf",
+    "type": "visual_extractor",
+    "chapter": "First"
+  },
+  "title": "#3",
+  "questions": [
+    {
+      "id": "extract-1771664053136-fg4y7-0",
+      "number": "1",
+      "text": "____ make up a large section of the end-user population.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Naive or parametric end users",
+          "text": "Naive or parametric end users"
+        },
+        {
+          "value": "B",
+          "label": "Casual end users",
+          "text": "Casual end users"
+        },
+        {
+          "value": "C",
+          "label": "Standalone users",
+          "text": "Standalone users"
+        },
+        {
+          "value": "D",
+          "label": "Sophisticated end users",
+          "text": "Sophisticated end users"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Database Management Systems, naive or parametric end users constitute the largest group of the end-user population. They interact with the system through permanent programs that have been developed for them."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-1",
+      "number": "2",
+      "text": "Which of the following is NOT a feature of a Database Management System (DBMS)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Minimum Duplication and Redundancy of Data",
+          "text": "Minimum Duplication and Redundancy of Data"
+        },
+        {
+          "value": "B",
+          "label": "High Level of Security",
+          "text": "High Level of Security"
+        },
+        {
+          "value": "C",
+          "label": "Single-user Access only",
+          "text": "Single-user Access only"
+        },
+        {
+          "value": "D",
+          "label": "Support ACID Property",
+          "text": "Support ACID Property"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A primary feature of a DBMS is to support multi-user access and concurrency control. Single-user access only is a characteristic of simple file systems or personal database applications, not a defining feature of a full DBMS."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-2",
+      "number": "3",
+      "text": "Which one of the following statements regarding DBMS concepts is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Database Management System is a collection of related data.",
+          "text": "Database Management System is a collection of related data."
+        },
+        {
+          "value": "B",
+          "label": "Workers behind the scene are those users who can design and develop DBMS software.",
+          "text": "Workers behind the scene are those users who can design and develop DBMS software."
+        },
+        {
+          "value": "C",
+          "label": "Meta-data is the state of data.",
+          "text": "Meta-data is the state of data."
+        },
+        {
+          "value": "D",
+          "label": "DBA is a program used by all users.",
+          "text": "DBA is a program used by all users."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "According to standard database literature (like Elmasri/Navathe), 'workers behind the scene' include those who design and implement the DBMS software itself. Statement A is technically incorrect as the Database is the collection of data, whereas the DBMS is the software. Statement C is false because Meta-data is 'data about data', and Statement D is false because a DBA is a person (Administrator), not a program."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-3",
+      "number": "4",
+      "text": "Which of the following is a specific example of a database query?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Create a new section for the DB course",
+          "text": "Create a new section for the DB course"
+        },
+        {
+          "value": "B",
+          "label": "Retrieve the transcript of a student named Mark",
+          "text": "Retrieve the transcript of a student named Mark"
+        },
+        {
+          "value": "C",
+          "label": "Change the class of Mark to JAVA",
+          "text": "Change the class of Mark to JAVA"
+        },
+        {
+          "value": "D",
+          "label": "Delete Mark from class DB",
+          "text": "Delete Mark from class DB"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "While 'query' can sometimes refer to any database request, in a strict technical sense, it refers to data retrieval (Read operations), whereas the others are Data Definition (Create) or Data Manipulation (Update, Delete) operations."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-4",
+      "number": "5",
+      "text": "The use of a File Management System would be more suitable than a Database Management System (DBMS) in which scenario?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Database applications change frequently",
+          "text": "Database applications change frequently"
+        },
+        {
+          "value": "B",
+          "label": "Multiple-user access to data is required",
+          "text": "Multiple-user access to data is required"
+        },
+        {
+          "value": "C",
+          "label": "Embedded systems with limited storage capacity",
+          "text": "Embedded systems with limited storage capacity"
+        },
+        {
+          "value": "D",
+          "label": "Availability of up-to-date information is critical",
+          "text": "Availability of up-to-date information is critical"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "DBMS software comes with high overhead in terms of storage and processing. For embedded systems with very limited resources, a simple file system is often more efficient."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-5",
+      "number": "6",
+      "text": "Who is accountable for problems such as security breaches and poor system response time in a database environment?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "DBA (Database Administrator)",
+          "text": "DBA (Database Administrator)"
+        },
+        {
+          "value": "B",
+          "label": "Database designers",
+          "text": "Database designers"
+        },
+        {
+          "value": "C",
+          "label": "End users",
+          "text": "End users"
+        },
+        {
+          "value": "D",
+          "label": "System analysts",
+          "text": "System analysts"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The Database Administrator (DBA) is responsible for authorizing access to the database, coordinating and monitoring its use, and acquiring software and hardware resources as needed."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-6",
+      "number": "7",
+      "text": "Consider the provided Entity-Relationship (ER) diagram where entity **Course** is related to entity **Student** through the relationship **Enrolled** with a cardinality ratio of 1:N (Course:Student). Determine the equivalent (min, max) constraints for the entity **Course**.\n\n[Diagram: Course --1-- <Enrolled> --N-- Student]",
+      "choices": [
+        {
+          "value": "A",
+          "label": "(1, 1)",
+          "text": "(1, 1)"
+        },
+        {
+          "value": "B",
+          "label": "(0, 1)",
+          "text": "(0, 1)"
+        },
+        {
+          "value": "C",
+          "label": "(1, N)",
+          "text": "(1, N)"
+        },
+        {
+          "value": "D",
+          "label": "(0, N)",
+          "text": "(0, N)"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In a 1:N relationship between Course and Student, one course can be associated with many (N) students. Using the (min, max) notation with the 'look-across' rule: Since the line connecting Course to Enrolled is a single line, participation is partial (min=0). The cardinality ratio indicates a Course can relate to multiple students, so the max is N. Thus, the constraint for Course is (0, N)."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-7",
+      "number": "8",
+      "text": "Which of the following is a correct statement with respect to relations and keys?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "If a set of attributes is a superkey then it is always a key",
+          "text": "If a set of attributes is a superkey then it is always a key"
+        },
+        {
+          "value": "B",
+          "label": "If a set of attributes is a superkey then every subset is a key",
+          "text": "If a set of attributes is a superkey then every subset is a key"
+        },
+        {
+          "value": "C",
+          "label": "If a set of attributes is a key then it is also a superkey",
+          "text": "If a set of attributes is a key then it is also a superkey"
+        },
+        {
+          "value": "D",
+          "label": "All of the above",
+          "text": "All of the above"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A 'key' is defined as a minimal superkey. Therefore, every key is by definition a superkey, but not every superkey is a key (because it might not be minimal)."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-8",
+      "number": "9",
+      "text": "A relation can have just one foreign key.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A relation (table) in a relational database can have multiple foreign keys. For instance, an `Orders` table might have one foreign key referencing a `Customers` table and another foreign key referencing a `Products` table."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-9",
+      "number": "10",
+      "text": "Let relation \\( R2 \\) have a foreign key that refers to the primary key of relation \\( R1 \\). Which of the following operations may cause a violation of referential integrity constraints?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Insert a tuple into \\( R1 \\)",
+          "text": "Insert a tuple into \\( R1 \\)"
+        },
+        {
+          "value": "B",
+          "label": "Delete a tuple from \\( R2 \\)",
+          "text": "Delete a tuple from \\( R2 \\)"
+        },
+        {
+          "value": "C",
+          "label": "Delete a tuple from \\( R1 \\)",
+          "text": "Delete a tuple from \\( R1 \\)"
+        },
+        {
+          "value": "D",
+          "label": "Delete a non-key attribute from \\( R2 \\)",
+          "text": "Delete a non-key attribute from \\( R2 \\)"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Referential integrity constraints ensure that every value in a foreign key column of a referencing table (\\( R2 \\)) must exist in the primary key column of the referenced table (\\( R1 \\)). Deleting a tuple from \\( R1 \\) could violate this constraint if there are tuples in \\( R2 \\) that still reference the primary key value being deleted, resulting in 'orphaned' records."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-10",
+      "number": "11",
+      "text": "Consider the provided ERD showing a relationship **Enrolled** between the entities **Course** and **Student**. The connection between **Course** and **Enrolled** is represented by a single line (labeled 1), and the connection between **Student** and **Enrolled** is represented by a double line (labeled N). Which of the following represents Partial participation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Every student is expected to relate at least one course.",
+          "text": "Every student is expected to relate at least one course."
+        },
+        {
+          "value": "B",
+          "label": "Ahmad can enroll in two courses or more.",
+          "text": "Ahmad can enroll in two courses or more."
+        },
+        {
+          "value": "C",
+          "label": "Calculus course may or may not have students enrolled in.",
+          "text": "Calculus course may or may not have students enrolled in."
+        },
+        {
+          "value": "D",
+          "label": "None of the mentioned above",
+          "text": "None of the mentioned above"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Entity-Relationship diagrams, a single line indicates partial participation, while a double line indicates total participation. Since there is a single line between the **Course** entity and the **Enrolled** relationship, the course participates partially. This means a course (like Calculus) can exist in the database without necessarily being linked to any students."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-11",
+      "number": "12",
+      "text": "An entity set that does not have sufficient attributes to form a primary key is termed a __________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Strong entity set",
+          "text": "Strong entity set"
+        },
+        {
+          "value": "B",
+          "label": "Variant set",
+          "text": "Variant set"
+        },
+        {
+          "value": "C",
+          "label": "Weak entity set",
+          "text": "Weak entity set"
+        },
+        {
+          "value": "D",
+          "label": "Variable set",
+          "text": "Variable set"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A **weak entity set** is an entity set that does not possess a primary key of its own. It depends on an identifying relationship with a strong entity set to be uniquely identified."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-12",
+      "number": "13",
+      "text": "How are roles specified in an ER diagram?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By labelling the rectangles",
+          "text": "By labelling the rectangles"
+        },
+        {
+          "value": "B",
+          "label": "By labelling the diamonds",
+          "text": "By labelling the diamonds"
+        },
+        {
+          "value": "C",
+          "label": "Roles cannot be specified in an ER diagram",
+          "text": "Roles cannot be specified in an ER diagram"
+        },
+        {
+          "value": "D",
+          "label": "By labelling the lines",
+          "text": "By labelling the lines"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In an ER diagram, roles are specified by adding labels to the lines connecting the relationship (diamond) to the entity sets (rectangles). This is particularly useful in recursive relationships where the same entity set participates in the relationship multiple times in different capacities."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-13",
+      "number": "14",
+      "text": "A relation between a weak entity and its owner strong entity and represented by a double diamond box in ER diagram called:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "weak entity set",
+          "text": "weak entity set"
+        },
+        {
+          "value": "B",
+          "label": "identifying relationship",
+          "text": "identifying relationship"
+        },
+        {
+          "value": "C",
+          "label": "derived attribute",
+          "text": "derived attribute"
+        },
+        {
+          "value": "D",
+          "label": "A relationship",
+          "text": "A relationship"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In an Entity-Relationship (ER) diagram, a **weak entity set** depends on an **identifying entity set** (the owner). The relationship between them is called an **identifying relationship**, which is graphically represented by a double diamond shape."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-14",
+      "number": "15",
+      "text": "Consider the relation \\( \\text{employee(ename, empno, address, deptno, location)} \\) with **empno** as the primary key. Which of the following operations is invalid?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "inserting an employee with only empno",
+          "text": "inserting an employee with only empno"
+        },
+        {
+          "value": "B",
+          "label": "inserting an employee without empno",
+          "text": "inserting an employee without empno"
+        },
+        {
+          "value": "C",
+          "label": "inserting an employee without ename, address",
+          "text": "inserting an employee without ename, address"
+        },
+        {
+          "value": "D",
+          "label": "inserting an employee without a department",
+          "text": "inserting an employee without a department"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "According to the **entity integrity constraint**, a primary key attribute (in this case `empno`) cannot contain null values. Therefore, attempting to insert a record without providing a primary key value is invalid."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-15",
+      "number": "16",
+      "text": "The `DROP TABLE` command cannot be used to drop a table referenced by a ________ constraint.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Local Key",
+          "text": "Local Key"
+        },
+        {
+          "value": "B",
+          "label": "Primary Key",
+          "text": "Primary Key"
+        },
+        {
+          "value": "C",
+          "label": "Composite Key",
+          "text": "Composite Key"
+        },
+        {
+          "value": "D",
+          "label": "Foreign Key",
+          "text": "Foreign Key"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "To maintain **referential integrity**, a database management system will prevent you from dropping a table if its primary key is being referenced by a **Foreign Key** in another table. You must first remove the foreign key constraint or the child table before dropping the parent table."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-16",
+      "number": "17",
+      "text": "Consider the following relational database:\n\n**books**\n| BNO | Title | Author | Date | Edition |\n| --- | --- | --- | --- | --- |\n| 231 | The Soul of a New Machine | Tracy Kidder | 1981 | 1 |\n| 77 | Programming Pearls | Jon Bentley | 2000 | 2 |\n| 23 | Programming Pearls | Jon Bentley | 1981 | 1 |\n| 2 | Tess of the d'Urbevilles | Thomas Hardy | 1850 | 1 |\n\n**publishers**\n| PNO | Publisher | City | Web Site |\n| --- | --- | --- | --- |\n| 1 | Back Bay Books | Boston | backbay.com |\n| 2 | Addison Wesley | New York | addisonwesley.com |\n| 3 | Modern Library | London | randomhouse.com |\n| 4 | Penguin | New York | penguin.com |\n\n**publishes**\n| PNO | BNO | Pages | Copyright |\n| --- | --- | --- | --- |\n| 4 | 231 | 293 | 1981 |\n| 2 | 77 | 235 | 2001 |\n| 2 | 23 | 200 | 1980 |\n| 3 | 2 | 565 | 2001 |\n| 4 | 2 | 540 | 1990 |\n\nAssuming we have the tables above with (BNO, PNO) as primary keys for the **publishes** table and BNO/PNO as foreign keys, what occurs when inserting the tuple (4, 83, 200, 1990) into the **publishes** table?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It would violate key integrity",
+          "text": "It would violate key integrity"
+        },
+        {
+          "value": "B",
+          "label": "It would violate entity integrity",
+          "text": "It would violate entity integrity"
+        },
+        {
+          "value": "C",
+          "label": "It would violate referential integrity",
+          "text": "It would violate referential integrity"
+        },
+        {
+          "value": "D",
+          "label": "It would be inserted correctly",
+          "text": "It would be inserted correctly"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `publishes` table uses `BNO` as a foreign key referencing the `books` table. In the `books` table, the available BNO values are {231, 77, 23, 2}. Since the value 83 does not exist in the parent `books` table, inserting it into the `publishes` table violates referential integrity."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-17",
+      "number": "18",
+      "text": "Which of the following is **NOT** a super key in the following schema \\( R1(C, A, D, F, B, E) \\) with \\( AC \\) as the primary key?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "ABCD",
+          "text": "ABCD"
+        },
+        {
+          "value": "B",
+          "label": "ACDEB",
+          "text": "ACDEB"
+        },
+        {
+          "value": "C",
+          "label": "CABE",
+          "text": "CABE"
+        },
+        {
+          "value": "D",
+          "label": "CBFE",
+          "text": "CBFE"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "A super key is any set of attributes that contains the candidate key (or primary key). Since \\( AC \\) is the primary key, any super key must contain both attributes \\( A \\) and \\( C \\). Options A, B, and C all contain both \\( A \\) and \\( C \\). Option D (CBFE) contains \\( C \\) but not \\( A \\), therefore it is not a super key."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-18",
+      "number": "19",
+      "text": "A unique identifier for each tuple in the relation which could have no business meaning (for example, sequential numbers) is called a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Primary Key",
+          "text": "Primary Key"
+        },
+        {
+          "value": "B",
+          "label": "Foreign Key",
+          "text": "Foreign Key"
+        },
+        {
+          "value": "C",
+          "label": "Surrogate Key",
+          "text": "Surrogate Key"
+        },
+        {
+          "value": "D",
+          "label": "Super Key",
+          "text": "Super Key"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A surrogate key is a unique identifier for an entity in a database that has no intrinsic business meaning or relationship to the data's real-world attributes. They are often implemented as auto-incrementing integers."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-19",
+      "number": "20",
+      "text": "An entity:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Is the association between two related processes",
+          "text": "Is the association between two related processes"
+        },
+        {
+          "value": "B",
+          "label": "Has cardinality (1:1, 1:N, or M:N)",
+          "text": "Has cardinality (1:1, 1:N, or M:N)"
+        },
+        {
+          "value": "C",
+          "label": "Shows if it can be null or no null",
+          "text": "Shows if it can be null or no null"
+        },
+        {
+          "value": "D",
+          "label": "Is a person, place or thing",
+          "text": "Is a person, place or thing"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In Entity-Relationship (ER) modeling, an **entity** is a person, place, thing, or concept of interest about which data is to be maintained. Options A and B refer to relationships and their properties, while option C refers to attribute constraints."
+    },
+    {
+      "id": "extract-1771664053136-fg4y7-20",
+      "number": "21",
+      "text": "Which of the following can be a multivalued attribute?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Phone_number",
+          "text": "Phone_number"
+        },
+        {
+          "value": "B",
+          "label": "Name",
+          "text": "Name"
+        },
+        {
+          "value": "C",
+          "label": "Date_of_birth",
+          "text": "Date_of_birth"
+        },
+        {
+          "value": "D",
+          "label": "All of the mentioned",
+          "text": "All of the mentioned"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A **multivalued attribute** can have more than one value for a specific entity instance. For example, a single person can have multiple phone numbers (e.g., home, work, mobile). In contrast, `Date_of_birth` is a single-valued attribute, and `Name` is typically treated as a composite attribute."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 21
+}

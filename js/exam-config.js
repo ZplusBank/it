@@ -110,62 +110,7 @@ const EXAM_CONFIG = [
     "name": "Algorithms",
     "description": "Algorithm Analysis",
     "path": "data/algorithm",
-    "chapters": [
-      {
-        "id": "17",
-        "name": "Chapter 17: Binary I/O",
-        "q": 8,
-        "file": "data/algorithm/chapter17slide.pdf.json"
-      },
-      {
-        "id": "c++",
-        "name": "Second",
-        "q": 16,
-        "file": "data/algorithm/chapterc++ Second(3).pdfvisual_extractor.json"
-      },
-      {
-        "id": "Data Structures",
-        "name": "Final",
-        "q": 14,
-        "file": "data/algorithm/chapterData Structures - Final.pdfvisual_extractor (1).json"
-      },
-      {
-        "id": "Database",
-        "name": "First",
-        "q": 37,
-        "file": "data/algorithm/chapterDatabase - First.pdfvisual_extractor.json"
-      },
-      {
-        "id": "Final",
-        "name": "#1",
-        "q": 32,
-        "file": "data/algorithm/chapterfinal.pdfvisual_extractor.json"
-      },
-      {
-        "id": "chapterlecture 9 Greedy Algorithms.pdf",
-        "name": "Greedy Algorithms and Activity Selection & Knapsack Problems (Fractional and 0-1)",
-        "q": 10,
-        "file": "data/algorithm/chapterlecture 9 Greedy Algorithms.pdf.json"
-      },
-      {
-        "id": "chapterlecture2 Asymptotic Notations.pdf",
-        "name": "Asymptotic Notations and Logarithms & Analysis Examples and Comparisons",
-        "q": 10,
-        "file": "data/algorithm/chapterlecture2 Asymptotic Notations.pdf.json"
-      },
-      {
-        "id": "chapterScreenshot 2025-06-14 024536.pngvisual_extractor",
-        "name": "Extracted: Screenshot 2025-06-14 024536.png",
-        "q": 1,
-        "file": "data/algorithm/chapterScreenshot 2025-06-14 024536.pngvisual_extractor.json"
-      },
-      {
-        "id": "chapterScreenshot 2025-06-14 144736.pngvisual_extractor",
-        "name": "Extracted: Screenshot 2025-06-14 144736.png",
-        "q": 1,
-        "file": "data/algorithm/chapterScreenshot 2025-06-14 144736.pngvisual_extractor.json"
-      }
-    ]
+    "chapters": []
   },
   {
     "id": "data_structure",
@@ -221,6 +166,44 @@ const EXAM_CONFIG = [
         "name": "Relational Database Fundamentals & SQL (Structured Query Language) & JDBC and System Setup & Connecting to and Querying a Database with JDBC & ResultSet Metadata and Result Properties & Displaying Results with JTable and TableModels & Manipulating Databases with JDBC and JTable & RowSet Interface & PreparedStatements & JDBC GUI Application Implementation & Stored Procedures and CallableStatements & Transaction Processing",
         "q": 60,
         "file": "data/java_advanced/chapterchapter8JDBCpdf.json"
+      }
+    ]
+  },
+  {
+    "id": "DBMS",
+    "name": "Data Base",
+    "description": "Study of structured data storage, retrieval, management, and SQL design.",
+    "path": "data/DBMS",
+    "chapters": [
+      {
+        "id": "Final",
+        "name": "#1",
+        "q": 42,
+        "file": "data/DBMS/chapterDatabase - Final.pdfvisual_extractor.json"
+      },
+      {
+        "id": "First",
+        "name": "#1",
+        "q": 37,
+        "file": "data/DBMS/chapterDatabase - First.pdfvisual_extractor (1).json"
+      },
+      {
+        "id": "Second",
+        "name": "#1",
+        "q": 17,
+        "file": "data/DBMS/chapterDatabase - Second.pdfvisual_extractor.json"
+      },
+      {
+        "id": "First",
+        "name": "#2",
+        "q": 19,
+        "file": "data/DBMS/chapterTest bank  First.pdfvisual_extractor.json"
+      },
+      {
+        "id": "First",
+        "name": "#3",
+        "q": 21,
+        "file": "data/DBMS/chapterTest Bank 2024 (ch1+2+3).pdfvisual_extractor.json"
       }
     ]
   }

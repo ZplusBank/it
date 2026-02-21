@@ -1,0 +1,1141 @@
+{
+  "id": "extract-1771663485909-ar2av",
+  "label": "Database - Final.pdf",
+  "params": {
+    "file": "Database - Final.pdf",
+    "type": "visual_extractor",
+    "chapter": "Final"
+  },
+  "title": "#1",
+  "questions": [
+    {
+      "id": "extract-1771663485909-ar2av-0",
+      "number": "1",
+      "text": "Specialization S: \\( S = \\{V1, v2, ..., vn\\} \\) is a set of subclasses with the same superclass G. If the union of \\( V1, v2, ..., vn = G \\) is correct all the time, then S is a disjoint specialization.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The condition where the union of all subclasses equals the superclass represents **total completeness**, not disjointness. A specialization is disjoint if an entity can belong to at most one subclass."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-1",
+      "number": "2",
+      "text": "The disjoint constraint specifies that an entity instance of a supertype may belong to any of its subtypes.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The **disjoint constraint** specifies that an entity instance of a supertype can be a member of at most **one** subtype. If it can belong to multiple subtypes, it is called an overlapping constraint."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-2",
+      "number": "3",
+      "text": "Given \"Game\" relation which already satisfies 1NF: Game ( GameID, GameDate, GameField, City, GameTitle, Game_session, GameCode). FDs: GameID \\(\\rightarrow\\) GameDate, GameField, GameTitle; GameDate, GameField, GameTitle, Game_session, GameCode. The above relation 'Game' is in 3NF but NOT in BCNF.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Based on the provided functional dependencies, GameID does not determine all attributes (e.g., City), meaning it is not a superkey. Without clearly defined candidate keys that overlap and involve non-trivial dependencies, the relation does not meet the specific criteria for being in 3NF but not BCNF."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-3",
+      "number": "4",
+      "text": "The surrogate key is artificial and has no business meaning.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "By definition, a **surrogate key** is a system-generated unique identifier that has no inherent meaning in the business domain, unlike a natural key (e.g., SSN or email)."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-4",
+      "number": "5",
+      "text": "In mapping 1:1 relationships: The foreign key approach is the only available method to create relations.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Besides the foreign key approach, 1:1 relationships can also be mapped using a **merged relation** (combining both entities into one table) or a **cross-reference table** (associative entity)."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-5",
+      "number": "6",
+      "text": "Given \"Tech\" relation which already satisfies 1NF: Tech ( cust_ID, problem_code, tech_no). FDs: cust_ID, problem_code \\(\\rightarrow\\) tech_no; tech_no \\(\\rightarrow\\) problem_code. The above relation 'Tech' is in 3NF but NOT in BCNF.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The candidate keys are (cust_ID, problem_code) and (cust_ID, tech_no). The dependency `tech_no \\rightarrow problem_code` violates BCNF because `tech_no` is not a superkey. However, it satisfies 3NF because `problem_code` is a prime attribute (part of a candidate key)."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-6",
+      "number": "7",
+      "text": "Which degree of relationship does the following relation represent?\n\n**Employee**\n| Employee ID | Name | DOB | Supervisor ID |\n| :--- | :--- | :--- | :--- |",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Unary",
+          "text": "Unary"
+        },
+        {
+          "value": "B",
+          "label": "Binary",
+          "text": "Binary"
+        },
+        {
+          "value": "C",
+          "label": "Ternary",
+          "text": "Ternary"
+        },
+        {
+          "value": "D",
+          "label": "M:N relationship",
+          "text": "M:N relationship"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "This is a **unary (recursive) relationship** because the 'Supervisor ID' refers to another record within the same 'Employee' table, indicating a relationship between instances of the same entity type."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-7",
+      "number": "8",
+      "text": "In mapping M-N relationships: The primary key from the \"M side\" is placed as a foreign key in the \"N side\".",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "To map a **many-to-many (M:N)** relationship, you must create a separate **associative relation** (junction table) that contains the primary keys of both entities as foreign keys. Placing a single foreign key in one of the original tables is only sufficient for 1:N relationships."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-8",
+      "number": "9",
+      "text": "Given the following FDs on relation R(A, B, C, D, E). Which of the following is correct? \nFDs: A, B, C \\(\\rightarrow\\) D; A, B \\(\\rightarrow\\) C; D \\(\\rightarrow\\) E; A \\(\\rightarrow\\) B",
+      "choices": [
+        {
+          "value": "A",
+          "label": "(A, B) is a candidate key of R.",
+          "text": "(A, B) is a candidate key of R."
+        },
+        {
+          "value": "B",
+          "label": "(A, B) is a superkey of R.",
+          "text": "(A, B) is a superkey of R."
+        },
+        {
+          "value": "C",
+          "label": "(A) cannot be a key of R.",
+          "text": "(A) cannot be a key of R."
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Calculating the closure of A: \\( A^+ = \\{A, B, C, D, E\\} \\). Thus, {A} is a candidate key. Since {A} is a candidate key, any set containing A (such as {A, B}) is a **superkey**."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-9",
+      "number": "10",
+      "text": "Given a relation R(A, B, C, D, E, F) where (A,B) is the only candidate key available for R. Which of the following FDs can be seen as an example of transitive dependency?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "FD1: A, B \\(\\rightarrow\\) E, F",
+          "text": "FD1: A, B \\(\\rightarrow\\) E, F"
+        },
+        {
+          "value": "B",
+          "label": "FD2: B \\(\\rightarrow\\) F",
+          "text": "FD2: B \\(\\rightarrow\\) F"
+        },
+        {
+          "value": "C",
+          "label": "FD3: E \\(\\rightarrow\\) F",
+          "text": "FD3: E \\(\\rightarrow\\) F"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A **transitive dependency** occurs when a non-key attribute determines another non-key attribute. Here, (A,B) is the key. FD2 is a partial dependency because B is part of the key. FD3 (E \\(\\rightarrow\\) F) is transitive because neither E nor F are part of a candidate key."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-10",
+      "number": "11",
+      "text": "In ER diagrams, derived attributes are depicted by a double line oval shape.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In ER diagrams, **derived attributes** are depicted by **dashed or dotted ovals**. Double-line ovals are used to represent **multi-valued attributes**."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-11",
+      "number": "12",
+      "text": "Every relation in 2NF is also in 1NF.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Yes, this is correct.",
+          "text": "Yes, this is correct."
+        },
+        {
+          "value": "B",
+          "label": "No, it is not correct.",
+          "text": "No, it is not correct."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Database normalization forms are hierarchical. To reach the Second Normal Form (2NF), a relation must first satisfy all the requirements of the **First Normal Form (1NF)**."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-12",
+      "number": "13",
+      "text": "A shared subclass is a subclass with more than one superclass.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In EER modeling, a shared subclass is a subclass that has more than one superclass, which is a representation of multiple inheritance."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-13",
+      "number": "14",
+      "text": "If \\( B \\rightarrow C \\), then \\( BY \\rightarrow CY \\), for every \\( Y \\). This is an example of augmentation in Armstrong's Axioms.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The augmentation rule in Armstrong's Axioms states that if \\( X \\rightarrow Y \\) holds, then \\( XZ \\rightarrow YZ \\) also holds for any attribute set \\( Z \\)."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-14",
+      "number": "15",
+      "text": "Trying to insert a value in a foreign key that references a primary key value that does not exist in the referenced relation is considered a violation of Referential integrity.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Referential integrity constraints require that a foreign key value must either be null or match an existing primary key value in the referenced relation."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-15",
+      "number": "16",
+      "text": "The bottom-up conceptual refinement process starts with a type and then defines subtypes.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The process described (starting with a type and defining subtypes) is known as top-down refinement or specialization. Bottom-up refinement starts with subtypes and generalizes them into a supertype."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-16",
+      "number": "17",
+      "text": "In \\( R(K, L, M, N, O) \\) and the following set of functional dependencies, FDs: 1) \\( K \\rightarrow L \\); 2) \\( K \\rightarrow M \\); 3) \\( MN \\rightarrow O \\); 4) \\( L \\rightarrow N \\); 5) \\( O \\rightarrow K \\). Which of the following is correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( O \\rightarrow L \\) is not implied in the above set of functional dependencies",
+          "text": "\\( O \\rightarrow L \\) is not implied in the above set of functional dependencies"
+        },
+        {
+          "value": "B",
+          "label": "\\( KM \\rightarrow LM \\) is not implied in the above set of functional dependencies",
+          "text": "\\( KM \\rightarrow LM \\) is not implied in the above set of functional dependencies"
+        },
+        {
+          "value": "C",
+          "label": "\\( LN \\rightarrow MN \\) is not implied in the above set of functional dependencies",
+          "text": "\\( LN \\rightarrow MN \\) is not implied in the above set of functional dependencies"
+        },
+        {
+          "value": "D",
+          "label": "\\( LM \\rightarrow MN \\) is not implied in the above set of functional dependencies",
+          "text": "\\( LM \\rightarrow MN \\) is not implied in the above set of functional dependencies"
+        },
+        {
+          "value": "E",
+          "label": "All of them are correct",
+          "text": "All of them are correct"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "To check if an FD is implied, we calculate the closure of the LHS: \n- For \\( O \\rightarrow L \\): \\( \\{O\\}^+ = \\{O, K, L, M, N, O\\} \\). It is implied.\n- For \\( KM \\rightarrow LM \\): \\( \\{K, M\\}^+ = \\{K, M, L, N, O\\} \\). It is implied.\n- For \\( LN \\rightarrow MN \\): \\( \\{L, N\\}^+ = \\{L, N\\} \\). It is NOT implied because \\( M \\) is missing.\n- For \\( LM \\rightarrow MN \\): \\( \\{L, M\\}^+ = \\{L, M, N, O, K\\} \\). It is implied.\nThus, only statement C is correct."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-17",
+      "number": "18",
+      "text": "Given the following relation \"Laptop\" and functional dependencies: Laptop( L_serial, L_Type, L_year, L_model, L_barcode, L_color) FDs: \\( L\\_serial, L\\_Type \\rightarrow \\text{All attributes of R} \\); \\( L\\_barcode \\rightarrow L\\_serial \\). Assume that there is no problem with 1NF, which of the following is correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The above relation \"Laptop\" is already in 3NF but not in BNCF.",
+          "text": "The above relation \"Laptop\" is already in 3NF but not in BNCF."
+        },
+        {
+          "value": "B",
+          "label": "The above relation \"Laptop\" is already in 2NF but not in 3NF.",
+          "text": "The above relation \"Laptop\" is already in 2NF but not in 3NF."
+        },
+        {
+          "value": "C",
+          "label": "The above relation \"Laptop\" satisfies the BNCF.",
+          "text": "The above relation \"Laptop\" satisfies the BNCF."
+        },
+        {
+          "value": "D",
+          "label": "The above relation \"Laptop\" is unnormalized.",
+          "text": "The above relation \"Laptop\" is unnormalized."
+        },
+        {
+          "value": "E",
+          "label": "The above relation \"Laptop\" satisfies only 1NF.",
+          "text": "The above relation \"Laptop\" satisfies only 1NF."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Candidate keys are \\( \\{L\\_serial, L\\_Type\\} \\) and \\( \\{L\\_barcode, L\\_Type\\} \\). Prime attributes are \\( \\{L\\_serial, L\\_Type, L\\_barcode\\} \\). The FD \\( L\\_barcode \\rightarrow L\\_serial \\) violates BNCF because \\( L\\_barcode \\) is not a superkey. However, it satisfies 3NF because the RHS (\\( L\\_serial \\)) is a prime attribute."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-18",
+      "number": "19",
+      "text": "This diagram is an example of a relationship with a many-to-one cardinality ratio.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Based on the faint diagram in the background showing an N:1 cardinality ratio between two entities, the statement is correct."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-19",
+      "number": "20",
+      "text": "Consider the following Union where each entity has a different format of the primary key. Assume that entity A has 5 attributes, B has 10 attributes, C has 5 attributes, and D has 15 attributes. After mapping the EER, the minimum number of attributes to represent the category(W) is :",
+      "choices": [
+        {
+          "value": "A",
+          "label": "38",
+          "text": "38"
+        },
+        {
+          "value": "B",
+          "label": "5",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "8",
+          "text": "8"
+        },
+        {
+          "value": "D",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "E",
+          "label": "21",
+          "text": "21"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "When mapping a category (Union Type) where superclasses have different keys, a new surrogate key is created to identify the union. The relation for the category W requires this single surrogate key as its primary key."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-20",
+      "number": "21",
+      "text": "Given a relation \\( R(A, B, C, D, E, F, G, H, I) \\) which is in 3NF. The primary key is a composite key of two attributes A and B. Which of the following functional dependencies must be FALSE?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( A, B \\rightarrow C, D, E, F, G, H, I \\)",
+          "text": "\\( A, B \\rightarrow C, D, E, F, G, H, I \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( D \\rightarrow B \\)",
+          "text": "\\( D \\rightarrow B \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( A, D \\rightarrow I \\)",
+          "text": "\\( A, D \\rightarrow I \\)"
+        },
+        {
+          "value": "D",
+          "label": "\\( E \\rightarrow A \\)",
+          "text": "\\( E \\rightarrow A \\)"
+        },
+        {
+          "value": "E",
+          "label": "\\( H, I \\rightarrow A \\)",
+          "text": "\\( H, I \\rightarrow A \\)"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In 3NF, for every FD \\( X \\rightarrow Y \\), either \\( X \\) is a superkey or \\( Y \\) is a prime attribute. In choice C, \\( I \\) is non-prime and \\( AD \\) is typically not a superkey (unless other FDs exist to imply it), so it violates the 3NF constraint. Choices B, D, and E have prime RHS, which is permitted in 3NF even if the LHS is not a superkey."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-21",
+      "number": "22",
+      "text": "The minimum number of relations to map the following EER diagram to a relational schema is : (Note: it is Total, overlapping)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "6",
+          "text": "6"
+        },
+        {
+          "value": "C",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "7",
+          "text": "7"
+        },
+        {
+          "value": "E",
+          "label": "5",
+          "text": "5"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "For an overlapping specialization, one of the mapping options is to create a single relation containing all attributes of the superclass and all subclasses, plus boolean flags to indicate subclass membership. This represents the minimum possible number of relations."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-22",
+      "number": "23",
+      "text": "Given a specialization where the intersection of any two subclasses is an empty set, and the union of all subclasses always gives the tuples in the superclass, which of the following is correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It is a partial and overlapping specialization.",
+          "text": "It is a partial and overlapping specialization."
+        },
+        {
+          "value": "B",
+          "label": "It is a total and disjoint specialization.",
+          "text": "It is a total and disjoint specialization."
+        },
+        {
+          "value": "C",
+          "label": "It is a partial and disjoint specialization.",
+          "text": "It is a partial and disjoint specialization."
+        },
+        {
+          "value": "D",
+          "label": "It is a total and overlapping specialization.",
+          "text": "It is a total and overlapping specialization."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An empty intersection defines the disjoint constraint. A union that covers the entire superclass defines the total (mandatory) participation constraint."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-23",
+      "number": "24",
+      "text": "Given a total and overlapping specialization of 10 subclasses. The number of attributes for each subclass varies from 2-3 attributes. The number of attributes of the superclass is 25 attributes. Which of the following is correct regarding the mapping process?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Step 8, option B is the recommended choice.",
+          "text": "Step 8, option B is the recommended choice."
+        },
+        {
+          "value": "B",
+          "label": "Step 8, option C is the recommended choice.",
+          "text": "Step 8, option C is the recommended choice."
+        },
+        {
+          "value": "C",
+          "label": "Step 8, option A is the recommended choice.",
+          "text": "Step 8, option A is the recommended choice."
+        },
+        {
+          "value": "D",
+          "label": "None of the above is correct.",
+          "text": "None of the above is correct."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Step 8, option C in the standard EER-to-Relational mapping algorithm is specifically designed for overlapping specializations. It involves creating a single relation with multiple boolean attributes, one for each subclass, to handle the overlap efficiently."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-24",
+      "number": "25",
+      "text": "One of the following is correct in mapping the following ER.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The foreign key approach would be the best when \"B\" relation would have \"a1\" as a foreign key referencing A(a1).",
+          "text": "The foreign key approach would be the best when \"B\" relation would have \"a1\" as a foreign key referencing A(a1)."
+        },
+        {
+          "value": "B",
+          "label": "The foreign key approach would be the best when relation would have \"b1\" as a foreign key referencing B(b1).",
+          "text": "The foreign key approach would be the best when relation would have \"b1\" as a foreign key referencing B(b1)."
+        },
+        {
+          "value": "C",
+          "label": "Cross-referencing approach is the only solution because we have a composite attribute (n) in relation \"A\".",
+          "text": "Cross-referencing approach is the only solution because we have a composite attribute (n) in relation \"A\"."
+        },
+        {
+          "value": "D",
+          "label": "None of them.",
+          "text": "None of them."
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Assuming a 1:N relationship from A to B (based on the diagram), the standard mapping is to place the primary key of the '1' side (A) as a foreign key in the 'N' side (B). Composite attributes are flattened into separate columns and do not necessitate a cross-referencing approach."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-25",
+      "number": "26",
+      "text": "Based on your understanding of the main reasons for the normalization process, select the main informal guidelines for good relational design.\n\nA) The BCNF must be satisfied in the database.\nB) Tuples will have as few NULL values as possible.\nC) No spurious tuples should be generated.\nD) Composite keys are always better than single attribute keys because they are clear and easy to understand.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "C only.",
+          "text": "C only."
+        },
+        {
+          "value": "B",
+          "label": "A and C.",
+          "text": "A and C."
+        },
+        {
+          "value": "C",
+          "label": "B and C.",
+          "text": "B and C."
+        },
+        {
+          "value": "D",
+          "label": "B and D.",
+          "text": "B and D."
+        },
+        {
+          "value": "E",
+          "label": "D only.",
+          "text": "D only."
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Informal guidelines for relational database design include minimizing redundant values to avoid update anomalies, reducing NULL values in tuples, and designing schemas to prevent the generation of spurious (fake) tuples when joining relations. While BCNF is a formal normalization step, avoiding NULLs and spurious tuples are specifically categorized as informal guidelines."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-26",
+      "number": "27",
+      "text": "Given the following FDs on relation \\( R(A, B, C, D, E, F, G) \\):\n\\( A \\to BC \\)\n\\( BC \\to DE \\)\n\\( D \\to F \\)\n\\( CF \\to G \\)\n\nIs \\( (B, C) \\) a candidate key of \\( R \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "To be a candidate key, the attribute set's closure must include all attributes in the relation. Calculating the closure for \\( \\{B, C\\} \\):\n1. \\( \\{B, C\\}^+ = \\{B, C\\} \\)\n2. From \\( BC \\to DE \\), we get \\( \\{B, C, D, E\\} \\)\n3. From \\( D \\to F \\), we get \\( \\{B, C, D, E, F\\} \\)\n4. From \\( CF \\to G \\), we get \\( \\{B, C, D, E, F, G\\} \\)\nThe closure is \\( \\{B, C, D, E, F, G\\} \\). Attribute \\( A \\) is missing. Since \\( A \\) is not on the right-hand side of any FD, it must be part of any candidate key. Therefore, \\( (B, C) \\) is not a candidate key."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-27",
+      "number": "28",
+      "text": "If \\( Std\\_no \\to std\\_name, std\\_major \\), then we can re-write this FD as \\( Std\\_no \\to std\\_name \\); \\( Std\\_no \\to std\\_major \\).",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "This follows the **Decomposition Rule** (also known as the projection rule) of Armstrong's axioms, which states that if \\( X \\to YZ \\), then \\( X \\to Y \\) and \\( X \\to Z \\)."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-28",
+      "number": "29",
+      "text": "Given the ER diagram with (min, max) constraints, which of the following is correct?\n\n**INSTRUCTOR** (2, 4) --- TEACHES --- (1, 1) **COURSE**",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Instructors teach only two courses or four courses.",
+          "text": "Instructors teach only two courses or four courses."
+        },
+        {
+          "value": "B",
+          "label": "Instructors teach from two to four courses.",
+          "text": "Instructors teach from two to four courses."
+        },
+        {
+          "value": "C",
+          "label": "Each course is taught by more than one instructor.",
+          "text": "Each course is taught by more than one instructor."
+        },
+        {
+          "value": "D",
+          "label": "All of them are correct.",
+          "text": "All of them are correct."
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In (min, max) notation, the constraint next to the entity describes its participation. (2, 4) next to INSTRUCTOR means each instructor must teach at least 2 and at most 4 courses. (1, 1) next to COURSE means each course is taught by exactly one instructor."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-29",
+      "number": "30",
+      "text": "The total participation constraint states that an entity instance can simultaneously be a member of two (or more) subtypes.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The statement describes an **overlapping** constraint. Total participation (indicated by a double line in some notations) means that every entity in the supertype must belong to at least one subtype."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-30",
+      "number": "31",
+      "text": "Primary key selection from a set of candidate keys is a complex process that needs a special selection algorithm.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Choosing a primary key from available candidate keys is a design decision typically based on which key is most stable (least likely to change), shortest, and easiest for users to refer to. It does not require a complex mathematical algorithm."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-31",
+      "number": "32",
+      "text": "______ is a set of all valid values of an attribute.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Tuples",
+          "text": "Tuples"
+        },
+        {
+          "value": "B",
+          "label": "Domain",
+          "text": "Domain"
+        },
+        {
+          "value": "C",
+          "label": "Primary Key",
+          "text": "Primary Key"
+        },
+        {
+          "value": "D",
+          "label": "Relations state",
+          "text": "Relations state"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A domain is the set of all atomic values that an attribute can take. For example, the domain for 'Day of Week' is {Monday, Tuesday, ..., Sunday}."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-32",
+      "number": "33",
+      "text": "Which of the following statements is NOT correct regarding data normalization?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Controls data redundancy.",
+          "text": "Controls data redundancy."
+        },
+        {
+          "value": "B",
+          "label": "Increases data duplication.",
+          "text": "Increases data duplication."
+        },
+        {
+          "value": "C",
+          "label": "Needs an understanding of functional dependencies of relations' attributes.",
+          "text": "Needs an understanding of functional dependencies of relations' attributes."
+        },
+        {
+          "value": "D",
+          "label": "Reduces update anomalies.",
+          "text": "Reduces update anomalies."
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The primary goal of normalization is to reduce or eliminate data duplication and redundancy. Therefore, saying it 'increases' duplication is incorrect."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-33",
+      "number": "34",
+      "text": "Every relation in BCNF is also in 3NF.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Boyce-Codd Normal Form (BCNF) is a stricter version of Third Normal Form (3NF). Every relation that satisfies BCNF requirements automatically satisfies 3NF requirements."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-34",
+      "number": "35",
+      "text": "An entity whose existence depends on another entity and does not have sufficient attributes to form a primary key is called an associative entity.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The description provided defines a **Weak Entity**. An associative entity is an entity type that associates the instances of one or more entity types and contains attributes that are peculiar to the relationship between those entity instances (often used to resolve many-to-many relationships)."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-35",
+      "number": "36",
+      "text": "Which statement is true regarding the following SQL: `SELECT MIN(Salary) FROM Worker WHERE Salary NOT IN (SELECT MIN(Salary) FROM Worker);`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "This will return the lowest salary from table worker.",
+          "text": "This will return the lowest salary from table worker."
+        },
+        {
+          "value": "B",
+          "label": "This will return the second-lowest salary from table worker.",
+          "text": "This will return the second-lowest salary from table worker."
+        },
+        {
+          "value": "C",
+          "label": "This will return the highest salary from table worker.",
+          "text": "This will return the highest salary from table worker."
+        },
+        {
+          "value": "D",
+          "label": "This will return the salary in table worker.",
+          "text": "This will return the salary in table worker."
+        },
+        {
+          "value": "E",
+          "label": "This will return nothing.",
+          "text": "This will return nothing."
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The subquery `(SELECT MIN(Salary) FROM Worker)` identifies the absolute minimum salary. The outer query then looks for the minimum salary among all salaries that are NOT that absolute minimum, which effectively identifies the second-lowest value."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-36",
+      "number": "37",
+      "text": "If `emp_id` contains the following set of rows `{1, 2, 2, 3, 3, 1}`, what will be the output of the following SQL statement?\n`SELECT emp_id FROM person ORDER BY emp_id DESC;`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "3, 3, 2, 2, 1, 1",
+          "text": "3, 3, 2, 2, 1, 1"
+        },
+        {
+          "value": "B",
+          "label": "1, 1, 2, 2, 3, 3",
+          "text": "1, 1, 2, 2, 3, 3"
+        },
+        {
+          "value": "C",
+          "label": "3, 2, 1",
+          "text": "3, 2, 1"
+        },
+        {
+          "value": "D",
+          "label": "1, 2, 2, 3, 3, 1",
+          "text": "1, 2, 2, 3, 3, 1"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `ORDER BY emp_id DESC` clause sorts the values in descending order. Given the input values, the descending order is 3, then 3, then 2, then 2, then 1, and finally 1. SQL does not remove duplicates in a standard SELECT unless DISTINCT is used."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-37",
+      "number": "38",
+      "text": "Given relation `student(s_id, LastName, GPA, Birthdate)`, which of the following is correct to change the data type of column `GPA` to integer?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "ALTER TABLE student MODIFY GPA integer",
+          "text": "ALTER TABLE student MODIFY GPA integer"
+        },
+        {
+          "value": "B",
+          "label": "ALTER TABLE student CHANGE GPA integer",
+          "text": "ALTER TABLE student CHANGE GPA integer"
+        },
+        {
+          "value": "C",
+          "label": "ALTER TABLE student DROP COLUMN GPA integer",
+          "text": "ALTER TABLE student DROP COLUMN GPA integer"
+        },
+        {
+          "value": "D",
+          "label": "ALTER TABLE MODIFY GPA integer",
+          "text": "ALTER TABLE MODIFY GPA integer"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In most SQL dialects like MySQL, the `ALTER TABLE ... MODIFY ...` syntax is used to change the data type of an existing column."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-38",
+      "number": "39",
+      "text": "The SQL operation that results in all pairs of tuples from two relations, only where key/foreign key attributes values are matched is called?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Join",
+          "text": "Join"
+        },
+        {
+          "value": "B",
+          "label": "Cartesian product",
+          "text": "Cartesian product"
+        },
+        {
+          "value": "C",
+          "label": "Intersection",
+          "text": "Intersection"
+        },
+        {
+          "value": "D",
+          "label": "Grouping",
+          "text": "Grouping"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A Join (specifically an inner join or equijoin) combines rows from two or more tables based on a related column between them, usually a primary key in one table and a foreign key in another."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-39",
+      "number": "40",
+      "text": "Given the relation **Employees** (ID, Name, Age, Department). How do you delete an employee with \\( ID=5 \\) from the Employees table?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "DELETE FROM Employees WHERE ID = 5",
+          "text": "DELETE FROM Employees WHERE ID = 5"
+        },
+        {
+          "value": "B",
+          "label": "DELETE * FROM Employees WHERE ID = 5",
+          "text": "DELETE * FROM Employees WHERE ID = 5"
+        },
+        {
+          "value": "C",
+          "label": "REMOVE FROM Employees WHERE ID = 5",
+          "text": "REMOVE FROM Employees WHERE ID = 5"
+        },
+        {
+          "value": "D",
+          "label": "DELETE ID=5 from Employees",
+          "text": "DELETE ID=5 from Employees"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The standard SQL syntax for deleting rows is `DELETE FROM table_name WHERE condition;`. Option B is incorrect because the `DELETE` statement does not use the `*` wildcard. Option C uses `REMOVE` which is not a standard SQL DML command. Option D is syntactically invalid."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-40",
+      "number": "41",
+      "text": "Given the relation **Emp_Dep** (Empno, Ename, DeptNo, Dname, Salary), which functional dependency types is/are **NOT** present in the following FDs? (Assume \\( Empno \\) is the primary key).",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Full functional dependency",
+          "text": "Full functional dependency"
+        },
+        {
+          "value": "B",
+          "label": "Partial functional dependency",
+          "text": "Partial functional dependency"
+        },
+        {
+          "value": "C",
+          "label": "Transitive functional dependency",
+          "text": "Transitive functional dependency"
+        },
+        {
+          "value": "D",
+          "label": "All of the answers",
+          "text": "All of the answers"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Based on the provided key, if no specific set of Functional Dependencies (FDs) is listed to evaluate against, or if the list provided in the original context did not contain these types, the correct answer is 'All of the answers'. Specifically, Partial Functional Dependency is impossible here because the primary key (Empno) is a single attribute (not composite)."
+    },
+    {
+      "id": "extract-1771663485909-ar2av-41",
+      "number": "42",
+      "text": "Given the schema **Course**(course_id, sec_id, semester), the `course_id`, `sec_id`, and `semester` are called ______ and `Course` is a ______.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Relation, Attribute",
+          "text": "Relation, Attribute"
+        },
+        {
+          "value": "B",
+          "label": "Tuple, Relation",
+          "text": "Tuple, Relation"
+        },
+        {
+          "value": "C",
+          "label": "Attribute, Relation",
+          "text": "Attribute, Relation"
+        },
+        {
+          "value": "D",
+          "label": "Tuple, Attribute",
+          "text": "Tuple, Attribute"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In relational database terminology, the column names (course_id, sec_id, semester) are called **Attributes**, and the table itself (Course) is called a **Relation**."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 42
+}

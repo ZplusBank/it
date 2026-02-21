@@ -1,17 +1,17 @@
 {
-  "id": "extract-1771046001886-07fhe",
+  "id": "extract-1771663113140-nvtax",
   "label": "Database - First.pdf",
   "params": {
     "file": "Database - First.pdf",
     "type": "visual_extractor",
-    "chapter": "Database"
+    "chapter": "First"
   },
-  "title": "First",
+  "title": "#1",
   "questions": [
     {
-      "id": "extract-1771046001886-07fhe-0",
+      "id": "extract-1771663113140-nvtax-0",
       "number": "1",
-      "text": "Which SQL statement is correct to find cities' names with the condition and temperature table 'weather' where the condition is sunny or cloudy and temperature \\( \\ge 60 \\)?",
+      "text": "Which SQL statement is correct to find cities' names with the condition and temperature table 'weather' where the condition is sunny or cloudy and temperature >= 60?",
       "choices": [
         {
           "value": "A",
@@ -37,12 +37,12 @@
       "inputName": "Q0",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "To filter for multiple values in a single column (sunny or cloudy), the `IN` operator is used. The condition for temperature is then combined using the `AND` operator to ensure both criteria (the weather type and the minimum temperature) are met simultaneously."
+      "explanation": "The condition requires the weather to be either 'sunny' or 'cloudy' AND the temperature to be 60 or higher. The `IN ('sunny', 'cloudy')` operator acts as a logical OR for those values, and the `AND` operator correctly links the temperature requirement."
     },
     {
-      "id": "extract-1771046001886-07fhe-1",
+      "id": "extract-1771663113140-nvtax-1",
       "number": "2",
-      "text": "To change the data type of a column in a table, use the following syntax :",
+      "text": "To change the data type of a column in a table, use the following syntax:",
       "choices": [
         {
           "value": "A",
@@ -68,10 +68,10 @@
       "inputName": "Q1",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "The `MODIFY` clause within an `ALTER TABLE` statement is used to change the attributes of an existing column, such as its data type or nullability, without renaming it. `ADD` is for new columns, `DROP` is for removing columns, and `CHANGE` is often used to rename a column while potentially changing its type."
+      "explanation": "In many SQL dialects (like MySQL and Oracle), the `MODIFY` keyword is used within an `ALTER TABLE` statement to change the definition (including data type) of an existing column."
     },
     {
-      "id": "extract-1771046001886-07fhe-2",
+      "id": "extract-1771663113140-nvtax-2",
       "number": "3",
       "text": "The isolation property in transaction means?",
       "choices": [
@@ -99,10 +99,10 @@
       "inputName": "Q2",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Isolation is one of the ACID properties. It ensures that the execution of concurrent transactions leaves the database in the same state that would have been obtained if the transactions were executed sequentially. This means transactions should not see the partial or intermediate results of other concurrent transactions."
+      "explanation": "Isolation is part of the ACID properties. it ensures that concurrent transactions are executed as if they were running sequentially, meaning one transaction's intermediate states are invisible to others."
     },
     {
-      "id": "extract-1771046001886-07fhe-3",
+      "id": "extract-1771663113140-nvtax-3",
       "number": "4",
       "text": "Which type of data can be stored in a multimedia database?",
       "choices": [
@@ -130,10 +130,10 @@
       "inputName": "Q3",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Multimedia databases are specifically designed to store, manage, and retrieve diverse types of rich media content, such as audio, video, images, and graphics, which are typically larger and more complex than standard alphanumeric data."
+      "explanation": "Multimedia databases are specifically designed to store non-textual data formats like audio, video, images, and animations."
     },
     {
-      "id": "extract-1771046001886-07fhe-4",
+      "id": "extract-1771663113140-nvtax-4",
       "number": "5",
       "text": "What uniquely identifies each record (tuple) in a database table?",
       "choices": [
@@ -161,12 +161,12 @@
       "inputName": "Q4",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "A Primary Key is a unique identifier for a row in a table. It must contain unique values and cannot contain NULL values, ensuring every record in the table can be uniquely addressed."
+      "explanation": "A primary key is a unique identifier for a row in a relational database table. No two rows can have the same primary key value."
     },
     {
-      "id": "extract-1771046001886-07fhe-5",
+      "id": "extract-1771663113140-nvtax-5",
       "number": "6",
-      "text": "DBMS is :",
+      "text": "DBMS is:",
       "choices": [
         {
           "value": "A",
@@ -192,10 +192,10 @@
       "inputName": "Q5",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "A Database Management System (DBMS) is the software suite that interacts with users, applications, and the database itself to capture and analyze data. Option B describes the database itself, while C describes the management software."
+      "explanation": "A Database Management System (DBMS) is the software interface that allows users and applications to create, manage, retrieve, and update data in a database."
     },
     {
-      "id": "extract-1771046001886-07fhe-6",
+      "id": "extract-1771663113140-nvtax-6",
       "number": "7",
       "text": "Which of the following problems is correct regarding Data redundancy?",
       "choices": [
@@ -223,10 +223,10 @@
       "inputName": "Q6",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Data redundancy occurs when the same data is stored in multiple places. This leads to the problem where a single logical change must be applied to every physical instance of that data, increasing maintenance overhead and the risk of data inconsistency."
+      "explanation": "Data redundancy means the same data is stored in multiple places. This causes problems because any update to that data must be applied to every single occurrence to maintain consistency, increasing the risk of errors."
     },
     {
-      "id": "extract-1771046001886-07fhe-7",
+      "id": "extract-1771663113140-nvtax-7",
       "number": "8",
       "text": "Consider the relation **Student (ID, firstName, lastName, address, GPA, CID, StartYear)**. What is the correct SQL statement to retrieve all students who have a GPA similar to the student whose first name is 'Ahmad'?",
       "choices": [
@@ -254,10 +254,10 @@
       "inputName": "Q7",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "To find students with a specific attribute matching a value from another query, a subquery is used. The outer query filters by `GPA`, and the inner query retrieves the `GPA` for the student named 'Ahmad'."
+      "explanation": "This query uses a subquery to first find the GPA of 'Ahmad'. The outer query then filters the records to return all students whose GPA matches that specific value."
     },
     {
-      "id": "extract-1771046001886-07fhe-8",
+      "id": "extract-1771663113140-nvtax-8",
       "number": "9",
       "text": "For performing tasks like deleting rows in relations, updating values in relations, which of the following is used?",
       "choices": [
@@ -285,10 +285,10 @@
       "inputName": "Q8",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Data Manipulation Language (DML) is the subset of SQL used for managing data within existing schema objects. It includes commands like `INSERT`, `UPDATE`, and `DELETE`. DDL is used to define structures (tables, indexes)."
+      "explanation": "Data Manipulation Language (DML) consists of SQL commands used for managing data within schema objects. Common DML statements include `INSERT`, `UPDATE`, and `DELETE`."
     },
     {
-      "id": "extract-1771046001886-07fhe-9",
+      "id": "extract-1771663113140-nvtax-9",
       "number": "10",
       "text": "Program-data independence means :",
       "choices": [
@@ -316,12 +316,12 @@
       "inputName": "Q9",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Program-data independence refers to the property of a DBMS that allows the metadata (data description/structure) to be stored in a system catalog separately from the application programs that access the data. This means changes to the data structure do not necessarily require changes to the application programs."
+      "explanation": "Program-data independence is the property that allows the data structure (metadata) to be stored in the DBMS catalog separately from the application programs, so changes to the data structure do not necessarily require changes to the programs."
     },
     {
-      "id": "extract-1771046001886-07fhe-10",
+      "id": "extract-1771663113140-nvtax-10",
       "number": "11",
-      "text": "Consider the relations: **Studio(name, address, presC)**, **Movie(title, year, length, film studioName, producer)**. Which SQL statement is correct to delete the relation **Studio** from the database?",
+      "text": "Consider the relations: `Studio(name, address, presC)`, `Movie(title, year, length, film studioName, producer)`. Which SQL statement is correct to delete the relation Studio from the database?",
       "choices": [
         {
           "value": "A",
@@ -347,12 +347,12 @@
       "inputName": "Q10",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "The `DROP TABLE` command is used to remove an entire relation (table) and its definition from the database. `DELETE` is used for removing rows within a table, not the table itself."
+      "explanation": "In SQL, the `DROP TABLE` command is used to completely remove a table (relation) and all its data from the database schema."
     },
     {
-      "id": "extract-1771046001886-07fhe-11",
+      "id": "extract-1771663113140-nvtax-11",
       "number": "12",
-      "text": "Consider the relations **Student (ID, firstName, lastName, GPA, CID)** where **ID** is the primary key, and **Courses (CID, CourseName)** where **CID** is the primary key. What is the correct SQL statement to retrieve students' first names and their course names?",
+      "text": "Consider the relations `Student (ID, firstName, lastName, GPA, CID)` where ID is the primary key, and `Courses (CID, CourseName)` where CID is the primary key. What is the correct SQL statement to retrieve students' first names and their course names?",
       "choices": [
         {
           "value": "A",
@@ -378,12 +378,12 @@
       "inputName": "Q11",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "To retrieve data from two related tables, an equijoin is performed. The tables are linked by their common field (`CID`). Option B correctly specifies the join condition using the table names to avoid ambiguity."
+      "explanation": "To retrieve data from multiple related tables, you must join them using a common attribute. In this case, the foreign key `CID` in the `Student` table must match the primary key `CID` in the `Courses` table."
     },
     {
-      "id": "extract-1771046001886-07fhe-12",
+      "id": "extract-1771663113140-nvtax-12",
       "number": "13",
-      "text": "Conceptual representation of a database does not show :",
+      "text": "Conceptual representation of a database does not show:",
       "choices": [
         {
           "value": "A",
@@ -409,10 +409,10 @@
       "inputName": "Q12",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "A conceptual representation (like an ER diagram or conceptual schema) focuses on what data is stored and the relationships between entities. It abstracts away the physical storage details, such as file structures or indexing, which are part of the internal or physical schema."
+      "explanation": "The conceptual schema describes the structure of the whole database for a community of users, hiding the details of physical storage structures."
     },
     {
-      "id": "extract-1771046001886-07fhe-13",
+      "id": "extract-1771663113140-nvtax-13",
       "number": "14",
       "text": "Which one of the following describes the structure of the database?",
       "choices": [
@@ -440,12 +440,12 @@
       "inputName": "Q13",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Metadata is defined as \"data about data.\" In a database system, metadata contains the description of the database structure, constraints, and storage details."
+      "explanation": "Metadata is defined as 'data about data.' In a DBMS, it includes descriptions of the database structure, data types, constraints, and more."
     },
     {
-      "id": "extract-1771046001886-07fhe-14",
+      "id": "extract-1771663113140-nvtax-14",
       "number": "15",
-      "text": "Engineers, scientists are examples of :",
+      "text": "Engineers and scientists are examples of:",
       "choices": [
         {
           "value": "A",
@@ -471,12 +471,12 @@
       "inputName": "Q14",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Sophisticated end users include engineers, scientists, and business analysts who are thoroughly familiar with the facilities of the DBMS and can implement their own complex applications or queries to meet their specific requirements."
+      "explanation": "Sophisticated end users include engineers, scientists, and business analysts who are thoroughly familiar with the facilities of the DBMS and use them to meet complex requirements."
     },
     {
-      "id": "extract-1771046001886-07fhe-15",
+      "id": "extract-1771663113140-nvtax-15",
       "number": "16",
-      "text": "An example of a query :",
+      "text": "An example of a query:",
       "choices": [
         {
           "value": "A",
@@ -502,10 +502,10 @@
       "inputName": "Q15",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "A query is specifically a request to retrieve data from a database. Retrieving a transcript is a read operation. Options A, C, and D are examples of data definition (DDL) or data manipulation (DML) operations that modify the database (Insert, Update, Delete)."
+      "explanation": "A query specifically refers to a request for data retrieval from the database. Creating, changing, or deleting records are considered data manipulation or definition tasks."
     },
     {
-      "id": "extract-1771046001886-07fhe-16",
+      "id": "extract-1771663113140-nvtax-16",
       "number": "17",
       "text": "Who is responsible for determining the requirements of end users?",
       "choices": [
@@ -533,10 +533,10 @@
       "inputName": "Q16",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "System analysts are responsible for identifying the needs of end users (especially naive and parametric users) and developing specifications that meet those needs."
+      "explanation": "System analysts determine the requirements of end users and develop specifications for transactions that meet these requirements."
     },
     {
-      "id": "extract-1771046001886-07fhe-17",
+      "id": "extract-1771663113140-nvtax-17",
       "number": "18",
       "text": "Which of the following is available in data file processing?",
       "choices": [
@@ -564,27 +564,27 @@
       "inputName": "Q17",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Traditional file processing systems generally lack the advanced features of a DBMS, such as concurrency control, which ensures that multiple users can access and modify data simultaneously without conflicts."
+      "explanation": "Traditional file processing systems generally lack centralized concurrency control, which can lead to data inconsistency when multiple users access the same data simultaneously."
     },
     {
-      "id": "extract-1771046001886-07fhe-18",
+      "id": "extract-1771663113140-nvtax-18",
       "number": "19",
-      "text": "Which of the following INSERT statements is not valid for the relation `R(a INT PRIMARY KEY, b INT DEFAULT 0, c INT NOT NULL)`?",
+      "text": "Which of the following `INSERT` statements is not valid for the relation `R(a INT PRIMARY KEY, b INT DEFAULT 0, c INT NOT NULL)`?",
       "choices": [
         {
           "value": "A",
-          "label": "INSERT INTO R (a, c) VALUES (7, 8);",
-          "text": "INSERT INTO R (a, c) VALUES (7, 8);"
+          "label": "`INSERT INTO R (a, c) VALUES (7, 8);`",
+          "text": "`INSERT INTO R (a, c) VALUES (7, 8);`"
         },
         {
           "value": "B",
-          "label": "INSERT INTO R (c, a, b) VALUES (3, 4, 5);",
-          "text": "INSERT INTO R (c, a, b) VALUES (3, 4, 5);"
+          "label": "`INSERT INTO R (c, a, b) VALUES (3, 4, 5);`",
+          "text": "`INSERT INTO R (c, a, b) VALUES (3, 4, 5);`"
         },
         {
           "value": "C",
-          "label": "INSERT INTO R (b, c) VALUES (3, 4);",
-          "text": "INSERT INTO R (b, c) VALUES (3, 4);"
+          "label": "`INSERT INTO R (b, c) VALUES (3, 4);`",
+          "text": "`INSERT INTO R (b, c) VALUES (3, 4);`"
         },
         {
           "value": "D",
@@ -595,12 +595,12 @@
       "inputName": "Q18",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Attribute 'a' is a PRIMARY KEY. By definition, a primary key cannot be NULL. In option C, 'a' is omitted from the insertion list and has no default value specified in the schema. Therefore, the database would attempt to insert a NULL into 'a', violating the primary key constraint."
+      "explanation": "In relation `R`, attribute `a` is a `PRIMARY KEY`. Primary keys cannot be null. Since `a` does not have a `DEFAULT` value specified, it must be provided in every `INSERT` statement. Option C fails to provide a value for `a`."
     },
     {
-      "id": "extract-1771046001886-07fhe-19",
+      "id": "extract-1771663113140-nvtax-19",
       "number": "20",
-      "text": "The HAVING clause does which of the following?",
+      "text": "The `HAVING` clause does which of the following?",
       "choices": [
         {
           "value": "A",
@@ -626,10 +626,10 @@
       "inputName": "Q19",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "In SQL, the WHERE clause is used to filter individual rows before any grouping occurs. The HAVING clause is used to filter groups of rows after they have been processed by a GROUP BY clause."
+      "explanation": "The `HAVING` clause is used to specify search conditions for a group or an aggregate, whereas the `WHERE` clause filters individual rows."
     },
     {
-      "id": "extract-1771046001886-07fhe-20",
+      "id": "extract-1771663113140-nvtax-20",
       "number": "21",
       "text": "Which is not a main characteristic of the database approach?",
       "choices": [
@@ -657,10 +657,10 @@
       "inputName": "Q20",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "While databases facilitate data analysis, the primary characteristics of the database approach are: self-describing nature (catalog), insulation between programs and data (abstraction), support for multiple views, and multi-user data sharing."
+      "explanation": "The main characteristics include self-describing nature, insulation between programs and data (program-data independence), data abstraction, support of multiple views, and sharing of data. Data analysis is a task performed *using* a database, not a core architectural characteristic of the database approach itself."
     },
     {
-      "id": "extract-1771046001886-07fhe-21",
+      "id": "extract-1771663113140-nvtax-21",
       "number": "22",
       "text": "Which is not a DBMS functionality?",
       "choices": [
@@ -688,12 +688,12 @@
       "inputName": "Q21",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Presentation and visualization (charts, graphs, UI layouts) are typically the responsibility of the application layer or front-end tools, not the core database management system itself."
+      "explanation": "Core DBMS functionalities involve data definition, construction, manipulation, sharing, and protection. Presentation and visualization are typically the responsibility of application software or business intelligence tools that interface with the DBMS."
     },
     {
-      "id": "extract-1771046001886-07fhe-22",
+      "id": "extract-1771663113140-nvtax-22",
       "number": "23",
-      "text": "The SQL WHERE clause :",
+      "text": "The SQL **WHERE** clause:",
       "choices": [
         {
           "value": "A",
@@ -719,10 +719,10 @@
       "inputName": "Q22",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "The WHERE clause acts as a filter on rows (horizontal filtering). The SELECT list is what determines which columns are returned (vertical filtering)."
+      "explanation": "The `WHERE` clause in SQL is used to filter records (rows) based on a specific condition, whereas the `SELECT` clause is used to limit column data."
     },
     {
-      "id": "extract-1771046001886-07fhe-23",
+      "id": "extract-1771663113140-nvtax-23",
       "number": "24",
       "text": "Which of the following will produce the minimum of all standard prices?",
       "choices": [
@@ -750,10 +750,10 @@
       "inputName": "Q23",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Option D uses the aggregate function `MIN()` in the SELECT clause, which correctly returns the smallest value for that column from the entire result set. Option A is syntactically invalid because aggregate functions cannot appear directly in a WHERE clause."
+      "explanation": "The `MIN()` aggregate function is used to find the smallest value in a column. Option A is syntactically incorrect because aggregate functions cannot be used directly in a `WHERE` clause without a subquery."
     },
     {
-      "id": "extract-1771046001886-07fhe-24",
+      "id": "extract-1771663113140-nvtax-24",
       "number": "25",
       "text": "Which schema is used to describe the structure and constraints for the whole database?",
       "choices": [
@@ -781,10 +781,10 @@
       "inputName": "Q24",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "The conceptual schema describes the entire database structure (entities, data types, relationships, user constraints) for a community of users, hiding physical storage details."
+      "explanation": "The conceptual schema (or logical schema) describes the structure, data types, relationships, and constraints for the entire database for a community of users."
     },
     {
-      "id": "extract-1771046001886-07fhe-25",
+      "id": "extract-1771663113140-nvtax-25",
       "number": "26",
       "text": "Who makes up a large section of the end-user population?",
       "choices": [
@@ -812,12 +812,12 @@
       "inputName": "Q25",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Naive or parametric end users (e.g., bank tellers, reservation agents) typically make up the largest percentage of the user base. They interact with the database through standardized, pre-written transactions."
+      "explanation": "Naive or parametric end users make up a sizable portion of the user population; they typically interact with the system through pre-defined 'canned transactions' like bank tellers or reservation clerks."
     },
     {
-      "id": "extract-1771046001886-07fhe-26",
+      "id": "extract-1771663113140-nvtax-26",
       "number": "27",
-      "text": "The DELETE TABLE DDL command is used to remove a table from the database.",
+      "text": "The **DELETE TABLE** DDL command is used to remove a table from the database.",
       "choices": [
         {
           "value": "A",
@@ -828,15 +828,25 @@
           "value": "B",
           "label": "False",
           "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "Only if the table is empty",
+          "text": "Only if the table is empty"
+        },
+        {
+          "value": "D",
+          "label": "Only if permissions are granted",
+          "text": "Only if permissions are granted"
         }
       ],
       "inputName": "Q26",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "The correct DDL command to remove a table and its structure from the database is `DROP TABLE`. The `DELETE` command is a DML operation used to remove rows from within a table."
+      "explanation": "The command to remove a table's structure from the database is `DROP TABLE`. `DELETE` is a DML (Data Manipulation Language) command used to remove specific rows from a table."
     },
     {
-      "id": "extract-1771046001886-07fhe-27",
+      "id": "extract-1771663113140-nvtax-27",
       "number": "28",
       "text": "Which database language is used to specify database retrievals and updates?",
       "choices": [
@@ -864,12 +874,12 @@
       "inputName": "Q27",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "DML (Data Manipulation Language) provides commands for retrieving, inserting, deleting, and modifying data. DDL (Data Definition Language) is used for defining the database structure."
+      "explanation": "DML (Data Manipulation Language) is used for data retrieval (SELECT), insertion (INSERT), updates (UPDATE), and deletions (DELETE)."
     },
     {
-      "id": "extract-1771046001886-07fhe-28",
+      "id": "extract-1771663113140-nvtax-28",
       "number": "29",
-      "text": "Which of the following is not a feature of DBMS?",
+      "text": "Which of the following is **not** a feature of DBMS?",
       "choices": [
         {
           "value": "A",
@@ -895,12 +905,12 @@
       "inputName": "Q28",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "A DBMS is specifically designed to support multi-user access and concurrent operations. Support for only single-user access would negate one of the primary benefits of using a database system."
+      "explanation": "One of the primary purposes of a DBMS is to manage concurrent access for multiple users simultaneously, not just single-user access."
     },
     {
-      "id": "extract-1771046001886-07fhe-29",
+      "id": "extract-1771663113140-nvtax-29",
       "number": "30",
-      "text": "An entity set that does not have sufficient attributes to form a primary key is termed a :",
+      "text": "An entity set that does not have sufficient attributes to form a primary key is termed a:",
       "choices": [
         {
           "value": "A",
@@ -926,10 +936,10 @@
       "inputName": "Q29",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "A weak entity set is an entity set that does not have a primary key of its own. It depends on a strong (identifying) entity set for its identification."
+      "explanation": "A weak entity set is an entity set that does not have a primary key of its own and depends on an identifying relationship with an owner (strong) entity set."
     },
     {
-      "id": "extract-1771046001886-07fhe-30",
+      "id": "extract-1771663113140-nvtax-30",
       "number": "31",
       "text": "How are roles specified in an ER diagram?",
       "choices": [
@@ -947,17 +957,22 @@
           "value": "C",
           "label": "By labeling the lines",
           "text": "By labeling the lines"
+        },
+        {
+          "value": "D",
+          "label": "By using dashed lines",
+          "text": "By using dashed lines"
         }
       ],
       "inputName": "Q30",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "In an ER diagram, roles (how an entity participates in a relationship) are indicated by labels on the lines that connect the entity rectangles to the relationship diamonds."
+      "explanation": "Roles are typically specified in an ER diagram by placing labels on the lines connecting a relationship (diamond) to the participating entities (rectangles)."
     },
     {
-      "id": "extract-1771046001886-07fhe-31",
+      "id": "extract-1771663113140-nvtax-31",
       "number": "32",
-      "text": "A relation between a weak entity and its owner strong entity is represented by a double diamond box in an ER diagram called :",
+      "text": "A relation between a weak entity and its owner strong entity is represented by a double diamond box in an ER diagram called:",
       "choices": [
         {
           "value": "A",
@@ -983,12 +998,12 @@
       "inputName": "Q31",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "The relationship that links a weak entity to its owner entity is called an identifying relationship. In ER notation, it is visually represented using a double-lined diamond."
+      "explanation": "An identifying relationship is the relationship that links a weak entity to its identifying owner and is denoted by a double diamond."
     },
     {
-      "id": "extract-1771046001886-07fhe-32",
+      "id": "extract-1771663113140-nvtax-32",
       "number": "33",
-      "text": "Q33) Drop Table cannot be used to drop a table referenced by a ______ constraint.",
+      "text": "Drop Table cannot be used to drop a table referenced by a \\_\\_\\_\\_\\_\\_ constraint.",
       "choices": [
         {
           "value": "A",
@@ -1014,12 +1029,12 @@
       "inputName": "Q32",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "A table cannot be dropped if it is referenced by a Foreign Key constraint in another table. This is to maintain referential integrity. To drop such a table, the foreign key constraints must first be removed, or the drop must be performed using a CASCADE option (if the DBMS supports it)."
+      "explanation": "To maintain referential integrity, most DBMS prevent dropping a table if it is currently being referenced by a foreign key constraint in another table."
     },
     {
-      "id": "extract-1771046001886-07fhe-33",
+      "id": "extract-1771663113140-nvtax-33",
       "number": "34",
-      "text": "Q34) Which of the following is NOT a superkey in the schema R1(C, A, D, F, B, E) with AC as the primary key?",
+      "text": "Which of the following is **NOT** a superkey in the schema \\(R1(C, A, D, F, B, E)\\) with **AC** as the primary key?",
       "choices": [
         {
           "value": "A",
@@ -1045,12 +1060,12 @@
       "inputName": "Q33",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "A superkey is any set of attributes that contains a candidate key (in this case, the primary key AC). For a set of attributes to be a superkey for this relation, it must contain both 'A' and 'C'. Options A, B, and C all contain both 'A' and 'C'. Option D (CBFE) contains 'C' but lacks 'A', meaning it cannot uniquely identify a tuple and thus is not a superkey."
+      "explanation": "A superkey is any set of attributes that includes the primary key. Since the primary key is {A, C}, any superkey must contain both 'A' and 'C'. Option D (CBFE) contains 'C' but lacks 'A', so it cannot be a superkey."
     },
     {
-      "id": "extract-1771046001886-07fhe-34",
+      "id": "extract-1771663113140-nvtax-34",
       "number": "35",
-      "text": "Q35) A unique identifier for each tuple in the relation which could have no business meaning (e.g., sequential numbers) is called :",
+      "text": "A unique identifier for each tuple in the relation which could have no business meaning (e.g., sequential numbers) is called:",
       "choices": [
         {
           "value": "A",
@@ -1076,12 +1091,12 @@
       "inputName": "Q34",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "A surrogate key is a system-generated unique identifier that has no inherent business meaning. It is often used as a primary key when no suitable natural key exists or to simplify the database design (e.g., an auto-incrementing integer ID)."
+      "explanation": "A surrogate key is a unique, system-generated identifier used as a primary key that has no meaning in the real-world application domain."
     },
     {
-      "id": "extract-1771046001886-07fhe-35",
+      "id": "extract-1771663113140-nvtax-35",
       "number": "36",
-      "text": "Q36) An entity :",
+      "text": "An entity:",
       "choices": [
         {
           "value": "A",
@@ -1107,12 +1122,12 @@
       "inputName": "Q35",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "In database modeling (Entity-Relationship modeling), an entity represents an object or concept from the real world that is distinguishable from other objects, typically described as a person, place, thing, event, or concept."
+      "explanation": "In database modeling, an entity represents an object in the real world that is distinguishable from other objects, such as a person, place, or thing."
     },
     {
-      "id": "extract-1771046001886-07fhe-36",
+      "id": "extract-1771663113140-nvtax-36",
       "number": "37",
-      "text": "Q37) Which of the following can be a multi-valued attribute?",
+      "text": "Which of the following can be a multi-valued attribute?",
       "choices": [
         {
           "value": "A",
@@ -1138,7 +1153,7 @@
       "inputName": "Q36",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "A multi-valued attribute is one that can hold more than one value for a single entity instance. A person can have multiple phone numbers (e.g., home, work, mobile), whereas age, salary, and date of birth are typically represented as single values for an individual at any given point in time."
+      "explanation": "A multi-valued attribute is one that can have more than one value for a single entity instance. A person can have multiple phone numbers (e.g., home, work, mobile)."
     }
   ],
   "status": "completed",
