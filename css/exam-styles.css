@@ -1587,7 +1587,7 @@ button.submit-btn {
     animation: fadeInOpacity 0.3s ease;
     padding-bottom: 120px;
     /* Space for sticky button */
-    contain: layout style;
+    contain: style;
     border: 1px solid var(--border-color);
 }
 
@@ -1662,7 +1662,6 @@ button.submit-btn {
     cursor: pointer;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-weight: 700;
-    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.25);
     letter-spacing: 0.01em;
     font-family: inherit;
     position: fixed;
@@ -1672,12 +1671,13 @@ button.submit-btn {
     margin: 0 auto;
     z-index: 1000;
     width: min(85%, 400px);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-    animation: fadeInUpCenter 0.5s ease 0.2s backwards;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(99, 102, 241, 0.2);
+    animation: fadeInUpCenter 0.5s ease 0.2s backwards, pulseGlow 2.5s ease-in-out infinite 1s;
 }
 
 .restart-btn:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px) translateZ(0);
+    box-shadow: 0 14px 50px rgba(0, 0, 0, 0.4), 0 0 50px rgba(99, 102, 241, 0.25);
 }
 
 /* ============================================================
