@@ -176,22 +176,10 @@ const EXAM_CONFIG = [
     "path": "data/DBMS",
     "chapters": [
       {
-        "id": "Final.1",
-        "name": "#1",
-        "q": 42,
-        "file": "data/DBMS/chapterDatabase - Final.pdfvisual_extractor.json"
-      },
-      {
         "id": "First.1",
         "name": "#1",
         "q": 37,
         "file": "data/DBMS/chapterDatabase - First.pdfvisual_extractor (1).json"
-      },
-      {
-        "id": "Second.1",
-        "name": "#1",
-        "q": 17,
-        "file": "data/DBMS/chapterDatabase - Second.pdfvisual_extractor.json"
       },
       {
         "id": "First.2",
@@ -204,6 +192,18 @@ const EXAM_CONFIG = [
         "name": "#3",
         "q": 21,
         "file": "data/DBMS/chapterTest Bank 2024 (ch1+2+3).pdfvisual_extractor.json"
+      },
+      {
+        "id": "Second.1",
+        "name": "#1",
+        "q": 17,
+        "file": "data/DBMS/chapterDatabase - Second.pdfvisual_extractor.json"
+      },
+      {
+        "id": "Final.1",
+        "name": "#1",
+        "q": 42,
+        "file": "data/DBMS/chapterDatabase - Final.pdfvisual_extractor.json"
       }
     ]
   }

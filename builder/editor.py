@@ -1989,8 +1989,11 @@ class ExamEditor:
         """Save everything"""
         self.save_sections()
         self.save_chapter()
-        messagebox.showinfo("Success", "All changes saved successfully!")
-        self.update_status("✓ All saved", "green")
+        try:
+            self.generate_js_config()
+        except Exception as e:
+            print(f"Auto-config error: {e}")
+        self.update_status("✓ All saved & configured", "green")
         
     def generate_js_config(self):
         """Generate js/exam-config.js from current sections and chapters"""
@@ -2006,21 +2009,34 @@ class ExamEditor:
                     "chapters": []
                 }
                 
-                # AUTO-SYNC: Update chapters.json from directory content
+                # AUTO-SYNC: Respect existing chapters.json order, only append new files
                 sec_path = self.base_path / section['path']
                 if sec_path.exists():
-                    chapter_files = sorted(sec_path.glob("*.json"))
+                    # Load existing chapters.json to preserve manual ordering
+                    ch_json_path = sec_path / "chapters.json"
+                    existing_chapters = []
+                    if ch_json_path.exists():
+                        try:
+                            with open(ch_json_path, 'r', encoding='utf-8') as f:
+                                existing_chapters = json.load(f)
+                        except Exception:
+                            existing_chapters = []
 
-                    # Sort helper
+                    # Track which files are already in chapters.json
+                    known_files = {ch.get('file', '') for ch in existing_chapters}
+
+                    # Scan for new chapter files not yet in chapters.json
+                    chapter_files = [p for p in sec_path.glob("*.json") if p.name != "chapters.json"]
+
                     def get_chapter_num(path):
                         match = re.search(r'chapter(\d+)', path.name)
                         return int(match.group(1)) if match else 999
 
                     chapter_files.sort(key=get_chapter_num)
 
-                    synced_chapters = []
+                    new_chapters = []
                     for ch_file in chapter_files:
-                        if ch_file.name == "chapters.json":
+                        if ch_file.name in known_files:
                             continue
 
                         try:
@@ -2044,7 +2060,7 @@ class ExamEditor:
                             if not c_q and 'totalQuestions' in data_obj:
                                 c_q = data_obj['totalQuestions']
 
-                            synced_chapters.append({
+                            new_chapters.append({
                                 "id": str(c_id),
                                 "name": c_title,
                                 "q": c_q,
@@ -2053,7 +2069,25 @@ class ExamEditor:
                         except Exception as e:
                             print(f"Skipping {ch_file}: {e}")
 
-                    ch_json_path = sec_path / "chapters.json"
+                    # Update question counts for existing chapters
+                    for ch in existing_chapters:
+                        ch_path = sec_path / ch.get('file', '')
+                        if ch_path.exists():
+                            try:
+                                with open(ch_path, 'r', encoding='utf-8') as f:
+                                    content = json.load(f)
+                                data_obj = content[0] if isinstance(content, list) and content else content
+                                if isinstance(content, list) and not content:
+                                    data_obj = {}
+                                c_q = len(data_obj.get("questions", []))
+                                if c_q:
+                                    ch['q'] = c_q
+                            except Exception:
+                                pass
+
+                    # Preserve existing order, append new files at end
+                    synced_chapters = existing_chapters + new_chapters
+
                     try:
                         with open(ch_json_path, 'w', encoding='utf-8') as f:
                             json.dump(synced_chapters, f, indent=2)
