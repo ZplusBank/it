@@ -1159,6 +1159,8 @@ class ExamEditor:
                   width=3, bootstyle="success-outline").pack(side=tk.RIGHT, padx=2)
         ttk.Button(sections_header, text="Import", command=self.import_section,
               width=6, bootstyle="info-outline").pack(side=tk.RIGHT, padx=2)
+        ttk.Button(sections_header, text="Edit", command=self.edit_section,
+                  width=4, bootstyle="warning-outline").pack(side=tk.RIGHT, padx=2)
         ttk.Button(sections_header, text="Del", command=self.delete_section,
                   width=3, bootstyle="danger-outline").pack(side=tk.RIGHT, padx=2)
 
@@ -1207,6 +1209,10 @@ class ExamEditor:
               width=6, bootstyle="info-outline").pack(side=tk.RIGHT, padx=2)
         ttk.Button(chapters_header, text="Del", command=self.delete_chapter,
                   width=3, bootstyle="danger-outline").pack(side=tk.RIGHT, padx=2)
+        ttk.Button(chapters_header, text="▼", command=self.move_chapter_down,
+                  width=3, bootstyle="secondary-outline").pack(side=tk.RIGHT, padx=2)
+        ttk.Button(chapters_header, text="▲", command=self.move_chapter_up,
+                  width=3, bootstyle="secondary-outline").pack(side=tk.RIGHT, padx=2)
 
         # Chapters table
         chapters_scroll = ttk.Scrollbar(right_frame, orient=tk.VERTICAL)
@@ -1633,6 +1639,100 @@ class ExamEditor:
         ttk.Button(btn_frame, text="Delete", command=do_delete, width=12, bootstyle="danger").pack(side=tk.RIGHT, padx=6)
         ttk.Button(btn_frame, text="Cancel", command=cancel, width=12, bootstyle="secondary-outline").pack(side=tk.RIGHT)
     
+    def edit_section(self):
+        """Edit the selected section"""
+        if self.current_section_idx is None:
+            messagebox.showwarning("Warning", "Select a section first")
+            return
+
+        section = self.sections[self.current_section_idx]
+
+        dialog = tk.Toplevel(self.root)
+        _style_dialog(dialog, "Edit Section", "450x320")
+        dialog.transient(self.root)
+        dialog.grab_set()
+
+        frame = ttk.Frame(dialog, padding=20, bootstyle="dark")
+        frame.pack(fill=tk.BOTH, expand=True)
+
+        ttk.Label(frame, text="Section ID:", style="SubHeader.TLabel").grid(
+            row=0, column=0, sticky=tk.W, pady=10)
+        sec_id = ttk.Entry(frame, width=30, bootstyle="info")
+        sec_id.insert(0, section.get('id', ''))
+        sec_id.grid(row=0, column=1, pady=10, padx=10)
+        sec_id.focus()
+
+        ttk.Label(frame, text="Section Name:", style="SubHeader.TLabel").grid(
+            row=1, column=0, sticky=tk.W, pady=10)
+        sec_name = ttk.Entry(frame, width=30, bootstyle="info")
+        sec_name.insert(0, section.get('name', ''))
+        sec_name.grid(row=1, column=1, pady=10, padx=10)
+
+        ttk.Label(frame, text="Data Path:", style="SubHeader.TLabel").grid(
+            row=2, column=0, sticky=tk.W, pady=10)
+        sec_path = ttk.Entry(frame, width=30, bootstyle="info")
+        sec_path.insert(0, section.get('path', ''))
+        sec_path.grid(row=2, column=1, pady=10, padx=10)
+
+        ttk.Label(frame, text="Description:", style="SubHeader.TLabel").grid(
+            row=3, column=0, sticky=tk.W, pady=10)
+        sec_desc = ttk.Entry(frame, width=30, bootstyle="info")
+        sec_desc.insert(0, section.get('description', ''))
+        sec_desc.grid(row=3, column=1, pady=10, padx=10)
+
+        def save():
+            if not sec_id.get() or not sec_name.get():
+                messagebox.showerror("Error", "ID and Name are required")
+                return
+
+            section['id'] = sec_id.get()
+            section['name'] = sec_name.get()
+            section['path'] = sec_path.get()
+            section['description'] = sec_desc.get()
+
+            self.current_section = section['id']
+            self.refresh_sections_tree()
+            self.sections_tree.selection_set(str(self.current_section_idx))
+            self.update_status(f"Section updated: {section['name']}", "orange")
+            dialog.destroy()
+
+        ttk.Button(frame, text="Save Changes", command=save,
+                  width=20, bootstyle="success").grid(row=4, column=0, columnspan=2, pady=20)
+
+        dialog.bind('<Return>', lambda e: save())
+
+    def move_chapter_up(self):
+        """Move the selected chapter up in the list"""
+        if self.current_chapter_idx is None:
+            messagebox.showwarning("Warning", "Select a chapter first")
+            return
+
+        idx = self.current_chapter_idx
+        if idx <= 0:
+            return
+
+        self.chapters[idx], self.chapters[idx - 1] = self.chapters[idx - 1], self.chapters[idx]
+        self.current_chapter_idx = idx - 1
+        self.refresh_chapters_tree()
+        self.chapters_tree.selection_set(str(self.current_chapter_idx))
+        self.update_status("Chapter moved up (click Save All)", "orange")
+
+    def move_chapter_down(self):
+        """Move the selected chapter down in the list"""
+        if self.current_chapter_idx is None:
+            messagebox.showwarning("Warning", "Select a chapter first")
+            return
+
+        idx = self.current_chapter_idx
+        if idx >= len(self.chapters) - 1:
+            return
+
+        self.chapters[idx], self.chapters[idx + 1] = self.chapters[idx + 1], self.chapters[idx]
+        self.current_chapter_idx = idx + 1
+        self.refresh_chapters_tree()
+        self.chapters_tree.selection_set(str(self.current_chapter_idx))
+        self.update_status("Chapter moved down (click Save All)", "orange")
+
     def add_chapter(self):
         """Add new chapter"""
         if not self.current_section:
