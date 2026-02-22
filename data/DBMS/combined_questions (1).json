@@ -1,0 +1,568 @@
+{
+  "title": "#4",
+  "timestamp": 1771797973878,
+  "totalQuestions": 18,
+  "questions": [
+    {
+      "id": "extract-1771791270383-3qguj-0",
+      "number": "1",
+      "text": "Which database language is used to specify database retrievals and updates?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "DDL",
+          "text": "DDL"
+        },
+        {
+          "value": "B",
+          "label": "DML",
+          "text": "DML"
+        },
+        {
+          "value": "C",
+          "label": "VDL",
+          "text": "VDL"
+        },
+        {
+          "value": "D",
+          "label": "SDL",
+          "text": "SDL"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Data Manipulation Language (DML) is used to retrieve, insert, update, and delete data within a database."
+    },
+    {
+      "id": "extract-1771791270383-3qguj-1",
+      "number": "2",
+      "text": "Based on the database tables provided below, which SQL statement correctly finds the **Number** and **order_date** from the **Orders** table where the **Amount** is higher than the minimum salary of all salespersons, sorted by **cust_id**?\n\n**Salesperson**\n| ID | Name | Age | Salary |\n| :--- | :--- | :--- | :--- |\n| 1 | Abe | 61 | 140000 |\n| 2 | Bob | 34 | 44000 |\n| 5 | Chris | 34 | 40000 |\n| 7 | Dan | 41 | 52000 |\n| 8 | Ken | 57 | 115000 |\n| 11 | Joe | 38 | 38000 |\n\n**Orders**\n| Number | order_date | cust_id | salesperson_id | Amount |\n| :--- | :--- | :--- | :--- | :--- |\n| 10 | 8/2/96 | 4 | 2 | 540 |\n| 20 | 1/30/99 | 4 | 8 | 1800 |\n| 30 | 7/14/95 | 9 | 1 | 460 |\n| 40 | 1/29/98 | 7 | 2 | 2400 |\n| 50 | 2/3/98 | 6 | 7 | 600 |\n| 60 | 3/2/98 | 6 | 7 | 720 |\n| 70 | 5/6/98 | 9 | 7 | 150 |",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`SELECT Number, order_date FROM Orders WHERE Amount > (SELECT MIN(Salary) FROM Salesperson) ORDER BY cust_id;`",
+          "text": "`SELECT Number, order_date FROM Orders WHERE Amount > (SELECT MIN(Salary) FROM Salesperson) ORDER BY cust_id;`"
+        },
+        {
+          "value": "B",
+          "label": "`SELECT Number, order_date FROM Orders WHERE Amount > MIN(Salary) ORDER BY cust_id;`",
+          "text": "`SELECT Number, order_date FROM Orders WHERE Amount > MIN(Salary) ORDER BY cust_id;`"
+        },
+        {
+          "value": "C",
+          "label": "`SELECT Number, order_date FROM Orders WHERE Amount > (SELECT MIN(Salary) FROM Salesperson) GROUP BY cust_id;`",
+          "text": "`SELECT Number, order_date FROM Orders WHERE Amount > (SELECT MIN(Salary) FROM Salesperson) GROUP BY cust_id;`"
+        },
+        {
+          "value": "D",
+          "label": "`SELECT Number, order_date FROM Orders JOIN Salesperson ON salesperson_id = ID WHERE Amount > Salary ORDER BY cust_id;`",
+          "text": "`SELECT Number, order_date FROM Orders JOIN Salesperson ON salesperson_id = ID WHERE Amount > Salary ORDER BY cust_id;`"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To compare a column value with an aggregate result (like the minimum salary), a subquery must be used. The `ORDER BY` clause correctly handles the requirement to sort by `cust_id`."
+    },
+    {
+      "id": "extract-1771791270383-3qguj-2",
+      "number": "3",
+      "text": "If you know that the current year is 2012, which SQL statement correctly calculates the **total_salary** of all salespersons in the provided table who were born after 1970?\n\n**Salesperson**\n| ID | Name | Age | Salary |\n| :--- | :--- | :--- | :--- |\n| 1 | Abe | 61 | 140000 |\n| 2 | Bob | 34 | 44000 |\n| 5 | Chris | 34 | 40000 |\n| 7 | Dan | 41 | 52000 |\n| 8 | Ken | 57 | 115000 |\n| 11 | Joe | 38 | 38000 |",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`SELECT SUM(Salary) AS total_salary FROM Salesperson WHERE (2012 - Age) > 1970;`",
+          "text": "`SELECT SUM(Salary) AS total_salary FROM Salesperson WHERE (2012 - Age) > 1970;`"
+        },
+        {
+          "value": "B",
+          "label": "`SELECT SUM(Salary) AS total_salary FROM Salesperson WHERE Age > 42;`",
+          "text": "`SELECT SUM(Salary) AS total_salary FROM Salesperson WHERE Age > 42;`"
+        },
+        {
+          "value": "C",
+          "label": "`SELECT COUNT(Salary) FROM Salesperson WHERE (2012 - Age) > 1970;`",
+          "text": "`SELECT COUNT(Salary) FROM Salesperson WHERE (2012 - Age) > 1970;`"
+        },
+        {
+          "value": "D",
+          "label": "`SELECT SUM(Salary) FROM Salesperson WHERE Age < 1970;`",
+          "text": "`SELECT SUM(Salary) FROM Salesperson WHERE Age < 1970;`"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "If the current year is 2012, a birth year after 1970 implies that the person's age is less than 42 (calculated as 2012 - 1970). The expression `(2012 - Age) > 1970` correctly filters for these records, and `SUM(Salary)` calculates the total."
+    },
+    {
+      "id": "extract-1771791255447-vlf0c-0",
+      "number": "4",
+      "text": "Relation R has schema:\nsql\nCREATE TABLE R(\n  a INT PRIMARY KEY,\n  b INT DEFAULT 0,\n  c INT NOT NULL\n);\n\nWhich of the following INSERT statements is **not** valid?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "INSERT INTO R (a,c) VALUES(7,8);",
+          "text": "INSERT INTO R (a,c) VALUES(7,8);"
+        },
+        {
+          "value": "B",
+          "label": "INSERT INTO R(c,a,b) VALUES(3,4,5);",
+          "text": "INSERT INTO R(c,a,b) VALUES(3,4,5);"
+        },
+        {
+          "value": "C",
+          "label": "INSERT INTO R(b,c) VALUES(3,4);",
+          "text": "INSERT INTO R(b,c) VALUES(3,4);"
+        },
+        {
+          "value": "D",
+          "label": "None of the above",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In the table schema, column `a` is defined as the `PRIMARY KEY`. A primary key constraint implicitly includes a `NOT NULL` constraint. The INSERT statement in option C provides values for columns `b` and `c` but omits `a`. Since `a` has no default value and cannot be null, the statement will fail."
+    },
+    {
+      "id": "extract-1771791255447-vlf0c-1",
+      "number": "5",
+      "text": "The `HAVING` clause does which of the following?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Acts like a WHERE clause but is used for rows rather than columns.",
+          "text": "Acts like a WHERE clause but is used for rows rather than columns."
+        },
+        {
+          "value": "B",
+          "label": "Acts EXACTLY like a WHERE clause.",
+          "text": "Acts EXACTLY like a WHERE clause."
+        },
+        {
+          "value": "C",
+          "label": "Acts like a WHERE clause but is used for groups rather than rows.",
+          "text": "Acts like a WHERE clause but is used for groups rather than rows."
+        },
+        {
+          "value": "D",
+          "label": "Acts like a WHERE clause but is used for columns rather than groups.",
+          "text": "Acts like a WHERE clause but is used for columns rather than groups."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `WHERE` clause is used to filter individual rows before any grouping occurs. The `HAVING` clause is used to filter the groups created by a `GROUP BY` clause, typically based on aggregate functions."
+    },
+    {
+      "id": "extract-1771791255447-vlf0c-2",
+      "number": "6",
+      "text": "Which is **not** a main characteristic of the database approach?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Data abstraction.",
+          "text": "Data abstraction."
+        },
+        {
+          "value": "B",
+          "label": "Support of multiple views of the data.",
+          "text": "Support of multiple views of the data."
+        },
+        {
+          "value": "C",
+          "label": "Data sharing.",
+          "text": "Data sharing."
+        },
+        {
+          "value": "D",
+          "label": "Data analysis.",
+          "text": "Data analysis."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "According to standard database theory (e.g., Elmasri & Navathe), the main characteristics of the database approach are: self-describing nature (metadata), insulation between programs and data (data abstraction), support of multiple views of the data, and sharing of data and multi-user transaction processing. Data analysis is an application of the data, not an inherent characteristic of the database approach itself."
+    },
+    {
+      "id": "extract-1771791255447-vlf0c-3",
+      "number": "7",
+      "text": "Which is **not** a DBMS functionality?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Manipulating the database by retrieving, modification and accessing data through the web",
+          "text": "Manipulating the database by retrieving, modification and accessing data through the web"
+        },
+        {
+          "value": "B",
+          "label": "Transforming data format.",
+          "text": "Transforming data format."
+        },
+        {
+          "value": "C",
+          "label": "Sharing by a set of concurrent users.",
+          "text": "Sharing by a set of concurrent users."
+        },
+        {
+          "value": "D",
+          "label": "Presentation and visualization of data",
+          "text": "Presentation and visualization of data"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Database Management Systems (DBMS) focus on the storage, retrieval, and management of data. While they provide interfaces for data manipulation and concurrency, the presentation and visualization of data (such as creating charts, graphs, or complex UI reports) is typically handled by application-level software or business intelligence tools."
+    },
+    {
+      "id": "extract-1771791255447-vlf0c-4",
+      "number": "8",
+      "text": "The SQL `WHERE` clause:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "limits the row data are returned.",
+          "text": "limits the row data are returned."
+        },
+        {
+          "value": "B",
+          "label": "limits the column data that are returned.",
+          "text": "limits the column data that are returned."
+        },
+        {
+          "value": "C",
+          "label": "Both A and B are correct.",
+          "text": "Both A and B are correct."
+        },
+        {
+          "value": "D",
+          "label": "Neither A nor B are correct.",
+          "text": "Neither A nor B are correct."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `WHERE` clause is used for selection, which filters the rows based on a specified condition. Limiting which columns are returned is achieved through projection in the `SELECT` list."
+    },
+    {
+      "id": "extract-1771791219375-28bpg-0",
+      "number": "9",
+      "text": "What result will the following query return?\n\nsql\nSelect item_no, description\nfrom item\nwhere weight > 100 and weight < 200;\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The item_no and description for all items weighing between 101 and 199",
+          "text": "The item_no and description for all items weighing between 101 and 199"
+        },
+        {
+          "value": "B",
+          "label": "The item_no for all items weighing between 101 and 199",
+          "text": "The item_no for all items weighing between 101 and 199"
+        },
+        {
+          "value": "C",
+          "label": "The item_no for all items weighing more than 200",
+          "text": "The item_no for all items weighing more than 200"
+        },
+        {
+          "value": "D",
+          "label": "The item_no and description for all items weighing less than 100",
+          "text": "The item_no and description for all items weighing less than 100"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `SELECT` statement specifies two columns: `item_no` and `description`. The `WHERE` clause uses logical `AND` to filter rows where the weight is strictly greater than 100 and strictly less than 200. For integer weights, this corresponds to the range of 101 through 199 inclusive."
+    },
+    {
+      "id": "extract-1771791219375-28bpg-1",
+      "number": "10",
+      "text": "Which of the following will produce the minimum of all standard prices?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Select min(standard_price) from product_v where standard_price = min(standard_price);",
+          "text": "Select min(standard_price) from product_v where standard_price = min(standard_price);"
+        },
+        {
+          "value": "B",
+          "label": "Select standard_price from product_v where standard_price = min;",
+          "text": "Select standard_price from product_v where standard_price = min;"
+        },
+        {
+          "value": "C",
+          "label": "Select standard_price from min(product_v);",
+          "text": "Select standard_price from min(product_v);"
+        },
+        {
+          "value": "D",
+          "label": "Select min(standard_price) from product_v;",
+          "text": "Select min(standard_price) from product_v;"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In SQL, the `min()` aggregate function is used in the `SELECT` list to find the minimum value of a column across the result set. Option A is syntactically incorrect because aggregate functions cannot be used in a `WHERE` clause in this manner (they require a subquery or `HAVING` clause)."
+    },
+    {
+      "id": "extract-1771791219375-28bpg-2",
+      "number": "11",
+      "text": "Given the **CUSTOMER** table below:\n\n| CID | CNAME | AGE | RESID_CITY | BIRTHPLACE |\n| :--- | :--- | :--- | :--- | :--- |\n| 10 | BLACK | 40 | ERIE | TAMPA |\n| 20 | GREEN | 25 | CARY | ERIE |\n| 30 | JONES | 30 | HEMET | TAMPA |\n| 40 | MARTIN | 35 | HEMET | TAMPA |\n| 50 | SIMON | 22 | ERIE | ERIE |\n| 60 | VERNON | 60 | CARY | CARY |\n\nAfter execution of the command:\n\nsql\nSELECT Cname\nFROM Customer\nORDER BY Cname;\n\n\nthe value shown first will be:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "MARTIN",
+          "text": "MARTIN"
+        },
+        {
+          "value": "B",
+          "label": "GREEN",
+          "text": "GREEN"
+        },
+        {
+          "value": "C",
+          "label": "BLACK",
+          "text": "BLACK"
+        },
+        {
+          "value": "D",
+          "label": "VERNON",
+          "text": "VERNON"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `ORDER BY` clause sorts the result set in ascending order by default. Sorting the names in the `CNAME` column (BLACK, GREEN, JONES, MARTIN, SIMON, VERNON) alphabetically places 'BLACK' at the top of the list."
+    },
+    {
+      "id": "extract-1771791181534-ssurs-0",
+      "number": "12",
+      "text": "The SQL query `SELECT Cname FROM Customer WHERE Resid_City = 'CARY'` will produce the following number of rows (assuming a specific database instance):",
+      "choices": [
+        {
+          "value": "A",
+          "label": "4",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "C",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "D",
+          "label": "2",
+          "text": "2"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The number of rows returned by a `SELECT` statement depends on the current state of the database instance. Based on the provided context, the query returns 2 rows."
+    },
+    {
+      "id": "extract-1771791181534-ssurs-1",
+      "number": "13",
+      "text": "Which one of the following four options is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Database system is a collection of related data.",
+          "text": "Database system is a collection of related data."
+        },
+        {
+          "value": "B",
+          "label": "Database instance changes every time the database is updated.",
+          "text": "Database instance changes every time the database is updated."
+        },
+        {
+          "value": "C",
+          "label": "Meta-data is the state of data.",
+          "text": "Meta-data is the state of data."
+        },
+        {
+          "value": "D",
+          "label": "DBA is program used by all users",
+          "text": "DBA is program used by all users"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A database instance (or state) represents the data at a specific moment; any update (insert, delete, or modify) creates a new instance. A Database System includes the DBMS and the data. Meta-data describes the schema (intension), and a DBA is a person, not a program."
+    },
+    {
+      "id": "extract-1771791181534-ssurs-2",
+      "number": "14",
+      "text": "Which schema is used to describe the structure and constraints for the whole database?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Internal schema.",
+          "text": "Internal schema."
+        },
+        {
+          "value": "B",
+          "label": "Conceptual schema.",
+          "text": "Conceptual schema."
+        },
+        {
+          "value": "C",
+          "label": "External schema.",
+          "text": "External schema."
+        },
+        {
+          "value": "D",
+          "label": "None of the above.",
+          "text": "None of the above."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In the three-schema architecture, the **conceptual schema** describes the logical structure, data types, relationships, and constraints for the entire database for a community of users."
+    },
+    {
+      "id": "extract-1771791181534-ssurs-3",
+      "number": "15",
+      "text": "________________ make up a large section of the end-user population.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Casual end users",
+          "text": "Casual end users"
+        },
+        {
+          "value": "B",
+          "label": "Standalone users",
+          "text": "Standalone users"
+        },
+        {
+          "value": "C",
+          "label": "Naive or parametric end users",
+          "text": "Naive or parametric end users"
+        },
+        {
+          "value": "D",
+          "label": "Sophisticated end users",
+          "text": "Sophisticated end users"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Naive or parametric end users (e.g., bank tellers, reservation agents) constitute the largest portion of the end-user population and interact with the database through predefined canned transactions."
+    },
+    {
+      "id": "extract-1771791181534-ssurs-4",
+      "number": "16",
+      "text": "The `DELETE TABLE` DDL command is used to remove a table from the database.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "True, but only if the table is empty",
+          "text": "True, but only if the table is empty"
+        },
+        {
+          "value": "D",
+          "label": "True, if used with the CASCADE option",
+          "text": "True, if used with the CASCADE option"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The correct DDL command to remove a table's definition and all its data from the database is `DROP TABLE`. `DELETE` is a DML command used to remove rows from a table, not the table structure itself."
+    },
+    {
+      "id": "extract-1771791181534-ssurs-5",
+      "number": "17",
+      "text": "________________ within the DBMS guarantees that each transaction is correctly executed or aborted.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Recovery subsystem",
+          "text": "Recovery subsystem"
+        },
+        {
+          "value": "B",
+          "label": "Concurrency control",
+          "text": "Concurrency control"
+        },
+        {
+          "value": "C",
+          "label": "Database backup",
+          "text": "Database backup"
+        },
+        {
+          "value": "D",
+          "label": "none of the above",
+          "text": "none of the above"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The **recovery subsystem** ensures the **Atomicity** property of transactions, guaranteeing that a transaction is either completely finished or its effects are undone (aborted) in case of a failure."
+    },
+    {
+      "id": "extract-1771791181534-ssurs-6",
+      "number": "18",
+      "text": "Which is/are true about the database state?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Change very infrequently.",
+          "text": "Change very infrequently."
+        },
+        {
+          "value": "B",
+          "label": "Change every time the database is updated.",
+          "text": "Change every time the database is updated."
+        },
+        {
+          "value": "C",
+          "label": "Called intension.",
+          "text": "Called intension."
+        },
+        {
+          "value": "D",
+          "label": "b+c",
+          "text": "b+c"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The database **state** (extension) changes every time the data is modified (updated, inserted, or deleted). The database **schema** (intension) is what remains relatively stable and changes infrequently."
+    }
+  ],
+  "params": {
+    "chapter": "First.4"
+  }
+}

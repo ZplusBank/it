@@ -194,6 +194,12 @@ const EXAM_CONFIG = [
         "file": "data/DBMS/chapterTest Bank 2024 (ch1+2+3).pdfvisual_extractor.json"
       },
       {
+        "id": "First.4",
+        "name": "#4",
+        "q": 18,
+        "file": "data/DBMS/combined_questions (1).json"
+      },
+      {
         "id": "Second.1",
         "name": "#1",
         "q": 17,
