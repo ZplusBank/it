@@ -507,6 +507,10 @@ class AdvancedChapterEditor:
                   width=15, bootstyle="success").pack(side=tk.LEFT, padx=5)
         ttk.Button(toolbar, text="Delete Question", command=self.delete_question,
                   width=18, bootstyle="danger-outline").pack(side=tk.LEFT, padx=5)
+        ttk.Button(toolbar, text="▲", command=self.move_question_up,
+                  width=3, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=2)
+        ttk.Button(toolbar, text="▼", command=self.move_question_down,
+                  width=3, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=2)
         ttk.Button(toolbar, text="Save Changes", command=self.save_chapter,
                   width=15, bootstyle="primary").pack(side=tk.RIGHT, padx=5)
 
@@ -1052,6 +1056,38 @@ class AdvancedChapterEditor:
         ttk.Button(btn_frame, text="Delete", command=do_delete, width=12, bootstyle="danger").pack(side=tk.RIGHT, padx=6)
         ttk.Button(btn_frame, text="Cancel", command=cancel, width=12, bootstyle="secondary-outline").pack(side=tk.RIGHT)
     
+    def move_question_up(self):
+        """Move the selected question up in the list"""
+        if self.current_question_idx is None:
+            messagebox.showwarning("Warning", "Select a question first")
+            return
+
+        idx = self.current_question_idx
+        if idx <= 0:
+            return
+
+        self.questions[idx], self.questions[idx - 1] = self.questions[idx - 1], self.questions[idx]
+        self.current_question_idx = idx - 1
+        self.refresh_questions_list()
+        self.questions_listbox.selection_set(self.current_question_idx)
+        self.display_question()
+
+    def move_question_down(self):
+        """Move the selected question down in the list"""
+        if self.current_question_idx is None:
+            messagebox.showwarning("Warning", "Select a question first")
+            return
+
+        idx = self.current_question_idx
+        if idx >= len(self.questions) - 1:
+            return
+
+        self.questions[idx], self.questions[idx + 1] = self.questions[idx + 1], self.questions[idx]
+        self.current_question_idx = idx + 1
+        self.refresh_questions_list()
+        self.questions_listbox.selection_set(self.current_question_idx)
+        self.display_question()
+
     def save_chapter(self):
         """Save chapter data back to JSON file"""
         try:
