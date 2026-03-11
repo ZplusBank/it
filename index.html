@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Interactive exam system for Java 2 - Objects and Classes">
-    <title>Exam System - Java 2</title>
-
+    <title>Exam System</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <!-- Critical: Inline theme detection to prevent FOUC -->
     <script>
         (function () {
@@ -27,16 +27,21 @@
     <!-- Google Fonts: Non-blocking, reduced weight set -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600;700;900&display=swap">
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600;700;900&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600;700;900&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600;700;900&display=swap"></noscript>
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600;700;900&display=swap">
+    </noscript>
 
     <!-- Prism.js Theme (non-blocking — only needed when code is visible) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css" media="print"
+        onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css"
+        media="print" onload="this.media='all'">
 
     <!-- Preload critical JS -->
     <link rel="preload" href="js/lib-loader.js" as="script">
@@ -95,7 +100,8 @@
                     <input type="text" class="search-input" id="subjectSearch" placeholder="Search subjects..."
                         autocomplete="off" aria-label="Search subjects">
                     <span class="search-icon">🔍</span>
-                    <button class="search-clear" id="subjectSearchClear" style="display: none;" aria-label="Clear search" onclick="app.clearSearch('subject')">✕</button>
+                    <button class="search-clear" id="subjectSearchClear" style="display: none;"
+                        aria-label="Clear search" onclick="app.clearSearch('subject')">✕</button>
                 </div>
 
                 <div class="subjects-grid" id="subjectsGrid">
@@ -116,7 +122,8 @@
                     <input type="text" class="search-input" id="chapterSearch" placeholder="Search chapters..."
                         autocomplete="off" aria-label="Search chapters">
                     <span class="search-icon">🔍</span>
-                    <button class="search-clear" id="chapterSearchClear" style="display: none;" aria-label="Clear search" onclick="app.clearSearch('chapter')">✕</button>
+                    <button class="search-clear" id="chapterSearchClear" style="display: none;"
+                        aria-label="Clear search" onclick="app.clearSearch('chapter')">✕</button>
                 </div>
 
                 <div class="chapters-actions">
@@ -172,7 +179,8 @@
 
                 <div class="exam-controls">
                     <div class="group-btns">
-                        <button class="nav-btn" id="prevBtn" onclick="app.previousQuestion()" disabled aria-label="Previous question">
+                        <button class="nav-btn" id="prevBtn" onclick="app.previousQuestion()" disabled
+                            aria-label="Previous question">
                             <span aria-hidden="true">←</span> Previous
                         </button>
                         <button class="nav-btn" id="nextBtn" onclick="app.nextQuestion()" aria-label="Next question">
@@ -189,7 +197,7 @@
             <!-- RESULTS VIEW -->
             <div class="results-view" id="resultsView">
                 <div class="results-title">Exam Results</div>
-                
+
                 <!-- Score Ring -->
                 <div class="score-ring-wrapper">
                     <svg class="score-ring" viewBox="0 0 140 140">
@@ -235,7 +243,7 @@
         function _initFloatingLines() {
             var s = document.createElement('script');
             s.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
-            s.onload = function() {
+            s.onload = function () {
                 var s2 = document.createElement('script');
                 s2.src = 'js/floating-lines.js';
                 document.body.appendChild(s2);
@@ -251,23 +259,23 @@
 
     <script>
         // Close menus/popups with Escape key
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
-                document.querySelectorAll('.modal.open, .dropdown.open, .menu.open').forEach(function(el) { el.classList.remove('open'); });
+                document.querySelectorAll('.modal.open, .dropdown.open, .menu.open').forEach(function (el) { el.classList.remove('open'); });
             }
         });
 
         // Mobile swipe navigation for exam questions
-        (function() {
+        (function () {
             var touchStartX = 0, touchStartY = 0, touchEndX = 0, touchEndY = 0;
             var minSwipe = 60, maxVertical = 100;
 
-            document.addEventListener('touchstart', function(e) {
+            document.addEventListener('touchstart', function (e) {
                 touchStartX = e.changedTouches[0].screenX;
                 touchStartY = e.changedTouches[0].screenY;
             }, { passive: true });
 
-            document.addEventListener('touchend', function(e) {
+            document.addEventListener('touchend', function (e) {
                 touchEndX = e.changedTouches[0].screenX;
                 touchEndY = e.changedTouches[0].screenY;
                 var dx = touchEndX - touchStartX;
@@ -312,16 +320,18 @@
     </div>
 
     <!-- Keyboard Shortcuts Help -->
-    <button id="keyboardHelpBtn" class="keyboard-help-btn" title="Keyboard Shortcuts (?)" aria-label="Show keyboard shortcuts">
+    <button id="keyboardHelpBtn" class="keyboard-help-btn" title="Keyboard Shortcuts (?)"
+        aria-label="Show keyboard shortcuts">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="6" width="20" height="12" rx="2"/>
-            <path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h8M18 14h.01"/>
+            <rect x="2" y="6" width="20" height="12" rx="2" />
+            <path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h8M18 14h.01" />
         </svg>
     </button>
 
     <!-- Scroll to Top Button -->
     <button id="scrollTopBtn" class="scroll-top-btn" title="Scroll to top" aria-label="Scroll to top">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </button>
