@@ -216,7 +216,7 @@ const EXAM_CONFIG = [
   {
     "id": "Network",
     "name": "Network",
-    "description": "Study of OSI layers, protocols, and data transmission across networks.",
+    "description": "Study of data transmission across networks.",
     "path": "data/Network",
     "chapters": [
       {
