@@ -1,0 +1,1563 @@
+{
+  "id": "upload-1773223144828",
+  "label": "ch02.pdf",
+  "params": {
+    "file": "ch02.pdf",
+    "chapter": "Chapter (2)"
+  },
+  "title": "Network Models",
+  "questions": [
+    {
+      "id": "upload-1773223144828-0",
+      "number": "1",
+      "text": "In the OSI model, what does the acronym **ISO** stand for?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "International Systems Organization",
+          "text": "International Systems Organization"
+        },
+        {
+          "value": "B",
+          "label": "International Standards Organization",
+          "text": "International Standards Organization"
+        },
+        {
+          "value": "C",
+          "label": "Internal Systems Interconnection",
+          "text": "Internal Systems Interconnection"
+        },
+        {
+          "value": "D",
+          "label": "Inter-System Operation",
+          "text": "Inter-System Operation"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "ISO stands for the International Standards Organization, which is a multinational body dedicated to worldwide agreement on international standards."
+    },
+    {
+      "id": "upload-1773223144828-1",
+      "number": "2",
+      "text": "Which layer of the OSI model is responsible for moving individual bits from one node to the next?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Data Link Layer",
+          "text": "Data Link Layer"
+        },
+        {
+          "value": "B",
+          "label": "Physical Layer",
+          "text": "Physical Layer"
+        },
+        {
+          "value": "C",
+          "label": "Network Layer",
+          "text": "Network Layer"
+        },
+        {
+          "value": "D",
+          "label": "Transport Layer",
+          "text": "Transport Layer"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The physical layer is responsible for the movement of individual bits over a transmission medium."
+    },
+    {
+      "id": "upload-1773223144828-2",
+      "number": "3",
+      "text": "Which layer is responsible for **hop-to-hop** delivery of frames?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Physical Layer",
+          "text": "Physical Layer"
+        },
+        {
+          "value": "B",
+          "label": "Network Layer",
+          "text": "Network Layer"
+        },
+        {
+          "value": "C",
+          "label": "Data Link Layer",
+          "text": "Data Link Layer"
+        },
+        {
+          "value": "D",
+          "label": "Session Layer",
+          "text": "Session Layer"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The data link layer is responsible for moving frames from one hop (node) to the next."
+    },
+    {
+      "id": "upload-1773223144828-3",
+      "number": "4",
+      "text": "The process of adding headers to data as it moves down through the layers is known as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Segmentation",
+          "text": "Segmentation"
+        },
+        {
+          "value": "B",
+          "label": "Decapsulation",
+          "text": "Decapsulation"
+        },
+        {
+          "value": "C",
+          "label": "Encapsulation",
+          "text": "Encapsulation"
+        },
+        {
+          "value": "D",
+          "label": "Synchronization",
+          "text": "Synchronization"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Encapsulation is the process of wrapping data in a particular protocol header at each layer of the OSI model."
+    },
+    {
+      "id": "upload-1773223144828-4",
+      "number": "5",
+      "text": "In the OSI model, which layer provides the interface between the devices and the transmission medium?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Network Layer",
+          "text": "Network Layer"
+        },
+        {
+          "value": "B",
+          "label": "Data Link Layer",
+          "text": "Data Link Layer"
+        },
+        {
+          "value": "C",
+          "label": "Physical Layer",
+          "text": "Physical Layer"
+        },
+        {
+          "value": "D",
+          "label": "Transport Layer",
+          "text": "Transport Layer"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The physical layer defines the physical characteristics of interfaces and the transmission medium."
+    },
+    {
+      "id": "upload-1773223144828-5",
+      "number": "6",
+      "text": "Which functional responsibility of the Physical Layer determines how 0s and 1s are changed into signals?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Data rate",
+          "text": "Data rate"
+        },
+        {
+          "value": "B",
+          "label": "Synchronization of bits",
+          "text": "Synchronization of bits"
+        },
+        {
+          "value": "C",
+          "label": "Representation of bits",
+          "text": "Representation of bits"
+        },
+        {
+          "value": "D",
+          "label": "Line configuration",
+          "text": "Line configuration"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Representation of bits involves the type of encoding used to transform bits into signals."
+    },
+    {
+      "id": "upload-1773223144828-6",
+      "number": "7",
+      "text": "What is the primary responsibility of the **Network Layer**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Node-to-node delivery of frames",
+          "text": "Node-to-node delivery of frames"
+        },
+        {
+          "value": "B",
+          "label": "Process-to-process delivery of messages",
+          "text": "Process-to-process delivery of messages"
+        },
+        {
+          "value": "C",
+          "label": "Source-to-destination delivery of packets",
+          "text": "Source-to-destination delivery of packets"
+        },
+        {
+          "value": "D",
+          "label": "Bit-level transmission",
+          "text": "Bit-level transmission"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The network layer is responsible for the delivery of individual packets from the source host to the destination host."
+    },
+    {
+      "id": "upload-1773223144828-7",
+      "number": "8",
+      "text": "Which layer is responsible for dividing a stream of bits into manageable data units called **frames**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Physical Layer",
+          "text": "Physical Layer"
+        },
+        {
+          "value": "B",
+          "label": "Network Layer",
+          "text": "Network Layer"
+        },
+        {
+          "value": "C",
+          "label": "Data Link Layer",
+          "text": "Data Link Layer"
+        },
+        {
+          "value": "D",
+          "label": "Transport Layer",
+          "text": "Transport Layer"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Framing is a function of the data link layer, where bit streams are organized into frames."
+    },
+    {
+      "id": "upload-1773223144828-8",
+      "number": "9",
+      "text": "Which responsibility of the Data Link Layer handles the transmission speed to prevent the receiver from being overwhelmed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Error control",
+          "text": "Error control"
+        },
+        {
+          "value": "B",
+          "label": "Flow control",
+          "text": "Flow control"
+        },
+        {
+          "value": "C",
+          "label": "Access control",
+          "text": "Access control"
+        },
+        {
+          "value": "D",
+          "label": "Physical addressing",
+          "text": "Physical addressing"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Flow control prevents the sender from overwhelming the receiver with data by managing the transmission speed."
+    },
+    {
+      "id": "upload-1773223144828-9",
+      "number": "10",
+      "text": "The Network Layer adds a header to the packet that includes the **logical addresses** of the sender and receiver. What is another name for these addresses?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "MAC Addresses",
+          "text": "MAC Addresses"
+        },
+        {
+          "value": "B",
+          "label": "Port Addresses",
+          "text": "Port Addresses"
+        },
+        {
+          "value": "C",
+          "label": "IP Addresses",
+          "text": "IP Addresses"
+        },
+        {
+          "value": "D",
+          "label": "Physical Addresses",
+          "text": "Physical Addresses"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Logical addresses are commonly known as IP addresses in the TCP/IP protocol suite."
+    },
+    {
+      "id": "upload-1773223144828-10",
+      "number": "11",
+      "text": "Which layer is responsible for **process-to-process** delivery of the entire message?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Network Layer",
+          "text": "Network Layer"
+        },
+        {
+          "value": "B",
+          "label": "Transport Layer",
+          "text": "Transport Layer"
+        },
+        {
+          "value": "C",
+          "label": "Session Layer",
+          "text": "Session Layer"
+        },
+        {
+          "value": "D",
+          "label": "Data Link Layer",
+          "text": "Data Link Layer"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The transport layer ensures the delivery of a message from one process (running application) to another."
+    },
+    {
+      "id": "upload-1773223144828-11",
+      "number": "12",
+      "text": "The Transport Layer uses which type of addressing to identify a specific process on a computer?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Physical addressing",
+          "text": "Physical addressing"
+        },
+        {
+          "value": "B",
+          "label": "Logical addressing",
+          "text": "Logical addressing"
+        },
+        {
+          "value": "C",
+          "label": "Service-point (port) addressing",
+          "text": "Service-point (port) addressing"
+        },
+        {
+          "value": "D",
+          "label": "Specific addressing",
+          "text": "Specific addressing"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Service-point addressing, also called port addressing, identifies the specific process running on a host."
+    },
+    {
+      "id": "upload-1773223144828-12",
+      "number": "13",
+      "text": "What is the function of **segmentation and reassembly** in the Transport Layer?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Dividing a message into transmittable segments and reassembling them",
+          "text": "Dividing a message into transmittable segments and reassembling them"
+        },
+        {
+          "value": "B",
+          "label": "Converting bits into electrical signals",
+          "text": "Converting bits into electrical signals"
+        },
+        {
+          "value": "C",
+          "label": "Routing packets through routers",
+          "text": "Routing packets through routers"
+        },
+        {
+          "value": "D",
+          "label": "Encrypting data for security",
+          "text": "Encrypting data for security"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The transport layer divides messages into segments with sequence numbers to allow correct reassembly at the destination."
+    },
+    {
+      "id": "upload-1773223144828-13",
+      "number": "14",
+      "text": "Which OSI layer is responsible for **dialog control** and **synchronization**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Presentation Layer",
+          "text": "Presentation Layer"
+        },
+        {
+          "value": "B",
+          "label": "Transport Layer",
+          "text": "Transport Layer"
+        },
+        {
+          "value": "C",
+          "label": "Session Layer",
+          "text": "Session Layer"
+        },
+        {
+          "value": "D",
+          "label": "Application Layer",
+          "text": "Application Layer"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The session layer manages the dialogue (half-duplex or full-duplex) and adds checkpoints (synchronization) to data streams."
+    },
+    {
+      "id": "upload-1773223144828-14",
+      "number": "15",
+      "text": "Which layer handles **translation**, **compression**, and **encryption**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Application Layer",
+          "text": "Application Layer"
+        },
+        {
+          "value": "B",
+          "label": "Presentation Layer",
+          "text": "Presentation Layer"
+        },
+        {
+          "value": "C",
+          "label": "Session Layer",
+          "text": "Session Layer"
+        },
+        {
+          "value": "D",
+          "label": "Transport Layer",
+          "text": "Transport Layer"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The presentation layer is responsible for translating data into a common format, compressing it for efficiency, and encrypting it for security."
+    },
+    {
+      "id": "upload-1773223144828-15",
+      "number": "16",
+      "text": "The **Application Layer** provides which of the following services?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Error detection across a single link",
+          "text": "Error detection across a single link"
+        },
+        {
+          "value": "B",
+          "label": "Bit synchronization",
+          "text": "Bit synchronization"
+        },
+        {
+          "value": "C",
+          "label": "File transfer, access, and management (FTAM)",
+          "text": "File transfer, access, and management (FTAM)"
+        },
+        {
+          "value": "D",
+          "label": "Logical addressing",
+          "text": "Logical addressing"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Application layer services include Network Virtual Terminal, FTAM, Mail Services, and Directory Services."
+    },
+    {
+      "id": "upload-1773223144828-16",
+      "number": "17",
+      "text": "How many layers are traditionally defined in the original **TCP/IP protocol suite**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Seven",
+          "text": "Seven"
+        },
+        {
+          "value": "B",
+          "label": "Five",
+          "text": "Five"
+        },
+        {
+          "value": "C",
+          "label": "Four",
+          "text": "Four"
+        },
+        {
+          "value": "D",
+          "label": "Three",
+          "text": "Three"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The original TCP/IP suite was defined with four layers: host-to-network, internet, transport, and application."
+    },
+    {
+      "id": "upload-1773223144828-17",
+      "number": "18",
+      "text": "In a modern 5-layer TCP/IP model, which OSI layers are combined into the single **Application Layer**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Physical, Data Link, and Network",
+          "text": "Physical, Data Link, and Network"
+        },
+        {
+          "value": "B",
+          "label": "Session, Presentation, and Application",
+          "text": "Session, Presentation, and Application"
+        },
+        {
+          "value": "C",
+          "label": "Transport and Session",
+          "text": "Transport and Session"
+        },
+        {
+          "value": "D",
+          "label": "Network and Transport",
+          "text": "Network and Transport"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The TCP/IP Application layer roughly corresponds to the combined Session, Presentation, and Application layers of the OSI model."
+    },
+    {
+      "id": "upload-1773223144828-18",
+      "number": "19",
+      "text": "Which protocol in the TCP/IP suite is described as **unreliable** and **connectionless**, providing 'best-effort' delivery?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "TCP",
+          "text": "TCP"
+        },
+        {
+          "value": "B",
+          "label": "SCTP",
+          "text": "SCTP"
+        },
+        {
+          "value": "C",
+          "label": "IP",
+          "text": "IP"
+        },
+        {
+          "value": "D",
+          "label": "FTP",
+          "text": "FTP"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "IP (Internetworking Protocol) is the main protocol at the network layer and is unreliable and connectionless."
+    },
+    {
+      "id": "upload-1773223144828-19",
+      "number": "20",
+      "text": "The protocol used to find the **physical address** of a node when its Internet address is known is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "RARP",
+          "text": "RARP"
+        },
+        {
+          "value": "B",
+          "label": "ICMP",
+          "text": "ICMP"
+        },
+        {
+          "value": "C",
+          "label": "ARP",
+          "text": "ARP"
+        },
+        {
+          "value": "D",
+          "label": "IGMP",
+          "text": "IGMP"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "ARP (Address Resolution Protocol) maps a known logical (IP) address to a physical (MAC) address."
+    },
+    {
+      "id": "upload-1773223144828-20",
+      "number": "21",
+      "text": "Which protocol allows a host to discover its **Internet address** when it only knows its physical address?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "ARP",
+          "text": "ARP"
+        },
+        {
+          "value": "B",
+          "label": "RARP",
+          "text": "RARP"
+        },
+        {
+          "value": "C",
+          "label": "UDP",
+          "text": "UDP"
+        },
+        {
+          "value": "D",
+          "label": "ICMP",
+          "text": "ICMP"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "RARP (Reverse Address Resolution Protocol) is used to find a logical address from a known physical address."
+    },
+    {
+      "id": "upload-1773223144828-21",
+      "number": "22",
+      "text": "Which protocol is used for sending **query and error reporting** messages in the network layer?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "IGMP",
+          "text": "IGMP"
+        },
+        {
+          "value": "B",
+          "label": "TCP",
+          "text": "TCP"
+        },
+        {
+          "value": "C",
+          "label": "ICMP",
+          "text": "ICMP"
+        },
+        {
+          "value": "D",
+          "label": "UDP",
+          "text": "UDP"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "ICMP (Internet Control Message Protocol) is used by hosts and gateways to send notification of datagram problems back to the sender."
+    },
+    {
+      "id": "upload-1773223144828-22",
+      "number": "23",
+      "text": "In the TCP/IP Transport Layer, which protocol provides **reliable**, connection-oriented delivery?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "UDP",
+          "text": "UDP"
+        },
+        {
+          "value": "B",
+          "label": "IP",
+          "text": "IP"
+        },
+        {
+          "value": "C",
+          "label": "TCP",
+          "text": "TCP"
+        },
+        {
+          "value": "D",
+          "label": "IGMP",
+          "text": "IGMP"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "TCP (Transmission Control Protocol) is the reliable, connection-oriented protocol at the transport layer."
+    },
+    {
+      "id": "upload-1773223144828-23",
+      "number": "24",
+      "text": "Which protocol combines the best features of UDP and TCP and supports newer applications like VOIP?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "SCTP",
+          "text": "SCTP"
+        },
+        {
+          "value": "B",
+          "label": "ICMP",
+          "text": "ICMP"
+        },
+        {
+          "value": "C",
+          "label": "ARP",
+          "text": "ARP"
+        },
+        {
+          "value": "D",
+          "label": "RARP",
+          "text": "RARP"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "SCTP (Stream Control Transmission Protocol) provides support for newer applications and combines features of both TCP and UDP."
+    },
+    {
+      "id": "upload-1773223144828-24",
+      "number": "25",
+      "text": "How many levels of addressing are used in the TCP/IP protocols?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Two",
+          "text": "Two"
+        },
+        {
+          "value": "B",
+          "label": "Three",
+          "text": "Three"
+        },
+        {
+          "value": "C",
+          "label": "Four",
+          "text": "Four"
+        },
+        {
+          "value": "D",
+          "label": "Seven",
+          "text": "Seven"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "TCP/IP uses four levels of addressing: physical, logical, port, and specific addresses."
+    },
+    {
+      "id": "upload-1773223144828-25",
+      "number": "26",
+      "text": "Which address type is usually **48 bits (6 bytes)** long and written in hexadecimal format?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Logical address",
+          "text": "Logical address"
+        },
+        {
+          "value": "B",
+          "label": "Port address",
+          "text": "Port address"
+        },
+        {
+          "value": "C",
+          "label": "Physical address",
+          "text": "Physical address"
+        },
+        {
+          "value": "D",
+          "label": "Specific address",
+          "text": "Specific address"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Physical addresses (MAC addresses) are typically 48-bit hexadecimal values."
+    },
+    {
+      "id": "upload-1773223144828-26",
+      "number": "27",
+      "text": "The port address in the TCP/IP protocol suite is how many bits long?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "32 bits",
+          "text": "32 bits"
+        },
+        {
+          "value": "B",
+          "label": "16 bits",
+          "text": "16 bits"
+        },
+        {
+          "value": "C",
+          "label": "48 bits",
+          "text": "48 bits"
+        },
+        {
+          "value": "D",
+          "label": "8 bits",
+          "text": "8 bits"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A port address is a 16-bit address represented as a single decimal number."
+    },
+    {
+      "id": "upload-1773223144828-27",
+      "number": "28",
+      "text": "As a data packet travels through the Internet, which addresses **change from hop to hop**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Logical addresses",
+          "text": "Logical addresses"
+        },
+        {
+          "value": "B",
+          "label": "Port addresses",
+          "text": "Port addresses"
+        },
+        {
+          "value": "C",
+          "label": "Physical addresses",
+          "text": "Physical addresses"
+        },
+        {
+          "value": "D",
+          "label": "Specific addresses",
+          "text": "Specific addresses"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Physical addresses change as a frame moves from one link to another, whereas logical and port addresses stay the same."
+    },
+    {
+      "id": "upload-1773223144828-28",
+      "number": "29",
+      "text": "An **email address** like `forouzan@fhda.edu` is an example of which type of address?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Logical address",
+          "text": "Logical address"
+        },
+        {
+          "value": "B",
+          "label": "Port address",
+          "text": "Port address"
+        },
+        {
+          "value": "C",
+          "label": "Physical address",
+          "text": "Physical address"
+        },
+        {
+          "value": "D",
+          "label": "Specific address",
+          "text": "Specific address"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Specific addresses are user-friendly addresses like email addresses or URLs."
+    },
+    {
+      "id": "upload-1773223144828-29",
+      "number": "30",
+      "text": "Which layer defines the **transmission mode** (simplex, half-duplex, or full-duplex)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Data Link Layer",
+          "text": "Data Link Layer"
+        },
+        {
+          "value": "B",
+          "label": "Physical Layer",
+          "text": "Physical Layer"
+        },
+        {
+          "value": "C",
+          "label": "Session Layer",
+          "text": "Session Layer"
+        },
+        {
+          "value": "D",
+          "label": "Presentation Layer",
+          "text": "Presentation Layer"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Transmission mode is a physical layer characteristic."
+    },
+    {
+      "id": "upload-1773223144828-30",
+      "number": "31",
+      "text": "In the context of the OSI model, what is a **peer-to-peer process**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Processes on a single machine communicating",
+          "text": "Processes on a single machine communicating"
+        },
+        {
+          "value": "B",
+          "label": "Communication between corresponding layers on different machines",
+          "text": "Communication between corresponding layers on different machines"
+        },
+        {
+          "value": "C",
+          "label": "The movement of bits from sender to receiver",
+          "text": "The movement of bits from sender to receiver"
+        },
+        {
+          "value": "D",
+          "label": "A hierarchy of services within one computer",
+          "text": "A hierarchy of services within one computer"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Peer-to-peer processes are the communication protocols that allow corresponding layers on two separate machines to interact."
+    },
+    {
+      "id": "upload-1773223144828-31",
+      "number": "32",
+      "text": "Which layer is responsible for **error control** across a single link?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Transport Layer",
+          "text": "Transport Layer"
+        },
+        {
+          "value": "B",
+          "label": "Data Link Layer",
+          "text": "Data Link Layer"
+        },
+        {
+          "value": "C",
+          "label": "Network Layer",
+          "text": "Network Layer"
+        },
+        {
+          "value": "D",
+          "label": "Physical Layer",
+          "text": "Physical Layer"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The data link layer performs error control for the movement of frames across a single physical link."
+    },
+    {
+      "id": "upload-1773223144828-32",
+      "number": "33",
+      "text": "What does **topology** refer to in the Physical Layer?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The speed of the network",
+          "text": "The speed of the network"
+        },
+        {
+          "value": "B",
+          "label": "The protocol used for communication",
+          "text": "The protocol used for communication"
+        },
+        {
+          "value": "C",
+          "label": "The physical arrangement of devices in a network",
+          "text": "The physical arrangement of devices in a network"
+        },
+        {
+          "value": "D",
+          "label": "The method of encoding bits",
+          "text": "The method of encoding bits"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Physical topology defines how devices are physically connected to form a network (e.g., star, bus)."
+    },
+    {
+      "id": "upload-1773223144828-33",
+      "number": "34",
+      "text": "Which layer would handle the conversion of an integer from a Big-Endian format to a Little-Endian format?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Application Layer",
+          "text": "Application Layer"
+        },
+        {
+          "value": "B",
+          "label": "Session Layer",
+          "text": "Session Layer"
+        },
+        {
+          "value": "C",
+          "label": "Presentation Layer",
+          "text": "Presentation Layer"
+        },
+        {
+          "value": "D",
+          "label": "Data Link Layer",
+          "text": "Data Link Layer"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The presentation layer handles translation, which includes converting sender-dependent formats into a common format."
+    },
+    {
+      "id": "upload-1773223144828-34",
+      "number": "35",
+      "text": "A packet at the **Network Layer** in the TCP/IP suite is specifically called a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Frame",
+          "text": "Frame"
+        },
+        {
+          "value": "B",
+          "label": "Datagram",
+          "text": "Datagram"
+        },
+        {
+          "value": "C",
+          "label": "Segment",
+          "text": "Segment"
+        },
+        {
+          "value": "D",
+          "label": "Bit",
+          "text": "Bit"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "IP (Network layer) transports data in packets called datagrams."
+    },
+    {
+      "id": "upload-1773223144828-35",
+      "number": "36",
+      "text": "In the letter-sending analogy, the **Carrier** represents which layer level?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Upper layers",
+          "text": "Upper layers"
+        },
+        {
+          "value": "B",
+          "label": "Lower layers",
+          "text": "Lower layers"
+        },
+        {
+          "value": "C",
+          "label": "Middle layers",
+          "text": "Middle layers"
+        },
+        {
+          "value": "D",
+          "label": "User layer",
+          "text": "User layer"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Lower layers (like Physical and Data Link) are responsible for the actual carrying of information from one point to another."
+    },
+    {
+      "id": "upload-1773223144828-36",
+      "number": "37",
+      "text": "Which protocol is used for **simultaneous transmission** of a message to a group of recipients?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "IGMP",
+          "text": "IGMP"
+        },
+        {
+          "value": "B",
+          "label": "ICMP",
+          "text": "ICMP"
+        },
+        {
+          "value": "C",
+          "label": "UDP",
+          "text": "UDP"
+        },
+        {
+          "value": "D",
+          "label": "ARP",
+          "text": "ARP"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "IGMP (Internet Group Message Protocol) facilitates multicasting (sending messages to a group)."
+    },
+    {
+      "id": "upload-1773223144828-37",
+      "number": "38",
+      "text": "In a bus topology LAN, if computer A (address 10) sends a frame to computer B (address 87), which address is the **destination physical address**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "10",
+          "text": "10"
+        },
+        {
+          "value": "B",
+          "label": "87",
+          "text": "87"
+        },
+        {
+          "value": "C",
+          "label": "07",
+          "text": "07"
+        },
+        {
+          "value": "D",
+          "label": "None of the above",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The receiver's address is the destination; in this example, address 87."
+    },
+    {
+      "id": "upload-1773223144828-38",
+      "number": "39",
+      "text": "What happens if a Data Link layer frame is received with errors that cannot be corrected?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The receiver ignores it",
+          "text": "The receiver ignores it"
+        },
+        {
+          "value": "B",
+          "label": "The data link layer handles retransmission",
+          "text": "The data link layer handles retransmission"
+        },
+        {
+          "value": "C",
+          "label": "The network layer fixes it",
+          "text": "The network layer fixes it"
+        },
+        {
+          "value": "D",
+          "label": "The bits are automatically flipped back",
+          "text": "The bits are automatically flipped back"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Error control in the data link layer involves detecting and retransmitting damaged or lost frames."
+    },
+    {
+      "id": "upload-1773223144828-39",
+      "number": "40",
+      "text": "Which layer is responsible for the **physical configuration** of connections (Point-to-Point vs Multi-point)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Network Layer",
+          "text": "Network Layer"
+        },
+        {
+          "value": "B",
+          "label": "Data Link Layer",
+          "text": "Data Link Layer"
+        },
+        {
+          "value": "C",
+          "label": "Physical Layer",
+          "text": "Physical Layer"
+        },
+        {
+          "value": "D",
+          "label": "Transport Layer",
+          "text": "Transport Layer"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Line configuration is a function of the physical layer."
+    },
+    {
+      "id": "upload-1773223144828-40",
+      "number": "41",
+      "text": "A URL like `www.mhhe.com` is eventually changed into which type of addresses by the sending computer?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Physical only",
+          "text": "Physical only"
+        },
+        {
+          "value": "B",
+          "label": "Logical and Port",
+          "text": "Logical and Port"
+        },
+        {
+          "value": "C",
+          "label": "Logical only",
+          "text": "Logical only"
+        },
+        {
+          "value": "D",
+          "label": "Port only",
+          "text": "Port only"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Specific addresses are mapped to their corresponding port and logical addresses for transmission."
+    },
+    {
+      "id": "upload-1773223144828-41",
+      "number": "42",
+      "text": "If the transport layer is **connectionless**, how are packets treated?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "All packets follow the same path",
+          "text": "All packets follow the same path"
+        },
+        {
+          "value": "B",
+          "label": "Each segment is treated as an independent packet",
+          "text": "Each segment is treated as an independent packet"
+        },
+        {
+          "value": "C",
+          "label": "A connection must be established before sending",
+          "text": "A connection must be established before sending"
+        },
+        {
+          "value": "D",
+          "label": "The receiver must acknowledge every packet",
+          "text": "The receiver must acknowledge every packet"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In connectionless transmission, each packet is independent and carries no relation to others."
+    },
+    {
+      "id": "upload-1773223144828-42",
+      "number": "43",
+      "text": "What is the primary function of **checkpoints** in the Session Layer?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To stop the flow of data",
+          "text": "To stop the flow of data"
+        },
+        {
+          "value": "B",
+          "label": "To allow recovery after a crash from the last checkpoint",
+          "text": "To allow recovery after a crash from the last checkpoint"
+        },
+        {
+          "value": "C",
+          "label": "To encrypt the data",
+          "text": "To encrypt the data"
+        },
+        {
+          "value": "D",
+          "label": "To route packets",
+          "text": "To route packets"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Synchronization points or checkpoints allow a data stream to be resumed from a specific point in case of failure."
+    },
+    {
+      "id": "upload-1773223144828-43",
+      "number": "44",
+      "text": "In the OSI model, which layer is responsible for **routing** packets through an internetwork?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Physical Layer",
+          "text": "Physical Layer"
+        },
+        {
+          "value": "B",
+          "label": "Data Link Layer",
+          "text": "Data Link Layer"
+        },
+        {
+          "value": "C",
+          "label": "Network Layer",
+          "text": "Network Layer"
+        },
+        {
+          "value": "D",
+          "label": "Transport Layer",
+          "text": "Transport Layer"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Routing is the process of finding the best path for a packet to reach its destination, handled by the network layer."
+    },
+    {
+      "id": "upload-1773223144828-44",
+      "number": "45",
+      "text": "Which layer is responsible for bit-level **synchronization** between sender and receiver clocks?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Data Link Layer",
+          "text": "Data Link Layer"
+        },
+        {
+          "value": "B",
+          "label": "Physical Layer",
+          "text": "Physical Layer"
+        },
+        {
+          "value": "C",
+          "label": "Session Layer",
+          "text": "Session Layer"
+        },
+        {
+          "value": "D",
+          "label": "Network Layer",
+          "text": "Network Layer"
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Synchronization of bits (clock synchronization) is a physical layer responsibility."
+    },
+    {
+      "id": "upload-1773223144828-45",
+      "number": "46",
+      "text": "Which of these is **NOT** a function of the Data Link Layer?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Framing",
+          "text": "Framing"
+        },
+        {
+          "value": "B",
+          "label": "Routing",
+          "text": "Routing"
+        },
+        {
+          "value": "C",
+          "label": "Physical Addressing",
+          "text": "Physical Addressing"
+        },
+        {
+          "value": "D",
+          "label": "Access Control",
+          "text": "Access Control"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Routing is a function of the Network Layer, not the Data Link Layer."
+    },
+    {
+      "id": "upload-1773223144828-46",
+      "number": "47",
+      "text": "The **Presentation Layer** reduces the number of bits in the information to improve transmission efficiency. This is called:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Translation",
+          "text": "Translation"
+        },
+        {
+          "value": "B",
+          "label": "Encryption",
+          "text": "Encryption"
+        },
+        {
+          "value": "C",
+          "label": "Compression",
+          "text": "Compression"
+        },
+        {
+          "value": "D",
+          "label": "Encapsulation",
+          "text": "Encapsulation"
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Compression reduces the volume of data, which is particularly important for multimedia transmission."
+    },
+    {
+      "id": "upload-1773223144828-47",
+      "number": "48",
+      "text": "In a 48-bit physical address written in hexadecimal, how many hexadecimal digits are used?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "6",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "8",
+          "text": "8"
+        },
+        {
+          "value": "C",
+          "label": "12",
+          "text": "12"
+        },
+        {
+          "value": "D",
+          "label": "16",
+          "text": "16"
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A 48-bit address consists of 6 bytes. Since each byte is 2 hexadecimal digits, 6 * 2 = 12 hexadecimal digits are used."
+    },
+    {
+      "id": "upload-1773223144828-48",
+      "number": "49",
+      "text": "Which layer is described as being responsible for **reliable process-to-process** delivery of a message?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Data Link Layer",
+          "text": "Data Link Layer"
+        },
+        {
+          "value": "B",
+          "label": "Network Layer",
+          "text": "Network Layer"
+        },
+        {
+          "value": "C",
+          "label": "Transport Layer",
+          "text": "Transport Layer"
+        },
+        {
+          "value": "D",
+          "label": "Application Layer",
+          "text": "Application Layer"
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The Transport Layer provides reliable process-to-process delivery of messages."
+    },
+    {
+      "id": "upload-1773223144828-49",
+      "number": "50",
+      "text": "Which OSI layer provides the **Network Virtual Terminal** service?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Transport Layer",
+          "text": "Transport Layer"
+        },
+        {
+          "value": "B",
+          "label": "Session Layer",
+          "text": "Session Layer"
+        },
+        {
+          "value": "C",
+          "label": "Application Layer",
+          "text": "Application Layer"
+        },
+        {
+          "value": "D",
+          "label": "Presentation Layer",
+          "text": "Presentation Layer"
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The Network Virtual Terminal is a software version of a physical terminal that allows a user to log on to a remote host, provided by the Application Layer."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 50
+}

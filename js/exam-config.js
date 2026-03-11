@@ -212,5 +212,25 @@ const EXAM_CONFIG = [
         "file": "data/DBMS/chapterDatabase - Final.pdfvisual_extractor.json"
       }
     ]
+  },
+  {
+    "id": "Network",
+    "name": "Network",
+    "description": "Study of OSI layers, protocols, and data transmission across networks.",
+    "path": "data/Network",
+    "chapters": [
+      {
+        "id": "Chapter (1)",
+        "name": "Introduction to Data Communications and Networking",
+        "q": 40,
+        "file": "data/Network/chapterch01.pdf (1).json"
+      },
+      {
+        "id": "Chapter (2)",
+        "name": "Network Models",
+        "q": 50,
+        "file": "data/Network/chapterch02.pdf.json"
+      }
+    ]
   }
 ];
