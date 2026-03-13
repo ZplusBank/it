@@ -241,7 +241,7 @@ const EXAM_CONFIG = [
     "chapters": [
       {
         "id": "Quiz Ch (1)",
-        "name": "",
+        "name": " ",
         "q": 9,
         "file": "data/soft/chapter14abfeda-4c01-4dba-88a9-c252d2ff0f89.pdfvisual_extractor.json"
       }
