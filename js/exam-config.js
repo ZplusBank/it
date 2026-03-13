@@ -232,5 +232,19 @@ const EXAM_CONFIG = [
         "file": "data/Network/chapterch02.pdf.json"
       }
     ]
+  },
+  {
+    "id": "soft",
+    "name": "Software Engineering",
+    "description": "engineering principles to design, develop, maintain, and test software.",
+    "path": "data/soft",
+    "chapters": [
+      {
+        "id": "Quiz Ch (1)",
+        "name": "",
+        "q": 9,
+        "file": "data/soft/chapter14abfeda-4c01-4dba-88a9-c252d2ff0f89.pdfvisual_extractor.json"
+      }
+    ]
   }
 ];
