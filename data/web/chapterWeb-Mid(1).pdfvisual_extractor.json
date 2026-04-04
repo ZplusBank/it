@@ -197,7 +197,7 @@
     {
       "id": "extract-1775331211260-vys0c-6",
       "number": "7",
-      "text": "Given the following CSS and HTML fragments, one of the following is true.\n\n```html\n<html>\n  <head>\n    <style>\n      div { color: blue; }\n      p { color: red; }\n      em { color: green; }\n    </style>\n  </head>\n  <body>\n    <div>\n      <p>Hello</p>\n    </div>\n    <p>\n      <em>Goodbye</em>\n    </p>\n  </body>\n</html>\n```",
+      "text": "Given the following CSS and HTML fragments, one of the following is true.\n\nhtml\n<html>\n  <head>\n    <style>\n      div { color: blue; }\n      p { color: red; }\n      em { color: green; }\n    </style>\n  </head>\n  <body>\n    <div>\n      <p>Hello</p>\n    </div>\n    <p>\n      <em>Goodbye</em>\n    </p>\n  </body>\n</html>\n",
       "choices": [
         {
           "value": "A",
@@ -734,7 +734,7 @@
     {
       "id": "extract-1775331211260-vys0c-23",
       "number": "24",
-      "text": "What color will be applied to the text of the `em` element in the following code snippet?\n\n```html\n<style type = \"text/css\">\n.text em {color: red}\nem {color: blue}\nh1 {color: green;}\nh1 em {color: black;}\np em {color: yellow;}\n</style>\n<h1><p>\n<em class= \"text\"> <em>Text </em> </em>\n</p></h>\n```",
+      "text": "What color will be applied to the text of the `em` element in the following code snippet?\n\nhtml\n<style type = \"text/css\">\n.text em {color: red}\nem {color: blue}\nh1 {color: green;}\nh1 em {color: black;}\np em {color: yellow;}\n</style>\n<h1><p>\n<em class= \"text\"> <em>Text </em> </em>\n</p></h>\n",
       "choices": [
         {
           "value": "A",
@@ -920,7 +920,7 @@
     {
       "id": "extract-1775331211260-vys0c-29",
       "number": "30",
-      "text": "Given the following CSS rules:\n```css\n.d1 {top: 20px; left:30px; z-index : 10;}\n.d2 {top: 20px; left:40px; z-index: 5;}\n.d3 {top: 20px; left:50px; z-index: 4;}\n```\n\nThe HTML code which shows `x.jpg` behind `y.jpg` and `y.jpg` behind `z.png` is:",
+      "text": "Given the following CSS rules:\ncss\n.d1 {top: 20px; left:30px; z-index : 10;}\n.d2 {top: 20px; left:40px; z-index: 5;}\n.d3 {top: 20px; left:50px; z-index: 4;}\n\nThe HTML code which shows `x.jpg` behind `y.jpg` and `y.jpg` behind `z.png` is:",
       "choices": [
         {
           "value": "A",
@@ -951,7 +951,7 @@
     {
       "id": "extract-1775331211260-vys0c-30",
       "number": "31",
-      "text": "There is/are an error in the following CSS rules. The error is in line:\n\n```css\n1 en color: blue; background-color: green;\n2 p. fav [weight-color: bold; color: yellow]\n3 mybest (font-size: 12pt; image: url(x.png);}\n4 h2 {font-size: 12pt;}\n5 p {wd: 30ex)\n```",
+      "text": "There is/are an error in the following CSS rules. The error is in line:\n\ncss\n1 en color: blue; background-color: green;\n2 p. fav [weight-color: bold; color: yellow]\n3 mybest (font-size: 12pt; image: url(x.png);}\n4 h2 {font-size: 12pt;}\n5 p {wd: 30ex)\n",
       "choices": [
         {
           "value": "A",
