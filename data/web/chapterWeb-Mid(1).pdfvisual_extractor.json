@@ -1,0 +1,1016 @@
+{
+  "id": "extract-1775331211260-vys0c",
+  "label": "Web-Mid(1).pdf",
+  "params": {
+    "file": "Web-Mid(1).pdf",
+    "type": "visual_extractor",
+    "chapter": "Mid"
+  },
+  "title": "Web-Mid",
+  "questions": [
+    {
+      "id": "extract-1775331211260-vys0c-0",
+      "number": "1",
+      "text": "There is an error in the following CSS rules. The error is in line:\n1. `em {font-weight: bold;`\n2. `font-color: black; }`\n3. `.special { font-style: italic; }`\n4. `h1 {font-size: 12pt;}`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "3",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "4",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In CSS, there is no property named `font-color`. To change the color of the text, the property is simply `color`. Line 2 should be `color: black; }`."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-1",
+      "number": "2",
+      "text": "The following URL `validator.w3.org/#validate-by-upload` is used for:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Rendering the output of the HTML Document",
+          "text": "Rendering the output of the HTML Document"
+        },
+        {
+          "value": "B",
+          "label": "Correcting the errors in HTML document.",
+          "text": "Correcting the errors in HTML document."
+        },
+        {
+          "value": "C",
+          "label": "Checking the syntax of the CSS rules",
+          "text": "Checking the syntax of the CSS rules"
+        },
+        {
+          "value": "D",
+          "label": "Checking that an HTML5 document is syntactically correct",
+          "text": "Checking that an HTML5 document is syntactically correct"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The W3C Markup Validation Service (validator.w3.org) is a free service provided by W3C that helps check the validity of Web documents, such as HTML5, to ensure they are syntactically correct according to official standards."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-2",
+      "number": "3",
+      "text": "Given the CSS rule below, which of the following elements would have the color red?\n\ncss\n.fav {color: red;}\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<p>some text</p>",
+          "text": "<p>some text</p>"
+        },
+        {
+          "value": "B",
+          "label": "<div id=\"fav\">some text</div>",
+          "text": "<div id=\"fav\">some text</div>"
+        },
+        {
+          "value": "C",
+          "label": "<div class=\"fav\">some text</div>",
+          "text": "<div class=\"fav\">some text</div>"
+        },
+        {
+          "value": "D",
+          "label": "<p>.fav</p>",
+          "text": "<p>.fav</p>"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In CSS, selectors starting with a period (`.`) are class selectors. The selector `.fav` will match any HTML element that has an attribute `class=\"fav\"`. Elements with `id=\"fav\"` would require a hash selector (`#fav`)."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-3",
+      "number": "4",
+      "text": "To link an external style sheet file named `myfavourite.css`, we type in the head:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<link rel = href = \"myfavourite.css;\">",
+          "text": "<link rel = href = \"myfavourite.css;\">"
+        },
+        {
+          "value": "B",
+          "label": "<link stylesheet = \"myfavourite.css;\">",
+          "text": "<link stylesheet = \"myfavourite.css;\">"
+        },
+        {
+          "value": "C",
+          "label": "<link = \"myfavourite.css;\">",
+          "text": "<link = \"myfavourite.css;\">"
+        },
+        {
+          "value": "D",
+          "label": "<link rel = \"stylesheet\" type = \"text/css\" href = \"myfavourite.css\">",
+          "text": "<link rel = \"stylesheet\" type = \"text/css\" href = \"myfavourite.css\">"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The standard HTML syntax for linking an external stylesheet is to use the `<link>` tag with the `rel=\"stylesheet\"` attribute to define the relationship, and the `href` attribute to specify the file path. The `type=\"text/css\"` attribute is also commonly included, though it is optional in HTML5."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-4",
+      "number": "5",
+      "text": "To insert an image named `x.jpg` of 100px width and 200px height in an HTML document, we type:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<img href=\"x.jpg\" height = \"100\" width = \"200\" >",
+          "text": "<img href=\"x.jpg\" height = \"100\" width = \"200\" >"
+        },
+        {
+          "value": "B",
+          "label": "<img src=\"x.jpg\" height = \"100\" width = \"200\" >",
+          "text": "<img src=\"x.jpg\" height = \"100\" width = \"200\" >"
+        },
+        {
+          "value": "C",
+          "label": "<img=\"x.jpg\" height = \"100\" width = \"200\" >",
+          "text": "<img=\"x.jpg\" height = \"100\" width = \"200\" >"
+        },
+        {
+          "value": "D",
+          "label": "<img http=\"x.jpg\" height = \"100\" width = \"200\" >",
+          "text": "<img http=\"x.jpg\" height = \"100\" width = \"200\" >"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In HTML, the `<img>` tag uses the `src` attribute (source) to define the path to the image file. The `width` and `height` attributes are used to set dimensions. While the values in the options are swapped compared to the prompt's text, option B is the only syntactically correct choice because it uses the proper `src` attribute."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-5",
+      "number": "6",
+      "text": "Based on the provided browser preview image, which HTML/CSS code correctly styles the phrase \"fourth year\" in blue and shifted downwards?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<p> I am a <span style = \"position: relative; top : -2ex; color:blue;\"> fourth year </span> student at Hashemite University. </p>",
+          "text": "<p> I am a <span style = \"position: relative; top : -2ex; color:blue;\"> fourth year </span> student at Hashemite University. </p>"
+        },
+        {
+          "value": "B",
+          "label": "<p> I am a <span style = \"position: relative; bottom:-2ex; color:blue;\"> fourth year </span> student at Hashemite University. </p>",
+          "text": "<p> I am a <span style = \"position: relative; bottom:-2ex; color:blue;\"> fourth year </span> student at Hashemite University. </p>"
+        },
+        {
+          "value": "C",
+          "label": "<p> I am a fourth year student at Hashemite University. </p>",
+          "text": "<p> I am a fourth year student at Hashemite University. </p>"
+        },
+        {
+          "value": "D",
+          "label": "<p style = \"position: relative; bottom:-2ex; color:blue;\" > I am a fourth year student at Hashemite University. </p>",
+          "text": "<p style = \"position: relative; bottom:-2ex; color:blue;\" > I am a fourth year student at Hashemite University. </p>"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "To shift an element downwards relative to its normal position using CSS relative positioning, you can use a negative value for the `bottom` property (e.g., `bottom: -2ex`). Since only the specific phrase \"fourth year\" is colored blue and shifted, it must be wrapped in a `<span>` tag. Option A would move the text upwards (`top: -2ex`), and Option D would move the entire paragraph."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-6",
+      "number": "7",
+      "text": "Given the following CSS and HTML fragments, one of the following is true.\n\nhtml\n<html>\n  <head>\n    <style>\n      div { color: blue; }\n      p { color: red; }\n      em { color: green; }\n    </style>\n  </head>\n  <body>\n    <div>\n      <p>Hello</p>\n    </div>\n    <p>\n      <em>Goodbye</em>\n    </p>\n  </body>\n</html>\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Hello is blue, goodbye is red",
+          "text": "Hello is blue, goodbye is red"
+        },
+        {
+          "value": "B",
+          "label": "Hello is blue, goodbye is green",
+          "text": "Hello is blue, goodbye is green"
+        },
+        {
+          "value": "C",
+          "label": "Hello is red, goodbye is red",
+          "text": "Hello is red, goodbye is red"
+        },
+        {
+          "value": "D",
+          "label": "Hello is red, goodbye is green",
+          "text": "Hello is red, goodbye is green"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In CSS, a direct element selector (like `p` or `em`) has higher specificity for that specific element than inherited styles from a parent container. For 'Hello', the `<p>` selector sets it to red, overriding the inherited blue from the `<div>`. For 'Goodbye', the `<em>` selector sets it to green, overriding the inherited red from the `<p>`."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-7",
+      "number": "8",
+      "text": "What is the HTML code which gives the following output? (Note: The image shows 'What is your Specilization:' with a line break, then radio buttons where 'CIS' is selected.)\n\n| Output Snippet |\n| --- |\n| **What is your Specilization:**<br> CIS ● CS ○ SWE ○ |",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<form><p> What is your Specilization:< br><label>CIS <input name = \"X\" type = \"radio\" value = \"CIS\" > </label><label>CS <input name = \"x\" type = \"radio\" value = \"CS\"></label><label>SWE <input name = \"X\" type = \"radio\" value = \"swe\"></label></p></form>",
+          "text": "<form><p> What is your Specilization:< br><label>CIS <input name = \"X\" type = \"radio\" value = \"CIS\" > </label><label>CS <input name = \"x\" type = \"radio\" value = \"CS\"></label><label>SWE <input name = \"X\" type = \"radio\" value = \"swe\"></label></p></form>"
+        },
+        {
+          "value": "B",
+          "label": "<form><p>What is your Specilization:<br><label>CIS <input name = \"x\" type = \"checkbox\" value = \"CIS\"> </label><label> <input name = \"x\" type = \"checkbox\" value = \"CS\" ></label><label>SWE <input name = \"X\" type = \"checkbox\" value = \"swe\"></label></p></form>",
+          "text": "<form><p>What is your Specilization:<br><label>CIS <input name = \"x\" type = \"checkbox\" value = \"CIS\"> </label><label> <input name = \"x\" type = \"checkbox\" value = \"CS\" ></label><label>SWE <input name = \"X\" type = \"checkbox\" value = \"swe\"></label></p></form>"
+        },
+        {
+          "value": "C",
+          "label": "<form style = \"background-color:red;\" > <p> What is your Specilization: <br> <label>CIS <input name = \"X\" type = \"radio\" value = \"CIS\" checked></label><label>CS <input name = \"X\" type = \"radio\" value = \"CS\"></label> <label>SWE <input name = \"X\" type = \"radio\" value = \"swe\" checked> </label></p></form>",
+          "text": "<form style = \"background-color:red;\" > <p> What is your Specilization: <br> <label>CIS <input name = \"X\" type = \"radio\" value = \"CIS\" checked></label><label>CS <input name = \"X\" type = \"radio\" value = \"CS\"></label> <label>SWE <input name = \"X\" type = \"radio\" value = \"swe\" checked> </label></p></form>"
+        },
+        {
+          "value": "D",
+          "label": "<form style = \"background-color:blue\" ><p>What is your Specilization: <br> <label>CIS <input name = \"X\" type = \"radio\" value = \"CIS\" checked></label><label>CS <input name = \"X\" type = \"radio\" value = \"CS\" checked> </label><label>SWE <input name = \"X\" type = \"radio\" value = \"swe\"></label></p></form>",
+          "text": "<form style = \"background-color:blue\" ><p>What is your Specilization: <br> <label>CIS <input name = \"X\" type = \"radio\" value = \"CIS\" checked></label><label>CS <input name = \"X\" type = \"radio\" value = \"CS\" checked> </label><label>SWE <input name = \"X\" type = \"radio\" value = \"swe\"></label></p></form>"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Option D uses radio buttons and includes the `checked` attribute for the desired selections and a background style. While option D has two buttons marked as `checked`, in standard HTML behavior for radio buttons with the same `name`, the last one would typically remain selected; however, this option is the most likely intended answer in the context of the exam's structure compared to checkboxes or un-styled/un-checked versions."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-8",
+      "number": "9",
+      "text": "Identify the correct HTML code that produces the input field and text shown in the browser image.\n\n(The image shows an input box with placeholder `(00962)079-xxxxxxx` and following text `(00962)079-xxxxxxx`)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<p> <label>Input Phone Number: <input type = \"tel\" placeholder = \"(00962)079-XXXXXXX \"required > (00962)079-xxxxxxx </label> </p>",
+          "text": "<p> <label>Input Phone Number: <input type = \"tel\" placeholder = \"(00962)079-XXXXXXX \"required > (00962)079-xxxxxxx </label> </p>"
+        },
+        {
+          "value": "B",
+          "label": "<p> <label>Input Phone Number: <input type = \"tel\" pattern = \"(00962)079-\\d{7}\" > (00962)079-xxxxxxx </label> </p>",
+          "text": "<p> <label>Input Phone Number: <input type = \"tel\" pattern = \"(00962)079-\\d{7}\" > (00962)079-xxxxxxx </label> </p>"
+        },
+        {
+          "value": "C",
+          "label": "<p> <label>Input Phone Number: <input type = \"tel\" placeholder =\" (00962)079-xxxxxxx \" pattern = \"\\(00962\\)079-\\d{7}\" > (00962)079-XXXXXXX </label> </p>",
+          "text": "<p> <label>Input Phone Number: <input type = \"tel\" placeholder =\" (00962)079-xxxxxxx \" pattern = \"\\(00962\\)079-\\d{7}\" > (00962)079-XXXXXXX </label> </p>"
+        },
+        {
+          "value": "D",
+          "label": "<p> <label>Input Phone Number: <input type = \"tel\" placeholder =\" (00962)079-xxxxxxx \" pattern =\"\\(00962\\)079-\\d{7}\" required > (00962)079-xxxxxxx </label> </p>",
+          "text": "<p> <label>Input Phone Number: <input type = \"tel\" placeholder =\" (00962)079-xxxxxxx \" pattern =\"\\(00962\\)079-\\d{7}\" required > (00962)079-xxxxxxx </label> </p>"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Option D correctly sets the `type=\"tel\"`, provides the matching lowercase placeholder text, uses the `pattern` attribute with correctly escaped parentheses `\\(` and `\\)` for the regex, and includes the trailing text in lowercase as seen in the screenshot."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-9",
+      "number": "10",
+      "text": "The html Code which makes the link to the text \"Hashemite university\" is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<http a= \" https://www.hu.edu.jo \" Hashemite university",
+          "text": "<http a= \" https://www.hu.edu.jo \" Hashemite university"
+        },
+        {
+          "value": "B",
+          "label": "<a href=\" https://www.hu.edu.jo \" Hashemite university",
+          "text": "<a href=\" https://www.hu.edu.jo \" Hashemite university"
+        },
+        {
+          "value": "C",
+          "label": "<a href= = \"Hashemite university\"> https://www.hu.edufjo",
+          "text": "<a href= = \"Hashemite university\"> https://www.hu.edufjo"
+        },
+        {
+          "value": "D",
+          "label": "<a src= \" https://www.hu.edu.jo \"> Hashemite university",
+          "text": "<a src= \" https://www.hu.edu.jo \"> Hashemite university"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In HTML, the `<a>` (anchor) tag is used to create hyperlinks, and the `href` attribute specifies the destination URL. Option B correctly identifies these components."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-10",
+      "number": "11",
+      "text": "Given the following CSS rule: `div p { background-color: #555555;}` which text \"Corona Virus is gone\" will apply this rule:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<div> Corona Virus is gone </div>",
+          "text": "<div> Corona Virus is gone </div>"
+        },
+        {
+          "value": "B",
+          "label": "<p><div> Corona Virus is gone </div> </p>",
+          "text": "<p><div> Corona Virus is gone </div> </p>"
+        },
+        {
+          "value": "C",
+          "label": "<div> <p> Corona Virus is gone </p> </div>",
+          "text": "<div> <p> Corona Virus is gone </p> </div>"
+        },
+        {
+          "value": "D",
+          "label": "<p> Corona Virus is gone </p>",
+          "text": "<p> Corona Virus is gone </p>"
+        },
+        {
+          "value": "E",
+          "label": "B and C",
+          "text": "B and C"
+        },
+        {
+          "value": "F",
+          "label": "All of the above",
+          "text": "All of the above"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The CSS selector `div p` is a descendant selector. It targets all `<p>` elements that are descendants (children, grandchildren, etc.) of a `<div>` element. Only option C follows this structure."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-11",
+      "number": "12",
+      "text": "What does the following code do?\n`P {font-family: arial, helvetica;}`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It tells the browser to use both fonts every time.",
+          "text": "It tells the browser to use both fonts every time."
+        },
+        {
+          "value": "B",
+          "label": "It tells the browser to use Arial font always.",
+          "text": "It tells the browser to use Arial font always."
+        },
+        {
+          "value": "C",
+          "label": "It tells the browser to use any font but not Arial or Helvetica.",
+          "text": "It tells the browser to use any font but not Arial or Helvetica."
+        },
+        {
+          "value": "D",
+          "label": "It tells the browser to use Helvetica if Arial is not present.",
+          "text": "It tells the browser to use Helvetica if Arial is not present."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The `font-family` property lists font names as a fallback system. The browser will try to use the first font (Arial). If that font is not installed on the user's system, it will move to the next one (Helvetica)."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-12",
+      "number": "13",
+      "text": "The `<title>` tag is used to",
+      "choices": [
+        {
+          "value": "A",
+          "label": "There is no tag in html called `<title>`",
+          "text": "There is no tag in html called `<title>`"
+        },
+        {
+          "value": "B",
+          "label": "Give information about the table contents that help search engines finding a the web page",
+          "text": "Give information about the table contents that help search engines finding a the web page"
+        },
+        {
+          "value": "C",
+          "label": "Display a title of the web page that appears in the first row of the page contents",
+          "text": "Display a title of the web page that appears in the first row of the page contents"
+        },
+        {
+          "value": "D",
+          "label": "Display a title of the web page in the browser toolbar",
+          "text": "Display a title of the web page in the browser toolbar"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The `<title>` element defines the title of the document. This title is displayed in the browser's title bar or the page's tab. It is a required element in all HTML documents."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-13",
+      "number": "14",
+      "text": "Based on the provided browser image showing a combined date and time selection field with the value `06/28/2013 03:19 AM`, which HTML code is correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`<p> <label>Time:<input type = \"datetime\" /> dd/mm/yyyy hh:mm (AM/PM)) </label></p>`",
+          "text": "`<p> <label>Time:<input type = \"datetime\" /> dd/mm/yyyy hh:mm (AM/PM)) </label></p>`"
+        },
+        {
+          "value": "B",
+          "label": "`<p><label>Time:<input type = \"datetime-local\" /> dd/mm/yyyy hh:mm (AM/PM)) </label></p>`",
+          "text": "`<p><label>Time:<input type = \"datetime-local\" /> dd/mm/yyyy hh:mm (AM/PM)) </label></p>`"
+        },
+        {
+          "value": "C",
+          "label": "`<p><label>Time:<input type = \"date\" /> dd/mm/yyyy hh:mm (AM/PM)) </label></p>`",
+          "text": "`<p><label>Time:<input type = \"date\" /> dd/mm/yyyy hh:mm (AM/PM)) </label></p>`"
+        },
+        {
+          "value": "D",
+          "label": " `<p> <label>Time:<input type = \"time\" /> dd/mm/yyyy hh:mm (AM/PM)) </label> </p>`",
+          "text": " `<p> <label>Time:<input type = \"time\" /> dd/mm/yyyy hh:mm (AM/PM)) </label> </p>`"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `type=\"datetime-local\"` input attribute is used in HTML5 to allow the user to select both a date and a time (without time zone information). Since the image shows both components, this is the correct input type."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-14",
+      "number": "15",
+      "text": "The HTML code which gives the following form (showing the label **Name:** followed by a text entry box) is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`<form> <p> <label>Name: <input name = \"x\" type = \"button\"> </label></p> </form>`",
+          "text": "`<form> <p> <label>Name: <input name = \"x\" type = \"button\"> </label></p> </form>`"
+        },
+        {
+          "value": "B",
+          "label": "`<form> <p><label>type: <input name = \"x\" type = \"text\"></label></p> </form>`",
+          "text": "`<form> <p><label>type: <input name = \"x\" type = \"text\"></label></p> </form>`"
+        },
+        {
+          "value": "C",
+          "label": "`<form> <p><label>Name: <input name = \"x\" type = \"name\" </label></p></form>`",
+          "text": "`<form> <p><label>Name: <input name = \"x\" type = \"name\" </label></p></form>`"
+        },
+        {
+          "value": "D",
+          "label": "`<form> <p><label><input name = \"x\" type = \"text\"></label></p> </form>`",
+          "text": "`<form> <p><label><input name = \"x\" type = \"text\"></label></p> </form>`"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "While `type=\"name\"` is not a standard HTML attribute value (the standard is `text`), browsers typically fall back to a text input field for unrecognized types. Option C is the only choice that includes the specific 'Name:' label text shown in the image alongside an input field that would appear as a text box."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-15",
+      "number": "16",
+      "text": "Based on the provided browser screenshot, which HTML code snippet correctly styles the link **Wadi Al-Rayan** to appear in red without an underline?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<a style=\"text-decoration: underline; color: red;\" href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">Wadi Al-Rayan</a>",
+          "text": "<a style=\"text-decoration: underline; color: red;\" href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">Wadi Al-Rayan</a>"
+        },
+        {
+          "value": "B",
+          "label": "<a style=\"text-decoration: none; color: blue;\" href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">WadiAI-Rayan</a>",
+          "text": "<a style=\"text-decoration: none; color: blue;\" href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">WadiAI-Rayan</a>"
+        },
+        {
+          "value": "C",
+          "label": "<a href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">WadiAI- Rayan</a>",
+          "text": "<a href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">WadiAI- Rayan</a>"
+        },
+        {
+          "value": "D",
+          "label": "<a style=\"text-decoration: none; color: red;\" href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">Wadi Al-Rayan</a>",
+          "text": "<a style=\"text-decoration: none; color: red;\" href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">Wadi Al-Rayan</a>"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In HTML/CSS, the property `text-decoration: none;` is used to remove the default underline from a link element (`<a>`). To change the font color to red, the `color: red;` property is applied. The visual output in the browser shows red text without an underline, making option D the correct choice."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-16",
+      "number": "17",
+      "text": "Observe the screenshot showing the text: \"I am a fourth year student at Hashemite University\". If the phrase **fourth year** is styled in red while the rest of the sentence is blue, which of the following HTML structures would be required?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<p style=\"color: blue;\">I am a <span style=\"color: red;\">fourth year</span> student at Hashemite University</p>",
+          "text": "<p style=\"color: blue;\">I am a <span style=\"color: red;\">fourth year</span> student at Hashemite University</p>"
+        },
+        {
+          "value": "B",
+          "label": "<p style=\"color: red;\">I am a <span style=\"color: blue;\">fourth year</span> student at Hashemite University</p>",
+          "text": "<p style=\"color: red;\">I am a <span style=\"color: blue;\">fourth year</span> student at Hashemite University</p>"
+        },
+        {
+          "value": "C",
+          "label": "<p style=\"color: blue;\">I am a <b style=\"color: red;\">fourth year</b> student at Hashemite University</p>",
+          "text": "<p style=\"color: blue;\">I am a <b style=\"color: red;\">fourth year</b> student at Hashemite University</p>"
+        },
+        {
+          "value": "D",
+          "label": "<p color=\"blue\">I am a <span color=\"red\">fourth year</span> student at Hashemite University</p>",
+          "text": "<p color=\"blue\">I am a <span color=\"red\">fourth year</span> student at Hashemite University</p>"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To style a specific portion of text within a paragraph, an inline element like `<span>` is typically used. In this scenario, the paragraph is globally styled as blue, and the internal `<span>` tag overrides that color with red for just the words 'fourth year'."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-17",
+      "number": "18",
+      "text": "What is the correct CSS syntax for making all the `<p>` elements bold?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "p {font: bold}",
+          "text": "p {font: bold}"
+        },
+        {
+          "value": "B",
+          "label": "p {text-size: bold}",
+          "text": "p {text-size: bold}"
+        },
+        {
+          "value": "C",
+          "label": "p {font-weight: bold}",
+          "text": "p {font-weight: bold}"
+        },
+        {
+          "value": "D",
+          "label": "style: bold",
+          "text": "style: bold"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `font-weight` CSS property is the standard way to set the thickness of text. The value `bold` specifically targets the bold weight of the typeface."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-18",
+      "number": "19",
+      "text": "Given the following CSS rule:\n`h1.x { color: font; font-size: 20pt; }` \nWhich section applies this rule:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<h1> I love web Prog. </h1>",
+          "text": "<h1> I love web Prog. </h1>"
+        },
+        {
+          "value": "B",
+          "label": "<h1 style = \"x\"> I love web Prog. </h1>",
+          "text": "<h1 style = \"x\"> I love web Prog. </h1>"
+        },
+        {
+          "value": "C",
+          "label": "<h1 class = \"x\"> I love web prog. </h1>",
+          "text": "<h1 class = \"x\"> I love web prog. </h1>"
+        },
+        {
+          "value": "D",
+          "label": "<h1 class = \"special\"> I love web Prog. </h1>",
+          "text": "<h1 class = \"special\"> I love web Prog. </h1>"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The CSS selector `h1.x` is a combination of an element selector and a class selector. It targets any `<h1>` element that specifically has the attribute `class=\"x\"`."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-19",
+      "number": "20",
+      "text": "Which of these HTML codes produce the table described below?\n- A header row with 'Cascading Style Sheets' spanning 2 columns.\n- A second row with 'left' in column 1 and 'shift' in column 2 spanning 2 rows.\n- A third row with 'right' in column 1.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<table border=\"1\"><tr> <th colspan= \"2\"> Cascading Style Sheets</th> <td>left</td> <td rowspan=2>shift</td>",
+          "text": "<table border=\"1\"><tr> <th colspan= \"2\"> Cascading Style Sheets</th> <td>left</td> <td rowspan=2>shift</td>"
+        },
+        {
+          "value": "B",
+          "label": "<table border=\"1\"><tr> <th colspan = \"4\"> cascading Style Sheets </th> <tr> <tr> <td>right</td> <td rowspan=2>left </td></tr> <tr><td>shift</td></tr>",
+          "text": "<table border=\"1\"><tr> <th colspan = \"4\"> cascading Style Sheets </th> <tr> <tr> <td>right</td> <td rowspan=2>left </td></tr> <tr><td>shift</td></tr>"
+        },
+        {
+          "value": "C",
+          "label": "<table border=\"1\"> <tr><th colspan=\"2\"> Cascading Style Sheets </th> </tr> <tr><td>left</td><td rowspan= 2> shift </td> </tr> <tr> <td>right</td></tr> </table>",
+          "text": "<table border=\"1\"> <tr><th colspan=\"2\"> Cascading Style Sheets </th> </tr> <tr><td>left</td><td rowspan= 2> shift </td> </tr> <tr> <td>right</td></tr> </table>"
+        },
+        {
+          "value": "D",
+          "label": "<table border=\"1\"> <tr> <th rowspan=\"2\"> left</th></tr> <tr> <td>shift</td> <td colspan=2> Cascading Style Sheet </td></tr><tr> <td>right</td></tr>",
+          "text": "<table border=\"1\"> <tr> <th rowspan=\"2\"> left</th></tr> <tr> <td>shift</td> <td colspan=2> Cascading Style Sheet </td></tr><tr> <td>right</td></tr>"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Option C correctly structures the table. The first row uses `colspan=\"2\"` for the header. The second row defines 'left' and then 'shift' with `rowspan=2`. Because 'shift' occupies the second column for two rows, the third row only needs to define the 'right' cell for the first column."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-20",
+      "number": "21",
+      "text": "Which HTML code generates the following output?\n\nWindows ® is registered trade mark",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<p> Windows &trade; is registered trade mark </p>",
+          "text": "<p> Windows &trade; is registered trade mark </p>"
+        },
+        {
+          "value": "B",
+          "label": "<p> Windows &reg; is registered trade mark </p>",
+          "text": "<p> Windows &reg; is registered trade mark </p>"
+        },
+        {
+          "value": "C",
+          "label": "<p> Windows &copy; is registered trade mark </p>",
+          "text": "<p> Windows &copy; is registered trade mark </p>"
+        },
+        {
+          "value": "D",
+          "label": "<p> Windows is registered trade mark </p>",
+          "text": "<p> Windows is registered trade mark </p>"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The registered trademark symbol (®) is represented by the HTML character entity `&reg;`. `&trade;` is used for the trademark symbol (™) and `&copy;` for the copyright symbol (©)."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-21",
+      "number": "22",
+      "text": "CSS stands for",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Creative Style Sheets",
+          "text": "Creative Style Sheets"
+        },
+        {
+          "value": "B",
+          "label": "Computer Style Sheets",
+          "text": "Computer Style Sheets"
+        },
+        {
+          "value": "C",
+          "label": "Cascading Style Sheets",
+          "text": "Cascading Style Sheets"
+        },
+        {
+          "value": "D",
+          "label": "Colorful Style Sheets",
+          "text": "Colorful Style Sheets"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "CSS stands for **Cascading Style Sheets**. It is a style sheet language used for describing the presentation of a document written in a markup language like HTML."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-22",
+      "number": "23",
+      "text": "Which of the following statements about meta elements is correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "One way that search engines catalog pages is by reading the meta element's contents.",
+          "text": "One way that search engines catalog pages is by reading the meta element's contents."
+        },
+        {
+          "value": "B",
+          "label": "Meta elements are not visible to users.",
+          "text": "Meta elements are not visible to users."
+        },
+        {
+          "value": "C",
+          "label": "Meta elements must be placed inside the head section of the HTML Document to be read by search engines.",
+          "text": "Meta elements must be placed inside the head section of the HTML Document to be read by search engines."
+        },
+        {
+          "value": "D",
+          "label": "All of the Above",
+          "text": "All of the Above"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Meta elements provide metadata about the HTML document. They are located in the `<head>` section, are generally not visible to the user on the web page, and are used by browsers and search engines for processing and indexing."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-23",
+      "number": "24",
+      "text": "What color will be applied to the text of the `em` element in the following code snippet?\n\nhtml\n<style type = \"text/css\">\n.text em {color: red}\nem {color: blue}\nh1 {color: green;}\nh1 em {color: black;}\np em {color: yellow;}\n</style>\n<h1><p>\n<em class= \"text\"> <em>Text </em> </em>\n</p></h>\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "red",
+          "text": "red"
+        },
+        {
+          "value": "B",
+          "label": "green",
+          "text": "green"
+        },
+        {
+          "value": "C",
+          "label": "yellow",
+          "text": "yellow"
+        },
+        {
+          "value": "D",
+          "label": "blue",
+          "text": "blue"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The text 'Text' is inside a nested `<em>` element. This inner `<em>` is a descendant of the outer `<em>` which has the class `text`. The CSS rule `.text em` uses a class selector and a descendant combinator, giving it a higher specificity (0,1,1) than the other element-only selectors like `p em` (0,0,2) or `em` (0,0,1). Therefore, the color red is applied."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-24",
+      "number": "25",
+      "text": "What does the following CSS rule mean:\\ncss\\na:hover {color:green;}\\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "When the mouse cursor is over the link, the whole document font color becomes green",
+          "text": "When the mouse cursor is over the link, the whole document font color becomes green"
+        },
+        {
+          "value": "B",
+          "label": "When the mouse cursor is over the link, the font color comes back to blue",
+          "text": "When the mouse cursor is over the link, the font color comes back to blue"
+        },
+        {
+          "value": "C",
+          "label": "When the mouse cursor is over the link, the font color becomes green",
+          "text": "When the mouse cursor is over the link, the font color becomes green"
+        },
+        {
+          "value": "D",
+          "label": "When the mouse cursor is over the link, the whole paragraph font color becomes green",
+          "text": "When the mouse cursor is over the link, the whole paragraph font color becomes green"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `:hover` pseudo-class selects an element when the user hovers over it with a mouse. In this rule, `a:hover` targets anchor (link) tags, and `{color:green;}` changes the text color of the hovered link to green."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-25",
+      "number": "26",
+      "text": "Which HTML code produces the following output? \\n\\n**20 [half-filled bar] 100**",
+      "choices": [
+        {
+          "value": "A",
+          "label": "20 <meter min = \"0\" max = \"100\" value = \"5\"></meter> 100",
+          "text": "20 <meter min = \"0\" max = \"100\" value = \"5\"></meter> 100"
+        },
+        {
+          "value": "B",
+          "label": "0 <meter min = \"2\" max = \"10\" value = \"5\"></meter> 100",
+          "text": "0 <meter min = \"2\" max = \"10\" value = \"5\"></meter> 100"
+        },
+        {
+          "value": "C",
+          "label": "20 <meter min = \"2\" max = \"10\" value = \"5\"></meter> 100",
+          "text": "20 <meter min = \"2\" max = \"10\" value = \"5\"></meter> 100"
+        },
+        {
+          "value": "D",
+          "label": "20 <meter min = \"2\" max = \"10\" value = \"2\"></meter> 100",
+          "text": "20 <meter min = \"2\" max = \"10\" value = \"2\"></meter> 100"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Option C is the only choice that correctly reflects the output text ('20' at the start and '100' at the end) and provides a meter value (5) that is approximately in the middle of the defined range (2 to 10), matching the visual state of the bar."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-26",
+      "number": "27",
+      "text": "The HTML source code which gives the following output is:\\n**Nearly > 3/4 of our students love web prog.**",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<p> Nearly > &frac34; of our students love web prog.</p>",
+          "text": "<p> Nearly > &frac34; of our students love web prog.</p>"
+        },
+        {
+          "value": "B",
+          "label": "<p> Nearly &gt; 3/4 of our students love web prog.</p>",
+          "text": "<p> Nearly &gt; 3/4 of our students love web prog.</p>"
+        },
+        {
+          "value": "C",
+          "label": "<p> Nearly > 3/4 of our students love web prog.</p>",
+          "text": "<p> Nearly > 3/4 of our students love web prog.</p>"
+        },
+        {
+          "value": "D",
+          "label": "<p> Nearly &gt; &frac34; of our students love web prog.</p>",
+          "text": "<p> Nearly &gt; &frac34; of our students love web prog.</p>"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In HTML, the character entity `&gt;` is used to represent the greater-than symbol (`>`). Since the output displays literal characters '3/4' rather than the single-glyph fraction '¾', option B is the correct source code."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-27",
+      "number": "28",
+      "text": "Comments within HTML documents are enclosed within __________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "/* and */",
+          "text": "/* and */"
+        },
+        {
+          "value": "B",
+          "label": "//",
+          "text": "//"
+        },
+        {
+          "value": "C",
+          "label": "??",
+          "text": "??"
+        },
+        {
+          "value": "D",
+          "label": "<!-- and -->",
+          "text": "<!-- and -->"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In HTML, comments are defined by the `<!-- comment goes here -->` syntax. The other options are used for different programming languages (e.g., `/* */` and `//` are used in CSS, JavaScript, C++, etc.)."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-28",
+      "number": "29",
+      "text": "The HTML code which gives the following output is, where **me** has a link to the email address `ymkilani@hu.edu.jo`:\n\n**For further information, please contact me.**\n\nwhere the link is only to the word **me**.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<p> For further information, please contact <a href = \" ymkilani@hu.edu.jo \">me. </p>",
+          "text": "<p> For further information, please contact <a href = \" ymkilani@hu.edu.jo \">me. </p>"
+        },
+        {
+          "value": "B",
+          "label": "<p> <a href =\" ymkilani@hu.edu.jo\"> For further information, please contact me. </p>",
+          "text": "<p> <a href =\" ymkilani@hu.edu.jo\"> For further information, please contact me. </p>"
+        },
+        {
+          "value": "C",
+          "label": "<p> For further information, please contact <a href = \" mailto:ymkilani@hu.edu.jo\">me. </p>",
+          "text": "<p> For further information, please contact <a href = \" mailto:ymkilani@hu.edu.jo\">me. </p>"
+        },
+        {
+          "value": "D",
+          "label": "<p> <a href = \"mailto:ymkilani@hu.edu.jo\"> For further information, please contact me. </p>",
+          "text": "<p> <a href = \"mailto:ymkilani@hu.edu.jo\"> For further information, please contact me. </p>"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "To create an email link in HTML, the `href` attribute must start with the `mailto:` protocol. Additionally, since the requirement states the link should only apply to the word \"me\", the anchor tag `<a>` should be placed specifically around that word. Option C follows these requirements, even though the source text exhibits a missing closing `</a>` tag."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-29",
+      "number": "30",
+      "text": "Given the following CSS rules:\ncss\n.d1 {top: 20px; left:30px; z-index : 10;}\n.d2 {top: 20px; left:40px; z-index: 5;}\n.d3 {top: 20px; left:50px; z-index: 4;}\n\nThe HTML code which shows `x.jpg` behind `y.jpg` and `y.jpg` behind `z.png` is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<img src=\"x.jpg\" width = \"100\" height = \"200\" class = \"d3\"> <img src=\"y.jpg\" width = \"100\" height = \"200\" class = \"d1\"> <img src=\"z.jpg\" width = \"100\" height = \"200\" class = \"d2\">",
+          "text": "<img src=\"x.jpg\" width = \"100\" height = \"200\" class = \"d3\"> <img src=\"y.jpg\" width = \"100\" height = \"200\" class = \"d1\"> <img src=\"z.jpg\" width = \"100\" height = \"200\" class = \"d2\">"
+        },
+        {
+          "value": "B",
+          "label": "<img src=\"x.jpg\" width = \"100\" height = \"200\" class = \"d3\"> <img src=\"y.jpg\" width = \"100\" height = \"200\" class = \"d2\"> <img src=\"z.jpg\" width = '100' height = \"200\" class = \"d3\">",
+          "text": "<img src=\"x.jpg\" width = \"100\" height = \"200\" class = \"d3\"> <img src=\"y.jpg\" width = \"100\" height = \"200\" class = \"d2\"> <img src=\"z.jpg\" width = '100' height = \"200\" class = \"d3\">"
+        },
+        {
+          "value": "C",
+          "label": "<img src=\"x.jpg\" width = \"100\" height = \"200\" class = \"d1\"> <img src=\"y.jpg\" width = \"100\" height = \"200\" class = \"d2\"> <img src=\"z.jpg\" width = 100 height = \"200\" class = \"d3\">",
+          "text": "<img src=\"x.jpg\" width = \"100\" height = \"200\" class = \"d1\"> <img src=\"y.jpg\" width = \"100\" height = \"200\" class = \"d2\"> <img src=\"z.jpg\" width = 100 height = \"200\" class = \"d3\">"
+        },
+        {
+          "value": "D",
+          "label": "<img src= x.jpg width = \"100\" height - \"200\" class = \"d3\"> <img src=\" y.jpg\" width = \"100\" height = \"200\" class=\"d2\"> <img src= z.jpg width = \"100\" height = \"200\" class = \"d1\">",
+          "text": "<img src= x.jpg width = \"100\" height - \"200\" class = \"d3\"> <img src=\" y.jpg\" width = \"100\" height = \"200\" class=\"d2\"> <img src= z.jpg width = \"100\" height = \"200\" class = \"d1\">"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The `z-index` property controls the vertical stacking order of elements; higher values appear on top of lower values. \n- Requirement: x is behind y (z-index of x < z-index of y), and y is behind z (z-index of y < z-index of z). \n- Looking at the classes: `.d3` (z-index: 4), `.d2` (z-index: 5), `.d1` (z-index: 10). \n- Thus, the stacking order is satisfied when x has class `.d3`, y has class `.d2`, and z has class `.d1`. Option D correctly assigns these classes."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-30",
+      "number": "31",
+      "text": "There is/are an error in the following CSS rules. The error is in line:\n\ncss\n1 en color: blue; background-color: green;\n2 p. fav [weight-color: bold; color: yellow]\n3 mybest (font-size: 12pt; image: url(x.png);}\n4 h2 {font-size: 12pt;}\n5 p {wd: 30ex)\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1,5",
+          "text": "1,5"
+        },
+        {
+          "value": "B",
+          "label": "1,2,3",
+          "text": "1,2,3"
+        },
+        {
+          "value": "C",
+          "label": "2,3,5",
+          "text": "2,3,5"
+        },
+        {
+          "value": "D",
+          "label": "1,2,3,5",
+          "text": "1,2,3,5"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Line 1 is missing curly braces. Line 2 uses incorrect syntax (square brackets instead of curly braces, space in class selector, and invalid property 'weight-color'). Line 3 uses an opening parenthesis instead of a curly brace and lacks a valid selector prefix. Line 5 uses an invalid property 'wd' and a closing parenthesis instead of a curly brace. Line 4 is the only valid rule."
+    },
+    {
+      "id": "extract-1775331211260-vys0c-31",
+      "number": "32",
+      "text": "(CSS) A table takes 35% of the screen width, this can be written in HTML as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<table border=\"2\">",
+          "text": "<table border=\"2\">"
+        },
+        {
+          "value": "B",
+          "label": "<table border = \"2\" table Width=\"35%\">",
+          "text": "<table border = \"2\" table Width=\"35%\">"
+        },
+        {
+          "value": "C",
+          "label": "<table border = \"2\" style=\"width:35%\">",
+          "text": "<table border = \"2\" style=\"width:35%\">"
+        },
+        {
+          "value": "D",
+          "label": "<table border = \"35%\">",
+          "text": "<table border = \"35%\">"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The standard and modern way to define an element's width in HTML is through the `style` attribute using the CSS `width` property. Option B is syntactically incorrect, and Option D incorrectly uses the `border` attribute for width."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 32
+}

@@ -246,5 +246,19 @@ const EXAM_CONFIG = [
         "file": "data/soft/chapter14abfeda-4c01-4dba-88a9-c252d2ff0f89.pdfvisual_extractor.json"
       }
     ]
+  },
+  {
+    "id": "web",
+    "name": "Web development",
+    "description": "Html/Css/Js/PhP",
+    "path": "data/web",
+    "chapters": [
+      {
+        "id": "Mid",
+        "name": "Web-Mid",
+        "q": 32,
+        "file": "data/web/chapterWeb-Mid(1).pdfvisual_extractor.json"
+      }
+    ]
   }
 ];
