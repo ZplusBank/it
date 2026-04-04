@@ -497,6 +497,35 @@ const app = {
         return String(text).replace(this._escapeRe, ch => map[ch]);
     },
 
+    _isWebRelatedQuestion(question) {
+        if (!question) return false;
+
+        if (this.currentSubject?.id === 'web') {
+            return true;
+        }
+
+        const choicesText = (question.choices || [])
+            .map(c => c?.text || c?.label || '')
+            .join(' ');
+        const haystack = `${question.text || ''} ${question.explanation || ''} ${choicesText}`;
+
+        const hasHtmlLikeTags = /<\s*\/?\s*[a-z][^>]*>/i.test(haystack);
+        const hasWebTerms = /\b(html|css|javascript|js|php|stylesheet|href|src|dom)\b/i.test(haystack);
+
+        return hasHtmlLikeTags && hasWebTerms;
+    },
+
+    _renderQuestionContent(rawText, question) {
+        const text = rawText == null ? '' : String(rawText);
+
+        if (this._isWebRelatedQuestion(question)) {
+            // Render web snippets as literal text so tags are visible and not interpreted.
+            return this.escapeHtml(text).replace(/\n/g, '<br>');
+        }
+
+        return ContentRenderer.render(text);
+    },
+
     getIconForSubject(id) {
         const icons = {
             'java1': '☕',
@@ -865,7 +894,7 @@ const app = {
         // Question text
         const textDiv = document.createElement('div');
         textDiv.className = 'question-text';
-        textDiv.innerHTML = ContentRenderer.render(question.text);
+        textDiv.innerHTML = this._renderQuestionContent(question.text, question);
         fragment.appendChild(textDiv);
 
         // Choices container with event delegation
@@ -896,7 +925,7 @@ const app = {
 
             const label = document.createElement('label');
             label.htmlFor = `choice-${choice.value}`;
-            label.innerHTML = ContentRenderer.render(choice.text);
+            label.innerHTML = this._renderQuestionContent(choice.text, question);
 
             choiceDiv.appendChild(input);
             choiceDiv.appendChild(label);
@@ -1023,7 +1052,7 @@ const app = {
         const explanationDiv = document.createElement('div');
         explanationDiv.className = 'explanation';
         explanationDiv.style.cssText = 'margin-top:10px;padding-top:10px;border-top:1px solid rgba(0,0,0,0.1)';
-        explanationDiv.innerHTML = `<strong>Explanation:</strong><br>${ContentRenderer.render(explanationRaw)}`;
+        explanationDiv.innerHTML = `<strong>Explanation:</strong><br>${this._renderQuestionContent(explanationRaw, question)}`;
         frag.appendChild(explanationDiv);
 
         feedbackEl.textContent = '';
