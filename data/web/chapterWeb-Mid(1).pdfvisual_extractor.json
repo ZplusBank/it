@@ -192,12 +192,13 @@
       "inputName": "Q5",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "To shift an element downwards relative to its normal position using CSS relative positioning, you can use a negative value for the `bottom` property (e.g., `bottom: -2ex`). Since only the specific phrase \"fourth year\" is colored blue and shifted, it must be wrapped in a `<span>` tag. Option A would move the text upwards (`top: -2ex`), and Option D would move the entire paragraph."
+      "explanation": "To shift an element downwards relative to its normal position using CSS relative positioning, you can use a negative value for the `bottom` property (e.g., `bottom: -2ex`). Since only the specific phrase \"fourth year\" is colored blue and shifted, it must be wrapped in a `<span>` tag. Option A would move the text upwards (`top: -2ex`), and Option D would move the entire paragraph.",
+      "image": "data/web/images/image6_a327e177.png"
     },
     {
       "id": "extract-1775331211260-vys0c-6",
       "number": "7",
-      "text": "Given the following CSS and HTML fragments, one of the following is true.\n\nhtml\n<html>\n  <head>\n    <style>\n      div { color: blue; }\n      p { color: red; }\n      em { color: green; }\n    </style>\n  </head>\n  <body>\n    <div>\n      <p>Hello</p>\n    </div>\n    <p>\n      <em>Goodbye</em>\n    </p>\n  </body>\n</html>\n",
+      "text": "Given the following CSS and HTML fragments, one of the following is true.\n\nhtml\n<html>\n  <head>\n    <style>\n      div { color: blue; }\n      p { color: red; }\n      em { color: green; }\n    </style>\n  </head>\n  <body>\n    <div>\n      <p>Hello</p>\n    </div>\n    <p> <em>Goodbye</em> </p>\n  </body>\n</html>",
       "choices": [
         {
           "value": "A",
@@ -228,7 +229,7 @@
     {
       "id": "extract-1775331211260-vys0c-7",
       "number": "8",
-      "text": "What is the HTML code which gives the following output? (Note: The image shows 'What is your Specilization:' with a line break, then radio buttons where 'CIS' is selected.)\n\n| Output Snippet |\n| --- |\n| **What is your Specilization:**<br> CIS ● CS ○ SWE ○ |",
+      "text": "What is the HTML code which gives the following output? (Note: The image shows 'What is your Specilization:' with a line break, then radio buttons where 'CS' is selected.)\n\n| Output Snippet |\n| --- |\n| **What is your Specilization:**<br> CIS ● CS ○ SWE ● |",
       "choices": [
         {
           "value": "A",
@@ -259,7 +260,7 @@
     {
       "id": "extract-1775331211260-vys0c-8",
       "number": "9",
-      "text": "Identify the correct HTML code that produces the input field and text shown in the browser image.\n\n(The image shows an input box with placeholder `(00962)079-xxxxxxx` and following text `(00962)079-xxxxxxx`)",
+      "text": "Identify the correct HTML code that produces the input field and text shown in the browser image.",
       "choices": [
         {
           "value": "A",
@@ -285,7 +286,8 @@
       "inputName": "Q8",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Option D correctly sets the `type=\"tel\"`, provides the matching lowercase placeholder text, uses the `pattern` attribute with correctly escaped parentheses `\\(` and `\\)` for the regex, and includes the trailing text in lowercase as seen in the screenshot."
+      "explanation": "Option D correctly sets the `type=\"tel\"`, provides the matching lowercase placeholder text, uses the `pattern` attribute with correctly escaped parentheses `\\(` and `\\)` for the regex, and includes the trailing text in lowercase as seen in the screenshot.",
+      "image": "data/web/images/image9_7eac48f4.png"
     },
     {
       "id": "extract-1775331211260-vys0c-9",
@@ -450,12 +452,13 @@
       "inputName": "Q13",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "The `type=\"datetime-local\"` input attribute is used in HTML5 to allow the user to select both a date and a time (without time zone information). Since the image shows both components, this is the correct input type."
+      "explanation": "The `type=\"datetime-local\"` input attribute is used in HTML5 to allow the user to select both a date and a time (without time zone information). Since the image shows both components, this is the correct input type.",
+      "image": "data/web/images/image14_ee0a23d1.png"
     },
     {
       "id": "extract-1775331211260-vys0c-14",
       "number": "15",
-      "text": "The HTML code which gives the following form (showing the label **Name:** followed by a text entry box) is:",
+      "text": "The HTML code which gives the following form is:",
       "choices": [
         {
           "value": "A",
@@ -481,7 +484,8 @@
       "inputName": "Q14",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "While `type=\"name\"` is not a standard HTML attribute value (the standard is `text`), browsers typically fall back to a text input field for unrecognized types. Option C is the only choice that includes the specific 'Name:' label text shown in the image alongside an input field that would appear as a text box."
+      "explanation": "While `type=\"name\"` is not a standard HTML attribute value (the standard is `text`), browsers typically fall back to a text input field for unrecognized types. Option C is the only choice that includes the specific 'Name:' label text shown in the image alongside an input field that would appear as a text box.",
+      "image": "data/web/images/image15_993825c2.png"
     },
     {
       "id": "extract-1775331211260-vys0c-15",
@@ -512,12 +516,13 @@
       "inputName": "Q15",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "In HTML/CSS, the property `text-decoration: none;` is used to remove the default underline from a link element (`<a>`). To change the font color to red, the `color: red;` property is applied. The visual output in the browser shows red text without an underline, making option D the correct choice."
+      "explanation": "In HTML/CSS, the property `text-decoration: none;` is used to remove the default underline from a link element (`<a>`). To change the font color to red, the `color: red;` property is applied. The visual output in the browser shows red text without an underline, making option D the correct choice.",
+      "image": "data/web/images/image16_95abf6a3.png"
     },
     {
       "id": "extract-1775331211260-vys0c-16",
       "number": "17",
-      "text": "Observe the screenshot showing the text: \"I am a fourth year student at Hashemite University\". If the phrase **fourth year** is styled in red while the rest of the sentence is blue, which of the following HTML structures would be required?",
+      "text": "Observe the screenshot showing the text: \"I am a fourth year student at Hashemite University\". which of the following HTML structures would be required?",
       "choices": [
         {
           "value": "A",
@@ -543,7 +548,8 @@
       "inputName": "Q16",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "To style a specific portion of text within a paragraph, an inline element like `<span>` is typically used. In this scenario, the paragraph is globally styled as blue, and the internal `<span>` tag overrides that color with red for just the words 'fourth year'."
+      "explanation": "To style a specific portion of text within a paragraph, an inline element like `<span>` is typically used. In this scenario, the paragraph is globally styled as blue, and the internal `<span>` tag overrides that color with red for just the words 'fourth year'.",
+      "image": "data/web/images/image17_2d747c15.png"
     },
     {
       "id": "extract-1775331211260-vys0c-17",
@@ -610,7 +616,7 @@
     {
       "id": "extract-1775331211260-vys0c-19",
       "number": "20",
-      "text": "Which of these HTML codes produce the table described below?\n- A header row with 'Cascading Style Sheets' spanning 2 columns.\n- A second row with 'left' in column 1 and 'shift' in column 2 spanning 2 rows.\n- A third row with 'right' in column 1.",
+      "text": "Which of these HTML codes produce the table described below?",
       "choices": [
         {
           "value": "A",
@@ -636,7 +642,8 @@
       "inputName": "Q19",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Option C correctly structures the table. The first row uses `colspan=\"2\"` for the header. The second row defines 'left' and then 'shift' with `rowspan=2`. Because 'shift' occupies the second column for two rows, the third row only needs to define the 'right' cell for the first column."
+      "explanation": "Option C correctly structures the table. The first row uses `colspan=\"2\"` for the header. The second row defines 'left' and then 'shift' with `rowspan=2`. Because 'shift' occupies the second column for two rows, the third row only needs to define the 'right' cell for the first column.",
+      "image": "data/web/images/image20_e800f575.png"
     },
     {
       "id": "extract-1775331211260-vys0c-20",
@@ -796,7 +803,7 @@
     {
       "id": "extract-1775331211260-vys0c-25",
       "number": "26",
-      "text": "Which HTML code produces the following output? \\n\\n**20 [half-filled bar] 100**",
+      "text": "Which HTML code produces the following output?",
       "choices": [
         {
           "value": "A",
@@ -822,7 +829,8 @@
       "inputName": "Q25",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Option C is the only choice that correctly reflects the output text ('20' at the start and '100' at the end) and provides a meter value (5) that is approximately in the middle of the defined range (2 to 10), matching the visual state of the bar."
+      "explanation": "Option C is the only choice that correctly reflects the output text ('20' at the start and '100' at the end) and provides a meter value (5) that is approximately in the middle of the defined range (2 to 10), matching the visual state of the bar.",
+      "image": "data/web/images/image26_1b2f710c.png"
     },
     {
       "id": "extract-1775331211260-vys0c-26",
