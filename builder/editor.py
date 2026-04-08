@@ -505,6 +505,8 @@ class AdvancedChapterEditor:
 
         ttk.Button(toolbar, text="Add Question", command=self.add_question,
                   width=15, bootstyle="success").pack(side=tk.LEFT, padx=5)
+        ttk.Button(toolbar, text="Del Duplicates", command=self.delete_duplicate_questions,
+              width=16, bootstyle="warning-outline").pack(side=tk.LEFT, padx=5)
         ttk.Button(toolbar, text="Delete Question", command=self.delete_question,
                   width=18, bootstyle="danger-outline").pack(side=tk.LEFT, padx=5)
         ttk.Button(toolbar, text="▲", command=self.move_question_up,
@@ -1004,6 +1006,184 @@ class AdvancedChapterEditor:
         # Force display of the new question
         self.display_question()
         messagebox.showinfo("Success", "New question added")
+
+    def _normalize_for_compare(self, value):
+        """Normalize text so duplicate checks are whitespace/case insensitive."""
+        return re.sub(r"\s+", " ", str(value or "")).strip().lower()
+
+    def _question_signature(self, question):
+        """Build a stable signature from question title and choices."""
+        title = self._normalize_for_compare(question.get("text", ""))
+        normalized_choices = []
+        for choice in question.get("choices", []) or []:
+            normalized_choices.append((
+                self._normalize_for_compare(choice.get("value", "")),
+                self._normalize_for_compare(choice.get("text", "")),
+            ))
+        # Sort so duplicate detection works even if choice order differs.
+        return title, tuple(sorted(normalized_choices))
+
+    def _select_duplicates_to_delete(self, duplicate_groups):
+        """Show interactive duplicate selector and return selected duplicate indexes."""
+        dlg = tk.Toplevel(self.window)
+        _style_dialog(dlg, "Select Duplicates To Delete", "900x560")
+        dlg.transient(self.window)
+        dlg.grab_set()
+
+        frame = ttk.Frame(dlg, padding=12, bootstyle="dark")
+        frame.pack(fill=tk.BOTH, expand=True)
+
+        ttk.Label(frame, text="Duplicate Questions", style="Header.TLabel").pack(
+            anchor=tk.W, pady=(0, 4)
+        )
+        ttk.Label(
+            frame,
+            text=(
+                "Choose which duplicate entries to delete. "
+                "The original question in each group is kept."
+            ),
+            style="Muted.TLabel",
+        ).pack(anchor=tk.W, pady=(0, 8))
+
+        list_frame = ttk.Frame(frame)
+        list_frame.pack(fill=tk.BOTH, expand=True)
+
+        list_scroll = ttk.Scrollbar(list_frame, orient=tk.VERTICAL)
+        dup_listbox = tk.Listbox(
+            list_frame,
+            selectmode=tk.EXTENDED,
+            yscrollcommand=list_scroll.set,
+            exportselection=False,
+        )
+        _style_tk_listbox(dup_listbox)
+        list_scroll.config(command=dup_listbox.yview)
+
+        listbox_entries = []
+        for original_idx, dup_idx in duplicate_groups:
+            original_q = self.questions[original_idx]
+            dup_q = self.questions[dup_idx]
+            original_number = original_q.get("number", str(original_idx + 1))
+            dup_number = dup_q.get("number", str(dup_idx + 1))
+
+            title = str(dup_q.get("text", "")).strip().replace("\n", " ")
+            title = re.sub(r"\s+", " ", title)
+            if len(title) > 85:
+                title = title[:85] + "..."
+
+            row_text = f"Delete Q{dup_number} (duplicate of Q{original_number})  |  {title}"
+            listbox_entries.append((dup_idx, row_text))
+            dup_listbox.insert(tk.END, row_text)
+
+        # Default behavior: all duplicates selected.
+        if listbox_entries:
+            dup_listbox.selection_set(0, tk.END)
+
+        dup_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        list_scroll.pack(side=tk.RIGHT, fill=tk.Y)
+
+        ctrl_frame = ttk.Frame(frame)
+        ctrl_frame.pack(fill=tk.X, pady=(10, 6))
+
+        def select_all():
+            dup_listbox.selection_set(0, tk.END)
+
+        def clear_selection():
+            dup_listbox.selection_clear(0, tk.END)
+
+        def toggle_selection():
+            selected = set(dup_listbox.curselection())
+            for i in range(dup_listbox.size()):
+                if i in selected:
+                    dup_listbox.selection_clear(i)
+                else:
+                    dup_listbox.selection_set(i)
+
+        ttk.Button(ctrl_frame, text="Select All", command=select_all,
+                   width=12, bootstyle="success-outline").pack(side=tk.LEFT, padx=3)
+        ttk.Button(ctrl_frame, text="Clear", command=clear_selection,
+                   width=10, bootstyle="warning-outline").pack(side=tk.LEFT, padx=3)
+        ttk.Button(ctrl_frame, text="Toggle", command=toggle_selection,
+                   width=10, bootstyle="info-outline").pack(side=tk.LEFT, padx=3)
+
+        result = {"selected": None}
+
+        btn_frame = ttk.Frame(frame)
+        btn_frame.pack(fill=tk.X, pady=(4, 0))
+
+        def confirm():
+            selected_rows = dup_listbox.curselection()
+            if not selected_rows:
+                messagebox.showwarning("No Selection", "Select at least one duplicate to delete.")
+                return
+            selected_dups = [listbox_entries[i][0] for i in selected_rows]
+            result["selected"] = sorted(set(selected_dups))
+            dlg.destroy()
+
+        def cancel():
+            dlg.destroy()
+
+        ttk.Button(btn_frame, text="Delete Selected", command=confirm,
+                   width=16, bootstyle="danger").pack(side=tk.RIGHT, padx=6)
+        ttk.Button(btn_frame, text="Cancel", command=cancel,
+                   width=12, bootstyle="secondary-outline").pack(side=tk.RIGHT)
+
+        dlg.bind("<Escape>", lambda e: cancel())
+        dlg.bind("<Return>", lambda e: confirm())
+        dlg.wait_window()
+        return result["selected"]
+
+    def delete_duplicate_questions(self):
+        """Delete questions that have the same title and the same choices."""
+        if not self.questions:
+            messagebox.showinfo("No Questions", "There are no questions to deduplicate.")
+            return
+
+        first_seen = {}
+        duplicate_groups = []
+
+        for idx, question in enumerate(self.questions):
+            sig = self._question_signature(question)
+            if sig in first_seen:
+                duplicate_groups.append((first_seen[sig], idx))
+            else:
+                first_seen[sig] = idx
+
+        if not duplicate_groups:
+            messagebox.showinfo("No Duplicates", "No duplicate questions were found.")
+            return
+
+        duplicate_indexes = self._select_duplicates_to_delete(duplicate_groups)
+        if duplicate_indexes is None:
+            return
+
+        previous_idx = self.current_question_idx
+
+        for idx in reversed(duplicate_indexes):
+            del self.questions[idx]
+
+        self.refresh_questions_list()
+
+        if self.questions:
+            new_idx = 0
+            if previous_idx is not None:
+                removed_before = sum(1 for i in duplicate_indexes if i < previous_idx)
+                new_idx = previous_idx - removed_before
+                new_idx = max(0, min(new_idx, len(self.questions) - 1))
+
+            self.current_question_idx = new_idx
+            self.questions_listbox.selection_clear(0, tk.END)
+            self.questions_listbox.selection_set(new_idx)
+            self.questions_listbox.activate(new_idx)
+            self.display_question()
+        else:
+            self.current_question_idx = None
+            self.init_editor_widgets()
+
+        messagebox.showinfo(
+            "Success",
+            f"Removed {len(duplicate_indexes)} duplicate question(s).\n"
+            f"Remaining questions: {len(self.questions)}"
+        )
     
     def delete_question(self):
         """Delete current question"""
