@@ -266,5 +266,12 @@ const EXAM_CONFIG = [
         "file": "data/web/chapterWeb-Mid(1).pdfvisual_extractor.json"
       }
     ]
+  },
+  {
+    "id": "Uml",
+    "name": "UML",
+    "description": "Diagrams ",
+    "path": "data/Uml",
+    "chapters": []
   }
 ];
