@@ -1076,6 +1076,19 @@ const app = {
         return userAnswer === question.correctAnswer;
     },
 
+    /** Resolve answer key (A/B/C...) to the actual choice text */
+    _getChoiceTextByValue(question, value) {
+        const choices = Array.isArray(question?.choices) ? question.choices : [];
+        const choice = choices.find(c => c.value === value);
+        if (!choice) return value;
+
+        // Convert rendered rich text to plain text for compact feedback line
+        const temp = document.createElement('div');
+        temp.innerHTML = ContentRenderer.render(choice.text || '');
+        const plain = (temp.textContent || temp.innerText || '').trim();
+        return plain || value;
+    },
+
     showFeedback(index, status = null) {
         const question = this.questions[index];
         const userAnswer = this.userAnswers[index];
@@ -1085,9 +1098,12 @@ const app = {
         feedbackEl.className = `feedback ${answerStatus}`;
 
         const message = answerStatus === 'correct' ? '✓ Correct!' : (answerStatus === 'wrong' ? '✗ Incorrect' : '○ Skipped');
+        const correctAnswerText = question.inputType === 'checkbox'
+            ? question.correctAnswer.split('').map(a => this._getChoiceTextByValue(question, a)).join(', ')
+            : this._getChoiceTextByValue(question, question.correctAnswer);
         const correctText = question.inputType === 'checkbox'
-            ? `Correct answers: ${question.correctAnswer.split('').join(', ')}`
-            : `Correct answer: ${question.correctAnswer}`;
+            ? `Correct answers: ${correctAnswerText}`
+            : `Correct answer: ${correctAnswerText}`;
 
         const explanationRaw = question.explanation || 'Coming soon...';
 
