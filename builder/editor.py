@@ -467,8 +467,16 @@ class AdvancedChapterEditor:
         self.questions = []
         self.current_image_path = None
         self.question_search_var = tk.StringVar(value="")
+        self.search_in_text_var = tk.BooleanVar(value=True)
+        self.search_in_explanation_var = tk.BooleanVar(value=True)
+        self.search_in_choices_var = tk.BooleanVar(value=True)
+        self.search_in_meta_var = tk.BooleanVar(value=False)
         self.filtered_question_indices = []
         self.question_search_var.trace_add("write", lambda *_: self.refresh_questions_list())
+        self.search_in_text_var.trace_add("write", lambda *_: self.refresh_questions_list())
+        self.search_in_explanation_var.trace_add("write", lambda *_: self.refresh_questions_list())
+        self.search_in_choices_var.trace_add("write", lambda *_: self.refresh_questions_list())
+        self.search_in_meta_var.trace_add("write", lambda *_: self.refresh_questions_list())
         
         self.load_chapter_data()
         self.setup_ui()
@@ -545,6 +553,34 @@ class AdvancedChapterEditor:
         search_entry.pack(side=tk.LEFT, fill=tk.X, expand=True)
         ttk.Button(search_frame, text="Clear", command=self.clear_question_search,
                   width=6, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=(6, 0))
+
+        search_options_frame = ttk.Frame(left_frame)
+        search_options_frame.pack(fill=tk.X, pady=(0, 6))
+
+        ttk.Checkbutton(
+            search_options_frame,
+            text="Text",
+            variable=self.search_in_text_var,
+            bootstyle="info-round-toggle",
+        ).pack(side=tk.LEFT, padx=(0, 4))
+        ttk.Checkbutton(
+            search_options_frame,
+            text="Explanation",
+            variable=self.search_in_explanation_var,
+            bootstyle="info-round-toggle",
+        ).pack(side=tk.LEFT, padx=4)
+        ttk.Checkbutton(
+            search_options_frame,
+            text="Choices",
+            variable=self.search_in_choices_var,
+            bootstyle="info-round-toggle",
+        ).pack(side=tk.LEFT, padx=4)
+        ttk.Checkbutton(
+            search_options_frame,
+            text="Meta",
+            variable=self.search_in_meta_var,
+            bootstyle="info-round-toggle",
+        ).pack(side=tk.LEFT, padx=4)
 
         list_scroll = ttk.Scrollbar(left_frame, orient=tk.VERTICAL)
         self.questions_listbox = tk.Listbox(
@@ -720,21 +756,39 @@ class AdvancedChapterEditor:
 
     def _question_search_blob(self, question):
         """Build searchable text for a question."""
-        parts = [
-            question.get("id", ""),
-            question.get("number", ""),
-            question.get("text", ""),
-            question.get("explanation", ""),
-            question.get("correctAnswer", ""),
-            question.get("inputType", ""),
-            question.get("image", ""),
-        ]
-        for choice in question.get("choices", []) or []:
+        parts = []
+
+        # Keep text searchable by default even if all options are unchecked.
+        search_text = self.search_in_text_var.get()
+        search_explanation = self.search_in_explanation_var.get()
+        search_choices = self.search_in_choices_var.get()
+        search_meta = self.search_in_meta_var.get()
+        if not any([search_text, search_explanation, search_choices, search_meta]):
+            search_text = True
+
+        if search_text:
+            parts.append(question.get("text", ""))
+
+        if search_explanation:
+            parts.append(question.get("explanation", ""))
+
+        if search_choices:
+            for choice in question.get("choices", []) or []:
+                parts.extend([
+                    choice.get("value", ""),
+                    choice.get("label", ""),
+                    choice.get("text", ""),
+                ])
+
+        if search_meta:
             parts.extend([
-                choice.get("value", ""),
-                choice.get("label", ""),
-                choice.get("text", ""),
+                question.get("id", ""),
+                question.get("number", ""),
+                question.get("correctAnswer", ""),
+                question.get("inputType", ""),
+                question.get("image", ""),
             ])
+
         return self._normalize_for_compare(" ".join(str(part) for part in parts if part is not None))
 
     def get_selected_question_indices(self):
