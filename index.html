@@ -373,6 +373,89 @@
             </div>
         </div>
     </div>
+
+    <!-- Contact Us Button -->
+    <button id="contactBtn" class="contact-btn" title="Contact Us" aria-label="Contact Us">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+        </svg>
+    </button>
+
+    <!-- Contact Us Modal -->
+    <div id="contactModal" class="modal-overlay" style="display: none;" role="dialog" aria-modal="true">
+        <div class="modal contact-modal">
+            <div class="modal-header">
+                <h3 id="contactModalTitle">📞 Contact Us</h3>
+            </div>
+            <div class="modal-body">
+                <p id="contactModalMessage">If there is any wrong questions or any problem with the site, please contact us :</p>
+                <div class="contact-info">
+                    <a href="https://web.facebook.com/profile.php?id=61573369235218&_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer" class="contact-card contact-card-link">
+                        <span class="contact-icon">📘</span>
+                        <div class="contact-details">
+                            <span class="contact-name">Z+</span>
+                            <span class="contact-phone" id="contactSubtext">Facebook Page</span>
+                        </div>
+                        <span class="contact-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+            <div class="modal-footer contact-modal-footer">
+                <button class="btn-translate" id="contactTranslateBtn" onclick="toggleContactLang()">
+                    🌐 العربية
+                </button>
+                <button class="btn-confirm contact-close-btn" onclick="closeContactModal()">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Contact modal logic
+        let contactLang = 'en';
+
+        document.getElementById('contactBtn').addEventListener('click', function () {
+            document.getElementById('contactModal').style.display = 'flex';
+        });
+
+        function closeContactModal() {
+            document.getElementById('contactModal').style.display = 'none';
+        }
+
+        document.getElementById('contactModal').addEventListener('click', function (e) {
+            if (e.target.id === 'contactModal') closeContactModal();
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeContactModal();
+        });
+
+        function toggleContactLang() {
+            const title = document.getElementById('contactModalTitle');
+            const message = document.getElementById('contactModalMessage');
+            const btn = document.getElementById('contactTranslateBtn');
+            const subtext = document.getElementById('contactSubtext');
+            const modal = document.querySelector('.contact-modal');
+
+            if (contactLang === 'en') {
+                contactLang = 'ar';
+                title.textContent = '📞 تواصل معنا';
+                message.textContent = 'إذا كان هناك أي أسئلة خاطئة أو أي مشكلة في الموقع، يرجى التواصل معنا :';
+                subtext.textContent = 'صفحة فيسبوك';
+                btn.textContent = '🌐 English';
+                modal.setAttribute('dir', 'rtl');
+                modal.style.textAlign = 'right';
+            } else {
+                contactLang = 'en';
+                title.textContent = '📞 Contact Us';
+                message.textContent = 'If there is any wrong questions or any problem with the site, please contact us :';
+                subtext.textContent = 'Facebook Page';
+                btn.textContent = '🌐 العربية';
+                modal.setAttribute('dir', 'ltr');
+                modal.style.textAlign = 'left';
+            }
+        }
+    </script>
 </body>
 
 </html>
