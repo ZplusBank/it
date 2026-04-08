@@ -248,7 +248,7 @@ const EXAM_CONFIG = [
       {
         "id": "2",
         "name": "First",
-        "q": 120,
+        "q": 115,
         "file": "data/soft/Soft_first.json"
       }
     ]
