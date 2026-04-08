@@ -466,6 +466,9 @@ class AdvancedChapterEditor:
         self.current_question_idx = None
         self.questions = []
         self.current_image_path = None
+        self.question_search_var = tk.StringVar(value="")
+        self.filtered_question_indices = []
+        self.question_search_var.trace_add("write", lambda *_: self.refresh_questions_list())
         
         self.load_chapter_data()
         self.setup_ui()
@@ -526,11 +529,29 @@ class AdvancedChapterEditor:
         left_frame = ttk.Frame(container)
         container.add(left_frame, weight=1)
 
-        ttk.Label(left_frame, text="Questions", style="Header.TLabel").pack(
-            fill=tk.X, pady=(0, 5))
+        questions_header = ttk.Frame(left_frame)
+        questions_header.pack(fill=tk.X, pady=(0, 5))
+
+        ttk.Label(questions_header, text="Questions", style="Header.TLabel").pack(
+            side=tk.LEFT, anchor=tk.W)
+
+        search_frame = ttk.Frame(questions_header)
+        search_frame.pack(side=tk.RIGHT, fill=tk.X, expand=True)
+
+        ttk.Label(search_frame, text="Search:", style="Muted.TLabel").pack(
+            side=tk.LEFT, padx=(0, 6))
+        search_entry = ttk.Entry(search_frame, textvariable=self.question_search_var, bootstyle="info")
+        search_entry.pack(side=tk.LEFT, fill=tk.X, expand=True)
+        ttk.Button(search_frame, text="Clear", command=self.clear_question_search,
+                  width=6, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=(6, 0))
 
         list_scroll = ttk.Scrollbar(left_frame, orient=tk.VERTICAL)
-        self.questions_listbox = tk.Listbox(left_frame, yscrollcommand=list_scroll.set)
+        self.questions_listbox = tk.Listbox(
+            left_frame,
+            yscrollcommand=list_scroll.set,
+            selectmode=tk.EXTENDED,
+            exportselection=False,
+        )
         _style_tk_listbox(self.questions_listbox)
         list_scroll.config(command=self.questions_listbox.yview)
 
@@ -670,18 +691,93 @@ class AdvancedChapterEditor:
     
     def refresh_questions_list(self):
         """Refresh questions list"""
+        selected_actual_indices = self.get_selected_question_indices()
+        if not selected_actual_indices and self.current_question_idx is not None:
+            selected_actual_indices = [self.current_question_idx]
+
+        self.filtered_question_indices = self.get_filtered_question_indices()
         self.questions_listbox.delete(0, tk.END)
-        for idx, q in enumerate(self.questions):
-            display = f"{idx + 1}. {q.get('number', '')} - {q.get('text', '')[:60]}"
+        for display_idx, question_idx in enumerate(self.filtered_question_indices):
+            q = self.questions[question_idx]
+            display = f"{question_idx + 1}. {q.get('number', '')} - {q.get('text', '')[:60]}"
             self.questions_listbox.insert(tk.END, display)
+
+        self.restore_question_selection(selected_actual_indices)
+
+    def get_filtered_question_indices(self):
+        """Return question indexes that match the current search filter."""
+        term = self._normalize_for_compare(self.question_search_var.get())
+        if not term:
+            return list(range(len(self.questions)))
+
+        matches = []
+        for idx, question in enumerate(self.questions):
+            haystack = self._question_search_blob(question)
+            if term in haystack:
+                matches.append(idx)
+        return matches
+
+    def _question_search_blob(self, question):
+        """Build searchable text for a question."""
+        parts = [
+            question.get("id", ""),
+            question.get("number", ""),
+            question.get("text", ""),
+            question.get("explanation", ""),
+            question.get("correctAnswer", ""),
+            question.get("inputType", ""),
+            question.get("image", ""),
+        ]
+        for choice in question.get("choices", []) or []:
+            parts.extend([
+                choice.get("value", ""),
+                choice.get("label", ""),
+                choice.get("text", ""),
+            ])
+        return self._normalize_for_compare(" ".join(str(part) for part in parts if part is not None))
+
+    def get_selected_question_indices(self):
+        """Map selected listbox rows to actual question indexes."""
+        if not hasattr(self, "questions_listbox"):
+            return []
+
+        selected = []
+        for row_idx in self.questions_listbox.curselection():
+            if 0 <= row_idx < len(self.filtered_question_indices):
+                selected.append(self.filtered_question_indices[row_idx])
+        return selected
+
+    def restore_question_selection(self, selected_actual_indices):
+        """Restore listbox selection from actual question indexes."""
+        if not hasattr(self, "questions_listbox"):
+            return
+
+        self.questions_listbox.selection_clear(0, tk.END)
+        if not selected_actual_indices:
+            return
+
+        selected_rows = []
+        for actual_idx in selected_actual_indices:
+            if actual_idx in self.filtered_question_indices:
+                selected_rows.append(self.filtered_question_indices.index(actual_idx))
+
+        for row_idx in selected_rows:
+            self.questions_listbox.selection_set(row_idx)
+        if selected_rows:
+            self.questions_listbox.activate(selected_rows[0])
+
+    def clear_question_search(self):
+        """Clear the question search filter."""
+        self.question_search_var.set("")
+        self.refresh_questions_list()
     
     def on_question_select(self, event):
         """Handle question selection"""
-        selection = self.questions_listbox.curselection()
-        if not selection:
+        selected_indices = self.get_selected_question_indices()
+        if not selected_indices:
             return
         
-        self.current_question_idx = selection[0]
+        self.current_question_idx = selected_indices[0]
         self.display_question()
     
     def display_question(self):
@@ -979,7 +1075,7 @@ class AdvancedChapterEditor:
         q['explanation'] = self.q_explanation.get(1.0, tk.END).strip()
         
         self.refresh_questions_list()
-        self.questions_listbox.selection_set(self.current_question_idx)
+        self.restore_question_selection([self.current_question_idx])
         # Force display refresh to show updated data including image path
         self.display_question()
         messagebox.showinfo("Success", "Question updated ✓\n(Click 'Save Changes' to save to file)")
@@ -1004,7 +1100,7 @@ class AdvancedChapterEditor:
         self.questions.append(new_q)
         self.refresh_questions_list()
         self.current_question_idx = len(self.questions) - 1
-        self.questions_listbox.selection_set(self.current_question_idx)
+        self.restore_question_selection([self.current_question_idx])
         # Force display of the new question
         self.display_question()
         messagebox.showinfo("Success", "New question added")
@@ -1154,9 +1250,7 @@ class AdvancedChapterEditor:
         if self.current_question_idx is not None and self.questions:
             keep_idx = max(0, min(self.current_question_idx, len(self.questions) - 1))
             self.current_question_idx = keep_idx
-            self.questions_listbox.selection_clear(0, tk.END)
-            self.questions_listbox.selection_set(keep_idx)
-            self.questions_listbox.activate(keep_idx)
+            self.restore_question_selection([keep_idx])
             self.display_question()
 
         if show_message:
@@ -1214,9 +1308,7 @@ class AdvancedChapterEditor:
                 new_idx = max(0, min(new_idx, len(self.questions) - 1))
 
             self.current_question_idx = new_idx
-            self.questions_listbox.selection_clear(0, tk.END)
-            self.questions_listbox.selection_set(new_idx)
-            self.questions_listbox.activate(new_idx)
+            self.restore_question_selection([new_idx])
             self.display_question()
         else:
             self.current_question_idx = None
@@ -1230,49 +1322,105 @@ class AdvancedChapterEditor:
         )
     
     def delete_question(self):
-        """Delete current question"""
-        if self.current_question_idx is None:
-            messagebox.showwarning("Warning", "Select a question first")
+        """Delete the currently selected question(s)."""
+        selected_question_indices = self.get_selected_question_indices()
+        if not selected_question_indices and self.current_question_idx is not None:
+            selected_question_indices = [self.current_question_idx]
+
+        if not selected_question_indices:
+            messagebox.showwarning("Warning", "Select at least one question first")
             return
 
-        question = self.questions[self.current_question_idx]
-        image_path = question.get('image', '')
+        selected_question_indices = sorted(set(selected_question_indices))
+        selected_questions = [self.questions[idx] for idx in selected_question_indices]
+        has_any_image = any(question.get('image', '') for question in selected_questions)
 
         dlg = tk.Toplevel(self.window)
-        _style_dialog(dlg, "Delete Question", "480x180" if image_path else "480x140")
+        _style_dialog(dlg, "Delete Question(s)", "720x360" if has_any_image else "720x300")
         dlg.transient(self.window)
         dlg.grab_set()
 
         frame = ttk.Frame(dlg, padding=12, bootstyle="dark")
         frame.pack(fill=tk.BOTH, expand=True)
 
-        q_num = question.get('number', str(self.current_question_idx + 1))
-        ttk.Label(frame, text=f"Delete question {q_num}?", style="Header.TLabel").pack(anchor=tk.W, pady=(0, 8))
+        ttk.Label(
+            frame,
+            text=f"Delete {len(selected_question_indices)} selected question(s)?",
+            style="Header.TLabel"
+        ).pack(anchor=tk.W, pady=(0, 8))
+
+        preview_frame = ttk.Frame(frame)
+        preview_frame.pack(fill=tk.BOTH, expand=True)
+
+        preview_scroll = ttk.Scrollbar(preview_frame, orient=tk.VERTICAL)
+        preview_list = tk.Listbox(
+            preview_frame,
+            height=8,
+            yscrollcommand=preview_scroll.set,
+            exportselection=False,
+        )
+        _style_tk_listbox(preview_list)
+        preview_scroll.config(command=preview_list.yview)
+
+        for idx in selected_question_indices:
+            question = self.questions[idx]
+            q_num = question.get('number', str(idx + 1))
+            title = str(question.get('text', '')).strip().replace('\n', ' ')
+            title = re.sub(r'\s+', ' ', title)
+            if len(title) > 90:
+                title = title[:90] + '...'
+            preview_list.insert(tk.END, f"Q{q_num} - {title}")
+
+        preview_list.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        preview_scroll.pack(side=tk.RIGHT, fill=tk.Y)
 
         del_image_var = tk.BooleanVar(value=False)
-        if image_path:
-            ttk.Label(frame, text=f"This question has an image: {image_path}").pack(anchor=tk.W)
-            ttk.Checkbutton(frame, text="Also delete image file from disk (permanent)", variable=del_image_var, bootstyle="warning").pack(anchor=tk.W, pady=(4, 8))
+        if has_any_image:
+            ttk.Label(frame, text="Some selected questions have images.").pack(anchor=tk.W, pady=(8, 0))
+            ttk.Checkbutton(
+                frame,
+                text="Also delete image files from disk (permanent)",
+                variable=del_image_var,
+                bootstyle="warning"
+            ).pack(anchor=tk.W, pady=(4, 8))
 
         btn_frame = ttk.Frame(frame)
         btn_frame.pack(fill=tk.X, pady=(10, 0))
 
         def do_delete():
-            if del_image_var.get() and image_path:
-                try:
-                    img_path = self.base_path / image_path
-                    if img_path.exists():
-                        img_path.unlink()
-                        print(f"Deleted image: {image_path}")
-                except Exception as e:
-                    print(f"Warning: Failed to delete image {image_path}: {e}")
+            if del_image_var.get():
+                for idx in selected_question_indices:
+                    image_path = self.questions[idx].get('image', '')
+                    if not image_path:
+                        continue
+                    try:
+                        img_path = self.base_path / image_path
+                        if img_path.exists():
+                            img_path.unlink()
+                            print(f"Deleted image: {image_path}")
+                    except Exception as e:
+                        print(f"Warning: Failed to delete image {image_path}: {e}")
 
-            del self.questions[self.current_question_idx]
-            self.current_question_idx = None
-            self.refresh_questions_list()
-            self.init_editor_widgets()
+            previous_idx = self.current_question_idx
+            for idx in reversed(selected_question_indices):
+                del self.questions[idx]
+
+            self.fix_question_numbering(show_message=False)
+
+            remaining_count = len(self.questions)
+            if remaining_count:
+                next_idx = min(previous_idx if previous_idx is not None else 0, remaining_count - 1)
+                self.current_question_idx = next_idx
+                self.refresh_questions_list()
+                self.restore_question_selection([next_idx])
+                self.display_question()
+            else:
+                self.current_question_idx = None
+                self.refresh_questions_list()
+                self.init_editor_widgets()
+
             dlg.destroy()
-            messagebox.showinfo("Success", "Question deleted")
+            messagebox.showinfo("Success", f"Deleted {len(selected_question_indices)} question(s)")
 
         def cancel():
             dlg.destroy()
@@ -1293,7 +1441,7 @@ class AdvancedChapterEditor:
         self.questions[idx], self.questions[idx - 1] = self.questions[idx - 1], self.questions[idx]
         self.current_question_idx = idx - 1
         self.refresh_questions_list()
-        self.questions_listbox.selection_set(self.current_question_idx)
+        self.restore_question_selection([self.current_question_idx])
         self.display_question()
 
     def move_question_down(self):
@@ -1309,7 +1457,7 @@ class AdvancedChapterEditor:
         self.questions[idx], self.questions[idx + 1] = self.questions[idx + 1], self.questions[idx]
         self.current_question_idx = idx + 1
         self.refresh_questions_list()
-        self.questions_listbox.selection_set(self.current_question_idx)
+        self.restore_question_selection([self.current_question_idx])
         self.display_question()
 
     def save_chapter(self):
