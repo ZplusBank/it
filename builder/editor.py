@@ -490,6 +490,7 @@ class AdvancedChapterEditor:
                 self.chapter_data = {"questions": [], "title": ""}
             
             self.questions = self.chapter_data.get("questions", [])
+            self.sync_question_count()
             
             # Debug: Show how many questions loaded and if they have images
             print(f"DEBUG: Loaded {len(self.questions)} questions from {self.chapter_file.name}")
@@ -1073,6 +1074,7 @@ class AdvancedChapterEditor:
         q['inputType'] = self.q_input_type.get()
         q['correctAnswer'] = self.q_correct.get()
         q['explanation'] = self.q_explanation.get(1.0, tk.END).strip()
+        self.sync_question_count()
         
         self.refresh_questions_list()
         self.restore_question_selection([self.current_question_idx])
@@ -1098,6 +1100,7 @@ class AdvancedChapterEditor:
         }
         
         self.questions.append(new_q)
+        self.sync_question_count()
         self.refresh_questions_list()
         self.current_question_idx = len(self.questions) - 1
         self.restore_question_selection([self.current_question_idx])
@@ -1253,6 +1256,8 @@ class AdvancedChapterEditor:
             self.restore_question_selection([keep_idx])
             self.display_question()
 
+        self.sync_question_count()
+
         if show_message:
             if changed:
                 messagebox.showinfo(
@@ -1266,6 +1271,16 @@ class AdvancedChapterEditor:
                 )
 
         return changed
+
+    def sync_question_count(self):
+        """Keep the chapter Questions field aligned with the actual question count."""
+        count = len(self.questions)
+        if hasattr(self, "ch_count"):
+            self.ch_count.delete(0, tk.END)
+            self.ch_count.insert(0, str(count))
+        if self.chapter_data is not None:
+            self.chapter_data["q"] = count
+        return count
 
     def delete_duplicate_questions(self):
         """Delete questions that have the same title and the same choices."""
@@ -1297,6 +1312,7 @@ class AdvancedChapterEditor:
             del self.questions[idx]
 
         renumbered_count = self.fix_question_numbering(show_message=False)
+        self.sync_question_count()
 
         self.refresh_questions_list()
 
@@ -1406,6 +1422,7 @@ class AdvancedChapterEditor:
                 del self.questions[idx]
 
             self.fix_question_numbering(show_message=False)
+            self.sync_question_count()
 
             remaining_count = len(self.questions)
             if remaining_count:
@@ -1418,6 +1435,8 @@ class AdvancedChapterEditor:
                 self.current_question_idx = None
                 self.refresh_questions_list()
                 self.init_editor_widgets()
+
+            self.sync_question_count()
 
             dlg.destroy()
             messagebox.showinfo("Success", f"Deleted {len(selected_question_indices)} question(s)")
