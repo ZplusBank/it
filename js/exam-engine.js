@@ -7,6 +7,7 @@ const app = {
     questions: [],
     userAnswers: {},
     checkedAnswers: {},
+    questionStatuses: {},
     currentView: 'subjects',
     currentSubject: null,
     modalCallback: null,
@@ -127,6 +128,7 @@ const app = {
                     currentQuestionIndex: this.currentQuestionIndex,
                     userAnswers: this.userAnswers,
                     checkedAnswers: this.checkedAnswers,
+                    questionStatuses: this.questionStatuses,
                     timestamp: Date.now()
                 };
                 localStorage.setItem('examProgress', JSON.stringify(progress));
@@ -146,6 +148,7 @@ const app = {
                     currentQuestionIndex: this.currentQuestionIndex,
                     userAnswers: this.userAnswers,
                     checkedAnswers: this.checkedAnswers,
+                    questionStatuses: this.questionStatuses,
                     timestamp: Date.now()
                 };
                 localStorage.setItem('examProgress', JSON.stringify(progress));
@@ -333,11 +336,22 @@ const app = {
             this.currentQuestionIndex = progress.currentQuestionIndex;
             this.userAnswers = progress.userAnswers;
             this.checkedAnswers = progress.checkedAnswers;
+            this.questionStatuses = progress.questionStatuses || {};
 
             // Recalculate incremental answered count from restored state
             this._answeredCount = 0;
             for (const idx in this.userAnswers) {
                 if (!this._isSkipped(this.userAnswers[idx])) this._answeredCount++;
+            }
+
+            // Backfill statuses from older saves that only stored checked flags
+            for (const idx in this.checkedAnswers) {
+                if (!this.questionStatuses[idx]) {
+                    const question = this.questions[idx];
+                    if (question) {
+                        this.questionStatuses[idx] = this._getQuestionStatus(question, this.userAnswers[idx]);
+                    }
+                }
             }
 
             this.renderCurrentQuestion();
@@ -796,6 +810,7 @@ const app = {
         this.currentQuestionIndex = 0;
         this.userAnswers = {};
         this.checkedAnswers = {};
+        this.questionStatuses = {};
         this._answeredCount = 0;
         this.clearProgress(); // Clear any old progress when starting new exam
 
@@ -830,6 +845,7 @@ const app = {
 
         this.renderQuestionNumbers();
         this.renderCurrentQuestion();
+        this.updateQuestionNumberStyles();
 
         // Toast notification
         this.showToast(`Exam started with ${this.questions.length} questions. Good luck!`, 'info', 3500);
@@ -855,13 +871,14 @@ const app = {
 
         for (let idx = 0; idx < count; idx++) {
             const btn = document.createElement('button');
-            btn.className = 'question-number' + (idx === 0 ? ' active' : '') + (this.userAnswers[idx] ? ' answered' : '');
+            btn.className = 'question-number' + (idx === 0 ? ' active' : '');
             btn.textContent = idx + 1;
             btn.dataset.idx = idx;
             fragment.appendChild(btn);
             this._questionBtns[idx] = btn;
         }
         container.appendChild(fragment);
+        this.updateQuestionNumberStyles();
     },
 
     renderCurrentQuestion() {
@@ -950,7 +967,7 @@ const app = {
 
         prevBtn.disabled = idx === 0;
         nextBtn.disabled = false;
-        checkBtn.style.display = isLastQuestion ? 'none' : 'block';
+        checkBtn.style.display = 'block';
         submitBtn.style.display = isLastQuestion ? 'block' : 'none';
 
         // Clear feedback
@@ -966,6 +983,7 @@ const app = {
     selectAnswer(value, isCheckbox) {
         const idx = this.currentQuestionIndex;
         const wasPreviouslyAnswered = !this._isSkipped(this.userAnswers[idx]);
+        const wasChecked = !!this.checkedAnswers[idx];
 
         if (isCheckbox) {
             const current = this.userAnswers[idx] || [];
@@ -981,6 +999,16 @@ const app = {
             this.userAnswers[idx] = value;
         }
 
+        if (wasChecked) {
+            delete this.checkedAnswers[idx];
+            delete this.questionStatuses[idx];
+            const feedbackEl = document.getElementById('feedback');
+            if (feedbackEl) {
+                feedbackEl.className = 'feedback';
+                feedbackEl.textContent = '';
+            }
+        }
+
         // Update incremental answered count
         const isNowAnswered = !this._isSkipped(this.userAnswers[idx]);
         if (!wasPreviouslyAnswered && isNowAnswered) this._answeredCount++;
@@ -993,23 +1021,37 @@ const app = {
             choice.classList.toggle('selected', input && input.checked);
         });
 
+        this.updateQuestionNumberStyles();
+
         // Auto-save on answer change (debounced)
         this.saveProgress();
     },
 
     checkAnswer() {
-        this.checkedAnswers[this.currentQuestionIndex] = true;
-        this.showFeedback(this.currentQuestionIndex);
+        const idx = this.currentQuestionIndex;
+        const question = this.questions[idx];
+        const userAnswer = this.userAnswers[idx];
+        const status = this._getQuestionStatus(question, userAnswer);
+
+        this.checkedAnswers[idx] = true;
+        this.questionStatuses[idx] = status;
+        this.updateQuestionNumberStyles();
+        this.showFeedback(idx, status);
 
         // Toast feedback 
-        const question = this.questions[this.currentQuestionIndex];
-        const userAnswer = this.userAnswers[this.currentQuestionIndex];
-        const isCorrect = this._isAnswerCorrect(question, userAnswer);
         this.showToast(
-            isCorrect ? 'Correct! Well done!' : 'Incorrect. Check the explanation below.',
-            isCorrect ? 'success' : 'error',
+            status === 'correct'
+                ? 'Correct! Well done!'
+                : (status === 'wrong' ? 'Incorrect. Check the explanation below.' : 'Skipped. Review the answer below.'),
+            status === 'correct' ? 'success' : (status === 'wrong' ? 'error' : 'info'),
             2500
         );
+    },
+
+    /** Determine the status for a checked question */
+    _getQuestionStatus(question, userAnswer) {
+        if (this._isSkipped(userAnswer)) return 'skipped';
+        return this._isAnswerCorrect(question, userAnswer) ? 'correct' : 'wrong';
     },
 
     /** Check if an answer is correct (reusable helper) */
@@ -1022,15 +1064,15 @@ const app = {
         return userAnswer === question.correctAnswer;
     },
 
-    showFeedback(index) {
+    showFeedback(index, status = null) {
         const question = this.questions[index];
         const userAnswer = this.userAnswers[index];
         const feedbackEl = document.getElementById('feedback');
-        const isCorrect = this._isAnswerCorrect(question, userAnswer);
+        const answerStatus = status || this._getQuestionStatus(question, userAnswer);
 
-        feedbackEl.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+        feedbackEl.className = `feedback ${answerStatus}`;
 
-        const message = isCorrect ? '✓ Correct!' : '✗ Incorrect';
+        const message = answerStatus === 'correct' ? '✓ Correct!' : (answerStatus === 'wrong' ? '✗ Incorrect' : '○ Skipped');
         const correctText = question.inputType === 'checkbox'
             ? `Correct answers: ${question.correctAnswer.split('').join(', ')}`
             : `Correct answer: ${question.correctAnswer}`;
@@ -1105,11 +1147,16 @@ const app = {
         const btns = this._questionBtns;
         const currentIdx = this.currentQuestionIndex;
         const answers = this.userAnswers;
+        const statuses = this.questionStatuses;
         for (let idx = 0; idx < btns.length; idx++) {
             const btn = btns[idx];
             if (!btn) continue;
             btn.classList.toggle('active', idx === currentIdx);
-            btn.classList.toggle('answered', !!answers[idx]);
+            const status = statuses[idx];
+            btn.classList.toggle('answered', !!answers[idx] && !status);
+            btn.classList.toggle('correct', status === 'correct');
+            btn.classList.toggle('wrong', status === 'wrong');
+            btn.classList.toggle('skipped', status === 'skipped');
         }
         this.updateProgressIndicator();
     },
@@ -1456,6 +1503,7 @@ const app = {
         this.questions = [];
         this.userAnswers = {};
         this.checkedAnswers = {};
+        this.questionStatuses = {};
         this._answeredCount = 0;
         this._cleanupResultIO();
     },

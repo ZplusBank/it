@@ -599,6 +599,7 @@ class AdvancedChapterEditor:
         list_scroll.pack(side=tk.RIGHT, fill=tk.Y)
 
         self.questions_listbox.bind("<<ListboxSelect>>", self.on_question_select)
+        self.questions_listbox.bind("<Button-3>", self.show_question_context_menu)
 
         # Right panel - Question editor
         right_frame = ttk.Frame(container)
@@ -837,6 +838,42 @@ class AdvancedChapterEditor:
         
         self.current_question_idx = selected_indices[0]
         self.display_question()
+    
+    def show_question_context_menu(self, event):
+        """Show context menu on right-click"""
+        # Select the item under the cursor
+        idx = self.questions_listbox.nearest(event.y)
+        if idx < 0:
+            return
+        
+        # Ensure the clicked item is selected
+        if idx not in self.questions_listbox.curselection():
+            self.questions_listbox.selection_clear(0, tk.END)
+            self.questions_listbox.selection_set(idx)
+            self.questions_listbox.activate(idx)
+            self.current_question_idx = idx
+            self.display_question()
+        
+        # Create context menu
+        context_menu = tk.Menu(self.window, tearoff=0, bg=COLORS['bg_card'], 
+                               fg=COLORS['text_main'], activebackground=COLORS['primary'],
+                               activeforeground=COLORS['selection_fg'], relief=tk.FLAT,
+                               font=("Segoe UI", 9))
+        
+        context_menu.add_command(label="Edit", command=self.display_question)
+        context_menu.add_separator()
+        context_menu.add_command(label="Delete", command=self.delete_question)
+        context_menu.add_separator()
+        context_menu.add_command(label="Move Up", command=self.move_question_up)
+        context_menu.add_command(label="Move Down", command=self.move_question_down)
+        context_menu.add_separator()
+        context_menu.add_command(label="Duplicate", command=self.duplicate_question)
+        
+        # Display menu at cursor position
+        try:
+            context_menu.tk_popup(event.x_root, event.y_root)
+        finally:
+            context_menu.after_idle(context_menu.grab_release)
     
     def display_question(self):
         """Display current question in editor"""
@@ -1164,6 +1201,31 @@ class AdvancedChapterEditor:
         # Force display of the new question
         self.display_question()
         messagebox.showinfo("Success", "New question added")
+
+    def duplicate_question(self):
+        """Duplicate the currently selected question"""
+        if self.current_question_idx is None or self.current_question_idx >= len(self.questions):
+            messagebox.showwarning("Warning", "Select a question first")
+            return
+        
+        # Deep copy the current question
+        import copy
+        original = self.questions[self.current_question_idx]
+        duplicated = copy.deepcopy(original)
+        
+        # Generate new ID and update other fields
+        duplicated["id"] = str(uuid.uuid4())
+        duplicated["number"] = str(len(self.questions) + 1)
+        duplicated["inputName"] = f"Q{len(self.questions)}"
+        
+        # Insert after current question
+        self.questions.insert(self.current_question_idx + 1, duplicated)
+        self.sync_question_count()
+        self.refresh_questions_list()
+        self.current_question_idx = self.current_question_idx + 1
+        self.restore_question_selection([self.current_question_idx])
+        self.display_question()
+        messagebox.showinfo("Success", "Question duplicated")
 
     def _normalize_for_compare(self, value):
         """Normalize text so duplicate checks are whitespace/case insensitive."""

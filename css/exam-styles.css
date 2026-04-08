@@ -990,15 +990,57 @@ header::before {
 }
 
 .question-number.answered {
-    background: var(--success);
-    color: white;
-    border-color: var(--success);
+    background: rgba(99, 102, 241, 0.08);
+    color: var(--primary);
+    border-color: rgba(99, 102, 241, 0.35);
 }
 
 .question-number.answered.active {
     background: var(--accent-gradient);
     border-color: transparent;
-    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3), inset 0 -3px 0 rgba(16, 185, 129, 0.4);
+    color: white;
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+}
+
+.question-number.correct {
+    background: var(--success);
+    color: white;
+    border-color: var(--success);
+}
+
+.question-number.wrong {
+    background: var(--danger);
+    color: white;
+    border-color: var(--danger);
+}
+
+.question-number.skipped {
+    background: var(--bg-card);
+    color: var(--text-muted);
+    border-color: var(--border-color);
+    box-shadow: none;
+}
+
+.question-number.correct.active,
+.question-number.wrong.active,
+.question-number.skipped.active {
+    border-color: transparent;
+    color: white;
+    transform: scale(1);
+}
+
+.question-number.correct.active {
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+}
+
+.question-number.wrong.active {
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.3);
+}
+
+.question-number.skipped.active {
+    background: var(--bg-card);
+    color: var(--text-muted);
+    box-shadow: none;
 }
 
 /* ============= Question Container ============= */
@@ -2019,6 +2061,14 @@ button.submit-btn {
     color: var(--danger);
     border: 1.5px solid var(--danger);
     box-shadow: 0 4px 20px rgba(239, 68, 68, 0.1);
+}
+
+.feedback.skipped {
+    display: block;
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    border: 1.5px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(148, 163, 184, 0.08);
 }
 
 /* ============================================================
