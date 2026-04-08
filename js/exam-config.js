@@ -244,6 +244,12 @@ const EXAM_CONFIG = [
         "name": " ",
         "q": 9,
         "file": "data/soft/chapter14abfeda-4c01-4dba-88a9-c252d2ff0f89.pdfvisual_extractor.json"
+      },
+      {
+        "id": "First",
+        "name": "",
+        "q": 120,
+        "file": "data/soft/Soft_first.json"
       }
     ]
   },
