@@ -14,6 +14,7 @@ from pathlib import Path
 import re
 import shutil
 import zipfile
+from difflib import SequenceMatcher
 
 # -- Dark Theme Color Constants (matches web app CSS dark theme) --
 COLORS = {
@@ -518,6 +519,8 @@ class AdvancedChapterEditor:
         ttk.Button(toolbar, text="Add Question", command=self.add_question,
                   width=15, bootstyle="success").pack(side=tk.LEFT, padx=5)
         ttk.Button(toolbar, text="Del Duplicates", command=self.delete_duplicate_questions,
+              width=16, bootstyle="warning-outline").pack(side=tk.LEFT, padx=5)
+        ttk.Button(toolbar, text="Smart Duplicates", command=self.delete_similar_questions,
               width=16, bootstyle="warning-outline").pack(side=tk.LEFT, padx=5)
         ttk.Button(toolbar, text="Delete Question", command=self.delete_question,
                   width=18, bootstyle="danger-outline").pack(side=tk.LEFT, padx=5)
@@ -1286,6 +1289,216 @@ class AdvancedChapterEditor:
         dlg.bind("<Return>", lambda e: confirm())
         dlg.wait_window()
         return result["selected"]
+
+    def _select_similar_to_delete(self, similar_pairs):
+        """Show interactive similar-question selector and return selected duplicate indexes."""
+        dlg = tk.Toplevel(self.window)
+        _style_dialog(dlg, "Select Similar Questions To Delete", "920x580")
+        dlg.transient(self.window)
+        dlg.grab_set()
+
+        frame = ttk.Frame(dlg, padding=12, bootstyle="dark")
+        frame.pack(fill=tk.BOTH, expand=True)
+
+        ttk.Label(frame, text="Similar Questions (Smart Detector)", style="Header.TLabel").pack(
+            anchor=tk.W, pady=(0, 4)
+        )
+        ttk.Label(
+            frame,
+            text=(
+                "These are likely duplicates based on similar wording and choices. "
+                "Select which entries to delete."
+            ),
+            style="Muted.TLabel",
+        ).pack(anchor=tk.W, pady=(0, 8))
+
+        list_frame = ttk.Frame(frame)
+        list_frame.pack(fill=tk.BOTH, expand=True)
+
+        list_scroll = ttk.Scrollbar(list_frame, orient=tk.VERTICAL)
+        sim_listbox = tk.Listbox(
+            list_frame,
+            selectmode=tk.EXTENDED,
+            yscrollcommand=list_scroll.set,
+            exportselection=False,
+        )
+        _style_tk_listbox(sim_listbox)
+        list_scroll.config(command=sim_listbox.yview)
+
+        listbox_entries = []
+        for keep_idx, dup_idx, score in similar_pairs:
+            keep_q = self.questions[keep_idx]
+            dup_q = self.questions[dup_idx]
+            keep_number = keep_q.get("number", str(keep_idx + 1))
+            dup_number = dup_q.get("number", str(dup_idx + 1))
+
+            title = str(dup_q.get("text", "")).strip().replace("\n", " ")
+            title = re.sub(r"\s+", " ", title)
+            if len(title) > 80:
+                title = title[:80] + "..."
+
+            row_text = (
+                f"Delete Q{dup_number} (similar to Q{keep_number}) "
+                f"| score: {score:.0%} | {title}"
+            )
+            listbox_entries.append((dup_idx, row_text))
+            sim_listbox.insert(tk.END, row_text)
+
+        if listbox_entries:
+            sim_listbox.selection_set(0, tk.END)
+
+        sim_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        list_scroll.pack(side=tk.RIGHT, fill=tk.Y)
+
+        ctrl_frame = ttk.Frame(frame)
+        ctrl_frame.pack(fill=tk.X, pady=(10, 6))
+
+        def select_all():
+            sim_listbox.selection_set(0, tk.END)
+
+        def clear_selection():
+            sim_listbox.selection_clear(0, tk.END)
+
+        def toggle_selection():
+            selected = set(sim_listbox.curselection())
+            for i in range(sim_listbox.size()):
+                if i in selected:
+                    sim_listbox.selection_clear(i)
+                else:
+                    sim_listbox.selection_set(i)
+
+        ttk.Button(ctrl_frame, text="Select All", command=select_all,
+                   width=12, bootstyle="success-outline").pack(side=tk.LEFT, padx=3)
+        ttk.Button(ctrl_frame, text="Clear", command=clear_selection,
+                   width=10, bootstyle="warning-outline").pack(side=tk.LEFT, padx=3)
+        ttk.Button(ctrl_frame, text="Toggle", command=toggle_selection,
+                   width=10, bootstyle="info-outline").pack(side=tk.LEFT, padx=3)
+
+        result = {"selected": None}
+
+        btn_frame = ttk.Frame(frame)
+        btn_frame.pack(fill=tk.X, pady=(4, 0))
+
+        def confirm():
+            selected_rows = sim_listbox.curselection()
+            if not selected_rows:
+                messagebox.showwarning("No Selection", "Select at least one similar question to delete.")
+                return
+            selected_dups = [listbox_entries[i][0] for i in selected_rows]
+            result["selected"] = sorted(set(selected_dups))
+            dlg.destroy()
+
+        def cancel():
+            dlg.destroy()
+
+        ttk.Button(btn_frame, text="Delete Selected", command=confirm,
+                   width=16, bootstyle="danger").pack(side=tk.RIGHT, padx=6)
+        ttk.Button(btn_frame, text="Cancel", command=cancel,
+                   width=12, bootstyle="secondary-outline").pack(side=tk.RIGHT)
+
+        dlg.bind("<Escape>", lambda e: cancel())
+        dlg.bind("<Return>", lambda e: confirm())
+        dlg.wait_window()
+        return result["selected"]
+
+    def _question_text_similarity(self, left, right):
+        """Compute fuzzy similarity between two question titles."""
+        if not left or not right:
+            return 0.0
+        seq = SequenceMatcher(None, left, right).ratio()
+        left_tokens = set(left.split())
+        right_tokens = set(right.split())
+        union = left_tokens | right_tokens
+        jaccard = (len(left_tokens & right_tokens) / len(union)) if union else 0.0
+        return max(seq, jaccard)
+
+    def _question_choices_similarity(self, q1, q2):
+        """Compute fuzzy similarity between two questions' choices."""
+        c1 = [self._normalize_for_compare(c.get("text", "")) for c in q1.get("choices", []) or []]
+        c2 = [self._normalize_for_compare(c.get("text", "")) for c in q2.get("choices", []) or []]
+        c1 = [c for c in c1 if c]
+        c2 = [c for c in c2 if c]
+        if not c1 or not c2:
+            return 0.0
+
+        s1 = " | ".join(sorted(c1))
+        s2 = " | ".join(sorted(c2))
+        seq = SequenceMatcher(None, s1, s2).ratio()
+        t1 = set(c1)
+        t2 = set(c2)
+        union = t1 | t2
+        overlap = (len(t1 & t2) / len(union)) if union else 0.0
+        return max(seq, overlap)
+
+    def delete_similar_questions(self):
+        """Delete likely duplicate questions using fuzzy similarity matching."""
+        if len(self.questions) < 2:
+            messagebox.showinfo("Not Enough Questions", "Need at least 2 questions for smart duplicate detection.")
+            return
+
+        similar_pairs = []
+        for i in range(len(self.questions)):
+            for j in range(i + 1, len(self.questions)):
+                q1 = self.questions[i]
+                q2 = self.questions[j]
+
+                t1 = self._normalize_for_compare(q1.get("text", ""))
+                t2 = self._normalize_for_compare(q2.get("text", ""))
+                if not t1 or not t2:
+                    continue
+
+                title_score = self._question_text_similarity(t1, t2)
+                choices_score = self._question_choices_similarity(q1, q2)
+                score = (0.75 * title_score) + (0.25 * choices_score)
+
+                # Strict enough to avoid most false positives while catching close variants.
+                short_text = min(len(t1), len(t2)) < 12
+                if short_text:
+                    is_similar = score >= 0.92 and title_score >= 0.88
+                else:
+                    is_similar = score >= 0.84 and title_score >= 0.76
+
+                if is_similar:
+                    similar_pairs.append((i, j, score))
+
+        if not similar_pairs:
+            messagebox.showinfo("No Similar Questions", "No likely duplicate questions were found.")
+            return
+
+        # Keep strongest matches first for cleaner review.
+        similar_pairs.sort(key=lambda item: item[2], reverse=True)
+        selected_indexes = self._select_similar_to_delete(similar_pairs)
+        if selected_indexes is None:
+            return
+
+        previous_idx = self.current_question_idx
+        for idx in reversed(selected_indexes):
+            del self.questions[idx]
+
+        renumbered_count = self.fix_question_numbering(show_message=False)
+        self.sync_question_count()
+        self.refresh_questions_list()
+
+        if self.questions:
+            new_idx = 0
+            if previous_idx is not None:
+                removed_before = sum(1 for i in selected_indexes if i < previous_idx)
+                new_idx = previous_idx - removed_before
+                new_idx = max(0, min(new_idx, len(self.questions) - 1))
+
+            self.current_question_idx = new_idx
+            self.restore_question_selection([new_idx])
+            self.display_question()
+        else:
+            self.current_question_idx = None
+            self.init_editor_widgets()
+
+        messagebox.showinfo(
+            "Success",
+            f"Removed {len(selected_indexes)} similar question(s).\n"
+            f"Renumbered {renumbered_count} question(s).\n"
+            f"Remaining questions: {len(self.questions)}"
+        )
 
     def fix_question_numbering(self, show_message=True):
         """Renumber question.number fields sequentially from 1..N."""
