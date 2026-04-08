@@ -509,6 +509,8 @@ class AdvancedChapterEditor:
               width=16, bootstyle="warning-outline").pack(side=tk.LEFT, padx=5)
         ttk.Button(toolbar, text="Delete Question", command=self.delete_question,
                   width=18, bootstyle="danger-outline").pack(side=tk.LEFT, padx=5)
+        ttk.Button(toolbar, text="Fix Numbering", command=self.fix_question_numbering,
+              width=14, bootstyle="info-outline").pack(side=tk.LEFT, padx=5)
         ttk.Button(toolbar, text="▲", command=self.move_question_up,
                   width=3, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=2)
         ttk.Button(toolbar, text="▼", command=self.move_question_down,
@@ -1132,6 +1134,45 @@ class AdvancedChapterEditor:
         dlg.wait_window()
         return result["selected"]
 
+    def fix_question_numbering(self, show_message=True):
+        """Renumber question.number fields sequentially from 1..N."""
+        if not self.questions:
+            if show_message:
+                messagebox.showinfo("No Questions", "There are no questions to renumber.")
+            return 0
+
+        changed = 0
+        for idx, question in enumerate(self.questions, start=1):
+            new_number = str(idx)
+            old_number = str(question.get("number", ""))
+            if old_number != new_number:
+                question["number"] = new_number
+                changed += 1
+
+        self.refresh_questions_list()
+
+        if self.current_question_idx is not None and self.questions:
+            keep_idx = max(0, min(self.current_question_idx, len(self.questions) - 1))
+            self.current_question_idx = keep_idx
+            self.questions_listbox.selection_clear(0, tk.END)
+            self.questions_listbox.selection_set(keep_idx)
+            self.questions_listbox.activate(keep_idx)
+            self.display_question()
+
+        if show_message:
+            if changed:
+                messagebox.showinfo(
+                    "Numbering Fixed",
+                    f"Updated numbering for {changed} question(s)."
+                )
+            else:
+                messagebox.showinfo(
+                    "Numbering Already Correct",
+                    "Question numbering is already sequential."
+                )
+
+        return changed
+
     def delete_duplicate_questions(self):
         """Delete questions that have the same title and the same choices."""
         if not self.questions:
@@ -1161,6 +1202,8 @@ class AdvancedChapterEditor:
         for idx in reversed(duplicate_indexes):
             del self.questions[idx]
 
+        renumbered_count = self.fix_question_numbering(show_message=False)
+
         self.refresh_questions_list()
 
         if self.questions:
@@ -1182,6 +1225,7 @@ class AdvancedChapterEditor:
         messagebox.showinfo(
             "Success",
             f"Removed {len(duplicate_indexes)} duplicate question(s).\n"
+            f"Renumbered {renumbered_count} question(s).\n"
             f"Remaining questions: {len(self.questions)}"
         )
     
