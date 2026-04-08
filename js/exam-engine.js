@@ -331,7 +331,12 @@ const app = {
             }
 
             // Restore state
-            this.selectedChapters = progress.selectedChapters;
+            const rawSelected = Array.isArray(progress.selectedChapters) ? progress.selectedChapters : [];
+            // Normalize legacy saved chapter IDs to section-scoped keys.
+            this.selectedChapters = rawSelected.map(ch => {
+                const chapterId = String(ch);
+                return chapterId.includes('::') ? chapterId : this._makeChapterKey(subject.id, chapterId);
+            });
             await this.startExam();
             this.currentQuestionIndex = progress.currentQuestionIndex;
             this.userAnswers = progress.userAnswers;
@@ -654,7 +659,7 @@ const app = {
             if (signal.aborted) break;
             const batch = configs.slice(i, i + MAX_CONCURRENT);
             const batchResults = await Promise.allSettled(
-                batch.map(chInfo => this._fetchChapter(chInfo, signal))
+                batch.map(chInfo => this._fetchChapter(chInfo, signal, subject.id))
             );
             for (const result of batchResults) {
                 if (result.status === 'fulfilled' && result.value) {
@@ -669,7 +674,7 @@ const app = {
     },
 
     /** Fetch and parse a single chapter file */
-    async _fetchChapter(chInfo, signal) {
+    async _fetchChapter(chInfo, signal, subjectId = '') {
         try {
             const response = await fetch(`./${chInfo.file}`, { signal });
             if (!response.ok) return null;
@@ -681,6 +686,8 @@ const app = {
 
             return {
                 id: chInfo.id,
+                subjectId,
+                scopedId: this._makeChapterKey(subjectId, chInfo.id),
                 title: chInfo.name || chapterData.title,
                 questions: chapterData.questions,
                 totalQuestions: chapterData.questions.length
@@ -691,6 +698,10 @@ const app = {
             }
             return null;
         }
+    },
+
+    _makeChapterKey(subjectId, chapterId) {
+        return `${String(subjectId)}::${String(chapterId)}`;
     },
 
     showChaptersView(subject) {
@@ -721,7 +732,7 @@ const app = {
         const grid = document.getElementById('chaptersGrid');
         grid.innerHTML = chapters.map((chapter, idx) => `
             <div class="chapter-card" data-name="${this.escapeHtml(chapter.title)}" style="--i: ${idx}">
-                <input type="checkbox" id="ch-${idx}" value="${chapter.id}" 
+                <input type="checkbox" id="ch-${idx}" value="${chapter.scopedId || this._makeChapterKey(this.currentSubject?.id || '', chapter.id)}" 
                        onchange="app.updateSelectedChapters()">
                 <label for="ch-${idx}">
                     <strong>${chapter.id}:</strong> ${this.escapeHtml(chapter.title)}<br>
@@ -797,7 +808,8 @@ const app = {
         });
 
         this.allChapters.forEach(chapter => {
-            if (selectedChapterIds.has(chapter.id)) {
+            const chapterKey = chapter.scopedId || this._makeChapterKey(chapter.subjectId || this.currentSubject?.id || '', chapter.id);
+            if (selectedChapterIds.has(chapterKey)) {
                 this.questions.push(...chapter.questions);
             }
         });
