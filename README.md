@@ -32,7 +32,12 @@ A client-side exam engine for IT subjects using JSON-based data. Users select a 
 
 ### ⚙️ Admin Editor (Python Tool)
 - **Section Management**: Add, import, delete sections
+- **Section Icon Management**: Upload/edit icon per section with default path `data/<section>/icon.png`
+- **Icon Preview**: Live preview in Add/Edit Section dialogs before saving
+- **Internet Icon Support**: Search icons on web and use icon URLs directly
+- **Icon Resize Option**: Auto-resize large icons during upload (recommended `128px` max)
 - **Chapter Management**: Organize chapters per section
+- **Batch Chapter Tools**: Multi-select chapters and run tools from **Tools** menu
 - **Advanced Chapter Editor**: Double-click to edit questions
 
 ### ✨ Advanced Chapter Editor
@@ -62,6 +67,7 @@ data/
   └── <subject>/
       ├── chapter1.json               # Questions & answers
       ├── chapters.json               # Chapter list
+      ├── icon.png                    # Section icon (default location)
       └── images/                     # Question images (auto-created)
 builder/
   └── editor.py                        # Admin manager tool
@@ -80,9 +86,10 @@ python builder/editor.py
 
 1. **Select a Section** (left panel)
 2. **View Chapters** (right panel)
-3. **Simple Edit**: Select chapter → Edit name/ID/questions count → Click "✓ Update Chapter"
-4. **Advanced Edit**: **Double-click chapter** → Opens Advanced Editor
-5. **Save**: Click **💾 Save All**
+3. **Batch Tools**: Multi-select chapters (Ctrl/Shift) → **Tools** menu (fix numbering/input typing, de-duplicate, delete)
+4. **Simple Edit**: Select chapter → Edit name/ID/questions count → Click "✓ Update Chapter"
+5. **Advanced Edit**: **Double-click chapter** → Opens Advanced Editor
+6. **Save**: Click **💾 Save All**
 
 ### Advanced Chapter Editor
 When you double-click a chapter:

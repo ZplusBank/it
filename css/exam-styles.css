@@ -639,9 +639,22 @@ header::before {
 .subject-card .subject-icon {
     font-size: 3rem;
     margin-bottom: 18px;
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 74px;
+    height: 74px;
+    overflow: hidden;
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.subject-card .subject-icon-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 14px;
+    display: block;
 }
 
 .subject-card:hover .subject-icon {

@@ -4,6 +4,7 @@ const EXAM_CONFIG = [
     "name": "Java 1",
     "description": "Introduction to Java",
     "path": "data/java1",
+    "icon": "data/java1/icon.png",
     "chapters": [
       {
         "id": "Chapter 1",
@@ -66,6 +67,7 @@ const EXAM_CONFIG = [
     "name": "Java 2",
     "description": "Advanced Java",
     "path": "data/java2",
+    "icon": "data/java2/icon.png",
     "chapters": [
       {
         "id": "Chapter 10",
@@ -110,6 +112,7 @@ const EXAM_CONFIG = [
     "name": "Algorithms",
     "description": "Algorithm Analysis",
     "path": "data/algorithm",
+    "icon": "data/algorithm/icon.png",
     "chapters": []
   },
   {
@@ -117,6 +120,7 @@ const EXAM_CONFIG = [
     "name": "Data Structures",
     "description": "Data Structures",
     "path": "data/data_structure",
+    "icon": "data/data_structure/icon.png",
     "chapters": []
   },
   {
@@ -124,6 +128,7 @@ const EXAM_CONFIG = [
     "name": "Java Advanced",
     "description": "Enterprise Java",
     "path": "data/java_advanced",
+    "icon": "data/java_advanced/icon.png",
     "chapters": [
       {
         "id": "1",
@@ -174,6 +179,7 @@ const EXAM_CONFIG = [
     "name": "Data Base",
     "description": "Structured data storage",
     "path": "data/DBMS",
+    "icon": "data/DBMS/icon.png",
     "chapters": [
       {
         "id": "First.1",
@@ -218,6 +224,7 @@ const EXAM_CONFIG = [
     "name": "Network",
     "description": "Study of data transmission across networks.",
     "path": "data/Network",
+    "icon": "data/Network/icon.png",
     "chapters": [
       {
         "id": "Chapter (1)",
@@ -238,6 +245,7 @@ const EXAM_CONFIG = [
     "name": "Software Engineering",
     "description": "engineering principles to design, develop, maintain, and test software.",
     "path": "data/soft",
+    "icon": "data/soft/icon.png",
     "chapters": [
       {
         "id": "1",
@@ -258,6 +266,7 @@ const EXAM_CONFIG = [
     "name": "Web development",
     "description": "Html/Css/Js/PhP",
     "path": "data/web",
+    "icon": "data/web/icon.png",
     "chapters": [
       {
         "id": "Mid",
@@ -272,6 +281,7 @@ const EXAM_CONFIG = [
     "name": "UML",
     "description": "Diagrams ",
     "path": "data/Uml",
+    "icon": "data/Uml/icon.png",
     "chapters": []
   },
   {
@@ -279,6 +289,7 @@ const EXAM_CONFIG = [
     "name": "Operating System",
     "description": "Covers the fundamental design, implementation, and management of computer systems",
     "path": "data/os",
+    "icon": "data/os/icon.png",
     "chapters": [
       {
         "id": "ch1",

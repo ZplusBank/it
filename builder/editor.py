@@ -14,7 +14,17 @@ from pathlib import Path
 import re
 import shutil
 import zipfile
+import tempfile
+import urllib.parse
+import urllib.request
+import webbrowser
 from difflib import SequenceMatcher
+
+try:
+    from PIL import Image, ImageTk
+except Exception:
+    Image = None
+    ImageTk = None
 
 # -- Dark Theme Color Constants (matches web app CSS dark theme) --
 COLORS = {
@@ -473,7 +483,7 @@ class AdvancedChapterEditor:
         self.search_in_choices_var = tk.BooleanVar(value=True)
         self.search_in_meta_var = tk.BooleanVar(value=False)
         self.filtered_question_indices = []
-        self.is_maximized = False
+        self.is_maximized = True
         self.question_search_var.trace_add("write", lambda *_: self.refresh_questions_list())
         self.search_in_text_var.trace_add("write", lambda *_: self.refresh_questions_list())
         self.search_in_explanation_var.trace_add("write", lambda *_: self.refresh_questions_list())
@@ -2255,6 +2265,184 @@ class ExamEditor:
         self.status_label.config(text=message, foreground=mapped)
         self.root.after(3000, lambda: self.status_label.config(
             text="Ready", foreground=COLORS["success"]))
+
+    def _normalize_rel_path(self, path_text):
+        """Normalize a config-relative path using forward slashes."""
+        return str(path_text or "").strip().replace("\\", "/").strip("/")
+
+    def _default_section_icon_rel(self, section_id, section_path=None):
+        """Return default section icon path (data/<section>/icon.png)."""
+        section_id = str(section_id or "").strip()
+        section_path = self._normalize_rel_path(section_path)
+        if not section_path:
+            section_path = f"data/{section_id}" if section_id else "data/section"
+        return f"{section_path.rstrip('/')}/icon.png"
+
+    def _build_section_path(self, section_root_text, section_id):
+        """Build a normalized section data path from root/id inputs."""
+        section_id = str(section_id or "").strip()
+        root = str(section_root_text or "").strip().replace("\\", "/")
+        root = root.rstrip("/")
+
+        if not root:
+            return f"data/{section_id}" if section_id else "data/section"
+
+        if section_id and root.lower().endswith(f"/{section_id.lower()}"):
+            return root
+        if section_id and root.lower() == section_id.lower():
+            return f"data/{section_id}"
+        if root.lower() == "data" and section_id:
+            return f"data/{section_id}"
+        if section_id:
+            return f"{root}/{section_id}"
+        return root
+
+    def _store_section_icon(self, source_path, section_path_rel, resize_if_large=True, max_size=128):
+        """Store uploaded section icon in the section folder and return relative icon path."""
+        src = Path(source_path)
+        if not src.exists():
+            raise FileNotFoundError(f"Icon source not found: {src}")
+
+        section_path_rel = self._normalize_rel_path(section_path_rel)
+        section_abs = self.base_path / section_path_rel
+        section_abs.mkdir(parents=True, exist_ok=True)
+
+        max_size = max(16, int(max_size or 128))
+        if Image is not None:
+            dst = section_abs / "icon.png"
+            with Image.open(src) as img:
+                img = img.convert("RGBA")
+                resized = False
+                if resize_if_large and (img.width > max_size or img.height > max_size):
+                    lanczos = getattr(getattr(Image, "Resampling", Image), "LANCZOS", Image.LANCZOS)
+                    img.thumbnail((max_size, max_size), lanczos)
+                    resized = True
+                img.save(dst, format="PNG")
+            return f"{section_path_rel}/icon.png", resized
+
+        # Pillow fallback: copy file as-is (cannot resize/convert formats).
+        ext = src.suffix.lower() or ".png"
+        dst_name = "icon.png" if ext == ".png" else f"icon{ext}"
+        dst = section_abs / dst_name
+        shutil.copy2(src, dst)
+        return f"{section_path_rel}/{dst_name}", False
+
+    def _download_icon_url_to_temp(self, icon_url):
+        """Download icon URL to a temporary file and return its path."""
+        raw = str(icon_url or "").strip()
+        if not raw:
+            raise ValueError("Icon URL is empty")
+        if not re.match(r"^https?://", raw, flags=re.IGNORECASE):
+            raw = f"https://{raw}"
+
+        req = urllib.request.Request(raw, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=20) as response:
+            data = response.read()
+            content_type = (response.headers.get("Content-Type") or "").lower()
+
+        suffix = ".png"
+        parsed = urllib.parse.urlparse(raw)
+        url_ext = Path(parsed.path).suffix.lower()
+        if url_ext in {".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp", ".ico"}:
+            suffix = url_ext
+        elif "jpeg" in content_type:
+            suffix = ".jpg"
+        elif "webp" in content_type:
+            suffix = ".webp"
+        elif "gif" in content_type:
+            suffix = ".gif"
+        elif "bmp" in content_type:
+            suffix = ".bmp"
+        elif "icon" in content_type:
+            suffix = ".ico"
+
+        temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=suffix)
+        temp_file.write(data)
+        temp_file.flush()
+        temp_file.close()
+        return temp_file.name
+
+    def _store_section_icon_from_url(self, icon_url, section_path_rel, resize_if_large=True, max_size=128):
+        """Download icon from URL, then store it in the section folder."""
+        temp_path = self._download_icon_url_to_temp(icon_url)
+        try:
+            return self._store_section_icon(
+                temp_path,
+                section_path_rel,
+                resize_if_large=resize_if_large,
+                max_size=max_size,
+            )
+        finally:
+            try:
+                Path(temp_path).unlink(missing_ok=True)
+            except Exception:
+                pass
+
+    def _open_icon_search(self, query_text):
+        """Open a browser image search for icons."""
+        query = urllib.parse.quote_plus(str(query_text or "section icon"))
+        webbrowser.open(f"https://www.google.com/search?tbm=isch&q={query}")
+
+    def _set_icon_preview(self, preview_label, icon_rel=None, source_path=None, icon_url=None, max_preview=72):
+        """Render icon preview from local file, icon path, or URL."""
+        preview_label.configure(text="No icon preview", image="")
+        preview_label._preview_image = None
+
+        candidate_path = None
+        temp_path = None
+        try:
+            if source_path:
+                candidate_path = Path(source_path)
+            elif icon_url:
+                temp_path = self._download_icon_url_to_temp(icon_url)
+                candidate_path = Path(temp_path)
+            elif icon_rel:
+                candidate_path = self.base_path / self._normalize_rel_path(icon_rel)
+
+            if not candidate_path or not candidate_path.exists():
+                if icon_rel:
+                    preview_label.configure(text=f"No icon found\n{icon_rel}")
+                return
+
+            if Image is not None and ImageTk is not None:
+                with Image.open(candidate_path) as img:
+                    img = img.convert("RGBA")
+                    lanczos = getattr(getattr(Image, "Resampling", Image), "LANCZOS", Image.LANCZOS)
+                    img.thumbnail((max_preview, max_preview), lanczos)
+                    tk_img = ImageTk.PhotoImage(img)
+                preview_label.configure(image=tk_img, text="")
+                preview_label._preview_image = tk_img
+                return
+
+            tk_img = tk.PhotoImage(file=str(candidate_path))
+            preview_label.configure(image=tk_img, text="")
+            preview_label._preview_image = tk_img
+        except Exception as e:
+            preview_label.configure(text=f"Preview unavailable\n{Path(str(candidate_path or '')).name}")
+        finally:
+            if temp_path:
+                try:
+                    Path(temp_path).unlink(missing_ok=True)
+                except Exception:
+                    pass
+
+    def _ensure_section_icon_defaults(self):
+        """Ensure every section has an icon path, defaulting to data/<section>/icon.png."""
+        changed = False
+        for section in self.sections:
+            section_id = section.get("id", "")
+            section_path = section.get("path", "")
+            default_icon = self._default_section_icon_rel(section_id, section_path)
+            icon_rel = self._normalize_rel_path(section.get("icon", ""))
+            if not icon_rel:
+                section["icon"] = default_icon
+                changed = True
+            else:
+                normalized_icon = icon_rel
+                if normalized_icon != section.get("icon", ""):
+                    section["icon"] = normalized_icon
+                    changed = True
+        return changed
     
     def refresh_all(self):
         """Refresh all data and auto-configure engine"""
@@ -2278,6 +2466,9 @@ class ExamEditor:
                     self.sections = json.load(f)
         except:
             self.sections = []
+
+        if self._ensure_section_icon_defaults():
+            self.save_sections()
         
         self.refresh_sections_tree()
     
@@ -2794,7 +2985,7 @@ class ExamEditor:
     def add_section(self):
         """Add new section"""
         dialog = tk.Toplevel(self.root)
-        _style_dialog(dialog, "Add New Section", "450x320")
+        _style_dialog(dialog, "Add New Section", "620x560")
         dialog.transient(self.root)
         dialog.grab_set()
 
@@ -2823,16 +3014,96 @@ class ExamEditor:
         sec_desc = ttk.Entry(frame, width=30, bootstyle="info")
         sec_desc.grid(row=3, column=1, pady=10, padx=10)
 
+        ttk.Label(frame, text="Icon Path:", style="SubHeader.TLabel").grid(
+            row=4, column=0, sticky=tk.W, pady=10)
+        icon_var = tk.StringVar(value="data/section/icon.png")
+        icon_entry = ttk.Entry(frame, width=30, bootstyle="info", textvariable=icon_var)
+        icon_entry.grid(row=4, column=1, pady=10, padx=10)
+
+        ttk.Label(frame, text="Icon URL:", style="SubHeader.TLabel").grid(
+            row=5, column=0, sticky=tk.W, pady=10)
+        icon_url_var = tk.StringVar(value="")
+        ttk.Entry(frame, width=30, bootstyle="info", textvariable=icon_url_var).grid(row=5, column=1, pady=10, padx=10)
+
+        resize_icon_var = tk.BooleanVar(value=True)
+        resize_max_var = tk.StringVar(value="128")
+        icon_upload_source = {"path": ""}
+
+        icon_controls = ttk.Frame(frame)
+        icon_controls.grid(row=6, column=0, columnspan=2, sticky=tk.W, pady=(0, 8))
+
+        preview_frame = ttk.Frame(frame)
+        preview_frame.grid(row=7, column=0, columnspan=2, sticky=tk.W, pady=(0, 8))
+        ttk.Label(preview_frame, text="Icon Preview:", style="SubHeader.TLabel").pack(side=tk.LEFT, padx=(0, 8))
+        preview_label = ttk.Label(preview_frame, text="No icon preview", width=22, style="Muted.TLabel")
+        preview_label.pack(side=tk.LEFT)
+
+        def choose_icon_file():
+            file_path = filedialog.askopenfilename(
+                title="Select Section Icon",
+                filetypes=[("Images", "*.png *.jpg *.jpeg *.webp *.gif *.bmp"), ("All Files", "*.*")],
+            )
+            if not file_path:
+                return
+            icon_upload_source["path"] = file_path
+            self._set_icon_preview(preview_label, source_path=file_path)
+            self.update_status(f"Icon selected: {Path(file_path).name}", "blue")
+
+        def preview_icon_from_url():
+            url = icon_url_var.get().strip()
+            if not url:
+                messagebox.showwarning("Icon URL", "Enter an icon URL first")
+                return
+            self._set_icon_preview(preview_label, icon_url=url)
+
+        def search_icons_web():
+            q = f"{sec_name.get().strip() or sec_id.get().strip() or 'section'} icon png"
+            self._open_icon_search(q)
+
+        def preview_from_icon_path(*_):
+            if icon_upload_source["path"]:
+                return
+            icon_rel = icon_var.get().strip()
+            self._set_icon_preview(preview_label, icon_rel=icon_rel)
+
+        ttk.Button(icon_controls, text="Upload Icon", command=choose_icon_file,
+                   width=14, bootstyle="info-outline").pack(side=tk.LEFT, padx=(0, 8))
+        ttk.Button(icon_controls, text="Preview URL", command=preview_icon_from_url,
+                   width=12, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=(0, 8))
+        ttk.Button(icon_controls, text="Search Icons", command=search_icons_web,
+                   width=12, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=(0, 8))
+        ttk.Checkbutton(icon_controls,
+                        text="Resize if bigger",
+                        variable=resize_icon_var,
+                        bootstyle="info-round-toggle").pack(side=tk.LEFT, padx=(0, 6))
+        ttk.Label(icon_controls, text="Max px:", style="Muted.TLabel").pack(side=tk.LEFT)
+        ttk.Entry(icon_controls, width=6, textvariable=resize_max_var, bootstyle="info").pack(side=tk.LEFT, padx=(4, 0))
+
+        def refresh_default_icon(*_):
+            section_path_rel = self._build_section_path(sec_path.get(), sec_id.get())
+            icon_var.set(self._default_section_icon_rel(sec_id.get(), section_path_rel))
+
+        sec_id.bind("<KeyRelease>", refresh_default_icon)
+        sec_path.bind("<KeyRelease>", refresh_default_icon)
+        icon_var.trace_add("write", preview_from_icon_path)
+        refresh_default_icon()
+
         def save():
             if not sec_id.get() or not sec_name.get():
                 messagebox.showerror("Error", "ID and Name are required")
                 return
 
+            section_path_rel = self._build_section_path(sec_path.get(), sec_id.get())
+            icon_rel = self._normalize_rel_path(icon_var.get())
+            if not icon_rel:
+                icon_rel = self._default_section_icon_rel(sec_id.get(), section_path_rel)
+
             new_section = {
                 "id": sec_id.get(),
                 "name": sec_name.get(),
-                "path": sec_path.get() + sec_id.get(),
-                "description": sec_desc.get()
+                "path": section_path_rel,
+                "description": sec_desc.get(),
+                "icon": icon_rel,
             }
 
             # Create directory and init chapters.json
@@ -2843,6 +3114,31 @@ class ExamEditor:
                 if not ch_file.exists():
                     with open(ch_file, 'w') as f:
                         json.dump([], f)
+
+                if icon_upload_source["path"]:
+                    max_px = int(str(resize_max_var.get() or "128").strip() or "128")
+                    saved_icon_rel, resized = self._store_section_icon(
+                        icon_upload_source["path"],
+                        new_section["path"],
+                        resize_if_large=resize_icon_var.get(),
+                        max_size=max_px,
+                    )
+                    new_section["icon"] = saved_icon_rel
+                    if Image is None and resize_icon_var.get():
+                        messagebox.showwarning(
+                            "Resize Unavailable",
+                            "Pillow is not installed, so icon resize was skipped.\n"
+                            "Install with: pip install pillow"
+                        )
+                elif icon_url_var.get().strip():
+                    max_px = int(str(resize_max_var.get() or "128").strip() or "128")
+                    saved_icon_rel, resized = self._store_section_icon_from_url(
+                        icon_url_var.get().strip(),
+                        new_section["path"],
+                        resize_if_large=resize_icon_var.get(),
+                        max_size=max_px,
+                    )
+                    new_section["icon"] = saved_icon_rel
             except Exception as e:
                 messagebox.showerror("Error", f"Failed to create directory: {e}")
                 return
@@ -2854,7 +3150,7 @@ class ExamEditor:
             dialog.destroy()
 
         ttk.Button(frame, text="Create Section", command=save,
-                  width=20, bootstyle="success").grid(row=4, column=0, columnspan=2, pady=20)
+                  width=20, bootstyle="success").grid(row=8, column=0, columnspan=2, pady=20)
 
         dialog.bind('<Return>', lambda e: save())
     
@@ -2920,7 +3216,7 @@ class ExamEditor:
         section = self.sections[self.current_section_idx]
 
         dialog = tk.Toplevel(self.root)
-        _style_dialog(dialog, "Edit Section", "450x320")
+        _style_dialog(dialog, "Edit Section", "620x560")
         dialog.transient(self.root)
         dialog.grab_set()
 
@@ -2952,15 +3248,118 @@ class ExamEditor:
         sec_desc.insert(0, section.get('description', ''))
         sec_desc.grid(row=3, column=1, pady=10, padx=10)
 
+        ttk.Label(frame, text="Icon Path:", style="SubHeader.TLabel").grid(
+            row=4, column=0, sticky=tk.W, pady=10)
+        icon_var = tk.StringVar(value=section.get('icon', self._default_section_icon_rel(section.get('id', ''), section.get('path', ''))))
+        ttk.Entry(frame, width=30, bootstyle="info", textvariable=icon_var).grid(row=4, column=1, pady=10, padx=10)
+
+        ttk.Label(frame, text="Icon URL:", style="SubHeader.TLabel").grid(
+            row=5, column=0, sticky=tk.W, pady=10)
+        icon_url_var = tk.StringVar(value="")
+        ttk.Entry(frame, width=30, bootstyle="info", textvariable=icon_url_var).grid(row=5, column=1, pady=10, padx=10)
+
+        resize_icon_var = tk.BooleanVar(value=True)
+        resize_max_var = tk.StringVar(value="128")
+        icon_upload_source = {"path": ""}
+
+        icon_controls = ttk.Frame(frame)
+        icon_controls.grid(row=6, column=0, columnspan=2, sticky=tk.W, pady=(0, 8))
+
+        preview_frame = ttk.Frame(frame)
+        preview_frame.grid(row=7, column=0, columnspan=2, sticky=tk.W, pady=(0, 8))
+        ttk.Label(preview_frame, text="Icon Preview:", style="SubHeader.TLabel").pack(side=tk.LEFT, padx=(0, 8))
+        preview_label = ttk.Label(preview_frame, text="No icon preview", width=22, style="Muted.TLabel")
+        preview_label.pack(side=tk.LEFT)
+
+        def choose_icon_file():
+            file_path = filedialog.askopenfilename(
+                title="Select Section Icon",
+                filetypes=[("Images", "*.png *.jpg *.jpeg *.webp *.gif *.bmp"), ("All Files", "*.*")],
+            )
+            if not file_path:
+                return
+            icon_upload_source["path"] = file_path
+            self._set_icon_preview(preview_label, source_path=file_path)
+            self.update_status(f"Icon selected: {Path(file_path).name}", "blue")
+
+        def preview_icon_from_url():
+            url = icon_url_var.get().strip()
+            if not url:
+                messagebox.showwarning("Icon URL", "Enter an icon URL first")
+                return
+            self._set_icon_preview(preview_label, icon_url=url)
+
+        def search_icons_web():
+            q = f"{sec_name.get().strip() or sec_id.get().strip() or 'section'} icon png"
+            self._open_icon_search(q)
+
+        def preview_from_icon_path(*_):
+            if icon_upload_source["path"]:
+                return
+            self._set_icon_preview(preview_label, icon_rel=icon_var.get().strip())
+
+        ttk.Button(icon_controls, text="Upload Icon", command=choose_icon_file,
+                   width=14, bootstyle="info-outline").pack(side=tk.LEFT, padx=(0, 8))
+        ttk.Button(icon_controls, text="Preview URL", command=preview_icon_from_url,
+                   width=12, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=(0, 8))
+        ttk.Button(icon_controls, text="Search Icons", command=search_icons_web,
+                   width=12, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=(0, 8))
+        ttk.Checkbutton(icon_controls,
+                        text="Resize if bigger",
+                        variable=resize_icon_var,
+                        bootstyle="info-round-toggle").pack(side=tk.LEFT, padx=(0, 6))
+        ttk.Label(icon_controls, text="Max px:", style="Muted.TLabel").pack(side=tk.LEFT)
+        ttk.Entry(icon_controls, width=6, textvariable=resize_max_var, bootstyle="info").pack(side=tk.LEFT, padx=(4, 0))
+        icon_var.trace_add("write", preview_from_icon_path)
+        self._set_icon_preview(preview_label, icon_rel=icon_var.get().strip())
+
         def save():
             if not sec_id.get() or not sec_name.get():
                 messagebox.showerror("Error", "ID and Name are required")
                 return
 
+            section_path_rel = self._normalize_rel_path(sec_path.get())
+            if not section_path_rel:
+                section_path_rel = self._build_section_path("data", sec_id.get())
+
             section['id'] = sec_id.get()
             section['name'] = sec_name.get()
-            section['path'] = sec_path.get()
+            section['path'] = section_path_rel
             section['description'] = sec_desc.get()
+            section['icon'] = self._normalize_rel_path(icon_var.get()) or self._default_section_icon_rel(section['id'], section['path'])
+
+            if icon_upload_source["path"]:
+                try:
+                    max_px = int(str(resize_max_var.get() or "128").strip() or "128")
+                    saved_icon_rel, resized = self._store_section_icon(
+                        icon_upload_source["path"],
+                        section['path'],
+                        resize_if_large=resize_icon_var.get(),
+                        max_size=max_px,
+                    )
+                    section['icon'] = saved_icon_rel
+                    if Image is None and resize_icon_var.get():
+                        messagebox.showwarning(
+                            "Resize Unavailable",
+                            "Pillow is not installed, so icon resize was skipped.\n"
+                            "Install with: pip install pillow"
+                        )
+                except Exception as e:
+                    messagebox.showerror("Error", f"Failed to save icon: {e}")
+                    return
+            elif icon_url_var.get().strip():
+                try:
+                    max_px = int(str(resize_max_var.get() or "128").strip() or "128")
+                    saved_icon_rel, resized = self._store_section_icon_from_url(
+                        icon_url_var.get().strip(),
+                        section['path'],
+                        resize_if_large=resize_icon_var.get(),
+                        max_size=max_px,
+                    )
+                    section['icon'] = saved_icon_rel
+                except Exception as e:
+                    messagebox.showerror("Error", f"Failed to download icon URL: {e}")
+                    return
 
             self.current_section = section['id']
             self.refresh_sections_tree()
@@ -2969,7 +3368,7 @@ class ExamEditor:
             dialog.destroy()
 
         ttk.Button(frame, text="Save Changes", command=save,
-                  width=20, bootstyle="success").grid(row=4, column=0, columnspan=2, pady=20)
+                  width=20, bootstyle="success").grid(row=8, column=0, columnspan=2, pady=20)
 
         dialog.bind('<Return>', lambda e: save())
 
@@ -3096,8 +3495,18 @@ class ExamEditor:
             "id": sec_id,
             "name": sec_id,
             "path": dest_rel,
-            "description": ""
+            "description": "",
+            "icon": f"{dest_rel}/icon.png",
         }
+
+        # Prefer existing icon file if present under another common extension.
+        icon_png = self.base_path / dest_rel / "icon.png"
+        if not icon_png.exists():
+            for candidate in ["icon.webp", "icon.jpg", "icon.jpeg", "icon.gif", "icon.bmp"]:
+                candidate_path = self.base_path / dest_rel / candidate
+                if candidate_path.exists():
+                    new_section["icon"] = f"{dest_rel}/{candidate}"
+                    break
 
         # remove existing section with same id
         self.sections = [s for s in self.sections if s['id'] != sec_id]
@@ -3292,6 +3701,7 @@ class ExamEditor:
                     "name": section['name'],
                     "description": section.get('description', ''),
                     "path": section['path'],
+                    "icon": section.get('icon', self._default_section_icon_rel(section.get('id', ''), section.get('path', ''))),
                     "chapters": []
                 }
                 

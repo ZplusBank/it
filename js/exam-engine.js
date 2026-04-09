@@ -494,7 +494,8 @@ const app = {
                 id: subjectConfig.id,
                 name: subjectConfig.name,
                 description: subjectConfig.description,
-                icon: this.getIconForSubject(subjectConfig.id),
+                iconEmoji: this.getIconForSubject(subjectConfig.id),
+                iconPath: this.resolveSubjectIcon(subjectConfig),
                 chaptersConfig: subjectConfig.chapters || [], // Save config for later loading
                 chapters: [], // Loaded data goes here
                 loaded: false // Track if chapters are loaded
@@ -613,6 +614,25 @@ const app = {
         return icons[id] || '📚';
     },
 
+    resolveSubjectIcon(subjectConfig) {
+        const explicit = String(subjectConfig?.icon || '').trim().replace(/\\/g, '/');
+        if (explicit) return explicit;
+
+        const basePath = String(subjectConfig?.path || '').trim().replace(/\\/g, '/').replace(/\/+$/, '');
+        if (!basePath) return '';
+        return `${basePath}/icon.png`;
+    },
+
+    renderSubjectIcon(subject) {
+        const fallback = this.escapeHtml(subject.iconEmoji || '📚');
+        if (!subject.iconPath) return fallback;
+
+        const src = this.escapeHtml(subject.iconPath);
+        const sid = this.escapeHtml(subject.id || '');
+        const alt = this.escapeHtml(`${subject.name || 'Subject'} icon`);
+        return `<img class="subject-icon-image" src="${src}" alt="${alt}" loading="lazy" decoding="async" data-sid="${sid}">`;
+    },
+
     showSubjectsView() {
         this.currentView = 'subjects';
         this.resetExam();
@@ -653,12 +673,22 @@ const app = {
                  data-name="${this.escapeHtml(subject.name)}" data-desc="${this.escapeHtml(subject.description)}"
                  data-sid="${subject.id}"
                  style="--i: ${i}">
-                <span class="subject-icon">${subject.icon}</span>
+                <span class="subject-icon">${this.renderSubjectIcon(subject)}</span>
                 <h2>${this.escapeHtml(subject.name)}</h2>
                 <p>${this.escapeHtml(subject.description)}</p>
                 <span class="chapter-count">📚 ${subject.chaptersConfig.length} Chapters · ${totalQs(subject)} Questions</span>
             </div>
         `).join('');
+
+        // Fallback to emoji when icon image is missing/broken.
+        grid.querySelectorAll('.subject-icon-image').forEach((img) => {
+            img.addEventListener('error', () => {
+                const host = img.closest('.subject-icon');
+                if (!host) return;
+                const sid = img.getAttribute('data-sid') || '';
+                host.textContent = this.getIconForSubject(sid);
+            }, { once: true });
+        });
     },
 
     async selectSubject(subjectId) {
