@@ -10,6 +10,7 @@ from tkinter import messagebox, filedialog
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 import json
+import os
 from pathlib import Path
 import re
 import shutil
@@ -2396,6 +2397,34 @@ class ExamEditor:
         query = urllib.parse.quote_plus(str(query_text or "section icon"))
         webbrowser.open(f"https://www.google.com/search?tbm=isch&q={query}")
 
+    def _open_windows_emoji_picker(self, target_entry=None):
+        """Open native Windows emoji picker (Win + .) focused on a target entry."""
+        if target_entry is not None:
+            try:
+                target_entry.focus_force()
+                target_entry.icursor(tk.END)
+            except Exception:
+                pass
+
+        if os.name != "nt":
+            messagebox.showinfo("Emoji Picker", "Windows emoji picker is available on Windows only.")
+            return
+
+        try:
+            import ctypes
+
+            user32 = ctypes.windll.user32
+            VK_LWIN = 0x5B
+            VK_OEM_PERIOD = 0xBE
+            KEYEVENTF_KEYUP = 0x0002
+
+            user32.keybd_event(VK_LWIN, 0, 0, 0)
+            user32.keybd_event(VK_OEM_PERIOD, 0, 0, 0)
+            user32.keybd_event(VK_OEM_PERIOD, 0, KEYEVENTF_KEYUP, 0)
+            user32.keybd_event(VK_LWIN, 0, KEYEVENTF_KEYUP, 0)
+        except Exception as e:
+            messagebox.showerror("Emoji Picker", f"Could not open Windows emoji picker: {e}")
+
     def _set_icon_preview(self, preview_label, icon_rel=None, source_path=None, icon_url=None, max_preview=72):
         """Render icon preview from local file, icon path, or URL."""
         preview_label.configure(text="No icon preview", image="")
@@ -3045,7 +3074,8 @@ class ExamEditor:
         ttk.Label(frame, text="Icon Emoji:", style="SubHeader.TLabel").grid(
             row=6, column=0, sticky=tk.W, pady=10)
         icon_emoji_var = tk.StringVar(value="")
-        ttk.Entry(frame, width=30, bootstyle="info", textvariable=icon_emoji_var).grid(row=6, column=1, pady=10, padx=10)
+        emoji_entry = ttk.Entry(frame, width=30, bootstyle="info", textvariable=icon_emoji_var)
+        emoji_entry.grid(row=6, column=1, pady=10, padx=10)
 
         resize_icon_var = tk.BooleanVar(value=True)
         resize_max_var = tk.StringVar(value="128")
@@ -3082,10 +3112,12 @@ class ExamEditor:
             q = f"{sec_name.get().strip() or sec_id.get().strip() or 'section'} icon png"
             self._open_icon_search(q)
 
-        def apply_emoji_icon():
+        def open_emoji_picker():
+            self._open_windows_emoji_picker(emoji_entry)
+
+        def sync_emoji_to_icon(*_):
             emoji = icon_emoji_var.get().strip()
             if not emoji:
-                messagebox.showwarning("Emoji", "Enter an emoji first")
                 return
             icon_var.set(emoji)
             self._set_icon_preview(preview_label, icon_rel=emoji)
@@ -3102,8 +3134,8 @@ class ExamEditor:
                    width=12, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=(0, 8))
         ttk.Button(icon_controls, text="Search Icons", command=search_icons_web,
                    width=12, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=(0, 8))
-        ttk.Button(icon_controls, text="Use Emoji", command=apply_emoji_icon,
-               width=10, bootstyle="warning-outline").pack(side=tk.LEFT, padx=(0, 8))
+        ttk.Button(icon_controls, text="Emoji Picker", command=open_emoji_picker,
+                   width=12, bootstyle="warning-outline").pack(side=tk.LEFT, padx=(0, 8))
         ttk.Checkbutton(icon_controls,
                         text="Resize if bigger",
                         variable=resize_icon_var,
@@ -3118,6 +3150,7 @@ class ExamEditor:
         sec_id.bind("<KeyRelease>", refresh_default_icon)
         sec_path.bind("<KeyRelease>", refresh_default_icon)
         icon_var.trace_add("write", preview_from_icon_path)
+        icon_emoji_var.trace_add("write", sync_emoji_to_icon)
         refresh_default_icon()
 
         def save():
@@ -3298,7 +3331,8 @@ class ExamEditor:
         ttk.Label(frame, text="Icon Emoji:", style="SubHeader.TLabel").grid(
             row=6, column=0, sticky=tk.W, pady=10)
         icon_emoji_var = tk.StringVar(value="" if current_icon_is_path else str(default_icon_val))
-        ttk.Entry(frame, width=30, bootstyle="info", textvariable=icon_emoji_var).grid(row=6, column=1, pady=10, padx=10)
+        emoji_entry = ttk.Entry(frame, width=30, bootstyle="info", textvariable=icon_emoji_var)
+        emoji_entry.grid(row=6, column=1, pady=10, padx=10)
 
         resize_icon_var = tk.BooleanVar(value=True)
         resize_max_var = tk.StringVar(value="128")
@@ -3335,10 +3369,12 @@ class ExamEditor:
             q = f"{sec_name.get().strip() or sec_id.get().strip() or 'section'} icon png"
             self._open_icon_search(q)
 
-        def apply_emoji_icon():
+        def open_emoji_picker():
+            self._open_windows_emoji_picker(emoji_entry)
+
+        def sync_emoji_to_icon(*_):
             emoji = icon_emoji_var.get().strip()
             if not emoji:
-                messagebox.showwarning("Emoji", "Enter an emoji first")
                 return
             icon_var.set(emoji)
             self._set_icon_preview(preview_label, icon_rel=emoji)
@@ -3354,8 +3390,8 @@ class ExamEditor:
                    width=12, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=(0, 8))
         ttk.Button(icon_controls, text="Search Icons", command=search_icons_web,
                    width=12, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=(0, 8))
-        ttk.Button(icon_controls, text="Use Emoji", command=apply_emoji_icon,
-               width=10, bootstyle="warning-outline").pack(side=tk.LEFT, padx=(0, 8))
+        ttk.Button(icon_controls, text="Emoji Picker", command=open_emoji_picker,
+                   width=12, bootstyle="warning-outline").pack(side=tk.LEFT, padx=(0, 8))
         ttk.Checkbutton(icon_controls,
                         text="Resize if bigger",
                         variable=resize_icon_var,
@@ -3363,6 +3399,7 @@ class ExamEditor:
         ttk.Label(icon_controls, text="Max px:", style="Muted.TLabel").pack(side=tk.LEFT)
         ttk.Entry(icon_controls, width=6, textvariable=resize_max_var, bootstyle="info").pack(side=tk.LEFT, padx=(4, 0))
         icon_var.trace_add("write", preview_from_icon_path)
+        icon_emoji_var.trace_add("write", sync_emoji_to_icon)
         self._set_icon_preview(preview_label, icon_rel=icon_var.get().strip())
 
         def save():
