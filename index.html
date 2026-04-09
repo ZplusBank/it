@@ -21,11 +21,6 @@
         (function () {
             var t = localStorage.getItem('theme') || 'dark';
             document.documentElement.setAttribute('data-theme', t);
-
-            var ua = navigator.userAgent || '';
-            if (/Firefox|Zen/i.test(ua)) {
-                document.documentElement.classList.add('browser-firefox');
-            }
         })();
     </script>
 
@@ -83,7 +78,7 @@
 
     <!-- Floating Lines Background -->
     <div id="floatingLinesBg" aria-hidden="true"
-        style="position:fixed;inset:0;z-index:0;pointer-events:none;"></div>
+        style="position:fixed;inset:0;z-index:-1;pointer-events:auto;mix-blend-mode:screen;"></div>
 
     <div class="container">
         <header role="banner">
@@ -255,36 +250,14 @@
     <script>
         // Defer heavy WebGL background until after first paint + idle time
         function _initFloatingLines() {
-            function loadFloatingScript() {
+            var s = document.createElement('script');
+            s.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+            s.onload = function () {
                 var s2 = document.createElement('script');
                 s2.src = 'js/floating-lines.js';
                 document.body.appendChild(s2);
-            }
-
-            function loadThreeWithFallback(urls, done, fail) {
-                var i = 0;
-                function tryNext() {
-                    if (i >= urls.length) {
-                        if (typeof fail === 'function') fail();
-                        return;
-                    }
-                    var src = urls[i++];
-                    var s = document.createElement('script');
-                    s.src = src;
-                    s.onload = function () { done(); };
-                    s.onerror = function () { tryNext(); };
-                    document.body.appendChild(s);
-                }
-                tryNext();
-            }
-
-            loadThreeWithFallback([
-                'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js',
-                'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js'
-            ], loadFloatingScript, function () {
-                // CSS fallback remains visible even when WebGL libs fail.
-                console.warn('Floating background WebGL libs failed to load; using CSS fallback background.');
-            });
+            };
+            document.body.appendChild(s);
         }
         if ('requestIdleCallback' in window) {
             requestIdleCallback(_initFloatingLines, { timeout: 3000 });

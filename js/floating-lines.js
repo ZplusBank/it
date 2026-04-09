@@ -4,7 +4,6 @@
 (function () {
   const container = document.getElementById('floatingLinesBg');
   if (!container) return;
-  const isFirefox = /Firefox|Zen/i.test(navigator.userAgent || '');
 
   // --- GLSL Shaders ---
   const vertexShader = `
@@ -167,17 +166,17 @@ void main() {
   const config = {
     linesGradient: ['#3730a3', '#4338ca', '#5b21b6', '#6d28d9'],
     enabledWaves: ['top', 'middle', 'bottom'],
-    lineCount: isMobile ? [2, 2, 2] : (isFirefox ? [3, 3, 3] : [4, 4, 4]),
+    lineCount: isMobile ? [2, 2, 2] : [4, 4, 4],
     lineDistance: [5, 5, 5],
     topWavePosition: { x: 10.0, y: 0.5, rotate: -0.4 },
     middleWavePosition: { x: 5.0, y: 0.0, rotate: 0.2 },
     bottomWavePosition: { x: 2.0, y: -0.7, rotate: -1.0 },
     animationSpeed: 1,
-    interactive: !isMobile && !isFirefox,
+    interactive: !isMobile,
     bendRadius: 5.0,
     bendStrength: -0.5,
     mouseDamping: 0.04,
-    parallax: !isMobile && !isFirefox,
+    parallax: !isMobile,
     parallaxStrength: 0.2
   };
 
@@ -204,7 +203,7 @@ void main() {
   camera.position.z = 1;
 
   const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: false, powerPreference: 'low-power' });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isFirefox ? 0.9 : 1));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1));
   renderer.domElement.style.width = '100%';
   renderer.domElement.style.height = '100%';
   container.appendChild(renderer.domElement);
@@ -372,7 +371,7 @@ void main() {
   const clock = new THREE.Clock();
   let animationId = null;
   let lastRenderTime = 0;
-  const FRAME_INTERVAL = 1000 / (isFirefox ? 24 : 30);
+  const FRAME_INTERVAL = 1000 / 30;
 
   function renderLoop(timestamp) {
     // Mobile optimization: Render only once, then stop loop
