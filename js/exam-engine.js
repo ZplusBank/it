@@ -1029,7 +1029,8 @@ const app = {
         // Use event delegation instead of per-button onclick
         container.textContent = '';
         container.onclick = (e) => {
-            const btn = e.target.closest('.question-number');
+            const btn = e.target.closest('.question-number')
+                || document.elementFromPoint(e.clientX, e.clientY)?.closest('.question-number');
             if (!btn) return;
             const idx = parseInt(btn.dataset.idx, 10);
             if (!isNaN(idx)) this.goToQuestion(idx);
@@ -1092,7 +1093,8 @@ const app = {
 
         // Improve click/tap reliability by treating the whole answer card as selectable.
         choicesDiv.addEventListener('click', (e) => {
-            const choiceCard = e.target.closest('.choice');
+            const choiceCard = e.target.closest('.choice')
+                || document.elementFromPoint(e.clientX, e.clientY)?.closest('.choice');
             if (!choiceCard) return;
 
             const input = choiceCard.querySelector('input[name="answer"]');
