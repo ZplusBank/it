@@ -2270,6 +2270,19 @@ class ExamEditor:
         """Normalize a config-relative path using forward slashes."""
         return str(path_text or "").strip().replace("\\", "/").strip("/")
 
+    def _looks_like_icon_path(self, icon_value):
+        """Return True when icon value looks like a file path or URL."""
+        text = str(icon_value or "").strip()
+        if not text:
+            return False
+        if re.match(r"^(https?://|\./|\.\./|/)", text, flags=re.IGNORECASE):
+            return True
+        if "/" in text or "\\" in text:
+            return True
+        if re.search(r"\.(png|jpg|jpeg|webp|gif|bmp|ico|svg)$", text, flags=re.IGNORECASE):
+            return True
+        return False
+
     def _default_section_icon_rel(self, section_id, section_path=None):
         """Return default section icon path (data/<section>/icon.png)."""
         section_id = str(section_id or "").strip()
@@ -2397,6 +2410,10 @@ class ExamEditor:
                 temp_path = self._download_icon_url_to_temp(icon_url)
                 candidate_path = Path(temp_path)
             elif icon_rel:
+                if not self._looks_like_icon_path(icon_rel):
+                    preview_label.configure(text=str(icon_rel), image="", font=("Segoe UI Emoji", 34))
+                    return
+                preview_label.configure(font=("Segoe UI", 10))
                 candidate_path = self.base_path / self._normalize_rel_path(icon_rel)
 
             if not candidate_path or not candidate_path.exists():
@@ -3025,15 +3042,20 @@ class ExamEditor:
         icon_url_var = tk.StringVar(value="")
         ttk.Entry(frame, width=30, bootstyle="info", textvariable=icon_url_var).grid(row=5, column=1, pady=10, padx=10)
 
+        ttk.Label(frame, text="Icon Emoji:", style="SubHeader.TLabel").grid(
+            row=6, column=0, sticky=tk.W, pady=10)
+        icon_emoji_var = tk.StringVar(value="")
+        ttk.Entry(frame, width=30, bootstyle="info", textvariable=icon_emoji_var).grid(row=6, column=1, pady=10, padx=10)
+
         resize_icon_var = tk.BooleanVar(value=True)
         resize_max_var = tk.StringVar(value="128")
         icon_upload_source = {"path": ""}
 
         icon_controls = ttk.Frame(frame)
-        icon_controls.grid(row=6, column=0, columnspan=2, sticky=tk.W, pady=(0, 8))
+        icon_controls.grid(row=7, column=0, columnspan=2, sticky=tk.W, pady=(0, 8))
 
         preview_frame = ttk.Frame(frame)
-        preview_frame.grid(row=7, column=0, columnspan=2, sticky=tk.W, pady=(0, 8))
+        preview_frame.grid(row=8, column=0, columnspan=2, sticky=tk.W, pady=(0, 8))
         ttk.Label(preview_frame, text="Icon Preview:", style="SubHeader.TLabel").pack(side=tk.LEFT, padx=(0, 8))
         preview_label = ttk.Label(preview_frame, text="No icon preview", width=22, style="Muted.TLabel")
         preview_label.pack(side=tk.LEFT)
@@ -3060,6 +3082,14 @@ class ExamEditor:
             q = f"{sec_name.get().strip() or sec_id.get().strip() or 'section'} icon png"
             self._open_icon_search(q)
 
+        def apply_emoji_icon():
+            emoji = icon_emoji_var.get().strip()
+            if not emoji:
+                messagebox.showwarning("Emoji", "Enter an emoji first")
+                return
+            icon_var.set(emoji)
+            self._set_icon_preview(preview_label, icon_rel=emoji)
+
         def preview_from_icon_path(*_):
             if icon_upload_source["path"]:
                 return
@@ -3072,6 +3102,8 @@ class ExamEditor:
                    width=12, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=(0, 8))
         ttk.Button(icon_controls, text="Search Icons", command=search_icons_web,
                    width=12, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=(0, 8))
+        ttk.Button(icon_controls, text="Use Emoji", command=apply_emoji_icon,
+               width=10, bootstyle="warning-outline").pack(side=tk.LEFT, padx=(0, 8))
         ttk.Checkbutton(icon_controls,
                         text="Resize if bigger",
                         variable=resize_icon_var,
@@ -3139,6 +3171,8 @@ class ExamEditor:
                         max_size=max_px,
                     )
                     new_section["icon"] = saved_icon_rel
+                elif icon_emoji_var.get().strip():
+                    new_section["icon"] = icon_emoji_var.get().strip()
             except Exception as e:
                 messagebox.showerror("Error", f"Failed to create directory: {e}")
                 return
@@ -3150,7 +3184,7 @@ class ExamEditor:
             dialog.destroy()
 
         ttk.Button(frame, text="Create Section", command=save,
-                  width=20, bootstyle="success").grid(row=8, column=0, columnspan=2, pady=20)
+                  width=20, bootstyle="success").grid(row=9, column=0, columnspan=2, pady=20)
 
         dialog.bind('<Return>', lambda e: save())
     
@@ -3258,15 +3292,23 @@ class ExamEditor:
         icon_url_var = tk.StringVar(value="")
         ttk.Entry(frame, width=30, bootstyle="info", textvariable=icon_url_var).grid(row=5, column=1, pady=10, padx=10)
 
+        default_icon_val = section.get('icon', self._default_section_icon_rel(section.get('id', ''), section.get('path', '')))
+        current_icon_is_path = self._looks_like_icon_path(default_icon_val)
+
+        ttk.Label(frame, text="Icon Emoji:", style="SubHeader.TLabel").grid(
+            row=6, column=0, sticky=tk.W, pady=10)
+        icon_emoji_var = tk.StringVar(value="" if current_icon_is_path else str(default_icon_val))
+        ttk.Entry(frame, width=30, bootstyle="info", textvariable=icon_emoji_var).grid(row=6, column=1, pady=10, padx=10)
+
         resize_icon_var = tk.BooleanVar(value=True)
         resize_max_var = tk.StringVar(value="128")
         icon_upload_source = {"path": ""}
 
         icon_controls = ttk.Frame(frame)
-        icon_controls.grid(row=6, column=0, columnspan=2, sticky=tk.W, pady=(0, 8))
+        icon_controls.grid(row=7, column=0, columnspan=2, sticky=tk.W, pady=(0, 8))
 
         preview_frame = ttk.Frame(frame)
-        preview_frame.grid(row=7, column=0, columnspan=2, sticky=tk.W, pady=(0, 8))
+        preview_frame.grid(row=8, column=0, columnspan=2, sticky=tk.W, pady=(0, 8))
         ttk.Label(preview_frame, text="Icon Preview:", style="SubHeader.TLabel").pack(side=tk.LEFT, padx=(0, 8))
         preview_label = ttk.Label(preview_frame, text="No icon preview", width=22, style="Muted.TLabel")
         preview_label.pack(side=tk.LEFT)
@@ -3293,6 +3335,14 @@ class ExamEditor:
             q = f"{sec_name.get().strip() or sec_id.get().strip() or 'section'} icon png"
             self._open_icon_search(q)
 
+        def apply_emoji_icon():
+            emoji = icon_emoji_var.get().strip()
+            if not emoji:
+                messagebox.showwarning("Emoji", "Enter an emoji first")
+                return
+            icon_var.set(emoji)
+            self._set_icon_preview(preview_label, icon_rel=emoji)
+
         def preview_from_icon_path(*_):
             if icon_upload_source["path"]:
                 return
@@ -3304,6 +3354,8 @@ class ExamEditor:
                    width=12, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=(0, 8))
         ttk.Button(icon_controls, text="Search Icons", command=search_icons_web,
                    width=12, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=(0, 8))
+        ttk.Button(icon_controls, text="Use Emoji", command=apply_emoji_icon,
+               width=10, bootstyle="warning-outline").pack(side=tk.LEFT, padx=(0, 8))
         ttk.Checkbutton(icon_controls,
                         text="Resize if bigger",
                         variable=resize_icon_var,
@@ -3360,6 +3412,8 @@ class ExamEditor:
                 except Exception as e:
                     messagebox.showerror("Error", f"Failed to download icon URL: {e}")
                     return
+            elif icon_emoji_var.get().strip():
+                section['icon'] = icon_emoji_var.get().strip()
 
             self.current_section = section['id']
             self.refresh_sections_tree()
@@ -3368,7 +3422,7 @@ class ExamEditor:
             dialog.destroy()
 
         ttk.Button(frame, text="Save Changes", command=save,
-                  width=20, bootstyle="success").grid(row=8, column=0, columnspan=2, pady=20)
+                  width=20, bootstyle="success").grid(row=9, column=0, columnspan=2, pady=20)
 
         dialog.bind('<Return>', lambda e: save())
 

@@ -490,16 +490,19 @@ const app = {
             }
 
             // Map basic subject info from config without loading chapter files yet
-            this.subjects = EXAM_CONFIG.map(subjectConfig => ({
-                id: subjectConfig.id,
-                name: subjectConfig.name,
-                description: subjectConfig.description,
-                iconEmoji: this.getIconForSubject(subjectConfig.id),
-                iconPath: this.resolveSubjectIcon(subjectConfig),
-                chaptersConfig: subjectConfig.chapters || [], // Save config for later loading
-                chapters: [], // Loaded data goes here
-                loaded: false // Track if chapters are loaded
-            }));
+            this.subjects = EXAM_CONFIG.map(subjectConfig => {
+                const iconMeta = this.resolveSubjectIcon(subjectConfig);
+                return {
+                    id: subjectConfig.id,
+                    name: subjectConfig.name,
+                    description: subjectConfig.description,
+                    iconEmoji: iconMeta.emoji,
+                    iconPath: iconMeta.path,
+                    chaptersConfig: subjectConfig.chapters || [], // Save config for later loading
+                    chapters: [], // Loaded data goes here
+                    loaded: false // Track if chapters are loaded
+                };
+            });
 
             // subjects loaded
         } catch (error) {
@@ -616,11 +619,24 @@ const app = {
 
     resolveSubjectIcon(subjectConfig) {
         const explicit = String(subjectConfig?.icon || '').trim().replace(/\\/g, '/');
-        if (explicit) return explicit;
+        const fallbackEmoji = this.getIconForSubject(subjectConfig?.id);
+
+        if (explicit) {
+            const looksLikePath = /^(https?:\/\/|\.\/|\.\.\/|\/)/i.test(explicit)
+                || explicit.includes('/')
+                || /\.(png|jpg|jpeg|webp|gif|bmp|ico|svg)$/i.test(explicit);
+
+            if (looksLikePath) {
+                return { emoji: fallbackEmoji, path: explicit };
+            }
+
+            // Non-path icon values are treated as custom emoji/text icons.
+            return { emoji: explicit, path: '' };
+        }
 
         const basePath = String(subjectConfig?.path || '').trim().replace(/\\/g, '/').replace(/\/+$/, '');
-        if (!basePath) return '';
-        return `${basePath}/icon.png`;
+        if (!basePath) return { emoji: fallbackEmoji, path: '' };
+        return { emoji: fallbackEmoji, path: `${basePath}/icon.png` };
     },
 
     renderSubjectIcon(subject) {
@@ -686,7 +702,8 @@ const app = {
                 const host = img.closest('.subject-icon');
                 if (!host) return;
                 const sid = img.getAttribute('data-sid') || '';
-                host.textContent = this.getIconForSubject(sid);
+                const subject = this.subjects.find(s => s.id === sid);
+                host.textContent = (subject && subject.iconEmoji) || this.getIconForSubject(sid);
             }, { once: true });
         });
     },

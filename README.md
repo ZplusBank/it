@@ -35,6 +35,7 @@ A client-side exam engine for IT subjects using JSON-based data. Users select a 
 - **Section Icon Management**: Upload/edit icon per section with default path `data/<section>/icon.png`
 - **Icon Preview**: Live preview in Add/Edit Section dialogs before saving
 - **Internet Icon Support**: Search icons on web and use icon URLs directly
+- **Emoji Icon Support**: Set section icons to emojis (for example ☕ 🚀 🌲 📚)
 - **Icon Resize Option**: Auto-resize large icons during upload (recommended `128px` max)
 - **Chapter Management**: Organize chapters per section
 - **Batch Chapter Tools**: Multi-select chapters and run tools from **Tools** menu
