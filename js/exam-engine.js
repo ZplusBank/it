@@ -520,6 +520,35 @@ const app = {
         return String(text).replace(this._escapeRe, ch => map[ch]);
     },
 
+    async copyTextToClipboard(text) {
+        const value = String(text || '').trim();
+        if (!value) return false;
+
+        try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText(value);
+                return true;
+            }
+        } catch (_) {
+            // Fallback below
+        }
+
+        try {
+            const ta = document.createElement('textarea');
+            ta.value = value;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            const ok = document.execCommand('copy');
+            ta.remove();
+            return !!ok;
+        } catch (_) {
+            return false;
+        }
+    },
+
     _isWebRelatedQuestion(question) {
         if (!question) return false;
 
@@ -844,6 +873,20 @@ const app = {
                 </label>
             </div>
         `).join('');
+
+        // Make the whole chapter card a reliable click target.
+        grid.querySelectorAll('.chapter-card').forEach((card) => {
+            card.addEventListener('click', (e) => {
+                const cb = card.querySelector('input[type="checkbox"]');
+                if (!cb) return;
+                if (e.target === cb) return;
+
+                cb.checked = !cb.checked;
+                this.updateSelectedChapters();
+            });
+        });
+
+        this.updateSelectedChapters();
     },
 
     updateSelectedChapters() {
@@ -1039,6 +1082,56 @@ const app = {
                 this.selectAnswer(input.value, isCheckbox);
             }
         });
+
+        // Improve click/tap reliability by treating the whole answer card as selectable.
+        choicesDiv.addEventListener('click', (e) => {
+            const choiceCard = e.target.closest('.choice');
+            if (!choiceCard) return;
+
+            const input = choiceCard.querySelector('input[name="answer"]');
+            if (!input || e.target === input) return;
+
+            if (isCheckbox) {
+                input.checked = !input.checked;
+            } else {
+                input.checked = true;
+            }
+
+            input.dispatchEvent(new Event('change', { bubbles: true }));
+        });
+
+        const normalizeText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
+
+        // Right-click on an answer card copies question + answer for quick sharing/review.
+        choicesDiv.addEventListener('contextmenu', async (e) => {
+            const choiceCard = e.target.closest('.choice')
+                || document.elementFromPoint(e.clientX, e.clientY)?.closest('.choice');
+            if (!choiceCard) return;
+
+            const questionText = normalizeText(container.querySelector('.question-text')?.textContent || '');
+            const label = choiceCard.querySelector('label');
+            const answerText = normalizeText(label?.textContent || '');
+            if (!answerText) return;
+
+            e.preventDefault();
+            const payload = questionText
+                ? `Question: ${questionText}\nAnswer: ${answerText}`
+                : `Answer: ${answerText}`;
+            const copied = await this.copyTextToClipboard(payload);
+            this.showToast(copied ? 'Question + answer copied' : 'Copy failed', copied ? 'success' : 'error', 1200);
+        });
+
+        // Right-click question text to copy question only.
+        const questionTextDiv = fragment.querySelector?.('.question-text') || null;
+        if (questionTextDiv) {
+            questionTextDiv.addEventListener('contextmenu', async (e) => {
+                const questionText = normalizeText(questionTextDiv.textContent || '');
+                if (!questionText) return;
+                e.preventDefault();
+                const copied = await this.copyTextToClipboard(`Question: ${questionText}`);
+                this.showToast(copied ? 'Question copied' : 'Copy failed', copied ? 'success' : 'error', 1200);
+            });
+        }
 
         for (let i = 0; i < question.choices.length; i++) {
             const choice = question.choices[i];

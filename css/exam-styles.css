@@ -762,6 +762,18 @@ header::before {
     position: relative;
 }
 
+.chapter-card,
+.chapter-card *,
+.question-number,
+.question-text,
+.question-text *,
+.choice,
+.choice * {
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
 .chapter-card::after {
     content: '';
     position: absolute;
