@@ -1682,6 +1682,15 @@ button.submit-btn {
     animation: scoreReveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+.score-grade {
+    display: inline-block;
+    margin-left: 0.35em;
+    font-size: 0.58em;
+    font-weight: 800;
+    vertical-align: middle;
+    opacity: 0.95;
+}
+
 @keyframes scoreReveal {
     from {
         opacity: 0;

@@ -1505,6 +1505,26 @@ const app = {
             (Array.isArray(answer) && answer.length === 0);
     },
 
+    getLetterGrade(percentage) {
+        if (percentage >= 97) return 'A+';
+        if (percentage >= 93) return 'A';
+        if (percentage >= 90) return 'A-';
+        if (percentage >= 87) return 'B+';
+        if (percentage >= 83) return 'B';
+        if (percentage >= 80) return 'B-';
+        if (percentage >= 77) return 'C+';
+        if (percentage >= 73) return 'C';
+        if (percentage >= 70) return 'C-';
+        return 'F';
+    },
+
+    getDisplayGrade(letterGrade) {
+        if (letterGrade === 'A+') return 'Z+';
+        if (letterGrade === 'A') return 'Z';
+        if (letterGrade === 'A-') return 'A';
+        return letterGrade;
+    },
+
     calculateAndDisplayResults() {
         const totalCount = this.questions.length;
         let correctCount = 0, wrongCount = 0, skippedCount = 0;
@@ -1525,8 +1545,10 @@ const app = {
         }
 
         const percentage = totalCount > 0 ? Math.round((correctCount / totalCount) * 100) : 0;
+    const letterGrade = this.getLetterGrade(percentage);
+    const displayGrade = this.getDisplayGrade(letterGrade);
 
-        document.getElementById('scoreDisplay').textContent = `${correctCount} / ${totalCount}`;
+    document.getElementById('scoreDisplay').innerHTML = `${correctCount} / ${totalCount} <span class="score-grade">${displayGrade}</span>`;
         document.getElementById('scoreText').textContent = `You answered ${correctCount} out of ${totalCount} questions correctly`;
 
         // Animate score ring
