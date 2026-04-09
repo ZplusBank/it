@@ -64,7 +64,7 @@
         }
       ],
       "inputName": "Q1",
-      "inputType": "radio",
+      "inputType": "checkbox",
       "correctAnswer": "A, B, C, D",
       "explanation": "Modern applications use threads to handle multiple concurrent tasks such as UI updates, data fetching, spell checking, and processing network requests."
     },
@@ -157,7 +157,7 @@
         }
       ],
       "inputName": "Q4",
-      "inputType": "radio",
+      "inputType": "checkbox",
       "correctAnswer": "A, B, C, D",
       "explanation": "All these benefits are listed in the content as advantages of multithreading over traditional single-threaded process models."
     },
@@ -188,7 +188,7 @@
         }
       ],
       "inputName": "Q5",
-      "inputType": "radio",
+      "inputType": "checkbox",
       "correctAnswer": "A, B, C, D",
       "explanation": "The transition to multicore systems places pressure on programmers to handle activity division, balance, data splitting, dependencies, and complex debugging."
     },
@@ -374,7 +374,7 @@
         }
       ],
       "inputName": "Q11",
-      "inputType": "radio",
+      "inputType": "checkbox",
       "correctAnswer": "A, B, C",
       "explanation": "POSIX Pthreads, Windows threads, and Java threads are the three primary user-level thread libraries mentioned. Kernel threads are supported by the OS itself."
     },
@@ -560,7 +560,7 @@
         }
       ],
       "inputName": "Q17",
-      "inputType": "radio",
+      "inputType": "checkbox",
       "correctAnswer": "A, B",
       "explanation": "Java threads are created by either extending the Thread class or implementing the Runnable interface; `clone()` is specific to Linux and `pthread_create` is POSIX."
     },
@@ -591,7 +591,7 @@
         }
       ],
       "inputName": "Q18",
-      "inputType": "radio",
+      "inputType": "checkbox",
       "correctAnswer": "A, B, C",
       "explanation": "The slides explore Thread Pools, OpenMP, and Grand Central Dispatch (GCD) as strategies for implicit threading."
     },
@@ -746,7 +746,7 @@
         }
       ],
       "inputName": "Q23",
-      "inputType": "radio",
+      "inputType": "checkbox",
       "correctAnswer": "A, B, C, D",
       "explanation": "All four are valid strategies for signal delivery in multithreaded systems depending on the signal type and OS implementation."
     },
@@ -870,7 +870,7 @@
         }
       ],
       "inputName": "Q27",
-      "inputType": "radio",
+      "inputType": "checkbox",
       "correctAnswer": "A, B, C",
       "explanation": "Windows threads use ETHREAD, KTHREAD, and TEB. LWP is a concept used in Many-to-Many or Two-level models, not the standard Windows 1:1 implementation."
     },
@@ -907,5 +907,6 @@
     }
   ],
   "status": "completed",
-  "totalQuestions": 29
+  "totalQuestions": 29,
+  "q": 29
 }

@@ -523,14 +523,34 @@ class AdvancedChapterEditor:
 
         ttk.Button(toolbar, text="Add Question", command=self.add_question,
                   width=15, bootstyle="success").pack(side=tk.LEFT, padx=5)
-        ttk.Button(toolbar, text="Del Duplicates", command=self.delete_duplicate_questions,
-              width=16, bootstyle="warning-outline").pack(side=tk.LEFT, padx=5)
-        ttk.Button(toolbar, text="Smart Duplicates", command=self.delete_similar_questions,
-              width=16, bootstyle="warning-outline").pack(side=tk.LEFT, padx=5)
         ttk.Button(toolbar, text="Delete Question", command=self.delete_question,
                   width=18, bootstyle="danger-outline").pack(side=tk.LEFT, padx=5)
-        ttk.Button(toolbar, text="Fix Numbering", command=self.fix_question_numbering,
-              width=14, bootstyle="info-outline").pack(side=tk.LEFT, padx=5)
+
+        self.tools_menu = tk.Menu(
+            self.window,
+            tearoff=0,
+            bg=COLORS["bg_card"],
+            fg=COLORS["text_main"],
+            activebackground=COLORS["primary"],
+            activeforeground=COLORS["selection_fg"],
+            relief=tk.FLAT,
+            font=("Segoe UI", 9),
+        )
+        self.tools_menu.add_command(label="Delete Duplicates", command=self.delete_duplicate_questions)
+        self.tools_menu.add_command(label="Smart Duplicates", command=self.delete_similar_questions)
+        self.tools_menu.add_command(label="Fix Numbering", command=self.fix_question_numbering)
+        self.tools_menu.add_command(label="Fix Input Typing", command=self.fix_input_typing)
+
+        self.tools_btn = ttk.Button(
+            toolbar,
+            text="Tools ▼",
+            width=10,
+            bootstyle="warning-outline",
+            command=self.show_tools_menu,
+        )
+        self.tools_btn.pack(side=tk.LEFT, padx=5)
+        self.tools_btn.bind("<Enter>", self.show_tools_menu)
+
         ttk.Button(toolbar, text="▲", command=self.move_question_up,
                   width=3, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=2)
         ttk.Button(toolbar, text="▼", command=self.move_question_down,
@@ -643,6 +663,19 @@ class AdvancedChapterEditor:
 
         # Initialize editor widgets (will be populated when question is selected)
         self.init_editor_widgets()
+
+    def show_tools_menu(self, event=None):
+        """Show the tools menu below the tools button."""
+        if not hasattr(self, "tools_btn") or not hasattr(self, "tools_menu"):
+            return "break"
+
+        x = self.tools_btn.winfo_rootx()
+        y = self.tools_btn.winfo_rooty() + self.tools_btn.winfo_height()
+        try:
+            self.tools_menu.tk_popup(x, y)
+        finally:
+            self.tools_menu.after_idle(self.tools_menu.grab_release)
+        return "break"
 
     def on_window_configure(self, event=None):
         """Keep maximize button label in sync with current window state."""
@@ -1213,6 +1246,7 @@ class AdvancedChapterEditor:
         
         q['inputType'] = self.q_input_type.get()
         q['correctAnswer'] = self.q_correct.get()
+        self._normalize_question_answer_fields(q, force_input_type=True)
         q['explanation'] = self.q_explanation.get(1.0, tk.END).strip()
         self.sync_question_count()
         
@@ -1221,6 +1255,90 @@ class AdvancedChapterEditor:
         # Force display refresh to show updated data including image path
         self.display_question()
         messagebox.showinfo("Success", "Question updated ✓\n(Click 'Save Changes' to save to file)")
+
+    def _normalize_answer_letters(self, value, question=None):
+        """Normalize answer keys to compact uppercase form (e.g., A, B, C -> ABC)."""
+        raw = str(value or "").upper()
+        allowed = []
+        if isinstance(question, dict):
+            for choice in question.get("choices", []) or []:
+                key = str(choice.get("value", "")).strip().upper()
+                if len(key) == 1:
+                    allowed.append(key)
+
+        allowed_set = set(allowed)
+        letters = []
+        for ch in re.findall(r"[A-Z0-9]", raw):
+            if allowed_set and ch not in allowed_set:
+                continue
+            if ch not in letters:
+                letters.append(ch)
+        return "".join(letters)
+
+    def _normalize_question_answer_fields(self, question, force_input_type=False):
+        """Normalize a question's correctAnswer and optionally enforce matching inputType."""
+        if not isinstance(question, dict):
+            return False, False
+
+        old_answer = str(question.get("correctAnswer", ""))
+        old_input_type = str(question.get("inputType", "radio") or "radio").lower()
+
+        normalized_answer = self._normalize_answer_letters(old_answer, question)
+        question["correctAnswer"] = normalized_answer
+
+        type_changed = False
+        if force_input_type:
+            new_type = "checkbox" if len(normalized_answer) > 1 else "radio"
+            if old_input_type != new_type:
+                type_changed = True
+            question["inputType"] = new_type
+        elif old_input_type not in {"radio", "checkbox"}:
+            question["inputType"] = "radio"
+            type_changed = True
+
+        answer_changed = normalized_answer != old_answer
+        return answer_changed, type_changed
+
+    def fix_input_typing(self, show_message=True):
+        """Normalize correctAnswer and force matching inputType for all questions."""
+        if not self.questions:
+            if show_message:
+                messagebox.showinfo("No Questions", "There are no questions to fix.")
+            return (0, 0)
+
+        answer_changes = 0
+        type_changes = 0
+        for question in self.questions:
+            answer_changed, type_changed = self._normalize_question_answer_fields(
+                question,
+                force_input_type=True,
+            )
+            if answer_changed:
+                answer_changes += 1
+            if type_changed:
+                type_changes += 1
+
+        self.refresh_questions_list()
+        if self.current_question_idx is not None and self.questions:
+            keep_idx = max(0, min(self.current_question_idx, len(self.questions) - 1))
+            self.current_question_idx = keep_idx
+            self.restore_question_selection([keep_idx])
+            self.display_question()
+
+        if show_message:
+            if answer_changes or type_changes:
+                messagebox.showinfo(
+                    "Input Typing Fixed",
+                    f"Normalized correct answers in {answer_changes} question(s).\n"
+                    f"Adjusted input type in {type_changes} question(s)."
+                )
+            else:
+                messagebox.showinfo(
+                    "Already Correct",
+                    "Input types and correct answers are already consistent."
+                )
+
+        return answer_changes, type_changes
     
     def add_question(self):
         """Add new question"""
@@ -1882,7 +2000,11 @@ class AdvancedChapterEditor:
                 
                 q['inputType'] = self.q_input_type.get()
                 q['correctAnswer'] = self.q_correct.get()
+                self._normalize_question_answer_fields(q, force_input_type=True)
                 q['explanation'] = self.q_explanation.get(1.0, tk.END).strip()
+
+            # Ensure every question follows website-compatible answer format.
+            self.fix_input_typing(show_message=False)
             
             # Update chapter data
             if self.chapter_data:
