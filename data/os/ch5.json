@@ -100,7 +100,7 @@
         }
       ],
       "inputName": "Q2",
-      "inputType": "radio",
+      "inputType": "checkbox",
       "correctAnswer": "ABC",
       "explanation": "A solution must satisfy Mutual Exclusion (only one process at a time), Progress (selection of next process cannot be postponed indefinitely), and Bounded Waiting (a limit on how many other processes can enter before a request is granted)."
     },
@@ -379,7 +379,7 @@
         }
       ],
       "inputName": "Q11",
-      "inputType": "radio",
+      "inputType": "checkbox",
       "correctAnswer": "ABC",
       "explanation": "The problem uses a mutex for mutual exclusion, 'full' to count occupied buffers, and 'empty' to count available buffers."
     },
@@ -472,7 +472,7 @@
         }
       ],
       "inputName": "Q14",
-      "inputType": "radio",
+      "inputType": "checkbox",
       "correctAnswer": "ABC",
       "explanation": "Eliminating the circular wait through asymmetric picking, limiting the number of participants, or using atomic acquisition of both resources are standard solutions."
     },
@@ -632,7 +632,7 @@
         }
       ],
       "inputName": "Q19",
-      "inputType": "radio",
+      "inputType": "checkbox",
       "correctAnswer": "ABCD",
       "explanation": "Dispatcher objects in Windows can act as mutexes, semaphores, events, or timers to coordinate threads."
     },

@@ -2127,6 +2127,49 @@ class ExamEditor:
         ttk.Label(chapters_header, text="Chapters",
                  style="Header.TLabel").pack(side=tk.LEFT)
 
+        self.chapter_tools_menu = tk.Menu(
+            self.root,
+            tearoff=0,
+            bg=COLORS["bg_card"],
+            fg=COLORS["text_main"],
+            activebackground=COLORS["primary"],
+            activeforeground=COLORS["selection_fg"],
+            relief=tk.FLAT,
+            font=("Segoe UI", 9),
+        )
+        self.chapter_tools_menu.add_command(
+            label="Fix Numbering (Selected)",
+            command=lambda: self.apply_tools_to_selected_chapters("fix_numbering"),
+        )
+        self.chapter_tools_menu.add_command(
+            label="Fix Input Typing (Selected)",
+            command=lambda: self.apply_tools_to_selected_chapters("fix_input_typing"),
+        )
+        self.chapter_tools_menu.add_separator()
+        self.chapter_tools_menu.add_command(
+            label="Delete Duplicates (Selected)",
+            command=lambda: self.apply_tools_to_selected_chapters("delete_duplicates"),
+        )
+        self.chapter_tools_menu.add_command(
+            label="Smart Duplicates (Selected)",
+            command=lambda: self.apply_tools_to_selected_chapters("smart_duplicates"),
+        )
+        self.chapter_tools_menu.add_separator()
+        self.chapter_tools_menu.add_command(
+            label="Delete Selected Chapters",
+            command=self.delete_chapter,
+        )
+
+        self.chapter_tools_btn = ttk.Button(
+            chapters_header,
+            text="Tools ▼",
+            width=9,
+            bootstyle="warning-outline",
+            command=self.show_chapter_tools_menu,
+        )
+        self.chapter_tools_btn.pack(side=tk.RIGHT, padx=2)
+        self.chapter_tools_btn.bind("<Enter>", self.show_chapter_tools_menu)
+
         ttk.Button(chapters_header, text="+", command=self.add_chapter,
                   width=3, bootstyle="success-outline").pack(side=tk.RIGHT, padx=2)
         ttk.Button(chapters_header, text="Import", command=self.import_chapters,
@@ -2145,7 +2188,7 @@ class ExamEditor:
                                          columns=("ID", "Name", "Questions", "File"),
                                          show="headings",
                                          yscrollcommand=chapters_scroll.set,
-                                         selectmode="browse",
+                                         selectmode="extended",
                                          height=10)
 
         chapters_scroll.config(command=self.chapters_tree.yview)
@@ -2293,27 +2336,332 @@ class ExamEditor:
                 chapter.get('q', 0),
                 chapter.get('file', '')
             ), tags=(tag,))
+
+    def get_selected_chapter_indices(self):
+        """Return selected chapter indices from the chapters tree."""
+        indices = []
+        for iid in self.chapters_tree.selection():
+            try:
+                idx = int(iid)
+            except (TypeError, ValueError):
+                continue
+            if 0 <= idx < len(self.chapters):
+                indices.append(idx)
+        return sorted(set(indices))
+
+    def show_chapter_tools_menu(self, event=None):
+        """Show chapter batch-tools menu below the tools button."""
+        if not hasattr(self, "chapter_tools_btn"):
+            return "break"
+        x = self.chapter_tools_btn.winfo_rootx()
+        y = self.chapter_tools_btn.winfo_rooty() + self.chapter_tools_btn.winfo_height()
+        try:
+            self.chapter_tools_menu.tk_popup(x, y)
+        finally:
+            self.chapter_tools_menu.after_idle(self.chapter_tools_menu.grab_release)
+        return "break"
     
     def on_chapter_select(self, event):
         """Handle chapter selection"""
-        selection = self.chapters_tree.selection()
-        if selection:
-            self.current_chapter_idx = int(selection[0])
+        selected_indices = self.get_selected_chapter_indices()
+        if selected_indices:
+            self.current_chapter_idx = selected_indices[0]
             chapter = self.chapters[self.current_chapter_idx]
-            
+
             self.ch_id.delete(0, tk.END)
-            self.ch_id.insert(0, chapter.get('id', ''))
-            
             self.ch_name.delete(0, tk.END)
-            self.ch_name.insert(0, chapter.get('name', ''))
-            
             self.ch_count.delete(0, tk.END)
-            self.ch_count.insert(0, str(chapter.get('q', 0)))
-            
-            self.update_chapter_btn.config(state="normal")
+
+            if len(selected_indices) == 1:
+                self.ch_id.insert(0, chapter.get('id', ''))
+                self.ch_name.insert(0, chapter.get('name', ''))
+                self.ch_count.insert(0, str(chapter.get('q', 0)))
+                self.update_chapter_btn.config(state="normal")
+            else:
+                total_questions = sum(int(self.chapters[i].get('q', 0) or 0) for i in selected_indices)
+                self.ch_id.insert(0, f"{len(selected_indices)} selected")
+                self.ch_name.insert(0, "Use Tools menu to apply batch actions")
+                self.ch_count.insert(0, str(total_questions))
+                self.update_chapter_btn.config(state="disabled")
         else:
             self.current_chapter_idx = None
             self.update_chapter_btn.config(state="disabled")
+
+    def _normalize_for_compare(self, value):
+        """Normalize text for duplicate comparisons."""
+        return re.sub(r"\s+", " ", str(value or "")).strip().lower()
+
+    def _question_signature(self, question):
+        """Build stable signature from question text and choices."""
+        title = self._normalize_for_compare(question.get("text", ""))
+        normalized_choices = []
+        for choice in question.get("choices", []) or []:
+            cval = self._normalize_for_compare(choice.get("value", ""))
+            ctext = self._normalize_for_compare(choice.get("text", ""))
+            normalized_choices.append((cval, ctext))
+        normalized_choices.sort()
+        return (title, tuple(normalized_choices))
+
+    def _question_text_similarity(self, left, right):
+        """Compute fuzzy similarity between two question titles."""
+        if not left or not right:
+            return 0.0
+        seq = SequenceMatcher(None, left, right).ratio()
+        left_tokens = set(left.split())
+        right_tokens = set(right.split())
+        union = left_tokens | right_tokens
+        jaccard = (len(left_tokens & right_tokens) / len(union)) if union else 0.0
+        return max(seq, jaccard)
+
+    def _question_choices_similarity(self, q1, q2):
+        """Compute fuzzy similarity between two questions' choices."""
+        c1 = [self._normalize_for_compare(c.get("text", "")) for c in q1.get("choices", []) or []]
+        c2 = [self._normalize_for_compare(c.get("text", "")) for c in q2.get("choices", []) or []]
+        c1 = [c for c in c1 if c]
+        c2 = [c for c in c2 if c]
+        if not c1 or not c2:
+            return 0.0
+
+        s1 = " | ".join(sorted(c1))
+        s2 = " | ".join(sorted(c2))
+        seq = SequenceMatcher(None, s1, s2).ratio()
+        t1 = set(c1)
+        t2 = set(c2)
+        union = t1 | t2
+        overlap = (len(t1 & t2) / len(union)) if union else 0.0
+        return max(seq, overlap)
+
+    def _normalize_answer_letters(self, value, question=None):
+        """Normalize answer keys to compact uppercase form (e.g., A, B, C -> ABC)."""
+        raw = str(value or "").upper()
+        allowed = []
+        if isinstance(question, dict):
+            for choice in question.get("choices", []) or []:
+                key = str(choice.get("value", "")).strip().upper()
+                if len(key) == 1:
+                    allowed.append(key)
+
+        allowed_set = set(allowed)
+        letters = []
+        for ch in re.findall(r"[A-Z0-9]", raw):
+            if allowed_set and ch not in allowed_set:
+                continue
+            if ch not in letters:
+                letters.append(ch)
+        return "".join(letters)
+
+    def _normalize_question_answer_fields(self, question, force_input_type=False):
+        """Normalize a question's correctAnswer and optionally enforce matching inputType."""
+        if not isinstance(question, dict):
+            return False, False
+
+        old_answer = str(question.get("correctAnswer", ""))
+        old_input_type = str(question.get("inputType", "radio") or "radio").lower()
+        normalized_answer = self._normalize_answer_letters(old_answer, question)
+        question["correctAnswer"] = normalized_answer
+
+        type_changed = False
+        if force_input_type:
+            new_type = "checkbox" if len(normalized_answer) > 1 else "radio"
+            if old_input_type != new_type:
+                type_changed = True
+            question["inputType"] = new_type
+        elif old_input_type not in {"radio", "checkbox"}:
+            question["inputType"] = "radio"
+            type_changed = True
+
+        return normalized_answer != old_answer, type_changed
+
+    def _load_chapter_payload(self, section, chapter):
+        """Load chapter JSON payload and return (path, payload, chapter_data, questions)."""
+        fpath = self.base_path / section.get('path', '') / chapter.get('file', '')
+        if not fpath.exists():
+            raise FileNotFoundError(f"Chapter file not found: {fpath}")
+
+        with open(fpath, 'r', encoding='utf-8') as f:
+            payload = json.load(f)
+
+        if isinstance(payload, list):
+            if payload and isinstance(payload[0], dict):
+                chapter_data = payload[0]
+            else:
+                chapter_data = {"questions": []}
+                payload = [chapter_data]
+        elif isinstance(payload, dict):
+            chapter_data = payload
+        else:
+            chapter_data = {"questions": []}
+            payload = chapter_data
+
+        questions = chapter_data.get("questions", [])
+        if not isinstance(questions, list):
+            questions = []
+            chapter_data["questions"] = questions
+
+        return fpath, payload, chapter_data, questions
+
+    def _save_chapter_payload(self, fpath, payload):
+        """Persist chapter JSON payload."""
+        with open(fpath, 'w', encoding='utf-8') as f:
+            json.dump(payload, f, indent=2, ensure_ascii=False)
+
+    def apply_tools_to_selected_chapters(self, tool_name):
+        """Apply a chapter tool to all selected chapters."""
+        if not self.current_section:
+            messagebox.showwarning("Warning", "Select a section first")
+            return
+
+        selected_indices = self.get_selected_chapter_indices()
+        if not selected_indices and self.current_chapter_idx is not None:
+            selected_indices = [self.current_chapter_idx]
+        if not selected_indices:
+            messagebox.showwarning("Warning", "Select one or more chapters first")
+            return
+
+        section = next((s for s in self.sections if s['id'] == self.current_section), None)
+        if not section:
+            messagebox.showerror("Error", "Selected section not found")
+            return
+
+        if tool_name == "delete_chapters":
+            self.delete_chapter()
+            return
+
+        stats = {
+            "chapters": 0,
+            "questions_removed": 0,
+            "numbering_fixed": 0,
+            "typing_fixed": 0,
+            "type_fixed": 0,
+        }
+
+        errors = []
+        for idx in selected_indices:
+            chapter = self.chapters[idx]
+            try:
+                fpath, payload, chapter_data, questions = self._load_chapter_payload(section, chapter)
+                changed = False
+
+                if tool_name == "fix_numbering":
+                    renumbered = 0
+                    for q_idx, question in enumerate(questions, start=1):
+                        target = str(q_idx)
+                        if str(question.get("number", "")) != target:
+                            question["number"] = target
+                            renumbered += 1
+                    changed = renumbered > 0
+                    stats["numbering_fixed"] += renumbered
+
+                elif tool_name == "fix_input_typing":
+                    answer_changes = 0
+                    type_changes = 0
+                    for question in questions:
+                        answer_changed, type_changed = self._normalize_question_answer_fields(
+                            question,
+                            force_input_type=True,
+                        )
+                        if answer_changed:
+                            answer_changes += 1
+                        if type_changed:
+                            type_changes += 1
+                    changed = (answer_changes + type_changes) > 0
+                    stats["typing_fixed"] += answer_changes
+                    stats["type_fixed"] += type_changes
+
+                elif tool_name == "delete_duplicates":
+                    first_seen = {}
+                    keep = []
+                    removed = 0
+                    for question in questions:
+                        sig = self._question_signature(question)
+                        if sig in first_seen:
+                            removed += 1
+                            continue
+                        first_seen[sig] = True
+                        keep.append(question)
+                    if removed:
+                        questions[:] = keep
+                        for q_idx, question in enumerate(questions, start=1):
+                            question["number"] = str(q_idx)
+                        changed = True
+                    stats["questions_removed"] += removed
+
+                elif tool_name == "smart_duplicates":
+                    similar_delete_indexes = set()
+                    for i in range(len(questions)):
+                        for j in range(i + 1, len(questions)):
+                            if j in similar_delete_indexes:
+                                continue
+                            q1 = questions[i]
+                            q2 = questions[j]
+
+                            t1 = self._normalize_for_compare(q1.get("text", ""))
+                            t2 = self._normalize_for_compare(q2.get("text", ""))
+                            if not t1 or not t2:
+                                continue
+
+                            title_score = self._question_text_similarity(t1, t2)
+                            choices_score = self._question_choices_similarity(q1, q2)
+                            score = (0.75 * title_score) + (0.25 * choices_score)
+
+                            short_text = min(len(t1), len(t2)) < 12
+                            if short_text:
+                                is_similar = score >= 0.92 and title_score >= 0.88
+                            else:
+                                is_similar = score >= 0.84 and title_score >= 0.76
+
+                            if is_similar:
+                                similar_delete_indexes.add(j)
+
+                    if similar_delete_indexes:
+                        questions[:] = [q for q_idx, q in enumerate(questions) if q_idx not in similar_delete_indexes]
+                        for q_idx, question in enumerate(questions, start=1):
+                            question["number"] = str(q_idx)
+                        changed = True
+                    stats["questions_removed"] += len(similar_delete_indexes)
+
+                chapter_data["questions"] = questions
+                chapter["q"] = len(questions)
+                if changed:
+                    self._save_chapter_payload(fpath, payload)
+                stats["chapters"] += 1
+            except Exception as e:
+                errors.append(f"{chapter.get('name', chapter.get('id', 'Unknown'))}: {e}")
+
+        self.refresh_chapters_tree()
+        self.save_chapter()
+
+        if errors:
+            messagebox.showwarning(
+                "Completed With Errors",
+                "Some chapters failed:\n\n" + "\n".join(errors[:10])
+            )
+
+        if tool_name == "fix_numbering":
+            message = (
+                f"Processed {stats['chapters']} chapter(s).\n"
+                f"Renumbered {stats['numbering_fixed']} question(s)."
+            )
+        elif tool_name == "fix_input_typing":
+            message = (
+                f"Processed {stats['chapters']} chapter(s).\n"
+                f"Normalized answers in {stats['typing_fixed']} question(s).\n"
+                f"Adjusted input type in {stats['type_fixed']} question(s)."
+            )
+        elif tool_name == "delete_duplicates":
+            message = (
+                f"Processed {stats['chapters']} chapter(s).\n"
+                f"Removed {stats['questions_removed']} duplicate question(s)."
+            )
+        elif tool_name == "smart_duplicates":
+            message = (
+                f"Processed {stats['chapters']} chapter(s).\n"
+                f"Removed {stats['questions_removed']} likely-duplicate question(s)."
+            )
+        else:
+            message = f"Processed {stats['chapters']} chapter(s)."
+
+        messagebox.showinfo("Batch Tools Complete", message)
     
     def on_chapter_double_click(self, event):
         """Open advanced chapter editor when double-clicking a chapter"""
@@ -2627,6 +2975,10 @@ class ExamEditor:
 
     def move_chapter_up(self):
         """Move the selected chapter up in the list"""
+        selected_indices = self.get_selected_chapter_indices()
+        if len(selected_indices) > 1:
+            messagebox.showwarning("Warning", "Select a single chapter to move.")
+            return
         if self.current_chapter_idx is None:
             messagebox.showwarning("Warning", "Select a chapter first")
             return
@@ -2643,6 +2995,10 @@ class ExamEditor:
 
     def move_chapter_down(self):
         """Move the selected chapter down in the list"""
+        selected_indices = self.get_selected_chapter_indices()
+        if len(selected_indices) > 1:
+            messagebox.showwarning("Warning", "Select a single chapter to move.")
+            return
         if self.current_chapter_idx is None:
             messagebox.showwarning("Warning", "Select a chapter first")
             return
@@ -2791,21 +3147,30 @@ class ExamEditor:
     
     def delete_chapter(self):
         """Delete chapter"""
-        if self.current_chapter_idx is None:
-            messagebox.showwarning("Warning", "Select a chapter first")
+        selected_indices = self.get_selected_chapter_indices()
+        if not selected_indices and self.current_chapter_idx is not None:
+            selected_indices = [self.current_chapter_idx]
+        if not selected_indices:
+            messagebox.showwarning("Warning", "Select one or more chapters first")
             return
-        
-        chapter = self.chapters[self.current_chapter_idx]
+
+        selected_chapters = [self.chapters[i] for i in selected_indices]
+        chapter_names = [c.get('name', c.get('id', '')) for c in selected_chapters]
+        preview_names = "\n".join(f"- {name}" for name in chapter_names[:8])
+        if len(chapter_names) > 8:
+            preview_names += f"\n... and {len(chapter_names) - 8} more"
+
         dlg = tk.Toplevel(self.root)
-        _style_dialog(dlg, "Delete Chapter", "500x200")
+        _style_dialog(dlg, "Delete Chapter", "600x320")
         dlg.transient(self.root)
         dlg.grab_set()
 
         frame = ttk.Frame(dlg, padding=12, bootstyle="dark")
         frame.pack(fill=tk.BOTH, expand=True)
 
-        ttk.Label(frame, text=f"Delete chapter '{chapter.get('name','')}'?", style="Header.TLabel").pack(anchor=tk.W, pady=(0,8))
+        ttk.Label(frame, text=f"Delete {len(selected_chapters)} chapter(s)?", style="Header.TLabel").pack(anchor=tk.W, pady=(0,8))
         ttk.Label(frame, text="This will remove the chapter from the list.").pack(anchor=tk.W)
+        ttk.Label(frame, text=preview_names, style="Muted.TLabel", justify=tk.LEFT).pack(anchor=tk.W, pady=(8, 0))
 
         del_var = tk.BooleanVar(value=False)
         ttk.Checkbutton(frame, text="Also delete chapter file from disk (permanent)", variable=del_var, bootstyle="warning").pack(anchor=tk.W, pady=(8, 0))
@@ -2819,60 +3184,57 @@ class ExamEditor:
         def do_delete():
             section = next((s for s in self.sections if s['id'] == self.current_section), None)
 
-            # Collect image paths from the chapter JSON before deleting it
-            image_paths = []
-            if section and (del_var.get() or del_images_var.get()):
-                try:
-                    fpath = self.base_path / section.get('path', '') / chapter.get('file', '')
-                    if fpath.exists():
-                        with open(fpath, 'r', encoding='utf-8') as f:
-                            data = json.load(f)
-                        # Handle both list and dict formats
-                        chapter_data = data[0] if isinstance(data, list) and data else data
-                        if isinstance(chapter_data, dict):
-                            for q in chapter_data.get('questions', []):
-                                img = q.get('image', '')
-                                if img:
-                                    image_paths.append(img)
-                except Exception as e:
-                    print(f"Warning: Could not read chapter images: {e}")
+            for idx in reversed(selected_indices):
+                chapter = self.chapters[idx]
+                image_paths = []
 
-            # Delete image files if the user opted in
-            if del_images_var.get() and image_paths:
-                deleted_count = 0
-                for img_rel in image_paths:
+                # Collect image paths from chapter JSON before deleting files.
+                if section and (del_var.get() or del_images_var.get()):
                     try:
-                        img_path = self.base_path / img_rel
-                        if img_path.exists():
-                            img_path.unlink()
-                            deleted_count += 1
-                    except Exception as e:
-                        print(f"Warning: Failed to delete image {img_rel}: {e}")
-                if deleted_count:
-                    print(f"Deleted {deleted_count} image(s) for chapter '{chapter.get('name', '')}'")
-
-            # If user chose to delete the file, attempt it
-            if del_var.get():
-                try:
-                    if section:
                         fpath = self.base_path / section.get('path', '') / chapter.get('file', '')
                         if fpath.exists():
-                            fpath.unlink()
-                except Exception as e:
-                    messagebox.showerror("Error", f"Failed to delete chapter file: {e}")
-                    return
+                            with open(fpath, 'r', encoding='utf-8') as f:
+                                data = json.load(f)
+                            chapter_data = data[0] if isinstance(data, list) and data else data
+                            if isinstance(chapter_data, dict):
+                                for q in chapter_data.get('questions', []):
+                                    img = q.get('image', '')
+                                    if img:
+                                        image_paths.append(img)
+                    except Exception as e:
+                        print(f"Warning: Could not read chapter images: {e}")
 
-            try:
-                del self.chapters[self.current_chapter_idx]
-            except Exception:
-                pass
+                if del_images_var.get() and image_paths:
+                    for img_rel in image_paths:
+                        try:
+                            img_path = self.base_path / img_rel
+                            if img_path.exists():
+                                img_path.unlink()
+                        except Exception as e:
+                            print(f"Warning: Failed to delete image {img_rel}: {e}")
+
+                if del_var.get():
+                    try:
+                        if section:
+                            fpath = self.base_path / section.get('path', '') / chapter.get('file', '')
+                            if fpath.exists():
+                                fpath.unlink()
+                    except Exception as e:
+                        messagebox.showerror("Error", f"Failed to delete chapter file: {e}")
+                        return
+
+                try:
+                    del self.chapters[idx]
+                except Exception:
+                    pass
+
             self.current_chapter_idx = None
             self.refresh_chapters_tree()
             self.ch_id.delete(0, tk.END)
             self.ch_name.delete(0, tk.END)
             self.ch_count.delete(0, tk.END)
             self.update_chapter_btn.config(state="disabled")
-            self.update_status("Chapter deleted (click Save All)", "orange")
+            self.update_status("Chapter(s) deleted (click Save All)", "orange")
             dlg.destroy()
 
         def cancel():
