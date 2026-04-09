@@ -384,7 +384,7 @@
     {
       "id": "regen-1775769768374-12",
       "number": "13",
-      "text": "What is the running time of the following pseudo code in Big-Oh notation:\n\ncpp\nint YYY(int n)\n{\n    if(n < 10)\n        cout << \"small\";\n    else\n        for (int i = 0; i < n/2; ++i)\n        {\n            cout << \"ok\";\n        }\n    return n;\n}\n\nvoid main()\n{\n    for (int i = 0; i < n; ++i)\n        a = YYY(i);\n}\n",
+      "text": "What is the running time of the following pseudo code in Big-Oh notation:\n\n```cpp\nint YYY(int n)\n{\n    if(n < 10)\n        cout << \"small\";\n    else\n        for (int i = 0; i < n/2; ++i)\n        {\n            cout << \"ok\";\n        }\n    return n;\n}\n\nvoid main()\n{\n    for (int i = 0; i < n; ++i)\n        a = YYY(i);\n}\n\n```",
       "choices": [
         {
           "value": "A",
@@ -936,5 +936,6 @@
     }
   ],
   "status": "completed",
-  "totalQuestions": 30
+  "totalQuestions": 30,
+  "q": 30
 }

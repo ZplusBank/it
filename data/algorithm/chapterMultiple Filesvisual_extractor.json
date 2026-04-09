@@ -378,7 +378,7 @@
     {
       "id": "extract-combined-1775769443368-12",
       "number": "13",
-      "text": "What is the running time of the following pseudo code in Big-Oh notation:\n\ncpp\nint XXX(int n)\n{\n    if(n < 6)\n        cout << \"too small\";\n    else\n        for (int i = 0; i < n; ++i)\n        {\n            cout << \"just right\";\n        }\n    return n;\n}\n\nvoid main()\n{\n    for (int i = 0; i < n; ++i)\n        a = XXX(i);\n}\n",
+      "text": "What is the running time of the following pseudo code in Big-Oh notation:\n\n```cpp\nint XXX(int n)\n{\n    if(n < 6)\n        cout << \"too small\";\n    else\n        for (int i = 0; i < n; ++i)\n        {\n            cout << \"just right\";\n        }\n    return n;\n}\n\nvoid main()\n{\n    for (int i = 0; i < n; ++i)\n        a = XXX(i);\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -1091,7 +1091,7 @@
     {
       "id": "extract-combined-1775769443368-35",
       "number": "36",
-      "text": "What is the running time of the following pseudo code in Big-Oh notation?\n\ncpp\nint XXX(int n) {\n    if (n < 6)\n        cout << \"too small\";\n    else\n        for (int i = 0; i < n; ++i) {\n            cout << \"just right\";\n        }\n    return n;\n}\n\nvoid main() {\n    for (int i = 0; i < n; ++i)\n        a = XXX(i);\n}\n",
+      "text": "What is the running time of the following pseudo code in Big-Oh notation?\n\n```cpp\nint XXX(int n) {\n    if (n < 6)\n        cout << \"too small\";\n    else\n        for (int i = 0; i < n; ++i) {\n            cout << \"just right\";\n        }\n    return n;\n}\n\nvoid main() {\n    for (int i = 0; i < n; ++i)\n        a = XXX(i);\n}\n\n```",
       "choices": [
         {
           "value": "A",
@@ -1245,5 +1245,6 @@
     }
   ],
   "status": "completed",
-  "totalQuestions": 40
+  "totalQuestions": 40,
+  "q": 40
 }
