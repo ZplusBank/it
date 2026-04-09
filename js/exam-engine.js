@@ -538,11 +538,68 @@ const app = {
         const text = rawText == null ? '' : String(rawText);
 
         if (this._isWebRelatedQuestion(question)) {
-            // Render web snippets as literal text so tags are visible and not interpreted.
-            return this.escapeHtml(text).replace(/\n/g, '<br>');
+            // Prepare HTML code for markdown rendering: escape raw HTML,
+            // auto-wrap snippets in inline code, and auto-fence code blocks.
+            return ContentRenderer.render(this._prepareWebContent(text));
         }
 
         return ContentRenderer.render(text);
+    },
+
+    /**
+     * Prepare web/HTML question content for markdown rendering.
+     * - Auto-wraps single-line HTML snippets in inline code backticks
+     * - Auto-fences unfenced code blocks (e.g. "html\n<code>" → ```html)
+     * - Escapes HTML tags/entities outside markdown code regions
+     */
+    _prepareWebContent(text) {
+        if (!text) return text;
+
+        // Normalize line endings
+        text = text.replace(/\r\n/g, '\n');
+
+        // Quick path: single-line text with HTML tags and no backticks
+        // → wrap entire text in inline code (typical for choice texts)
+        if (!text.includes('\n') && !text.includes('`') && /<[a-zA-Z/!][^>]*>/.test(text)) {
+            return '`' + text.trim() + '`';
+        }
+
+        // Multi-line / mixed content path
+
+        // Step 1: Auto-fence unfenced code blocks.
+        // Detects patterns like "\nhtml\n<code..." or "\ncss\n.selector{..."
+        // and wraps them in proper markdown fenced code blocks.
+        text = text.replace(
+            /\n(html|css|javascript|js|php|xml)\n([\s\S]+?)(?=\n\n[A-Za-z]|$)/gi,
+            (_, lang, code) => '\n\n```' + lang + '\n' + code.trimEnd() + '\n```'
+        );
+
+        // Step 2: Protect existing markdown code regions from escaping
+        const codeRegions = [];
+        let codeCounter = 0;
+        const CODE_PH = '%%WEBCODE_';
+        const protectCode = (match) => {
+            const id = CODE_PH + (codeCounter++) + '%%';
+            codeRegions.push({ id, content: match });
+            return id;
+        };
+
+        // Protect fenced code blocks (```...```), then inline code (`...`)
+        text = text.replace(/```[\s\S]*?```/g, protectCode);
+        text = text.replace(/`[^`\n]+`/g, protectCode);
+
+        // Step 3: Escape HTML in non-code regions so tags are visible, not rendered
+        text = text
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+
+        // Step 4: Restore protected code regions
+        for (let i = 0; i < codeRegions.length; i++) {
+            text = text.replace(codeRegions[i].id, codeRegions[i].content);
+        }
+
+        return text;
     },
 
     getIconForSubject(id) {
@@ -1082,6 +1139,11 @@ const app = {
         const choice = choices.find(c => c.value === value);
         if (!choice) return value;
 
+        // For web questions, return raw text to preserve visible HTML tags
+        if (this._isWebRelatedQuestion(question)) {
+            return choice.text || value;
+        }
+
         // Convert rendered rich text to plain text for compact feedback line
         const temp = document.createElement('div');
         temp.innerHTML = ContentRenderer.render(choice.text || '');
@@ -1468,7 +1530,7 @@ const app = {
         // Question text
         const qText = document.createElement('div');
         qText.className = 'results-q-text question-text';
-        qText.innerHTML = ContentRenderer.render(question.text);
+        qText.innerHTML = this._renderQuestionContent(question.text, question);
         card.appendChild(qText);
 
         // Choices
@@ -1490,7 +1552,7 @@ const app = {
 
             const choiceDiv = document.createElement('div');
             choiceDiv.className = `results-choice ${choiceClass}`;
-            choiceDiv.innerHTML = `<div class="results-choice-letter">${choice.value}</div><div class="results-choice-text">${ContentRenderer.render(choice.text)}</div>${choiceIcon ? `<div class="results-choice-icon">${choiceIcon}</div>` : ''}`;
+            choiceDiv.innerHTML = `<div class="results-choice-letter">${choice.value}</div><div class="results-choice-text">${this._renderQuestionContent(choice.text, question)}</div>${choiceIcon ? `<div class="results-choice-icon">${choiceIcon}</div>` : ''}`;
             choicesList.appendChild(choiceDiv);
         }
         card.appendChild(choicesList);
@@ -1499,7 +1561,7 @@ const app = {
         if (question.explanation) {
             const expDiv = document.createElement('div');
             expDiv.className = 'results-explanation';
-            expDiv.innerHTML = `<strong>💡 Explanation:</strong><div class="results-explanation-text">${ContentRenderer.render(question.explanation)}</div>`;
+            expDiv.innerHTML = `<strong>💡 Explanation:</strong><div class="results-explanation-text">${this._renderQuestionContent(question.explanation, question)}</div>`;
             card.appendChild(expDiv);
         }
 

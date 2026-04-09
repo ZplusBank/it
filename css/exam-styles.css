@@ -1399,6 +1399,7 @@ header::before {
 .question-text code:not([class*="language-"]),
 .explanation code:not([class*="language-"]),
 .results-explanation-text code:not([class*="language-"]),
+.results-choice-text code:not([class*="language-"]),
 .choice label code:not([class*="language-"]) {
     background: rgba(99, 102, 241, 0.1);
     padding: 2px 7px;
@@ -1411,6 +1412,7 @@ header::before {
 [data-theme="dark"] .question-text code:not([class*="language-"]),
 [data-theme="dark"] .explanation code:not([class*="language-"]),
 [data-theme="dark"] .results-explanation-text code:not([class*="language-"]),
+[data-theme="dark"] .results-choice-text code:not([class*="language-"]),
 [data-theme="dark"] .choice label code:not([class*="language-"]) {
     background: rgba(129, 140, 248, 0.15);
 }
@@ -1418,6 +1420,7 @@ header::before {
 .question-text code:not([class*="language-"]),
 .explanation code:not([class*="language-"]),
 .results-explanation-text code:not([class*="language-"]),
+.results-choice-text code:not([class*="language-"]),
 .choice label code:not([class*="language-"]) {
     overflow-x: auto;
     white-space: nowrap;
@@ -1431,6 +1434,7 @@ header::before {
 .question-text code:not([class*="language-"])::-webkit-scrollbar,
 .explanation code:not([class*="language-"])::-webkit-scrollbar,
 .results-explanation-text code:not([class*="language-"])::-webkit-scrollbar,
+.results-choice-text code:not([class*="language-"])::-webkit-scrollbar,
 .choice label code:not([class*="language-"])::-webkit-scrollbar {
     display: none;
 }
