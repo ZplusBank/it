@@ -1545,10 +1545,10 @@ const app = {
         }
 
         const percentage = totalCount > 0 ? Math.round((correctCount / totalCount) * 100) : 0;
-    const letterGrade = this.getLetterGrade(percentage);
-    const displayGrade = this.getDisplayGrade(letterGrade);
+        const letterGrade = this.getLetterGrade(percentage);
+        const displayGrade = this.getDisplayGrade(letterGrade);
 
-    document.getElementById('scoreDisplay').innerHTML = `${correctCount} / ${totalCount} <span class="score-grade">${displayGrade}</span>`;
+        document.getElementById('scoreDisplay').innerHTML = `${correctCount} / ${totalCount} <span class="score-grade">${displayGrade}</span>`;
         document.getElementById('scoreText').textContent = `You answered ${correctCount} out of ${totalCount} questions correctly`;
 
         // Animate score ring
