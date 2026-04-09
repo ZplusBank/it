@@ -874,17 +874,24 @@ const app = {
             </div>
         `).join('');
 
-        // Make the whole chapter card a reliable click target.
-        grid.querySelectorAll('.chapter-card').forEach((card) => {
-            card.addEventListener('click', (e) => {
-                const cb = card.querySelector('input[type="checkbox"]');
-                if (!cb) return;
-                if (e.target === cb) return;
+        // Make whole chapter cards clickable with fallback hit detection.
+        grid.onclick = (e) => {
+            const card = e.target.closest('.chapter-card')
+                || document.elementFromPoint(e.clientX, e.clientY)?.closest('.chapter-card');
+            if (!card) return;
 
-                cb.checked = !cb.checked;
-                this.updateSelectedChapters();
-            });
-        });
+            const cb = card.querySelector('input[type="checkbox"]');
+            if (!cb) return;
+
+            // Let native checkbox/label behavior run, but keep UI state synced.
+            if (e.target === cb || e.target.closest('label')) {
+                queueMicrotask(() => this.updateSelectedChapters());
+                return;
+            }
+
+            cb.checked = !cb.checked;
+            this.updateSelectedChapters();
+        };
 
         this.updateSelectedChapters();
     },
