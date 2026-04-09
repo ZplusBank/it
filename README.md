@@ -140,7 +140,7 @@ Question text, choices, and explanations support **Markdown**, **LaTeX math**, *
 | `- item` | Bullet list | `- First item` |
 
 ### Supported Code Languages
-`java`, `python`, `c`, `cpp`, `csharp`, `sql`, `javascript`
+`java`, `python`, `c`, `cpp`, `csharp`, `sql`, `javascript`, `html`
 
 ### Example Question JSON
 ```json

@@ -1,0 +1,797 @@
+{
+  "id": "upload-1775754511906-9hw74",
+  "label": "ch5.ppt",
+  "params": {
+    "file": "ch5.ppt"
+  },
+  "title": "Process Synchronization",
+  "questions": [
+    {
+      "id": "upload-1775754511906-0",
+      "number": "1",
+      "text": "In the context of concurrent access to shared data, what is a primary concern for maintaining data consistency?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Ensuring processes execute as quickly as possible",
+          "text": "Ensuring processes execute as quickly as possible"
+        },
+        {
+          "value": "B",
+          "label": "Mechanisms to ensure the orderly execution of cooperating processes",
+          "text": "Mechanisms to ensure the orderly execution of cooperating processes"
+        },
+        {
+          "value": "C",
+          "label": "Maximizing the number of buffers in the producer-consumer problem",
+          "text": "Maximizing the number of buffers in the producer-consumer problem"
+        },
+        {
+          "value": "D",
+          "label": "Preventing processes from being interrupted during execution",
+          "text": "Preventing processes from being interrupted during execution"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Concurrent access to shared data can result in data inconsistency; therefore, mechanisms are required to ensure orderly execution."
+    },
+    {
+      "id": "upload-1775754511906-1",
+      "number": "2",
+      "text": "Consider a shared variable `counter` initialized to 5. One process executes `counter++` and another executes `counter--` concurrently. Which of the following is NOT a possible final value for `counter` due to a race condition?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "4",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "5",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "6",
+          "text": "6"
+        },
+        {
+          "value": "D",
+          "label": "0",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In a race condition between an increment and a decrement (each involving three steps: load, modify, store), the possible outcomes are 4, 5, or 6 depending on the interleaving. 0 is not a possible outcome for a single pair of operations starting at 5."
+    },
+    {
+      "id": "upload-1775754511906-2",
+      "number": "3",
+      "text": "Which requirements MUST a solution to the critical-section problem satisfy? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Mutual Exclusion",
+          "text": "Mutual Exclusion"
+        },
+        {
+          "value": "B",
+          "label": "Progress",
+          "text": "Progress"
+        },
+        {
+          "value": "C",
+          "label": "Bounded Waiting",
+          "text": "Bounded Waiting"
+        },
+        {
+          "value": "High CPU utilization",
+          "label": "D",
+          "text": "D"
+        },
+        {
+          "value": "Non-preemptive scheduling",
+          "label": "E",
+          "text": "E"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "ABC",
+      "explanation": "A solution must satisfy Mutual Exclusion (only one process at a time), Progress (selection of next process cannot be postponed indefinitely), and Bounded Waiting (a limit on how many other processes can enter before a request is granted)."
+    },
+    {
+      "id": "upload-1775754511906-3",
+      "number": "4",
+      "text": "In a non-preemptive kernel, how is the critical-section problem effectively managed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By allowing processes to be preempted at any time",
+          "text": "By allowing processes to be preempted at any time"
+        },
+        {
+          "value": "B",
+          "label": "A process runs until it exits kernel mode, blocks, or yields the CPU",
+          "text": "A process runs until it exits kernel mode, blocks, or yields the CPU"
+        },
+        {
+          "value": "C",
+          "label": "By disabling all hardware interrupts permanently",
+          "text": "By disabling all hardware interrupts permanently"
+        },
+        {
+          "value": "D",
+          "label": "Using complex software algorithms like Peterson's solution for all kernel tasks",
+          "text": "Using complex software algorithms like Peterson's solution for all kernel tasks"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Non-preemptive kernels are essentially free of race conditions because a process in kernel mode will not be preempted until it voluntarily yields or finishes."
+    },
+    {
+      "id": "upload-1775754511906-4",
+      "number": "5",
+      "text": "In Peterson’s Solution, what is the purpose of the variable \\( \\text{flag}[i] = \\text{true} \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It indicates that process \\( P_i \\) is currently in the critical section.",
+          "text": "It indicates that process \\( P_i \\) is currently in the critical section."
+        },
+        {
+          "value": "B",
+          "label": "It indicates that it is currently process \\( P_i \\)'s turn.",
+          "text": "It indicates that it is currently process \\( P_i \\)'s turn."
+        },
+        {
+          "value": "C",
+          "label": "It indicates that process \\( P_i \\) is ready to enter the critical section.",
+          "text": "It indicates that process \\( P_i \\) is ready to enter the critical section."
+        },
+        {
+          "value": "D",
+          "label": "It is used to reset the system clock.",
+          "text": "It is used to reset the system clock."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Peterson's solution, the flag array indicates readiness, while the 'turn' variable indicates whose turn it actually is."
+    },
+    {
+      "id": "upload-1775754511906-5",
+      "number": "6",
+      "text": "Why is disabling interrupts a poor solution for process synchronization on multiprocessor systems?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It is too easy to implement.",
+          "text": "It is too easy to implement."
+        },
+        {
+          "value": "B",
+          "label": "Interrupts cannot be disabled on modern CPUs.",
+          "text": "Interrupts cannot be disabled on modern CPUs."
+        },
+        {
+          "value": "C",
+          "label": "It is inefficient because the message to disable interrupts must be passed to all processors, which is not scalable.",
+          "text": "It is inefficient because the message to disable interrupts must be passed to all processors, which is not scalable."
+        },
+        {
+          "value": "D",
+          "label": "It causes the system to shut down.",
+          "text": "It causes the system to shut down."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Disabling interrupts on uniprocessors works, but on multiprocessors, the time consumed by messaging every core makes it unscalable and inefficient."
+    },
+    {
+      "id": "upload-1775754511906-6",
+      "number": "7",
+      "text": "The `test_and_set` instruction is defined as: \n\nc\nboolean test_and_set (boolean *target) {\n    boolean rv = *target;\n    *target = TRUE;\n    return rv;\n}\n\nIf `lock` is initially `FALSE`, what does the first process to call `test_and_set(&lock)` receive, and what is the new value of `lock`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Receives TRUE; lock becomes TRUE",
+          "text": "Receives TRUE; lock becomes TRUE"
+        },
+        {
+          "value": "B",
+          "label": "Receives FALSE; lock becomes FALSE",
+          "text": "Receives FALSE; lock becomes FALSE"
+        },
+        {
+          "value": "C",
+          "label": "Receives FALSE; lock becomes TRUE",
+          "text": "Receives FALSE; lock becomes TRUE"
+        },
+        {
+          "value": "D",
+          "label": "Receives TRUE; lock becomes FALSE",
+          "text": "Receives TRUE; lock becomes FALSE"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The instruction returns the original value (FALSE) and sets the target to TRUE."
+    },
+    {
+      "id": "upload-1775754511906-7",
+      "number": "8",
+      "text": "What is a 'spinlock'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A lock that rotates between processes based on priority.",
+          "text": "A lock that rotates between processes based on priority."
+        },
+        {
+          "value": "B",
+          "label": "A mutex lock that requires busy waiting.",
+          "text": "A mutex lock that requires busy waiting."
+        },
+        {
+          "value": "C",
+          "label": "A hardware-level failure in the memory bus.",
+          "text": "A hardware-level failure in the memory bus."
+        },
+        {
+          "value": "D",
+          "label": "A lock that automatically releases after a set amount of time.",
+          "text": "A lock that automatically releases after a set amount of time."
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Spinlocks are locks where the process 'spins' (busy waits) while waiting for the lock to become available."
+    },
+    {
+      "id": "upload-1775754511906-8",
+      "number": "9",
+      "text": "Which of the following is a key difference between `wait()` and `signal()` in a semaphore implementation without busy waiting?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`wait()` increments the semaphore value; `signal()` decrements it.",
+          "text": "`wait()` increments the semaphore value; `signal()` decrements it."
+        },
+        {
+          "value": "B",
+          "label": "`wait()` utilizes the `wakeup()` operation; `signal()` utilizes `block()`.",
+          "text": "`wait()` utilizes the `wakeup()` operation; `signal()` utilizes `block()`."
+        },
+        {
+          "value": "C",
+          "label": "`wait()` decrements the value and may `block()`; `signal()` increments and may `wakeup()`.",
+          "text": "`wait()` decrements the value and may `block()`; `signal()` increments and may `wakeup()`."
+        },
+        {
+          "value": "D",
+          "label": "There is no difference; they are synonymous.",
+          "text": "There is no difference; they are synonymous."
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In implementations without busy waiting, `wait` decrements the count and blocks if the value is less than 0, while `signal` increments it and wakes up processes if they were waiting."
+    },
+    {
+      "id": "upload-1775754511906-9",
+      "number": "10",
+      "text": "Which scenario describes a 'Deadlock'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A high-priority process preempts a low-priority process.",
+          "text": "A high-priority process preempts a low-priority process."
+        },
+        {
+          "value": "B",
+          "label": "A process is waiting for an event that only another waiting process can cause.",
+          "text": "A process is waiting for an event that only another waiting process can cause."
+        },
+        {
+          "value": "C",
+          "label": "The CPU is idle because there are no processes in the ready queue.",
+          "text": "The CPU is idle because there are no processes in the ready queue."
+        },
+        {
+          "value": "D",
+          "label": "A process finishes execution and remains in the system as a zombie.",
+          "text": "A process finishes execution and remains in the system as a zombie."
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Deadlock occurs when two or more processes are waiting indefinitely for an event that can be caused by only one of the other waiting processes."
+    },
+    {
+      "id": "upload-1775754511906-10",
+      "number": "11",
+      "text": "Priority Inversion is a problem that occurs when a high-priority process needs a resource held by a lower-priority process. How is this typically solved?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By killing the lower-priority process.",
+          "text": "By killing the lower-priority process."
+        },
+        {
+          "value": "B",
+          "label": "Using a priority-inheritance protocol.",
+          "text": "Using a priority-inheritance protocol."
+        },
+        {
+          "value": "C",
+          "label": "By disabling the scheduler.",
+          "text": "By disabling the scheduler."
+        },
+        {
+          "value": "D",
+          "label": "By ignoring the priority of all processes until the lock is released.",
+          "text": "By ignoring the priority of all processes until the lock is released."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Priority inheritance allows the lower-priority process to temporarily inherit the higher priority of the process waiting for its resource, allowing it to finish and release the lock faster."
+    },
+    {
+      "id": "upload-1775754511906-11",
+      "number": "12",
+      "text": "In the Bounded-Buffer problem, which semaphores are typically used? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A mutex semaphore initialized to 1",
+          "text": "A mutex semaphore initialized to 1"
+        },
+        {
+          "value": "B",
+          "label": "A 'full' semaphore initialized to 0",
+          "text": "A 'full' semaphore initialized to 0"
+        },
+        {
+          "value": "C",
+          "label": "An 'empty' semaphore initialized to n",
+          "text": "An 'empty' semaphore initialized to n"
+        },
+        {
+          "value": "A 'binary' semaphore initialized to n",
+          "label": "D",
+          "text": "D"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "ABC",
+      "explanation": "The problem uses a mutex for mutual exclusion, 'full' to count occupied buffers, and 'empty' to count available buffers."
+    },
+    {
+      "id": "upload-1775754511906-12",
+      "number": "13",
+      "text": "What is the constraint on the Readers-Writers problem?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Multiple writers can write at once, but only one reader can read.",
+          "text": "Multiple writers can write at once, but only one reader can read."
+        },
+        {
+          "value": "B",
+          "label": "Multiple readers can read at once, but only one writer can access the data at a time.",
+          "text": "Multiple readers can read at once, but only one writer can access the data at a time."
+        },
+        {
+          "value": "C",
+          "label": "Only one process (reader or writer) can access the data at any time.",
+          "text": "Only one process (reader or writer) can access the data at any time."
+        },
+        {
+          "value": "D",
+          "label": "Writers have no priority over readers.",
+          "text": "Writers have no priority over readers."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The readers-writers problem allows concurrent reads (since they don't modify data) but requires exclusive access for writers."
+    },
+    {
+      "id": "upload-1775754511906-13",
+      "number": "14",
+      "text": "The Dining-Philosophers problem structure `wait(chopstick[i]); wait(chopstick[(i+1)%5]); ... signal(chopstick[i]); signal(chopstick[(i+1)%5]);` can result in which of the following?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Mutual exclusion violation",
+          "text": "Mutual exclusion violation"
+        },
+        {
+          "value": "B",
+          "label": "Deadlock",
+          "text": "Deadlock"
+        },
+        {
+          "value": "C",
+          "label": "Memory leak",
+          "text": "Memory leak"
+        },
+        {
+          "value": "D",
+          "label": "Buffer overflow",
+          "text": "Buffer overflow"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If all five philosophers pick up their left chopstick simultaneously, they will all be waiting forever for their right chopstick, causing a deadlock."
+    },
+    {
+      "id": "upload-1775754511906-14",
+      "number": "15",
+      "text": "Which of the following are valid ways to prevent deadlock in the Dining-Philosophers problem? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Allow at most 4 philosophers to sit at a 5-seat table.",
+          "text": "Allow at most 4 philosophers to sit at a 5-seat table."
+        },
+        {
+          "value": "B",
+          "label": "Allow a philosopher to pick up chopsticks only if both are available.",
+          "text": "Allow a philosopher to pick up chopsticks only if both are available."
+        },
+        {
+          "value": "C",
+          "label": "Use an asymmetric solution (odd pick left first, even pick right first).",
+          "text": "Use an asymmetric solution (odd pick left first, even pick right first)."
+        },
+        {
+          "value": "Ensure all philosophers pick up the left chopstick first.",
+          "label": "D",
+          "text": "D"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "ABC",
+      "explanation": "Eliminating the circular wait through asymmetric picking, limiting the number of participants, or using atomic acquisition of both resources are standard solutions."
+    },
+    {
+      "id": "upload-1775754511906-15",
+      "number": "16",
+      "text": "What is a 'Monitor' in the context of process synchronization?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A hardware device that tracks CPU temperature.",
+          "text": "A hardware device that tracks CPU temperature."
+        },
+        {
+          "value": "B",
+          "label": "A high-level abstraction (ADT) that ensures only one process is active within it at a time.",
+          "text": "A high-level abstraction (ADT) that ensures only one process is active within it at a time."
+        },
+        {
+          "value": "C",
+          "label": "A specific type of semaphore used only in Linux.",
+          "text": "A specific type of semaphore used only in Linux."
+        },
+        {
+          "value": "D",
+          "label": "A low-level assembly instruction for swapping memory.",
+          "text": "A low-level assembly instruction for swapping memory."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Monitors are high-level abstractions where mutual exclusion is provided automatically by the language/environment."
+    },
+    {
+      "id": "upload-1775754511906-16",
+      "number": "17",
+      "text": "In a monitor, what happens if process P calls `x.signal()` and there is no process suspended on `x.wait()`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The monitor crashes.",
+          "text": "The monitor crashes."
+        },
+        {
+          "value": "B",
+          "label": "The signal has no effect.",
+          "text": "The signal has no effect."
+        },
+        {
+          "value": "C",
+          "label": "The signal is stored for the next process that calls `wait()`.",
+          "text": "The signal is stored for the next process that calls `wait()`."
+        },
+        {
+          "value": "D",
+          "label": "The monitor value is incremented.",
+          "text": "The monitor value is incremented."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Unlike semaphores, where `signal` always increments the value, a monitor signal on a condition variable has no effect if no one is waiting."
+    },
+    {
+      "id": "upload-1775754511906-17",
+      "number": "18",
+      "text": "When a process Q is resumed inside a monitor due to a signal from process P, which of the following describes 'Signal and Continue'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "P waits until Q leaves the monitor or waits for another condition.",
+          "text": "P waits until Q leaves the monitor or waits for another condition."
+        },
+        {
+          "value": "B",
+          "label": "Q waits until P leaves the monitor or waits for another condition.",
+          "text": "Q waits until P leaves the monitor or waits for another condition."
+        },
+        {
+          "value": "C",
+          "label": "P and Q execute in parallel inside the monitor.",
+          "text": "P and Q execute in parallel inside the monitor."
+        },
+        {
+          "value": "D",
+          "label": "P is terminated immediately.",
+          "text": "P is terminated immediately."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Signal and Continue, the signaler (P) continues execution, and the resumed process (Q) must wait until P exits or blocks."
+    },
+    {
+      "id": "upload-1775754511906-18",
+      "number": "19",
+      "text": "Solaris uses 'Adaptive Mutexes'. What is an adaptive mutex?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A mutex that changes its priority based on the owner.",
+          "text": "A mutex that changes its priority based on the owner."
+        },
+        {
+          "value": "B",
+          "label": "A lock that spins if the owner is running on another CPU but blocks if the owner is not running.",
+          "text": "A lock that spins if the owner is running on another CPU but blocks if the owner is not running."
+        },
+        {
+          "value": "C",
+          "label": "A lock that adjusts its size based on the amount of data it protects.",
+          "text": "A lock that adjusts its size based on the amount of data it protects."
+        },
+        {
+          "value": "D",
+          "label": "A mutex that only works on uniprocessor systems.",
+          "text": "A mutex that only works on uniprocessor systems."
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Adaptive mutexes are efficient because they spin for short periods if the lock holder is currently active on another core, avoiding the overhead of a context switch."
+    },
+    {
+      "id": "upload-1775754511906-19",
+      "number": "20",
+      "text": "In Windows synchronization, what are 'Dispatcher Objects'? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Events",
+          "text": "Events"
+        },
+        {
+          "value": "B",
+          "label": "Timers",
+          "text": "Timers"
+        },
+        {
+          "value": "C",
+          "label": "Semaphores",
+          "text": "Semaphores"
+        },
+        {
+          "value": "D",
+          "label": "Mutexes",
+          "text": "Mutexes"
+        },
+        {
+          "value": "Instruction Pipelines",
+          "label": "E",
+          "text": "E"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "ABCD",
+      "explanation": "Dispatcher objects in Windows can act as mutexes, semaphores, events, or timers to coordinate threads."
+    },
+    {
+      "id": "upload-1775754511906-20",
+      "number": "21",
+      "text": "How does Linux handle short critical sections on a single-CPU system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Using spinlocks.",
+          "text": "Using spinlocks."
+        },
+        {
+          "value": "B",
+          "label": "Disabling and enabling kernel preemption.",
+          "text": "Disabling and enabling kernel preemption."
+        },
+        {
+          "value": "C",
+          "label": "Using transactional memory.",
+          "text": "Using transactional memory."
+        },
+        {
+          "value": "D",
+          "label": "It does not need to handle them because there is only one CPU.",
+          "text": "It does not need to handle them because there is only one CPU."
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "On a single-CPU system, spinlocks are ineffective; Linux handles this by disabling kernel preemption so the running task cannot be replaced."
+    },
+    {
+      "id": "upload-1775754511906-21",
+      "number": "22",
+      "text": "What is the primary characteristic of 'Transactional Memory'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Memory is rented rather than owned.",
+          "text": "Memory is rented rather than owned."
+        },
+        {
+          "value": "B",
+          "label": "Memory operations are performed as an atomic transaction; they either all complete or are rolled back.",
+          "text": "Memory operations are performed as an atomic transaction; they either all complete or are rolled back."
+        },
+        {
+          "value": "C",
+          "label": "It is only used for database management systems.",
+          "text": "It is only used for database management systems."
+        },
+        {
+          "value": "D",
+          "label": "It requires the use of semaphores for every read operation.",
+          "text": "It requires the use of semaphores for every read operation."
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Transactional memory treats a sequence of memory operations as an atomic unit, ensuring data consistency without explicit locks."
+    },
+    {
+      "id": "upload-1775754511906-22",
+      "number": "23",
+      "text": "In OpenMP, which directive is used to ensure a block of code is performed atomically as a critical section?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`#pragma omp atomic`",
+          "text": "`#pragma omp atomic`"
+        },
+        {
+          "value": "B",
+          "label": "`#pragma omp parallel`",
+          "text": "`#pragma omp parallel`"
+        },
+        {
+          "value": "C",
+          "label": "`#pragma omp critical`",
+          "text": "`#pragma omp critical`"
+        },
+        {
+          "value": "D",
+          "label": "`#pragma omp sync`",
+          "text": "`#pragma omp sync`"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `#pragma omp critical` directive ensures that the following block of code is executed by only one thread at a time."
+    },
+    {
+      "id": "upload-1775754511906-23",
+      "number": "24",
+      "text": "Why are functional programming languages like Erlang or Scala gaining interest for handling data races?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "They are faster than C++.",
+          "text": "They are faster than C++."
+        },
+        {
+          "value": "B",
+          "label": "They treat variables as immutable, so state cannot change once assigned.",
+          "text": "They treat variables as immutable, so state cannot change once assigned."
+        },
+        {
+          "value": "C",
+          "label": "They do not allow concurrent execution.",
+          "text": "They do not allow concurrent execution."
+        },
+        {
+          "value": "D",
+          "label": "They automatically implement Peterson's solution at the hardware level.",
+          "text": "They automatically implement Peterson's solution at the hardware level."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Functional languages emphasize immutability. If data cannot be changed after creation, race conditions involving simultaneous modifications are inherently prevented."
+    },
+    {
+      "id": "upload-1775754511906-24",
+      "number": "25",
+      "text": "Which synchronization tool is used by Solaris to order threads waiting for a lock and implement priority inheritance?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Adaptive Mutex",
+          "text": "Adaptive Mutex"
+        },
+        {
+          "value": "B",
+          "label": "Turnstile",
+          "text": "Turnstile"
+        },
+        {
+          "value": "C",
+          "label": "Dispatcher Object",
+          "text": "Dispatcher Object"
+        },
+        {
+          "value": "D",
+          "label": "Condition Variable",
+          "text": "Condition Variable"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Solaris uses turnstiles to manage lists of waiting threads and to propagate priority inheritance from waiting threads to the thread holding the lock."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}

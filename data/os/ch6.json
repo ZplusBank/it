@@ -1,0 +1,787 @@
+{
+  "id": "upload-1775754256243-78bnl",
+  "label": "ch6.ppt",
+  "params": {
+    "file": "ch6.ppt"
+  },
+  "title": "Chapter 6: CPU Scheduling",
+  "questions": [
+    {
+      "id": "upload-1775754256243-0",
+      "number": "1",
+      "text": "Which of the following describes the fundamental cycle of process execution in a system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Memory allocation followed by CPU execution",
+          "text": "Memory allocation followed by CPU execution"
+        },
+        {
+          "value": "B",
+          "label": "A cycle of CPU execution and I/O wait",
+          "text": "A cycle of CPU execution and I/O wait"
+        },
+        {
+          "value": "C",
+          "label": "System call request and kernel interrupt",
+          "text": "System call request and kernel interrupt"
+        },
+        {
+          "value": "D",
+          "label": "Input processing and Output rendering",
+          "text": "Input processing and Output rendering"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Process execution consists of a cycle of CPU execution (CPU burst) and I/O wait (I/O burst)."
+    },
+    {
+      "id": "upload-1775754256243-1",
+      "number": "2",
+      "text": "Under which of the following circumstances is CPU scheduling considered **nonpreemptive**? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "When a process switches from the running state to the waiting state",
+          "text": "When a process switches from the running state to the waiting state"
+        },
+        {
+          "value": "B",
+          "label": "When a process switches from the running state to the ready state",
+          "text": "When a process switches from the running state to the ready state"
+        },
+        {
+          "value": "C",
+          "label": "When a process switches from the waiting state to the ready state",
+          "text": "When a process switches from the waiting state to the ready state"
+        },
+        {
+          "value": "D",
+          "label": "When a process terminates",
+          "text": "When a process terminates"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "AD",
+      "explanation": "Scheduling is nonpreemptive only when a process switches from running to waiting or when it terminates. In these cases, the process gives up the CPU voluntarily."
+    },
+    {
+      "id": "upload-1775754256243-2",
+      "number": "3",
+      "text": "What is the term for the time it takes for the dispatcher to stop one process and start another running?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Context switch duration",
+          "text": "Context switch duration"
+        },
+        {
+          "value": "B",
+          "label": "Turnaround time",
+          "text": "Turnaround time"
+        },
+        {
+          "value": "C",
+          "label": "Dispatch latency",
+          "text": "Dispatch latency"
+        },
+        {
+          "value": "D",
+          "label": "Throughput delay",
+          "text": "Throughput delay"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Dispatch latency is the specific time used by the dispatcher to stop one process and initiate another."
+    },
+    {
+      "id": "upload-1775754256243-3",
+      "number": "4",
+      "text": "Which scheduling criterion measures the number of processes that complete their execution per time unit?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "CPU Utilization",
+          "text": "CPU Utilization"
+        },
+        {
+          "value": "B",
+          "label": "Turnaround Time",
+          "text": "Turnaround Time"
+        },
+        {
+          "value": "C",
+          "label": "Response Time",
+          "text": "Response Time"
+        },
+        {
+          "value": "D",
+          "label": "Throughput",
+          "text": "Throughput"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Throughput is the count of processes completed in a specific time frame."
+    },
+    {
+      "id": "upload-1775754256243-4",
+      "number": "5",
+      "text": "In a time-sharing environment, which metric is most critical for measuring the time from request submission until the first response is produced?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Waiting Time",
+          "text": "Waiting Time"
+        },
+        {
+          "value": "B",
+          "label": "Response Time",
+          "text": "Response Time"
+        },
+        {
+          "value": "C",
+          "label": "Throughput",
+          "text": "Throughput"
+        },
+        {
+          "value": "D",
+          "label": "CPU Burst Time",
+          "text": "CPU Burst Time"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Response time is the interval between a request being submitted and the first response being produced."
+    },
+    {
+      "id": "upload-1775754256243-5",
+      "number": "6",
+      "text": "What is the primary disadvantage of the First-Come, First-Served (FCFS) scheduling algorithm?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It is complex to implement",
+          "text": "It is complex to implement"
+        },
+        {
+          "value": "B",
+          "label": "It causes high overhead for context switching",
+          "text": "It causes high overhead for context switching"
+        },
+        {
+          "value": "C",
+          "label": "It may result in the convoy effect",
+          "text": "It may result in the convoy effect"
+        },
+        {
+          "value": "D",
+          "label": "It is always preemptive",
+          "text": "It is always preemptive"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The convoy effect occurs in FCFS when short processes must wait for a single long, CPU-bound process to finish."
+    },
+    {
+      "id": "upload-1775754256243-6",
+      "number": "7",
+      "text": "Shortest-Job-First (SJF) scheduling is considered optimal because it:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Maximizes CPU utilization",
+          "text": "Maximizes CPU utilization"
+        },
+        {
+          "value": "B",
+          "label": "Minimizes average waiting time for a given set of processes",
+          "text": "Minimizes average waiting time for a given set of processes"
+        },
+        {
+          "value": "C",
+          "label": "Eliminates starvation completely",
+          "text": "Eliminates starvation completely"
+        },
+        {
+          "value": "D",
+          "label": "Uses a fixed time quantum",
+          "text": "Uses a fixed time quantum"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "SJF is optimal because it reduces the average waiting time more than any other scheduling algorithm for a specific set of processes."
+    },
+    {
+      "id": "upload-1775754256243-7",
+      "number": "8",
+      "text": "Predicting the length of the next CPU burst in SJF is often done using exponential averaging. Given the formula \\( \\tau_{n+1} = \\alpha t_n + (1 - \\alpha)\\tau_n \\), what does \\( \\alpha = 0 \\) imply?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Only the most recent actual CPU burst counts",
+          "text": "Only the most recent actual CPU burst counts"
+        },
+        {
+          "value": "B",
+          "label": "Recent history does not count toward the prediction",
+          "text": "Recent history does not count toward the prediction"
+        },
+        {
+          "value": "C",
+          "label": "The prediction is equal to the average of all previous bursts",
+          "text": "The prediction is equal to the average of all previous bursts"
+        },
+        {
+          "value": "D",
+          "label": "The system assumes the next burst will be zero",
+          "text": "The system assumes the next burst will be zero"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If \\( \\alpha = 0 \\), then \\( \\tau_{n+1} = \\tau_n \\), meaning recent history (actual burst \\( t_n \\)) is ignored and only the predicted history is used."
+    },
+    {
+      "id": "upload-1775754256243-8",
+      "number": "9",
+      "text": "Shortest-remaining-time-first (SRTF) is the preemptive version of which algorithm?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "First-Come, First-Served",
+          "text": "First-Come, First-Served"
+        },
+        {
+          "value": "B",
+          "label": "Shortest-Job-First",
+          "text": "Shortest-Job-First"
+        },
+        {
+          "value": "C",
+          "label": "Priority Scheduling",
+          "text": "Priority Scheduling"
+        },
+        {
+          "value": "D",
+          "label": "Round Robin",
+          "text": "Round Robin"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "SRTF is the preemptive implementation of SJF, where the currently running process can be interrupted if a new process arrives with a shorter remaining burst time."
+    },
+    {
+      "id": "upload-1775754256243-9",
+      "number": "10",
+      "text": "Priority scheduling can lead to 'starvation'. Which technique is used to solve this problem?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Preemption",
+          "text": "Preemption"
+        },
+        {
+          "value": "B",
+          "label": "Context switching",
+          "text": "Context switching"
+        },
+        {
+          "value": "C",
+          "label": "Aging",
+          "text": "Aging"
+        },
+        {
+          "value": "D",
+          "label": "Throughput maximization",
+          "text": "Throughput maximization"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Aging gradually increases the priority of processes that wait in the system for a long time, preventing them from being indefinitely postponed (starvation)."
+    },
+    {
+      "id": "upload-1775754256243-10",
+      "number": "11",
+      "text": "In Round Robin (RR) scheduling, what happens when the time quantum is very large?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The algorithm behaves like FCFS",
+          "text": "The algorithm behaves like FCFS"
+        },
+        {
+          "value": "B",
+          "label": "The algorithm behaves like SJF",
+          "text": "The algorithm behaves like SJF"
+        },
+        {
+          "value": "C",
+          "label": "Context switch overhead becomes too high",
+          "text": "Context switch overhead becomes too high"
+        },
+        {
+          "value": "D",
+          "label": "Starvation is eliminated",
+          "text": "Starvation is eliminated"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "If the time quantum is larger than the longest CPU burst, RR effectively becomes FCFS."
+    },
+    {
+      "id": "upload-1775754256243-11",
+      "number": "12",
+      "text": "What is the recommended rule of thumb regarding the relationship between CPU bursts and the time quantum \\( q \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "20% of CPU bursts should be shorter than \\( q \\)",
+          "text": "20% of CPU bursts should be shorter than \\( q \\)"
+        },
+        {
+          "value": "B",
+          "label": "50% of CPU bursts should be shorter than \\( q \\)",
+          "text": "50% of CPU bursts should be shorter than \\( q \\)"
+        },
+        {
+          "value": "C",
+          "label": "80% of CPU bursts should be shorter than \\( q \\)",
+          "text": "80% of CPU bursts should be shorter than \\( q \\)"
+        },
+        {
+          "value": "D",
+          "label": "99% of CPU bursts should be shorter than \\( q \\)",
+          "text": "99% of CPU bursts should be shorter than \\( q \\)"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Turnaround time is improved when most processes (roughly 80%) finish their CPU burst within a single time quantum."
+    },
+    {
+      "id": "upload-1775754256243-12",
+      "number": "13",
+      "text": "Which scheduling algorithm partitions the ready queue into separate queues for foreground and background processes?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Shortest Job First",
+          "text": "Shortest Job First"
+        },
+        {
+          "value": "B",
+          "label": "Priority Scheduling",
+          "text": "Priority Scheduling"
+        },
+        {
+          "value": "C",
+          "label": "Multilevel Queue",
+          "text": "Multilevel Queue"
+        },
+        {
+          "value": "D",
+          "label": "Round Robin",
+          "text": "Round Robin"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Multilevel Queue scheduling divides processes into separate queues (like interactive and batch) based on their characteristics."
+    },
+    {
+      "id": "upload-1775754256243-13",
+      "number": "14",
+      "text": "What is the key difference between Multilevel Queue and Multilevel Feedback Queue scheduling?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Multilevel Feedback Queue is only used in Windows",
+          "text": "Multilevel Feedback Queue is only used in Windows"
+        },
+        {
+          "value": "B",
+          "label": "Multilevel Feedback Queue allows processes to move between queues",
+          "text": "Multilevel Feedback Queue allows processes to move between queues"
+        },
+        {
+          "value": "C",
+          "label": "Multilevel Queue uses aging while Feedback Queue does not",
+          "text": "Multilevel Queue uses aging while Feedback Queue does not"
+        },
+        {
+          "value": "D",
+          "label": "Multilevel Queue is preemptive while Feedback Queue is not",
+          "text": "Multilevel Queue is preemptive while Feedback Queue is not"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Unlike a simple Multilevel Queue where processes are permanently assigned to a queue, Multilevel Feedback Queues allow processes to move between them, enabling features like aging."
+    },
+    {
+      "id": "upload-1775754256243-14",
+      "number": "15",
+      "text": "In thread scheduling, Process-Contention Scope (PCS) refers to:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Competition among all threads in the system",
+          "text": "Competition among all threads in the system"
+        },
+        {
+          "value": "B",
+          "label": "Competition for the CPU within a single process",
+          "text": "Competition for the CPU within a single process"
+        },
+        {
+          "value": "C",
+          "label": "Scheduling kernel-level threads to CPUs",
+          "text": "Scheduling kernel-level threads to CPUs"
+        },
+        {
+          "value": "D",
+          "label": "The mapping of processes to I/O devices",
+          "text": "The mapping of processes to I/O devices"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "PCS refers to scheduling user-level threads to run on available LWPs (lightweight processes) within the same process."
+    },
+    {
+      "id": "upload-1775754256243-15",
+      "number": "16",
+      "text": "Which of the following describes Asymmetric Multiprocessing?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Each processor is self-scheduling",
+          "text": "Each processor is self-scheduling"
+        },
+        {
+          "value": "B",
+          "label": "Only one processor (the master) accesses system data structures",
+          "text": "Only one processor (the master) accesses system data structures"
+        },
+        {
+          "value": "C",
+          "label": "All processors share a common ready queue",
+          "text": "All processors share a common ready queue"
+        },
+        {
+          "value": "D",
+          "label": "Processes are fixed to a single core",
+          "text": "Processes are fixed to a single core"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Asymmetric multiprocessing centralizes scheduling decisions and data structure access to one master processor to reduce complexity."
+    },
+    {
+      "id": "upload-1775754256243-16",
+      "number": "17",
+      "text": "What is the purpose of 'Load Balancing' in Symmetric Multiprocessing (SMP) systems?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To ensure each process has affinity for its processor",
+          "text": "To ensure each process has affinity for its processor"
+        },
+        {
+          "value": "B",
+          "label": "To keep the workload evenly distributed across all processors",
+          "text": "To keep the workload evenly distributed across all processors"
+        },
+        {
+          "value": "C",
+          "label": "To increase context switch time",
+          "text": "To increase context switch time"
+        },
+        {
+          "value": "D",
+          "label": "To prioritize I/O bound tasks",
+          "text": "To prioritize I/O bound tasks"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Load balancing attempts to keep all CPUs equally busy using techniques like push and pull migration."
+    },
+    {
+      "id": "upload-1775754256243-17",
+      "number": "18",
+      "text": "Multithreaded multicore systems take advantage of 'memory stall' to:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Shut down idle cores to save power",
+          "text": "Shut down idle cores to save power"
+        },
+        {
+          "value": "B",
+          "label": "Make progress on another thread while one thread waits for memory",
+          "text": "Make progress on another thread while one thread waits for memory"
+        },
+        {
+          "value": "C",
+          "label": "Increase the cache size dynamically",
+          "text": "Increase the cache size dynamically"
+        },
+        {
+          "value": "D",
+          "label": "Preempt high-priority kernel tasks",
+          "text": "Preempt high-priority kernel tasks"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "When a processor thread waits for memory access (memory stall), the hardware can switch to another thread to maintain throughput."
+    },
+    {
+      "id": "upload-1775754256243-18",
+      "number": "19",
+      "text": "What are the two types of latencies that affect real-time system performance? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Interrupt latency",
+          "text": "Interrupt latency"
+        },
+        {
+          "value": "B",
+          "label": "Disk latency",
+          "text": "Disk latency"
+        },
+        {
+          "value": "C",
+          "label": "Dispatch latency",
+          "text": "Dispatch latency"
+        },
+        {
+          "value": "D",
+          "label": "Cache latency",
+          "text": "Cache latency"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "AC",
+      "explanation": "Interrupt latency (time to reach the ISR) and dispatch latency (time to switch tasks) are critical to real-time performance."
+    },
+    {
+      "id": "upload-1775754256243-19",
+      "number": "20",
+      "text": "In Rate Monotonic Scheduling (RMS), how are priorities assigned?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Based on the length of the CPU burst",
+          "text": "Based on the length of the CPU burst"
+        },
+        {
+          "value": "B",
+          "label": "Based on the inverse of the period (shorter periods get higher priority)",
+          "text": "Based on the inverse of the period (shorter periods get higher priority)"
+        },
+        {
+          "value": "C",
+          "label": "Based on the deadline (earlier deadlines get higher priority)",
+          "text": "Based on the deadline (earlier deadlines get higher priority)"
+        },
+        {
+          "value": "D",
+          "label": "Using a first-in-first-out strategy",
+          "text": "Using a first-in-first-out strategy"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "RMS assigns static priorities where tasks that repeat more frequently (shorter periods) are given higher priority."
+    },
+    {
+      "id": "upload-1775754256243-20",
+      "number": "21",
+      "text": "Which scheduling algorithm allows for priorities to change dynamically based on the task's deadline?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Rate Monotonic Scheduling",
+          "text": "Rate Monotonic Scheduling"
+        },
+        {
+          "value": "B",
+          "label": "Round Robin",
+          "text": "Round Robin"
+        },
+        {
+          "value": "C",
+          "label": "Earliest Deadline First (EDF)",
+          "text": "Earliest Deadline First (EDF)"
+        },
+        {
+          "value": "D",
+          "label": "FCFS",
+          "text": "FCFS"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In EDF, the closer a task is to its deadline, the higher its priority becomes."
+    },
+    {
+      "id": "upload-1775754256243-21",
+      "number": "22",
+      "text": "The Linux Completely Fair Scheduler (CFS) calculates the next task to run based on which variable?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Nice value",
+          "text": "Nice value"
+        },
+        {
+          "value": "B",
+          "label": "vruntime",
+          "text": "vruntime"
+        },
+        {
+          "value": "C",
+          "label": "Quantum",
+          "text": "Quantum"
+        },
+        {
+          "value": "D",
+          "label": "Priority level",
+          "text": "Priority level"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "CFS maintains a `vruntime` (virtual runtime) for each task and selects the task with the lowest `vruntime` to ensure fairness."
+    },
+    {
+      "id": "upload-1775754256243-22",
+      "number": "23",
+      "text": "How many priority levels are in the Windows 32-level priority scheme?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "0 to 31",
+          "text": "0 to 31"
+        },
+        {
+          "value": "B",
+          "label": "1 to 32",
+          "text": "1 to 32"
+        },
+        {
+          "value": "C",
+          "label": "0 to 100",
+          "text": "0 to 100"
+        },
+        {
+          "value": "D",
+          "label": "-20 to 19",
+          "text": "-20 to 19"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Windows uses a 32-level scheme where 0 is for memory management, 1-15 are variable classes, and 16-31 are real-time classes."
+    },
+    {
+      "id": "upload-1775754256243-23",
+      "number": "24",
+      "text": "Which formula expresses Little's Law in a steady state?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( n = \\lambda / W \\)",
+          "text": "\\( n = \\lambda / W \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( n = \\lambda \\times W \\)",
+          "text": "\\( n = \\lambda \\times W \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( W = \\lambda \\times n \\)",
+          "text": "\\( W = \\lambda \\times n \\)"
+        },
+        {
+          "value": "D",
+          "label": "\\( \\lambda = n \\times W \\)",
+          "text": "\\( \\lambda = n \\times W \\)"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Little's Law states that the average number of processes in the queue (n) equals the average arrival rate (\\( \\lambda \\)) multiplied by the average waiting time (W)."
+    },
+    {
+      "id": "upload-1775754256243-24",
+      "number": "25",
+      "text": "What is the primary benefit of using 'Simulations' for algorithm evaluation over deterministic modeling?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "They are faster to compute",
+          "text": "They are faster to compute"
+        },
+        {
+          "value": "B",
+          "label": "They provide exact numbers for simple inputs",
+          "text": "They provide exact numbers for simple inputs"
+        },
+        {
+          "value": "C",
+          "label": "They are more accurate as they use a programmed model and probabilistic data",
+          "text": "They are more accurate as they use a programmed model and probabilistic data"
+        },
+        {
+          "value": "D",
+          "label": "They have zero cost",
+          "text": "They have zero cost"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Simulations use programmed models of systems and can utilize trace tapes or random number generators to provide much higher accuracy than simple analytic models."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}

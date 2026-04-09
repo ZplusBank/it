@@ -1,0 +1,812 @@
+{
+  "id": "upload-1775754411607-n5wp3",
+  "label": "ch10.ppt",
+  "params": {
+    "file": "ch10.ppt"
+  },
+  "title": "Mass-Storage Systems",
+  "questions": [
+    {
+      "id": "upload-1775754411607-0",
+      "number": "1",
+      "text": "Which of the following components are used to define **Positioning Time** (also known as random-access time) in magnetic disks?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Transfer rate and Controller overhead",
+          "text": "Transfer rate and Controller overhead"
+        },
+        {
+          "value": "B",
+          "label": "Seek time and Rotational latency",
+          "text": "Seek time and Rotational latency"
+        },
+        {
+          "value": "C",
+          "label": "Cylinder density and Head switch time",
+          "text": "Cylinder density and Head switch time"
+        },
+        {
+          "value": "D",
+          "label": "Buffer depth and Spindle speed",
+          "text": "Buffer depth and Spindle speed"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Positioning time consists of the seek time (moving the disk arm to the desired cylinder) and rotational latency (waiting for the desired sector to rotate under the head)."
+    },
+    {
+      "id": "upload-1775754411607-1",
+      "number": "2",
+      "text": "Calculate the **Average I/O time** for a 4KB block transfer on a 7200 RPM disk with a 5ms average seek time, a 1Gb/sec transfer rate, and a 0.1ms controller overhead. (Assume average latency is half a rotation).",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Approximately 5.131 ms",
+          "text": "Approximately 5.131 ms"
+        },
+        {
+          "value": "B",
+          "label": "Approximately 9.301 ms",
+          "text": "Approximately 9.301 ms"
+        },
+        {
+          "value": "C",
+          "label": "Approximately 12.450 ms",
+          "text": "Approximately 12.450 ms"
+        },
+        {
+          "value": "D",
+          "label": "Approximately 7.210 ms",
+          "text": "Approximately 7.210 ms"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Average latency = \\( \\frac{1}{2} \\times (\\frac{60}{7200}) \\approx 4.17 \\) ms. Transfer time = \\( 4KB / 1Gb/s \\approx 0.031 \\) ms. Total = 5 (seek) + 4.17 (latency) + 0.1 (overhead) + 0.031 (transfer) = 9.301 ms."
+    },
+    {
+      "id": "upload-1775754411607-2",
+      "number": "3",
+      "text": "**Select all that apply:** Which of the following are characteristics or advantages of **Solid-State Disks (SSDs)** compared to Hard Disk Drives (HDDs)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Lack of moving parts, resulting in no seek time or rotational latency",
+          "text": "Lack of moving parts, resulting in no seek time or rotational latency"
+        },
+        {
+          "value": "B",
+          "label": "Generally more expensive per megabyte than HDDs",
+          "text": "Generally more expensive per megabyte than HDDs"
+        },
+        {
+          "value": "C",
+          "label": "Infinitely long lifespan compared to mechanical disks",
+          "text": "Infinitely long lifespan compared to mechanical disks"
+        },
+        {
+          "value": "D",
+          "label": "Can be connected directly to the PCI bus for higher throughput",
+          "text": "Can be connected directly to the PCI bus for higher throughput"
+        },
+        {
+          "value": "E",
+          "label": "Lower capacity per dollar than traditional magnetic storage",
+          "text": "Lower capacity per dollar than traditional magnetic storage"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "ABDE",
+      "explanation": "SSDs have no moving parts, are more expensive per MB, can connect to PCI, and have lower capacity generally. However, they may have a shorter lifespan due to write-cycle limits."
+    },
+    {
+      "id": "upload-1775754411607-3",
+      "number": "4",
+      "text": "What was the access time of the first commercial disk drive, the **IBM Model 350** (RAMDAC system)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Less than 10 milliseconds",
+          "text": "Less than 10 milliseconds"
+        },
+        {
+          "value": "B",
+          "label": "Exactly 100 milliseconds",
+          "text": "Exactly 100 milliseconds"
+        },
+        {
+          "value": "C",
+          "label": "Less than 1 second",
+          "text": "Less than 1 second"
+        },
+        {
+          "value": "D",
+          "label": "Approximately 5 seconds",
+          "text": "Approximately 5 seconds"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "According to the slide content, the IBM RAMDAC model 350 had an access time of less than 1 second."
+    },
+    {
+      "id": "upload-1775754411607-4",
+      "number": "5",
+      "text": "In disk structure mapping, which sector is typically identified as the **first sector** of the first track on the outermost cylinder?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Sector -1",
+          "text": "Sector -1"
+        },
+        {
+          "value": "B",
+          "label": "Sector 0",
+          "text": "Sector 0"
+        },
+        {
+          "value": "C",
+          "label": "Sector 1",
+          "text": "Sector 1"
+        },
+        {
+          "value": "D",
+          "label": "The Master Boot Record (MBR)",
+          "text": "The Master Boot Record (MBR)"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Disk drives are addressed as 1-dimensional arrays of logical blocks where Sector 0 is the first sector of the first track on the outermost cylinder."
+    },
+    {
+      "id": "upload-1775754411607-5",
+      "number": "6",
+      "text": "**Select all that apply:** Which of the following are common I/O bus types or protocols used for **Disk Attachment**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "SATA",
+          "text": "SATA"
+        },
+        {
+          "value": "B",
+          "label": "Fibre Channel (FC)",
+          "text": "Fibre Channel (FC)"
+        },
+        {
+          "value": "C",
+          "label": "SCSI",
+          "text": "SCSI"
+        },
+        {
+          "value": "D",
+          "label": "USB",
+          "text": "USB"
+        },
+        {
+          "value": "E",
+          "label": "SMTP",
+          "text": "SMTP"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "ABCD",
+      "explanation": "SATA, Fibre Channel, SCSI, and USB are all mentioned as valid disk attachment/bus technologies. SMTP is a mail protocol."
+    },
+    {
+      "id": "upload-1775754411607-6",
+      "number": "7",
+      "text": "What is the primary function of **LUN Masking** in a Storage Area Network (SAN)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To encrypt data packets over Fibre Channel",
+          "text": "To encrypt data packets over Fibre Channel"
+        },
+        {
+          "value": "B",
+          "label": "To allocate and restrict specific storage units to specific servers",
+          "text": "To allocate and restrict specific storage units to specific servers"
+        },
+        {
+          "value": "C",
+          "label": "To hide bad sectors from the operating system",
+          "text": "To hide bad sectors from the operating system"
+        },
+        {
+          "value": "D",
+          "label": "To compress data before it reaches the disk controller",
+          "text": "To compress data before it reaches the disk controller"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "LUN Masking makes storage available from specific arrays to specific servers in a SAN environment."
+    },
+    {
+      "id": "upload-1775754411607-7",
+      "number": "8",
+      "text": "How does **Network-Attached Storage (NAS)** differ from a traditional **Storage Area Network (SAN)**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "NAS provides block-level access while SAN provides file-level access",
+          "text": "NAS provides block-level access while SAN provides file-level access"
+        },
+        {
+          "value": "B",
+          "label": "NAS uses NFS/CIFS protocols over IP; SAN typically uses Fibre Channel or iSCSI for block-level access",
+          "text": "NAS uses NFS/CIFS protocols over IP; SAN typically uses Fibre Channel or iSCSI for block-level access"
+        },
+        {
+          "value": "C",
+          "label": "NAS is always faster than SAN due to TCP/IP optimization",
+          "text": "NAS is always faster than SAN due to TCP/IP optimization"
+        },
+        {
+          "value": "D",
+          "label": "SAN is only for backups, whereas NAS is for primary storage",
+          "text": "SAN is only for backups, whereas NAS is for primary storage"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "NAS provides file-system level access (NFS/CIFS) over a network, whereas SAN provides block-level access via Fibre Channel or specialized protocols like iSCSI."
+    },
+    {
+      "id": "upload-1775754411607-8",
+      "number": "9",
+      "text": "In the context of disk scheduling, **Disk Bandwidth** is defined as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The maximum theoretical speed of the SATA/SCSI bus",
+          "text": "The maximum theoretical speed of the SATA/SCSI bus"
+        },
+        {
+          "value": "B",
+          "label": "The total number of bytes transferred divided by the total time between the first request and completion of the last transfer",
+          "text": "The total number of bytes transferred divided by the total time between the first request and completion of the last transfer"
+        },
+        {
+          "value": "C",
+          "label": "The rotational speed of the platters measured in RPM",
+          "text": "The rotational speed of the platters measured in RPM"
+        },
+        {
+          "value": "D",
+          "label": "The time taken to switch between the top and bottom heads of a platter",
+          "text": "The time taken to switch between the top and bottom heads of a platter"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Bandwidth is a measure of effective data throughput: total bytes transferred divided by total time from first request to final completion."
+    },
+    {
+      "id": "upload-1775754411607-9",
+      "number": "10",
+      "text": "Given a disk queue with requests at **98, 183, 37, 122, 14, 124, 65, 67** and the head at **53**, which request will the **SSTF (Shortest Seek Time First)** algorithm service first?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "98",
+          "text": "98"
+        },
+        {
+          "value": "B",
+          "label": "37",
+          "text": "37"
+        },
+        {
+          "value": "C",
+          "label": "65",
+          "text": "65"
+        },
+        {
+          "value": "D",
+          "label": "14",
+          "text": "14"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "SSTF chooses the request closest to the current head position. |53-65|=12, which is smaller than |53-37|=16 or |53-67|=14. Therefore, 65 is serviced first."
+    },
+    {
+      "id": "upload-1775754411607-10",
+      "number": "11",
+      "text": "The **SCAN** algorithm is frequently referred to as the:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Shortest-Job-First algorithm",
+          "text": "Shortest-Job-First algorithm"
+        },
+        {
+          "value": "B",
+          "label": "Elevator algorithm",
+          "text": "Elevator algorithm"
+        },
+        {
+          "value": "C",
+          "label": "Circular list algorithm",
+          "text": "Circular list algorithm"
+        },
+        {
+          "value": "D",
+          "label": "First-Come-First-Served algorithm",
+          "text": "First-Come-First-Served algorithm"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "SCAN is called the elevator algorithm because it moves from one end of the disk to the other, servicing requests, similar to an elevator."
+    },
+    {
+      "id": "upload-1775754411607-11",
+      "number": "12",
+      "text": "What is the key difference between the **SCAN** and **C-SCAN** disk scheduling algorithms?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "C-SCAN services requests in both directions of head movement",
+          "text": "C-SCAN services requests in both directions of head movement"
+        },
+        {
+          "value": "B",
+          "label": "C-SCAN immediately returns to the beginning of the disk without servicing requests on the return trip",
+          "text": "C-SCAN immediately returns to the beginning of the disk without servicing requests on the return trip"
+        },
+        {
+          "value": "C",
+          "label": "SCAN provides a more uniform wait time than C-SCAN",
+          "text": "SCAN provides a more uniform wait time than C-SCAN"
+        },
+        {
+          "value": "D",
+          "label": "C-SCAN only services the outermost cylinder",
+          "text": "C-SCAN only services the outermost cylinder"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "C-SCAN (Circular SCAN) is designed to provide more uniform wait times by only servicing requests in one direction and jumping back to the start when the end is reached."
+    },
+    {
+      "id": "upload-1775754411607-12",
+      "number": "13",
+      "text": "In the **C-LOOK** algorithm, how far does the disk arm move?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To the very end of the disk (cylinder 0 and 199)",
+          "text": "To the very end of the disk (cylinder 0 and 199)"
+        },
+        {
+          "value": "B",
+          "label": "Only as far as the last request in each direction",
+          "text": "Only as far as the last request in each direction"
+        },
+        {
+          "value": "C",
+          "label": "It stays at the center cylinder and waits for requests",
+          "text": "It stays at the center cylinder and waits for requests"
+        },
+        {
+          "value": "D",
+          "label": "It moves in a random pattern to avoid starvation",
+          "text": "It moves in a random pattern to avoid starvation"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "LOOK and C-LOOK are versions of SCAN/C-SCAN that 'look' for the last request in the current direction and reverse/return immediately without going to the physical end of the disk."
+    },
+    {
+      "id": "upload-1775754411607-13",
+      "number": "14",
+      "text": "**Select all that apply:** Which of the following features are commonly found in advanced **Storage Arrays**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Snapshots",
+          "text": "Snapshots"
+        },
+        {
+          "value": "B",
+          "label": "Deduplication",
+          "text": "Deduplication"
+        },
+        {
+          "value": "C",
+          "label": "Thin provisioning",
+          "text": "Thin provisioning"
+        },
+        {
+          "value": "D",
+          "label": "Replication",
+          "text": "Replication"
+        },
+        {
+          "value": "E",
+          "label": "CPU Overclocking",
+          "text": "CPU Overclocking"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "ABCD",
+      "explanation": "Snapshots, deduplication, thin provisioning, and replication are standard advanced storage array features mentioned in the slides."
+    },
+    {
+      "id": "upload-1775754411607-14",
+      "number": "15",
+      "text": "What is the purpose of **Low-level formatting** (physical formatting)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To install the operating system kernel",
+          "text": "To install the operating system kernel"
+        },
+        {
+          "value": "B",
+          "label": "To divide the disk into sectors with headers, ECC, and data areas",
+          "text": "To divide the disk into sectors with headers, ECC, and data areas"
+        },
+        {
+          "value": "C",
+          "label": "To create the NTFS or ext4 file system structures",
+          "text": "To create the NTFS or ext4 file system structures"
+        },
+        {
+          "value": "D",
+          "label": "To partition the disk into logical drives",
+          "text": "To partition the disk into logical drives"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Low-level formatting divides the physical media into sectors that the disk controller can recognize, including overhead for ECC and headers."
+    },
+    {
+      "id": "upload-1775754411607-15",
+      "number": "16",
+      "text": "Where is the **Bootstrap loader** program typically stored?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "In the swap space",
+          "text": "In the swap space"
+        },
+        {
+          "value": "B",
+          "label": "In the bad sector map",
+          "text": "In the bad sector map"
+        },
+        {
+          "value": "C",
+          "label": "In the boot blocks of the boot partition",
+          "text": "In the boot blocks of the boot partition"
+        },
+        {
+          "value": "D",
+          "label": "In the L1 Cache of the CPU",
+          "text": "In the L1 Cache of the CPU"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The bootstrap loader is stored in the boot blocks of the boot partition on the disk."
+    },
+    {
+      "id": "upload-1775754411607-16",
+      "number": "17",
+      "text": "**Select all that apply:** Which of the following are true regarding **Swap-Space Management**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Swap space can be a dedicated raw partition or a file within the file system",
+          "text": "Swap space can be a dedicated raw partition or a file within the file system"
+        },
+        {
+          "value": "B",
+          "label": "Solaris 2 only allocates swap space when a dirty page is forced out of physical memory",
+          "text": "Solaris 2 only allocates swap space when a dirty page is forced out of physical memory"
+        },
+        {
+          "value": "C",
+          "label": "Swap space is used to extend the capacity of main memory (Virtual Memory)",
+          "text": "Swap space is used to extend the capacity of main memory (Virtual Memory)"
+        },
+        {
+          "value": "D",
+          "label": "Swap space is generally faster than physical RAM",
+          "text": "Swap space is generally faster than physical RAM"
+        },
+        {
+          "value": "E",
+          "label": "Linux uses specific data structures like swap maps to track usage",
+          "text": "Linux uses specific data structures like swap maps to track usage"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "ABCE",
+      "explanation": "Swap space is slower than RAM (as it is on disk). The other points regarding allocation strategies and implementation are correct."
+    },
+    {
+      "id": "upload-1775754411607-17",
+      "number": "18",
+      "text": "If a disk has a **Mean Time To Failure (MTTF)** of 100,000 hours and a **Mean Time To Repair (MTTR)** of 10 hours, what is the Mean Time to Data Loss for a mirrored (RAID 1) system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "100,000 hours",
+          "text": "100,000 hours"
+        },
+        {
+          "value": "B",
+          "label": "1,000,000 hours",
+          "text": "1,000,000 hours"
+        },
+        {
+          "value": "C",
+          "label": "500,000,000 hours",
+          "text": "500,000,000 hours"
+        },
+        {
+          "value": "D",
+          "label": "10,000,000,000 hours",
+          "text": "10,000,000,000 hours"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Using the formula from the slide: \\( 100,000^2 / (2 \\times 10) = 500 \times 10^6 \\) hours."
+    },
+    {
+      "id": "upload-1775754411607-18",
+      "number": "19",
+      "text": "Which RAID level provides **Block Interleaved Parity** and is commonly used to balance performance and reliability with less redundancy than mirroring?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "RAID 0",
+          "text": "RAID 0"
+        },
+        {
+          "value": "B",
+          "label": "RAID 1",
+          "text": "RAID 1"
+        },
+        {
+          "value": "C",
+          "label": "RAID 5",
+          "text": "RAID 5"
+        },
+        {
+          "value": "D",
+          "label": "RAID 1+0",
+          "text": "RAID 1+0"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "RAID 5 uses block-interleaved parity across multiple disks to provide fault tolerance without the 100% overhead of RAID 1."
+    },
+    {
+      "id": "upload-1775754411607-19",
+      "number": "20",
+      "text": "What is the difference between **RAID 0+1** and **RAID 1+0**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "RAID 0+1 is a stripe of mirrors, while RAID 1+0 is a mirror of stripes",
+          "text": "RAID 0+1 is a stripe of mirrors, while RAID 1+0 is a mirror of stripes"
+        },
+        {
+          "value": "B",
+          "label": "RAID 1+0 is a stripe of mirrors, while RAID 0+1 is a mirror of stripes",
+          "text": "RAID 1+0 is a stripe of mirrors, while RAID 0+1 is a mirror of stripes"
+        },
+        {
+          "value": "C",
+          "label": "RAID 0+1 does not provide any redundancy",
+          "text": "RAID 0+1 does not provide any redundancy"
+        },
+        {
+          "value": "D",
+          "label": "They are identical in fault tolerance and performance",
+          "text": "They are identical in fault tolerance and performance"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "RAID 1+0 (Striped Mirrors) stripes data across sets of mirrored disks. RAID 0+1 (Mirrored Stripes) mirrors two large striped sets."
+    },
+    {
+      "id": "upload-1775754411607-20",
+      "number": "21",
+      "text": "**Select all that apply:** Which of the following features does the **Solaris ZFS** file system provide for data integrity?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Checksums of all data and metadata",
+          "text": "Checksums of all data and metadata"
+        },
+        {
+          "value": "B",
+          "label": "Pooled storage (removing traditional partitions)",
+          "text": "Pooled storage (removing traditional partitions)"
+        },
+        {
+          "value": "C",
+          "label": "Detection and correction of data corruption",
+          "text": "Detection and correction of data corruption"
+        },
+        {
+          "value": "D",
+          "label": "Manual sector sparing via a physical jumper",
+          "text": "Manual sector sparing via a physical jumper"
+        },
+        {
+          "value": "E",
+          "label": "Direct PCI-to-Disk hardware bypass",
+          "text": "Direct PCI-to-Disk hardware bypass"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "ABC",
+      "explanation": "ZFS uses checksums to detect/correct corruption and uses a pooled storage model."
+    },
+    {
+      "id": "upload-1775754411607-21",
+      "number": "22",
+      "text": "In the implementation of **Stable Storage**, what are the three possible outcomes of a disk write?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Success, Cached, Deleted",
+          "text": "Success, Cached, Deleted"
+        },
+        {
+          "value": "B",
+          "label": "Successful completion, Partial failure, Total failure",
+          "text": "Successful completion, Partial failure, Total failure"
+        },
+        {
+          "value": "C",
+          "label": "Seek error, Latency error, Write error",
+          "text": "Seek error, Latency error, Write error"
+        },
+        {
+          "value": "D",
+          "label": "Synchronous, Asynchronous, Mirroring",
+          "text": "Synchronous, Asynchronous, Mirroring"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "According to the slides, a disk write results in successful completion, partial failure (mid-transfer failure), or total failure (failure before write starts)."
+    },
+    {
+      "id": "upload-1775754411607-22",
+      "number": "23",
+      "text": "To achieve **Stable Storage**, the system must maintain how many physical blocks for every logical block?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "3",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "RAID 5 parity only",
+          "text": "RAID 5 parity only"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Stable storage is implemented by maintaining 2 physical blocks for each logical block and updating them in a specific sequence (write to 1st, then write to 2nd)."
+    },
+    {
+      "id": "upload-1775754411607-23",
+      "number": "24",
+      "text": "What is a **Hot Spare** disk used for in a RAID array?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To increase the transfer rate during peak hours",
+          "text": "To increase the transfer rate during peak hours"
+        },
+        {
+          "value": "B",
+          "label": "To serve as a high-speed cache for the controller",
+          "text": "To serve as a high-speed cache for the controller"
+        },
+        {
+          "value": "C",
+          "label": "To automatically replace a failed disk and rebuild the RAID set",
+          "text": "To automatically replace a failed disk and rebuild the RAID set"
+        },
+        {
+          "value": "D",
+          "label": "To store the operating system kernel for faster booting",
+          "text": "To store the operating system kernel for faster booting"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Hot spares are unallocated disks that the system can use to immediately begin rebuilding data if a production disk fails."
+    },
+    {
+      "id": "upload-1775754411607-24",
+      "number": "25",
+      "text": "Which of the following describes a **Head Crash**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The disk controller running out of memory",
+          "text": "The disk controller running out of memory"
+        },
+        {
+          "value": "B",
+          "label": "The disk head making physical contact with the disk surface",
+          "text": "The disk head making physical contact with the disk surface"
+        },
+        {
+          "value": "C",
+          "label": "A failure in the SATA bus cable",
+          "text": "A failure in the SATA bus cable"
+        },
+        {
+          "value": "D",
+          "label": "The spindle motor rotating too fast",
+          "text": "The spindle motor rotating too fast"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A head crash occurs when the read-write head touches the platter surface, usually damaging both the head and the media."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}

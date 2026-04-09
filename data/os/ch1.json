@@ -1,0 +1,797 @@
+{
+  "id": "upload-1775754165985-vxxrs",
+  "label": "ch1.ppt",
+  "params": {
+    "file": "ch1.ppt"
+  },
+  "title": "Chapter 1: Operating System Introduction",
+  "questions": [
+    {
+      "id": "upload-1775754165985-0",
+      "number": "1",
+      "text": "What are the primary goals of an operating system according to the provided material?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To execute user programs and make solving user problems easier.",
+          "text": "To execute user programs and make solving user problems easier."
+        },
+        {
+          "value": "B",
+          "label": "To make the computer system convenient to use.",
+          "text": "To make the computer system convenient to use."
+        },
+        {
+          "value": "C",
+          "label": "To use the computer hardware in an efficient manner.",
+          "text": "To use the computer hardware in an efficient manner."
+        },
+        {
+          "value": "D",
+          "label": "All of the above.",
+          "text": "All of the above."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The slide explicitly lists executing user programs, providing convenience, and ensuring hardware efficiency as the three main goals of an OS."
+    },
+    {
+      "id": "upload-1775754165985-1",
+      "number": "2",
+      "text": "Identify the four main components of a computer system. (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Hardware",
+          "text": "Hardware"
+        },
+        {
+          "value": "B",
+          "label": "Operating System",
+          "text": "Operating System"
+        },
+        {
+          "value": "C",
+          "label": "Application Programs",
+          "text": "Application Programs"
+        },
+        {
+          "value": "D",
+          "label": "Users",
+          "text": "Users"
+        },
+        {
+          "value": "E",
+          "label": "Firmware",
+          "text": "Firmware"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "ABCD",
+      "explanation": "The system is divided into Hardware, OS, Application Programs, and Users. Firmware is a specific type of storage for the bootstrap program but not one of the four high-level components."
+    },
+    {
+      "id": "upload-1775754165985-2",
+      "number": "3",
+      "text": "From a system view, the operating system is primarily defined as a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "User interface provider",
+          "text": "User interface provider"
+        },
+        {
+          "value": "B",
+          "label": "Resource allocator and control program",
+          "text": "Resource allocator and control program"
+        },
+        {
+          "value": "C",
+          "label": "Graphic rendering engine",
+          "text": "Graphic rendering engine"
+        },
+        {
+          "value": "D",
+          "label": "Database management system",
+          "text": "Database management system"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The system view defines the OS as a resource allocator (managing hardware/software conflicts) and a control program (managing program execution to prevent errors)."
+    },
+    {
+      "id": "upload-1775754165985-3",
+      "number": "4",
+      "text": "Which of the following is the 'one program running at all times on the computer'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "System Program",
+          "text": "System Program"
+        },
+        {
+          "value": "B",
+          "label": "Application Program",
+          "text": "Application Program"
+        },
+        {
+          "value": "C",
+          "label": "Kernel",
+          "text": "Kernel"
+        },
+        {
+          "value": "D",
+          "label": "Bootstrap Program",
+          "text": "Bootstrap Program"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The kernel is defined as the central component that runs continuously. Other programs are either system programs (bundled with the OS) or applications."
+    },
+    {
+      "id": "upload-1775754165985-4",
+      "number": "5",
+      "text": "Where is the bootstrap program typically stored during power-up or reboot?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "On the Hard Disk Drive (HDD)",
+          "text": "On the Hard Disk Drive (HDD)"
+        },
+        {
+          "value": "B",
+          "label": "In Random Access Memory (RAM)",
+          "text": "In Random Access Memory (RAM)"
+        },
+        {
+          "value": "C",
+          "label": "In Read-Only Memory (ROM) or EPROM, known as firmware",
+          "text": "In Read-Only Memory (ROM) or EPROM, known as firmware"
+        },
+        {
+          "value": "D",
+          "label": "In the CPU Cache",
+          "text": "In the CPU Cache"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Initial boot code (bootstrap) is stored in non-volatile ROM or EPROM (firmware) to initialize the system and load the kernel."
+    },
+    {
+      "id": "upload-1775754165985-5",
+      "number": "6",
+      "text": "In a modern computer system, how does a device controller inform the CPU that it has finished its operation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By modifying a variable in shared memory",
+          "text": "By modifying a variable in shared memory"
+        },
+        {
+          "value": "B",
+          "label": "By causing an interrupt",
+          "text": "By causing an interrupt"
+        },
+        {
+          "value": "C",
+          "label": "By polling the CPU continuously",
+          "text": "By polling the CPU continuously"
+        },
+        {
+          "value": "D",
+          "label": "By restarting the bootstrap program",
+          "text": "By restarting the bootstrap program"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Device controllers use interrupts to signal the CPU that an I/O operation is complete, allowing concurrent execution."
+    },
+    {
+      "id": "upload-1775754165985-6",
+      "number": "7",
+      "text": "A software-generated interrupt caused either by an error or a specific user request is called a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Hardware interrupt",
+          "text": "Hardware interrupt"
+        },
+        {
+          "value": "B",
+          "label": "Signal",
+          "text": "Signal"
+        },
+        {
+          "value": "C",
+          "label": "Trap or Exception",
+          "text": "Trap or Exception"
+        },
+        {
+          "value": "D",
+          "label": "Polling event",
+          "text": "Polling event"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A trap (or exception) is the specific term used for interrupts triggered by software conditions like division by zero or system calls."
+    },
+    {
+      "id": "upload-1775754165985-7",
+      "number": "8",
+      "text": "When an interrupt occurs, what must the interrupt architecture do first before servicing the interrupt?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Reboot the system",
+          "text": "Reboot the system"
+        },
+        {
+          "value": "B",
+          "label": "Save the address of the interrupted instruction",
+          "text": "Save the address of the interrupted instruction"
+        },
+        {
+          "value": "C",
+          "label": "Clear the main memory",
+          "text": "Clear the main memory"
+        },
+        {
+          "value": "D",
+          "label": "Initialize the device driver",
+          "text": "Initialize the device driver"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The system must save the state (registers and program counter) so it can return to the exact same point in the user program after handling the interrupt."
+    },
+    {
+      "id": "upload-1775754165985-8",
+      "number": "9",
+      "text": "Calculate the number of bytes in 1 Gigabyte (GB) according to standard computer storage definitions.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( 1,024 \\)",
+          "text": "\\( 1,024 \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( 1,024^2 \\)",
+          "text": "\\( 1,024^2 \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( 1,024^3 \\)",
+          "text": "\\( 1,024^3 \\)"
+        },
+        {
+          "value": "D",
+          "label": "\\( 1,024^4 \\)",
+          "text": "\\( 1,024^4 \\)"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In binary storage notation, KB is \\( 1,024^1 \\), MB is \\( 1,024^2 \\), and GB is \\( 1,024^3 \\)."
+    },
+    {
+      "id": "upload-1775754165985-9",
+      "number": "10",
+      "text": "Which storage medium is directly accessible by the CPU?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Hard Disk",
+          "text": "Hard Disk"
+        },
+        {
+          "value": "B",
+          "label": "Main Memory (RAM)",
+          "text": "Main Memory (RAM)"
+        },
+        {
+          "value": "C",
+          "label": "Optical Storage",
+          "text": "Optical Storage"
+        },
+        {
+          "value": "D",
+          "label": "Magnetic Tape",
+          "text": "Magnetic Tape"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The CPU can only fetch instructions and data from main memory (and registers/cache). Everything else is secondary/tertiary storage."
+    },
+    {
+      "id": "upload-1775754165985-10",
+      "number": "11",
+      "text": "The mechanism that allows high-speed I/O devices to transfer blocks of data directly to/from main memory without CPU intervention is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Programmed I/O",
+          "text": "Programmed I/O"
+        },
+        {
+          "value": "B",
+          "label": "Polling",
+          "text": "Polling"
+        },
+        {
+          "value": "C",
+          "label": "Direct Memory Access (DMA)",
+          "text": "Direct Memory Access (DMA)"
+        },
+        {
+          "value": "D",
+          "label": "Vectored Interrupts",
+          "text": "Vectored Interrupts"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "DMA allows the device controller to move data in blocks, generating only one interrupt per block rather than one per byte, saving CPU cycles."
+    },
+    {
+      "id": "upload-1775754165985-11",
+      "number": "12",
+      "text": "What is the primary advantage of Symmetric Multiprocessing (SMP) over Asymmetric Multiprocessing?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Only one processor runs the kernel, making it simpler.",
+          "text": "Only one processor runs the kernel, making it simpler."
+        },
+        {
+          "value": "B",
+          "label": "Each processor can perform all tasks, providing better load balancing and reliability.",
+          "text": "Each processor can perform all tasks, providing better load balancing and reliability."
+        },
+        {
+          "value": "C",
+          "label": "It is much cheaper to implement.",
+          "text": "It is much cheaper to implement."
+        },
+        {
+          "value": "D",
+          "label": "It does not require a common bus.",
+          "text": "It does not require a common bus."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In SMP, all processors are peers and can execute any task, unlike Asymmetric where one 'master' assigns specific tasks to 'slaves'."
+    },
+    {
+      "id": "upload-1775754165985-12",
+      "number": "13",
+      "text": "Clustered systems share storage via a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Local Area Network (LAN)",
+          "text": "Local Area Network (LAN)"
+        },
+        {
+          "value": "B",
+          "label": "Storage-Area Network (SAN)",
+          "text": "Storage-Area Network (SAN)"
+        },
+        {
+          "value": "C",
+          "label": "Universal Serial Bus (USB)",
+          "text": "Universal Serial Bus (USB)"
+        },
+        {
+          "value": "D",
+          "label": "Peripheral Component Interconnect (PCI)",
+          "text": "Peripheral Component Interconnect (PCI)"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Clusters typically consist of multiple separate systems working together, sharing storage through a SAN for high availability."
+    },
+    {
+      "id": "upload-1775754165985-13",
+      "number": "14",
+      "text": "Multiprogramming increases CPU utilization by:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Increasing the clock speed of the processor.",
+          "text": "Increasing the clock speed of the processor."
+        },
+        {
+          "value": "B",
+          "label": "Ensuring the CPU always has a job to execute by keeping a subset of jobs in memory.",
+          "text": "Ensuring the CPU always has a job to execute by keeping a subset of jobs in memory."
+        },
+        {
+          "value": "C",
+          "label": "Executing only one job until it completes.",
+          "text": "Executing only one job until it completes."
+        },
+        {
+          "value": "D",
+          "label": "Eliminating the need for I/O devices.",
+          "text": "Eliminating the need for I/O devices."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Multiprogramming organizes jobs so that when one job must wait for I/O, the OS switches to another job, keeping the CPU busy."
+    },
+    {
+      "id": "upload-1775754165985-14",
+      "number": "15",
+      "text": "In dual-mode operation, the 'mode bit' is used to distinguish between:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Real mode and Protected mode",
+          "text": "Real mode and Protected mode"
+        },
+        {
+          "value": "B",
+          "label": "User mode and Kernel mode",
+          "text": "User mode and Kernel mode"
+        },
+        {
+          "value": "C",
+          "label": "Read mode and Write mode",
+          "text": "Read mode and Write mode"
+        },
+        {
+          "value": "D",
+          "label": "Sequential and Random access",
+          "text": "Sequential and Random access"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The hardware mode bit (0 for kernel, 1 for user) allows the system to protect itself by restricting privileged instructions to kernel mode."
+    },
+    {
+      "id": "upload-1775754165985-15",
+      "number": "16",
+      "text": "Which of the following instructions would be considered 'privileged'? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Set the value of the timer",
+          "text": "Set the value of the timer"
+        },
+        {
+          "value": "B",
+          "label": "Add two integers",
+          "text": "Add two integers"
+        },
+        {
+          "value": "C",
+          "label": "Clear memory",
+          "text": "Clear memory"
+        },
+        {
+          "value": "D",
+          "label": "Turn off interrupts",
+          "text": "Turn off interrupts"
+        },
+        {
+          "value": "E",
+          "label": "Modify the mode bit",
+          "text": "Modify the mode bit"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "ACDE",
+      "explanation": "Instructions that could harm the system or other users (timer settings, I/O control, mode bit changes, memory clearing) are privileged. Arithmetic is not."
+    },
+    {
+      "id": "upload-1775754165985-16",
+      "number": "17",
+      "text": "What is the purpose of the 'timer' in operating system operations?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To display the current time to the user.",
+          "text": "To display the current time to the user."
+        },
+        {
+          "value": "B",
+          "label": "To prevent a user program from running forever or hogging resources.",
+          "text": "To prevent a user program from running forever or hogging resources."
+        },
+        {
+          "value": "C",
+          "label": "To synchronize data between the cache and memory.",
+          "text": "To synchronize data between the cache and memory."
+        },
+        {
+          "value": "D",
+          "label": "To increase the speed of disk scheduling.",
+          "text": "To increase the speed of disk scheduling."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A timer is used to trigger an interrupt after a specific period, ensuring the OS regains control from user processes."
+    },
+    {
+      "id": "upload-1775754165985-17",
+      "number": "18",
+      "text": "A program is a ____ entity, while a process is an ____ entity.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "active, passive",
+          "text": "active, passive"
+        },
+        {
+          "value": "B",
+          "label": "secondary, primary",
+          "text": "secondary, primary"
+        },
+        {
+          "value": "C",
+          "label": "passive, active",
+          "text": "passive, active"
+        },
+        {
+          "value": "D",
+          "label": "virtual, physical",
+          "text": "virtual, physical"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A program is just a file on disk (passive), whereas a process is a program in execution (active)."
+    },
+    {
+      "id": "upload-1775754165985-18",
+      "number": "19",
+      "text": "Which of these is NOT a responsibility of the OS in memory management?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Allocating and deallocating memory space",
+          "text": "Allocating and deallocating memory space"
+        },
+        {
+          "value": "B",
+          "label": "Keeping track of which parts of memory are currently used",
+          "text": "Keeping track of which parts of memory are currently used"
+        },
+        {
+          "value": "C",
+          "label": "Compiling source code into machine code",
+          "text": "Compiling source code into machine code"
+        },
+        {
+          "value": "D",
+          "label": "Deciding which processes to move into memory",
+          "text": "Deciding which processes to move into memory"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Compiling is done by a compiler (application/system program), not the OS memory management module."
+    },
+    {
+      "id": "upload-1775754165985-19",
+      "number": "20",
+      "text": "Which kernel data structure provides O(lg n) search performance?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Singly Linked List",
+          "text": "Singly Linked List"
+        },
+        {
+          "value": "B",
+          "label": "Circular Linked List",
+          "text": "Circular Linked List"
+        },
+        {
+          "value": "C",
+          "label": "Balanced Binary Search Tree",
+          "text": "Balanced Binary Search Tree"
+        },
+        {
+          "value": "D",
+          "label": "Unbalanced Binary Search Tree",
+          "text": "Unbalanced Binary Search Tree"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Search in a standard list or unbalanced tree is O(n), but a balanced BST ensures O(log n) efficiency."
+    },
+    {
+      "id": "upload-1775754165985-20",
+      "number": "21",
+      "text": "In which computing environment do nodes act as both clients and servers without a central server?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Client-Server",
+          "text": "Client-Server"
+        },
+        {
+          "value": "B",
+          "label": "Peer-to-Peer (P2P)",
+          "text": "Peer-to-Peer (P2P)"
+        },
+        {
+          "value": "C",
+          "label": "Traditional Thin Client",
+          "text": "Traditional Thin Client"
+        },
+        {
+          "value": "D",
+          "label": "Mainframe Batch System",
+          "text": "Mainframe Batch System"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "P2P systems like Napster or Gnutella treat all nodes as peers that can request or provide services."
+    },
+    {
+      "id": "upload-1775754165985-21",
+      "number": "22",
+      "text": "Cloud computing that provides a software stack ready for application use (like a database server) is referred to as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "SaaS (Software as a Service)",
+          "text": "SaaS (Software as a Service)"
+        },
+        {
+          "value": "B",
+          "label": "IaaS (Infrastructure as a Service)",
+          "text": "IaaS (Infrastructure as a Service)"
+        },
+        {
+          "value": "C",
+          "label": "PaaS (Platform as a Service)",
+          "text": "PaaS (Platform as a Service)"
+        },
+        {
+          "value": "D",
+          "label": "VMM (Virtual Machine Manager)",
+          "text": "VMM (Virtual Machine Manager)"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "PaaS provides the platform (OS + middleware like DBs) for developers to run applications."
+    },
+    {
+      "id": "upload-1775754165985-22",
+      "number": "23",
+      "text": "What is the key requirement for an OS to be considered 'Real-Time'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It must have a high-speed GPU.",
+          "text": "It must have a high-speed GPU."
+        },
+        {
+          "value": "B",
+          "label": "It must be open-source.",
+          "text": "It must be open-source."
+        },
+        {
+          "value": "C",
+          "label": "It must have well-defined, fixed time constraints for processing.",
+          "text": "It must have well-defined, fixed time constraints for processing."
+        },
+        {
+          "value": "D",
+          "label": "It must run on a mobile device.",
+          "text": "It must run on a mobile device."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Real-time systems are defined by their ability to complete tasks within strict timing deadlines."
+    },
+    {
+      "id": "upload-1775754165985-23",
+      "number": "24",
+      "text": "The 'copyleft' GNU Public License (GPL) is associated with which organization?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Apple",
+          "text": "Apple"
+        },
+        {
+          "value": "B",
+          "label": "Free Software Foundation (FSF)",
+          "text": "Free Software Foundation (FSF)"
+        },
+        {
+          "value": "C",
+          "label": "Microsoft",
+          "text": "Microsoft"
+        },
+        {
+          "value": "D",
+          "label": "VMware",
+          "text": "VMware"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The FSF started the open-source/free software movement and manages the GPL."
+    },
+    {
+      "id": "upload-1775754165985-24",
+      "number": "25",
+      "text": "What does a Virtual Machine Manager (VMM) provide?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Disk defragmentation",
+          "text": "Disk defragmentation"
+        },
+        {
+          "value": "B",
+          "label": "Virtualization services to run guest OSes",
+          "text": "Virtualization services to run guest OSes"
+        },
+        {
+          "value": "C",
+          "label": "Cloud billing management",
+          "text": "Cloud billing management"
+        },
+        {
+          "value": "D",
+          "label": "User interface design",
+          "text": "User interface design"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The VMM (also called a hypervisor) manages and abstracts hardware to allow multiple guest operating systems to run on a single host."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}

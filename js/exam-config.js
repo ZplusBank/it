@@ -273,5 +273,73 @@ const EXAM_CONFIG = [
     "description": "Diagrams ",
     "path": "data/Uml",
     "chapters": []
+  },
+  {
+    "id": "os",
+    "name": "Operating System",
+    "description": "Covers the fundamental design, implementation, and management of computer systems",
+    "path": "data/os",
+    "chapters": [
+      {
+        "id": "ch1",
+        "name": "Chapter 1: Operating System Introduction",
+        "q": 25,
+        "file": "data/os/ch1.json"
+      },
+      {
+        "id": "ch2",
+        "name": "Operating-System Structures",
+        "q": 25,
+        "file": "data/os/ch2.json"
+      },
+      {
+        "id": "ch3",
+        "name": "Chapter 3: Processes",
+        "q": 25,
+        "file": "data/os/ch3.json"
+      },
+      {
+        "id": "ch4",
+        "name": "Chapter 4: Threads",
+        "q": 29,
+        "file": "data/os/ch4.json"
+      },
+      {
+        "id": "ch5",
+        "name": "Process Synchronization",
+        "q": 25,
+        "file": "data/os/ch5.json"
+      },
+      {
+        "id": "ch6",
+        "name": "Chapter 6: CPU Scheduling",
+        "q": 25,
+        "file": "data/os/ch6.json"
+      },
+      {
+        "id": "ch7",
+        "name": "Chapter 7: Deadlocks",
+        "q": 25,
+        "file": "data/os/ch7.json"
+      },
+      {
+        "id": "ch8",
+        "name": "Main Memory Management",
+        "q": 25,
+        "file": "data/os/ch8.json"
+      },
+      {
+        "id": "ch9",
+        "name": "Virtual Memory Management",
+        "q": 25,
+        "file": "data/os/ch9.json"
+      },
+      {
+        "id": "ch10",
+        "name": "Mass-Storage Systems",
+        "q": 25,
+        "file": "data/os/ch10.json"
+      }
+    ]
   }
 ];

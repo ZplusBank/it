@@ -1,0 +1,807 @@
+{
+  "id": "upload-1775754289994-qsxwt",
+  "label": "ch7.ppt",
+  "params": {
+    "file": "ch7.ppt"
+  },
+  "title": "Chapter 7: Deadlocks",
+  "questions": [
+    {
+      "id": "upload-1775754289994-0",
+      "number": "1",
+      "text": "In the context of the System Model, which of the following are examples of resources that a process may utilize?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "CPU cycles",
+          "text": "CPU cycles"
+        },
+        {
+          "value": "B",
+          "label": "Memory space",
+          "text": "Memory space"
+        },
+        {
+          "value": "C",
+          "label": "I/O devices",
+          "text": "I/O devices"
+        },
+        {
+          "value": "D",
+          "label": "Process IDs",
+          "text": "Process IDs"
+        },
+        {
+          "value": "E",
+          "label": "Instruction register values",
+          "text": "Instruction register values"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "ABC",
+      "explanation": "According to the system model slide, resource types include CPU cycles, memory space, and I/O devices."
+    },
+    {
+      "id": "upload-1775754289994-1",
+      "number": "2",
+      "text": "A process typically utilizes a resource in a specific sequence. Based on the system model, what are the steps in this sequence?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Request, Release",
+          "text": "Request, Release"
+        },
+        {
+          "value": "B",
+          "label": "Request, Use, Release",
+          "text": "Request, Use, Release"
+        },
+        {
+          "value": "C",
+          "label": "Allocate, Use, Free",
+          "text": "Allocate, Use, Free"
+        },
+        {
+          "value": "D",
+          "label": "Wait, Hold, Release",
+          "text": "Wait, Hold, Release"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The slide explicitly lists the utilization sequence as: request and release."
+    },
+    {
+      "id": "upload-1775754289994-2",
+      "number": "3",
+      "text": "Which of the following conditions must hold simultaneously for a deadlock to arise? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Mutual exclusion",
+          "text": "Mutual exclusion"
+        },
+        {
+          "value": "B",
+          "label": "Hold and wait",
+          "text": "Hold and wait"
+        },
+        {
+          "value": "C",
+          "label": "No preemption",
+          "text": "No preemption"
+        },
+        {
+          "value": "D",
+          "label": "Circular wait",
+          "text": "Circular wait"
+        },
+        {
+          "value": "E",
+          "label": "Resource fragmentation",
+          "text": "Resource fragmentation"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "ABCD",
+      "explanation": "Deadlock characterization requires four necessary conditions: Mutual exclusion, Hold and wait, No preemption, and Circular wait."
+    },
+    {
+      "id": "upload-1775754289994-3",
+      "number": "4",
+      "text": "How is the 'Circular wait' condition defined in a set of waiting processes \\(\\{P_0, P_1, \\dots, P_n\\}\\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Every process is waiting for a resource held by the operating system.",
+          "text": "Every process is waiting for a resource held by the operating system."
+        },
+        {
+          "value": "B",
+          "label": "Processes are waiting for resources that will never be released due to hardware failure.",
+          "text": "Processes are waiting for resources that will never be released due to hardware failure."
+        },
+        {
+          "value": "C",
+          "label": "Process \\(P_0\\) waits for a resource held by \\(P_1\\), \\(P_1\\) for \\(P_2\\), and \\(P_n\\) for \\(P_0\\).",
+          "text": "Process \\(P_0\\) waits for a resource held by \\(P_1\\), \\(P_1\\) for \\(P_2\\), and \\(P_n\\) for \\(P_0\\)."
+        },
+        {
+          "value": "D",
+          "label": "All processes are waiting for the same single instance of a resource type.",
+          "text": "All processes are waiting for the same single instance of a resource type."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Circular wait involves a closed loop where each process is waiting for a resource held by the next process in the chain, with the last process waiting for the first."
+    },
+    {
+      "id": "upload-1775754289994-4",
+      "number": "5",
+      "text": "In a Resource-Allocation Graph, what does a directed edge from process \\(P_i\\) to resource type \\(R_j\\) signify?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Assignment edge (\\(P_i\\) is holding an instance of \\(R_j\\))",
+          "text": "Assignment edge (\\(P_i\\) is holding an instance of \\(R_j\\))"
+        },
+        {
+          "value": "B",
+          "label": "Request edge (\\(P_i\\) has requested an instance of \\(R_j\\))",
+          "text": "Request edge (\\(P_i\\) has requested an instance of \\(R_j\\))"
+        },
+        {
+          "value": "C",
+          "label": "Release edge (\\(P_i\\) is about to free \\(R_j\\))",
+          "text": "Release edge (\\(P_i\\) is about to free \\(R_j\\))"
+        },
+        {
+          "value": "D",
+          "label": "Preemption edge (\\(P_i\\) is taking \\(R_j\\) from another process)",
+          "text": "Preemption edge (\\(P_i\\) is taking \\(R_j\\) from another process)"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A directed edge from a process to a resource (\\(P_i \\rightarrow R_j\\)) is a request edge."
+    },
+    {
+      "id": "upload-1775754289994-5",
+      "number": "6",
+      "text": "In a Resource-Allocation Graph, what does a directed edge from resource type \\(R_j\\) to process \\(P_i\\) signify?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Claim edge",
+          "text": "Claim edge"
+        },
+        {
+          "value": "B",
+          "label": "Request edge",
+          "text": "Request edge"
+        },
+        {
+          "value": "C",
+          "label": "Assignment edge",
+          "text": "Assignment edge"
+        },
+        {
+          "value": "D",
+          "label": "Wait edge",
+          "text": "Wait edge"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A directed edge from a resource to a process (\\(R_j \\rightarrow P_i\\)) is an assignment edge, meaning the process is currently holding that resource."
+    },
+    {
+      "id": "upload-1775754289994-6",
+      "number": "7",
+      "text": "Regarding cycles in a Resource-Allocation Graph, which of the following statements is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "If there is a cycle, a deadlock must exist regardless of instance counts.",
+          "text": "If there is a cycle, a deadlock must exist regardless of instance counts."
+        },
+        {
+          "value": "B",
+          "label": "If there is a cycle and only one instance per resource type, then a deadlock exists.",
+          "text": "If there is a cycle and only one instance per resource type, then a deadlock exists."
+        },
+        {
+          "value": "C",
+          "label": "If there are no cycles, a deadlock might still exist.",
+          "text": "If there are no cycles, a deadlock might still exist."
+        },
+        {
+          "value": "D",
+          "label": "A cycle in a graph with multiple instances per resource type always implies deadlock.",
+          "text": "A cycle in a graph with multiple instances per resource type always implies deadlock."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Basic facts state: If the graph contains no cycles, there is no deadlock. If it contains a cycle and only one instance per resource type, there is a deadlock."
+    },
+    {
+      "id": "upload-1775754289994-7",
+      "number": "8",
+      "text": "Which method for handling deadlocks is used by most operating systems, including UNIX?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Deadlock prevention",
+          "text": "Deadlock prevention"
+        },
+        {
+          "value": "B",
+          "label": "Deadlock avoidance",
+          "text": "Deadlock avoidance"
+        },
+        {
+          "value": "C",
+          "label": "Deadlock detection and recovery",
+          "text": "Deadlock detection and recovery"
+        },
+        {
+          "value": "D",
+          "label": "Ignore the problem and pretend deadlocks never occur",
+          "text": "Ignore the problem and pretend deadlocks never occur"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The slides note that most OSs, including UNIX, ignore the problem and pretend deadlocks never occur."
+    },
+    {
+      "id": "upload-1775754289994-8",
+      "number": "9",
+      "text": "To prevent 'Hold and Wait,' which of the following strategies could be employed? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Require processes to request all resources before starting execution.",
+          "text": "Require processes to request all resources before starting execution."
+        },
+        {
+          "value": "B",
+          "label": "Allow a process to request resources only when it has none allocated to it.",
+          "text": "Allow a process to request resources only when it has none allocated to it."
+        },
+        {
+          "value": "C",
+          "label": "Preempt resources from processes that are currently running.",
+          "text": "Preempt resources from processes that are currently running."
+        },
+        {
+          "value": "D",
+          "label": "Assign a numerical order to all resources.",
+          "text": "Assign a numerical order to all resources."
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "AB",
+      "explanation": "Deadlock prevention for Hold and Wait involves guaranteeing a process doesn't hold resources while waiting for more, either by requesting all at once or only when holding none."
+    },
+    {
+      "id": "upload-1775754289994-9",
+      "number": "10",
+      "text": "What are the primary disadvantages of the 'Hold and Wait' prevention protocols?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "High CPU overhead",
+          "text": "High CPU overhead"
+        },
+        {
+          "value": "B",
+          "label": "Low resource utilization",
+          "text": "Low resource utilization"
+        },
+        {
+          "value": "C",
+          "label": "Starvation is possible",
+          "text": "Starvation is possible"
+        },
+        {
+          "value": "D",
+          "label": "Fragmentation of physical memory",
+          "text": "Fragmentation of physical memory"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "BC",
+      "explanation": "The slide explicitly mentions low resource utilization and the possibility of starvation as downsides."
+    },
+    {
+      "id": "upload-1775754289994-10",
+      "number": "11",
+      "text": "Under the 'No Preemption' prevention protocol, what happens if a process holding resources requests another resource that cannot be immediately allocated?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The process enters a busy-wait loop until the resource is free.",
+          "text": "The process enters a busy-wait loop until the resource is free."
+        },
+        {
+          "value": "B",
+          "label": "The process is terminated and its resources are lost.",
+          "text": "The process is terminated and its resources are lost."
+        },
+        {
+          "value": "C",
+          "label": "All resources currently being held by the process are released.",
+          "text": "All resources currently being held by the process are released."
+        },
+        {
+          "value": "D",
+          "label": "The operating system forcibly takes the requested resource from its current owner.",
+          "text": "The operating system forcibly takes the requested resource from its current owner."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The 'No Preemption' prevention rule states that if a request cannot be met, the process must release all its currently held resources."
+    },
+    {
+      "id": "upload-1775754289994-11",
+      "number": "12",
+      "text": "The 'Circular Wait' condition can be prevented by requiring that processes request resources in:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Random order",
+          "text": "Random order"
+        },
+        {
+          "value": "B",
+          "label": "Decreasing order of resource size",
+          "text": "Decreasing order of resource size"
+        },
+        {
+          "value": "C",
+          "label": "Increasing order of enumeration (total ordering)",
+          "text": "Increasing order of enumeration (total ordering)"
+        },
+        {
+          "value": "D",
+          "label": "Order of process priority",
+          "text": "Order of process priority"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Circular wait prevention involves imposing a total ordering and requiring requests in an increasing order of enumeration."
+    },
+    {
+      "id": "upload-1775754289994-12",
+      "number": "13",
+      "text": "Deadlock avoidance requires the system to have which additional information?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Total number of processes currently in the 'Ready' queue.",
+          "text": "Total number of processes currently in the 'Ready' queue."
+        },
+        {
+          "value": "B",
+          "label": "The exact time each process will terminate.",
+          "text": "The exact time each process will terminate."
+        },
+        {
+          "value": "C",
+          "label": "A priori information about the maximum number of resources of each type a process may need.",
+          "text": "A priori information about the maximum number of resources of each type a process may need."
+        },
+        {
+          "value": "D",
+          "label": "The physical address of every allocated resource.",
+          "text": "The physical address of every allocated resource."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Deadlock avoidance requires that each process declare the maximum number of resources of each type it may need."
+    },
+    {
+      "id": "upload-1775754289994-13",
+      "number": "14",
+      "text": "A system is in a 'Safe State' if:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "No process is currently requesting any resources.",
+          "text": "No process is currently requesting any resources."
+        },
+        {
+          "value": "B",
+          "label": "There exists a sequence of processes such that all resource needs can be satisfied by current plus previously held resources.",
+          "text": "There exists a sequence of processes such that all resource needs can be satisfied by current plus previously held resources."
+        },
+        {
+          "value": "C",
+          "label": "The CPU is utilized at 100% capacity.",
+          "text": "The CPU is utilized at 100% capacity."
+        },
+        {
+          "value": "D",
+          "label": "All resources are currently free and available for allocation.",
+          "text": "All resources are currently free and available for allocation."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A safe state exists if there is a sequence \\(<P_1, P_2, \\dots, P_n>\\) where each process's needs can be met by available resources plus those held by its predecessors in the sequence."
+    },
+    {
+      "id": "upload-1775754289994-14",
+      "number": "15",
+      "text": "Which of the following statements regarding Safe and Unsafe states is correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "An unsafe state is equivalent to a deadlock.",
+          "text": "An unsafe state is equivalent to a deadlock."
+        },
+        {
+          "value": "B",
+          "label": "If a system is in an unsafe state, a deadlock is possible but not guaranteed.",
+          "text": "If a system is in an unsafe state, a deadlock is possible but not guaranteed."
+        },
+        {
+          "value": "C",
+          "label": "A safe state guarantees that the CPU will not crash.",
+          "text": "A safe state guarantees that the CPU will not crash."
+        },
+        {
+          "value": "D",
+          "label": "Avoidance algorithms ensure the system stays in an unsafe state.",
+          "text": "Avoidance algorithms ensure the system stays in an unsafe state."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A safe state means no deadlock. An unsafe state means there is the possibility of deadlock."
+    },
+    {
+      "id": "upload-1775754289994-15",
+      "number": "16",
+      "text": "Which algorithm is used for deadlock avoidance in systems with multiple instances of a resource type?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Resource-Allocation Graph with claim edges",
+          "text": "Resource-Allocation Graph with claim edges"
+        },
+        {
+          "value": "B",
+          "label": "Banker's Algorithm",
+          "text": "Banker's Algorithm"
+        },
+        {
+          "value": "C",
+          "label": "Wait-for Graph",
+          "text": "Wait-for Graph"
+        },
+        {
+          "value": "D",
+          "label": "Round Robin Scheduling",
+          "text": "Round Robin Scheduling"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Banker's Algorithm is used for multiple instances, while the Resource-Allocation Graph is used for single instances."
+    },
+    {
+      "id": "upload-1775754289994-16",
+      "number": "17",
+      "text": "In the Resource-Allocation Graph scheme for avoidance, what is a 'Claim Edge'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "An edge indicating a resource currently being used.",
+          "text": "An edge indicating a resource currently being used."
+        },
+        {
+          "value": "B",
+          "label": "An edge indicating that a process may request a resource in the future (represented by a dashed line).",
+          "text": "An edge indicating that a process may request a resource in the future (represented by a dashed line)."
+        },
+        {
+          "value": "C",
+          "label": "An edge showing a process being blocked by the OS.",
+          "text": "An edge showing a process being blocked by the OS."
+        },
+        {
+          "value": "D",
+          "label": "An edge showing a resource that has been preempted.",
+          "text": "An edge showing a resource that has been preempted."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A claim edge (\\(P_i \\rightarrow R_j\\)) indicates the process may request a resource and is shown as a dashed line."
+    },
+    {
+      "id": "upload-1775754289994-17",
+      "number": "18",
+      "text": "In the Banker’s Algorithm, if \\(n\\) is the number of processes and \\(m\\) is the number of resource types, which of the following are the correct data structures? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Available: Vector of length \\(m\\)",
+          "text": "Available: Vector of length \\(m\\)"
+        },
+        {
+          "value": "B",
+          "label": "Max: \\(n \\times m\\) matrix",
+          "text": "Max: \\(n \\times m\\) matrix"
+        },
+        {
+          "value": "C",
+          "label": "Allocation: \\(n \\times m\\) matrix",
+          "text": "Allocation: \\(n \\times m\\) matrix"
+        },
+        {
+          "value": "D",
+          "label": "Need: \\(n \\times m\\) matrix",
+          "text": "Need: \\(n \\times m\\) matrix"
+        },
+        {
+          "value": "E",
+          "label": "Wait: Vector of length \\(n\\)",
+          "text": "Wait: Vector of length \\(n\\)"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "ABCD",
+      "explanation": "The Banker's Algorithm uses Available, Max, Allocation, and Need as its primary data structures."
+    },
+    {
+      "id": "upload-1775754289994-18",
+      "number": "19",
+      "text": "In the Banker’s Algorithm, how is the 'Need' matrix calculated?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Need = Max + Allocation",
+          "text": "Need = Max + Allocation"
+        },
+        {
+          "value": "B",
+          "label": "Need = Max - Allocation",
+          "text": "Need = Max - Allocation"
+        },
+        {
+          "value": "C",
+          "label": "Need = Available - Allocation",
+          "text": "Need = Available - Allocation"
+        },
+        {
+          "value": "D",
+          "label": "Need = Max - Available",
+          "text": "Need = Max - Available"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The slide defines \\(Need[i,j] = Max[i,j] - Allocation[i,j]\\)."
+    },
+    {
+      "id": "upload-1775754289994-19",
+      "number": "20",
+      "text": "During the Safety Algorithm of the Banker's Algorithm, what condition must be met to find a process \\(P_i\\) to add to the safe sequence?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\(Finish[i] == true\\) and \\(Need_i \\le Work\\)",
+          "text": "\\(Finish[i] == true\\) and \\(Need_i \\le Work\\)"
+        },
+        {
+          "value": "B",
+          "label": "\\(Finish[i] == false\\) and \\(Need_i \\le Work\\)",
+          "text": "\\(Finish[i] == false\\) and \\(Need_i \\le Work\\)"
+        },
+        {
+          "value": "C",
+          "label": "\\(Finish[i] == false\\) and \\(Allocation_i \\le Work\\)",
+          "text": "\\(Finish[i] == false\\) and \\(Allocation_i \\le Work\\)"
+        },
+        {
+          "value": "D",
+          "label": "\\(Finish[i] == true\\) and \\(Available_i \\le Max\\)",
+          "text": "\\(Finish[i] == true\\) and \\(Available_i \\le Max\\)"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The algorithm seeks a process that hasn't finished (\\(Finish[i] == false\\)) and whose current needs can be met by the working available resources (\\(Need_i \\le Work\\))."
+    },
+    {
+      "id": "upload-1775754289994-20",
+      "number": "21",
+      "text": "Under the Resource-Request Algorithm, if a request is found to be unsafe, what must happen?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The process is terminated immediately.",
+          "text": "The process is terminated immediately."
+        },
+        {
+          "value": "B",
+          "label": "The resources are allocated anyway to see if a deadlock occurs.",
+          "text": "The resources are allocated anyway to see if a deadlock occurs."
+        },
+        {
+          "value": "C",
+          "label": "The process must wait, and the old resource-allocation state is restored.",
+          "text": "The process must wait, and the old resource-allocation state is restored."
+        },
+        {
+          "value": "D",
+          "label": "The operating system preempts resources from other processes to make the state safe.",
+          "text": "The operating system preempts resources from other processes to make the state safe."
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "If a request results in an unsafe state, the process must wait and the state is reverted."
+    },
+    {
+      "id": "upload-1775754289994-21",
+      "number": "22",
+      "text": "For a system with single instances of each resource type, deadlock detection can be performed using a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Resource-Allocation Graph with claim edges",
+          "text": "Resource-Allocation Graph with claim edges"
+        },
+        {
+          "value": "B",
+          "label": "Wait-for graph",
+          "text": "Wait-for graph"
+        },
+        {
+          "value": "C",
+          "label": "Process-Scheduling chart",
+          "text": "Process-Scheduling chart"
+        },
+        {
+          "value": "D",
+          "label": "Gantt chart",
+          "text": "Gantt chart"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In single instance systems, a wait-for graph (a simplified RAG) is used to detect cycles and thus deadlocks."
+    },
+    {
+      "id": "upload-1775754289994-22",
+      "number": "23",
+      "text": "The complexity of an algorithm to detect a cycle in a wait-for graph with \\(n\\) vertices is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\(O(n)\\)",
+          "text": "\\(O(n)\\)"
+        },
+        {
+          "value": "B",
+          "label": "\\(O(n^2)\\)",
+          "text": "\\(O(n^2)\\)"
+        },
+        {
+          "value": "C",
+          "label": "\\(O(n \\log n)\\)",
+          "text": "\\(O(n \\log n)\\)"
+        },
+        {
+          "value": "D",
+          "label": "\\(O(1)\\)",
+          "text": "\\(O(1)\\)"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The slide states that detecting a cycle in a graph requires an order of \\(n^2\\) operations."
+    },
+    {
+      "id": "upload-1775754289994-23",
+      "number": "24",
+      "text": "When recovering from deadlock through process termination, which factors should be considered when choosing an order to abort processes? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Priority of the process",
+          "text": "Priority of the process"
+        },
+        {
+          "value": "B",
+          "label": "How long the process has computed",
+          "text": "How long the process has computed"
+        },
+        {
+          "value": "C",
+          "label": "Resources the process has used",
+          "text": "Resources the process has used"
+        },
+        {
+          "value": "D",
+          "label": "Resources the process needs to complete",
+          "text": "Resources the process needs to complete"
+        },
+        {
+          "value": "E",
+          "label": "Whether the process is interactive or batch",
+          "text": "Whether the process is interactive or batch"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "ABCDE",
+      "explanation": "The recovery slide lists all these factors (priority, time computed, resources used, resources needed, and process type) as criteria for process termination."
+    },
+    {
+      "id": "upload-1775754289994-24",
+      "number": "25",
+      "text": "In the context of resource preemption, what is 'Starvation'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A process uses up all available CPU cycles.",
+          "text": "A process uses up all available CPU cycles."
+        },
+        {
+          "value": "B",
+          "label": "The same process is consistently picked as a victim for preemption, never completing its task.",
+          "text": "The same process is consistently picked as a victim for preemption, never completing its task."
+        },
+        {
+          "value": "C",
+          "label": "The operating system runs out of memory for the deadlock detection algorithm.",
+          "text": "The operating system runs out of memory for the deadlock detection algorithm."
+        },
+        {
+          "value": "D",
+          "label": "A process is blocked indefinitely by a hardware failure.",
+          "text": "A process is blocked indefinitely by a hardware failure."
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Starvation occurs if the same process is always chosen as the victim; the solution is to include the number of rollbacks in the cost factor."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}

@@ -1,0 +1,797 @@
+{
+  "id": "upload-1775754368086-5ym6d",
+  "label": "ch9.ppt",
+  "params": {
+    "file": "ch9.ppt"
+  },
+  "title": "Virtual Memory Management",
+  "questions": [
+    {
+      "id": "upload-1775754368086-0",
+      "number": "1",
+      "text": "What is the primary motivation for separating user logical memory from physical memory in a virtual memory system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To ensure that the entire program is loaded into memory before execution begins",
+          "text": "To ensure that the entire program is loaded into memory before execution begins"
+        },
+        {
+          "value": "B",
+          "label": "To allow the logical address space to be much larger than the physical address space",
+          "text": "To allow the logical address space to be much larger than the physical address space"
+        },
+        {
+          "value": "C",
+          "label": "To reduce the CPU utilization by limiting the number of concurrent programs",
+          "text": "To reduce the CPU utilization by limiting the number of concurrent programs"
+        },
+        {
+          "value": "D",
+          "label": "To force the programmer to manage memory allocation manually",
+          "text": "To force the programmer to manage memory allocation manually"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Virtual memory allows the logical address space to be significantly larger than physical memory, enabling programs to run even if only partially loaded."
+    },
+    {
+      "id": "upload-1775754368086-1",
+      "number": "2",
+      "text": "Which of the following are benefits of implementing virtual memory? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Increased CPU utilization and throughput",
+          "text": "Increased CPU utilization and throughput"
+        },
+        {
+          "value": "B",
+          "label": "Reduced I/O needed to load or swap programs",
+          "text": "Reduced I/O needed to load or swap programs"
+        },
+        {
+          "value": "C",
+          "label": "Faster execution of user programs due to less I/O",
+          "text": "Faster execution of user programs due to less I/O"
+        },
+        {
+          "value": "D",
+          "label": "Programs are constrained by the physical limits of RAM",
+          "text": "Programs are constrained by the physical limits of RAM"
+        },
+        {
+          "value": "E",
+          "label": "Ability to run more programs concurrently",
+          "text": "Ability to run more programs concurrently"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "ABCE",
+      "explanation": "Virtual memory removes physical memory constraints, allowing more programs to run, reducing unnecessary I/O, and improving system efficiency."
+    },
+    {
+      "id": "upload-1775754368086-2",
+      "number": "3",
+      "text": "In a virtual address space, why is it beneficial to have the stack and heap grow toward each other from opposite ends of the logical memory?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To minimize the use of the page table",
+          "text": "To minimize the use of the page table"
+        },
+        {
+          "value": "B",
+          "label": "To prevent the MMU from mapping logical addresses to physical frames",
+          "text": "To prevent the MMU from mapping logical addresses to physical frames"
+        },
+        {
+          "value": "C",
+          "label": "To maximize address space use and enable sparse address spaces",
+          "text": "To maximize address space use and enable sparse address spaces"
+        },
+        {
+          "value": "D",
+          "label": "To ensure that code is always loaded in the center of memory",
+          "text": "To ensure that code is always loaded in the center of memory"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "This design creates a 'hole' in the middle of the virtual address space that can be filled as needed, allowing for dynamic growth of heap/stack and sharing of libraries."
+    },
+    {
+      "id": "upload-1775754368086-3",
+      "number": "4",
+      "text": "What is the definition of a 'lazy swapper' in the context of demand paging?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A swapper that swaps out processes only when the CPU is idle",
+          "text": "A swapper that swaps out processes only when the CPU is idle"
+        },
+        {
+          "value": "B",
+          "label": "A swapper that never swaps a page into memory unless it is specifically needed",
+          "text": "A swapper that never swaps a page into memory unless it is specifically needed"
+        },
+        {
+          "value": "C",
+          "label": "A swapper that only handles kernel-level memory",
+          "text": "A swapper that only handles kernel-level memory"
+        },
+        {
+          "value": "D",
+          "label": "A swapper that loads all pages of a process at once to avoid page faults",
+          "text": "A swapper that loads all pages of a process at once to avoid page faults"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A lazy swapper (or pager) only brings a page into memory when a reference is made to it, minimizing unnecessary I/O."
+    },
+    {
+      "id": "upload-1775754368086-4",
+      "number": "5",
+      "text": "If a page table entry's valid-invalid bit is set to 'i', what does this indicate during address translation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The page is read-only",
+          "text": "The page is read-only"
+        },
+        {
+          "value": "B",
+          "label": "The page is currently in physical memory",
+          "text": "The page is currently in physical memory"
+        },
+        {
+          "value": "C",
+          "label": "The page is not currently in memory (Page Fault)",
+          "text": "The page is not currently in memory (Page Fault)"
+        },
+        {
+          "value": "D",
+          "label": "The page has been modified and must be written to disk",
+          "text": "The page has been modified and must be written to disk"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The 'i' (invalid) bit indicates that the page is either not in the process's logical address space or is on disk rather than in RAM."
+    },
+    {
+      "id": "upload-1775754368086-5",
+      "number": "6",
+      "text": "Which steps are involved in handling a page fault? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Trap to the operating system",
+          "text": "Trap to the operating system"
+        },
+        {
+          "value": "B",
+          "label": "Find a free frame",
+          "text": "Find a free frame"
+        },
+        {
+          "value": "C",
+          "label": "Swap the page into the frame via a disk operation",
+          "text": "Swap the page into the frame via a disk operation"
+        },
+        {
+          "value": "D",
+          "label": "Set the validation bit to 'v' and restart the instruction",
+          "text": "Set the validation bit to 'v' and restart the instruction"
+        },
+        {
+          "value": "E",
+          "label": "Abort the process immediately",
+          "text": "Abort the process immediately"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "ABCD",
+      "explanation": "If the reference is valid but the page is not in memory, the OS finds a frame, loads the page, updates the table, and restarts the instruction."
+    },
+    {
+      "id": "upload-1775754368086-6",
+      "number": "7",
+      "text": "What is 'pure demand paging'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Loading the first 10 pages of a process before execution",
+          "text": "Loading the first 10 pages of a process before execution"
+        },
+        {
+          "value": "B",
+          "label": "Starting a process with zero pages in memory and faulting for every page",
+          "text": "Starting a process with zero pages in memory and faulting for every page"
+        },
+        {
+          "value": "C",
+          "label": "A system where pages are never swapped out to disk",
+          "text": "A system where pages are never swapped out to disk"
+        },
+        {
+          "value": "D",
+          "label": "A system that uses segmentation instead of paging",
+          "text": "A system that uses segmentation instead of paging"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Pure demand paging starts a process with no pages in memory, relying entirely on page faults to bring in required code and data."
+    },
+    {
+      "id": "upload-1775754368086-7",
+      "number": "8",
+      "text": "Calculate the Effective Access Time (EAT) for a system with a memory access time of 200ns, a page-fault service time of 8ms, and a page fault rate \\( p \\).",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( EAT = (1 - p) \\times 200 + p \\times 8,000,000 \\)",
+          "text": "\\( EAT = (1 - p) \\times 200 + p \\times 8,000,000 \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( EAT = p \\times 200 + (1 - p) \\times 8,000,000 \\)",
+          "text": "\\( EAT = p \\times 200 + (1 - p) \\times 8,000,000 \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( EAT = 200 + p \\)",
+          "text": "\\( EAT = 200 + p \\)"
+        },
+        {
+          "value": "D",
+          "label": "\\( EAT = 8,000,000 \\times p \\)",
+          "text": "\\( EAT = 8,000,000 \\times p \\)"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The formula for EAT in demand paging is (1 - page fault rate) * memory access time + (page fault rate) * page fault service time."
+    },
+    {
+      "id": "upload-1775754368086-8",
+      "number": "9",
+      "text": "How does the 'Copy-on-Write' (COW) mechanism optimize process creation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It copies all pages of the parent process to the child process immediately",
+          "text": "It copies all pages of the parent process to the child process immediately"
+        },
+        {
+          "value": "B",
+          "label": "It allows parent and child to share pages until one of them modifies a page",
+          "text": "It allows parent and child to share pages until one of them modifies a page"
+        },
+        {
+          "value": "C",
+          "label": "It eliminates the need for a page table",
+          "text": "It eliminates the need for a page table"
+        },
+        {
+          "value": "D",
+          "label": "It prevents the child process from accessing any memory",
+          "text": "It prevents the child process from accessing any memory"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "COW allows for efficient `fork()` by sharing pages. A copy is only made when a process attempts to write to a shared page."
+    },
+    {
+      "id": "upload-1775754368086-9",
+      "number": "10",
+      "text": "What is the primary purpose of the 'modify bit' (dirty bit) in page replacement?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To indicate if a page is read-only",
+          "text": "To indicate if a page is read-only"
+        },
+        {
+          "value": "B",
+          "label": "To reduce overhead by only writing modified pages back to disk",
+          "text": "To reduce overhead by only writing modified pages back to disk"
+        },
+        {
+          "value": "C",
+          "label": "To track the total number of times a page was accessed",
+          "text": "To track the total number of times a page was accessed"
+        },
+        {
+          "value": "D",
+          "label": "To implement Belady's Anomaly",
+          "text": "To implement Belady's Anomaly"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The modify bit tracks whether a page has been changed. If it hasn't (it is 'clean'), it doesn't need to be written back to disk when replaced."
+    },
+    {
+      "id": "upload-1775754368086-10",
+      "number": "11",
+      "text": "Which of the following describes 'Belady’s Anomaly'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "As memory access speed increases, page faults increase",
+          "text": "As memory access speed increases, page faults increase"
+        },
+        {
+          "value": "B",
+          "label": "For some page-replacement algorithms, the page-fault rate may increase as the number of allocated frames increases",
+          "text": "For some page-replacement algorithms, the page-fault rate may increase as the number of allocated frames increases"
+        },
+        {
+          "value": "C",
+          "label": "The optimal algorithm always produces the most page faults",
+          "text": "The optimal algorithm always produces the most page faults"
+        },
+        {
+          "value": "D",
+          "label": "Allocating more frames always results in fewer page faults",
+          "text": "Allocating more frames always results in fewer page faults"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Belady's Anomaly is a counter-intuitive phenomenon specifically seen in FIFO page replacement where more frames can lead to more faults."
+    },
+    {
+      "id": "upload-1775754368086-11",
+      "number": "12",
+      "text": "In the Optimal (OPT) page replacement algorithm, which page is selected for replacement?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The page that has been in memory the longest",
+          "text": "The page that has been in memory the longest"
+        },
+        {
+          "value": "B",
+          "label": "The page that will not be used for the longest period of time in the future",
+          "text": "The page that will not be used for the longest period of time in the future"
+        },
+        {
+          "value": "C",
+          "label": "The page that was used most recently",
+          "text": "The page that was used most recently"
+        },
+        {
+          "value": "D",
+          "label": "The page with the smallest counter",
+          "text": "The page with the smallest counter"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Optimal algorithm replaces the page that will not be needed for the longest future duration, providing the lowest possible page fault rate."
+    },
+    {
+      "id": "upload-1775754368086-12",
+      "number": "13",
+      "text": "Which of these are methods for implementing Least Recently Used (LRU) replacement? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Counter implementation (Time-of-use)",
+          "text": "Counter implementation (Time-of-use)"
+        },
+        {
+          "value": "B",
+          "label": "Stack implementation (Double-linked list)",
+          "text": "Stack implementation (Double-linked list)"
+        },
+        {
+          "value": "C",
+          "label": "Purely random selection",
+          "text": "Purely random selection"
+        },
+        {
+          "value": "D",
+          "label": "Reference bit approximation",
+          "text": "Reference bit approximation"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "ABD",
+      "explanation": "LRU can be implemented exactly using counters or stacks, or approximated using reference bits in hardware."
+    },
+    {
+      "id": "upload-1775754368086-13",
+      "number": "14",
+      "text": "How does the 'Second-Chance' (Clock) algorithm differ from standard FIFO?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It replaces pages based on their size",
+          "text": "It replaces pages based on their size"
+        },
+        {
+          "value": "B",
+          "label": "It uses a reference bit to give a page another chance if it was recently used",
+          "text": "It uses a reference bit to give a page another chance if it was recently used"
+        },
+        {
+          "value": "C",
+          "label": "It replaces the most recently used page",
+          "text": "It replaces the most recently used page"
+        },
+        {
+          "value": "D",
+          "label": "It requires knowing future memory references",
+          "text": "It requires knowing future memory references"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Second-chance uses a reference bit. If the bit is 1, it's cleared and the page is moved to the end of the queue rather than being evicted."
+    },
+    {
+      "id": "upload-1775754368086-14",
+      "number": "15",
+      "text": "The 'Enhanced Second-Chance' algorithm uses an ordered pair (reference, modify). Which class is the best candidate for replacement?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "(1, 1): Recently used and modified",
+          "text": "(1, 1): Recently used and modified"
+        },
+        {
+          "value": "B",
+          "label": "(1, 0): Recently used but clean",
+          "text": "(1, 0): Recently used but clean"
+        },
+        {
+          "value": "C",
+          "label": "(0, 1): Not recently used but modified",
+          "text": "(0, 1): Not recently used but modified"
+        },
+        {
+          "value": "D",
+          "label": "(0, 0): Neither recently used nor modified",
+          "text": "(0, 0): Neither recently used nor modified"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "(0,0) is the best candidate because it hasn't been used recently and doesn't need a disk write-back."
+    },
+    {
+      "id": "upload-1775754368086-15",
+      "number": "16",
+      "text": "What is 'Thrashing' in an operating system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "When the CPU is executing at 100% capacity",
+          "text": "When the CPU is executing at 100% capacity"
+        },
+        {
+          "value": "B",
+          "label": "When a process spends more time paging (swapping) than executing",
+          "text": "When a process spends more time paging (swapping) than executing"
+        },
+        {
+          "value": "C",
+          "label": "When the system shuts down due to lack of memory",
+          "text": "When the system shuts down due to lack of memory"
+        },
+        {
+          "value": "D",
+          "label": "When the disk head stops moving",
+          "text": "When the disk head stops moving"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Thrashing occurs when the total size of localities exceeds total physical memory, causing constant page faults and low CPU utilization."
+    },
+    {
+      "id": "upload-1775754368086-16",
+      "number": "17",
+      "text": "Which model is used to prevent thrashing by tracking the set of pages a process is currently using?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "FIFO Queue Model",
+          "text": "FIFO Queue Model"
+        },
+        {
+          "value": "B",
+          "label": "Working-Set Model",
+          "text": "Working-Set Model"
+        },
+        {
+          "value": "C",
+          "label": "Binary Search Model",
+          "text": "Binary Search Model"
+        },
+        {
+          "value": "D",
+          "label": "Round Robin Model",
+          "text": "Round Robin Model"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Working-Set Model defines a window of recent references to approximate locality and ensure the process has enough frames to avoid thrashing."
+    },
+    {
+      "id": "upload-1775754368086-17",
+      "number": "18",
+      "text": "In memory-mapped files, how is file I/O treated?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "As manual sector-by-sector disk writes",
+          "text": "As manual sector-by-sector disk writes"
+        },
+        {
+          "value": "B",
+          "label": "As routine memory accesses (load/store) to a mapped page",
+          "text": "As routine memory accesses (load/store) to a mapped page"
+        },
+        {
+          "value": "C",
+          "label": "As a sequence of `read()` and `write()` system calls only",
+          "text": "As a sequence of `read()` and `write()` system calls only"
+        },
+        {
+          "value": "D",
+          "label": "As encrypted network packets",
+          "text": "As encrypted network packets"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Memory-mapped I/O maps a disk block to a page in RAM, allowing standard memory instructions to interact with file data."
+    },
+    {
+      "id": "upload-1775754368086-18",
+      "number": "19",
+      "text": "What are the two common strategies for allocating kernel memory? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Buddy System",
+          "text": "Buddy System"
+        },
+        {
+          "value": "B",
+          "label": "Slab Allocation",
+          "text": "Slab Allocation"
+        },
+        {
+          "value": "C",
+          "label": "FIFO Allocation",
+          "text": "FIFO Allocation"
+        },
+        {
+          "value": "D",
+          "label": "Belady Allocation",
+          "text": "Belady Allocation"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "AB",
+      "explanation": "The Buddy System (power-of-2) and Slab Allocation (caches for data structures) are the primary kernel memory management schemes."
+    },
+    {
+      "id": "upload-1775754368086-19",
+      "number": "20",
+      "text": "What is the primary advantage of the Buddy System allocator?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It eliminates internal fragmentation entirely",
+          "text": "It eliminates internal fragmentation entirely"
+        },
+        {
+          "value": "B",
+          "label": "It can quickly coalesce unused adjacent chunks into larger segments",
+          "text": "It can quickly coalesce unused adjacent chunks into larger segments"
+        },
+        {
+          "value": "C",
+          "label": "It uses a circular queue to manage pages",
+          "text": "It uses a circular queue to manage pages"
+        },
+        {
+          "value": "D",
+          "label": "It only works with non-contiguous memory",
+          "text": "It only works with non-contiguous memory"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Buddy System allows 'buddies' to be merged back into larger power-of-2 blocks quickly when they are freed."
+    },
+    {
+      "id": "upload-1775754368086-20",
+      "number": "21",
+      "text": "How does 'Slab Allocation' minimize fragmentation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By using power-of-2 chunks for every request",
+          "text": "By using power-of-2 chunks for every request"
+        },
+        {
+          "value": "B",
+          "label": "By pre-allocating caches for specific kernel data structures (like `task_struct`)",
+          "text": "By pre-allocating caches for specific kernel data structures (like `task_struct`)"
+        },
+        {
+          "value": "C",
+          "label": "By swapping kernel code to disk",
+          "text": "By swapping kernel code to disk"
+        },
+        {
+          "value": "D",
+          "label": "By increasing the page size to 4MB",
+          "text": "By increasing the page size to 4MB"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Slab allocation uses caches tailored to the size of specific kernel objects, ensuring that memory is used efficiently without splitting pages into awkward sizes."
+    },
+    {
+      "id": "upload-1775754368086-21",
+      "number": "22",
+      "text": "What is 'TLB Reach'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The maximum number of pages in the swap file",
+          "text": "The maximum number of pages in the swap file"
+        },
+        {
+          "value": "B",
+          "label": "The amount of memory accessible from the Translation Lookaside Buffer",
+          "text": "The amount of memory accessible from the Translation Lookaside Buffer"
+        },
+        {
+          "value": "C",
+          "label": "The time it takes to restart an instruction",
+          "text": "The time it takes to restart an instruction"
+        },
+        {
+          "value": "D",
+          "label": "The physical distance between the CPU and RAM",
+          "text": "The physical distance between the CPU and RAM"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "TLB Reach = (TLB Size) * (Page Size). It represents how much memory the CPU can address without incurring a page table walk."
+    },
+    {
+      "id": "upload-1775754368086-22",
+      "number": "23",
+      "text": "Why does Program 1 (looping by column then row) cause more page faults than Program 2 (looping by row then column) in a row-major array storage system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Program 1 uses more variables",
+          "text": "Program 1 uses more variables"
+        },
+        {
+          "value": "B",
+          "label": "Program 1 violates locality of reference by jumping between pages on every access",
+          "text": "Program 1 violates locality of reference by jumping between pages on every access"
+        },
+        {
+          "value": "C",
+          "label": "Program 2 is written in a higher-level language",
+          "text": "Program 2 is written in a higher-level language"
+        },
+        {
+          "value": "D",
+          "label": "The operating system gives Program 2 more frames",
+          "text": "The operating system gives Program 2 more frames"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In row-major storage, rows are contiguous. Accessing column-wise means jumping across pages repeatedly, causing a fault for nearly every access."
+    },
+    {
+      "id": "upload-1775754368086-23",
+      "number": "24",
+      "text": "In the Solaris operating system, what happens when free memory reaches the 'Minfree' threshold?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The system starts demand paging",
+          "text": "The system starts demand paging"
+        },
+        {
+          "value": "B",
+          "label": "The system begins swapping entire processes",
+          "text": "The system begins swapping entire processes"
+        },
+        {
+          "value": "C",
+          "label": "The system increases the scan rate of pages",
+          "text": "The system increases the scan rate of pages"
+        },
+        {
+          "value": "D",
+          "label": "The system turns off the MMU",
+          "text": "The system turns off the MMU"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Solaris uses thresholds: 'Lotsfree' starts paging, but 'Minfree' indicates critical memory pressure, triggering swapping of whole processes."
+    },
+    {
+      "id": "upload-1775754368086-24",
+      "number": "25",
+      "text": "What is 'Working Set Trimming' in Windows?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Deleting files from the hard drive",
+          "text": "Deleting files from the hard drive"
+        },
+        {
+          "value": "B",
+          "label": "Removing pages from processes that have pages in excess of their working set minimum when free memory is low",
+          "text": "Removing pages from processes that have pages in excess of their working set minimum when free memory is low"
+        },
+        {
+          "value": "C",
+          "label": "Reducing the priority of background threads",
+          "text": "Reducing the priority of background threads"
+        },
+        {
+          "value": "D",
+          "label": "Increasing the size of the page file",
+          "text": "Increasing the size of the page file"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Windows restores free memory by taking frames away from processes that have exceeded their guaranteed minimum allocation."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}

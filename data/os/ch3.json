@@ -1,0 +1,797 @@
+{
+  "id": "upload-1775754077255-tyjwz",
+  "label": "ch3.ppt",
+  "params": {
+    "file": "ch3.ppt"
+  },
+  "title": "Chapter 3: Processes",
+  "questions": [
+    {
+      "id": "upload-1775754077255-0",
+      "number": "1",
+      "text": "Which of the following best describes the difference between a program and a process as outlined in the text?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A program is an active entity while a process is a passive entity stored on disk.",
+          "text": "A program is an active entity while a process is a passive entity stored on disk."
+        },
+        {
+          "value": "B",
+          "label": "A program is a passive entity, such as an executable file, while a process is an active entity.",
+          "text": "A program is a passive entity, such as an executable file, while a process is an active entity."
+        },
+        {
+          "value": "C",
+          "label": "A program and a process are entirely interchangeable terms in all operating systems.",
+          "text": "A program and a process are entirely interchangeable terms in all operating systems."
+        },
+        {
+          "value": "D",
+          "label": "A process exists only on disk, whereas a program exists only in memory.",
+          "text": "A process exists only on disk, whereas a program exists only in memory."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "According to the slides, a program is a passive entity (executable file on disk), whereas a process is an active entity that becomes such when the executable is loaded into memory."
+    },
+    {
+      "id": "upload-1775754077255-1",
+      "number": "2",
+      "text": "A process in memory is composed of multiple parts. Select all the sections that constitute a process's memory layout:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Text section (code)",
+          "text": "Text section (code)"
+        },
+        {
+          "value": "B",
+          "label": "Stack (temporary data like function parameters)",
+          "text": "Stack (temporary data like function parameters)"
+        },
+        {
+          "value": "C",
+          "label": "Data section (global variables)",
+          "text": "Data section (global variables)"
+        },
+        {
+          "value": "D",
+          "label": "Heap (dynamically allocated memory)",
+          "text": "Heap (dynamically allocated memory)"
+        },
+        {
+          "value": "E",
+          "label": "Kernel Section (shared OS code)",
+          "text": "Kernel Section (shared OS code)"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "ABCD",
+      "explanation": "A process in memory includes the text section, the stack (temporary data), the data section (global variables), and the heap (dynamically allocated memory during runtime)."
+    },
+    {
+      "id": "upload-1775754077255-2",
+      "number": "3",
+      "text": "When a process is waiting to be assigned to a processor, it is in which of the following states?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Waiting",
+          "text": "Waiting"
+        },
+        {
+          "value": "B",
+          "label": "Running",
+          "text": "Running"
+        },
+        {
+          "value": "C",
+          "label": "Ready",
+          "text": "Ready"
+        },
+        {
+          "value": "D",
+          "label": "New",
+          "text": "New"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The 'Ready' state is defined as the process waiting to be assigned to a processor. 'Waiting' means it is waiting for an event (like I/O completion)."
+    },
+    {
+      "id": "upload-1775754077255-3",
+      "number": "4",
+      "text": "Which component of the Process Control Block (PCB) contains the address of the next instruction to be executed for that process?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Process state",
+          "text": "Process state"
+        },
+        {
+          "value": "B",
+          "label": "CPU registers",
+          "text": "CPU registers"
+        },
+        {
+          "value": "C",
+          "label": "Program counter",
+          "text": "Program counter"
+        },
+        {
+          "value": "D",
+          "label": "I/O status information",
+          "text": "I/O status information"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The Program Counter indicates the address of the next instruction to be executed for the process."
+    },
+    {
+      "id": "upload-1775754077255-4",
+      "number": "5",
+      "text": "In the context of a CPU switch between processes, what is the primary purpose of the 'Context Switch'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To increase the degree of multiprogramming by adding more processes to the job queue.",
+          "text": "To increase the degree of multiprogramming by adding more processes to the job queue."
+        },
+        {
+          "value": "B",
+          "label": "To save the state of the current process and load the saved state of a new process.",
+          "text": "To save the state of the current process and load the saved state of a new process."
+        },
+        {
+          "value": "C",
+          "label": "To perform useful computation while the I/O devices are busy.",
+          "text": "To perform useful computation while the I/O devices are busy."
+        },
+        {
+          "value": "D",
+          "label": "To allocate more memory to a process so it can finish its execution faster.",
+          "text": "To allocate more memory to a process so it can finish its execution faster."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A context switch is the process of saving the state of an old process and loading the saved state for a new process when the CPU switches."
+    },
+    {
+      "id": "upload-1775754077255-5",
+      "number": "6",
+      "text": "How does the introduction of threads change the traditional concept of a process in the PCB?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It eliminates the need for a program counter.",
+          "text": "It eliminates the need for a program counter."
+        },
+        {
+          "value": "B",
+          "label": "It allows a process to have multiple program counters, enabling multiple locations to execute at once.",
+          "text": "It allows a process to have multiple program counters, enabling multiple locations to execute at once."
+        },
+        {
+          "value": "C",
+          "label": "It combines the stack and the heap into a single memory section.",
+          "text": "It combines the stack and the heap into a single memory section."
+        },
+        {
+          "value": "D",
+          "label": "It forces the process to remain in the 'Waiting' state indefinitely.",
+          "text": "It forces the process to remain in the 'Waiting' state indefinitely."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Threads allow a process to have multiple program counters, which means multiple locations in the code can execute concurrently."
+    },
+    {
+      "id": "upload-1775754077255-6",
+      "number": "7",
+      "text": "In Linux, the process representation is handled by which C structure?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`proc_struct`",
+          "text": "`proc_struct`"
+        },
+        {
+          "value": "B",
+          "label": "`task_struct`",
+          "text": "`task_struct`"
+        },
+        {
+          "value": "C",
+          "label": "`pcb_list`",
+          "text": "`pcb_list`"
+        },
+        {
+          "value": "D",
+          "label": "`linux_process`",
+          "text": "`linux_process`"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Linux, the process is represented by the C structure `task_struct`, which contains the PID, state, scheduling info, and more."
+    },
+    {
+      "id": "upload-1775754077255-7",
+      "number": "8",
+      "text": "The process scheduler maintains several queues for processes. Select all valid queues mentioned in the text:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Job queue",
+          "text": "Job queue"
+        },
+        {
+          "value": "B",
+          "label": "Ready queue",
+          "text": "Ready queue"
+        },
+        {
+          "value": "C",
+          "label": "Device queues",
+          "text": "Device queues"
+        },
+        {
+          "value": "D",
+          "label": "Terminated queue",
+          "text": "Terminated queue"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "ABC",
+      "explanation": "The text identifies the Job queue (all processes), Ready queue (main memory, ready to execute), and Device queues (waiting for I/O)."
+    },
+    {
+      "id": "upload-1775754077255-8",
+      "number": "9",
+      "text": "A process that spends more of its time doing computations and has few, very long CPU bursts is known as a(n):",
+      "choices": [
+        {
+          "value": "A",
+          "label": "I/O-bound process",
+          "text": "I/O-bound process"
+        },
+        {
+          "value": "B",
+          "label": "Computation-bound process",
+          "text": "Computation-bound process"
+        },
+        {
+          "value": "C",
+          "label": "CPU-bound process",
+          "text": "CPU-bound process"
+        },
+        {
+          "value": "D",
+          "label": "Memory-bound process",
+          "text": "Memory-bound process"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A CPU-bound process is defined as one that spends more time doing computations and has few very long CPU bursts."
+    },
+    {
+      "id": "upload-1775754077255-9",
+      "number": "10",
+      "text": "The long-term scheduler is primarily responsible for which of the following?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Selecting which process should be executed next by the CPU.",
+          "text": "Selecting which process should be executed next by the CPU."
+        },
+        {
+          "value": "B",
+          "label": "Controlling the degree of multiprogramming.",
+          "text": "Controlling the degree of multiprogramming."
+        },
+        {
+          "value": "C",
+          "label": "Saving the context of a process during a switch.",
+          "text": "Saving the context of a process during a switch."
+        },
+        {
+          "value": "D",
+          "label": "Managing the device queues for I/O requests.",
+          "text": "Managing the device queues for I/O requests."
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The long-term scheduler (job scheduler) selects which processes should be brought into the ready queue, thereby controlling the degree of multiprogramming."
+    },
+    {
+      "id": "upload-1775754077255-10",
+      "number": "11",
+      "text": "What is the primary function of a 'Medium-term scheduler'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To handle the context switch between two running processes.",
+          "text": "To handle the context switch between two running processes."
+        },
+        {
+          "value": "B",
+          "label": "To select the initial job from the disk to load into memory.",
+          "text": "To select the initial job from the disk to load into memory."
+        },
+        {
+          "value": "C",
+          "label": "To swap processes in and out of memory to reduce the degree of multiprogramming.",
+          "text": "To swap processes in and out of memory to reduce the degree of multiprogramming."
+        },
+        {
+          "value": "D",
+          "label": "To manage the communication between the client and the server.",
+          "text": "To manage the communication between the client and the server."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The medium-term scheduler can remove a process from memory (swapping) to decrease the degree of multiprogramming and later bring it back to continue execution."
+    },
+    {
+      "id": "upload-1775754077255-11",
+      "number": "12",
+      "text": "On mobile systems like iOS, how does multitasking typically differ from traditional desktop multitasking?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It allows an unlimited number of foreground processes.",
+          "text": "It allows an unlimited number of foreground processes."
+        },
+        {
+          "value": "B",
+          "label": "It typically allows only one foreground process while others are suspended or restricted in the background.",
+          "text": "It typically allows only one foreground process while others are suspended or restricted in the background."
+        },
+        {
+          "value": "C",
+          "label": "Background processes have no limits on CPU or memory usage.",
+          "text": "Background processes have no limits on CPU or memory usage."
+        },
+        {
+          "value": "D",
+          "label": "It does not use a process scheduler at all.",
+          "text": "It does not use a process scheduler at all."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Early versions of iOS and similar mobile systems often restrict the user to a single foreground process, while background processes are either suspended or given very specific, limited capabilities (like audio playback)."
+    },
+    {
+      "id": "upload-1775754077255-12",
+      "number": "13",
+      "text": "When a parent process creates a child process in UNIX using the `fork()` system call, what is the initial state of the child's address space?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It is empty until an `exec()` call is made.",
+          "text": "It is empty until an `exec()` call is made."
+        },
+        {
+          "value": "B",
+          "label": "It is a duplicate of the parent's address space.",
+          "text": "It is a duplicate of the parent's address space."
+        },
+        {
+          "value": "C",
+          "label": "It is assigned a random segment of the heap.",
+          "text": "It is assigned a random segment of the heap."
+        },
+        {
+          "value": "D",
+          "label": "It shares the exact same physical memory pages as the parent without duplication.",
+          "text": "It shares the exact same physical memory pages as the parent without duplication."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In UNIX, the `fork()` system call creates a new process that is a duplicate of the parent's address space."
+    },
+    {
+      "id": "upload-1775754077255-13",
+      "number": "14",
+      "text": "A process that has finished execution but whose parent has not yet called `wait()` is known as a(n):",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Orphan process",
+          "text": "Orphan process"
+        },
+        {
+          "value": "B",
+          "label": "Zombie process",
+          "text": "Zombie process"
+        },
+        {
+          "value": "C",
+          "label": "Daemon process",
+          "text": "Daemon process"
+        },
+        {
+          "value": "D",
+          "label": "Cascading process",
+          "text": "Cascading process"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A process becomes a 'zombie' if it has terminated but its parent hasn't called `wait()` to collect its status."
+    },
+    {
+      "id": "upload-1775754077255-14",
+      "number": "15",
+      "text": "If a parent process terminates before its children, and the operating system does not allow children to continue, what occurs?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The children become zombies.",
+          "text": "The children become zombies."
+        },
+        {
+          "value": "B",
+          "label": "The children are adopted by the `init` process.",
+          "text": "The children are adopted by the `init` process."
+        },
+        {
+          "value": "C",
+          "label": "Cascading termination occurs.",
+          "text": "Cascading termination occurs."
+        },
+        {
+          "value": "D",
+          "label": "The children are granted root privileges.",
+          "text": "The children are granted root privileges."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Cascading termination is when the operating system initiates the termination of all children, grandchildren, etc., because the parent process has terminated."
+    },
+    {
+      "id": "upload-1775754077255-15",
+      "number": "16",
+      "text": "Google Chrome uses a multiprocess architecture. Select the three types of processes it employs:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Browser process",
+          "text": "Browser process"
+        },
+        {
+          "value": "B",
+          "label": "Renderer process",
+          "text": "Renderer process"
+        },
+        {
+          "value": "C",
+          "label": "Plug-in process",
+          "text": "Plug-in process"
+        },
+        {
+          "value": "D",
+          "label": "Execution process",
+          "text": "Execution process"
+        },
+        {
+          "value": "E",
+          "label": "Kernel process",
+          "text": "Kernel process"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "ABC",
+      "explanation": "Google Chrome utilizes Browser processes (UI/Disk/Network), Renderer processes (Web pages/HTML/JS), and Plug-in processes."
+    },
+    {
+      "id": "upload-1775754077255-16",
+      "number": "17",
+      "text": "In the Producer-Consumer problem, what is the key difference between an 'unbounded-buffer' and a 'bounded-buffer'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Unbounded-buffer uses message passing, while bounded-buffer uses shared memory.",
+          "text": "Unbounded-buffer uses message passing, while bounded-buffer uses shared memory."
+        },
+        {
+          "value": "B",
+          "label": "Unbounded-buffer has no practical limit on the size of the buffer, whereas bounded-buffer has a fixed size.",
+          "text": "Unbounded-buffer has no practical limit on the size of the buffer, whereas bounded-buffer has a fixed size."
+        },
+        {
+          "value": "C",
+          "label": "Unbounded-buffer is only for CPU-bound processes.",
+          "text": "Unbounded-buffer is only for CPU-bound processes."
+        },
+        {
+          "value": "D",
+          "label": "Bounded-buffer allows the consumer to produce items.",
+          "text": "Bounded-buffer allows the consumer to produce items."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Unbounded-buffer places no practical limit on size; bounded-buffer assumes a fixed buffer size."
+    },
+    {
+      "id": "upload-1775754077255-17",
+      "number": "18",
+      "text": "What are the two primary models of Interprocess Communication (IPC)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Direct and Indirect",
+          "text": "Direct and Indirect"
+        },
+        {
+          "value": "B",
+          "label": "Shared Memory and Message Passing",
+          "text": "Shared Memory and Message Passing"
+        },
+        {
+          "value": "C",
+          "label": "Sockets and RPCs",
+          "text": "Sockets and RPCs"
+        },
+        {
+          "value": "D",
+          "label": "Blocking and Non-blocking",
+          "text": "Blocking and Non-blocking"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The two models of IPC described are Shared Memory and Message Passing."
+    },
+    {
+      "id": "upload-1775754077255-18",
+      "number": "19",
+      "text": "In a message-passing system, if communication is 'Indirect', where are messages sent to?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Directly to the receiver's process ID.",
+          "text": "Directly to the receiver's process ID."
+        },
+        {
+          "value": "B",
+          "label": "To a shared variable in the data section.",
+          "text": "To a shared variable in the data section."
+        },
+        {
+          "value": "C",
+          "label": "To mailboxes or ports.",
+          "text": "To mailboxes or ports."
+        },
+        {
+          "value": "D",
+          "label": "To the short-term scheduler.",
+          "text": "To the short-term scheduler."
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In indirect communication, messages are directed to and received from mailboxes, also referred to as ports."
+    },
+    {
+      "id": "upload-1775754077255-19",
+      "number": "20",
+      "text": "If both the `send()` and `receive()` operations are 'Blocking', it results in which of the following scenarios?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A race condition",
+          "text": "A race condition"
+        },
+        {
+          "value": "B",
+          "label": "A rendezvous",
+          "text": "A rendezvous"
+        },
+        {
+          "value": "C",
+          "label": "An orphan process",
+          "text": "An orphan process"
+        },
+        {
+          "value": "D",
+          "label": "Automatic buffering",
+          "text": "Automatic buffering"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "When both send and receive are blocking, it is considered a rendezvous between the sender and the receiver."
+    },
+    {
+      "id": "upload-1775754077255-20",
+      "number": "21",
+      "text": "What does a 'Zero capacity' buffer in a message-passing system imply for the sender?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The sender never waits.",
+          "text": "The sender never waits."
+        },
+        {
+          "value": "B",
+          "label": "The sender must wait for the receiver (rendezvous).",
+          "text": "The sender must wait for the receiver (rendezvous)."
+        },
+        {
+          "value": "C",
+          "label": "The link has an infinite length.",
+          "text": "The link has an infinite length."
+        },
+        {
+          "value": "D",
+          "label": "The sender can queue up to 'n' messages.",
+          "text": "The sender can queue up to 'n' messages."
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Zero capacity means no messages are queued on a link; thus, the sender must wait for the receiver to receive the message."
+    },
+    {
+      "id": "upload-1775754077255-21",
+      "number": "22",
+      "text": "Which of the following defines a 'Socket' as used in client-server communication?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A C-structure in the Linux kernel.",
+          "text": "A C-structure in the Linux kernel."
+        },
+        {
+          "value": "B",
+          "label": "An endpoint for communication, defined by an IP address concatenated with a port number.",
+          "text": "An endpoint for communication, defined by an IP address concatenated with a port number."
+        },
+        {
+          "value": "C",
+          "label": "A proxy for a remote procedure.",
+          "text": "A proxy for a remote procedure."
+        },
+        {
+          "value": "D",
+          "label": "A unidirectional pipe between a parent and child.",
+          "text": "A unidirectional pipe between a parent and child."
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A socket is an endpoint for communication, specifically the concatenation of an IP address and a port number."
+    },
+    {
+      "id": "upload-1775754077255-22",
+      "number": "23",
+      "text": "In Remote Procedure Calls (RPC), what is the role of a 'Stub'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To allocate shared memory segments.",
+          "text": "To allocate shared memory segments."
+        },
+        {
+          "value": "B",
+          "label": "To act as a client-side proxy that locates the server and marshalls parameters.",
+          "text": "To act as a client-side proxy that locates the server and marshalls parameters."
+        },
+        {
+          "value": "C",
+          "label": "To act as the main execution loop of the operating system.",
+          "text": "To act as the main execution loop of the operating system."
+        },
+        {
+          "value": "D",
+          "label": "To prevent cascading termination.",
+          "text": "To prevent cascading termination."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Stubs are client-side proxies for the actual procedure on the server. The client-side stub locates the server and marshalls the parameters."
+    },
+    {
+      "id": "upload-1775754077255-23",
+      "number": "24",
+      "text": "Which of the following is true regarding 'Ordinary Pipes'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "They are bidirectional and allow full-duplex communication.",
+          "text": "They are bidirectional and allow full-duplex communication."
+        },
+        {
+          "value": "B",
+          "label": "They can be accessed by any process on the network.",
+          "text": "They can be accessed by any process on the network."
+        },
+        {
+          "value": "C",
+          "label": "They are typically unidirectional and require a parent-child relationship.",
+          "text": "They are typically unidirectional and require a parent-child relationship."
+        },
+        {
+          "value": "D",
+          "label": "They do not require the process to be in the 'Running' state.",
+          "text": "They do not require the process to be in the 'Running' state."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Ordinary pipes are unidirectional and require a relationship (like parent-child) between the communicating processes."
+    },
+    {
+      "id": "upload-1775754077255-24",
+      "number": "25",
+      "text": "How do 'Named Pipes' differ from 'Ordinary Pipes'? Select all that apply:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Named Pipes are bidirectional.",
+          "text": "Named Pipes are bidirectional."
+        },
+        {
+          "value": "B",
+          "label": "No parent-child relationship is necessary for Named Pipes.",
+          "text": "No parent-child relationship is necessary for Named Pipes."
+        },
+        {
+          "value": "C",
+          "label": "Named Pipes are only available on UNIX, not Windows.",
+          "text": "Named Pipes are only available on UNIX, not Windows."
+        },
+        {
+          "value": "D",
+          "label": "Several processes can use a Named Pipe for communication.",
+          "text": "Several processes can use a Named Pipe for communication."
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "ABD",
+      "explanation": "Named Pipes are bidirectional, do not require a parent-child relationship, and can be used by several processes. They are available on both UNIX and Windows."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}

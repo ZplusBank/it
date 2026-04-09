@@ -1,0 +1,911 @@
+{
+  "id": "upload-1775754115374-rm5iw",
+  "label": "ch4.ppt",
+  "params": {
+    "file": "ch4.ppt"
+  },
+  "title": "Chapter 4: Threads",
+  "questions": [
+    {
+      "id": "upload-1775754115374-0",
+      "number": "1",
+      "text": "What is the fundamental unit of CPU utilization that forms the basis of multithreaded computer systems?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Process",
+          "text": "Process"
+        },
+        {
+          "value": "B",
+          "label": "Program Counter",
+          "text": "Program Counter"
+        },
+        {
+          "value": "C",
+          "label": "Thread",
+          "text": "Thread"
+        },
+        {
+          "value": "D",
+          "label": "Kernel Block",
+          "text": "Kernel Block"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "According to the slide content, a thread is the fundamental unit of CPU utilization and forms the basis of multithreaded computer systems."
+    },
+    {
+      "id": "upload-1775754115374-1",
+      "number": "2",
+      "text": "In a modern multithreaded application, which of the following tasks within the application can be implemented by separate threads? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Updating a user display",
+          "text": "Updating a user display"
+        },
+        {
+          "value": "B",
+          "label": "Fetching remote data",
+          "text": "Fetching remote data"
+        },
+        {
+          "value": "C",
+          "label": "Performing spell checking",
+          "text": "Performing spell checking"
+        },
+        {
+          "value": "D",
+          "label": "Answering network requests",
+          "text": "Answering network requests"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A, B, C, D",
+      "explanation": "Modern applications use threads to handle multiple concurrent tasks such as UI updates, data fetching, spell checking, and processing network requests."
+    },
+    {
+      "id": "upload-1775754115374-2",
+      "number": "3",
+      "text": "Compared to process creation, thread creation is considered which of the following?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Heavy-weight",
+          "text": "Heavy-weight"
+        },
+        {
+          "value": "B",
+          "label": "Light-weight",
+          "text": "Light-weight"
+        },
+        {
+          "value": "C",
+          "label": "Equally resource-intensive",
+          "text": "Equally resource-intensive"
+        },
+        {
+          "value": "D",
+          "label": "More complex for kernels to manage",
+          "text": "More complex for kernels to manage"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The material notes that process creation is heavy-weight while thread creation is light-weight, leading to increased efficiency."
+    },
+    {
+      "id": "upload-1775754115374-3",
+      "number": "4",
+      "text": "Which of the following describes the multithreaded server architecture when a request arrives?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The server spawns a new process to handle the request.",
+          "text": "The server spawns a new process to handle the request."
+        },
+        {
+          "value": "B",
+          "label": "The server blocks all incoming requests until the current one is finished.",
+          "text": "The server blocks all incoming requests until the current one is finished."
+        },
+        {
+          "value": "C",
+          "label": "The server creates a new thread to service the request and resumes listening for more requests.",
+          "text": "The server creates a new thread to service the request and resumes listening for more requests."
+        },
+        {
+          "value": "D",
+          "label": "The kernel shuts down the listening thread to prevent data races.",
+          "text": "The kernel shuts down the listening thread to prevent data races."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Standard multithreaded server architecture involves creating a thread to service a specific request so the server can continue listening for additional incoming requests."
+    },
+    {
+      "id": "upload-1775754115374-4",
+      "number": "5",
+      "text": "What are the primary benefits of multithreaded programming? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Responsiveness: Allowing continued execution if part of a process is blocked.",
+          "text": "Responsiveness: Allowing continued execution if part of a process is blocked."
+        },
+        {
+          "value": "B",
+          "label": "Resource Sharing: Threads share the memory and resources of the process naturally.",
+          "text": "Resource Sharing: Threads share the memory and resources of the process naturally."
+        },
+        {
+          "value": "C",
+          "label": "Economy: Lower overhead in creation and context switching compared to processes.",
+          "text": "Economy: Lower overhead in creation and context switching compared to processes."
+        },
+        {
+          "value": "D",
+          "label": "Scalability: Ability to utilize multiprocessor architectures.",
+          "text": "Scalability: Ability to utilize multiprocessor architectures."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "A, B, C, D",
+      "explanation": "All these benefits are listed in the content as advantages of multithreading over traditional single-threaded process models."
+    },
+    {
+      "id": "upload-1775754115374-5",
+      "number": "6",
+      "text": "What are the specific challenges associated with multicore programming? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Dividing activities",
+          "text": "Dividing activities"
+        },
+        {
+          "value": "B",
+          "label": "Data splitting",
+          "text": "Data splitting"
+        },
+        {
+          "value": "C",
+          "label": "Data dependency",
+          "text": "Data dependency"
+        },
+        {
+          "value": "D",
+          "label": "Testing and debugging",
+          "text": "Testing and debugging"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "A, B, C, D",
+      "explanation": "The transition to multicore systems places pressure on programmers to handle activity division, balance, data splitting, dependencies, and complex debugging."
+    },
+    {
+      "id": "upload-1775754115374-6",
+      "number": "7",
+      "text": "Which term describes a system that supports more than one task making progress, even on a single processor core?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Parallelism",
+          "text": "Parallelism"
+        },
+        {
+          "value": "B",
+          "label": "Concurrency",
+          "text": "Concurrency"
+        },
+        {
+          "value": "C",
+          "label": "Pipelining",
+          "text": "Pipelining"
+        },
+        {
+          "value": "D",
+          "label": "Data parallelism",
+          "text": "Data parallelism"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Concurrency supports more than one task making progress (scheduling between them), whereas parallelism implies performing more than one task simultaneously."
+    },
+    {
+      "id": "upload-1775754115374-7",
+      "number": "8",
+      "text": "Which type of parallelism distributes subsets of the same data across multiple cores, performing the same operation on each?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Task Parallelism",
+          "text": "Task Parallelism"
+        },
+        {
+          "value": "B",
+          "label": "Instruction Parallelism",
+          "text": "Instruction Parallelism"
+        },
+        {
+          "value": "C",
+          "label": "Data Parallelism",
+          "text": "Data Parallelism"
+        },
+        {
+          "value": "D",
+          "label": "Context Parallelism",
+          "text": "Context Parallelism"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Data parallelism is defined as distributing subsets of the same data across multiple cores with the same operation applied to each subset."
+    },
+    {
+      "id": "upload-1775754115374-8",
+      "number": "9",
+      "text": "An Oracle SPARC T4 system with 8 cores and 8 hardware threads per core provides a total of how many hardware threads?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "8",
+          "text": "8"
+        },
+        {
+          "value": "B",
+          "label": "16",
+          "text": "16"
+        },
+        {
+          "value": "C",
+          "label": "64",
+          "text": "64"
+        },
+        {
+          "value": "D",
+          "label": "128",
+          "text": "128"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "8 cores multiplied by 8 hardware threads per core equals 64 hardware threads."
+    },
+    {
+      "id": "upload-1775754115374-9",
+      "number": "10",
+      "text": "According to Amdahl's Law, if an application is 75% parallel and 25% serial, what is the speedup when moving from 1 core to 2 cores?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1.25 times",
+          "text": "1.25 times"
+        },
+        {
+          "value": "B",
+          "label": "1.5 times",
+          "text": "1.5 times"
+        },
+        {
+          "value": "C",
+          "label": "1.6 times",
+          "text": "1.6 times"
+        },
+        {
+          "value": "D",
+          "label": "2.0 times",
+          "text": "2.0 times"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Using the formula \\( Speedup \\le \\frac{1}{S + \\frac{1-S}{N}} \\), where S is 0.25 and N is 2: \\( \\frac{1}{0.25 + 0.375} = \\frac{1}{0.625} = 1.6 \\)."
+    },
+    {
+      "id": "upload-1775754115374-10",
+      "number": "11",
+      "text": "What does Amdahl's Law state about the serial portion of an application?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The serial portion becomes irrelevant as N approaches infinity.",
+          "text": "The serial portion becomes irrelevant as N approaches infinity."
+        },
+        {
+          "value": "B",
+          "label": "The serial portion has a disproportionate effect on performance gains from adding more cores.",
+          "text": "The serial portion has a disproportionate effect on performance gains from adding more cores."
+        },
+        {
+          "value": "C",
+          "label": "Adding more cores will always reduce the serial portion of an application.",
+          "text": "Adding more cores will always reduce the serial portion of an application."
+        },
+        {
+          "value": "D",
+          "label": "The serial portion speedup is equal to \\( 1/N \\).",
+          "text": "The serial portion speedup is equal to \\( 1/N \\)."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Amdahl's Law emphasizes that the serial portion of an application limits the potential speedup, regardless of the number of cores added."
+    },
+    {
+      "id": "upload-1775754115374-11",
+      "number": "12",
+      "text": "Which of the following are examples of user-level thread libraries? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "POSIX Pthreads",
+          "text": "POSIX Pthreads"
+        },
+        {
+          "value": "B",
+          "label": "Windows threads",
+          "text": "Windows threads"
+        },
+        {
+          "value": "C",
+          "label": "Java threads",
+          "text": "Java threads"
+        },
+        {
+          "value": "D",
+          "label": "Solaris Kernel threads",
+          "text": "Solaris Kernel threads"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "A, B, C",
+      "explanation": "POSIX Pthreads, Windows threads, and Java threads are the three primary user-level thread libraries mentioned. Kernel threads are supported by the OS itself."
+    },
+    {
+      "id": "upload-1775754115374-12",
+      "number": "13",
+      "text": "In the Many-to-One multithreading model, what happens if a single thread performs a blocking system call?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Only that specific thread blocks.",
+          "text": "Only that specific thread blocks."
+        },
+        {
+          "value": "B",
+          "label": "The entire process blocks.",
+          "text": "The entire process blocks."
+        },
+        {
+          "value": "C",
+          "label": "The kernel creates a new thread to bypass the block.",
+          "text": "The kernel creates a new thread to bypass the block."
+        },
+        {
+          "value": "D",
+          "label": "The thread is immediately terminated.",
+          "text": "The thread is immediately terminated."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In the Many-to-One model, many user threads map to a single kernel thread. If one thread blocks, the entire process blocks because only one thread can be in the kernel at a time."
+    },
+    {
+      "id": "upload-1775754115374-13",
+      "number": "14",
+      "text": "Which multithreading model is used by Windows and Linux?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Many-to-One",
+          "text": "Many-to-One"
+        },
+        {
+          "value": "B",
+          "label": "One-to-One",
+          "text": "One-to-One"
+        },
+        {
+          "value": "C",
+          "label": "Many-to-Many",
+          "text": "Many-to-Many"
+        },
+        {
+          "value": "D",
+          "label": "Two-level",
+          "text": "Two-level"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The One-to-One model is the standard for Windows and Linux, providing higher concurrency than the Many-to-One model."
+    },
+    {
+      "id": "upload-1775754115374-14",
+      "number": "15",
+      "text": "The Many-to-Many multithreading model is characterized by which of the following?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Mapping many user-level threads to a single kernel thread.",
+          "text": "Mapping many user-level threads to a single kernel thread."
+        },
+        {
+          "value": "B",
+          "label": "Binding every user thread to a permanent kernel thread.",
+          "text": "Binding every user thread to a permanent kernel thread."
+        },
+        {
+          "value": "C",
+          "label": "Mapping many user-level threads to a smaller or equal number of kernel threads.",
+          "text": "Mapping many user-level threads to a smaller or equal number of kernel threads."
+        },
+        {
+          "value": "D",
+          "label": "Mapping exactly one user thread to one kernel thread.",
+          "text": "Mapping exactly one user thread to one kernel thread."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The Many-to-Many model allows the OS to create a sufficient number of kernel threads for a large number of user threads."
+    },
+    {
+      "id": "upload-1775754115374-15",
+      "number": "16",
+      "text": "Which operating system historically utilized the Two-level multithreading model?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Windows 7",
+          "text": "Windows 7"
+        },
+        {
+          "value": "B",
+          "label": "Linux",
+          "text": "Linux"
+        },
+        {
+          "value": "C",
+          "label": "Solaris 8 and earlier",
+          "text": "Solaris 8 and earlier"
+        },
+        {
+          "value": "D",
+          "label": "Mac OS X",
+          "text": "Mac OS X"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The Two-level model, which is similar to Many-to-Many but allows binding a user thread to a kernel thread, was used by HP-UX, Tru64 UNIX, and Solaris 8 and earlier."
+    },
+    {
+      "id": "upload-1775754115374-16",
+      "number": "17",
+      "text": "What is Pthreads in the context of multithreading?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A specific implementation of a thread library for Linux.",
+          "text": "A specific implementation of a thread library for Linux."
+        },
+        {
+          "value": "B",
+          "label": "An IEEE 1003.1c POSIX standard API for thread creation and synchronization.",
+          "text": "An IEEE 1003.1c POSIX standard API for thread creation and synchronization."
+        },
+        {
+          "value": "C",
+          "label": "A hardware-based threading mechanism for UNIX.",
+          "text": "A hardware-based threading mechanism for UNIX."
+        },
+        {
+          "value": "D",
+          "label": "A user-level library exclusive to Mac OS X.",
+          "text": "A user-level library exclusive to Mac OS X."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Pthreads refers to the POSIX standard (IEEE 1003.1c) specification for thread behavior, which is widely implemented in UNIX systems."
+    },
+    {
+      "id": "upload-1775754115374-17",
+      "number": "18",
+      "text": "How can Java threads be created? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By extending the `Thread` class",
+          "text": "By extending the `Thread` class"
+        },
+        {
+          "value": "B",
+          "label": "By implementing the `Runnable` interface",
+          "text": "By implementing the `Runnable` interface"
+        },
+        {
+          "value": "C",
+          "label": "By calling the `clone()` system call directly",
+          "text": "By calling the `clone()` system call directly"
+        },
+        {
+          "value": "D",
+          "label": "By using the `pthread_create` function",
+          "text": "By using the `pthread_create` function"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "A, B",
+      "explanation": "Java threads are created by either extending the Thread class or implementing the Runnable interface; `clone()` is specific to Linux and `pthread_create` is POSIX."
+    },
+    {
+      "id": "upload-1775754115374-18",
+      "number": "19",
+      "text": "What are the primary methods explored for implicit threading? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Thread Pools",
+          "text": "Thread Pools"
+        },
+        {
+          "value": "B",
+          "label": "OpenMP",
+          "text": "OpenMP"
+        },
+        {
+          "value": "C",
+          "label": "Grand Central Dispatch",
+          "text": "Grand Central Dispatch"
+        },
+        {
+          "value": "D",
+          "label": "Fork/Join via Pthreads",
+          "text": "Fork/Join via Pthreads"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "A, B, C",
+      "explanation": "The slides explore Thread Pools, OpenMP, and Grand Central Dispatch (GCD) as strategies for implicit threading."
+    },
+    {
+      "id": "upload-1775754115374-19",
+      "number": "20",
+      "text": "What is an advantage of using a Thread Pool?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It removes the need for synchronization in shared memory.",
+          "text": "It removes the need for synchronization in shared memory."
+        },
+        {
+          "value": "B",
+          "label": "Servicing a request with an existing thread is usually faster than creating a new one.",
+          "text": "Servicing a request with an existing thread is usually faster than creating a new one."
+        },
+        {
+          "value": "C",
+          "label": "It allows an infinite number of threads to be created.",
+          "text": "It allows an infinite number of threads to be created."
+        },
+        {
+          "value": "D",
+          "label": "It automatically converts data parallelism into task parallelism.",
+          "text": "It automatically converts data parallelism into task parallelism."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "One of the listed advantages of Thread Pools is that they provide faster service by reusing existing threads and allow the number of threads to be bounded."
+    },
+    {
+      "id": "upload-1775754115374-20",
+      "number": "21",
+      "text": "Which compiler directive is used in OpenMP to identify a block of code that can run in parallel?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`#pragma omp block`",
+          "text": "`#pragma omp block`"
+        },
+        {
+          "value": "B",
+          "label": "`#pragma omp parallel`",
+          "text": "`#pragma omp parallel`"
+        },
+        {
+          "value": "C",
+          "label": "`^{ parallel_section }`",
+          "text": "`^{ parallel_section }`"
+        },
+        {
+          "value": "D",
+          "label": "`dispatch_queue_create`",
+          "text": "`dispatch_queue_create`"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "OpenMP uses `#pragma omp parallel` to identify parallel regions in C, C++, or FORTRAN code."
+    },
+    {
+      "id": "upload-1775754115374-21",
+      "number": "22",
+      "text": "In Apple's Grand Central Dispatch (GCD), what is the behavior of a 'concurrent' dispatch queue?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Blocks are removed in LIFO order one at a time.",
+          "text": "Blocks are removed in LIFO order one at a time."
+        },
+        {
+          "value": "B",
+          "label": "Blocks are removed in FIFO order, but several may be removed at once.",
+          "text": "Blocks are removed in FIFO order, but several may be removed at once."
+        },
+        {
+          "value": "C",
+          "label": "It is a per-process queue called the 'main queue'.",
+          "text": "It is a per-process queue called the 'main queue'."
+        },
+        {
+          "value": "D",
+          "label": "It ensures that only one block is removed from the queue per second.",
+          "text": "It ensures that only one block is removed from the queue per second."
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "GCD concurrent queues remove blocks in FIFO order but allow multiple blocks to be processed simultaneously depending on available threads."
+    },
+    {
+      "id": "upload-1775754115374-22",
+      "number": "23",
+      "text": "When a process invokes `exec()` after a `fork()` call in a multithreaded environment, what usually happens?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Only the calling thread is replaced.",
+          "text": "Only the calling thread is replaced."
+        },
+        {
+          "value": "B",
+          "label": "The new program replaces the entire process, including all threads.",
+          "text": "The new program replaces the entire process, including all threads."
+        },
+        {
+          "value": "C",
+          "label": "The threads continue to run alongside the new program.",
+          "text": "The threads continue to run alongside the new program."
+        },
+        {
+          "value": "D",
+          "label": "The `exec()` call fails unless the process is single-threaded.",
+          "text": "The `exec()` call fails unless the process is single-threaded."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "As per the slides, `exec()` typically works by replacing the entire running process, including all of its threads, with the specified program."
+    },
+    {
+      "id": "upload-1775754115374-23",
+      "number": "24",
+      "text": "What are the common options for delivering a signal to a multithreaded process? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Deliver the signal to the thread to which it applies.",
+          "text": "Deliver the signal to the thread to which it applies."
+        },
+        {
+          "value": "B",
+          "label": "Deliver the signal to every thread in the process.",
+          "text": "Deliver the signal to every thread in the process."
+        },
+        {
+          "value": "C",
+          "label": "Deliver the signal to certain threads in the process.",
+          "text": "Deliver the signal to certain threads in the process."
+        },
+        {
+          "value": "D",
+          "label": "Assign a specific thread to receive all signals.",
+          "text": "Assign a specific thread to receive all signals."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A, B, C, D",
+      "explanation": "All four are valid strategies for signal delivery in multithreaded systems depending on the signal type and OS implementation."
+    },
+    {
+      "id": "upload-1775754115374-24",
+      "number": "25",
+      "text": "What is the difference between asynchronous and deferred thread cancellation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Asynchronous terminates immediately; Deferred checks periodically at cancellation points.",
+          "text": "Asynchronous terminates immediately; Deferred checks periodically at cancellation points."
+        },
+        {
+          "value": "B",
+          "label": "Asynchronous is for kernel threads; Deferred is for user threads.",
+          "text": "Asynchronous is for kernel threads; Deferred is for user threads."
+        },
+        {
+          "value": "C",
+          "label": "Deferred terminates immediately; Asynchronous waits for the thread to exit.",
+          "text": "Deferred terminates immediately; Asynchronous waits for the thread to exit."
+        },
+        {
+          "value": "D",
+          "label": "They are identical in Pthreads but different in Windows threads.",
+          "text": "They are identical in Pthreads but different in Windows threads."
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Asynchronous cancellation terminates the target thread immediately, while deferred cancellation allows the thread to reach a 'cancellation point' before terminating."
+    },
+    {
+      "id": "upload-1775754115374-25",
+      "number": "26",
+      "text": "Thread-Local Storage (TLS) differs from local variables in that:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "TLS data is lost after a function returns.",
+          "text": "TLS data is lost after a function returns."
+        },
+        {
+          "value": "B",
+          "label": "TLS is shared among all threads in a pool.",
+          "text": "TLS is shared among all threads in a pool."
+        },
+        {
+          "value": "C",
+          "label": "TLS is visible across function invocations, similar to static data.",
+          "text": "TLS is visible across function invocations, similar to static data."
+        },
+        {
+          "value": "D",
+          "label": "Local variables are unique to each thread while TLS is not.",
+          "text": "Local variables are unique to each thread while TLS is not."
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "TLS allows each thread to have its own unique copy of data that persists across multiple function calls, unlike local variables which only exist during a single invocation."
+    },
+    {
+      "id": "upload-1775754115374-26",
+      "number": "27",
+      "text": "In the context of scheduler activations, what is the role of the 'upcall' mechanism?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It allows a user thread to override a kernel thread priority.",
+          "text": "It allows a user thread to override a kernel thread priority."
+        },
+        {
+          "value": "B",
+          "label": "It is a communication from the kernel to the upcall handler in the thread library.",
+          "text": "It is a communication from the kernel to the upcall handler in the thread library."
+        },
+        {
+          "value": "C",
+          "label": "It converts a One-to-One model into a Many-to-Many model.",
+          "text": "It converts a One-to-One model into a Many-to-Many model."
+        },
+        {
+          "value": "D",
+          "label": "It triggers an immediate context switch to a light-weight process.",
+          "text": "It triggers an immediate context switch to a light-weight process."
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Scheduler activations use upcalls as a communication mechanism from the kernel to the thread library to manage the number of kernel threads."
+    },
+    {
+      "id": "upload-1775754115374-27",
+      "number": "28",
+      "text": "What are the primary data structures of a Windows thread? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "ETHREAD (Executive Thread Block)",
+          "text": "ETHREAD (Executive Thread Block)"
+        },
+        {
+          "value": "B",
+          "label": "KTHREAD (Kernel Thread Block)",
+          "text": "KTHREAD (Kernel Thread Block)"
+        },
+        {
+          "value": "C",
+          "label": "TEB (Thread Environment Block)",
+          "text": "TEB (Thread Environment Block)"
+        },
+        {
+          "value": "D",
+          "label": "LWP (Light-Weight Process)",
+          "text": "LWP (Light-Weight Process)"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "A, B, C",
+      "explanation": "Windows threads use ETHREAD, KTHREAD, and TEB. LWP is a concept used in Many-to-Many or Two-level models, not the standard Windows 1:1 implementation."
+    },
+    {
+      "id": "upload-1775754115374-28",
+      "number": "29",
+      "text": "How does Linux implement thread-like behavior via the `clone()` system call?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It creates a complete copy of the parent process including the address space.",
+          "text": "It creates a complete copy of the parent process including the address space."
+        },
+        {
+          "value": "B",
+          "label": "It allows a child task to share the address space of the parent task.",
+          "text": "It allows a child task to share the address space of the parent task."
+        },
+        {
+          "value": "C",
+          "label": "It maps user threads directly to the hardware threads of the SPARC processor.",
+          "text": "It maps user threads directly to the hardware threads of the SPARC processor."
+        },
+        {
+          "value": "D",
+          "label": "It prevents any sharing of data structures between parent and child.",
+          "text": "It prevents any sharing of data structures between parent and child."
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Linux uses `clone()` to create tasks (threads) which can share or not share data structures (like address space) with the parent based on flag settings."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 29
+}

@@ -1,0 +1,802 @@
+{
+  "id": "upload-1775754198787-py2if",
+  "label": "ch2.ppt",
+  "params": {
+    "file": "ch2.ppt"
+  },
+  "title": "Operating-System Structures",
+  "questions": [
+    {
+      "id": "upload-1775754198787-0",
+      "number": "1",
+      "text": "Which of the following is an operating-system service specifically intended to help the user rather than ensuring efficient system operation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Resource allocation",
+          "text": "Resource allocation"
+        },
+        {
+          "value": "B",
+          "label": "I/O operations",
+          "text": "I/O operations"
+        },
+        {
+          "value": "C",
+          "label": "Accounting",
+          "text": "Accounting"
+        },
+        {
+          "value": "D",
+          "label": "Protection and security",
+          "text": "Protection and security"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "I/O operations, along with user interface and program execution, are services that provide functions helpful to the user. Resource allocation, accounting, and protection are focused on the efficient operation of the system itself."
+    },
+    {
+      "id": "upload-1775754198787-1",
+      "number": "2",
+      "text": "Which operating-system services fall under the category of ensuring efficient system operation through resource sharing? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Accounting",
+          "text": "Accounting"
+        },
+        {
+          "value": "B",
+          "label": "Error detection",
+          "text": "Error detection"
+        },
+        {
+          "value": "C",
+          "label": "Resource allocation",
+          "text": "Resource allocation"
+        },
+        {
+          "value": "D",
+          "label": "Protection and security",
+          "text": "Protection and security"
+        },
+        {
+          "value": "E",
+          "label": "Communication",
+          "text": "Communication"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "ACD",
+      "explanation": "Accounting, Resource Allocation, and Protection/Security are the three services identified as ensuring efficient operation of the system itself. Error detection and Communication are services for the user's convenience."
+    },
+    {
+      "id": "upload-1775754198787-2",
+      "number": "3",
+      "text": "In the context of the Command-Line Interface (CLI), what is the primary function of the command interpreter?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To manage the hardware directly through the kernel",
+          "text": "To manage the hardware directly through the kernel"
+        },
+        {
+          "value": "B",
+          "label": "To provide a graphical representation of file folders",
+          "text": "To provide a graphical representation of file folders"
+        },
+        {
+          "value": "C",
+          "label": "To fetch a command from the user and execute it",
+          "text": "To fetch a command from the user and execute it"
+        },
+        {
+          "value": "D",
+          "label": "To compile high-level source code into machine-executable formats",
+          "text": "To compile high-level source code into machine-executable formats"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The CLI, sometimes called the shell, primarily functions by fetching a command from the user and executing it. It can either contain built-in code for commands or simply point to system programs."
+    },
+    {
+      "id": "upload-1775754198787-3",
+      "number": "4",
+      "text": "Which of the following describes the 'desktop metaphor' interface used in Graphical User Interfaces (GUIs)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A series of text commands entered at a prompt",
+          "text": "A series of text commands entered at a prompt"
+        },
+        {
+          "value": "B",
+          "label": "A system where programs are submitted in blocks for later execution",
+          "text": "A system where programs are submitted in blocks for later execution"
+        },
+        {
+          "value": "C",
+          "label": "An interface using icons to represent files, programs, and actions, navigated by a mouse",
+          "text": "An interface using icons to represent files, programs, and actions, navigated by a mouse"
+        },
+        {
+          "value": "D",
+          "label": "A voice-activated system for hands-free computing",
+          "text": "A voice-activated system for hands-free computing"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The GUI desktop metaphor represents files and actions as icons on a screen, allowing users to interact via a mouse or touch gestures rather than text commands."
+    },
+    {
+      "id": "upload-1775754198787-4",
+      "number": "5",
+      "text": "Why do programmers usually use an Application Programming Interface (API) rather than making direct system calls?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "System calls are only available in assembly language",
+          "text": "System calls are only available in assembly language"
+        },
+        {
+          "value": "B",
+          "label": "APIs are faster to execute than system calls",
+          "text": "APIs are faster to execute than system calls"
+        },
+        {
+          "value": "C",
+          "label": "APIs provide program portability and are easier to use",
+          "text": "APIs provide program portability and are easier to use"
+        },
+        {
+          "value": "D",
+          "label": "Direct system calls are prohibited by the hardware for security reasons",
+          "text": "Direct system calls are prohibited by the hardware for security reasons"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "APIs allow a program to run on any system that supports that API (portability) and are generally easier to work with than the raw system call interface, which is managed by a run-time support library."
+    },
+    {
+      "id": "upload-1775754198787-5",
+      "number": "6",
+      "text": "Which method of passing parameters to the operating system during a system call does NOT limit the number or length of parameters passed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Passing parameters in registers",
+          "text": "Passing parameters in registers"
+        },
+        {
+          "value": "B",
+          "label": "Storing parameters in a block/table in memory and passing the block's address",
+          "text": "Storing parameters in a block/table in memory and passing the block's address"
+        },
+        {
+          "value": "C",
+          "label": "Pushing parameters onto a stack to be popped by the OS",
+          "text": "Pushing parameters onto a stack to be popped by the OS"
+        },
+        {
+          "value": "D",
+          "label": "Both B and C",
+          "text": "Both B and C"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Passing parameters via registers is limited by the number of available registers. Block/table and stack methods do not have this limitation, making them more flexible for complex system calls."
+    },
+    {
+      "id": "upload-1775754198787-6",
+      "number": "7",
+      "text": "Which of the following is a 'Process Control' system call?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "create file",
+          "text": "create file"
+        },
+        {
+          "value": "B",
+          "label": "read, write, reposition",
+          "text": "read, write, reposition"
+        },
+        {
+          "value": "C",
+          "label": "wait for time",
+          "text": "wait for time"
+        },
+        {
+          "value": "D",
+          "label": "get system data",
+          "text": "get system data"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Wait for time, end, abort, load, execute, and create process are all categorized as Process Control system calls."
+    },
+    {
+      "id": "upload-1775754198787-7",
+      "number": "8",
+      "text": "A program encounters an error and the OS 'dumps' its memory to a file for a developer to analyze. What is this file called?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Crash dump",
+          "text": "Crash dump"
+        },
+        {
+          "value": "B",
+          "label": "Core dump",
+          "text": "Core dump"
+        },
+        {
+          "value": "C",
+          "label": "Log file",
+          "text": "Log file"
+        },
+        {
+          "value": "D",
+          "label": "Profiling trace",
+          "text": "Profiling trace"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An application failure generates a 'core dump' file (memory of the process). An operating system failure generates a 'crash dump' file (kernel memory)."
+    },
+    {
+      "id": "upload-1775754198787-8",
+      "number": "9",
+      "text": "In Unix/Linux, which system call is used to create a new process?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`exec()`",
+          "text": "`exec()`"
+        },
+        {
+          "value": "B",
+          "label": "`fork()`",
+          "text": "`fork()`"
+        },
+        {
+          "value": "C",
+          "label": "`CreateProcess()`",
+          "text": "`CreateProcess()`"
+        },
+        {
+          "value": "D",
+          "label": "`wait()`",
+          "text": "`wait()`"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Unix-like systems, a shell creates a process by executing the `fork()` system call. `exec()` is then typically used to load a program into that process."
+    },
+    {
+      "id": "upload-1775754198787-9",
+      "number": "10",
+      "text": "Which of the following are categories of system programs? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "File manipulation",
+          "text": "File manipulation"
+        },
+        {
+          "value": "B",
+          "label": "Status information",
+          "text": "Status information"
+        },
+        {
+          "value": "C",
+          "label": "Programming language support",
+          "text": "Programming language support"
+        },
+        {
+          "value": "D",
+          "label": "Background services (daemons)",
+          "text": "Background services (daemons)"
+        },
+        {
+          "value": "E",
+          "label": "Microkernel message passing",
+          "text": "Microkernel message passing"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "ABCD",
+      "explanation": "System programs include file manipulation, status information, file modification, programming language support, program loading/execution, communications, and background services. Microkernel message passing is a structural design, not a system program category."
+    },
+    {
+      "id": "upload-1775754198787-10",
+      "number": "11",
+      "text": "What is the primary difference between 'Policy' and 'Mechanism' in OS design?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Mechanism is what will be done; Policy is how to do it.",
+          "text": "Mechanism is what will be done; Policy is how to do it."
+        },
+        {
+          "value": "B",
+          "label": "Policy is what will be done; Mechanism is how to do it.",
+          "text": "Policy is what will be done; Mechanism is how to do it."
+        },
+        {
+          "value": "C",
+          "label": "Policy refers to hardware goals; Mechanism refers to user goals.",
+          "text": "Policy refers to hardware goals; Mechanism refers to user goals."
+        },
+        {
+          "value": "D",
+          "label": "There is no functional difference; they are used interchangeably.",
+          "text": "There is no functional difference; they are used interchangeably."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Mechanisms determine 'how' to do something, while policies decide 'what' will be done. Separating them allows for more flexibility to change policies without changing the underlying mechanisms."
+    },
+    {
+      "id": "upload-1775754198787-11",
+      "number": "12",
+      "text": "Why is the MS-DOS operating system structure considered 'simple'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It used a microkernel design.",
+          "text": "It used a microkernel design."
+        },
+        {
+          "value": "B",
+          "label": "It was written in a high-level language like Java.",
+          "text": "It was written in a high-level language like Java."
+        },
+        {
+          "value": "C",
+          "label": "It was not divided into modules and had poorly separated interfaces.",
+          "text": "It was not divided into modules and had poorly separated interfaces."
+        },
+        {
+          "value": "D",
+          "label": "It strictly separated hardware from user programs using layers.",
+          "text": "It strictly separated hardware from user programs using layers."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "MS-DOS was not divided into modules; its interfaces and levels of functionality were not well separated, allowing user programs to access I/O routines and write directly to the hardware."
+    },
+    {
+      "id": "upload-1775754198787-12",
+      "number": "13",
+      "text": "In a layered OS structure, what defines 'Layer 0' and 'Layer N'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Layer 0 is the User Interface; Layer N is the Hardware.",
+          "text": "Layer 0 is the User Interface; Layer N is the Hardware."
+        },
+        {
+          "value": "B",
+          "label": "Layer 0 is the Hardware; Layer N is the User Interface.",
+          "text": "Layer 0 is the Hardware; Layer N is the User Interface."
+        },
+        {
+          "value": "C",
+          "label": "Layer 0 is the Kernel; Layer N is the Microkernel.",
+          "text": "Layer 0 is the Kernel; Layer N is the Microkernel."
+        },
+        {
+          "value": "D",
+          "label": "Layer 0 is the File System; Layer N is the CPU Scheduler.",
+          "text": "Layer 0 is the File System; Layer N is the CPU Scheduler."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In the layered approach, the bottom layer (layer 0) is the hardware and the highest layer (layer N) is the user interface."
+    },
+    {
+      "id": "upload-1775754198787-13",
+      "number": "14",
+      "text": "What is a major benefit of the microkernel approach to system structure?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Extreme performance due to lack of message passing",
+          "text": "Extreme performance due to lack of message passing"
+        },
+        {
+          "value": "B",
+          "label": "Ease of extending the OS and porting to new architectures",
+          "text": "Ease of extending the OS and porting to new architectures"
+        },
+        {
+          "value": "C",
+          "label": "The kernel contains all file system and device driver logic",
+          "text": "The kernel contains all file system and device driver logic"
+        },
+        {
+          "value": "D",
+          "label": "It is the simplest to implement for small-scale hardware",
+          "text": "It is the simplest to implement for small-scale hardware"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Microkernels are easier to extend and port because most services run in user space. They are also more reliable and secure, though they may suffer from performance overhead due to message passing."
+    },
+    {
+      "id": "upload-1775754198787-14",
+      "number": "15",
+      "text": "How do Loadable Kernel Modules (LKMs) differ from a strictly layered approach?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "LKMs require a complete system reboot to add functionality.",
+          "text": "LKMs require a complete system reboot to add functionality."
+        },
+        {
+          "value": "B",
+          "label": "LKMs are more flexible because any module can call any other module over known interfaces.",
+          "text": "LKMs are more flexible because any module can call any other module over known interfaces."
+        },
+        {
+          "value": "C",
+          "label": "LKMs move all kernel functions into user space.",
+          "text": "LKMs move all kernel functions into user space."
+        },
+        {
+          "value": "D",
+          "label": "LKMs are only used in simple structures like MS-DOS.",
+          "text": "LKMs are only used in simple structures like MS-DOS."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Modules are similar to layers in that they have defined interfaces, but they are more flexible because they do not require a strict hierarchy (any module can talk to any other) and are loadable as needed."
+    },
+    {
+      "id": "upload-1775754198787-15",
+      "number": "16",
+      "text": "Which of the following describes the hybrid structure of Apple's Mac OS X?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Purely monolithic Linux kernel",
+          "text": "Purely monolithic Linux kernel"
+        },
+        {
+          "value": "B",
+          "label": "Layered Aqua UI over a Mach microkernel and BSD Unix parts",
+          "text": "Layered Aqua UI over a Mach microkernel and BSD Unix parts"
+        },
+        {
+          "value": "C",
+          "label": "Strictly simple structure with no modularity",
+          "text": "Strictly simple structure with no modularity"
+        },
+        {
+          "value": "D",
+          "label": "A single-tasking shell-based system",
+          "text": "A single-tasking shell-based system"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Mac OS X is a hybrid system using a layered approach. It features the Aqua UI and Cocoa environment, with a kernel (Darwin) consisting of the Mach microkernel and BSD Unix components."
+    },
+    {
+      "id": "upload-1775754198787-16",
+      "number": "17",
+      "text": "In the Android architecture, what is the role of the Dalvik Virtual Machine (or ART)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To provide power management for the Linux kernel",
+          "text": "To provide power management for the Linux kernel"
+        },
+        {
+          "value": "B",
+          "label": "To execute Java bytecode translated into a specialized executable format",
+          "text": "To execute Java bytecode translated into a specialized executable format"
+        },
+        {
+          "value": "C",
+          "label": "To manage physical I/O devices directly",
+          "text": "To manage physical I/O devices directly"
+        },
+        {
+          "value": "D",
+          "label": "To act as the primary web browser engine (WebKit)",
+          "text": "To act as the primary web browser engine (WebKit)"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Android apps are written in Java and compiled to bytecode, which is then translated to an executable format that runs on the Dalvik VM or Android Runtime (ART)."
+    },
+    {
+      "id": "upload-1775754198787-17",
+      "number": "18",
+      "text": "According to Kernighan’s Law, why should code NOT be written as 'cleverly' as possible?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Clever code is more susceptible to security breaches.",
+          "text": "Clever code is more susceptible to security breaches."
+        },
+        {
+          "value": "B",
+          "label": "Clever code uses more CPU cycles and memory.",
+          "text": "Clever code uses more CPU cycles and memory."
+        },
+        {
+          "value": "C",
+          "label": "Debugging is twice as hard as writing the code, making clever code nearly impossible to debug.",
+          "text": "Debugging is twice as hard as writing the code, making clever code nearly impossible to debug."
+        },
+        {
+          "value": "D",
+          "label": "High-level languages like C do not allow for clever optimizations.",
+          "text": "High-level languages like C do not allow for clever optimizations."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Kernighan’s Law states that because debugging is twice as hard as writing, writing code at the limit of your cleverness means you won't be smart enough to debug it."
+    },
+    {
+      "id": "upload-1775754198787-18",
+      "number": "19",
+      "text": "The DTrace tool uses 'probes' that fire when specific code is executed. Where do these probes originate from?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Consumers",
+          "text": "Consumers"
+        },
+        {
+          "value": "B",
+          "label": "Providers",
+          "text": "Providers"
+        },
+        {
+          "value": "C",
+          "label": "Boot blocks",
+          "text": "Boot blocks"
+        },
+        {
+          "value": "D",
+          "label": "Sysgen programs",
+          "text": "Sysgen programs"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In DTrace, probes fire when code is executed within a 'provider.' The data is then sent to 'consumers' of those probes."
+    },
+    {
+      "id": "upload-1775754198787-19",
+      "number": "20",
+      "text": "What is the purpose of a SYSGEN (System Generation) program?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To generate random test data for debugging",
+          "text": "To generate random test data for debugging"
+        },
+        {
+          "value": "B",
+          "label": "To configure the operating system for a specific hardware site",
+          "text": "To configure the operating system for a specific hardware site"
+        },
+        {
+          "value": "C",
+          "label": "To execute the bootstrap loader from ROM",
+          "text": "To execute the bootstrap loader from ROM"
+        },
+        {
+          "value": "D",
+          "label": "To provide a user interface for system calls",
+          "text": "To provide a user interface for system calls"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "SYSGEN is used to configure the OS for specific hardware, often building a system-specific compiled kernel that is more efficient than a general-purpose one."
+    },
+    {
+      "id": "upload-1775754198787-20",
+      "number": "21",
+      "text": "Which component is responsible for locating the kernel and loading it into memory during system startup?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The command interpreter",
+          "text": "The command interpreter"
+        },
+        {
+          "value": "B",
+          "label": "The DTrace consumer",
+          "text": "The DTrace consumer"
+        },
+        {
+          "value": "C",
+          "label": "The bootstrap loader",
+          "text": "The bootstrap loader"
+        },
+        {
+          "value": "D",
+          "label": "The file system",
+          "text": "The file system"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The bootstrap loader (e.g., GRUB) is a small piece of code stored in ROM or EEPROM that locates the kernel, loads it into memory, and starts its execution."
+    },
+    {
+      "id": "upload-1775754198787-21",
+      "number": "22",
+      "text": "Which of the following are examples of 'Information Maintenance' system calls? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "get time or date",
+          "text": "get time or date"
+        },
+        {
+          "value": "B",
+          "label": "set system data",
+          "text": "set system data"
+        },
+        {
+          "value": "C",
+          "label": "allocate and free memory",
+          "text": "allocate and free memory"
+        },
+        {
+          "value": "D",
+          "label": "get process attributes",
+          "text": "get process attributes"
+        },
+        {
+          "value": "E",
+          "label": "transfer status information",
+          "text": "transfer status information"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "ABD",
+      "explanation": "Information maintenance includes getting/setting time, date, system data, and attributes for processes, files, or devices. Memory allocation is Process Control, and status transfer is Communication."
+    },
+    {
+      "id": "upload-1775754198787-22",
+      "number": "23",
+      "text": "What is the difference between 'Protection' and 'Security' in an OS context?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Protection handles external threats; Security handles internal process interference.",
+          "text": "Protection handles external threats; Security handles internal process interference."
+        },
+        {
+          "value": "B",
+          "label": "Protection ensures controlled access to system resources; Security defends against outsiders.",
+          "text": "Protection ensures controlled access to system resources; Security defends against outsiders."
+        },
+        {
+          "value": "C",
+          "label": "They are identical terms in modern operating systems.",
+          "text": "They are identical terms in modern operating systems."
+        },
+        {
+          "value": "D",
+          "label": "Security is a system goal; Protection is a user goal.",
+          "text": "Security is a system goal; Protection is a user goal."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Protection involves ensuring that all access to system resources is controlled. Security defends the system from outsiders through user authentication and firewalling."
+    },
+    {
+      "id": "upload-1775754198787-23",
+      "number": "24",
+      "text": "How does the 'Shared Memory' communication model differ from 'Message Passing'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Shared memory is safer but slower.",
+          "text": "Shared memory is safer but slower."
+        },
+        {
+          "value": "B",
+          "label": "Message passing uses packets moved by the OS; shared memory uses a shared region of memory accessed directly by processes.",
+          "text": "Message passing uses packets moved by the OS; shared memory uses a shared region of memory accessed directly by processes."
+        },
+        {
+          "value": "C",
+          "label": "Shared memory requires the kernel to act as an intermediary for every data transfer.",
+          "text": "Shared memory requires the kernel to act as an intermediary for every data transfer."
+        },
+        {
+          "value": "D",
+          "label": "Message passing is only used for communication between different computers.",
+          "text": "Message passing is only used for communication between different computers."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In message passing, the OS moves packets of information between processes. In shared memory, processes create a shared region in memory and transfer information by reading and writing to that region directly."
+    },
+    {
+      "id": "upload-1775754198787-24",
+      "number": "25",
+      "text": "Which of the following is true regarding the implementation of modern operating systems?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "They are exclusively written in assembly language for speed.",
+          "text": "They are exclusively written in assembly language for speed."
+        },
+        {
+          "value": "B",
+          "label": "They are typically written in a mix of languages, including C and C++.",
+          "text": "They are typically written in a mix of languages, including C and C++."
+        },
+        {
+          "value": "C",
+          "label": "Higher-level languages make an OS harder to port to new hardware.",
+          "text": "Higher-level languages make an OS harder to port to new hardware."
+        },
+        {
+          "value": "D",
+          "label": "Assembly language is never used in modern kernels like Linux or Windows.",
+          "text": "Assembly language is never used in modern kernels like Linux or Windows."
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Modern OSes are usually a mix of C and C++, with only the lowest levels written in assembly. Using high-level languages actually makes the OS easier to port, not harder."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}
