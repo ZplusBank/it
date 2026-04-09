@@ -113,7 +113,26 @@ const EXAM_CONFIG = [
     "description": "Algorithm Analysis",
     "path": "data/algorithm",
     "icon": "data/algorithm/icon.png",
-    "chapters": []
+    "chapters": [
+      {
+        "id": "1",
+        "name": "Mid",
+        "q": 40,
+        "file": "data/algorithm/chapterMultiple Filesvisual_extractor.json"
+      },
+      {
+        "id": "2",
+        "name": "Mid Custom",
+        "q": 30,
+        "file": "data/algorithm/chapterMultiple Filesregenerationsame.json"
+      },
+      {
+        "id": "3",
+        "name": "Mid Custom(Hard)",
+        "q": 30,
+        "file": "data/algorithm/chapterMultiple Filesregenerationharder.json"
+      }
+    ]
   },
   {
     "id": "data_structure",
