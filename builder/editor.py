@@ -473,11 +473,16 @@ class AdvancedChapterEditor:
         self.search_in_choices_var = tk.BooleanVar(value=True)
         self.search_in_meta_var = tk.BooleanVar(value=False)
         self.filtered_question_indices = []
+        self.is_maximized = False
         self.question_search_var.trace_add("write", lambda *_: self.refresh_questions_list())
         self.search_in_text_var.trace_add("write", lambda *_: self.refresh_questions_list())
         self.search_in_explanation_var.trace_add("write", lambda *_: self.refresh_questions_list())
         self.search_in_choices_var.trace_add("write", lambda *_: self.refresh_questions_list())
         self.search_in_meta_var.trace_add("write", lambda *_: self.refresh_questions_list())
+
+        self.window.bind("<F11>", self.toggle_maximize)
+        self.window.bind("<Control-m>", self.toggle_maximize)
+        self.window.bind("<Configure>", self.on_window_configure)
         
         self.load_chapter_data()
         self.setup_ui()
@@ -530,6 +535,14 @@ class AdvancedChapterEditor:
                   width=3, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=2)
         ttk.Button(toolbar, text="▼", command=self.move_question_down,
                   width=3, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=2)
+        self.maximize_btn = ttk.Button(
+            toolbar,
+            text="Maximize",
+            command=self.toggle_maximize,
+            width=12,
+            bootstyle="secondary-outline",
+        )
+        self.maximize_btn.pack(side=tk.RIGHT, padx=5)
         ttk.Button(toolbar, text="Save Changes", command=self.save_chapter,
                   width=15, bootstyle="primary").pack(side=tk.RIGHT, padx=5)
 
@@ -630,6 +643,39 @@ class AdvancedChapterEditor:
 
         # Initialize editor widgets (will be populated when question is selected)
         self.init_editor_widgets()
+
+    def on_window_configure(self, event=None):
+        """Keep maximize button label in sync with current window state."""
+        new_state = self._window_is_maximized()
+        if new_state != self.is_maximized:
+            self.is_maximized = new_state
+            if hasattr(self, "maximize_btn"):
+                self.maximize_btn.configure(text="Restore" if self.is_maximized else "Maximize")
+
+    def _window_is_maximized(self):
+        """Return True when the chapter editor window is maximized."""
+        try:
+            return self.window.state() == "zoomed"
+        except tk.TclError:
+            try:
+                return bool(self.window.attributes("-zoomed"))
+            except tk.TclError:
+                return False
+
+    def toggle_maximize(self, event=None):
+        """Toggle between maximized and normal chapter editor window size."""
+        should_maximize = not self._window_is_maximized()
+
+        try:
+            self.window.state("zoomed" if should_maximize else "normal")
+        except tk.TclError:
+            try:
+                self.window.attributes("-zoomed", should_maximize)
+            except tk.TclError:
+                pass
+
+        self.on_window_configure()
+        return "break"
     
     def init_editor_widgets(self):
         """Initialize editor widget placeholders"""
