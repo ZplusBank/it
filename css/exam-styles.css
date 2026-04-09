@@ -4310,10 +4310,88 @@ html {
 
 @media (max-width: 768px) {
     .contact-btn {
-        bottom: 24px;
-        right: 80px;
+        bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+        right: 14px;
         width: 46px;
         height: 46px;
+    }
+
+    .scroll-top-btn {
+        right: 14px;
+        bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+    }
+
+    body.exam-active .contact-btn {
+        display: none;
+    }
+
+    .contact-modal {
+        width: min(100%, 420px);
+        max-height: min(88vh, 720px);
+        padding: 18px 14px 14px;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .contact-modal .modal-body {
+        max-height: calc(88vh - 148px);
+        overflow-y: auto;
+        padding-right: 2px;
+    }
+
+    .contact-modal .modal-body p {
+        margin-bottom: 14px;
+        font-size: 0.95rem;
+        line-height: 1.45;
+    }
+
+    .contact-cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 12px;
+    }
+
+    .wa-contact-card {
+        gap: 8px;
+        padding: 14px 8px 12px;
+        min-height: 160px;
+    }
+
+    .wa-icon-wrapper {
+        width: 46px;
+        height: 46px;
+    }
+
+    .wa-icon-wrapper svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .wa-card-name {
+        font-size: 0.88rem;
+        line-height: 1.25;
+        min-height: 2.3em;
+    }
+
+    .wa-card-label {
+        font-size: 0.72rem;
+        line-height: 1.2;
+        white-space: normal;
+        text-align: center;
+        padding: 4px 8px;
+    }
+
+    .contact-modal-footer {
+        gap: 8px;
+        margin-top: 10px;
+    }
+
+    .btn-translate,
+    .contact-close-btn {
+        flex: 1;
+        min-height: 42px;
+        padding: 10px 10px;
+        font-size: 0.84rem;
     }
 }
 
