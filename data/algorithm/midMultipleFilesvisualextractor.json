@@ -36,7 +36,8 @@
       "inputName": "Q0",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "When node 50 is inserted, it becomes the left child of node 55. Both 50 and 55 are red, creating a double-red violation. The uncle of node 55 (the right child of node 60) is a NIL node, which is black. Since the path from the grandparent (60) to the new node (50) forms a straight line (60 -> 55 -> 50, left-left), this corresponds to Case 3 in standard Red-Black tree insertion algorithms, requiring a single right rotation at node 60."
+      "explanation": "When node 50 is inserted, it becomes the left child of node 55. Both 50 and 55 are red, creating a double-red violation. The uncle of node 55 (the right child of node 60) is a NIL node, which is black. Since the path from the grandparent (60) to the new node (50) forms a straight line (60 -> 55 -> 50, left-left), this corresponds to Case 3 in standard Red-Black tree insertion algorithms, requiring a single right rotation at node 60.",
+      "image": "data/algorithm/images/image1_954ed7cc.jpg"
     },
     {
       "id": "extract-combined-1775834365327-1",
@@ -67,7 +68,8 @@
       "inputName": "Q1",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "When node 10 is inserted, it becomes the left child of node 15. Because node 15 is black, no Red-Black tree properties are violated. Therefore, no remedial cases are invoked."
+      "explanation": "When node 10 is inserted, it becomes the left child of node 15. Because node 15 is black, no Red-Black tree properties are violated. Therefore, no remedial cases are invoked.",
+      "image": "data/algorithm/images/image2_6a82cec2.jpg"
     },
     {
       "id": "extract-combined-1775834365327-2",
@@ -98,7 +100,8 @@
       "inputName": "Q2",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "The height of a tree is usually defined as the number of edges on the longest path from the root to a leaf (or NIL node). The longest path is 30 -> 45 -> 60 -> 55 -> NIL. Counting the edges in this path gives a height of 4."
+      "explanation": "The height of a tree is usually defined as the number of edges on the longest path from the root to a leaf (or NIL node). The longest path is 30 -> 45 -> 60 -> 55 -> NIL. Counting the edges in this path gives a height of 4.",
+      "image": "data/algorithm/images/image3_99e542ac.jpg"
     },
     {
       "id": "extract-combined-1775834365327-3",
@@ -160,7 +163,8 @@
       "inputName": "Q4",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Pre-order traversal follows the pattern: Root, Left Subtree, Right Subtree. \n1. Root: 30\n2. Left: 15\n3. Right subtree of 30: 45 (Root), 35 (Left), 60 (Right subtree: 60 (Root), 55 (Left)).\nCombining these: 30, 15, 45, 35, 60, 55."
+      "explanation": "Pre-order traversal follows the pattern: Root, Left Subtree, Right Subtree. \n1. Root: 30\n2. Left: 15\n3. Right subtree of 30: 45 (Root), 35 (Left), 60 (Right subtree: 60 (Root), 55 (Left)).\nCombining these: 30, 15, 45, 35, 60, 55.",
+      "image": "data/algorithm/images/image5_4a17c912.jpg"
     },
     {
       "id": "extract-combined-1775834365327-5",
@@ -341,7 +345,8 @@
       "inputName": "Q10",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "In a binary search tree (BST), the successor of a node with a right subtree is the minimum element in that right subtree. For node 45, the right child is 60. The minimum element in the subtree rooted at 60 is obtained by following left pointers, which leads to node 55. Therefore, 55 is the successor of 45."
+      "explanation": "In a binary search tree (BST), the successor of a node with a right subtree is the minimum element in that right subtree. For node 45, the right child is 60. The minimum element in the subtree rooted at 60 is obtained by following left pointers, which leads to node 55. Therefore, 55 is the successor of 45.",
+      "image": "data/algorithm/images/image11_944c1f06.jpg"
     },
     {
       "id": "extract-combined-1775834365327-11",
@@ -527,7 +532,8 @@
       "inputName": "Q16",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Black height \\( bh(x) \\) is defined as the number of black nodes on any path from node \\( x \\) to a leaf, excluding the node \\( x \\) itself but including the terminal NILL nodes (which are always black). From node 45, any path to a leaf (for example, 45 to 60 to NILL) contains exactly 2 black nodes (node 60 and the NILL node)."
+      "explanation": "Black height \\( bh(x) \\) is defined as the number of black nodes on any path from node \\( x \\) to a leaf, excluding the node \\( x \\) itself but including the terminal NILL nodes (which are always black). From node 45, any path to a leaf (for example, 45 to 60 to NILL) contains exactly 2 black nodes (node 60 and the NILL node).",
+      "image": "data/algorithm/images/image17_d84cf835.jpg"
     },
     {
       "id": "extract-combined-1775834365327-17",
@@ -620,7 +626,8 @@
       "inputName": "Q19",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "The depth of a node in a tree structure is defined as the number of edges along the unique path from the root to that node. Since node 30 is the root node of the tree, its depth is zero."
+      "explanation": "The depth of a node in a tree structure is defined as the number of edges along the unique path from the root to that node. Since node 30 is the root node of the tree, its depth is zero.",
+      "image": "data/algorithm/images/image20_4729d35c.jpg"
     },
     {
       "id": "extract-combined-1775834365327-20",
@@ -1249,5 +1256,6 @@
     }
   ],
   "status": "completed",
-  "totalQuestions": 40
+  "totalQuestions": 40,
+  "q": 40
 }
