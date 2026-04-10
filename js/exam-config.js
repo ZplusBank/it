@@ -267,7 +267,7 @@ const EXAM_CONFIG = [
   },
   {
     "id": "soft",
-    "name": "Software Engineering",
+    "name": "Software Fundamentals",
     "description": "engineering principles to design, develop, maintain, and test software.",
     "path": "data/soft",
     "icon": "data/soft/icon.png",
