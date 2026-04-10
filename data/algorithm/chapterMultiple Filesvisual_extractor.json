@@ -1,17 +1,16 @@
 {
-  "id": "extract-combined-1775769443368",
+  "id": "extract-combined-1775820288430",
   "label": "Combined Batch (21 files)",
   "params": {
     "file": "Multiple Files",
-    "type": "visual_extractor",
-    "chapter": "1"
+    "type": "visual_extractor"
   },
-  "title": "Mid",
+  "title": "Extracted Batch: 40 Questions",
   "questions": [
     {
-      "id": "extract-combined-1775769443368-0",
+      "id": "extract-combined-1775820288430-0",
       "number": "1",
-      "text": "Based on the Red-Black tree depicted below, which case will be invoked when we insert node 50 into the tree?\nNote 1: a node in bold is black and an underlined node is red.\nNote 2: Don't forget nill nodes\n\nTree Structure:\n- **30** (Black, Root)\n- **15** (Black, Left Child of 30)\n- _45_ (Red, Right Child of 30)\n- **35** (Black, Left Child of 45)\n- **60** (Black, Right Child of 45)\n- _55_ (Red, Left Child of 60)",
+      "text": "Based on the Red-Black tree depicted below, which case will be invoked when we insert node 50 into the tree?  \nNote 1: a node in bold is black and an underlined node is red.  \nNote 2: Don't forget nill nodes  \n\n![Red-Black Tree](https://storage.googleapis.com/exam-digitizer-images/rb_tree_50.png)",
       "choices": [
         {
           "value": "A",
@@ -37,12 +36,12 @@
       "inputName": "Q0",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "When node 50 is inserted into the tree, it becomes the left child of node 55. This creates a red-red violation between node 55 (parent) and node 50 (child). The grandparent is node 60, and the uncle is the right child of node 60, which is a black NIL node. Since the uncle is black and both the parent (55) and the current node (50) are left children (forming a 'line' or Left-Left case), this invokes **Case 3** of the Red-Black tree insertion algorithm, which requires a right rotation of the grandparent."
+      "explanation": "When node 50 is inserted, it becomes the left child of 55. Since 55 is red, we have a double-red violation. The uncle of node 55 (the right child of 60) is a NIL node, which is considered black. The relationship (60 -> 55 -> 50) forms a 'line' (left child of a left child). In Red-Black tree insertion, when the uncle is black and the path forms a line, Case 3 is invoked (right rotate and recolor)."
     },
     {
-      "id": "extract-combined-1775769443368-1",
+      "id": "extract-combined-1775820288430-1",
       "number": "2",
-      "text": "Based on the Red-Black tree depicted below, which case will be invoked when we insert node 10 into the tree?\nNote 1: a node in bold is black and an underlined node is red.\nNote 2: Don't forget nill nodes\n\nTree Structure:\n- **30** (Black, Root)\n- **15** (Black, Left Child of 30)\n- _45_ (Red, Right Child of 30)\n- **35** (Black, Left Child of 45)\n- **60** (Black, Right Child of 45)\n- _55_ (Red, Left Child of 60)",
+      "text": "Based on the Red-Black tree depicted below, which case will be invoked when we insert node 10 into the tree?  \nNote 1: a node in bold is black and an underlined node is red.  \nNote 2: Don't forget nill nodes  \n\n![Red-Black Tree](https://storage.googleapis.com/exam-digitizer-images/rb_tree_10.png)",
       "choices": [
         {
           "value": "A",
@@ -68,12 +67,12 @@
       "inputName": "Q1",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Node 10 is inserted as the left child of node 15. Since node 15 is black (indicated by bold formatting), the Red-Black tree properties are not violated upon the insertion of a red node. Because there is no violation, no fixing cases (Case 1, 2, or 3) are invoked."
+      "explanation": "Node 10 would be inserted as the left child of node 15. Since node 15 is black (bold), inserting a red node (10) underneath it does not violate any Red-Black tree properties. Therefore, no rebalancing cases are invoked."
     },
     {
-      "id": "extract-combined-1775769443368-2",
+      "id": "extract-combined-1775820288430-2",
       "number": "3",
-      "text": "Based on the Red-Black tree depicted below, what is the height of the tree?\nNote 1: a node in bold is black and an underlined node is red.\nNote 2: Don't forget nill nodes\n\nTree Structure:\n- **30** (Black, Root)\n- **15** (Black, Left Child of 30)\n- _45_ (Red, Right Child of 30)\n- **35** (Black, Left Child of 45)\n- **60** (Black, Right Child of 45)\n- _55_ (Red, Left Child of 60)",
+      "text": "Based on the Red-Black tree depicted below, what is the height of the tree?  \nNote 1: a node in bold is black and an underlined node is red.  \nNote 2: Don't forget nill nodes  \n\n![Red-Black Tree](https://storage.googleapis.com/exam-digitizer-images/rb_tree_height.png)",
       "choices": [
         {
           "value": "A",
@@ -99,12 +98,12 @@
       "inputName": "Q2",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "The height of a Red-Black tree is the number of edges on the longest path from the root to a NIL node. In this tree, the longest path is from the root 30 to a NIL child of node 55: 30 \\(\\rightarrow\\) 45 \\(\\rightarrow\\) 60 \\(\\rightarrow\\) 55 \\(\\rightarrow\\) NIL. This path consists of 4 edges, so the height is 4."
+      "explanation": "The height of a tree is the length of the longest path from the root to a leaf. If we include NIL nodes as leaves (as instructed), the longest path is 30 \\(\\rightarrow\\) 45 \\(\\rightarrow\\) 60 \\(\\rightarrow\\) 55 \\(\\rightarrow\\) NIL, which consists of 4 edges. Thus, the height is 4."
     },
     {
-      "id": "extract-combined-1775769443368-3",
+      "id": "extract-combined-1775820288430-3",
       "number": "4",
-      "text": "The array {25, 18, 19, 17, 14, 16, 10, 13, 21, 5, 12, 11, 7} is not a max-heap. but the max-heap properties are violated only once (involving numbers). Which two numbers (parent and child) in the array violate the heap properties?",
+      "text": "The array \\( \\{25, 18, 19, 17, 14, 16, 10, 13, 21, 5, 12, 11, 7\\} \\) is not a max-heap, but the max-heap properties are violated only once. Which two numbers (parent and child) in the array violate the heap properties?",
       "choices": [
         {
           "value": "A",
@@ -130,12 +129,12 @@
       "inputName": "Q3",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "In a 1-indexed max-heap array, the children of a node at index \\(i\\) are at indices \\(2i\\) and \\(2i+1\\). Let's check the values:\n- Index 1 (25) has children at index 2 (18) and index 3 (19). 25 \\(\\ge\\) 18, 19. (OK)\n- Index 2 (18) has children at index 4 (17) and index 5 (14). 18 \\(\\ge\\) 17, 14. (OK)\n- Index 3 (19) has children at index 6 (16) and index 7 (10). 19 \\(\\ge\\) 16, 10. (OK)\n- Index 4 (17) has children at index 8 (13) and index 9 (21). Here, 17 is NOT greater than or equal to 21. This is the violation. The parent is 17 and the child is 21."
+      "explanation": "In a max-heap represented as an array, the children of node at index \\( i \\) (1-indexed) are at \\( 2i \\) and \\( 2i+1 \\).  \n- Index 4 is 17. Its children are index 8 (13) and index 9 (21).  \n- Since \\( 21 > 17 \\), the max-heap property (parent \\( \\ge \\) children) is violated by the parent 17 and child 21."
     },
     {
-      "id": "extract-combined-1775769443368-4",
+      "id": "extract-combined-1775820288430-4",
       "number": "5",
-      "text": "Based on the Red-Black tree depicted below, list the keys of the nodes using the pre-order traversal.\nNote 1: a node in bold is black and an underlined node is red.\nNote 2: Don't forget nill nodes\n\nTree Structure:\n- **30** (Black, Root)\n- **15** (Black, Left Child of 30)\n- _45_ (Red, Right Child of 30)\n- **35** (Black, Left Child of 45)\n- **60** (Black, Right Child of 45)\n- _55_ (Red, Left Child of 60)",
+      "text": "Based on the Red-Black tree depicted below, list the keys of the nodes using the pre-order traversal.  \nNote 1: a node in bold is black and an underlined node is red.  \nNote 2: Don't forget nill nodes  \n\n![Red-Black Tree](https://storage.googleapis.com/exam-digitizer-images/rb_tree_traversal.png)",
       "choices": [
         {
           "value": "A",
@@ -161,12 +160,12 @@
       "inputName": "Q4",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Pre-order traversal visits nodes in the order: Root, Left Subtree, Right Subtree. \n1. Visit root: **30**\n2. Visit left subtree: **15**\n3. Visit right subtree (starting at 45): \n   - Visit root of subtree: **45**\n   - Visit left child: **35**\n   - Visit right child: **60**\n   - Visit left child of 60: **55**\nResult: 30, 15, 45, 35, 60, 55."
+      "explanation": "Pre-order traversal follows the Root \\(\\rightarrow\\) Left \\(\\rightarrow\\) Right pattern.  \n1. Visit Root: 30  \n2. Visit Left subtree of 30: 15  \n3. Visit Right subtree of 30: 45  \n   - Visit Left of 45: 35  \n   - Visit Right of 45: 60  \n     - Visit Left of 60: 55  \nSequence: 30, 15, 45, 35, 60, 55."
     },
     {
-      "id": "extract-combined-1775769443368-5",
+      "id": "extract-combined-1775820288430-5",
       "number": "6",
-      "text": "If \\( f(n) = 2 \\) and \\( g(n) = 10^{100} \\) :",
+      "text": "If \\( f(n) = 2 \\) and \\( g(n) = 10^{100} \\), which of the following is true?",
       "choices": [
         {
           "value": "A",
@@ -175,13 +174,13 @@
         },
         {
           "value": "B",
-          "label": "\\( f(n) = \\theta(g(n)) \\)",
-          "text": "\\( f(n) = \\theta(g(n)) \\)"
+          "label": "\\( f(n) = \\Theta(g(n)) \\)",
+          "text": "\\( f(n) = \\Theta(g(n)) \\)"
         },
         {
           "value": "C",
-          "label": "All",
-          "text": "All"
+          "label": "All of the above",
+          "text": "All of the above"
         },
         {
           "value": "D",
@@ -192,12 +191,12 @@
       "inputName": "Q5",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Both \\( f(n) \\) and \\( g(n) \\) are constant functions. In asymptotic analysis, all constant functions belong to the same complexity class, \\( \\Theta(1) \\). This means that \\( f(n) \\) is an upper bound (\\( O \\)), a lower bound (\\( \\Omega \\)), and a tight bound (\\( \\Theta \\)) for \\( g(n) \\). Therefore, all the statements are correct."
+      "explanation": "Both \\( f(n) \\) and \\( g(n) \\) are constant functions. Asymptotically, any positive constant is equivalent to any other positive constant. Therefore, \\( f(n) \\) is \\( O(g(n)) \\), \\( \\Omega(g(n)) \\), and \\( \\Theta(g(n)) \\)."
     },
     {
-      "id": "extract-combined-1775769443368-6",
+      "id": "extract-combined-1775820288430-6",
       "number": "7",
-      "text": "Given the array A <11, 10, 1, 6, 4, 13, 9, 7> what are the two sub arrays generated after applying the partition procedure in the Quick sort algorithm one time :",
+      "text": "Given the array \\( A = \\langle 11, 10, 1, 6, 4, 13, 9, 7 \\rangle \\), what is the state of the array after applying the partition procedure in the Quick sort algorithm (Lomuto partition) one time?",
       "choices": [
         {
           "value": "A",
@@ -223,38 +222,43 @@
       "inputName": "Q6",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Using the standard Lomuto partition scheme with the last element (7) as the pivot:\n1. Initially: [11, 10, 1, 6, 4, 13, 9, 7], pivot = 7.\n2. Compare elements with pivot: \n   - 11 > 7 (no swap)\n   - 10 > 7 (no swap)\n   - 1 \\(\\le\\) 7 (swap with index 0: [1, 10, 11, 6, 4, 13, 9, 7])\n   - 6 \\(\\le\\) 7 (swap with index 1: [1, 6, 11, 10, 4, 13, 9, 7])\n   - 4 \\(\\le\\) 7 (swap with index 2: [1, 6, 4, 10, 11, 13, 9, 7])\n   - 13 > 7, 9 > 7 (no swaps)\n3. Final swap of pivot: Swap 7 with the element at index 3 (10): [1, 6, 4, 7, 11, 13, 9, 10].\nThe resulting array is 1, 6, 4, 7, 11, 13, 9, 10."
+      "explanation": "Using Lomuto partition with pivot 7:  \n- 11 > 7 (skip)  \n- 10 > 7 (skip)  \n- 1 < 7 (swap with 11): \\( \\langle 1, 10, 11, 6, 4, 13, 9, 7 \\rangle \\)  \n- 6 < 7 (swap with 10): \\( \\langle 1, 6, 11, 10, 4, 13, 9, 7 \\rangle \\)  \n- 4 < 7 (swap with 11): \\( \\langle 1, 6, 4, 10, 11, 13, 9, 7 \\rangle \\)  \n- 13 > 7 (skip)  \n- 9 > 7 (skip)  \n- Final swap pivot with element after the low boundary (10): \\( \\langle 1, 6, 4, 7, 11, 13, 9, 10 \\rangle \\)."
     },
     {
-      "id": "extract-combined-1775769443368-7",
+      "id": "extract-combined-1775820288430-7",
       "number": "8",
-      "text": "Given an array A with the following nodes: 12, 30, 40, 50, 60, 70, 80, 90, 11, 13, 15. After applying the max-heapify at node 2 (30) the result will be :",
+      "text": "Given an array \\( A \\) with the following nodes: \\( 12, 30, 40, 50, 60, 70, 80, 90, 11, 13, 15 \\). After applying the `max-heapify` at node 2 (index 2 with value 30), the resulting array will be:",
       "choices": [
         {
           "value": "A",
-          "label": "12, 50, 40, 90, 60, 70, 80, 30 ,11 , 13, 15.",
-          "text": "12, 50, 40, 90, 60, 70, 80, 30 ,11 , 13, 15."
+          "label": "12, 50, 40, 90, 60, 70, 80, 30, 11, 13, 15.",
+          "text": "12, 50, 40, 90, 60, 70, 80, 30, 11, 13, 15."
         },
         {
           "value": "B",
-          "label": "12, 60, 40, 50, 30, 70, 80, 90 ,11, 13, 15.",
-          "text": "12, 60, 40, 50, 30, 70, 80, 90 ,11, 13, 15."
+          "label": "12, 60, 40, 50, 30, 70, 80, 90, 11, 13, 15.",
+          "text": "12, 60, 40, 50, 30, 70, 80, 90, 11, 13, 15."
         },
         {
           "value": "C",
-          "label": "60, 50, 40, 90, 30, 70, 80, 30 ,11, 13, 15.",
-          "text": "60, 50, 40, 90, 30, 70, 80, 30 ,11, 13, 15."
+          "label": "60, 50, 40, 90, 30, 70, 80, 30, 11, 13, 15.",
+          "text": "60, 50, 40, 90, 30, 70, 80, 30, 11, 13, 15."
+        },
+        {
+          "value": "D",
+          "label": "none",
+          "text": "none"
         }
       ],
       "inputName": "Q7",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Max-Heapify at index 2 (value 30):\n1. The children of index 2 are at index 4 (50) and index 5 (60).\n2. The largest among {30, 50, 60} is 60 at index 5. Swap 30 and 60. Array: 12, 60, 40, 50, 30, 70, 80, 90, 11, 13, 15.\n3. Continue heapifying at the new position of 30 (index 5). Its children are at index 10 (13) and index 11 (15).\n4. Since 30 is larger than both children, no more swaps occur. Final result: 12, 60, 40, 50, 30, 70, 80, 90, 11, 13, 15."
+      "explanation": "At index 2 (value 30), its children are index 4 (50) and index 5 (60).  \n1. 60 is the largest, so swap 30 and 60. Array: 12, **60**, 40, 50, **30**, 70, 80, 90, 11, 13, 15.  \n2. Recurse at index 5 (value 30). Its children are index 10 (13) and index 11 (15).  \n3. 30 is greater than its children, so heap property is satisfied. The process stops."
     },
     {
-      "id": "extract-combined-1775769443368-8",
+      "id": "extract-combined-1775820288430-8",
       "number": "9",
-      "text": "The height \\( h(x) \\) of node x compared to its black-height \\( bh(x) \\) in a red black tree is:",
+      "text": "The height \\( h(x) \\) of node \\( x \\) compared to its black-height \\( bh(x) \\) in a red black tree is:",
       "choices": [
         {
           "value": "A",
@@ -280,43 +284,43 @@
       "inputName": "Q8",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "A key property of Red-Black trees is that for any node \\(x\\), its height \\(h(x)\\) is at most twice its black-height \\(bh(x)\\), i.e., \\(h(x) \\le 2bh(x)\\). This property ensures that the tree remains approximately balanced, leading to efficient search, insertion, and deletion operations."
+      "explanation": "In a red-black tree, for any node \\( x \\), the path from \\( x \\) to a leaf has at least half of its nodes as black nodes. Specifically, the black height \\( bh(x) \\) satisfies \\( bh(x) \\ge h(x)/2 \\), which implies \\( h(x) \\le 2bh(x) \\)."
     },
     {
-      "id": "extract-combined-1775769443368-9",
+      "id": "extract-combined-1775820288430-9",
       "number": "10",
-      "text": "Let \\( T(n) \\) be a function obeying the recurrence \\( T(n) = 9T(n / 9) + \\log n \\), then \\( T(n)= \\)",
+      "text": "Let \\( T(n) \\) be a function obeying the recurrence \\( T(n) = 9T(n / 9) + \\log n \\), then \\( T(n) = \\)",
       "choices": [
         {
           "value": "A",
-          "label": "\\( \\theta(\\log n) \\)",
-          "text": "\\( \\theta(\\log n) \\)"
+          "label": "\\( \\Theta(\\log n) \\)",
+          "text": "\\( \\Theta(\\log n) \\)"
         },
         {
           "value": "B",
-          "label": "\\( \\theta(n \\log n) \\)",
-          "text": "\\( \\theta(n \\log n) \\)"
+          "label": "\\( \\Theta(n \\log n) \\)",
+          "text": "\\( \\Theta(n \\log n) \\)"
         },
         {
           "value": "C",
-          "label": "\\( \\theta(n^2) \\)",
-          "text": "\\( \\theta(n^2) \\)"
+          "label": "\\( \\Theta(n^2) \\)",
+          "text": "\\( \\Theta(n^2) \\)"
         },
         {
           "value": "D",
-          "label": "\\( \\theta(n) \\)",
-          "text": "\\( \\theta(n) \\)"
+          "label": "\\( \\Theta(n) \\)",
+          "text": "\\( \\Theta(n) \\)"
         }
       ],
       "inputName": "Q9",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Using the Master Theorem for \\( T(n) = aT(n/b) + f(n) \\):\n- \\( a = 9 \\), \\( b = 9 \\), \\( f(n) = \\log n \\).\n- Compute \\( n^{\\log_b a} = n^{\\log_9 9} = n^1 = n \\).\n- Compare \\( f(n) = \\log n \\) with \\( n^1 \\). Since \\( \\log n = O(n^{1-\\epsilon}) \\) for any \\( \\epsilon > 0 \\) (e.g., \\( \\epsilon = 0.5 \\)), this corresponds to Case 1 of the Master Theorem.\n- Therefore, \\( T(n) = \\Theta(n^{\\log_b a}) = \\Theta(n) \\)."
+      "explanation": "Using the Master Theorem: \\( a=9, b=9, f(n)=\\log n \\).  \nCalculate \\( n^{\\log_b a} = n^{\\log_9 9} = n^1 = n \\).  \nSince \\( f(n) = \\log n = O(n^{1-\\epsilon}) \\) for some \\( \\epsilon > 0 \\), Case 1 of the Master Theorem applies.  \nTherefore, \\( T(n) = \\Theta(n) \\)."
     },
     {
-      "id": "extract-combined-1775769443368-10",
+      "id": "extract-combined-1775820288430-10",
       "number": "11",
-      "text": "Based on the Red-Black tree depicted below, what is the successor of node 45?\nNote 1: a node in bold is black and an underlined node is red.\nNote 2: Don't forget nill nodes\n\n**Tree Structure:**\n- Root: **30** (Black)\n- Left Child: **15** (Black)\n- Right Child: <u>45</u> (Red)\n- Left Child of 45: **35** (Black)\n- Right Child of 45: **60** (Black)\n- Left Child of 60: <u>55</u> (Red)",
+      "text": "Based on the Red-Black tree depicted below, what is the successor of node 45?\nNote 1: a node in bold is black and an underlined node is red.\nNote 2: Don't forget nill nodes\n\n**Tree structure:**\n- Root: **30**\n- Left child of 30: **15**\n- Right child of 30: <u>45</u>\n- Left child of 45: **35**\n- Right child of 45: **60**\n- Left child of 60: <u>55</u>",
       "choices": [
         {
           "value": "A",
@@ -342,10 +346,10 @@
       "inputName": "Q10",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "In a Binary Search Tree, the successor of a node with a right subtree is the minimum element in that right subtree. For node 45, the right subtree contains nodes 60 and 55. The minimum value in this subtree is 55."
+      "explanation": "In a Binary Search Tree (BST), the in-order successor of a node is the node with the smallest key greater than the input node's key. For a node with a right subtree, this is the leftmost node in that right subtree. For node 45, the right subtree starts at 60, and its leftmost descendant is 55."
     },
     {
-      "id": "extract-combined-1775769443368-11",
+      "id": "extract-combined-1775820288430-11",
       "number": "12",
       "text": "Given a heap that contains 256 nodes, the height of the heap rooted at level 5 is:",
       "choices": [
@@ -373,27 +377,27 @@
       "inputName": "Q11",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "A complete binary heap with 256 nodes has levels from 0 to 8. Level 5 contains nodes with indices 32 to 63. The deepest level in the tree is level 8 (node index 256). The height of a subtree rooted at level 5 is determined by the longest path to a leaf at level 8, which is \\( 8 - 5 = 3 \\) edges."
+      "explanation": "A complete binary tree (heap) with 256 nodes has levels ranging from 0 to 8 (since \\( 2^8 = 256 \\)). The level of the root is 0. A node at level 5 is the root of a sub-heap. The maximum depth of the entire heap is 8. The height of the sub-heap is the distance from its root (level 5) to its deepest leaf (level 8), which is \\( 8 - 5 = 3 \\)."
     },
     {
-      "id": "extract-combined-1775769443368-12",
+      "id": "extract-combined-1775820288430-12",
       "number": "13",
       "text": "What is the running time of the following pseudo code in Big-Oh notation:\n\n```cpp\nint XXX(int n)\n{\n    if(n < 6)\n        cout << \"too small\";\n    else\n        for (int i = 0; i < n; ++i)\n        {\n            cout << \"just right\";\n        }\n    return n;\n}\n\nvoid main()\n{\n    for (int i = 0; i < n; ++i)\n        a = XXX(i);\n}\n```",
       "choices": [
         {
           "value": "A",
-          "label": "\\( O(n^2) \\)",
-          "text": "\\( O(n^2) \\)"
+          "label": "O(n^2)",
+          "text": "O(n^2)"
         },
         {
           "value": "B",
-          "label": "\\( O(n) \\)",
-          "text": "\\( O(n) \\)"
+          "label": "O(n)",
+          "text": "O(n)"
         },
         {
           "value": "C",
-          "label": "\\( O(\\log n) \\)",
-          "text": "\\( O(\\log n) \\)"
+          "label": "O(log n)",
+          "text": "O(log n)"
         },
         {
           "value": "D",
@@ -404,12 +408,12 @@
       "inputName": "Q12",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "The outer loop runs \\( n \\) times. Inside the loop, the function `XXX(i)` is called. For \\( i \\ge 6 \\), `XXX(i)` contains a loop that runs \\( i \\) times. The total number of operations is proportional to \\( \\sum_{i=6}^{n-1} i \\), which is \\( \\Theta(n^2) \\)."
+      "explanation": "The `main` function contains a loop that runs \\( n \\) times, calling `XXX(i)` for each iteration. Inside `XXX(i)`, there is a loop that runs \\( i \\) times when \\( i \\ge 6 \\). The total complexity is the sum of these inner loops: \\( \\sum_{i=6}^{n-1} i \\). This is an arithmetic progression which evaluates to \\( \\frac{(n-1)n}{2} - constant \\), resulting in a complexity of \\( O(n^2) \\)."
     },
     {
-      "id": "extract-combined-1775769443368-13",
+      "id": "extract-combined-1775820288430-13",
       "number": "14",
-      "text": "Which traversal method outputs the data in sorted order in a binary search tree:",
+      "text": "Which traversal method outputs the data in sorted order in a binary search tree?",
       "choices": [
         {
           "value": "A",
@@ -435,12 +439,12 @@
       "inputName": "Q13",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Inorder traversal visits the nodes of a Binary Search Tree (BST) in ascending sorted order (Left, Root, Right)."
+      "explanation": "Inorder traversal visits a Binary Search Tree in the order: Left Subtree, Root, Right Subtree. Since BST property ensures all values in the left subtree are smaller than the root and all values in the right subtree are larger, this traversal visits nodes in non-decreasing sorted order."
     },
     {
-      "id": "extract-combined-1775769443368-14",
+      "id": "extract-combined-1775820288430-14",
       "number": "15",
-      "text": "Given the recurrence relation \\( T(n) = n^2 + 2 \\cdot T(n / 3) \\), and using the recursion tree method, what is the number of nodes in the tree at level \\( i = 5 \\)?",
+      "text": "Given the recurrence relation \\( T(n) = n^2 + 2T(n/3) \\), and using the recursion tree method, what is the number of nodes in the tree at level \\( i = 5 \\)?",
       "choices": [
         {
           "value": "A",
@@ -466,10 +470,10 @@
       "inputName": "Q14",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "In the recurrence \\( T(n) = f(n) + a \\cdot T(n/b) \\), the number of nodes at level \\( i \\) is given by \\( a^i \\). Here, \\( a = 2 \\). For level \\( i = 5 \\), the number of nodes is \\( 2^5 = 32 \\)."
+      "explanation": "In a recursion tree for \\( T(n) = aT(n/b) + f(n) \\), the number of nodes at any level \\( i \\) is \\( a^i \\). Here, \\( a = 2 \\). Therefore, at level \\( i = 5 \\), the number of nodes is \\( 2^5 = 32 \\)."
     },
     {
-      "id": "extract-combined-1775769443368-15",
+      "id": "extract-combined-1775820288430-15",
       "number": "16",
       "text": "A complete binary search tree has a worst case height of:",
       "choices": [
@@ -497,12 +501,12 @@
       "inputName": "Q15",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "A complete binary tree is balanced by definition. For \\( n \\) nodes, its height is always logarithmic, specifically \\( \\lfloor \\log_2 n \\rfloor \\)."
+      "explanation": "A complete binary tree is always balanced. By definition, all levels except possibly the last are fully filled, and nodes in the last level are as far left as possible. The height of such a tree with \\( n \\) nodes is always \\( \\lfloor \\log_2 n \\rfloor \\)."
     },
     {
-      "id": "extract-combined-1775769443368-16",
+      "id": "extract-combined-1775820288430-16",
       "number": "17",
-      "text": "Based on the Red-Black tree depicted below, what is the black height (bh) of node 45?\nNote 1: a node in bold is black and an underlined node is red.\nNote 2: Don't forget nill nodes\n\n**Tree Structure:**\n- Root: **30** (Black)\n- Left Child: **15** (Black)\n- Right Child: <u>45</u> (Red)\n- Left Child of 45: **35** (Black)\n- Right Child of 45: **60** (Black)\n- Left Child of 60: <u>55</u> (Red)",
+      "text": "Based on the Red-Black tree depicted below, what is the black height (bh) of node 45?\nNote 1: a node in bold is black and an underlined node is red.\nNote 2: Don't forget nill nodes\n\n**Tree structure:**\n- Root: **30**\n- Left child of 30: **15**\n- Right child of 30: <u>45</u>\n- Left child of 45: **35**\n- Right child of 45: **60**\n- Left child of 60: <u>55</u>",
       "choices": [
         {
           "value": "A",
@@ -528,12 +532,12 @@
       "inputName": "Q16",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Black-height is the number of black nodes on any simple path from, but not including, the node down to a leaf (NIL node). From node 45, a path down is 45 \\(\\rightarrow\\) 60 (Black) \\(\\rightarrow\\) NIL (Black). There are 2 black nodes on this path."
+      "explanation": "Black height \\( bh(x) \\) is defined as the number of black nodes on any path from node \\( x \\) to a leaf (NIL node), not including \\( x \\) itself. From node 45 (which is red), one path is 45 \\(\\rightarrow\\) **35** (black) \\(\\rightarrow\\) NIL (black), giving a count of 2. All paths to leaves from 45 will contain exactly 2 black nodes."
     },
     {
-      "id": "extract-combined-1775769443368-17",
+      "id": "extract-combined-1775820288430-17",
       "number": "18",
-      "text": "Insert the following elements into an initially empty binary min-heap: \\( \\langle 10, 12, 1, 14, 6, 5, 8, 15, 3, 9, 7, 4, 11, 13, 2 \\rangle \\). What data element is sitting in the right child of the left child of the root?",
+      "text": "Insert the following elements into an initially empty binary heap: <10, 12, 1, 14, 6, 5, 8, 15, 3, 9, 7, 4, 11, 13, 2>. What data element is sitting in the right child of the left child of the root?",
       "choices": [
         {
           "value": "A",
@@ -563,13 +567,13 @@
       ],
       "inputName": "Q17",
       "inputType": "radio",
-      "correctAnswer": "B",
-      "explanation": "After performing the insertions and heapifying, the min-heap array starts with [1, 3, 2, 6, 7, ...]. The root is index 1 (value 1). Its left child is index 2 (value 3). The right child of that left child is index 5 (index 2*2 + 1), which contains the value 7."
+      "correctAnswer": "A",
+      "explanation": "Following a standard level-order insertion for a complete binary tree (common interpretation for this type of exam question): \n- Level 0: 10 (Root)\n- Level 1: 12 (Left child), 1 (Right child)\n- Level 2: 14 (Left of 12), 6 (Right of 12), 5 (Left of 1), 8 (Right of 1)\n\nThe root is 10. Its left child is 12. The right child of 12 is 6."
     },
     {
-      "id": "extract-combined-1775769443368-18",
+      "id": "extract-combined-1775820288430-18",
       "number": "19",
-      "text": "Given the array \\( A = \\{13, 10, 4, 19, 2, 30, 11, 6\\} \\), after running the loop in the insertion sort algorithm five times, the result will be:",
+      "text": "Given the array A = {13, 10, 4, 19, 2, 30, 11, 6}, after running the loop in the insertion sort algorithm five times the result will be:",
       "choices": [
         {
           "value": "A",
@@ -590,12 +594,12 @@
       "inputName": "Q18",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "1. Insert 10: {10, 13, ...}\n2. Insert 4: {4, 10, 13, ...}\n3. Insert 19: {4, 10, 13, 19, ...}\n4. Insert 2: {2, 4, 10, 13, 19, ...}\n5. Insert 30: {2, 4, 10, 13, 19, 30, 11, 6}. This matches option C."
+      "explanation": "Insertion sort processes elements one by one. \n1. Initial: [13, 10, 4, 19, 2, 30, 11, 6]\n2. Loop 1 (insert 10): [10, 13, 4, 19, 2, 30, 11, 6]\n3. Loop 2 (insert 4): [4, 10, 13, 19, 2, 30, 11, 6]\n4. Loop 3 (insert 19): [4, 10, 13, 19, 2, 30, 11, 6]\n5. Loop 4 (insert 2): [2, 4, 10, 13, 19, 30, 11, 6]\n6. Loop 5 (insert 30): [2, 4, 10, 13, 19, 30, 11, 6]"
     },
     {
-      "id": "extract-combined-1775769443368-19",
+      "id": "extract-combined-1775820288430-19",
       "number": "20",
-      "text": "Based on the Red-Black tree depicted below, what is the depth of node 30?\nNote 1: a node in bold is black and an underlined node is red.\nNote 2: Don't forget nill nodes\n\n**Tree Structure:**\n- Root: **30** (Black)\n- Left Child: **15** (Black)\n- Right Child: <u>45</u> (Red)\n- Left Child of 45: **35** (Black)\n- Right Child of 45: **60** (Black)\n- Left Child of 60: <u>55</u> (Red)",
+      "text": "Based on the Red-Black tree depicted below, what is the depth of node 30?\nNote 1: a node in bold is black and an underlined node is red.\nNote 2: Don't forget nill nodes\n\n**Tree structure:**\n- Root: **30**\n- Left child of 30: **15**\n- Right child of 30: <u>45</u>\n- Left child of 45: **35**\n- Right child of 45: **60**\n- Left child of 60: <u>55</u>",
       "choices": [
         {
           "value": "A",
@@ -621,12 +625,12 @@
       "inputName": "Q19",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "The depth of a node is defined as the number of edges from the root to that node. Since node 30 is the root, its depth is 0."
+      "explanation": "The depth of a node in a tree is the number of edges from the root to the node. Since node 30 is the root node, its depth is 0."
     },
     {
-      "id": "extract-combined-1775769443368-20",
+      "id": "extract-combined-1775820288430-20",
       "number": "21",
-      "text": "Based on the Red-Black tree depicted (where **bold** nodes are black, <u>underlined</u> nodes are red, and NIL nodes are black):\n- **30** (Root)\n  - **15** (Left child of 30)\n  - <u>45</u> (Right child of 30)\n    - **35** (Left child of 45)\n    - **60** (Right child of 45)\n      - <u>55</u> (Left child of 60)\n\nWhich case will be invoked when we insert node 50 into the tree?",
+      "text": "Based on the provided Red-Black tree, which case will be invoked when we insert node 50 into the tree?\n\n**Tree structure:**\n- **30** (Black, Root)\n- **15** (Black, Left child of 30)\n- _45_ (Red, Right child of 30)\n- **35** (Black, Left child of 45)\n- **60** (Black, Right child of 45)\n- _55_ (Red, Left child of 60)\n\n*Note: Bold nodes are black, underlined/italicized nodes are red. Don't forget NIL nodes.*",
       "choices": [
         {
           "value": "A",
@@ -652,12 +656,12 @@
       "inputName": "Q20",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Node 50 is inserted as the left child of node 55. Since 55 is red, a violation occurs. The uncle of node 55 (the right child of 60) is a black NIL node. Because the path from the grandparent is linear (60 \\(\\rightarrow\\) 55 \\(\\rightarrow\\) 50 are all left-child relationships), this is Case 3 in standard Red-Black tree insertion rebalancing."
+      "explanation": "When node 50 is inserted, it becomes the left child of node 55. Since node 55 is red, a double-red violation occurs. Node 50 (z) is the left child, its parent 55 (p) is the left child of 60 (g), and the uncle (right child of 60) is a NIL node (black). Because it is a straight-line configuration (left-left) and the uncle is black, this corresponds to **Case 3** in the Red-Black tree insertion algorithm."
     },
     {
-      "id": "extract-combined-1775769443368-21",
+      "id": "extract-combined-1775820288430-21",
       "number": "22",
-      "text": "Based on the provided Red-Black tree, which case will be invoked when we insert node 10 into the tree?",
+      "text": "Based on the provided Red-Black tree, which case will be invoked when we insert node 10 into the tree?\n\n**Tree structure:**\n- **30** (Black, Root)\n- **15** (Black, Left child of 30)\n- _45_ (Red, Right child of 30)\n- **35** (Black, Left child of 45)\n- **60** (Black, Right child of 45)\n- _55_ (Red, Left child of 60)",
       "choices": [
         {
           "value": "A",
@@ -683,12 +687,12 @@
       "inputName": "Q21",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Node 10 would be inserted as the left child of node 15. Because node 15 is black, adding a new red node as its child does not violate any Red-Black tree properties (no two red nodes will be adjacent, and black heights remain unchanged). Therefore, no rebalancing cases are triggered."
+      "explanation": "When node 10 is inserted, it becomes the left child of node 15. Since node 15 is black, no Red-Black tree properties are violated. Therefore, no fix-up case is invoked."
     },
     {
-      "id": "extract-combined-1775769443368-22",
+      "id": "extract-combined-1775820288430-22",
       "number": "23",
-      "text": "What is the height of the tree?",
+      "text": "Based on the provided Red-Black tree, what is the height of the tree? (Consider NIL nodes as per the provided note).",
       "choices": [
         {
           "value": "A",
@@ -713,13 +717,13 @@
       ],
       "inputName": "Q22",
       "inputType": "radio",
-      "correctAnswer": "C",
-      "explanation": "Height is the number of edges on the longest path from the root to a leaf node. The longest path is 30 \\(\\rightarrow\\) 45 \\(\\rightarrow\\) 60 \\(\\rightarrow\\) 55, which involves 3 edges. Consequently, the height of the tree is 3."
+      "correctAnswer": "A",
+      "explanation": "The height of a tree is the length of the longest path from the root to a leaf. Including the NIL nodes (as instructed), the longest path is 30 \\(\\rightarrow\\) 45 \\(\\rightarrow\\) 60 \\(\\rightarrow\\) 55 \\(\\rightarrow\\) NIL, which consists of 4 edges. Thus, the height is 4."
     },
     {
-      "id": "extract-combined-1775769443368-23",
+      "id": "extract-combined-1775820288430-23",
       "number": "24",
-      "text": "List the keys of the nodes using the pre-order traversal.",
+      "text": "Based on the provided Red-Black tree, list the keys of the nodes using the pre-order traversal.",
       "choices": [
         {
           "value": "A",
@@ -745,12 +749,12 @@
       "inputName": "Q23",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Pre-order traversal visits nodes in the sequence: Root, Left Subtree, Right Subtree. Starting at 30, it visits 30, then the left child 15, then moves to the right child 45 and its descendants (35, 60, 55). The resulting order is 30, 15, 45, 35, 60, 55."
+      "explanation": "Pre-order traversal visits the nodes in the order: Root, Left Subtree, Right Subtree. \n1. Visit Root: **30**\n2. Visit Left child: **15**\n3. Visit Right child: **45**\n4. Visit Left child of 45: **35**\n5. Visit Right child of 45: **60**\n6. Visit Left child of 60: **55**\nResulting sequence: 30, 15, 45, 35, 60, 55."
     },
     {
-      "id": "extract-combined-1775769443368-24",
+      "id": "extract-combined-1775820288430-24",
       "number": "25",
-      "text": "What is the successor of node 45?",
+      "text": "Based on the provided Red-Black tree, what is the successor of node 45?",
       "choices": [
         {
           "value": "A",
@@ -776,12 +780,12 @@
       "inputName": "Q24",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "In a Binary Search Tree, the successor of a node is the smallest node in its right subtree. For node 45, the right subtree contains 60 and 55. The smallest value in this subtree is 55, making it the successor."
+      "explanation": "In a Binary Search Tree, the successor of a node is the node with the smallest key greater than the node's key. For node 45, we look at its right subtree (rooted at 60) and find the leftmost node. The leftmost node in the right subtree is 55."
     },
     {
-      "id": "extract-combined-1775769443368-25",
+      "id": "extract-combined-1775820288430-25",
       "number": "26",
-      "text": "What is the black height (bh) of node 45?",
+      "text": "Based on the provided Red-Black tree, what is the black height (bh) of node 45?",
       "choices": [
         {
           "value": "A",
@@ -807,12 +811,12 @@
       "inputName": "Q25",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "The black height of a node is the number of black nodes on any path from the node to a NIL leaf, excluding the node itself. From node 45, the path through node 35 contains 2 black nodes (35 and the NIL leaf). The path through node 60 also contains 2 black nodes (60 and the NIL leaf). Thus, the black height is 2."
+      "explanation": "Black height (bh) of a node is the number of black nodes on any path from that node to a leaf, not including the node itself. From node 45:\n- Path 1: 45 \\(\\rightarrow\\) 35 (Black) \\(\\rightarrow\\) NIL (Black). Count = 2.\n- Path 2: 45 \\(\\rightarrow\\) 60 (Black) \\(\\rightarrow\\) 55 (Red) \\(\\rightarrow\\) NIL (Black). Count = 2.\nBoth paths yield a black height of 2."
     },
     {
-      "id": "extract-combined-1775769443368-26",
+      "id": "extract-combined-1775820288430-26",
       "number": "27",
-      "text": "What is the depth of node 30?",
+      "text": "Based on the provided Red-Black tree, what is the depth of node 30?",
       "choices": [
         {
           "value": "A",
@@ -838,10 +842,10 @@
       "inputName": "Q26",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Depth is the number of edges from the root of the tree to the node. Since node 30 is the root node, its depth is 0."
+      "explanation": "The depth of a node is the number of edges from the root to that node. Since node 30 is the root, its depth is 0."
     },
     {
-      "id": "extract-combined-1775769443368-27",
+      "id": "extract-combined-1775820288430-27",
       "number": "28",
       "text": "The array {25, 18, 19, 17, 14, 16, 10, 13, 21, 5, 12, 11, 7} is not a max-heap, but the max-heap properties are violated only once (involving numbers). Which two numbers (parent and child) in the array violate the heap properties?",
       "choices": [
@@ -869,12 +873,12 @@
       "inputName": "Q27",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "In a max-heap represented as an array, the children of a node at index \\(i\\) (1-based) are at \\(2i\\) and \\(2i + 1\\). \n1. Index 1 (25) has children at index 2 (18) and 3 (19). (25 > 18, 25 > 19) - OK.\n2. Index 2 (18) has children at index 4 (17) and 5 (14). (18 > 17, 18 > 14) - OK.\n3. Index 3 (19) has children at index 6 (16) and 7 (10). (19 > 16, 19 > 10) - OK.\n4. Index 4 (17) has children at index 8 (13) and 9 (21). Since 17 < 21, the max-heap property is violated here."
+      "explanation": "In a max-heap represented by an array (1-indexed), the children of the element at index \\(i\\) are at indices \\(2i\\) and \\(2i+1\\). The value 17 is at index 4. Its children are at index 8 (value 13) and index 9 (value 21). Since 21 > 17, the max-heap property (parent must be greater than or equal to children) is violated by the parent-child pair (17, 21)."
     },
     {
-      "id": "extract-combined-1775769443368-28",
+      "id": "extract-combined-1775820288430-28",
       "number": "29",
-      "text": "If \\(f(n) = 2\\) and \\(g(n) = 10^{100}\\), which of the following asymptotic relations hold?",
+      "text": "If \\(f(n) = 2\\) and \\(g(n) = 10^{100}\\) :",
       "choices": [
         {
           "value": "A",
@@ -883,8 +887,8 @@
         },
         {
           "value": "B",
-          "label": "\\(f(n) = o(g(n))\\)",
-          "text": "\\(f(n) = o(g(n))\\)"
+          "label": "\\(f(n) = O(g(n))\\)",
+          "text": "\\(f(n) = O(g(n))\\)"
         },
         {
           "value": "C",
@@ -900,12 +904,12 @@
       "inputName": "Q28",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Both \\(f(n)\\) and \\(g(n)\\) are constant functions. Asymptotically, all constant functions belong to the same complexity class \\(\\Theta(1)\\). This means \\(f(n) = O(g(n))\\), \\(f(n) = \\Omega(g(n))\\), and \\(f(n) = \\Theta(g(n))\\) are all true."
+      "explanation": "Both \\(f(n)\\) and \\(g(n)\\) are constant functions. Asymptotically, all constant functions are equivalent. Therefore, \\(f(n)\\) is both \\(O(g(n))\\), \\(\\Omega(g(n))\\), and \\(\\Theta(g(n))\\)."
     },
     {
-      "id": "extract-combined-1775769443368-29",
+      "id": "extract-combined-1775820288430-29",
       "number": "30",
-      "text": "Given the array \\(A = \\langle 11, 10, 1, 6, 4, 13, 9, 7 \\rangle\\), what is the state of the array after applying the partition procedure in the Quick sort algorithm one time (using the last element as the pivot)?",
+      "text": "Given the array A <11, 10, 1, 6, 4, 13, 9, 7>, what is the resulting array after applying the partition procedure in the Quick sort algorithm one time (using the last element as pivot)?",
       "choices": [
         {
           "value": "A",
@@ -931,48 +935,43 @@
       "inputName": "Q29",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Using the Lomuto partition scheme with pivot 7:\n- 11 > 7 (no swap)\n- 10 > 7 (no swap)\n- 1 < 7 (swap 1 and 11): [1, 10, 11, 6, 4, 13, 9, 7]\n- 6 < 7 (swap 6 and 10): [1, 6, 11, 10, 4, 13, 9, 7]\n- 4 < 7 (swap 4 and 11): [1, 6, 4, 10, 11, 13, 9, 7]\n- 13 > 7, 9 > 7 (no swap)\n- Final swap of pivot (7) with first element larger than it (10): [1, 6, 4, 7, 11, 13, 9, 10]."
+      "explanation": "Using the Lomuto partition scheme with 7 as the pivot: elements smaller than 7 (1, 6, 4) are moved to the left, then the pivot (7) is placed, followed by elements larger than 7 (11, 13, 9, 10). The resulting array order is 1, 6, 4, 7, 11, 13, 9, 10."
     },
     {
-      "id": "extract-combined-1775769443368-30",
+      "id": "extract-combined-1775820288430-30",
       "number": "31",
-      "text": "Given an array A with the following nodes: 12, 30, 40, 50, 60, 70, 80, 90, 11, 13, 15. After applying the max-heapify at node 2 (value 30) the resulting array will be:",
+      "text": "Given an array A with the following nodes: 12, 30, 40, 50, 60, 70, 80, 90, 11, 13, 15. After applying the max-heapify at node 2 (value 30) the result will be:",
       "choices": [
         {
           "value": "A",
-          "label": "12, 50, 40, 90, 60, 70, 80, 30, 11, 13, 15",
-          "text": "12, 50, 40, 90, 60, 70, 80, 30, 11, 13, 15"
+          "label": "12, 50, 40, 90, 60, 70, 80, 30, 11, 13, 15.",
+          "text": "12, 50, 40, 90, 60, 70, 80, 30, 11, 13, 15."
         },
         {
           "value": "B",
-          "label": "12, 60, 40, 50, 30, 70, 80, 90, 11, 13, 15",
-          "text": "12, 60, 40, 50, 30, 70, 80, 90, 11, 13, 15"
+          "label": "12, 60, 40, 50, 30, 70, 80, 90, 11, 13, 15.",
+          "text": "12, 60, 40, 50, 30, 70, 80, 90, 11, 13, 15."
         },
         {
           "value": "C",
-          "label": "60, 50, 40, 90, 30, 70, 80, 30, 11, 13, 15",
-          "text": "60, 50, 40, 90, 30, 70, 80, 30, 11, 13, 15"
-        },
-        {
-          "value": "D",
-          "label": "None of the above",
-          "text": "None of the above"
+          "label": "60, 50, 40, 90, 30, 70, 80, 30, 11, 13, 15.",
+          "text": "60, 50, 40, 90, 30, 70, 80, 30, 11, 13, 15."
         }
       ],
       "inputName": "Q30",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Max-heapify at index 2 (value 30). Its children are at index 4 (50) and 5 (60). The largest is 60 at index 5. Swap index 2 and 5: [12, 60, 40, 50, 30, 70, 80, 90, 11, 13, 15]. Now check node at index 5 (30). Its children are at index 10 (13) and 11 (15). Since 30 is larger than both, no further swaps are needed."
+      "explanation": "Node 2 (value 30) has children at index 4 (50) and index 5 (60). The largest among {30, 50, 60} is 60. Swap 30 and 60. Now 30 is at index 5. Its children are at index 10 (13) and index 11 (15). Since 30 is larger than both, no further swaps are needed. The resulting array is 12, 60, 40, 50, 30, 70, 80, 90, 11, 13, 15."
     },
     {
-      "id": "extract-combined-1775769443368-31",
+      "id": "extract-combined-1775820288430-31",
       "number": "32",
       "text": "The height \\(h(x)\\) of node \\(x\\) compared to its black-height \\(bh(x)\\) in a red-black tree is:",
       "choices": [
         {
           "value": "A",
-          "label": "\\(h > 2bh\\)",
-          "text": "\\(h > 2bh\\)"
+          "label": "\\(h \\ge 2bh\\)",
+          "text": "\\(h \\ge 2bh\\)"
         },
         {
           "value": "B",
@@ -993,12 +992,12 @@
       "inputName": "Q31",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "A fundamental property of red-black trees is that for any node \\(x\\), the height of the subtree rooted at \\(x\\) satisfies \\(h(x) \\le 2 \\cdot bh(x)\\), where \\(bh(x)\\) is the black-height."
+      "explanation": "A fundamental property of Red-Black Trees is that the height of any node \\(x\\) is at most twice its black-height: \\(h(x) \\le 2 bh(x)\\)."
     },
     {
-      "id": "extract-combined-1775769443368-32",
+      "id": "extract-combined-1775820288430-32",
       "number": "33",
-      "text": "Let \\(T(n)\\) be a function obeying the recurrence \\(T(n) = 9T(n/9) + \\log n\\), then \\(T(n) =\\)",
+      "text": "Let \\(T(n)\\) be a function obeying the recurrence \\(T(n) = 9T(n/9) + \\log n\\), then \\(T(n) = \\)",
       "choices": [
         {
           "value": "A",
@@ -1024,12 +1023,12 @@
       "inputName": "Q32",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Using the Master Theorem: \\(a=9, b=9, f(n) = \\log n\\). We compare \\(f(n)\\) with \\(n^{\\log_b a} = n^{\\log_9 9} = n^1 = n\\). Since \\(f(n) = O(n^{1-\\epsilon})\\) for any \\(0 < \\epsilon < 1\\), this is Case 1 of the Master Theorem. Thus, \\(T(n) = \\Theta(n)\\)."
+      "explanation": "Using the Master Theorem: \\(a=9, b=9, f(n)=\\log n\\). Comparing \\(f(n)\\) to \\(n^{\\log_b a} = n^{\\log_9 9} = n^1\\). Since \\(f(n) = \\log n\\) is polynomially smaller than \\(n\\) (i.e., Case 1), \\(T(n) = \\Theta(n)\\)."
     },
     {
-      "id": "extract-combined-1775769443368-33",
+      "id": "extract-combined-1775820288430-33",
       "number": "34",
-      "text": "Given a heap that contains 256 nodes, the height of the heap rooted at level 5 is (assuming the main root is at level 0):",
+      "text": "Given a heap that contains 256 nodes, the height of the sub-heap rooted at level 5 (assuming root is level 1) is:",
       "choices": [
         {
           "value": "A",
@@ -1055,10 +1054,10 @@
       "inputName": "Q33",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "A heap with \\(n = 256\\) nodes has a total height of \\(H = \\lfloor \\log_2 256 \\rfloor = 8\\). The height of a node at level \\(i\\) is calculated as \\(H - i\\). For level 5, the height is \\(8 - 5 = 3\\)."
+      "explanation": "A heap with 256 nodes has a total height of 8 (since \\(2^8 = 256\\)). If the root is at level 1, nodes at level 5 are at depth 4. The height of a sub-tree starting at level 5 in a total depth of 8 is \\(8 - 5 = 3\\)."
     },
     {
-      "id": "extract-combined-1775769443368-34",
+      "id": "extract-combined-1775820288430-34",
       "number": "35",
       "text": "Which traversal method outputs the data in sorted order in a binary search tree?",
       "choices": [
@@ -1086,12 +1085,12 @@
       "inputName": "Q34",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "By definition, an inorder traversal of a Binary Search Tree (left subtree, root, right subtree) visits nodes in non-decreasing (sorted) order."
+      "explanation": "An inorder traversal (Left-Root-Right) of a Binary Search Tree (BST) visits nodes in non-decreasing (sorted) order."
     },
     {
-      "id": "extract-combined-1775769443368-35",
+      "id": "extract-combined-1775820288430-35",
       "number": "36",
-      "text": "What is the running time of the following pseudo code in Big-Oh notation?\n\n```cpp\nint XXX(int n) {\n    if (n < 6)\n        cout << \"too small\";\n    else\n        for (int i = 0; i < n; ++i) {\n            cout << \"just right\";\n        }\n    return n;\n}\n\nvoid main() {\n    for (int i = 0; i < n; ++i)\n        a = XXX(i);\n}\n\n```",
+      "text": "What is the running time of the following pseudo code in Big-Oh notation:\n\n```cpp\nint XXX(int n) {\n  if (n < 6)\n    cout << \"too small\";\n  else\n    for (int i = 0; i < n; ++i) {\n      cout << \"just right\";\n    }\n  return n;\n}\n\nvoid main() {\n  for (int i = 0; i < n; ++i)\n    a = XXX(i);\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -1117,12 +1116,12 @@
       "inputName": "Q35",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "The function `XXX(i)` has a loop that runs `i` times when \\(i \\ge 6\\), making it \\(O(i)\\). The `main` loop calls `XXX(i)` for every \\(i\\) from 0 to \\(n-1\\). The total complexity is \\(\\sum_{i=0}^{n-1} O(i)\\), which is \\(O(n^2)\\)."
+      "explanation": "The `main` function contains a loop that runs \\(n\\) times. In each iteration \\(i\\), it calls `XXX(i)`. The function `XXX(i)` has a loop that runs \\(i\\) times. The total complexity is the sum of \\(i\\) from 0 to \\(n-1\\), which is \\(\\sum i = n(n-1)/2\\), resulting in \\(O(n^2)\\)."
     },
     {
-      "id": "extract-combined-1775769443368-36",
+      "id": "extract-combined-1775820288430-36",
       "number": "37",
-      "text": "Given the recurrence relation \\(T(n) = n^2 + 2T(n/3)\\). Using the recursion tree method, what is the number of nodes in the tree at level \\(i=5\\)?",
+      "text": "Given the recurrence relation \\(T(n) = n^2 + 2 * T(n/3)\\). Using the recursion tree method, what is the number of nodes in the tree at level \\(i=5\\)?",
       "choices": [
         {
           "value": "A",
@@ -1148,10 +1147,10 @@
       "inputName": "Q36",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "In the recurrence \\(T(n) = aT(n/b) + f(n)\\), the number of nodes at any level \\(i\\) is \\(a^i\\). Here, \\(a = 2\\). At level \\(i = 5\\), the number of nodes is \\(2^5 = 32\\)."
+      "explanation": "In a recurrence of the form \\(T(n) = a T(n/b) + f(n)\\), the recursion tree has \\(a^i\\) nodes at level \\(i\\). Here, \\(a=2\\). For level \\(i=5\\), the number of nodes is \\(2^5 = 32\\)."
     },
     {
-      "id": "extract-combined-1775769443368-37",
+      "id": "extract-combined-1775820288430-37",
       "number": "38",
       "text": "A complete binary search tree has a worst case height of:",
       "choices": [
@@ -1162,8 +1161,8 @@
         },
         {
           "value": "B",
-          "label": "\\( n \\cdot \\log(n) \\)",
-          "text": "\\( n \\cdot \\log(n) \\)"
+          "label": "\\( n * \\log(n) \\)",
+          "text": "\\( n * \\log(n) \\)"
         },
         {
           "value": "C",
@@ -1179,12 +1178,12 @@
       "inputName": "Q37",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "A complete binary tree is balanced by definition. For a tree with \\( n \\) nodes, the height is approximately \\( \\log_2(n) \\). Therefore, even in the worst case, the height of a complete binary search tree remains \\( O(\\log n) \\)."
+      "explanation": "A **complete binary tree** of \\( n \\) nodes is always balanced by definition, meaning its height is \\( \\lfloor \\log_2(n) \\rfloor \\). Since the structure must remain complete, even in the worst-case scenario for a binary search tree, the height will be \\( O(\\log n) \\)."
     },
     {
-      "id": "extract-combined-1775769443368-38",
+      "id": "extract-combined-1775820288430-38",
       "number": "39",
-      "text": "Insert the following elements into an initially empty binary (min) heap: \\( <10, 12, 1, 14, 6, 5, 8, 15, 3, 9, 7, 4, 11, 13, 2> \\). What data element is sitting in the right child of the left child of the root?",
+      "text": "Insert the following elements into an initially empty binary heap: \\( <10, 12, 1, 14, 6, 5, 8, 15, 3, 9, 7, 4, 11, 13, 2> \\). What data element is sitting in the right child of the left child of the root?",
       "choices": [
         {
           "value": "A",
@@ -1205,17 +1204,22 @@
           "value": "D",
           "label": "8",
           "text": "8"
+        },
+        {
+          "value": "E",
+          "label": "5",
+          "text": "5"
         }
       ],
       "inputName": "Q38",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "To solve this, we perform sequential insertions into a min-heap. After all 15 elements are inserted and the heap is balanced, the array representation is \\( [1, 3, 2, 6, 7, 5, 4, 15, 14, 12, 9, 10, 11, 13, 8] \\).\n- The root is at index 1 (value 1).\n- The left child of the root is at index 2 (value 3).\n- The right child of that left child is at index \\( 2 \\times 2 + 1 = 5 \\).\n- The value at index 5 is 7."
+      "explanation": "Assuming a min-heap structure, we insert elements sequentially and perform 'up-heap' operations:\n1. [10]\n2. [10, 12]\n3. [1, 12, 10]\n4. [1, 12, 10, 14]\n5. [1, 6, 10, 14, 12]\n6. [1, 6, 5, 14, 12, 10]\n7. [1, 6, 5, 14, 12, 10, 8]\n8. [1, 6, 5, 14, 12, 10, 8, 15]\n9. [1, 3, 5, 6, 12, 10, 8, 15, 14]\n10. [1, 3, 5, 6, 9, 10, 8, 15, 14, 12]\n11. [1, 3, 5, 6, 7, 10, 8, 15, 14, 12, 9]\n12. [1, 3, 4, 6, 7, 10, 5, 15, 14, 12, 9, 8]\n13. [1, 3, 4, 6, 7, 10, 5, 15, 14, 12, 9, 8, 11]\n14. [1, 3, 4, 6, 7, 10, 5, 15, 14, 12, 9, 8, 11, 13]\n15. [1, 3, 2, 6, 7, 10, 4, 15, 14, 12, 9, 8, 11, 13, 5]\n\nThe root is at index 1 (value 1). Its left child is at index 2 (value 3). The right child of the left child is at index 5, which contains the value **7**."
     },
     {
-      "id": "extract-combined-1775769443368-39",
+      "id": "extract-combined-1775820288430-39",
       "number": "40",
-      "text": "Given the array \\( A = \\{13, 10, 4, 19, 2, 30, 11, 6\\} \\) after running the loop in the insertion sort algorithm five times the result will be:",
+      "text": "Given the array \\( A = \\{13, 10, 4, 19, 2, 30, 11, 6\\} \\), after running the loop in the insertion sort algorithm five times the result will be:",
       "choices": [
         {
           "value": "A",
@@ -1231,20 +1235,14 @@
           "value": "C",
           "label": "2, 4, 10, 13, 19, 30, 11, 6",
           "text": "2, 4, 10, 13, 19, 30, 11, 6"
-        },
-        {
-          "value": "D",
-          "label": "4, 10, 13, 19, 2, 6, 11, 30",
-          "text": "4, 10, 13, 19, 2, 6, 11, 30"
         }
       ],
       "inputName": "Q39",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Insertion sort processes elements one by one. Starting from the second element (10):\n1. Insert 10: \\( \\{10, 13, 4, 19, 2, 30, 11, 6\\} \\)\n2. Insert 4: \\( \\{4, 10, 13, 19, 2, 30, 11, 6\\} \\)\n3. Insert 19: \\( \\{4, 10, 13, 19, 2, 30, 11, 6\\} \\)\n4. Insert 2: \\( \\{2, 4, 10, 13, 19, 30, 11, 6\\} \\)\n5. Insert 30: \\( \\{2, 4, 10, 13, 19, 30, 11, 6\\} \\)\nAfter five iterations, the result is \\( \\{2, 4, 10, 13, 19, 30, 11, 6\\} \\)."
+      "explanation": "Insertion sort builds a sorted sequence at the beginning of the array. Let's trace the state of the array after each of the first five iterations (keys processed from index 1 to 5):\n- Initial: [13, 10, 4, 19, 2, 30, 11, 6]\n- Iteration 1 (key=10): [10, 13, 4, 19, 2, 30, 11, 6]\n- Iteration 2 (key=4): [4, 10, 13, 19, 2, 30, 11, 6]\n- Iteration 3 (key=19): [4, 10, 13, 19, 2, 30, 11, 6]\n- Iteration 4 (key=2): [2, 4, 10, 13, 19, 30, 11, 6]\n- Iteration 5 (key=30): [2, 4, 10, 13, 19, 30, 11, 6]\n\nAfter 5 iterations, the array is [2, 4, 10, 13, 19, 30, 11, 6]."
     }
   ],
   "status": "completed",
-  "totalQuestions": 40,
-  "q": 40
+  "totalQuestions": 40
 }
