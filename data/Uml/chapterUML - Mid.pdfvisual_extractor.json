@@ -1,0 +1,438 @@
+{
+  "id": "extract-1775859490876-v5qze",
+  "label": "UML - Mid.pdf",
+  "params": {
+    "file": "UML - Mid.pdf",
+    "type": "visual_extractor",
+    "chapter": "1"
+  },
+  "title": "Mid",
+  "questions": [
+    {
+      "id": "extract-1775859490876-v5qze-0",
+      "number": "1",
+      "text": "Which of the following techniques can be used to identify domain classes?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Reuse existing domain models",
+          "text": "Reuse existing domain models"
+        },
+        {
+          "value": "B",
+          "label": "Identify noun phrases in the requirements",
+          "text": "Identify noun phrases in the requirements"
+        },
+        {
+          "value": "C",
+          "label": "Use a conceptual class category list",
+          "text": "Use a conceptual class category list"
+        },
+        {
+          "value": "D",
+          "label": "All of the above",
+          "text": "All of the above"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Domain classes are commonly identified through three main techniques: identifying noun phrases in the problem description, using a conceptual class category list (brainstorming based on common domain roles/objects), and reusing existing domain models from similar systems."
+    },
+    {
+      "id": "extract-1775859490876-v5qze-1",
+      "number": "2",
+      "text": "True or False: The software engineer typically adds operation contracts during the requirement analysis phase.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "Only in the implementation phase",
+          "text": "Only in the implementation phase"
+        },
+        {
+          "value": "D",
+          "label": "Only during deployment",
+          "text": "Only during deployment"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Object-Oriented Analysis (OOA), specifically following methodologies like Larman's, operation contracts are defined during the analysis phase to describe the state changes and post-conditions of system operations."
+    },
+    {
+      "id": "extract-1775859490876-v5qze-2",
+      "number": "3",
+      "text": "Frameworks usually contain implementations of many design patterns.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "Only if they are architectural patterns",
+          "text": "Only if they are architectural patterns"
+        },
+        {
+          "value": "D",
+          "label": "Frameworks and patterns are mutually exclusive",
+          "text": "Frameworks and patterns are mutually exclusive"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A framework is a set of cooperating classes that make up a reusable design for a specific class of software. Frameworks are heavily built upon design patterns to provide extensibility and robustness."
+    },
+    {
+      "id": "extract-1775859490876-v5qze-3",
+      "number": "4",
+      "text": "In application domain objects, are attribute types typically shown in the class diagram during the analysis phase?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "Only for numeric types",
+          "text": "Only for numeric types"
+        },
+        {
+          "value": "D",
+          "label": "Always, to assist the programmer",
+          "text": "Always, to assist the programmer"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In a Domain Model (Analysis level), attributes are conceptual and should generally not include technical data types (like `int` or `float`). Technical types are added later during the Design phase in the Design Class Diagram (DCD)."
+    },
+    {
+      "id": "extract-1775859490876-v5qze-4",
+      "number": "5",
+      "text": "Greenfield engineering is defined as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Developing an existing software",
+          "text": "Developing an existing software"
+        },
+        {
+          "value": "B",
+          "label": "Re-implementing existing software",
+          "text": "Re-implementing existing software"
+        },
+        {
+          "value": "C",
+          "label": "Developing the software from scratch",
+          "text": "Developing the software from scratch"
+        },
+        {
+          "value": "D",
+          "label": "Re-designing an existing software",
+          "text": "Re-designing an existing software"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Greenfield engineering refers to projects that are started from scratch without any constraints imposed by prior work or legacy systems."
+    },
+    {
+      "id": "extract-1775859490876-v5qze-5",
+      "number": "6",
+      "text": "The use of 'having' verbs (e.g., 'has') in requirements documentation helps the requirement engineer identify which elements?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Generalization and Specialization",
+          "text": "Generalization and Specialization"
+        },
+        {
+          "value": "B",
+          "label": "Attributes and Aggregation",
+          "text": "Attributes and Aggregation"
+        },
+        {
+          "value": "C",
+          "label": "Methods and Operations",
+          "text": "Methods and Operations"
+        },
+        {
+          "value": "D",
+          "label": "Inheritance and Polymorphism",
+          "text": "Inheritance and Polymorphism"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "'Has-a' relationships indicate that one object possesses a property (Attribute) or is composed of parts (Aggregation/Composition). This is distinct from 'is-a' relationships which indicate Generalization."
+    },
+    {
+      "id": "extract-1775859490876-v5qze-6",
+      "number": "7",
+      "text": "The post condition for the use case \"Add Course\" is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Course shall be available",
+          "text": "Course shall be available"
+        },
+        {
+          "value": "B",
+          "label": "Notification email shall be sends to the student",
+          "text": "Notification email shall be sends to the student"
+        },
+        {
+          "value": "C",
+          "label": "Student shall be active",
+          "text": "Student shall be active"
+        },
+        {
+          "value": "D",
+          "label": "System sends confirmation message",
+          "text": "System sends confirmation message"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "A post-condition describes the state of the system or the final output after the use case has successfully executed. In this context, the system sending a confirmation message marks the successful completion of the 'Add Course' use case."
+    },
+    {
+      "id": "extract-1775859490876-v5qze-7",
+      "number": "8",
+      "text": "What is the relationship between UseCase1 use case \"Login\"?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Relationship \"include\" and the base case is \"UseCase1\" and the included use case is \"Login\"",
+          "text": "Relationship \"include\" and the base case is \"UseCase1\" and the included use case is \"Login\""
+        },
+        {
+          "value": "B",
+          "label": "Relationship \"include\" and the base case is \"Login\" and the included use case is \"UseCase1\"",
+          "text": "Relationship \"include\" and the base case is \"Login\" and the included use case is \"UseCase1\""
+        },
+        {
+          "value": "C",
+          "label": "Relationship \"extend\" and the base case is \"UseCase1\" and the extending use case is \"Login\"",
+          "text": "Relationship \"extend\" and the base case is \"UseCase1\" and the extending use case is \"Login\""
+        },
+        {
+          "value": "D",
+          "label": "Relationship \"extend\" and the base case is \"Login\" and the extending use case is \"UseCase1\"",
+          "text": "Relationship \"extend\" and the base case is \"Login\" and the extending use case is \"UseCase1\""
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In the diagram, the arrow points from UseCase1 to Login. In UML use case diagrams, an arrow from a base use case to another use case (often representing shared functionality like Login) indicates an 'include' relationship, where the base case requires the functionality of the included case."
+    },
+    {
+      "id": "extract-1775859490876-v5qze-8",
+      "number": "9",
+      "text": "The relationship between use case Add Course and use case \"Login\" Is correct.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The diagram explicitly shows an arrow labeled \\( \\ll include \\gg \\) from 'Add Course' to 'Login', which is a standard and correct modeling practice for requiring authentication before performing an action."
+    },
+    {
+      "id": "extract-1775859490876-v5qze-9",
+      "number": "10",
+      "text": "How many included use case(s) for the use case \"Add Course\"?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "4",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "There is no included use case(s)",
+          "text": "There is no included use case(s)"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Looking at the 'Add Course' use case in the diagram, there are two arrows originating from it that are labeled with the \\( \\ll include \\gg \\) stereotype: one pointing to 'UseCase3' and one pointing to 'Login'."
+    },
+    {
+      "id": "extract-1775859490876-v5qze-10",
+      "number": "11",
+      "text": "The entry Condition for the use case \"Add Course\" is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Course shall be available.",
+          "text": "Course shall be available."
+        },
+        {
+          "value": "B",
+          "label": "Notification email shall be sent to the student.",
+          "text": "Notification email shall be sent to the student."
+        },
+        {
+          "value": "C",
+          "label": "Student shall be active.",
+          "text": "Student shall be active."
+        },
+        {
+          "value": "D",
+          "label": "System sends confirmation message.",
+          "text": "System sends confirmation message."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "An entry condition (pre-condition) defines what must be true before a use case can start. To register for a course, the student must already be an 'active' user in the system."
+    },
+    {
+      "id": "extract-1775859490876-v5qze-11",
+      "number": "12",
+      "text": "What is the relationship between use case \"Add Course\" and use case \"Registration Closed\" and which one is the base use case?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Relationship is «extend» and the base use case is 'Add Course' and the extending use \"Registration Closed\".",
+          "text": "Relationship is «extend» and the base use case is 'Add Course' and the extending use \"Registration Closed\"."
+        },
+        {
+          "value": "B",
+          "label": "Relationship is «extend» and the base use case is \"Registration Closed\" and the extend \"Add Course\".",
+          "text": "Relationship is «extend» and the base use case is \"Registration Closed\" and the extend \"Add Course\"."
+        },
+        {
+          "value": "C",
+          "label": "Relationship is «include» and the base use case is \"Add Course\" and we included \"Registration Closed\".",
+          "text": "Relationship is «include» and the base use case is \"Add Course\" and we included \"Registration Closed\"."
+        },
+        {
+          "value": "D",
+          "label": "Relationship is «include» and the base use case is \"Registration Closed\" and the extend \"Add Course\".",
+          "text": "Relationship is «include» and the base use case is \"Registration Closed\" and the extend \"Add Course\"."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "'Registration Closed' represents an exceptional or conditional behavior that occurs during the registration process. In UML, this is modeled as an 'extend' relationship where 'Add Course' is the base use case and 'Registration Closed' is the extension that occurs under specific conditions."
+    },
+    {
+      "id": "extract-1775859490876-v5qze-12",
+      "number": "13",
+      "text": "What is the relationship between use case \"Login\" and Usecase2?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Relationship \"include\" and the base case is \"UseCase2\" and the included use case is \"Login\"",
+          "text": "Relationship \"include\" and the base case is \"UseCase2\" and the included use case is \"Login\""
+        },
+        {
+          "value": "B",
+          "label": "Relationship \"include\" and the base case is \"Login\" and the included use case is \"UseCase2\"",
+          "text": "Relationship \"include\" and the base case is \"Login\" and the included use case is \"UseCase2\""
+        },
+        {
+          "value": "C",
+          "label": "Relationship \"extend\" and the base case is \"UseCase2\" and the extending use case is \"Login\"",
+          "text": "Relationship \"extend\" and the base case is \"UseCase2\" and the extending use case is \"Login\""
+        },
+        {
+          "value": "D",
+          "label": "Relationship \"extend\" and the base case is \"Login\" and the extending use case is \"UseCase2\"",
+          "text": "Relationship \"extend\" and the base case is \"Login\" and the extending use case is \"UseCase2\""
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Following the visual logic of the diagram, the arrow points from Usecase2 to Login. This indicates that Usecase2 (the base case) includes the Login functionality."
+    },
+    {
+      "id": "extract-1775859490876-v5qze-13",
+      "number": "14",
+      "text": "The Last step of the basic flow of the use case \"Add Course\" is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Student enter course name.",
+          "text": "Student enter course name."
+        },
+        {
+          "value": "B",
+          "label": "Student clicks ok button on confirmation message.",
+          "text": "Student clicks ok button on confirmation message."
+        },
+        {
+          "value": "C",
+          "label": "Student shall be active.",
+          "text": "Student shall be active."
+        },
+        {
+          "value": "D",
+          "label": "Notification email shall be sent to the student.",
+          "text": "Notification email shall be sent to the student."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In a standard business flow for course registration, the final system action to conclude the process is typically sending a notification (like an email) to the user confirming the transaction."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 14
+}

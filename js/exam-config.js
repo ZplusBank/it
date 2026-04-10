@@ -307,7 +307,20 @@ const EXAM_CONFIG = [
     "description": "Diagrams ",
     "path": "data/Uml",
     "icon": "data/Uml/icon.png",
-    "chapters": []
+    "chapters": [
+      {
+        "id": "1",
+        "name": "Mid",
+        "q": 14,
+        "file": "data/Uml/chapterUML - Mid.pdfvisual_extractor.json"
+      },
+      {
+        "id": "2",
+        "name": "Final",
+        "q": 40,
+        "file": "data/Uml/combined_questions.json"
+      }
+    ]
   },
   {
     "id": "os",
