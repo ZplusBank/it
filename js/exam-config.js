@@ -122,7 +122,7 @@ const EXAM_CONFIG = [
       },
       {
         "id": "2",
-        "name": "Mid custom",
+        "name": "Mid By Z+",
         "q": 30,
         "file": "data/algorithm/midMultipleFilesregenerationsame.json"
       },
