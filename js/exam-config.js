@@ -131,6 +131,12 @@ const EXAM_CONFIG = [
         "name": "Mid custom (Hard)",
         "q": 30,
         "file": "data/algorithm/midMultipleFilesregenerationharder.json"
+      },
+      {
+        "id": "4",
+        "name": "First",
+        "q": 8,
+        "file": "data/algorithm/midMultiple Filesvisual_extractor.json"
       }
     ]
   },

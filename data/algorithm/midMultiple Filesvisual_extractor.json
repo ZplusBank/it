@@ -1,0 +1,262 @@
+{
+  "id": "extract-combined-1775848796579",
+  "label": "Combined Batch (8 files)",
+  "params": {
+    "file": "Multiple Files",
+    "type": "visual_extractor",
+    "chapter": "4"
+  },
+  "title": "First",
+  "questions": [
+    {
+      "id": "extract-combined-1775848796579-0",
+      "number": "1",
+      "text": "What is the sorted version of the array \\( A = \\{5, 7, 3, 8, 1\\} \\) after applying the insertion sort algorithm?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\{1, 3, 5, 7, 8\\}",
+          "text": "\\{1, 3, 5, 7, 8\\}"
+        },
+        {
+          "value": "B",
+          "label": "\\{1, 5, 3, 7, 8\\}",
+          "text": "\\{1, 5, 3, 7, 8\\}"
+        },
+        {
+          "value": "C",
+          "label": "\\{3, 5, 7, 8, 1\\}",
+          "text": "\\{3, 5, 7, 8, 1\\}"
+        },
+        {
+          "value": "D",
+          "label": "\\{8, 7, 5, 3, 1\\}",
+          "text": "\\{8, 7, 5, 3, 1\\}"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Insertion sort builds the sorted array one element at a time. For the array \\( \\{5, 7, 3, 8, 1\\} \\):\n1. Start with 5.\n2. Insert 7: \\( \\{5, 7\\} \\)\n3. Insert 3: \\( \\{3, 5, 7\\} \\)\n4. Insert 8: \\( \\{3, 5, 7, 8\\} \\)\n5. Insert 1: \\( \\{1, 3, 5, 7, 8\\} \\)"
+    },
+    {
+      "id": "extract-combined-1775848796579-1",
+      "number": "2",
+      "text": "The best case running time of the insertion sort algorithm is obtained when the elements of a given Array (A) are:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Sorted",
+          "text": "Sorted"
+        },
+        {
+          "value": "B",
+          "label": "The middle element is the minimum",
+          "text": "The middle element is the minimum"
+        },
+        {
+          "value": "C",
+          "label": "Reversely sorted",
+          "text": "Reversely sorted"
+        },
+        {
+          "value": "D",
+          "label": "The middle element is the maximum",
+          "text": "The middle element is the maximum"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In insertion sort, if the array is already sorted, the inner loop comparison fails immediately for each element, leading to a linear time complexity of \\( O(n) \\)."
+    },
+    {
+      "id": "extract-combined-1775848796579-2",
+      "number": "3",
+      "text": "Which of the following sorting algorithms is/are based on the Divide-and-Conquer design paradigm?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Merge sort",
+          "text": "Merge sort"
+        },
+        {
+          "value": "B",
+          "label": "Quick sort",
+          "text": "Quick sort"
+        },
+        {
+          "value": "C",
+          "label": "Insertion sort",
+          "text": "Insertion sort"
+        },
+        {
+          "value": "D",
+          "label": "A and B",
+          "text": "A and B"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Both Merge sort and Quick sort use the Divide-and-Conquer paradigm. Merge sort divides the array in halves, and Quick sort partitions the array around a pivot."
+    },
+    {
+      "id": "extract-combined-1775848796579-3",
+      "number": "4",
+      "text": "If \\( f(n) = \\Omega(g(n)) \\) and \\( g(n) = \\Omega(f(n)) \\), which of the following is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( g(n) = \\Theta(f(n)) \\)",
+          "text": "\\( g(n) = \\Theta(f(n)) \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( f(n) = \\Theta(g(n)) \\)",
+          "text": "\\( f(n) = \\Theta(g(n)) \\)"
+        },
+        {
+          "value": "C",
+          "label": "Both A and B",
+          "text": "Both A and B"
+        },
+        {
+          "value": "D",
+          "label": "None of the above",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "By definition, if \\( f(n) = \\Omega(g(n)) \\) and \\( f(n) = O(g(n)) \\) (which is implied by \\( g(n) = \\Omega(f(n)) \\)), then \\( f(n) = \\Theta(g(n)) \\). Because Theta notation is symmetric, both statements are true."
+    },
+    {
+      "id": "extract-combined-1775848796579-4",
+      "number": "5",
+      "text": "Which of the following functions has the worst case complexity (highest growth rate)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( 2^n \\)",
+          "text": "\\( 2^n \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( n^3 \\)",
+          "text": "\\( n^3 \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( n^n \\)",
+          "text": "\\( n^n \\)"
+        },
+        {
+          "value": "D",
+          "label": "All have same complexity",
+          "text": "All have same complexity"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In terms of asymptotic growth, \\( n^n \\) grows faster than exponential functions like \\( 2^n \\), which in turn grow faster than polynomial functions like \\( n^3 \\)."
+    },
+    {
+      "id": "extract-combined-1775848796579-5",
+      "number": "6",
+      "text": "If \\( f(n) = \\log \\log n \\) and \\( g(n) = \\log n \\), which of the following statements is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( f(n) = O(g(n)) \\)",
+          "text": "\\( f(n) = O(g(n)) \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( f(n) = \\Omega(g(n)) \\)",
+          "text": "\\( f(n) = \\Omega(g(n)) \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( f(n) = \\Theta(g(n)) \\)",
+          "text": "\\( f(n) = \\Theta(g(n)) \\)"
+        },
+        {
+          "value": "D",
+          "label": "None of the above",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The function \\( \\log \\log n \\) grows much slower than \\( \\log n \\). Therefore, \\( f(n) \\) is asymptotically bounded above by \\( g(n) \\), making \\( f(n) = O(g(n)) \\) true."
+    },
+    {
+      "id": "extract-combined-1775848796579-6",
+      "number": "7",
+      "text": "Which one of the following recurrence relations describes a recursive algorithm that halves the input but must examine every item in the input?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "\\( T(n) = T(n-1) + n \\)",
+          "text": "\\( T(n) = T(n-1) + n \\)"
+        },
+        {
+          "value": "B",
+          "label": "\\( T(n) = T(n/2) + c \\)",
+          "text": "\\( T(n) = T(n/2) + c \\)"
+        },
+        {
+          "value": "C",
+          "label": "\\( T(n) = T(n/2) + n \\)",
+          "text": "\\( T(n) = T(n/2) + n \\)"
+        },
+        {
+          "value": "D",
+          "label": "\\( T(n) = 2T(n/1) + 1 \\)",
+          "text": "\\( T(n) = 2T(n/1) + 1 \\)"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The term \\( T(n/2) \\) represents halving the input size in the recursive call, and the additive term \\( n \\) represents the work done at the current level (examining every item)."
+    },
+    {
+      "id": "extract-combined-1775848796579-7",
+      "number": "8",
+      "text": "Let \\( f(n) = n^2 - n \\). Which of the following constant values for \\( c \\) make the statement \\( f(n) \\le c \\cdot n^2 \\) true for all \\( n \\ge 1 \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1/4",
+          "text": "1/4"
+        },
+        {
+          "value": "B",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "1/2",
+          "text": "1/2"
+        },
+        {
+          "value": "D",
+          "label": "None of the above",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "For \\( n^2 - n \\le c \\cdot n^2 \\) to hold for all \\( n \\ge 1 \\), we can rewrite it as \\( 1 - 1/n \\le c \\). Since the maximum value of \\( 1 - 1/n \\) approaches 1 (and is 0 at \\( n=1 \\)), \\( c \\) must be at least 1. Among the choices, 1 is the only valid value."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 8
+}
