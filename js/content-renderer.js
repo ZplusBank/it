@@ -53,17 +53,18 @@ const ContentRenderer = {
 
         // Override code block renderer to use Prism.js with line numbers, language badge, and copy button
         renderer.code = function ({ text, lang }) {
-            const language = lang && Prism.languages[lang] ? lang : 'plaintext';
-            const displayLang = language.charAt(0).toUpperCase() + language.slice(1);
+            const sourceLang = String(lang || '').trim().toLowerCase();
+            const prismLanguage = sourceLang && Prism.languages[sourceLang] ? sourceLang : 'plaintext';
+            const displayLang = (sourceLang || prismLanguage).charAt(0).toUpperCase() + (sourceLang || prismLanguage).slice(1);
             let highlighted;
             try {
-                highlighted = Prism.languages[language]
-                    ? Prism.highlight(text, Prism.languages[language], language)
+                highlighted = Prism.languages[prismLanguage]
+                    ? Prism.highlight(text, Prism.languages[prismLanguage], prismLanguage)
                     : self._escapeHtml(text);
             } catch (e) {
                 highlighted = self._escapeHtml(text);
             }
-            return `<div class="code-block-wrapper">
+            return `<div class="code-block-wrapper" data-source-lang="${self._escapeHtml(sourceLang)}">
                 <div class="code-block-header">
                     <span class="code-block-dots"><span></span><span></span><span></span></span>
                     <span class="code-block-lang">${displayLang}</span>
@@ -72,7 +73,7 @@ const ContentRenderer = {
                         <span class="copy-label">Copy</span>
                     </button>
                 </div>
-                <pre class="code-block language-${language} line-numbers"><code class="language-${language}">${highlighted}</code></pre>
+                <pre class="code-block language-${prismLanguage} line-numbers"><code class="language-${prismLanguage}">${highlighted}</code></pre>
             </div>`;
         };
 

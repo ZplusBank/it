@@ -933,6 +933,18 @@ const app = {
     // Track whether content libs are loaded
     _contentLibsReady: false,
 
+    async _enhanceDiagrams(element) {
+        if (!element || typeof DiagramHandler === 'undefined') return;
+
+        try {
+            await DiagramHandler.enhanceContainer(element, {
+                subjectId: this.currentSubject?.id || ''
+            });
+        } catch (e) {
+            console.warn('Diagram enhancement failed:', e);
+        }
+    },
+
     /**
      * Load content-rendering libraries on demand (Marked, Prism).
      * Called once before first question render.
@@ -1170,8 +1182,9 @@ const app = {
         container.textContent = '';
         container.appendChild(fragment);
 
-        // Typeset MathJax + attach image listeners
+        // Typeset MathJax + render diagrams + attach image listeners
         ContentRenderer.typeset(container);
+        this._enhanceDiagrams(container);
         ContentRenderer.attachImageListeners(container);
 
         // Update button states (batch reads then writes to avoid layout thrashing)
@@ -1338,6 +1351,7 @@ const app = {
         feedbackEl.appendChild(frag);
 
         ContentRenderer.typeset(feedbackEl);
+        this._enhanceDiagrams(feedbackEl);
         ContentRenderer.attachImageListeners(feedbackEl);
     },
 

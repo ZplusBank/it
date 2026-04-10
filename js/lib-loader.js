@@ -105,6 +105,69 @@ const LibLoader = {
     },
 
     /**
+     * Load Mermaid.js (flowcharts, UML-like, ER, mindmap, etc.)
+     */
+    async loadMermaid() {
+        if (this._loaded._mermaid) return;
+        if (typeof mermaid !== 'undefined') {
+            this._loaded._mermaid = true;
+            return;
+        }
+        await this.loadScript('https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js');
+        this._loaded._mermaid = true;
+    },
+
+    /**
+     * Load Viz.js (Graphviz DOT renderer)
+     */
+    async loadGraphviz() {
+        if (this._loaded._graphviz) return;
+        if (typeof Viz !== 'undefined') {
+            this._loaded._graphviz = true;
+            return;
+        }
+        await this.loadScriptsSequential([
+            'https://cdn.jsdelivr.net/npm/viz.js@2.1.2/viz.js',
+            'https://cdn.jsdelivr.net/npm/viz.js@2.1.2/full.render.js'
+        ]);
+        this._loaded._graphviz = true;
+    },
+
+    /**
+     * Load Nomnoml (simple UML class/structure diagrams)
+     */
+    async loadNomnoml() {
+        if (this._loaded._nomnoml) return;
+        if (typeof nomnoml !== 'undefined') {
+            this._loaded._nomnoml = true;
+            return;
+        }
+        await this.loadScript('https://cdn.jsdelivr.net/npm/nomnoml@1/dist/nomnoml.js');
+        this._loaded._nomnoml = true;
+    },
+
+    /**
+     * Generic diagram engine loader by engine id.
+     */
+    async loadDiagramEngine(engineName) {
+        const key = String(engineName || '').toLowerCase();
+        if (!key) return;
+
+        if (key === 'mermaid') {
+            await this.loadMermaid();
+            return;
+        }
+        if (key === 'graphviz' || key === 'dot') {
+            await this.loadGraphviz();
+            return;
+        }
+        if (key === 'nomnoml' || key === 'uml') {
+            await this.loadNomnoml();
+            return;
+        }
+    },
+
+    /**
      * Load all content-rendering libs (call before first question render)
      */
     async loadContentLibs() {

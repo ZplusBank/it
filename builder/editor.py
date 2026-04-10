@@ -20,6 +20,7 @@ import urllib.parse
 import urllib.request
 import webbrowser
 from difflib import SequenceMatcher
+from diagram_support import validate_diagram_blocks
 
 try:
     from PIL import Image, ImageTk
@@ -149,6 +150,9 @@ class FormattedTextEditor(ttk.Frame):
         ("SEP", None, None, None),
         ("<>", "`", "`", "success-outline"),
         ("{..}", "```java\n", "\n```", "success-outline"),
+        ("MM", "```mermaid\nflowchart LR\n  A[Start] --> B[End]\n```", "", "primary-outline"),
+        ("UML", "```uml\n[User]-[Order]\n```", "", "primary-outline"),
+        ("DOT", "```dot\ndigraph G {\n  A -> B;\n}\n```", "", "primary-outline"),
         ("SEP", None, None, None),
         ("f(x)", "\\(", "\\)", "primary-outline"),
         ("[=]", "\\[", "\\]", "primary-outline"),
@@ -252,6 +256,8 @@ class FormattedTextEditor(ttk.Frame):
         t.tag_configure("fmt_html", foreground=COLORS["warning"])
         t.tag_configure("fmt_entity", foreground=COLORS["text_muted"],
                          background="#1c1c2e")
+        t.tag_configure("fmt_diagram_marker", foreground="#a78bfa")
+        t.tag_configure("fmt_diagram_lang", foreground="#c4b5fd", font=("Consolas", 9, "bold"))
 
     def _bind_events(self):
         self.text.bind("<KeyRelease>", self._schedule_highlight)
@@ -297,10 +303,16 @@ class FormattedTextEditor(ttk.Frame):
 
         # Code blocks (highest priority)
         codeblock_ranges = []
-        for m in re.finditer(r'```[\w]*\n?([\s\S]*?)```', content):
+        for m in re.finditer(r'```([\w\-]*)\n?([\s\S]*?)```', content):
             s, e = m.start(), m.end()
             codeblock_ranges.append((s, e))
             self.text.tag_add("fmt_codeblock", idx(s), idx(e))
+            self.text.tag_add("fmt_diagram_marker", idx(s), idx(s + 3))
+            lang = (m.group(1) or "")
+            if lang:
+                lang_start = s + 3
+                self.text.tag_add("fmt_diagram_lang", idx(lang_start), idx(lang_start + len(lang)))
+            self.text.tag_add("fmt_diagram_marker", idx(e - 3), idx(e))
 
         def in_codeblock(pos):
             return any(s <= pos < e for s, e in codeblock_ranges)
@@ -439,6 +451,11 @@ class FormattedTextEditor(ttk.Frame):
         self.text.focus_set()
         self._schedule_highlight()
 
+    def get_warnings(self, subject_id=""):
+        """Return non-blocking content warnings for the current text body."""
+        content = self.text.get("1.0", "end-1c")
+        return validate_diagram_blocks(content, subject_id=subject_id)
+
     # -- Compatibility proxy methods (match tk.Text interface) --
 
     def get(self, *args, **kwargs):
@@ -551,6 +568,8 @@ class AdvancedChapterEditor:
         self.tools_menu.add_command(label="Smart Duplicates", command=self.delete_similar_questions)
         self.tools_menu.add_command(label="Fix Numbering", command=self.fix_question_numbering)
         self.tools_menu.add_command(label="Fix Input Typing", command=self.fix_input_typing)
+        self.tools_menu.add_separator()
+        self.tools_menu.add_command(label="Validate Diagram Blocks", command=self.validate_diagram_blocks_for_chapter)
 
         self.tools_btn = ttk.Button(
             toolbar,
@@ -1266,6 +1285,34 @@ class AdvancedChapterEditor:
         # Force display refresh to show updated data including image path
         self.display_question()
         messagebox.showinfo("Success", "Question updated ✓\n(Click 'Save Changes' to save to file)")
+
+    def validate_diagram_blocks_for_chapter(self):
+        """Validate diagram fenced code blocks in question text and explanation."""
+        if not self.questions:
+            messagebox.showinfo("Validate Diagrams", "No questions available.")
+            return
+
+        subject_id = self.section_path.name if self.section_path else ""
+        issues = []
+
+        for i, q in enumerate(self.questions):
+            q_num = str(q.get("number") or i + 1)
+            text_warnings = validate_diagram_blocks(q.get("text", ""), subject_id=subject_id)
+            for warning in text_warnings:
+                issues.append(f"Q{q_num} text L{warning['line']}: {warning['message']}")
+
+            exp_warnings = validate_diagram_blocks(q.get("explanation", ""), subject_id=subject_id)
+            for warning in exp_warnings:
+                issues.append(f"Q{q_num} explanation L{warning['line']}: {warning['message']}")
+
+        if not issues:
+            messagebox.showinfo("Validate Diagrams", "No diagram warnings found.")
+            return
+
+        preview = "\n".join(issues[:20])
+        if len(issues) > 20:
+            preview += f"\n... and {len(issues) - 20} more"
+        messagebox.showwarning("Diagram Warnings", preview)
 
     def _normalize_answer_letters(self, value, question=None):
         """Normalize answer keys to compact uppercase form (e.g., A, B, C -> ABC)."""
