@@ -1061,6 +1061,12 @@ const app = {
         // Build DOM with DocumentFragment for single reflow
         const fragment = document.createDocumentFragment();
 
+        // Question text
+        const textDiv = document.createElement('div');
+        textDiv.className = 'question-text';
+        textDiv.innerHTML = this._renderQuestionContent(question.text, question);
+        fragment.appendChild(textDiv);
+
         // Question image (lazy loaded with decode hints)
         if (question.image) {
             const imgWrapper = document.createElement('div');
@@ -1073,12 +1079,6 @@ const app = {
             imgWrapper.appendChild(img);
             fragment.appendChild(imgWrapper);
         }
-
-        // Question text
-        const textDiv = document.createElement('div');
-        textDiv.className = 'question-text';
-        textDiv.innerHTML = this._renderQuestionContent(question.text, question);
-        fragment.appendChild(textDiv);
 
         // Choices container with event delegation
         const choicesDiv = document.createElement('div');
