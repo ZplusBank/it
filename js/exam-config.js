@@ -543,8 +543,14 @@ const EXAM_CONFIG = [
       {
         "id": "1",
         "name": "Mid",
-        "q": 224,
+        "q": 176,
         "file": "data/Design/chapterMultiple Filesvisual_extractor (1) design.json"
+      },
+      {
+        "id": "2",
+        "name": "Final",
+        "q": 25,
+        "file": "data/Design/chapterMultiple Filesvisual_extractor final.json"
       }
     ]
   }

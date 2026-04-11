@@ -1,0 +1,835 @@
+{
+  "id": "extract-combined-1775933974585",
+  "label": "Combined Batch (4 files)",
+  "params": {
+    "file": "Multiple Files",
+    "type": "visual_extractor",
+    "chapter": "2"
+  },
+  "title": "Final",
+  "questions": [
+    {
+      "id": "extract-combined-1775933974585-0",
+      "number": "1",
+      "text": "All of the following statements are true about the Dependency Inversion Principle except:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "High-level modules should depend on abstractions."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "High-level modules should depend on low-level modules."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Details should depend on abstractions."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Abstractions should not depend on details."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Dependency Inversion Principle (DIP) specifically states that high-level modules should not depend on low-level modules. Instead, both should depend on abstractions. Therefore, the statement that high-level modules depend on low-level modules is false regarding DIP."
+    },
+    {
+      "id": "extract-combined-1775933974585-1",
+      "number": "2",
+      "text": "The Dependency Inversion Principle implies:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Simple code"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Low effort"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Flexible code"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the mentioned"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The primary benefit of the Dependency Inversion Principle is that it decouples high-level policy from low-level implementation details, which makes the code more flexible and easier to change without causing ripple effects throughout the system."
+    },
+    {
+      "id": "extract-combined-1775933974585-2",
+      "number": "3",
+      "text": "The first component-level model you create will be complete, consistent, and accurate.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "True, provided all requirements are finalized"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "True, for systems of low complexity"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Software engineering is an iterative process. Initial models are almost never complete or perfectly accurate; they are refined and corrected through successive iterations as the understanding of the system deepens."
+    },
+    {
+      "id": "extract-combined-1775933974585-3",
+      "number": "4",
+      "text": "\"All operations that access the same data are defined within one class\", this is called:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Functional cohesion"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Layer cohesion"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Communicational cohesion"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Common coupling"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Communicational cohesion occurs when all the elements of a component or module operate on the same input data or contribute to the creation of the same output data. In object-oriented design, grouping methods that access the same data into a single class is a classic example of this."
+    },
+    {
+      "id": "extract-combined-1775933974585-4",
+      "number": "5",
+      "text": "Whom of the following is/are among the author(s) of the book **Design Pattern: Elements of Reusable Object-Oriented Software**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Erich Gamma"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Richard Helm"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Ralph Johnson"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the mentioned"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The book was authored by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. These four authors are widely known as the **Gang of Four (GoF)**."
+    },
+    {
+      "id": "extract-combined-1775933974585-5",
+      "number": "6",
+      "text": "Which of the following is not a participant in the **Builder** design pattern?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Builder"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "ConcreteBuilder"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Director"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Context"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The participants in the Builder pattern are the **Builder** (abstract interface), **ConcreteBuilder** (constructs the product), **Director** (controls the construction process), and **Product**. **Context** is not a standard participant in the Builder pattern; it is typically found in patterns like State or Strategy."
+    },
+    {
+      "id": "extract-combined-1775933974585-6",
+      "number": "7",
+      "text": "Which of the following is true about object adapter?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The Adapter subclasses the Target"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The Adapter subclasses the Adaptee"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The Adapter holds an instance of the Adaptee"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The Adapter inherits the interface of the Adaptee"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "A and C only"
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "A and B and D"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "In the **Object Adapter** pattern, the Adapter maintains compatibility with the client by implementing the **Target** interface (or subclassing the Target class). Unlike the Class Adapter which uses inheritance, the Object Adapter uses **composition**, meaning it holds an instance of the **Adaptee** to delegate requests to it. Thus, statements A and C are correct.\n\n```mermaid\nclassDiagram\n    class Target {\n        <<interface>>\n        +request()\n    }\n    class Adapter {\n        -adaptee: Adaptee\n        +request()\n    }\n    class Adaptee {\n        +specificRequest()\n    }\n    Target <|.. Adapter\n    Adapter --> Adaptee\n```"
+    },
+    {
+      "id": "extract-combined-1775933974585-7",
+      "number": "8",
+      "text": "Common Language Runtime (CLR) in the .NET platform is an example of which architecture?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Virtual Machine architecture"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Layered architecture"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Master-slave architecture"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Main-subroutine architecture"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The Common Language Runtime (CLR) is a virtual machine component of Microsoft's .NET framework that manages the execution of .NET programs. It provides an abstraction layer between the compiled code and the underlying hardware, which is the defining characteristic of a **Virtual Machine architecture**."
+    },
+    {
+      "id": "extract-combined-1775933974585-8",
+      "number": "9",
+      "text": "Which of the following statements is true about master-slave architecture?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Slaves may perform the same functional task using different algorithms"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Slaves provide replicated services to the master to support fault tolerance"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The architecture supports system reliability and fault tolerance"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the mentioned"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In a master-slave architecture, the master component distributes work among slave components. Slaves can perform the same tasks (often using different algorithms to ensure reliability), provide replicated services for redundancy, and collectively support fault tolerance and high system reliability."
+    },
+    {
+      "id": "extract-combined-1775933974585-9",
+      "number": "10",
+      "text": "Which of the following is used to describe the processing flow within each class operation in detail?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Activity diagram or pseudo code"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Class diagram or object diagram"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Use case diagram or sequence diagram"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Component diagram or deployment diagram"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To detail the internal logic and processing flow of a specific operation or method within a class, designers typically use **Activity diagrams** (for visual flow) or **pseudo-code** (for textual logic)."
+    },
+    {
+      "id": "extract-combined-1775933974585-10",
+      "number": "11",
+      "text": "Pipe and Filter architecture allows all of the following except:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Dynamic interactions"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Concurrency"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Reusability"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Modifiability"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Flexibility"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Pipe and Filter architecture is based on a unidirectional flow of data through independent components. While it excels in **concurrency**, **reusability**, and **flexibility** (by swapping filters), it does not naturally support complex **dynamic interactions** or two-way communication between arbitrary components."
+    },
+    {
+      "id": "extract-combined-1775933974585-11",
+      "number": "12",
+      "text": "Process-control software architecture is usually used in:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Games"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Embedded systems"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Business systems"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Operating system"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Interactive systems"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Process-control architecture is typically used in **embedded systems** and real-time environments where the software must continuously monitor external sensors and adjust actuators to maintain a process within a specific range or at a set point."
+    },
+    {
+      "id": "extract-combined-1775933974585-12",
+      "number": "13",
+      "text": "In data-flow architecture, data can flow in:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Linear structure"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Graph topology with cycles"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Tree structures"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the mentioned"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Data-flow architectures are highly versatile. Data can follow a simple **linear structure** (like a basic pipeline), branch out into **tree structures** (fan-out/fan-in), or follow complex **graph topologies**, which may include **cycles** for feedback loops in certain implementations."
+    },
+    {
+      "id": "extract-combined-1775933974585-13",
+      "number": "14",
+      "text": "The figure below represents the structure of the Singleton design pattern. Consider it carefully then identify the correct code for the `getInstance()` operation that reflects the \"lazy initialization\" of the Singleton.\n\n```mermaid\nclassDiagram\n    class Singleton {\n        -instance: Singleton\n        -Singleton()\n        +getInstance() Singleton\n    }\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\npublic static Singleton getInstance() {\n    if (instance == null) {\n        instance = new Singleton();\n    }\n    return instance;\n}\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\npublic static Singleton getInstance() {\n    return instance;\n}\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\npublic static Singleton getInstance() {\n    instance = new Singleton();\n    return instance;\n}\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\npublic static Singleton getInstance() {\n    return new Singleton();\n}\n```"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Lazy initialization in the Singleton design pattern involves delaying the creation of the class instance until it is first needed. This is implemented by checking if the static variable `instance` is `null` inside the `getInstance()` method. If it is `null`, the private constructor is called to create the instance; otherwise, the existing instance is returned. Option A correctly implements this logic."
+    },
+    {
+      "id": "extract-combined-1775933974585-14",
+      "number": "15",
+      "text": "Based on the provided description, use the Composite design pattern and UML to model a Windows file system consisting of a 'root' folder containing items such as text files, binary files, shortcuts to items, and other nested folders. Which of the following structures correctly represents the relationship and roles of these classes in the UML model?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "An abstract class `FileSystemItem` (Component) defines the `getSize()` method. `TextFile`, `BinaryFile`, and `Shortcut` (Leaves) inherit from it. `Folder` (Composite) also inherits from `FileSystemItem`, aggregates a collection of `FileSystemItem` objects, and implements `addItem()` and `removeItem()` methods."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A `Root` class contains separate lists for `TextFile`, `BinaryFile`, and `Shortcut` objects. The `Folder` class acts independently to avoid recursive calls and does not share a base class with the files."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A `FileSystem` interface is implemented only by a `Folder` class. All files (`TextFile`, `BinaryFile`) are stored as primitive attributes inside the `Folder` class rather than as part of a hierarchy."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The Decorator pattern is used where a `File` object is the base, and a `Folder` class acts as a decorator to add the functionality of containing other files."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The Composite design pattern is designed to represent part-whole hierarchies so that clients can treat individual objects and compositions of objects uniformly.\n\n- **Component (`FileSystemItem`)**: An abstract class or interface that declares the interface for objects in the composition (e.g., `getSize()`).\n- **Leaf (`TextFile`, `BinaryFile`, `Shortcut`)**: Represents individual objects in the composition that have no children.\n- **Composite (`Folder`)**: Represents a container that can store both Leaves and other Composites. It implements the child-related operations (`add`, `remove`) and the component interface by delegating tasks to its children.\n\n```mermaid\nclassDiagram\n    class FileSystemItem {\n        <<abstract>>\n        +getSize() int\n    }\n    class TextFile {\n        +getSize() int\n    }\n    class BinaryFile {\n        +getSize() int\n    }\n    class Shortcut {\n        +getSize() int\n    }\n    class Folder {\n        -items: List<FileSystemItem>\n        +getSize() int\n        +addItem(item: FileSystemItem)\n        +removeItem(item: FileSystemItem)\n    }\n    FileSystemItem <|-- TextFile\n    FileSystemItem <|-- BinaryFile\n    FileSystemItem <|-- Shortcut\n    FileSystemItem <|-- Folder\n    Folder o-- FileSystemItem : children\n```"
+    },
+    {
+      "id": "extract-combined-1775933974585-15",
+      "number": "16",
+      "text": "All of the following statements are true about Dependency Inversion Principle **Except**:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "High-level modules depend on low-level modules"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Low-level modules depend on high-level modules"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Low-level modules depend on abstraction"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "High-level modules depend on abstraction"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Details depend on abstraction"
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "A and B"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "F",
+      "explanation": "The Dependency Inversion Principle (DIP) states that: 1. High-level modules should not depend on low-level modules. Both should depend on abstractions. 2. Abstractions should not depend on details. Details should depend on abstractions. Therefore, both (a) and (b) are incorrect descriptions of the principle's goals, making (f) the correct exception."
+    },
+    {
+      "id": "extract-combined-1775933974585-16",
+      "number": "17",
+      "text": "Dependency Inversion Principle implies:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Simple code"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Low effort"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Flexible code"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the mentioned"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Only A and B"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "DIP leads to decoupled code, which significantly increases the flexibility and maintainability of the software by allowing low-level details to change without impacting high-level policy."
+    },
+    {
+      "id": "extract-combined-1775933974585-17",
+      "number": "18",
+      "text": "The first component-level model you create will be complete, consistent, and accurate.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Design is an iterative process. Initial models are rarely complete or fully accurate and are refined as more details and constraints are discovered."
+    },
+    {
+      "id": "extract-combined-1775933974585-19",
+      "number": "19",
+      "text": "Whom of the following is/are among the author(s) of the book \"Design Pattern. Elements of Reusable Object-Oriented Software\"?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Erich Gamma"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Richard Helm"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Ralph Johnson"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "John Vlissides"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All of the mentioned"
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "Only A and B"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "The classic design patterns book was written by the 'Gang of Four' (GoF), which consists of Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides."
+    },
+    {
+      "id": "extract-combined-1775933974585-20",
+      "number": "20",
+      "text": "Which of the following is **not** a participant in the Builder design pattern?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Builder"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "ConcreteBuilder"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Director"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Context"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Product"
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "None of the mentioned"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Participants in the Builder pattern include the Director, Builder, ConcreteBuilder, and Product. 'Context' is a participant in patterns like State or Strategy, but not Builder."
+    },
+    {
+      "id": "extract-combined-1775933974585-23",
+      "number": "21",
+      "text": "Which of the following is true about the master-slave architecture?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Slaves may perform the same functional task by different algorithms or different functional tasks"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It supports fault tolerance and system reliability"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Slaves provide replicated services to the master"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the mentioned"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Master-slave architectures are designed so that the master distributes work among slaves. This can involve performing the same task for redundancy (reliability) or different sub-tasks."
+    },
+    {
+      "id": "extract-combined-1775933974585-24",
+      "number": "22",
+      "text": "To describe the processing flow within each class operation in detail, we use either an activity diagram or pseudo code.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Only activity diagrams are used"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Neither is used for operation logic"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Activity diagrams and pseudo code are both appropriate tools for modeling the procedural logic or algorithmic flow within an operation."
+    },
+    {
+      "id": "extract-combined-1775933974585-27",
+      "number": "23",
+      "text": "In data-flow architecture, data can flow in which of the following structures?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Linear structure"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Graph topology with cycles"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Tree structures"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the mentioned"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Data-flow architectures can be organized in various topologies, including simple linear pipes, hierarchical trees, or more complex network graphs."
+    },
+    {
+      "id": "extract-combined-1775933974585-28",
+      "number": "24",
+      "text": "The figure below represents the structure of the Singleton design pattern. Which of the following code snippets correctly implements the `getInstance()` operation using 'lazy initialization'?\n\n```mermaid\nclassDiagram\n    class Singleton {\n        -instance: Singleton\n        -Singleton()\n        +getInstance(): Singleton\n    }\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\npublic static Singleton getInstance() {\n    if (instance == null) {\n        instance = new Singleton();\n    }\n    return instance;\n}\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\nprivate static Singleton instance = new Singleton();\npublic static Singleton getInstance() {\n    return instance;\n}\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\npublic static Singleton getInstance() {\n    return new Singleton();\n}\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\npublic Singleton getInstance() {\n    instance = new Singleton();\n    return instance;\n}\n```"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Lazy initialization means the object is created only when it is first requested. Option A checks if the instance is null before creating it, which is the standard implementation of lazy initialization."
+    },
+    {
+      "id": "extract-combined-1775933974585-29",
+      "number": "25",
+      "text": "A file system in Windows consists of a \"root\" folder. Inside the folder are \"items\": text files, binary files, shortcuts to items, and other nested folders. The nested folders hold more of the same items. The size can be obtained for each item. Folders may also have items added to and removed from them. Using the **Composite** design pattern, which of the following describes the correct UML structure for this system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Define a common interface or abstract class (e.g., `FileSystemItem`) that includes the `getSize()` method. `TextFile`, `BinaryFile`, `Shortcut`, and `Folder` all inherit from this interface. The `Folder` class maintains a collection of `FileSystemItem` objects and provides methods to `add()` and `remove()` them."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Create a `Folder` class as the base class for all other items. `TextFile` and `BinaryFile` inherit from `Folder` so they can be stored inside it, while `Shortcut` is a separate standalone class that does not implement `getSize()`."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Implement a `FileSystem` class that contains two separate lists: one for `Files` and one for `Folders`. The `Folders` list can contain other `FileSystem` objects, but individual files do not share an interface with folders."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Define `TextFile`, `BinaryFile`, and `Shortcut` as leaf nodes that inherit from a `Folder` class. This allows the `Folder` class to use polymorphism to calculate the size of all its children."
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The **Composite** design pattern is ideal for representing part-whole hierarchies like a file system. \n\n1. **Component (`FileSystemItem`)**: An abstract class or interface that defines the common operation `getSize()`. This allows clients to treat both individual files and folder compositions uniformly.\n2. **Leaf (`TextFile`, `BinaryFile`, `Shortcut`)**: Represents individual objects in the composition. They implement `getSize()` to return their own size.\n3. **Composite (`Folder`)**: Represents a collection of components. It implements `getSize()` by summing the sizes of its children and provides methods to manage those children (`add`, `remove`).\n\n```mermaid\nclassDiagram\n    class FileSystemItem {\n        <<abstract>>\n        +getSize() int\n    }\n    class TextFile {\n        +getSize() int\n    }\n    class BinaryFile {\n        +getSize() int\n    }\n    class Shortcut {\n        +getSize() int\n    }\n    class Folder {\n        -items: List<FileSystemItem>\n        +getSize() int\n        +add(item: FileSystemItem)\n        +remove(item: FileSystemItem)\n    }\n    FileSystemItem <|-- TextFile\n    FileSystemItem <|-- BinaryFile\n    FileSystemItem <|-- Shortcut\n    FileSystemItem <|-- Folder\n    Folder o-- FileSystemItem\n```"
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 30,
+  "q": 25
+}
