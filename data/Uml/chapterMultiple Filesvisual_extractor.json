@@ -1,0 +1,1179 @@
+{
+  "id": "extract-combined-1775903049722",
+  "label": "Combined Batch (2 files)",
+  "params": {
+    "file": "Multiple Files",
+    "type": "visual_extractor",
+    "chapter": "2"
+  },
+  "title": "Final",
+  "questions": [
+    {
+      "id": "extract-combined-1775903049722-0",
+      "number": "1",
+      "text": "Consider the following Use-Case diagram:\n\n```mermaid\ngraph TD\n    Patient((Patient))\n    InsuredPatient((Insured Patient))\n    BookAppointment([Book Appointment])\n    ApplyDiscount([Apply Insurance Discount])\n    MakePayment([Make Payment])\n    PayCash([Pay by Cash])\n    PayCredit([Pay by Credit Card])\n\n    Patient --- BookAppointment\n    InsuredPatient -- \"d\" --> Patient\n    ApplyDiscount -. \"a\" .-> BookAppointment\n    BookAppointment -. \"b\" .-> MakePayment\n    PayCash -- \"c\" --> MakePayment\n    PayCredit -- \"c\" --> MakePayment\n```\n\nGiven that \"book appointment\" is the base use-case, the association denoted by (a) should be:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Include"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Extend"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Generalization"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Aggregation"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Composition"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In UML Use Case diagrams, the `<<extend>>` relationship is used when an extension use case optionally adds behavior to a base use case. The arrow points from the extension use case (Apply Insurance Discount) to the base use case (Book Appointment)."
+    },
+    {
+      "id": "extract-combined-1775903049722-1",
+      "number": "2",
+      "text": "Based on the previously provided Use-Case diagram, given that \"book appointment\" is the base use-case, the association denoted by (b) should be:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Include"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Extend"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Generalization"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Aggregation"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Composition"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In UML Use Case diagrams, the `<<include>>` relationship indicates that a base use case (Book Appointment) requires the functionality of another use case (Make Payment) to complete its task. The arrow points from the base use case to the included use case."
+    },
+    {
+      "id": "extract-combined-1775903049722-2",
+      "number": "3",
+      "text": "Based on the previously provided Use-Case diagram, the association denoted by (c) should be:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Include"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Extend"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Generalization"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Aggregation"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Composition"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The association (c) uses a hollow triangle arrowhead, which represents Generalization in UML. It indicates that 'Pay by Cash' and 'Pay by Credit Card' are specialized types of the more general 'Make Payment' use case."
+    },
+    {
+      "id": "extract-combined-1775903049722-4",
+      "number": "4",
+      "text": "Implementing the object design model in a programming language is called:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Forward engineering"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Reverse engineering"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Roundtrip engineering"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "**Forward engineering** is the process of building a system (or generating code) from high-level models or designs."
+    },
+    {
+      "id": "extract-combined-1775903049722-5",
+      "number": "5",
+      "text": "The specification of the subsystem interface in a specific programming language is called \"API\":",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "True. **API** (Application Programming Interface) is the specific set of routines, protocols, and tools that define how software components should interact, acting as the specification for a subsystem interface."
+    },
+    {
+      "id": "extract-combined-1775903049722-6",
+      "number": "6",
+      "text": "\"Tools\" are automated systems to accomplish a technique:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "True. In software engineering, **tools** are software applications or automated systems used to perform tasks or implement specific techniques within a methodology."
+    },
+    {
+      "id": "extract-combined-1775903049722-7",
+      "number": "7",
+      "text": "The following UML diagram represents:\n\n```mermaid\ngraph LR\n    Actor((Actor))\n    Obj1[Object1]\n    Obj2[Object2]\n    Obj3a[Object3]\n    Obj3b[Object3]\n    Obj4[Object4]\n\n    Actor -- \"1: message\" --> Obj1\n    Obj1 -- \"1.1: reply\" --> Obj3a\n    Actor -- \"2: message\" --> Obj2\n    Obj2 -- \"2.1: reply\" --> Obj3a\n    Obj3a -- \"2.1.1: message\" --> Obj3b\n    Obj3b -- \"2.1.1: message\" --> Obj4\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Object diagram"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "State diagram"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Collaboration diagram"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Communication diagram"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "C and D"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "The diagram shows objects interacting through numbered messages, which is characteristic of an interaction diagram. In UML 1.x, this was called a **Collaboration Diagram**, and in UML 2.x, it was renamed to a **Communication Diagram**. Therefore, both terms refer to this type of diagram."
+    },
+    {
+      "id": "extract-combined-1775903049722-8",
+      "number": "8",
+      "text": "The following design reflects:\n\n```mermaid\ngraph LR\n    subgraph Module1 [Module A]\n    n1(( )) --- n2(( ))\n    n2 --- n3(( ))\n    n3 --- n4(( ))\n    n4 --- n1\n    n1 --- n3\n    n2 --- n4\n    end\n    \n    subgraph Module2 [Module B]\n    m1(( )) --- m2(( ))\n    m2 --- m3(( ))\n    m3 --- m4(( ))\n    m4 --- m5(( ))\n    m5 --- m1\n    m1 --- m3\n    m2 --- m4\n    m3 --- m5\n    end\n\n    n3 --- m1\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "High cohesion, low coupling"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Low cohesion, high coupling"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "low cohesion, low coupling"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "high cohesion, high coupling"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "High cohesion is represented by the many internal connections within each module (the dense spider-web of lines inside the boxes), meaning the elements inside are highly related. Low coupling is represented by the single line connecting the two modules, indicating a minimal dependency between separate components."
+    },
+    {
+      "id": "extract-combined-1775903049722-9",
+      "number": "9",
+      "text": "\"To measure how it is easy for users to deal with the system\" we use _________ nonfunctional requirement:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Usability"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Performance"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Reliability"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Supportability"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Dependability"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "**Usability** is the non-functional requirement that measures how easy and intuitive a system is for its intended users."
+    },
+    {
+      "id": "extract-combined-1775903049722-10",
+      "number": "10",
+      "text": "The following architecture improves maintainability:\n\n```mermaid\ngraph TD\n    L4[Layer 4]\n    L3[Layer 3]\n    L2[Layer 2]\n    L1[Layer 1]\n\n    L4 -.-> L3\n    L3 -.-> L2\n    L2 -.-> L1\n    L4 -.-> L2\n    L3 -.-> L1\n    L4 -.-> L1\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The diagram represents a **Layered Architecture**. Layered architectures improve maintainability by promoting separation of concerns; changes in one layer have minimal impact on others as long as the interfaces remain consistent."
+    },
+    {
+      "id": "extract-combined-1775903049722-11",
+      "number": "11",
+      "text": "\"A student logs into the system. If the login is successful, the system displays the dashboard; otherwise, it shows an error message.\" Which activity diagram element should be used to model this behavior?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Fork node"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Merge node"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Branch node"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Join node"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A **Branch node** (also called a decision node) is used in activity diagrams to represent conditional logic where an incoming flow is directed to one of several outgoing flows based on a condition (guard)."
+    },
+    {
+      "id": "extract-combined-1775903049722-12",
+      "number": "12",
+      "text": "\"After payment processing, the system waits until **BOTH** inventory is updated and confirmation email is sent before completing the order.\" Which activity diagram element should be used?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Fork node"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Merge node"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Branch node"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Join node"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "A **Join node** is used in activity diagrams to synchronize multiple concurrent flows. It waits for all incoming flows to arrive before allowing the process to continue with a single outgoing flow."
+    },
+    {
+      "id": "extract-combined-1775903049722-13",
+      "number": "13",
+      "text": "\"In a hospital system, a nurse records patient vitals, while a doctor diagnoses the patient.\" Each action is shown in a separate partition in an activity diagram. What is this partition called?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Activity"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Control flow"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Swimlane"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Subsystem"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In UML activity diagrams, partitions used to organize actions according to the responsible entity (e.g., nurse, doctor) are commonly referred to as **Swimlanes**."
+    },
+    {
+      "id": "extract-combined-1775903049722-14",
+      "number": "14",
+      "text": "\"A designer models all business logic inside the User Interface (UI) object in a sequence diagram.\" What is the best design critique?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Sequence diagrams should not include UI objects"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Business logic should be delegated to control object"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "UI objects must use asynchronous messages only"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "UI objects cannot send messages"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Following design principles like MVC (Model-View-Controller) or Boundary-Control-Entity, the User Interface (Boundary) should only handle presentation. **Business logic** should be placed in **Control** or Entity objects to ensure separation of concerns."
+    },
+    {
+      "id": "extract-combined-1775903049722-15",
+      "number": "15",
+      "text": "Which modeling choice best supports low coupling in a sequence diagram?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "UI directly calls database objects"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Controller mediates between UI and entity objects"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Entity objects call UI objects"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All objects communicate with all others"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Using a **Controller** as a mediator reduces the direct dependencies (coupling) between the User Interface and the underlying data/entity objects."
+    },
+    {
+      "id": "extract-combined-1775903049722-16",
+      "number": "16",
+      "text": "Two alternative flows (\"valid login\" and \"invalid login\") are shown one after another in a sequence diagram instead of conditionally. Which UML construct should be used to model this correctly?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "loop fragment"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "opt fragment"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "alt fragment"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "ref fragment"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The **alt (alternative)** fragment is used in sequence diagrams to show mutually exclusive conditional logic, where only one of several paths is executed based on a guard condition."
+    },
+    {
+      "id": "extract-combined-1775903049722-17",
+      "number": "17",
+      "text": "While mapping an object model to database, mapping using horizontal mapping results in faster queries.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "True only for small datasets",
+          "text": "True only for small datasets"
+        },
+        {
+          "value": "D",
+          "label": "False, vertical mapping is always faster",
+          "text": "False, vertical mapping is always faster"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Horizontal mapping (Table-per-Concrete-Class) maps each class to its own table containing all its attributes. This avoids the overhead of SQL JOINs required in vertical mapping (Table-per-Subclass), generally resulting in faster query performance for individual objects."
+    },
+    {
+      "id": "extract-combined-1775903049722-18",
+      "number": "18",
+      "text": "\"In a library system, a Book may be temporarily used by a Reservation object during processing but is not owned by it.\" Which UML relationship best represents this?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Association"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Aggregation"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Composition"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Dependency"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "A **Dependency** represents a transient relationship where one class uses another (e.g., as a parameter or local variable in a method) without a structural, long-term link or ownership."
+    },
+    {
+      "id": "extract-combined-1775903049722-19",
+      "number": "19",
+      "text": "A designer connects almost all classes with bidirectional associations. What is the most likely consequence?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Low coupling"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Easier maintenance"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Tight coupling and complex dependencies"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Better reusability"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Bidirectional associations create dependencies in both directions. When most classes are connected this way, the system becomes highly interdependent, leading to **tight coupling**, which makes the code harder to change, test, and reuse."
+    },
+    {
+      "id": "extract-combined-1775903049722-20",
+      "number": "20",
+      "text": "Consider the following Class Diagram. Which OCL constraint correctly expresses that a student's GPA is always between 0.0 and 4.0?\n\n```mermaid\nclassDiagram\n    class Student {\n        -stId: int\n        -name: String\n        -gpa: double\n        +Student()\n        +enroll(c: Course)\n    }\n    class Course {\n        -cId: int\n        -title: String\n        -cHrs: int\n        -numOfStudents: int\n        +Course()\n        +addStudent(s: Student)\n    }\n    class Undergraduate {\n        -year: int\n    }\n    class Graduate {\n        -thesis: String\n    }\n    Student <|-- Undergraduate\n    Student <|-- Graduate\n    Student \"*\" -- \"*\" Course : courses / students\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "context Student inv: gpa >= 0.0 and gpa <= 4.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "context Course inv: gpa >= 0.0 and gpa <= 4.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "context Student pre: gpa between 0.0 and 4.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "context Student post: gpa >= 0.0 and gpa <= 4.0"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "An invariant (`inv`) is a condition that must always hold true for all instances of a class. The constraint targets the `Student` class and its `gpa` attribute."
+    },
+    {
+      "id": "extract-combined-1775903049722-21",
+      "number": "21",
+      "text": "Based on the provided Class Diagram, which OCL contract correctly expresses that a student must have a GPA of at least 2.0 to enroll in a new course?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "context Student::enroll(c: Course) pre: self.gpa >= 2.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "context Student::enroll(c: Course) post: self.gpa >= 2.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "context Course::addStudent(s: Student) inv: s.gpa >= 2.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "context Student inv: enroll(c) implies gpa >= 2.0"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A precondition (`pre`) specifies conditions that must be met before an operation can be executed. In this case, the `enroll` method in the `Student` class requires `gpa >= 2.0` to start."
+    },
+    {
+      "id": "extract-combined-1775903049722-22",
+      "number": "22",
+      "text": "Which OCL post-condition correctly ensures that after a student enrolls in a course, the `numOfStudents` in that course is increased by 1?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "context Student::enroll(c: Course) post: c.numOfStudents = c.numOfStudents@pre + 1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "context Student::enroll(c: Course) pre: c.numOfStudents = c.numOfStudents + 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "context Student::enroll(c: Course) post: c.numOfStudents = c.numOfStudents + 1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "context Student::enroll(c: Course) post: self.courses->size() = self.courses@pre->size() + 1"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In OCL, `@pre` is used in a post-condition to refer to the value of an attribute before the operation was performed. Thus, `c.numOfStudents = c.numOfStudents@pre + 1` correctly specifies the increment."
+    },
+    {
+      "id": "extract-combined-1775903049722-23",
+      "number": "23",
+      "text": "Map the provided Class Diagram into a Relational Database Schema using **Vertical Mapping** (Table per Class). Which of the following sets of tables is correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Student(stId, name, gpa), Undergraduate(stId, year), Graduate(stId, thesis), Course(cId, title, cHrs, numOfStudents), Student_Course(stId, cId)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Student(stId, name, gpa, year, thesis), Course(cId, title, cHrs, numOfStudents), Student_Course(stId, cId)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Undergraduate(stId, name, gpa, year), Graduate(stId, name, gpa, thesis), Course(cId, title, cHrs, numOfStudents)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Student(stId, name, gpa), Undergraduate(year), Graduate(thesis), Course(cId, title, cHrs, numOfStudents)"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Vertical Mapping (also known as Joined Table inheritance) creates a table for every class in the hierarchy. Subclass tables (`Undergraduate`, `Graduate`) include their specific attributes and a primary key that also acts as a foreign key to the superclass table (`Student`). Many-to-many relationships require a join table (`Student_Course`)."
+    },
+    {
+      "id": "extract-combined-1775903049722-24",
+      "number": "24",
+      "text": "Which Java code snippet correctly implements the inheritance and relationship for the `Graduate` class as shown in the UML diagram?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\\npublic class Graduate extends Student {\\n    private String thesis;\\n    public Graduate() { super(); }\\n}```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\\npublic class Graduate {\\n    private String thesis;\\n    private Student student;\\n}```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\\npublic class Graduate implements Student {\\n    private String thesis;\\n}```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\\npublic abstract class Student {\\n    private String thesis;\\n}```"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In the UML diagram, the arrow with a hollow triangle head indicates that `Graduate` inherits from `Student`. In Java, this is represented by the `extends` keyword."
+    },
+    {
+      "id": "extract-combined-1775903049722-25",
+      "number": "25",
+      "text": "Consider the following English statement:\n\n\"The course **c** shall be available before calling the `addCourse(c)` operation.\"\n\nWhich of the following is the correct OCL expression?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Context Student::addCourse(C) pre: not self.checkCourseAvailability(C)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Context Student inv: self.checkCourseAvailabilty(C)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Context Student::addCourse(c) pre: self.checkCourseAvailbility(c)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Context Stucient::addCourse(C) post: self1checkCourseAvalabthty(c)"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In OCL, a requirement that must be true before an operation is executed is defined as a precondition (`pre`). The statement 'before calling' directly maps to a precondition for the `addCourse(c)` operation. Option C correctly identifies the context and the precondition."
+    },
+    {
+      "id": "extract-combined-1775903049722-26",
+      "number": "26",
+      "text": "Constraints are modeled using contracts and UML.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In software engineering, constraints are often formally specified using contracts (like OCL) within the UML framework to define invariants, preconditions, and postconditions."
+    },
+    {
+      "id": "extract-combined-1775903049722-27",
+      "number": "27",
+      "text": "Which of the following sets of diagrams typically compose the analysis model?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Use Case Model, Class Diagram, StateChart Diagram, and Sequence Diagram"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Deployment Diagram, Component Diagram, and Package Diagram"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Object Diagram and Activity Diagram only"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "User Interface Wireframes and Database Schema"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The analysis model in Object-Oriented Analysis (OOA) typically consists of a functional model (Use Case Model), a structural model (Analysis Class Diagrams), and behavioral models (Sequence and StateChart Diagrams)."
+    },
+    {
+      "id": "extract-combined-1775903049722-28",
+      "number": "28",
+      "text": "Does the CRC (Class-Responsibility-Collaborator) model help in identifying the attributes and the methods of the classes?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The CRC model is a brainstorming tool used in the design of object-oriented software. 'Responsibilities' map to the methods/behaviors of a class, and understanding these responsibilities often helps identify the necessary state or attributes the class must maintain."
+    },
+    {
+      "id": "extract-combined-1775903049722-29",
+      "number": "29",
+      "text": "Application Programmer Interface (API) is defined in the Requirement Elicitation phase.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "APIs are typically defined during the Architecture and Design phases. Requirement Elicitation focuses on what the system should do from a user/stakeholder perspective, rather than technical interface specifications."
+    },
+    {
+      "id": "extract-combined-1775903049722-30",
+      "number": "30",
+      "text": "The architecture design of a system where a layer can only call operations from the layer directly below it is classified as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Closed Architecture"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Open Architecture"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Transparent Layering"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Hybrid Architecture"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In a **Closed Architecture** (also known as opaque layering), each layer can only access the services provided by the layer immediately below it. This reduces dependencies and simplifies maintenance."
+    },
+    {
+      "id": "extract-combined-1775903049722-31",
+      "number": "31",
+      "text": "Referencing the Online Course Registration System (OCRS) diagram below, what is a primary design goal for such a system?\n\n```mermaid\ngraph TD\n    Actor((Actor))\n    subgraph OCRS [Online Course Registration System]\n        AddCourse((Add Course))\n        UseCase1((UseCase1))\n        UseCase2((UseCase2))\n        UseCase3((UseCase3))\n        Login((Login))\n        RegClosed([Registration Closed])\n    end\n    Actor --- AddCourse\n    Actor --- UseCase1\n    AddCourse -.->|include| UseCase3\n    AddCourse -.->|include| Login\n    RegClosed --- AddCourse\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Increase efficiency"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Increase performance"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Reduce performance"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Reduce efficiency"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "For an online registration system that may experience high traffic during enrollment periods, a primary design goal is to **Increase performance** to ensure the system remains responsive under load."
+    },
+    {
+      "id": "extract-combined-1775903049722-32",
+      "number": "32",
+      "text": "When comparing the sequence diagram with the communication diagram, which of the following statements is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Communication diagrams are easier to track the temporal sequence of messages than sequence diagrams."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Communication diagrams require more space than sequence diagrams to represent the same logic."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Sequence diagrams are more effective at showing complex object relationships in a compact space."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Sequence diagrams are easier to track the messages between objects chronologically but generally require more space."
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "**Sequence diagrams** are designed to highlight the time-ordered sequence of messages (using lifelines and vertical flow), which makes them easier to read chronologically, although they typically consume more space than the graph-based communication diagrams."
+    },
+    {
+      "id": "extract-combined-1775903049722-33",
+      "number": "33",
+      "text": "In the software development lifecycle, the subsystem interface is typically defined during the implementation phase.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Subsystem interfaces are defined during the **System Design** or **Object Design** phases. The implementation phase is where these predefined interfaces are actually coded."
+    },
+    {
+      "id": "extract-combined-1775903049722-34",
+      "number": "34",
+      "text": "The ultimate goal of subsystem decomposition is to reach high coupling and low cohesion between subsystems.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The goal of good software design is the exact opposite: **high cohesion** (tasks within a subsystem are closely related) and **low coupling** (subsystems are independent of each other)."
+    },
+    {
+      "id": "extract-combined-1775903049722-35",
+      "number": "35",
+      "text": "In a UML activity diagram, a swimlane is used to group activities performed by the same actor or organizational unit.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "**Swimlanes** provide a way to assign responsibility for specific activities in a process to different actors or departments."
+    },
+    {
+      "id": "extract-combined-1775903049722-36",
+      "number": "36",
+      "text": "Associations and multiplicities defined in a UML class diagram are typically mapped into collections of object references during implementation.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In object-oriented programming, a multiplicity like \\( 0..* \\) is usually implemented using a collection (e.g., an `ArrayList` or `Set`) of object references."
+    },
+    {
+      "id": "extract-combined-1775903049722-37",
+      "number": "37",
+      "text": "Which of the following is considered an advantage of modeling software?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Facilitating communication between the development team"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Reducing the perceived complexity of the system"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Visualizing and understanding the application structure"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the above"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Modeling software helps in visualizing the system, managing complexity, and serving as a communication tool for stakeholders and developers."
+    },
+    {
+      "id": "extract-combined-1775903049722-38",
+      "number": "38",
+      "text": "When drawing a sequence diagram using the Entity-Control-Boundary (ECB) pattern, the third lifeline (column) usually represents the:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Boundary object"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Actor of the use case"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Control object"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Database/Entity object"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In standard ECB sequence diagrams, the flow typically goes: Actor (1st) -> Boundary (2nd) -> **Control** (3rd) -> Entity (4th)."
+    },
+    {
+      "id": "extract-combined-1775903049722-39",
+      "number": "39",
+      "text": "In the context of an online book shop, which of the following is an example of a **functional** requirement?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The system shall be available to all users 24/7."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The system shall support a minimum of 1000 transactions per hour."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The system shall allow users to update the quantity of books in their shopping cart."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The system interface shall be available in German, Arabic, and English."
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A **functional requirement** describes specific behavior or functions of the system (what the system does). Updating a cart quantity is a functional behavior. The other options are non-functional requirements (Availability, Performance, and Localization constraints)."
+    },
+    {
+      "id": "extract-combined-1775903049722-40",
+      "number": "40",
+      "text": "A complete use case model is composed of which components?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Use case diagrams only"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Textual descriptions (specifications) only"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Both Use case diagrams and textual descriptions"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Sequence diagrams and Class diagrams"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A full use case model consists of both the visual **Use Case Diagrams** and the detailed **Textual Descriptions** (or specifications) that explain the flow of events for each use case."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 41
+}

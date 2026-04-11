@@ -318,7 +318,7 @@ const EXAM_CONFIG = [
         "id": "2",
         "name": "Final",
         "q": 40,
-        "file": "data/Uml/combined_questions.json"
+        "file": "data/Uml/chapterMultiple Filesvisual_extractor.json"
       }
     ]
   },
