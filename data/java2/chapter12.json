@@ -1,11 +1,11 @@
 {
-  "id": "task-3",
+  "id": "task-11",
   "label": "chapter=12, username=liang12e",
   "params": {
-    "chapter": "Chapter 12",
+    "chapter": "12",
     "username": "liang12e"
   },
-  "title": "Chapter Chapter 12 Exception Handling and Text I/O",
+  "title": "Chapter 12 Chapter 12:Exception Handling and Text I/O",
   "questions": [
     {
       "id": "12.1",
@@ -75,7 +75,8 @@
       ],
       "inputName": "Q1",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "Integer division by 0 throws ArithmeticException."
     },
     {
       "id": "12.3",
@@ -445,7 +446,8 @@
       ],
       "inputName": "Q12",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "When an exception of Error type occurs, your program would terminate. Therefore, you should not declare an exception that extends Error. You declared an exception in the main method. If you did not throw anything, that is fine."
     },
     {
       "id": "12.14",
@@ -545,7 +547,8 @@
       ],
       "inputName": "Q15",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "See Table 12.3 in Section 12.3."
     },
     {
       "id": "12.17",
@@ -575,7 +578,8 @@
       ],
       "inputName": "Q16",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "Both (A) and (B) would cause exception, but (A) occurred first, so the exception is due to (A)."
     },
     {
       "id": "12.18",
@@ -610,7 +614,8 @@
       ],
       "inputName": "Q17",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "It should be A. The main method invokes the method p. In p, Integer.parseInt(s) causes a NumberFormatException. The method p is now terminated. The NumberFormatException exception is handled in the main method. So NumberFormatException is displayed."
     },
     {
       "id": "12.19",
@@ -1230,7 +1235,8 @@
       ],
       "inputName": "Q37",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "See Figure 12.8."
     },
     {
       "id": "12.39",
@@ -1350,7 +1356,8 @@
       ],
       "inputName": "Q41",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "File is not a subtype of AutoCloseable. So it cannot be used to open a resource in a try-with-resources."
     },
     {
       "id": "12.43",

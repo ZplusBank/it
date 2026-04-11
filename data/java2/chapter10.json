@@ -1,11 +1,11 @@
 {
-  "id": "task-1",
+  "id": "task-9",
   "label": "chapter=10, username=liang12e",
   "params": {
-    "chapter": "Chapter 10",
+    "chapter": "10",
     "username": "liang12e"
   },
-  "title": "Chapter Chapter 10 Object-Oriented Thinking",
+  "title": "Chapter 10 Chapter 10:Object-Oriented Thinking",
   "questions": [
     {
       "id": "10.1",
@@ -35,7 +35,8 @@
       ],
       "inputName": "Q0",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "See Figure 10.6."
     },
     {
       "id": "10.2",
@@ -65,7 +66,8 @@
       ],
       "inputName": "Q1",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "See Figure 10.7."
     },
     {
       "id": "10.3",
@@ -285,7 +287,8 @@
       ],
       "inputName": "Q8",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "See the first paragraph."
     },
     {
       "id": "10.10",
@@ -410,7 +413,8 @@
       ],
       "inputName": "Q12",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "Note that x.add(y) does not change the content of x."
     },
     {
       "id": "10.14",
@@ -460,7 +464,8 @@
       ],
       "inputName": "Q14",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "See the first paragraph in this section."
     },
     {
       "id": "10.16",
@@ -590,7 +595,8 @@
       ],
       "inputName": "Q18",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "Since strings are immutable and are ubiquitous in programming, to improve efficiency and save memory, the JVM uses a unique instance for string literals with the same character sequence. Such an instance is called interned. String s = 'Welcome to Java' creates and assigns an interned string to s. This is simpler and more efficient than other choices."
     },
     {
       "id": "10.20",
@@ -620,7 +626,8 @@
       ],
       "inputName": "Q19",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "s is a local variable. Before its use, a value must be assigned to it."
     },
     {
       "id": "10.21",
@@ -640,7 +647,8 @@
       ],
       "inputName": "Q20",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "s2 = s1 assigns s1 to s2. Now s1 and s2 have the same references."
     },
     {
       "id": "10.22",
@@ -660,7 +668,8 @@
       ],
       "inputName": "Q21",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "Since strings are immutable and are ubiquitous in programming, to improve efficiency and save memory, the JVM uses a unique instance for string literals with the same character sequence. Such an instance is called interned."
     },
     {
       "id": "10.23",
@@ -700,7 +709,8 @@
       ],
       "inputName": "Q23",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "s1 and s2 are two difference objects, but they have the same content."
     },
     {
       "id": "10.25",
@@ -1150,7 +1160,8 @@
       ],
       "inputName": "Q38",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "Inside the method, the statement s = s + ' and HTML' creates a new String object s, which is different from the original String object passed to the change(s) method. The original String object has not been changed. Therefore, the output from the original string is Java."
     },
     {
       "id": "10.40",
@@ -1400,7 +1411,8 @@
       ],
       "inputName": "Q46",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "See Figure 10.20."
     }
   ],
   "status": "completed",

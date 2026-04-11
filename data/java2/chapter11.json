@@ -1,11 +1,11 @@
 {
-  "id": "task-2",
+  "id": "task-10",
   "label": "chapter=11, username=liang12e",
   "params": {
-    "chapter": "Chapter 11",
+    "chapter": "11",
     "username": "liang12e"
   },
-  "title": "Chapter Chapter 11 Inheritance and Polymorphism",
+  "title": "Chapter 11 Chapter 11:Inheritance and Polymorphism",
   "questions": [
     {
       "id": "11.1",
@@ -250,7 +250,8 @@
       ],
       "inputName": "Q7",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "A constructor cannot be static, because you use a constructor to create a specific instance. A constructor may be private. In this case, the use cannot create an instance using this constructor. For example, the constructor in the Math class is private. A constructor may invoke a static method just like any method can invoke a static method. A constructor can invoke an overloaded constructor using the this keyword. So, the correct answer is A."
     },
     {
       "id": "11.9",
@@ -620,7 +621,8 @@
       ],
       "inputName": "Q19",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "Note that the getInfo method is private in Person. It is not known to the outside of the class. This is the method invoked from the printPerson() method."
     },
     {
       "id": "11.21",
@@ -740,7 +742,8 @@
       ],
       "inputName": "Q23",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "You cannot assign a variable of a supertype to a subtype without explicit casting."
     },
     {
       "id": "11.25",
@@ -950,7 +953,8 @@
       ],
       "inputName": "Q30",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "In Program 1, ((A)a1).equals((A)a2) matches the equals(A a) method in the class A."
     },
     {
       "id": "11.32",
@@ -1040,7 +1044,8 @@
       ],
       "inputName": "Q33",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "o1 == o2 is false, since o1 and o2 are two different objects. o1.equals(o2) is false since the equals method returns o1 == o2 in the Object class."
     },
     {
       "id": "11.35",
@@ -1090,7 +1095,8 @@
       ],
       "inputName": "Q35",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "t1 and t2 refer to the same object."
     },
     {
       "id": "11.37",
@@ -1790,7 +1796,8 @@
       ],
       "inputName": "Q58",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "The data fields in a superclass are contained in a subclass. Whether the data fields in a superclass can be accessed in a subclass is a visibility issue. A private data field in a superclass cannot be directly accessed in a subclass, but the data field may have the getter or setter methods, which can be used to get or set a data field value."
     },
     {
       "id": "11.60",

@@ -2,10 +2,10 @@
   "id": "task-5",
   "label": "chapter=17, username=liang12e",
   "params": {
-    "chapter": "Chapter 17",
+    "chapter": "17",
     "username": "liang12e"
   },
-  "title": "Chapter Chapter 17 Binary I/O",
+  "title": "Chapter 17 Chapter 17:Binary I/O",
   "questions": [
     {
       "id": "17.1",
@@ -40,7 +40,8 @@
       ],
       "inputName": "QE0",
       "inputType": "checkbox",
-      "correctAnswer": "ABCDE"
+      "correctAnswer": "ABCDE",
+      "explanation": "Every statement provided in options A through E is factually accurate. Therefore, you should select the answer that includes all of them since none of the individual claims are false."
     },
     {
       "id": "17.2",
@@ -75,7 +76,8 @@
       ],
       "inputName": "QE1",
       "inputType": "checkbox",
-      "correctAnswer": "ABCDE"
+      "correctAnswer": "ABCDE",
+      "explanation": "Each of the statements from A to E is factually accurate, making the combined answer the correct choice. You should select this because every individual point listed is true."
     },
     {
       "id": "17.3",
@@ -105,7 +107,8 @@
       ],
       "inputName": "Q2",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "You can use the **available()** method, which returns an estimate of the number of bytes that can be read from the input stream without blocking. This allows you to determine the size of the remaining content in the file stream."
     },
     {
       "id": "17.4",
@@ -140,7 +143,8 @@
       ],
       "inputName": "Q3",
       "inputType": "radio",
-      "correctAnswer": "E"
+      "correctAnswer": "E",
+      "explanation": "Choice E is the correct answer because it is the only statement among the options that is false or inaccurate. You should select it because the question specifically asks you to identify which claim is incorrect."
     },
     {
       "id": "17.5",
@@ -170,7 +174,8 @@
       ],
       "inputName": "Q4",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "To append data, you must use the `FileOutputStream` constructor that accepts a second boolean argument set to `true`. This specific parameter tells Java to add new data to the end of the file rather than overwriting its existing content."
     },
     {
       "id": "17.6",
@@ -205,7 +210,8 @@
       ],
       "inputName": "Q5",
       "inputType": "radio",
-      "correctAnswer": "E"
+      "correctAnswer": "E",
+      "explanation": "This code creates a `FileInputStream` object that opens the file named \"test.dat\" so your program can read its data. It establishes a connection to the file, allowing you to read its contents as a sequence of bytes."
     },
     {
       "id": "17.7",
@@ -235,7 +241,8 @@
       ],
       "inputName": "Q6",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "When you attempt to create a stream for a nonexistent file, Java throws a `FileNotFoundException`. This exception occurs because the underlying file stream cannot locate the specific file path you provided."
     },
     {
       "id": "17.8",
@@ -265,7 +272,8 @@
       ],
       "inputName": "Q7",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "To create a `DataOutputStream`, you must pass a `FileOutputStream` initialized with the filename \"out.dat\" into its constructor. This nesting allows the `DataOutputStream` to write primitive data types directly to that specific file."
     },
     {
       "id": "17.9",
@@ -295,7 +303,8 @@
       ],
       "inputName": "Q8",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "Each `writeShort` method call writes 2 bytes to the output stream. Since the program calls this method twice, a total of 4 bytes are written to the file."
     },
     {
       "id": "17.10",
@@ -325,7 +334,8 @@
       ],
       "inputName": "Q9",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "In Java, the `writeChar` method writes a character as a 2-byte Unicode value. Therefore, writing a single character like 'A' results in exactly 2 bytes being written to the file."
     },
     {
       "id": "17.11",
@@ -360,7 +370,8 @@
       ],
       "inputName": "Q10",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "In Java, the `writeChars` method writes each character of a string as a two-byte Unicode value. Since the string \"ABCD\" has four characters, the program writes a total of 8 bytes to the file."
     },
     {
       "id": "17.12",
@@ -395,7 +406,8 @@
       ],
       "inputName": "Q11",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The `writeUTF` method (likely intended by `writeUTFString`) writes two bytes to store the length of the string followed by one byte for each character in \"ABCD\". This results in a total of 6 bytes: 2 bytes for the length header and 4 bytes for the characters themselves."
     },
     {
       "id": "17.13",
@@ -425,7 +437,8 @@
       ],
       "inputName": "QD12",
       "inputType": "checkbox",
-      "correctAnswer": "ABCD"
+      "correctAnswer": "ABCD",
+      "explanation": "All of these statements are correct because each one accurately reflects the facts or principles discussed in your material. Therefore, you should select all the options provided as they are all true."
     },
     {
       "id": "17.14",
@@ -455,7 +468,8 @@
       ],
       "inputName": "QD13",
       "inputType": "checkbox",
-      "correctAnswer": "ABCD"
+      "correctAnswer": "ABCD",
+      "explanation": "All of the provided statements are factually correct, so you should select every option. Each choice accurately reflects a different aspect of the topic covered in this lesson."
     },
     {
       "id": "17.15",
@@ -480,7 +494,8 @@
       ],
       "inputName": "QC14",
       "inputType": "checkbox",
-      "correctAnswer": "BC"
+      "correctAnswer": "BC",
+      "explanation": "Serializing a `Foo` object will throw a `NotSerializableException` because its `v3` field is a `Loan` object, which does not implement `Serializable`. Additionally, the static field `v2` is not included in the serialization process because static members belong to the class rather than individual instances."
     },
     {
       "id": "17.16",
@@ -510,7 +525,8 @@
       ],
       "inputName": "Q15",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "Option C is correct because it is the only statement that accurately reflects the facts or principles being discussed. You can choose this answer because it correctly identifies the truth among the provided choices."
     },
     {
       "id": "17.17",
@@ -540,7 +556,8 @@
       ],
       "inputName": "Q16",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "The `RandomAccessFile` class is correct because it allows you to move to any specific position within a file to both read and write data. This flexibility makes it the ideal tool for either updating existing content or appending new information to the end of a file."
     },
     {
       "id": "17.18",
@@ -570,7 +587,8 @@
       ],
       "inputName": "Q17",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "Choice C is correct because `\"rw\"` is a legal mode string that allows you to open a `RandomAccessFile` for both reading and writing. In Java, only specific strings such as `\"r\"`, `\"rw\"`, `\"rws\"`, and `\"rwd\"` are recognized as valid mode arguments."
     },
     {
       "id": "17.19",
@@ -600,7 +618,8 @@
       ],
       "inputName": "Q18",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "When you attempt to open a non-existent file in read-only mode (\"r\"), the program throws a `FileNotFoundException`. Since this is a subclass of `IOException`, the catch block handles the error and prints \"IO exception\" to the console."
     },
     {
       "id": "17.20",
@@ -630,7 +649,8 @@
       ],
       "inputName": "Q19",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "You can use several different classes, such as `File`, `Formatter`, or `PrintWriter`, to create a new file in Java. Option D is correct because it likely includes these multiple valid methods that each allow you to generate a file on your system."
     }
   ],
   "status": "completed",

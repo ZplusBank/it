@@ -70,40 +70,40 @@ const EXAM_CONFIG = [
     "icon": "data/java2/icon.png",
     "chapters": [
       {
-        "id": "Chapter 10",
-        "name": "Object-Oriented Thinking",
-        "q": 47,
-        "file": "data/java2/chapterChapter 10.json"
-      },
-      {
-        "id": "Chapter 11",
-        "name": "Inheritance and Polymorphism",
-        "q": 65,
-        "file": "data/java2/chapterChapter 11.json"
-      },
-      {
-        "id": "Chapter 12",
-        "name": "Exception Handling and Text I/O",
-        "q": 48,
-        "file": "data/java2/chapterChapter 12.json"
-      },
-      {
-        "id": "Chapter 13",
-        "name": "Abstract Classes and Interfaces",
-        "q": 35,
-        "file": "data/java2/chapterChapter 13.json"
-      },
-      {
-        "id": "Chapter 17",
-        "name": "Binary I/O",
-        "q": 20,
-        "file": "data/java2/chapterChapter 17.json"
-      },
-      {
-        "id": "Chapter 9",
-        "name": "Objects and Classes",
+        "id": "9",
+        "name": "Chapter 9 :Objects and Classes",
         "q": 52,
-        "file": "data/java2/chapterChapter 9.json"
+        "file": "data/java2/chapter9.json"
+      },
+      {
+        "id": "10",
+        "name": "Chapter 10:Object-Oriented Thinking",
+        "q": 47,
+        "file": "data/java2/chapter10.json"
+      },
+      {
+        "id": "11",
+        "name": "Chapter 11:Inheritance and Polymorphism",
+        "q": 65,
+        "file": "data/java2/chapter11.json"
+      },
+      {
+        "id": "12",
+        "name": "Chapter 12:Exception Handling and Text I/O",
+        "q": 48,
+        "file": "data/java2/chapter12.json"
+      },
+      {
+        "id": "13",
+        "name": "Chapter 13:Abstract Classes and Interfaces",
+        "q": 35,
+        "file": "data/java2/chapter13.json"
+      },
+      {
+        "id": "17",
+        "name": "Chapter 17:Binary I/O",
+        "q": 20,
+        "file": "data/java2/chapter17.json"
       }
     ]
   },
