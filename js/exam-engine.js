@@ -761,7 +761,11 @@ const app = {
                 <span class="subject-icon">${this.renderSubjectIcon(subject)}</span>
                 <h2>${this.escapeHtml(subject.name)}</h2>
                 <p>${this.escapeHtml(subject.description)}</p>
-                <span class="chapter-count">📚 ${subject.chaptersConfig.length} Chapters · ${totalQs(subject)} Questions</span>
+                <span class="chapter-count">
+                    <span class="count-item"><strong>${subject.chaptersConfig.length}</strong> Chapters</span>
+                    <span class="count-sep">•</span>
+                    <span class="count-item"><strong>${totalQs(subject)}</strong> Questions</span>
+                </span>
             </div>
         `).join('');
 
@@ -903,15 +907,34 @@ const app = {
         if (noResults) noResults.style.display = 'none';
     },
 
+    _formatChapterIdBadge(chapterId) {
+        const raw = String(chapterId || '').trim();
+        if (!raw) return 'Chapter';
+
+        const numberLike = raw.match(/(?:chapter\s*)?([0-9]+[a-z]?)/i);
+        if (numberLike && numberLike[1]) {
+            return `Ch ${numberLike[1].toUpperCase()}`;
+        }
+
+        // Keep custom IDs compact to avoid badge wrapping.
+        return raw.length > 10 ? `${raw.slice(0, 10)}...` : raw;
+    },
+
     renderChapters(chapters) {
         const grid = document.getElementById('chaptersGrid');
         grid.innerHTML = chapters.map((chapter, idx) => `
             <div class="chapter-card" data-name="${this.escapeHtml(chapter.title)}" style="--i: ${idx}">
                 <input type="checkbox" id="ch-${idx}" value="${chapter.scopedId || this._makeChapterKey(this.currentSubject?.id || '', chapter.id)}" 
                        onchange="app.updateSelectedChapters()">
-                <label for="ch-${idx}">
-                    <strong>${chapter.id}:</strong> ${this.escapeHtml(chapter.title)}<br>
-                    <span>${chapter.totalQuestions} questions</span>
+                <label for="ch-${idx}" class="chapter-content">
+                    <span class="chapter-head">
+                        <span class="chapter-id-badge" title="${this.escapeHtml(String(chapter.id || ''))}">${this.escapeHtml(this._formatChapterIdBadge(chapter.id))}</span>
+                        <span class="chapter-title">${this.escapeHtml(chapter.title)}</span>
+                    </span>
+                    <span class="chapter-meta">
+                        <span class="chapter-dot"></span>
+                        ${chapter.totalQuestions} questions
+                    </span>
                 </label>
             </div>
         `).join('');
