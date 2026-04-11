@@ -35,7 +35,8 @@
       ],
       "inputName": "Q0",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "In Java, when declaring and initializing an array, the size must not be specified on the left-hand side type declaration (e.g., char[2][2]). The correct syntax for a 2D array literal uses nested curly braces to represent the rows and columns, such as char[][] name = {{...}, {...}};"
     },
     {
       "id": "8.2",
@@ -65,7 +66,8 @@
       ],
       "inputName": "Q1",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "Java arrays use zero-based indexing for both rows and columns. Consequently, the very first element of a 2D array 'a' is located at the intersection of the first row (index 0) and the first column (index 0), denoted as a[0][0]."
     },
     {
       "id": "8.3",
@@ -85,7 +87,8 @@
       ],
       "inputName": "Q2",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "When a numeric array (such as an int[][] matrix) is created using the 'new' keyword, Java automatically allocates memory and initializes all elements to the default value for that specific type. For the primitive type 'int', the default value is 0."
     },
     {
       "id": "8.4",
@@ -115,7 +118,8 @@
       ],
       "inputName": "Q3",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "In the declaration 'new double[4][5]', the first number represents the number of rows, which is accessed via 'x.length' (4). The second number represents the number of columns in each row, so 'x[2].length' returns the length of the row at index 2, which is 5."
     },
     {
       "id": "8.5",
@@ -145,7 +149,8 @@
       ],
       "inputName": "Q4",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The total capacity or number of elements in a rectangular 2D array is the product of its dimensions. For a matrix defined with 5 rows and 5 columns, the total number of elements is 5 * 5 = 25."
     },
     {
       "id": "8.6",
@@ -180,7 +185,8 @@
       ],
       "inputName": "Q5",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The property 'x.length' refers to the number of rows in the 2D array; since there are three sets of inner braces, x.length is 3. The property 'x[0].length' refers to the number of elements in the first row {1, 2}, which is 2."
     },
     {
       "id": "8.7",
@@ -215,7 +221,8 @@
       ],
       "inputName": "Q6",
       "inputType": "radio",
-      "correctAnswer": "E"
+      "correctAnswer": "E",
+      "explanation": "The code creates a 'ragged array' where each row is initialized with a different length. Elements of a boolean array default to 'false'. Since 'x[2]' is initialized as a new boolean array of length 3, the element at 'x[2][2]' (the third element) exists and holds the default value 'false'."
     },
     {
       "id": "8.8",
@@ -250,7 +257,8 @@
       ],
       "inputName": "Q7",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "This is an example of a ragged array where each row has a unique length. By counting the elements in each literal initializer, we see that the first row has 2 elements, the second has 3 elements, and the third has 4 elements."
     },
     {
       "id": "8.9",
@@ -285,7 +293,8 @@
       ],
       "inputName": "Q8",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "The loop iterates through each row 'i' from 0 to 3 while keeping the column index constant at 1. This effectively prints the second element of every row: matrix[0][1] is 2, matrix[1][1] is 5, matrix[2][1] is 9, and matrix[3][1] is 13."
     },
     {
       "id": "8.10",
@@ -320,7 +329,8 @@
       ],
       "inputName": "Q9",
       "inputType": "radio",
-      "correctAnswer": "E"
+      "correctAnswer": "E",
+      "explanation": "This program performs a linear search for the maximum value within a 2D array. It initializes 'v' with the first element and updates 'v' whenever it encounters a larger number. Among the values provided, 33 is the largest, so it is the final value of 'v'."
     },
     {
       "id": "8.11",
@@ -355,7 +365,8 @@
       ],
       "inputName": "Q10",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "The program iterates through each row of the 2D array and uses java.util.Arrays.sort() to sort the elements of that row in ascending order. The first row {3, 4, 5, 1} becomes {1, 3, 4, 5}, and the second row {33, 6, 1, 2} becomes {1, 2, 6, 33}. These sorted rows are then printed, resulting in choice D."
     },
     {
       "id": "8.12",
@@ -390,7 +401,8 @@
       ],
       "inputName": "Q11",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The code initializes a 4x4 2D array. The loop iterates from i = 0 to 3 and prints the elements of matrix[1][i]. Since row indices are zero-based, matrix[1] refers to the second row {4, 5, 6, 7}. Thus, the output is 4 5 6 7."
     },
     {
       "id": "8.13",
@@ -425,7 +437,8 @@
       ],
       "inputName": "Q12",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "The program initializes a variable v with the value at values[0][0] (which is 3) and then uses nested for-each loops to compare every element in the 2D array to v. If an element is smaller than v, v is updated. This logic effectively finds the minimum value in the entire array, which is 1."
     },
     {
       "id": "8.14",
@@ -460,7 +473,8 @@
       ],
       "inputName": "Q13",
       "inputType": "radio",
-      "correctAnswer": "E"
+      "correctAnswer": "E",
+      "explanation": "The method header indicates that p() must return a two-dimensional array of integers (int[][]). Choice E is correct because it uses the correct syntax to instantiate and initialize a 2D array (new int[][]{...}) with two rows, matching the return type requirements."
     },
     {
       "id": "8.15",
@@ -495,7 +509,8 @@
       ],
       "inputName": "Q14",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "The program calls method m for each row of the 2D array. Method m iterates through the passed 1D array to find and return the maximum value. For the first row {3, 4, 5, 1}, the maximum is 5. For the second row {33, 6, 1, 2}, the maximum is 33. Therefore, the output is 5 33."
     },
     {
       "id": "8.16",
@@ -525,7 +540,8 @@
       ],
       "inputName": "Q15",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "In a multidimensional array, the length property returns the size of the first dimension. Here, x.length is 4. x[2] refers to a 2D sub-array with a length of 5. x[0][0] refers to a 1D sub-array with a length of 6. Therefore, the lengths are 4, 5, and 6."
     },
     {
       "id": "8.17",
@@ -560,7 +576,8 @@
       ],
       "inputName": "Q16",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "The 3D array data consists of two 2D arrays. data[1] refers to the second 2D array: {{5, 6}, {7, 8}}. data[1][0] refers to the first row of that array: {5, 6}. data[1][0][0] refers to the first element of that row, which is 5."
     },
     {
       "id": "8.18",
@@ -595,7 +612,8 @@
       ],
       "inputName": "Q17",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The method ttt is designed to find the maximum value in a 2D array. The call ttt(data[0]) passes the first 2D array of data, which is {{1, 2}, {3, 4}}. The nested loops compare these values, and the largest value found in this specific subset is 4."
     },
     {
       "id": "8.19",
@@ -625,7 +643,8 @@
       ],
       "inputName": "QD18",
       "inputType": "checkbox",
-      "correctAnswer": "AD"
+      "correctAnswer": "AD",
+      "explanation": "Statement A is correct because Java allows the creation of multidimensional arrays by specifying at least the first dimension. Statement D is correct because it uses nested curly braces to properly initialize a 3D array (depth, rows, and columns). B is incorrect because dimensions cannot be in the type declaration, and C is incorrect because it provides a 2D array literal for a 3D array reference."
     }
   ],
   "status": "completed",

@@ -40,7 +40,8 @@
       ],
       "inputName": "Q0",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "In Java, when a method performs an action but does not need to return a result to the caller, the 'void' keyword is used in the method header as the return type."
     },
     {
       "id": "6.2",
@@ -70,7 +71,8 @@
       ],
       "inputName": "Q1",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "A method signature is the unique identifier for a method used by the compiler to differentiate between overloaded methods; it consists solely of the method name and the parameter list (the types and order of parameters)."
     },
     {
       "id": "6.3",
@@ -105,7 +107,8 @@
       ],
       "inputName": "Q2",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The standard entry point for any Java application must follow the exact signature: 'public static void main(String[] args)'. Java is case-sensitive, so 'Main' is incorrect, and 'static void' is required for the JVM to invoke the method without instantiating the class."
     },
     {
       "id": "6.4",
@@ -135,7 +138,8 @@
       ],
       "inputName": "Q3",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "In Java and many other programming languages, arguments provided to a method call or parameters defined in a method header are always enclosed within parentheses ()."
     },
     {
       "id": "6.5",
@@ -155,7 +159,8 @@
       ],
       "inputName": "Q4",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "Calling a method that returns a value (like Math.pow) as a standalone statement is perfectly valid. The value is computed and then effectively discarded because it is not assigned to a variable or passed to another method."
     },
     {
       "id": "6.6",
@@ -185,7 +190,8 @@
       ],
       "inputName": "Q5",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The 'stack' is the memory structure used during method execution. Each time a method is called, a frame is pushed onto the stack to store local variables and parameters; when the method finishes, the frame is popped off in a Last-In, First-Out (LIFO) manner."
     },
     {
       "id": "6.7",
@@ -215,7 +221,8 @@
       ],
       "inputName": "Q6",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "A 'void' method is used for performing operations that do not produce a data result for the program to use later. Printing to the console is a side effect, whereas returning a random number, checking a condition, or converting a character all require the method to pass data back to the caller."
     },
     {
       "id": "6.8",
@@ -250,7 +257,8 @@
       ],
       "inputName": "Q7",
       "inputType": "radio",
-      "correctAnswer": "E"
+      "correctAnswer": "E",
+      "explanation": "The provided code for 'printGrade' uses 'System.out.println' to output characters directly to the console and does not contain a 'return' statement. Therefore, the return type must be 'void'."
     },
     {
       "id": "6.9",
@@ -285,7 +293,8 @@
       ],
       "inputName": "Q8",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "The 'getGrade' method contains 'return' statements followed by character literals (e.g., 'A', 'B'). Because the method is returning a single character, the return type in the blank must be 'char'."
     },
     {
       "id": "6.10",
@@ -305,7 +314,8 @@
       ],
       "inputName": "Q9",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "In a method declared as 'void', such as the main method, it is legal to use the 'return;' statement. This acts as an early exit from the method and does not return a value, so it does not conflict with the 'void' return type."
     },
     {
       "id": "6.11",
@@ -335,7 +345,8 @@
       ],
       "inputName": "Q10",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "The method 'f' is defined with a return type of 'int', meaning it must return an integer value. Option D is the only choice that provides a valid return statement with an integer value. Options B and C are invalid because they attempt to use 'System.out.println' (which returns void) in place of a return value, and Option A returns a String."
     },
     {
       "id": "6.12",
@@ -365,7 +376,8 @@
       ],
       "inputName": "Q11",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "In Java, 'pass by value' refers to the process where the value of an actual argument is copied into the formal parameter of the method. Any changes made to the parameter inside the method do not affect the original argument value passed by the caller."
     },
     {
       "id": "6.13",
@@ -395,7 +407,8 @@
       ],
       "inputName": "Q12",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "The method signature for 'nPrint' specifies that the first parameter must be a 'String'. However, the call 'nPrint('a', 4)' passes a character literal ('a'). In Java, a 'char' is not automatically converted to a 'String', resulting in a compilation error due to incompatible types."
     },
     {
       "id": "6.14",
@@ -425,7 +438,8 @@
       ],
       "inputName": "Q13",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "Java uses pass-by-value for all parameters. When the variable 'k' is passed to 'nPrint', the method receives a copy of 'k''s value (2). Although the method decrements its local parameter 'n', the original variable 'k' in the calling scope remains unchanged."
     },
     {
       "id": "6.15",
@@ -455,7 +469,8 @@
       ],
       "inputName": "Q14",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "The call 'xMethod(5, 500L)' passes an 'int' and a 'long' literal. The Java compiler looks for the most specific method signature that matches these types. Since 'xMethod(int, long)' is an exact match for the provided arguments, that version is executed, printing 'int, long' and returning 5."
     },
     {
       "id": "6.16",
@@ -485,7 +500,8 @@
       ],
       "inputName": "Q15",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The call 'xmethod(5)' provides a single integer argument. The method 'xmethod(int, long)' cannot be used because it requires two arguments. The method 'xmethod(long n)' is compatible because the integer 5 can be automatically widened to a 'long'. Thus, the 'long' version is invoked."
     },
     {
       "id": "6.17",
@@ -520,7 +536,8 @@
       ],
       "inputName": "Q16",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The call 'max(1, 2)' involves two integers. The compiler faces an 'ambiguous' situation because it could widen the first 'int' to match 'max(double, int)' or the second 'int' to match 'max(int, double)'. Because both possibilities are equally valid, the compiler generates an error."
     },
     {
       "id": "6.18",
@@ -550,7 +567,8 @@
       ],
       "inputName": "Q17",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "In Java, method overloading is based on the method signature, which consists of the method name and the parameter list (types and order). The return type is not part of the signature. Therefore, having two methods named 'm' with the same parameter 'int num' creates a signature conflict, even if their return types differ."
     },
     {
       "id": "6.19",
@@ -580,7 +598,8 @@
       ],
       "inputName": "Q18",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "A variable declared within a method or a block of code is defined as a local variable. Its scope and lifetime are restricted to the method or block in which it was created."
     },
     {
       "id": "6.20",
@@ -610,7 +629,8 @@
       ],
       "inputName": "Q19",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "The variable 'k' is defined inside a local block (marked by '{ }'). In Java, the scope of a variable is limited to the block in which it is declared. Because the 'System.out.println(k)' statement is outside that block, 'k' is no longer in scope, resulting in a compilation error."
     },
     {
       "id": "6.21",
@@ -640,7 +660,8 @@
       ],
       "inputName": "Q20",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "Explanation generation failed."
     },
     {
       "id": "6.22",
@@ -670,7 +691,8 @@
       ],
       "inputName": "Q21",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "Explanation generation failed."
     },
     {
       "id": "6.23",
@@ -700,7 +722,8 @@
       ],
       "inputName": "Q22",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "Explanation generation failed."
     },
     {
       "id": "6.24",
@@ -735,7 +758,8 @@
       ],
       "inputName": "Q23",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "Explanation generation failed."
     },
     {
       "id": "6.25",
@@ -765,7 +789,8 @@
       ],
       "inputName": "QD24",
       "inputType": "checkbox",
-      "correctAnswer": "AB"
+      "correctAnswer": "AB",
+      "explanation": "Explanation generation failed."
     },
     {
       "id": "6.26",
@@ -795,7 +820,8 @@
       ],
       "inputName": "Q25",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "Explanation generation failed."
     },
     {
       "id": "6.27",
@@ -825,7 +851,8 @@
       ],
       "inputName": "Q26",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "Explanation generation failed."
     }
   ],
   "status": "completed",

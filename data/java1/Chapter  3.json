@@ -40,7 +40,8 @@
       ],
       "inputName": "Q0",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "In Java, the 'less than or equal to' operator is represented by the sequence '<=', where the less-than symbol precedes the equal sign. Option C is incorrect because the symbols are in the wrong order."
     },
     {
       "id": "3.2",
@@ -70,7 +71,8 @@
       ],
       "inputName": "Q1",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The equality comparison operator in Java is '=='. A single '=' is used for assignment, '!=' means 'not equal', and '<>' is not a valid operator in Java (though used in other languages like SQL)."
     },
     {
       "id": "3.3",
@@ -95,7 +97,8 @@
       ],
       "inputName": "Q2",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "This code uses integer arithmetic. Adding the integer 1 five times results in exactly 5, and the comparison '5 == 5' evaluates to true because integer calculations are precise."
     },
     {
       "id": "3.4",
@@ -120,7 +123,8 @@
       ],
       "inputName": "Q3",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "Calculations with floating-point numbers (double and float) are subject to rounding errors because decimal values like 0.1 cannot be represented exactly in binary. Therefore, the result of 1 - 0.1 - 0.1 - 0.1 - 0.1 - 0.1 may not be exactly 0.5, making exact equality comparisons unreliable."
     },
     {
       "id": "3.5",
@@ -150,7 +154,8 @@
       ],
       "inputName": "Q4",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "In Java, 'true' and 'false' are boolean literals representing the two possible values of the boolean type. While they are reserved words, they are formally defined as literals in the Java Language Specification."
     },
     {
       "id": "3.6",
@@ -180,7 +185,8 @@
       ],
       "inputName": "Q5",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The term 'positive' means strictly greater than zero. Option B is incorrect because it includes zero (non-negative), and Option C correctly uses the '>' operator to check for values greater than zero."
     },
     {
       "id": "3.7",
@@ -215,7 +221,8 @@
       ],
       "inputName": "Q6",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "Initially, x is 0. The condition 'x < 4' is true (0 < 4), so the code inside the if-block executes, updating x to 1 (0 + 1). The print statement then outputs 'x is 1'."
     },
     {
       "id": "3.8",
@@ -250,7 +257,8 @@
       ],
       "inputName": "Q7",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "In a multi-way if-else statement, only the first block whose condition evaluates to true is executed. Since 4001 > 3000 is true, the first block executes and the rest of the structure is skipped, even though the next condition (income > 4000) is also true."
     },
     {
       "id": "3.9",
@@ -280,7 +288,8 @@
       ],
       "inputName": "Q8",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The program checks the conditions sequentially. 50 is not >= 100, and 50 is not <= 40. Since both 'if' and 'else if' conditions are false, the 'else' block executes, printing 'just right'."
     },
     {
       "id": "3.10",
@@ -310,7 +319,8 @@
       ],
       "inputName": "Q9",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "In Java, an 'else' clause is matched with the nearest preceding 'if' that does not have an 'else'. Here, the 'else' belongs to the inner if (y > 0). Because x > 0 is true but y > 0 is false, the program executes the 'else if (z > 0)' branch. Since z > 0 is true, it prints 'x < 0 and z > 0' (despite the string content being logically confusing)."
     },
     {
       "id": "3.11",
@@ -340,7 +350,8 @@
       ],
       "inputName": "Q10",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "In Java, 'even = true' is an assignment expression, not a comparison. This expression assigns true to the variable 'even' and then evaluates to the assigned value (true). Therefore, the 'if' condition is satisfied, and the program prints 'It is even'."
     },
     {
       "id": "3.12",
@@ -375,7 +386,8 @@
       ],
       "inputName": "Q11",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "While 'if (isPrime == true)' is syntactically correct, 'if (isPrime)' is the best practice because it is more concise and idiomatic. Avoid 'if (isPrime = true)' as it performs an assignment rather than a comparison."
     },
     {
       "id": "3.13",
@@ -405,7 +417,8 @@
       ],
       "inputName": "Q12",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The variable 'even' is initialized to false. The condition 'if (even)' evaluates the current value of the variable, which is false. Consequently, the code block inside the 'if' statement is skipped, and nothing is printed."
     },
     {
       "id": "3.14",
@@ -435,7 +448,8 @@
       ],
       "inputName": "Q13",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "Both versions are logically equivalent and syntactically correct. Code 2 is preferred because it is more concise; it directly assigns the boolean result of the expression '(number % 2 == 0)' to the variable 'even' in a single line."
     },
     {
       "id": "3.15",
@@ -465,7 +479,8 @@
       ],
       "inputName": "QD14",
       "inputType": "checkbox",
-      "correctAnswer": "BC"
+      "correctAnswer": "BC",
+      "explanation": "The 'Math.random()' method returns a double value that is greater than or equal to 0.0 and strictly less than 1.0. Therefore, 0.0 and 0.5 are possible outputs, while 3.43 is out of range and 1.0 is the exclusive upper bound."
     },
     {
       "id": "3.16",
@@ -500,7 +515,8 @@
       ],
       "inputName": "Q15",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "Casting '(int)' has higher precedence than multiplication. 'Math.random()' returns a value between 0.0 and 0.999...; casting this to an int always results in 0. Multiplying that 0 by 4 still results in 0."
     },
     {
       "id": "3.17",
@@ -535,7 +551,8 @@
       ],
       "inputName": "QE16",
       "inputType": "checkbox",
-      "correctAnswer": "ABCD"
+      "correctAnswer": "ABCD",
+      "explanation": "The expression '(Math.random() * 4)' yields a double between 0.0 and 3.999... . When cast to an integer, the decimal part is truncated, resulting in the possible integer values 0, 1, 2, and 3. The value 4 is impossible because the range of Math.random() is exclusive of 1.0."
     },
     {
       "id": "3.18",
@@ -570,7 +587,8 @@
       ],
       "inputName": "Q17",
       "inputType": "radio",
-      "correctAnswer": "E"
+      "correctAnswer": "E",
+      "explanation": "All four options are logically correct. I uses two independent if statements; II uses a standard if-else; III and IV use if-else if chains that correctly partition the logic. While some are more redundant than others, they all produce the required output for any given age."
     },
     {
       "id": "3.19",
@@ -600,7 +618,8 @@
       ],
       "inputName": "Q18",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "Option II is the 'best' because the conditions (age < 16) and (age >= 16) are mutually exclusive and collectively exhaustive. A simple if-else statement is the most efficient and readable way to handle two opposing outcomes."
     },
     {
       "id": "3.20",
@@ -635,7 +654,8 @@
       ],
       "inputName": "Q19",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The 'System.exit(status)' method is the standard way to terminate the Java Virtual Machine. A status code of 0 typically indicates successful termination, while non-zero values indicate abnormal termination."
     },
     {
       "id": "3.21",
@@ -670,7 +690,8 @@
       ],
       "inputName": "QE20",
       "inputType": "checkbox",
-      "correctAnswer": "ADE"
+      "correctAnswer": "ADE",
+      "explanation": "Choice A is incorrect because '=>' is not a valid operator (it should be '>='); choice D is incorrect because it uses the assignment operator '=' instead of the comparison operator '=='; choice E is incorrect because programming languages do not support chained comparison syntax like '-10 < x < 0' and require the use of logical operators."
     },
     {
       "id": "3.22",
@@ -700,7 +721,8 @@
       ],
       "inputName": "Q21",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "To check if a number x is between 1 and 100, we must verify that it is greater than 1 AND less than 100 using '(x > 1) && (x < 100)'. We then combine this with the 'negative' condition using the OR operator '||', resulting in Choice B."
     },
     {
       "id": "3.23",
@@ -730,7 +752,8 @@
       ],
       "inputName": "Q22",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "Given x = 4 and y = 5, the expression 'x < 5' is true and 'y < 5' is false. Because the OR operator '||' only requires one side to be true for the entire expression to be true, Choice B evaluates to true."
     },
     {
       "id": "3.24",
@@ -760,7 +783,8 @@
       ],
       "inputName": "Q23",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "Since x is 4, the condition 'x != 5' (4 is not equal to 5) is a true statement. The other options either compare 4 to 5 as equal or negate a true equality, resulting in false values."
     },
     {
       "id": "3.25",
@@ -790,7 +814,8 @@
       ],
       "inputName": "Q24",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "Choice B is true because the XOR (^) operator returns true if exactly one operand is true. In B, 'x != 4' is false (because 4 equals 4) and 'y == 5' is true (because 5 equals 5). Since one is false and one is true, the result is true."
     },
     {
       "id": "3.26",
@@ -820,7 +845,8 @@
       ],
       "inputName": "Q25",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The mathematical absolute value inequality |x| <= 4 translates to the range -4 <= x <= 4. In programming, this is expressed as x being greater than or equal to -4 AND less than or equal to 4, which matches Choice C."
     },
     {
       "id": "3.27",
@@ -850,7 +876,8 @@
       ],
       "inputName": "Q26",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The mathematical absolute value inequality |x| >= 4 translates to x being either greater than or equal to 4 OR less than or equal to -4. Choice B correctly represents this logic using the logical OR (||) operator."
     },
     {
       "id": "3.28",
@@ -880,7 +907,8 @@
       ],
       "inputName": "QD27",
       "inputType": "checkbox",
-      "correctAnswer": "AC"
+      "correctAnswer": "AC",
+      "explanation": "Choice A is equivalent because it is the logical negation of equality. Choice C is equivalent because if two numbers are not equal, one must be strictly greater than or strictly less than the other."
     },
     {
       "id": "3.29",
@@ -905,7 +933,8 @@
       ],
       "inputName": "Q28",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The '&&' operator uses short-circuit evaluation. Because the first condition '(y > 10)' is false (10 is not greater than 10), the second part of the expression '(x-- > 10)' is never executed. Consequently, the value of x remains 10."
     },
     {
       "id": "3.30",
@@ -930,7 +959,8 @@
       ],
       "inputName": "Q29",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "Just like in the previous question, the logical AND (&&) operator short-circuits. Since 'y > 10' is false, the computer skips the evaluation of '(x++ > 10)'. This means the increment operation never happens, leaving x at its original value of 10."
     },
     {
       "id": "3.31",
@@ -955,7 +985,8 @@
       ],
       "inputName": "Q30",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The || operator is a short-circuit operator, meaning if the first operand evaluates to true, the second operand is not evaluated. Since (y >= 10) is true, the expression (x-- > 10) is skipped, leaving x at its original value of 10."
     },
     {
       "id": "3.32",
@@ -980,7 +1011,8 @@
       ],
       "inputName": "Q31",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "Because the || operator performs short-circuit evaluation, the second operand (x++ > 10) is never executed once the first operand (y >= 10) is found to be true. Consequently, the increment operation on x is skipped, and x remains 10."
     },
     {
       "id": "3.33",
@@ -1010,7 +1042,8 @@
       ],
       "inputName": "Q32",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "In Java, the condition for an if statement must be fully enclosed within a single set of parentheses. The code fails to compile because the logical expression '&& (x > 10)' sits outside the required parentheses that should encompass the entire if condition."
     },
     {
       "id": "3.34",
@@ -1040,7 +1073,8 @@
       ],
       "inputName": "QD33",
       "inputType": "checkbox",
-      "correctAnswer": "AC"
+      "correctAnswer": "AC",
+      "explanation": "Short-circuit operators are those that do not evaluate the second operand if the result of the expression is already determined by the first operand. In Java, && (Conditional AND) and || (Conditional OR) are short-circuit operators."
     },
     {
       "id": "3.35",
@@ -1075,7 +1109,8 @@
       ],
       "inputName": "Q34",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The switch expression (x + 3) evaluates to 6, triggering the code at case 6. However, because there are no break statements, the execution falls through case 7 (y = 1) and continues into the default block (y += 1), resulting in a final value of 2."
     },
     {
       "id": "3.36",
@@ -1105,7 +1140,8 @@
       ],
       "inputName": "Q35",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "Java switch statements require the control variable to be an integral type (byte, short, char, int), a wrapper class of these types, an enum, or a String. Floating-point types such as double and float are not permitted as switch variables."
     },
     {
       "id": "3.37",
@@ -1140,7 +1176,8 @@
       ],
       "inputName": "Q36",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "The ternary operator (condition ? value_if_true : value_if_false) evaluates the condition x > 0. Since x is 0, the condition is false, and the expression evaluates to -10, which is then assigned to y."
     },
     {
       "id": "3.38",
@@ -1175,7 +1212,8 @@
       ],
       "inputName": "Q37",
       "inputType": "radio",
-      "correctAnswer": "E"
+      "correctAnswer": "E",
+      "explanation": "All three code snippets correctly assign a boolean value based on whether number is even. However, Code 3 is considered the best practice because it is the most concise; since the expression 'number % 2 == 0' already returns a boolean, it can be assigned directly."
     },
     {
       "id": "3.39",
@@ -1205,7 +1243,8 @@
       ],
       "inputName": "Q38",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The ternary operator uses the boolean value of the variable 'even'. Since 'even' is false, the operator selects the value after the colon ('false') to pass to the println method."
     },
     {
       "id": "3.40",
@@ -1240,7 +1279,8 @@
       ],
       "inputName": "Q39",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "Java follows a specific operator precedence: Multiplicative operators (*) have higher precedence than additive (+), followed by bitwise XOR (^), then logical AND (&&), and finally logical OR (||)."
     },
     {
       "id": "3.41",
@@ -1270,7 +1310,8 @@
       ],
       "inputName": "Q40",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "In the statement 'int y = x = x + 1;', the assignment operator '=' is right-associative. First, 'x + 1' is calculated (1 + 1 = 2), then this value is assigned to 'x'. Finally, the value of that assignment (2) is assigned to 'y'. Therefore, 'y' becomes 2."
     },
     {
       "id": "3.42",
@@ -1305,7 +1346,8 @@
       ],
       "inputName": "Q41",
       "inputType": "radio",
-      "correctAnswer": "E"
+      "correctAnswer": "E",
+      "explanation": "In Java, most binary operators are left-associative, meaning they are evaluated from left to right. However, assignment operators like '=' are right-associative, which allows for multiple assignments in a single statement, such as 'a = b = c', where 'c' is assigned to 'b' first, and then the result is assigned to 'a'."
     },
     {
       "id": "3.43",
@@ -1325,7 +1367,8 @@
       ],
       "inputName": "Q42",
       "inputType": "radio",
-      "correctAnswer": "A"
+      "correctAnswer": "A",
+      "explanation": "The logical AND operator (&&) has higher precedence than the logical OR operator (||). Therefore, 'true && false' is evaluated first, resulting in 'false'. The expression then becomes 'true || false', which evaluates to 'true'."
     },
     {
       "id": "3.44",
@@ -1355,7 +1398,8 @@
       ],
       "inputName": "Q43",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "Statement D is false because the logical AND operator (&&) has higher precedence than the logical OR operator (||). In the expression 'x > 0 || x < 10 && y < 0', the '&&' operation is performed before the '||' operation, making it equivalent to 'x > 0 || (x < 10 && y < 0)' rather than the grouping shown in option D."
     }
   ],
   "status": "completed",

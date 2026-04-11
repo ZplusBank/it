@@ -10,55 +10,55 @@ const EXAM_CONFIG = [
         "id": "Chapter 1",
         "name": "Introduction to Computers, Programs, and Java",
         "q": 45,
-        "file": "data/java1/chapterChapter 1.json"
+        "file": "data/java1/Chapter  1.json"
       },
       {
         "id": "Chapter 2",
         "name": "Elementary Programming",
         "q": 67,
-        "file": "data/java1/chapterChapter 2.json"
+        "file": "data/java1/Chapter  2.json"
       },
       {
         "id": "Chapter 3",
         "name": "Selections",
         "q": 44,
-        "file": "data/java1/chapterChapter 3.json"
+        "file": "data/java1/Chapter  3.json"
       },
       {
         "id": "Chapter 4",
         "name": "Mathematical Functions, Characters, and Strings",
         "q": 48,
-        "file": "data/java1/chapterChapter 4.json"
+        "file": "data/java1/Chapter  4.json"
       },
       {
         "id": "Chapter 5",
         "name": "Loops",
         "q": 37,
-        "file": "data/java1/chapterChapter 5.json"
+        "file": "data/java1/Chapter  5.json"
       },
       {
         "id": "Chapter 6",
         "name": "Methods",
         "q": 27,
-        "file": "data/java1/chapterChapter 6.json"
+        "file": "data/java1/Chapter  6.json"
       },
       {
         "id": "Chapter 7",
         "name": "Single-Dimensional Arrays",
         "q": 55,
-        "file": "data/java1/chapterChapter 7.json"
+        "file": "data/java1/Chapter  7.json"
       },
       {
         "id": "Chapter 8",
         "name": "Multidimensional Arrays",
         "q": 19,
-        "file": "data/java1/chapterChapter 8.json"
+        "file": "data/java1/Chapter  8.json"
       },
       {
         "id": "Chapter 9",
         "name": "Objects and Classes",
         "q": 52,
-        "file": "data/java1/chapterChapter 9.json"
+        "file": "data/java1/Chapter  9.json"
       }
     ]
   },
@@ -70,40 +70,40 @@ const EXAM_CONFIG = [
     "icon": "data/java2/icon.png",
     "chapters": [
       {
-        "id": "9",
-        "name": "Chapter 9 :Objects and Classes",
+        "id": "Chapter 9",
+        "name": "Objects and Classes",
         "q": 52,
-        "file": "data/java2/chapter9.json"
+        "file": "data/java2/chapterChapter 9.json"
       },
       {
-        "id": "10",
-        "name": "Chapter 10:Object-Oriented Thinking",
+        "id": "Chapter 10",
+        "name": "Object-Oriented Thinking",
         "q": 47,
-        "file": "data/java2/chapter10.json"
+        "file": "data/java2/chapterChapter 10.json"
       },
       {
-        "id": "11",
-        "name": "Chapter 11:Inheritance and Polymorphism",
+        "id": "Chapter 11",
+        "name": "Inheritance and Polymorphism",
         "q": 65,
-        "file": "data/java2/chapter11.json"
+        "file": "data/java2/chapterChapter 11.json"
       },
       {
-        "id": "12",
-        "name": "Chapter 12:Exception Handling and Text I/O",
+        "id": "Chapter 12",
+        "name": "Exception Handling and Text I/O",
         "q": 48,
-        "file": "data/java2/chapter12.json"
+        "file": "data/java2/chapterChapter 12.json"
       },
       {
-        "id": "13",
-        "name": "Chapter 13:Abstract Classes and Interfaces",
+        "id": "Chapter 13",
+        "name": "Abstract Classes and Interfaces",
         "q": 35,
-        "file": "data/java2/chapter13.json"
+        "file": "data/java2/chapterChapter 13.json"
       },
       {
-        "id": "17",
-        "name": "Chapter 17:Binary I/O",
+        "id": "Chapter 17",
+        "name": "Binary I/O",
         "q": 20,
-        "file": "data/java2/chapter17.json"
+        "file": "data/java2/chapterChapter 17.json"
       }
     ]
   },
