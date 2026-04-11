@@ -312,7 +312,7 @@ const EXAM_CONFIG = [
         "id": "1",
         "name": "Mid",
         "q": 14,
-        "file": "data/Uml/chapterUML - Mid.pdfvisual_extractor.json"
+        "file": "data/Uml/chapterUML - Mid.pdfvisual_extractor (1).json"
       },
       {
         "id": "2",
