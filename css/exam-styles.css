@@ -1848,6 +1848,10 @@ button.submit-btn {
     margin: 20px auto 10px;
     border-radius: 50%;
     padding: 12px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
     background:
         radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.98) 54%, rgba(15, 23, 42, 0.74) 100%);
     box-shadow:
@@ -1856,6 +1860,7 @@ button.submit-btn {
 }
 
 .score-ring {
+    grid-area: 1 / 1;
     width: 100%;
     height: 100%;
     transform: rotate(-90deg);
@@ -1879,8 +1884,7 @@ button.submit-btn {
 }
 
 .score-ring-text {
-    position: absolute;
-    inset: 0;
+    grid-area: 1 / 1;
     display: grid;
     place-items: center;
     align-content: center;
