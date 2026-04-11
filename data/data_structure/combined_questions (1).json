@@ -1,0 +1,1886 @@
+{
+  "title": "Second",
+  "timestamp": 1775912272577,
+  "totalQuestions": 61,
+  "questions": [
+    {
+      "id": "extract-1775911086034-86q0m-0",
+      "number": "1",
+      "text": "Consider the following Java implementation of a method to find the parent of a node in a Binary Search Tree (BST). What should replace the placeholder `xxxxxxx` in the `while` loop condition to correctly traverse the tree?\n\n```java\npublic node findParent (node n, int val) {\n    node p = root;\n    node nn = root;\n    while (xxxxxxx) \n    {\n        P = nn;\n        if (val > nn.data)\n            nn = nn.right;\n        else if (val < nn.data)\n            nn = nn.left;\n        if (nn.data == val)\n            break;\n    }\n    return p;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "nn != null"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "nn == null"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "val != 0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "nn.left != null"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To traverse a BST until a target value is found or the end of a branch is reached, the loop should continue as long as the current node pointer (`nn`) is not null."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-1",
+      "number": "2",
+      "text": "In the `findParent` method, which statement should replace `XXXXX` to move the traversal to the right subtree when the target value is greater than the current node's data?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "nn = nn.right"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "nn = nn.left"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "nn = root"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "p = nn.right"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In a Binary Search Tree, for any given node, values greater than that node's value are stored in its right subtree."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-2",
+      "number": "3",
+      "text": "In the `findParent` method, which statement should replace `YYYYY` to move the traversal to the left subtree when the target value is less than the current node's data?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "nn = nn.left"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "nn = nn.right"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "p = nn.left"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "nn = null"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In a Binary Search Tree, for any given node, values smaller than that node's value are stored in its left subtree."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-3",
+      "number": "4",
+      "text": "In the `findParent` method, what variable should be returned (placeholder `xxxxx`) to provide the reference to the parent of the node containing `val`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "p"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "nn"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "root"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "null"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The variable `p` is assigned the current node `nn` just before `nn` moves down to its children. Therefore, when `nn` finds the target node, `p` still points to the node's predecessor, which is its parent."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-4",
+      "number": "5",
+      "text": "In the `insertNode` method, what code correctly creates a new instance of a node to be assigned to `nn` (replacing `XXXXXXX`)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "new node()"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "malloc(node)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "null"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "p"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, objects are instantiated using the `new` keyword followed by the class constructor."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-5",
+      "number": "6",
+      "text": "How should the data field of the new node `nn` be assigned in the `insertNode` method (replacing `XXXXXXX`) to store the inserted value?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "nn.data"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "p.data"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "nn.val"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "root.data"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To store the input `val` into the newly created node, we access the node's `data` property: `nn.data = val;`."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-6",
+      "number": "7",
+      "text": "In a BST, what should the left child of a newly inserted leaf node be initialized to (replacing `xxxxxx`)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "null"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "root"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "p"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "When a new node is inserted into a BST, it is initially a leaf node, meaning its child references must be set to `null`."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-7",
+      "number": "8",
+      "text": "In a BST, what should the right child of a newly inserted leaf node be initialized to (replacing `yyyyy`)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "null"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "root"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "p"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Standard practice for initializing leaf nodes in a tree is setting their child pointers to `null`."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-8",
+      "number": "9",
+      "text": "If the value being inserted is greater than the parent's data (`val > p.data`), how should the parent's pointer be updated to include the new node `nn` (replacing `XXXXXXX`)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "p.right = nn"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "p.left = nn"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "nn.right = p"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "root = nn"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "According to the properties of a Binary Search Tree, a value greater than the parent's value must be placed in the parent's right subtree."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-9",
+      "number": "10",
+      "text": "What is the average-case time complexity of the `insertNode` operation in a Binary Search Tree (BST) containing \\( n \\) nodes?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(\\log n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n \\log n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(1) \\)"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In a balanced or average-case BST, the height of the tree is logarithmic relative to the number of nodes, making insertion take \\( O(\\log n) \\) time."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-10",
+      "number": "11",
+      "text": "In the following Java method for a preorder traversal of a binary tree, what code should replace the first `xxxxx;` placeholder?\n\n```java\npublic void preOrder (node n) {\n    if (n != null) {\n        System.out.println(n.data);\n        xxxxx; // Q11\n        xxxxx; // Q12\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "preOrder(n.left);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "preOrder(n.right);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "preOrder(left);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "n.left.preOrder();"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Preorder traversal follows the order: Root, Left Subtree, Right Subtree. Since the root (n.data) is printed first, the next call must be to traverse the left child recursively: `preOrder(n.left);`."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-11",
+      "number": "12",
+      "text": "In the following Java method for a preorder traversal, what code should replace the second `xxxxx;` placeholder?\n\n```java\npublic void preOrder (node n) {\n    if (n != null) {\n        System.out.println(n.data);\n        xxxxx; // Q11\n        xxxxx; // Q12\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "preOrder(n.left);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "preOrder(n.right);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "preOrder(right);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "n.right.preOrder();"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "After visiting the root and the left subtree, the preorder traversal completes by visiting the right subtree: `preOrder(n.right);`."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-12",
+      "number": "13",
+      "text": "Consider the following recursive method. Which of the following accurately describes the recursion call tree for the call `x(7)`?\n\n```java\npublic static int x(int n) {\n    if (n >= 12) return 2;\n    else if (n >= 8) return 1 + x(n + 2) + x(n + 3);\n    else if (n > 5) return 2 + x(n + 2);\n    else return 1 + x(n + 1) + x(n + 2);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x(7) calls x(9); x(9) calls x(11) and x(12); x(11) calls x(13) and x(14)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x(7) calls x(8); x(8) calls x(10) and x(11); x(10) calls x(12) and x(13)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x(7) calls x(9) and x(10); x(9) calls x(11)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x(7) calls x(8) and x(9)"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Step-by-step trace:\n1. `x(7)`: 7 > 5 is true, calls `x(9)`.\n2. `x(9)`: 9 >= 8 is true, calls `x(11)` and `x(12)`.\n3. `x(11)`: 11 >= 8 is true, calls `x(13)` and `x(14)`.\n\n```mermaid\ngraph TD\n    A[x(7)] --> B[x(9)]\n    B --> C[x(11)]\n    B --> D[x(12)]\n    C --> E[x(13)]\n    C --> F[x(14)]\n```"
+    },
+    {
+      "id": "extract-1775911086034-86q0m-13",
+      "number": "14",
+      "text": "What is the return value of the call `x(7)` using the method provided in the previous question?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "8"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "12"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "15"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Calculations:\n- `x(13)` = 2, `x(14)` = 2 (base cases where n >= 12)\n- `x(11)` = 1 + `x(13)` + `x(14)` = 1 + 2 + 2 = 5\n- `x(12)` = 2\n- `x(9)` = 1 + `x(11)` + `x(12)` = 1 + 5 + 2 = 8\n- `x(7)` = 2 + `x(9)` = 2 + 8 = 10"
+    },
+    {
+      "id": "extract-1775911086034-86q0m-14",
+      "number": "15",
+      "text": "What is the output of the following program when `y(3)` is executed?\n\n```java\npublic static void y(int n) {\n    if (n >= 10) return;\n    else if (n >= 7) {\n        System.out.println(\" n =\" + n);\n        n = n + 2;\n        y(n);\n        System.out.println(n);\n        return;\n    }\n    else if (n > 2) {\n        System.out.println(n);\n        n = n + 3;\n        y(n);\n        System.out.println(n);\n        return;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3\n6\n n =9\n11\n9\n6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3\n6\n n =9\n9\n6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3\n6\n n =9\n11\n6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3\n6\n9\n11\n9\n6"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Trace of `y(3)`:\n1. `y(3)` prints **3**, sets `n=6`, calls `y(6)`.\n2. `y(6)` prints **6**, sets `n=9`, calls `y(9)`.\n3. `y(9)` prints ** n =9**, sets `n=11`, calls `y(11)`.\n4. `y(11)` returns immediately.\n5. `y(9)` resumes and prints its current `n`, which is **11**.\n6. `y(6)` resumes and prints its current `n`, which is **9**.\n7. `y(3)` resumes and prints its current `n`, which is **6**."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-15",
+      "number": "16",
+      "text": "Consider the following binary search tree (BST). What is the Preorder Traversal sequence for this tree?\n\n```mermaid\ngraph TD\n    8((8)) --> 3((3))\n    8 --> 10((10))\n    3 --> 1((1))\n    3 --> 6((6))\n    6 --> 4((4))\n    6 --> 7((7))\n    10 --> 14((14))\n    14 --> 13((13))\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "8, 3, 1, 6, 4, 7, 10, 14, 13"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1, 4, 7, 6, 3, 13, 14, 10, 8"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1, 3, 4, 6, 7, 8, 10, 13, 14"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "8, 10, 14, 13, 3, 6, 7, 4, 1"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Preorder traversal (Root, Left, Right): 8, then left subtree (3, 1, 6, 4, 7), then right subtree (10, 14, 13)."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-16",
+      "number": "17",
+      "text": "Using the same binary search tree from the previous question, what is the Postorder Traversal sequence?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "8, 3, 1, 6, 4, 7, 10, 14, 13"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1, 4, 7, 6, 3, 13, 14, 10, 8"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1, 3, 4, 6, 7, 8, 10, 13, 14"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "13, 14, 10, 7, 4, 6, 1, 3, 8"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Postorder traversal (Left, Right, Root): Left subtree (1, 4, 7, 6, 3), then right subtree (13, 14, 10), then the root (8)."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-17",
+      "number": "18",
+      "text": "If you delete the root node (8) from the provided BST, what node will logically replace it according to standard binary search tree deletion (using the inorder successor)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Node 10"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Node 7"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Node 6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Node 3"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The inorder successor is the smallest node in the right subtree. In this tree, the right subtree starts at 10, and since 10 has no left child, 10 is the inorder successor."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-18",
+      "number": "19",
+      "text": "Where will the node with value 12 be placed if it is inserted into the original binary search tree?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "As the left child of 13"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "As the right child of 13"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "As the right child of 10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "As the left child of 10"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Insertion steps: 12 > 8 (go right), 12 > 10 (go right), 12 < 14 (go left), 12 < 13 (go left). Thus, it becomes the left child of 13."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-19",
+      "number": "20",
+      "text": "Which of the following implementations correctly completes the recursive method `Smallest(node n)` to return the smallest data value in a BST?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "if (n.left == null) return n.data; return Smallest(n.left);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "if (n.right == null) return n.data; return Smallest(n.right);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "if (n == null) return 0; return Smallest(n.right);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "return Smallest(n.left);"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In a BST, the smallest value is found by traveling as far left as possible. If `n.left` is null, the current node is the smallest."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-20",
+      "number": "21",
+      "text": "Consider the Binary Search Tree (BST) represented by the diagram below:\n\n```mermaid\ngraph TD\n    8((8)) --> 3((3))\n    8 --> 10((10))\n    3 --> 1((1))\n    3 --> 6((6))\n    6 --> 4((4))\n    6 --> 7((7))\n    10 --> null1[ ]\n    10 --> 14((14))\n    14 --> 13((13))\n    14 --> null2[ ]\n    style null1 fill:none,stroke:none\n    style null2 fill:none,stroke:none\n```\n\nWhat is the **pre-order** traversal of this tree?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "8, 3, 1, 6, 4, 7, 10, 14, 13"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1, 4, 7, 6, 3, 13, 14, 10, 8"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1, 3, 4, 6, 7, 8, 10, 13, 14"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "8, 10, 14, 1, 3, 6, 4, 7, 13"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Pre-order traversal visits the tree in the order: Root, Left Subtree, Right Subtree. Following this path: visit 8, move to left subtree (visit 3, then its left child 1, then its right child 6, then 6's children 4 and 7), then move to the right subtree of 8 (visit 10, then its right child 14, then 14's left child 13)."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-21",
+      "number": "22",
+      "text": "Given the Binary Search Tree from the previous question, what is its **post-order** traversal?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "8, 3, 1, 6, 4, 7, 10, 14, 13"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1, 4, 7, 6, 3, 13, 14, 10, 8"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1, 3, 4, 6, 7, 8, 10, 13, 14"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "7, 4, 6, 1, 3, 13, 14, 10, 8"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Post-order traversal visits the tree in the order: Left Subtree, Right Subtree, Root. For each node, you visit all descendants before the node itself. For this tree, the nodes are visited in the order: 1, 4, 7, 6, 3 (left subtree), then 13, 14, 10 (right subtree), and finally 8 (root)."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-22",
+      "number": "23",
+      "text": "If the value **12** is inserted into the following Binary Search Tree, where will it be placed?\n\n```mermaid\ngraph TD\n    8((8)) --> 3((3))\n    8 --> 10((10))\n    3 --> 1((1))\n    3 --> 6((6))\n    6 --> 4((4))\n    6 --> 7((7))\n    10 --> null1[ ]\n    10 --> 14((14))\n    14 --> 13((13))\n    14 --> null2[ ]\n    style null1 fill:none,stroke:none\n    style null2 fill:none,stroke:none\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "As the left child of 13"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "As the right child of 13"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "As the left child of 14"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "As the right child of 10"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In a BST, values are inserted by comparing with the current node: 12 > 8 (go right), 12 > 10 (go right), 12 < 14 (go left), 12 < 13 (go left). Since 13 currently has no left child, 12 becomes the left child of 13."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-23",
+      "number": "24",
+      "text": "What is the purpose of the following recursive function when executed on a Binary Search Tree node `n`?\n\n```java\nif (n.left != null)\n    return (smallest(n.left));\nelse\n    return (n.data);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To find the maximum value in the BST"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To find the minimum value in the BST"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To calculate the total number of nodes"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To perform a level-order traversal"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In a Binary Search Tree, the minimum value is always found in the leftmost node. The function recursively calls itself on the left child until it reaches a node with no left child, at which point it returns that node's data."
+    },
+    {
+      "id": "extract-1775911086034-86q0m-24",
+      "number": "25",
+      "text": "In a balanced Binary Search Tree containing \\( n \\) nodes, what is the average time complexity for searching for a specific value?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(1) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(\\log_2 n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(n \\log_2 n) \\)"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Searching in a balanced BST involves dividing the search space in half at each step (left or right branch), which leads to a logarithmic time complexity of \\( O(\\log_2 n) \\)."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-0",
+      "number": "26",
+      "text": "What is the Big O time complexity of the following Java-like code snippet?\n\n```java\npublic static void test(int n){\n    int x = 4;\n    while (x < n){\n        x *= 3;\n        System.out.println(\"A\");\n        for(int i = 1; i <= n; i += 2){\n            System.out.println(\"B\");\n            for(int j = 2; j < 80; j++){\n                System.out.println(\"C\");\n            }\n        }\n        int z = n^2;\n        while(z >= 1){\n            System.out.println(\"D\");\n            z--;\n        }\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(n^2 \\log n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n \\log n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n^2) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(n^3) \\)"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The outer loop runs \\( \\log_3(n) \\) times because the variable \\( x \\) is multiplied by 3 in each iteration. Inside this loop, there are two independent segments. The first is a nested loop where the inner loop runs a constant 78 times and the outer part runs \\( n/2 \\) times, resulting in \\( O(n) \\). The second segment is a `while` loop that runs \\( n^2 \\) times (assuming `^` represents exponentiation as common in complexity problems). The dominant complexity inside the outer loop is \\( O(n^2) \\). Therefore, the overall complexity is the product of the outer loop and the dominant inner part: \\( O(n^2 \\log n) \\)."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-1",
+      "number": "27",
+      "text": "What is the Big O time complexity of the following code snippet?\n\n```java\nint x = 1;\nwhile (x < n^3) {\n    System.out.print(\"A\");\n    x = x + 1;\n    int y = n^3;\n    while (y >= 1) {\n        System.out.print(\"B\");\n        y -= 3;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(n^3) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n^6) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n^9) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(n^3 \\log n) \\)"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The outer `while` loop iterates from 1 to \\( n^3 \\), performing \\( O(n^3) \\) iterations. Inside this loop, the variable \\( y \\) is reset to \\( n^3 \\) every time and then decremented by 3 in each step of the inner loop until it reaches 1. The inner loop thus performs approximately \\( n^3 / 3 \\) iterations, which is also \\( O(n^3) \\). Since the inner loop is fully nested within the outer loop, we multiply their complexities: \\( O(n^3) \\times O(n^3) = O(n^6) \\)."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-2",
+      "number": "28",
+      "text": "You are given a singly-linked list and asked to rearrange it in-place such that all even numbers are placed at the beginning and all odd numbers at the end. For an input list `5 -> 6 -> 4 -> 1 -> 2 -> 8`, a sample output is `8 -> 2 -> 4 -> 6 -> 5 -> 1`. Which of the following is the most efficient time and space complexity to achieve this rearrangement in-place?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Time: \\( O(n) \\), Space: \\( O(1) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Time: \\( O(n \\log n) \\), Space: \\( O(1) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Time: \\( O(n) \\), Space: \\( O(n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Time: \\( O(n^2) \\), Space: \\( O(1) \\)"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To solve this problem in-place, you can traverse the list once and maintain pointers for the head and tail of an 'even' sub-list and an 'odd' sub-list. As you iterate, you detach each node and link it into the appropriate sub-list. Finally, you join the two lists. This requires only a single pass over the \\( n \\) nodes and a constant amount of extra pointer variables, resulting in \\( O(n) \\) time and \\( O(1) \\) auxiliary space."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-3",
+      "number": "29",
+      "text": "Consider the following Java code snippet:\n\n```java\nint x = 1;\nwhile(x <= 100)\n{\n    for(int i = 1; i <= x; i++)\n    {\n        System.out.println(\"Hello\");\n    }\n    x++;\n}\n```\n\nHow many times will the word \"Hello\" be printed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "5050"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10000"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2550"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1000"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The code consists of nested loops. The outer `while` loop iterates from \\(x = 1\\) to \\(100\\). For each iteration of \\(x\\), the inner `for` loop executes \\(x\\) times, printing \"Hello\". The total number of prints is the sum of integers from 1 to 100:\n\\[ \\sum_{i=1}^{100} i = \\frac{n(n+1)}{2} = \\frac{100(101)}{2} = 5050 \\]"
+    },
+    {
+      "id": "extract-1775911958122-3riwm-4",
+      "number": "30",
+      "text": "Determine if the following code statement is correct when used inside a standard Java `main` method without any additional context or declarations:\n\n`System.out.println(head.data);`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Correct"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Incorrect"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "This statement is incorrect because the variable `head` has not been declared or initialized within the scope of the method. In Java, all variables must be declared with a type before they can be used."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-5",
+      "number": "31",
+      "text": "What is the postfix (Reverse Polish Notation) of the following mathematical expression?\n\n\\[ 7 + (10 - (6 * 1 + 17) + 8) - 2 \\]",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "7 10 6 1 * 17 + - 8 + + 2 -"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "7 10 6 1 * + 17 - 8 + + 2 -"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "7 10 6 1 17 * + - 8 + + 2 -"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "7 10 6 1 * 17 + 8 + - + 2 -"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Converting from infix to postfix following operator precedence and left-to-right evaluation:\n1. The innermost parentheses `(6 * 1 + 17)` becomes `6 1 * 17 +`.\n2. The outer parentheses `(10 - [result] + 8)` involves subtraction and addition (equal precedence), evaluated left-to-right: `10 6 1 * 17 + - 8 +`.\n3. The full expression `7 + [result] - 2` also evaluates left-to-right: `7 10 6 1 * 17 + - 8 + + 2 -`."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-6",
+      "number": "32",
+      "text": "What is the output of the following code?\n\n```java\nint i = 2;\nwhile(i < 8)\n{\n  s1.push(i);\n  s2.push(s1.top());\n  if(s1.top() < 6)\n    s2.push(i * s1.pop());\n  i++;\n}\nSystem.out.println();\nfor(i=1; i<= 3 ; i++)\n  s2.pop();\n\ns2.printStack();\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2 4 3 9 4 16 5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5 16 4 9 3 4 2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2 4 3 9 4 16 5 25 6 7"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "7 6 25 5 16 4 9 3 4 2"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Let's trace the loop from \\( i = 2 \\) to \\( 7 \\):\n- \\( i=2 \\): \\( s1=[2], s2=[2] \\). Since \\( 2 < 6 \\), \\( s2.push(2*2) \\). \\( s2=[2, 4], s1=[] \\).\n- \\( i=3 \\): \\( s1=[3], s2=[2, 4, 3] \\). Since \\( 3 < 6 \\), \\( s2.push(3*3) \\). \\( s2=[2, 4, 3, 9], s1=[] \\).\n- \\( i=4 \\): \\( s1=[4], s2=[2, 4, 3, 9, 4] \\). Since \\( 4 < 6 \\), \\( s2.push(4*4) \\). \\( s2=[2, 4, 3, 9, 4, 16], s1=[] \\).\n- \\( i=5 \\): \\( s1=[5], s2=[2, 4, 3, 9, 4, 16, 5] \\). Since \\( 5 < 6 \\), \\( s2.push(5*5) \\). \\( s2=[2, 4, 3, 9, 4, 16, 5, 25], s1=[] \\).\n- \\( i=6 \\): \\( s1=[6], s2=[2, 4, 3, 9, 4, 16, 5, 25, 6] \\). Since \\( 6 < 6 \\) is false, \\( s1 \\) retains 6.\n- \\( i=7 \\): \\( s1=[6, 7], s2=[2, 4, 3, 9, 4, 16, 5, 25, 6, 7] \\). Since \\( 7 < 6 \\) is false, \\( s1 \\) retains 7.\n\nAfter the loop, the bottom-to-top content of \\( s2 \\) is `[2, 4, 3, 9, 4, 16, 5, 25, 6, 7]`. \nThe second loop pops 3 elements: 7, 6, and 25. \nThe remaining stack contains: `2 4 3 9 4 16 5`."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-7",
+      "number": "33",
+      "text": "What is the output of the following code and what is the top stack of s1?\n\n```java\nint y=7;\nstack s1=new stack();\nfor (int x=1; x<=2;x++)\n{\n  s1.push(y-x);\n  s1.push(s1.top()+x);\n}\nqueue q1=new queue();\nfor(int j=3; j>0;j--)\n{\n  q1.enqueue(y+j);\n  y--;\n  q1.enqueue(s1.pop()+y);\n  q1.enqueue(q1.dequeue());\n}\nq1.print();\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "8 10 13 6 11 10 and top of s1 is 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10 11 6 13 10 8 and top of s1 is 7"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "8 10 13 6 11 10 and top of s1 is 7"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "10 13 8 10 6 11 and top of s1 is 6"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. Build stack \\( s1 \\):\n- \\( x=1 \\): \\( s1.push(7-1=6), s1.push(6+1=7) \\). Stack: `[6, 7]`.\n- \\( x=2 \\): \\( s1.push(7-2=5), s1.push(5+2=7) \\). Stack: `[6, 7, 5, 7]`.\n2. Queue loop:\n- \\( j=3 \\): \\( y=7 \\). \\( q1.enq(10) \\). \\( y=6 \\). \\( q1.enq(s1.pop(7)+6=13) \\). \\( q1.enq(q1.deq(10)) \\). Queue: `[13, 10]`.\n- \\( j=2 \\): \\( y=6 \\). \\( q1.enq(8) \\). \\( y=5 \\). \\( q1.enq(s1.pop(5)+5=10) \\). \\( q1.enq(q1.deq(13)) \\). Queue: `[10, 8, 10, 13]`.\n- \\( j=1 \\): \\( y=5 \\). \\( q1.enq(6) \\). \\( y=4 \\). \\( q1.enq(s1.pop(7)+4=11) \\). \\( q1.enq(q1.deq(10)) \\). Queue: `[8, 10, 13, 6, 11, 10]`.\n3. Final stack \\( s1 \\) top is the remaining element 6. Output is `8 10 13 6 11 10`."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-8",
+      "number": "34",
+      "text": "The elements are not stored at contiguous memory locations in a linked list.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Linked lists use nodes that contain data and pointers to the next node. These nodes can be allocated anywhere in the heap memory and are linked logically, not physically contiguous like array elements."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-9",
+      "number": "35",
+      "text": "Consider a doubly linked list as follows:\n\n```mermaid\ngraph LR\n    A <--> B\n    B <--> C\n    C <--> D\n    D <--> E\n    E --> NULL[null]\n    p((p)) --> D\n```\n\nThere is only one pointer `p` pointing to the node containing `D`. Which of the following pairs of statements correctly deletes the node containing `C`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "p.prev = p.prev.prev; p.prev.next = p;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "p.prev.next = p; p.prev = p.prev.prev;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "p.prev = p.next; p.next = p.prev;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "p.next.prev = p.prev; p.prev.next = p.next;"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To delete node C, we must link node B directly to node D. Since `p` points to D, `p.prev` is C and `p.prev.prev` is B. \n1. `p.prev = p.prev.prev;` updates D's previous pointer to point to B. \n2. `p.prev.next = p;` (where `p.prev` is now B) updates B's next pointer to point to D. \nNote: If statement 2 was executed first, `p.prev` would still be C, resulting in `C.next = p`, which is redundant and does not bypass C."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-10",
+      "number": "36",
+      "text": "Which of the following recursive methods correctly counts the number of nodes in a doubly linked list?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\npublic int count(Node n) {\n    if (n == null) return 0;\n    return 1 + count(n.next);\n}\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\npublic int count(Node n) {\n    if (n == null) return 1;\n    return count(n.next);\n}\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\npublic int count(Node n) {\n    int c = 0;\n    while (n != null) {\n        c++;\n        n = n.next;\n    }\n    return c;\n}\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\npublic int count(Node n) {\n    if (n.next == null) return 1;\n    return 1 + count(n);\n}\n```"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A recursive count involves a base case and a recursive step. If the current node `n` is null, the count is 0. Otherwise, the count is 1 (for the current node) plus the result of the recursive call on the next node (`n.next`). Option C is iterative, and Option D would cause a stack overflow."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-11",
+      "number": "37",
+      "text": "Given the doubly linked list below, where `Y` points to node `D`, which set of 4 Java statements correctly creates a copy of node `Y` and inserts it at the end of the list?\n\n```mermaid\ngraph LR\n    head((head)) --> A\n    A <--> B\n    B <--> D\n    D <--> E\n    E <--> F\n    F --> tail((tail))\n    Y((Y)) --> D\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Node nn = new Node(Y.data);\nnn.prev = tail;\ntail.next = nn;\ntail = nn;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Node nn = new Node();\nnn.data = Y.data;\ntail.next = nn;\ntail = nn;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Node nn = Y;\nnn.prev = tail;\ntail.next = nn;\ntail = nn;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Node nn = new Node(Y.data);\nnn.next = tail;\ntail.prev = nn;\ntail = nn;"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To copy node Y and insert it at the end:\n1. `Node nn = new Node(Y.data);` creates a new node with Y's data.\n2. `nn.prev = tail;` links the new node back to the current last node.\n3. `tail.next = nn;` links the current last node forward to the new node.\n4. `tail = nn;` updates the list's tail pointer to the new node."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-12",
+      "number": "38",
+      "text": "Consider the following linked list and Java code snippet. What will be the state of the linked list after executing the `DoSomthing1()` method?\n\n```mermaid\ngraph LR\n    Head((Head)) --> N4\n    subgraph List\n        N4[4] --> N7[7]\n        N7 --> N8[8]\n        N8 --> N9[9]\n        N9 --> N3[3]\n    end\n    N3 --> NULL[/NULL/]\n    P_ptr(P) -.-> N8\n    Tail_ptr(Tail) -.-> N3\n```\n\n```java\npublic void DoSomthing1() {\n    node nn = new node;\n    nn.data = head.next.data;\n    nn.next = P.next;\n    P.next = nn;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4 -> 7 -> 8 -> 7 -> 9 -> 3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4 -> 7 -> 7 -> 8 -> 9 -> 3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4 -> 8 -> 7 -> 9 -> 3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4 -> 7 -> 8 -> 9 -> 3"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The code performs the following steps:\n1. `nn.data = head.next.data;`: `head` points to 4, so `head.next` is 7. The new node `nn` gets data 7.\n2. `nn.next = P.next;`: `P` points to 8, and `P.next` is 9. So `nn.next` points to 9.\n3. `P.next = nn;`: Node 8 now points to the new node `nn` (which contains 7).\nThis results in the sequence: 4 -> 7 -> 8 -> (new 7) -> 9 -> 3."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-13",
+      "number": "39",
+      "text": "The time complexity to reverse a stack (using a standard recursive algorithm without auxiliary data structures) is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(1) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n^2) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(\\log n) \\)"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Reversing a stack recursively involves popping all elements until the stack is empty and then inserting each element at the bottom of the stack. The 'insert at bottom' operation takes \\( O(n) \\) time, and it is performed \\( n \\) times, leading to a total time complexity of \\( O(n^2) \\)."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-14",
+      "number": "40",
+      "text": "Evaluate the following postfix expression: `\"1 4 8 4 / 3 + + 3 / +\"`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Evaluating step by step using a stack:\n1. Push 1, 4, 8, 4. Stack: `[1, 4, 8, 4]`\n2. `/`: 8 / 4 = 2. Stack: `[1, 4, 2]`\n3. Push 3. Stack: `[1, 4, 2, 3]`\n4. `+`: 2 + 3 = 5. Stack: `[1, 4, 5]`\n5. `+`: 4 + 5 = 9. Stack: `[1, 9]`\n6. Push 3. Stack: `[1, 9, 3]`\n7. `/`: 9 / 3 = 3. Stack: `[1, 3]`\n8. `+`: 1 + 3 = 4. Final result: 4."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-15",
+      "number": "41",
+      "text": "The postfix expression for the infix expression \"5*(8+4/2-1)*2 \"",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "5 8 4 2 / + 1 - * 2 *"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5 8 4 2 / + 1 - 2 * *"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5 8 4 + 2 / 1 - * 2 *"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5 8 4 2 / 1 - + * 2 *"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To convert the infix expression \\( 5 * (8 + 4 / 2 - 1) * 2 \\) to postfix:\n1. Evaluate the expression inside the parentheses: \\( 8 + 4 / 2 - 1 \\).\n   - Division has the highest precedence: \\( 4 / 2 \\) becomes `4 2 /`.\n   - Addition and subtraction are evaluated left-to-right: `8 + (4 2 /)` becomes `8 4 2 / +`. Then `(8 4 2 / +) - 1` becomes `8 4 2 / + 1 -`.\n2. Apply the outer operators left-to-right:\n   - \\( 5 * (result) \\) becomes `5 8 4 2 / + 1 - *`.\n   - Finally, multiply by 2: `5 8 4 2 / + 1 - * 2 *`."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-16",
+      "number": "42",
+      "text": "Which of these data types is used by operating system to manage the Recursion in Java?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Array"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Stack"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Tree"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Queue"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The JVM (and the underlying operating system) uses a call stack to manage method calls. Each recursive call adds a new frame to the stack, and when a call returns, its frame is popped."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-17",
+      "number": "43",
+      "text": "Which of these will happen if recursive method does not have a base case?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "System stops the program after some time"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Compilation Error"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "After 1000000 calls it will be automatically stopped"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "An infinite loop occurs"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "If a recursive method lacks a base case, it leads to infinite recursion. This consumes stack memory for every call until the stack is full, at which point the system throws a `StackOverflowError` and stops the program."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-18",
+      "number": "44",
+      "text": "What is the output of this program?\n\n```java\nclass recursion\n{\n    int func (int n)\n    {\n        int result;\n        if (n == 1)\n            return 1;\n        result = func (n - 1);\n        return result;\n    }\n}\n\nclass Output\n{\n    public static void main(String args[])\n    {\n        recursion obj = new recursion();\n        System.out.print(obj.func(5));\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "120"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The method `func(5)` calls `func(4)`, which calls `func(3)`, which calls `func(2)`, which finally calls `func(1)`. Since the base case `if (n == 1)` returns 1, and every other recursive call simply returns the result of the previous call (`return result;`), the value 1 is passed all the way back up the call stack to be printed."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-19",
+      "number": "45",
+      "text": "What is the output of this program?\n\n```java\nclass recursion\n{\n    int fact(int n)\n    {\n        int result;\n        if (n == 1)\n            return 1;\n        result = fact(n - 1) * n;\n        return result;\n    }\n}\n\nclass Output\n{\n    public static void main(String args[])\n    {\n        recursion obj = new recursion();\n        System.out.print(obj.fact(5));\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "30"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "120"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "720"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "This method implements the mathematical factorial function recursively. The result of `fact(5)` is calculated as \\( 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120 \\)."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-20",
+      "number": "46",
+      "text": "How many recursive calls does the following method contain?\n\n```java\npublic static int fibonacci(int n)\n{\n    if (n == 0)\n        return 0;\n    else if (n == 1)\n        return 1;\n    else return fibonacci(n-1) + fibonacci(n-2);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In the `else` block of the `fibonacci` method, there are two distinct instances where the method calls itself: `fibonacci(n-1)` and `fibonacci(n-2)`. Therefore, the code contains 2 recursive calls."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-21",
+      "number": "47",
+      "text": "Given a number \\(N\\) and an array \\(A\\) of \\(N\\) numbers, a program is required to print the summation of the array elements using recursion. If the input provided is:\n\nInput:\n4\n1 4 2 7\n\nWhat is the expected output?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "11"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "14"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "13"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "20"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The summation of the elements 1, 4, 2, and 7 is \\(1 + 4 + 2 + 7 = 14\\)."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-22",
+      "number": "48",
+      "text": "What is the output for the following code snippet?\n\n```java\nstack st1 = new stack();\nstack st2 = new stack();\n\nfor (int i = 10; i > 0; i -= 2)\n    st1.push(i);\n\nwhile (st1.top() != 4)\n    st2.push(st1.pop() - 1);\n\nfor (int j = 1; j <= 3; j++)\n    System.out.println(st2.pop() + st1.top());\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "5, then an error (EmptyStackException)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5, 7, 9"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4, 6, 8"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. `st1` pushes 10, 8, 6, 4, 2. `st1` top is 2.\n2. The `while` loop checks if `st1.top() != 4`. Since 2 != 4, it pops 2, subtracts 1 (result 1), and pushes 1 to `st2`. `st1` is now [10, 8, 6, 4].\n3. Next check: `st1.top()` is 4. Loop terminates.\n4. Final loop starts: \n   - Iteration 1: `st2.pop()` (1) + `st1.top()` (4) = 5. \n   - Iteration 2: `st2.pop()` is called, but `st2` only had one element and is now empty. This causes a stack underflow error."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-23",
+      "number": "49",
+      "text": "Consider a doubly linked list: \\(A \\iff B \\iff C \\iff D \\iff E \\to \\text{null}\\). There is only one pointer (\\(p\\)) pointing to the node containing (C). The code below is used to duplicate the node containing D. \n\n```java\nnode nn = new node();\nnn.data = p.next.data;\nnn.next = p.next;\nnn.prev = p;\np.next = nn;\n// missing code is here\n```\n\nTo ensure the list becomes \\(A \\iff B \\iff C \\iff D \\iff D \\iff E \\to \\text{null}\\), what is the missing code?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "nn.next.prev = nn;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "p.next.prev = nn;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "D.prev = nn;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The current code inserts a new node `nn` (containing 'D') between `p` (Node C) and the original Node D. However, the original Node D's `prev` pointer still points back to C. To maintain the doubly linked list property, the original Node D (which is now `nn.next`) must have its `prev` pointer updated to point to the new node `nn`. Thus, `nn.next.prev = nn;` is required."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-24",
+      "number": "50",
+      "text": "Based on the provided diagrams, what is the time complexity to insert a node before node \\(F\\) in the doubly linked list (Figure 2)? Assume you have a direct reference to node \\(F\\).\n\n```mermaid\ngraph LR\n    D[\"Node (D)\"] <--> n2[\"Node\"]\n    n2 <--> E[\"Node (E)\"]\n    E <--> n4[\"Node\"]\n    n4 <--> F[\"Node (F)\"]\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\(O(1)\\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\(O(n)\\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\(O(\\log n)\\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\(O(n^2)\\)"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In a doubly linked list, if you have a reference to a node, you can access its predecessor directly via the 'prev' pointer. Therefore, inserting a node before it involves updating four pointers, which is a constant time operation, \\(O(1)\\)."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-25",
+      "number": "51",
+      "text": "Based on Figure 2, what is the time complexity to delete node \\(E\\) from the doubly linked list? Assume you have a direct reference to node \\(E\\).",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\(O(n)\\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\(O(1)\\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\(O(\\log n)\\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\(O(n \\log n)\\)"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Deleting a node from a doubly linked list when given a reference to the node itself is \\(O(1)\\) because you can reach both the predecessor and successor immediately to update their links."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-26",
+      "number": "52",
+      "text": "Based on the provided diagrams, what is the time complexity to insert a node before node \\(C\\) in the singly linked list (Figure 1)? Assume you have a direct reference to node \\(C\\).\n\n```mermaid\ngraph LR\n    A[\"Node (A)\"] --> n2[\"Node\"]\n    n2 --> B[\"Node (B)\"]\n    B --> n4[\"Node\"]\n    n4 --> C[\"Node (C)\"]\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\(O(1)\\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\(O(n)\\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\(O(n^2)\\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\(O(\\log n)\\)"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In a singly linked list, even if you have a reference to node \\(C\\), you cannot access its predecessor directly. You must traverse the list from the head to find the node pointing to \\(C\\), resulting in \\(O(n)\\) complexity."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-27",
+      "number": "53",
+      "text": "In Figure 2 (doubly linked list), what is the time complexity to search for a specific node by its value?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\(O(1)\\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\(O(\\log n)\\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\(O(n)\\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\(O(n^2)\\)"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Searching for a specific value in a linked list requires a linear scan from the head (or tail) to find the target, which takes \\(O(n)\\) time."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-28",
+      "number": "54",
+      "text": "In Figure 1 (singly linked list), what is the time complexity to insert a node after node \\(B\\)? Assume you have a direct reference to node \\(B\\).",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\(O(1)\\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\(O(n)\\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\(O(\\log n)\\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\(O(n^2)\\)"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Inserting after a node in a singly linked list only requires updating the 'next' pointer of the current node and the new node. This is a constant time operation, \\(O(1)\\)."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-29",
+      "number": "55",
+      "text": "Consider the following recursive Java method. What will be the output when the method is called as `y(6, 6)`?\n\n```java\npublic static void y(int n, int z) {\n    if (n >= 10) {\n        System.out.println(n);\n        System.out.println(z);\n        return;\n    } else {\n        System.out.println(\"z=\" + z);\n        n = n + 2;\n        y(n, z + 2);\n        y(z + 5, 4);\n        System.out.println(n + 1);\n        return;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "z=6, z=8, 10, 10, 13, 4, 11, 11, 4, 9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "z=6, z=8, 10, 10, 11, 13, 4, 11, 4, 9"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6, 6, 8, 8, 10, 10, 13, 4, 11, 9"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "z=6, 10, 10, z=8, 13, 4, 11, 9, 11, 4"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Tracing `y(6,6)`:\n1. Print `z=6`, update `n=8`. Call `y(8,8)`.\n2. In `y(8,8)`: Print `z=8`, update `n=10`. Call `y(10,10)`.\n3. In `y(10,10)`: `10 >= 10` is true, prints `10` then `10`. Returns to `y(8,8)`.\n4. In `y(8,8)`: Call `y(8+5, 4)` -> `y(13,4)`. Prints `13` then `4`. Returns.\n5. In `y(8,8)`: Print `n+1` (where `n=10`), so prints `11`. Returns to `y(6,6)`.\n6. In `y(6,6)`: Call `y(6+5, 4)` -> `y(11,4)`. Prints `11` then `4`. Returns.\n7. In `y(6,6)`: Print `n+1` (where `n=8`), so prints `9`."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-30",
+      "number": "56",
+      "text": "What is the output of the following Java method when called with `A = {5, 3, 8, 7, 6}` and `n = 0`?\n\n```java\npublic static void xxx(int A[], int n) {\n    if (n >= A.length)\n        return;\n    else {\n        xxx(A, n + 1);\n        System.out.println(A[n]);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "5, 3, 8, 7, 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6, 7, 8, 3, 5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5, 6, 7, 8, 3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "6, 5, 3, 8, 7"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "This is a post-order recursive traversal of an array. The method calls itself for the next index before printing the current element. This results in the array being printed in reverse order: 6, 7, 8, 3, 5."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-31",
+      "number": "57",
+      "text": "Consider the following code fragment:\n\n```java\nfor (int i = 5; i <= n * n; i++) {\n    System.out.println(\"Hi\");\n    for (int j = 1; j <= n; j *= 2) {\n        System.out.println(\"bye\");\n    }\n    int k = 1;\n    while (k <= n * n) { // statement 3\n        k = k + 1;\n        for (int m = 1; m <= n; m += 3) {\n            System.out.println(\"Why\");\n        }\n    }\n}\n```\nHow many times will \"Hi\" be printed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( n^2 - 4 \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( n^2 - 5 \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( n^2 \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( n \\)"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The outer loop initializes \\( i = 5 \\) and runs while \\( i \\le n^2 \\). The number of iterations is calculated as \\( (\\text{upper bound} - \\text{lower bound}) + 1 \\), which is \\( (n^2 - 5) + 1 = n^2 - 4 \\). Since \"Hi\" is printed once at the start of each outer loop iteration, it is printed \\( n^2 - 4 \\) times."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-32",
+      "number": "58",
+      "text": "How many times will \"bye\" be printed in the provided code fragment?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( (n^2 - 4) \\times (\\lfloor \\log_2 n \\rfloor + 1) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( n^2 \\log_2 n \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( n \\log_2 n \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( n^2 - 4 \\)"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The outer loop executes \\( n^2 - 4 \\) times. Within each iteration, the inner loop for \\( j \\) starts at 1 and doubles in value (\\( j *= 2 \\)) until it exceeds \\( n \\). This is a logarithmic loop that executes \\( \\lfloor \\log_2 n \\rfloor + 1 \\) times. Thus, the total number of prints is the product of the outer and inner loop iterations: \\( (n^2 - 4) \\times (\\lfloor \\log_2 n \\rfloor + 1) \\)."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-33",
+      "number": "59",
+      "text": "How many times will statement 3 (`while (k <= n * n)`) be repeated (evaluated)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( (n^2 - 4) \\times (n^2 + 1) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( n^2 \\times (n^2 - 4) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( n^4 \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( n^2 \\)"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Statement 3 is the condition of the while loop. The outer loop runs \\( n^2 - 4 \\) times. In each of those iterations, the variable \\( k \\) goes from 1 to \\( n^2 \\), incrementing by 1. The body of the while loop executes \\( n^2 \\) times, but the condition is evaluated one extra time (when \\( k = n^2 + 1 \\)) to terminate the loop. Therefore, the statement is evaluated \\( (n^2 - 4) \\times (n^2 + 1) \\) times."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-34",
+      "number": "60",
+      "text": "What is the time complexity of the whole algorithm shown in the first code fragment?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(n^5) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n^4) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n^3 \\log n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(n^2) \\)"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Analyzing the nesting:\n- Outer loop: \\( O(n^2) \\)\n- Inside the outer loop, we have two sequential parts. The second part dominates: a while loop running \\( n^2 \\) times, which contains another loop running \\( n/3 \\) times (or \\( O(n) \\)).\n- The complexity of the inner logic is \\( O(n^2 \\cdot n) = O(n^3) \\).\n- The total complexity is the outer loop multiplied by the inner logic: \\( O(n^2) \\times O(n^3) = O(n^5) \\)."
+    },
+    {
+      "id": "extract-1775911958122-3riwm-35",
+      "number": "61",
+      "text": "Consider the following code. How many times will the character 'A' be printed?\n\n```java\npublic static void test(int n) {\n    int x = 4;\n    while (x < n) {\n        x *= 3;\n        System.out.println(\"A\");\n        for (int i = 1; i <= n; i += 2) {\n            System.out.println(\"B\");\n            for (int j = 2; j < 80; j++) {\n                System.out.println(\"C\");\n            }\n        }\n        int z = n * n;\n        while (z >= 1) {\n            System.out.println(\"D\");\n            z--;\n        }\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( \\lceil \\log_3(n/4) \\rceil \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( \\log_3 n \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( n/3 \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( \\lceil n/4 \\rceil \\)"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The character 'A' is printed once inside the `while (x < n)` loop. In this loop, `x` starts at 4 and is multiplied by 3 in each iteration. The values of `x` follow the sequence \\( 4, 12, 36, \\dots, 4 \\cdot 3^k \\). The loop continues as long as the value of `x` from the *previous* iteration is less than `n`. The number of times the body executes (and 'A' prints) is the smallest integer \\( k \\) such that \\( 4 \\cdot 3^{k-1} < n \\) but the updated `x` reflects the progress. This corresponds to \\( \\lceil \\log_3(n/4) \\rceil \\) iterations."
+    }
+  ],
+  "params": {
+    "chapter": "2"
+  }
+}

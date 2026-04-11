@@ -147,7 +147,7 @@ const EXAM_CONFIG = [
       {
         "id": "6",
         "name": "Final",
-        "q": 47,
+        "q": 41,
         "file": "data/algorithm/chapterMultiple Filesvisual_extractor (4).json"
       }
     ]
@@ -158,7 +158,14 @@ const EXAM_CONFIG = [
     "description": "Data Structures",
     "path": "data/data_structure",
     "icon": "data/data_structure/icon.png",
-    "chapters": []
+    "chapters": [
+      {
+        "id": "2",
+        "name": "Second",
+        "q": 61,
+        "file": "data/data_structure/combined_questions (1).json"
+      }
+    ]
   },
   {
     "id": "java_advanced",
