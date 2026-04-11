@@ -283,16 +283,28 @@ const EXAM_CONFIG = [
     "icon": "data/Network/icon.png",
     "chapters": [
       {
-        "id": "Chapter (1)",
+        "id": "1",
         "name": "Introduction to Data Communications and Networking",
         "q": 40,
         "file": "data/Network/chapterch01.pdf (1).json"
       },
       {
-        "id": "Chapter (2)",
+        "id": "2",
         "name": "Network Models",
         "q": 50,
         "file": "data/Network/chapterch02.pdf.json"
+      },
+      {
+        "id": "3",
+        "name": " Mid",
+        "q": 33,
+        "file": "data/Network/Mid.json"
+      },
+      {
+        "id": "4",
+        "name": "Final",
+        "q": 42,
+        "file": "data/Network/Final.json"
       }
     ]
   },

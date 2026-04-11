@@ -1,0 +1,1356 @@
+{
+  "id": "extract-1775924903566-b8zkq",
+  "label": "Network - Final.pdf",
+  "params": {
+    "file": "Network - Final.pdf",
+    "type": "visual_extractor",
+    "chapter": "4"
+  },
+  "title": "Final",
+  "questions": [
+    {
+      "id": "extract-1775924903566-b8zkq-0",
+      "number": "1",
+      "text": "In the _______ Protocol, the sender sends frames continuously.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Stop-and-Wait"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Simplest"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Go-Back-N ARQ"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Selective-Repeat ARQ"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The 'Simplest' protocol assumes an ideal channel where the sender transmits frames one after another without waiting for any feedback or checking for errors/congestion."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-1",
+      "number": "2",
+      "text": "For Stop-and-Wait ARQ, for 159 data packets sent, _______ acknowledgments are needed.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "exactly 159"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "less than 159"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "more than 159"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "none of the above"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Stop-and-Wait ARQ, the sender must receive an individual acknowledgment (ACK) for each packet before it can transmit the next one. Thus, 159 packets require 159 ACKs."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-2",
+      "number": "3",
+      "text": "HDLC implements _______.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Stop-and-Wait ARQ"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Go-Back-N ARQ"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Selective-Repeat ARQ"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All the above"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "High-Level Data Link Control (HDLC) is a versatile protocol that supports various flow and error control mechanisms, including Stop-and-Wait, Go-Back-N, and Selective-Repeat ARQ."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-3",
+      "number": "4",
+      "text": "In PPP, the _______ phase handles data transfer.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Establish"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Network"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Open"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Send"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In the Point-to-Point Protocol (PPP) lifecycle, the Network phase (specifically the Networking state) is where actual user data packets (like IP) are encapsulated and transferred after the link has been configured by the NCP."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-4",
+      "number": "5",
+      "text": "The most efficient protocol for noisy links is _______.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Simplest"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Stop-and-Wait"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Go-Back-N ARQ"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Selective-Repeat ARQ"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Selective-Repeat ARQ is the most efficient because it only retransmits frames that were lost or corrupted, whereas Go-Back-N retransmits the entire sliding window."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-5",
+      "number": "6",
+      "text": "_______ acknowledges the receipt of a frame and announces the receiver is busy.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Receive Ready"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Receive Not Ready"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Reject"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Selective Reject"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Receive Not Ready (RNR) frame in protocols like HDLC acknowledges the successful receipt of frames up to a certain point but informs the sender that the receiver is temporarily unable to accept more data."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-6",
+      "number": "7",
+      "text": "In _______ protocol, there is one timer for all sent frames.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Simplest"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Stop-and-Wait"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Go-Back-N ARQ"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Selective-Repeat ARQ"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Go-Back-N ARQ, a single timer is used for the entire sliding window (specifically for the oldest unacknowledged frame). In contrast, Selective-Repeat typically uses a separate timer for every outstanding frame."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-7",
+      "number": "8",
+      "text": "The _______ address helps the recipient acknowledge the receipt.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Sender"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Receiver"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Destination"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Final destination"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To send an acknowledgment back to the original source, the recipient must know the Sender's address."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-8",
+      "number": "9",
+      "text": "In HDLC, there are ———— types of S-frames.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "8"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Supervisory frames (S-frames) in HDLC are used for flow and error control. There are four types: Receive Ready (RR), Receive Not Ready (RNR), Reject (REJ), and Selective Reject (SREJ)."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-9",
+      "number": "10",
+      "text": "PPP uses ———— frames for link management.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "L-frames"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "S-frames"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "U-frames"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All the above"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "PPP (Point-to-Point Protocol) uses Unnumbered frames (U-frames) for link management, which includes protocols like Link Control Protocol (LCP)."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-10",
+      "number": "11",
+      "text": "In slotted ALOHA, the vulnerable time is ———— the frame transmission time.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "the same as"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "two times"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "three times"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "none of the above"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In slotted ALOHA, time is divided into slots and a station can only send at the beginning of a slot. Therefore, the vulnerable time is reduced from \\( 2 \\times T_{fr} \\) (in pure ALOHA) to just \\( T_{fr} \\) (the frame transmission time)."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-11",
+      "number": "12",
+      "text": "In ————, one channel carries all transmissions simultaneously.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "FDMA"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "TDMA"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "CDMA"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All the above"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "CDMA (Code Division Multiple Access) allows multiple users to transmit simultaneously over the entire available frequency bandwidth by using distinct mathematical codes for each user."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-12",
+      "number": "13",
+      "text": "———— is a multiple-access method that divides bandwidth via time/frequency/code.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Random access"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Controlled access"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Channelization"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Channelization refers to the methods (FDMA, TDMA, and CDMA) where the total bandwidth of a link is shared in time, frequency, or through code among different stations."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-13",
+      "number": "14",
+      "text": "In pure ALOHA, if \\( K=2 \\), the random number R is between ————.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0 and 2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0 and 4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1 and 4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0 and 3"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In the binary exponential backoff algorithm, after the \\( K^{th} \\) collision, a random number \\( R \\) is chosen in the range \\( [0, 2^K - 1] \\). For \\( K=2 \\), the range is \\( [0, 2^2 - 1] \\), which is 0 to 3."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-14",
+      "number": "15",
+      "text": "The vulnerable time for CSMA is ————.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Propagation time"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2 × Propagation time"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Transmission time"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2 × Transmission time"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The vulnerable time for CSMA is the propagation time \\( T_p \\). This is the time needed for a signal to propagate from one end of the medium to the other."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-15",
+      "number": "16",
+      "text": "CSMA/CA avoids collisions using ————.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Interframe space"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Contention window"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Acknowledgements"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All the above"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance) uses Interframe Space (IFS) to prioritize traffic, a Contention Window for random backoff, and Acknowledgements (ACKs) to confirm successful delivery."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-16",
+      "number": "17",
+      "text": "In ————, the available bandwidth is divided into bands separated by guard bands.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "FDMA"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "TDMA"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "CDMA"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Frequency Division Multiple Access (FDMA), the available bandwidth is divided into frequency bands. Each station is allocated a band, and guard bands are used to prevent interference between them."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-17",
+      "number": "18",
+      "text": "The minimum frame size restriction exists in ————.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "ALOHA"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "CSMA"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "CSMA/CD"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "CSMA/CA"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "CSMA/CD (Carrier Sense Multiple Access with Collision Detection) requires a minimum frame size to ensure that a station does not finish transmitting its frame before it can detect a collision at the far end of the cable."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-18",
+      "number": "19",
+      "text": "The vulnerable time for CSMA/CD is determined by ————.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Propagation delay"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Frame size"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Bandwidth"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All the above"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In CSMA/CD, the vulnerable time is the propagation delay \\( T_p \\), which represents the window of time during which a collision can occur before the channel is perceived as busy by other stations."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-19",
+      "number": "20",
+      "text": "Standard Ethernet uses ———— for collision detection.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "ALOHA"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "CSMA"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "CSMA/CD"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "CSMA/CA"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Standard Ethernet (IEEE 802.3) historically used CSMA/CD to manage access to a shared physical medium and detect collisions."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-20",
+      "number": "21",
+      "text": "The minimum frame size in Ethernet ensures ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Efficient transmission"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Collision detection"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Error correction"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Flow control"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Ethernet (CSMA/CD), the minimum frame size ensures that a transmitting station is still sending the frame when the leading edge of the signal reaches the farthest point and any resulting collision signal travels back to the transmitter. This is necessary for collision detection."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-21",
+      "number": "22",
+      "text": "The mask of Class B is ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "255.0.0.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "255.255.0.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "255.255.255.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "255.255.255.255"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In classful addressing, Class B uses the first 16 bits for the network ID, which corresponds to a subnet mask of 255.255.0.0."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-22",
+      "number": "23",
+      "text": "If there are N addresses in Class C, Class B has ________ addresses.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "N"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2N"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4N"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "8N"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In classful addressing, the IPv4 address space is divided such that Class B comprises \\( 2^{30} \\) addresses (range 128.0.0.0 to 191.255.255.255) and Class C comprises \\( 2^{29} \\) addresses (range 192.0.0.0 to 223.255.255.255). Thus, Class B has twice as many addresses as Class C."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-23",
+      "number": "24",
+      "text": "In Class B, the netid length is ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 byte"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2 bytes"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3 bytes"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4 bytes"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Class B addresses use 16 bits (2 bytes) for the network identifier (netid) and 16 bits for the host identifier."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-24",
+      "number": "25",
+      "text": "The netid length for 190.87.140.202/26 is ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "26"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "32"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "64"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In CIDR notation (IP/n), 'n' represents the length of the network prefix (netid) in bits. Here, /26 indicates a 26-bit netid length."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-25",
+      "number": "26",
+      "text": "The block size in Class B is ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "268,435,456"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "16,777,216"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "65,536"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "256"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Class B uses 16 bits for the host portion. The number of addresses in one Class B block is \\( 2^{16} = 65,536 \\)."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-26",
+      "number": "27",
+      "text": "Class ________ has the largest address blocks.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "B"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "C"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "D"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Class A blocks use 24 bits for the host portion, resulting in \\( 2^{24} = 16,777,216 \\) addresses per block, which is the largest among the classes."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-27",
+      "number": "28",
+      "text": "The last address in a block is found by setting ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "All host bits to 0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "All host bits to 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The first bit to 1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The last bit to 0"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The last address in an IP block (the directed broadcast address) is calculated by keeping the network bits the same and setting all host bits to binary 1."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-28",
+      "number": "29",
+      "text": "The network address is ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The first address in the block"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Any address in the block"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The last address in the block"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The network address is defined as the first address within a specific block or subnet, where all host bits are set to 0."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-29",
+      "number": "30",
+      "text": "The address space of IPv4 is ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "32"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( 2^{32} \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "128"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( 2^{128} \\)"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "IPv4 addresses are 32 bits long. Therefore, the total theoretical address space consists of \\( 2^{32} \\) (approximately 4.3 billion) unique addresses."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-30",
+      "number": "31",
+      "text": "Class E addresses start with ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "110"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1111"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Class E addresses range from 240.0.0.0 to 255.255.255.255. In binary, the first octet starts with '1111' (240 is 11110000)."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-31",
+      "number": "32",
+      "text": "The number of blocks in Class E is ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "128"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "16,384"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2,097,152"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Unlike Classes A, B, and C which are divided into many blocks, Class E is a single large reserved block encompassing addresses from 240.0.0.0 to 255.255.255.255."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-32",
+      "number": "33",
+      "text": "The first address in the block 203.58.100.0/22 is ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "203.58.100.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "203.58.101.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "203.58.102.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "203.58.103.0"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A /22 mask means the first 22 bits are the network ID. The 3rd octet binary for 100 is 01100100. The /22 mask (255.255.252.0) covers up to bit 22. In the 3rd octet, bits 23 and 24 (the last two) are host bits. Since they are already 0, the first address remains 203.58.100.0."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-33",
+      "number": "34",
+      "text": "Suppose an organization is given the block 203.58.100.0/22. The organization has four offices and needs to divide the addresses into four subnets of 512, 256, 128, and 128 addresses. The third subnet mask is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "/22"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "/23"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "/24"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "/25"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Using VLSM: \n- 1st subnet (512 hosts) needs \\( 2^9 \\) addresses, requiring a /23 mask (32-9=23).\n- 2nd subnet (256 hosts) needs \\( 2^8 \\) addresses, requiring a /24 mask (32-8=24).\n- 3rd subnet (128 hosts) needs \\( 2^7 \\) addresses, requiring a /25 mask (32-7=25)."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-34",
+      "number": "35",
+      "text": "Suppose an organization is given the block \\( 203.58.100.0/22 \\). The organization has four offices and needs to divide the addresses into four subnets of 512, 256, 128, and 128 addresses. The first address in the third subnet is :",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "203.58.100.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "203.58.101.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "203.58.102.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "203.58.103.0"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "203.58.100.128"
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "203.58.101.128"
+        },
+        {
+          "value": "G",
+          "label": "G",
+          "text": "203.58.102.128"
+        },
+        {
+          "value": "H",
+          "label": "H",
+          "text": "203.58.103.128"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "To allocate the addresses efficiently:\n1. The first subnet requires 512 addresses (a /23 block). Starting from 203.58.100.0, it spans 203.58.100.0 to 203.58.101.255.\n2. The second subnet requires 256 addresses (a /24 block). Starting from 203.58.102.0, it spans 203.58.102.0 to 203.58.102.255.\n3. The third subnet requires 128 addresses (a /25 block). It starts at the next available address, which is 203.58.103.0."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-35",
+      "number": "36",
+      "text": "The IP address 78.34.253.4 is equivalent to ________ in binary notation.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "11001001 00010110 11111011 00010000"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "01001110 00100010 11111011 00000100"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "00110110 00110110 11110111 00001000"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "01110110 00010010 11101111 00000100"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Converting each octet to binary:\n- 78 = 01001110 (64 + 8 + 4 + 2)\n- 34 = 00100010 (32 + 2)\n- 253 = 11111101 (128 + 64 + 32 + 16 + 8 + 4 + 1)\n- 4 = 00000100\nNote: Option B in the original image contains a small typo in the 3rd octet compared to the exact conversion, but is the intended closest match."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-36",
+      "number": "37",
+      "text": "Suppose an organization is given the block \\( 203.58.100.0/22 \\). The organization has four offices and needs to divide the addresses into four subnets of 512, 256, 128, and 128 addresses. The last address in the third subnet is :",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "203.58.100.127"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "203.58.101.127"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "203.58.102.127"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "203.58.103.127"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "203.58.100.255"
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "203.58.101.255"
+        },
+        {
+          "value": "G",
+          "label": "G",
+          "text": "203.58.102.255"
+        },
+        {
+          "value": "H",
+          "label": "H",
+          "text": "203.58.103.255"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Following the allocation from Q35:\n- Subnet 1 (512): 203.58.100.0 to 203.58.101.255.\n- Subnet 2 (256): 203.58.102.0 to 203.58.102.255.\n- Subnet 3 (128): Starts at 203.58.103.0. Since it needs 128 addresses, it ends at 203.58.103.127 (0 to 127 is 128 addresses)."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-37",
+      "number": "38",
+      "text": "The network address is :",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The first address in the block"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Any address in the block"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The last address in the block"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "By definition in classless or classful addressing, the very first address in a CIDR block or subnet represents the Network Address (identification of the network)."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-38",
+      "number": "39",
+      "text": "For Stop-and-Wait ARQ, for 208 data packets sent, ________ acknowledgments are needed.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "exactly 208"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "less than 208"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "more than 208"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "none of the above"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Stop-and-Wait ARQ, the sender sends one packet and waits for a specific acknowledgment for that packet before sending the next one. Therefore, for 208 packets, exactly 208 successful acknowledgments are required."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-39",
+      "number": "40",
+      "text": "The most efficient protocol for noisy links is the :",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Simplest"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Stop-and-Wait"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Go-Back-N ARQ"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Selective-Repeat ARQ"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Selective-Repeat ARQ is more efficient on noisy links because it only retransmits frames that were actually lost or corrupted. In contrast, Go-Back-N retransmits all frames from the point of error, wasting bandwidth."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-40",
+      "number": "41",
+      "text": "Propagation method where signals are transmitted in straight lines directly from antenna is called :",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Ground propagation"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Sky propagation"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Line of sight propagation"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Ionosphere propagation"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Line of sight (LOS) propagation refers to the transmission of signals in a direct, straight path from the transmitter to the receiver antenna."
+    },
+    {
+      "id": "extract-1775924903566-b8zkq-41",
+      "number": "42",
+      "text": "In a datagram network :",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Resources are reserved during setup"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Resources are reserved during data transfer"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Resources are reserved until teardown"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Resources are allocated on demand"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Datagram networks are connectionless. Unlike virtual circuit networks, they do not reserve resources (bandwidth, buffer space) in advance. Instead, resources are allocated on demand as packets arrive at switches/routers."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 42
+}
