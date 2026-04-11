@@ -1700,7 +1700,7 @@ const app = {
         if (scorePercentEl) scorePercentEl.textContent = `${percentage}%`;
 
         document.getElementById('scoreDisplay').textContent = `${correctCount} / ${totalCount}`;
-        document.getElementById('scoreText').textContent = `You answered ${correctCount} out of ${totalCount} questions correctly`;
+        document.getElementById('scoreText').textContent = '';
 
         // Animate score ring
         this.animateScoreRing(percentage, scoreTone);
@@ -1722,11 +1722,6 @@ const app = {
         const mainFrag = document.createDocumentFragment();
 
         // Stats section
-        const messageDiv = document.createElement('div');
-        messageDiv.className = 'results-message';
-        messageDiv.textContent = resultMessage;
-        mainFrag.appendChild(messageDiv);
-
         const statsDiv = document.createElement('div');
         statsDiv.className = 'results-stats';
         const statDefs = [
