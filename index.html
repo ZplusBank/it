@@ -212,16 +212,16 @@
                     <svg class="score-ring" viewBox="0 0 140 140">
                         <defs>
                             <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" style="stop-color: #6366f1" />
-                                <stop offset="100%" style="stop-color: #8b5cf6" />
+                                <stop id="scoreGradientStart" offset="0%" style="stop-color: #6366f1" />
+                                <stop id="scoreGradientEnd" offset="100%" style="stop-color: #8b5cf6" />
                             </linearGradient>
                         </defs>
                         <circle class="score-ring-bg" cx="70" cy="70" r="65" />
                         <circle class="score-ring-progress" id="scoreRingProgress" cx="70" cy="70" r="65" />
                     </svg>
-                    <div class="score-ring-text">
-                        <div class="percentage" id="scorePercentage">0%</div>
-                        <div class="label">Score</div>
+                    <div class="score-ring-text score-summary">
+                        <div class="score-grade" id="scoreGrade">F</div>
+                        <div class="score-percentage" id="scorePercentage">0%</div>
                     </div>
                 </div>
 

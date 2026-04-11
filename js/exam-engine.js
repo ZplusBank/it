@@ -14,6 +14,7 @@ const app = {
     _answeredCount: 0,       // Incremental answered-question counter
     _saveTimer: null,        // Debounced save timer
     _resultIO: null,         // IntersectionObserver for lazy results
+    _resultImageIO: null,    // IntersectionObserver for lazy result images
     _subjectIconObserver: null, // IntersectionObserver for subject icons
 
     // === Toast Notification System ===
@@ -1010,6 +1011,59 @@ const app = {
         }
     },
 
+    _cleanupResultImageIO() {
+        if (this._resultImageIO) {
+            this._resultImageIO.disconnect();
+            this._resultImageIO = null;
+        }
+    },
+
+    _loadDeferredImage(img) {
+        if (!img || img.dataset.loaded === '1') return;
+        const src = img.getAttribute('data-src');
+        if (!src) return;
+        img.dataset.loaded = '1';
+        img.src = src;
+    },
+
+    _initLazyResultImages(container) {
+        if (!container) return;
+
+        const images = container.querySelectorAll('img[data-src]');
+        if (!images.length) return;
+
+        if (!('IntersectionObserver' in window)) {
+            images.forEach((img) => this._loadDeferredImage(img));
+            return;
+        }
+
+        if (this._resultImageIO) {
+            this._resultImageIO.disconnect();
+        }
+
+        this._resultImageIO = new IntersectionObserver((entries, observer) => {
+            for (const entry of entries) {
+                if (!entry.isIntersecting && entry.intersectionRatio <= 0) continue;
+                this._loadDeferredImage(entry.target);
+                observer.unobserve(entry.target);
+            }
+        }, {
+            root: null,
+            rootMargin: '250px 0px',
+            threshold: 0.01,
+        });
+
+        images.forEach((img) => this._resultImageIO.observe(img));
+    },
+
+    async _finalizeResultCard(card) {
+        if (!card) return;
+        ContentRenderer.typeset(card);
+        await this._enhanceDiagrams(card);
+        ContentRenderer.attachImageListeners(card);
+        this._initLazyResultImages(card);
+    },
+
     /**
      * Load content-rendering libraries on demand (Marked, Prism).
      * Called once before first question render.
@@ -1604,6 +1658,13 @@ const app = {
         return letterGrade;
     },
 
+    _getScoreTone(percentage) {
+        if (percentage >= 85) return 'success';
+        if (percentage >= 70) return 'primary';
+        if (percentage >= 60) return 'warning';
+        return 'danger';
+    },
+
     calculateAndDisplayResults() {
         const totalCount = this.questions.length;
         let correctCount = 0, wrongCount = 0, skippedCount = 0;
@@ -1626,12 +1687,23 @@ const app = {
         const percentage = totalCount > 0 ? Math.round((correctCount / totalCount) * 100) : 0;
         const letterGrade = this.getLetterGrade(percentage);
         const displayGrade = this.getDisplayGrade(letterGrade);
+        const scoreTone = this._getScoreTone(percentage);
 
-        document.getElementById('scoreDisplay').innerHTML = `${correctCount} / ${totalCount} <span class="score-grade">${displayGrade}</span>`;
+        const resultsView = document.getElementById('resultsView');
+        if (resultsView) {
+            resultsView.dataset.scoreTone = scoreTone;
+        }
+
+        const scoreGradeEl = document.getElementById('scoreGrade');
+        const scorePercentEl = document.getElementById('scorePercentage');
+        if (scoreGradeEl) scoreGradeEl.textContent = displayGrade;
+        if (scorePercentEl) scorePercentEl.textContent = `${percentage}%`;
+
+        document.getElementById('scoreDisplay').textContent = `${correctCount} / ${totalCount}`;
         document.getElementById('scoreText').textContent = `You answered ${correctCount} out of ${totalCount} questions correctly`;
 
         // Animate score ring
-        this.animateScoreRing(percentage);
+        this.animateScoreRing(percentage, scoreTone);
 
         if (percentage >= 90) this.triggerConfetti();
 
@@ -1712,11 +1784,10 @@ const app = {
         resultDetails.textContent = '';
         resultDetails.appendChild(mainFrag);
 
-        // Typeset only the initially-rendered cards
+        // Hydrate only the initially-rendered cards
         const initialCards = listDiv.querySelectorAll('.results-question-card');
         if (initialCards.length > 0) {
-            ContentRenderer.typeset(listDiv);
-            ContentRenderer.attachImageListeners(listDiv);
+            initialCards.forEach((card) => this._finalizeResultCard(card));
         }
 
         // Set up IntersectionObserver for lazy card rendering
@@ -1734,9 +1805,8 @@ const app = {
                     sentinel.replaceWith(card);
                     this._resultIO.unobserve(sentinel);
 
-                    // Typeset just this card
-                    ContentRenderer.typeset(card);
-                    ContentRenderer.attachImageListeners(card);
+                    // Hydrate just this card
+                    this._finalizeResultCard(card);
                 }
             }, { rootMargin: '300px 0px' }); // Start rendering 300px before visible
 
@@ -1767,7 +1837,8 @@ const app = {
             const imgWrap = document.createElement('div');
             imgWrap.className = 'question-image';
             const img = document.createElement('img');
-            img.src = question.image;
+            img.dataset.src = question.image;
+            img.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACw=';
             img.alt = 'Question illustration';
             img.loading = 'lazy';
             img.decoding = 'async';
@@ -1844,6 +1915,7 @@ const app = {
         this.questionStatuses = {};
         this._answeredCount = 0;
         this._cleanupResultIO();
+        this._cleanupResultImageIO();
     },
 
     /** Cleanup IntersectionObserver for results lazy rendering */
@@ -1917,10 +1989,22 @@ const app = {
     },
 
     // === Score Ring Animation ===
-    animateScoreRing(percentage) {
+    animateScoreRing(percentage, scoreTone = 'primary') {
         const ring = document.getElementById('scoreRingProgress');
         const percentText = document.getElementById('scorePercentage');
+        const startStop = document.getElementById('scoreGradientStart');
+        const endStop = document.getElementById('scoreGradientEnd');
         if (!ring || !percentText) return;
+
+        const toneStops = {
+            success: ['#10b981', '#22d3ee'],
+            primary: ['#6366f1', '#8b5cf6'],
+            warning: ['#f59e0b', '#f97316'],
+            danger: ['#ff4d5e', '#ff7a59'],
+        };
+        const [startColor, endColor] = toneStops[scoreTone] || toneStops.primary;
+        if (startStop) startStop.setAttribute('style', `stop-color: ${startColor}`);
+        if (endStop) endStop.setAttribute('style', `stop-color: ${endColor}`);
 
         const circumference = 2 * Math.PI * 65; // r=65
         const offset = circumference - (percentage / 100) * circumference;
