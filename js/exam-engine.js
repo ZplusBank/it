@@ -14,6 +14,7 @@ const app = {
     _answeredCount: 0,       // Incremental answered-question counter
     _saveTimer: null,        // Debounced save timer
     _resultIO: null,         // IntersectionObserver for lazy results
+    _subjectIconObserver: null, // IntersectionObserver for subject icons
 
     // === Toast Notification System ===
     showToast(message, type = 'info', duration = 3000) {
@@ -675,7 +676,46 @@ const app = {
         const src = this.escapeHtml(subject.iconPath);
         const sid = this.escapeHtml(subject.id || '');
         const alt = this.escapeHtml(`${subject.name || 'Subject'} icon`);
-        return `<img class="subject-icon-image" src="${src}" alt="${alt}" loading="lazy" decoding="async" data-sid="${sid}">`;
+        return `<img class="subject-icon-image" data-src="${src}" alt="${alt}" loading="lazy" decoding="async" data-sid="${sid}">`;
+    },
+
+    _loadSubjectIconImage(img) {
+        if (!img || img.dataset.loaded === '1') return;
+        const src = img.getAttribute('data-src');
+        if (!src) return;
+        img.dataset.loaded = '1';
+        img.src = src;
+    },
+
+    _initSubjectIconLazyLoad(grid) {
+        if (!grid) return;
+
+        const iconImages = grid.querySelectorAll('.subject-icon-image[data-src]');
+        if (!iconImages.length) return;
+
+        if (!('IntersectionObserver' in window)) {
+            iconImages.forEach((img) => this._loadSubjectIconImage(img));
+            return;
+        }
+
+        if (this._subjectIconObserver) {
+            this._subjectIconObserver.disconnect();
+        }
+
+        this._subjectIconObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting || entry.intersectionRatio > 0) {
+                    this._loadSubjectIconImage(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '180px 0px',
+            threshold: 0.01,
+        });
+
+        iconImages.forEach((img) => this._subjectIconObserver.observe(img));
     },
 
     showSubjectsView() {
@@ -735,6 +775,8 @@ const app = {
                 host.textContent = (subject && subject.iconEmoji) || this.getIconForSubject(sid);
             }, { once: true });
         });
+
+        this._initSubjectIconLazyLoad(grid);
     },
 
     async selectSubject(subjectId) {
