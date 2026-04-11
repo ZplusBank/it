@@ -2562,7 +2562,7 @@ class ExamEditor:
         except Exception as e:
             messagebox.showerror("Emoji Picker", f"Could not open Windows emoji picker: {e}")
 
-    def _set_icon_preview(self, preview_label, icon_rel=None, source_path=None, icon_url=None, max_preview=72):
+    def _set_icon_preview(self, preview_label, icon_rel=None, source_path=None, icon_url=None, max_preview=140):
         """Render icon preview from local file, icon path, or URL."""
         preview_label.configure(text="No icon preview", image="")
         preview_label._preview_image = None
@@ -3214,8 +3214,8 @@ class ExamEditor:
         emoji_entry = ttk.Entry(frame, width=30, bootstyle="info", textvariable=icon_emoji_var)
         emoji_entry.grid(row=6, column=1, pady=10, padx=10)
 
-        resize_icon_var = tk.BooleanVar(value=True)
-        resize_max_var = tk.StringVar(value="128")
+        resize_icon_var = tk.BooleanVar(value=False)
+        resize_max_var = tk.StringVar(value="768")
         icon_upload_source = {"path": ""}
 
         icon_controls = ttk.Frame(frame)
@@ -3224,7 +3224,7 @@ class ExamEditor:
         preview_frame = ttk.Frame(frame)
         preview_frame.grid(row=8, column=0, columnspan=2, sticky=tk.W, pady=(0, 8))
         ttk.Label(preview_frame, text="Icon Preview:", style="SubHeader.TLabel").pack(side=tk.LEFT, padx=(0, 8))
-        preview_label = ttk.Label(preview_frame, text="No icon preview", width=22, style="Muted.TLabel")
+        preview_label = ttk.Label(preview_frame, text="No icon preview", width=28, style="Muted.TLabel")
         preview_label.pack(side=tk.LEFT)
 
         def choose_icon_file():
@@ -3318,7 +3318,7 @@ class ExamEditor:
                         json.dump([], f)
 
                 if icon_upload_source["path"]:
-                    max_px = int(str(resize_max_var.get() or "128").strip() or "128")
+                    max_px = int(str(resize_max_var.get() or "768").strip() or "768")
                     saved_icon_rel, resized = self._store_section_icon(
                         icon_upload_source["path"],
                         new_section["path"],
@@ -3333,7 +3333,7 @@ class ExamEditor:
                             "Install with: pip install pillow"
                         )
                 elif icon_url_var.get().strip():
-                    max_px = int(str(resize_max_var.get() or "128").strip() or "128")
+                    max_px = int(str(resize_max_var.get() or "768").strip() or "768")
                     saved_icon_rel, resized = self._store_section_icon_from_url(
                         icon_url_var.get().strip(),
                         new_section["path"],
@@ -3471,8 +3471,8 @@ class ExamEditor:
         emoji_entry = ttk.Entry(frame, width=30, bootstyle="info", textvariable=icon_emoji_var)
         emoji_entry.grid(row=6, column=1, pady=10, padx=10)
 
-        resize_icon_var = tk.BooleanVar(value=True)
-        resize_max_var = tk.StringVar(value="128")
+        resize_icon_var = tk.BooleanVar(value=False)
+        resize_max_var = tk.StringVar(value="768")
         icon_upload_source = {"path": ""}
 
         icon_controls = ttk.Frame(frame)
@@ -3481,7 +3481,7 @@ class ExamEditor:
         preview_frame = ttk.Frame(frame)
         preview_frame.grid(row=8, column=0, columnspan=2, sticky=tk.W, pady=(0, 8))
         ttk.Label(preview_frame, text="Icon Preview:", style="SubHeader.TLabel").pack(side=tk.LEFT, padx=(0, 8))
-        preview_label = ttk.Label(preview_frame, text="No icon preview", width=22, style="Muted.TLabel")
+        preview_label = ttk.Label(preview_frame, text="No icon preview", width=28, style="Muted.TLabel")
         preview_label.pack(side=tk.LEFT)
 
         def choose_icon_file():
@@ -3556,7 +3556,7 @@ class ExamEditor:
 
             if icon_upload_source["path"]:
                 try:
-                    max_px = int(str(resize_max_var.get() or "128").strip() or "128")
+                    max_px = int(str(resize_max_var.get() or "768").strip() or "768")
                     saved_icon_rel, resized = self._store_section_icon(
                         icon_upload_source["path"],
                         section['path'],
@@ -3575,7 +3575,7 @@ class ExamEditor:
                     return
             elif icon_url_var.get().strip():
                 try:
-                    max_px = int(str(resize_max_var.get() or "128").strip() or "128")
+                    max_px = int(str(resize_max_var.get() or "768").strip() or "768")
                     saved_icon_rel, resized = self._store_section_icon_from_url(
                         icon_url_var.get().strip(),
                         section['path'],
