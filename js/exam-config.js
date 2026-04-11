@@ -326,6 +326,18 @@ const EXAM_CONFIG = [
         "name": "First",
         "q": 80,
         "file": "data/soft/Soft_first.json"
+      },
+      {
+        "id": "3",
+        "name": "Second",
+        "q": 20,
+        "file": "data/soft/chapterMultiple Filesvisual_extractor (1) mid soft.json"
+      },
+      {
+        "id": "4",
+        "name": "Final",
+        "q": 96,
+        "file": "data/soft/chapterMultiple Filesvisual_extractor (1) final.json"
       }
     ]
   },
