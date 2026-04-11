@@ -1189,7 +1189,7 @@
     {
       "id": "extract-combined-1775907437942-44",
       "number": "39",
-      "text": "The following table (s-table) has been computed for a chain of matrices \\( A_1, A_2, A_3, A_4, A_5 \\), with dimensions \\( \\langle 30, 1, 40, 10, 25, 6 \\rangle \\).\n\n| i \\ j | 1 | 2 | 3 | 4 | 5 |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| **1** | | 1 | 2 | 3 | 3 |\n| **2** | | | 2 | 2 | 4 |\n| **3** | | | | 3 | 4 |\n| **4** | | | | | 4 |\n\nIdentify the optimal parenthesization for this matrix chain multiplication.",
+      "text": "The following table (s-table) has been computed for a chain of matrices \\( A_1, A_2, A_3, A_4, A_5 \\), with dimensions \\( \\langle 30, 1, 40, 10, 25, 6 \\rangle \\).\n\n| i \\ j | 1 | 2 | 3 | 4 | 5 |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| **1** | | 1 | 2 | 3 | 3 |\n| **2** | | | 2 | 2 | 4 |\n| **3** | | | | 3 | 4 |\n| **4** | | | | | 4 |\n| **5** | | | | | |\n\nIdentify the optimal parenthesization for this matrix chain multiplication.",
       "choices": [
         {
           "value": "A",
@@ -1220,7 +1220,7 @@
     {
       "id": "extract-combined-1775907437942-45",
       "number": "40",
-      "text": "Execute a depth-first search (DFS) on the directed graph below, starting from vertex (U). If at any point you have a choice between two vertices, choose the one with the label which is lexicographically smaller (e.g., closer to the start of the alphabet). Identify the discovery time \\(d[u]\\) and finishing time \\(f[u]\\) for the selected vertices: U, V, Z, and Q.\n\n```mermaid\ngraph TD\n    U((U)) --> V((V))\n    U --> X((X))\n    V --> W((W))\n    V --> Y((Y))\n    W --> Z((Z))\n    Z --> Q((Q))\n    Q --> Z\n    X --> V\n    Y --> X\n    Y --> V\n```",
+      "text": "Execute a depth-first search (DFS) on the directed graph below, starting from vertex (U). If at any point you have a choice between two vertices, choose the one with the label which is lexicographically smaller (e.g., closer to the start of the alphabet). Identify the discovery time \\(d[u]\\) and finishing time \\(f[u]\\) for the selected vertices: U, V, Z, and Q.\n\n```mermaid\ngraph TD\n    Q((Q)) --> Z((Z))\n    U((U)) --> V((V))\n    U --> Y((Y))\n    V --> W((W))\n    Z --> W((W))\n    Z --> Y((Y))\n    Y --> X((X))\n    Y --> V((V))\n```",
       "choices": [
         {
           "value": "A",
@@ -1235,7 +1235,7 @@
         {
           "value": "C",
           "label": "C",
-          "text": "U: (1, 10), V: (2, 8), Z: (3, 6), Q: (4, 5)"
+          "text": "U: (1, 10), V: (2, 5), Z: (12, 13), Q: (11, 14)"
         },
         {
           "value": "D",
@@ -1245,13 +1245,13 @@
       ],
       "inputName": "Q45",
       "inputType": "radio",
-      "correctAnswer": "A",
+      "correctAnswer": "C",
       "explanation": "The DFS traversal starting from U follows these steps based on lexicographical order:\n1. Discover **U** at time 1. Neighbors are V and X; choose **V**.\n2. Discover **V** at time 2. Neighbors are W and Y; choose **W**.\n3. Discover **W** at time 3. Neighbor is **Z**.\n4. Discover **Z** at time 4. Neighbor is **Q**.\n5. Discover **Q** at time 5. Neighbor is Z (already gray), so finish **Q** at time 6.\n6. Backtrack to **Z** and finish at time 7.\n7. Backtrack to **W** and finish at time 8.\n8. Backtrack to **V**. Neighbor Y is white; discover **Y** at time 9.\n9. From **Y**, neighbors are V (gray) and X (white). Discover **X** at time 10.\n10. From **X**, neighbor V is gray; finish **X** at time 11.\n11. Backtrack to **Y** and finish at time 12.\n12. Backtrack to **V** and finish at time 13.\n13. Backtrack to **U**. Neighbor X is black; finish **U** at time 14."
     },
     {
       "id": "extract-combined-1775907437942-46",
       "number": "41",
-      "text": "Based on the depth-first search (DFS) traversal starting from vertex (U) with lexicographical tie-breaking, classify the following edges: (U,V), (Y,X), (Q,Z), and (Y,V) as either Tree edges (T), Back edges (B), Forward edges (F), or Cross edges (C).\n\n```mermaid\ngraph TD\n    U((U)) --> V((V))\n    U --> X((X))\n    V --> W((W))\n    V --> Y((Y))\n    W --> Z((Z))\n    Z --> Q((Q))\n    Q --> Z\n    X --> V\n    Y --> X\n    Y --> V\n```",
+      "text": "Based on the depth-first search (DFS) traversal starting from vertex (U) with lexicographical tie-breaking, classify the following edges: (U,V), (Y,X), (Q,Z), and (Y,V) as either Tree edges (T), Back edges (B), Forward edges (F), or Cross edges (C).\n\n```mermaid\ngraph TD\n    Q((Q)) --> Z((Z))\n    U((U)) --> V((V))\n    U --> Y((Y))\n    V --> W((W))\n    Z --> W((W))\n    Z --> Y((Y))\n    Y --> X((X))\n    Y --> V((V))\n```",
       "choices": [
         {
           "value": "A",
