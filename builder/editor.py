@@ -569,7 +569,6 @@ class AdvancedChapterEditor:
         self.tools_menu.add_command(label="Fix Numbering", command=self.fix_question_numbering)
         self.tools_menu.add_command(label="Fix Choice IDs", command=self.fix_choice_ids)
         self.tools_menu.add_command(label="Fix Input Typing", command=self.fix_input_typing)
-        self.tools_menu.add_command(label="Fix Code Fences (cpp/java)", command=self.fix_code_fences)
         self.tools_menu.add_separator()
         self.tools_menu.add_command(label="Validate Diagram Blocks", command=self.validate_diagram_blocks_for_chapter)
 
@@ -1449,206 +1448,6 @@ class AdvancedChapterEditor:
 
         return answer_changes, type_changes
 
-    def _canonical_code_lang(self, marker):
-        """Map loose language markers to markdown fence language identifiers."""
-        token = str(marker or "").strip().lower().replace(" ", "")
-        mapping = {
-            "c++": "cpp",
-            "cpp": "cpp",
-            "c": "c",
-            "java": "java",
-            "javascript": "js",
-            "js": "js",
-            "typescript": "ts",
-            "ts": "ts",
-            "python": "python",
-            "py": "python",
-            "sql": "sql",
-            "html": "html",
-            "css": "css",
-            "php": "php",
-            "c#": "csharp",
-            "cs": "csharp",
-        }
-        return mapping.get(token, token)
-
-    def _looks_like_code_line(self, line):
-        """Heuristic check for source-code-like lines."""
-        text = str(line or "")
-        stripped = text.strip()
-        if not stripped:
-            return False
-
-        code_patterns = [
-            r"^#include\b",
-            r"^using\s+namespace\b",
-            r"^import\s+",
-            r"^package\s+",
-            r"^public\s+class\b",
-            r"^class\s+\w+",
-            r"^(int|double|float|char|bool|void|string|auto|long|short)\s+\w+",
-            r"^(if|for|while|switch)\s*\(",
-            r"^else\b",
-            r"^return\b",
-            r"cout\s*<<",
-            r"cin\s*>>",
-            r"System\.out\.",
-            r"console\.log\(",
-            r"^SELECT\b|^INSERT\b|^UPDATE\b|^DELETE\b",
-            r"^<\w+",
-            r"[{};]",
-        ]
-        return any(re.search(pattern, stripped, flags=re.IGNORECASE) for pattern in code_patterns)
-
-    def _fence_language_markers_in_text(self, text):
-        """Wrap blocks after bare language marker lines into fenced code blocks."""
-        content = str(text or "")
-        if not content.strip():
-            return content, 0
-
-        lines = content.splitlines()
-        out = []
-        i = 0
-        changes = 0
-        in_fence = False
-        marker_re = re.compile(r"^\s*([A-Za-z][A-Za-z0-9+#\- ]{0,20})\s*:?\s*$")
-
-        while i < len(lines):
-            line = lines[i]
-            stripped = line.strip()
-
-            if stripped.startswith("```"):
-                in_fence = not in_fence
-                out.append(line)
-                i += 1
-                continue
-
-            if in_fence:
-                out.append(line)
-                i += 1
-                continue
-
-            marker_match = marker_re.match(line)
-            if marker_match:
-                marker = marker_match.group(1).strip()
-                lang = self._canonical_code_lang(marker)
-                valid_lang = {
-                    "cpp", "c", "java", "js", "ts", "python", "sql",
-                    "html", "css", "php", "csharp"
-                }
-                if lang in valid_lang:
-                    j = i + 1
-                    while j < len(lines) and not lines[j].strip():
-                        j += 1
-
-                    if j < len(lines):
-                        end = len(lines)
-                        for k in range(j, len(lines) - 1):
-                            if lines[k].strip() == "" and lines[k + 1].strip() and not self._looks_like_code_line(lines[k + 1]):
-                                end = k
-                                break
-
-                        candidate = lines[j:end]
-                        if any(self._looks_like_code_line(candidate_line) for candidate_line in candidate):
-                            out.append(f"```{lang}")
-                            out.extend(candidate)
-                            out.append("```")
-                            i = end
-                            changes += 1
-                            continue
-
-            out.append(line)
-            i += 1
-
-        result = "\n".join(out)
-        if content.endswith("\n"):
-            result += "\n"
-        return result, changes
-
-    def _sync_current_question_from_editor(self):
-        """Persist current editor fields into self.questions without showing dialogs."""
-        if self.current_question_idx is None:
-            return
-        if self.current_question_idx < 0 or self.current_question_idx >= len(self.questions):
-            return
-
-        q = self.questions[self.current_question_idx]
-        q['id'] = self.q_id.get()
-        q['number'] = self.q_number.get()
-        q['text'] = self.q_text.get(1.0, tk.END).strip()
-
-        image_path = self.q_image.get().strip()
-        if image_path:
-            q['image'] = image_path
-        else:
-            q.pop('image', None)
-
-        q['inputType'] = self.q_input_type.get()
-        q['correctAnswer'] = self.q_correct.get()
-        q['explanation'] = self.q_explanation.get(1.0, tk.END).strip()
-
-    def fix_code_fences(self, show_message=True):
-        """Convert loose language markers (cpp/java/etc.) into fenced code blocks."""
-        if not self.questions:
-            if show_message:
-                messagebox.showinfo("No Questions", "There are no questions to fix.")
-            return (0, 0)
-
-        # Include unsaved edits from the currently open question before running fixes.
-        self._sync_current_question_from_editor()
-
-        questions_changed = 0
-        blocks_created = 0
-
-        for question in self.questions:
-            question_changed = False
-
-            original_text = question.get("text", "")
-            fixed_text, text_changes = self._fence_language_markers_in_text(original_text)
-            if text_changes:
-                question["text"] = fixed_text
-                blocks_created += text_changes
-                question_changed = True
-
-            original_explanation = question.get("explanation", "")
-            fixed_explanation, exp_changes = self._fence_language_markers_in_text(original_explanation)
-            if exp_changes:
-                question["explanation"] = fixed_explanation
-                blocks_created += exp_changes
-                question_changed = True
-
-            for choice in question.get("choices", []) or []:
-                original_choice = choice.get("text", "")
-                fixed_choice, choice_changes = self._fence_language_markers_in_text(original_choice)
-                if choice_changes:
-                    choice["text"] = fixed_choice
-                    blocks_created += choice_changes
-                    question_changed = True
-
-            if question_changed:
-                questions_changed += 1
-
-        self.refresh_questions_list()
-        if self.current_question_idx is not None and self.questions:
-            keep_idx = max(0, min(self.current_question_idx, len(self.questions) - 1))
-            self.current_question_idx = keep_idx
-            self.restore_question_selection([keep_idx])
-            self.display_question()
-
-        if show_message:
-            if blocks_created:
-                messagebox.showinfo(
-                    "Code Fences Fixed",
-                    f"Created {blocks_created} fenced code block(s) in {questions_changed} question(s)."
-                )
-            else:
-                messagebox.showinfo(
-                    "No Changes",
-                    "No loose language markers were found that needed fencing."
-                )
-
-        return questions_changed, blocks_created
-
     def fix_choice_ids(self, show_message=True):
         """Renumber choice IDs and keep correctAnswer aligned with the new IDs."""
         if not self.questions:
@@ -2494,10 +2293,6 @@ class ExamEditor:
             label="Fix Input Typing (Selected)",
             command=lambda: self.apply_tools_to_selected_chapters("fix_input_typing"),
         )
-        self.chapter_tools_menu.add_command(
-            label="Fix Code Fences (Selected)",
-            command=lambda: self.apply_tools_to_selected_chapters("fix_code_fences"),
-        )
         self.chapter_tools_menu.add_separator()
         self.chapter_tools_menu.add_command(
             label="Delete Duplicates (Selected)",
@@ -3051,122 +2846,6 @@ class ExamEditor:
 
         return normalized_answer != old_answer, type_changed
 
-    def _canonical_code_lang(self, marker):
-        """Map loose language markers to markdown fence language identifiers."""
-        token = str(marker or "").strip().lower().replace(" ", "")
-        mapping = {
-            "c++": "cpp",
-            "cpp": "cpp",
-            "c": "c",
-            "java": "java",
-            "javascript": "js",
-            "js": "js",
-            "typescript": "ts",
-            "ts": "ts",
-            "python": "python",
-            "py": "python",
-            "sql": "sql",
-            "html": "html",
-            "css": "css",
-            "php": "php",
-            "c#": "csharp",
-            "cs": "csharp",
-        }
-        return mapping.get(token, token)
-
-    def _looks_like_code_line(self, line):
-        """Heuristic check for source-code-like lines."""
-        text = str(line or "")
-        stripped = text.strip()
-        if not stripped:
-            return False
-
-        code_patterns = [
-            r"^#include\b",
-            r"^using\s+namespace\b",
-            r"^import\s+",
-            r"^package\s+",
-            r"^public\s+class\b",
-            r"^class\s+\w+",
-            r"^(int|double|float|char|bool|void|string|auto|long|short)\s+\w+",
-            r"^(if|for|while|switch)\s*\(",
-            r"^else\b",
-            r"^return\b",
-            r"cout\s*<<",
-            r"cin\s*>>",
-            r"System\.out\.",
-            r"console\.log\(",
-            r"^SELECT\b|^INSERT\b|^UPDATE\b|^DELETE\b",
-            r"^<\w+",
-            r"[{};]",
-        ]
-        return any(re.search(pattern, stripped, flags=re.IGNORECASE) for pattern in code_patterns)
-
-    def _fence_language_markers_in_text(self, text):
-        """Wrap blocks after bare language marker lines into fenced code blocks."""
-        content = str(text or "")
-        if not content.strip():
-            return content, 0
-
-        lines = content.splitlines()
-        out = []
-        i = 0
-        changes = 0
-        in_fence = False
-        marker_re = re.compile(r"^\s*([A-Za-z][A-Za-z0-9+#\- ]{0,20})\s*:?\s*$")
-
-        while i < len(lines):
-            line = lines[i]
-            stripped = line.strip()
-
-            if stripped.startswith("```"):
-                in_fence = not in_fence
-                out.append(line)
-                i += 1
-                continue
-
-            if in_fence:
-                out.append(line)
-                i += 1
-                continue
-
-            marker_match = marker_re.match(line)
-            if marker_match:
-                marker = marker_match.group(1).strip()
-                lang = self._canonical_code_lang(marker)
-                valid_lang = {
-                    "cpp", "c", "java", "js", "ts", "python", "sql",
-                    "html", "css", "php", "csharp"
-                }
-                if lang in valid_lang:
-                    j = i + 1
-                    while j < len(lines) and not lines[j].strip():
-                        j += 1
-
-                    if j < len(lines):
-                        end = len(lines)
-                        for k in range(j, len(lines) - 1):
-                            if lines[k].strip() == "" and lines[k + 1].strip() and not self._looks_like_code_line(lines[k + 1]):
-                                end = k
-                                break
-
-                        candidate = lines[j:end]
-                        if any(self._looks_like_code_line(candidate_line) for candidate_line in candidate):
-                            out.append(f"```{lang}")
-                            out.extend(candidate)
-                            out.append("```")
-                            i = end
-                            changes += 1
-                            continue
-
-            out.append(line)
-            i += 1
-
-        result = "\n".join(out)
-        if content.endswith("\n"):
-            result += "\n"
-        return result, changes
-
     def _load_chapter_payload(self, section, chapter):
         """Load chapter JSON payload and return (path, payload, chapter_data, questions)."""
         fpath = self.base_path / section.get('path', '') / chapter.get('file', '')
@@ -3228,8 +2907,6 @@ class ExamEditor:
             "numbering_fixed": 0,
             "typing_fixed": 0,
             "type_fixed": 0,
-            "fences_fixed": 0,
-            "questions_fenced": 0,
         }
 
         errors = []
@@ -3264,44 +2941,6 @@ class ExamEditor:
                     changed = (answer_changes + type_changes) > 0
                     stats["typing_fixed"] += answer_changes
                     stats["type_fixed"] += type_changes
-
-                elif tool_name == "fix_code_fences":
-                    chapter_fences = 0
-                    chapter_questions = 0
-                    for question in questions:
-                        q_changed = False
-
-                        fixed_text, text_changes = self._fence_language_markers_in_text(
-                            question.get("text", "")
-                        )
-                        if text_changes:
-                            question["text"] = fixed_text
-                            chapter_fences += text_changes
-                            q_changed = True
-
-                        fixed_explanation, exp_changes = self._fence_language_markers_in_text(
-                            question.get("explanation", "")
-                        )
-                        if exp_changes:
-                            question["explanation"] = fixed_explanation
-                            chapter_fences += exp_changes
-                            q_changed = True
-
-                        for choice in question.get("choices", []) or []:
-                            fixed_choice, choice_changes = self._fence_language_markers_in_text(
-                                choice.get("text", "")
-                            )
-                            if choice_changes:
-                                choice["text"] = fixed_choice
-                                chapter_fences += choice_changes
-                                q_changed = True
-
-                        if q_changed:
-                            chapter_questions += 1
-
-                    changed = chapter_fences > 0
-                    stats["fences_fixed"] += chapter_fences
-                    stats["questions_fenced"] += chapter_questions
 
                 elif tool_name == "delete_duplicates":
                     first_seen = {}
@@ -3382,12 +3021,6 @@ class ExamEditor:
                 f"Processed {stats['chapters']} chapter(s).\n"
                 f"Normalized answers in {stats['typing_fixed']} question(s).\n"
                 f"Adjusted input type in {stats['type_fixed']} question(s)."
-            )
-        elif tool_name == "fix_code_fences":
-            message = (
-                f"Processed {stats['chapters']} chapter(s).\n"
-                f"Created {stats['fences_fixed']} fenced code block(s) in "
-                f"{stats['questions_fenced']} question(s)."
             )
         elif tool_name == "delete_duplicates":
             message = (
