@@ -912,12 +912,16 @@ const app = {
         const raw = String(chapterId || '').trim();
         if (!raw) return 'Chapter';
 
-        const numberLike = raw.match(/(?:chapter\s*)?([0-9]+[a-z]?)/i);
-        if (numberLike && numberLike[1]) {
-            return `Ch ${numberLike[1].toUpperCase()}`;
+        // Only normalize to "Ch N" when ID explicitly uses Chapter/Ch prefix.
+        const hasChapterPrefix = /^(chapter|ch)\b/i.test(raw);
+        if (hasChapterPrefix) {
+            const numberLike = raw.match(/^(?:chapter|ch)\s*[-_:]*\s*([0-9]+[a-z]?)/i);
+            if (numberLike && numberLike[1]) {
+                return `Ch ${numberLike[1].toUpperCase()}`;
+            }
         }
 
-        // Keep custom IDs compact to avoid badge wrapping.
+        // Keep custom IDs as-is (compact only for badge safety).
         return raw.length > 10 ? `${raw.slice(0, 10)}...` : raw;
     },
 
