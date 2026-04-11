@@ -138,8 +138,9 @@ const DiagramHandler = {
         if (/^\s*#?title\s*:/i.test(text) || /\[[^\]]+\]\s*[-:o+<>*]+\s*\[[^\]]+\]/.test(text)) return 'nomnoml';
         if (/\b(flowchart|sequenceDiagram|classDiagram|erDiagram|stateDiagram|mindmap)\b/i.test(text)) return 'mermaid';
 
-        const preferred = this._resolveSubjectEngines(subjectId);
-        return preferred[0] || '';
+        // Do not force generic code blocks into a diagram engine.
+        // Only explicit language hints or known diagram syntax should render as diagrams.
+        return '';
     },
 
     _getLanguageHint(wrapper, codeEl) {
