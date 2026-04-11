@@ -1,0 +1,788 @@
+{
+  "id": "upload-1775923085363-hz47b",
+  "label": "Chapter-5.ppt",
+  "params": {
+    "file": "Chapter-5.ppt",
+    "chapter": "8"
+  },
+  "title": "Chapter 8 Chapter 5: Control Structures II (Repetition)",
+  "questions": [
+    {
+      "id": "upload-1775923085363-0",
+      "number": "1",
+      "text": "Which of the following describes a **pretest** loop?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The loop condition is evaluated after the loop body executes.",
+          "text": "The loop condition is evaluated after the loop body executes."
+        },
+        {
+          "value": "B",
+          "label": "The loop condition is evaluated before the loop body executes.",
+          "text": "The loop condition is evaluated before the loop body executes."
+        },
+        {
+          "value": "C",
+          "label": "The loop is guaranteed to execute at least once.",
+          "text": "The loop is guaranteed to execute at least once."
+        },
+        {
+          "value": "D",
+          "label": "The loop never evaluates a condition.",
+          "text": "The loop never evaluates a condition."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In a pretest loop, such as `while` or `for`, the condition is checked before entering the loop body. If the condition is false initially, the body may never execute."
+    },
+    {
+      "id": "upload-1775923085363-1",
+      "number": "2",
+      "text": "Which loop structure in C++ is classified as a **posttest** loop?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`while` loop",
+          "text": "`while` loop"
+        },
+        {
+          "value": "B",
+          "label": "`for` loop",
+          "text": "`for` loop"
+        },
+        {
+          "value": "C",
+          "label": "`do...while` loop",
+          "text": "`do...while` loop"
+        },
+        {
+          "value": "D",
+          "label": "`switch` structure",
+          "text": "`switch` structure"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A `do...while` loop executes the body first and then tests the condition, making it a posttest loop."
+    },
+    {
+      "id": "upload-1775923085363-2",
+      "number": "3",
+      "text": "What is a **sentinel-controlled** loop?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A loop that runs a specific number of times based on a counter.",
+          "text": "A loop that runs a specific number of times based on a counter."
+        },
+        {
+          "value": "B",
+          "label": "A loop that terminates when a specific special value is encountered in the input.",
+          "text": "A loop that terminates when a specific special value is encountered in the input."
+        },
+        {
+          "value": "C",
+          "label": "A loop that terminates based on a boolean flag variable.",
+          "text": "A loop that terminates based on a boolean flag variable."
+        },
+        {
+          "value": "D",
+          "label": "A loop that only stops when the end of a file is reached.",
+          "text": "A loop that only stops when the end of a file is reached."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A sentinel is a special value (like -1 or 'Q') used to signal the end of data input in a loop."
+    },
+    {
+      "id": "upload-1775923085363-3",
+      "number": "4",
+      "text": "In the Windows console environment, which key combination is typically used to enter the **end-of-file (EOF)** marker?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Ctrl+C",
+          "text": "Ctrl+C"
+        },
+        {
+          "value": "B",
+          "label": "Ctrl+X",
+          "text": "Ctrl+X"
+        },
+        {
+          "value": "C",
+          "label": "Ctrl+Z",
+          "text": "Ctrl+Z"
+        },
+        {
+          "value": "D",
+          "label": "Alt+F4",
+          "text": "Alt+F4"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Ctrl+Z is the standard way to signal an EOF condition from the keyboard in Windows terminal environments."
+    },
+    {
+      "id": "upload-1775923085363-4",
+      "number": "5",
+      "text": "What does the `continue` statement do when executed inside a loop?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Terminates the loop entirely.",
+          "text": "Terminates the loop entirely."
+        },
+        {
+          "value": "B",
+          "label": "Exits the entire program.",
+          "text": "Exits the entire program."
+        },
+        {
+          "value": "C",
+          "label": "Skips the remaining statements in the current iteration and proceeds to the next iteration.",
+          "text": "Skips the remaining statements in the current iteration and proceeds to the next iteration."
+        },
+        {
+          "value": "D",
+          "label": "Restarts the loop from the initial statement.",
+          "text": "Restarts the loop from the initial statement."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `continue` statement skips the rest of the loop's body for the current iteration and jumps to the update/condition check for the next iteration."
+    },
+    {
+      "id": "upload-1775923085363-5",
+      "number": "6",
+      "text": "Which header file is required to use the `rand()` function to generate random numbers?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`<iostream>`",
+          "text": "`<iostream>`"
+        },
+        {
+          "value": "B",
+          "label": "`<cmath>`",
+          "text": "`<cmath>`"
+        },
+        {
+          "value": "C",
+          "label": "`<cstdlib>`",
+          "text": "`<cstdlib>`"
+        },
+        {
+          "value": "D",
+          "label": "`<iomanip>`",
+          "text": "`<iomanip>`"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `rand()` and `srand()` functions are defined in the `<cstdlib>` header file."
+    },
+    {
+      "id": "upload-1775923085363-6",
+      "number": "7",
+      "text": "What is the range of values generated by the expression `rand() % 100`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1 to 100",
+          "text": "1 to 100"
+        },
+        {
+          "value": "B",
+          "label": "0 to 99",
+          "text": "0 to 99"
+        },
+        {
+          "value": "C",
+          "label": "0 to 100",
+          "text": "0 to 100"
+        },
+        {
+          "value": "D",
+          "label": "1 to 99",
+          "text": "1 to 99"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The modulo operator `%` returns the remainder of division. `rand() % 100` results in values from 0 up to 99."
+    },
+    {
+      "id": "upload-1775923085363-7",
+      "number": "8",
+      "text": "What occurs if you put a semicolon at the end of a `for` loop header, such as `for (i = 0; i < 10; i++);`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A syntax error that prevents compilation.",
+          "text": "A syntax error that prevents compilation."
+        },
+        {
+          "value": "B",
+          "label": "A semantic error where the loop body executes only once after the loop finishes.",
+          "text": "A semantic error where the loop body executes only once after the loop finishes."
+        },
+        {
+          "value": "C",
+          "label": "The loop works normally; the semicolon is ignored.",
+          "text": "The loop works normally; the semicolon is ignored."
+        },
+        {
+          "value": "D",
+          "label": "An infinite loop occurs.",
+          "text": "An infinite loop occurs."
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The semicolon acts as an empty statement. The loop will iterate 10 times doing nothing, and then the following block of code will execute exactly once, logically outside the loop."
+    },
+    {
+      "id": "upload-1775923085363-8",
+      "number": "9",
+      "text": "Which of the following is the correct syntax for the `eof` function using an input stream variable `cin`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`eof(cin)`",
+          "text": "`eof(cin)`"
+        },
+        {
+          "value": "B",
+          "label": "`cin(eof)`",
+          "text": "`cin(eof)`"
+        },
+        {
+          "value": "C",
+          "label": "`cin.eof()`",
+          "text": "`cin.eof()`"
+        },
+        {
+          "value": "D",
+          "label": "`eof.cin()`",
+          "text": "`eof.cin()`"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`eof` is a member function of the `istream` class, so it is called using the dot operator on a stream object like `cin`."
+    },
+    {
+      "id": "upload-1775923085363-9",
+      "number": "10",
+      "text": "Which loop is the best choice if you know the exact number of repetitions required before the loop starts?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`while` loop",
+          "text": "`while` loop"
+        },
+        {
+          "value": "B",
+          "label": "`for` loop",
+          "text": "`for` loop"
+        },
+        {
+          "value": "C",
+          "label": "`do...while` loop",
+          "text": "`do...while` loop"
+        },
+        {
+          "value": "D",
+          "label": "A `switch` statement",
+          "text": "A `switch` statement"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `for` loop is specifically designed for counter-controlled repetition where the number of iterations is known."
+    },
+    {
+      "id": "upload-1775923085363-10",
+      "number": "11",
+      "text": "Trace the following code. What is the output?\n\n```cpp\nint count = 1;\nwhile (count <= 4) {\n    cout << count << \" \";\n    count++;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1 2 3",
+          "text": "1 2 3"
+        },
+        {
+          "value": "B",
+          "label": "1 2 3 4",
+          "text": "1 2 3 4"
+        },
+        {
+          "value": "C",
+          "label": "1 2 3 4 5",
+          "text": "1 2 3 4 5"
+        },
+        {
+          "value": "D",
+          "label": "0 1 2 3 4",
+          "text": "0 1 2 3 4"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The loop starts at 1. It prints 1, 2, 3, and 4. When `count` becomes 5, the condition `count <= 4` becomes false and the loop terminates."
+    },
+    {
+      "id": "upload-1775923085363-11",
+      "number": "12",
+      "text": "What is the output of the following code snippet?\n\n```cpp\nfor (int i = 1; i < 5; i++) {\n    if (i == 3) continue;\n    cout << i << \" \";\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1 2",
+          "text": "1 2"
+        },
+        {
+          "value": "B",
+          "label": "1 2 3 4",
+          "text": "1 2 3 4"
+        },
+        {
+          "value": "C",
+          "label": "1 2 4",
+          "text": "1 2 4"
+        },
+        {
+          "value": "D",
+          "label": "1 2 4 5",
+          "text": "1 2 4 5"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "When `i` is 3, the `continue` statement skips the `cout` line. Therefore, 1, 2, and 4 are printed. The loop stops when `i` reaches 5."
+    },
+    {
+      "id": "upload-1775923085363-12",
+      "number": "13",
+      "text": "What is the output of the following code snippet?\n\n```cpp\nint x = 5;\ndo {\n    cout << x << \" \";\n    x = x - 2;\n} while (x > 0);\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "5 3 1",
+          "text": "5 3 1"
+        },
+        {
+          "value": "B",
+          "label": "5 3",
+          "text": "5 3"
+        },
+        {
+          "value": "C",
+          "label": "3 1",
+          "text": "3 1"
+        },
+        {
+          "value": "D",
+          "label": "5 3 1 -1",
+          "text": "5 3 1 -1"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "First iteration: prints 5, x becomes 3. Second iteration: prints 3, x becomes 1. Third iteration: prints 1, x becomes -1. The condition `x > 0` is then false."
+    },
+    {
+      "id": "upload-1775923085363-13",
+      "number": "14",
+      "text": "How many times will the word \"Hello\" be printed?\n\n```cpp\nfor (int i = 0; i < 3; i++) {\n    for (int j = 0; j < 2; j++) {\n        cout << \"Hello\" << endl;\n    }\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "3",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "5",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "6",
+          "text": "6"
+        },
+        {
+          "value": "D",
+          "label": "9",
+          "text": "9"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The outer loop runs 3 times. For every iteration of the outer loop, the inner loop runs 2 times. \\( 3 \\times 2 = 6 \\)."
+    },
+    {
+      "id": "upload-1775923085363-14",
+      "number": "15",
+      "text": "What is the output of the following code?\n\n```cpp\nint i = 0;\nwhile (i < 5) {\n    if (i == 2) break;\n    cout << i << \" \";\n    i++;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "0 1",
+          "text": "0 1"
+        },
+        {
+          "value": "B",
+          "label": "0 1 2",
+          "text": "0 1 2"
+        },
+        {
+          "value": "C",
+          "label": "0 1 3 4",
+          "text": "0 1 3 4"
+        },
+        {
+          "value": "D",
+          "label": "0 1 2 3 4",
+          "text": "0 1 2 3 4"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The loop prints 0 and 1. When `i` becomes 2, the `break` statement is executed, which exits the loop immediately before printing 2."
+    },
+    {
+      "id": "upload-1775923085363-15",
+      "number": "16",
+      "text": "Trace the values of `sum`. What is the final value of `sum` after this loop?\n\n```cpp\nint sum = 0;\nfor (int i = 1; i <= 5; i += 2) {\n    sum += i;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "6",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "9",
+          "text": "9"
+        },
+        {
+          "value": "C",
+          "label": "15",
+          "text": "15"
+        },
+        {
+          "value": "D",
+          "label": "5",
+          "text": "5"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Iteration 1: `i=1`, `sum=1`. Iteration 2: `i=3`, `sum=1+3=4`. Iteration 3: `i=5`, `sum=4+5=9`. Next `i` is 7, which fails the condition `i <= 5`."
+    },
+    {
+      "id": "upload-1775923085363-16",
+      "number": "17",
+      "text": "What is the output of the following code snippet?\n\n```cpp\nint j = 10;\nwhile (j > 7) {\n    j--;\n    cout << j << \" \";\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "10 9 8",
+          "text": "10 9 8"
+        },
+        {
+          "value": "B",
+          "label": "9 8 7",
+          "text": "9 8 7"
+        },
+        {
+          "value": "C",
+          "label": "10 9 8 7",
+          "text": "10 9 8 7"
+        },
+        {
+          "value": "D",
+          "label": "9 8",
+          "text": "9 8"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Iteration 1: `j` becomes 9, prints 9. Iteration 2: `j` becomes 8, prints 8. Iteration 3: `j` becomes 7, prints 7. Then condition `7 > 7` is false."
+    },
+    {
+      "id": "upload-1775923085363-17",
+      "number": "18",
+      "text": "What is the result of the following nested loop?\n\n```cpp\nfor (int i = 1; i <= 2; i++) {\n    for (int j = 1; j <= 3; j++) {\n        if (j == 2) continue;\n        cout << i << j << \" \";\n    }\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "11 12 13 21 22 23",
+          "text": "11 12 13 21 22 23"
+        },
+        {
+          "value": "B",
+          "label": "11 13 21 23",
+          "text": "11 13 21 23"
+        },
+        {
+          "value": "C",
+          "label": "11 13",
+          "text": "11 13"
+        },
+        {
+          "value": "D",
+          "label": "12 22",
+          "text": "12 22"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The inner loop skips `j=2` due to `continue`. Thus for `i=1` it prints 11 and 13. For `i=2` it prints 21 and 23."
+    },
+    {
+      "id": "upload-1775923085363-18",
+      "number": "19",
+      "text": "What is the output of the following code snippet?\n\n```cpp\nint x = 1;\nwhile (x < 10) {\n    x *= 3;\n}\ncout << x;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "3",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "9",
+          "text": "9"
+        },
+        {
+          "value": "C",
+          "label": "27",
+          "text": "27"
+        },
+        {
+          "value": "D",
+          "label": "10",
+          "text": "10"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Iteration 1: `x` becomes 3 (3 < 10 is true). Iteration 2: `x` becomes 9 (9 < 10 is true). Iteration 3: `x` becomes 27 (27 < 10 is false). The loop ends and prints 27."
+    },
+    {
+      "id": "upload-1775923085363-19",
+      "number": "20",
+      "text": "Determine the output of this code:\n\n```cpp\nint k = 0;\nfor (int i = 0; i < 5; i++) {\n    if (i % 2 == 0) k += i;\n    else k--;\n}\ncout << k;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "4",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "6",
+          "text": "6"
+        },
+        {
+          "value": "C",
+          "label": "5",
+          "text": "5"
+        },
+        {
+          "value": "D",
+          "label": "3",
+          "text": "3"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "`i=0`: `k=0+0=0`. `i=1`: `k=0-1=-1`. `i=2`: `k=-1+2=1`. `i=3`: `k=1-1=0`. `i=4`: `k=0+4=4`. Total = 4."
+    },
+    {
+      "id": "upload-1775923085363-20",
+      "number": "21",
+      "text": "What does the following code print?\n\n```cpp\nint a = 0;\ndo {\n    a++;\n    if (a == 3) break;\n} while (a < 5);\ncout << a;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "3",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "5",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "4",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "2",
+          "text": "2"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The loop increments `a`. When `a` hits 3, the `break` triggers, exiting the loop and printing the current value of `a`, which is 3."
+    },
+    {
+      "id": "upload-1775923085363-21",
+      "number": "22",
+      "text": "Identify the output of the following code:\n\n```cpp\nfor (int i = 5; i >= 1; i--) {\n    if (i == 3) break;\n    cout << i << \",\";\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "5,4,3,2,1,",
+          "text": "5,4,3,2,1,"
+        },
+        {
+          "value": "B",
+          "label": "5,4,2,1,",
+          "text": "5,4,2,1,"
+        },
+        {
+          "value": "C",
+          "label": "5,4,",
+          "text": "5,4,"
+        },
+        {
+          "value": "D",
+          "label": "3,2,1,",
+          "text": "3,2,1,"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The loop counts down from 5. It prints 5 and 4. When `i` is 3, the `break` statement executes, terminating the loop."
+    },
+    {
+      "id": "upload-1775923085363-22",
+      "number": "23",
+      "text": "Trace the output of this code snippet:\n\n```cpp\nint n = 2;\nwhile (n < 20) {\n    n = n * n;\n    cout << n << \" \";\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "4 8 16",
+          "text": "4 8 16"
+        },
+        {
+          "value": "B",
+          "label": "4 16",
+          "text": "4 16"
+        },
+        {
+          "value": "C",
+          "label": "4 16 256",
+          "text": "4 16 256"
+        },
+        {
+          "value": "D",
+          "label": "2 4 16",
+          "text": "2 4 16"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Iteration 1: `n = 2*2 = 4`, prints 4. Iteration 2: `n = 4*4 = 16`, prints 16. Iteration 3: `n = 16*16 = 256`, prints 256. Then `256 < 20` is false."
+    },
+    {
+      "id": "upload-1775923085363-23",
+      "number": "24",
+      "text": "What is the result of the following code?\n\n```cpp\nint m = 0;\nfor (int i = 0; i < 2; i++) {\n    for (int j = 0; j < 2; j++) {\n        m = m + i + j;\n    }\n}\ncout << m;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "4",
+          "text": "4"
+        },
+        {
+          "value": "C",
+          "label": "6",
+          "text": "6"
+        },
+        {
+          "value": "D",
+          "label": "8",
+          "text": "8"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Pairs `(i,j)` are: `(0,0)`, `(0,1)`, `(1,0)`, `(1,1)`. Sum `m` = `(0+0) + (0+1) + (1+0) + (1+1) = 0 + 1 + 1 + 2 = 4`."
+    },
+    {
+      "id": "upload-1775923085363-24",
+      "number": "25",
+      "text": "What is the output of the following loop?\n\n```cpp\nint p = 1;\nwhile (p < 5) {\n    p++;\n    if (p == 3) continue;\n    cout << p << \" \";\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "2 4 5",
+          "text": "2 4 5"
+        },
+        {
+          "value": "B",
+          "label": "1 2 4",
+          "text": "1 2 4"
+        },
+        {
+          "value": "C",
+          "label": "2 3 4",
+          "text": "2 3 4"
+        },
+        {
+          "value": "D",
+          "label": "2 4",
+          "text": "2 4"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Iteration 1: `p` becomes 2, prints 2. Iteration 2: `p` becomes 3, hits `continue`. Iteration 3: `p` becomes 4, prints 4. Iteration 4: `p` becomes 5, prints 5. Loop condition `5 < 5` then fails."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}

@@ -1,0 +1,788 @@
+{
+  "id": "upload-1775923013344-d0kn0",
+  "label": "Chapter-3.ppt",
+  "params": {
+    "file": "Chapter-3.ppt",
+    "chapter": "6"
+  },
+  "title": "Chapter 6 Chapter 3: Input/Output and Predefined Functions",
+  "questions": [
+    {
+      "id": "upload-1775923013344-0",
+      "number": "1",
+      "text": "In C++, what is the formal definition of a **stream**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A sequence of bits stored in a file",
+          "text": "A sequence of bits stored in a file"
+        },
+        {
+          "value": "B",
+          "label": "A sequence of characters from a source to a destination",
+          "text": "A sequence of characters from a source to a destination"
+        },
+        {
+          "value": "C",
+          "label": "A data type used specifically for integer storage",
+          "text": "A data type used specifically for integer storage"
+        },
+        {
+          "value": "D",
+          "label": "A command that clears the computer memory",
+          "text": "A command that clears the computer memory"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "As defined in the text, a stream is a sequence of characters (or bytes) from a source to a destination."
+    },
+    {
+      "id": "upload-1775923013344-1",
+      "number": "2",
+      "text": "Which header file must be included to use the standard input variable `cin` and output variable `cout`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`<cmath>`",
+          "text": "`<cmath>`"
+        },
+        {
+          "value": "B",
+          "label": "`<string>`",
+          "text": "`<string>`"
+        },
+        {
+          "value": "C",
+          "label": "`<iostream>`",
+          "text": "`<iostream>`"
+        },
+        {
+          "value": "D",
+          "label": "`<fstream>`",
+          "text": "`<fstream>`"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `<iostream>` header file contains the definitions for `istream` and `ostream`, which are the types for `cin` and `cout` respectively."
+    },
+    {
+      "id": "upload-1775923013344-2",
+      "number": "3",
+      "text": "What does the extraction operator `>>` do when it encounters leading whitespace characters (blanks, tabs, or newlines) while reading data into a variable?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It stores the whitespace in the variable.",
+          "text": "It stores the whitespace in the variable."
+        },
+        {
+          "value": "B",
+          "label": "It stops reading and returns an error.",
+          "text": "It stops reading and returns an error."
+        },
+        {
+          "value": "C",
+          "label": "It skips all leading whitespace.",
+          "text": "It skips all leading whitespace."
+        },
+        {
+          "value": "D",
+          "label": "It treats whitespace as the character '0'.",
+          "text": "It treats whitespace as the character '0'."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The extraction operator `>>` is designed to skip all leading whitespace before finding the actual data to store."
+    },
+    {
+      "id": "upload-1775923013344-3",
+      "number": "4",
+      "text": "In the statement `cin >> x;`, what are the left-side and right-side operands of the extraction operator?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Left: `x`, Right: `cin`",
+          "text": "Left: `x`, Right: `cin`"
+        },
+        {
+          "value": "B",
+          "label": "Left: `cin`, Right: `x` (a variable)",
+          "text": "Left: `cin`, Right: `x` (a variable)"
+        },
+        {
+          "value": "C",
+          "label": "Left: `iostream`, Right: `int`",
+          "text": "Left: `iostream`, Right: `int`"
+        },
+        {
+          "value": "D",
+          "label": "Left: Extraction, Right: Variable",
+          "text": "Left: Extraction, Right: Variable"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The operator `>>` is binary; its left operand is an input stream variable (like `cin`) and its right operand is a variable where the data will be stored."
+    },
+    {
+      "id": "upload-1775923013344-4",
+      "number": "5",
+      "text": "Which of the following describes **input failure** in C++?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The computer runs out of memory during an input operation.",
+          "text": "The computer runs out of memory during an input operation."
+        },
+        {
+          "value": "B",
+          "label": "Attempting to read a character (like 'A') into an `int` or `double` variable.",
+          "text": "Attempting to read a character (like 'A') into an `int` or `double` variable."
+        },
+        {
+          "value": "C",
+          "label": "The user presses the Enter key without typing anything.",
+          "text": "The user presses the Enter key without typing anything."
+        },
+        {
+          "value": "D",
+          "label": "Connecting a keyboard that is not recognized by the OS.",
+          "text": "Connecting a keyboard that is not recognized by the OS."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Input failure occurs when the data type of the input does not match the data type of the variable it is being read into."
+    },
+    {
+      "id": "upload-1775923013344-5",
+      "number": "6",
+      "text": "What is the primary difference between `cin >> ch;` and `cin.get(ch);` where `ch` is a `char` variable?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`get` only reads numbers, `>>` reads characters.",
+          "text": "`get` only reads numbers, `>>` reads characters."
+        },
+        {
+          "value": "B",
+          "label": "`>>` skips whitespace, while `get` reads the very next character including whitespace.",
+          "text": "`>>` skips whitespace, while `get` reads the very next character including whitespace."
+        },
+        {
+          "value": "C",
+          "label": "`get` is used for strings, `>>` is used for single characters.",
+          "text": "`get` is used for strings, `>>` is used for single characters."
+        },
+        {
+          "value": "D",
+          "label": "There is no difference; they behave identically.",
+          "text": "There is no difference; they behave identically."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `get` function inputs the next character regardless of whether it is whitespace, whereas `>>` skips whitespace."
+    },
+    {
+      "id": "upload-1775923013344-6",
+      "number": "7",
+      "text": "To use the predefined function `pow(x, y)`, which header file must be included?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`<iostream>`",
+          "text": "`<iostream>`"
+        },
+        {
+          "value": "B",
+          "label": "`<cmath>`",
+          "text": "`<cmath>`"
+        },
+        {
+          "value": "C",
+          "label": "`<iomanip>`",
+          "text": "`<iomanip>`"
+        },
+        {
+          "value": "D",
+          "label": "`<power>`",
+          "text": "`<power>`"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The power function `pow` is part of the C math library, accessed via `<cmath>`."
+    },
+    {
+      "id": "upload-1775923013344-7",
+      "number": "8",
+      "text": "What executes first when a C++ program is run?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The first predefined function in the library",
+          "text": "The first predefined function in the library"
+        },
+        {
+          "value": "B",
+          "label": "The `cin` statement",
+          "text": "The `cin` statement"
+        },
+        {
+          "value": "C",
+          "label": "The `main` function",
+          "text": "The `main` function"
+        },
+        {
+          "value": "D",
+          "label": "The preprocessor directives",
+          "text": "The preprocessor directives"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In a C++ program, execution begins with the `main` function."
+    },
+    {
+      "id": "upload-1775923013344-8",
+      "number": "9",
+      "text": "Which data type is associated with the `cout` variable?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`istream`",
+          "text": "`istream`"
+        },
+        {
+          "value": "B",
+          "label": "`iostream`",
+          "text": "`iostream`"
+        },
+        {
+          "value": "C",
+          "label": "`ostream`",
+          "text": "`ostream`"
+        },
+        {
+          "value": "D",
+          "label": "`string`",
+          "text": "`string`"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`cout` is an output stream variable, which is of the type `ostream`."
+    },
+    {
+      "id": "upload-1775923013344-9",
+      "number": "10",
+      "text": "What information is NOT required to use a predefined function?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The name of the header file",
+          "text": "The name of the header file"
+        },
+        {
+          "value": "B",
+          "label": "The function's memory address",
+          "text": "The function's memory address"
+        },
+        {
+          "value": "C",
+          "label": "The type of each parameter",
+          "text": "The type of each parameter"
+        },
+        {
+          "value": "D",
+          "label": "What the function does",
+          "text": "What the function does"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "To use a function, you need the header, the name, parameters, and the purpose, but not the internal memory address."
+    },
+    {
+      "id": "upload-1775923013344-10",
+      "number": "11",
+      "text": "Trace the output of the following code snippet:\n\n```cpp\nint x;\ndouble y;\n// Input: 10 25.5\ncin >> x >> y;\ncout << x + y;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "35",
+          "text": "35"
+        },
+        {
+          "value": "B",
+          "label": "1025.5",
+          "text": "1025.5"
+        },
+        {
+          "value": "C",
+          "label": "35.5",
+          "text": "35.5"
+        },
+        {
+          "value": "D",
+          "label": "25.5",
+          "text": "25.5"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`x` gets 10, `y` gets 25.5. The sum of 10 and 25.5 is 35.5."
+    },
+    {
+      "id": "upload-1775923013344-11",
+      "number": "12",
+      "text": "What will be stored in the variable `ch` after the following code execution?\n\n```cpp\nchar ch;\n// Input:   Z\ncin >> ch;\n```\n\n*(Note: There are three leading spaces before 'Z')*",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A blank space ' '",
+          "text": "A blank space ' '"
+        },
+        {
+          "value": "B",
+          "label": "'Z'",
+          "text": "'Z'"
+        },
+        {
+          "value": "C",
+          "label": "Nothing (Input failure)",
+          "text": "Nothing (Input failure)"
+        },
+        {
+          "value": "D",
+          "label": "A newline character",
+          "text": "A newline character"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The extraction operator `>>` skips the leading whitespace and finds the character 'Z'."
+    },
+    {
+      "id": "upload-1775923013344-12",
+      "number": "13",
+      "text": "What is the value of `result` after this line executes?\n\n```cpp\ndouble result = pow(2, 3) + sqrt(16);\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "10.0",
+          "text": "10.0"
+        },
+        {
+          "value": "B",
+          "label": "12.0",
+          "text": "12.0"
+        },
+        {
+          "value": "C",
+          "label": "14.0",
+          "text": "14.0"
+        },
+        {
+          "value": "D",
+          "label": "64.0",
+          "text": "64.0"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "`pow(2, 3)` is \\( 2^3 = 8 \\). `sqrt(16)` is 4. \\( 8 + 4 = 12 \\)."
+    },
+    {
+      "id": "upload-1775923013344-13",
+      "number": "14",
+      "text": "Trace the following code. What character is stored in `c2`?\n\n```cpp\nchar c1, c2;\n// Input: A B\ncin.get(c1);\ncin.get(c2);\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "'B'",
+          "text": "'B'"
+        },
+        {
+          "value": "B",
+          "label": "' '",
+          "text": "' '"
+        },
+        {
+          "value": "C",
+          "label": "'A'",
+          "text": "'A'"
+        },
+        {
+          "value": "D",
+          "label": "None (Input failure)",
+          "text": "None (Input failure)"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "`cin.get(c1)` reads 'A'. `cin.get(c2)` reads the very next character, which is the space between 'A' and 'B'."
+    },
+    {
+      "id": "upload-1775923013344-14",
+      "number": "15",
+      "text": "Given the input `45.67`, what will be the values of `a` and `b` after this code executes?\n\n```cpp\nint a;\ndouble b;\ncin >> a >> b;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "a = 45, b = 67.0",
+          "text": "a = 45, b = 67.0"
+        },
+        {
+          "value": "B",
+          "label": "a = 45.67, b = 0",
+          "text": "a = 45.67, b = 0"
+        },
+        {
+          "value": "C",
+          "label": "a = 45, b = 0.67",
+          "text": "a = 45, b = 0.67"
+        },
+        {
+          "value": "D",
+          "label": "Input failure occurs",
+          "text": "Input failure occurs"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`cin >> a` reads digits until it hits the decimal point (a non-digit for integers), so `a` becomes 45. Then `cin >> b` starts from the decimal point and reads `.67`."
+    },
+    {
+      "id": "upload-1775923013344-15",
+      "number": "16",
+      "text": "What is the output of the following code?\n\n```cpp\nstring s = \"C++ Programming\";\ncout << s.length();\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "13",
+          "text": "13"
+        },
+        {
+          "value": "B",
+          "label": "14",
+          "text": "14"
+        },
+        {
+          "value": "C",
+          "label": "15",
+          "text": "15"
+        },
+        {
+          "value": "D",
+          "label": "16",
+          "text": "16"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "\"C++ Programming\" has 3 characters ('C','+','+'), 1 space, and 11 characters in \"Programming\". Total: \\( 3 + 1 + 11 = 15 \\)."
+    },
+    {
+      "id": "upload-1775923013344-16",
+      "number": "17",
+      "text": "Trace the output of the code below:\n\n```cpp\nint x = 4;\ncout << pow(x, 0.5);\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "4",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "16",
+          "text": "16"
+        },
+        {
+          "value": "D",
+          "label": "0.5",
+          "text": "0.5"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Raising a number to the 0.5 power is equivalent to taking its square root. \\( 4^{0.5} = 2 \\)."
+    },
+    {
+      "id": "upload-1775923013344-17",
+      "number": "18",
+      "text": "If the user enters `-15 20`, what are the values of `x` and `y`?\n\n```cpp\nint x, y;\ncin >> x >> y;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "x = 15, y = 20",
+          "text": "x = 15, y = 20"
+        },
+        {
+          "value": "B",
+          "label": "x = -15, y = 20",
+          "text": "x = -15, y = 20"
+        },
+        {
+          "value": "C",
+          "label": "x = 0, y = 20",
+          "text": "x = 0, y = 20"
+        },
+        {
+          "value": "D",
+          "label": "x = -15, y = 0",
+          "text": "x = -15, y = 0"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The extraction operator reads the leading sign (+ or -) for numeric variables. So `x` gets -15 and `y` gets 20."
+    },
+    {
+      "id": "upload-1775923013344-18",
+      "number": "19",
+      "text": "What happens in the following scenario?\n\n```cpp\nint num;\n// Input: Hello 5\ncin >> num;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`num` will store 5.",
+          "text": "`num` will store 5."
+        },
+        {
+          "value": "B",
+          "label": "`num` will store the ASCII value of 'H'.",
+          "text": "`num` will store the ASCII value of 'H'."
+        },
+        {
+          "value": "C",
+          "label": "The program enters an input failure state.",
+          "text": "The program enters an input failure state."
+        },
+        {
+          "value": "D",
+          "label": "The program crashes immediately.",
+          "text": "The program crashes immediately."
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Trying to read a string (\"Hello\") into an integer variable (`num`) causes an input failure, and the variable `num` will typically not be updated or set to a default value depending on the compiler version."
+    },
+    {
+      "id": "upload-1775923013344-19",
+      "number": "20",
+      "text": "Trace the values of `ch1` and `ch2`:\n\n```cpp\nchar ch1, ch2;\n// Input: 12\ncin >> ch1 >> ch2;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "ch1 = '1', ch2 = '2'",
+          "text": "ch1 = '1', ch2 = '2'"
+        },
+        {
+          "value": "B",
+          "label": "ch1 = 12, ch2 = 0",
+          "text": "ch1 = 12, ch2 = 0"
+        },
+        {
+          "value": "C",
+          "label": "Input failure",
+          "text": "Input failure"
+        },
+        {
+          "value": "D",
+          "label": "ch1 = '1', ch2 = ' '",
+          "text": "ch1 = '1', ch2 = ' '"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "When reading into a `char`, `>>` reads only one character at a time. The first character '1' goes to `ch1`, and the next character '2' goes to `ch2`."
+    },
+    {
+      "id": "upload-1775923013344-20",
+      "number": "21",
+      "text": "Given input `28 32 45`, what is the value of `sum` after these statements?\n\n```cpp\nint a, b, c, sum;\ncin >> a;\ncin >> b;\ncin >> c;\nsum = a + b + c;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "60",
+          "text": "60"
+        },
+        {
+          "value": "B",
+          "label": "105",
+          "text": "105"
+        },
+        {
+          "value": "C",
+          "label": "283245",
+          "text": "283245"
+        },
+        {
+          "value": "D",
+          "label": "77",
+          "text": "77"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "\\( 28 + 32 + 45 = 105 \\). Multiple `cin` statements with one variable are equivalent to one `cin` with multiple variables."
+    },
+    {
+      "id": "upload-1775923013344-21",
+      "number": "22",
+      "text": "What is the output of this code?\n\n```cpp\ncout << pow(3.0, 2.0);\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "6.0",
+          "text": "6.0"
+        },
+        {
+          "value": "B",
+          "label": "9.0",
+          "text": "9.0"
+        },
+        {
+          "value": "C",
+          "label": "5.0",
+          "text": "5.0"
+        },
+        {
+          "value": "D",
+          "label": "1.0",
+          "text": "1.0"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "\\( 3.0^2 = 9.0 \\)."
+    },
+    {
+      "id": "upload-1775923013344-22",
+      "number": "23",
+      "text": "Trace the following code snippet. What is stored in `val`?\n\n```cpp\nint val;\n// Input: 10.99\ncin >> val;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "10",
+          "text": "10"
+        },
+        {
+          "value": "B",
+          "label": "11",
+          "text": "11"
+        },
+        {
+          "value": "C",
+          "label": "10.99",
+          "text": "10.99"
+        },
+        {
+          "value": "D",
+          "label": "Input Failure",
+          "text": "Input Failure"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "When reading an `int`, the extraction operator stops as soon as it hits a non-digit character (the decimal point), storing only the whole number part (10)."
+    },
+    {
+      "id": "upload-1775923013344-23",
+      "number": "24",
+      "text": "What is the effect of the following statement?\n\n```cpp\nchar ch;\n// Input: \\n (A newline character produced by pressing Enter)\ncin.get(ch);\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`ch` stores the literal character '\\\\' and then 'n'.",
+          "text": "`ch` stores the literal character '\\\\' and then 'n'."
+        },
+        {
+          "value": "B",
+          "label": "`ch` stores the newline character '\\n'.",
+          "text": "`ch` stores the newline character '\\n'."
+        },
+        {
+          "value": "C",
+          "label": "The program waits for another character.",
+          "text": "The program waits for another character."
+        },
+        {
+          "value": "D",
+          "label": "`ch` remains empty.",
+          "text": "`ch` remains empty."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Unlike `>>`, `cin.get()` does not skip whitespace; it will read and store the newline character if it is the next byte in the stream."
+    },
+    {
+      "id": "upload-1775923013344-24",
+      "number": "25",
+      "text": "Analyze this code. What is output?\n\n```cpp\nint a = 5, b = 2;\ncout << pow(a, b);\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "10",
+          "text": "10"
+        },
+        {
+          "value": "B",
+          "label": "7",
+          "text": "7"
+        },
+        {
+          "value": "C",
+          "label": "25",
+          "text": "25"
+        },
+        {
+          "value": "D",
+          "label": "32",
+          "text": "32"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "\\( 5^2 = 25 \\)."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}

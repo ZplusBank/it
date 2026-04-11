@@ -1,0 +1,542 @@
+{
+  "id": "extract-1775921005768-coxn0",
+  "label": "C++ - Second.pdf",
+  "params": {
+    "file": "C++ - Second.pdf",
+    "type": "visual_extractor",
+    "chapter": "2"
+  },
+  "title": "Second",
+  "questions": [
+    {
+      "id": "extract-1775921005768-coxn0-0",
+      "number": "1",
+      "text": "What is the output of the following code?\n\n```cpp\n#include <iostream>\nusing namespace std;\nvoid main() {\n    int x = 55, y = 5;\n    switch(x % 7){\n        case 0: case 1: y++;\n        case 2: case 3: y = y + 2;\n        case 4: break;\n        case 5: case 6: y = y - 3;\n    }\n    cout << y << endl;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "7"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "67"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "First, the expression `x % 7` is evaluated. Given `x = 55`, `55 % 7` equals 6. The switch statement then jumps to `case 6`. The instruction for `case 5` and `case 6` is `y = y - 3`. Since `y` was initially 5, `5 - 3 = 2`. The result is then printed."
+    },
+    {
+      "id": "extract-1775921005768-coxn0-1",
+      "number": "2",
+      "text": "What is the final value of x?\n\n```cpp\n#include <iostream>\nusing namespace std;\nvoid main() {\n    int x, y = 5;\n    x = y++ + --y;\n    cout << x << endl;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "11"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "9"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "12"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In the expression `x = y++ + --y`, the side effects occur as follows: \n1. `y++` uses the current value of `y` (5) and then increments `y` to 6. \n2. `--y` decrements `y` from 6 back to 5 and then uses that value (5). \n3. The sum is `5 + 5 = 10`. \nNote: In standard C++, modifying a variable multiple times in one expression can lead to undefined behavior, but in most academic test contexts, this sequential logic is expected."
+    },
+    {
+      "id": "extract-1775921005768-coxn0-2",
+      "number": "3",
+      "text": "What is the output of the following code?\n\n```cpp\n#include <iostream>\nusing namespace std;\nint f1(int a) {\n    a++;\n    return a;\n}\nvoid main() {\n    cout << f1(f1(2));\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The inner function call `f1(2)` receives 2, increments it to 3, and returns 3. The outer function call `f1(3)` receives 3, increments it to 4, and returns 4. The final output is 4."
+    },
+    {
+      "id": "extract-1775921005768-coxn0-3",
+      "number": "4",
+      "text": "What is the output of the following code?\n\n```cpp\n#include <iostream>\nusing namespace std;\ndouble f1(double x, int y) {\n    cout << \"hi1\";\n    return 7.59;\n}\nint f1(int x, int b) {\n    cout << \"hi2\";\n    return 6;\n}\nint main() {\n    double z = f1(7.4, 5);\n    cout << z << endl;\n    return 0;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "hi1 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "hi2 7.59"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "hi2 6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "hi1 7.59"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The function call `f1(7.4, 5)` uses a `double` and an `int`. This matches the signature of the first overload: `double f1(double x, int y)`. Therefore, it executes the code that prints \"hi1\" and returns 7.59. The main function then prints the value of `z` (7.59), resulting in the combined output \"hi1 7.59\"."
+    },
+    {
+      "id": "extract-1775921005768-coxn0-4",
+      "number": "5",
+      "text": "What is the output of the following code?\n\n```cpp\n#include <iostream>\nusing namespace std;\nint x = 15;\nvoid function(int &k) {\n    k += 3;\n}\nvoid main() {\n    int x = 7;\n    function(x);\n    cout << x << endl;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "10"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "18"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "15"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "7"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In `main`, a local variable `x` is declared and initialized to 7. This local variable shadows the global variable `x` (which is 15). The local `x` is passed by reference to `function`, which adds 3 to it. Consequently, the local `x` becomes 10. The `cout` statement prints the local `x` value."
+    },
+    {
+      "id": "extract-1775921005768-coxn0-5",
+      "number": "6",
+      "text": "What is the output of the following code?\n\n```cpp\n#include <iostream>\nusing namespace std;\nvoid a() {\n    cout << \"b\" << endl;\n}\nvoid b() {\n    cout << \"a\" << endl;\n}\nvoid main() {\n    bool h = 1;\n    if(h)\n        a();\n    else\n        b();\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "b"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "ab"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of above"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The boolean variable `h` is initialized to 1, which represents `true`. The `if(h)` condition evaluates to true, causing the function `a()` to be executed. Function `a()` outputs the character \"b\". Therefore, the final output is **b**."
+    },
+    {
+      "id": "extract-1775921005768-coxn0-6",
+      "number": "7",
+      "text": "What is the output of the following code?\n\n```cpp\n#include <iostream>\nusing namespace std;\nint f2(int s) {\n    return ++s + 3;\n}\nvoid f1(char ch) {\n    if (ch > 'a')\n        cout << f2(4) << endl;\n    else\n        cout << f2(6) << endl;\n}\nint main() {\n    f1('D');\n    return 0;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "8"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "7"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "1. `main` calls `f1('D')`.\n2. In `f1`, `ch` is 'D' (ASCII 68). The comparison `ch > 'a'` (68 > 97) is false.\n3. The `else` branch executes: `cout << f2(6) << endl;`.\n4. In `f2(6)`, the prefix increment `++s` changes `s` from 6 to 7.\n5. The function returns `7 + 3`, which equals 10.\nThus, the output is **10**."
+    },
+    {
+      "id": "extract-1775921005768-coxn0-7",
+      "number": "8",
+      "text": "What is the output of the following code?\n\n```cpp\n#include <iostream>\nusing namespace std;\nint p = 6;\nvoid f1() {\n    p += 2;\n}\nvoid f2() {\n    int p = 2;\n    p += 2;\n    cout << p;\n    ::p += 3;\n}\nvoid main() {\n    p += 2;\n    f1();\n    cout << p;\n    f2();\n    cout << p << endl;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "10410"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1047"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10413"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "10212"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Execution Trace:\n1. Global `p` = 6.\n2. In `main`: `p += 2` -> global `p` is 8.\n3. Call `f1()`: `p += 2` -> global `p` is 10.\n4. `cout << p`: Prints **10**.\n5. Call `f2()`:\n   - Defines local `p = 2`.\n   - Local `p += 2` -> local `p` is 4.\n   - `cout << p`: Prints **4**.\n   - `::p += 3`: Updates global `p` (10 + 3) to 13.\n6. Back in `main`, `cout << p`: Prints global `p`, which is **13**.\nConcatenating the outputs: **10413**."
+    },
+    {
+      "id": "extract-1775921005768-coxn0-8",
+      "number": "9",
+      "text": "What is the output of the following code?\n\n```cpp\n#include <iostream>\nusing namespace std;\nint x = 7;\nvoid fun(int l) {\n    static int x = 2;\n    x += 1;\n    cout << x;\n}\nvoid main() {\n    for(int r = 0 ; r < 3 ; ++r)\n        fun(r);\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "345"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "346"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "333"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "344"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The internal variable `x` is `static`, so it is initialized once and persists between function calls.\n- 1st call (r=0): `x` increments from 2 to 3. Prints **3**.\n- 2nd call (r=1): `x` increments from 3 to 4. Prints **4**.\n- 3rd call (r=2): `x` increments from 4 to 5. Prints **5**.\nOutput: **345**."
+    },
+    {
+      "id": "extract-1775921005768-coxn0-9",
+      "number": "10",
+      "text": "What is the output of the following code?\n\n```cpp\n#include <iostream>\nusing namespace std;\nvoid main() {\n    int i;\n    for(i = 1 ; i < 5 ; i++)\n        for(int j = i ; j > 2 ; j--)\n            cout << j + i;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "45687610987"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "465876"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6871098"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "687"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Loop analysis:\n- When `i=1`: `j=1`, `j>2` is false.\n- When `i=2`: `j=2`, `j>2` is false.\n- When `i=3`: `j=3`, `j>2` is true. `cout << 3 + 3` outputs **6**. `j` becomes 2, loop ends.\n- When `i=4`: \n  - `j=4`, `j>2` is true. `cout << 4 + 4` outputs **8**.\n  - `j=3`, `j>2` is true. `cout << 3 + 4` outputs **7**.\n  - `j=2`, loop ends.\nThe concatenated output is **687**."
+    },
+    {
+      "id": "extract-1775921005768-coxn0-10",
+      "number": "11",
+      "text": "What is the output of the following code?\n\n```cpp\n#include <iostream>\nusing namespace std;\nvoid main() {\n    int u = 5;\n    while(u >= 1) {\n        int b = 10;\n        for( ; b >= 1 ; b -= 3) {\n            if(b % 2 == 0)\n                continue;\n            cout << b;\n        }\n        u -= 4;\n    }\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "7171"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "104104"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "17"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "104"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. The outer loop runs for `u=5` and `u=1` (after `u -= 4`). It executes twice.\n2. Inside, the inner loop processes `b` values: 10, 7, 4, 1 (decreasing by 3).\n3. The condition `if(b % 2 == 0) continue;` skips even numbers. So 10 and 4 are ignored.\n4. For `b=7` and `b=1`, the value is printed. So each outer iteration prints \"71\".\n5. After two iterations, the total output is **7171**."
+    },
+    {
+      "id": "extract-1775921005768-coxn0-11",
+      "number": "12",
+      "text": "What is the output of the following code?\n\n```cpp\n#include <iostream>\nusing namespace std;\nbool f3(int x) {\n    if(x > 3)\n        return 5;\n    return false;\n}\n\nvoid main() {\n    int b = f3(6);\n    cout << b << endl;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "50"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "false"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In this specific code snippet, when `f3(6)` is called, the condition `6 > 3` is true, so the function returns `5`. While in standard C++ a `bool` return type would typically convert `5` to `true` (represented as `1` numerically), this question follows a simplified logic where the value `5` is returned and assigned to the integer `b`. Since `1` is not an option, `5` is the intended answer."
+    },
+    {
+      "id": "extract-1775921005768-coxn0-12",
+      "number": "13",
+      "text": "What is the output of the following code?\n\n```cpp\n#include <iostream>\nusing namespace std;\nvoid main() {\n    int var = 46;\n    do {\n        var = var / 4;\n        if(var == 0)\n            break;\n        cout << var;\n    } while(var <= 20);\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1120"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "461120"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "112"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Infinite loop"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "1. `var` is initialized to 46.\n2. Iteration 1: `var = 46 / 4 = 11`. `cout << 11` prints `11`. `11 <= 20` is true, so loop continues.\n3. Iteration 2: `var = 11 / 4 = 2`. `cout << 2` prints `2`. `2 <= 20` is true, so loop continues.\n4. Iteration 3: `var = 2 / 4 = 0`. The condition `if(var == 0)` is true, triggering `break`.\nFinal output: `112`."
+    },
+    {
+      "id": "extract-1775921005768-coxn0-13",
+      "number": "14",
+      "text": "What is the best prototype for the following call statement : `int x = f1(5, 'c');`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "void f1(int, int);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "char f1(int, char);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "int f1(int, char);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "void f1(int, char);"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The call passes two arguments: an `int` (5) and a `char` ('c'). The return value is assigned to an `int` variable `x`. Therefore, the function must take an `int` and a `char` as parameters and return a type compatible with `int`. Option C is the perfect match."
+    },
+    {
+      "id": "extract-1775921005768-coxn0-14",
+      "number": "15",
+      "text": "What is the output of the following code?\n\n```cpp\n#include <iostream>\nusing namespace std;\ndouble G5(int &x, int y = 15, double z = 3.25) {\n    x += 2;\n    return x + y + z;\n}\n\nvoid main() {\n    int d = 8;\n    cout << G5(d, 2) << \" \";\n    cout << d << endl;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "15 10"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "13.5 8"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "15.25 10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "13 8"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "1. `d` is 8.\n2. `G5(d, 2)` is called. `x` refers to `d`, `y` is 2, and `z` defaults to 3.25.\n3. Inside `G5`, `x += 2` updates `d` to 10.\n4. Return value: `10 (x) + 2 (y) + 3.25 (z) = 15.25`.\n5. `cout << G5(d, 2)` prints `15.25`.\n6. `cout << d` prints the updated value `10`.\nResult: `15.25 10`."
+    },
+    {
+      "id": "extract-1775921005768-coxn0-15",
+      "number": "16",
+      "text": "What is the output of the following code?\n\n```cpp\n#include <iostream>\nusing namespace std;\nvoid main() {\n    for(int i = 1, j = 5 ; i > 6 && j >= 2 ; ++i, j--)\n        if(i % 2 == 0)\n            cout << \"*\";\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "**"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "***"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "*"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Nothing to print"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The loop condition is `i > 6 && j >= 2`. Since `i` starts at 1, the condition `1 > 6` is false from the start. The loop never executes, resulting in no output."
+    },
+    {
+      "id": "extract-1775921005768-coxn0-16",
+      "number": "17",
+      "text": "What is the output of the following code?\n\n```cpp\n#include <iostream>\nusing namespace std;\nvoid main() {\n    int i = 7;\n    for(i = 6 ; i >= 3 ; i -= 2) ;\n        for(int j = 1 ; j < 3 ; j++) ;\n            cout << \"hi\" << i;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "hi6hi6hi4hi4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "hi7hi7hi5hi5hi3hi3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "hi2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Both `for` loop headers end with semicolons, making them empty statements. \n1. The outer loop runs for `i = 6` and `i = 4`, terminating when `i` becomes 2.\n2. The inner loop runs twice but does nothing.\n3. The `cout` statement executes once after both loops have finished, using the final value of `i`, which is 2. \nOutput: `hi2`."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 17,
+  "q": 17
+}

@@ -1,0 +1,788 @@
+{
+  "id": "upload-1775923121214-dbh07",
+  "label": "Chapter-6.ppt",
+  "params": {
+    "file": "Chapter-6.ppt",
+    "chapter": "9"
+  },
+  "title": "Chapter 6: User-Defined Functions I",
+  "questions": [
+    {
+      "id": "upload-1775923121214-0",
+      "number": "1",
+      "text": "Which header file must be included to use the predefined mathematical functions such as \\( \\text{pow} \\) and \\( \\text{sqrt} \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "iostream",
+          "text": "iostream"
+        },
+        {
+          "value": "B",
+          "label": "cmath",
+          "text": "cmath"
+        },
+        {
+          "value": "C",
+          "label": "cctype",
+          "text": "cctype"
+        },
+        {
+          "value": "D",
+          "label": "math.h",
+          "text": "math.h"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In C++, standard mathematical functions are defined in the `cmath` header file."
+    },
+    {
+      "id": "upload-1775923121214-1",
+      "number": "2",
+      "text": "What is the difference between a formal parameter and an actual parameter?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Formal parameters are used in the function call; actual parameters are used in the function heading.",
+          "text": "Formal parameters are used in the function call; actual parameters are used in the function heading."
+        },
+        {
+          "value": "B",
+          "label": "Formal parameters are variables declared in the function heading; actual parameters are variables or expressions listed in the call.",
+          "text": "Formal parameters are variables declared in the function heading; actual parameters are variables or expressions listed in the call."
+        },
+        {
+          "value": "C",
+          "label": "Formal parameters must be constants; actual parameters must be variables.",
+          "text": "Formal parameters must be constants; actual parameters must be variables."
+        },
+        {
+          "value": "D",
+          "label": "There is no difference between them in C++.",
+          "text": "There is no difference between them in C++."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Formal parameters act as placeholders in the function definition, while actual parameters are the real values passed to the function during a call."
+    },
+    {
+      "id": "upload-1775923121214-2",
+      "number": "3",
+      "text": "A value-returning function must contain which of the following statements to send a value back to the caller?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "output",
+          "text": "output"
+        },
+        {
+          "value": "B",
+          "label": "send",
+          "text": "send"
+        },
+        {
+          "value": "C",
+          "label": "return",
+          "text": "return"
+        },
+        {
+          "value": "D",
+          "label": "exit",
+          "text": "exit"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `return` statement is used to terminate the function and return a specific value to the calling environment."
+    },
+    {
+      "id": "upload-1775923121214-3",
+      "number": "4",
+      "text": "What is a function prototype?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The complete code block of a function including its body.",
+          "text": "The complete code block of a function including its body."
+        },
+        {
+          "value": "B",
+          "label": "A function that has no parameters.",
+          "text": "A function that has no parameters."
+        },
+        {
+          "value": "C",
+          "label": "The function heading followed by a semicolon, without the function body.",
+          "text": "The function heading followed by a semicolon, without the function body."
+        },
+        {
+          "value": "D",
+          "label": "A function that returns a void type.",
+          "text": "A function that returns a void type."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A prototype (or declaration) tells the compiler about the function's name and type signature before the actual definition is encountered."
+    },
+    {
+      "id": "upload-1775923121214-4",
+      "number": "5",
+      "text": "When a `return` statement executes in a function other than `main`, what happens to the flow of execution?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The program terminates immediately.",
+          "text": "The program terminates immediately."
+        },
+        {
+          "value": "B",
+          "label": "The function continues to the next statement in its body.",
+          "text": "The function continues to the next statement in its body."
+        },
+        {
+          "value": "C",
+          "label": "Control is passed back to the point immediately following the function call.",
+          "text": "Control is passed back to the point immediately following the function call."
+        },
+        {
+          "value": "D",
+          "label": "The function restarts from the first statement.",
+          "text": "The function restarts from the first statement."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Executing `return` terminates the function and returns control to the caller."
+    },
+    {
+      "id": "upload-1775923121214-5",
+      "number": "6",
+      "text": "Which of the following is an advantage of using functions in programming?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "They allow code to be reused in different programs.",
+          "text": "They allow code to be reused in different programs."
+        },
+        {
+          "value": "B",
+          "label": "They enhance program readability by dividing tasks into manageable pieces.",
+          "text": "They enhance program readability by dividing tasks into manageable pieces."
+        },
+        {
+          "value": "C",
+          "label": "Different programmers can work on different functions simultaneously.",
+          "text": "Different programmers can work on different functions simultaneously."
+        },
+        {
+          "value": "D",
+          "label": "All of the above.",
+          "text": "All of the above."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Functions provide modularity, reusability, and maintainability, allowing for collaborative and cleaner development."
+    },
+    {
+      "id": "upload-1775923121214-6",
+      "number": "7",
+      "text": "What does the `floor` function return for the input \\( 48.79 \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "49.0",
+          "text": "49.0"
+        },
+        {
+          "value": "B",
+          "label": "48.0",
+          "text": "48.0"
+        },
+        {
+          "value": "C",
+          "label": "48",
+          "text": "48"
+        },
+        {
+          "value": "D",
+          "label": "48.8",
+          "text": "48.8"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `floor` function returns the largest whole number not greater than \\( x \\) as a `double` type."
+    },
+    {
+      "id": "upload-1775923121214-7",
+      "number": "8",
+      "text": "If a function is declared as `int func(double x, int y)`, what is its return type?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "double",
+          "text": "double"
+        },
+        {
+          "value": "B",
+          "label": "void",
+          "text": "void"
+        },
+        {
+          "value": "C",
+          "label": "int",
+          "text": "int"
+        },
+        {
+          "value": "D",
+          "label": "bool",
+          "text": "bool"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The data type specified before the function name in the heading is the return type."
+    },
+    {
+      "id": "upload-1775923121214-8",
+      "number": "9",
+      "text": "Where does the execution of a C++ program always begin?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "At the first function prototype.",
+          "text": "At the first function prototype."
+        },
+        {
+          "value": "B",
+          "label": "At the first defined function in the file.",
+          "text": "At the first defined function in the file."
+        },
+        {
+          "value": "C",
+          "label": "At the first statement in the function `main`.",
+          "text": "At the first statement in the function `main`."
+        },
+        {
+          "value": "D",
+          "label": "At the `#include` directives.",
+          "text": "At the `#include` directives."
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `main` function is the designated entry point for every C++ program."
+    },
+    {
+      "id": "upload-1775923121214-9",
+      "number": "10",
+      "text": "In a function call, how must the actual parameters match the formal parameters?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Only by name.",
+          "text": "Only by name."
+        },
+        {
+          "value": "B",
+          "label": "Only by count.",
+          "text": "Only by count."
+        },
+        {
+          "value": "C",
+          "label": "By number, data type, and order.",
+          "text": "By number, data type, and order."
+        },
+        {
+          "value": "D",
+          "label": "There is no requirement for matching.",
+          "text": "There is no requirement for matching."
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The actual parameters provided in the call must match the formal parameters in order, count, and compatible data types."
+    },
+    {
+      "id": "upload-1775923121214-10",
+      "number": "11",
+      "text": "What is the output of the following code snippet?\n\n```cpp\ncout << static_cast<char>(toupper('b')) << endl;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "b",
+          "text": "b"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "B"
+        },
+        {
+          "value": "C",
+          "label": "98",
+          "text": "98"
+        },
+        {
+          "value": "D",
+          "label": "66",
+          "text": "66"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "`toupper` converts 'b' to 'B' (uppercase). The `static_cast<char>` ensures it is printed as a character rather than its ASCII integer value."
+    },
+    {
+      "id": "upload-1775923121214-11",
+      "number": "12",
+      "text": "What is the output of the following code?\n\n```cpp\ndouble u = 4.0, v = 2.0;\ncout << pow(u, v) << endl;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "8.0",
+          "text": "8.0"
+        },
+        {
+          "value": "B",
+          "label": "16.0",
+          "text": "16.0"
+        },
+        {
+          "value": "C",
+          "label": "16",
+          "text": "16"
+        },
+        {
+          "value": "D",
+          "label": "4.0",
+          "text": "4.0"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "`pow(4.0, 2.0)` calculates \\( 4^2 \\), which is \\( 16.0 \\). It returns a `double` type."
+    },
+    {
+      "id": "upload-1775923121214-12",
+      "number": "13",
+      "text": "Trace the output of the following code:\n\n```cpp\nint x = -25;\ncout << abs(x) + 5 << endl;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "-20",
+          "text": "-20"
+        },
+        {
+          "value": "B",
+          "label": "30",
+          "text": "30"
+        },
+        {
+          "value": "C",
+          "label": "25",
+          "text": "25"
+        },
+        {
+          "value": "D",
+          "label": "-30",
+          "text": "-30"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "`abs(-25)` is \\( 25 \\). Adding \\( 5 \\) results in \\( 30 \\)."
+    },
+    {
+      "id": "upload-1775923121214-13",
+      "number": "14",
+      "text": "What is the output of the following code snippet?\n\n```cpp\ncout << floor(-3.1) << endl;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "-3.0",
+          "text": "-3.0"
+        },
+        {
+          "value": "B",
+          "label": "-4.0",
+          "text": "-4.0"
+        },
+        {
+          "value": "C",
+          "label": "3.0",
+          "text": "3.0"
+        },
+        {
+          "value": "D",
+          "label": "4.0",
+          "text": "4.0"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The floor function returns the largest whole number *not greater than* \\( x \\). For \\( -3.1 \\), the largest whole number less than or equal to it is \\( -4.0 \\)."
+    },
+    {
+      "id": "upload-1775923121214-14",
+      "number": "15",
+      "text": "Consider the following function definition. What will `compute(5, 3)` return?\n\n```cpp\nint compute(int a, int b) {\n    if (a > b)\n        return a - b;\n    else\n        return b - a;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "8",
+          "text": "8"
+        },
+        {
+          "value": "B",
+          "label": "-2",
+          "text": "-2"
+        },
+        {
+          "value": "C",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "15",
+          "text": "15"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Since \\( 5 > 3 \\), the function executes `return a - b`, which is \\( 5 - 3 = 2 \\)."
+    },
+    {
+      "id": "upload-1775923121214-15",
+      "number": "16",
+      "text": "What is the output of the following code snippet?\n\n```cpp\ncout << sqrt(pow(3.0, 2.0) + pow(4.0, 2.0)) << endl;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "7.0",
+          "text": "7.0"
+        },
+        {
+          "value": "B",
+          "label": "5.0",
+          "text": "5.0"
+        },
+        {
+          "value": "C",
+          "label": "25.0",
+          "text": "25.0"
+        },
+        {
+          "value": "D",
+          "label": "12.0",
+          "text": "12.0"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "`pow(3, 2)` is \\( 9 \\) and `pow(4, 2)` is \\( 16 \\). \\( 9 + 16 = 25 \\). `sqrt(25)` is \\( 5.0 \\)."
+    },
+    {
+      "id": "upload-1775923121214-16",
+      "number": "17",
+      "text": "What will be printed by the following code?\n\n```cpp\nint test(int x) {\n    x = x + 10;\n    return x;\n}\n\nint main() {\n    int num = 5;\n    cout << test(num) << \" \" << num << endl;\n    return 0;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "15 15",
+          "text": "15 15"
+        },
+        {
+          "value": "B",
+          "label": "5 5",
+          "text": "5 5"
+        },
+        {
+          "value": "C",
+          "label": "15 5",
+          "text": "15 5"
+        },
+        {
+          "value": "D",
+          "label": "5 15",
+          "text": "5 15"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The function `test` receives a copy of `num` (pass-by-value). The local variable `x` is incremented to \\( 15 \\) and returned. The original variable `num` remains unchanged at \\( 5 \\)."
+    },
+    {
+      "id": "upload-1775923121214-17",
+      "number": "18",
+      "text": "What is the result of `pow(2.0, pow(2.0, 2.0))`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "8.0",
+          "text": "8.0"
+        },
+        {
+          "value": "B",
+          "label": "16.0",
+          "text": "16.0"
+        },
+        {
+          "value": "C",
+          "label": "4.0",
+          "text": "4.0"
+        },
+        {
+          "value": "D",
+          "label": "32.0",
+          "text": "32.0"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Inner call: `pow(2.0, 2.0)` is \\( 4.0 \\). Outer call: `pow(2.0, 4.0)` is \\( 2^4 = 16.0 \\)."
+    },
+    {
+      "id": "upload-1775923121214-18",
+      "number": "19",
+      "text": "Given the following code, what is the output?\n\n```cpp\nint findVal(int n) {\n    if (n <= 0) return 0;\n    return n + findVal(n - 2);\n}\n// In main:\ncout << findVal(4) << endl;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "4",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "6",
+          "text": "6"
+        },
+        {
+          "value": "C",
+          "label": "10",
+          "text": "10"
+        },
+        {
+          "value": "D",
+          "label": "0",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "`findVal(4)` returns \\( 4 + findVal(2) \\). `findVal(2)` returns \\( 2 + findVal(0) \\). `findVal(0)` returns \\( 0 \\). Total: \\( 4 + 2 + 0 = 6 \\)."
+    },
+    {
+      "id": "upload-1775923121214-19",
+      "number": "20",
+      "text": "What is the output of the following sequence?\n\n```cpp\nint a = 10;\nint b = 20;\nint c = max(a, b); // Assume standard max\ncout << pow(c, 0) << endl;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "0.0",
+          "text": "0.0"
+        },
+        {
+          "value": "B",
+          "label": "1.0",
+          "text": "1.0"
+        },
+        {
+          "value": "C",
+          "label": "20.0",
+          "text": "20.0"
+        },
+        {
+          "value": "D",
+          "label": "10.0",
+          "text": "10.0"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The maximum of \\( 10 \\) and \\( 20 \\) is \\( 20 \\). Any non-zero number to the power of \\( 0 \\) is \\( 1.0 \\)."
+    },
+    {
+      "id": "upload-1775923121214-20",
+      "number": "21",
+      "text": "Consider the logic for checking a palindrome number. If a function extracts digits one by one, what is the value of `remainder` in the first step for the number \\( 789 \\)?\n\n```cpp\nremainder = num % 10;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "7",
+          "text": "7"
+        },
+        {
+          "value": "B",
+          "label": "8",
+          "text": "8"
+        },
+        {
+          "value": "C",
+          "label": "9",
+          "text": "9"
+        },
+        {
+          "value": "D",
+          "label": "78",
+          "text": "78"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The modulo operator `% 10` extracts the last digit of an integer. For \\( 789 \\), \\( 789 \\% 10 = 9 \\)."
+    },
+    {
+      "id": "upload-1775923121214-21",
+      "number": "22",
+      "text": "In the 'Largest Number' algorithm described in the text, if the current `max` is \\( 15 \\) and the next number `num` read is \\( 20 \\), what happens to `max`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "max remains 15.",
+          "text": "max remains 15."
+        },
+        {
+          "value": "B",
+          "label": "max is updated to 20.",
+          "text": "max is updated to 20."
+        },
+        {
+          "value": "C",
+          "label": "max becomes 35 (sum of both).",
+          "text": "max becomes 35 (sum of both)."
+        },
+        {
+          "value": "D",
+          "label": "num is discarded.",
+          "text": "num is discarded."
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If `max < num`, `num` is the new largest number and `max` is updated by copying `num` into it."
+    },
+    {
+      "id": "upload-1775923121214-22",
+      "number": "23",
+      "text": "What is the output of the following code?\n\n```cpp\nint x = 10;\nif (x > 5) {\n    cout << \"A \";\n    return 0; // Assume this is inside main\n    cout << \"B \";\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A B",
+          "text": "A B"
+        },
+        {
+          "value": "B",
+          "label": "A",
+          "text": "A"
+        },
+        {
+          "value": "C",
+          "label": "B",
+          "text": "B"
+        },
+        {
+          "value": "D",
+          "label": "Nothing is printed.",
+          "text": "Nothing is printed."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `return` statement immediately terminates the function (in this case, `main`). The statement `cout << \"B \";` is never reached."
+    },
+    {
+      "id": "upload-1775923121214-23",
+      "number": "24",
+      "text": "What does `toupper('7')` return?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "7",
+          "text": "7"
+        },
+        {
+          "value": "B",
+          "label": "An error.",
+          "text": "An error."
+        },
+        {
+          "value": "C",
+          "label": "A null character.",
+          "text": "A null character."
+        },
+        {
+          "value": "D",
+          "label": "8",
+          "text": "8"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `toupper` function returns the argument unchanged if it is not a lowercase letter."
+    },
+    {
+      "id": "upload-1775923121214-24",
+      "number": "25",
+      "text": "Trace the logic: If `u = 2.0` and `u = u + pow(3.0, 2.0)`, what is the final value of `u`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "5.0",
+          "text": "5.0"
+        },
+        {
+          "value": "B",
+          "label": "11.0",
+          "text": "11.0"
+        },
+        {
+          "value": "C",
+          "label": "18.0",
+          "text": "18.0"
+        },
+        {
+          "value": "D",
+          "label": "25.0",
+          "text": "25.0"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "`pow(3.0, 2.0)` is \\( 9.0 \\). Then \\( u = 2.0 + 9.0 = 11.0 \\)."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}

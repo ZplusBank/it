@@ -1,0 +1,788 @@
+{
+  "id": "upload-1775923051911-9jyj2",
+  "label": "Chapter-4.ppt",
+  "params": {
+    "file": "Chapter-4.ppt",
+    "chapter": "7"
+  },
+  "title": "Control Structures I (Selection)",
+  "questions": [
+    {
+      "id": "upload-1775923051911-0",
+      "number": "1",
+      "text": "Which of the following describes a control structure that allows a program to make a choice between different paths of execution?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Sequential structure",
+          "text": "Sequential structure"
+        },
+        {
+          "value": "B",
+          "label": "Selection structure",
+          "text": "Selection structure"
+        },
+        {
+          "value": "C",
+          "label": "Repetitive structure",
+          "text": "Repetitive structure"
+        },
+        {
+          "value": "D",
+          "label": "Recursive structure",
+          "text": "Recursive structure"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Selection structures, such as if and switch, allow the computer to 'branch' and make choices based on conditions."
+    },
+    {
+      "id": "upload-1775923051911-1",
+      "number": "2",
+      "text": "What does the expression \\( 8 < 15 \\) evaluate to in C++?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "false",
+          "text": "false"
+        },
+        {
+          "value": "D",
+          "label": "true",
+          "text": "true"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "8 is indeed less than 15, so the Boolean expression evaluates to true."
+    },
+    {
+      "id": "upload-1775923051911-2",
+      "number": "3",
+      "text": "In C++, the logical operator for 'AND' is represented by which symbol?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "||",
+          "text": "||"
+        },
+        {
+          "value": "B",
+          "label": "!",
+          "text": "!"
+        },
+        {
+          "value": "C",
+          "label": "&&",
+          "text": "&&"
+        },
+        {
+          "value": "D",
+          "label": "==",
+          "text": "=="
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "&& is the binary operator for logical AND."
+    },
+    {
+      "id": "upload-1775923051911-3",
+      "number": "4",
+      "text": "Which property allows C++ to stop evaluating a logical expression as soon as the final value is known?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Short-circuit evaluation",
+          "text": "Short-circuit evaluation"
+        },
+        {
+          "value": "B",
+          "label": "Operator precedence",
+          "text": "Operator precedence"
+        },
+        {
+          "value": "C",
+          "label": "Binary reduction",
+          "text": "Binary reduction"
+        },
+        {
+          "value": "D",
+          "label": "Logical branching",
+          "text": "Logical branching"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Short-circuit evaluation stops the process early if, for example, the first part of an OR expression is true."
+    },
+    {
+      "id": "upload-1775923051911-4",
+      "number": "5",
+      "text": "In older versions of C++, logical expressions evaluated to which data type?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "char",
+          "text": "char"
+        },
+        {
+          "value": "B",
+          "label": "float",
+          "text": "float"
+        },
+        {
+          "value": "C",
+          "label": "int",
+          "text": "int"
+        },
+        {
+          "value": "D",
+          "label": "double",
+          "text": "double"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Before the 'bool' type was standardized, 0 and 1 (int) were used to represent false and true."
+    },
+    {
+      "id": "upload-1775923051911-5",
+      "number": "6",
+      "text": "To use the `assert` function, which header file must be included?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<iostream>",
+          "text": "<iostream>"
+        },
+        {
+          "value": "B",
+          "label": "<cmath>",
+          "text": "<cmath>"
+        },
+        {
+          "value": "C",
+          "label": "<cassert>",
+          "text": "<cassert>"
+        },
+        {
+          "value": "D",
+          "label": "<iomanip>",
+          "text": "<iomanip>"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The assert function is defined in the cassert library."
+    },
+    {
+      "id": "upload-1775923051911-6",
+      "number": "7",
+      "text": "Which of the following is a ternary operator in C++?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "if-else",
+          "text": "if-else"
+        },
+        {
+          "value": "B",
+          "label": "&&",
+          "text": "&&"
+        },
+        {
+          "value": "C",
+          "label": "? :",
+          "text": "? :"
+        },
+        {
+          "value": "D",
+          "label": "!",
+          "text": "!"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "? : is the conditional operator and it takes three arguments."
+    },
+    {
+      "id": "upload-1775923051911-7",
+      "number": "8",
+      "text": "What happens in a `switch` statement if a `break` statement is omitted after a `case` block?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A syntax error occurs.",
+          "text": "A syntax error occurs."
+        },
+        {
+          "value": "B",
+          "label": "The program terminates.",
+          "text": "The program terminates."
+        },
+        {
+          "value": "C",
+          "label": "Execution 'falls through' to the next case.",
+          "text": "Execution 'falls through' to the next case."
+        },
+        {
+          "value": "D",
+          "label": "The default case is automatically executed.",
+          "text": "The default case is automatically executed."
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Without a break, the execution continues into the next case regardless of whether the expression matches the label."
+    },
+    {
+      "id": "upload-1775923051911-8",
+      "number": "9",
+      "text": "How are `string` objects compared in C++?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By their memory address",
+          "text": "By their memory address"
+        },
+        {
+          "value": "B",
+          "label": "Character by character using ASCII values",
+          "text": "Character by character using ASCII values"
+        },
+        {
+          "value": "C",
+          "label": "By total length only",
+          "text": "By total length only"
+        },
+        {
+          "value": "D",
+          "label": "By the number of vowels",
+          "text": "By the number of vowels"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Strings are compared character by character starting from the first character."
+    },
+    {
+      "id": "upload-1775923051911-9",
+      "number": "10",
+      "text": "Which of the following is a logical error that results from using the assignment operator instead of the equality operator?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "if (x == 5)",
+          "text": "if (x == 5)"
+        },
+        {
+          "value": "B",
+          "label": "if (x = 5)",
+          "text": "if (x = 5)"
+        },
+        {
+          "value": "C",
+          "label": "if (x != 5)",
+          "text": "if (x != 5)"
+        },
+        {
+          "value": "D",
+          "label": "if (x >= 5)",
+          "text": "if (x >= 5)"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Using '=' inside an 'if' assigns the value and evaluates the assigned value (5) as true, which is usually not the intended behavior."
+    },
+    {
+      "id": "upload-1775923051911-10",
+      "number": "11",
+      "text": "What is the output of the following code snippet?\n```cpp\nint x = 10;\nif (x > 5)\n    x = x + 5;\nx = x + 2;\ncout << x;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "10",
+          "text": "10"
+        },
+        {
+          "value": "B",
+          "label": "15",
+          "text": "15"
+        },
+        {
+          "value": "C",
+          "label": "17",
+          "text": "17"
+        },
+        {
+          "value": "D",
+          "label": "12",
+          "text": "12"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The condition (10 > 5) is true, so x becomes 15. Then x = x + 2 makes it 17. The second addition is outside the 'if' statement."
+    },
+    {
+      "id": "upload-1775923051911-11",
+      "number": "12",
+      "text": "What is the output of the following code?\n```cpp\nint a = 3, b = 4;\nif (a > b)\n    cout << \"Alpha\";\nelse\n    cout << \"Beta\";\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Alpha",
+          "text": "Alpha"
+        },
+        {
+          "value": "B",
+          "label": "Beta",
+          "text": "Beta"
+        },
+        {
+          "value": "C",
+          "label": "AlphaBeta",
+          "text": "AlphaBeta"
+        },
+        {
+          "value": "D",
+          "label": "Nothing is printed",
+          "text": "Nothing is printed"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Since 3 is not greater than 4, the else block executes, printing 'Beta'."
+    },
+    {
+      "id": "upload-1775923051911-12",
+      "number": "13",
+      "text": "Trace the output of this code:\n```cpp\nint x = 0;\nif (x = 0)\n    cout << \"Zero\";\nelse\n    cout << \"Non-Zero\";\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Zero",
+          "text": "Zero"
+        },
+        {
+          "value": "B",
+          "label": "Non-Zero",
+          "text": "Non-Zero"
+        },
+        {
+          "value": "C",
+          "label": "Syntax Error",
+          "text": "Syntax Error"
+        },
+        {
+          "value": "D",
+          "label": "Logical Error: No output",
+          "text": "Logical Error: No output"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The expression (x = 0) assigns 0 to x. The value of the expression is 0, which is treated as 'false' in C++, so the else branch executes."
+    },
+    {
+      "id": "upload-1775923051911-13",
+      "number": "14",
+      "text": "Evaluate the result of the following logical expression:\n`true || (5 < 2) && (10 == 10)`\nAssume left-to-right associativity and standard precedence.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "true",
+          "text": "true"
+        },
+        {
+          "value": "B",
+          "label": "false",
+          "text": "false"
+        },
+        {
+          "value": "C",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "10",
+          "text": "10"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Because of short-circuit evaluation, 'true || [anything]' is immediately true."
+    },
+    {
+      "id": "upload-1775923051911-14",
+      "number": "15",
+      "text": "What is the output of the following code snippet?\n```cpp\nint n = 2;\nswitch(n) {\n    case 1: cout << \"1\";\n    case 2: cout << \"2\";\n    case 3: cout << \"3\";\n    default: cout << \"D\";\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "23",
+          "text": "23"
+        },
+        {
+          "value": "C",
+          "label": "23D",
+          "text": "23D"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "D"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "There are no break statements. Execution starts at 'case 2' and falls through to 'case 3' and 'default', printing '23D'."
+    },
+    {
+      "id": "upload-1775923051911-15",
+      "number": "16",
+      "text": "What is printed by this code?\n```cpp\nstring s1 = \"Apple\";\nstring s2 = \"Apply\";\nif (s1 < s2)\n    cout << \"Less\";\nelse\n    cout << \"Greater\";\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Less",
+          "text": "Less"
+        },
+        {
+          "value": "B",
+          "label": "Greater",
+          "text": "Greater"
+        },
+        {
+          "value": "C",
+          "label": "Apple",
+          "text": "Apple"
+        },
+        {
+          "value": "D",
+          "label": "Apply",
+          "text": "Apply"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Strings are compared character by character. 'e' comes before 'y' in ASCII, so \"Apple\" is less than \"Apply\"."
+    },
+    {
+      "id": "upload-1775923051911-16",
+      "number": "17",
+      "text": "What is the value of `result` after execution?\n```cpp\nint a = 10, b = 20;\nint result = (a > b) ? a : b;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "10",
+          "text": "10"
+        },
+        {
+          "value": "B",
+          "label": "20",
+          "text": "20"
+        },
+        {
+          "value": "C",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "1",
+          "text": "1"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The condition (10 > 20) is false, so the operator returns the value after the colon, which is b (20)."
+    },
+    {
+      "id": "upload-1775923051911-17",
+      "number": "18",
+      "text": "What is the output of the following?\n```cpp\nint x = 5;\nif (x > 0 || x++ < 10)\n    cout << x;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "5",
+          "text": "5"
+        },
+        {
+          "value": "B",
+          "label": "6",
+          "text": "6"
+        },
+        {
+          "value": "C",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "10",
+          "text": "10"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Due to short-circuiting, since (x > 0) is true, the second part (x++) is never evaluated. x remains 5."
+    },
+    {
+      "id": "upload-1775923051911-18",
+      "number": "19",
+      "text": "Trace the following nested `if` statement:\n```cpp\nint x = 15;\nif (x > 10)\n    if (x < 20)\n        cout << \"A\";\n    else\n        cout << \"B\";\nelse\n    cout << \"C\";\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "B"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "C"
+        },
+        {
+          "value": "D",
+          "label": "No output",
+          "text": "No output"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "15 is > 10 (True), and 15 is < 20 (True), so 'A' is printed."
+    },
+    {
+      "id": "upload-1775923051911-19",
+      "number": "20",
+      "text": "What does the following expression evaluate to?\n`0 <= 5 <= 10`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "true",
+          "text": "true"
+        },
+        {
+          "value": "B",
+          "label": "false",
+          "text": "false"
+        },
+        {
+          "value": "C",
+          "label": "Error",
+          "text": "Error"
+        },
+        {
+          "value": "D",
+          "label": "5",
+          "text": "5"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In C++, this is evaluated as (0 <= 5) <= 10. (0 <= 5) is 1 (true). 1 <= 10 is true (1). Note: This is usually a logic error in coding."
+    },
+    {
+      "id": "upload-1775923051911-20",
+      "number": "21",
+      "text": "What is the output?\n```cpp\nint a = 5;\nif (a > 10);\n    a = a + 5;\ncout << a;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "5",
+          "text": "5"
+        },
+        {
+          "value": "B",
+          "label": "10",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "15",
+          "text": "15"
+        },
+        {
+          "value": "D",
+          "label": "Compilation Error",
+          "text": "Compilation Error"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The semicolon after 'if (a > 10)' is an empty statement. Therefore, 'a = a + 5' always executes. 5 + 5 = 10."
+    },
+    {
+      "id": "upload-1775923051911-21",
+      "number": "22",
+      "text": "Which value of `grade` will cause the following code to print \"Pass\"?\n```cpp\nif (grade >= 70 && grade <= 100)\n    cout << \"Pass\";\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "65",
+          "text": "65"
+        },
+        {
+          "value": "B",
+          "label": "105",
+          "text": "105"
+        },
+        {
+          "value": "C",
+          "label": "70",
+          "text": "70"
+        },
+        {
+          "value": "D",
+          "label": "0",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "70 is the only value provided that satisfies both being >= 70 and <= 100."
+    },
+    {
+      "id": "upload-1775923051911-22",
+      "number": "23",
+      "text": "What is the result of `! (5 == 5)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "true",
+          "text": "true"
+        },
+        {
+          "value": "B",
+          "label": "false",
+          "text": "false"
+        },
+        {
+          "value": "C",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "D",
+          "label": "5",
+          "text": "5"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "(5 == 5) is true. Applying the NOT (!) operator makes it false."
+    },
+    {
+      "id": "upload-1775923051911-23",
+      "number": "24",
+      "text": "Trace this code snippet:\n```cpp\nint x = 2, y = 5;\nif (x > 2 || y < 10)\n    cout << \"Condition1\";\nelse\n    cout << \"Condition2\";\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Condition1",
+          "text": "Condition1"
+        },
+        {
+          "value": "B",
+          "label": "Condition2",
+          "text": "Condition2"
+        },
+        {
+          "value": "C",
+          "label": "Condition1Condition2",
+          "text": "Condition1Condition2"
+        },
+        {
+          "value": "D",
+          "label": "Nothing",
+          "text": "Nothing"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "(2 > 2) is false, but (5 < 10) is true. Since it is an OR (||) operation, the overall condition is true."
+    },
+    {
+      "id": "upload-1775923051911-24",
+      "number": "25",
+      "text": "In the Cable Billing example, if a residential customer has 2 premium channels, what is the cost of the channels alone (RES_COST_PREM_CHANNEL = 7.50)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "$7.50",
+          "text": "$7.50"
+        },
+        {
+          "value": "B",
+          "label": "$15.00",
+          "text": "$15.00"
+        },
+        {
+          "value": "C",
+          "label": "$14.50",
+          "text": "$14.50"
+        },
+        {
+          "value": "D",
+          "label": "$22.50",
+          "text": "$22.50"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The formula is numOfPremChannels * 7.50. 2 * 7.50 = 15.00."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}

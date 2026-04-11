@@ -415,5 +415,86 @@ const EXAM_CONFIG = [
         "file": "data/os/ch10.json"
       }
     ]
+  },
+  {
+    "id": "c++",
+    "name": "C++",
+    "description": "An introduction to programming teaches the fundamental logic and syntax used to instruct computers to solve problems in C++",
+    "path": "data/c++",
+    "icon": "data/c++/icon.png",
+    "chapters": [
+      {
+        "id": "1",
+        "name": "First",
+        "q": 12,
+        "file": "data/c++/chapterC++ - First.pdfvisual_extractor.json"
+      },
+      {
+        "id": "2",
+        "name": "Second",
+        "q": 17,
+        "file": "data/c++/chapterC++ - Second.pdfvisual_extractor.json"
+      },
+      {
+        "id": "3",
+        "name": "Final",
+        "q": 12,
+        "file": "data/c++/chapterC++ - Final.pdfvisual_extractor.json"
+      },
+      {
+        "id": "4",
+        "name": "Chapter 1: An Overview of Computers and Programming Languages",
+        "q": 25,
+        "file": "data/c++/Chapter-1.json"
+      },
+      {
+        "id": "5",
+        "name": "Chapter 2: Basic Elements of C++",
+        "q": 25,
+        "file": "data/c++/Chapter-2.json"
+      },
+      {
+        "id": "6",
+        "name": "Chapter 3: Input/Output and Predefined Functions",
+        "q": 25,
+        "file": "data/c++/Chapter-3.json"
+      },
+      {
+        "id": "7",
+        "name": "Control Structures I (Selection)",
+        "q": 25,
+        "file": "data/c++/Chapter-4.json"
+      },
+      {
+        "id": "8",
+        "name": "Chapter 5: Control Structures II (Repetition)",
+        "q": 25,
+        "file": "data/c++/Chapter-5.json"
+      },
+      {
+        "id": "9",
+        "name": "Chapter 6: User-Defined Functions I",
+        "q": 25,
+        "file": "data/c++/Chapter-6.json"
+      },
+      {
+        "id": "10",
+        "name": "Chapter 7: User-Defined Functions II",
+        "q": 25,
+        "file": "data/c++/Chapter-7.json"
+      },
+      {
+        "id": "11",
+        "name": "Chapter 9: C++ Arrays and Strings",
+        "q": 25,
+        "file": "data/c++/Chapter-9.json"
+      },
+      {
+        "id": "12",
+        "name": "Chapter 12: Classes and Data Abstraction",
+        "q": 25,
+        "file": "data/c++/Chapter-12.json"
+      }
+    ]
   }
 ];

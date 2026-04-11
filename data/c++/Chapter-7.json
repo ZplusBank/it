@@ -1,0 +1,788 @@
+{
+  "id": "upload-1775923158942-1vtrg",
+  "label": "Chapter-7.ppt",
+  "params": {
+    "file": "Chapter-7.ppt",
+    "chapter": "10"
+  },
+  "title": "Chapter 10 Chapter 7: User-Defined Functions II",
+  "questions": [
+    {
+      "id": "upload-1775923158942-0",
+      "number": "1",
+      "text": "What is the primary difference between a void function and a value-returning function?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Void functions cannot have parameters.",
+          "text": "Void functions cannot have parameters."
+        },
+        {
+          "value": "B",
+          "label": "Void functions do not return a value and are called as stand-alone statements.",
+          "text": "Void functions do not return a value and are called as stand-alone statements."
+        },
+        {
+          "value": "C",
+          "label": "Void functions must be defined before the main function.",
+          "text": "Void functions must be defined before the main function."
+        },
+        {
+          "value": "D",
+          "label": "Value-returning functions cannot use reference parameters.",
+          "text": "Value-returning functions cannot use reference parameters."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A void function does not have a return type and is invoked as a complete statement, whereas value-returning functions return a value that is usually part of an expression."
+    },
+    {
+      "id": "upload-1775923158942-1",
+      "number": "2",
+      "text": "Which symbol is used to declare a reference parameter in a C++ function heading?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "*",
+          "text": "*"
+        },
+        {
+          "value": "B",
+          "label": "@",
+          "text": "@"
+        },
+        {
+          "value": "C",
+          "label": "&",
+          "text": "&"
+        },
+        {
+          "value": "D",
+          "label": "#",
+          "text": "#"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The ampersand (&) symbol following the data type in a formal parameter list indicates that the parameter is a reference parameter."
+    },
+    {
+      "id": "upload-1775923158942-2",
+      "number": "3",
+      "text": "In C++, the scope of a local identifier is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The entire program file.",
+          "text": "The entire program file."
+        },
+        {
+          "value": "B",
+          "label": "From its declaration to the end of the block in which it is declared.",
+          "text": "From its declaration to the end of the block in which it is declared."
+        },
+        {
+          "value": "C",
+          "label": "Only within the 'main' function.",
+          "text": "Only within the 'main' function."
+        },
+        {
+          "value": "D",
+          "label": "Across all functions in the program regardless of where it is declared.",
+          "text": "Across all functions in the program regardless of where it is declared."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Local identifiers are accessible only within the block (curly braces) where they are defined, starting from the point of declaration."
+    },
+    {
+      "id": "upload-1775923158942-3",
+      "number": "4",
+      "text": "What is the 'signature' of a function in the context of function overloading?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The return type and the function name.",
+          "text": "The return type and the function name."
+        },
+        {
+          "value": "B",
+          "label": "The function name and the formal parameter list.",
+          "text": "The function name and the formal parameter list."
+        },
+        {
+          "value": "C",
+          "label": "The memory address of the function.",
+          "text": "The memory address of the function."
+        },
+        {
+          "value": "D",
+          "label": "The function name, return type, and parameter list.",
+          "text": "The function name, return type, and parameter list."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The signature consists of the function name and the number and types of its formal parameters. It does NOT include the return type."
+    },
+    {
+      "id": "upload-1775923158942-4",
+      "number": "5",
+      "text": "What is the rule for assigning default values to parameters in a function prototype?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Default parameters must be the leftmost parameters.",
+          "text": "Default parameters must be the leftmost parameters."
+        },
+        {
+          "value": "B",
+          "label": "All parameters must have default values if one does.",
+          "text": "All parameters must have default values if one does."
+        },
+        {
+          "value": "C",
+          "label": "Default parameters must be the rightmost parameters.",
+          "text": "Default parameters must be the rightmost parameters."
+        },
+        {
+          "value": "D",
+          "label": "Default parameters can only be used with value-returning functions.",
+          "text": "Default parameters can only be used with value-returning functions."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "C++ requires that all default parameters be the rightmost parameters in the formal parameter list."
+    },
+    {
+      "id": "upload-1775923158942-5",
+      "number": "6",
+      "text": "Which of the following is true about static variables declared within a block?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Memory is deallocated when the block is exited.",
+          "text": "Memory is deallocated when the block is exited."
+        },
+        {
+          "value": "B",
+          "label": "Memory remains allocated as long as the program executes.",
+          "text": "Memory remains allocated as long as the program executes."
+        },
+        {
+          "value": "C",
+          "label": "They are globally accessible by any function.",
+          "text": "They are globally accessible by any function."
+        },
+        {
+          "value": "D",
+          "label": "They are initialized every time the block is entered.",
+          "text": "They are initialized every time the block is entered."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Static variables retain their memory and value throughout the entire execution of the program, even after the function or block they reside in finishes execution."
+    },
+    {
+      "id": "upload-1775923158942-6",
+      "number": "7",
+      "text": "What is a 'stub' in the context of program debugging?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A program used to test another function.",
+          "text": "A program used to test another function."
+        },
+        {
+          "value": "B",
+          "label": "A placeholder function that is not fully coded but allows the rest of the program to be tested.",
+          "text": "A placeholder function that is not fully coded but allows the rest of the program to be tested."
+        },
+        {
+          "value": "C",
+          "label": "The final compiled version of the code.",
+          "text": "The final compiled version of the code."
+        },
+        {
+          "value": "D",
+          "label": "A logic error that causes the program to crash.",
+          "text": "A logic error that causes the program to crash."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A stub is a dummy function used during development to stand in for a function that has not yet been implemented."
+    },
+    {
+      "id": "upload-1775923158942-7",
+      "number": "8",
+      "text": "Which operator is used to access a global variable when a local variable with the same name exists?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "->",
+          "text": "->"
+        },
+        {
+          "value": "B",
+          "label": ".",
+          "text": "."
+        },
+        {
+          "value": "C",
+          "label": "::",
+          "text": "::"
+        },
+        {
+          "value": "D",
+          "label": "?",
+          "text": "?"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The scope resolution operator (::) allows the program to bypass local scope and access a global identifier."
+    },
+    {
+      "id": "upload-1775923158942-8",
+      "number": "9",
+      "text": "What happens when a 'value parameter' is passed to a function?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The function receives the memory address of the actual parameter.",
+          "text": "The function receives the memory address of the actual parameter."
+        },
+        {
+          "value": "B",
+          "label": "The function receives a copy of the content of the actual parameter.",
+          "text": "The function receives a copy of the content of the actual parameter."
+        },
+        {
+          "value": "C",
+          "label": "Any changes to the parameter inside the function affect the original variable.",
+          "text": "Any changes to the parameter inside the function affect the original variable."
+        },
+        {
+          "value": "D",
+          "label": "It saves memory space and time compared to a reference parameter.",
+          "text": "It saves memory space and time compared to a reference parameter."
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Value parameters create a local copy of the data. Changes made to the local copy do not affect the actual parameter in the calling function."
+    },
+    {
+      "id": "upload-1775923158942-9",
+      "number": "10",
+      "text": "Why should stream variables (like ifstream) be passed by reference?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Because stream variables cannot be copied.",
+          "text": "Because stream variables cannot be copied."
+        },
+        {
+          "value": "B",
+          "label": "To make the program run slower.",
+          "text": "To make the program run slower."
+        },
+        {
+          "value": "C",
+          "label": "Because they are always global variables.",
+          "text": "Because they are always global variables."
+        },
+        {
+          "value": "D",
+          "label": "They don't have to be; passing by value is preferred.",
+          "text": "They don't have to be; passing by value is preferred."
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Stream objects maintain state information that cannot be easily copied; therefore, C++ requires them to be passed by reference."
+    },
+    {
+      "id": "upload-1775923158942-10",
+      "number": "11",
+      "text": "What is the output of the following code snippet?\\ncpp\\nvoid mystery(int a, int &b) {\\n    a = a + 10;\\n    b = b + 10;\\n}\\n\\nint main() {\\n    int x = 5, y = 5;\\n    mystery(x, y);\\n    cout << x << \" \" << y;\\n    return 0;\\n}",
+      "choices": [
+        {
+          "value": "A",
+          "label": "5 5",
+          "text": "5 5"
+        },
+        {
+          "value": "B",
+          "label": "15 15",
+          "text": "15 15"
+        },
+        {
+          "value": "C",
+          "label": "5 15",
+          "text": "5 15"
+        },
+        {
+          "value": "D",
+          "label": "15 5",
+          "text": "15 5"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "'x' is passed by value, so the original 'x' remains 5. 'y' is passed by reference, so 'b = b + 10' updates the original 'y' to 15."
+    },
+    {
+      "id": "upload-1775923158942-11",
+      "number": "12",
+      "text": "What is the output of the following code snippet?\\ncpp\\nvoid countCall() {\\n    static int count = 0;\\n    count++;\\n    cout << count << \" \";\\n}\\n\\nint main() {\\n    countCall();\\n    countCall();\\n    countCall();\\n    return 0;\\n}",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1 1 1",
+          "text": "1 1 1"
+        },
+        {
+          "value": "B",
+          "label": "1 2 3",
+          "text": "1 2 3"
+        },
+        {
+          "value": "C",
+          "label": "0 1 2",
+          "text": "0 1 2"
+        },
+        {
+          "value": "D",
+          "label": "3 3 3",
+          "text": "3 3 3"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Because 'count' is static, it is initialized once and retains its value between function calls. Each call increments the existing value."
+    },
+    {
+      "id": "upload-1775923158942-12",
+      "number": "13",
+      "text": "What is the output of the following code?\\ncpp\\nint x = 10;\\nvoid printX() {\\n    int x = 20;\\n    cout << x << \" \" << ::x;\\n}\\n\\nint main() {\\n    printX();\\n    return 0;\\n}",
+      "choices": [
+        {
+          "value": "A",
+          "label": "10 10",
+          "text": "10 10"
+        },
+        {
+          "value": "B",
+          "label": "20 20",
+          "text": "20 20"
+        },
+        {
+          "value": "C",
+          "label": "10 20",
+          "text": "10 20"
+        },
+        {
+          "value": "D",
+          "label": "20 10",
+          "text": "20 10"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The local 'x' (20) hides the global 'x'. Using 'x' refers to the local version, while '::x' uses the scope resolution operator to access the global version (10)."
+    },
+    {
+      "id": "upload-1775923158942-13",
+      "number": "14",
+      "text": "Consider the following function: \\ncpp\\nvoid test(int a, int b = 5, double c = 10.5) {\\n    cout << a << \" \" << b << \" \" << c;\\n}\\nWhat is the output of the call `test(1, 2);`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1 5 10.5",
+          "text": "1 5 10.5"
+        },
+        {
+          "value": "B",
+          "label": "1 2 10.5",
+          "text": "1 2 10.5"
+        },
+        {
+          "value": "C",
+          "label": "1 2 5",
+          "text": "1 2 5"
+        },
+        {
+          "value": "D",
+          "label": "Error: Too few arguments",
+          "text": "Error: Too few arguments"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The value 1 is assigned to 'a', 2 overrides the default value of 'b', and 'c' uses its default value of 10.5."
+    },
+    {
+      "id": "upload-1775923158942-14",
+      "number": "15",
+      "text": "What is the output of the following code?\\ncpp\\nvoid func(int &n) {\\n    n = n * 2;\\n}\\n\\nint main() {\\n    int num = 10;\\n    func(num);\\n    func(num);\\n    cout << num;\\n    return 0;\\n}",
+      "choices": [
+        {
+          "value": "A",
+          "label": "10",
+          "text": "10"
+        },
+        {
+          "value": "B",
+          "label": "20",
+          "text": "20"
+        },
+        {
+          "value": "C",
+          "label": "40",
+          "text": "40"
+        },
+        {
+          "value": "D",
+          "label": "80",
+          "text": "80"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "First call: num becomes 20 (10*2). Second call: num becomes 40 (20*2) because it is passed by reference."
+    },
+    {
+      "id": "upload-1775923158942-15",
+      "number": "16",
+      "text": "Which of these function calls is ILLEGAL given the prototype: \\n`void sample(int x, double y = 1.1, char z = 'A');`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "sample(5);",
+          "text": "sample(5);"
+        },
+        {
+          "value": "B",
+          "label": "sample(5, 2.2);",
+          "text": "sample(5, 2.2);"
+        },
+        {
+          "value": "C",
+          "label": "sample(5, , 'B');",
+          "text": "sample(5, , 'B');"
+        },
+        {
+          "value": "D",
+          "label": "sample(1, 2, 'C');",
+          "text": "sample(1, 2, 'C');"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "You cannot skip a middle default argument. If you want to provide a value for 'z', you must also provide a value for 'y'."
+    },
+    {
+      "id": "upload-1775923158942-16",
+      "number": "17",
+      "text": "What is the output of this code?\\ncpp\\nvoid change(int x) {\\n    x = 100;\\n}\\n\\nint main() {\\n    int val = 50;\\n    change(val);\\n    cout << val;\\n    return 0;\\n}",
+      "choices": [
+        {
+          "value": "A",
+          "label": "50",
+          "text": "50"
+        },
+        {
+          "value": "B",
+          "label": "100",
+          "text": "100"
+        },
+        {
+          "value": "C",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "Compiler Error",
+          "text": "Compiler Error"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Since 'x' is a value parameter, the function 'change' only modifies its local copy. 'val' remains 50."
+    },
+    {
+      "id": "upload-1775923158942-17",
+      "number": "18",
+      "text": "What is the output?\\ncpp\\nvoid add(int a, int b) { cout << a + b; }\\nvoid add(double a, double b) { cout << a + b; }\\n\\nint main() {\\n    add(5, 10);\\n    return 0;\\n}",
+      "choices": [
+        {
+          "value": "A",
+          "label": "15",
+          "text": "15"
+        },
+        {
+          "value": "B",
+          "label": "15.0",
+          "text": "15.0"
+        },
+        {
+          "value": "C",
+          "label": "Compilation Error",
+          "text": "Compilation Error"
+        },
+        {
+          "value": "D",
+          "label": "1510",
+          "text": "1510"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The compiler uses function overloading resolution. Since 5 and 10 are integers, it calls the 'int' version of the function."
+    },
+    {
+      "id": "upload-1775923158942-18",
+      "number": "19",
+      "text": "What is the output?\\ncpp\\nint main() {\\n    int i;\\n    for(i = 0; i < 3; i++) {\\n        int x = 0;\\n        x++;\\n        cout << x;\\n    }\\n    return 0;\\n}",
+      "choices": [
+        {
+          "value": "A",
+          "label": "123",
+          "text": "123"
+        },
+        {
+          "value": "B",
+          "label": "111",
+          "text": "111"
+        },
+        {
+          "value": "C",
+          "label": "012",
+          "text": "012"
+        },
+        {
+          "value": "D",
+          "label": "333",
+          "text": "333"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "'x' is an automatic variable local to the for-loop block. It is re-initialized to 0 in every iteration of the loop."
+    },
+    {
+      "id": "upload-1775923158942-19",
+      "number": "20",
+      "text": "What is the output?\\ncpp\\nvoid compute(int &x, int y) {\\n    x = x + y;\\n    y = y + 10;\\n}\\n\\nint main() {\\n    int a = 10, b = 20;\\n    compute(a, b);\\n    cout << a << \" \" << b;\\n    return 0;\\n}",
+      "choices": [
+        {
+          "value": "A",
+          "label": "30 20",
+          "text": "30 20"
+        },
+        {
+          "value": "B",
+          "label": "30 30",
+          "text": "30 30"
+        },
+        {
+          "value": "C",
+          "label": "10 20",
+          "text": "10 20"
+        },
+        {
+          "value": "D",
+          "label": "10 30",
+          "text": "10 30"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "'a' is passed by reference (x), so 10 + 20 = 30 is stored in 'a'. 'b' is passed by value (y), so modifications to 'y' do not affect 'b'."
+    },
+    {
+      "id": "upload-1775923158942-20",
+      "number": "21",
+      "text": "What is the output?\\ncpp\\nvoid demo(int &x) {\\n    int x = 5; \\n    cout << x;\\n}",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Outputs 5",
+          "text": "Outputs 5"
+        },
+        {
+          "value": "B",
+          "label": "Outputs the address of x",
+          "text": "Outputs the address of x"
+        },
+        {
+          "value": "C",
+          "label": "Compilation Error",
+          "text": "Compilation Error"
+        },
+        {
+          "value": "D",
+          "label": "Runtime Error",
+          "text": "Runtime Error"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "You cannot declare a local variable with the same name as a formal parameter within the same function scope."
+    },
+    {
+      "id": "upload-1775923158942-21",
+      "number": "22",
+      "text": "What is the output?\\ncpp\\nvoid swap(int &a, int &b) {\\n    int temp = a;\\n    a = b;\\n    b = temp;\\n}\\n\\nint main() {\\n    int u = 1, v = 2;\\n    swap(u, v);\\n    cout << u << v;\\n    return 0;\\n}",
+      "choices": [
+        {
+          "value": "A",
+          "label": "12",
+          "text": "12"
+        },
+        {
+          "value": "B",
+          "label": "21",
+          "text": "21"
+        },
+        {
+          "value": "C",
+          "label": "22",
+          "text": "22"
+        },
+        {
+          "value": "D",
+          "label": "11",
+          "text": "11"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Because they are reference parameters, the values of 'u' and 'v' are successfully swapped in main."
+    },
+    {
+      "id": "upload-1775923158942-22",
+      "number": "23",
+      "text": "What is the output?\\ncpp\\nint n = 5;\\nvoid update() { n++; }\\n\\nint main() {\\n    int n = 10;\\n    update();\\n    cout << n << \" \" << ::n;\\n    return 0;\\n}",
+      "choices": [
+        {
+          "value": "A",
+          "label": "11 6",
+          "text": "11 6"
+        },
+        {
+          "value": "B",
+          "label": "10 5",
+          "text": "10 5"
+        },
+        {
+          "value": "C",
+          "label": "10 6",
+          "text": "10 6"
+        },
+        {
+          "value": "D",
+          "label": "11 5",
+          "text": "11 5"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The function 'update' modifies the global 'n' (making it 6). The 'main' function prints its local 'n' (10) and then the global 'n' (6)."
+    },
+    {
+      "id": "upload-1775923158942-23",
+      "number": "24",
+      "text": "Which of these function signatures is different from `void print(int x, double y)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "void print(int a, double b)",
+          "text": "void print(int a, double b)"
+        },
+        {
+          "value": "B",
+          "label": "int print(int x, double y)",
+          "text": "int print(int x, double y)"
+        },
+        {
+          "value": "C",
+          "label": "void print(double x, int y)",
+          "text": "void print(double x, int y)"
+        },
+        {
+          "value": "D",
+          "label": "Both A and B",
+          "text": "Both A and B"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A and B have the same parameter types in the same order. Changing parameter names (A) or return type (B) does not change the signature. C changes the order of types, making it a different signature."
+    },
+    {
+      "id": "upload-1775923158942-24",
+      "number": "25",
+      "text": "What is the output of the following code?\\ncpp\\nvoid recurse(int &z) {\\n    z = z + 1;\\n    if (z < 3) recurse(z);\\n}\\n\\nint main() {\\n    int m = 1;\\n    recurse(m);\\n    cout << m;\\n    return 0;\\n}",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "3",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "Infinite loop",
+          "text": "Infinite loop"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Because 'z' is a reference to 'm', every recursive call increments the original 'm'. It starts at 1, becomes 2, then becomes 3, at which point the recursion stops."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}

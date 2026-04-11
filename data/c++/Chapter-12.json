@@ -1,0 +1,788 @@
+{
+  "id": "upload-1775923415684-cuinx",
+  "label": "Chapter-12.ppt",
+  "params": {
+    "file": "Chapter-12.ppt",
+    "chapter": "12"
+  },
+  "title": "Chapter 12 Chapter 12: Classes and Data Abstraction",
+  "questions": [
+    {
+      "id": "upload-1775923415685-0",
+      "number": "1",
+      "text": "In C++, what is the default access specifier for members of a `class`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "public",
+          "text": "public"
+        },
+        {
+          "value": "B",
+          "label": "protected",
+          "text": "protected"
+        },
+        {
+          "value": "C",
+          "label": "private",
+          "text": "private"
+        },
+        {
+          "value": "D",
+          "label": "static",
+          "text": "static"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "By default, all members of a class are private unless specified otherwise by the public or protected keywords."
+    },
+    {
+      "id": "upload-1775923415685-1",
+      "number": "2",
+      "text": "Which of the following is a requirement for a class definition in C++?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It must contain at least one constructor.",
+          "text": "It must contain at least one constructor."
+        },
+        {
+          "value": "B",
+          "label": "It must end with a semicolon after the closing brace.",
+          "text": "It must end with a semicolon after the closing brace."
+        },
+        {
+          "value": "C",
+          "label": "All members must be declared as public.",
+          "text": "All members must be declared as public."
+        },
+        {
+          "value": "D",
+          "label": "Memory is allocated as soon as the class is defined.",
+          "text": "Memory is allocated as soon as the class is defined."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A class definition syntax requires a semicolon (;) immediately following the closing curly brace."
+    },
+    {
+      "id": "upload-1775923415685-2",
+      "number": "3",
+      "text": "Which symbol is used in Unified Modeling Language (UML) class diagrams to denote a **private** member?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "+",
+          "text": "+"
+        },
+        {
+          "value": "B",
+          "label": "-",
+          "text": "-"
+        },
+        {
+          "value": "C",
+          "label": "#",
+          "text": "#"
+        },
+        {
+          "value": "D",
+          "label": "*",
+          "text": "*"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In UML diagrams, '-' denotes private, '+' denotes public, and '#' denotes protected members."
+    },
+    {
+      "id": "upload-1775923415685-3",
+      "number": "4",
+      "text": "What type of value does a constructor return?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "void",
+          "text": "void"
+        },
+        {
+          "value": "B",
+          "label": "int",
+          "text": "int"
+        },
+        {
+          "value": "C",
+          "label": "The class type itself",
+          "text": "The class type itself"
+        },
+        {
+          "value": "D",
+          "label": "A constructor has no return type.",
+          "text": "A constructor has no return type."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Constructors have no return type, not even void, and their name must be the same as the class name."
+    },
+    {
+      "id": "upload-1775923415685-4",
+      "number": "5",
+      "text": "Which of the following built-in operators is valid for class objects by default (without overloading)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Arithmetic operators (+, -)",
+          "text": "Arithmetic operators (+, -)"
+        },
+        {
+          "value": "B",
+          "label": "Relational operators (==, <)",
+          "text": "Relational operators (==, <)"
+        },
+        {
+          "value": "C",
+          "label": "The assignment operator (=)",
+          "text": "The assignment operator (=)"
+        },
+        {
+          "value": "D",
+          "label": "None of the above",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Most built-in operations do not apply to classes. However, member access (.) and assignment (=) are valid built-in operations."
+    },
+    {
+      "id": "upload-1775923415685-5",
+      "number": "6",
+      "text": "What is the purpose of using `const` in a member function heading, such as: `void print() const;`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "To ensure the function returns a constant value.",
+          "text": "To ensure the function returns a constant value."
+        },
+        {
+          "value": "B",
+          "label": "To prevent the function from modifying the class's member variables.",
+          "text": "To prevent the function from modifying the class's member variables."
+        },
+        {
+          "value": "C",
+          "label": "To allow the function to access private members.",
+          "text": "To allow the function to access private members."
+        },
+        {
+          "value": "D",
+          "label": "To make the function static.",
+          "text": "To make the function static."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A constant member function (accessor) is declared with 'const' to guarantee it will not modify any data members of the object."
+    },
+    {
+      "id": "upload-1775923415685-6",
+      "number": "7",
+      "text": "Which of the following is true regarding **static** member variables of a class?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Each object has its own copy of the static variable.",
+          "text": "Each object has its own copy of the static variable."
+        },
+        {
+          "value": "B",
+          "label": "Static variables exist only after an object is instantiated.",
+          "text": "Static variables exist only after an object is instantiated."
+        },
+        {
+          "value": "C",
+          "label": "Static variables exist even if no objects of the class are created.",
+          "text": "Static variables exist even if no objects of the class are created."
+        },
+        {
+          "value": "D",
+          "label": "Static variables must be private.",
+          "text": "Static variables must be private."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Static member variables are shared among all objects and exist even if no objects of the class type exist."
+    },
+    {
+      "id": "upload-1775923415685-7",
+      "number": "8",
+      "text": "What is a **Mutator** function?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A function that deletes an object.",
+          "text": "A function that deletes an object."
+        },
+        {
+          "value": "B",
+          "label": "A function that only reads the values of member variables.",
+          "text": "A function that only reads the values of member variables."
+        },
+        {
+          "value": "C",
+          "label": "A function that modifies the value(s) of member variables.",
+          "text": "A function that modifies the value(s) of member variables."
+        },
+        {
+          "value": "D",
+          "label": "A function that is declared as static.",
+          "text": "A function that is declared as static."
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Mutator functions are member functions specifically designed to modify or update the values of private data members."
+    },
+    {
+      "id": "upload-1775923415685-8",
+      "number": "9",
+      "text": "In C++, the only difference between a `struct` and a `class` is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A class can have member functions but a struct cannot.",
+          "text": "A class can have member functions but a struct cannot."
+        },
+        {
+          "value": "B",
+          "label": "By default, members of a struct are public, while members of a class are private.",
+          "text": "By default, members of a struct are public, while members of a class are private."
+        },
+        {
+          "value": "C",
+          "label": "A struct cannot have constructors.",
+          "text": "A struct cannot have constructors."
+        },
+        {
+          "value": "D",
+          "label": "There is no difference; they are identical in every way.",
+          "text": "There is no difference; they are identical in every way."
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Both have the same capabilities, but structs default to public access, whereas classes default to private."
+    },
+    {
+      "id": "upload-1775923415685-9",
+      "number": "10",
+      "text": "Which file extension is typically used for the **interface** (specification) of a class?",
+      "choices": [
+        {
+          "value": "A",
+          "label": ".cpp",
+          "text": ".cpp"
+        },
+        {
+          "value": "B",
+          "label": ".obj",
+          "text": ".obj"
+        },
+        {
+          "value": "C",
+          "label": ".h",
+          "text": ".h"
+        },
+        {
+          "value": "D",
+          "label": ".exe",
+          "text": ".exe"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Interface files (header files) use the .h extension, while implementation files use .cpp."
+    },
+    {
+      "id": "upload-1775923415685-10",
+      "number": "11",
+      "text": "What is the output of the following code?\n\n```cpp\nclass Trace {\npublic:\n    Trace() { cout << \"A\"; }\n    Trace(int x) { cout << \"B\"; }\n};\n\nint main() {\n    Trace t1;\n    Trace t2(10);\n    return 0;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "AA",
+          "text": "AA"
+        },
+        {
+          "value": "B",
+          "label": "BB",
+          "text": "BB"
+        },
+        {
+          "value": "C",
+          "label": "AB",
+          "text": "AB"
+        },
+        {
+          "value": "D",
+          "label": "BA",
+          "text": "BA"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "t1 calls the default constructor (A) and t2 calls the parameterized constructor (B), resulting in 'AB'."
+    },
+    {
+      "id": "upload-1775923415685-11",
+      "number": "12",
+      "text": "Consider the following class. What will happen if you compile this code?\n\n```cpp\nclass Sample {\n    int x;\npublic:\n    void setX(int a) { x = a; }\n};\n\nint main() {\n    Sample s;\n    s.x = 10;\n    return 0;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The code outputs 10.",
+          "text": "The code outputs 10."
+        },
+        {
+          "value": "B",
+          "label": "Compile-time error: x is private.",
+          "text": "Compile-time error: x is private."
+        },
+        {
+          "value": "C",
+          "label": "Runtime error.",
+          "text": "Runtime error."
+        },
+        {
+          "value": "D",
+          "label": "The code runs successfully but does nothing.",
+          "text": "The code runs successfully but does nothing."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Member 'x' is private by default and cannot be accessed directly from outside the class (main)."
+    },
+    {
+      "id": "upload-1775923415685-12",
+      "number": "13",
+      "text": "What is the output of the following code?\n\n```cpp\nclass Counter {\npublic:\n    static int count;\n    Counter() { count++; }\n};\n\nint Counter::count = 0;\n\nint main() {\n    Counter c1;\n    Counter c2;\n    Counter c3;\n    cout << Counter::count;\n    return 0;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "3",
+          "text": "3"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The static variable 'count' is shared. Three objects are created, each incrementing the same variable, so the final value is 3."
+    },
+    {
+      "id": "upload-1775923415685-13",
+      "number": "14",
+      "text": "What is the output of the following code?\n\n```cpp\nclass MyClass {\n    int val;\npublic:\n    MyClass(int v) : val(v) {}\n    int getVal() const { return val; }\n};\n\nint main() {\n    MyClass obj1(5);\n    MyClass obj2 = obj1;\n    cout << obj2.getVal();\n    return 0;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "5",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "Garbage value",
+          "text": "Garbage value"
+        },
+        {
+          "value": "D",
+          "label": "Compile error",
+          "text": "Compile error"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The assignment operator (=) works by default on class objects by copying member variables. obj2 becomes a copy of obj1."
+    },
+    {
+      "id": "upload-1775923415685-14",
+      "number": "15",
+      "text": "What is the output of the following code sequence?\n\n```cpp\nclass Test {\npublic:\n    ~Test() { cout << \"D\"; }\n};\n\nint main() {\n    {\n        Test t;\n    }\n    cout << \"M\";\n    return 0;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "MD",
+          "text": "MD"
+        },
+        {
+          "value": "B",
+          "label": "DM",
+          "text": "DM"
+        },
+        {
+          "value": "C",
+          "label": "D",
+          "text": "D"
+        },
+        {
+          "value": "D",
+          "label": "M",
+          "text": "M"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Destructors execute automatically when an object goes out of scope. The inner block ends before 'M' is printed, so the destructor (D) runs first."
+    },
+    {
+      "id": "upload-1775923415685-15",
+      "number": "16",
+      "text": "What is the output of the following code snippet?\n\n```cpp\nclass Point {\n    int x, y;\npublic:\n    Point() { x = 0; y = 0; }\n    Point(int a, int b) { x = a; y = b; }\n    void display() { cout << x << y; }\n};\n\nint main() {\n    Point p[2] = {Point(1, 2)};\n    p[0].display();\n    p[1].display();\n    return 0;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1212",
+          "text": "1212"
+        },
+        {
+          "value": "B",
+          "label": "1200",
+          "text": "1200"
+        },
+        {
+          "value": "C",
+          "label": "0000",
+          "text": "0000"
+        },
+        {
+          "value": "D",
+          "label": "Compile error",
+          "text": "Compile error"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "p[0] is initialized with (1, 2). p[1] is initialized using the default constructor (0, 0) because no explicit value was provided."
+    },
+    {
+      "id": "upload-1775923415685-16",
+      "number": "17",
+      "text": "What is the error in the following class implementation?\n\n```cpp\n// File: Sample.h\nclass Sample {\n    void show();\n};\n```\n\n// File: Sample.cpp\nvoid show() {\n    cout << \"Hello\";\n}\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The function show is not public.",
+          "text": "The function show is not public."
+        },
+        {
+          "value": "B",
+          "label": "Missing the scope resolution operator in Sample.cpp.",
+          "text": "Missing the scope resolution operator in Sample.cpp."
+        },
+        {
+          "value": "C",
+          "label": "A class cannot have a function named show.",
+          "text": "A class cannot have a function named show."
+        },
+        {
+          "value": "D",
+          "label": "Both A and B are errors.",
+          "text": "Both A and B are errors."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "First, 'show' is private by default. Second, in Sample.cpp, it should be 'void Sample::show()' to link it to the class."
+    },
+    {
+      "id": "upload-1775923415685-17",
+      "number": "18",
+      "text": "What is the output of the following code?\n\n```cpp\nclass Secret {\n    int k;\npublic:\n    Secret(int i) : k(i) {}\n    void inc(int n) { k += n; }\n    void print() { cout << k; }\n};\n\nvoid manipulate(Secret s) {\n    s.inc(10);\n}\n\nint main() {\n    Secret myS(5);\n    manipulate(myS);\n    myS.print();\n    return 0;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "5",
+          "text": "5"
+        },
+        {
+          "value": "B",
+          "label": "15",
+          "text": "15"
+        },
+        {
+          "value": "C",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "10",
+          "text": "10"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The object is passed by value to 'manipulate', meaning a copy is made. The changes to the copy do not affect the original object 'myS'."
+    },
+    {
+      "id": "upload-1775923415685-18",
+      "number": "19",
+      "text": "What is the output of the following code?\n\n```cpp\nclass Value {\npublic:\n    int v;\n    Value() { v = 1; }\n    Value(int n) { v = n; }\n};\n\nint main() {\n    Value v1(10);\n    Value v2;\n    v2 = v1;\n    v1.v = 20;\n    cout << v2.v;\n    return 0;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "10",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "20",
+          "text": "20"
+        },
+        {
+          "value": "D",
+          "label": "Compile error",
+          "text": "Compile error"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "v2 = v1 copies the value (10). Changing v1 afterwards does not change v2 because they are independent objects in memory."
+    },
+    {
+      "id": "upload-1775923415685-19",
+      "number": "20",
+      "text": "Identify the result of this code:\n\n```cpp\nclass Demo {\npublic:\n    void func() { cout << \"F\"; }\n};\n\nint main() {\n    Demo d();\n    d.func();\n    return 0;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Output: F",
+          "text": "Output: F"
+        },
+        {
+          "value": "B",
+          "label": "Compile error: d is treated as a function declaration.",
+          "text": "Compile error: d is treated as a function declaration."
+        },
+        {
+          "value": "C",
+          "label": "Output: Garbage",
+          "text": "Output: Garbage"
+        },
+        {
+          "value": "D",
+          "label": "Runtime crash",
+          "text": "Runtime crash"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The line 'Demo d();' is interpreted by C++ as a declaration of a function named 'd' that returns a 'Demo' object. To call the default constructor, use 'Demo d;' without parentheses."
+    },
+    {
+      "id": "upload-1775923415685-20",
+      "number": "21",
+      "text": "What is the output of the following code?\n\n```cpp\nclass Math {\npublic:\n    static int calc(int x) { return x * 2; }\n};\n\nint main() {\n    cout << Math::calc(5);\n    return 0;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "5",
+          "text": "5"
+        },
+        {
+          "value": "B",
+          "label": "10",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "Compile error: Cannot call static function using ::",
+          "text": "Compile error: Cannot call static function using ::"
+        },
+        {
+          "value": "D",
+          "label": "0",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Public static member functions can be accessed using the class name and the scope resolution operator (::) without needing an object."
+    },
+    {
+      "id": "upload-1775923415685-21",
+      "number": "22",
+      "text": "What is the output of the following code?\n\n```cpp\nclass Box {\n    int s;\npublic:\n    Box(int side) { s = side; }\n    int getArea() { return s * s; }\n};\n\nint main() {\n    Box b1(4);\n    Box b2(b1);\n    cout << b2.getArea();\n    return 0;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "4",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "16",
+          "text": "16"
+        },
+        {
+          "value": "C",
+          "label": "8",
+          "text": "8"
+        },
+        {
+          "value": "D",
+          "label": "Compile error",
+          "text": "Compile error"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "C++ provides a default copy constructor if none is defined. b2 is initialized with b1's 's' value (4). 4 * 4 = 16."
+    },
+    {
+      "id": "upload-1775923415685-22",
+      "number": "23",
+      "text": "Consider the following class. Which line causes a compiler error?\n\n```cpp\nclass ConstTest {\n    int val;\npublic:\n    ConstTest(int v) { val = v; } // Line 1\n    void setVal(int v) const { val = v; } // Line 2\n    int getVal() const { return val; } // Line 3\n};\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Line 1",
+          "text": "Line 1"
+        },
+        {
+          "value": "B",
+          "label": "Line 2",
+          "text": "Line 2"
+        },
+        {
+          "value": "C",
+          "label": "Line 3",
+          "text": "Line 3"
+        },
+        {
+          "value": "D",
+          "label": "None of the lines",
+          "text": "None of the lines"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A member function marked as 'const' cannot modify any member variables of the class. Line 2 attempts to change 'val'."
+    },
+    {
+      "id": "upload-1775923415685-23",
+      "number": "24",
+      "text": "What is the output of the following code?\n\n```cpp\nclass Data {\n    int x;\npublic:\n    Data(int a = 10) { x = a; }\n    void print() { cout << x; }\n};\n\nint main() {\n    Data d1;\n    Data d2(5);\n    d1.print();\n    d2.print();\n    return 0;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1010",
+          "text": "1010"
+        },
+        {
+          "value": "B",
+          "label": "55",
+          "text": "55"
+        },
+        {
+          "value": "C",
+          "label": "105",
+          "text": "105"
+        },
+        {
+          "value": "D",
+          "label": "Compile error: Multiple constructors",
+          "text": "Compile error: Multiple constructors"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The constructor uses a default parameter. d1 uses the default (10), while d2 passes an explicit value (5)."
+    },
+    {
+      "id": "upload-1775923415685-24",
+      "number": "25",
+      "text": "What is printed by the following code?\n\n```cpp\nclass A {\npublic:\n    A() { cout << \"1\"; }\n    ~A() { cout << \"2\"; }\n};\n\nvoid f() {\n    A obj;\n}\n\nint main() {\n    f();\n    cout << \"3\";\n    return 0;\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "123",
+          "text": "123"
+        },
+        {
+          "value": "B",
+          "label": "132",
+          "text": "132"
+        },
+        {
+          "value": "C",
+          "label": "312",
+          "text": "312"
+        },
+        {
+          "value": "D",
+          "label": "213",
+          "text": "213"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "When 'f()' is called, 'obj' is created (prints 1). When 'f()' finishes, 'obj' is destroyed (prints 2). Then main prints 3."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}

@@ -1,0 +1,788 @@
+{
+  "id": "upload-1775922983530-x96j4",
+  "label": "Chapter-2.ppt",
+  "params": {
+    "file": "Chapter-2.ppt",
+    "chapter": "5"
+  },
+  "title": "Chapter 5 Chapter 2: Basic Elements of C++",
+  "questions": [
+    {
+      "id": "upload-1775922983530-0",
+      "number": "1",
+      "text": "According to the C++ syntax rules for identifiers, which of the following is a legal identifier?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "2ndPlace",
+          "text": "2ndPlace"
+        },
+        {
+          "value": "B",
+          "label": "pay-rate",
+          "text": "pay-rate"
+        },
+        {
+          "value": "C",
+          "label": "first_name",
+          "text": "first_name"
+        },
+        {
+          "value": "D",
+          "label": "total$",
+          "text": "total$"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "C++ identifiers must begin with a letter or an underscore and can only contain letters, digits, and underscores. Hyphens and starting with digits are not allowed."
+    },
+    {
+      "id": "upload-1775922983530-1",
+      "number": "2",
+      "text": "Which data type is considered the smallest integral data type in C++ and is used to represent characters?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "int",
+          "text": "int"
+        },
+        {
+          "value": "B",
+          "label": "float",
+          "text": "float"
+        },
+        {
+          "value": "C",
+          "label": "char",
+          "text": "char"
+        },
+        {
+          "value": "D",
+          "label": "double",
+          "text": "double"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `char` data type is the smallest integral data type, used for characters like letters, digits, and special symbols enclosed in single quotes."
+    },
+    {
+      "id": "upload-1775922983530-2",
+      "number": "3",
+      "text": "What is the maximum number of significant digits (precision) for the `double` data type on most systems?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "6 or 7",
+          "text": "6 or 7"
+        },
+        {
+          "value": "B",
+          "label": "10",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "15",
+          "text": "15"
+        },
+        {
+          "value": "D",
+          "label": "25",
+          "text": "25"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "While `float` values typically have 6 or 7 significant digits, the `double` data type provides approximately 15 significant digits."
+    },
+    {
+      "id": "upload-1775922983530-3",
+      "number": "4",
+      "text": "Which of the following is a reserved word (keyword) in C++?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "cin",
+          "text": "cin"
+        },
+        {
+          "value": "B",
+          "label": "cout",
+          "text": "cout"
+        },
+        {
+          "value": "C",
+          "label": "return",
+          "text": "return"
+        },
+        {
+          "value": "D",
+          "label": "main",
+          "text": "main"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`return`, `const`, `float`, and `double` are reserved words. `cin` and `cout` are predefined identifiers, and `main` is a function name."
+    },
+    {
+      "id": "upload-1775922983530-4",
+      "number": "5",
+      "text": "In C++, the expression `\\( 17 \\% 5 \\)` evaluates to:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "3",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "D",
+          "label": "0.4",
+          "text": "0.4"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The modulus operator `%` returns the remainder of integer division. 17 divided by 5 is 3 with a remainder of 2."
+    },
+    {
+      "id": "upload-1775922983530-5",
+      "number": "6",
+      "text": "What is the value of the variable `y` after the following code executes?\n```cpp\nint x = 5;\nint y = ++x;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "5",
+          "text": "5"
+        },
+        {
+          "value": "B",
+          "label": "6",
+          "text": "6"
+        },
+        {
+          "value": "C",
+          "label": "4",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "0",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The pre-increment operator `++x` increments `x` first (making it 6) and then assigns that value to `y`."
+    },
+    {
+      "id": "upload-1775922983530-6",
+      "number": "7",
+      "text": "What is the value of the variable `y` after the following code executes?\n```cpp\nint x = 5;\nint y = x++;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "5",
+          "text": "5"
+        },
+        {
+          "value": "B",
+          "label": "6",
+          "text": "6"
+        },
+        {
+          "value": "C",
+          "label": "4",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "Undefined",
+          "text": "Undefined"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The post-increment operator `x++` assigns the current value of `x` (which is 5) to `y` first, and then increments `x` to 6."
+    },
+    {
+      "id": "upload-1775922983530-7",
+      "number": "8",
+      "text": "Evaluate the following integral expression: `\\( 3 * 7 - 6 + 2 \\)`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "7",
+          "text": "7"
+        },
+        {
+          "value": "B",
+          "label": "13",
+          "text": "13"
+        },
+        {
+          "value": "C",
+          "label": "17",
+          "text": "17"
+        },
+        {
+          "value": "D",
+          "label": "21",
+          "text": "21"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "According to precedence: `3 * 7 = 21`. Then `21 - 6 = 15`. Finally `15 + 2 = 17`."
+    },
+    {
+      "id": "upload-1775922983530-8",
+      "number": "9",
+      "text": "What is the result of the mixed expression `\\( 6 / 4 + 3.9 \\)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "5.4",
+          "text": "5.4"
+        },
+        {
+          "value": "B",
+          "label": "5.5",
+          "text": "5.5"
+        },
+        {
+          "value": "C",
+          "label": "4.9",
+          "text": "4.9"
+        },
+        {
+          "value": "D",
+          "label": "4.0",
+          "text": "4.0"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`6 / 4` is integer division, which evaluates to 1. Then `1 + 3.9` results in 4.9."
+    },
+    {
+      "id": "upload-1775922983530-9",
+      "number": "10",
+      "text": "Given the string `\"William Jacob\"`, what is its length and the position of the first character 'W'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Length: 12, Position: 1",
+          "text": "Length: 12, Position: 1"
+        },
+        {
+          "value": "B",
+          "label": "Length: 13, Position: 1",
+          "text": "Length: 13, Position: 1"
+        },
+        {
+          "value": "C",
+          "label": "Length: 13, Position: 0",
+          "text": "Length: 13, Position: 0"
+        },
+        {
+          "value": "D",
+          "label": "Length: 12, Position: 0",
+          "text": "Length: 12, Position: 0"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The string has 13 characters (including the space). In C++, the relative position of the first character in a string is always 0."
+    },
+    {
+      "id": "upload-1775922983530-10",
+      "number": "11",
+      "text": "Which operator is used for explicit type conversion in C++?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "type_cast",
+          "text": "type_cast"
+        },
+        {
+          "value": "B",
+          "label": "convert_to",
+          "text": "convert_to"
+        },
+        {
+          "value": "C",
+          "label": "static_cast",
+          "text": "static_cast"
+        },
+        {
+          "value": "D",
+          "label": "implicit_cast",
+          "text": "implicit_cast"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `static_cast<dataTypeName>(expression)` operator is used for explicit type conversion (casting)."
+    },
+    {
+      "id": "upload-1775922983530-11",
+      "number": "12",
+      "text": "What is the output of the following code snippet?\n```cpp\nint a = 10;\na *= 2 + 3;\ncout << a;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "23",
+          "text": "23"
+        },
+        {
+          "value": "B",
+          "label": "25",
+          "text": "25"
+        },
+        {
+          "value": "C",
+          "label": "50",
+          "text": "50"
+        },
+        {
+          "value": "D",
+          "label": "20",
+          "text": "20"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In compound assignments like `*=`, the entire expression on the right is evaluated first. `2 + 3 = 5`. Then `a = a * 5`, which is `10 * 5 = 50`."
+    },
+    {
+      "id": "upload-1775922983530-12",
+      "number": "13",
+      "text": "Evaluate the following expression: `\\( 13.6 + 18 / 2 \\)`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "15.8",
+          "text": "15.8"
+        },
+        {
+          "value": "B",
+          "label": "22.6",
+          "text": "22.6"
+        },
+        {
+          "value": "C",
+          "label": "15.6",
+          "text": "15.6"
+        },
+        {
+          "value": "D",
+          "label": "14.5",
+          "text": "14.5"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Precedence dictates division first: `18 / 2 = 9`. Then `13.6 + 9 = 22.6`."
+    },
+    {
+      "id": "upload-1775922983530-13",
+      "number": "14",
+      "text": "What does the `endl` manipulator do in a `cout` statement?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Ends the program execution",
+          "text": "Ends the program execution"
+        },
+        {
+          "value": "B",
+          "label": "Clears the screen",
+          "text": "Clears the screen"
+        },
+        {
+          "value": "C",
+          "label": "Moves the cursor to the beginning of the next line",
+          "text": "Moves the cursor to the beginning of the next line"
+        },
+        {
+          "value": "D",
+          "label": "Inserts a tab space",
+          "text": "Inserts a tab space"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`endl` causes the insertion point (cursor) to move to the beginning of the next line."
+    },
+    {
+      "id": "upload-1775922983530-14",
+      "number": "15",
+      "text": "Which of the following is the correct preprocessor directive to include the I/O stream library?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "#include iostream",
+          "text": "#include iostream"
+        },
+        {
+          "value": "B",
+          "label": "include <iostream>;",
+          "text": "include <iostream>;"
+        },
+        {
+          "value": "C",
+          "label": "#include <iostream>",
+          "text": "#include <iostream>"
+        },
+        {
+          "value": "D",
+          "label": "#include (iostream)",
+          "text": "#include (iostream)"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Preprocessor directives begin with `#`, use angle brackets for standard libraries, and do not end with a semicolon."
+    },
+    {
+      "id": "upload-1775922983530-15",
+      "number": "16",
+      "text": "What is the value of `x` after this statement: `x = static_cast<int>(7.9) + static_cast<int>(3.3);`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "11",
+          "text": "11"
+        },
+        {
+          "value": "B",
+          "label": "10",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "11.2",
+          "text": "11.2"
+        },
+        {
+          "value": "D",
+          "label": "10.0",
+          "text": "10.0"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Casting to `int` truncates the decimal: `7.9` becomes `7` and `3.3` becomes `3`. `7 + 3 = 10`."
+    },
+    {
+      "id": "upload-1775922983530-16",
+      "number": "17",
+      "text": "If the user inputs `15 7` for the following code, what is stored in `inches`?\n```cpp\ncin >> feet >> inches;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "15",
+          "text": "15"
+        },
+        {
+          "value": "B",
+          "label": "7",
+          "text": "7"
+        },
+        {
+          "value": "C",
+          "label": "157",
+          "text": "157"
+        },
+        {
+          "value": "D",
+          "label": "22",
+          "text": "22"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `cin` statement reads the first value into `feet` (15) and the second value into `inches` (7)."
+    },
+    {
+      "id": "upload-1775922983530-17",
+      "number": "18",
+      "text": "Which of the following defines a 'Semantic Rule' in a programming language?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Rules that specify which statements are legal",
+          "text": "Rules that specify which statements are legal"
+        },
+        {
+          "value": "B",
+          "label": "Rules that determine the meaning of instructions",
+          "text": "Rules that determine the meaning of instructions"
+        },
+        {
+          "value": "C",
+          "label": "Rules for naming variables",
+          "text": "Rules for naming variables"
+        },
+        {
+          "value": "D",
+          "label": "Rules for documentation",
+          "text": "Rules for documentation"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Syntax rules specify what is legal; semantic rules determine the meaning of those legal instructions."
+    },
+    {
+      "id": "upload-1775922983530-18",
+      "number": "19",
+      "text": "What is the output of the following code?\n```cpp\ncout << \"Line 1\\nLine 2\";\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Line 1\\nLine 2",
+          "text": "Line 1\\nLine 2"
+        },
+        {
+          "value": "B",
+          "label": "Line 1 Line 2",
+          "text": "Line 1 Line 2"
+        },
+        {
+          "value": "C",
+          "label": "Line 1\nLine 2",
+          "text": "Line 1\nLine 2"
+        },
+        {
+          "value": "D",
+          "label": "Line 1Line 2",
+          "text": "Line 1Line 2"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The escape sequence `\\n` represents a newline character, which moves the output to the next line."
+    },
+    {
+      "id": "upload-1775922983530-19",
+      "number": "20",
+      "text": "Which of the following is true regarding a `named constant`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Its value can be changed during execution.",
+          "text": "Its value can be changed during execution."
+        },
+        {
+          "value": "B",
+          "label": "It is declared using the keyword 'var'.",
+          "text": "It is declared using the keyword 'var'."
+        },
+        {
+          "value": "C",
+          "label": "Its content cannot change during execution.",
+          "text": "Its content cannot change during execution."
+        },
+        {
+          "value": "D",
+          "label": "It does not require initialization when declared.",
+          "text": "It does not require initialization when declared."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A named constant is a memory location whose content cannot change during program execution and must be initialized when declared."
+    },
+    {
+      "id": "upload-1775922983530-20",
+      "number": "21",
+      "text": "What is the result of `\\( 5 / 2 \\)` in C++?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "2.5",
+          "text": "2.5"
+        },
+        {
+          "value": "B",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "3",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "0.5",
+          "text": "0.5"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Since both 5 and 2 are integers, C++ performs integer division, discarding the remainder."
+    },
+    {
+      "id": "upload-1775922983530-21",
+      "number": "22",
+      "text": "Which of the following symbols is the 'Stream Extraction Operator'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "<<",
+          "text": "<<"
+        },
+        {
+          "value": "B",
+          "label": ">>",
+          "text": ">>"
+        },
+        {
+          "value": "C",
+          "label": "<=",
+          "text": "<="
+        },
+        {
+          "value": "D",
+          "label": ">=",
+          "text": ">="
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The operator `>>` is the stream extraction operator (used with `cin`), and `<<` is the stream insertion operator (used with `cout`)."
+    },
+    {
+      "id": "upload-1775922983530-22",
+      "number": "23",
+      "text": "What are the two values allowed for the `bool` data type?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "0 and 1",
+          "text": "0 and 1"
+        },
+        {
+          "value": "B",
+          "label": "Yes and No",
+          "text": "Yes and No"
+        },
+        {
+          "value": "C",
+          "label": "true and false",
+          "text": "true and false"
+        },
+        {
+          "value": "D",
+          "label": "T and F",
+          "text": "T and F"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `bool` data type has exactly two values: `true` and `false`."
+    },
+    {
+      "id": "upload-1775922983530-23",
+      "number": "24",
+      "text": "A string with no characters is called a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Empty character",
+          "text": "Empty character"
+        },
+        {
+          "value": "B",
+          "label": "Null string",
+          "text": "Null string"
+        },
+        {
+          "value": "C",
+          "label": "Void string",
+          "text": "Void string"
+        },
+        {
+          "value": "D",
+          "label": "Zero string",
+          "text": "Zero string"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A string with no characters (written as `\"\"`) is referred to as a null or empty string."
+    },
+    {
+      "id": "upload-1775922983530-24",
+      "number": "25",
+      "text": "Every C++ program must contain a function named:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "start",
+          "text": "start"
+        },
+        {
+          "value": "B",
+          "label": "begin",
+          "text": "begin"
+        },
+        {
+          "value": "C",
+          "label": "main",
+          "text": "main"
+        },
+        {
+          "value": "D",
+          "label": "program",
+          "text": "program"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In C++, the `main` function is the entry point where program execution begins."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}

@@ -1,0 +1,788 @@
+{
+  "id": "upload-1775923329962-461tr",
+  "label": "Chapter-9.ppt",
+  "params": {
+    "file": "Chapter-9.ppt",
+    "chapter": "11"
+  },
+  "title": "Chapter 11 Chapter 9: C++ Arrays and Strings",
+  "questions": [
+    {
+      "id": "upload-1775923329962-0",
+      "number": "1",
+      "text": "What is the primary characteristic of a **structured data type** in C++?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It can store only one value at a time.",
+          "text": "It can store only one value at a time."
+        },
+        {
+          "value": "B",
+          "label": "It is a collection of other data items.",
+          "text": "It is a collection of other data items."
+        },
+        {
+          "value": "C",
+          "label": "It consists only of integral data types.",
+          "text": "It consists only of integral data types."
+        },
+        {
+          "value": "D",
+          "label": "It is always passed by value to functions.",
+          "text": "It is always passed by value to functions."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "As per the text, a structured data type is one in which each data item is a collection of other data items, whereas a simple data type stores only one value at a time."
+    },
+    {
+      "id": "upload-1775923329962-1",
+      "number": "2",
+      "text": "In C++, array indexing always starts at which value?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "-1",
+          "text": "-1"
+        },
+        {
+          "value": "C",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "Any integer defined by the user",
+          "text": "Any integer defined by the user"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In C++, array indices are zero-based, meaning the first element is at index 0."
+    },
+    {
+      "id": "upload-1775923329962-2",
+      "number": "3",
+      "text": "What happens if a program attempts to access an array index that is **out of bounds** in C++?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The compiler generates a syntax error.",
+          "text": "The compiler generates a syntax error."
+        },
+        {
+          "value": "B",
+          "label": "The program automatically resizes the array.",
+          "text": "The program automatically resizes the array."
+        },
+        {
+          "value": "C",
+          "label": "C++ does not guard against this; it may cause data corruption or crashes.",
+          "text": "C++ does not guard against this; it may cause data corruption or crashes."
+        },
+        {
+          "value": "D",
+          "label": "The index is automatically wrapped around using the modulo operator.",
+          "text": "The index is automatically wrapped around using the modulo operator."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "C++ does not perform automatic bounds checking. Accessing an index outside the valid range [0, SIZE-1] leads to undefined behavior."
+    },
+    {
+      "id": "upload-1775923329962-3",
+      "number": "4",
+      "text": "Which of the following is an **illegal** aggregate operation on arrays `list1` and `list2` (both of size 25)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`cin >> list1[0];`",
+          "text": "`cin >> list1[0];`"
+        },
+        {
+          "value": "B",
+          "label": "`list1 = list2;`",
+          "text": "`list1 = list2;`"
+        },
+        {
+          "value": "C",
+          "label": "`cout << list1[24];`",
+          "text": "`cout << list1[24];`"
+        },
+        {
+          "value": "D",
+          "label": "`list1[i] = list2[i];`",
+          "text": "`list1[i] = list2[i];`"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "C++ does not allow aggregate assignment between arrays. You must copy elements one by one using a loop."
+    },
+    {
+      "id": "upload-1775923329962-4",
+      "number": "5",
+      "text": "When an array is passed as a parameter to a function, how is it transferred?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "By value",
+          "text": "By value"
+        },
+        {
+          "value": "B",
+          "label": "By reference only",
+          "text": "By reference only"
+        },
+        {
+          "value": "C",
+          "label": "By pointer only (the `&` symbol is required)",
+          "text": "By pointer only (the `&` symbol is required)"
+        },
+        {
+          "value": "D",
+          "label": "Only if the size is specified in the formal parameter",
+          "text": "Only if the size is specified in the formal parameter"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Arrays are always passed by reference in C++. The base address of the array is passed to the function."
+    },
+    {
+      "id": "upload-1775923329962-5",
+      "number": "6",
+      "text": "What is the special character used to terminate a C-string?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`/n`",
+          "text": "`/n`"
+        },
+        {
+          "value": "B",
+          "label": "`//0`",
+          "text": "`//0`"
+        },
+        {
+          "value": "C",
+          "label": "`\\0`",
+          "text": "`\\0`"
+        },
+        {
+          "value": "D",
+          "label": "`.`",
+          "text": "`.`"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "C-strings are null-terminated character arrays, ending with the null character `\\0`."
+    },
+    {
+      "id": "upload-1775923329962-6",
+      "number": "7",
+      "text": "If you declare `char name[16];`, what is the maximum number of characters you can store in the string while remaining valid?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "16",
+          "text": "16"
+        },
+        {
+          "value": "B",
+          "label": "15",
+          "text": "15"
+        },
+        {
+          "value": "C",
+          "label": "17",
+          "text": "17"
+        },
+        {
+          "value": "D",
+          "label": "Depends on the compiler",
+          "text": "Depends on the compiler"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Because one space is required for the null terminator (`\\0`), a character array of size 16 can hold a string of at most 15 characters."
+    },
+    {
+      "id": "upload-1775923329962-7",
+      "number": "8",
+      "text": "Which function is used to read a C-string that contains blanks/spaces?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`cin >> str;`",
+          "text": "`cin >> str;`"
+        },
+        {
+          "value": "B",
+          "label": "`cin.get(str, size);`",
+          "text": "`cin.get(str, size);`"
+        },
+        {
+          "value": "C",
+          "label": "`cout << str;`",
+          "text": "`cout << str;`"
+        },
+        {
+          "value": "D",
+          "label": "`str.read();`",
+          "text": "`str.read();`"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The standard extraction operator `>>` stops at whitespace. To read blanks, `cin.get` or `cin.getline` is used."
+    },
+    {
+      "id": "upload-1775923329962-8",
+      "number": "9",
+      "text": "In a two-dimensional array declaration `int matrix[5][10];`, what do 5 and 10 represent?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "5 columns, 10 rows",
+          "text": "5 columns, 10 rows"
+        },
+        {
+          "value": "B",
+          "label": "5 rows, 10 columns",
+          "text": "5 rows, 10 columns"
+        },
+        {
+          "value": "C",
+          "label": "5 elements in total, 10 bytes each",
+          "text": "5 elements in total, 10 bytes each"
+        },
+        {
+          "value": "D",
+          "label": "A range from 5 to 10",
+          "text": "A range from 5 to 10"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The first dimension in a 2D array declaration specifies the number of rows, and the second dimension specifies the number of columns."
+    },
+    {
+      "id": "upload-1775923329962-9",
+      "number": "10",
+      "text": "What is the 'base address' of an array?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The address of the last component",
+          "text": "The address of the last component"
+        },
+        {
+          "value": "B",
+          "label": "The total memory size of the array",
+          "text": "The total memory size of the array"
+        },
+        {
+          "value": "C",
+          "label": "The memory location of the first array component",
+          "text": "The memory location of the first array component"
+        },
+        {
+          "value": "D",
+          "label": "The number of elements in the array",
+          "text": "The number of elements in the array"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The base address is the address of the first element (index 0) of the array."
+    },
+    {
+      "id": "upload-1775923329962-10",
+      "number": "11",
+      "text": "Consider the code: `int list[5] = {2, 4, 6};`. What is the value of `list[3]`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "6",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "Garbage value",
+          "text": "Garbage value"
+        },
+        {
+          "value": "C",
+          "label": "0",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "Undefined",
+          "text": "Undefined"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "When an array is partially initialized during declaration, C++ initializes the remaining elements to 0."
+    },
+    {
+      "id": "upload-1775923329962-11",
+      "number": "12",
+      "text": "What is the output of the following code snippet?\n\n```cpp\nint val[4] = {10, 20, 30, 40};\nfor (int i = 0; i < 3; i++) {\n    cout << val[i] << \" \";\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "10 20 30 40",
+          "text": "10 20 30 40"
+        },
+        {
+          "value": "B",
+          "label": "10 20 30",
+          "text": "10 20 30"
+        },
+        {
+          "value": "C",
+          "label": "20 30 40",
+          "text": "20 30 40"
+        },
+        {
+          "value": "D",
+          "label": "10 20",
+          "text": "10 20"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The loop runs for `i = 0, 1, 2`. It stops when `i` reaches 3 (which is not less than 3). Thus, it prints `val[0]`, `val[1]`, and `val[2]`."
+    },
+    {
+      "id": "upload-1775923329962-12",
+      "number": "13",
+      "text": "Trace the following code. What is the value of `sum`?\n\n```cpp\nint arr[3] = {5, 10, 15};\nint sum = 0;\nfor (int i = 1; i < 3; i++) {\n    sum += arr[i];\n}\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "30",
+          "text": "30"
+        },
+        {
+          "value": "B",
+          "label": "15",
+          "text": "15"
+        },
+        {
+          "value": "C",
+          "label": "25",
+          "text": "25"
+        },
+        {
+          "value": "D",
+          "label": "10",
+          "text": "10"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The loop starts at `i = 1`. `arr[1]` is 10, and `arr[2]` is 15. `sum = 10 + 15 = 25`. Note that `arr[0]` (5) is skipped."
+    },
+    {
+      "id": "upload-1775923329962-13",
+      "number": "14",
+      "text": "Given the declaration `char str[] = \"C++\";`, what is the value of `sizeof(str)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "3",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "4",
+          "text": "4"
+        },
+        {
+          "value": "C",
+          "label": "5",
+          "text": "5"
+        },
+        {
+          "value": "D",
+          "label": "Depends on the system",
+          "text": "Depends on the system"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The string \"C++\" contains 3 characters ('C', '+', '+'). C++ automatically adds the null terminator '\\0' at the end, making the total size 4."
+    },
+    {
+      "id": "upload-1775923329962-14",
+      "number": "15",
+      "text": "What is the result of the following 2D array trace?\n\n```cpp\nint table[2][3] = {{1, 2, 3}, {4, 5, 6}};\ncout << table[1][0];\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "4",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "5",
+          "text": "5"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`table[1]` refers to the second row `{4, 5, 6}`. `table[1][0]` refers to the first element of that second row, which is 4."
+    },
+    {
+      "id": "upload-1775923329962-15",
+      "number": "16",
+      "text": "What is the output of this loop logic?\n\n```cpp\nint list[5] = {1, 2, 3, 4, 5};\nfor (int i = 0; i < 4; i++) {\n    list[i] = list[i + 1];\n}\ncout << list[0] << \" \" << list[4];\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "1 5",
+          "text": "1 5"
+        },
+        {
+          "value": "B",
+          "label": "2 5",
+          "text": "2 5"
+        },
+        {
+          "value": "C",
+          "label": "2 4",
+          "text": "2 4"
+        },
+        {
+          "value": "D",
+          "label": "1 4",
+          "text": "1 4"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The loop shifts elements to the left: `list[0]` becomes `list[1]` (2), `list[1]` becomes `list[2]` (3), etc. The last element `list[4]` is never modified by the loop, so it remains 5."
+    },
+    {
+      "id": "upload-1775923329962-16",
+      "number": "17",
+      "text": "In the following function prototype, which dimension of the 2D array **must** be specified?\n\n`void process(int board[][?], int rows);`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "The first dimension (rows)",
+          "text": "The first dimension (rows)"
+        },
+        {
+          "value": "B",
+          "label": "The second dimension (columns)",
+          "text": "The second dimension (columns)"
+        },
+        {
+          "value": "C",
+          "label": "Both dimensions",
+          "text": "Both dimensions"
+        },
+        {
+          "value": "D",
+          "label": "Neither dimension",
+          "text": "Neither dimension"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "When a 2D array is passed to a function, the first dimension can be omitted, but the second dimension (columns) must be specified so the compiler can calculate memory offsets."
+    },
+    {
+      "id": "upload-1775923329962-17",
+      "number": "18",
+      "text": "What will the following code print?\n\n```cpp\nchar greeting[10] = \"Hi\";\ngreeting[1] = 'o';\ncout << greeting;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Hi",
+          "text": "Hi"
+        },
+        {
+          "value": "B",
+          "label": "Ho",
+          "text": "Ho"
+        },
+        {
+          "value": "C",
+          "label": "H o",
+          "text": "H o"
+        },
+        {
+          "value": "D",
+          "label": "o",
+          "text": "o"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "`greeting[0]` is 'H', `greeting[1]` was 'i'. Changing `greeting[1]` to 'o' results in the string \"Ho\"."
+    },
+    {
+      "id": "upload-1775923329962-18",
+      "number": "19",
+      "text": "Trace this logic to find the largest value:\n\n```cpp\nint nums[4] = {12, 45, 7, 33};\nint max = nums[0];\nfor (int i = 1; i < 4; i++) {\n    if (nums[i] > max)\n        max = nums[i];\n}\ncout << max;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "12",
+          "text": "12"
+        },
+        {
+          "value": "B",
+          "label": "33",
+          "text": "33"
+        },
+        {
+          "value": "C",
+          "label": "45",
+          "text": "45"
+        },
+        {
+          "value": "D",
+          "label": "7",
+          "text": "7"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The algorithm initializes `max` with the first element (12). It then compares 45 (new max), then 7 (no change), then 33 (no change). The result is 45."
+    },
+    {
+      "id": "upload-1775923329962-19",
+      "number": "20",
+      "text": "If `int a[5] = {0};` and `int b[5] = {1, 2, 3, 4, 5};`, what happens after executing `for(int i=0; i<5; i++) a[i] = b[i];`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Array `a` remains all zeros.",
+          "text": "Array `a` remains all zeros."
+        },
+        {
+          "value": "B",
+          "label": "Array `b` becomes all zeros.",
+          "text": "Array `b` becomes all zeros."
+        },
+        {
+          "value": "C",
+          "label": "Array `a` becomes `{1, 2, 3, 4, 5}`.",
+          "text": "Array `a` becomes `{1, 2, 3, 4, 5}`."
+        },
+        {
+          "value": "D",
+          "label": "A runtime error occurs because of aggregate assignment.",
+          "text": "A runtime error occurs because of aggregate assignment."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Since the assignment is done element-by-element inside a loop (component-wise), it is perfectly legal and copies the contents of `b` into `a`."
+    },
+    {
+      "id": "upload-1775923329962-20",
+      "number": "21",
+      "text": "What is the output of the following code snippet?\n\n```cpp\nint matrix[2][2] = {1, 2, 3, 4};\nint total = 0;\nfor (int i = 0; i < 2; i++)\n    total += matrix[i][i];\ncout << total;\n```\n",
+      "choices": [
+        {
+          "value": "A",
+          "label": "10",
+          "text": "10"
+        },
+        {
+          "value": "B",
+          "label": "5",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "4",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "6",
+          "text": "6"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The loop accesses diagonal elements: `matrix[0][0]` (1) and `matrix[1][1]` (4). `1 + 4 = 5`."
+    },
+    {
+      "id": "upload-1775923329962-21",
+      "number": "22",
+      "text": "Which of the following describes **parallel arrays**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "Arrays that are sorted in the same order.",
+          "text": "Arrays that are sorted in the same order."
+        },
+        {
+          "value": "B",
+          "label": "Two or more arrays where corresponding components hold related information.",
+          "text": "Two or more arrays where corresponding components hold related information."
+        },
+        {
+          "value": "C",
+          "label": "Arrays that share the same memory address.",
+          "text": "Arrays that share the same memory address."
+        },
+        {
+          "value": "D",
+          "label": "A single array that can be processed in two directions.",
+          "text": "A single array that can be processed in two directions."
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Parallel arrays are used to store related data, such as a student ID in one array and their corresponding grade in another at the same index."
+    },
+    {
+      "id": "upload-1775923329962-22",
+      "number": "23",
+      "text": "What does `cout << name;` do if `name` is a character array that was never null-terminated?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "It prints nothing.",
+          "text": "It prints nothing."
+        },
+        {
+          "value": "B",
+          "label": "It prints only the first character.",
+          "text": "It prints only the first character."
+        },
+        {
+          "value": "C",
+          "label": "It outputs characters from memory until a null character is eventually found.",
+          "text": "It outputs characters from memory until a null character is eventually found."
+        },
+        {
+          "value": "D",
+          "label": "It triggers a compiler error.",
+          "text": "It triggers a compiler error."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`cout` for character arrays continues reading memory sequentially until it hits a `\\0` byte. If the array lacks one, it will read adjacent (garbage) memory."
+    },
+    {
+      "id": "upload-1775923329962-23",
+      "number": "24",
+      "text": "What is the result of the following string comparison: `\"Hello\" < \"hello\"`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "True",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "False",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "Neither, they are equal.",
+          "text": "Neither, they are equal."
+        },
+        {
+          "value": "D",
+          "label": "Syntax error.",
+          "text": "Syntax error."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In ASCII, uppercase letters have lower numerical values than lowercase letters. Therefore, 'H' (72) is less than 'h' (104)."
+    },
+    {
+      "id": "upload-1775923329962-24",
+      "number": "25",
+      "text": "How do you find the sum of the **third row** (index 2) of `int matrix[5][10]`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "`for(int j=0; j<10; j++) sum += matrix[j][2];`",
+          "text": "`for(int j=0; j<10; j++) sum += matrix[j][2];`"
+        },
+        {
+          "value": "B",
+          "label": "`for(int i=0; i<5; i++) sum += matrix[2][i];`",
+          "text": "`for(int i=0; i<5; i++) sum += matrix[2][i];`"
+        },
+        {
+          "value": "C",
+          "label": "`for(int j=0; j<10; j++) sum += matrix[2][j];`",
+          "text": "`for(int j=0; j<10; j++) sum += matrix[2][j];`"
+        },
+        {
+          "value": "D",
+          "label": "`sum = matrix[2];`",
+          "text": "`sum = matrix[2];`"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "To process a specific row, the row index remains constant (2), and you iterate through all column indices (0 to 9)."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}
