@@ -349,10 +349,16 @@ const EXAM_CONFIG = [
     "icon": "data/web/icon.png",
     "chapters": [
       {
-        "id": "Mid",
-        "name": "Web-Mid",
+        "id": "1",
+        "name": "Mid",
         "q": 32,
         "file": "data/web/chapterWeb-Mid(1).pdfvisual_extractor.json"
+      },
+      {
+        "id": "2",
+        "name": "Final",
+        "q": 17,
+        "file": "data/web/chapterWeb-Final(1).pdfvisual_extractor.json"
       }
     ]
   },

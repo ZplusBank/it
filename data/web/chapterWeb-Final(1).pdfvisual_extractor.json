@@ -1,0 +1,551 @@
+{
+  "id": "extract-1775930331027-g9tqi",
+  "label": "Web-Final(1).pdf",
+  "params": {
+    "file": "Web-Final(1).pdf",
+    "type": "visual_extractor",
+    "chapter": "2"
+  },
+  "title": "Final",
+  "questions": [
+    {
+      "id": "extract-1775930331027-g9tqi-0",
+      "number": "1",
+      "text": "The `alt` attribute is used in a(n) ___________ element to provide an alternate ___________ description for the image.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`img`, text"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`a href`, address"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`title`, text"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`image`, text"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `alt` attribute is specifically used within the `<img>` tag to provide alternative text descriptions for accessibility and for when images fail to load."
+    },
+    {
+      "id": "extract-1775930331027-g9tqi-1",
+      "number": "2",
+      "text": "The `<li>` (list item) element is categorized as a block-level element.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It is an inline element"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It is an inline-block element"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "By default, `<li>` elements have a display value of `list-item`, which behaves like a block-level element as it starts on a new line and occupies the full width available."
+    },
+    {
+      "id": "extract-1775930331027-g9tqi-2",
+      "number": "3",
+      "text": "If there is a CSS rule `p {font-size: 14px;}` in the external style sheet, and there is a CSS rule `p {font-size: 12px;}` in the internal style sheet, the font-size of the text in a paragraph will be 12px (assuming the internal style is declared after the external link).",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The size will be 14px"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The size will be an average of both (13px)"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "According to the CSS cascade rules, if two selectors have the same specificity, the one defined later in the document flow (in this case, the internal style sheet following the external link) takes precedence."
+    },
+    {
+      "id": "extract-1775930331027-g9tqi-3",
+      "number": "4",
+      "text": "Which of the following is the right way to apply this CSS rule:\n`.blue {color: blue }`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<p color = \"blue\">"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<p class = \"blue\">"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<p color = .blue>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<p class = .blue>"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The CSS selector `.blue` targets elements with the class 'blue'. To apply this in HTML, you use the `class` attribute. The attribute value should contain just the class name without the leading dot used in the CSS selector."
+    },
+    {
+      "id": "extract-1775930331027-g9tqi-4",
+      "number": "5",
+      "text": "The following is a list inside an XHTML document:\n\n```html\n<ol>\n  <li id=\"a1\">item1</li>\n  <li id=\"a1\">item1</li>\n</ol>\n```\n\nAnd it uses the following CSS rules:\n\n```css\n#a1 {margin-bottom: 10px;}\n#a2 {margin-top: 5px;}\n```\n\nThen when the list is displayed in a browser, the actual margin between the first and second list items will be ____",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "5px"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10px"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "15px"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "none of the above"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "This question addresses CSS margin collapsing. In web browsers, vertical margins of adjacent block-level elements collapse into a single margin. The size of this collapsed margin is equal to the larger of the two margins. Here, the first item has `margin-bottom: 10px`. The second item (item2) also has `id=\"a1\"` in the code snippet provided, so it would inherit the 10px bottom margin but no specified top margin. Even if the code intended the second item to have `id=\"a2\"` (top margin of 5px), the collapsed margin would be `max(10px, 5px) = 10px`."
+    },
+    {
+      "id": "extract-1775930331027-g9tqi-5",
+      "number": "6",
+      "text": "To refer to an external CSS file within an HTML document, use:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<a href=\"\"></a>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<script></script>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<style> </style>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<link>"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The `<link>` tag is the standard HTML element used to link a document to an external resource, such as a CSS stylesheet. The `<style>` tag is used for internal CSS defined within the HTML file itself."
+    },
+    {
+      "id": "extract-1775930331027-g9tqi-6",
+      "number": "7",
+      "text": "What is the output of the following PHP code?\n\n```php\n<?php\n$cars = array(\"BMW\", \"Toyota\", \"Mercedes \");\nprint(next($cars));\nprint (reset($cars));\n?>\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "oToyota"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "BME Toyota"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Toyota"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "ToyotaBMW"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The `next()` function moves the internal pointer of the array to the next element (which is 'Toyota') and returns its value. Then, the `reset()` function moves the internal pointer back to the first element ('BMW') and returns its value. Because the values are printed consecutively without spaces, the resulting output is 'ToyotaBMW'."
+    },
+    {
+      "id": "extract-1775930331027-g9tqi-7",
+      "number": "8",
+      "text": "Which of the following statements is a correct way of creating an array in PHP?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "s[o] = \"section2\";"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "$s - array(\"section2\");"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "$s[o] = \"section2\""
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "$s = array(\"section2\");"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In PHP, variables must always start with a dollar sign (\\$s). The correct syntax to assign an array to a variable is using the assignment operator (=) followed by the `array()` constructor or square brackets `[]`. Option D correctly uses the variable prefix, the assignment operator, and the semicolon terminator."
+    },
+    {
+      "id": "extract-1775930331027-g9tqi-8",
+      "number": "9",
+      "text": "Which of the following words matches the regular expression `\\b([[:alpha:]]+m)\\b/i`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Mine"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "min2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "minimum"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "mother"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The regular expression `\\b([[:alpha:]]+m)\\b/i` looks for a whole word (denoted by word boundaries `\\b`) that consists of one or more alphabetic characters (`[[:alpha:]]+`) followed by the letter 'm'. The `/i` flag makes the search case-insensitive. 'minimum' is a word consisting of alphabetic characters that ends in 'm', thus matching the pattern."
+    },
+    {
+      "id": "extract-1775930331027-g9tqi-9",
+      "number": "10",
+      "text": "What is the output of the following code?\n\n```php\n<?php\n$top=\"bottom\";\n$middle=\"middle\";\n$bottom=\"top\";\nprint($$$top);\n?>\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "top"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "bottom"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "middle"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "error or not of the above"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In PHP, variable variables allow for dynamic naming. \n1. `$top` is assigned the value `\"bottom\"`.\n2. `$$top` refers to the variable named by the value of `$top`, which is `$bottom`. Since `$bottom = \"top\"`, `$$top` evaluates to `\"top\"`.\n3. `$$$top` refers to the variable named by the value of `$$top`. Since `$$top` is `\"top\"`, `$$$top` is effectively `$top`.\n4. The value of `$top` is `\"bottom\"`, so that is what is printed."
+    },
+    {
+      "id": "extract-1775930331027-g9tqi-10",
+      "number": "11",
+      "text": "What is the output of the following code?\n\n```php\n<?php\nDefine(\"index\",5);\n$array=array(5=>index,\"index\"=>2);\nPrint ($array[$array[index]]*$array[\"index\"]);\n?>\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "20"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "25"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "100"
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Let's trace the execution:\n1. A constant `index` is defined with the value `5`.\n2. `$array` is initialized: `$array[5]` is set to the value of the constant `index` (which is `5`), and `$array[\"index\"]` is set to `2`.\n3. In the Print statement: \n   - `$array[index]` refers to `$array[5]`, which is `5`.\n   - `$array[$array[index]]` then evaluates to `$array[5]`, which is `5`.\n   - `$array[\"index\"]` is `2`.\n4. The operation is `5 * 2`, which equals `10`."
+    },
+    {
+      "id": "extract-1775930331027-g9tqi-11",
+      "number": "12",
+      "text": "What is the output of the following code?\n\n```php\n<?php\n$num=12.3;\nprint((double)$num.\"<br>\");\nprint($num.\"<br>\");\nsettype($num, integer);\nprint($num.\"<br>\");\n?>\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "12.3<br>12.3<br>12<br>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "12.3<br>12.3<br>12.3<br>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "12<br>12<br>12<br>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "12.3<br>12<br>12<br>"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. Initially, `$num` is `12.3` (a float).\n2. `print((double)$num...` casts it to double (no change) and prints `12.3<br>`.\n3. `print($num...` prints the float value `12.3<br>`.\n4. `settype($num, integer)` converts the variable type permanently to integer. In PHP, using `integer` as a bareword constant might throw a notice but will typically resolve to the string `\"integer\"` or the intended type depending on versioning. The float `12.3` is truncated to `12`.\n5. The final print outputs the new value `12<br>`."
+    },
+    {
+      "id": "extract-1775930331027-g9tqi-12",
+      "number": "13",
+      "text": "What is the output of the following code?\n\n```php\n<?php\n$a=\"web\";\n$a.=\"final\";\nprint(\"$a\");\n?>\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "web"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "final"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "webfinal"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In PHP, the `.=` operator is the concatenation assignment operator. It appends the right-hand string to the left-hand variable. So, \"web\" + \"final\" results in \"webfinal\"."
+    },
+    {
+      "id": "extract-1775930331027-g9tqi-13",
+      "number": "14",
+      "text": "Write the necessary HTML code to allow the browser to predict the value. When a user starts to type in a field, the browser should display options to fill in the field (e.g., male and female).\n\n**Note**: Specify the necessary change that must be applied to the text field 'Gender'.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Add a `list=\"genders\"` attribute to the input and define a `<datalist id=\"genders\">` with `<option>` tags."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Add `autocomplete=\"male, female\"` directly to the input field attribute."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Change the input type to `type=\"select\"` and add options within the input tag."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Use the `placeholder` attribute to list suggested values separated by commas."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `<datalist>` element contains a set of `<option>` elements that represent the permissible or recommended options available for a specific `<input>` element. The input is linked to the datalist using the `list` attribute matching the datalist's `id`."
+    },
+    {
+      "id": "extract-1775930331027-g9tqi-14",
+      "number": "15",
+      "text": "Write the necessary code to remove the last word in a string. Assume that we have a variable `\\$string` containing any number of words and we want to print it without the last word.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "echo substr(\\$string, 0, strrpos(\\$string, ' '));"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "echo str_replace(' ', '', \\$string);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "echo rtrim(\\$string, 'word');"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "echo explode(' ', \\$string);"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `strrpos()` function finds the position of the last occurrence of a substring (a space in this case) in a string. `substr()` then extracts the portion of the string from the beginning up to that last space, effectively removing the last word."
+    },
+    {
+      "id": "extract-1775930331027-g9tqi-15",
+      "number": "16",
+      "text": "Assume you have a database table named `std_info` as shown in the table below. Write the necessary PHP code to be filled in the missing section of the provided code snippet to output all information for the student with `std_name = 'Ahmad'` as a table row. \n\n**Note**: You must not change the existing SQL query or add a new one. Your solution must be built based on the available query result only.\n\n**Database Table (std_info):**\n| std_id | std_name | std_major |\n| :--- | :--- | :--- |\n| 111 | duha | CIS |\n| 222 | Ahmad | BIT |\n| 333 | leen | CIS |\n| 444 | kareem | CS |\n\n**PHP Code:**\n```php\n$db = mysql_connect(\"localhost\", \"root\", \"12345678\");\nmysql_select_db(\"students3\", $db);\n$q = \"select * from std_info\";\n$result = mysql_query($q, $db);\nmysql_close($db);\nprint(\"<table border='1'>\");\n\n// Fill the missing code that should be here\n\nprint(\"</table>\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```php\nwhile ($row = mysql_fetch_array($result)) {\n    if ($row['std_name'] == \"Ahmad\") {\n        echo \"<tr><td>\".$row['std_id'].\"</td><td>\".$row['std_name'].\"</td><td>\".$row['std_major'].\"</td></tr>\";\n    }\n}\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```php\n$row = mysql_fetch_assoc($result);\necho \"<tr><td>\".$row['std_id'].\"</td><td>\".$row['std_name'].\"</td><td>\".$row['std_major'].\"</td></tr>\";\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```php\nwhile ($row = mysql_fetch_array($result)) {\n    echo \"<tr><td>\".$row['std_id'].\"</td><td>\".$row['std_name'].\"</td><td>\".$row['std_major'].\"</td></tr>\";\n}\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```php\nforeach ($result as $row) {\n    if ($row['std_name'] == \"Ahmad\") {\n        print \"<tr><td>\".$row['std_id'].\"</td><td>\".$row['std_name'].\"</td><td>\".$row['std_major'].\"</td></tr>\";\n    }\n}\n```"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Since the query selects all students from the table (`select *`), and we are constrained not to change this query, we must iterate through the entire result set using a loop (like `while`) and check each row with an `if` statement to see if the `std_name` matches 'Ahmad'."
+    },
+    {
+      "id": "extract-1775930331027-g9tqi-16",
+      "number": "17",
+      "text": "Write the suitable PHP code to merge two associative arrays `$a1` and `$a2` into a single array named `$a3`.\n\n**Input Arrays:**\n```php\n$a1 = array(\"ahmad\" => 50, \"karam\" => 70);\n$a2 = array(\"salma\" => 80, \"rana\" => 90);\n```\n\n**Requirement:** The final array `$a3` should contain all elements from both `$a1` and `$a2`. \n\n**Constraint**: You are not allowed to use any predefined PHP functions that automatically perform the merge (such as `array_merge()`).",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```php\n$a3 = $a1;\nforeach ($a2 as $key => $val) {\n    $a3[$key] = $val;\n}\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```php\n$a3 = array_merge($a1, $a2);\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```php\n$a3 = array_combine($a1, $a2);\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```php\n$a3 = [];\nfor ($i = 0; $i < count($a1) + count($a2); $i++) {\n    $a3[] = $a1[$i];\n}\n```"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To merge associative arrays manually without built-in functions, you can initialize the new array with the first array's content and then use a `foreach` loop to iterate through the second array, adding each key-value pair to the new array one by one."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 17
+}
