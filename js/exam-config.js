@@ -164,6 +164,12 @@ const EXAM_CONFIG = [
         "name": "Second",
         "q": 61,
         "file": "data/data_structure/combined_questions (1).json"
+      },
+      {
+        "id": "3",
+        "name": "Final",
+        "q": 83,
+        "file": "data/data_structure/combined_questions (2).json"
       }
     ]
   },
