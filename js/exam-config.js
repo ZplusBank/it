@@ -130,19 +130,19 @@ const EXAM_CONFIG = [
         "id": "3",
         "name": "Mid",
         "q": 40,
-        "file": "data/algorithm/midMultipleFilesvisualextractor.json"
+        "file": "data/algorithm/chapterMultiple Filesvisual_extractor (5).json"
       },
       {
         "id": "4",
         "name": "Mid By Z+",
         "q": 30,
-        "file": "data/algorithm/midMultipleFilesregenerationsame.json"
+        "file": "data/algorithm/chapterMultiple Filesregenerationsame.json"
       },
       {
         "id": "5",
-        "name": "Mid custom (Hard)",
+        "name": "Mid By Z+ (Hard)",
         "q": 30,
-        "file": "data/algorithm/midMultipleFilesregenerationharder.json"
+        "file": "data/algorithm/chapterMultiple Filesregenerationharder.json"
       },
       {
         "id": "6",
