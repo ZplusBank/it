@@ -532,5 +532,20 @@ const EXAM_CONFIG = [
         "file": "data/c++/Chapter-12.json"
       }
     ]
+  },
+  {
+    "id": "Design",
+    "name": "Design",
+    "description": "Introduction to Design Software Engineering",
+    "path": "data/Design",
+    "icon": "data/Design/icon.png",
+    "chapters": [
+      {
+        "id": "1",
+        "name": "Mid",
+        "q": 224,
+        "file": "data/Design/chapterMultiple Filesvisual_extractor (1) design.json"
+      }
+    ]
   }
 ];
