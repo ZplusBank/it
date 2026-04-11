@@ -5,7 +5,7 @@
     "chapter": "10",
     "username": "liang12e"
   },
-  "title": "Chapter 10 Chapter 10:Object-Oriented Thinking",
+  "title": "Chapter 10 Object-Oriented Thinking",
   "questions": [
     {
       "id": "10.1",
@@ -36,7 +36,7 @@
       "inputName": "Q0",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "See Figure 10.6."
+      "explanation": "In UML diagrams, aggregation is denoted by an empty diamond symbol attached to the aggregating (composing) class, whereas a solid diamond is used for composition (a stronger form of ownership)."
     },
     {
       "id": "10.2",
@@ -67,7 +67,7 @@
       "inputName": "Q1",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "See Figure 10.7."
+      "explanation": "Aggregation is a 'has-a' relationship. To implement this in code, the class that 'has' the objects (the aggregating class) contains a data field that stores a reference to the objects being contained (the aggregated class)."
     },
     {
       "id": "10.3",
@@ -97,7 +97,8 @@
       ],
       "inputName": "Q2",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "Composition is a specific type of aggregation that represents a whole-part relationship where the part cannot exist independently of the whole. It is implemented by making the composing class contain a data field that references the composed object."
     },
     {
       "id": "10.4",
@@ -132,7 +133,8 @@
       ],
       "inputName": "QE3",
       "inputType": "checkbox",
-      "correctAnswer": "ABCDE"
+      "correctAnswer": "ABCDE",
+      "explanation": "All options are valid: A uses the direct parsing method; B and C create wrapper objects and call explicit unboxing; D relies on implicit autoboxing/unboxing; and E parses a double and casts it to an integer."
     },
     {
       "id": "10.5",
@@ -157,7 +159,8 @@
       ],
       "inputName": "QC4",
       "inputType": "checkbox",
-      "correctAnswer": "ABC"
+      "correctAnswer": "ABC",
+      "explanation": "These three options represent the standard ways to convert a String to a double primitive: directly via Double.parseDouble(), or by creating a Double wrapper object (via constructor or valueOf) and calling its doubleValue() method."
     },
     {
       "id": "10.6",
@@ -192,7 +195,8 @@
       ],
       "inputName": "QE5",
       "inputType": "checkbox",
-      "correctAnswer": "CE"
+      "correctAnswer": "CE",
+      "explanation": "Integer.parseInt(String s, int radix) requires a string as the first argument. Option A is invalid because '2' is not a digit in base 2. Options B and D are invalid because they pass integers, not strings. C and E are valid strings for their respective bases."
     },
     {
       "id": "10.7",
@@ -222,7 +226,8 @@
       ],
       "inputName": "Q6",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The expression Integer.parseInt(\"10\", 2) parses the string '10' using radix 2 (binary). In binary, '10' represents 1 in the twos place and 0 in the ones place, which equals 2 in decimal."
     },
     {
       "id": "10.8",
@@ -257,7 +262,8 @@
       ],
       "inputName": "QE7",
       "inputType": "checkbox",
-      "correctAnswer": "AE"
+      "correctAnswer": "AE",
+      "explanation": "Option A converts the double to a Wrapper object and then to a String using toString(). Option E uses the shortcut of concatenating the double with an empty string, which invokes implicit conversion."
     },
     {
       "id": "10.9",
@@ -288,7 +294,7 @@
       "inputName": "Q8",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "See the first paragraph."
+      "explanation": "Autoboxing is the automatic conversion that the Java compiler makes between the primitive types and their corresponding object wrapper classes (for example, converting an int to an Integer)."
     },
     {
       "id": "10.10",
@@ -318,7 +324,8 @@
       ],
       "inputName": "QD9",
       "inputType": "checkbox",
-      "correctAnswer": "ABCD"
+      "correctAnswer": "ABCD",
+      "explanation": "Since Java 5, the language supports autoboxing and unboxing. This allows primitive literals to be placed in Wrapper arrays (A), Wrapper objects to be used in arithmetic (B and C), and unboxed values to be promoted to wider types like double (D)."
     },
     {
       "id": "10.11",
@@ -348,7 +355,8 @@
       ],
       "inputName": "QD10",
       "inputType": "checkbox",
-      "correctAnswer": "AD"
+      "correctAnswer": "AD",
+      "explanation": "BigInteger does not have a constructor that accepts an int or long. To create an instance from a numeric primitive, you must use the static method BigInteger.valueOf(long). Alternatively, you can use the constructor new BigInteger(String) to create an instance from a string representation."
     },
     {
       "id": "10.12",
@@ -383,7 +391,8 @@
       ],
       "inputName": "QE11",
       "inputType": "checkbox",
-      "correctAnswer": "CD"
+      "correctAnswer": "CD",
+      "explanation": "Because BigInteger is immutable, its arithmetic methods return a new BigInteger object rather than modifying the existing one. To add b1 and b2 and store the result in b2, you must assign the result of the add method back to b2. Since addition is commutative, both b1.add(b2) and b2.add(b1) produce the same sum."
     },
     {
       "id": "10.13",
@@ -414,7 +423,7 @@
       "inputName": "Q12",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Note that x.add(y) does not change the content of x."
+      "explanation": "BigInteger objects are immutable. The line x.add(y) calculates the sum (10) and returns a new BigInteger object, but because this result is not assigned back to x, the value of x remains unchanged at 3."
     },
     {
       "id": "10.14",
@@ -444,7 +453,8 @@
       ],
       "inputName": "QD13",
       "inputType": "checkbox",
-      "correctAnswer": "AD"
+      "correctAnswer": "AD",
+      "explanation": "The preferred ways to create a BigDecimal are using the static valueOf(double) method or the String-based constructor. While a double constructor exists, it is often discouraged because it may not represent the decimal value exactly as written due to floating-point precision; the String constructor and valueOf method are more reliable for exactness."
     },
     {
       "id": "10.15",
@@ -465,7 +475,7 @@
       "inputName": "Q14",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "See the first paragraph in this section."
+      "explanation": "BigInteger and BigDecimal are part of the java.math package and are immutable. This means once an instance is created, its value cannot be changed; any operation that appears to modify the value actually returns a new instance."
     },
     {
       "id": "10.16",
@@ -500,7 +510,8 @@
       ],
       "inputName": "Q15",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "To divide b1 by b2 and store the result in b1, you must use the assignment operator because the divide method returns a new object. Additionally, for BigDecimal division, it is highly recommended (and often required to avoid ArithmeticException for non-terminating decimals) to specify a scale and a rounding mode."
     },
     {
       "id": "10.17",
@@ -535,7 +546,8 @@
       ],
       "inputName": "QE16",
       "inputType": "checkbox",
-      "correctAnswer": "ABCDE"
+      "correctAnswer": "ABCDE",
+      "explanation": "Both BigInteger and BigDecimal provide constructors that take a String argument. BigInteger does not provide a constructor that takes an int or long (requiring valueOf instead), which is why choice C is incorrect. While BigDecimal does have a double constructor, the standard 'correct' answers in this context usually highlight the String-based creation for precision."
     },
     {
       "id": "10.18",
@@ -565,7 +577,8 @@
       ],
       "inputName": "QD17",
       "inputType": "checkbox",
-      "correctAnswer": "AB"
+      "correctAnswer": "AB",
+      "explanation": "Using a string literal (e.g., \"Welcome to Java\") is preferred over the 'new' keyword. Literals allow the JVM to utilize the String Constant Pool, which optimizes memory by reusing identical string instances rather than creating redundant objects on the heap."
     },
     {
       "id": "10.19",
@@ -596,7 +609,7 @@
       "inputName": "Q18",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Since strings are immutable and are ubiquitous in programming, to improve efficiency and save memory, the JVM uses a unique instance for string literals with the same character sequence. Such an instance is called interned. String s = 'Welcome to Java' creates and assigns an interned string to s. This is simpler and more efficient than other choices."
+      "explanation": "In Java, local variables (variables defined within a method) are not assigned a default value. The compiler requires that local variables be initialized with a value before they are accessed or used in an expression, such as a print statement."
     },
     {
       "id": "10.20",
@@ -627,7 +640,7 @@
       "inputName": "Q19",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "s is a local variable. Before its use, a value must be assigned to it."
+      "explanation": "All Java wrapper classes for primitives (like Integer and Double), as well as BigInteger, BigDecimal, and String, are immutable. This design choice ensures they are thread-safe and can be used safely in collections or as keys in a Map."
     },
     {
       "id": "10.21",
@@ -648,7 +661,7 @@
       "inputName": "Q20",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "s2 = s1 assigns s1 to s2. Now s1 and s2 have the same references."
+      "explanation": "In this code, s2 is assigned the reference of s1. This means both variables point to the exact same memory location, so the '==' operator (which compares references) evaluates to true."
     },
     {
       "id": "10.22",
@@ -669,7 +682,7 @@
       "inputName": "Q21",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Since strings are immutable and are ubiquitous in programming, to improve efficiency and save memory, the JVM uses a unique instance for string literals with the same character sequence. Such an instance is called interned."
+      "explanation": "Java uses a mechanism called 'String Interning' for string literals. Since both s1 and s2 are defined with the identical literal 'Welcome to Java!', the JVM points both variables to the same object in the String Constant Pool to optimize memory."
     },
     {
       "id": "10.23",
@@ -689,7 +702,8 @@
       ],
       "inputName": "Q22",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "Using the 'new' keyword explicitly creates a new object in the heap memory. Even though the contents of the strings are identical, s1 and s2 point to two distinct objects at different memory addresses, so 's1 == s2' is false."
     },
     {
       "id": "10.24",
@@ -710,7 +724,7 @@
       "inputName": "Q23",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "s1 and s2 are two difference objects, but they have the same content."
+      "explanation": "The '.equals()' method in Java is specifically designed to compare the actual character content of the strings rather than their memory addresses. Since both objects contain the same text, the result is true."
     },
     {
       "id": "10.25",
@@ -735,7 +749,8 @@
       ],
       "inputName": "Q24",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "Strings in Java are immutable. The 'toUpperCase()' method creates a completely new String object. Because s1 (original case) and s2 (uppercase) have different content and different references, the final 'else' block is executed."
     },
     {
       "id": "10.26",
@@ -755,7 +770,8 @@
       ],
       "inputName": "Q25",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "When the '+=' operator is used on a String, a new String object is created and its reference is assigned to s1. Since s2 still points to the original memory address of 'Welcome to Java', s1 and s2 no longer reference the same object."
     },
     {
       "id": "10.27",
@@ -790,7 +806,8 @@
       ],
       "inputName": "QE26",
       "inputType": "checkbox",
-      "correctAnswer": "CDE"
+      "correctAnswer": "CDE",
+      "explanation": "Statement C is incorrect because relational operators like '>=' cannot be used with objects (use 'compareTo' instead). D is incorrect because 'length' is a method (length()) for Strings, not a field. E is incorrect because Strings are immutable and charAt() returns a value, not a variable that can be assigned a new character."
     },
     {
       "id": "10.28",
@@ -820,7 +837,8 @@
       ],
       "inputName": "Q27",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "Strings are immutable. The 's.replace()' method returns a new String object with the modifications; it does not modify the original string 's'. Because the result of the replacement was not stored, 's' still prints as 'University'."
     },
     {
       "id": "10.29",
@@ -855,7 +873,8 @@
       ],
       "inputName": "QE28",
       "inputType": "checkbox",
-      "correctAnswer": "CE"
+      "correctAnswer": "CE",
+      "explanation": "The 'replace' method returns a new string where all occurrences of a character or substring are replaced. Option C replaces every 'A' with 'a', and option E replaces the entire string content with the new version."
     },
     {
       "id": "10.30",
@@ -885,7 +904,8 @@
       ],
       "inputName": "Q29",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The split('o') method breaks the string into an array of substrings wherever 'o' occurs, removing the 'o' characters. This results in the segments 'Welc', 'me t', and ' Java'. Printing these segments with a space in between produces 'Welc me t  Java '."
     },
     {
       "id": "10.31",
@@ -915,7 +935,8 @@
       ],
       "inputName": "Q30",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The replaceAll(\"is\", \"AAA\") method replaces the substring \"is\" with \"AAA\". Since \"Java is neat\" contains the sequence \"is\" preceded and followed by spaces, the result becomes \"Java AAA neat\"."
     },
     {
       "id": "10.32",
@@ -945,7 +966,8 @@
       ],
       "inputName": "Q31",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "The matches() method in Java requires the entire string to match the specified regular expression. \"ABC \" does not match the full string \"Hi, ABC, good\", but \".*ABC.*\" does because it accounts for any leading and trailing characters."
     },
     {
       "id": "10.33",
@@ -975,7 +997,8 @@
       ],
       "inputName": "Q32",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "In the first statement, replaceAll(\",;\", \"#\") looks for the literal sequence \",;\" which does not exist in the string. In the second statement, the regex \"[,;]\" is a character class that matches either a comma or a semicolon, replacing each with \"#\"."
     },
     {
       "id": "10.34",
@@ -1005,7 +1028,8 @@
       ],
       "inputName": "Q33",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The split(\"[,;]\") method breaks the string into an array at every comma or semicolon. The resulting tokens are \"A\", \"B\", \"C\", and \"D\", which are then printed with spaces in between."
     },
     {
       "id": "10.35",
@@ -1035,7 +1059,8 @@
       ],
       "inputName": "Q34",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "In Java, the String class provides a constructor, new String(char[] a), which is used to create a new String object containing the characters from the specified character array."
     },
     {
       "id": "10.36",
@@ -1065,7 +1090,8 @@
       ],
       "inputName": "Q35",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "The trim() method is an instance method of the String class that returns a new string with all leading and trailing whitespace removed. The correct syntax is s.trim()."
     },
     {
       "id": "10.37",
@@ -1100,7 +1126,8 @@
       ],
       "inputName": "Q36",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The toCharArray() method is an instance method of the String class that converts the string into a new character array containing every character in the string."
     },
     {
       "id": "10.38",
@@ -1130,7 +1157,8 @@
       ],
       "inputName": "QD37",
       "inputType": "checkbox",
-      "correctAnswer": "ABCD"
+      "correctAnswer": "ABCD",
+      "explanation": "The String.valueOf() method is overloaded to handle multiple data types, including primitive types like int, double, and boolean, as well as character arrays, returning a string representation for each."
     },
     {
       "id": "10.39",
@@ -1161,7 +1189,7 @@
       "inputName": "Q38",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Inside the method, the statement s = s + ' and HTML' creates a new String object s, which is different from the original String object passed to the change(s) method. The original String object has not been changed. Therefore, the output from the original string is Java."
+      "explanation": "Strings in Java are immutable. When the change(s) method modifies the parameter 's', it creates a new String object and assigns it to the local variable 's', leaving the original reference in the main method pointing to 'Java'."
     },
     {
       "id": "10.40",
@@ -1191,7 +1219,8 @@
       ],
       "inputName": "Q39",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "While StringBuilder automatically increases its capacity when text is appended, the charAt(index) method is limited by the current length of the content. Since \"ABCDE\" has a length of 5, the valid indices are 0 through 4; index 5 causes a StringIndexOutOfBoundsException."
     },
     {
       "id": "10.41",
@@ -1221,7 +1250,8 @@
       ],
       "inputName": "Q40",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "StringBuilder objects are mutable in Java. When the 'builder' object is passed to the 'change' method, the method modifies the actual object in memory by appending ' and HTML'. Since the 'builder' variable in the main method points to that same object, the output reflects the modification."
     },
     {
       "id": "10.42",
@@ -1251,7 +1281,8 @@
       ],
       "inputName": "QD41",
       "inputType": "checkbox",
-      "correctAnswer": "ABCD"
+      "correctAnswer": "ABCD",
+      "explanation": "StringBuilder and StringBuffer are both designed for mutable string manipulation. They provide methods to add, delete, and reverse characters. Additionally, both classes automatically manage their internal buffer, expanding their capacity as the number of stored characters grows."
     },
     {
       "id": "10.43",
@@ -1281,7 +1312,8 @@
       ],
       "inputName": "Q42",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The 'delete(start, end)' method in StringBuilder removes characters starting from the 'start' index (inclusive) up to, but not including, the 'end' index (exclusive). To transform 'ABCDEFG' into 'AEFG', you must remove 'BCD' (indices 1, 2, and 3), which requires the parameters (1, 4)."
     },
     {
       "id": "10.44",
@@ -1311,7 +1343,8 @@
       ],
       "inputName": "Q43",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The 'insert(offset, str)' method adds a string at the specified index, shifting existing characters to the right. To place 'RRRR' immediately after 'ABC', you target index 3 (the position originally occupied by 'D'), resulting in 'ABCRRRRDEFG'."
     },
     {
       "id": "10.45",
@@ -1346,7 +1379,8 @@
       ],
       "inputName": "Q44",
       "inputType": "radio",
-      "correctAnswer": "E"
+      "correctAnswer": "E",
+      "explanation": "Unlike the String class which has a 'replace(char, char)' method, the StringBuilder 'replace' method requires start and end indices: 'replace(int start, int end, String str)'. To transform 'ABCCEFC' to 'ABTTEFT', we replace everything from index 2 to the end of the string (index 6) with 'TTEFT'. Using index 7 as the exclusive end point correctly replaces the range 2-6."
     },
     {
       "id": "10.46",
@@ -1381,7 +1415,8 @@
       ],
       "inputName": "QE45",
       "inputType": "checkbox",
-      "correctAnswer": "ABCDE"
+      "correctAnswer": "ABCDE",
+      "explanation": "The StringBuilder and StringBuffer classes utilize a fluent interface design where modification methods (append, delete, insert, reverse, and replace) return a reference to the object itself (the 'this' keyword). This allows for method chaining, where multiple operations can be performed in a single line of code."
     },
     {
       "id": "10.47",
@@ -1412,7 +1447,7 @@
       "inputName": "Q46",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "See Figure 10.20."
+      "explanation": "To retrieve a character at a specific position, you must use the instance method 'charAt(index)'. Because Java uses zero-based indexing, the last character is always located at 'length() - 1'. The 'capacity()' method is incorrect here because it refers to the total memory allocated for the buffer, which is usually greater than the actual length of the string."
     }
   ],
   "status": "completed",

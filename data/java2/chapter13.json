@@ -5,7 +5,7 @@
     "chapter": "13",
     "username": "liang12e"
   },
-  "title": "Chapter 13 Chapter 13:Abstract Classes and Interfaces",
+  "title": "Chapter 13 Abstract Classes and Interfaces",
   "questions": [
     {
       "id": "13.1",
@@ -35,7 +35,8 @@
       ],
       "inputName": "Q0",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "In Java, any class containing abstract methods must be explicitly declared as 'abstract'. Furthermore, abstract methods cannot have a body (braces) and must terminate with a semicolon. Option C is the only one following these rules."
     },
     {
       "id": "13.2",
@@ -70,7 +71,8 @@
       ],
       "inputName": "Q1",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "An abstract method declaration requires the 'abstract' keyword, a return type, and must end with a semicolon without providing a method body. Option B correctly follows this syntax."
     },
     {
       "id": "13.3",
@@ -106,7 +108,7 @@
       "inputName": "Q2",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "A is wrong because you cannot create an instance using the constructor from an abstract class."
+      "explanation": "Abstract classes cannot be instantiated directly using the 'new' keyword. They are meant to serve as templates for subclasses. While they have constructors, these are called during the instantiation of a concrete subclass."
     },
     {
       "id": "13.4",
@@ -141,7 +143,8 @@
       ],
       "inputName": "Q3",
       "inputType": "radio",
-      "correctAnswer": "E"
+      "correctAnswer": "E",
+      "explanation": "The 'abstract' modifier can only be applied to classes and methods. It is not a valid modifier for data fields (variables). All other statements regarding constructors and class requirements are true."
     },
     {
       "id": "13.5",
@@ -171,7 +174,8 @@
       ],
       "inputName": "QD4",
       "inputType": "checkbox",
-      "correctAnswer": "BD"
+      "correctAnswer": "BD",
+      "explanation": "Because A is an abstract class, it cannot be instantiated ('new A()' is illegal). B is a concrete subclass, so it can be instantiated. An object of type B can be assigned to a reference of type B or its supertype A."
     },
     {
       "id": "13.6",
@@ -206,7 +210,8 @@
       ],
       "inputName": "Q5",
       "inputType": "radio",
-      "correctAnswer": "E"
+      "correctAnswer": "E",
+      "explanation": "The program uses constructor chaining. The no-arg Circle9 constructor calls the one-arg constructor, which calls the three-arg constructor, which calls the superclass constructor. The output reflects the order in which the constructor bodies complete: B (GeometricObject), E, D, then C (Circle9)."
     },
     {
       "id": "13.7",
@@ -241,7 +246,8 @@
       ],
       "inputName": "Q6",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The compiler allows the cast from Number to Double, but because the actual object referenced at runtime is an Integer, a ClassCastException is thrown. Integer and Double are separate branches of the Number hierarchy and cannot be cast to one another."
     },
     {
       "id": "13.8",
@@ -271,7 +277,8 @@
       ],
       "inputName": "Q7",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "Even though the reference is of type Number[], the actual array object created is an Integer[]. Java arrays track their internal type at runtime; therefore, trying to put a Double into an array of Integers results in a runtime error."
     },
     {
       "id": "13.9",
@@ -301,7 +308,8 @@
       ],
       "inputName": "Q8",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "Method resolution is performed by the compiler based on the reference type. Since the variable 'x' is declared as type Number, and the Number class does not define a 'compareTo' method, the code will not compile."
     },
     {
       "id": "13.10",
@@ -332,7 +340,7 @@
       "inputName": "Q9",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "i is an Integer. You cannot assign 4.5 to i. A is incorrect. B, C, and D are correct. 4.5 is autoboxed to new Double(4.5). A Double object is an instance of Object and Double."
+      "explanation": "The literal 4.5 is a double. While it can be autoboxed into a Double and subsequently treated as a Number or Object, it cannot be assigned to an Integer reference because Double and Integer are incompatible types."
     },
     {
       "id": "13.11",
@@ -367,7 +375,8 @@
       ],
       "inputName": "Q10",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "The program fails to compile because the member access operator (.) has higher precedence than the casting operator (Integer). Consequently, the compiler attempts to call 'x.compareTo' before casting 'x' to Integer. Since the 'Number' class does not define a 'compareTo' method, a compilation error occurs."
     },
     {
       "id": "13.12",
@@ -397,7 +406,8 @@
       ],
       "inputName": "Q11",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "In Java, 'java.util.Calendar' is an abstract class and cannot be instantiated using the 'new' keyword. Line 5 attempts to create an instance of Calendar directly ('new Calendar()'), which results in a compile-time error."
     },
     {
       "id": "13.13",
@@ -428,7 +438,7 @@
       "inputName": "Q12",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "B is wrong since Calendar.MONTH_OF_YEAR is not a valid field."
+      "explanation": "The 'java.util.Calendar' class uses constant fields to represent date components. The 'Calendar.MONTH' constant is passed to the 'get' method to retrieve the month of the year (note: months are zero-based, where 0 is January)."
     },
     {
       "id": "13.14",
@@ -458,7 +468,8 @@
       ],
       "inputName": "Q13",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "To retrieve the week number within the current year from a 'Calendar' object, the 'get' method is called with the 'Calendar.WEEK_OF_YEAR' constant as the argument."
     },
     {
       "id": "13.15",
@@ -493,7 +504,8 @@
       ],
       "inputName": "Q14",
       "inputType": "radio",
-      "correctAnswer": "E"
+      "correctAnswer": "E",
+      "explanation": "While 'Calendar.DAY_OF_MONTH' represents the current day, 'getActualMaximum(Calendar.DAY_OF_MONTH)' is the correct method to determine the total number of days in the specific month currently represented by the calendar instance."
     },
     {
       "id": "13.16",
@@ -523,7 +535,8 @@
       ],
       "inputName": "Q15",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "Option D is a correct interface definition. In an interface, methods are implicitly public and abstract; they are declared with a signature and a semicolon, but without a body. Options A and C provide bodies for abstract methods, which is illegal."
     },
     {
       "id": "13.17",
@@ -558,7 +571,8 @@
       ],
       "inputName": "QE16",
       "inputType": "checkbox",
-      "correctAnswer": "CDE"
+      "correctAnswer": "CDE",
+      "explanation": "C is incorrect because private constructors would prevent subclasses from being instantiated. D is incorrect because 'final' prevents inheritance while 'abstract' requires it, making them mutually exclusive modifiers. E is incorrect because interfaces cannot have constructors as they cannot be instantiated."
     },
     {
       "id": "13.18",
@@ -588,7 +602,8 @@
       ],
       "inputName": "Q17",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "In Java, types are divided into reference types and primitive types. Classes, interfaces, and arrays are all reference types because they refer to objects in memory. Primitive types (like int, char, and double) store actual values directly."
     },
     {
       "id": "13.19",
@@ -618,7 +633,8 @@
       ],
       "inputName": "Q18",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "Class B inherits from Class D, and Class D inherits from Class C; therefore, B is an instance of C via polymorphism. Additionally, B explicitly implements interface A. Because both 'instanceof' checks are true, both strings are printed."
     },
     {
       "id": "13.20",
@@ -648,7 +664,8 @@
       ],
       "inputName": "QD19",
       "inputType": "checkbox",
-      "correctAnswer": "BD"
+      "correctAnswer": "BD",
+      "explanation": "Option B is correct because an interface can be used as a reference type for any object that implements it (polymorphism). Option D is correct because a concrete class with a no-arg constructor can be instantiated and assigned to its own type."
     },
     {
       "id": "13.21",
@@ -678,7 +695,8 @@
       ],
       "inputName": "QD20",
       "inputType": "checkbox",
-      "correctAnswer": "BD"
+      "correctAnswer": "BD",
+      "explanation": "The code has two main issues. First, the 'Object' class does not have a 'compareTo' method, so 'o1.compareTo(o2)' causes a compile error. Second, to use the 'compareTo' method defined in the 'Comparable' interface, 'o1' must be cast to 'Comparable' before the method call, as in '((Comparable)o1).compareTo(o2)'."
     },
     {
       "id": "13.22",
@@ -708,7 +726,8 @@
       ],
       "inputName": "QD21",
       "inputType": "checkbox",
-      "correctAnswer": "ABCD"
+      "correctAnswer": "ABCD",
+      "explanation": "All four of these standard Java classes—String, java.util.Date, Double, and BigInteger—implement the 'java.lang.Comparable' interface, providing a natural ordering for their instances."
     },
     {
       "id": "13.23",
@@ -738,7 +757,8 @@
       ],
       "inputName": "Q22",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "The 'java.util.Arrays.sort(Object[])' method expects the elements within the array to implement the 'Comparable' interface. Because the 'Fruit' class does not implement 'Comparable', the code compiles, but the JVM will throw a 'ClassCastException' at runtime when it tries to compare the elements."
     },
     {
       "id": "13.24",
@@ -768,7 +788,8 @@
       ],
       "inputName": "Q23",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "The 'clone()' method inherited from the 'Object' class returns a value of type 'java.lang.Object'. Even though 'java.util.Date' overrides this method, it returns 'Object', so you must explicitly cast the result back to 'java.util.Date' to assign it to a 'Date' variable."
     },
     {
       "id": "13.25",
@@ -798,7 +819,8 @@
       ],
       "inputName": "Q24",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "Cloning an 'ArrayList' creates a shallow copy, meaning 'list1' initially contains the same elements as 'list'. Subsequent additions to the original 'list' (like 'Atlanta') do not affect 'list1', and additions to 'list1' (like 'Dallas') do not affect the original, resulting in ['New York', 'Dallas'] for 'list1'."
     },
     {
       "id": "13.26",
@@ -828,7 +850,8 @@
       ],
       "inputName": "QD25",
       "inputType": "checkbox",
-      "correctAnswer": "ABCD"
+      "correctAnswer": "ABCD",
+      "explanation": "To correctly implement cloning, a class must implement the 'Cloneable' marker interface and override the 'clone()' method (which is protected in 'Object') to make it public. If a class overrides 'clone()' but fails to implement 'Cloneable', calling 'super.clone()' will result in a 'CloneNotSupportedException'."
     },
     {
       "id": "13.27",
@@ -858,7 +881,8 @@
       ],
       "inputName": "Q26",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The Java compiler only generates a '.class' file containing bytecode if the source code is free of compilation errors. While warnings do not prevent the creation of a '.class' file, any error will stop the process."
     },
     {
       "id": "13.28",
@@ -893,7 +917,8 @@
       ],
       "inputName": "QE27",
       "inputType": "checkbox",
-      "correctAnswer": "ABCDE"
+      "correctAnswer": "ABCDE",
+      "explanation": "Inheritance is used to model 'is-a' relationships. A 'strong is-a' relationship (class inheritance) represents a strict hierarchy, while a 'weak is-a' relationship (interfaces) describes classes that possess certain common properties or capabilities."
     },
     {
       "id": "13.29",
@@ -923,7 +948,8 @@
       ],
       "inputName": "Q28",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "Because every faculty member is a specific type of employee, the relationship is one of specialization. In object-oriented design, this 'is-a' relationship is best represented using inheritance."
     },
     {
       "id": "13.30",
@@ -953,7 +979,8 @@
       ],
       "inputName": "Q29",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "When one object (the Company) exclusively owns another object (the Employee) and the lifecycle of the owned object is tied to the owner, the relationship is defined as Composition. In this scenario, the 'works for only one company' constraint points toward this strong ownership model."
     },
     {
       "id": "13.31",
@@ -983,7 +1010,8 @@
       ],
       "inputName": "Q30",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "In Java, when a class implements an interface, it is considered a form of inheritance known as interface inheritance. This relationship establishes an 'is-a' relationship where the class inherits the abstract methods (the contract) defined by the interface."
     },
     {
       "id": "13.32",
@@ -1018,7 +1046,8 @@
       ],
       "inputName": "QE31",
       "inputType": "checkbox",
-      "correctAnswer": "CE"
+      "correctAnswer": "CE",
+      "explanation": "Since the Rational class is a subclass of java.lang.Number, it must implement the abstract methods defined in Number, which include doubleValue() and intValue(). Therefore, invoking these methods on a Rational object instance is valid code."
     },
     {
       "id": "13.33",
@@ -1048,7 +1077,8 @@
       ],
       "inputName": "Q32",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "The program will compile because the array elements are all subtypes of Number, and Arrays.sort accepts Object[]. However, it fails at runtime because the elements are not 'mutually comparable.' For instance, the compareTo method in the Integer class cannot compare itself to a Rational object, leading to a ClassCastException."
     },
     {
       "id": "13.34",
@@ -1078,7 +1108,8 @@
       ],
       "inputName": "QD33",
       "inputType": "checkbox",
-      "correctAnswer": "AD"
+      "correctAnswer": "AD",
+      "explanation": "Statement A reflects the principle of high cohesion, meaning a class should have a single, well-defined purpose. Statement D is true because constructors can be assigned any access modifier, including protected, to control how the class is instantiated by subclasses or within the package."
     },
     {
       "id": "13.35",
@@ -1113,7 +1144,8 @@
       ],
       "inputName": "Q34",
       "inputType": "radio",
-      "correctAnswer": "E"
+      "correctAnswer": "E",
+      "explanation": "All options represent poor design: A) derived fields cause data redundancy; B) sequential dependencies make APIs difficult to use; C) instance methods that do not use instance data should be static; and D) static fields should be initialized by the class, not by specific instance constructors."
     }
   ],
   "status": "completed",

@@ -5,7 +5,7 @@
     "chapter": "12",
     "username": "liang12e"
   },
-  "title": "Chapter 12 Chapter 12:Exception Handling and Text I/O",
+  "title": "Chapter 12 Exception Handling and Text I/O",
   "questions": [
     {
       "id": "12.1",
@@ -40,7 +40,8 @@
       ],
       "inputName": "Q0",
       "inputType": "radio",
-      "correctAnswer": "E"
+      "correctAnswer": "E",
+      "explanation": "In Java, arithmetic operations on primitive integer types do not throw exceptions when an overflow occurs; instead, the value wraps around according to two's complement arithmetic."
     },
     {
       "id": "12.2",
@@ -76,7 +77,7 @@
       "inputName": "Q1",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Integer division by 0 throws ArithmeticException."
+      "explanation": "Dividing an integer by zero in Java triggers the Java Virtual Machine to throw an ArithmeticException at runtime."
     },
     {
       "id": "12.3",
@@ -111,7 +112,8 @@
       ],
       "inputName": "Q2",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "The Throwable class is the root class for all objects that can be thrown or caught in Java, serving as the parent for both the Error and Exception classes."
     },
     {
       "id": "12.4",
@@ -146,7 +148,8 @@
       ],
       "inputName": "Q3",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The Error class represents serious internal system problems, such as OutOfMemoryError, which are generally beyond the control of the application and should not typically be caught."
     },
     {
       "id": "12.5",
@@ -181,7 +184,8 @@
       ],
       "inputName": "Q4",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The Exception class is intended for conditions that a reasonable application might want to catch and handle, covering both checked exceptions and runtime exceptions."
     },
     {
       "id": "12.6",
@@ -216,7 +220,8 @@
       ],
       "inputName": "QE5",
       "inputType": "checkbox",
-      "correctAnswer": "ACE"
+      "correctAnswer": "ACE",
+      "explanation": "Unchecked exceptions consist of the Error class, the RuntimeException class, and all of their subclasses (such as NumberFormatException). These do not require explicit handling or declaration in a method's throws clause."
     },
     {
       "id": "12.7",
@@ -251,7 +256,8 @@
       ],
       "inputName": "Q6",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "Java arrays use zero-based indexing. For an array of size 5, the valid indices are 0 through 4; accessing index 5 is out of bounds and throws an ArrayIndexOutOfBoundsException."
     },
     {
       "id": "12.8",
@@ -286,7 +292,8 @@
       ],
       "inputName": "Q7",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "Strings in Java are zero-indexed. The string 'abc' has characters at indices 0, 1, and 2; therefore, calling charAt(3) results in a StringIndexOutOfBoundsException."
     },
     {
       "id": "12.9",
@@ -316,7 +323,8 @@
       ],
       "inputName": "Q8",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "Java's 'catch or specify' requirement applies only to checked exceptions. These must either be handled within a try-catch block or declared in the method signature using the throws keyword."
     },
     {
       "id": "12.10",
@@ -351,7 +359,8 @@
       ],
       "inputName": "Q9",
       "inputType": "radio",
-      "correctAnswer": "E"
+      "correctAnswer": "E",
+      "explanation": "Attempting to call an instance method, such as toString(), on a reference variable that points to null results in a NullPointerException."
     },
     {
       "id": "12.11",
@@ -386,7 +395,8 @@
       ],
       "inputName": "Q10",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "In Java, passing a null reference to System.out.println() does not throw an exception; instead, the PrintStream class handles the null value by converting it to the string 'null' via String.valueOf()."
     },
     {
       "id": "12.12",
@@ -416,7 +426,8 @@
       ],
       "inputName": "QD11",
       "inputType": "checkbox",
-      "correctAnswer": "ABCD"
+      "correctAnswer": "ABCD",
+      "explanation": "All listed statements are fundamental rules of Java exception handling: 'throws' is used for declarations in method signatures, multiple exceptions can be comma-separated, 'throw' is used to trigger an exception object, and checked exceptions require the 'catch or declare' handling policy."
     },
     {
       "id": "12.13",
@@ -447,7 +458,7 @@
       "inputName": "Q12",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "When an exception of Error type occurs, your program would terminate. Therefore, you should not declare an exception that extends Error. You declared an exception in the main method. If you did not throw anything, that is fine."
+      "explanation": "While the code is syntactically correct and will compile, it is a poor design practice to extend the Error class. Error is reserved for serious system-level problems that an application should not try to handle; custom exceptions should extend the Exception class or its subclasses."
     },
     {
       "id": "12.14",
@@ -482,7 +493,8 @@
       ],
       "inputName": "Q13",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "The program attempts to cast an instance of the base class Object to a more specific subclass String. Since the object was instantiated as an Object (new Object()) and not a String, this invalid downcasting triggers a ClassCastException at runtime."
     },
     {
       "id": "12.15",
@@ -512,7 +524,8 @@
       ],
       "inputName": "Q14",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "In Java, catch blocks must be ordered from the most specific exception to the most general. Because RuntimeException is a subclass of Exception, the first catch block (Exception) would catch all exceptions, making the second block (RuntimeException) unreachable, which results in a compilation error."
     },
     {
       "id": "12.16",
@@ -548,7 +561,7 @@
       "inputName": "Q15",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "See Table 12.3 in Section 12.3."
+      "explanation": "RuntimeException is the superclass of exceptions that occur during the normal operation of the Java Virtual Machine. These are often the result of programming logic errors, such as invalid array indexing (ArrayIndexOutOfBoundsException) or invalid casting (ClassCastException)."
     },
     {
       "id": "12.17",
@@ -579,7 +592,7 @@
       "inputName": "Q16",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Both (A) and (B) would cause exception, but (A) occurred first, so the exception is due to (A)."
+      "explanation": "The execution of Integer.parseInt(\"5.6\") immediately throws a NumberFormatException because the string contains a decimal point. This exception stops the execution of the remaining lines in the try block (including the division by zero), and control is transferred to the catch block."
     },
     {
       "id": "12.18",
@@ -615,7 +628,7 @@
       "inputName": "Q17",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "It should be A. The main method invokes the method p. In p, Integer.parseInt(s) causes a NumberFormatException. The method p is now terminated. The NumberFormatException exception is handled in the main method. So NumberFormatException is displayed."
+      "explanation": "The method p() throws a NumberFormatException. This exception is caught by the first catch block in the main method that matches the exception type. Since NumberFormatException is caught specifically, 'NumberFormatException' is printed, and the code following the call to p() inside the try block is skipped."
     },
     {
       "id": "12.19",
@@ -650,7 +663,8 @@
       ],
       "inputName": "Q18",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "Inside method p(), the NumberFormatException is caught by the local 'catch (RuntimeException ex)' block, which prints 'RuntimeException'. Since the exception is handled locally, p() completes normally, allowing the main method to continue and print 'After the method call'."
     },
     {
       "id": "12.20",
@@ -680,7 +694,8 @@
       ],
       "inputName": "Q19",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The Java language specification requires every 'try' block to be followed by at least one 'catch' block or a 'finally' block. A 'try' block alone is syntactically incomplete and will cause a compilation error."
     },
     {
       "id": "12.21",
@@ -710,7 +725,8 @@
       ],
       "inputName": "Q20",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The finally block is designed to execute regardless of whether an exception is thrown or not in the try block. In this code, the try block completes successfully, printing 'Welcome to Java', and then the finally block executes, printing 'The finally clause is executed'."
     },
     {
       "id": "12.22",
@@ -740,7 +756,8 @@
       ],
       "inputName": "Q21",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The finally block executes even if the try block contains a return statement. The control flow ensures that the finally code runs before the method actually returns to the caller, resulting in both lines being printed."
     },
     {
       "id": "12.23",
@@ -770,7 +787,8 @@
       ],
       "inputName": "Q22",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "When the integer division by zero occurs, an ArithmeticException is thrown. The try block stops immediately (skipping 'Welcome to HTML'), the finally block executes ('The finally clause is executed'), and since the exception is not caught, the JVM then prints the error message."
     },
     {
       "id": "12.24",
@@ -800,7 +818,8 @@
       ],
       "inputName": "Q23",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "In Java, floating-point division by zero (2.0 / 0) does not throw an exception; instead, it results in a value of Infinity. Consequently, the try block completes normally, printing both 'Welcome' lines, followed by the finally block."
     },
     {
       "id": "12.25",
@@ -830,7 +849,8 @@
       ],
       "inputName": "Q24",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The first line is printed, then an ArithmeticException (a subclass of RuntimeException) is thrown. The catch block intercepts it and prints the second line, and finally, the finally block executes to print 'End of the block'."
     },
     {
       "id": "12.26",
@@ -860,7 +880,8 @@
       ],
       "inputName": "Q25",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "This program follows the same logic as the previous one, but because the exception was caught and handled, the program execution continues normally after the try-catch-finally structure, executing the final print statement."
     },
     {
       "id": "12.27",
@@ -890,7 +911,8 @@
       ],
       "inputName": "Q26",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "Because there is no catch block, the ArithmeticException stops the try block and jumps to the finally block. After 'End of the block' is printed, the exception remains unhandled, so the program terminates immediately, never reaching the final print statement outside the block."
     },
     {
       "id": "12.28",
@@ -920,7 +942,8 @@
       ],
       "inputName": "Q27",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "Exception handling is used to create robust, maintainable code by separating error-handling logic from business logic. However, it typically decreases performance due to the overhead of creating exception objects and unwinding the call stack."
     },
     {
       "id": "12.29",
@@ -950,7 +973,8 @@
       ],
       "inputName": "Q28",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "While nesting try-catch blocks is syntactically legal in Java, it is generally discouraged as a programming practice because it makes the logic harder to follow and maintain compared to a flattened structure."
     },
     {
       "id": "12.30",
@@ -980,7 +1004,8 @@
       ],
       "inputName": "Q29",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "In method(), a NumberFormatException is caught, printed, and then re-thrown. In main(), this re-thrown exception is caught by the RuntimeException catch block (since NumberFormatException inherits from RuntimeException) and 'RuntimeException' is printed."
     },
     {
       "id": "12.31",
@@ -1015,7 +1040,8 @@
       ],
       "inputName": "QE30",
       "inputType": "checkbox",
-      "correctAnswer": "ABCD"
+      "correctAnswer": "ABCD",
+      "explanation": "The File class is used for managing file system metadata and performing file-level operations like checking existence, retrieving properties, renaming, and deleting; however, it does not handle the actual reading or writing of file content."
     },
     {
       "id": "12.32",
@@ -1050,7 +1076,8 @@
       ],
       "inputName": "Q31",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "In Java string literals, the backslash is an escape character, so a literal backslash must be represented as '\\\\'. Additionally, the correct method for checking existence is 'exists()', not 'exist()'."
     },
     {
       "id": "12.33",
@@ -1080,7 +1107,8 @@
       ],
       "inputName": "Q32",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "To represent a Windows file path in a Java string literal, backslashes must be escaped with another backslash (e.g., 'c:\\\\temp.txt'). While forward slashes also work in many Java environments, the question specifically targets the escaped backslash syntax."
     },
     {
       "id": "12.34",
@@ -1115,7 +1143,8 @@
       ],
       "inputName": "Q33",
       "inputType": "radio",
-      "correctAnswer": "E"
+      "correctAnswer": "E",
+      "explanation": "The File constructor does not interact with the physical disk; it simply creates an object in memory representing a path. It does not return null or create files/directories automatically regardless of whether the path exists."
     },
     {
       "id": "12.35",
@@ -1145,7 +1174,8 @@
       ],
       "inputName": "Q34",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The PrintWriter class is the standard class used for writing formatted text data to a file in Java."
     },
     {
       "id": "12.36",
@@ -1175,7 +1205,8 @@
       ],
       "inputName": "Q35",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The 'print' and 'println' methods are the standard methods provided by classes like PrintWriter to write data to a destination."
     },
     {
       "id": "12.37",
@@ -1205,7 +1236,8 @@
       ],
       "inputName": "QD36",
       "inputType": "checkbox",
-      "correctAnswer": "AC"
+      "correctAnswer": "AC",
+      "explanation": "The PrintWriter class provides overloaded constructors that allow you to create an output object using either a String representing the file path (A) or a File object (C)."
     },
     {
       "id": "12.38",
@@ -1236,7 +1268,7 @@
       "inputName": "Q37",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "See Figure 12.8."
+      "explanation": "The 'exists()' method, which checks for the presence of a file or directory on the disk, is a member of the java.io.File class."
     },
     {
       "id": "12.39",
@@ -1266,7 +1298,8 @@
       ],
       "inputName": "QD38",
       "inputType": "checkbox",
-      "correctAnswer": "AB"
+      "correctAnswer": "AB",
+      "explanation": "Statements I and II are correct because try-with-resources requires the resource to be declared within the parentheses. Statement III is incorrect because the resource is declared outside, and Statement IV is incorrect because the resource variable is not in scope within the finally block."
     },
     {
       "id": "12.40",
@@ -1296,7 +1329,8 @@
       ],
       "inputName": "Q39",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The Scanner class is used to read and parse text data from various sources, including files, by passing a File object to its constructor."
     },
     {
       "id": "12.41",
@@ -1326,7 +1360,8 @@
       ],
       "inputName": "Q40",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The nextLine() method of the Scanner class reads all characters until a line separator is encountered and returns them as a string, effectively reading a whole line."
     },
     {
       "id": "12.42",
@@ -1357,7 +1392,7 @@
       "inputName": "Q41",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "File is not a subtype of AutoCloseable. So it cannot be used to open a resource in a try-with-resources."
+      "explanation": "The try-with-resources statement requires the resource to implement the AutoCloseable interface. Scanner implements this, but File does not. Additionally, resources must be initialized within the parentheses to be managed by the try-with-resources block."
     },
     {
       "id": "12.43",
@@ -1387,7 +1422,8 @@
       ],
       "inputName": "Q42",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "To read from a file, the Scanner constructor must be passed a java.io.File object. Passing a string literal directly, as in 'new Scanner(\"temp.txt\")', creates a scanner that reads the string content itself rather than the contents of the file named temp.txt."
     },
     {
       "id": "12.44",
@@ -1417,7 +1453,8 @@
       ],
       "inputName": "Q43",
       "inputType": "radio",
-      "correctAnswer": "B"
+      "correctAnswer": "B",
+      "explanation": "The nextInt() method expects the next token to be a valid integer. Since '34.3' contains a decimal point, it is treated as a double, and calling nextInt() on it results in an InputMismatchException at runtime."
     },
     {
       "id": "12.45",
@@ -1447,7 +1484,8 @@
       ],
       "inputName": "Q44",
       "inputType": "radio",
-      "correctAnswer": "D"
+      "correctAnswer": "D",
+      "explanation": "After two nextDouble() calls read '34.3' and '57.8', the scanner cursor is positioned exactly after the '8'. The remaining characters on the line are the space followed by '7', '8', and '9'. The nextLine() method reads from the current cursor position to the end of the line."
     },
     {
       "id": "12.46",
@@ -1482,7 +1520,8 @@
       ],
       "inputName": "QE45",
       "inputType": "checkbox",
-      "correctAnswer": "ABC"
+      "correctAnswer": "ABC",
+      "explanation": "The nextDouble() method consumes the numeric token but stops before the line separator (ENTER). After '57.8' is read, the cursor is at the newline character. The nextLine() method then consumes this newline character and returns the empty string preceding it."
     },
     {
       "id": "12.47",
@@ -1517,7 +1556,8 @@
       ],
       "inputName": "QE46",
       "inputType": "checkbox",
-      "correctAnswer": "ABC"
+      "correctAnswer": "ABC",
+      "explanation": "After nextDouble() reads '57.8', the scanner's cursor sits at the end of that numeric token, before the first ENTER key character. Consequently, nextLine() consumes the remaining empty space and the newline character on that specific line, leaving 'abc' in the buffer for subsequent read operations."
     },
     {
       "id": "12.48",
@@ -1547,7 +1587,8 @@
       ],
       "inputName": "Q47",
       "inputType": "radio",
-      "correctAnswer": "C"
+      "correctAnswer": "C",
+      "explanation": "The URL class provides the openStream() method, which opens a connection to the URL and returns an InputStream for reading its contents."
     }
   ],
   "status": "completed",
