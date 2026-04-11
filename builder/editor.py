@@ -567,6 +567,7 @@ class AdvancedChapterEditor:
         self.tools_menu.add_command(label="Delete Duplicates", command=self.delete_duplicate_questions)
         self.tools_menu.add_command(label="Smart Duplicates", command=self.delete_similar_questions)
         self.tools_menu.add_command(label="Fix Numbering", command=self.fix_question_numbering)
+        self.tools_menu.add_command(label="Fix Choice IDs", command=self.fix_choice_ids)
         self.tools_menu.add_command(label="Fix Input Typing", command=self.fix_input_typing)
         self.tools_menu.add_separator()
         self.tools_menu.add_command(label="Validate Diagram Blocks", command=self.validate_diagram_blocks_for_chapter)
@@ -1357,6 +1358,55 @@ class AdvancedChapterEditor:
         answer_changed = normalized_answer != old_answer
         return answer_changed, type_changed
 
+    def _choice_id_for_index(self, index):
+        """Return a stable choice label for a zero-based choice index."""
+        index += 1
+        letters = []
+        while index > 0:
+            index, remainder = divmod(index - 1, 26)
+            letters.append(chr(65 + remainder))
+        return "".join(reversed(letters))
+
+    def _normalize_question_choice_ids(self, question):
+        """Renumber choice IDs and remap correctAnswer to the new IDs."""
+        if not isinstance(question, dict):
+            return False, False
+
+        choices = question.get("choices", []) or []
+        if not choices:
+            return False, False
+
+        old_to_new = {}
+        new_values = []
+        old_answer = str(question.get("correctAnswer", "") or "").upper()
+        choice_changed = False
+
+        for idx, choice in enumerate(choices):
+            new_value = self._choice_id_for_index(idx)
+            old_value = str(choice.get("value", "")).strip().upper()
+            if old_value:
+                old_to_new[old_value] = new_value
+
+            if old_value != new_value or str(choice.get("label", "")).strip().upper() != new_value:
+                choice_changed = True
+
+            choice["value"] = new_value
+            choice["label"] = new_value
+            new_values.append(new_value)
+
+        remapped_answer = []
+        for char in re.findall(r"[A-Z0-9]", old_answer):
+            mapped_value = old_to_new.get(char)
+            if mapped_value and mapped_value not in remapped_answer:
+                remapped_answer.append(mapped_value)
+            elif char in new_values and char not in remapped_answer:
+                remapped_answer.append(char)
+
+        normalized_answer = "".join(remapped_answer)
+        question["correctAnswer"] = normalized_answer
+
+        return choice_changed, normalized_answer != old_answer
+
     def fix_input_typing(self, show_message=True):
         """Normalize correctAnswer and force matching inputType for all questions."""
         if not self.questions:
@@ -1397,6 +1447,44 @@ class AdvancedChapterEditor:
                 )
 
         return answer_changes, type_changes
+
+    def fix_choice_ids(self, show_message=True):
+        """Renumber choice IDs and keep correctAnswer aligned with the new IDs."""
+        if not self.questions:
+            if show_message:
+                messagebox.showinfo("No Questions", "There are no questions to fix.")
+            return (0, 0)
+
+        choice_changes = 0
+        answer_changes = 0
+        for question in self.questions:
+            choices_changed, answer_changed = self._normalize_question_choice_ids(question)
+            if choices_changed:
+                choice_changes += 1
+            if answer_changed:
+                answer_changes += 1
+
+        self.refresh_questions_list()
+        if self.current_question_idx is not None and self.questions:
+            keep_idx = max(0, min(self.current_question_idx, len(self.questions) - 1))
+            self.current_question_idx = keep_idx
+            self.restore_question_selection([keep_idx])
+            self.display_question()
+
+        if show_message:
+            if choice_changes or answer_changes:
+                messagebox.showinfo(
+                    "Choice IDs Fixed",
+                    f"Renumbered choice IDs in {choice_changes} question(s).\n"
+                    f"Adjusted correct answers in {answer_changes} question(s)."
+                )
+            else:
+                messagebox.showinfo(
+                    "Already Correct",
+                    "Choice IDs and correct answers are already consistent."
+                )
+
+        return choice_changes, answer_changes
     
     def add_question(self):
         """Add new question"""
@@ -2059,10 +2147,12 @@ class AdvancedChapterEditor:
                 q['inputType'] = self.q_input_type.get()
                 q['correctAnswer'] = self.q_correct.get()
                 self._normalize_question_answer_fields(q, force_input_type=True)
+                self._normalize_question_choice_ids(q)
                 q['explanation'] = self.q_explanation.get(1.0, tk.END).strip()
 
             # Ensure every question follows website-compatible answer format.
             self.fix_input_typing(show_message=False)
+            self.fix_choice_ids(show_message=False)
             
             # Update chapter data
             if self.chapter_data:
