@@ -536,6 +536,7 @@ header::before {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     background: var(--bg-body);
+    text-align: center;
     overflow: auto;
 }
 
@@ -543,6 +544,8 @@ header::before {
     max-width: 100%;
     height: auto;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .diagram-loading {
