@@ -1,0 +1,417 @@
+{
+  "id": "extract-combined-1775906993093",
+  "label": "Combined Batch (12 files)",
+  "params": {
+    "file": "Multiple Files",
+    "type": "visual_extractor",
+    "chapter": "2"
+  },
+  "title": "Second",
+  "questions": [
+    {
+      "id": "extract-combined-1775906993093-0",
+      "number": "1",
+      "text": "One main difference between dynamic programming and divide and conquer is that divide and conquer has:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Dependent sub problems"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A bottom up solution"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "In-dependent sub problems"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A top down solution"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Divide and conquer algorithms partition a problem into independent subproblems, solve them, and combine the results. Dynamic programming is typically used when the subproblems are overlapping (dependent)."
+    },
+    {
+      "id": "extract-combined-1775906993093-1",
+      "number": "2",
+      "text": "Based on the matrix chain multiplication algorithm, given the following matrices with their dimensions: \\( A_1(3, 5), A_2(5, 6), A_3(6, 10) \\). What are the dimensions of the resulting matrix \\( (A_1 A_2 A_3) \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3, 5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3, 10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5, 10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "6, 10"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The result of multiplying a chain of matrices \\( A_1, A_2, ..., A_n \\) where \\( A_i \\) has dimensions \\( p_{i-1} \\times p_i \\) is a matrix with dimensions \\( p_0 \\times p_n \\). Here, \\( p_0 = 3 \\) and \\( p_3 = 10 \\), so the result is \\( 3 \\times 10 \\)."
+    },
+    {
+      "id": "extract-combined-1775906993093-2",
+      "number": "3",
+      "text": "Given the matrices \\( A_1(3, 5), A_2(5, 6), A_3(6, 10) \\), what is the minimum number of scalar multiplications \\( m(1, 3) \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "90"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "300"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "270"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Calculation for \\( m(1, 3) \\):\n- \\( m(1, 2) = 3 \\times 5 \\times 6 = 90 \\)\n- \\( m(2, 3) = 5 \\times 6 \\times 10 = 300 \\)\n- \\( m(1, 3) = \\min(m(1,1) + m(2,3) + 3 \\times 5 \\times 10, m(1,2) + m(3,3) + 3 \\times 6 \\times 10) \\)\n- \\( m(1, 3) = \\min(0 + 300 + 150, 90 + 0 + 180) = \\min(450, 270) = 270 \\)."
+    },
+    {
+      "id": "extract-combined-1775906993093-3",
+      "number": "4",
+      "text": "What is the value of \\( s(1, 3) \\)? Note: \\( s(i, j) \\) refers to the value of \\( k \\) that gives the minimum number of scalar multiplications for \\( m(i, j) \\). Matrices: \\( A_1(3, 5), A_2(5, 6), A_3(6, 10) \\).",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In the calculation of \\( m(1, 3) \\), the split at \\( k=2 \\) (i.e., \\( (A_1 A_2) A_3 \\)) resulted in 270 multiplications, whereas \\( k=1 \\) resulted in 450. Thus, \\( s(1, 3) = 2 \\)."
+    },
+    {
+      "id": "extract-combined-1775906993093-4",
+      "number": "5",
+      "text": "Based on the Red-Black Tree depicted below, what is the height of the tree? Note: A node in **bold** is black, an <u>underlined</u> node is red. Don't forget NIL nodes.\n\n```mermaid\ngraph TD\n30((30)) --- 15((15))\n30 --- 45((45))\n15 --- 10((10))\n15 --- 20((20))\n45 --- 35((35))\n45 --- 60((60))\n60 --- 55((55))\n60 --- 70((70))\n\nstyle 30 fill:#000,color:#fff,stroke-width:4px\nstyle 45 fill:#000,color:#fff,stroke-width:4px\nstyle 10 fill:#000,color:#fff,stroke-width:4px\nstyle 20 fill:#000,color:#fff,stroke-width:4px\nstyle 35 fill:#000,color:#fff,stroke-width:4px\nstyle 60 fill:#000,color:#fff,stroke-width:4px\nstyle 70 fill:#000,color:#fff,stroke-width:4px\nstyle 15 fill:#fff,color:#000,stroke:#f00,stroke-width:2px\nstyle 55 fill:#fff,color:#000,stroke:#f00,stroke-width:2px\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The height of a tree is the length of the longest path from the root to a NIL node. The longest path is 30 -> 45 -> 60 -> 55 -> NIL (or 60 -> 70 -> NIL). This path involves 4 edges, so the height is 4."
+    },
+    {
+      "id": "extract-combined-1775906993093-5",
+      "number": "6",
+      "text": "List the keys of the nodes using the post-order traversal for the provided tree.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "30, 45, 60, 70, 55, 35, 15, 20, 10"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10, 20, 15, 35, 55, 90, 60, 45, 30"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "40, 15, 20, 30, 45, 30, 70, 35, 55"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The correct post-order traversal (Left, Right, Root) is: 10, 20, 15, 35, 55, 70, 60, 45, 30. Option B contains a typo ('90' instead of '70'), making D the correct choice."
+    },
+    {
+      "id": "extract-combined-1775906993093-6",
+      "number": "7",
+      "text": "What is the black height (bh) of node 45 in the provided Red-Black Tree? Note: NIL nodes are black.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Black height \\( bh(x) \\) is the number of black nodes from node \\( x \\) to a leaf, not counting \\( x \\) itself. From node 45, the path through 35 to its NIL leaves encounters black nodes 35 and NIL. Thus, the black height is 2."
+    },
+    {
+      "id": "extract-combined-1775906993093-7",
+      "number": "8",
+      "text": "What is the successor of node 45 in the provided tree?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "60"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "55"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "35"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "30"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The in-order successor of a node is the smallest node in its right subtree. The right child of 45 is 60, and the smallest (leftmost) node in the subtree rooted at 60 is 55."
+    },
+    {
+      "id": "extract-combined-1775906993093-8",
+      "number": "9",
+      "text": "What is the height of node 60 in the provided tree?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The height of a node is the longest path from that node to a NIL leaf. From node 60, the path 60 -> 55 -> NIL (or 60 -> 70 -> NIL) has 2 edges, so the height is 2."
+    },
+    {
+      "id": "extract-combined-1775906993093-9",
+      "number": "10",
+      "text": "What is the predecessor of node 35 in the provided tree?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "60"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "55"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "45"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "30"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The in-order predecessor of a node is the largest node in its left subtree. Since 35 has no left subtree, its predecessor is the first ancestor for which node 35 lies in the right subtree. Following the path up: 35 is the left child of 45, and 45 is the right child of 30. Therefore, 30 is the predecessor."
+    },
+    {
+      "id": "extract-combined-1775906993093-10",
+      "number": "11",
+      "text": "What is the result of inserting node 65 into the tree according to Binary Search Tree rules?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "65 becomes the right child of 60"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "65 becomes the right child of 45"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "65 becomes the left child of 70"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "To insert 65: compare with 30 (go right), compare with 45 (go right), compare with 60 (go right), compare with 70 (65 < 70, so go left). 65 is inserted as the left child of 70."
+    },
+    {
+      "id": "extract-combined-1775906993093-11",
+      "number": "12",
+      "text": "Note 1: A node in bold is black and an underlined node is red.\nNote 2: Don't forget nill (null) nodes.\n\nConsider the following Red-Black Tree diagram:\n\n```mermaid\ngraph TD\n  30((30))\n  15((<u>15</u>))\n  45((<u>45</u>))\n  10((10))\n  20((20))\n  35((35))\n  60((60))\n  55((<u>55</u>))\n  70((<u>70</u>))\n\n  30 --- 15\n  30 --- 45\n  15 --- 10\n  15 --- 20\n  45 --- 35\n  45 --- 60\n  60 --- 55\n  60 --- 70\n```\n\nWhat is the type of this binary search tree (BST) structure after inserting node 65?",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "Full"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "Complete"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "Perfect"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "d",
+      "explanation": "To determine the tree type, we first insert node 65 into the Red-Black Tree and balance it:\n1. **Insertion**: Node 65 is inserted as the left child of node 70.\n2. **Balancing**: \n   - 65 is red. Its parent (70) and uncle (55) are both red. \n   - **Case 1**: Recolor 70 and 55 to black, and grandparent 60 to red.\n   - Now node 60 is red. Its parent (45) and uncle (15) are also red.\n   - **Case 1 again**: Recolor 45 and 15 to black, and grandparent 30 to red.\n   - Since 30 is the root, it is recolored black.\n3. **Structural Check**:\n   - **Full**: Every node must have 0 or 2 children. Node 70 has only one child (65), so it is not full.\n   - **Complete**: All levels must be filled except the last, which must be filled left-to-right. In this tree, level 3 contains node 70 with a child (65), but nodes 10, 20, and 35 (which are to the left of 70) do not have children. This creates 'holes' in the level filling, so it is not complete.\n   - **Perfect**: All internal nodes must have 2 children and leaves must be at the same level. This is clearly not the case.\nTherefore, the answer is 'None of the above'."
+    },
+    {
+      "id": "extract-combined-1775906993093-12",
+      "number": "13",
+      "text": "Note 1: A node in bold is black and an underlined node is red.\nNote 2: Don't forget nill (null) nodes.\n\nConsider the following Red-Black Tree diagram:\n\n```mermaid\ngraph TD\n  30((30))\n  15((<u>15</u>))\n  45((<u>45</u>))\n  10((10))\n  20((20))\n  35((35))\n  60((60))\n  55((<u>55</u>))\n  70((<u>70</u>))\n\n  30 --- 15\n  30 --- 45\n  15 --- 10\n  15 --- 20\n  45 --- 35\n  45 --- 60\n  60 --- 55\n  60 --- 70\n```\n\nWhat is the depth of node 30 after inserting node 65?",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "0"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "1"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "2"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "3"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "a",
+      "explanation": "After inserting node 65 into the Red-Black Tree:\n1. 65 is placed as the left child of 70.\n2. Because parent (70) and uncle (55) are red, we recolor them black and recolor grandparent (60) red.\n3. Now node 60 is red. Its parent (45) and uncle (15) are also red. We recolor them black and recolor grandparent (30) red.\n4. Since 30 is the root, we recolor it black and stop.\nNo rotations were required during this process, meaning the structure of the upper tree remains unchanged. Node 30 remains the root of the tree. By definition, the depth of the root node is 0."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 13
+}

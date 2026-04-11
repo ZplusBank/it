@@ -1,0 +1,1471 @@
+{
+  "id": "extract-combined-1775907437942",
+  "label": "Combined Batch (2 files)",
+  "params": {
+    "file": "Multiple Files",
+    "type": "visual_extractor",
+    "chapter": "6"
+  },
+  "title": "Final",
+  "questions": [
+    {
+      "id": "extract-combined-1775907437942-0",
+      "number": "1",
+      "text": "The running time of the Max-Heapify operation used to maintain the max-heap property in a Max-Heap of size \\( n \\) is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(\\lg n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n^2) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Max-Heapify operation maintains the heap property by potentially swapping a node with its child and recursing down the tree. Since the height of a binary heap with \\( n \\) elements is \\( \\lfloor \\lg n \\rfloor \\), the worst-case running time is proportional to the height, which is \\( O(\\lg n) \\)."
+    },
+    {
+      "id": "extract-combined-1775907437942-1",
+      "number": "2",
+      "text": "If \\( w(n) = O(q(n)) \\), which of the following statements is always true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( q(n) = O(w(n)) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( q(n) = \\Omega(w(n)) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( q(n) = \\Theta(w(n)) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( w(n) = \\Omega(q(n)) \\)"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The relationship \\( f(n) = O(g(n)) \\) implies that \\( f \\) is bounded above by \\( g \\) (up to a constant factor). This is mathematically equivalent to saying \\( g(n) = \\Omega(f(n)) \\), which means \\( g \\) is bounded below by \\( f \\). This is known as the transpose symmetry of asymptotic notation."
+    },
+    {
+      "id": "extract-combined-1775907437942-2",
+      "number": "3",
+      "text": "The running time complexity required for printing the leaves in a Binary Min Heap is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n \\log n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n^2) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In a binary heap represented as an array of size \\( n \\), the leaves are the nodes indexed from \\( \\lfloor n/2 \\rfloor + 1 \\) to \\( n \\). Since there are roughly \\( n/2 \\) leaves, printing all of them requires iterating through approximately half the array, which results in a linear time complexity of \\( O(n) \\)."
+    },
+    {
+      "id": "extract-combined-1775907437942-3",
+      "number": "4",
+      "text": "Which of the following sorting algorithms has the highest worst-case complexity for \\( n > 1 \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Insertion sort"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Merge sort"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Heap sort"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All have the same worst complexity"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Insertion sort has a worst-case time complexity of \\( O(n^2) \\). In contrast, both Merge sort and Heap sort have a worst-case time complexity of \\( O(n \\log n) \\). Since \\( O(n^2) \\) grows faster than \\( O(n \\log n) \\), Insertion sort has the highest worst-case complexity."
+    },
+    {
+      "id": "extract-combined-1775907437942-4",
+      "number": "5",
+      "text": "Which of the following design techniques is/are used in quick sort?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Incremental"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Heap data structure"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Divide and Conquer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the above"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Quick sort is a quintessential example of the **Divide and Conquer** paradigm. It works by partitioning an array into two sub-arrays around a pivot element and then recursively sorting the sub-arrays."
+    },
+    {
+      "id": "extract-combined-1775907437942-5",
+      "number": "6",
+      "text": "The running time complexity required for solving this recurrence relation \\( T(n) = T(n/2) + c \\) in \\( \\theta \\) notation is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "n"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "n log n"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "c"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "logn"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Using the Master Theorem for \\( T(n) = aT(n/b) + f(n) \\):\n- \\( a = 1 \\)\n- \\( b = 2 \\)\n- \\( f(n) = c \\) (constant, which is \\( \\Theta(n^0) \\))\n\nComparing \\( f(n) \\) with \\( n^{\\log_b a} \\):\n\\( n^{\\log_2 1} = n^0 = 1 \\).\nSince \\( f(n) = \\Theta(n^{\\log_b a}) \\), this falls into Case 2 of the Master Theorem. Therefore, \\( T(n) = \\Theta(n^{\\log_b a} \\log n) = \\Theta(1 \\cdot \\log n) = \\Theta(\\log n) \\)."
+    },
+    {
+      "id": "extract-combined-1775907437942-6",
+      "number": "7",
+      "text": "Assume that the length of array (P), which represents the dimensions of a number of matrices in the matrix chain multiplication, is 11, what is the number of matrices in this chain?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "11"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "12"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "13"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In matrix chain multiplication, to multiply \\( n \\) matrices \\( A_1, A_2, \\dots, A_n \\), the dimensions are typically given in an array \\( P = [p_0, p_1, \\dots, p_n] \\) where matrix \\( A_i \\) has dimensions \\( p_{i-1} \\times p_i \\). The length of array \\( P \\) is \\( n + 1 \\). If the length is 11, then \\( n + 1 = 11 \\), meaning \\( n = 10 \\)."
+    },
+    {
+      "id": "extract-combined-1775907437942-7",
+      "number": "8",
+      "text": "The following tree is a:\n\n```mermaid\ngraph TD\n    8((8)) --> 7((7))\n    8((8)) --> 4((4))\n    7((7)) --> 5((5))\n    7((7)) --> 2((2))\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Binary search tree"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Max heap"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Balanced binary search tree"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Min heap"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A max heap is a specialized tree-based data structure that satisfies the heap property: for any given node \\( C \\), if \\( P \\) is a parent node of \\( C \\), then the key (the value) of \\( P \\) is greater than or equal to the key of \\( C \\). In this tree, 8 is greater than its children (7 and 4), and 7 is greater than its children (5 and 2). It is also a complete binary tree, making it a max heap."
+    },
+    {
+      "id": "extract-combined-1775907437942-8",
+      "number": "9",
+      "text": "One main difference between greedy algorithms and dynamic programming is that dynamic programming use:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A top down solution"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A bottom up solution"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A tabular method"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A left right solution"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Dynamic programming is characterized by solving subproblems and storing their results to avoid redundant computations, a process known as memoization or tabulation. The use of a tabular method to keep track of these results is a primary structural difference from simple greedy approaches, which make locally optimal choices at each step without necessarily storing subproblem states in a table."
+    },
+    {
+      "id": "extract-combined-1775907437942-9",
+      "number": "10",
+      "text": "Which one of the following functions \\( f(n) = 2^n \\), \\( w(n) = n^3 \\), \\( y(n) = n^{(n \\log n)} \\) has the highest asymptotic complexity?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( f(n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( w(n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( y(n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All have the same complexity"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "To compare the growth rates, we can express them with the same base. \\( w(n) = n^3 \\) is polynomial. \\( f(n) = 2^n \\) is exponential. For \\( y(n) = n^{n \\log n} \\), using the identity \\( n = 2^{\\log n} \\), we get \\( y(n) = (2^{\\log n})^{n \\log n} = 2^{n \\log^2 n} \\). Comparing the exponents of base 2, \\( n \\log^2 n \\) grows significantly faster than \\( n \\) (from \\( f(n) \\)), making \\( y(n) \\) the function with the highest asymptotic complexity."
+    },
+    {
+      "id": "extract-combined-1775907437942-10",
+      "number": "11",
+      "text": "Based on the red-black tree given below, can we set the color of node 12 as red?\n\n```mermaid\ngraph TD\n    10((10)) --- 7((7))\n    10((10)) --- 12((12))\n    7((7)) --- 3((3))\n    7((7)) --- 8((8))\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Yes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It depends on the remaining nodes"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Only if node 10 is red"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In a Red-Black tree, the root (node 10) must always be black. A red node cannot have a red child (Red-Red property). Since node 10 is the black root, setting its child (node 12) to red does not violate the Red-Red property. Furthermore, if node 12 is a leaf-like node whose children are NIL (which are black by definition), the black-height property can still be satisfied depending on the rest of the tree's configuration."
+    },
+    {
+      "id": "extract-combined-1775907437942-11",
+      "number": "12",
+      "text": "Based on the red-black tree given below, what is the depth of node 8?\n\n```mermaid\ngraph TD\n    10((10)) --- 7((7))\n    10((10)) --- 12((12))\n    7((7)) --- 3((3))\n    7((7)) --- 8((8))\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The depth of a node is defined as the number of edges from the root to that node. Starting from the root (node 10):\n- Root (10) has depth 0.\n- Node 7 and node 12 have depth 1.\n- Node 3 and node 8 have depth 2.\nTherefore, the depth of node 8 is 2."
+    },
+    {
+      "id": "extract-combined-1775907437942-12",
+      "number": "13",
+      "text": "Based on the red-black tree given below, assume that node 7 is red and the remaining nodes are black. Which case will be invoked after inserting node 5?\n\n```mermaid\ngraph TD\n    10((10)) --- 7((7))\n    10((10)) --- 12((12))\n    7((7)) --- 3((3))\n    7((7)) --- 8((8))\n    style 10 fill:#000,color:#fff\n    style 7 fill:#f00,color:#fff\n    style 12 fill:#000,color:#fff\n    style 3 fill:#000,color:#fff\n    style 8 fill:#000,color:#fff\n```",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "Case 1"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "Case 2"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "Case 3"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "d",
+      "explanation": "When node 5 is inserted into the BST, it becomes the right child of node 3. In a Red-Black Tree, newly inserted nodes are red. Since node 3 is black, no red-red violation occurs between parent and child. Therefore, no balancing cases (Case 1, 2, or 3) need to be invoked."
+    },
+    {
+      "id": "extract-combined-1775907437942-13",
+      "number": "14",
+      "text": "Based on the red-black tree given below, what is the black height of node 10 after inserting node 5?\nNote: You must count nil nodes\n\n```mermaid\ngraph TD\n    10((10)) --- 7((7))\n    10((10)) --- 12((12))\n    7((7)) --- 3((3))\n    7((7)) --- 8((8))\n    style 10 fill:#000,color:#fff\n    style 7 fill:#f00,color:#fff\n    style 12 fill:#000,color:#fff\n    style 3 fill:#000,color:#fff\n    style 8 fill:#000,color:#fff\n```",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "0"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "1"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "2"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "3"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "d",
+      "explanation": "Black height is the number of black nodes on a path from a node to a leaf. If we count the node itself and the NIL nodes as specified: Path 10(B) -> 12(B) -> NIL(B) contains 3 black nodes. Path 10(B) -> 7(R) -> 3(B) -> 5(R) -> NIL(B) also contains 3 black nodes (10, 3, and NIL). Thus, the black height is 3."
+    },
+    {
+      "id": "extract-combined-1775907437942-14",
+      "number": "15",
+      "text": "Given the following two matrices with their dimensions: \\( A1 (2, 5) \\) and \\( A2 (5, 10) \\), what is the minimum number of scalar multiplications for \\( A1 \\times A2 \\)?",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "100"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "200"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "250"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "50"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "a",
+      "explanation": "The number of scalar multiplications required to multiply a matrix of size \\( p \\times q \\) by a matrix of size \\( q \\times r \\) is given by the formula \\( p \\times q \\times r \\). In this case, \\( 2 \\times 5 \\times 10 = 100 \\)."
+    },
+    {
+      "id": "extract-combined-1775907437942-15",
+      "number": "16",
+      "text": "What is the total running time of the breadth first search algorithm?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\(O(|V|)\\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\(O(|E|)\\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\(\\theta(|V| + |E|)\\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\(O(|V| + |E|)\\)"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The breadth-first search (BFS) algorithm visits every vertex once and explores every edge once. When implemented using an adjacency list, the total running time is proportional to the number of vertices and edges, which is denoted as \\(O(V + E)\\)."
+    },
+    {
+      "id": "extract-combined-1775907437942-16",
+      "number": "17",
+      "text": "Which of the following is not a graph type?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Directed graph"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Acyclic graph"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Connected graph"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Virtual graph"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Directed, acyclic, and connected are standard classifications of graphs based on the nature of their edges and connectivity. 'Virtual graph' is not a formal type of graph in standard graph theory."
+    },
+    {
+      "id": "extract-combined-1775907437942-17",
+      "number": "18",
+      "text": "Which of the following is not a property of greedy algorithms?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "don't always yield an optimal solution"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Used for optimization problems"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Use a top down solution"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Use a bottom up solution"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Greedy algorithms follow a top-down approach by making the best local choice at each step. Bottom-up solutions are a characteristic of Dynamic Programming, where subproblems are solved first to build up to the main problem."
+    },
+    {
+      "id": "extract-combined-1775907437942-18",
+      "number": "19",
+      "text": "The running time complexity required for finding the maximum value in a Binary Max Heap of size \\(N\\):",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\(O(\\log n)\\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\(O(n \\log n)\\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\(O(1)\\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In a Binary Max Heap, the heap property ensures that the largest element is always at the root. Accessing the root in an array-based implementation of a heap takes constant time, \\(O(1)\\)."
+    },
+    {
+      "id": "extract-combined-1775907437942-19",
+      "number": "20",
+      "text": "Which of the following techniques is/are used for designing algorithms?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Dynamic programming"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Divide and conquer"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Greedy approach"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the above"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Dynamic programming, Divide and Conquer, and Greedy approaches are all well-established and widely used paradigms for algorithm design."
+    },
+    {
+      "id": "extract-combined-1775907437942-20",
+      "number": "21",
+      "text": "Consider a graph represented by an adjacency matrix with \\(V\\) vertices. What is the time complexity for checking if vertex \\(i\\) is adjacent to vertex \\(j\\), and for listing all neighbors of vertex \\(i\\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Checking adjacency: \\(O(1)\\); Listing neighbors: \\(O(V)\\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Checking adjacency: \\(O(V)\\); Listing neighbors: \\(O(1)\\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Checking adjacency: \\(O(1)\\); Listing neighbors: \\(O(E)\\) where \\(E\\) is the number of edges"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Checking adjacency: \\(O(V^2)\\); Listing neighbors: \\(O(V)\\)"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In an adjacency matrix, checking if two vertices are connected involves a direct index lookup (\\(matrix[i][j]\\)), which takes \\(O(1)\\). To list all neighbors of vertex \\(i\\), you must scan the entire row corresponding to vertex \\(i\\), which contains \\(V\\) elements, resulting in \\(O(V)\\) complexity."
+    },
+    {
+      "id": "extract-combined-1775907437942-21",
+      "number": "22",
+      "text": "Based on the 0-1 knapsack problem with a total capacity \\( W = 5 \\) and the following item data:\n\n| Item | Weight | Value |\n|---|---|---|\n| 1 | 2 | 12 |\n| 2 | 1 | 10 |\n| 3 | 3 | 20 |\n| 4 | 2 | 15 |\n\nAnd the partial dynamic programming table below:\n\n| i \\\\ w | 0 | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|---|\n| 0 | 0 | 0 | 0 | 0 | 0 | 0 |\n| 1 | 0 | 0 | 12 | 12 | 12 | 12 |\n| 2 | 0 | 10 | 12 | 22 | 22 | 22 |\n| 3 | 0 | 10 | 12 | 22 | 30 | 32 |\n| 4 | 0 | ? | ? | ? | ? | ? |\n\nWhat are the calculated values for the last row (Item 4) for weights 1 through 5?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "10, 15, 25, 30, 37"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10, 12, 22, 30, 32"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "12, 12, 22, 27, 35"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "10, 15, 22, 32, 37"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Using the knapsack recurrence \\( V[i, w] = \\max(V[i-1, w], V[i-1, w-w_i] + v_i) \\) for Item 4 (weight 2, value 15):\n- \\( w=1 \\): \\( \\max(10, -) = 10 \\)\n- \\( w=2 \\): \\( \\max(12, 0 + 15) = 15 \\)\n- \\( w=3 \\): \\( \\max(22, 10 + 15) = 25 \\)\n- \\( w=4 \\): \\( \\max(30, 12 + 15) = 30 \\)\n- \\( w=5 \\): \\( \\max(32, 22 + 15) = 37 \\)"
+    },
+    {
+      "id": "extract-combined-1775907437942-22",
+      "number": "23",
+      "text": "Using the data from the 0-1 knapsack problem provided (W=5), identify the set of items that should be selected to achieve the maximum profit.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Items 1, 2, and 4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Items 2 and 3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Items 1 and 3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Items 3 and 4"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The maximum profit is 37. To backtrack:\n- At (4, 5), value is 37, which is different from (3, 5) which is 32. Thus, **Item 4** is selected. Remaining weight: 5 - 2 = 3.\n- At (3, 3), value is 22, which is the same as (2, 3). **Item 3** is not selected. Remaining weight: 3.\n- At (2, 3), value is 22, which is different from (1, 3) which is 12. Thus, **Item 2** is selected. Remaining weight: 3 - 1 = 2.\n- At (1, 2), value is 12, which is different from (0, 2) which is 0. Thus, **Item 1** is selected. Remaining weight: 2 - 2 = 0.\nSelected items: {1, 2, 4}."
+    },
+    {
+      "id": "extract-combined-1775907437942-23",
+      "number": "24",
+      "text": "What is the adjacency list representation of the following undirected graph?\n\n```mermaid\ngraph LR\n1 --- 2\n1 --- 3\n2 --- 3\n2 --- 4\n3 --- 4\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1: [2, 3]; 2: [1, 3, 4]; 3: [1, 2, 4]; 4: [2, 3]"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1: [2]; 2: [1, 3, 4]; 3: [2, 4]; 4: [2, 3]"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1: [2, 3]; 2: [1, 4]; 3: [1, 4]; 4: [2, 3]"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1: [3]; 2: [1, 3]; 3: [1, 2, 4]; 4: [3]"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "An adjacency list lists all neighbors for every node. For the given graph edges {(1,2), (1,3), (2,3), (2,4), (3,4)}:\n- Node 1 connects to 2, 3.\n- Node 2 connects to 1, 3, 4.\n- Node 3 connects to 1, 2, 4.\n- Node 4 connects to 2, 3."
+    },
+    {
+      "id": "extract-combined-1775907437942-24",
+      "number": "25",
+      "text": "Given the following adjacency matrix for an undirected graph, how many edges does the graph contain?\n\n| | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|\n| **1** | 0 | 1 | 0 | 0 | 1 |\n| **2** | 1 | 0 | 1 | 1 | 1 |\n| **3** | 0 | 1 | 0 | 1 | 0 |\n| **4** | 0 | 1 | 1 | 0 | 1 |\n| **5** | 1 | 1 | 0 | 1 | 0 |",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "7"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "14"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "10"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In an undirected graph, an edge between \\( u \\) and \\( v \\) is represented twice in the matrix (at \\( (u, v) \\) and \\( (v, u) \\)). To find the total number of edges, count the number of 1s in the upper triangle (above the diagonal): (1,2), (1,5), (2,3), (2,4), (2,5), (3,4), (4,5). Total = 7 edges."
+    },
+    {
+      "id": "extract-combined-1775907437942-25",
+      "number": "26",
+      "text": "Given the following directed graph, perform a Depth First Search (DFS) starting with vertex **w** as the first source. If multiple vertices are available, visit them in alphabetical order. What are the discovery and finishing times for vertex **x**?\n\n```mermaid\ngraph TD\nu --> v\nu --> x\nv --> y\nw --> v\nw --> y\nx --> v\ny --> x\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Discovery: 4, Finishing: 5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Discovery: 1, Finishing: 8"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Discovery: 2, Finishing: 7"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Discovery: 3, Finishing: 6"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "DFS Traversal starting at w:\n1. Discover w (time 1). Neighbors: {v, y}. Visit v.\n2. Discover v (time 2). Neighbor: {y}. Visit y.\n3. Discover y (time 3). Neighbor: {x}. Visit x.\n4. Discover x (time 4). Neighbor: {v}. v is already being visited (gray), so no new visits.\n5. Finish x (time 5).\n6. Finish y (time 6).\n7. Finish v (time 7).\n8. Finish w (time 8)."
+    },
+    {
+      "id": "extract-combined-1775907437942-26",
+      "number": "27",
+      "text": "Based on a DFS traversal of the following directed graph starting at vertex **w**, classify the edges **(w, y)** and **(x, v)**.\n\n```mermaid\ngraph TD\nu --> v\nu --> x\nv --> y\nw --> v\nw --> y\nx --> v\ny --> x\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Edge (w, y): Forward edge; Edge (x, v): Back edge"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Edge (w, y): Tree edge; Edge (x, v): Cross edge"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Edge (w, y): Back edge; Edge (x, v): Forward edge"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Edge (w, y): Cross edge; Edge (x, v): Tree edge"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In the DFS tree starting from w (path: w -> v -> y -> x):\n- Edge (w, y): y is a descendant of w in the DFS tree, but (w, y) is not part of the tree path. Therefore, it is a Forward edge.\n- Edge (x, v): v is an ancestor of x in the DFS tree. A directed edge pointing from a descendant to an ancestor is a Back edge."
+    },
+    {
+      "id": "extract-combined-1775907437942-27",
+      "number": "28",
+      "text": "Consider the following algorithm intended to find all nodes adjacent to node \\( i \\) using an adjacency matrix \\( E \\):\n\n```\nadherent(i){\n    for j ← 1 to |V|\n        if E[i, j] = 1\n            then add j to adj[i]\n}\n```\nWhat is the time complexity of this algorithm?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(1) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(|V|) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(|E|) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(|V|^2) \\)"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The algorithm iterates through a single loop from 1 to \\( |V| \\) to check the entries in the adjacency matrix for node \\( i \\). Therefore, its complexity is proportional to the number of vertices, \\( O(|V|) \\)."
+    },
+    {
+      "id": "extract-combined-1775907437942-28",
+      "number": "29",
+      "text": "Consider the following algorithm that checks if node \\( i \\) is adjacent to node \\( j \\) using an adjacency list representation:\n\n```\nis-adjacent(i, j){\n    for each v ∈ adj[j]\n        if v = i\n            then return true\n    return false;\n}\n```\nIn the worst-case scenario, what is the time complexity of this operation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(1) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(|V|) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(|E|) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(1) \\) on average"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In an adjacency list, checking for the existence of an edge requires scanning the list of neighbors for a vertex. In the worst case (a complete graph), a node can have \\( |V| - 1 \\) neighbors, leading to \\( O(|V|) \\) complexity."
+    },
+    {
+      "id": "extract-combined-1775907437942-29",
+      "number": "30",
+      "text": "A 0/1 Knapsack problem is defined with a capacity of \\( W = 5 \\) and the following four items:\n\n| Item | Value (v) | Weight (w) |\n| :--- | :--- | :--- |\n| 1 | 12 | 2 |\n| 2 | 10 | 1 |\n| 3 | 20 | 3 |\n| 4 | 15 | 2 |\n\nUsing dynamic programming, what is the maximum total value that can be placed in the knapsack?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "32"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "35"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "37"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "42"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "By checking combinations: Items {1, 2, 4} have total weight \\( 2 + 1 + 2 = 5 \\) and total value \\( 12 + 10 + 15 = 37 \\). Items {3, 4} have weight 5 and value 35. Items {3, 1} have weight 5 and value 32. The maximum value is 37."
+    },
+    {
+      "id": "extract-combined-1775907437942-30",
+      "number": "31",
+      "text": "Given the following adjacency list for an undirected graph:\n\n- 1: 2, 3\n- 2: 1, 3, 4\n- 3: 1, 2, 4\n- 4: 2, 3\n\nWhich of the following statements about this graph is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The graph is a directed acyclic graph (DAG)."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The graph contains a cycle (e.g., 1-2-3-1)."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The degree of node 4 is 3."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Node 1 is connected to all other nodes in the graph."
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Since node 1 is connected to 2, 2 is connected to 3, and 3 is connected back to 1, the graph contains the cycle 1-2-3-1. Node 4 only has 2 neighbors (2 and 3), so its degree is 2, not 3."
+    },
+    {
+      "id": "extract-combined-1775907437942-31",
+      "number": "32",
+      "text": "Consider the following undirected graph:\n\n```mermaid\ngraph TD\n    1 --- 2\n    1 --- 5\n    2 --- 3\n    2 --- 4\n    2 --- 5\n    3 --- 4\n    4 --- 5\n```\n\nWhat is the degree of node 2 and node 1 respectively?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Degree(2) = 3, Degree(1) = 2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Degree(2) = 4, Degree(1) = 2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Degree(2) = 4, Degree(1) = 3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Degree(2) = 5, Degree(1) = 2"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Node 2 is connected to nodes 1, 3, 4, and 5 (Degree 4). Node 1 is connected to nodes 2 and 5 (Degree 2)."
+    },
+    {
+      "id": "extract-combined-1775907437942-32",
+      "number": "33",
+      "text": "Based on the provided graph representing a Depth-First Search (DFS) traversal, identify the classification of the edge connecting node \\(v\\) to node \\(y\\). The numbers inside the nodes represent (discovery time / finish time).\n\nLegend:\n- Solid line: Tree edge\n- Dashed line (---): Back edge\n- Dotted line (...): Cross edge\n\n```mermaid\ngraph TD\n    u((u: 9/10))\n    w((w: 1/8))\n    y((y: 2/7))\n    x((x: 3/6))\n    v((v: 4/5))\n\n    w --> y\n    y --> x\n    x --> v\n    u -. cross edge .-> x\n    u -. cross edge .-> v\n    v -. back edge .-> y\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Tree edge"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Back edge"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Forward edge"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Cross edge"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In a DFS traversal, an edge from a node \\(v\\) to an ancestor \\(y\\) in the DFS tree is classified as a **back edge**. By examining the discovery/finish times (d/f), we can determine ancestry: node \\(y\\) has the interval \\([2, 7]\\) and node \\(v\\) has the interval \\([4, 5]\\). Since the interval for \\(v\\) is contained within the interval for \\(y\\) (\\([4, 5] \\subset [2, 7]\\)), \\(v\\) is a descendant of \\(y\\). An edge going from a descendant back to an ancestor is a back edge. This classification is also explicitly noted in the diagram's legend for dashed lines."
+    },
+    {
+      "id": "extract-combined-1775907437942-33",
+      "number": "34",
+      "text": "Which of the following is the most commonly used data structure for implementing Dijkstra's Algorithm?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Stack"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Min priority queue"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Circular queue"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Dijkstra's algorithm uses a min-priority queue to repeatedly select the vertex with the smallest tentative distance."
+    },
+    {
+      "id": "extract-combined-1775907437942-34",
+      "number": "35",
+      "text": "Which of the following is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Prim's algorithm initializes with a vertex"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Prim's algorithm initializes with an edge"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Prim's algorithm initializes with a vertex which has smallest edge"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Prim's algorithm initializes with a forest"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Prim's algorithm starts from an arbitrary source vertex and grows the Minimum Spanning Tree edge by edge."
+    },
+    {
+      "id": "extract-combined-1775907437942-35",
+      "number": "36",
+      "text": "The Bellman Ford algorithm returns _______ value.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Boolean"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Integer"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "String"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Double"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In standard implementations (like CLRS), Bellman-Ford returns a boolean value indicating whether the graph contains a negative-weight cycle reachable from the source."
+    },
+    {
+      "id": "extract-combined-1775907437942-36",
+      "number": "37",
+      "text": "Consider the knapsack with the following items, with weights and values as follows:\n- Item 1: (40 lbs, $120)\n- Item 2: (5 lbs, $45)\n- Item 3: (25 lbs, $150)\n- Item 4: (30 lbs, $120)\n\nConsider the fractional knapsack problem where the weight constraint is 50 lbs. The greatest value that can be achieved using a Greedy Algorithm is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "195"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "255"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "275"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "340"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Calculate value per pound: \n1. $120/40 = $3/lb\n2. $45/5 = $9/lb\n3. $150/25 = $6/lb\n4. $120/30 = $4/lb\n\nGreedy order: Item 2, Item 3, Item 4, Item 1.\n- Take all of Item 2 (5 lbs, $45). Remaining: 45 lbs.\n- Take all of Item 3 (25 lbs, $150). Remaining: 20 lbs.\n- Take 20 lbs of Item 4 ($4/lb * 20 = $80).\nTotal Value = 45 + 150 + 80 = 275."
+    },
+    {
+      "id": "extract-combined-1775907437942-37",
+      "number": "38",
+      "text": "In DFS, vertex v is a descendant of vertex u in the depth first forest iff",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "v is discovered during the time in which u is white"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "v is discovered during the time in which u is gray"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "v is discovered during the time in which u is black"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "u is discovered while v is gray"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "According to the Parenthesis Theorem, vertex v is a descendant of u if and only if the discovery interval [d[v], f[v]] is entirely contained within the discovery interval [d[u], f[u]], which means v is discovered while u is in the 'gray' state."
+    },
+    {
+      "id": "extract-combined-1775907437942-38",
+      "number": "39",
+      "text": "In the adjacency list, the time to list all vertices adjacent to u is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( \\Theta(V) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( \\Theta(E) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( \\Theta(1) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( \\Theta(\\text{degree}(u)) \\)"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In an adjacency list representation, the neighbors of vertex u are stored in a linked list. Traversing this list takes time proportional to its length, which is the degree of vertex u."
+    },
+    {
+      "id": "extract-combined-1775907437942-39",
+      "number": "40",
+      "text": "If \\( T(n) = 4T(\\frac{n}{4}) + n \\), then:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( T(n) = \\Theta(n \\log n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( T(n) = \\Theta(n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( T(n) = \\Theta(n^2) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "By Master Theorem: \\( a=4, b=4, f(n)=n \\). Since \\( n^{\\log_4 4} = n^1 \\) and \\( f(n) = \\Theta(n^1) \\), it falls into Case 2. Thus, \\( T(n) = \\Theta(n \\log n) \\)."
+    },
+    {
+      "id": "extract-combined-1775907437942-40",
+      "number": "41",
+      "text": "In a Minimum Spanning Tree, the number of edges equals:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( |V|-1 \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( |V| \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( 2|V| \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( |V|+1 \\)"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A tree with V vertices always contains exactly V-1 edges."
+    },
+    {
+      "id": "extract-combined-1775907437942-41",
+      "number": "42",
+      "text": "In a Complete Binary Tree (CBT), the height of a node is defined as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "the number of edges on any path from the node down to a leaf"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "the number of edges on a longest simple path from the node down to a leaf"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "the length of a path from the root to the node"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "the length of the maximum path from the root to the node"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Height of a node is the length (number of edges) of the longest path from that node down to a leaf. The length of a path from the root to the node is called the depth."
+    },
+    {
+      "id": "extract-combined-1775907437942-42",
+      "number": "43",
+      "text": "Consider the following graph with weighted edges. What are the resulting disjoint sets after applying the Kruskal algorithm at the fifth iteration?\n\n```mermaid\ngraph LR\n    S ---|10| A\n    S ---|14| B\n    A ---|16| C\n    A ---|12| D\n    B ---|8| D\n    B ---|4| F\n    C ---|9| G\n    D ---|6| E\n    D ---|7| F\n    E ---|5| G\n    E ---|3| H\n    F ---|11| H\n    G ---|15| H\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "{B,F}, {C}, {D}, {E,H}, {G}, {S}, {A}"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "{B,F}, {C}, {D}, {E,G,H}, {S}, {A}"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "{A,B,F}, {C}, {D,E,G,H}, {S}"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "{B,D,E,F,G,H}, {C}, {S}, {A}"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Kruskal's algorithm processes edges in increasing order of weight:\n1. (E,H) [3]: Sets {E,H}\n2. (B,F) [4]: Sets {E,H}, {B,F}\n3. (E,G) [5]: Sets {E,G,H}, {B,F}\n4. (E,D) [6]: Sets {D,E,G,H}, {B,F}\n5. (D,F) [7]: Merges {D,E,G,H} and {B,F} -> {B,D,E,F,G,H}.\nThe remaining singleton sets are {S}, {A}, and {C}."
+    },
+    {
+      "id": "extract-combined-1775907437942-43",
+      "number": "44",
+      "text": "Consider the graph below as your input. What is the resulting Breadth-First Tree starting from node V? \nNote: If at any point you have a choice between two vertices, choose the one with the smaller number.\n\n```mermaid\ngraph TD\n    V --- V1\n    V --- V2\n    V1 --- V3\n    V1 --- V5\n    V2 --- V3\n    V2 --- V4\n    V3 --- V4\n    V3 --- V5\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Edges: (V, V1), (V, V2), (V1, V3), (V1, V5), (V2, V4)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Edges: (V, V1), (V, V2), (V2, V3), (V2, V4), (V1, V5)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Edges: (V, V1), (V, V2), (V3, V4), (V3, V5), (V1, V3)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Edges: (V, V1), (V, V2), (V1, V3), (V1, V4), (V1, V5)"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "BFS steps starting from V:\n1. Visit V. Neighbors: V1, V2. Both are added to queue and tree. Queue: [V1, V2]. Edges: (V,V1), (V,V2).\n2. Dequeue V1. Neighbors: V3, V5. Both are added to queue and tree. Queue: [V2, V3, V5]. Edges: (V,V1), (V,V2), (V1,V3), (V1,V5).\n3. Dequeue V2. Neighbors: V3 (visited), V4 (unvisited). Add V4. Queue: [V3, V5, V4]. Edges: (V,V1), (V,V2), (V1,V3), (V1,V5), (V2,V4)."
+    },
+    {
+      "id": "extract-combined-1775907437942-44",
+      "number": "45",
+      "text": "The following table (s-table) has been computed for a chain of matrices \\( A_1, A_2, A_3, A_4, A_5 \\), with dimensions \\( \\langle 30, 1, 40, 10, 25, 6 \\rangle \\).\n\n| i \\ j | 1 | 2 | 3 | 4 | 5 |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| **1** | | 1 | 2 | 3 | 3 |\n| **2** | | | 2 | 2 | 4 |\n| **3** | | | | 3 | 4 |\n| **4** | | | | | 4 |\n\nIdentify the optimal parenthesization for this matrix chain multiplication.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( ((A_1 A_2) A_3) (A_4 A_5) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( (A_1 (A_2 A_3)) (A_4 A_5) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( (A_1 A_2) (A_3 (A_4 A_5)) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( A_1 (A_2 (A_3 (A_4 A_5))) \\)"
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Using the s-table to reconstruct the split points:\n- \\( s[1,5] = 3 \\) implies split is \\( (A_1..A_3)(A_4..A_5) \\).\n- \\( s[1,3] = 2 \\) implies split for the first group is \\( (A_1..A_2)(A_3) \\).\n- \\( s[1,2] = 1 \\) implies split is \\( (A_1)(A_2) \\).\n- \\( s[4,5] = 4 \\) implies split for the second group is \\( (A_4)(A_5) \\).\nCombining these gives: \\( ((A_1 A_2) A_3) (A_4 A_5) \\)."
+    },
+    {
+      "id": "extract-combined-1775907437942-45",
+      "number": "46",
+      "text": "Execute a depth-first search (DFS) on the directed graph below, starting from vertex (U). If at any point you have a choice between two vertices, choose the one with the label which is lexicographically smaller (e.g., closer to the start of the alphabet). Identify the discovery time \\(d[u]\\) and finishing time \\(f[u]\\) for the selected vertices: U, V, Z, and Q.\n\n```mermaid\ngraph TD\n    U((U)) --> V((V))\n    U --> X((X))\n    V --> W((W))\n    V --> Y((Y))\n    W --> Z((Z))\n    Z --> Q((Q))\n    Q --> Z\n    X --> V\n    Y --> X\n    Y --> V\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "U: (1, 14), V: (2, 13), Z: (4, 7), Q: (5, 6)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "U: (1, 14), V: (2, 9), Z: (4, 5), Q: (6, 7)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "U: (1, 10), V: (2, 8), Z: (3, 6), Q: (4, 5)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "U: (1, 12), V: (2, 11), Z: (5, 8), Q: (6, 7)"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The DFS traversal starting from U follows these steps based on lexicographical order:\n1. Discover **U** at time 1. Neighbors are V and X; choose **V**.\n2. Discover **V** at time 2. Neighbors are W and Y; choose **W**.\n3. Discover **W** at time 3. Neighbor is **Z**.\n4. Discover **Z** at time 4. Neighbor is **Q**.\n5. Discover **Q** at time 5. Neighbor is Z (already gray), so finish **Q** at time 6.\n6. Backtrack to **Z** and finish at time 7.\n7. Backtrack to **W** and finish at time 8.\n8. Backtrack to **V**. Neighbor Y is white; discover **Y** at time 9.\n9. From **Y**, neighbors are V (gray) and X (white). Discover **X** at time 10.\n10. From **X**, neighbor V is gray; finish **X** at time 11.\n11. Backtrack to **Y** and finish at time 12.\n12. Backtrack to **V** and finish at time 13.\n13. Backtrack to **U**. Neighbor X is black; finish **U** at time 14."
+    },
+    {
+      "id": "extract-combined-1775907437942-46",
+      "number": "47",
+      "text": "Based on the depth-first search (DFS) traversal starting from vertex (U) with lexicographical tie-breaking, classify the following edges: (U,V), (Y,X), (Q,Z), and (Y,V) as either Tree edges (T), Back edges (B), Forward edges (F), or Cross edges (C).\n\n```mermaid\ngraph TD\n    U((U)) --> V((V))\n    U --> X((X))\n    V --> W((W))\n    V --> Y((Y))\n    W --> Z((Z))\n    Z --> Q((Q))\n    Q --> Z\n    X --> V\n    Y --> X\n    Y --> V\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "(U,V): Tree, (Y,X): Tree, (Q,Z): Back, (Y,V): Back"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "(U,V): Tree, (Y,X): Forward, (Q,Z): Tree, (Y,V): Cross"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "(U,V): Forward, (Y,X): Tree, (Q,Z): Back, (Y,V): Tree"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "(U,V): Tree, (Y,X): Cross, (Q,Z): Back, (Y,V): Forward"
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Classification of edges during DFS:\n- **(U,V)**: V is white when explored from U, making it a Tree edge.\n- **(Y,X)**: X is white when explored from Y, making it a Tree edge.\n- **(Q,Z)**: Z is an ancestor of Q currently on the stack (gray) when the edge is explored, making it a Back edge.\n- **(Y,V)**: V is an ancestor of Y currently on the stack (gray) when the edge is explored, making it a Back edge."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 47
+}

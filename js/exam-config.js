@@ -116,27 +116,39 @@ const EXAM_CONFIG = [
     "chapters": [
       {
         "id": "1",
+        "name": "First",
+        "q": 8,
+        "file": "data/algorithm/midMultiple Filesvisual_extractor.json"
+      },
+      {
+        "id": "2",
+        "name": "Second",
+        "q": 13,
+        "file": "data/algorithm/chapterMultiple Filesvisual_extractor (3).json"
+      },
+      {
+        "id": "3",
         "name": "Mid",
         "q": 40,
         "file": "data/algorithm/midMultipleFilesvisualextractor.json"
       },
       {
-        "id": "2",
+        "id": "4",
         "name": "Mid By Z+",
         "q": 30,
         "file": "data/algorithm/midMultipleFilesregenerationsame.json"
       },
       {
-        "id": "3",
+        "id": "5",
         "name": "Mid custom (Hard)",
         "q": 30,
         "file": "data/algorithm/midMultipleFilesregenerationharder.json"
       },
       {
-        "id": "4",
-        "name": "First",
-        "q": 8,
-        "file": "data/algorithm/midMultiple Filesvisual_extractor.json"
+        "id": "6",
+        "name": "Final",
+        "q": 47,
+        "file": "data/algorithm/chapterMultiple Filesvisual_extractor (4).json"
       }
     ]
   },
