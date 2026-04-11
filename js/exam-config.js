@@ -160,6 +160,12 @@ const EXAM_CONFIG = [
     "icon": "data/data_structure/icon.png",
     "chapters": [
       {
+        "id": "1",
+        "name": "First",
+        "q": 65,
+        "file": "data/data_structure/chapterMultiple Filesvisual_extractor (1) fir.json"
+      },
+      {
         "id": "2",
         "name": "Second",
         "q": 61,

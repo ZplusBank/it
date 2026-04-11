@@ -1,0 +1,2029 @@
+{
+  "id": "extract-combined-1775924177097",
+  "label": "Combined Batch (14 files)",
+  "params": {
+    "file": "Multiple Files",
+    "type": "visual_extractor",
+    "chapter": "1"
+  },
+  "title": "First",
+  "questions": [
+    {
+      "id": "extract-combined-1775924177097-0",
+      "number": "1",
+      "text": "Based on the provided doubly linked list diagram, where pointer **P** points to node **D**, which code correctly deletes the node located before node **P**?\n\n```mermaid\ngraph LR\n    A[A] <--> B[B] <--> C[C] <--> D[D] <--> E[E] <--> F[F]\n    P((P)) --> D\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "B.next = D; D.prev = B;"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "p.prev = p.prev.prev; p.prev.prev.next = P;"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "p.prev.next = p; p.prev = p.prev.prev;"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "p.prev = p.prev.prev; p.prev.next = P;"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "To delete node C (the node before P/D), we must link its predecessor (B) to its successor (D). In a doubly linked list, this involves setting `B.next` to `D` and `D.prev` to `B`. In general terms using pointer `p`, this would be `p.prev.prev.next = p;` and `p.prev = p.prev.prev;`."
+    },
+    {
+      "id": "extract-combined-1775924177097-1",
+      "number": "2",
+      "text": "Given a Singly Linked list `list1`, where 13 is the head and 19 is the tail: `13 -> 5 -> 12 -> 19`. What is the output of calling the method `XXX()`?\n\n```java\npublic void XXX() {\n    if (!isEmpty()) {\n        Node temp = head;\n        int i = 1;\n        while (temp != tail) {\n            if (i % 2 == 0) \n                System.out.println(temp.data);\n            temp = temp.next;\n            i++;\n        }\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "12"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "13 5"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "5"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "5 19"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "3",
+      "explanation": "The loop traverses the list until `temp` reaches the tail (19). \n- \\(i=1\\), `temp=13`: \\(1 \\% 2 \\neq 0\\). \n- \\(i=2\\), `temp=5`: \\(2 \\% 2 = 0\\), so 5 is printed. \n- \\(i=3\\), `temp=12`: \\(3 \\% 2 \\neq 0\\). \n- Loop terminates because `temp` now points to the tail (19). Only 5 is printed."
+    },
+    {
+      "id": "extract-combined-1775924177097-2",
+      "number": "3",
+      "text": "What is the output of the following code segment?\n\n```java\nStack s1 = new Stack();\nStack s2 = new Stack();\nfor(int i = 1; i < 10; i *= 2) \n    s1.push(i);\n\nwhile(!s1.isEmpty()) {\n    if(s1.top() > 3) \n        s2.push(s1.pop());\n    else \n        System.out.println(s1.pop());\n}\n\nwhile(!s1.isEmpty()) \n    System.out.println(s1.pop());\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "2 1"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "2 9"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "1 2 3 4 5 6 7 8 9"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "1 2 6"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "First, values 1, 2, 4, 8 are pushed onto `s1`. \n- Pop 8: \\(8 > 3\\) is true, push 8 to `s2`.\n- Pop 4: \\(4 > 3\\) is true, push 4 to `s2`.\n- Pop 2: \\(2 > 3\\) is false, print 2.\n- Pop 1: \\(1 > 3\\) is false, print 1.\nThe second `while` loop doesn't execute because `s1` is empty. Output is `2 1`."
+    },
+    {
+      "id": "extract-combined-1775924177097-3",
+      "number": "4",
+      "text": "What is the output of the following code?\n\n```java\nStack S1 = new Stack(); \nStack S2 = new Stack();\nfor (int i = 2; i <= 5; i++){\n    S1.push(i); \n    S1.push(S1.top()+i); \n    S2.push(S1.pop()); \n}\nfor (int j = 1; j <= 3; j++) \n    if (S1.pop() >= S2.pop()) \n        S1.push(S2.top()); \n    else \n        S1.push(S2.top());\n\nSystem.out.print(S1.top()+S2.top());\nSystem.out.print(S2.size()+S1.size());\nSystem.out.print(S1.pop()+S1.pop());\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "10 6 8"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "8 5 8"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "6 8 8"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "No Correct answer"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "2",
+      "explanation": "Initial state: `S1=[2, 3, 4, 5]`, `S2=[4, 6, 8, 10]`. \n- j=1: pop 5 from S1, pop 10 from S2. `5 >= 10` is false. S1.push(S2.top()) which is 8. `S1=[2,3,4,8]`, `S2=[4,6,8]`.\n- j=2: pop 8 from S1, pop 8 from S2. `8 >= 8` is true. S1.push(S2.top()) which is 6. `S1=[2,3,4,6]`, `S2=[4,6]`.\n- j=3: pop 6 from S1, pop 6 from S2. `6 >= 6` is true. S1.push(S2.top()) which is 4. `S1=[2,3,4,4]`, `S2=[4]`.\n- `S1.top() + S2.top() = 4 + 4 = 8`.\n- `S2.size() + S1.size() = 1 + 4 = 5`.\n- `S1.pop() + S1.pop() = 4 + 4 = 8`. Result: `858`."
+    },
+    {
+      "id": "extract-combined-1775924177097-4",
+      "number": "5",
+      "text": "Consider a linked list containing values. What is the purpose of the following code?\n\n```java\npublic void xxx(int val) {\n    node t = head;\n    int x1 = 1;\n    int x2 = 1;\n    while (t != null) {\n        if (t.data == val)\n            x2 = x1;\n        x1++;\n        t = t.next;\n    }\n    deleteFromPos(x2);\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "Delete each node contains the value (val)"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "Delete the first node contains of the value (val)"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "Delete the last node contains of the value (val)"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "No Correct answer"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "3",
+      "explanation": "The loop traverses the entire list. `x1` tracks the current index. Whenever `val` is found, `x2` is updated to the current index. After the loop, `x2` holds the index of the final occurrence of `val`. `deleteFromPos(x2)` then removes that specific node."
+    },
+    {
+      "id": "extract-combined-1775924177097-5",
+      "number": "6",
+      "text": "What is the most efficient code to delete the node at the 5th location in the following singly linked list: `4 -> 12 -> 20 -> 8 -> 6 -> 7`, where 4 is the head and 7 is the tail?",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "tail = tail.previous; tail.next = null;"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "Node t = head; for(int i=1; i<=4; i++); t = t.next; t.next=t.next.next;"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "tail.previous.previous.next = tail;"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "The efficient code is not mentioned."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "4",
+      "explanation": "The question specifies a singly linked list. Options 1 and 3 use `previous`, which is for doubly linked lists. Option 2 has a semicolon after the `for` loop, which makes it logically incorrect as it won't traverse the list as intended. Therefore, no correct code is provided."
+    },
+    {
+      "id": "extract-combined-1775924177097-6",
+      "number": "7",
+      "text": "Which of the following options most accurately characterizes the relevant criteria for comparing algorithm efficiency?",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "Execution Time"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "Memory Usage"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "Neither Execution Time nor Memory Usage"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "Both Execution Time and Memory Usage"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "4",
+      "explanation": "Algorithm efficiency is typically evaluated based on Time Complexity (Execution Time) and Space Complexity (Memory Usage)."
+    },
+    {
+      "id": "extract-combined-1775924177097-7",
+      "number": "8",
+      "text": "What is the time complexity of the following code segment?\n\n```java\nfor (int i = 1; i <= n^2; i += 1) {\n    int k = 1;\n    while (k <= n^2) {\n        k = k + n;\n        for (int j = 1; j <= n; j += 3)\n            System.out.println(\"Why\");\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "\\(O(n^3)\\)"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "\\(O(n^4)\\)"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "\\(O(n^5)\\)"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "No Correct Answer"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "2",
+      "explanation": "- Outer loop runs \\(n^2\\) times.\n- Middle `while` loop: `k` incremented by `n` until `n^2`, running approximately \\(n\\) times.\n- Inner `for` loop runs from 1 to `n` in steps of 3, running approximately \\(n/3\\) times, which is \\(O(n)\\).\nTotal Complexity = \\(O(n^2 \\cdot n \\cdot n) = O(n^4)\\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-8",
+      "number": "9",
+      "text": "The table below shows the run times of an algorithm for some values of \\(n\\). What is the complexity of the code?\n\n| n | running time |\n|---|--------------|\n| 1000 | 2.5 sec |\n| 2000 | 20 sec |\n| 4000 | 160 sec |",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "\\(O(n)\\)"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "\\(O(n^2)\\)"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "\\(O(n^3)\\)"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "\\(O(n^4)\\)"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "3",
+      "explanation": "Observe that when \\(n\\) doubles (e.g., from 1000 to 2000), the time increases by a factor of 8 (20 / 2.5 = 8). Since \\(2^3 = 8\\), the complexity is \\(O(n^3)\\). This is confirmed by the jump from 2000 to 4000 (160 / 20 = 8)."
+    },
+    {
+      "id": "extract-combined-1775924177097-9",
+      "number": "10",
+      "text": "What is the output of the following code?\n\n```java\nSinglyLinkedList s1 = new SinglyLinkedList();\ns1.insertToHead(5); \ns1.insertToHead(6); \ns1.insertToHead(7); \ns1.insertToHead(6); \ns1.insertToHead(8);\nnode t = s1.head;\nwhile (t != null) {\n    if (t.data == s1.head.next.data) {\n        node nn = new node();\n        nn.data = t.data - 1;\n        nn.next = s1.head.next;\n        s1.head.next = nn;\n    }\n    t = t.next;\n}\ns1.printAll();\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "8 4 5 6 7 6 5"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "8 5 7 8 6 7"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "8 5 6 7 6 6 7"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "1. Build list: `8 -> 6 -> 7 -> 6 -> 5`. `s1.head.next.data` is 6.\n2. Iteration: `t` points to 8 (skip).\n3. `t` points to 6: `6 == 6`. Create `nn(5)`. List: `8 -> 5 -> 6 -> 7 -> 6 -> 5`. `s1.head.next.data` is now 5.\n4. `t` points to 7 (skip).\n5. `t` points to 6 (skip).\n6. `t` points to 5: `5 == 5`. Create `nn(4)`. List: `8 -> 4 -> 5 -> 6 -> 7 -> 6 -> 5`. \nFinal output is `8 4 5 6 7 6 5`."
+    },
+    {
+      "id": "extract-combined-1775924177097-10",
+      "number": "11",
+      "text": "What is the Postfix of the following Infix expression? \\( 8 / (9 - 3 * 2 + 1) - 1 \\)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "8 9 3 2 * - 1 + / 1 -"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "8 9 3 - 2 * 1 + 1 / -"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "8 9 3 2 - * 1 + / 1 -"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No Correct Answer"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To convert the infix expression \\( 8 / (9 - 3 * 2 + 1) - 1 \\) to postfix:\n1. **Evaluate inside parentheses**: \\( (9 - 3 * 2 + 1) \\)\n   - Multiplication has higher precedence: \\( 3 * 2 \\) becomes `3 2 *`.\n   - Evaluate subtraction: \\( 9 - (3 * 2) \\) becomes `9 3 2 * -`.\n   - Evaluate addition: \\( (9 - 3 * 2) + 1 \\) becomes `9 3 2 * - 1 +`.\n2. **Apply division**: \\( 8 / (parentheses\\_result) \\) becomes `8 9 3 2 * - 1 + /`.\n3. **Apply final subtraction**: \\( (division\\_result) - 1 \\) becomes `8 9 3 2 * - 1 + / 1 -`."
+    },
+    {
+      "id": "extract-combined-1775924177097-11",
+      "number": "12",
+      "text": "For large values of \\( n \\), Algorithm A with complexity ________ is faster than algorithm B with an complexity of ________",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(n^2 \\log_2 n), O(n^2) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n^3), O(n^2 \\log_2 n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n), O(\\log_2 n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(n), O(n \\log_2 n) \\)"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "An algorithm is 'faster' if its time complexity grows more slowly as \\( n \\) increases. The general hierarchy of growth rates is: \\( O(1) < O(\\log n) < O(n) < O(n \\log n) < O(n^2) < O(n^2 \\log n) < O(n^3) \\).\n- In option D, Algorithm A has complexity \\( O(n) \\) and Algorithm B has complexity \\( O(n \\log_2 n) \\). Since \\( O(n) < O(n \\log_2 n) \\), Algorithm A is faster."
+    },
+    {
+      "id": "extract-combined-1775924177097-12",
+      "number": "13",
+      "text": "Determine the Big O complexity for the following code snippet:\n\n```java\nfor (int i = 1; i <= 15; i++)\n    System.out.print(\"HI\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(1) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(15) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(n^2) \\)"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The loop runs exactly 15 times regardless of the input size. Constant time operations are represented as \\( O(1) \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-13",
+      "number": "14",
+      "text": "Determine the Big O complexity for the following code snippet:\n\n```java\nfor (int i = 1; i < 15; i++)\n    for (int j = 1; j <= n; j++)\n        System.out.print(\"HI\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(1) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n^2) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(14n) \\)"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The outer loop runs a constant number of times (14 iterations), and the inner loop runs \\( n \\) times. Thus, the total iterations are \\( 14 \\times n \\), which simplifies to \\( O(n) \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-14",
+      "number": "15",
+      "text": "How many times will \"HI\" be printed in the following code snippet?\n\n```java\nfor (int i = 1; i < 15; i++)\n    for (int j = 1; j <= n; j++)\n        System.out.print(\"HI\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( 15n \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( 14n \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( n \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( 14 \\)"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The outer loop runs from \\( i = 1 \\) to \\( i < 15 \\) (14 times). The inner loop runs from \\( j = 1 \\) to \\( j \\le n \\) (\\( n \\) times). Total count is \\( 14 \\times n \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-15",
+      "number": "16",
+      "text": "Determine the Big O complexity for the following code snippet:\n\n```java\nint x = 1;\nwhile (x <= n) {\n    System.out.print(\"HI\");\n    x = x * 2;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(\\log n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n^2) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(2^n) \\)"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The loop variable \\( x \\) doubles every iteration (1, 2, 4, 8...). This geometric progression reaches \\( n \\) in approximately \\( \\log_2(n) \\) steps, making the complexity \\( O(\\log n) \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-16",
+      "number": "17",
+      "text": "Determine the Big O complexity for the following code snippet:\n\n```java\nint x = 1;\nwhile (x <= n) {\n    System.out.print(\"HI\");\n    x = x + 2;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(\\log n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n^2) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(1) \\)"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The loop increments \\( x \\) by a constant (2) each time. The loop will run approximately \\( n/2 \\) times, which simplifies to \\( O(n) \\) complexity."
+    },
+    {
+      "id": "extract-combined-1775924177097-17",
+      "number": "18",
+      "text": "How many times will \"HI\" be printed in the following code snippet?\n\n```java\nint x = 1;\nwhile (x <= n) {\n    System.out.print(\"HI\");\n    x = x + 2;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( n \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( n / 2 \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( \\lceil n/2 \\rceil \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( 2n \\)"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "For an input \\( n \\), starting from 1 and incrementing by 2, the loop runs \\( 1, 3, 5, \\dots \\) until it exceeds \\( n \\). This occurs exactly \\( \\lceil n/2 \\rceil \\) times."
+    },
+    {
+      "id": "extract-combined-1775924177097-18",
+      "number": "19",
+      "text": "Determine the Big O complexity for the following code snippet:\n\n```java\nint x = 1;\nwhile (x <= n) {\n    System.out.print(\"HI\");\n    x = x * 2;\n    int y = n;\n    while (y >= 1) {\n        System.out.print(\"BYE\");\n        y--;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n^2) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n \\log n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(\\log n) \\)"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The outer loop runs \\( O(\\log n) \\) times (doubling strategy). For each outer iteration, the inner loop runs \\( n \\) times (decrementing strategy). Total complexity is \\( O(n) \\times O(\\log n) = O(n \\log n) \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-19",
+      "number": "20",
+      "text": "In the following snippet, how many times will \"HI\" be printed?\n\n```java\nint x = 1;\nwhile (x <= n) {\n    System.out.print(\"HI\");\n    x = x * 2;\n    int y = n;\n    while (y >= 1) {\n        System.out.print(\"BYE\");\n        y--;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( n \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( \\log_2 n \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( \\lfloor \\log_2 n \\rfloor + 1 \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( n \\log_2 n \\)"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "\"HI\" is printed once per outer loop iteration. The outer loop runs for values of \\( x = 1, 2, 4, \\dots, 2^k \\le n \\). The count is \\( \\lfloor \\log_2 n \\rfloor + 1 \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-20",
+      "number": "21",
+      "text": "In the same snippet, how many times will \"BYE\" be printed?\n\n```java\nint x = 1;\nwhile (x <= n) {\n    System.out.print(\"HI\");\n    x = x * 2;\n    int y = n;\n    while (y >= 1) {\n        System.out.print(\"BYE\");\n        y--;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( n \\times (\\lfloor \\log_2 n \\rfloor + 1) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( n^2 \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( n \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( \\log_2 n \\)"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "\"BYE\" is printed inside an inner loop that executes \\( n \\) times. This inner loop is repeated for every iteration of the outer loop. Since the outer loop runs \\( \\lfloor \\log_2 n \\rfloor + 1 \\) times, the total is \\( n \\cdot (\\lfloor \\log_2 n \\rfloor + 1) \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-21",
+      "number": "22",
+      "text": "Assuming standard loop behavior (incrementing by 1), what is the Big O complexity for the following code snippet?\n\n```java\nint x = 1;\nwhile (x <= n) {\n    System.out.print(\"ONE\");\n    x = x++; \n    int y = n * n;\n    while (y >= 1) {\n        System.out.print(\"TWO\");\n        y--;\n    }\n    for (int i = 1; i <= n; i++) {\n        System.out.print(\"THREE\");\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(n^2) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n^3) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(n^4) \\)"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Assuming the increment logic works (despite the logic error in `x = x++`), the outer loop runs \\( n \\) times. Inside, we have a loop running \\( n^2 \\) times and another running \\( n \\) times. Total work: \\( n \\times (n^2 + n) = n^3 + n^2 \\), which is \\( O(n^3) \\). Note: In pure Java, `x = x++` results in an infinite loop as the original value is assigned back."
+    },
+    {
+      "id": "extract-combined-1775924177097-22",
+      "number": "23",
+      "text": "How many times will \"ONE\" be printed in the code snippet above, assuming the outer loop increments correctly?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( n \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( n^2 \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( n^3 \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "\"ONE\" is in the body of the outer loop which runs from \\( x=1 \\) to \\( n \\). It executes \\( n \\) times."
+    },
+    {
+      "id": "extract-combined-1775924177097-23",
+      "number": "24",
+      "text": "How many times will \"TWO\" be printed in the code snippet above, assuming the outer loop increments correctly?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( n \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( n^2 \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( n^3 \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( 2n \\)"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "\"TWO\" is in an inner loop that runs \\( n^2 \\) times. This happens for every iteration of the outer loop (which runs \\( n \\) times). Total is \\( n \\times n^2 = n^3 \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-24",
+      "number": "25",
+      "text": "How many times will \"THREE\" be printed in the code snippet above, assuming the outer loop increments correctly?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( n \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( n^2 \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( n^3 \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( 3n \\)"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "\"THREE\" is in an inner loop that runs \\( n \\) times. This happens for every iteration of the outer loop (which runs \\( n \\) times). Total is \\( n \\times n = n^2 \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-25",
+      "number": "26",
+      "text": "What is the time complexity of the following code snippet?\n\n```java\nfor(int i=1; i<=n; i++) {\n    System.out.print(\"ONE\");\n    for(int j = 1; j <= n; j *= 2)\n        System.out.print(\"TWO\");\n    int k = n * n;\n    while (k >= 1) {\n        System.out.print(\"THREE\");\n        k = k - n;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(n \\log n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n^2) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(n^3) \\)"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The outer loop runs \\( n \\) times. Inside, the first inner loop runs \\( \\log_2 n \\) times. The second inner loop (while) starts at \\( n^2 \\) and decreases by \\( n \\) each step, resulting in \\( n^2 / n = n \\) iterations. The total complexity is \\( n \\times (\\log n + n) = O(n^2 + n \\log n) \\), which simplifies to \\( O(n^2) \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-26",
+      "number": "27",
+      "text": "In the provided code snippet, how many times will the string \"TWO\" be printed in terms of \\( n \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( n \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( n^2 \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( n \\log_2 n \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( \\log_2 n \\)"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The string \"TWO\" is printed inside an inner loop that runs \\( \\log_2 n \\) times. This inner loop is contained within an outer loop that runs \\( n \\) times. Therefore, the total number of prints is \\( n \\times \\log_2 n \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-27",
+      "number": "28",
+      "text": "In the `insert_after_X` method, what is the missing statement for `Y.next` when the list is initially empty?\n\n```java\npublic void insert_after_X(int val) {\n    if(isEmpty()) {\n        Y = new node();\n        Y.data = val;\n        Y.next = ---------;\n        X = Y;\n    }\n    // ... else block\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "X"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "NULL"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Y"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "new node()"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "When inserting the first element into an empty singly linked list, the `next` pointer of that new node must point to `NULL` (or `null`) to signify the end of the list."
+    },
+    {
+      "id": "extract-combined-1775924177097-28",
+      "number": "29",
+      "text": "In the `else` block of `insert_after_X`, what should the variable `nn` be initialized to?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "new node()"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "X.next"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Y"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "NULL"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To insert a new value, a new node must be instantiated. The code `Node nn = new node();` creates this new container."
+    },
+    {
+      "id": "extract-combined-1775924177097-29",
+      "number": "30",
+      "text": "To correctly insert the new node `nn` after the tail node `X`, which sequence of statements is correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`X.next = nn; X = nn;`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`X = nn; X.next = nn;`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`nn.next = X; X = nn;`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`X.next = NULL; X = nn;`"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To append after the current tail `X`, you first link `X`'s next pointer to the new node (`X.next = nn`) and then update the tail pointer `X` to be the new node (`X = nn`)."
+    },
+    {
+      "id": "extract-combined-1775924177097-30",
+      "number": "31",
+      "text": "In the `insert_before_X` method, what is the missing statement inside the `while` loop used to traverse the list until the node before `X` is found?\n\n```java\nNode t = y;\nwhile (t.next != x)\n    ---------;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "t = x;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "t = t.next;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "t.next = t;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "continue;"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Standard linked list traversal involves moving the pointer to the next node using `t = t.next` until the desired condition is met."
+    },
+    {
+      "id": "extract-combined-1775924177097-31",
+      "number": "32",
+      "text": "When inserting a new node `nn` before node `x`, what should `nn.next` point to?\n\n```java\nnode nn = new node();\nnn.data = val;\nnn.next = ---------;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "NULL"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "t"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "y"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "To place `nn` before `x`, the `next` pointer of `nn` must point to `x`."
+    },
+    {
+      "id": "extract-combined-1775924177097-32",
+      "number": "33",
+      "text": "In the `print_neighbors_if_equal` method, how should `t2` be initialized to allow comparison between adjacent nodes (neighbors)?\n\n```java\nNode t1 = y;\nNode t2 = ---------;\nwhile (t2.next != NULL) {\n    if (t1.data == ---------)\n    // ...\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "NULL"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "y.next"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "y"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "t1"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "To compare a node with its immediate neighbor, if `t1` starts at the head (`y`), `t2` should start at the second node (`y.next`)."
+    },
+    {
+      "id": "extract-combined-1775924177097-33",
+      "number": "34",
+      "text": "What is the time complexity of the `print_neighbors_if_equal` method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(1) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n^2) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(\\log n) \\)"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The method uses a single `while` loop that traverses the linked list from head to tail once. This results in linear time complexity, \\( O(n) \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-34",
+      "number": "35",
+      "text": "Consider the following Java method intended to repeat each node in a single linked list that contains the value \\( n \\). What should be the condition for **Q27** to check if the current node's data matches \\( n \\)?\n\n```java\npublic int RepeatNodes(int n)\n{\n    Node t = head;\n    int x = 1;\n    while (t != null)\n    {\n        if (/* Q27 */)\n        {\n            /* Q28 */;\n            /* Q29 */;\n            /* Q30 */;\n        }\n        else\n        {\n            /* Q31 */;\n            /* Q32 */;\n        }\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "t.data == n"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "t == n"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "t.next == n"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "head.data == n"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To check if the value of the current node `t` is equal to `n`, we access the `data` field of the node object using `t.data`."
+    },
+    {
+      "id": "extract-combined-1775924177097-35",
+      "number": "36",
+      "text": "Referencing the `RepeatNodes(int n)` method, what statement should be placed in **Q28** to insert a duplicate of the current node at the current position \\( x \\)?\n\n(Hint: Use the `insertTopos(pos, val)` method provided in class.)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "insertTopos(x, t.data)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "insertTopos(t.data, x)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "addNode(x)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "t.next = new Node(n)"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The method `insertTopos(pos, val)` is used to insert a value at a specific position. Here, we insert the value of the current node (`t.data`) at position `x`."
+    },
+    {
+      "id": "extract-combined-1775924177097-36",
+      "number": "37",
+      "text": "After a node is inserted in the `if` block of the `RepeatNodes` method, how should the position counter \\( x \\) be updated in **Q29** to correctly skip both the new node and the original node in the next iteration?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x++;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x += 2;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x = 1;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x = x - 1;"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Since a new node was inserted, the list grew by one. To move past the newly inserted node and the original node that was just matched, the position counter `x` must be incremented by 2."
+    },
+    {
+      "id": "extract-combined-1775924177097-37",
+      "number": "38",
+      "text": "In the `RepeatNodes` method, what statement should be placed in **Q30** to advance the pointer `t` to the next node in the original sequence after a match is found?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "t = head;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "t = t.next.next;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "t = t.next;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "t = null;"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "To iterate through the list, the pointer `t` must move to its successor using `t = t.next`. Note that if `insertTopos` inserts *at* position `x`, the original node `t` remains the same object, but its index in the list increases."
+    },
+    {
+      "id": "extract-combined-1775924177097-38",
+      "number": "39",
+      "text": "In the `else` block of the `RepeatNodes` method (where the current node's data does not match \\( n \\)), how should the position counter \\( x \\) be updated in **Q31**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x++;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x += 2;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x--;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x = 0;"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "If no insertion occurs, we simply move to the next position in the list, so the counter `x` is incremented by 1."
+    },
+    {
+      "id": "extract-combined-1775924177097-39",
+      "number": "40",
+      "text": "What statement should be placed in **Q32** to advance the pointer `t` in the `else` block of the `RepeatNodes` method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "t = t.next;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "t = head;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "t = null;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "t = t.prev;"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Standard traversal of a single linked list requires updating the current node pointer to the next node: `t = t.next`."
+    },
+    {
+      "id": "extract-combined-1775924177097-40",
+      "number": "41",
+      "text": "Determine the Big O complexity of the following code snippet:\n```java\nfor (int i = 1; i <= 15; i++)\n    System.out.print(\"HI\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(1) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(\\log n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(15) \\)"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The loop runs for a fixed number of iterations (15), which is independent of the input size \\( n \\). Therefore, its complexity is constant, denoted as \\( O(1) \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-41",
+      "number": "42",
+      "text": "Consider the following nested loops. Determine the Big O complexity and the total number of times \"HI\" is printed.\n```java\nfor (int i = 1; i <= 15; i++)\n    for (int j = 1; j <= n; j++)\n        System.out.print(\"HI\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Complexity: \\( O(n^2) \\), Times: \\( n^2 \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Complexity: \\( O(n) \\), Times: \\( 15n \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Complexity: \\( O(1) \\), Times: \\( 15 \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Complexity: \\( O(n) \\), Times: \\( n + 15 \\)"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The outer loop runs exactly 15 times. The inner loop runs \\( n \\) times for each outer iteration. Total iterations = \\( 15 \\times n \\). Since 15 is a constant, the complexity is \\( O(n) \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-42",
+      "number": "43",
+      "text": "What is the Big O complexity of the following code block?\n```java\nint x = 1;\nwhile (x <= n) {\n    System.out.print(\"HI\");\n    x = x * 2;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n^2) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(\\log n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(2^n) \\)"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The variable \\( x \\) starts at 1 and doubles in each iteration until it exceeds \\( n \\). This geometric progression reaches \\( n \\) in approximately \\( \\log_2 n \\) steps."
+    },
+    {
+      "id": "extract-combined-1775924177097-43",
+      "number": "44",
+      "text": "For the code snippet below, calculate the Big O complexity and estimate the number of times \"HI\" is printed.\n```java\nint x = 1;\nwhile (x <= n) {\n    System.out.print(\"HI\");\n    x = x + 2;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Complexity: \\( O(n) \\), Times: \\( \\approx n/2 \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Complexity: \\( O(n) \\), Times: \\( \\approx 2n \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Complexity: \\( O(\\log n) \\), Times: \\( \\approx \\log n \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Complexity: \\( O(1) \\), Times: \\( n \\)"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The loop increments \\( x \\) by 2 each time. It takes \\( n/2 \\) steps to reach \\( n \\). Linear growth implies \\( O(n) \\) complexity."
+    },
+    {
+      "id": "extract-combined-1775924177097-44",
+      "number": "45",
+      "text": "Determine the complexity and repetitions for the following code:\n```java\nint x = 1;\nwhile (x <= n) {\n    System.out.print(\"HI\");\n    x = x * 2;\n    int y = n;\n    while (y >= 1) {\n        System.out.print(\"BYE\");\n        y--;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Complexity: \\( O(n \\log n) \\), BYE printed \\( n \\log n \\) times"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Complexity: \\( O(n^2) \\), BYE printed \\( n^2 \\) times"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Complexity: \\( O(n) \\), HI printed \\( n \\) times"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Complexity: \\( O(\\log n) \\), BYE printed \\( n \\) times"
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The outer while loop runs \\( \\log n \\) times (doubling \\( x \\)). Inside, a linear loop runs \\( n \\) times. The nested execution results in \\( n \\times \\log n \\) prints for \"BYE\"."
+    },
+    {
+      "id": "extract-combined-1775924177097-45",
+      "number": "46",
+      "text": "What is the Big O complexity of the following structure?\n```java\nfor (int i = 1; i <= n; i++) {\n    System.out.print(\"ONE\");\n    for (int j = 1; j <= n; j *= 2) {\n        System.out.print(\"TWO\");\n        int k = n * n;\n        while (k >= 1) {\n            System.out.print(\"THREE\");\n            k = k - n;\n        }\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(n^3) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n^2 \\log n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n \\log n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(n^2) \\)"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "1. The outermost loop runs \\( n \\) times. 2. The second loop (j) runs \\( \\log n \\) times. 3. The third loop (k) starts at \\( n^2 \\) and decreases by \\( n \\) each step, so it runs \\( n^2 / n = n \\) times. Total complexity = \\( n \\times \\log n \\times n = n^2 \\log n \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-46",
+      "number": "47",
+      "text": "In the `insert_after_X` method for a singly linked list where `Y` is head and `X` is tail, what code should fill the blanks in the `else` block to correctly append a new node `nn` after `X` and update `X`?\n```java\nelse {\n    Node nn = new Node();\n    nn.data = val;\n    nn.next = NULL;\n    X.next = ----------;\n    X = ----------;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`X.next = nn; X = nn;`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`X.next = Y; X = nn;`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`X.next = nn; X = Y;`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`nn.next = X; X = nn;`"
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To insert after node `X`, we set the current tail's `next` pointer to the new node (`X.next = nn`) and then move the tail pointer `X` to the new last node (`X = nn`)."
+    },
+    {
+      "id": "extract-combined-1775924177097-47",
+      "number": "48",
+      "text": "In the `insert_before_X` method, which code correctly navigates to the node preceding `X`?\n```java\nNode t = y;\nwhile (t.next != x)\n    ----------;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`t = t.next;`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`t = x.next;`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`x = t.next;`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`t = y.next;`"
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To find the node before `X` in a singly linked list, we start from the head (`y`) and advance the pointer `t` to its next node until `t.next` matches `x`."
+    },
+    {
+      "id": "extract-combined-1775924177097-48",
+      "number": "49",
+      "text": "What is the Big O complexity of the `print_neighbors_if_equal` method which iterates through the entire linked list of size \\( n \\) once?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(1) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n^2) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(\\log n) \\)"
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A single traversal of a linked list to compare adjacent nodes requires visiting each node once, resulting in linear time complexity \\( O(n) \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-49",
+      "number": "50",
+      "text": "What is the Big O complexity of the following code snippet?\n\n```java\nfor (int i = 1; i <= 15; i++)\n    System.out.print(\"HI\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(1) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(\\log n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(n^2) \\)"
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The loop runs a constant number of times (15 iterations), which does not depend on the input size \\( n \\). Therefore, its complexity is constant time, \\( O(1) \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-50",
+      "number": "51",
+      "text": "Analyze the following nested loop and determine both the Big O complexity and the exact number of times \"HI\" is printed.\n\n```java\nfor (int i = 1; i <= 15; i++)\n    for (int j = 1; j <= n; j++)\n        System.out.print(\"HI\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Complexity: \\( O(n^2) \\); Prints: \\( n^2 \\) times"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Complexity: \\( O(n) \\); Prints: \\( 15n \\) times"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Complexity: \\( O(1) \\); Prints: 15 times"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Complexity: \\( O(n) \\); Prints: \\( n+15 \\) times"
+        }
+      ],
+      "inputName": "Q50",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The outer loop runs a fixed 15 times, and the inner loop runs \\( n \\) times for every iteration of the outer loop. Total prints = \\( 15 \\times n \\). In Big O notation, constant factors are dropped, so it is \\( O(n) \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-51",
+      "number": "52",
+      "text": "Determine the complexity of the following `while` loop:\n\n```java\nint x = 1;\nwhile (x <= n) {\n    System.out.print(\"HI\");\n    x = x * 2;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n \\log n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(\\log_2 n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(1) \\)"
+        }
+      ],
+      "inputName": "Q51",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The variable \\( x \\) doubles with each iteration. This exponential growth in the control variable means the number of iterations required to reach \\( n \\) is logarithmic, specifically \\( \\lceil \\log_2(n+1) \\rceil \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-52",
+      "number": "53",
+      "text": "For the code snippet below, what is the complexity and approximately how many times is \"HI\" printed?\n\n```java\nint x = 1;\nwhile (x <= n) {\n    System.out.print(\"HI\");\n    x = x + 2;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Complexity: \\( O(n) \\); Prints: \\( n/2 \\) times"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Complexity: \\( O(\\log n) \\); Prints: \\( \\log n \\) times"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Complexity: \\( O(n) \\); Prints: \\( 2n \\) times"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Complexity: \\( O(1) \\); Prints: 2 times"
+        }
+      ],
+      "inputName": "Q52",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The variable \\( x \\) increases by a constant amount (2) in each step. This represents linear growth, meaning the loop runs roughly \\( n/2 \\) times, resulting in \\( O(n) \\) complexity."
+    },
+    {
+      "id": "extract-combined-1775924177097-53",
+      "number": "54",
+      "text": "What is the complexity of the following nested structure?\n\n```java\nint x = 1;\nwhile (x <= n) {\n    System.out.print(\"HI\");\n    x = x * 2;\n    int y = n;\n    while (y >= 1) {\n        System.out.print(\"BYE\");\n        y--;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n^2) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n \\log_2 n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(2^n) \\)"
+        }
+      ],
+      "inputName": "Q53",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The outer loop runs \\( \\log_2 n \\) times. For each iteration of the outer loop, the inner loop runs \\( n \\) times (from \\( n \\) down to 1). The total number of operations is \\( n \\times \\log_2 n \\), which simplifies to \\( O(n \\log n) \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-54",
+      "number": "55",
+      "text": "In a singly linked list with head pointer `Y`, you want to insert a new node with value `val` immediately after a specific node `X`. Which logic correctly completes the `else` block?\n\n```mermaid\ngraph LR\n    Y --> Node1[...] --> X --> Node2[...] --> NULL\n```\n\n```java\npublic void insert_after_X(int val) {\n    if (isEmpty()) { ... }\n    else {\n        Node nn = new Node();\n        nn.data = val;\n        // Missing logic\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "nn.next = X; X.next = nn;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "nn.next = X.next; X.next = nn;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "X.next = nn; nn.next = null;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "nn.next = Y; Y = nn;"
+        }
+      ],
+      "inputName": "Q54",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "To insert after node \\( X \\), the new node's `next` pointer must point to the node currently following \\( X \\) (`X.next`). Then, \\( X \\)'s `next` pointer is updated to point to the new node (`nn`)."
+    },
+    {
+      "id": "extract-combined-1775924177097-55",
+      "number": "56",
+      "text": "To insert a node before node `X` in a singly linked list starting at `y`, you must first find the predecessor of `X`. What condition should be used in the loop below?\n\n```java\npublic void insert_before_X(int val) {\n    Node t = y;\n    while (/* Condition */) {\n        t = t.next;\n    }\n    // insertion logic follows\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "t != X"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "t.next != X"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "t.next != null"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "t == X"
+        }
+      ],
+      "inputName": "Q55",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "To stop at the node immediately before \\( X \\), we must check the `next` property of the current node \\( t \\). If `t.next` is \\( X \\), then \\( t \\) is the predecessor."
+    },
+    {
+      "id": "extract-combined-1775924177097-56",
+      "number": "57",
+      "text": "The following method is intended to print the value of a node if it is equal to its immediate neighbor. Fill in the missing condition and identify the complexity.\n\n```java\npublic void print_neighbors_if_equal() {\n    Node t1 = y;\n    Node t2 = y.next;\n    while (t2 != null) {\n        if (t1.data == /* Missing */) {\n            System.out.print(t1.data);\n        }\n        t1 = t1.next;\n        t2 = t2.next;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Condition: t2.data; Complexity: \\( O(n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Condition: y.data; Complexity: \\( O(n^2) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Condition: t2.next; Complexity: \\( O(n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Condition: null; Complexity: \\( O(1) \\)"
+        }
+      ],
+      "inputName": "Q56",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The method uses two pointers, \\( t1 \\) and \\( t2 \\), where \\( t2 \\) is always one step ahead. To check if neighbors are equal, we compare `t1.data` with `t2.data`. Since the list is traversed once, the complexity is \\( O(n) \\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-57",
+      "number": "58",
+      "text": "Consider a singly linked list. You need to write a method to repeat (duplicate) each node that contains the value `n`. If you use a method `insertToPosition(pos, val)`, which logic correctly handles the traversal and avoids infinite loops?\n\n```java\npublic void RepeatNodes(int n) {\n    Node t = head;\n    int x = 1;\n    while (t != null) {\n        if (t.data == n) {\n            insertToPosition(x + 1, n);\n            // Logic to skip the newly inserted node\n        } else {\n            // Logic to move to next node\n        }\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "If True: { t = t.next; x++; }; If False: { t = t.next; x++; }"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "If True: { t = t.next.next; x = x + 2; }; If False: { t = t.next; x++; }"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "If True: { t = head; x = 1; }; If False: { t = t.next; x++; }"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "If True: { insertToPosition(x, n); }; If False: { t = t.next; }"
+        }
+      ],
+      "inputName": "Q57",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "When a node is duplicated and inserted at `x + 1`, the new list structure grows. To avoid checking the duplicate node (which would cause an infinite loop if its value is `n`), the pointer `t` must move two steps forward (`t.next.next`) and the position counter `x` must increment by 2. If the value doesn't match, you simply move one step forward."
+    },
+    {
+      "id": "extract-combined-1775924177097-58",
+      "number": "59",
+      "text": "Consider the following code snippet:\n\n```java\nint x=1;\nwhile (x<=n)\n{\n  System.out.print (\"ONE\");\n  x++; // Assuming standard increment logic\n  int y=n*n;\n  while (y>=1)\n  {\n    System.out.print (\"TWO\");\n    y--;\n  }\n  for (int i=1; i<=n; i++)\n    System.out.print (\"THREE\");\n}\n```\nWhat is the Big O time complexity of this code segment?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\(O(n)\\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\(O(n^2)\\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\(O(n^3)\\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\(O(n^4)\\)"
+        }
+      ],
+      "inputName": "Q58",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The outer loop runs \\(n\\) times. Inside this loop, there is a nested while loop that runs \\(n^2\\) times (printing 'TWO') and a for loop that runs \\(n\\) times (printing 'THREE'). The dominant term is \\(n \\times n^2 = n^3\\), resulting in \\(O(n^3)\\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-59",
+      "number": "60",
+      "text": "Using the code snippet from the previous question, how many times will the string \"ONE\" be printed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 time"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\(n\\) times"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\(n^2\\) times"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0 times"
+        }
+      ],
+      "inputName": "Q59",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The print statement for \"ONE\" is located directly inside the outer while loop which iterates \\(n\\) times (from \\(x=1\\) to \\(n\\))."
+    },
+    {
+      "id": "extract-combined-1775924177097-60",
+      "number": "61",
+      "text": "Using the code snippet from the previous question, how many times will the string \"TWO\" be printed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\(n\\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\(n^2\\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\(n^3\\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\(n \\log n\\)"
+        }
+      ],
+      "inputName": "Q60",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The \"TWO\" print statement is inside a loop that runs \\(y = n^2\\) times. Since this inner loop is executed for every iteration of the outer loop (which runs \\(n\\) times), the total count is \\(n \\times n^2 = n^3\\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-61",
+      "number": "62",
+      "text": "Using the code snippet from the previous question, how many times will the string \"THREE\" be printed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\(n\\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\(n^2\\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\(n^3\\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\(n + 1\\)"
+        }
+      ],
+      "inputName": "Q61",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The \"THREE\" print statement is inside a for loop that runs \\(n\\) times. This loop is executed for every iteration of the outer loop (which runs \\(n\\) times), so the total is \\(n \\times n = n^2\\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-62",
+      "number": "63",
+      "text": "Consider the following code snippet:\n\n```java\nfor(int i=1; i<=n; i++)\n{\n  System.out.print (\"ONE\");\n  for(int j = 1; j<=n; j*=2)\n    System.out.print (\"TWO\");\n  int k=n*n;\n  while (k>=1)\n  {\n    System.out.print (\"THREE\");\n    k = k-n;\n  }\n}\n```\nWhat is the Big O time complexity of this code segment?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\(O(n \\log n)\\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\(O(n^2)\\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\(O(n^3)\\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\(O(n^2 \\log n)\\)"
+        }
+      ],
+      "inputName": "Q62",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "1. Outer loop runs \\(n\\) times.\n2. First inner loop (j) runs \\(\\log_2 n\\) times.\n3. Second inner loop (k) starts at \\(n^2\\) and decrements by \\(n\\) until it reaches 1, which takes \\(n^2/n = n\\) iterations.\nTotal complexity is \\(n \\times \\max(\\log n, n) = n \\times n = O(n^2)\\)."
+    },
+    {
+      "id": "extract-combined-1775924177097-63",
+      "number": "64",
+      "text": "In the code snippet from the previous question, how many times will the string \"TWO\" be printed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\(n^2\\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\(n \\log_2 n\\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\(\\log_2 n\\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\(n\\)"
+        }
+      ],
+      "inputName": "Q63",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The inner loop for 'TWO' runs \\(\\log_2 n\\) times because the iterator `j` doubles each time until it reaches \\(n\\). This occurs for each of the \\(n\\) iterations of the outer loop, resulting in \\(n \\log_2 n\\) total prints."
+    },
+    {
+      "id": "extract-combined-1775924177097-64",
+      "number": "65",
+      "text": "You are given a singly linked list. You need to complete a method `RepeatNodes(int n)` that duplicates every node that contains the value `n`. The method uses a helper `insertToPos(pos, val)`. What is the correct logic for the missing `If` condition and the following `Else` block?\n\n```java\npublic void RepeatNodes(int n)\n{\n  Node t = head;\n  int x = 1;\n  while (t != null)\n  {\n    if ( /* missing condition */ )\n    {\n       insertToPos(x, t.data);\n       x += 2;\n       t = t.next;\n    }\n    else\n    {\n       /* missing logic */\n    }\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Condition: `t.data == n`; Else logic: `x++; t = t.next;`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Condition: `t == n`; Else logic: `t = t.next;`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Condition: `t.data == n`; Else logic: `x += 2; t = t.next;`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Condition: `x == n`; Else logic: `x++; t = t.next;`"
+        }
+      ],
+      "inputName": "Q64",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To repeat nodes with value `n`, we must check if the current node's data matches `n` (`t.data == n`). If it does, we insert a duplicate at position `x`, then move the index `x` by 2 (past original and duplicate) and advance `t`. In the `else` case, we simply increment the position counter `x` by 1 and move to the next node."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 65
+}
