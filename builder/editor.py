@@ -140,6 +140,48 @@ def _style_dialog(dialog, title, geometry):
     dialog.geometry(geometry)
     dialog.configure(bg=COLORS["bg_body"])
 
+
+def _replace_escaped_newlines(value):
+    """Convert literal escaped newline sequences (\\n) to real newlines."""
+    text = str(value or "")
+    replacements = 0
+
+    count = text.count("\\n")
+    if count:
+        text = text.replace("\\n", "\n")
+        replacements += count
+
+    return text, replacements
+
+
+def _fix_escaped_newlines_in_question(question):
+    """Fix escaped newline sequences in common question text fields."""
+    if not isinstance(question, dict):
+        return 0
+
+    replacements = 0
+    for field in ("text", "explanation"):
+        fixed, count = _replace_escaped_newlines(question.get(field, ""))
+        if count:
+            question[field] = fixed
+            replacements += count
+
+    for choice in question.get("choices", []) or []:
+        if not isinstance(choice, dict):
+            continue
+        fixed, count = _replace_escaped_newlines(choice.get("text", ""))
+        if count:
+            choice["text"] = fixed
+            replacements += count
+
+    return replacements
+
+
+def _load_json_file(path):
+    """Load JSON using UTF-8 BOM-safe decoding."""
+    with open(path, 'r', encoding='utf-8-sig') as f:
+        return json.load(f)
+
 class FormattedTextEditor(ttk.Frame):
     """Rich text editor with formatting toolbar, syntax highlighting, and live preview."""
 
@@ -519,8 +561,7 @@ class AdvancedChapterEditor:
     def load_chapter_data(self):
         """Load chapter JSON file"""
         try:
-            with open(self.chapter_file, 'r', encoding='utf-8') as f:
-                data = json.load(f)
+            data = _load_json_file(self.chapter_file)
             
             # Handle both list and dict formats
             if isinstance(data, list) and data:
@@ -567,6 +608,7 @@ class AdvancedChapterEditor:
         self.tools_menu.add_command(label="Delete Duplicates", command=self.delete_duplicate_questions)
         self.tools_menu.add_command(label="Smart Duplicates", command=self.delete_similar_questions)
         self.tools_menu.add_command(label="Fix Numbering", command=self.fix_question_numbering)
+        self.tools_menu.add_command(label="Fix Escaped \\n", command=self.fix_escaped_newlines)
         self.tools_menu.add_command(label="Fix Choice IDs", command=self.fix_choice_ids)
         self.tools_menu.add_command(label="Fix Input Typing", command=self.fix_input_typing)
         self.tools_menu.add_separator()
@@ -1911,6 +1953,44 @@ class AdvancedChapterEditor:
 
         return changed
 
+    def fix_escaped_newlines(self, show_message=True):
+        """Convert literal escaped newline sequences in question content to real newlines."""
+        if not self.questions:
+            if show_message:
+                messagebox.showinfo("No Questions", "There are no questions to process.")
+            return 0
+
+        replacements = 0
+        touched_questions = 0
+        for question in self.questions:
+            fixed_count = _fix_escaped_newlines_in_question(question)
+            if fixed_count:
+                touched_questions += 1
+                replacements += fixed_count
+
+        if touched_questions:
+            self.refresh_questions_list()
+            if self.current_question_idx is not None and self.questions:
+                keep_idx = max(0, min(self.current_question_idx, len(self.questions) - 1))
+                self.current_question_idx = keep_idx
+                self.restore_question_selection([keep_idx])
+                self.display_question()
+
+        if show_message:
+            if touched_questions:
+                messagebox.showinfo(
+                    "Escaped Newlines Fixed",
+                    f"Updated {touched_questions} question(s).\n"
+                    f"Replaced {replacements} escaped newline sequence(s)."
+                )
+            else:
+                messagebox.showinfo(
+                    "Already Clean",
+                    "No escaped newline sequences were found."
+                )
+
+        return replacements
+
     def sync_question_count(self):
         """Keep the chapter Questions field aligned with the actual question count."""
         count = len(self.questions)
@@ -2151,6 +2231,7 @@ class AdvancedChapterEditor:
                 q['explanation'] = self.q_explanation.get(1.0, tk.END).strip()
 
             # Ensure every question follows website-compatible answer format.
+            self.fix_escaped_newlines(show_message=False)
             self.fix_input_typing(show_message=False)
             self.fix_choice_ids(show_message=False)
             
@@ -2290,8 +2371,17 @@ class ExamEditor:
             command=lambda: self.apply_tools_to_selected_chapters("fix_numbering"),
         )
         self.chapter_tools_menu.add_command(
+            label="Fix Escaped \\n (Selected)",
+            command=lambda: self.apply_tools_to_selected_chapters("fix_escaped_newlines"),
+        )
+        self.chapter_tools_menu.add_command(
             label="Fix Input Typing (Selected)",
             command=lambda: self.apply_tools_to_selected_chapters("fix_input_typing"),
+        )
+        self.chapter_tools_menu.add_separator()
+        self.chapter_tools_menu.add_command(
+            label="Fix Chapter ID Numbering",
+            command=self.fix_chapter_id_numbering,
         )
         self.chapter_tools_menu.add_separator()
         self.chapter_tools_menu.add_command(
@@ -2645,8 +2735,7 @@ class ExamEditor:
         """Load sections from config"""
         try:
                 config_file = self.config_path / "sections.json"
-                with open(config_file, encoding='utf-8') as f:
-                    self.sections = json.load(f)
+                self.sections = _load_json_file(config_file)
         except:
             self.sections = []
 
@@ -2690,8 +2779,7 @@ class ExamEditor:
         
         try:
                 ch_file = self.base_path / f"{section['path']}" / "chapters.json"
-                with open(ch_file, encoding='utf-8') as f:
-                    self.chapters = json.load(f)
+                self.chapters = _load_json_file(ch_file)
         except:
             self.chapters = []
         
@@ -2852,8 +2940,7 @@ class ExamEditor:
         if not fpath.exists():
             raise FileNotFoundError(f"Chapter file not found: {fpath}")
 
-        with open(fpath, 'r', encoding='utf-8') as f:
-            payload = json.load(f)
+        payload = _load_json_file(fpath)
 
         if isinstance(payload, list):
             if payload and isinstance(payload[0], dict):
@@ -2905,6 +2992,7 @@ class ExamEditor:
             "chapters": 0,
             "questions_removed": 0,
             "numbering_fixed": 0,
+            "newline_fixed": 0,
             "typing_fixed": 0,
             "type_fixed": 0,
         }
@@ -2925,6 +3013,13 @@ class ExamEditor:
                             renumbered += 1
                     changed = renumbered > 0
                     stats["numbering_fixed"] += renumbered
+
+                elif tool_name == "fix_escaped_newlines":
+                    replacements = 0
+                    for question in questions:
+                        replacements += _fix_escaped_newlines_in_question(question)
+                    changed = replacements > 0
+                    stats["newline_fixed"] += replacements
 
                 elif tool_name == "fix_input_typing":
                     answer_changes = 0
@@ -3016,6 +3111,11 @@ class ExamEditor:
                 f"Processed {stats['chapters']} chapter(s).\n"
                 f"Renumbered {stats['numbering_fixed']} question(s)."
             )
+        elif tool_name == "fix_escaped_newlines":
+            message = (
+                f"Processed {stats['chapters']} chapter(s).\n"
+                f"Replaced {stats['newline_fixed']} escaped newline sequence(s)."
+            )
         elif tool_name == "fix_input_typing":
             message = (
                 f"Processed {stats['chapters']} chapter(s).\n"
@@ -3090,6 +3190,80 @@ class ExamEditor:
             messagebox.showerror("Sync Error", f"Failed to sync to file: {e}")
             self.update_status("Chapter updated in list (Sync Failed)", "red")
 
+    def fix_chapter_id_numbering(self, show_message=True):
+        """Renumber chapter IDs sequentially based on current chapter order."""
+        if not self.current_section:
+            if show_message:
+                messagebox.showwarning("Warning", "Select a section first")
+            return 0
+
+        if not self.chapters:
+            if show_message:
+                messagebox.showinfo("No Chapters", "There are no chapters to renumber.")
+            return 0
+
+        section = next((s for s in self.sections if s['id'] == self.current_section), None)
+        changed = 0
+        synced_files = 0
+        errors = []
+
+        for idx, chapter in enumerate(self.chapters, start=1):
+            new_id = str(idx)
+            old_id = str(chapter.get("id", ""))
+            if old_id != new_id:
+                chapter["id"] = new_id
+                changed += 1
+
+            if not section:
+                continue
+
+            try:
+                fpath, payload, chapter_data, _ = self._load_chapter_payload(section, chapter)
+                params = chapter_data.get("params")
+                if not isinstance(params, dict):
+                    params = {}
+                    chapter_data["params"] = params
+
+                file_changed = False
+                if str(params.get("chapter", "")) != new_id:
+                    params["chapter"] = new_id
+                    file_changed = True
+
+                if file_changed:
+                    self._save_chapter_payload(fpath, payload)
+                    synced_files += 1
+            except Exception as e:
+                errors.append(f"{chapter.get('name', chapter.get('file', 'Unknown'))}: {e}")
+
+        self.refresh_chapters_tree()
+        if self.current_chapter_idx is not None and self.chapters:
+            keep_idx = max(0, min(self.current_chapter_idx, len(self.chapters) - 1))
+            self.current_chapter_idx = keep_idx
+            self.chapters_tree.selection_set(str(keep_idx))
+
+        self.save_chapter()
+
+        if errors:
+            messagebox.showwarning(
+                "Renumbered With Errors",
+                "Some chapter files could not be synced:\n\n" + "\n".join(errors[:10])
+            )
+
+        if show_message:
+            if changed:
+                messagebox.showinfo(
+                    "Chapter IDs Fixed",
+                    f"Renumbered {changed} chapter ID(s).\n"
+                    f"Synced params.chapter in {synced_files} chapter file(s)."
+                )
+            else:
+                messagebox.showinfo(
+                    "Already Correct",
+                    "Chapter IDs are already sequential."
+                )
+
+        return changed
+
     def _sync_chapter_file(self, chapter_data):
         """Sync chapter metadata to the actual JSON file and rename if ID changed"""
         section = next((s for s in self.sections if s['id'] == self.current_section), None)
@@ -3107,8 +3281,7 @@ class ExamEditor:
             return
 
         # 1. Load content
-        with open(old_file_path, 'r', encoding='utf-8') as f:
-            content = json.load(f)
+        content = _load_json_file(old_file_path)
 
         data = content[0] if isinstance(content, list) and content else content
         if isinstance(content, list) and not content:
@@ -3830,8 +4003,7 @@ class ExamEditor:
                     try:
                         fpath = self.base_path / section.get('path', '') / chapter.get('file', '')
                         if fpath.exists():
-                            with open(fpath, 'r', encoding='utf-8') as f:
-                                data = json.load(f)
+                            data = _load_json_file(fpath)
                             chapter_data = data[0] if isinstance(data, list) and data else data
                             if isinstance(chapter_data, dict):
                                 for q in chapter_data.get('questions', []):
@@ -3941,8 +4113,7 @@ class ExamEditor:
                     existing_chapters = []
                     if ch_json_path.exists():
                         try:
-                            with open(ch_json_path, 'r', encoding='utf-8') as f:
-                                existing_chapters = json.load(f)
+                            existing_chapters = _load_json_file(ch_json_path)
                         except Exception:
                             existing_chapters = []
 
@@ -3964,8 +4135,7 @@ class ExamEditor:
                             continue
 
                         try:
-                            with open(ch_file, 'r', encoding='utf-8') as f:
-                                content = json.load(f)
+                            content = _load_json_file(ch_file)
 
                             data_obj = content[0] if isinstance(content, list) and content else content
                             if isinstance(content, list) and not content:
@@ -3998,8 +4168,7 @@ class ExamEditor:
                         ch_path = sec_path / ch.get('file', '')
                         if ch_path.exists():
                             try:
-                                with open(ch_path, 'r', encoding='utf-8') as f:
-                                    content = json.load(f)
+                                content = _load_json_file(ch_path)
                                 data_obj = content[0] if isinstance(content, list) and content else content
                                 if isinstance(content, list) and not content:
                                     data_obj = {}
@@ -4021,21 +4190,19 @@ class ExamEditor:
                 ch_file = self.base_path / section['path'] / "chapters.json"
                 if ch_file.exists():
                     try:
-                        with open(ch_file, encoding='utf-8') as f:
-                            chapters = json.load(f)
-                            for ch in chapters:
-                                ch['file'] = f"{section['path']}/{ch.get('file', '')}"
-                                if 'q' not in ch or ch['q'] == 0:
-                                    try:
-                                        q_path = self.base_path / section['path'] / ch.get('file', '')
-                                        with open(q_path, encoding='utf-8') as qf:
-                                            q_data = json.load(qf)
-                                            if isinstance(q_data, list):
-                                                q_data = q_data[0]
-                                            ch['q'] = len(q_data.get('questions', []))
-                                    except:
-                                        pass
-                            sec_data["chapters"] = chapters
+                        chapters = _load_json_file(ch_file)
+                        for ch in chapters:
+                            ch['file'] = f"{section['path']}/{ch.get('file', '')}"
+                            if 'q' not in ch or ch['q'] == 0:
+                                try:
+                                    q_path = self.base_path / section['path'] / ch.get('file', '')
+                                    q_data = _load_json_file(q_path)
+                                    if isinstance(q_data, list):
+                                        q_data = q_data[0]
+                                    ch['q'] = len(q_data.get('questions', []))
+                                except:
+                                    pass
+                        sec_data["chapters"] = chapters
                     except:
                         sec_data["chapters"] = []
                 

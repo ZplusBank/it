@@ -131,7 +131,7 @@
       "inputName": "Q3",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Let's check parent-child relationships: \\n- Index 1 (50) > indices 2 (30) & 3 (40). \\n- Index 2 (30) > indices 4 (35) is FALSE (Violation). \\n- Index 3 (40) > indices 6 (45) is FALSE (Violation). \\n- Index 5 (20) > index 10 (25) is FALSE (Violation). \\nTherefore, multiple violations exist; specifically at index 3 relative to child 45, index 2 relative to child 35, and index 5 relative to child 25."
+      "explanation": "Let's check parent-child relationships: \n- Index 1 (50) > indices 2 (30) & 3 (40). \n- Index 2 (30) > indices 4 (35) is FALSE (Violation). \n- Index 3 (40) > indices 6 (45) is FALSE (Violation). \n- Index 5 (20) > index 10 (25) is FALSE (Violation). \nTherefore, multiple violations exist; specifically at index 3 relative to child 45, index 2 relative to child 35, and index 5 relative to child 25."
     },
     {
       "id": "regen-1775923942150-4",
@@ -162,7 +162,7 @@
       "inputName": "Q4",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Post-order traversal: Left, Right, Root. \\n1. Left child of 30: 15. \\n2. Right child of 30: (Subtree at 45). \\n   - Left child of 45: 35. \\n   - Right child of 45: (Subtree at 60). \\n     - Left child of 60: 55. \\n     - Right of 60: NIL. \\n     - Visit 60: 55, 60. \\n   - Visit 45: 35, 55, 60, 45. \\n3. Visit root 30: 15, 35, 55, 60, 45, 30."
+      "explanation": "Post-order traversal: Left, Right, Root. \n1. Left child of 30: 15. \n2. Right child of 30: (Subtree at 45). \n   - Left child of 45: 35. \n   - Right child of 45: (Subtree at 60). \n     - Left child of 60: 55. \n     - Right of 60: NIL. \n     - Visit 60: 55, 60. \n   - Visit 45: 35, 55, 60, 45. \n3. Visit root 30: 15, 35, 55, 60, 45, 30."
     },
     {
       "id": "regen-1775923942150-5",
@@ -224,7 +224,7 @@
       "inputName": "Q6",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Pivot = 9. \\n- 8 < 9 (swap with index 1: 8) \\n- 3 < 9 (swap with index 2: 3) \\n- 10 > 9 (skip) \\n- 1 < 9 (swap with index 3: 10) -> <8, 3, 1, 10, 6, 14, 4, 7, 13, 9> \\n- 6 < 9 (swap with index 4: 10) -> <8, 3, 1, 6, 10, 14, 4, 7, 13, 9> \\n- 14 > 9 (skip) \\n- 4 < 9 (swap with index 5: 10) -> <8, 3, 1, 6, 4, 14, 10, 7, 13, 9> \\n- 7 < 9 (swap with index 6: 14) -> <8, 3, 1, 6, 4, 7, 10, 14, 13, 9> \\n- Final swap 9 with 10: <8, 3, 1, 6, 4, 7, 9, 14, 13, 10>."
+      "explanation": "Pivot = 9. \n- 8 < 9 (swap with index 1: 8) \n- 3 < 9 (swap with index 2: 3) \n- 10 > 9 (skip) \n- 1 < 9 (swap with index 3: 10) -> <8, 3, 1, 10, 6, 14, 4, 7, 13, 9> \n- 6 < 9 (swap with index 4: 10) -> <8, 3, 1, 6, 10, 14, 4, 7, 13, 9> \n- 14 > 9 (skip) \n- 4 < 9 (swap with index 5: 10) -> <8, 3, 1, 6, 4, 14, 10, 7, 13, 9> \n- 7 < 9 (swap with index 6: 14) -> <8, 3, 1, 6, 4, 7, 10, 14, 13, 9> \n- Final swap 9 with 10: <8, 3, 1, 6, 4, 7, 9, 14, 13, 10>."
     },
     {
       "id": "regen-1775923942150-7",
@@ -255,7 +255,7 @@
       "inputName": "Q7",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "1. At index 2 (val 10), children are index 4 (30) and 5 (20). Max is 30. Swap 10 and 30. \\n2. Array: <50, 30, 45, 10, 20, 40, 35, 15, 25>. \\n3. Now check new index 4 (val 10), children are index 8 (15) and 9 (25). Max is 25. Swap 10 and 25. \\n4. Final: <50, 30, 45, 25, 20, 40, 35, 15, 10>."
+      "explanation": "1. At index 2 (val 10), children are index 4 (30) and 5 (20). Max is 30. Swap 10 and 30. \n2. Array: <50, 30, 45, 10, 20, 40, 35, 15, 25>. \n3. Now check new index 4 (val 10), children are index 8 (15) and 9 (25). Max is 25. Swap 10 and 25. \n4. Final: <50, 30, 45, 25, 20, 40, 35, 15, 10>."
     },
     {
       "id": "regen-1775923942150-8",
@@ -565,7 +565,7 @@
       "inputName": "Q17",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Heap Construction: \\n1. [5] \\n2. [5, 10] \\n3. [5, 10, 8] \\n4. [5, 10, 8, 15] \\n5. [5, 10, 8, 15, 12] \\n6. [5, 10, 8, 15, 12, 20] \\n7. [5, 10, 8, 15, 12, 20, 25]. \\nNode 10 is at index 2. Its left child is at index 4, which is 15."
+      "explanation": "Heap Construction: \n1. [5] \n2. [5, 10] \n3. [5, 10, 8] \n4. [5, 10, 8, 15] \n5. [5, 10, 8, 15, 12] \n6. [5, 10, 8, 15, 12, 20] \n7. [5, 10, 8, 15, 12, 20, 25]. \nNode 10 is at index 2. Its left child is at index 4, which is 15."
     },
     {
       "id": "regen-1775923942150-18",
@@ -596,7 +596,7 @@
       "inputName": "Q18",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "- Start: {20, 15, 10, 5, 25, 30} \\n- k=1 (key 15): {15, 20, 10, 5, 25, 30} \\n- k=2 (key 10): {10, 15, 20, 5, 25, 30} \\n- k=3 (key 5): {5, 10, 15, 20, 25, 30} \\n- k=4 (key 25): {5, 10, 15, 20, 25, 30}."
+      "explanation": "- Start: {20, 15, 10, 5, 25, 30} \n- k=1 (key 15): {15, 20, 10, 5, 25, 30} \n- k=2 (key 10): {10, 15, 20, 5, 25, 30} \n- k=3 (key 5): {5, 10, 15, 20, 25, 30} \n- k=4 (key 25): {5, 10, 15, 20, 25, 30}."
     },
     {
       "id": "regen-1775923942150-19",
@@ -813,7 +813,7 @@
       "inputName": "Q25",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "1. Remove 3. Move last element (11) to root: <11, 8, 10, 15, 20, 12>. \\n2. Heapify-down on root: compare 11 with 8 and 10. Smallest is 8. Swap 11 and 8. \\n3. New root is 8."
+      "explanation": "1. Remove 3. Move last element (11) to root: <11, 8, 10, 15, 20, 12>. \n2. Heapify-down on root: compare 11 with 8 and 10. Smallest is 8. Swap 11 and 8. \n3. New root is 8."
     },
     {
       "id": "regen-1775923942150-26",
