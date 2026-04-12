@@ -7,12 +7,6 @@ const EXAM_CONFIG = [
     "icon": "data/java1/icon.png",
     "chapters": [
       {
-        "id": "Chapter 9",
-        "name": "Objects and Classes",
-        "q": 52,
-        "file": "data/java1/Chapter  9.json"
-      },
-      {
         "id": "Chapter 1",
         "name": "Introduction to Computers, Programs, and Java",
         "q": 45,
