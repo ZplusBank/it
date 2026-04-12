@@ -1,0 +1,1596 @@
+{
+  "id": "explainer-1776005911218-o6v9c",
+  "label": "chapter12liang12e.json",
+  "params": {
+    "file": "chapter12liang12e.json",
+    "chapter": "Chapter 12"
+  },
+  "title": "Exception Handling and Text I/O",
+  "questions": [
+    {
+      "id": "12.1",
+      "number": "12.1",
+      "text": "The following code causes Java to throw _________.\n\n```java\nint number = Integer.MAX_VALUE + 1;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "RuntimeException"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Exception"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Throwable"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "no exceptions"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "In Java, integer arithmetic does not throw exceptions upon overflow. Instead, it wraps around according to the rules of two's complement. Adding 1 to Integer.MAX_VALUE results in Integer.MIN_VALUE."
+    },
+    {
+      "id": "12.2",
+      "number": "12.2",
+      "text": "What exception type does the following program throw?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    System.out.println(1 / 0);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "ArithmeticException"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "ArrayIndexOutOfBoundsException"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "StringIndexOutOfBoundsException"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "ClassCastException"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "No exception"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Attempting to divide an integer by zero is an invalid mathematical operation in Java and results in an ArithmeticException being thrown at runtime."
+    },
+    {
+      "id": "12.3",
+      "number": "12.3",
+      "text": "A Java exception is an instance of __________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "RuntimeException"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Exception"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Throwable"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "NumberFormatException"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The java.lang.Throwable class is the root class for all objects that can be thrown by the Java Virtual Machine or by the 'throw' statement. Both Exception and Error inherit from Throwable."
+    },
+    {
+      "id": "12.4",
+      "number": "12.4",
+      "text": "An instance of _________ describes system errors. If this type of error occurs, there is little you can do beyond notifying the user and trying to terminate the program gracefully.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "RuntimeException"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Exception"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Throwable"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "NumberFormatException"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The Error class and its subclasses represent serious problems that are typically external to the application, such as OutOfMemoryError or StackOverflowError, and are generally not intended to be caught."
+    },
+    {
+      "id": "12.5",
+      "number": "12.5",
+      "text": "An instance of _________ describes the errors caused by your program and external circumstances. These errors can be caught and handled by your program.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "RuntimeException"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Exception"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Throwable"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "NumberFormatException"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Exception class represents conditions that a reasonable application might want to catch. This includes both checked exceptions (like IOException) and unchecked exceptions (like RuntimeException)."
+    },
+    {
+      "id": "12.6",
+      "number": "12.6",
+      "text": "Instances of _________ are unchecked exceptions. Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "RuntimeException"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Exception"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Throwable"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "NumberFormatException"
+        }
+      ],
+      "inputName": "QE5",
+      "inputType": "checkbox",
+      "correctAnswer": "ACE",
+      "explanation": "Unchecked exceptions in Java include Error, RuntimeException, and all their subclasses. NumberFormatException is a subclass of IllegalArgumentException, which is a RuntimeException, making it unchecked."
+    },
+    {
+      "id": "12.7",
+      "number": "12.7",
+      "text": "What exception type does the following program throw?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[] list = new int[5];\n    System.out.println(list[5]);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "ArithmeticException"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "ArrayIndexOutOfBoundsException"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "StringIndexOutOfBoundsException"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "ClassCastException"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "No exception"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Java arrays use zero-based indexing. An array created with a size of 5 has valid indices from 0 to 4. Attempting to access index 5 results in an ArrayIndexOutOfBoundsException."
+    },
+    {
+      "id": "12.8",
+      "number": "12.8",
+      "text": "What exception type does the following program throw?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    String s = \"abc\";\n    System.out.println(s.charAt(3));\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "ArithmeticException"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "ArrayIndexOutOfBoundsException"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "StringIndexOutOfBoundsException"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "ClassCastException"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "No exception"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The string \"abc\" has a length of 3, meaning its characters are located at indices 0, 1, and 2. Requesting the character at index 3 throws a StringIndexOutOfBoundsException."
+    },
+    {
+      "id": "12.9",
+      "number": "12.9",
+      "text": "A method must declare to throw ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "unchecked exceptions"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "checked exceptions"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "RuntimeException"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, checked exceptions must follow the 'Catch or Specify' requirement. This means they must either be caught in a try-catch block or declared in the method signature using the 'throws' keyword. Unchecked exceptions (RuntimeExceptions and Errors) do not require this."
+    },
+    {
+      "id": "12.10",
+      "number": "12.10",
+      "text": "What exception type does the following program throw?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    Object o = null;\n    System.out.println(o.toString());\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "ArithmeticException"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "ArrayIndexOutOfBoundsException"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "StringIndexOutOfBoundsException"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "ClassCastException"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "NullPointerException"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "Invoking an instance method (like toString()) on an object reference that evaluates to null triggers a NullPointerException."
+    },
+    {
+      "id": "12.11",
+      "number": "12.11",
+      "text": "What exception type does the following program throw?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    Object o = null;\n    System.out.println(o);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "ArithmeticException"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "ArrayIndexOutOfBoundsException"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "StringIndexOutOfBoundsException"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No exception"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "NullPointerException"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The program does not throw an exception. When an object reference is null, System.out.println(o) simply prints the string 'null' to the console. A NullPointerException would only occur if you tried to access a member or method of the null reference (e.g., o.toString())."
+    },
+    {
+      "id": "12.12",
+      "number": "12.12",
+      "text": "Which of the following statements are true? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "You use the keyword throws to declare exceptions in the method heading."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A method may declare multiple exceptions to be thrown."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To throw an exception, use the key word throw."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "If a checked exception occurs in a method, it must be either caught or declared to be thrown from the method."
+        }
+      ],
+      "inputName": "QD11",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD",
+      "explanation": "All four statements are correct. 'throws' is used in signatures, 'throw' is used to raise an exception instance, multiple exceptions can be comma-separated in the signature, and checked exceptions follow the 'catch or declare' rule."
+    },
+    {
+      "id": "12.13",
+      "number": "12.13",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) throws MyException {\n    System.out.println(\"Welcome to Java\");\n  }\n}\n\nclass MyException extends Error {\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "You should not declare a class that extends Error, because Error raises a fatal error that terminates the program."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "You cannot declare an exception in the main method."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "You declared an exception in the main method, but you did not throw it."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a compile error."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "While the code will technically compile, extending 'Error' is discouraged. 'Error' is intended for serious, irrecoverable system issues (like OutOfMemoryError). User-defined issues should extend 'Exception' or 'RuntimeException' instead."
+    },
+    {
+      "id": "12.14",
+      "number": "12.14",
+      "text": "What exception type does the following program throw?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    Object o = new Object();\n    String d = (String)o;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "ArithmeticException"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "ArrayIndexOutOfBoundsException"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "StringIndexOutOfBoundsException"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "ClassCastException"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "No exception"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "A ClassCastException is thrown when the code attempts to cast an object to a subclass of which it is not an instance. Since 'o' is a generic Object, it cannot be cast to a String."
+    },
+    {
+      "id": "12.15",
+      "number": "12.15",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    try {\n      String s = \"5.6\";\n      Integer.parseInt(s); // Cause a NumberFormatException\n\n      int i = 0;\n      int y = 2 / i;\n    }\n    catch (Exception ex) {\n      System.out.println(\"NumberFormatException\");\n    }\n    catch (RuntimeException ex) {\n      System.out.println(\"RuntimeException\");\n    }\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays NumberFormatException."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays RuntimeException."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays NumberFormatException followed by RuntimeException."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a compile error."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The program has a compile error because the catch blocks are in the wrong order. 'Exception' is a superclass of 'RuntimeException'. In Java, more specific exceptions must be caught before more general ones. The 'catch (RuntimeException ex)' block is unreachable."
+    },
+    {
+      "id": "12.16",
+      "number": "12.16",
+      "text": "An instance of _________ describes programming errors, such as bad casting, accessing an out-of-bounds array, and numeric errors.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "RuntimeException"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Exception"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Throwable"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "NumberFormatException"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "RuntimeException and its subclasses represent common logic or programming errors that occur at runtime and are typically preventable by proper coding (unchecked exceptions)."
+    },
+    {
+      "id": "12.17",
+      "number": "12.17",
+      "text": "Analyze the following program.\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    try {\n      String s = \"5.6\";\n      Integer.parseInt(s); // Cause a NumberFormatException\n\n      int i = 0;\n      int y = 2 / i;\n      System.out.println(\"Welcome to Java\");\n    }\n    catch (Exception ex) {\n      System.out.println(ex);\n    }\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "An exception is raised due to Integer.parseInt(s);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "An exception is raised due to 2 / i;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program compiles and runs without exceptions."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Integer.parseInt(s) attempts to parse '5.6' as an integer, which fails and throws a NumberFormatException. Once this exception is thrown, the rest of the try block (including the division by zero) is skipped as control shifts to the catch block."
+    },
+    {
+      "id": "12.18",
+      "number": "12.18",
+      "text": "What is displayed on the console when running the following program?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    try {\n      p();\n      System.out.println(\"After the method call\");\n    }\n    catch (NumberFormatException ex) {\n      System.out.println(\"NumberFormatException\");\n    }\n    catch (RuntimeException ex) {\n      System.out.println(\"RuntimeException\");\n    }\n  }\n\n  static void p() {\n    String s = \"5.6\";\n    Integer.parseInt(s); // Cause a NumberFormatException\n\n    int i = 0;\n    int y = 2 / i;\n    System.out.println(\"Welcome to Java\");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays NumberFormatException."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays NumberFormatException followed by After the method call."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays NumberFormatException followed by RuntimeException."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a compile error."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The program displays RuntimeException."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Method p() throws a NumberFormatException. This exception is propagated to the caller (main). In main, the first catch block specifically handles NumberFormatException, printing the text and completing the catch structure."
+    },
+    {
+      "id": "12.19",
+      "number": "12.19",
+      "text": "What is displayed on the console when running the following program?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    try {\n      p();\n      System.out.println(\"After the method call\");\n    }\n    catch (RuntimeException ex) {\n      System.out.println(\"RuntimeException\");\n    }\n    catch (Exception ex) {\n      System.out.println(\"Exception\");\n    }\n  }\n\n  static void p() throws Exception {\n    try {\n      String s = \"5.6\";\n      Integer.parseInt(s); // Cause a NumberFormatException\n\n      int i = 0;\n      int y = 2 / i;\n      System.out.println(\"Welcome to Java\");\n    }\n    catch (RuntimeException ex) {\n      System.out.println(\"RuntimeException\");\n    }\n    catch (Exception ex) {\n      System.out.println(\"Exception\");\n    }\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays RuntimeException twice."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays Exception twice."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays RuntimeException followed by After the method call."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program displays Exception followed by RuntimeException."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The program has a compile error."
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In method p(), NumberFormatException (a subclass of RuntimeException) is caught by the local RuntimeException block, printing 'RuntimeException'. Since the exception is caught locally, p() finishes execution normally. Control returns to main, which prints 'After the method call'."
+    },
+    {
+      "id": "12.20",
+      "number": "12.20",
+      "text": "What is wrong in the following program?\n\n```java\npublic class Test {\n  public static void main (String[] args) {\n    try {\n      System.out.println(\"Welcome to Java\");\n     }\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "You cannot have a try block without a catch block."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "You cannot have a try block without a catch block or a finally block."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A method call that does not declare exceptions cannot be placed inside a try block."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Nothing is wrong."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Java syntax requires a try block to be followed by at least one catch block or a finally block. A try block alone will cause a compilation error."
+    },
+    {
+      "id": "12.21",
+      "number": "12.21",
+      "text": "What is displayed on the console when running the following program?\n\n```java\npublic class Test {\n  public static void main (String[] args) {\n    try {\n      System.out.println(\"Welcome to Java\");\n    }\n    finally {\n      System.out.println(\"The finally clause is executed\");\n    }\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Welcome to Java"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Welcome to Java followed by The finally clause is executed in the next line"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The finally clause is executed"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, the `finally` block is always executed after the `try` block (and `catch` block, if present) finishes, regardless of whether an exception occurred or not. In this code, no exception occurs, so both the try and finally blocks execute."
+    },
+    {
+      "id": "12.22",
+      "number": "12.22",
+      "text": "What is displayed on the console when running the following program?\n\n```java\npublic class Test {\n  public static void main (String[] args) {\n    try {\n      System.out.println(\"Welcome to Java\");\n      return;\n    }\n    finally {\n      System.out.println(\"The finally clause is executed\");\n    }\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Welcome to Java"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Welcome to Java followed by The finally clause is executed in the next line"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The finally clause is executed"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Even if a `return` statement is executed within a `try` block, the `finally` block is guaranteed to execute before the method actually exits."
+    },
+    {
+      "id": "12.23",
+      "number": "12.23",
+      "text": "What is displayed on the console when running the following program?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    try {\n      System.out.println(\"Welcome to Java\");\n      int i = 0;\n      int y = 2 / i;\n      System.out.println(\"Welcome to HTML\");\n    }\n    finally {\n      System.out.println(\"The finally clause is executed\");\n    }\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Welcome to Java, then an error message."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Welcome to Java followed by The finally clause is executed in the next line, then an error message."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays three lines: Welcome to Java, Welcome to HTML, The finally clause is executed, then an error message."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Integer division by zero causes an `ArithmeticException`. When this occurs, the rest of the `try` block is skipped, the `finally` block is executed, and since the exception is not caught, it is then propagated to the console as an error message."
+    },
+    {
+      "id": "12.24",
+      "number": "12.24",
+      "text": "What is displayed on the console when running the following program?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    try {\n      System.out.println(\"Welcome to Java\");\n      int i = 0;\n      double y = 2.0 / i;\n      System.out.println(\"Welcome to HTML\");\n    }\n    finally {\n      System.out.println(\"The finally clause is executed\");\n    }\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Welcome to Java."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Welcome to Java followed by The finally clause is executed in the next line."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays three lines: Welcome to Java, Welcome to HTML, The finally clause is executed."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, floating-point division by zero (using `double` or `float`) does not throw an exception; instead, it results in `Infinity`. Therefore, the `try` block completes successfully, followed by the `finally` block."
+    },
+    {
+      "id": "12.25",
+      "number": "12.25",
+      "text": "What is displayed on the console when running the following program?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    try {\n      System.out.println(\"Welcome to Java\");\n      int i = 0;\n      int y = 2 / i;\n      System.out.println(\"Welcome to Java\");\n    }\n    catch (RuntimeException ex) {\n      System.out.println(\"Welcome to Java\");\n    }\n    finally {\n      System.out.println(\"End of the block\");\n    }\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays Welcome to Java three times followed by End of the block."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays Welcome to Java two times followed by End of the block."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays Welcome to Java three times."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program displays Welcome to Java two times."
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An `ArithmeticException` occurs at `2 / i`, which is a subclass of `RuntimeException`. The execution jumps to the `catch` block (printing 'Welcome to Java' for the second time), and then to the `finally` block."
+    },
+    {
+      "id": "12.26",
+      "number": "12.26",
+      "text": "What is displayed on the console when running the following program?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    try {\n      System.out.println(\"Welcome to Java\");\n      int i = 0;\n      int y = 2 / i;\n      System.out.println(\"Welcome to Java\");\n    }\n    catch (RuntimeException ex) {\n      System.out.println(\"Welcome to Java\");\n    }\n    finally {\n      System.out.println(\"End of the block\");\n    }\n   \n    System.out.println(\"End of the block\");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays Welcome to Java three times followed by End of the block."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays Welcome to Java two times followed by End of the block."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays Welcome to Java two times followed by End of the block two times."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "You cannot catch RuntimeException errors."
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The exception is caught and handled in the `catch` block. After the `finally` block executes, the program continues normal execution to the final print statement outside the exception-handling structure."
+    },
+    {
+      "id": "12.27",
+      "number": "12.27",
+      "text": "What is displayed on the console when running the following program?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    try {\n      System.out.println(\"Welcome to Java\");\n      int i = 0;\n      int y = 2 / i;\n      System.out.println(\"Welcome to Java\");\n    }\n    finally {\n      System.out.println(\"End of the block\");\n    }\n   \n    System.out.println(\"End of the block\");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays Welcome to Java three times followed by End of the block."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays Welcome to Java two times followed by End of the block."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays Welcome to Java two times followed by End of the block two times."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program displays Welcome to Java and End of the block, and then terminates because of an unhandled exception."
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Because there is no `catch` block to handle the `ArithmeticException`, the program executes the `finally` block and then terminates immediately. The last print statement is never reached."
+    },
+    {
+      "id": "12.28",
+      "number": "12.28",
+      "text": "Which of the following is not an advantage of Java exception handling?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Java separates exception handling from normal processing tasks."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Exception handling improves performance."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Exception handling makes it possible for the caller's caller to handle the exception."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Exception handling simplifies programming because the error-reporting and error-handling code can be placed at the catch block."
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Exception handling actually decreases performance slightly due to the overhead of creating exception objects and the stack unwinding process. It is used for robustness and maintainability, not speed."
+    },
+    {
+      "id": "12.29",
+      "number": "12.29",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    try {\n      int zero = 0;\n      int y = 2 / zero;\n      try {\n        String s = \"5.6\";\n        Integer.parseInt(s); // Cause a NumberFormatException\n      }\n      catch(Exception e) {\n      }\n    }\n    catch(RuntimeException e) {\n      System.out.println(e);\n    }\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A try-catch block cannot be embedded inside another try-catch block."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A good programming practice is to avoid nesting try-catch blocks, because nesting makes programs difficult to read. You can rewrite the program using only one try-catch block."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error because Exception appears before RuntimeException."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above."
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "While nesting try-catch blocks is syntactically legal in Java, it is generally considered poor practice as it reduces code readability. In this specific code, the exception occurs at `2 / zero` before the inner block is even reached."
+    },
+    {
+      "id": "12.30",
+      "number": "12.30",
+      "text": "What is displayed on the console when running the following program?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    try {\n      method();\n      System.out.println(\"After the method call\");\n    }\n    catch (RuntimeException ex) {\n      System.out.println(\"RuntimeException\");\n    }\n    catch (Exception ex) {\n      System.out.println(\"Exception\");\n    }\n  }\n\n  static void method() throws Exception {\n    try {\n      String s = \"5.6\";\n      Integer.parseInt(s); // Cause a NumberFormatException\n\n      int i = 0;\n      int y = 2 / i;\n      System.out.println(\"Welcome to Java\");\n    }\n    catch (NumberFormatException ex) {\n      System.out.println(\"NumberFormatException\");\n      throw ex;\n    }\n    catch (RuntimeException ex) {\n      System.out.println(\"RuntimeException\");\n    }\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays NumberFormatException twice."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays NumberFormatException followed by After the method call."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays NumberFormatException followed by RuntimeException."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a compile error."
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`Integer.parseInt(\"5.6\")` throws a `NumberFormatException`. It is caught by the `catch (NumberFormatException ex)` in `method()`, which prints \"NumberFormatException\" and then rethrows the exception. The main method then catches this rethrown exception in its `catch (RuntimeException ex)` block (because `NumberFormatException` is a subclass of `RuntimeException`), printing \"RuntimeException\"."
+    },
+    {
+      "id": "12.31",
+      "number": "12.31",
+      "text": "What are the reasons to create an instance of the `File` class? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To determine whether the file exists."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To obtain the properties of the file such as whether the file can be read, written, or is hidden."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To rename the file."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To delete the file."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "To read/write data from/to a file"
+        }
+      ],
+      "inputName": "QE30",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD",
+      "explanation": "The `File` class is used to obtain file properties and manipulate the file system (exists, rename, delete). It does not contain methods for reading or writing the actual content of the file; for that, you need classes like `Scanner` or `PrintWriter`."
+    },
+    {
+      "id": "12.32",
+      "number": "12.32",
+      "text": "Which of the following is used to test if a file `c:\\temp\\test.txt` exists?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\nnew File(\"c:\\temp\\test.txt\").exists()\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\nnew File(\"c:\\\\temp\\\\test.txt\").exists()\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\nnew File(\"c:\\temp\\test.txt\").exist()\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\nnew File(\"c:\\\\temp\\\\test.txt\").exist()\n```"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the above."
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java string literals, the backslash is an escape character, so a literal backslash must be written as `\\\\`. Additionally, the correct method name in the `File` class is `exists()` (plural), not `exist()`."
+    },
+    {
+      "id": "12.33",
+      "number": "12.33",
+      "text": "Which of the following statements creates an instance of `File` in Windows for the file `c:\\temp.txt`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\nnew File(\"c:\\temp.txt\")\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\nnew File(\"c:\\\\temp.txt\")\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\nnew File(\"c:/temp.txt\")\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\nnew File(\"c://temp.txt\")\n```"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "To represent a Windows path using backslashes in a Java String, you must use the escape sequence `\\\\`. While Java also supports using forward slashes (`/`) even on Windows, choice B specifically uses the correctly escaped Windows-style backslash."
+    },
+    {
+      "id": "12.34",
+      "number": "12.34",
+      "text": "Which of the following statements are true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "If a file (e.g., `c:\\temp.txt`) does not exist, `new File(\"c:\\\\temp.txt\")` returns `null`."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "If a directory (e.g., `c:\\\\liang`) does not exist, `new File(\"c:\\\\liang\")` returns `null`."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "If a file (e.g., `c:\\temp.txt`) does not exist, `new File(\"c:\\\\temp.txt\")` creates a new file named `c:\\temp.txt`."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "If a directory (e.g., `c:\\\\liang`) does not exist, `new File(\"c:\\\\liang\")` creates a new directory named `c:\\\\liang`."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the above."
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "Creating a `File` object using the constructor `new File(pathname)` only creates an object in memory representing that path. It does not check the physical disk, does not return `null` if the path is missing, and does not automatically create the file or directory on the disk."
+    },
+    {
+      "id": "12.35",
+      "number": "12.35",
+      "text": "Which class do you use to write data into a text file?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "File"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "PrintWriter"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Scanner"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "System"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `PrintWriter` class is specifically designed for writing formatted text to a file. The `File` class is used for file properties, and `Scanner` is used for reading data."
+    },
+    {
+      "id": "12.36",
+      "number": "12.36",
+      "text": "Which method can be used to write data?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "close"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "print"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "exist"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "rename"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "`PrintWriter` objects use methods like `print()`, `println()`, and `printf()` to output data to a file. `close` is used to release resources, while `exist` (actually `exists`) and `rename` (actually `renameTo`) are methods of the `File` class."
+    },
+    {
+      "id": "12.37",
+      "number": "12.37",
+      "text": "Which method can be used to create an output object for file `temp.txt`? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\nnew PrintWriter(\"temp.txt\")\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\nnew PrintWriter(temp.txt)\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\nnew PrintWriter(new File(\"temp.txt\"))\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\nnew PrintWriter(File(\"temp.txt\"))\n```"
+        }
+      ],
+      "inputName": "QD36",
+      "inputType": "checkbox",
+      "correctAnswer": "AC",
+      "explanation": "`PrintWriter` has constructors that accept either a String representing the filename (Choice A) or a `File` object (Choice C). Choice B is invalid because it treats `temp.txt` as a variable rather than a String literal, and Choice D is invalid because it misses the `new` keyword for the `File` object."
+    },
+    {
+      "id": "12.38",
+      "number": "12.38",
+      "text": "Which class contains the method for checking whether a file exists?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "File"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "PrintWriter"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Scanner"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "System"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `File` class contains the `exists()` method, which checks if the file or directory specified in the object's path actually exists on the disk."
+    },
+    {
+      "id": "12.39",
+      "number": "12.39",
+      "text": "Which of the following statements are correct? Please select all that apply.\n\nI:\n```java\ntry (PrintWriter output = new PrintWriter(\"output.txt\");) {\n  output.println(\"Welcome to Java\");\n}\n```\n\nII:\n```java\ntry (PrintWriter output = new PrintWriter(\"output.txt\");\n     Scanner input = new Scanner(System.in);) {\n  output.println(input.nextLine());\n}\n```\n\nIII:\n```java\nPrintWriter output;\ntry (output = new PrintWriter(\"output.txt\");) {\n  output.println(\"Welcome to Java\");\n}\n```\n\nIV:\n```java\ntry (PrintWriter output = new PrintWriter(\"output.txt\");) {\n  output.println(\"Welcome to Java\");\n}\nfinally {\n  output.close();\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "I"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "II"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "III"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "IV"
+        }
+      ],
+      "inputName": "QD38",
+      "inputType": "checkbox",
+      "correctAnswer": "AB",
+      "explanation": "Statements I and II use the correct try-with-resources syntax, where resources are declared and initialized inside the parentheses. III is incorrect because resources must be declared within the try parentheses (in older Java versions) or be effectively final (in newer versions, but the syntax shown is generally not the standard educational answer). IV is incorrect because the variable `output` is out of scope in the `finally` block, and try-with-resources automatically handles the closing anyway."
+    },
+    {
+      "id": "12.40",
+      "number": "12.40",
+      "text": "Which class do you use to read data from a text file?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "File"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "PrintWriter"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Scanner"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "System"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `Scanner` class is the standard utility for reading and parsing text from various sources, including files when passed a `File` object."
+    },
+    {
+      "id": "12.41",
+      "number": "12.41",
+      "text": "Which method can be used to read a whole line from the file?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "next"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "nextLine"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "nextInt"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "nextDouble"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `nextLine()` method of the `Scanner` class reads the input until the end of the current line and returns it as a String. In contrast, `next()` only reads until the next whitespace delimiter."
+    },
+    {
+      "id": "12.42",
+      "number": "12.42",
+      "text": "Which of the following statements are correct?\n\nI:\n```java\nFile file = new File(\"input.txt\");\ntry (Scanner input = new Scanner(file);) {\n  String line = input.nextLine();\n}\n```\n\nII:\n```java\ntry (File file = new File(\"input.txt\");\n     Scanner input = new Scanner(file);) {\n  String line = input.nextLine();\n}\n```\n\nIII:\n```java\nFile file;\ntry (file = new File(\"input.txt\");\n     Scanner input = new Scanner(file);) {\n  String line = input.nextLine();\n}\n```\n\nIV:\n```java\nFile file;\nScanner input;\ntry (file = new File(\"input.txt\");\n     input = new Scanner(file);) {\n  String line = input.nextLine();\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "I"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "II"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "III"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "IV"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Statement I is correct because the `try-with-resources` block requires resources that implement the `AutoCloseable` interface. `Scanner` implements `AutoCloseable`, but `File` does not. Statements II, III, and IV are incorrect because they attempt to declare or initialize a `File` object (which is not a resource) inside the resource specification header or use invalid syntax for the resource declaration."
+    },
+    {
+      "id": "12.43",
+      "number": "12.43",
+      "text": "Which method can be used to create an input object for file `temp.txt`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "new Scanner(\"temp.txt\")"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "new Scanner(temp.txt)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "new Scanner(new File(\"temp.txt\"))"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "new Scanner(File(\"temp.txt\"))"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "To read data from a file using the `Scanner` class, you must pass a `java.io.File` object to its constructor. Passing a literal String (Option A) would cause the Scanner to read the string text itself rather than the contents of a file."
+    },
+    {
+      "id": "12.44",
+      "number": "12.44",
+      "text": "Suppose you enter `34.3 57.8 789`, then press the ENTER key. Analyze the following code.\n\n```java\nScanner input = new Scanner(System.in);\nint v1 = input.nextInt();\nint v2 = input.nextInt();\nString line = input.nextLine();\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "After the last statement is executed, v1 is 34."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a runtime error because 34.3 is not an integer."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "After the last statement is executed, line contains characters '7', '8', '9', '\\n'."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "After the last statement is executed, line contains characters '7', '8', '9'."
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `nextInt()` method expects an integer token. When it encounters `34.3`, which is a floating-point number, it throws an `InputMismatchException`."
+    },
+    {
+      "id": "12.45",
+      "number": "12.45",
+      "text": "Suppose you enter `34.3 57.8 789`, then press the ENTER key. Analyze the following code.\n\n```java\nScanner input = new Scanner(System.in);\ndouble v1 = input.nextDouble();\ndouble v2 = input.nextDouble();\nString line = input.nextLine();\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "After the last statement is executed, line contains characters '7', '8', '9'."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "After the last statement is executed, line contains characters '7', '8', '9', '\\n'."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "After the last statement is executed, line contains characters ' ', '7', '8', '9', '\\n'."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "After the last statement is executed, line contains characters ' ', '7', '8', '9'."
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "After `v1` reads `34.3` and `v2` reads `57.8`, the scanner position is immediately after `57.8`. The `nextLine()` method reads all characters from that point to the end of the line. This includes the space character before `789`. Note that `nextLine()` consumes the newline character but does not include it in the returned string."
+    },
+    {
+      "id": "12.46",
+      "number": "12.46",
+      "text": "Suppose you enter `34.3`, the ENTER key, `57.8`, the ENTER key. Analyze the following code. Please select all that apply.\n\n```java\nLine 1  Scanner input = new Scanner(System.in);\nLine 2  double v1 = input.nextDouble();  \nLine 3  double v2 = input.nextDouble();\nLine 4  String line = input.nextLine();\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "After line 2 is executed, v1 is 34.3."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "After line 3 is executed, v2 is 57.8."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "After line 4 is executed, line contains an empty string."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "After line 4 is executed, line is null."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "After line 4 is executed, line contains character \"\\n\"."
+        }
+      ],
+      "inputName": "QE45",
+      "inputType": "checkbox",
+      "correctAnswer": "ABC",
+      "explanation": "Methods like `nextDouble()` do not consume the trailing newline character. After Line 3 reads `57.8`, the newline character following it remains in the buffer. Line 4's `nextLine()` reads this remaining newline character, returns an empty string, and finishes."
+    },
+    {
+      "id": "12.47",
+      "number": "12.47",
+      "text": "Suppose you enter `34.3`, the ENTER key, `57.8`, the ENTER key, `abc`, the Enter key. Analyze the following code. Please select all that apply.\n\n```java\nLine 1  Scanner input = new Scanner(System.in);\nLine 2  double v1 = input.nextDouble();  \nLine 3  double v2 = input.nextDouble();\nLine 4  String line = input.nextLine();\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "After line 2 is executed, v1 is 34.3."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "After line 3 is executed, v2 is 57.8."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "After line 4 is executed, line contains an empty string."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "After line 4 is executed, line is null."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "After line 4 is executed, line contains character \"abc\"."
+        }
+      ],
+      "inputName": "QE46",
+      "inputType": "checkbox",
+      "correctAnswer": "ABC",
+      "explanation": "Similar to the previous scenario, `nextDouble()` leaves the newline character in the buffer. When `nextLine()` is called in Line 4, it immediately sees the newline character right after `57.8` and returns an empty string. The subsequent input `abc` is not yet reached by the Scanner."
+    },
+    {
+      "id": "12.48",
+      "number": "12.48",
+      "text": "To create an `InputStream` to read from a file on a Web server, you use the method __________ in the `URL` class.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "getInputStream();"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "obtainInputStream();"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "openStream();"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "connectStream();"
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `openStream()` method in the `java.net.URL` class opens a connection to the URL and returns an `InputStream` for reading from that connection."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 48
+}

@@ -1,0 +1,1793 @@
+{
+  "id": "explainer-1776005911218-85m81",
+  "label": "chapter7liang12e.json",
+  "params": {
+    "file": "chapter7liang12e.json",
+    "chapter": "Chapter 7"
+  },
+  "title": "Single-Dimensional Arrays",
+  "questions": [
+    {
+      "id": "7.1",
+      "number": "7.1",
+      "text": "Once an array is created, its size _______.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "can be changed"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "is fixed"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "is not determined"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, an array is a static data structure. Once it is instantiated in memory, its length is fixed and cannot be modified. To change the size, you must create a new array object and copy the elements."
+    },
+    {
+      "id": "7.2",
+      "number": "7.2",
+      "text": "Which of the following are correct to declare an array of `int` values?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`int[] a;`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`int a[];`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`int a;`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`double[] a;`"
+        }
+      ],
+      "inputName": "QD1",
+      "inputType": "checkbox",
+      "correctAnswer": "AB",
+      "explanation": "Java supports two styles of array declaration: `int[] a;` (the preferred Java style) and `int a[];` (the style inherited from C/C++). Choice C declares a simple integer, and Choice D declares an array of doubles."
+    },
+    {
+      "id": "7.3",
+      "number": "7.3",
+      "text": "Which of the following are incorrect?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`int[] a = new int[2];`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`int a[] = new int[2];`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`int[] a = new int(2);`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`int a = new int[2];`"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "`int a() = new int[2];`"
+        }
+      ],
+      "inputName": "QE2",
+      "inputType": "checkbox",
+      "correctAnswer": "CDE",
+      "explanation": "Choice C is incorrect because array size must be specified in square brackets `[]`, not parentheses. Choice D is incorrect because an array object cannot be assigned to a primitive `int` variable. Choice E is incorrect because `a()` is method invocation syntax, not variable declaration syntax."
+    },
+    {
+      "id": "7.4",
+      "number": "7.4",
+      "text": "If you declare an array `double[] list = new double[5]`, the highest index in array `list` is __________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "Java arrays use zero-based indexing. For an array of size N, the valid indices range from 0 to N-1. Therefore, for an array of size 5, the indices are 0, 1, 2, 3, and 4."
+    },
+    {
+      "id": "7.5",
+      "number": "7.5",
+      "text": "How many elements are in array `double[] list = new double[5]`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The number inside the square brackets during the array instantiation (`new double[5]`) specifies the length of the array, which is the total number of elements it can hold."
+    },
+    {
+      "id": "7.6",
+      "number": "7.6",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[] x = new int[3];\n    System.out.println(\"x[0] is \" + x[0]);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because the size of the array wasn't specified when declaring the array."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a runtime error because the array elements are not initialized."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program runs fine and displays x[0] is 0."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a runtime error because the array element x[0] is not defined."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, when an array is created using the `new` operator, its elements are automatically initialized to default values. For numeric types like `int`, the default value is 0. Thus, `x[0]` is automatically 0."
+    },
+    {
+      "id": "7.7",
+      "number": "7.7",
+      "text": "What is the correct term for `numbers[99]`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "index"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "index variable"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "indexed variable"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "array variable"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "array"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In the expression `numbers[99]`, `numbers` is the array variable, `99` is the index, and the whole expression `numbers[99]` refers to a specific element, which is technically called an indexed variable or subscripted variable."
+    },
+    {
+      "id": "7.8",
+      "number": "7.8",
+      "text": "What is the representation of the third element in an array called `a`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`a[2]`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`a(2)`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`a[3]`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`a(3)`"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Because Java arrays are zero-indexed, the first element is at index 0, the second is at index 1, and the third is at index 2."
+    },
+    {
+      "id": "7.9",
+      "number": "7.9",
+      "text": "Suppose `int i = 5`, which of the following can be used as an index for array `double[] t = new double[100]`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`i`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`(int)(Math.random() * 100)`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`i + 10`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`i + 6.5`"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "`Math.random() * 100`"
+        }
+      ],
+      "inputName": "QE8",
+      "inputType": "checkbox",
+      "correctAnswer": "ABC",
+      "explanation": "Array indices must be of an integer type (`byte`, `short`, `char`, or `int`). A, B, and C result in integer values. D and E result in floating-point values (double), which are not legal as indices."
+    },
+    {
+      "id": "7.10",
+      "number": "7.10",
+      "text": "If you declare an array `double[] list = {3.4, 2.0, 3.5, 5.5}`, `list[1]` is ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3.4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3.5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5.5"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "undefined"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The array is initialized with values where `list[0]` is 3.4 and `list[1]` is 2.0. Index 1 refers to the second element in the list."
+    },
+    {
+      "id": "7.11",
+      "number": "7.11",
+      "text": "Which of the following statements are valid?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\nint i = new int(30);\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\ndouble d[] = new double[30];\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\nint[] i = {3, 4, 3, 2};\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\nchar[] c = new char();\n```"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "```java\nchar[] c = new char[4]{'a', 'b', 'c', 'd'};\n```"
+        }
+      ],
+      "inputName": "QE10",
+      "inputType": "checkbox",
+      "correctAnswer": "BC",
+      "explanation": "Option B is a valid array declaration and instantiation using the C-style bracket placement. Option C is a valid array literal initialization. Option A is invalid because primitives are not instantiated with 'new' like this. Option D is invalid syntax for array creation. Option E is invalid because in Java, you cannot specify the array size (e.g., [4]) when providing an explicit initializer list."
+    },
+    {
+      "id": "7.12",
+      "number": "7.12",
+      "text": "How can you initialize an array of two characters to 'a' and 'b'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\nchar[] charArray = new char[2]; charArray = {'a', 'b'};\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\nchar[2] charArray = {'a', 'b'};\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\nchar[] charArray = {'a', 'b'};\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\nchar[] charArray = new char[2]; charArray[0] = 'a'; charArray[1] = 'b';\n```"
+        }
+      ],
+      "inputName": "QD11",
+      "inputType": "checkbox",
+      "correctAnswer": "CD",
+      "explanation": "Option C uses an array initializer (literal) during declaration, which is valid. Option D instantiates the array and then assigns values to specific indices, which is also valid. Option A is invalid because array constants ({...}) can only be used in a declaration. Option B is invalid syntax as the size cannot be specified on the left side of the assignment."
+    },
+    {
+      "id": "7.13",
+      "number": "7.13",
+      "text": "Assume `int[] t = {1, 2, 3, 4}`. What is `t.length`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The length property of an array returns the number of elements it contains. Since there are four elements (1, 2, 3, 4) in the initializer, the length is 4."
+    },
+    {
+      "id": "7.14",
+      "number": "7.14",
+      "text": "What is the output of the following code?\n\n```java\ndouble[] myList = {1, 5, 5, 5, 5, 1};\ndouble max = myList[0];\nint indexOfMax = 0;\nfor (int i = 1; i < myList.length; i++) {\n  if (myList[i] > max) {\n    max = myList[i];\n    indexOfMax = i;\n  }\n}\nSystem.out.println(indexOfMax);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The code iterates through the array to find the first occurrence of the maximum value. The max value is 5.0. The first time the loop encounters 5.0 is at index 1. Since the condition is `myList[i] > max` (strictly greater than), the `indexOfMax` is not updated for subsequent occurrences of 5. Therefore, the output is 1."
+    },
+    {
+      "id": "7.15",
+      "number": "7.15",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[] x = new int[5];\n    int i;\n    for (i = 0; i < x.length; i++)\n      x[i] = i;\n    System.out.println(x[i]);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays 0 1 2 3 4."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays 4."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a runtime error because the last statement in the main method causes ArrayIndexOutOfBoundsException."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a compile error because i is not defined in the last statement in the main method."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The variable `i` is declared outside the loop, so it is accessible after the loop finishes. When the loop terminates, `i` has reached the value 5 (the length of the array). The statement `System.out.println(x[5])` attempts to access an index outside the valid range (0-4), resulting in an `ArrayIndexOutOfBoundsException` at runtime."
+    },
+    {
+      "id": "7.16",
+      "number": "7.16",
+      "text": "What is the output of the following code?\n\n```java\nint[] myList = {1, 2, 3, 4, 5, 6};\n\nfor (int i = myList.length - 2; i >= 0; i--) {\n  myList[i + 1] = myList[i];\n}\n\nfor (int e: myList)\n  System.out.print(e + \" \");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 2 3 4 5 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6 1 2 3 4 5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6 2 3 4 5 1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1 1 2 3 4 5"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "2 3 4 5 6 1"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The loop shifts elements to the right. It starts from the second-to-last index (i=4) and moves the value to index 5. At `i=4`, `myList[5]` becomes 5. At `i=3`, `myList[4]` becomes 4. This continues until `i=0`, where `myList[1]` becomes 1. The original first element `myList[0]` remains 1. The result is 1 1 2 3 4 5."
+    },
+    {
+      "id": "7.17",
+      "number": "7.17",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    double[] x = {2.5, 3, 4};\n    for (double value: x)\n      System.out.print(value + \" \");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays 2.5, 3, 4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays 2.5 3 4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays 2.5 3.0 4.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program displays 2.5, 3.0 4.0"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The program has a syntax error because value is undefined."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The array is of type `double`. Even though 3 and 4 are provided as integers in the initializer, they are stored as doubles (3.0 and 4.0). When printing doubles in Java, values are appended with '.0' if they are whole numbers."
+    },
+    {
+      "id": "7.18",
+      "number": "7.18",
+      "text": "What is output of the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[] x = {120, 200, 16};\n    for (int i = x.length - 1; i >= 0; i--)\n      System.out.print(x[i] + \" \");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "120 200 16"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "16 200 120"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "120 16 200"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "200 16 120"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The loop starts at the last index (`x.length - 1`, which is 2) and decrements `i` until it reaches 0. This prints the array elements in reverse order: 16, then 200, then 120."
+    },
+    {
+      "id": "7.19",
+      "number": "7.19",
+      "text": "What is output of the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int list[] = {1, 2, 3, 4, 5, 6};\n\n    for (int i = 1; i < list.length; i++)\n      list[i] = list[i - 1];\n\n    for (int i = 0; i < list.length; i++)\n      System.out.print(list[i] + \" \");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 2 3 4 5 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2 3 4 5 6 6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2 3 4 5 6 1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1 1 1 1 1 1"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The loop sets each element `list[i]` to the value of the preceding element `list[i-1]`. Since `list[0]` is 1, when `i=1`, `list[1]` becomes 1. When `i=2`, `list[2]` becomes the 'new' value of `list[1]` (which is 1), and so on. This propagates the first value throughout the entire array."
+    },
+    {
+      "id": "7.20",
+      "number": "7.20",
+      "text": "In the following code, what is the output for `list2`?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[] list1 = {1, 2, 3};\n    int[] list2 = {1, 2, 3};\n    list2 = list1;\n    list1[0] = 0; list1[1] = 1; list2[2] = 2;\n\n    for (int i = 0; i < list2.length; i++)\n      System.out.print(list2[i] + \" \");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 2 3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1 1 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0 1 2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0 1 3"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The statement `list2 = list1;` makes `list2` point to the same array object as `list1`. Any changes made through `list1` (index 0 becoming 0, index 1 becoming 1) or `list2` (index 2 becoming 2) affect the same underlying array. Thus, both variables see the modified array: {0, 1, 2}."
+    },
+    {
+      "id": "7.21",
+      "number": "7.21",
+      "text": "Analyze the following code:\n\n```java\npublic class Test { \n  public static void main(String[] args) {\n    int[] x = {1, 2, 3, 4};\n    int[] y = x;\n\n    x = new int[2];\n\n    for (int i = 0; i < y.length; i++)\n      System.out.print(y[i] + \" \");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays 1 2 3 4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays 0 0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays 0 0 3 4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program displays 0 0 0 0"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Initially, both x and y point to the same array {1, 2, 3, 4}. When x is reassigned to a new array (new int[2]), the reference stored in y remains unchanged, still pointing to the original array {1, 2, 3, 4}."
+    },
+    {
+      "id": "7.22",
+      "number": "7.22",
+      "text": "Analyze the following code:\n\n```java\npublic class Test { \n  public static void main(String[] args) {\n    final int[] x = {1, 2, 3, 4};\n    int[] y = x;\n\n    x = new int[2];\n\n    for (int i = 0; i < y.length; i++)\n      System.out.print(y[i] + \" \");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays 1 2 3 4."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays 0 0."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error on the statement x = new int[2], because x is final and cannot be changed."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The elements in the array x cannot be changed, because x is final."
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The keyword 'final' applied to a reference variable means that the variable cannot be reassigned to point to a different object or array after its initial assignment. Therefore, x = new int[2] causes a compilation error."
+    },
+    {
+      "id": "7.23",
+      "number": "7.23",
+      "text": "Analyze the following code.\n\n```java\nint[] list = new int[5];\nlist = new int[6];\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code has compile errors because the variable list cannot be changed once it is assigned."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code has runtime errors because the variable list cannot be changed once it is assigned."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The code can compile and run fine. The second line assigns a new array to list."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The code has compile errors because you cannot assign a different size array to list."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, an array variable is a reference. You can reassign that reference to a different array object at any time (as long as it's not final), even if the new array has a different size."
+    },
+    {
+      "id": "7.24",
+      "number": "7.24",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[] a = new int[4];\n    a[1] = 1;\n    a = new int[2];\n    System.out.println(\"a[1] is \" + a[1]);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because new int[2] is assigned to a."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a runtime error because a[1] is not initialized."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays a[1] is 0."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program displays a[1] is 1."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "After reassigning 'a' to a new array of size 2, the previous array is no longer accessible through 'a'. New numeric arrays in Java are automatically initialized with 0 for all elements, so a[1] is 0."
+    },
+    {
+      "id": "7.25",
+      "number": "7.25",
+      "text": "The __________ method copies the sourceArray to the targetArray.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "System.copyArrays(sourceArray, 0, targetArray, 0, sourceArray.length);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "System.copyarrays(sourceArray, 0, targetArray, 0, sourceArray.length);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "System.arrayCopy(sourceArray, 0, targetArray, 0, sourceArray.length);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "System.arraycopy(sourceArray, 0, targetArray, 0, sourceArray.length);"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The correct method in the Java System class for copying arrays is `arraycopy`. Note that Java is case-sensitive and the method name is entirely lowercase: `arraycopy`."
+    },
+    {
+      "id": "7.26",
+      "number": "7.26",
+      "text": "In the following code, what is the output for list1?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[] list1 = {1, 2, 3};\n    int[] list2 = {1, 2, 3};\n    list2 = list1;\n    list1[0] = 0; list1[1] = 1; list2[2] = 2;\n\n    for (int i = 0; i < list1.length; i++)\n      System.out.print(list1[i] + \" \");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 2 3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1 1 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0 1 2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0 1 3"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "After `list2 = list1`, both variables refer to the same array object in memory. Any modification made using either `list1` or `list2` affects that same array. The values become 0, 1, and 2 respectively."
+    },
+    {
+      "id": "7.27",
+      "number": "7.27",
+      "text": "Analyze the following code:\n\n```java\npublic class Test { \n  public static void main(String[] args) {\n    int[] x = {1, 2, 3, 4};\n    int[] y = x;\n\n    x = new int[2];\n\n    for (int i = 0; i < x.length; i++)\n      System.out.print(x[i] + \" \");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays 1 2 3 4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays 0 0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays 0 0 3 4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program displays 0 0 0 0"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The variable `x` is reassigned to a new array of size 2 (`new int[2]`). In Java, the elements of a new integer array are initialized to 0 by default. Since the loop iterates over the new `x.length` (which is 2), it prints '0 0 '."
+    },
+    {
+      "id": "7.28",
+      "number": "7.28",
+      "text": "Show the output of the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[] x = {1, 2, 3, 4, 5};\n    increase(x);\n\n    int[] y = {1, 2, 3, 4, 5};\n    increase(y[0]);\n\n    System.out.println(x[0] + \" \" + y[0]);\n  }\n\n  public static void increase(int[] x) {\n    for (int i = 0; i < x.length; i++)\n      x[i]++;\n  }\n\n  public static void increase(int y) {\n    y++;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0 0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2 2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2 1"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "1 2"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "When an array is passed to a method, a reference is passed, so changes to the array's elements inside the method affect the original array. When a primitive (like y[0]) is passed, only its value is passed, so changes inside the method do not affect the original variable."
+    },
+    {
+      "id": "7.29",
+      "number": "7.29",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[] oldList = {1, 2, 3, 4, 5};\n    reverse(oldList);\n    for (int i = 0; i < oldList.length; i++)\n      System.out.print(oldList[i] + \" \");\n  }\n\n  public static void reverse(int[] list) {\n    int[] newList = new int[list.length];\n\n    for (int i = 0; i < list.length; i++)\n      newList[i] = list[list.length - 1 - i];\n\n    list = newList;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays 1 2 3 4 5."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays 1 2 3 4 5 and then raises an ArrayIndexOutOfBoundsException."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays 5 4 3 2 1."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program displays 5 4 3 2 1 and then raises an ArrayIndexOutOfBoundsException."
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, parameters are passed by value. For objects, the 'value' passed is the reference. When the `reverse` method executes `list = newList`, it reassigns the local reference `list` to point to a new array, but this does not change the reference `oldList` in the `main` method."
+    },
+    {
+      "id": "7.30",
+      "number": "7.30",
+      "text": "Analyze the following code:\n\n```java\npublic class Test1 { \n  public static void main(String[] args) {\n    xMethod(new double[]{3, 3});\n    xMethod(new double[5]);\n    xMethod(new double[3]{1, 2, 3});\n  }\n\n  public static void xMethod(double[] a) {\n    System.out.println(a.length);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because xMethod(new double[]{3, 3}) is incorrect."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because xMethod(new double[5]) is incorrect."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error because xMethod(new double[3]{1, 2, 3}) is incorrect."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a runtime error because a is null."
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java anonymous array syntax, you must not specify the size of the array when using an initializer list. The statement `new double[3]{1, 2, 3}` is invalid; it should be `new double[]{1, 2, 3}`."
+    },
+    {
+      "id": "7.31",
+      "number": "7.31",
+      "text": "What would be the result of attempting to compile and run the following code?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    double[] x = new double[]{1, 2, 3};\n    System.out.println(\"Value is \" + x[1]);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because the syntax `new double[]{1, 2, 3}` is wrong and it should be replaced by `{1, 2, 3}`."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because the syntax `new double[]{1, 2, 3}` is wrong and it should be replaced by `new double[3]{1, 2, 3};`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error because the syntax `new double[]{1, 2, 3}` is wrong and it should be replaced by `new double[]{1.0, 2.0, 3.0};`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program compiles and runs fine and the output \"Value is 1.0\" is printed."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The program compiles and runs fine and the output \"Value is 2.0\" is printed."
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "The syntax `new double[]{1, 2, 3}` is correct for creating an anonymous array. In Java, array indices start at 0, so `x[1]` refers to the second element in the array, which is 2. Because it is a `double` array, the value is treated as 2.0."
+    },
+    {
+      "id": "7.32",
+      "number": "7.32",
+      "text": "Do the following two programs produce the same result?\n\n**Program I:**\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[] list = {1, 2, 3, 4, 5};\n    for (int i = 0; i < list.length; i++)\n      System.out.print(list[i] + \" \");\n  }\n}\n```\n\n**Program II:**\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[] oldList = {1, 2, 3, 4, 5};\n    reverse(oldList);\n    for (int i = 0; i < oldList.length; i++)\n      System.out.print(oldList[i] + \" \");\n  }\n\n  public static void reverse(int[] list) {\n    int[] newList = new int[list.length];\n    for (int i = 0; i < list.length; i++)\n      newList[i] = list[list.length - 1 - i];\n    list = newList;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Yes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Yes, they produce the same result. In Program II, the `reverse` method reassigns its local parameter `list` to a new array reference (`list = newList`). In Java, references are passed by value; reassigning the local reference inside a method does not change the reference held by the caller (`oldList`). Therefore, `oldList` remains unchanged and both programs print `1 2 3 4 5 `."
+    },
+    {
+      "id": "7.33",
+      "number": "7.33",
+      "text": "When you pass an array to a method, the method receives __________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a copy of the array"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "a copy of the first element"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "the reference of the array"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "the length of the array"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, objects and arrays are passed to methods by passing their reference (memory address) by value. This allows the method to access the same array stored in memory."
+    },
+    {
+      "id": "7.34",
+      "number": "7.34",
+      "text": "The JVM stores the array in an area of memory, called _______, which is used for dynamic memory allocation where blocks of memory are allocated and freed in an arbitrary order.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "stack"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "heap"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "memory block"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "dynamic memory"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The heap is the memory region used by the JVM for dynamic allocation of objects and arrays. The stack is used for local variables and method call execution."
+    },
+    {
+      "id": "7.35",
+      "number": "7.35",
+      "text": "Which of the following is correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`String[] list = new String{\"red\", \"yellow\", \"green\"};`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`String[] list = new String[]{\"red\", \"yellow\", \"green\"};`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`String[] list = {\"red\", \"yellow\", \"green\"};`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`String list = {\"red\", \"yellow\", \"green\"};`"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "`String list = new String{\"red\", \"yellow\", \"green\"};`"
+        }
+      ],
+      "inputName": "QE34",
+      "inputType": "checkbox",
+      "correctAnswer": "BC",
+      "explanation": "Choice B uses the correct syntax for an anonymous array initialization. Choice C uses the shortcut syntax allowed during array declaration. A is missing brackets `[]` before the curly braces, and D and E incorrectly attempt to assign an array to a single `String` variable."
+    },
+    {
+      "id": "7.36",
+      "number": "7.36",
+      "text": "When you return an array from a method, the method returns __________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a copy of the array"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "a copy of the first element"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "the reference of the array"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "the length of the array"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "When a method's return type is an array, it returns the memory reference to that array."
+    },
+    {
+      "id": "7.37",
+      "number": "7.37",
+      "text": "Suppose a method `p` has the following header:\n\n```java\npublic static int[] p()\n```\n\nWhat return statement may be used in `p()`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`return 1;`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`return {1, 2, 3};`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`return int[]{1, 2, 3};`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`return new int[]{1, 2, 3};`"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "To return an array literal directly, you must use the `new type[]{...}` syntax. The shortcut `{1, 2, 3}` is only valid in variable declarations."
+    },
+    {
+      "id": "7.38",
+      "number": "7.38",
+      "text": "The `reverse` method (returning a new array) is defined. What is `list1` after executing the following statements?\n\n```java\nint[] list1 = {1, 2, 3, 4, 5, 6};\nlist1 = reverse(list1);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "list1 is 1 2 3 4 5 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "list1 is 6 5 4 3 2 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "list1 is 0 0 0 0 0 0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "list1 is 6 6 6 6 6 6"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "By assigning the result of `reverse(list1)` back to the variable `list1`, the original variable now points to the new array created by the method, which contains the elements in reverse order."
+    },
+    {
+      "id": "7.39",
+      "number": "7.39",
+      "text": "The `reverse` method (returning a new array) is defined. What is `list1` after executing the following statements?\n\n```java\nint[] list1 = {1, 2, 3, 4, 5, 6};\nint[] list2 = reverse(list1);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "list1 is 1 2 3 4 5 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "list1 is 6 5 4 3 2 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "list1 is 0 0 0 0 0 0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "list1 is 6 6 6 6 6 6"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Since the result of the `reverse` method is assigned to a new variable `list2`, the original reference `list1` still points to the original array, which remains unchanged."
+    },
+    {
+      "id": "7.40",
+      "number": "7.40",
+      "text": "Which of the following declarations are correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`public static void print(String... strings, double... numbers)`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`public static void print(double... numbers, String name)`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`public static double... print(double d1, double d2)`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`public static void print(double... numbers)`"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "`public static void print(int n, double... numbers)`"
+        }
+      ],
+      "inputName": "QE39",
+      "inputType": "checkbox",
+      "correctAnswer": "DE",
+      "explanation": "In Java, a variable-length parameter (varargs) must be the last parameter in the method signature, and there can only be one varargs parameter per method. D and E follow these rules. C is incorrect because varargs syntax is for parameters, not return types."
+    },
+    {
+      "id": "7.41",
+      "number": "7.41",
+      "text": "Which of the following statements are correct to invoke the `printMax` method in Listing 7.5 in the textbook?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "printMax(1, 2, 2, 1, 4);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "printMax(new double[]{1, 2, 3});"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "printMax(1.0, 2.0, 2.0, 1.0, 4.0);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "printMax(new int[]{1, 2, 3});"
+        }
+      ],
+      "inputName": "QD40",
+      "inputType": "checkbox",
+      "correctAnswer": "ABC",
+      "explanation": "The printMax method uses a variable-length argument list (varargs) of type double (e.g., `double... numbers`). A and C work because int values are automatically promoted to double. B works because varargs can accept a single array of the matching type. D fails because an int array cannot be automatically cast to a double array."
+    },
+    {
+      "id": "7.42",
+      "number": "7.42",
+      "text": "For the `binarySearch` method in Section 7.10.2, what is low and high after the first iteration of the while loop when invoking `binarySearch(new int[]{1, 4, 6, 8, 10, 15, 20}, 11)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "low is 0 and high is 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "low is 5 and high is 5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "low is 3 and high is 6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "low is 4 and high is 6"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "low is 6 and high is 5"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Initially, low=0 and high=6. The mid index is (0+6)/2 = 3. The value at index 3 is 8. Since 11 > 8, low is updated to mid + 1, which is 4, while high remains 6."
+    },
+    {
+      "id": "7.43",
+      "number": "7.43",
+      "text": "If a key is not in the list, the `binarySearch` method returns _________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "insertion point"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "insertion point - 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "-(insertion point + 1)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "-insertion point"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The Java binarySearch method returns the negative of (insertion point + 1) to indicate the key was not found while also providing the position where it should be inserted."
+    },
+    {
+      "id": "7.44",
+      "number": "7.44",
+      "text": "Use the `selectionSort` method presented in this section to answer this question. Assume list is `{3.1, 3.1, 2.5, 6.4, 2.1}`, what is the content of list after the first iteration of the outer loop in the method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3.1, 3.1, 2.5, 6.4, 2.1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2.5, 3.1, 3.1, 6.4, 2.1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2.1, 2.5, 3.1, 3.1, 6.4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3.1, 3.1, 2.5, 2.1, 6.4"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "2.1, 3.1, 2.5, 6.4, 3.1"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "In the first iteration of selection sort, the algorithm finds the smallest element (2.1 at index 4) and swaps it with the first element (3.1 at index 0). The list becomes {2.1, 3.1, 2.5, 6.4, 3.1}."
+    },
+    {
+      "id": "7.45",
+      "number": "7.45",
+      "text": "Use the `selectionSort` method presented in this section to answer this question. What is `list1` after executing the following statements?\n\n```java\ndouble[] list1 = {3.1, 3.1, 2.5, 6.4};\nselectionSort(list1);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "list1 is 3.1, 3.1, 2.5, 6.4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "list1 is 2.5, 3.1, 3.1, 6.4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "list1 is 6.4, 3.1, 3.1, 2.5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "list1 is 3.1, 2.5, 3.1, 6.4"
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The selectionSort method sorts the input array in ascending order. Sorting {3.1, 3.1, 2.5, 6.4} results in {2.5, 3.1, 3.1, 6.4}."
+    },
+    {
+      "id": "7.46",
+      "number": "7.46",
+      "text": "The __________ method sorts the array scores of the `double[]` type.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "java.util.Arrays(scores)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "java.util.Arrays.sorts(scores)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "java.util.Arrays.sort(scores)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "java.util.Arrays.sortArray(scores)"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The static method sort() in the java.util.Arrays class is used to sort arrays of various types, including double[]."
+    },
+    {
+      "id": "7.47",
+      "number": "7.47",
+      "text": "Assume `int[] scores = {1, 20, 30, 40, 50}`, what value does `java.util.Arrays.binarySearch(scores, 30)` return?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "-1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "-2"
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Binary search returns the index of the element if found. In the array {1, 20, 30, 40, 50}, the value 30 is at index 2."
+    },
+    {
+      "id": "7.48",
+      "number": "7.48",
+      "text": "Assume `int[] scores = {1, 20, 30, 40, 50}`, what value does `java.util.Arrays.binarySearch(scores, 3)` return?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "-1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "-2"
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "The value 3 is not in the array. Its insertion point would be index 1 (between 1 and 20). The formula used is -(insertion point + 1), which is -(1 + 1) = -2."
+    },
+    {
+      "id": "7.49",
+      "number": "7.49",
+      "text": "Assume `int[] scores = {1, 20, 30, 40, 50}`, what is the output of `System.out.println(java.util.Arrays.toString(scores))`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "{1, 20, 30, 40, 50}"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "[1, 20, 30, 40, 50]"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "{1 20 30 40 50}"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "[1 20 30 40 50]"
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Arrays.toString() method returns a string starting with '[', followed by comma-separated elements, and ending with ']'."
+    },
+    {
+      "id": "7.50",
+      "number": "7.50",
+      "text": "How can you get the word \"abc\" in the main method from the following call?\n\n```bash\njava Test \"+\" 3 \"abc\" 2\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "args[0]"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "args[1]"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "args[2]"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "args[3]"
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The command-line arguments are stored in the String array `args`. Here, args[0] is \"+\", args[1] is \"3\", and args[2] is \"abc\"."
+    },
+    {
+      "id": "7.51",
+      "number": "7.51",
+      "text": "Given the following program:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    for (int i = 0; i < args.length; i++) {\n      System.out.print(args[i] + \" \");\n    }\n  }\n}\n```\n\nWhat is the output, if you run the program using:\n\n`java Test 1 2 3`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1 2 3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1 2"
+        }
+      ],
+      "inputName": "Q50",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "When a Java program is executed from the command line, the values provided after the class name (in this case, 1, 2, and 3) are passed into the `args` array of the `main` method. The loop iterates through this array and prints each element followed by a space, resulting in '1 2 3 '."
+    },
+    {
+      "id": "7.52",
+      "number": "7.52",
+      "text": "Which code fragment would correctly identify the number of arguments passed via the command line to a Java application, excluding the name of the class that is being invoked?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\nint count = args.length;\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\nint count = args.length - 1;\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\nint count = 0; while (args[count] != null) count ++;\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\nint count=0; while (!(args[count].equals(\"\"))) count ++;\n```"
+        }
+      ],
+      "inputName": "Q51",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, unlike languages like C or C++, the `args` array contains only the command-line arguments and does not include the name of the program or class itself. Therefore, `args.length` directly represents the number of arguments passed."
+    },
+    {
+      "id": "7.53",
+      "number": "7.53",
+      "text": "Which correctly creates an array of five empty Strings?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\nString[] a = new String [5];\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\nString[] a = {\"\", \"\", \"\", \"\", \"\"};\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\nString[5] a;\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\nString[] a = new String [5]; for (int i = 0; i < 5; a[i++] = null);\n```"
+        }
+      ],
+      "inputName": "Q52",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Choice B uses an array initializer to create an array with five String objects, each containing an empty string (\"\"). Choice A creates an array where all elements are `null`. Choice C is invalid syntax, and Choice D explicitly sets elements to `null` rather than empty strings."
+    },
+    {
+      "id": "7.54",
+      "number": "7.54",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String argv[]) {\n    System.out.println(\"argv.length is \" + argv.length);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because `String argv[]` is wrong and it should be replaced by `String[] args`."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because `String argv[]` is wrong and it should be replaced by `String args[]`."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "If you run this program without passing any arguments, the program would have a runtime error because `argv` is null."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "If you run this program without passing any arguments, the program would display `argv.length is 0`."
+        }
+      ],
+      "inputName": "Q53",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The parameter name for the main method (e.g., `argv` or `args`) and the placement of the brackets (`String[] argv` or `String argv[]`) are both flexible. If no arguments are provided at the command line, the JVM passes an empty array (length 0) to the method, not a null reference."
+    },
+    {
+      "id": "7.55",
+      "number": "7.55",
+      "text": "Which of the following is the correct header of the main method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\npublic static void main(String[] args)\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\npublic static void main(String args[])\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\npublic static void main(String[] x)\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\npublic static void main(String x[])\n```"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "```java\nstatic void main(String[] args)\n```"
+        }
+      ],
+      "inputName": "QE54",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD",
+      "explanation": "A valid main method must be `public`, `static`, and `void`, and take a `String` array as a parameter. The array can be declared as `String[] name` or `String name[]`, and the variable name itself (e.g., `args` or `x`) can be any valid identifier. Choice E is incorrect because the `public` access modifier is missing."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 55
+}

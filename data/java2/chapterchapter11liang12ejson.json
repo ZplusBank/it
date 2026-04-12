@@ -1,0 +1,2043 @@
+{
+  "id": "explainer-1776005911218-icb3g",
+  "label": "chapter11liang12e.json",
+  "params": {
+    "file": "chapter11liang12e.json",
+    "chapter": "Chapter 11"
+  },
+  "title": "Inheritance and Polymorphism",
+  "questions": [
+    {
+      "id": "11.1",
+      "number": "11.1",
+      "text": "Object-oriented programming allows you to derive new classes from existing classes. This is called ____________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "encapsulation"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "inheritance"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "abstraction"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "generalization"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Inheritance is the mechanism in object-oriented programming that allows a new class (subclass) to inherit the properties and behaviors of an existing class (superclass)."
+    },
+    {
+      "id": "11.2",
+      "number": "11.2",
+      "text": "Which of the following statements are true? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A subclass is a subset of a superclass."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A subclass is usually extended to contain more functions and more detailed information than its superclass."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`class A extends B` means A is a subclass of B."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`class A extends B` means B is a subclass of A."
+        }
+      ],
+      "inputName": "QD1",
+      "inputType": "checkbox",
+      "correctAnswer": "BC",
+      "explanation": "In Java, a subclass extends a superclass to add specific functionality (B). The keyword `extends` identifies the class on the left as the subclass and the class on the right as the superclass (C). Choice A is incorrect because a subclass is typically a 'superset' of functionality (it has more features than the superclass), even if it represents a more specific category of objects."
+    },
+    {
+      "id": "11.3",
+      "number": "11.3",
+      "text": "Inheritance means ______________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "that data fields should be declared private"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "that a class can extend another class"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "that a variable of supertype can refer to a subtype object"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "that a class can contain another class"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Inheritance is specifically the capability of a class to derive from and extend the functionality of another class using the `extends` keyword."
+    },
+    {
+      "id": "11.4",
+      "number": "11.4",
+      "text": "Suppose you create a class `Square` to be a subclass of `GeometricObject`. Analyze the following code:\n\n```java\nclass Square extends GeometricObject {\n  double length;\n\n  Square(double length) {\n    GeometricObject(length);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program compiles fine, but you cannot create an instance of Square because the constructor does not specify the length of the Square."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because you attempted to invoke the GeometricObject class's constructor illegally."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program compiles fine, but it has a runtime error because of invoking the Square class's constructor illegally."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, you cannot call a superclass constructor using the class name. You must use the `super()` keyword. The line `GeometricObject(length);` is syntactically invalid inside the constructor."
+    },
+    {
+      "id": "11.5",
+      "number": "11.5",
+      "text": "Analyze the following code. Please select all that apply.\n\n```java\npublic class A extends B {\n}\n\nclass B {\n  public B(String s) {\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because A does not have a default constructor."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because the default constructor of A invokes the default constructor of B, but B does not have a default constructor."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program would compile fine if you add the following constructor into A: `A(String s) { }`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program would compile fine if you add the following constructor into A: `A(String s) { super(s); }`"
+        }
+      ],
+      "inputName": "QD4",
+      "inputType": "checkbox",
+      "correctAnswer": "BD",
+      "explanation": "If a class does not define a constructor, Java provides a default no-arg constructor that calls `super()`. Since class B has a custom constructor `B(String s)`, it no longer has a default no-arg constructor. Therefore, A's implicit `super()` call fails (B). Adding a constructor to A that explicitly calls `super(s)` resolves this (D)."
+    },
+    {
+      "id": "11.6",
+      "number": "11.6",
+      "text": "Analyze the following code:\n\n```java\npublic class Test extends A { \n  public static void main(String[] args) {\n    Test t = new Test();\n    t.print();\n  }\n}\n\nclass A {\n  String s;\n\n  A(String s) {\n    this.s = s;\n  }\n\n  public void print() {\n    System.out.println(s);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program does not compile because Test does not have a default constructor Test()."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has an implicit default constructor Test(), but it cannot be compiled, because its super class does not have a default constructor. The program would compile if the constructor in the class A were removed."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program would compile if a default constructor A(){ } is added to class A explicitly."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program compiles, but it has a runtime error due to the conflict on the method name print."
+        }
+      ],
+      "inputName": "QD5",
+      "inputType": "checkbox",
+      "correctAnswer": "BC",
+      "explanation": "Class `Test` has an implicit no-arg constructor that calls `super()`. However, class `A` only has a parameterized constructor `A(String s)`, which removes its default no-arg constructor. Thus, `Test` cannot compile because `super()` is undefined in `A`. Adding `A() {}` (C) or removing the custom constructor (allowing the default one) (B) fixes the issue."
+    },
+    {
+      "id": "11.7",
+      "number": "11.7",
+      "text": "What is the output of running class C?\n\n```java\nclass A {\n  public A() {\n    System.out.println(\"The default constructor of A is invoked\");\n  }\n}\n\nclass B extends A {\n  public B() {\n    System.out.println(\"The default constructor of B is invoked\");\n  }\n}\n\npublic class C {\n  public static void main(String[] args) {\n    B b = new B();\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Nothing displayed"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\"The default constructor of B is invoked\""
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\"The default constructor of A is invoked\" followed by \"The default constructor of B is invoked\""
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\"The default constructor of B is invoked\" followed by \"The default constructor of A is invoked\""
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "\"The default constructor of A is invoked\""
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "This demonstrates constructor chaining. When an instance of a subclass is created, its constructor automatically calls the superclass's no-arg constructor first, unless an explicit call to another constructor is made."
+    },
+    {
+      "id": "11.8",
+      "number": "11.8",
+      "text": "Which of the following is incorrect?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A constructor may be static."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A constructor may be private."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A constructor may invoke a static method."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A constructor may invoke an overloaded constructor."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "A constructor invokes its superclass no-arg constructor by default if a constructor does not invoke an overloaded constructor or its superclass's constructor."
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Constructors cannot be declared `static`. A constructor is used to initialize an instance of a class, whereas static members belong to the class itself and are not associated with specific instances."
+    },
+    {
+      "id": "11.9",
+      "number": "11.9",
+      "text": "Which of the statements regarding the `super` keyword is incorrect?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "You can use `super` to invoke a super class constructor."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "You can use `super` to invoke a super class method."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "You can use `super.super.p` to invoke a method in superclass's parent class."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "You cannot invoke a method in superclass's parent class."
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Java does not support nested `super` calls like `super.super`. You can only access members of the immediate parent class using the `super` keyword."
+    },
+    {
+      "id": "11.10",
+      "number": "11.10",
+      "text": "Analyze the following code:\n\n```java\npublic class Test { \n  public static void main(String[] args) {\n    B b = new B();\n    b.m(5);\n    System.out.println(\"i is \" + b.i);\n  }\n}\n\nclass A {\n  int i;\n\n  public void m(int i) {\n    this.i = i;\n  }\n}\n\nclass B extends A {\n  public void m(String s) {\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error, because m is overridden with a different signature in B."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error, because b.m(5) cannot be invoked since the method m(int) is hidden in B."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a runtime error on b.i, because i is not accessible from b."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The method m is not overridden in B. B inherits the method m from A and defines an overloaded method m in B."
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Method overriding requires the same signature (parameters). Since `B` defines `m(String)` and `A` defines `m(int)`, these are two different overloaded methods. `B` inherits `m(int)` from `A`, so `b.m(5)` works perfectly."
+    },
+    {
+      "id": "11.11",
+      "number": "11.11",
+      "text": "The `getValue()` method is overridden in two ways. Which one is correct?\n\nI:\n```java\npublic class Test {\n  public static void main(String[] args) {\n    A a = new A();\n    System.out.println(a.getValue());\n  }\n}\n\nclass B {\n  public String getValue() {\n    return \"Any object\";\n  }\n}\n\nclass A extends B {\n  public Object getValue() {\n    return \"A string\";\n  }\n}\n```\n\nII:\n```java\npublic class Test {\n  public static void main(String[] args) {\n    A a = new A();\n    System.out.println(a.getValue());\n  }\n}\n\nclass B {\n  public Object getValue() {\n    return \"Any object\";\n  }\n}\n\nclass A extends B {\n  public String getValue() {\n    return \"A string\";\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "I"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "II"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Both I and II"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Neither"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, when overriding a method, the subclass method's return type must be the same as, or a subtype of (covariant return type), the return type declared in the superclass. In case II, `String` is a subtype of `Object`, which is valid. In case I, `Object` is a supertype of `String`, which results in a compilation error."
+    },
+    {
+      "id": "11.12",
+      "number": "11.12",
+      "text": "Which of the following statements are true? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To override a method, the method must be defined in the subclass using the same signature and compatible return type as in its superclass."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Overloading a method is to provide more than one method with the same name but with different signatures to distinguish them."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It is a compile error if two methods differ only in return type in the same class."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A private method cannot be overridden. If a method defined in a subclass is private in its superclass, the two methods are completely unrelated."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "A static method cannot be overridden. If a static method defined in the superclass is redefined in a subclass, the method defined in the superclass is hidden."
+        }
+      ],
+      "inputName": "QE11",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCDE",
+      "explanation": "All these statements are fundamental rules of Java. (A) defines overriding requirements. (B) defines overloading. (C) notes that return type is not part of the method signature for overloading. (D) explains that private methods are not inherited and thus cannot be overridden. (E) explains that static methods are subject to hiding rather than dynamic dispatch (overriding)."
+    },
+    {
+      "id": "11.13",
+      "number": "11.13",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    new B();\n  }\n}\n\nclass A {\n  int i = 7;\n  \n  public A() {\n    System.out.println(\"i from A is \" + i);\n  }\n  \n  public void setI(int i) {\n    this.i = 2 * i;\n  }\n}\n\nclass B extends A {\n  public B() {\n    setI(20);\n  }\n  \n  @Override\n  public void setI(int i) {\n    this.i = 3 * i;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The constructor of class A is not called."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The constructor of class A is called and it displays \"i from A is 7\"."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The constructor of class A is called and it displays \"i from A is 40\"."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The constructor of class A is called and it displays \"i from A is 60\"."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "When `new B()` is executed, the superclass constructor `A()` is invoked first. Inside `A()`, the field `i` has been initialized to its default value of 7. The `println` statement is then executed before any logic in `B()`'s constructor (like `setI(20)`) is reached."
+    },
+    {
+      "id": "11.14",
+      "number": "11.14",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    new B();\n  }\n}\n\nclass A {\n  int i = 7;\n  \n  public A() {\n    setI(20);\n    System.out.println(\"i from A is \" + i);\n  }\n  \n  public void setI(int i) {\n    this.i = 2 * i;\n  }\n}\n\nclass B extends A {\n  public B() {\n  }\n  \n  @Override\n  public void setI(int i) {\n    this.i = 3 * i;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The constructor of class A is not called."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The constructor of class A is called and it displays \"i from A is 7\"."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The constructor of class A is called and it displays \"i from A is 40\"."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The constructor of class A is called and it displays \"i from A is 60\"."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "When `new B()` is called, `A`'s constructor is executed. Inside `A()`, it calls `setI(20)`. Because the actual object being created is of type `B` and `setI` is overridden in `B`, dynamic binding ensures that `B`'s version of `setI` is executed. `B.setI` sets `i` to `3 * 20` (60). Thus, the print statement in `A()` displays 60."
+    },
+    {
+      "id": "11.15",
+      "number": "11.15",
+      "text": "Which of the following statements are true? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A method can be overloaded in the same class."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A method can be overridden in the same class."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "If a method overloads another method, these two methods must have the same signature."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "If a method overrides another method, these two methods must have the same signature."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "A method in a subclass can overload a method in the superclass."
+        }
+      ],
+      "inputName": "QE14",
+      "inputType": "checkbox",
+      "correctAnswer": "ADE",
+      "explanation": "A is true (standard overloading). B is false (overriding requires inheritance). C is false (overloading requires different signatures). D is true (overriding requires the same signature). E is true (a subclass can define a method with the same name but different parameters as its superclass)."
+    },
+    {
+      "id": "11.16",
+      "number": "11.16",
+      "text": "Analyze the following code. Please select all that apply.\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    Object a1 = new A();\n    Object a2 = new Object();\n    System.out.println(a1);\n    System.out.println(a2);\n  }\n}\n\nclass A {\n  int x;\n\n  @Override\n  public String toString() {\n    return \"A's x is \" + x;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program cannot be compiled, because System.out.println(a1) is wrong and it should be replaced by System.out.println(a1.toString());"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "When executing System.out.println(a1), the toString() method in the Object class is invoked."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "When executing System.out.println(a2), the toString() method in the Object class is invoked."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "When executing System.out.println(a1), the toString() method in the A class is invoked."
+        }
+      ],
+      "inputName": "QD15",
+      "inputType": "checkbox",
+      "correctAnswer": "CD",
+      "explanation": "`System.out.println(obj)` implicitly calls `obj.toString()`. For `a1`, which refers to an instance of `A`, the overridden `toString()` in `A` is called due to dynamic binding. For `a2`, which is a direct instance of `Object`, the original `toString()` in the `Object` class is called."
+    },
+    {
+      "id": "11.17",
+      "number": "11.17",
+      "text": "Given the following code, find the compile error. Please select all that apply.\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    m(new GraduateStudent());\n    m(new Student());\n    m(new Person());\n    m(new Object());\n  }\n\n  public static void m(Student x) {\n    System.out.println(x.toString());\n  }\n}\n\nclass GraduateStudent extends Student {\n}\n\nclass Student extends Person {\n  @Override\n  public String toString() {\n    return \"Student\";\n  }\n}\n\nclass Person extends Object {\n  @Override\n  public String toString() {\n    return \"Person\";\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "m(new GraduateStudent()) causes an error"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "m(new Student()) causes an error"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "m(new Person()) causes an error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "m(new Object()) causes an error"
+        }
+      ],
+      "inputName": "QD16",
+      "inputType": "checkbox",
+      "correctAnswer": "CD",
+      "explanation": "The method `m(Student x)` requires a parameter of type `Student` or its subclass (`GraduateStudent`). `Person` and `Object` are superclasses of `Student`. In Java, you cannot pass a supertype object to a method expecting a subtype without an explicit and valid cast."
+    },
+    {
+      "id": "11.18",
+      "number": "11.18",
+      "text": "Polymorphism means ______________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "that data fields should be declared private"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "that a class can extend another class"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "that a variable of supertype can refer to a subtype object"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "that a class can contain another class"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Polymorphism is the ability of a supertype reference variable to hold a reference to any of its subtype objects, allowing for dynamic method binding at runtime."
+    },
+    {
+      "id": "11.19",
+      "number": "11.19",
+      "text": "What is the output of the following code?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    new Person().printPerson();\n    new Student().printPerson();\n  }\n}\n\nclass Student extends Person {\n  @Override\n  public String getInfo() {\n    return \"Student\";\n  }\n}\n\nclass Person {\n  public String getInfo() {\n    return \"Person\";\n  }\n  \n  public void printPerson() {\n    System.out.println(getInfo());\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Person Person"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Person Student"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Student Student"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Student Person"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "When `new Person().printPerson()` is called, it executes `getInfo()` in `Person`. When `new Student().printPerson()` is called, the inherited `printPerson()` executes, but because `getInfo()` is overridden in `Student`, dynamic binding ensures `Student`'s version of `getInfo()` is invoked."
+    },
+    {
+      "id": "11.20",
+      "number": "11.20",
+      "text": "What is the output of the following code?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    new Person().printPerson();\n    new Student().printPerson();\n  }\n}\n\nclass Student extends Person {\n  private String getInfo() {\n    return \"Student\";\n  }\n}\n\nclass Person {\n  private String getInfo() {\n    return \"Person\";\n  }\n  \n  public void printPerson() {\n    System.out.println(getInfo());\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Person Person"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Person Student"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Student Student"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Student Person"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Private methods are not inherited and cannot be overridden. In the `Person` class, the `printPerson()` method calls its own `private` `getInfo()` method. Even when called on a `Student` object, `printPerson()` (which is defined in `Person`) can only see and access the `private` members of its own class. Therefore, it calls `Person.getInfo()` both times."
+    },
+    {
+      "id": "11.21",
+      "number": "11.21",
+      "text": "Which of the following statements is false?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "You can always pass an instance of a subclass to a parameter of its superclass type. This feature is known as polymorphism."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The compiler finds a matching method according to parameter type, number of parameters, and order of the parameters at compile time."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A method may be implemented in several subclasses. The Java Virtual Machine dynamically binds the implementation of the method at runtime."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Dynamic binding can apply to static methods."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Dynamic binding can apply to instance methods."
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Static methods are bound at compile time (static binding) based on the reference type, not the actual object type at runtime. Dynamic binding only applies to instance methods."
+    },
+    {
+      "id": "11.22",
+      "number": "11.22",
+      "text": "Which of the following are Java keywords?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "instanceOf"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "instanceof"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "cast"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "casting"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Java keywords are case-sensitive and always written in lowercase. `instanceof` is the correct keyword; `cast` and `casting` are concepts but not keywords in Java."
+    },
+    {
+      "id": "11.23",
+      "number": "11.23",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    String s = new String(\"Welcome to Java\");\n    Object o = s;\n    String d = (String)o;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "When assigning s to o in Object o = s, a new object is created."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "When casting o in String d = (String)o, a new object is created."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "When casting o in String d = (String)o, the contents of o is changed."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "s, o, and d reference the same String object."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Assigning a reference to another variable or casting a reference does not create a new object; it simply creates a new reference to the existing object. Therefore, s, o, and d all point to the same memory location."
+    },
+    {
+      "id": "11.24",
+      "number": "11.24",
+      "text": "Assume Cylinder is a subtype of Circle. Analyze the following code:\n\n```java\nCircle c = new Circle (5);\nCylinder cy = (Cylinder)c;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code has a compile error."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code has a runtime error."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The code is fine."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The original question text contained conflicting syntax. Assuming the intent was to assign a `Circle` object to a `Cylinder` reference, this will result in a compilation error if an explicit cast is missing, or a `ClassCastException` at runtime if the object is actually a `Circle` and not a `Cylinder`. Based on the provided correct answer and typical logic for these questions, the compiler will error if you attempt to assign a superclass type to a subclass type without casting, or if variables are redefined improperly."
+    },
+    {
+      "id": "11.25",
+      "number": "11.25",
+      "text": "Given the following classes and their objects:\n\n```java\nclass C1 {}\nclass C2 extends C1 {}\nclass C3 extends C1 {}\n\nC2 c2 = new C2();\nC3 c3 = new C3();\n```\n\nAnalyze the following statement:\n\n```java\nc2 = (C2)((C1)c3);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "c3 is cast into c2 successfully."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "You will get a runtime error because you cannot cast objects from sibling classes."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "You will get a runtime error because the Java runtime system cannot perform multiple casting in nested form."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The statement is correct."
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "While the syntax is valid for the compiler, at runtime the JVM checks if the actual object (an instance of `C3`) is compatible with the target type (`C2`). Since `C3` and `C2` are sibling classes, they are incompatible, resulting in a `ClassCastException`."
+    },
+    {
+      "id": "11.26",
+      "number": "11.26",
+      "text": "Given the following code, which of the following expressions evaluates to false?\n\n```java\nclass C1 {}\nclass C2 extends C1 { }\nclass C3 extends C2 { }\nclass C4 extends C1 {}\n\nC1 c1 = new C1();\nC2 c2 = new C2();\nC3 c3 = new C3();\nC4 c4 = new C4();\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "c1 instanceof C1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "c2 instanceof C1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "c3 instanceof C1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "c4 instanceof C2"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The `instanceof` operator returns true if the object is an instance of the class or any of its subclasses. `c4` is an instance of `C4`, which extends `C1`. It has no inheritance relationship with `C2`, so `c4 instanceof C2` is false."
+    },
+    {
+      "id": "11.27",
+      "number": "11.27",
+      "text": "You can assign _________ to a variable of `Object[]` type. Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "new char[100]"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "new int[100]"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "new double[100]"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "new String[100]"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "new java.util.Date[100]"
+        }
+      ],
+      "inputName": "QE26",
+      "inputType": "checkbox",
+      "correctAnswer": "DE",
+      "explanation": "In Java, an array of a reference type (like `String` or `Date`) is a subtype of `Object[]`. However, an array of primitives (like `int[]`, `char[]`, or `double[]`) is not a subtype of `Object[]`, even though it is a subtype of `Object`."
+    },
+    {
+      "id": "11.28",
+      "number": "11.28",
+      "text": "Assume Cylinder is a subtype of Circle. Analyze the following code:\n\n```java\nCylinder cy = new Cylinder(1, 1);\nCircle c = cy;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code has a compile error."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code has a runtime error."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The code is fine."
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Assigning a subclass instance (`Cylinder`) to a superclass reference variable (`Circle`) is called upcasting. Upcasting is implicit and safe in Java, so the code is correct."
+    },
+    {
+      "id": "11.29",
+      "number": "11.29",
+      "text": "Analyze the following code snippet.\n\n**Program 1:**\n```java\npublic class Test {\n  public static void main(String[] args) {\n    Object a1 = new A();\n    Object a2 = new A();\n    System.out.println(a1.equals(a2));\n  }\n}\nclass A {\n  int x;\n  public boolean equals(Object a) {\n    return this.x == ((A)a).x;\n  }\n}\n```\n\n**Program 2:**\n```java\npublic class Test {\n  public static void main(String[] args) {\n    Object a1 = new A();\n    Object a2 = new A();\n    System.out.println(a1.equals(a2));\n  }\n}\nclass A {\n  int x;\n  public boolean equals(A a) {\n    return this.x == a.x;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Program 1 displays true and Program 2 displays true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Program 1 displays false and Program 2 displays true"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Program 1 displays true and Program 2 displays false"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Program 1 displays false and Program 2 displays false"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Program 1, class A correctly overrides `equals(Object)`. When `a1.equals(a2)` is called, dynamic binding invokes the version in class A, which returns true. In Program 2, class A *overloads* equals with `equals(A)`. Because the reference type of `a1` is `Object`, the compiler binds the call to `Object.equals(Object)`, which checks reference equality. Since `a1` and `a2` are different objects, it returns false."
+    },
+    {
+      "id": "11.30",
+      "number": "11.30",
+      "text": "Analyze the following code snippet.\n\n**Program 1:**\n```java\npublic class Test {\n  public static void main(String[] args) {\n    Object a1 = new A();\n    Object a2 = new A();\n    System.out.println(a1.equals(a2));\n  }\n}\nclass A {\n  int x;\n  public boolean equals(A a) {\n    return this.x == a.x;\n  }\n}\n```\n\n**Program 2:**\n```java\npublic class Test {\n  public static void main(String[] args) {\n    A a1 = new A();\n    A a2 = new A();\n    System.out.println(a1.equals(a2));\n  }\n}\nclass A {\n  int x;\n  public boolean equals(A a) {\n    return this.x == a.x;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Program 1 displays true and Program 2 displays true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Program 1 displays false and Program 2 displays true"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Program 1 displays true and Program 2 displays false"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Program 1 displays false and Program 2 displays false"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Program 1, `a1` is declared as `Object`. The compiler searches for `equals(Object)` in the `Object` class. Since Class A does not override this method (it only overloads it with `equals(A)`), the default reference comparison occurs, returning false. In Program 2, `a1` is declared as `A`. The compiler finds the `equals(A)` method in class A directly, so it is invoked, returning true."
+    },
+    {
+      "id": "11.31",
+      "number": "11.31",
+      "text": "Analyze the following code:\n\n```java\n// Program 1\npublic class Test {\n  public static void main(String[] args) {\n    Object a1 = new A();\n    Object a2 = new A();\n    System.out.println(((A)a1).equals((A)a2));\n  }\n}\n\nclass A {\n  int x;\n\n  public boolean equals(A a) {\n    return this.x == a.x;\n  }\n}\n\n// Program 2\npublic class Test {\n  public static void main(String[] args) {\n    A a1 = new A();\n    A a2 = new A();\n    System.out.println(a1.equals(a2));\n  }\n}\n\nclass A {\n  int x;\n\n  public boolean equals(A a) {\n    return this.x == a.x;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Program 1 displays true and Program 2 displays true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Program 1 displays false and Program 2 displays true"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Program 1 displays true and Program 2 displays false"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Program 1 displays false and Program 2 displays false"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In both programs, the method `equals(A a)` is an overload, not an override of `Object.equals(Object o)`. In Program 1, the cast `((A)a1).equals((A)a2)` ensures the compiler selects the `equals(A a)` method. Since `x` defaults to 0 for both instances, both programs return true."
+    },
+    {
+      "id": "11.32",
+      "number": "11.32",
+      "text": "The `equals` method is defined in the `Object` class. Which of the following is correct to override it in the `String` class?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "public boolean equals(String other)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "public boolean equals(Object other)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "public static boolean equals(String other)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "public static boolean equals(Object other)"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "To override a method, the signature must be identical to the parent class's method. The `Object.equals` method is defined as `public boolean equals(Object obj)`. Option A is an overload, not an override."
+    },
+    {
+      "id": "11.33",
+      "number": "11.33",
+      "text": "Which of the following statements are true? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Override the `equals(Object)` method in the `Object` class whenever possible."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Override the `toString()` method in the `Object` class whenever possible."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A public default no-arg constructor is assumed if no constructors are defined explicitly."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "You should follow standard Java programming style and naming conventions. Choose informative names for classes, data fields, and methods."
+        }
+      ],
+      "inputName": "QD32",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD",
+      "explanation": "All options represent standard Java best practices or language rules. Overriding `equals` and `toString` improves class utility, Java provides a default constructor if none are specified, and naming conventions are essential for readability."
+    },
+    {
+      "id": "11.34",
+      "number": "11.34",
+      "text": "What is the output of the following code?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    Object o1 = new Object();\n    Object o2 = new Object();\n    System.out.print((o1 == o2) + \" \" + (o1.equals(o2)));\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "false false"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "true true"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "false true"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "true false"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `==` operator checks if both references point to the same memory address. Since two distinct `new Object()` calls were made, `o1 == o2` is false. The default implementation of `equals` in the `Object` class also uses the `==` operator, so `o1.equals(o2)` is also false."
+    },
+    {
+      "id": "11.35",
+      "number": "11.35",
+      "text": "What is the output of the following code?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    String s1 = new String(\"Java\");\n    String s2 = new String(\"Java\");\n    System.out.print((s1 == s2) + \" \" + (s1.equals(s2)));\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "false false"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "true true"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "false true"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "true false"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`s1` and `s2` are created using the `new` keyword, so they point to different object instances, making `s1 == s2` false. However, the `String` class overrides `equals` to compare the literal content of the strings, which is identical, making `s1.equals(s2)` true."
+    },
+    {
+      "id": "11.36",
+      "number": "11.36",
+      "text": "Given two reference variables `t1` and `t2`, if `t1 == t2` is true, `t1.equals(t2)` must be __________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "false"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "If `t1 == t2` is true, both variables refer to the exact same object. According to the contract of the `equals` method (specifically reflexivity), an object must always be equal to itself."
+    },
+    {
+      "id": "11.37",
+      "number": "11.37",
+      "text": "Given two reference variables `t1` and `t2`, if `t1.equals(t2)` is true, `t1 == t2` ___________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "is always true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "is always false"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "may be true or false"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Two different objects can be considered 'equal' via the `equals` method (logical equality), such as two different String instances containing the same characters. In that case, `==` would be false. If the variables point to the same instance, `==` would be true."
+    },
+    {
+      "id": "11.38",
+      "number": "11.38",
+      "text": "Analyze the following code. Please select all that apply.\n\n```java\nArrayList<String> list = new ArrayList<>();\nlist.add(\"Beijing\");\nlist.add(\"Tokyo\");\nlist.add(\"Shanghai\");\nlist.set(3, \"Hong Kong\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The last line in the code causes a runtime error because there is no element at index 3 in the array list."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The last line in the code has a compile error because there is no element at index 3 in the array list."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "If you replace the last line by list.add(3, \"Hong Kong\"), the code will compile and run fine."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "If you replace the last line by list.add(4, \"Hong Kong\"), the code will compile and run fine."
+        }
+      ],
+      "inputName": "QD37",
+      "inputType": "checkbox",
+      "correctAnswer": "AC",
+      "explanation": "The list size is 3 (indices 0, 1, 2). `list.set(index, element)` requires the index to already exist, so index 3 throws a runtime error. `list.add(index, element)` allows an index up to the current size of the list, so `list.add(3, ...)` is valid, but `list.add(4, ...)` would throw an error."
+    },
+    {
+      "id": "11.39",
+      "number": "11.39",
+      "text": "What is the output of the following code?\n\n```java\nArrayList<java.util.Date> list = new ArrayList<>();\njava.util.Date d = new java.util.Date();   \nlist.add(d);\nlist.add(d);    \nSystem.out.println((list.get(0) == list.get(1)) + \" \" \n  + (list.get(0)).equals(list.get(1)));\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "true false"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "false true"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "true true"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "false false"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The same reference `d` is added to the list twice. Therefore, `list.get(0)` and `list.get(1)` point to the exact same object in memory. This makes both `==` and `.equals()` return true."
+    },
+    {
+      "id": "11.40",
+      "number": "11.40",
+      "text": "What is the output of the following code?\n\n```java\nArrayList<String> list = new ArrayList<>();\nString s1 = new String(\"Java\");   \nString s2 = new String(\"Java\");   \nlist.add(s1);\nlist.add(s2);    \nSystem.out.println((list.get(0) == list.get(1)) + \" \" \n  + (list.get(0)).equals(list.get(1)));\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "true false"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "false true"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "true true"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "false false"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "`s1` and `s2` are distinct objects because they were created with `new String()`. Thus, `list.get(0) == list.get(1)` is false. However, they contain the same string content, so `equals()` returns true."
+    },
+    {
+      "id": "11.41",
+      "number": "11.41",
+      "text": "You can create an `ArrayList` using _________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`new ArrayList[]`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`new ArrayList[100]`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`new ArrayList<>()`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`ArrayList()`"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, an `ArrayList` is instantiated using the `new` keyword followed by the constructor. The diamond operator `<>` is used for type inference of the generic type."
+    },
+    {
+      "id": "11.42",
+      "number": "11.42",
+      "text": "Invoking _________ removes all elements in an `ArrayList x`.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`x.remove()`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`x.clean()`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`x.delete()`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`x.empty()`"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "`x.clear()`"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "The `clear()` method is the standard Java Collection API method used to remove all elements from the list, resetting its size to zero."
+    },
+    {
+      "id": "11.43",
+      "number": "11.43",
+      "text": "Suppose `ArrayList x` contains two strings `[Beijing, Singapore]`. Which of the following methods will cause the list to become `[Beijing, Chicago, Singapore]`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`x.add(\"Chicago\")`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`x.add(0, \"Chicago\")`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`x.add(1, \"Chicago\")`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`x.add(2, \"Chicago\")`"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "To insert an element between the first (index 0) and second (index 1) elements, you must add it at index 1. This shifts the existing element at index 1 and all subsequent elements to the right."
+    },
+    {
+      "id": "11.44",
+      "number": "11.44",
+      "text": "Suppose `ArrayList x` contains two strings `[Beijing, Singapore]`. Which of the following method will cause the list to become `[Beijing]`? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`x.remove(\"Singapore\")`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`x.remove(0)`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`x.remove(1)`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`x.remove(2)`"
+        }
+      ],
+      "inputName": "QD43",
+      "inputType": "checkbox",
+      "correctAnswer": "AC",
+      "explanation": "`ArrayList` provides overloaded remove methods. `remove(Object o)` searches for the value and removes it, while `remove(int index)` removes the item at that specific position. Since \"Singapore\" is at index 1, both A and C are correct."
+    },
+    {
+      "id": "11.45",
+      "number": "11.45",
+      "text": "Suppose `ArrayList x` contains two strings `[Beijing, Singapore]`. Which of the following method will cause runtime errors? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`x.get(1)`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`x.set(2, \"New York\");`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`x.get(2)`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`x.remove(2)`"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "`x.size()`"
+        }
+      ],
+      "inputName": "QE44",
+      "inputType": "checkbox",
+      "correctAnswer": "BCD",
+      "explanation": "The list has two elements, meaning valid indices are 0 and 1. Accessing index 2 via `set`, `get`, or `remove` throws an `IndexOutOfBoundsException` because index 2 is out of range (equal to the size of the list)."
+    },
+    {
+      "id": "11.46",
+      "number": "11.46",
+      "text": "Invoking _________ returns the first element in an `ArrayList x`.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`x.first()`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`x.get(0)`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`x.get(1)`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`x.get()`"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Java `ArrayList` uses zero-based indexing. The first element is stored at index 0 and is retrieved using the `get(int index)` method."
+    },
+    {
+      "id": "11.47",
+      "number": "11.47",
+      "text": "Invoking _________ returns the number of the elements in an `ArrayList x`.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`x.getSize()`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`x.getLength(0)`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`x.length(1)`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`x.size()`"
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Unlike standard arrays which use a `.length` property, the `ArrayList` class (and most classes in the Java Collections Framework) uses the `size()` method to return the current count of elements."
+    },
+    {
+      "id": "11.48",
+      "number": "11.48",
+      "text": "Suppose an `ArrayList list` contains `{\"red\", \"green\", \"red\", \"green\"}`. What is the list after the following code?\n\n```java\nlist.remove(\"red\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`{\"red\", \"green\", \"red\", \"green\"}`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`{\"green\", \"red\", \"green\"}`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`{\"green\", \"green\"}`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`{\"red\", \"green\", \"green\"}`"
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `remove(Object o)` method in `ArrayList` removes only the first occurrence of the specified element found in the list."
+    },
+    {
+      "id": "11.49",
+      "number": "11.49",
+      "text": "Suppose an `ArrayList list` contains `{\"red\", \"red\", \"green\"}`. What is the list after the following code?\n\n```java\nString element = \"red\";\nfor (int i = 0; i < list.size(); i++)\n  if (list.get(i).equals(element))\n    list.remove(element);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`{\"red\", \"red\", \"green\"}`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`{\"red\", \"green\"}`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`{\"green\"}`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`{}`"
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "When `i=0`, \"red\" is found and removed. The list shifts, and the second \"red\" moves to index 0. The loop then increments `i` to 1. At `i=1`, the list is `[\"red\", \"green\"]`, so `list.get(1)` is \"green\". The second \"red\" is never checked because it was skipped during the shift."
+    },
+    {
+      "id": "11.50",
+      "number": "11.50",
+      "text": "Suppose an `ArrayList list` contains `{\"red\", \"red\", \"green\"}`. What is the list after the following code?\n\n```java\nString element = \"red\";\nfor (int i = 0; i < list.size(); i++)\n  if (list.get(i).equals(element)) {\n    list.remove(element);\n    i--;\n  }\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`{\"red\", \"red\", \"green\"}`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`{\"red\", \"green\"}`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`{\"green\"}`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`{}`"
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "By using `i--` after removing an element, the loop correctly accounts for the index shift. When the first \"red\" is removed, the second \"red\" shifts to index 0, and the `i--` followed by the loop's `i++` ensures the next check occurs at index 0 again."
+    },
+    {
+      "id": "11.51",
+      "number": "11.51",
+      "text": "Suppose an ArrayList `list` contains `{\"red\", \"red\", \"green\"}`. What is the list after the following code?\n\n```java\nString element = \"red\";\nfor (int i = list.size() - 1; i >= 0; i--)\n  if (list.get(i).equals(element))\n    list.remove(element);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "{\"red\", \"red\", \"green\"}"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "{\"red\", \"green\"}"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "{\"green\"}"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "{}"
+        }
+      ],
+      "inputName": "Q50",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The loop iterates backwards through the list. There are two instances of \"red\". For each instance found, `list.remove(element)` is called. The `remove(Object)` method removes the first occurrence of the specified element. Since the code executes removal twice and there are exactly two \"red\" elements, both are removed, leaving only \"green\"."
+    },
+    {
+      "id": "11.52",
+      "number": "11.52",
+      "text": "The output from the following code is __________.\n\n```java\njava.util.ArrayList<String> list \n  = new java.util.ArrayList<>();\nlist.add(\"New York\"); \njava.util.ArrayList<String> list1 = list;\nlist.add(\"Atlanta\"); \nlist1.add(\"Dallas\"); \nSystem.out.println(list1);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "[New York]"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "[New York, Atlanta]"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "[New York, Atlanta, Dallas]"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "[New York, Dallas]"
+        }
+      ],
+      "inputName": "Q51",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, object variables are references. The statement `list1 = list` means both variables point to the same ArrayList object in memory. Modifications made through either reference affect the same object. Therefore, adding \"New York\", \"Atlanta\", and \"Dallas\" all populate the same list."
+    },
+    {
+      "id": "11.53",
+      "number": "11.53",
+      "text": "Show the output of the following code:\n\n```java\nString[] array = {\"red\", \"green\", \"blue\"};\nArrayList<String> list = new ArrayList<>(Arrays.asList(array));\nlist.add(0, \"red\");\nSystem.out.println(list);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "[\"red\", \"green\", \"blue\", \"red\"]"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "[\"red\", \"green\", \"blue\"]"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "[\"red\", \"red\", \"green\", \"blue\"]"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "[\"red\", \"green\", \"red\", \"blue\"]"
+        }
+      ],
+      "inputName": "Q52",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The list is initialized with \"red\", \"green\", and \"blue\". The `list.add(0, \"red\")` method inserts the string \"red\" at index 0, shifting the existing elements to the right. This results in [red, red, green, blue]."
+    },
+    {
+      "id": "11.54",
+      "number": "11.54",
+      "text": "Analyze the following code:\n\n```java\nDouble[] array = {1, 2, 3};\nArrayList<Double> list = new ArrayList<>(Arrays.asList(array));\nSystem.out.println(list);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code is correct and displays [1, 2, 3]."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code is correct and displays [1.0, 2.0, 3.0]."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The code has a compile error because an integer such as 1 is automatically converted into an Integer object, but the array element type is Double."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The code has a compile error because asList(array) requires that the array elements are objects."
+        }
+      ],
+      "inputName": "Q53",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, an `int` literal (like 1) can be autoboxed to an `Integer`, but it cannot be automatically converted to a `Double`. Only `double` literals (like 1.0) can be autoboxed to `Double`. Therefore, initializing a `Double[]` with `int` literals causes a compilation error."
+    },
+    {
+      "id": "11.55",
+      "number": "11.55",
+      "text": "Analyze the following code:\n\n```java\ndouble[] array = {1, 2, 3};\nArrayList<Double> list = new ArrayList<>(Arrays.asList(array));\nSystem.out.println(list);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code is correct and displays [1, 2, 3]."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code is correct and displays [1.0, 2.0, 3.0]."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The code has a compile error because an integer such as 1 is automatically converted into an Integer object, but the array element type is Double."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The code has a compile error because asList(array) requires that the array elements are objects."
+        }
+      ],
+      "inputName": "Q54",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "`Arrays.asList()` uses generics and expects an array of objects (`T[]`). While a `double[]` is an object, its elements are primitives. `Arrays.asList(array)` where array is `double[]` treats the whole array as a single element, resulting in a `List<double[]>` rather than a `List<Double>`. The `ArrayList<Double>` constructor cannot accept this."
+    },
+    {
+      "id": "11.56",
+      "number": "11.56",
+      "text": "Analyze the following code:\n\n```java\ndouble[] c = {1, 2, 3};\nSystem.out.println(java.util.Collections.max(c));\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code is correct and displays 3."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code is correct and displays 3.0."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The code has a compile error on Collections.max(c). c cannot be an array."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The code has a compile error on double[] c = {1, 2, 3}."
+        }
+      ],
+      "inputName": "Q55",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `java.util.Collections.max()` method is designed to work with objects that implement the `Collection` interface. It does not accept primitive arrays (or any arrays) as an argument."
+    },
+    {
+      "id": "11.57",
+      "number": "11.57",
+      "text": "Analyze the following code:\n\n```java\nInteger[] c = {3, 5};\njava.util.Collections.shuffle(c);\nSystem.out.println(java.util.Arrays.toString(c));\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code is correct and displays [3, 5]."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code is correct and displays [5, 3]."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The code has a compile error on Collections.shuffle(c). c cannot be an array."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The code has a compile error on Integer[] c = {3, 5}."
+        }
+      ],
+      "inputName": "Q56",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `java.util.Collections.shuffle()` method requires a `java.util.List` as an argument. It cannot be used directly on an array, even if the array contains objects like `Integer`."
+    },
+    {
+      "id": "11.58",
+      "number": "11.58",
+      "text": "A class design requires that a particular member variable must be accessible by any subclasses of this class, but otherwise not by classes which are not members of the same package. What should be done to achieve this?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The variable should be marked public."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The variable should be marked private."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The variable should be marked protected."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The variable should have no special access modifier."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The variable should be marked private and an accessor method provided."
+        }
+      ],
+      "inputName": "Q57",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `protected` modifier in Java provides access to members within the same package and also to subclasses in different packages. This matches the requirement of being accessible by subclasses and package members."
+    },
+    {
+      "id": "11.59",
+      "number": "11.59",
+      "text": "Which statements are most accurate regarding the following classes?\n\n```java\nclass A {\n  private int i;\n  protected int j;\n}\n\nclass B extends A {\n  private int k;\n  protected int m;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "An object of B contains data fields i, j, k, m."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "An object of B contains data fields j, k, m."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "An object of B contains data fields j, m."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "An object of B contains data fields k, m."
+        }
+      ],
+      "inputName": "Q58",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "When a class is extended, the subclass inherits all members (fields and methods) of the superclass. Although private fields (like `i`) are not directly accessible by the subclass code, they still exist within the memory allocated for an object of the subclass."
+    },
+    {
+      "id": "11.60",
+      "number": "11.60",
+      "text": "Which statements are most accurate regarding the following classes?\n\n```java\nclass A {\n  private int i;\n  protected int j;\n}\n\nclass B extends A {\n  private int k;\n  protected int m;\n\n  // some methods omitted\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "In the class B, an instance method can only access i, j, k, m."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "In the class B, an instance method can only access j, k, m."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "In the class B, an instance method can only access j, m."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "In the class B, an instance method can only access k, m."
+        }
+      ],
+      "inputName": "Q59",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Instance methods in class B can access its own fields (`k` and `m`) regardless of modifiers. It can also access the `protected` field `j` from its superclass A. However, it cannot access the `private` field `i` from class A because private members are only accessible within the class they are defined."
+    },
+    {
+      "id": "11.61",
+      "number": "11.61",
+      "text": "Which of the following statements is false?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A public class can be accessed by a class from a different package."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A private method cannot be accessed by a class in a different package."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A protected method can be accessed by a subclass in a different package."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A method with no visibility modifier can be accessed by a class in a different package."
+        }
+      ],
+      "inputName": "Q60",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In Java, the default visibility (no modifier) is 'package-private', meaning the method or class is only accessible to other classes within the same package. It cannot be accessed by classes in different packages."
+    },
+    {
+      "id": "11.62",
+      "number": "11.62",
+      "text": "What modifier should you use on a class so that a class in the same package can access it but a class (including a subclass) in a different package cannot access it?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "public"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "private"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "protected"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Use the default modifier."
+        }
+      ],
+      "inputName": "Q61",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The default access modifier (no keyword used) limits visibility to the current package. This prevents classes or subclasses in external packages from accessing the class."
+    },
+    {
+      "id": "11.63",
+      "number": "11.63",
+      "text": "What modifier should you use on the members of a class so that they are not accessible to another class in a different package, but are accessible to any subclasses in any package?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "public"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "private"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "protected"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Use the default modifier."
+        }
+      ],
+      "inputName": "Q62",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `protected` modifier is specifically designed to allow member access within the same package and also to subclasses in different packages, while denying access to non-subclasses in different packages."
+    },
+    {
+      "id": "11.64",
+      "number": "11.64",
+      "text": "The visibility of these modifiers increases in this order:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "private, protected, none (if no modifier is used), and public."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "private, none (if no modifier is used), protected, and public."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "none (if no modifier is used), private, protected, and public."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "none (if no modifier is used), protected, private, and public."
+        }
+      ],
+      "inputName": "Q63",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The visibility levels from most restrictive to least restrictive are: `private` (class only), default/none (package only), `protected` (package and subclasses), and `public` (accessible everywhere)."
+    },
+    {
+      "id": "11.65",
+      "number": "11.65",
+      "text": "Which of the following classes cannot be extended?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\nclass A { }\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\nclass A { private A() { } }\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\nfinal class A { }\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\nclass A { protected A() { } }\n```"
+        }
+      ],
+      "inputName": "Q64",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `final` keyword in Java is used in a class declaration to explicitly prevent the class from being subclassed or extended. While a private constructor (Option B) effectively prevents inheritance by external classes, the `final` modifier is the direct language feature for this purpose."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 65
+}

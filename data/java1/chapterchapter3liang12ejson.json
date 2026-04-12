@@ -1,0 +1,1407 @@
+{
+  "id": "explainer-1776005911218-uluhd",
+  "label": "chapter3liang12e.json",
+  "params": {
+    "file": "chapter3liang12e.json",
+    "chapter": "Chapter 3"
+  },
+  "title": "Selections",
+  "questions": [
+    {
+      "id": "3.1",
+      "number": "3.1",
+      "text": "The \"less than or equal to\" comparison operator in Java is ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`<`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`<=`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "=<"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<<"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "!="
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, the 'less than or equal to' comparison is performed using the `<=` operator. The order of characters is fixed; `=<` is not a valid operator."
+    },
+    {
+      "id": "3.2",
+      "number": "3.2",
+      "text": "The equal comparison operator in Java is ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "!="
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "=="
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "^="
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `==` operator is used to compare two values for equality. A single `=` is the assignment operator, not a comparison operator."
+    },
+    {
+      "id": "3.3",
+      "number": "3.3",
+      "text": "What is the result of the expression `1 + 1 + 1 + 1 + 1 == 5`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "false"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "There is no guarantee that 1 + 1 + 1 + 1 + 1 == 5 is true."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, integer arithmetic is exact. Adding the integer 1 five times will always result in exactly 5."
+    },
+    {
+      "id": "3.4",
+      "number": "3.4",
+      "text": "What is the result of the expression `1 - 0.1 - 0.1 - 0.1 - 0.1 - 0.1 == 0.5`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "false"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "There is no guarantee that 1 - 0.1 - 0.1 - 0.1 - 0.1 - 0.1 == 0.5 is true."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Floating-point numbers (like `double` or `float`) are represented in binary, and values like 0.1 cannot be represented with perfect precision. Cumulative rounding errors mean that the result of several subtractions may not exactly equal the target value when compared using `==`."
+    },
+    {
+      "id": "3.5",
+      "number": "3.5",
+      "text": "In Java, the word `true` is ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a Java keyword"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "a Boolean literal"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "same as value 1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "same as value 0"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, `true` and `false` are Boolean literals representing the two possible values of the `boolean` type. Unlike languages like C, they are not equivalent to the integers 1 or 0."
+    },
+    {
+      "id": "3.6",
+      "number": "3.6",
+      "text": "Which of the following code snippets displays the area of a circle if the radius is positive?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`if (radius != 0) System.out.println(radius * radius * 3.14159);`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`if (radius >= 0) System.out.println(radius * radius * 3.14159);`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`if (radius > 0) System.out.println(radius * radius * 3.14159);`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`if (radius <= 0) System.out.println(radius * radius * 3.14159);`"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Mathematically, 'positive' means strictly greater than zero. Therefore, the condition must be `radius > 0`."
+    },
+    {
+      "id": "3.7",
+      "number": "3.7",
+      "text": "What is the output of the following code?\n\n```java\nint x = 0;\nif (x < 4) {\n  x = x + 1;\n}\nSystem.out.println(\"x is \" + x);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x is 0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x is 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x is 2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x is 3"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "x is 4"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The variable `x` starts at 0. The condition `0 < 4` is true, so the code inside the `if` block executes, incrementing `x` to 1. The final print statement outputs 'x is 1'."
+    },
+    {
+      "id": "3.8",
+      "number": "3.8",
+      "text": "Suppose `income` is 4001, what is the output of the following code?\n\n```java\nif (income > 3000) {\n  System.out.println(\"Income is greater than 3000\");\n}\nelse if (income > 4000) {\n  System.out.println(\"Income is greater than 4000\");\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "no output"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Income is greater than 3000"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Income is greater than 3000 followed by Income is greater than 4000"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Income is greater than 4000"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Income is greater than 4000 followed by Income is greater than 3000"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In an `if-else if` structure, Java executes the first block whose condition is true and skips the rest. Since `4001 > 3000` is true, the first message is printed and the `else if` branch is never evaluated."
+    },
+    {
+      "id": "3.9",
+      "number": "3.9",
+      "text": "The following code displays __________.\n\n```java\ndouble temperature = 50;\n\nif (temperature >= 100)\n  System.out.println(\"too hot\");\nelse if (temperature <= 40)\n  System.out.println(\"too cold\");\nelse\n  System.out.println(\"just right\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "too hot"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "too cold"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "just right"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "too hot too cold just right"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The first condition `50 >= 100` is false. The second condition `50 <= 40` is also false. Therefore, the program executes the `else` block, printing 'just right'."
+    },
+    {
+      "id": "3.10",
+      "number": "3.10",
+      "text": "Suppose `x = 1`, `y = -1`, and `z = 1`. What is the output of the following statement? (Hint: Consider the 'dangling else' rule and proper indentation.)\n\n```java\nif (x > 0)\n  if (y > 0)\n    System.out.println(\"x > 0 and y > 0\");\n  else if (z > 0)\n    System.out.println(\"x < 0 and z > 0\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`x > 0 and y > 0;`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`x < 0 and z > 0;`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`x < 0 and z < 0;`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "no output."
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The 'dangling else' rule states that an `else` matches the closest preceding `if`. Here, the `else if` is associated with the inner `if (y > 0)`. Since `x > 0` is true, the program enters the outer block. Since `y > 0` is false, it moves to the `else if (z > 0)` clause. Since `z > 0` is true, it prints the string literal 'x < 0 and z > 0' (even though the text itself is logically misleading compared to the code's state)."
+    },
+    {
+      "id": "3.11",
+      "number": "3.11",
+      "text": "Analyze the following code:\n\n```java\nboolean even = false;\nif (even = true) {\n  System.out.println(\"It is even\");\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a runtime error."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program runs fine, but displays nothing."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program runs fine and displays It is even."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In Java, the expression `even = true` is an assignment, not a comparison. This assignment expression evaluates to the value being assigned (`true`). Since the `if` condition evaluates to `true`, the code inside the block executes and prints \"It is even\"."
+    },
+    {
+      "id": "3.12",
+      "number": "3.12",
+      "text": "Suppose `isPrime` is a boolean variable, which of the following is the correct and best statement for testing if `isPrime` is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "if (isPrime = true)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "if (isPrime == true)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "if (isPrime)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "if (!isPrime = false)"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "if (!isPrime == false)"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Option C (`if (isPrime)`) is the standard and most concise way to test a boolean variable in Java. Options B and E are redundant, and Option A is a logic error because it performs an assignment instead of a comparison."
+    },
+    {
+      "id": "3.13",
+      "number": "3.13",
+      "text": "Analyze the following code:\n\n```java\nboolean even = false;\nif (even) {\n  System.out.println(\"It is even!\");\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code displays It is even!"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code displays nothing."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The code is wrong. You should replace if (even) with if (even == true)."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The code is wrong. You should replace if (even) with if (even = true)."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The variable `even` is initialized to `false`. The statement `if (even)` checks if the condition is true. Since `even` is `false`, the code block inside the `if` statement is not executed, and nothing is printed."
+    },
+    {
+      "id": "3.14",
+      "number": "3.14",
+      "text": "Analyze the following code:\n\n**Code 1:**\n```java\nint number = 45;\nboolean even;\n\nif (number % 2 == 0) \n  even = true;\nelse \n  even = false;\n```\n\n**Code 2:**\n```java\nint number = 45;\nboolean even = (number % 2 == 0);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Code 1 has compile errors."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Code 2 has compile errors."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Both Code 1 and Code 2 have compile errors."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Both Code 1 and Code 2 are correct, but Code 2 is better."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Both snippets are logically correct and valid Java. However, Code 2 is preferred because it is more concise and avoids unnecessary branching. It directly assigns the result of the boolean expression `(number % 2 == 0)` to the variable."
+    },
+    {
+      "id": "3.15",
+      "number": "3.15",
+      "text": "Which of the following is a possible output from invoking `Math.random()`? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3.43"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0.5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1.0"
+        }
+      ],
+      "inputName": "QD14",
+      "inputType": "checkbox",
+      "correctAnswer": "BC",
+      "explanation": "The `Math.random()` method returns a `double` value in the range [0.0, 1.0). This means the result can be exactly 0.0 but is always strictly less than 1.0. Therefore, 0.5 and 0.0 are valid, while 3.43 and 1.0 are not."
+    },
+    {
+      "id": "3.16",
+      "number": "3.16",
+      "text": "What is the output from `System.out.println((int)Math.random() * 4);`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, the casting operator `(int)` has a higher precedence than multiplication. Since `Math.random()` returns a value between 0.0 and 0.999..., casting it to an `int` results in 0. The expression becomes `0 * 4`, which is 0."
+    },
+    {
+      "id": "3.17",
+      "number": "3.17",
+      "text": "What is the possible output from `System.out.println((int)(Math.random() * 4));`? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "4"
+        }
+      ],
+      "inputName": "QE16",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD",
+      "explanation": "Because of the parentheses, the multiplication `Math.random() * 4` happens first, resulting in a range [0.0, 4.0). Casting the result to an `int` truncates the decimal part, leaving the possible integer values 0, 1, 2, and 3. It will never be 4 because `Math.random()` never reaches 1.0."
+    },
+    {
+      "id": "3.18",
+      "number": "3.18",
+      "text": "Suppose you write the code to display \"Cannot get a driver's license\" if `age` is less than 16 and \"Can get a driver's license\" if `age` is greater than or equal to 16. Which of the following code snippets is correct? Please select all that apply.\n\n**I:**\n```java\nif (age < 16) \n  System.out.println(\"Cannot get a driver's license\");\nif (age >= 16) \n  System.out.println(\"Can get a driver's license\");\n```\n\n**II:**\n```java\nif (age < 16) \n  System.out.println(\"Cannot get a driver's license\");\nelse \n  System.out.println(\"Can get a driver's license\");\n```\n\n**III:**\n```java\nif (age < 16) \n  System.out.println(\"Cannot get a driver's license\");\nelse if (age >= 16) \n  System.out.println(\"Can get a driver's license\");\n```\n\n**IV:**\n```java\nif (age < 16) \n  System.out.println(\"Cannot get a driver's license\");\nelse if (age > 16) \n  System.out.println(\"Can get a driver's license\");\nelse if (age == 16) \n  System.out.println(\"Can get a driver's license\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "I and II"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "II and III"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "I, II, and III"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "III and IV"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "I, II, III, and IV"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "All four code segments correctly implement the logic required. While some are more efficient or standard than others (like II), they all result in the correct message being displayed for any given value of `age`."
+    },
+    {
+      "id": "3.19",
+      "number": "3.19",
+      "text": "Suppose you write the code to display \"Cannot get a driver's license\" if `age` is less than 16 and \"Can get a driver's license\" if `age` is greater than or equal to 16. Which of the following code snippets is the best?\n\n**I:**\n```java\nif (age < 16) \n  System.out.println(\"Cannot get a driver's license\");\nif (age >= 16) \n  System.out.println(\"Can get a driver's license\");\n```\n\n**II:**\n```java\nif (age < 16) \n  System.out.println(\"Cannot get a driver's license\");\nelse \n  System.out.println(\"Can get a driver's license\");\n```\n\n**III:**\n```java\nif (age < 16) \n  System.out.println(\"Cannot get a driver's license\");\nelse if (age >= 16) \n  System.out.println(\"Can get a driver's license\");\n```\n\n**IV:**\n```java\nif (age < 16) \n  System.out.println(\"Cannot get a driver's license\");\nelse if (age > 16) \n  System.out.println(\"Can get a driver's license\");\nelse if (age == 16) \n  System.out.println(\"Can get a driver's license\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "I"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "II"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "III"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "IV"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Code II is the best practice. An `if-else` statement is the most efficient and readable way to handle two mutually exclusive conditions. Code I checks two separate conditions unnecessarily, and Code III and IV are unnecessarily verbose."
+    },
+    {
+      "id": "3.20",
+      "number": "3.20",
+      "text": "The __________ method immediately terminates the program.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "System.terminate(0);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "System.halt(0);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "System.exit(0);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "System.quit(0);"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "System.stop(0);"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `System.exit(int status)` method is the standard Java method to terminate the JVM. By convention, a status code of 0 indicates successful termination."
+    },
+    {
+      "id": "3.21",
+      "number": "3.21",
+      "text": "Which of the Boolean expressions below is incorrect? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`(true) && (3 => 4)`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`!(x > 0) && (x > 0)`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`(x > 0) || (x < 0)`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`(x != 0) || (x = 0)`"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "`(-10 < x < 0)`"
+        }
+      ],
+      "inputName": "QE20",
+      "inputType": "checkbox",
+      "correctAnswer": "ADE",
+      "explanation": "Option A is incorrect because `=>` is not a valid comparison operator (the correct operator is `>=`). Option D is incorrect because `=` is an assignment operator; equality must be checked with `==`. Option E is incorrect in most programming languages (like Java or C++) because you cannot chain comparisons like `-10 < x < 0`; it must be written as `(-10 < x && x < 0)`."
+    },
+    {
+      "id": "3.22",
+      "number": "3.22",
+      "text": "Which of the following is the correct expression that evaluates to true if the number `x` is between 1 and 100 or the number is negative?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`1 < x < 100 && x < 0`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`((x < 100) && (x > 1)) || (x < 0)`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`((x < 100) && (x > 1)) && (x < 0)`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`(1 > x > 100) || (x < 0)`"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "To check if a value is between 1 and 100, we use `(x > 1 && x < 100)`. To check if it is negative, we use `(x < 0)`. These two conditions should be joined by the logical OR (`||`) operator as the requirement is for one or the other to be true."
+    },
+    {
+      "id": "3.23",
+      "number": "3.23",
+      "text": "Assume `x = 4` and `y = 5`, which of the following is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`x < 5 && y < 5`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`x < 5 || y < 5`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`x > 5 && y > 5`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`x > 5 || y > 5`"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Substituting the values: `x < 5` is `4 < 5` (True), and `y < 5` is `5 < 5` (False). For choice B, `True || False` evaluates to True. In choice A, `True && False` evaluates to False."
+    },
+    {
+      "id": "3.24",
+      "number": "3.24",
+      "text": "Assume `x = 4`, which of the following is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`!(x == 4)`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`x != 4`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`x == 5`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`x != 5`"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "If `x` is 4, then `x != 5` (4 is not equal to 5) is a True statement. All other choices evaluate to False."
+    },
+    {
+      "id": "3.25",
+      "number": "3.25",
+      "text": "Assume `x = 4` and `y = 5`, which of the following is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`!(x == 4) ^ y != 5`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`x != 4 ^ y == 5`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`x == 5 ^ y == 4`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`x != 5 ^ y != 4`"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `^` operator is the logical XOR, which is true only if the operands are different (one True, one False). In choice B, `x != 4` is `4 != 4` (False) and `y == 5` is `5 == 5` (True). `False ^ True` results in True."
+    },
+    {
+      "id": "3.26",
+      "number": "3.26",
+      "text": "Given `|x| <= 4`, which of the following is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`x <= 4 && x >= 4`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`x <= 4 && x > -4`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`x <= 4 && x >= -4`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`x <= 4 || x >= -4`"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The mathematical expression `|x| <= 4` translates to `-4 <= x <= 4`. In programming, this range is expressed as `x >= -4 && x <= 4`."
+    },
+    {
+      "id": "3.27",
+      "number": "3.27",
+      "text": "Given `|x| >= 4`, which of the following is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`x >= 4 && x <= -4`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`x >= 4 || x <= -4`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`x >= 4 && x < -4`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`x >= 4 || x < -4`"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The mathematical expression `|x| >= 4` means that `x` is either 4 or greater, OR `x` is -4 or less. This is correctly represented by the logical OR (`||`) operator."
+    },
+    {
+      "id": "3.28",
+      "number": "3.28",
+      "text": "Which of the following is equivalent to `x != y`? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`!(x == y)`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`x > y && x < y`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`x > y || x < y`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`x >= y || x <= y`"
+        }
+      ],
+      "inputName": "QD27",
+      "inputType": "checkbox",
+      "correctAnswer": "AC",
+      "explanation": "Option A is the direct logical negation of equality. Option C is equivalent because if two numbers are not equal, one must be strictly greater than or strictly less than the other. Option B is impossible (a number cannot be both greater and less than another), and Option D is a tautology (always true for any x and y)."
+    },
+    {
+      "id": "3.29",
+      "number": "3.29",
+      "text": "Suppose `x = 10` and `y = 10`. What is `x` after evaluating the expression `(y > 10) && (x-- > 10)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "11"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `&&` operator uses short-circuit evaluation. Since the first condition `y > 10` (10 > 10) is False, the second part of the expression `(x-- > 10)` is never executed. Thus, `x` remains 10."
+    },
+    {
+      "id": "3.30",
+      "number": "3.30",
+      "text": "Suppose `x = 10` and `y = 10`. What is `x` after evaluating the expression `(y > 10) && (x++ > 10)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "11"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Similar to the previous question, the logical AND operator (`&&`) short-circuits because the first operand `y > 10` is False. The second operand `x++ > 10` is not evaluated, so the increment operation on `x` never occurs."
+    },
+    {
+      "id": "3.31",
+      "number": "3.31",
+      "text": "Suppose `x = 10` and `y = 10`. What is `x` after evaluating the expression `(y >= 10) || (x-- > 10)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "11"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The logical OR operator `||` is a short-circuit operator. Since the first condition `(y >= 10)` is true (10 >= 10), the second part of the expression `(x-- > 10)` is never evaluated. Therefore, the decrement operation on `x` does not occur, and `x` remains 10."
+    },
+    {
+      "id": "3.32",
+      "number": "3.32",
+      "text": "Suppose `x = 10` and `y = 10`. What is `x` after evaluating the expression `(y >= 10) || (x++ > 10)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "11"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Similar to the previous question, the `||` operator short-circuits. Because `(y >= 10)` evaluates to true, the right-hand operand `(x++ > 10)` is skipped. The value of `x` is not incremented."
+    },
+    {
+      "id": "3.33",
+      "number": "3.33",
+      "text": "Analyze the following code:\n\n```java\nif (x < 100) && (x > 10)\n  System.out.println(\"x is between 10 and 100\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The statement has compile errors because `(x < 100) && (x > 10)` must be enclosed inside parentheses."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The statement has compile errors because `(x < 100) && (x > 10)` must be enclosed inside parentheses and the `println` statement must be put inside a block."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The statement compiles fine."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The statement compiles fine, but has a runtime error."
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, the condition for an `if` statement must be fully enclosed in parentheses. The correct syntax should be `if ((x < 100) && (x > 10))`. The code provided results in a compilation error because the outer parentheses are missing."
+    },
+    {
+      "id": "3.34",
+      "number": "3.34",
+      "text": "Which of the following are so-called short-circuit operators? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "&&"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "&"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "||"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "|"
+        }
+      ],
+      "inputName": "QD33",
+      "inputType": "checkbox",
+      "correctAnswer": "AC",
+      "explanation": "The conditional-AND (`&&`) and conditional-OR (`||`) operators are short-circuit operators. This means they only evaluate the second operand if the first operand is not sufficient to determine the result of the entire expression. In contrast, `&` and `|` always evaluate both sides when used as logical operators."
+    },
+    {
+      "id": "3.35",
+      "number": "3.35",
+      "text": "What is `y` after the following switch statement is executed?\n\n```java\nint x = 3; \nint y = 4;\nswitch (x + 3) {\n  case 6:  y = 0;\n  case 7:  y = 1;\n  default: y += 1;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The switch expression `x + 3` evaluates to 6. The program jumps to `case 6`, setting `y = 0`. Because there are no `break` statements, the code 'falls through' to `case 7` (setting `y = 1`) and then to the `default` case (executing `y += 1`). Final result: `1 + 1 = 2`."
+    },
+    {
+      "id": "3.36",
+      "number": "3.36",
+      "text": "Analyze the following program fragment:\n\n```java\nint x;\ndouble d = 1.5;\n\nswitch (d) {\n  case 1.0: x = 1;\n  case 1.5: x = 2;\n  case 2.0: x = 3;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because the required break statement is missing in the switch statement."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because the required default case is missing in the switch statement."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The switch control variable cannot be double."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No errors."
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, the switch control expression must result in an integral type (byte, short, char, int), their wrapper classes, an enum, or a String. Floating-point types like `double` are not allowed and will cause a compilation error."
+    },
+    {
+      "id": "3.37",
+      "number": "3.37",
+      "text": "What is `y` after the following statement is executed?\n\n```java\nx = 0;\ny = (x > 0) ? 10 : -10;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "-10"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "20"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Illegal expression"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "This uses the ternary operator `(condition) ? expression1 : expression2`. Since `x` is 0, the condition `(0 > 0)` is false. The operator returns the value of the second expression, which is `-10`."
+    },
+    {
+      "id": "3.38",
+      "number": "3.38",
+      "text": "Analyze the following code fragments that assign a boolean value to the variable `even`.\n\nCode 1:\n```java\nif (number % 2 == 0)\n  even = true;\nelse \n  even = false;\n```\n\nCode 2:\n```java\neven = (number % 2 == 0) ? true : false;\n```\n\nCode 3:\n```java\neven = number % 2 == 0;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Code 2 has a compile error, because you cannot have true and false literals in the conditional expression."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Code 3 has a compile error, because you attempt to assign number to even."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "All three are correct, but Code 1 is preferred."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All three are correct, but Code 2 is preferred."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All three are correct, but Code 3 is preferred."
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "All three fragments are logically equivalent and syntactically correct. However, Code 3 is the most concise and considered best practice because the comparison `number % 2 == 0` already evaluates to a boolean value, making explicit assignment via `if` or ternary operators redundant."
+    },
+    {
+      "id": "3.39",
+      "number": "3.39",
+      "text": "What is the output of the following code?\n\n```java\nboolean even = false;\nSystem.out.println(even ? \"true\" : \"false\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "false"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "nothing"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "true false"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Since the variable `even` is `false`, the ternary operator selects the second option (`\"false\"`), which is then printed to the console."
+    },
+    {
+      "id": "3.40",
+      "number": "3.40",
+      "text": "The order of precedence (from high to low) of the operators binary `+`, `*`, `&&`, `||`, `^` is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "&&, ||, ^, *, +"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "*, +, &&, ||, ^"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "*, +, ^, &&, ||"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "*, +, ^, ||, &&"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "^, ||, &&, *, +"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java/C/C++, the precedence order is: Multiplicative (`*`), Additive (`+`), Bitwise XOR (`^`), Logical AND (`&&`), and finally Logical OR (`||`)."
+    },
+    {
+      "id": "3.41",
+      "number": "3.41",
+      "text": "What is y displayed in the following code?\n\n```java\npublic class Test1 {\n  public static void main(String[] args) {\n    int x = 1;\n    int y = x = x + 1;\n    System.out.println(\"y is \" + y);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "y is 0."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "y is 1 because x is assigned to y first."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "y is 2 because x + 1 is assigned to x and then x is assigned to y."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a compile error since x is redeclared in the statement int y = x = x + 1."
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In the statement `int y = x = x + 1;`, the assignment operator `=` is right-associative. First, the expression `x + 1` is evaluated to 2. Then, 2 is assigned to `x`. The result of the assignment `x = 2` is the value 2, which is then assigned to `y`. Therefore, `y` becomes 2."
+    },
+    {
+      "id": "3.42",
+      "number": "3.42",
+      "text": "Which of the following operators are right-associative?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "*"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "+ (binary +)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "%"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "&&"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "="
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "In Java, most binary operators such as arithmetic (`*`, `+`, `%`) and logical (`&&`) operators are left-associative. However, assignment operators, including the simple assignment operator (`=`), are right-associative."
+    },
+    {
+      "id": "3.43",
+      "number": "3.43",
+      "text": "What is the value of the following expression?\n\n```java\ntrue || true && false\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "false"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Operator precedence dictates that the logical AND (`&&`) operator is evaluated before the logical OR (`||`) operator. The expression is evaluated as `true || (true && false)`, which becomes `true || false`, resulting in `true`."
+    },
+    {
+      "id": "3.44",
+      "number": "3.44",
+      "text": "Which of the following statements is false?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`(x > 0 && x < 10)` is same as `((x > 0) && (x < 10))`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`(x > 0 || x < 10)` is same as `((x > 0) || (x < 10))`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`(x > 0 || x < 10 && y < 0)` is same as `(x > 0 || (x < 10 && y < 0))`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`(x > 0 || x < 10 && y < 0)` is same as `((x > 0 || x < 10) && y < 0)`"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Choice D is false because the `&&` operator has higher precedence than the `||` operator. The expression `x > 0 || x < 10 && y < 0` automatically groups as `x > 0 || (x < 10 && y < 0)`. To force the OR operation to happen first, parentheses would be required, meaning the two expressions in choice D are not equivalent."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 44
+}

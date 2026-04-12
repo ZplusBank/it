@@ -1,16 +1,16 @@
 {
-  "id": "task-0",
-  "label": "chapter=2, username=liang12e",
+  "id": "explainer-1776005911218-04c07",
+  "label": "chapter2liang12e.json",
   "params": {
-    "chapter": "Chapter 2",
-    "username": "liang12e"
+    "file": "chapter2liang12e.json",
+    "chapter": "Chapter 2"
   },
-  "title": "Chapter Chapter 2 Elementary Programming",
+  "title": "Elementary Programming",
   "questions": [
     {
       "id": "2.1",
       "number": "2.1",
-      "text": "&nbsp; _______ is the code with natural language mixed with Java code.<br>",
+      "text": "_______ is the code with natural language mixed with Java code.",
       "choices": [
         {
           "value": "A",
@@ -36,12 +36,12 @@
       "inputName": "Q0",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Explanation generation failed."
+      "explanation": "Pseudocode is an informal way of describing a program's logic using a combination of natural language and code-like structures. It is used to design algorithms before they are formally coded in a specific programming language like Java."
     },
     {
       "id": "2.2",
       "number": "2.2",
-      "text": "&nbsp;\tWhat is the exact output of the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>&nbsp;&nbsp;<span class=\"keyword\">double</span> area = <span class=\"constant\">3</span><span class=\"literal\">.</span><span class=\"constant\">5</span>;<br>&nbsp;&nbsp;System.out.print(<span class=\"literal\">\"area\"</span>);<br>&nbsp;&nbsp;System.out.print(area);<br></span>",
+      "text": "What is the exact output of the following code?\n\n```java\ndouble area = 3.5;\nSystem.out.print(\"area\");\nSystem.out.print(area);\n```",
       "choices": [
         {
           "value": "A",
@@ -67,12 +67,12 @@
       "inputName": "Q1",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Explanation generation failed."
+      "explanation": "The first print statement outputs the literal string \"area\". The second print statement outputs the value of the variable 'area', which is 3.5. Since System.out.print() does not move the cursor to a new line or add spaces automatically, the two outputs are joined together as 'area3.5'."
     },
     {
       "id": "2.3",
       "number": "2.3",
-      "text": "&nbsp;\tSuppose a Scanner object is created as follows, what method do you use to read a real number?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>Scanner&nbsp;input&nbsp;=&nbsp;<span class=\"keyword\">new</span>&nbsp;Scanner(System.in);<br></span>",
+      "text": "Suppose a Scanner object is created as follows, what method do you use to read a real number?\n\n```java\nScanner input = new Scanner(System.in);\n```",
       "choices": [
         {
           "value": "A",
@@ -98,12 +98,12 @@
       "inputName": "Q2",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Explanation generation failed."
+      "explanation": "In Java's Scanner class, the standard method for reading a double-precision floating-point number (a real number) is nextDouble(). Java is case-sensitive, so the 'D' must be capitalized."
     },
     {
       "id": "2.4",
       "number": "2.4",
-      "text": "&nbsp; The following code fragment reads in two numbers. What is the incorrect way to enter these two numbers?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>Scanner&nbsp;input&nbsp;=&nbsp;<span class=\"keyword\">new</span>&nbsp;Scanner(System.in);<br><span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;input.nextInt();<br><span class=\"keyword\">double</span>&nbsp;d&nbsp;=&nbsp;input.nextDouble();<br></span>",
+      "text": "The following code fragment reads in two numbers. What is the incorrect way to enter these two numbers?\n\n```java\nScanner input = new Scanner(System.in);\nint i = input.nextInt();\ndouble d = input.nextDouble();\n```",
       "choices": [
         {
           "value": "A",
@@ -129,12 +129,12 @@
       "inputName": "Q3",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Explanation generation failed."
+      "explanation": "The program first calls nextInt(), which expects an integer. If you enter a numeric value with a decimal point (like 1.5), it will cause an InputMismatchException. While nextDouble() can accept an integer (treating it as a double), nextInt() cannot accept a decimal point."
     },
     {
       "id": "2.5",
       "number": "2.5",
-      "text": "&nbsp; If you enter 1 2 3, when you run this program, what will be the output?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">import</span>&nbsp;java.util.Scanner;<br><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test1&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;Scanner input = <span class=\"keyword\">new</span> Scanner(System.in);<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(<span class=\"literal\">\"Enter three numbers: \"</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">double</span> number1 = input.nextDouble();<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">double</span> number2 = input.nextDouble();<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">double</span> number3 = input.nextDouble();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"comment\">// Compute average</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">double</span> average = (number1 + number2 + number3) / <span class=\"constant\">3</span>;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"comment\">// Display result</span><br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(average);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "text": "If you enter 1 2 3, when you run this program, what will be the output?\n\n```java\nimport java.util.Scanner;\n\npublic class Test1 {\n  public static void main(String[] args) {\n    Scanner input = new Scanner(System.in);\n    System.out.print(\"Enter three numbers: \");\n    double number1 = input.nextDouble();\n    double number2 = input.nextDouble();\n    double number3 = input.nextDouble();\n\n    // Compute average\n    double average = (number1 + number2 + number3) / 3;\n\n    // Display result\n    System.out.println(average);\n  }\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -160,12 +160,12 @@
       "inputName": "Q4",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Explanation generation failed."
+      "explanation": "The calculation performed is (1.0 + 2.0 + 3.0) / 3, which equals 6.0 / 3 = 2.0. Since all inputs are read as doubles and the division result is stored in a double, the output is formatted as 2.0."
     },
     {
       "id": "2.6",
       "number": "2.6",
-      "text": "&nbsp; Every letter in a Java keyword is in lowercase?<br>",
+      "text": "Every letter in a Java keyword is in lowercase?",
       "choices": [
         {
           "value": "A",
@@ -181,12 +181,12 @@
       "inputName": "Q5",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Explanation generation failed."
+      "explanation": "In Java, all reserved keywords (such as 'class', 'public', 'static', 'if', 'else', etc.) consist entirely of lowercase letters."
     },
     {
       "id": "2.7",
       "number": "2.7",
-      "text": "&nbsp; Which of the following is a valid identifier? Please select all that apply.<br>",
+      "text": "Which of the following is a valid identifier? Please select all that apply.",
       "choices": [
         {
           "value": "A",
@@ -217,12 +217,12 @@
       "inputName": "QE6",
       "inputType": "checkbox",
       "correctAnswer": "AE",
-      "explanation": "Explanation generation failed."
+      "explanation": "A valid Java identifier must start with a letter, an underscore (_), or a dollar sign ($). It cannot start with a digit (9X is invalid), it cannot be a reserved keyword ('class' is invalid), and it cannot contain operators ('8+9' is invalid)."
     },
     {
       "id": "2.8",
       "number": "2.8",
-      "text": "&nbsp;\tWhich of the following are correct names for variables according to Java naming conventions? Please select all that apply.<br>",
+      "text": "Which of the following are correct names for variables according to Java naming conventions? Please select all that apply.",
       "choices": [
         {
           "value": "A",
@@ -253,12 +253,12 @@
       "inputName": "QE7",
       "inputType": "checkbox",
       "correctAnswer": "AD",
-      "explanation": "Explanation generation failed."
+      "explanation": "Java naming conventions dictate that variables should start with a lowercase letter and use camelCase for multi-word names (e.g., 'radius', 'findArea'). While 'Radius' (TitleCase) is common for classes and 'RADIUS' (UPPERCASE) for constants, they are not conventional for variables."
     },
     {
       "id": "2.9",
       "number": "2.9",
-      "text": "&nbsp;\tWhich of the following are correct ways to declare variables? Please select all that apply.<br>",
+      "text": "Which of the following are correct ways to declare variables? Please select all that apply.",
       "choices": [
         {
           "value": "A",
@@ -284,12 +284,12 @@
       "inputName": "QD8",
       "inputType": "checkbox",
       "correctAnswer": "AB",
-      "explanation": "Explanation generation failed."
+      "explanation": "Option A is correct because it declares two variables as separate statements. Option B is correct because it declares two variables of the same type in a single statement using a comma. Option C is incorrect because 'width' lacks a type. Option D is incorrect because the type 'int' should not be repeated after a comma in a single declaration statement."
     },
     {
       "id": "2.10",
       "number": "2.10",
-      "text": "&nbsp;\t____________ is the Java assignment operator.<br>",
+      "text": "____________ is the Java assignment operator.",
       "choices": [
         {
           "value": "A",
@@ -315,110 +315,110 @@
       "inputName": "Q9",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Explanation generation failed."
+      "explanation": "In Java, the single equals sign (=) is used to assign the value on its right to the variable on its left. The double equals sign (==) is used for comparison."
     },
     {
       "id": "2.11",
       "number": "2.11",
-      "text": "&nbsp;      To assign a value 1 to variable x, you write<br>",
+      "text": "To assign a value 1 to variable x, you write:",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "1 = x;"
+          "text": "```java\n1 = x;\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "x = 1;"
+          "text": "```java\nx = 1;\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "x := 1;"
+          "text": "```java\nx := 1;\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "1 := x;"
+          "text": "```java\n1 := x;\n```"
         },
         {
           "value": "E",
           "label": "E",
-          "text": "x == 1;"
+          "text": "```java\nx == 1;\n```"
         }
       ],
       "inputName": "Q10",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "In Java, the assignment operator is the single equals sign (=). The variable receiving the value must be on the left side, and the value or expression must be on the right, followed by a semicolon."
+      "explanation": "In Java, the assignment operator is the single equals sign (=). The variable name must be on the left side, and the value or expression being assigned must be on the right side."
     },
     {
       "id": "2.12",
       "number": "2.12",
-      "text": "&nbsp;      Which of the following assignment statements is incorrect? Please select all that apply.<br>",
+      "text": "Which of the following assignment statements is incorrect? Please select all that apply.",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "i = j = k = 1;"
+          "text": "```java\ni = j = k = 1;\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "i = 1; j = 1; k = 1;"
+          "text": "```java\ni = 1; j = 1; k = 1;\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "i = 1 = j = 1 = k = 1;"
+          "text": "```java\ni = 1 = j = 1 = k = 1;\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "i == j == k == 1;"
+          "text": "```java\ni == j == k == 1;\n```"
         }
       ],
       "inputName": "QD11",
       "inputType": "checkbox",
       "correctAnswer": "CD",
-      "explanation": "Option C is incorrect because you cannot assign a value to a literal (e.g., '1 = j' is invalid). Option D is incorrect because '==' is a comparison operator used for checking equality, not for assigning values."
+      "explanation": "Choice C is incorrect because assignment requires a variable on the left side; you cannot assign a value to a literal like '1'. Choice D is incorrect because '==' is a comparison operator, not an assignment operator, and it cannot be chained in this manner in Java because the result of a comparison is a boolean."
     },
     {
       "id": "2.13",
       "number": "2.13",
-      "text": "&nbsp;\tTo declare a constant MAX_LENGTH inside a method with value 99.98, you write<br>",
+      "text": "To declare a constant `MAX_LENGTH` inside a method with value 99.98, you write:",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "final MAX_LENGTH = 99.98;"
+          "text": "```java\nfinal MAX_LENGTH = 99.98;\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "final int MAX_LENGTH = 99.98;"
+          "text": "```java\nfinal int MAX_LENGTH = 99.98;\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "double MAX_LENGTH = 99.98;"
+          "text": "```java\ndouble MAX_LENGTH = 99.98;\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "final double MAX_LENGTH = 99.98;"
+          "text": "```java\nfinal double MAX_LENGTH = 99.98;\n```"
         }
       ],
       "inputName": "Q12",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "To declare a constant in Java, the 'final' keyword is required. Since 99.98 is a floating-point number, the 'double' data type must be used; 'int' is for whole numbers only."
+      "explanation": "Constants in Java are declared using the `final` keyword. Since 99.98 is a floating-point literal, the appropriate data type is `double`."
     },
     {
       "id": "2.14",
       "number": "2.14",
-      "text": "&nbsp;\tWhich of the following is a constant, according to Java naming conventions? Please select all that apply.<br>",
+      "text": "Which of the following is a constant, according to Java naming conventions? Please select all that apply.",
       "choices": [
         {
           "value": "A",
@@ -449,12 +449,12 @@
       "inputName": "QE13",
       "inputType": "checkbox",
       "correctAnswer": "AE",
-      "explanation": "Java naming conventions dictate that constants should be written in all uppercase letters with underscores separating words. Therefore, MAX_VALUE and COUNT are correctly formatted as constants."
+      "explanation": "According to Java naming conventions, constants should be written in all uppercase letters with underscores separating words (e.g., MAX_VALUE, COUNT)."
     },
     {
       "id": "2.15",
       "number": "2.15",
-      "text": "&nbsp;\tTo improve readability and maintainability, you should declare a _________ for PI instead of using literal values such as 3.14159.<br>",
+      "text": "To improve readability and maintainability, you should declare a _________ for PI instead of using literal values such as 3.14159.",
       "choices": [
         {
           "value": "A",
@@ -480,12 +480,12 @@
       "inputName": "Q14",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "A constant is used to represent a fixed value that does not change during the execution of a program. Using a named constant like PI instead of a literal value makes the code more descriptive and easier to update."
+      "explanation": "Using a named constant (declared with `final`) makes code more readable because it gives a meaningful name to a fixed value and ensures it cannot be accidentally changed during execution."
     },
     {
       "id": "2.16",
       "number": "2.16",
-      "text": "&nbsp;\tAccording to Java naming convention, which of the following names can be variables? Please select all that apply.<br>",
+      "text": "According to Java naming convention, which of the following names can be variables? Please select all that apply.",
       "choices": [
         {
           "value": "A",
@@ -516,43 +516,43 @@
       "inputName": "QE15",
       "inputType": "checkbox",
       "correctAnswer": "BC",
-      "explanation": "According to Java conventions, variable names should use camelCase, starting with a lowercase letter (e.g., findArea, totalLength). 'FindArea' follows class naming conventions, 'TOTAL_LENGTH' follows constant conventions, and 'class' is a reserved keyword."
+      "explanation": "Java naming conventions specify that variables should use camelCase (starting with a lowercase letter). `FindArea` follows PascalCase (used for classes), `TOTAL_LENGTH` is for constants, and `class` is a reserved keyword."
     },
     {
       "id": "2.17",
       "number": "2.17",
-      "text": "&nbsp;\tWhich of these data types requires the most amount of memory?<br>",
+      "text": "Which of these data types requires the most amount of memory?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "long"
+          "text": "```java\nlong\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "int"
+          "text": "```java\nint\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "short"
+          "text": "```java\nshort\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "byte"
+          "text": "```java\nbyte\n```"
         }
       ],
       "inputName": "Q16",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Among the integer types, 'long' requires 64 bits (8 bytes), while 'int' requires 32 bits, 'short' requires 16 bits, and 'byte' requires only 8 bits."
+      "explanation": "In Java, a `long` uses 64 bits (8 bytes), while `int` uses 32 bits, `short` uses 16 bits, and `byte` uses 8 bits."
     },
     {
       "id": "2.18",
       "number": "2.18",
-      "text": "&nbsp; What is the result of 45 / 4?<br>",
+      "text": "What is the result of `45 / 4` in Java?",
       "choices": [
         {
           "value": "A",
@@ -578,43 +578,43 @@
       "inputName": "Q17",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "In Java, when both operands are integers, the division operator (/) performs integer division, which truncates the decimal part. Thus, 45 / 4 equals 11 rather than 11.25."
+      "explanation": "Because both 45 and 4 are integers, Java performs integer division, which discards the fractional part (truncation). 45 divided by 4 is 11.25, so the result is 11."
     },
     {
       "id": "2.19",
       "number": "2.19",
-      "text": "&nbsp; Which of the following expression results in a value 1?<br>",
+      "text": "Which of the following expression results in a value 1?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "2 % 1"
+          "text": "```java\n2 % 1\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "15 % 4"
+          "text": "```java\n15 % 4\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "25 % 5"
+          "text": "```java\n25 % 5\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "37 % 6"
+          "text": "```java\n37 % 6\n```"
         }
       ],
       "inputName": "Q18",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "The modulo operator (%) returns the remainder of a division. 37 divided by 6 is 6 with a remainder of 1 (since 6 * 6 = 36), making it the correct choice."
+      "explanation": "The modulo operator (%) returns the remainder of the division. 37 divided by 6 is 6 with a remainder of 1 (6 * 6 = 36; 37 - 36 = 1)."
     },
     {
       "id": "2.20",
       "number": "2.20",
-      "text": "&nbsp; 25 % 1 is _____<br>",
+      "text": "The result of the expression `25 % 1` is:",
       "choices": [
         {
           "value": "A",
@@ -645,12 +645,12 @@
       "inputName": "Q19",
       "inputType": "radio",
       "correctAnswer": "E",
-      "explanation": "The modulo operator (%) calculates the remainder. Any integer divided by 1 results in a whole number with no remainder, so 25 % 1 equals 0."
+      "explanation": "Any integer divided by 1 results in no remainder. Therefore, `25 % 1` is 0."
     },
     {
       "id": "2.21",
       "number": "2.21",
-      "text": "&nbsp; -25 % 5 is _____<br>",
+      "text": "What is the result of the following expression?\n\n```java\n-25 % 5\n```",
       "choices": [
         {
           "value": "A",
@@ -681,12 +681,12 @@
       "inputName": "Q20",
       "inputType": "radio",
       "correctAnswer": "E",
-      "explanation": "The remainder operator (%) calculates the remainder after division. Since -25 is exactly divisible by 5, the remainder is 0."
+      "explanation": "In Java, the remainder operator `%` calculates the remainder of division. Since -25 is divisible by 5 without a remainder, the result is 0."
     },
     {
       "id": "2.22",
       "number": "2.22",
-      "text": "&nbsp; 24 % 5 is _____<br>",
+      "text": "What is the result of the following expression?\n\n```java\n24 % 5\n```",
       "choices": [
         {
           "value": "A",
@@ -717,12 +717,12 @@
       "inputName": "Q21",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "The remainder operator (%) returns the remainder of the division. 24 divided by 5 is 4 with a remainder of 4."
+      "explanation": "24 divided by 5 is 4 with a remainder of 4 ($24 = 5 \\times 4 + 4$)."
     },
     {
       "id": "2.23",
       "number": "2.23",
-      "text": "&nbsp; -24 % 5 is _____<br>",
+      "text": "What is the result of the following expression?\n\n```java\n-24 % 5\n```",
       "choices": [
         {
           "value": "A",
@@ -753,12 +753,12 @@
       "inputName": "Q22",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "In Java, the sign of the result for the remainder operator (%) is determined by the sign of the dividend (the left operand). Since the dividend is -24, the result is -4."
+      "explanation": "In Java, the result of the remainder operator has the same sign as the dividend (the operand on the left). Since the dividend -24 is negative, the remainder is -4."
     },
     {
       "id": "2.24",
       "number": "2.24",
-      "text": "&nbsp; -24 % -5 is _____<br>",
+      "text": "What is the result of the following expression?\n\n```java\n-24 % -5\n```",
       "choices": [
         {
           "value": "A",
@@ -789,48 +789,48 @@
       "inputName": "Q23",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "In Java, the remainder operator (%) follows the sign of the dividend (the left operand) regardless of the sign of the divisor. Since the dividend is -24, the result is -4."
+      "explanation": "The sign of the remainder in Java is determined solely by the sign of the dividend. Because -24 is negative, the result is -4, regardless of the divisor being -5."
     },
     {
       "id": "2.25",
       "number": "2.25",
-      "text": "&nbsp;\tHow do you write 2.5 ^ 3.1 in Java?<br>",
+      "text": "How do you write $2.5^{3.1}$ in Java code?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "2.5 * 3.1"
+          "text": "```java\n2.5 * 3.1\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "Math.pow(2.5, 3.1)"
+          "text": "```java\nMath.pow(2.5, 3.1)\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "Math.pow(3.1, 2.5)"
+          "text": "```java\nMath.pow(3.1, 2.5)\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "2.5 ** 3.1"
+          "text": "```java\n2.5 ** 3.1\n```"
         },
         {
           "value": "E",
           "label": "E",
-          "text": "3.1 ** 2.5"
+          "text": "```java\n3.1 ** 2.5\n```"
         }
       ],
       "inputName": "Q24",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Java does not use the ^ or ** symbols for exponentiation; instead, it uses the static method Math.pow(base, exponent) from the java.lang.Math class."
+      "explanation": "Java does not have an exponentiation operator (like `**` or `^`). Instead, you must use the `Math.pow(base, exponent)` method."
     },
     {
       "id": "2.26",
       "number": "2.26",
-      "text": "&nbsp; Math.pow(2, 3) returns __________.<br>",
+      "text": "What value is returned by the expression `Math.pow(2, 3)`?",
       "choices": [
         {
           "value": "A",
@@ -856,12 +856,12 @@
       "inputName": "Q25",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "The Math.pow method always returns a double value. Since 2 raised to the power of 3 is 8, the method returns 8.0."
+      "explanation": "The `Math.pow` method always returns a `double` value. $2^3$ is 8, so the result is `8.0`."
     },
     {
       "id": "2.27",
       "number": "2.27",
-      "text": "&nbsp; Math.pow(4, 1 / 2) returns __________.<br>",
+      "text": "What does the following method call return?\n\n```java\nMath.pow(4, 1 / 2)\n```",
       "choices": [
         {
           "value": "A",
@@ -892,12 +892,12 @@
       "inputName": "Q26",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "In Java, the expression 1 / 2 involves two integers, so it performs integer division which results in 0. Math.pow(4, 0) evaluates to 1.0."
+      "explanation": "In Java, `1 / 2` performs integer division, which results in `0`. Therefore, the expression evaluates `Math.pow(4, 0)`, which returns `1.0`."
     },
     {
       "id": "2.28",
       "number": "2.28",
-      "text": "&nbsp; Math.pow(4, 1.0 / 2) returns __________.<br>",
+      "text": "What does the following method call return?\n\n```java\nMath.pow(4, 1.0 / 2)\n```",
       "choices": [
         {
           "value": "A",
@@ -928,43 +928,43 @@
       "inputName": "Q27",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "In this expression, 1.0 / 2 involves a double, resulting in floating-point division (0.5). Math.pow(4, 0.5) is the square root of 4, which is 2.0."
+      "explanation": "Using `1.0 / 2` triggers floating-point division, resulting in `0.5`. `Math.pow(4, 0.5)` is equivalent to the square root of 4, which is `2.0`."
     },
     {
       "id": "2.29",
       "number": "2.29",
-      "text": "&nbsp; The __________ method returns a raised to the power of b.<br>",
+      "text": "Which method returns $a$ raised to the power of $b$?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "Math.power(a, b)"
+          "text": "```java\nMath.power(a, b)\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "Math.exponent(a, b)"
+          "text": "```java\nMath.exponent(a, b)\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "Math.pow(a, b)"
+          "text": "```java\nMath.pow(a, b)\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "Math.pow(b, a)"
+          "text": "```java\nMath.pow(b, a)\n```"
         }
       ],
       "inputName": "Q28",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "The Math.pow(a, b) method is the standard Java utility for raising a base (a) to the power of an exponent (b)."
+      "explanation": "The standard method in the `java.lang.Math` class for power calculations is `pow(double a, double b)`."
     },
     {
       "id": "2.30",
       "number": "2.30",
-      "text": "&nbsp; Analyze the following code.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> month = <span class=\"constant\">09</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"month is \"</span> + month);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int month = 09;\n    System.out.println(\"month is \" + month);\n  }\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -990,198 +990,198 @@
       "inputName": "Q29",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "In Java, an integer literal starting with a leading zero (e.g., 09) is interpreted as an octal (base-8) value. However, octal digits only range from 0 to 7, making 09 an invalid literal and causing a syntax error."
+      "explanation": "In Java, integer literals beginning with a zero are treated as octal (base-8) numbers. Valid octal digits are 0-7. Therefore, `09` is an invalid octal literal and results in a compilation error."
     },
     {
       "id": "2.31",
       "number": "2.31",
-      "text": "&nbsp; Which of the following is incorrect?<br>",
+      "text": "Which of the following is incorrect?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "1_2"
+          "text": "`1_2`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "0.4_56"
+          "text": "`0.4_56`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "1_200_229"
+          "text": "`1_200_229`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "_4544"
+          "text": "`_4544`"
         }
       ],
       "inputName": "Q30",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "In Java, underscores can be used to improve the readability of numeric literals, but they cannot be placed at the beginning or end of the literal. Therefore, '_4544' is an invalid numeric literal."
+      "explanation": "In Java, underscores can be used in numeric literals to improve readability, but they must be placed between digits. They cannot be placed at the beginning or the end of the literal, nor adjacent to a decimal point. `_4544` is treated as an identifier, not a valid numeric literal."
     },
     {
       "id": "2.32",
       "number": "2.32",
-      "text": "&nbsp; Which of the following are the same as 1545.534? Please select all that apply.<br>",
+      "text": "Which of the following are the same as 1545.534? Please select all that apply.",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "1.545534e+3"
+          "text": "`1.545534e+3`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "0.1545534e+4"
+          "text": "`0.1545534e+4`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "1545534.0e-3"
+          "text": "`1545534.0e-3`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "154553.4e-2"
+          "text": "`154553.4e-2`"
         }
       ],
       "inputName": "QD31",
       "inputType": "checkbox",
       "correctAnswer": "ABCD",
-      "explanation": "All options accurately represent the value 1545.534 using scientific notation: 1.545534e+3 (10^3), 0.1545534e+4 (10^4), 1545534.0e-3 (10^-3), and 154553.4e-2 (10^-2) all resolve to 1545.534."
+      "explanation": "These are all valid scientific notations for the same number. `e+n` represents multiplying by 10 to the power of n, and `e-n` represents multiplying by 10 to the power of -n. All four options mathematically evaluate to 1545.534."
     },
     {
       "id": "2.33",
       "number": "2.33",
-      "text": "&nbsp;\tTo declare an int variable number with initial value 2, you write<br>",
+      "text": "To declare an `int` variable `number` with initial value 2, you write",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "int number = 2L;"
+          "text": "```java\nint number = 2L;\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "int number = 2l;"
+          "text": "```java\nint number = 2l;\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "int number = 2;"
+          "text": "```java\nint number = 2;\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "int number = 2.0;"
+          "text": "```java\nint number = 2.0;\n```"
         }
       ],
       "inputName": "Q32",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Option C is the standard way to declare an int. Options A and B use long literals (L or l suffix), and option D uses a double literal (2.0), which cannot be assigned to an int without an explicit cast."
+      "explanation": "In Java, an integer literal is an `int` by default. Suffixing a number with `L` or `l` makes it a `long`, and adding a decimal point makes it a `double`. Assigning a `long` or `double` to an `int` variable requires an explicit cast because they are wider types."
     },
     {
       "id": "2.34",
       "number": "2.34",
-      "text": "&nbsp; Which of the following is incorrect?<br>",
+      "text": "Which of the following is incorrect?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "int x = 9;"
+          "text": "```java\nint x = 9;\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "long x = 9;"
+          "text": "```java\nlong x = 9;\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "float x = 1.0;"
+          "text": "```java\nfloat x = 1.0;\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "double x = 1.0;"
+          "text": "```java\ndouble x = 1.0;\n```"
         }
       ],
       "inputName": "Q33",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "In Java, floating-point literals such as 1.0 are treated as the 'double' type by default. A 'double' value cannot be assigned to a 'float' variable without an explicit cast or using the 'f' suffix (e.g., 1.0f)."
+      "explanation": "By default, floating-point literals like `1.0` are treated as type `double` in Java. You cannot assign a `double` to a `float` variable without an explicit cast or by using the `f` suffix (e.g., `1.0f`) because it is a narrowing conversion."
     },
     {
       "id": "2.35",
       "number": "2.35",
-      "text": "&nbsp;\tThe command to exit JShell is __________.<br>",
+      "text": "The command to exit JShell is __________.",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "\\quit"
+          "text": "`\\\\quit`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "\\exit"
+          "text": "`\\\\exit`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "/quit"
+          "text": "`/quit`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "/exit"
+          "text": "`/exit`"
         }
       ],
       "inputName": "Q34",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "JShell commands are prefixed with a forward slash. The '/exit' command is the standard way to terminate the current session and quit the JShell tool."
+      "explanation": "JShell commands begin with a forward slash (`/`). The command to exit the session is `/exit` (or `/quit`)."
     },
     {
       "id": "2.36",
       "number": "2.36",
-      "text": "&nbsp;\tThe command to view all variables in JShell is __________.<br>",
+      "text": "The command to view all variables in JShell is __________.",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "\\vars"
+          "text": "`\\\\vars`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "\\var"
+          "text": "`\\\\var`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "/vars"
+          "text": "`/vars`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "/var"
+          "text": "`/var`"
         }
       ],
       "inputName": "Q35",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "In JShell, commands begin with a forward slash. The '/vars' command lists all the variables currently defined in the session, along with their types and values."
+      "explanation": "The `/vars` command is used in JShell to list all variables that have been defined in the current session."
     },
     {
       "id": "2.37",
       "number": "2.37",
-      "text": "&nbsp;     The expression 4 + 20 / (3 - 1) * 2 is evaluated to<br>",
+      "text": "The expression `4 + 20 / (3 - 1) * 2` is evaluated to",
       "choices": [
         {
           "value": "A",
@@ -1212,12 +1212,12 @@
       "inputName": "Q36",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Following the order of operations: parentheses first (3 - 1 = 2), then division and multiplication from left to right (20 / 2 = 10; 10 * 2 = 20), and finally addition (4 + 20 = 24)."
+      "explanation": "Following the order of operations: 1. Parentheses: `(3 - 1) = 2`. 2. Division: `20 / 2 = 10`. 3. Multiplication: `10 * 2 = 20`. 4. Addition: `4 + 20 = 24`."
     },
     {
       "id": "2.38",
       "number": "2.38",
-      "text": "&nbsp; The System.currentTimeMillis() returns ________________ .<br>",
+      "text": "The `System.currentTimeMillis()` returns ________________ .",
       "choices": [
         {
           "value": "A",
@@ -1248,120 +1248,120 @@
       "inputName": "Q37",
       "inputType": "radio",
       "correctAnswer": "E",
-      "explanation": "The System.currentTimeMillis() method returns the total number of milliseconds elapsed since the Unix epoch, which is midnight, January 1, 1970, Greenwich Mean Time (GMT)."
+      "explanation": "This method returns the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC (the Unix epoch)."
     },
     {
       "id": "2.39",
       "number": "2.39",
-      "text": "&nbsp;     To obtain the current second, use _________.<br>",
+      "text": "To obtain the current second, use _________.",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "System.currentTimeMillis() % 3600"
+          "text": "`System.currentTimeMillis() % 3600`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "System.currentTimeMillis() % 60"
+          "text": "`System.currentTimeMillis() % 60`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "System.currentTimeMillis() / 1000 % 60"
+          "text": "`System.currentTimeMillis() / 1000 % 60`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "System.currentTimeMillis() / 1000 / 60 % 60"
+          "text": "`System.currentTimeMillis() / 1000 / 60 % 60`"
         },
         {
           "value": "E",
           "label": "E",
-          "text": "System.currentTimeMillis() / 1000 / 60 / 60 % 24"
+          "text": "`System.currentTimeMillis() / 1000 / 60 / 60 % 24`"
         }
       ],
       "inputName": "Q38",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "To find the current second, you convert total milliseconds to total seconds by dividing by 1000. Applying the modulo operator (% 60) then calculates the remainder, which is the number of seconds into the current minute."
+      "explanation": "First, divide the total milliseconds by 1,000 to convert them to total seconds. Then, use the modulo operator `% 60` to find the number of seconds that have passed in the current minute (0-59)."
     },
     {
       "id": "2.40",
       "number": "2.40",
-      "text": "&nbsp;     To obtain the current minute, use _________.<br>",
+      "text": "To obtain the current minute, use _________.",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "System.currentTimeMillis() % 3600"
+          "text": "`System.currentTimeMillis() % 3600`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "System.currentTimeMillis() % 60"
+          "text": "`System.currentTimeMillis() % 60`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "System.currentTimeMillis() / 1000 % 60"
+          "text": "`System.currentTimeMillis() / 1000 % 60`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "System.currentTimeMillis() / 1000 / 60 % 60"
+          "text": "`System.currentTimeMillis() / 1000 / 60 % 60`"
         },
         {
           "value": "E",
           "label": "E",
-          "text": "System.currentTimeMillis() / 1000 / 60 / 60 % 24"
+          "text": "`System.currentTimeMillis() / 1000 / 60 / 60 % 24`"
         }
       ],
       "inputName": "Q39",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "To find the current minute, you convert total milliseconds to total seconds (/ 1000) and then to total minutes (/ 60). Applying the modulo operator (% 60) gives the remainder, which represents the current minute within the hour."
+      "explanation": "First, divide the total milliseconds by 1,000 to get total seconds, then divide by 60 to get total minutes. Finally, use `% 60` to find the number of minutes that have passed in the current hour (0-59)."
     },
     {
       "id": "2.41",
       "number": "2.41",
-      "text": "&nbsp;     To obtain the current hour in UTC, use _________.<br>",
+      "text": "To obtain the current hour in UTC, use _________.",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "System.currentTimeMillis() % 3600"
+          "text": "`System.currentTimeMillis() % 3600`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "System.currentTimeMillis() % 60"
+          "text": "`System.currentTimeMillis() % 60`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "System.currentTimeMillis() / 1000 % 60"
+          "text": "`System.currentTimeMillis() / 1000 % 60`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "System.currentTimeMillis() / 1000 / 60 % 60"
+          "text": "`System.currentTimeMillis() / 1000 / 60 % 60`"
         },
         {
           "value": "E",
           "label": "E",
-          "text": "System.currentTimeMillis() / 1000 / 60 / 60 % 24"
+          "text": "`System.currentTimeMillis() / 1000 / 60 / 60 % 24`"
         }
       ],
       "inputName": "Q40",
       "inputType": "radio",
       "correctAnswer": "E",
-      "explanation": "System.currentTimeMillis() returns total milliseconds since the Unix epoch. Dividing by 1000 converts this to seconds, then dividing by 60 twice converts it to minutes and then hours. The modulo operator % 24 is used to find the remaining hours in the current 24-hour cycle (UTC)."
+      "explanation": "To find the current hour, you convert milliseconds to seconds (/ 1000), then seconds to minutes (/ 60), then minutes to hours (/ 60). Finally, you use the modulo operator (% 24) to find the hour within a 24-hour day cycle."
     },
     {
       "id": "2.42",
       "number": "2.42",
-      "text": "&nbsp;      Suppose x is 1. What is x after x += 2?<br>",
+      "text": "Suppose `x` is 1. What is `x` after `x += 2`?",
       "choices": [
         {
           "value": "A",
@@ -1392,12 +1392,12 @@
       "inputName": "Q41",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "The compound assignment operator x += 2 is shorthand for x = x + 2. Given that x starts at 1, the operation 1 + 2 results in 3."
+      "explanation": "The operator `+=` is an augmented assignment operator. `x += 2` is equivalent to `x = x + 2`. If `x` starts at 1, `1 + 2` results in 3."
     },
     {
       "id": "2.43",
       "number": "2.43",
-      "text": "&nbsp;      Suppose x is 1. What is x after x -= 1?<br>",
+      "text": "Suppose `x` is 1. What is `x` after `x -= 1`?",
       "choices": [
         {
           "value": "A",
@@ -1428,12 +1428,12 @@
       "inputName": "Q42",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "The compound assignment operator x -= 1 is shorthand for x = x - 1. Given that x starts at 1, the operation 1 - 1 results in 0."
+      "explanation": "The operator `-=` is an augmented assignment operator. `x -= 1` is equivalent to `x = x - 1`. If `x` starts at 1, `1 - 1` results in 0."
     },
     {
       "id": "2.44",
       "number": "2.44",
-      "text": "&nbsp;\tWhat is x after the following statements?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;x&nbsp;=&nbsp;<span class=\"constant\">2</span>;<br><span class=\"keyword\">int</span>&nbsp;y&nbsp;=&nbsp;<span class=\"constant\">1</span>;<br>x&nbsp;*=&nbsp;y&nbsp;+&nbsp;<span class=\"constant\">1</span>;<br></span>",
+      "text": "What is `x` after the following statements?\n\n```java\nint x = 2;\nint y = 1;\nx *= y + 1;\n```",
       "choices": [
         {
           "value": "A",
@@ -1459,12 +1459,12 @@
       "inputName": "Q43",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "In compound assignments, the entire expression on the right side is evaluated first as if it were enclosed in parentheses. Therefore, x *= y + 1 is equivalent to x = x * (y + 1). Substituting the values, we get x = 2 * (1 + 1) = 4."
+      "explanation": "In Java, augmented assignment operators have lower precedence than arithmetic operators. Therefore, `x *= y + 1` is equivalent to `x = x * (y + 1)`. Substituting values: `x = 2 * (1 + 1)`, which equals 4."
     },
     {
       "id": "2.45",
       "number": "2.45",
-      "text": "&nbsp;\tWhat is x after the following statements?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;x&nbsp;=&nbsp;<span class=\"constant\">1</span>;<br>x&nbsp;*=&nbsp;x&nbsp;+&nbsp;<span class=\"constant\">1</span>;<br></span>",
+      "text": "What is `x` after the following statements?\n\n```java\nint x = 1;\nx *= x + 1;\n```",
       "choices": [
         {
           "value": "A",
@@ -1490,12 +1490,12 @@
       "inputName": "Q44",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Similar to other compound assignments, x *= x + 1 is interpreted as x = x * (x + 1). With x equal to 1, the calculation becomes 1 * (1 + 1), which results in 2."
+      "explanation": "The expression `x *= x + 1` is evaluated as `x = x * (x + 1)`. Substituting 1 for `x`: `1 * (1 + 1) = 2`."
     },
     {
       "id": "2.46",
       "number": "2.46",
-      "text": "&nbsp;\tWhich of the following statements are the same?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>(A)&nbsp;x&nbsp;-=&nbsp;x&nbsp;+&nbsp;<span class=\"constant\">4</span><br>(B)&nbsp;x&nbsp;=&nbsp;x&nbsp;+&nbsp;<span class=\"constant\">4</span>&nbsp;-&nbsp;x<br>(C)&nbsp;x&nbsp;=&nbsp;x&nbsp;-&nbsp;(x&nbsp;+&nbsp;<span class=\"constant\">4</span>)<br></span>",
+      "text": "Which of the following statements are the same?\n\n(A) `x -= x + 4`  \n(B) `x = x + 4 - x`  \n(C) `x = x - (x + 4)`  ",
       "choices": [
         {
           "value": "A",
@@ -1521,84 +1521,84 @@
       "inputName": "Q45",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "The compound assignment operator x -= expression is equivalent to x = x - (expression). Applying this to x -= x + 4, we get x = x - (x + 4), which matches statement (C). Statement (B) simplifies to a constant 4, whereas (A) and (C) simplify to -4."
+      "explanation": "Statement (A) uses the augmented operator: `x = x - (x + 4)`, which simplifies to `-4`. Statement (C) is explicitly written as `x = x - (x + 4)`. Statement (B) simplifies to `4`. Therefore, (A) and (C) are equivalent."
     },
     {
       "id": "2.47",
       "number": "2.47",
-      "text": "&nbsp;      To add a value 1 to variable x, you write ______________. Please select all that apply.<br>",
+      "text": "To add a value 1 to variable `x`, you write ______________. Please select all that apply.",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "1 + x = x;"
+          "text": "`1 + x = x;`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "x += 1;"
+          "text": "`x += 1;`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "x := 1;"
+          "text": "`x := 1;`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "x = x + 1;"
+          "text": "`x = x + 1;`"
         },
         {
           "value": "E",
           "label": "E",
-          "text": "x = 1 + x;"
+          "text": "`x = 1 + x;`"
         }
       ],
       "inputName": "QE46",
       "inputType": "checkbox",
       "correctAnswer": "BDE",
-      "explanation": "In Java, you can add 1 to a variable using the standard assignment x = x + 1, its commutative variant x = 1 + x, or the shorthand x += 1. Option A is incorrect because the left-hand side of an assignment must be a variable, and option C uses syntax not found in Java."
+      "explanation": "Options B, D, and E are valid Java assignment statements to increment a variable. Option A is invalid because the left-hand side must be a variable, and option C uses syntax that is not valid in Java."
     },
     {
       "id": "2.48",
       "number": "2.48",
-      "text": "&nbsp;\tTo add number to sum, you write __________. (Note: Java is case-sensitive) Please select all that apply.<br>",
+      "text": "To add `number` to `sum`, you write __________. (Note: Java is case-sensitive) Please select all that apply.",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "number += sum;"
+          "text": "`number += sum;`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "number = sum + number;"
+          "text": "`number = sum + number;`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "sum = Number + sum;"
+          "text": "`sum = Number + sum;`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "sum += number;"
+          "text": "`sum += number;`"
         },
         {
           "value": "E",
           "label": "E",
-          "text": "sum = sum + number;"
+          "text": "`sum = sum + number;`"
         }
       ],
       "inputName": "QE47",
       "inputType": "checkbox",
       "correctAnswer": "DE",
-      "explanation": "To add 'number' to 'sum', 'sum' must be the variable being updated. 'sum += number' and 'sum = sum + number' are both correct. Java is case-sensitive, so 'Number' with a capital N is not the same as the variable 'number'."
+      "explanation": "To update `sum`, `sum` must be on the left-hand side of the assignment. Option D uses the augmented assignment operator, and option E uses the standard assignment. Option C is incorrect due to the case-sensitivity of the variable 'Number'."
     },
     {
       "id": "2.49",
       "number": "2.49",
-      "text": "&nbsp; What is i printed?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> j = <span class=\"constant\">0</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> i = ++j + j * <span class=\"constant\">5</span>;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"What is i? \"</span> + i);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "text": "What is `i` printed?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int j = 0;\n    int i = ++j + j * 5;\n\n    System.out.println(\"What is i? \" + i);\n  }\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -1624,12 +1624,12 @@
       "inputName": "Q48",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "The prefix increment ++j increments j before its value is used in the expression. Starting with j = 0, ++j makes j equal to 1 and evaluates to 1. The expression then becomes 1 + 1 * 5, resulting in 6."
+      "explanation": "The prefix increment `++j` increases `j` to 1 and returns 1. Then, the expression evaluates `1 + (1 * 5)`, where `j` is now 1. The result is 6."
     },
     {
       "id": "2.50",
       "number": "2.50",
-      "text": "&nbsp; What is i printed in the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> j = <span class=\"constant\">0</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> i = j++ + j * <span class=\"constant\">5</span>;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"What is i? \"</span> + i);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "text": "What is `i` printed in the following code?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int j = 0;\n    int i = j++ + j * 5;\n\n    System.out.println(\"What is i? \" + i);\n  }\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -1655,12 +1655,12 @@
       "inputName": "Q49",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "The postfix increment j++ uses the current value of j in the expression and then increments j. Starting with j = 0, the expression uses 0 for j++, then j becomes 1. The calculation becomes 0 + 1 * 5, which results in 5."
+      "explanation": "The postfix increment `j++` returns the current value of `j` (0) and then increments `j` to 1. The expression then becomes `0 + (1 * 5)`, because `j` is now 1 for the second part of the calculation. The result is 5."
     },
     {
       "id": "2.51",
       "number": "2.51",
-      "text": "&nbsp; What is y displayed in the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> x = <span class=\"constant\">1</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> y = x++ + x;<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"y is \"</span> + y);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "text": "What is y displayed in the following code?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int x = 1;\n    int y = x++ + x;\n    System.out.println(\"y is \" + y);\n  }\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -1686,12 +1686,12 @@
       "inputName": "Q50",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "In the expression 'x++ + x', 'x++' is a post-increment operation. It evaluates to the current value of x (which is 1) and then increments x to 2. The expression then evaluates to 1 + 2, resulting in 3."
+      "explanation": "The postfix operator x++ evaluates to the current value of x (1) and then increments x to 2. Therefore, the expression is evaluated as 1 + 2, resulting in 3."
     },
     {
       "id": "2.52",
       "number": "2.52",
-      "text": "&nbsp; What is y displayed?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> x = <span class=\"constant\">1</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> y = x + x++;<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"y is \"</span> + y);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "text": "What is y displayed?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int x = 1;\n    int y = x + x++;\n    System.out.println(\"y is \" + y);\n  }\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -1717,12 +1717,12 @@
       "inputName": "Q51",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "In the expression 'x + x++', the first 'x' evaluates to 1. Then 'x++' evaluates to the current value of x (which is 1) before incrementing x to 2. Thus, y becomes 1 + 1, which equals 2."
+      "explanation": "Java evaluates expressions from left to right. The first x is 1. The postfix expression x++ also evaluates to its current value (1) before x is incremented to 2. Thus, y = 1 + 1, which is 2."
     },
     {
       "id": "2.53",
       "number": "2.53",
-      "text": "&nbsp;\tAre the following four statements equivalent?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>&nbsp;&nbsp;number += <span class=\"constant\">1</span>;<br>&nbsp;&nbsp;number = number + <span class=\"constant\">1</span>;<br>&nbsp;&nbsp;number++;<br>&nbsp;&nbsp;++number;<br></span>",
+      "text": "Are the following four statements equivalent?\n\n```java\nnumber += 1;\nnumber = number + 1;\nnumber++;\n++number;\n```",
       "choices": [
         {
           "value": "A",
@@ -1738,12 +1738,12 @@
       "inputName": "Q52",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "All four statements perform the same action of increasing the value of the variable 'number' by exactly 1. When used as standalone statements, their side effects are identical."
+      "explanation": "All four statements effectively increment the value of the variable 'number' by 1."
     },
     {
       "id": "2.54",
       "number": "2.54",
-      "text": "&nbsp;\tTo assign a double variable d to a float variable x, you write<br>",
+      "text": "To assign a double variable `d` to a float variable `x`, you write:",
       "choices": [
         {
           "value": "A",
@@ -1769,12 +1769,12 @@
       "inputName": "Q53",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Assigning a 'double' (64-bit) to a 'float' (32-bit) is a narrowing conversion that requires an explicit cast to prevent potential loss of precision. The correct syntax is 'x = (float)d;'."
+      "explanation": "In Java, assigning a larger type (double) to a smaller type (float) requires an explicit narrowing cast to acknowledge potential loss of precision."
     },
     {
       "id": "2.55",
       "number": "2.55",
-      "text": "&nbsp; Which of the following expressions will yield 0.5? Please select all that apply.<br>",
+      "text": "Which of the following expressions will yield 0.5? Please select all that apply.",
       "choices": [
         {
           "value": "A",
@@ -1805,12 +1805,12 @@
       "inputName": "QE54",
       "inputType": "checkbox",
       "correctAnswer": "BDE",
-      "explanation": "Expressions B, D, and E result in 0.5 because they involve floating-point division. Expression A uses integer division (1/2 = 0), and expression C performs integer division (0) before casting the result to a double (0.0)."
+      "explanation": "Option A and C result in 0 or 0.0 because 1 / 2 is integer division. Options B, D, and E involve at least one floating-point operand (either via a literal or a cast before division), which triggers floating-point division."
     },
     {
       "id": "2.56",
       "number": "2.56",
-      "text": "&nbsp; What is the output of the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">double</span>&nbsp;x&nbsp;=&nbsp;<span class=\"constant\">5</span><span class=\"literal\">.</span><span class=\"constant\">5</span>;<br><span class=\"keyword\">int</span>&nbsp;y&nbsp;=&nbsp;(<span class=\"keyword\">int</span>)x;<br>System.out.println(<span class=\"literal\">\"x&nbsp;is&nbsp;\"</span>&nbsp;+&nbsp;x&nbsp;+&nbsp;<span class=\"literal\">\"&nbsp;and&nbsp;y&nbsp;is&nbsp;\"</span>&nbsp;+&nbsp;y);<br></span>",
+      "text": "What is the output of the following code:\n\n```java\ndouble x = 5.5;\nint y = (int)x;\nSystem.out.println(\"x is \" + x + \" and y is \" + y);\n```",
       "choices": [
         {
           "value": "A",
@@ -1841,12 +1841,12 @@
       "inputName": "Q55",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Casting a double to an int truncates the fractional part. Therefore, 'y' becomes 5, while the original value of 'x' remains 5.5. This results in the output: 'x is 5.5 and y is 5'."
+      "explanation": "Casting a double to an int truncates the fractional part. The value 5.5 becomes 5. The original double variable x remains 5.5."
     },
     {
       "id": "2.57",
       "number": "2.57",
-      "text": "&nbsp; Which of the following assignment statements is illegal?<br>",
+      "text": "Which of the following assignment statements is illegal?",
       "choices": [
         {
           "value": "A",
@@ -1872,12 +1872,12 @@
       "inputName": "Q56",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Assigning a floating-point literal (double) to an integer variable without an explicit cast is illegal in Java because it is a narrowing conversion that could lose information. Hence, 'int t = 4.5;' is invalid."
+      "explanation": "A floating-point literal like 4.5 is treated as a double by default. Assigning a double to an int requires an explicit cast because it is a narrowing conversion."
     },
     {
       "id": "2.58",
       "number": "2.58",
-      "text": "&nbsp; What is the value of (double)5/2?<br>",
+      "text": "What is the value of `(double)5/2`?",
       "choices": [
         {
           "value": "A",
@@ -1908,12 +1908,12 @@
       "inputName": "Q57",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "The cast operator '(double)' has higher precedence than division. Therefore, 5 is first cast to 5.0, and then 5.0 / 2 results in the floating-point value 2.5."
+      "explanation": "The cast operator has higher precedence than division. 5 is cast to 5.0, and 5.0 / 2 results in the floating-point value 2.5."
     },
     {
       "id": "2.59",
       "number": "2.59",
-      "text": "&nbsp; What is the value of (double)(5/2)?<br>",
+      "text": "What is the value of `(double)(5/2)`?",
       "choices": [
         {
           "value": "A",
@@ -1944,12 +1944,12 @@
       "inputName": "Q58",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "In this expression, the parentheses force the integer division '5 / 2' to occur first, resulting in 2. This integer result is then cast to a double, resulting in 2.0."
+      "explanation": "The parentheses ensure that the division 5/2 happens first. Since both are integers, the result is 2. This integer result is then cast to a double, yielding 2.0."
     },
     {
       "id": "2.60",
       "number": "2.60",
-      "text": "&nbsp; Which of the following expression results in 45.37?<br>",
+      "text": "Which of the following expressions results in 45.37?",
       "choices": [
         {
           "value": "A",
@@ -1975,12 +1975,12 @@
       "inputName": "Q59",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "To get 45.37, we first multiply 45.378 by 100 to get 4537.8. Casting this to an int truncates it to 4537. Dividing by the double '100.0' performs floating-point division, resulting in 45.37."
+      "explanation": "In option B, 45.378 * 100 becomes 4537.8. Casting to int truncates it to 4537. Dividing by 100.0 (floating-point division) results in 45.37."
     },
     {
       "id": "2.61",
       "number": "2.61",
-      "text": "&nbsp; The expression (int)(76.0252175 * 100) / 100 evaluates to _________.<br>",
+      "text": "The expression `(int)(76.0252175 * 100) / 100` evaluates to _________.",
       "choices": [
         {
           "value": "A",
@@ -2006,12 +2006,12 @@
       "inputName": "Q60",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "First, 76.0252175 is multiplied by 100 to get 7602.52175. Casting this value to an int truncates the decimal portion, resulting in 7602. Finally, the expression performs integer division: 7602 / 100 equals 76."
+      "explanation": "First, `76.0252175 * 100` results in `7602.52175`. Casting this to an `(int)` truncates the decimal part, resulting in `7602`. Finally, the integer division `7602 / 100` yields `76` because the remainder is discarded in integer arithmetic."
     },
     {
       "id": "2.62",
       "number": "2.62",
-      "text": "&nbsp;\tIf you attempt to add an int, a byte, a long, and a double, the result will be a(n) __________ value.<br>",
+      "text": "If you attempt to add an `int`, a `byte`, a `long`, and a `double`, the result will be a(n) __________ value.",
       "choices": [
         {
           "value": "A",
@@ -2037,12 +2037,12 @@
       "inputName": "Q61",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "In Java arithmetic, numeric promotion rules dictate that the result of an expression involving multiple types will be promoted to the widest type present. Since double is the widest type among int, byte, long, and double, the result is a double."
+      "explanation": "According to Java's binary numeric promotion rules, if any operand in an arithmetic operation is a `double`, the entire expression is promoted to `double` to prevent precision loss."
     },
     {
       "id": "2.63",
       "number": "2.63",
-      "text": "&nbsp; _____________ is a formal process that seeks to understand the problem and document in detail what the software system needs to do. <br>",
+      "text": "_____________ is a formal process that seeks to understand the problem and document in detail what the software system needs to do.",
       "choices": [
         {
           "value": "A",
@@ -2073,12 +2073,12 @@
       "inputName": "Q62",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Requirements specification is the specific stage in the software development life cycle where the goal is to understand the problem domain and document the detailed requirements that the software must satisfy."
+      "explanation": "Requirements specification is the phase in the software development life cycle focused on identifying and documenting the functional and non-functional requirements of the system."
     },
     {
       "id": "2.64",
       "number": "2.64",
-      "text": "&nbsp; _____________ seeks to analyze the data flow and to identify the system?s input and output. When you do analysis, it helps to identify what the output is first, and then figure out what input data you need in order to produce the output.<br>",
+      "text": "_____________ seeks to analyze the data flow and to identify the system's input and output. When you do analysis, it helps to identify what the output is first, and then figure out what input data you need in order to produce the output.",
       "choices": [
         {
           "value": "A",
@@ -2109,12 +2109,12 @@
       "inputName": "Q63",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Analysis is the phase that focuses on data flow and identifies the system's inputs and outputs. It typically starts by identifying the required output and then determining the input needed to achieve it."
+      "explanation": "The Analysis phase involves studying the system's logic and data flow to determine how inputs are transformed into outputs."
     },
     {
       "id": "2.65",
       "number": "2.65",
-      "text": "&nbsp; Suppose int x = 3264, what is the output of the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>&nbsp;&nbsp;<span class=\"keyword\">int</span> y = x % <span class=\"constant\">10</span>;<br>&nbsp;&nbsp;x = x / <span class=\"constant\">10</span>;<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"x is \"</span> + x + <span class=\"literal\">\" and y is \"</span> + y);<br></span>",
+      "text": "Suppose `int x = 3264`, what is the output of the following code?\n\n```java\nint y = x % 10;\nx = x / 10;\nSystem.out.println(\"x is \" + x + \" and y is \" + y);\n```",
       "choices": [
         {
           "value": "A",
@@ -2145,12 +2145,12 @@
       "inputName": "Q64",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "The modulus operator (%) returns the remainder of division, so 3264 % 10 is 4. The division operator (/) performs integer division when both operands are integers, so 3264 / 10 is 326."
+      "explanation": "The modulo operator `%` extracts the last digit (`3264 % 10 = 4`), and the division operator `/` performs integer division, removing the last digit (`3264 / 10 = 326`)."
     },
     {
       "id": "2.66",
       "number": "2.66",
-      "text": "&nbsp;\tAnalyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> n = <span class=\"constant\">10000</span> * <span class=\"constant\">10000</span> * <span class=\"constant\">10000</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"n is \"</span> + n);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int n = 10000 * 10000 * 10000;\n    System.out.println(\"n is \" + n);\n  }\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -2181,12 +2181,12 @@
       "inputName": "Q65",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "The calculation 10000 * 10000 * 10000 results in 1,000,000,000,000, which exceeds the maximum value of a 32-bit signed integer (approximately 2.147 billion). In Java, integer overflow does not cause an error or abort the program; it simply wraps around according to two's complement arithmetic."
+      "explanation": "The value 1,000,000,000,000 exceeds the maximum capacity of a 32-bit `int` (which is approximately 2.14 billion). In Java, integer overflow does not throw an exception; it simply wraps around using two's complement arithmetic."
     },
     {
       "id": "2.67",
       "number": "2.67",
-      "text": "&nbsp; When assigning a literal to a variable of the byte type, if the literal is too large to be stored as a byte value, it _____________.<br>",
+      "text": "When assigning a literal to a variable of the `byte` type, if the literal is too large to be stored as a `byte` value, it _____________.",
       "choices": [
         {
           "value": "A",
@@ -2217,7 +2217,7 @@
       "inputName": "Q66",
       "inputType": "radio",
       "correctAnswer": "E",
-      "explanation": "When assigning a literal to a narrower type like byte, the Java compiler checks if the value is within the range of that type (-128 to 127). If the literal value is outside this range, the compiler will issue an error regarding a possible lossy conversion."
+      "explanation": "A `byte` has a range of -128 to 127. If you attempt to assign an integer literal outside of this range directly to a `byte` variable, the compiler detects the potential loss of precision and issues a compile-time error."
     }
   ],
   "status": "completed",

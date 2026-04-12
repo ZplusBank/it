@@ -1,16 +1,16 @@
 {
-  "id": "task-5",
-  "label": "chapter=17, username=liang12e",
+  "id": "explainer-1776005911218-ive3c",
+  "label": "chapter17liang12e.json",
   "params": {
-    "chapter": "Chapter 17",
-    "username": "liang12e"
+    "file": "chapter17liang12e.json",
+    "chapter": "Chapter 17"
   },
-  "title": "Chapter Chapter 17 Binary I/O",
+  "title": "Binary I/O",
   "questions": [
     {
       "id": "17.1",
       "number": "17.1",
-      "text": "&nbsp; Which of the following statements are true?<br>",
+      "text": "Which of the following statements are true?",
       "choices": [
         {
           "value": "A",
@@ -41,12 +41,12 @@
       "inputName": "QE0",
       "inputType": "checkbox",
       "correctAnswer": "ABCDE",
-      "explanation": "Every statement provided in options A through E is factually accurate. Therefore, you should select the answer that includes all of them since none of the individual claims are false."
+      "explanation": "All statements are correct. The File class is used for file metadata and manipulation of the file system, while actual data I/O is handled by streams (like InputStream/OutputStream) and wrappers (like PrintWriter/Scanner)."
     },
     {
       "id": "17.2",
       "number": "17.2",
-      "text": "&nbsp; Which of the following statements are true?<br>",
+      "text": "Which of the following statements are true?",
       "choices": [
         {
           "value": "A",
@@ -77,12 +77,12 @@
       "inputName": "QE1",
       "inputType": "checkbox",
       "correctAnswer": "ABCDE",
-      "explanation": "Each of the statements from A to E is factually accurate, making the combined answer the correct choice. You should select this because every individual point listed is true."
+      "explanation": "Binary I/O handles raw data bits without the overhead of character encoding (translating to a specific charset like UTF-8), making it faster and inherently portable across systems."
     },
     {
       "id": "17.3",
       "number": "17.3",
-      "text": "&nbsp;\tWhich method can you use to find out the number of the bytes in a file using InputStream?<br>",
+      "text": "Which method can you use to find out the number of the bytes in a file using InputStream?",
       "choices": [
         {
           "value": "A",
@@ -108,12 +108,12 @@
       "inputName": "Q2",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "You can use the **available()** method, which returns an estimate of the number of bytes that can be read from the input stream without blocking. This allows you to determine the size of the remaining content in the file stream."
+      "explanation": "In Java's InputStream class, the `available()` method returns an estimate of the number of bytes that can be read from the input stream without blocking."
     },
     {
       "id": "17.4",
       "number": "17.4",
-      "text": "&nbsp; Which of the following statements is false?<br>",
+      "text": "Which of the following statements is false?",
       "choices": [
         {
           "value": "A",
@@ -144,43 +144,43 @@
       "inputName": "Q3",
       "inputType": "radio",
       "correctAnswer": "E",
-      "explanation": "Choice E is the correct answer because it is the only statement among the options that is false or inaccurate. You should select it because the question specifically asks you to identify which claim is incorrect."
+      "explanation": "Statement E is false because the FileOutputStream constructor creates a new file if the file does not exist (assuming the path is valid and permissions allow it), rather than throwing a FileNotFoundException."
     },
     {
       "id": "17.5",
       "number": "17.5",
-      "text": "&nbsp; To append data to an existing file, use _____________ to construct a FileOutputStream for file out.dat.<br>",
+      "text": "To append data to an existing file, use _____________ to construct a FileOutputStream for file out.dat.",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "new FileOutputStream(\"out.dat\")"
+          "text": "```java\nnew FileOutputStream(\"out.dat\")\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "new FileOutputStream(\"out.dat\", false)"
+          "text": "```java\nnew FileOutputStream(\"out.dat\", false)\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "new FileOutputStream(\"out.dat\", true)"
+          "text": "```java\nnew FileOutputStream(\"out.dat\", true)\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "new FileOutputStream(true, \"out.dat\")"
+          "text": "```java\nnew FileOutputStream(true, \"out.dat\")\n```"
         }
       ],
       "inputName": "Q4",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "To append data, you must use the `FileOutputStream` constructor that accepts a second boolean argument set to `true`. This specific parameter tells Java to add new data to the end of the file rather than overwriting its existing content."
+      "explanation": "The FileOutputStream constructor takes a second boolean parameter called 'append'. When set to true, data is written to the end of the file rather than overwriting existing content."
     },
     {
       "id": "17.6",
       "number": "17.6",
-      "text": "&nbsp;\tWhat does the following code do?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>FileInputStream&nbsp;fis&nbsp;=&nbsp;<span class=\"keyword\">new</span>&nbsp;FileInputStream(<span class=\"literal\">\"test.dat\"</span>);<br></span>",
+      "text": "What does the following code do?\n\n```java\nFileInputStream fis = new FileInputStream(\"test.dat\");\n```",
       "choices": [
         {
           "value": "A",
@@ -211,12 +211,12 @@
       "inputName": "Q5",
       "inputType": "radio",
       "correctAnswer": "E",
-      "explanation": "This code creates a `FileInputStream` object that opens the file named \"test.dat\" so your program can read its data. It establishes a connection to the file, allowing you to read its contents as a sequence of bytes."
+      "explanation": "FileInputStream is intended for reading only. It does not create a file if it is missing; it expects the file to exist and throws a FileNotFoundException otherwise."
     },
     {
       "id": "17.7",
       "number": "17.7",
-      "text": "&nbsp;\tWhich type of exception occurs when creating a DataInputStream for a nonexistent file?<br>",
+      "text": "Which type of exception occurs when creating a DataInputStream for a nonexistent file?",
       "choices": [
         {
           "value": "A",
@@ -242,43 +242,43 @@
       "inputName": "Q6",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "When you attempt to create a stream for a nonexistent file, Java throws a `FileNotFoundException`. This exception occurs because the underlying file stream cannot locate the specific file path you provided."
+      "explanation": "Since a DataInputStream is typically initialized with a FileInputStream, and the FileInputStream constructor throws a java.io.FileNotFoundException if the file is missing, that is the exception that occurs."
     },
     {
       "id": "17.8",
       "number": "17.8",
-      "text": "&nbsp;\tWhich of the following statements is correct to create a DataOutputStream to write to a file named out.dat?<br>",
+      "text": "Which of the following statements is correct to create a DataOutputStream to write to a file named out.dat?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "DataOutputStream outfile = new DataOutputStream(new File(\"out.dat\"));"
+          "text": "```java\nDataOutputStream outfile = new DataOutputStream(new File(\"out.dat\"));\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "DataOutputStream outfile =  new DataOutputStream(new FileOutputStream(\"out.dat\"));"
+          "text": "```java\nDataOutputStream outfile = new DataOutputStream(new FileOutputStream(\"out.dat\"));\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "DataOutputStream outfile = new DataOutputStream(FileOutputStream(\"out.dat\"));"
+          "text": "```java\nDataOutputStream outfile = new DataOutputStream(FileOutputStream(\"out.dat\"));\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "DataOutputStream outfile =  new DataOutputStream(\"out.dat\");"
+          "text": "```java\nDataOutputStream outfile = new DataOutputStream(\"out.dat\");\n```"
         }
       ],
       "inputName": "Q7",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "To create a `DataOutputStream`, you must pass a `FileOutputStream` initialized with the filename \"out.dat\" into its constructor. This nesting allows the `DataOutputStream` to write primitive data types directly to that specific file."
+      "explanation": "DataOutputStream is a wrapper (filter) that requires an existing OutputStream instance. You must pass a FileOutputStream object to its constructor."
     },
     {
       "id": "17.9",
       "number": "17.9",
-      "text": "&nbsp; After the following program is finished, how many bytes are written to the file t.dat?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">import</span>&nbsp;java.io.*;<br><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) <span class=\"keyword\">throws</span> IOException {<br>&nbsp;&nbsp;&nbsp;&nbsp;DataOutputStream output = <span class=\"keyword\">new</span> DataOutputStream(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">new</span> FileOutputStream(<span class=\"literal\">\"t.dat\"</span>));<br>&nbsp;&nbsp;&nbsp;&nbsp;output.writeShort(<span class=\"constant\">1234</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;output.writeShort(<span class=\"constant\">5678</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;output.close();<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "text": "After the following program is finished, how many bytes are written to the file t.dat?\n\n```java\nimport java.io.*;\n\npublic class Test {\n  public static void main(String[] args) throws IOException {\n    DataOutputStream output = new DataOutputStream(\n      new FileOutputStream(\"t.dat\"));\n    output.writeShort(1234);\n    output.writeShort(5678);\n    output.close();\n  }\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -304,12 +304,12 @@
       "inputName": "Q8",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Each `writeShort` method call writes 2 bytes to the output stream. Since the program calls this method twice, a total of 4 bytes are written to the file."
+      "explanation": "In Java, a 'short' is 16 bits, which is equal to 2 bytes. The program calls writeShort twice, resulting in 2 + 2 = 4 bytes written to the file."
     },
     {
       "id": "17.10",
       "number": "17.10",
-      "text": "&nbsp; After the following program is finished, how many bytes are written to the file t.dat?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">import</span>&nbsp;java.io.*;<br><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) <span class=\"keyword\">throws</span> IOException {<br>&nbsp;&nbsp;&nbsp;&nbsp;DataOutputStream output = <span class=\"keyword\">new</span> DataOutputStream(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">new</span> BufferedOutputStream(FileOutputStream(<span class=\"literal\">\"t.dat\"</span>)));<br>&nbsp;&nbsp;&nbsp;&nbsp;output.writeChar(<span class=\"literal\">'A'</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;output.close();<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "text": "After the following program is finished, how many bytes are written to the file t.dat?\n\n```java\nimport java.io.*;\n\npublic class Test {\n  public static void main(String[] args) throws IOException {\n    DataOutputStream output = new DataOutputStream(\n      new BufferedOutputStream(new FileOutputStream(\"t.dat\")));\n    output.writeChar('A');\n    output.close();\n  }\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -335,12 +335,12 @@
       "inputName": "Q9",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "In Java, the `writeChar` method writes a character as a 2-byte Unicode value. Therefore, writing a single character like 'A' results in exactly 2 bytes being written to the file."
+      "explanation": "In Java, a 'char' is represented using 16-bit Unicode (UTF-16). Therefore, the writeChar method writes 2 bytes for a single character."
     },
     {
       "id": "17.11",
       "number": "17.11",
-      "text": "&nbsp; After the following program is finished, how many bytes are written to the file t.dat?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">import</span>&nbsp;java.io.*;<br><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) <span class=\"keyword\">throws</span> IOException {<br>&nbsp;&nbsp;&nbsp;&nbsp;DataOutputStream output = <span class=\"keyword\">new</span> DataOutputStream(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">new</span> FileOutputStream(<span class=\"literal\">\"t.dat\"</span>));<br>&nbsp;&nbsp;&nbsp;&nbsp;output.writeChars(<span class=\"literal\">\"ABCD\"</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;output.close();<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "text": "After the following program is finished, how many bytes are written to the file t.dat?\n\n```java\nimport java.io.*;\n\npublic class Test {\n  public static void main(String[] args) throws IOException {\n    DataOutputStream output = new DataOutputStream(\n      new FileOutputStream(\"t.dat\"));\n    output.writeChars(\"ABCD\");\n    output.close();\n  }\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -371,12 +371,12 @@
       "inputName": "Q10",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "In Java, the `writeChars` method writes each character of a string as a two-byte Unicode value. Since the string \"ABCD\" has four characters, the program writes a total of 8 bytes to the file."
+      "explanation": "In Java, the `writeChars` method of `DataOutputStream` writes every character in the string as a 2-byte Unicode value. Since the string \"ABCD\" contains 4 characters, the total number of bytes written is 4 * 2 = 8 bytes."
     },
     {
       "id": "17.12",
       "number": "17.12",
-      "text": "&nbsp; After the following program is finished, how many bytes are written to the file t.dat?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">import</span>&nbsp;java.io.*;<br><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) <span class=\"keyword\">throws</span> IOException {<br>&nbsp;&nbsp;&nbsp;&nbsp;DataOutputStream output = <span class=\"keyword\">new</span> DataOutputStream(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">new</span> FileOutputStream(<span class=\"literal\">\"t.dat\"</span>));<br>&nbsp;&nbsp;&nbsp;&nbsp;output.writeUTFString(<span class=\"literal\">\"ABCD\"</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;output.close();<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "text": "After the following program is finished, how many bytes are written to the file t.dat?\n\n```java\nimport java.io.*;\n\npublic class Test {\n  public static void main(String[] args) throws IOException {\n    DataOutputStream output = new DataOutputStream(\n      new FileOutputStream(\"t.dat\"));\n    output.writeUTF(\"ABCD\");\n    output.close();\n  }\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -407,12 +407,12 @@
       "inputName": "Q11",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "The `writeUTF` method (likely intended by `writeUTFString`) writes two bytes to store the length of the string followed by one byte for each character in \"ABCD\". This results in a total of 6 bytes: 2 bytes for the length header and 4 bytes for the characters themselves."
+      "explanation": "The `writeUTF` method writes two bytes of 'length' information followed by the actual characters encoded in UTF-8. For standard ASCII characters like \"ABCD\", each character takes 1 byte. Therefore, 2 (length header) + 4 (data bytes) = 6 bytes."
     },
     {
       "id": "17.13",
       "number": "17.13",
-      "text": "&nbsp; Which of the following statements are true? Please select all that apply.<br>",
+      "text": "Which of the following statements are true? Please select all that apply.",
       "choices": [
         {
           "value": "A",
@@ -438,12 +438,12 @@
       "inputName": "QD12",
       "inputType": "checkbox",
       "correctAnswer": "ABCD",
-      "explanation": "All of these statements are correct because each one accurately reflects the facts or principles discussed in your material. Therefore, you should select all the options provided as they are all true."
+      "explanation": "All statements are true: (A) At the physical level, all data is binary. (B & C) Text I/O is an abstraction layer that handles character encoding/decoding automatically. (D) Binary files do not contain metadata about their structure, so the reading program must match the logic of the writing program."
     },
     {
       "id": "17.14",
       "number": "17.14",
-      "text": "&nbsp; Which of the following statements are true? Please select all that apply.<br>",
+      "text": "Which of the following statements are true? Please select all that apply.",
       "choices": [
         {
           "value": "A",
@@ -469,12 +469,12 @@
       "inputName": "QD13",
       "inputType": "checkbox",
       "correctAnswer": "ABCD",
-      "explanation": "All of the provided statements are factually correct, so you should select every option. Each choice accurately reflects a different aspect of the topic covered in this lesson."
+      "explanation": "All statements are correct. `ObjectOutputStream` and `ObjectInputStream` implement `DataOutput` and `DataInput` respectively, meaning they can handle both primitives and objects. Objects are serialized using `writeObject` and deserialized using `readObject`."
     },
     {
       "id": "17.15",
       "number": "17.15",
-      "text": "&nbsp; The Loan class given in the text does not implement java.io.Serializable. Analyze the following code.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Foo&nbsp;<span class=\"keyword\">implements</span>&nbsp;java.io.Serializable&nbsp;{&nbsp;&nbsp;<br>&nbsp;&nbsp;<span class=\"keyword\">private</span> <span class=\"keyword\">int</span> v1;<br>&nbsp;&nbsp;<span class=\"keyword\">private</span> <span class=\"keyword\">static</span> <span class=\"keyword\">double</span> v2;<br>&nbsp;&nbsp;<span class=\"keyword\">private</span> Loan v3 = <span class=\"keyword\">new</span> Loan();<br>}<br></span>",
+      "text": "The Loan class given in the text does not implement java.io.Serializable. Analyze the following code.\n\n```java\npublic class Foo implements java.io.Serializable {  \n  private int v1;\n  private static double v2;\n  private Loan v3 = new Loan();\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -495,12 +495,12 @@
       "inputName": "QC14",
       "inputType": "checkbox",
       "correctAnswer": "BC",
-      "explanation": "Serializing a `Foo` object will throw a `NotSerializableException` because its `v3` field is a `Loan` object, which does not implement `Serializable`. Additionally, the static field `v2` is not included in the serialization process because static members belong to the class rather than individual instances."
+      "explanation": "To serialize an object, all its non-static and non-transient instance variables must also be serializable. Since `Loan` does not implement `Serializable`, `v3` prevents `Foo` from being serialized (B). Marking `v3` as `transient` tells the JVM to skip that field during serialization, which would allow `Foo` to be serialized (C)."
     },
     {
       "id": "17.16",
       "number": "17.16",
-      "text": "&nbsp; Which of the following statements is true?<br>",
+      "text": "Which of the following statements is true?",
       "choices": [
         {
           "value": "A",
@@ -526,12 +526,12 @@
       "inputName": "Q15",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Option C is correct because it is the only statement that accurately reflects the facts or principles being discussed. You can choose this answer because it correctly identifies the truth among the provided choices."
+      "explanation": "In Java, an object can only be serialized if its class implements the `java.io.Serializable` marker interface. While it is also true that static and transient variables are not serialized, the fundamental prerequisite for the serialization process to even occur is the implementation of the `Serializable` interface."
     },
     {
       "id": "17.17",
       "number": "17.17",
-      "text": "&nbsp; With which I/O class can you append or update a file?<br>",
+      "text": "With which I/O class can you append or update a file?",
       "choices": [
         {
           "value": "A",
@@ -557,12 +557,12 @@
       "inputName": "Q16",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "The `RandomAccessFile` class is correct because it allows you to move to any specific position within a file to both read and write data. This flexibility makes it the ideal tool for either updating existing content or appending new information to the end of a file."
+      "explanation": "`RandomAccessFile` allows you to move the file pointer to any position using the `seek()` method. This allows you to either update existing data in the middle of the file or seek to the end of the file to append new data."
     },
     {
       "id": "17.18",
       "number": "17.18",
-      "text": "&nbsp;\tWhich of the following is the legal mode for creating a new RandomAccessFile stream?<br>",
+      "text": "Which of the following is the legal mode for creating a new RandomAccessFile stream?",
       "choices": [
         {
           "value": "A",
@@ -588,12 +588,12 @@
       "inputName": "Q17",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Choice C is correct because `\"rw\"` is a legal mode string that allows you to open a `RandomAccessFile` for both reading and writing. In Java, only specific strings such as `\"r\"`, `\"rw\"`, `\"rws\"`, and `\"rwd\"` are recognized as valid mode arguments."
+      "explanation": "The `RandomAccessFile` constructor takes a string for the mode. The valid values are \"r\" (read-only), \"rw\" (read and write), \"rws\", and \"rwd\". \"w\" and \"rwx\" are not valid modes in Java."
     },
     {
       "id": "17.19",
       "number": "17.19",
-      "text": "&nbsp;\tWhat happens if the file test.dat does not exist when you attempt to compile and run the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">import</span>&nbsp;java.io.*;<br><br><span class=\"keyword\">class</span>&nbsp;Test&nbsp;&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">try</span> {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RandomAccessFile raf =<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">new</span> RandomAccessFile(<span class=\"literal\">\"test.dat\"</span>, <span class=\"literal\">\"r\"</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">int</span> i = raf.readInt();<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">catch</span>(IOException ex) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"IO exception\"</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "text": "What happens if the file test.dat does not exist when you attempt to compile and run the following code?\n\n```java\nimport java.io.*;\n\nclass Test {\n  public static void main(String[] args) {\n    try {\n      RandomAccessFile raf =\n        new RandomAccessFile(\"test.dat\", \"r\");\n      int i = raf.readInt();\n    }\n    catch(IOException ex) {\n      System.out.println(\"IO exception\");\n    }\n  }\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -619,12 +619,12 @@
       "inputName": "Q18",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "When you attempt to open a non-existent file in read-only mode (\"r\"), the program throws a `FileNotFoundException`. Since this is a subclass of `IOException`, the catch block handles the error and prints \"IO exception\" to the console."
+      "explanation": "When opening a `RandomAccessFile` in read-only (\"r\") mode, the file must already exist. If it does not, the constructor throws a `FileNotFoundException`, which is a subclass of `IOException`. The `catch` block catches this and prints \"IO exception\"."
     },
     {
       "id": "17.20",
       "number": "17.20",
-      "text": "&nbsp;\tTo create a file, you can use __________.<br>",
+      "text": "To create a file, you can use __________.",
       "choices": [
         {
           "value": "A",
@@ -650,7 +650,7 @@
       "inputName": "Q19",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "You can use several different classes, such as `File`, `Formatter`, or `PrintWriter`, to create a new file in Java. Option D is correct because it likely includes these multiple valid methods that each allow you to generate a file on your system."
+      "explanation": "All three classes (`FileOutputStream`, `FileWriter`, and `RandomAccessFile` with \"rw\" mode) will automatically create a new file if the specified file does not exist."
     }
   ],
   "status": "completed",

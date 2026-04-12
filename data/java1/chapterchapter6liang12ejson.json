@@ -1,0 +1,860 @@
+{
+  "id": "explainer-1776005911218-c5sug",
+  "label": "chapter6liang12e.json",
+  "params": {
+    "file": "chapter6liang12e.json",
+    "chapter": "Chapter 6"
+  },
+  "title": "Methods",
+  "questions": [
+    {
+      "id": "6.1",
+      "number": "6.1",
+      "text": "Suppose your method does not return any value, which of the following keywords can be used as a return type?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "void"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "int"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "double"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "public"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, the `void` keyword is used in a method declaration to specify that the method does not return any value to its caller."
+    },
+    {
+      "id": "6.2",
+      "number": "6.2",
+      "text": "The signature of a method consists of ____________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "method name"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "method name and parameter list"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "return type, method name, and parameter list"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "parameter list"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A method signature in Java is defined as the method name and the parameter list (including types and order). The return type and access modifiers are not part of the signature."
+    },
+    {
+      "id": "6.3",
+      "number": "6.3",
+      "text": "All Java applications must have a method __________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "public static Main(String[] args)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "public static Main(String args[])"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "public static void main(String[] args)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "public void main(String[] args)"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "public static main(String[] args)"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "To be executable, a Java application must contain the `public static void main(String[] args)` method. Java is case-sensitive, so the method name must be lowercase 'main'."
+    },
+    {
+      "id": "6.4",
+      "number": "6.4",
+      "text": "Arguments to methods always appear within __________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "brackets"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "parentheses"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "curly braces"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "quotation marks"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "When a method is called, the arguments (values passed to the method) must be enclosed within parentheses `()`, even if the method takes no arguments."
+    },
+    {
+      "id": "6.5",
+      "number": "6.5",
+      "text": "Does the method call in the following method cause compile errors?\n\n```java\npublic static void main(String[] args) {\n  Math.pow(2, 4);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Yes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "No, this does not cause a compile error. In Java, it is perfectly legal to call a value-returning method as a statement without assigning its return value to a variable."
+    },
+    {
+      "id": "6.6",
+      "number": "6.6",
+      "text": "Each time a method is invoked, the system stores parameters and local variables in an area of memory, known as _______, which stores elements in last-in first-out fashion.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a heap"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "storage area"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "a stack"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "an array"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The call stack (or execution stack) is used to manage method invocation, storing activation records (parameters and local variables) in a Last-In-First-Out (LIFO) manner."
+    },
+    {
+      "id": "6.7",
+      "number": "6.7",
+      "text": "Which of the following should be defined as a void method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Write a method that prints integers from 1 to 100."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Write a method that returns a random integer from 1 to 100."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Write a method that checks whether a number is from 1 to 100."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Write a method that converts an uppercase letter to lowercase."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A method that prints output to the console and does not need to return a result to the calling code is a prime candidate for the `void` return type. Options B, C, and D all require returning a value (int, boolean, and char respectively)."
+    },
+    {
+      "id": "6.8",
+      "number": "6.8",
+      "text": "You should fill in the blank in the following code with ______________.\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    System.out.print(\"The grade is \");\n    printGrade(78.5);\n\n    System.out.print(\"The grade is \");\n    printGrade(59.5);\n  }\n\n  public static __________ printGrade(double score) {\n    if (score >= 90.0) {\n      System.out.println('A');\n    }\n    else if (score >= 80.0) {\n      System.out.println('B');\n    }\n    else if (score >= 70.0) {\n      System.out.println('C');\n    }\n    else if (score >= 60.0) {\n      System.out.println('D');\n    }\n    else {\n      System.out.println('F');\n    }\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "int"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "double"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "boolean"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "char"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "void"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "The `printGrade` method performs logic and prints to the console, but it does not contain any `return` statements. Therefore, its return type must be `void`."
+    },
+    {
+      "id": "6.9",
+      "number": "6.9",
+      "text": "You should fill in the blank in the following code with ______________.\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    System.out.print(\"The grade is \" + getGrade(78.5));\n    System.out.print(\"\\nThe grade is \" + getGrade(59.5));\n  }\n\n  public static _________ getGrade(double score) {\n    if (score >= 90.0)\n      return 'A';\n    else if (score >= 80.0)\n      return 'B';\n    else if (score >= 70.0)\n      return 'C';\n    else if (score >= 60.0)\n      return 'D';\n    else\n      return 'F';\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "int"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "double"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "boolean"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "char"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "void"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The `getGrade` method returns values such as `'A'`, `'B'`, and `'F'`. Since these are character literals, the method's return type must be `char`."
+    },
+    {
+      "id": "6.10",
+      "number": "6.10",
+      "text": "Does the return statement in the following method cause compile errors?\n\n```java\npublic static void main(String[] args) {\n  int max = 0;\n  if (max != 0)\n    System.out.println(max);\n  else\n    return;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Yes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "No, this does not cause a compile error. In a `void` method, you can use the `return;` statement to exit the method prematurely, provided you do not attempt to return a specific value."
+    },
+    {
+      "id": "6.11",
+      "number": "6.11",
+      "text": "Consider the following incomplete code. The missing method body should be ________.\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    System.out.println(f(5));\n  }\n  \n  public static int f(int number) {\n    // Missing body\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "return \"number\";"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "System.out.println(number);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "System.out.println(\"number\");"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "return number;"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The method f is declared with a return type of int. Therefore, the method body must include a return statement that returns an integer value. 'return number;' is the only choice that returns an int. Choice A returns a String, and choices B and C are print statements that do not satisfy the return type requirement."
+    },
+    {
+      "id": "6.12",
+      "number": "6.12",
+      "text": "When you invoke a method with a parameter, the value of the argument is passed to the parameter. This is referred to as _________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "method invocation"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "pass by value"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "pass by reference"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "pass by name"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, all arguments are passed to methods using 'pass by value'. This means a copy of the argument's value is made and assigned to the method's parameter."
+    },
+    {
+      "id": "6.13",
+      "number": "6.13",
+      "text": "Given the following method, what is the output of the call `nPrint('a', 4)`?\n\n```java\nstatic void nPrint(String message, int n) {\n  while (n > 0) {\n    System.out.print(message);\n    n--;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "aaaaa"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "aaaa"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "aaa"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "invalid call"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The method `nPrint` expects a `String` as its first argument. In the call `nPrint('a', 4)`, the literal `'a'` is a `char`. In Java, a `char` cannot be automatically converted to a `String`. Therefore, the compiler will flag this as an error."
+    },
+    {
+      "id": "6.14",
+      "number": "6.14",
+      "text": "Given the following method:\n\n```java\nstatic void nPrint(String message, int n) {\n  while (n > 0) {\n    System.out.print(message);\n    n--;\n  }\n}\n```\n\nWhat is `k` after invoking `nPrint(\"A message\", k)`?\n\n```java\nint k = 2;\nnPrint(\"A message\", k);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Java uses pass-by-value. When `nPrint` is called, the value of `k` (which is 2) is copied into the local parameter `n`. Although `n` is decremented inside the method, the original variable `k` in the calling method remains unchanged."
+    },
+    {
+      "id": "6.15",
+      "number": "6.15",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    System.out.println(xMethod(5, 500L));\n  }\n\n  public static int xMethod(int n, long l) {\n    System.out.println(\"int, long\");\n    return n;\n  }\n\n  public static long xMethod(long n, long l) {\n    System.out.println(\"long, long\");\n    return n;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays int, long followed by 5."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays long, long followed by 5."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program runs fine but displays things other than 5."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program does not compile because the compiler cannot distinguish which xmethod to invoke."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "This is an example of method overloading. The call `xMethod(5, 500L)` passes an `int` and a `long`. The compiler matches this directly to `xMethod(int, long)`. Because an exact match exists for the first parameter, it is chosen over the version that would require widening the `int` to a `long`."
+    },
+    {
+      "id": "6.16",
+      "number": "6.16",
+      "text": "Analyze the following code:\n\n```java\nclass Test {\n  public static void main(String[] args) {\n    System.out.println(xmethod(5));\n  }\n\n  public static int xmethod(int n, long t) {\n    System.out.println(\"int\");\n    return n;\n  }\n\n  public static long xmethod(long n) {\n    System.out.println(\"long\");\n    return n;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays int followed by 5."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays long followed by 5."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program runs fine but displays things other than 5."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program does not compile because the compiler cannot distinguish which xmethod to invoke."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The call `xmethod(5)` has only one argument. Only the second `xmethod` (which takes a single `long` parameter) is compatible with a single-argument call. The `int` literal 5 is automatically widened to a `long` to match the signature."
+    },
+    {
+      "id": "6.17",
+      "number": "6.17",
+      "text": "Analyze the following code.\n\n```java\npublic class Test {\n  public static void main(String[] args)  {\n    System.out.println(max(1, 2));\n  }\n\n  public static double max(int num1, double num2) {\n    System.out.println(\"max(int, double) is invoked\");\n\n    if (num1 > num2)\n      return num1;\n    else\n      return num2;\n  }\n  \n  public static double max(double num1, int num2) {\n    System.out.println(\"max(double, int) is invoked\");\n\n    if (num1 > num2)\n      return num1;\n    else\n      return num2;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program cannot compile because you cannot have the print statement in a non-void method."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program cannot compile because the compiler cannot determine which max method should be invoked."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program runs and prints 2 followed by \"max(int, double)\" is invoked."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program runs and prints 2 followed by \"max(double, int)\" is invoked."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The program runs and prints \"max(int, double) is invoked\" followed by 2."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "When calling `max(1, 2)`, both arguments are integers. The compiler could widen the second integer to a double to match the first method, or widen the first integer to a double to match the second method. This ambiguity results in a compile-time error."
+    },
+    {
+      "id": "6.18",
+      "number": "6.18",
+      "text": "Analyze the following code.\n\n```java\npublic class Test {\n  public static void main(String[] args)  {\n    System.out.println(m(2));\n  }\n\n  public static int m(int num) {\n    return num;\n  }\n  \n  public static void m(int num) {\n    System.out.println(num);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because the two methods m have the same signature."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because the second m method is defined, but not invoked in the main method."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program runs and prints 2 once."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program runs and prints 2 twice."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, a method signature consists of the method name and the parameter list. The return type is not part of the signature. Since both methods are named `m` and both take a single `int` parameter, they have identical signatures, which is not allowed in the same class."
+    },
+    {
+      "id": "6.19",
+      "number": "6.19",
+      "text": "A variable defined inside a method is referred to as __________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a global variable"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "a method variable"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "a block variable"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "a local variable"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Variables declared within a method body are called local variables. Their scope is limited to the method in which they are defined."
+    },
+    {
+      "id": "6.20",
+      "number": "6.20",
+      "text": "What is `k` after the following block executes?\n\n```java\n{\n  int k = 2;\n  nPrint(\"A message\", k);\n}\nSystem.out.println(k);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "k is not defined outside the block. So, the program has a compile error"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The variable `k` is declared inside a block (denoted by curly braces `{}`). The scope of a variable is limited to the block it is declared in. Trying to access `k` outside of that block results in a compilation error."
+    },
+    {
+      "id": "6.21",
+      "number": "6.21",
+      "text": "&nbsp; \n\n```java\n(int)(Math.random() * (65535 + 1))\n```\n\nreturns a random number __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "between 1 and 65536"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "between 1 and 65535"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "between 0 and 65535"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "between 0 and 65536"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Math.random() returns a double value in the range [0.0, 1.0). Multiplying this by 65536 results in a range of [0.0, 65536.0). When cast to an int, the decimal is truncated, resulting in an integer between 0 and 65535 inclusive."
+    },
+    {
+      "id": "6.22",
+      "number": "6.22",
+      "text": "&nbsp; \n\n```java\n(int)('a' + Math.random() * ('z' - 'a' + 1))\n```\n\nreturns a random number __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "between 0 and (int)'z'"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "between (int)'a' and (int)'z'"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "between 'a' and 'z'"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "between 'a' and 'y'"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The expression calculates an offset using ('z' - 'a' + 1), which is 26. Math.random() * 26 gives a range [0.0, 26.0). Adding this to the Unicode value of 'a' results in [97.0, 123.0). Casting to int truncates this to the range [97, 122], which corresponds to (int)'a' and (int)'z'."
+    },
+    {
+      "id": "6.23",
+      "number": "6.23",
+      "text": "&nbsp; \n\n```java\n(char)('a' + Math.random() * ('z' - 'a' + 1))\n```\n\nreturns a random character __________.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "between 'a' and 'z'"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "between 'a' and 'y'"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "between 'b' and 'z'"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "between 'b' and 'y'"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Following the same logic as the previous question, the expression generates a random integer in the Unicode range of 'a' through 'z'. Casting that integer to a char results in a random lowercase letter from 'a' to 'z' inclusive."
+    },
+    {
+      "id": "6.24",
+      "number": "6.24",
+      "text": "&nbsp; Which of the following is the best for generating random integer 0 or 1?<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\n(int)Math.random()\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\n(int)Math.random() + 1\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\n(int)(Math.random() + 0.5)\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\n(int)(Math.random() + 0.2)\n```"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "```java\n(int)(Math.random() + 0.8)\n```"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Since Math.random() produces a value in [0.0, 1.0), adding 0.5 shifts the range to [0.5, 1.5). Casting to int results in 0 if the original random number was < 0.5, and 1 if it was >= 0.5. This effectively rounds the value to the nearest integer, providing an equal 50% probability for both 0 and 1."
+    },
+    {
+      "id": "6.25",
+      "number": "6.25",
+      "text": "&nbsp; The client can use a method without knowing how it is implemented. The details of the implementation are encapsulated in the method and hidden from the client who invokes the method. This is known as __________. Please select all that apply.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "information hiding"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "encapsulation"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "method hiding"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "simplifying method"
+        }
+      ],
+      "inputName": "QD24",
+      "inputType": "checkbox",
+      "correctAnswer": "AB",
+      "explanation": "Encapsulation refers to the bundling of data and methods into a single unit, while information hiding is the practice of concealing implementation details from the user. Both terms describe the abstraction provided when a client uses a method's interface without knowing its internal logic."
+    },
+    {
+      "id": "6.26",
+      "number": "6.26",
+      "text": "&nbsp; __________ is to implement one method in the structure chart at a time from the top to the bottom.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Bottom-up approach"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Top-down approach"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Bottom-up and top-down approach"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Stepwise refinement"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The top-down approach is a software development strategy where the high-level logic and main methods are implemented first, with lower-level details or sub-methods implemented subsequently."
+    },
+    {
+      "id": "6.27",
+      "number": "6.27",
+      "text": "&nbsp; __________ is a simple but incomplete version of a method.<br>",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A stub"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A main method"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A non-main method"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A method developed using top-down approach"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A stub is a placeholder for a method that has not yet been fully implemented. It allows developers to test the high-level flow of a program before the specific details of all sub-methods are finalized."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 27
+}

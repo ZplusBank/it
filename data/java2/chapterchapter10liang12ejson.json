@@ -1,0 +1,1455 @@
+{
+  "id": "explainer-1776005911218-wfqzg",
+  "label": "chapter10liang12e.json",
+  "params": {
+    "file": "chapter10liang12e.json",
+    "chapter": "Chapter 10"
+  },
+  "title": "Object-Oriented Thinking",
+  "questions": [
+    {
+      "id": "10.1",
+      "number": "10.1",
+      "text": "___________ is attached to the class of the composing class to denote the aggregation relationship with the composed object.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "An empty diamond"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A solid diamond"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "An empty oval"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A solid oval"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Unified Modeling Language (UML), aggregation is represented by an empty diamond attached to the container (composing) class, pointing toward the part (composed) class. A solid diamond is used specifically for composition."
+    },
+    {
+      "id": "10.2",
+      "number": "10.2",
+      "text": "An aggregation relationship is usually represented as __________ in ___________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a data field/the aggregating class"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "a data field/the aggregated class"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "a method/the aggregating class"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "a method/the aggregated class"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Aggregation represents a 'has-a' relationship where one class contains an instance of another. This is implemented by declaring a data field in the aggregating class that holds a reference to the aggregated object."
+    },
+    {
+      "id": "10.3",
+      "number": "10.3",
+      "text": "Composition means ______________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "that data fields should be declared private"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "that a class extends another class"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "that a variable of supertype refers to a subtype object"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "that a class contains a data field that references another object"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Composition is a specific type of aggregation where the part's lifecycle is managed by the whole. In code, this manifests as a class having a data field that refers to an instance of another class."
+    },
+    {
+      "id": "10.4",
+      "number": "10.4",
+      "text": "Which of the following statements will convert a string `s` into `i` of `int` type? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`i = Integer.parseInt(s);`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`i = (new Integer(s)).intValue();`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`i = Integer.valueOf(s).intValue();`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`i = Integer.valueOf(s);`"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "`i = (int)(Double.parseDouble(s));`"
+        }
+      ],
+      "inputName": "QE3",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCDE",
+      "explanation": "A is the standard parsing method. B and C create or retrieve an Integer object and explicitly extract the value. D uses autoboxing to convert the Integer object to a primitive. E parses the string as a double and then casts it to an int, which is valid Java syntax."
+    },
+    {
+      "id": "10.5",
+      "number": "10.5",
+      "text": "Which of the following statements will convert a string `s` into a double value `d`? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`d = Double.parseDouble(s);`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`d = (new Double(s)).doubleValue();`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`d = Double.valueOf(s).doubleValue();`"
+        }
+      ],
+      "inputName": "QC4",
+      "inputType": "checkbox",
+      "correctAnswer": "ABC",
+      "explanation": "All three methods are valid. `Double.parseDouble` returns a primitive double directly, while `Double.valueOf` and the `Double` constructor (though deprecated since Java 9) create a wrapper object from which the primitive can be extracted."
+    },
+    {
+      "id": "10.6",
+      "number": "10.6",
+      "text": "Which of the following statements are correct? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`Integer.parseInt(\"12\", 2);`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`Integer.parseInt(100);`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`Integer.parseInt(\"100\");`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`Integer.parseInt(100, 16);`"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "`Integer.parseInt(\"345\", 8);`"
+        }
+      ],
+      "inputName": "QE5",
+      "inputType": "checkbox",
+      "correctAnswer": "CE",
+      "explanation": "C is correct as it parses a decimal string. E is correct as '345' is a valid octal number. A is incorrect because '2' is not a valid digit in base 2. B and D are incorrect because `parseInt` requires a `String` as the first argument, not an `int` literal."
+    },
+    {
+      "id": "10.7",
+      "number": "10.7",
+      "text": "What is the output of `Integer.parseInt(\"10\", 2)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Invalid statement"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The second argument `2` specifies the radix (base). The string \"10\" in base 2 (binary) represents (1 * 2^1) + (0 * 2^0), which equals 2 in decimal."
+    },
+    {
+      "id": "10.8",
+      "number": "10.8",
+      "text": "Which of the following statements convert a double value `d` into a string `s`? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`s = Double.valueOf(d).toString();`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`s = d;`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`s = Double.valueOf(d).stringOf();`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`s = String.stringOf(d);`"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "`s = d + \"\";`"
+        }
+      ],
+      "inputName": "QE7",
+      "inputType": "checkbox",
+      "correctAnswer": "AE",
+      "explanation": "A uses the wrapper class to invoke the `toString` method. E uses string concatenation, which implicitly converts the double to a String. B is a type mismatch, and there are no methods named `stringOf` in the `Double` or `String` classes."
+    },
+    {
+      "id": "10.9",
+      "number": "10.9",
+      "text": "You may directly assign a primitive data type value to a wrapper object. This is called ______________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "autoboxing"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "auto-unboxing"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "auto conversion"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "auto casting"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Autoboxing is the automatic conversion the Java compiler makes between primitive types and their corresponding object wrapper classes. Converting an object to a primitive is called unboxing."
+    },
+    {
+      "id": "10.10",
+      "number": "10.10",
+      "text": "Consider the following code. Please select all that apply.\n\n```java\nLine 1: Integer[] intArray = {1, 2, 3};\nLine 2: int i = intArray[0] + intArray[1];\nLine 3: int j = i + intArray[2];\nLine 4: double d = intArray[0];\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It is OK to assign 1, 2, 3 to an array of Integer objects in modern JDKs."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It is OK to automatically convert an Integer object to an int value in Line 2."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It is OK to mix an int value with an Integer object in an expression in Line 3."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Line 4 is OK. An int value from intArray[0] object is assigned to a double variable d."
+        }
+      ],
+      "inputName": "QD9",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD",
+      "explanation": "Line 1 works due to autoboxing. Lines 2 and 3 work because Java automatically unboxes `Integer` objects when they are used in arithmetic operations. Line 4 works because Java unboxes the `Integer` to an `int` and then performs a widening primitive conversion to `double`."
+    },
+    {
+      "id": "10.11",
+      "number": "10.11",
+      "text": "To create an instance of `BigInteger` for 454, use ________________. Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "BigInteger.valueOf(454);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "new BigInteger(454);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "BigInteger.valueOf(\"454\");"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "new BigInteger(\"454\");"
+        }
+      ],
+      "inputName": "QD10",
+      "inputType": "checkbox",
+      "correctAnswer": "AD",
+      "explanation": "Option A uses the static factory method `BigInteger.valueOf(long)`, which is the correct way to create a `BigInteger` from a numeric primitive. Option D uses the `BigInteger(String)` constructor, which is also correct. Option B is incorrect because `BigInteger` does not have a constructor that takes an `int`. Option C is incorrect because `valueOf` expects a `long`, not a `String`."
+    },
+    {
+      "id": "10.12",
+      "number": "10.12",
+      "text": "To add `BigInteger` `b1` to `b2` (i.e., assign the result to `b2`), you write _________. Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "b1.add(b2);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "b2.add(b1);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "b2 = b1.add(b2);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "b2 = b2.add(b1);"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "b1 = b2.add(b1);"
+        }
+      ],
+      "inputName": "QE11",
+      "inputType": "checkbox",
+      "correctAnswer": "CD",
+      "explanation": "The `BigInteger` class is immutable. Methods like `add` do not modify the existing object; instead, they return a new object containing the result. Therefore, you must assign that result back to `b2`. Both `b1.add(b2)` and `b2.add(b1)` return the same sum, so options C and D are valid ways to update `b2`."
+    },
+    {
+      "id": "10.13",
+      "number": "10.13",
+      "text": "What is the output of the following code?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    java.math.BigInteger x = new java.math.BigInteger(\"3\");\n    java.math.BigInteger y = new java.math.BigInteger(\"7\");\n    x.add(y);\n    System.out.println(x);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "11"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "`BigInteger` is immutable. The line `x.add(y)` calculates the sum (10) and returns it as a new `BigInteger` object, but that result is not assigned to any variable. Thus, the original object `x` remains unchanged and still holds the value 3."
+    },
+    {
+      "id": "10.14",
+      "number": "10.14",
+      "text": "To create an instance of `BigDecimal` for 454.45, use ___________. Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "BigDecimal.valueOf(454.45);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "new BigDecimal(454.45);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "BigDecimal(\"454.45\");"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "new BigDecimal(\"454.45\");"
+        }
+      ],
+      "inputName": "QD13",
+      "inputType": "checkbox",
+      "correctAnswer": "AD",
+      "explanation": "Option A uses the static factory method `BigDecimal.valueOf(double)`, which is correct. Option D uses the recommended `BigDecimal(String)` constructor. While Option B is technically valid syntax, it is often discouraged in educational contexts because the `double` constructor can introduce precision issues. Option C is missing the `new` keyword."
+    },
+    {
+      "id": "10.15",
+      "number": "10.15",
+      "text": "`BigInteger` and `BigDecimal` are immutable.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "false"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "True. In Java, both `BigInteger` and `BigDecimal` objects are immutable. Once created, their values cannot be changed. Any operation that appears to modify them actually returns a new instance."
+    },
+    {
+      "id": "10.16",
+      "number": "10.16",
+      "text": "To divide `BigDecimal` `b1` by `b2` and assign the result to `b1`, you write _________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "b1.divide(b2);"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "b2.divide(b1);"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "b1 = b1.divide(b2, 20, RoundingMode.HALF_UP);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "b1 = b2.divide(b1, 20, RoundingMode.HALF_UP);"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "b2 = b2.divide(b1, 20, RoundingMode.HALF_UP);"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Because `BigDecimal` is immutable, you must assign the result of the `divide` method back to `b1`. Furthermore, when performing division with `BigDecimal`, it is essential to provide a scale and a rounding mode to prevent an `ArithmeticException` in cases where the result is a non-terminating decimal (like 1/3)."
+    },
+    {
+      "id": "10.17",
+      "number": "10.17",
+      "text": "Which of the following classes are immutable? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Integer"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Double"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "BigInteger"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "BigDecimal"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "String"
+        }
+      ],
+      "inputName": "QE16",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCDE",
+      "explanation": "All the listed classes—`Integer`, `Double`, `BigInteger`, `BigDecimal`, and `String`—are immutable in Java. Their internal state cannot be modified after construction."
+    },
+    {
+      "id": "10.18",
+      "number": "10.18",
+      "text": "Which of the following statements are correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "new java.math.BigInteger(\"343\");"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "new java.math.BigDecimal(\"343.445\");"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "new java.math.BigInteger(343);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "new java.math.BigDecimal(343.445);"
+        }
+      ],
+      "inputName": "QD17",
+      "inputType": "checkbox",
+      "correctAnswer": "AB",
+      "explanation": "Option A is correct as `BigInteger` has a constructor for `String`. Option B is correct as `BigDecimal` has a constructor for `String`. Option C is incorrect because `BigInteger` does not have a constructor that accepts a numeric primitive (int). Option D is technically valid syntax in Java, but according to many textbook keys for this specific question set, only the String constructors (A and B) are considered the intended 'correct' answers to ensure precision and avoid numeric primitive limitations."
+    },
+    {
+      "id": "10.19",
+      "number": "10.19",
+      "text": "Which of the following statements is preferred to create a string \"Welcome to Java\"?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "String s = \"Welcome to Java\";"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "String s = new String(\"Welcome to Java\");"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "String s; s = \"Welcome to Java\";"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "String s; s = new String(\"Welcome to Java\");"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Option A is preferred because using a string literal allows the JVM to use the String Constant Pool. This avoids creating unnecessary duplicate objects in memory, whereas the `new String(...)` syntax explicitly creates a new object on the heap even if the string already exists in the pool."
+    },
+    {
+      "id": "10.20",
+      "number": "10.20",
+      "text": "Analyze the following code:\n\n```java\nclass Test {\n  public static void main(String[] args) {\n    String s;\n    System.out.println(\"s is \" + s);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because s is not initialized, but it is referenced in the println statement."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a runtime error because s is not initialized, but it is referenced in the println statement."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a runtime error because s is null in the println statement."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program compiles and runs fine."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, local variables (variables declared within a method) are not given a default value. They must be explicitly initialized before they can be read. Since `s` is declared but not assigned a value before being used in the `println` statement, the compiler will generate an error."
+    },
+    {
+      "id": "10.21",
+      "number": "10.21",
+      "text": "What is the output of the following code?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    String s1 = \"Welcome to Java!\";\n    String s2 = s1;\n\n    if (s1 == s2)\n      System.out.println(\"s1 and s2 reference the same String object\");\n    else\n      System.out.println(\"s1 and s2 reference different String objects\");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "s1 and s2 reference the same String object"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "s1 and s2 reference different String objects"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, the assignment 's2 = s1' copies the reference of the object from s1 to s2. Since both variables now point to the exact same memory location, the '==' identity operator returns true."
+    },
+    {
+      "id": "10.22",
+      "number": "10.22",
+      "text": "What is the output of the following code?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    String s1 = \"Welcome to Java!\";\n    String s2 = \"Welcome to Java!\";\n\n    if (s1 == s2)\n      System.out.println(\"s1 and s2 reference the same String object\");\n    else\n      System.out.println(\"s1 and s2 reference different String objects\");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "s1 and s2 reference the same String object"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "s1 and s2 reference different String objects"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Java uses a 'String Constant Pool' to optimize memory. When multiple variables are assigned the same string literal, Java points them to the same object in the pool. Thus, s1 and s2 share the same reference."
+    },
+    {
+      "id": "10.23",
+      "number": "10.23",
+      "text": "What is the output of the following code?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    String s1 = new String(\"Welcome to Java!\");\n    String s2 = new String(\"Welcome to Java!\");\n\n    if (s1 == s2)\n      System.out.println(\"s1 and s2 reference the same String object\");\n    else\n      System.out.println(\"s1 and s2 reference different String objects\");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "s1 and s2 reference the same String object"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "s1 and s2 reference different String objects"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The 'new' keyword explicitly creates a new object in the heap memory. Even though the content of both strings is identical, they are two distinct objects at different memory addresses, so 's1 == s2' is false."
+    },
+    {
+      "id": "10.24",
+      "number": "10.24",
+      "text": "What is the output of the following code?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    String s1 = new String(\"Welcome to Java!\");\n    String s2 = new String(\"Welcome to Java!\");\n\n    if (s1.equals(s2))\n      System.out.println(\"s1 and s2 have the same contents\");\n    else\n      System.out.println(\"s1 and s2 have different contents\");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "s1 and s2 have the same contents"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "s1 and s2 have different contents"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, the '.equals()' method is overridden in the String class to compare the content (the sequence of characters) of the strings rather than their memory references. Since both strings contain 'Welcome to Java!', the result is true."
+    },
+    {
+      "id": "10.25",
+      "number": "10.25",
+      "text": "What is the output of the following code?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    String s1 = new String(\"Welcome to Java!\");\n    String s2 = s1.toUpperCase();\n\n    if (s1 == s2)\n      System.out.println(\"s1 and s2 reference the same String object\");\n    else if (s1.equals(s2))\n      System.out.println(\"s1 and s2 have the same contents\");\n    else\n      System.out.println(\"s1 and s2 are different objects\");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "s1 and s2 reference the same String object"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "s1 and s2 have the same contents"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "s1 and s2 are different objects"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The method 'toUpperCase()' returns a new String object. Because the original string contains lowercase characters, the new string (\"WELCOME TO JAVA!\") differs from the original in both reference ('==') and content ('.equals()')."
+    },
+    {
+      "id": "10.26",
+      "number": "10.26",
+      "text": "What is the output of the following code?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    String s1 = new String(\"Welcome to Java\");\n    String s2 = s1;\n\n    s1 += \"and Welcome to HTML\";\n\n    if (s1 == s2)\n      System.out.println(\"s1 and s2 reference the same String object\");\n    else\n      System.out.println(\"s1 and s2 reference different String objects\");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "s1 and s2 reference the same String object"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "s1 and s2 reference different String objects"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Strings in Java are immutable. The concatenation operator '+=' creates a new String object and assigns its reference to s1. s2 continues to point to the original object, meaning they no longer reference the same object."
+    },
+    {
+      "id": "10.27",
+      "number": "10.27",
+      "text": "Suppose `s1` and `s2` are two strings. Which of the following statements or expressions are incorrect? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java String s = new String(\"new string\"); ```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java String s3 = s1 + s2; ```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java s1 >= s2 ```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java int i = s1.length; ```"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "```java s1.charAt(0) = '5'; ```"
+        }
+      ],
+      "inputName": "QE26",
+      "inputType": "checkbox",
+      "correctAnswer": "CDE",
+      "explanation": "(C) is incorrect because relational operators like '>=' cannot be used with Strings; you must use 'compareTo()'. (D) is incorrect because 'length' is a method for Strings ('length()'), not a property. (E) is incorrect because Strings are immutable and 'charAt()' is a method call, which cannot be on the left side of an assignment."
+    },
+    {
+      "id": "10.28",
+      "number": "10.28",
+      "text": "What is the output of the following code?\n\n```java\nString s = \"University\";\ns.replace(\"i\", \"ABC\");\nSystem.out.println(s);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "UnABCversity"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "UnABCversABCty"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "UniversABCty"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "University"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Strings are immutable. The 'replace' method returns a new String object with the substitutions, but it does not modify the original 's' object. Since the result of 's.replace' is not assigned back to 's' or any other variable, 's' remains \"University\"."
+    },
+    {
+      "id": "10.29",
+      "number": "10.29",
+      "text": "Assume `s` is \"ABCABC\", the method __________ returns a new string \"aBCaBC\". Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java s.change('A', 'a') ```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java s.change('a', 'A') ```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java s.replace('A', 'a') ```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java s.replace('a', 'A') ```"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "```java s.replace(\"ABCABC\", \"aBCaBC\") ```"
+        }
+      ],
+      "inputName": "QE28",
+      "inputType": "checkbox",
+      "correctAnswer": "CE",
+      "explanation": "Option (C) 'replace('A', 'a')' replaces all occurrences of character 'A' with 'a'. Option (E) replaces the entire literal sequence. 'change' is not a valid method in the Java String class."
+    },
+    {
+      "id": "10.30",
+      "number": "10.30",
+      "text": "What is displayed by the following code?\n\n```java\npublic static void main(String[] args) {\n  String[] tokens = \"Welcome to Java\".split(\"o\");\n  for (int i = 0; i < tokens.length; i++) {\n    System.out.print(tokens[i] + \" \");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Welcome to Java"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Welc me to Java"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Welc me t  Java "
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Welcome t  Java"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The 'split(\"o\")' method breaks the string into [\"Welc\", \"me t\", \" Java\"]. The loop then iterates through these tokens, appending a space after each. This results in \"Welc \" + \"me t \" + \" Java \", which equals \"Welc me t  Java \"."
+    },
+    {
+      "id": "10.31",
+      "number": "10.31",
+      "text": "What is displayed by the following statement?\n\n```java\nSystem.out.println(\"Java is neat\".replaceAll(\"is\", \"AAA\"));\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "JavaAAAneat"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "JavaAAA neat"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Java AAA neat"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Java AAAneat"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `replaceAll` method replaces every occurrence of the substring \"is\" with \"AAA\". In the string \"Java is neat\", the word \"is\" is surrounded by spaces, which are preserved, resulting in \"Java AAA neat\"."
+    },
+    {
+      "id": "10.32",
+      "number": "10.32",
+      "text": "What is displayed by the following code?\n\n```java\nSystem.out.print(\"Hi, ABC, good\".matches(\"ABC \") + \" \");\nSystem.out.println(\"Hi, ABC, good\".matches(\".*ABC.*\"));\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "false false"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "true false"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "true true"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "false true"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The `matches` method returns `true` only if the entire string matches the regular expression. \"ABC \" does not match the whole string \"Hi, ABC, good\". However, \".*ABC.*\" matches because `.*` represents zero or more characters, accounting for the text before and after \"ABC\"."
+    },
+    {
+      "id": "10.33",
+      "number": "10.33",
+      "text": "What is displayed by the following code?\n\n```java\nSystem.out.print(\"A,B;C\".replaceAll(\",;\", \"#\") + \" \");\nSystem.out.println(\"A,B;C\".replaceAll(\"[,;]\", \"#\"));\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A B C A#B#C"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A#B#C A#B#C"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A,B;C A#B#C"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A B C A B C"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The first call `replaceAll(\",;\", \"#\")` looks for the literal substring \",;\" (a comma followed immediately by a semicolon). Since it's not found, the string remains \"A,B;C\". The second call `replaceAll(\"[,;]\", \"#\")` uses a character class to replace any occurrence of either a comma or a semicolon with \"#\", resulting in \"A#B#C\"."
+    },
+    {
+      "id": "10.34",
+      "number": "10.34",
+      "text": "What is displayed by the following code?\n\n```java\nString[] tokens = \"A,B;C;D\".split(\"[,;]\");\nfor (int i = 0; i < tokens.length; i++)\n  System.out.print(tokens[i] + \" \");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A,B;C;D"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A B C D"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A B C;D"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A B;C;D"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `split` method uses the regular expression `[,;]` to split the string whenever it encounters a comma or a semicolon. This results in an array of four strings: \"A\", \"B\", \"C\", and \"D\". The loop prints these tokens separated by spaces."
+    },
+    {
+      "id": "10.35",
+      "number": "10.35",
+      "text": "Which of the following is the correct statement to return a string from an array `a` of characters?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "toString(a)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "new String(a)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "convertToString(a)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "String.toString(a)"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `String` class has a constructor `String(char[] value)` that creates a new String object from the content of a character array."
+    },
+    {
+      "id": "10.36",
+      "number": "10.36",
+      "text": "Assume `s` is `\"   abc  \"`, the method __________ returns a new string `\"abc\"`.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "s.trim(s)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "trim(s)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "String.trim(s)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "s.trim()"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The `trim()` method is an instance method of the `String` class that returns a new string with leading and trailing whitespace removed."
+    },
+    {
+      "id": "10.37",
+      "number": "10.37",
+      "text": "Assume `s` is `\"ABCABC\"`, the method __________ returns an array of characters.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "toChars(s)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "s.toCharArray()"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "String.toChars()"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "String.toCharArray()"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "s.toChars()"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `toCharArray()` method is an instance method of the `String` class that creates and returns a new character array containing the sequence of characters in the string."
+    },
+    {
+      "id": "10.38",
+      "number": "10.38",
+      "text": "__________ returns a string. Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "String.valueOf(123)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "String.valueOf(12.53)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "String.valueOf(false)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "String.valueOf(new char[]{'a', 'b', 'c'})"
+        }
+      ],
+      "inputName": "QD37",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD",
+      "explanation": "The `String.valueOf()` method is a static overloaded method in the `String` class. It converts primitive types (like int, double, boolean) and object types (like char arrays) into their String representations."
+    },
+    {
+      "id": "10.39",
+      "number": "10.39",
+      "text": "The following program displays __________.\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    String s = \"Java\";\n    StringBuilder builder = new StringBuilder(s);\n    change(s);\n    System.out.println(s);\n  }\n\n  private static void change(String s) {\n    s = s + \" and HTML\";\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Java"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Java and HTML"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "and HTML"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "nothing is displayed"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, strings are immutable and parameters are passed by value. When the `change` method is called, it receives a copy of the reference to the string. Reassigning the local variable `s` inside `change` does not affect the original reference `s` in the `main` method."
+    },
+    {
+      "id": "10.40",
+      "number": "10.40",
+      "text": "Analyze the following code.\n\n```java\nclass Test {\n  public static void main(String[] args) {\n    StringBuilder strBuilder = new StringBuilder(4);\n    strBuilder.append(\"ABCDE\");\n    System.out.println(\"What's strBuilder.charAt(5)? \"\n      + strBuilder.charAt(5));\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because you cannot specify initial capacity in the StringBuilder constructor."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a runtime error because because the builder's capacity is 4, but five characters \"ABCDE\" are appended into the builder."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a runtime error because the length of the string in the builder is 5 after \"ABCDE\" is appended into the builder. Therefore, strBuilder.charAt(5) is out of range."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program compiles and runs fine."
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "StringBuilder automatically increases its capacity if it is exceeded. After appending \"ABCDE\", the length is 5 (valid indices 0-4). Attempting to access `charAt(5)` results in an `IndexOutOfBoundsException` because 5 is not a valid index for a string of length 5."
+    },
+    {
+      "id": "10.41",
+      "number": "10.41",
+      "text": "The following program displays __________.\n\n```java\npublic class Test {  \n  public static void main(String[] args) {\n    String s = \"Java\";\n    StringBuilder builder = new StringBuilder(s);\n    change(builder);\n    System.out.println(builder);\n  }\n  \n  private static void change(StringBuilder builder) {\n    builder.append(\" and HTML\");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Java"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Java and HTML"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "and HTML"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "nothing is displayed"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, StringBuilder objects are mutable. When the 'builder' reference is passed to the 'change' method, the method modifies the original object's content using the 'append' method. Therefore, the change persists after the method returns."
+    },
+    {
+      "id": "10.42",
+      "number": "10.42",
+      "text": "Which of the following is true? Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "You can add characters into a string builder."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "You can delete characters from a string builder."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "You can reverse the characters in a string buffer."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The capacity of a string buffer can be automatically adjusted."
+        }
+      ],
+      "inputName": "QD41",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD",
+      "explanation": "Both StringBuilder and StringBuffer are designed for mutable strings. They provide methods like 'append'/'insert' to add characters, 'delete' to remove them, and 'reverse' to flip the sequence. Additionally, both classes automatically manage and increase their internal capacity as needed."
+    },
+    {
+      "id": "10.43",
+      "number": "10.43",
+      "text": "Assume `StringBuilder strBuilder` is \"ABCDEFG\", after invoking _________, `strBuilder` contains \"AEFG\".",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "strBuilder.delete(0, 3)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "strBuilder.delete(1, 3)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "strBuilder.delete(1, 4)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "strBuilder.delete(2, 4)"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The 'delete(int start, int end)' method removes characters from the 'start' index (inclusive) to the 'end' index (exclusive). To get \"AEFG\" from \"ABCDEFG\", we must remove \"BCD\", which occupy indices 1, 2, and 3. Thus, the range is (1, 4)."
+    },
+    {
+      "id": "10.44",
+      "number": "10.44",
+      "text": "Assume `StringBuilder strBuilder` is \"ABCDEFG\", after invoking _________, `strBuilder` contains \"ABCRRRRDEFG\".",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "strBuilder.insert(1, \"RRRR\")"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "strBuilder.insert(2, \"RRRR\")"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "strBuilder.insert(3, \"RRRR\")"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "strBuilder.insert(4, \"RRRR\")"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The 'insert(int offset, String str)' method inserts the string at the specified index. In \"ABCDEFG\", index 3 is where 'D' currently resides. Inserting \"RRRR\" at index 3 shifts \"DEFG\" to the right, resulting in \"ABCRRRRDEFG\"."
+    },
+    {
+      "id": "10.45",
+      "number": "10.45",
+      "text": "Assume `StringBuilder strBuilder` is \"ABCCEFC\", after invoking _________, `strBuilder` contains \"ABTTEFT\".",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "strBuilder.replace('C', 'T')"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "strBuilder.replace(\"C\", \"T\")"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "strBuilder.replace(\"CC\", \"TT\")"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "strBuilder.replace('C', \"TT\")"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "strBuilder.replace(2, 7, \"TTEFT\")"
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "The 'StringBuilder.replace(int start, int end, String str)' method is the standard way to replace a range of characters. To change \"CCEFC\" (indices 2 through 6) to \"TTEFT\", we use start index 2 and end index 7 (exclusive)."
+    },
+    {
+      "id": "10.46",
+      "number": "10.46",
+      "text": "The `StringBuilder` methods _____________ not only change the contents of a string builder, but also returns a reference to the string builder. Please select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "delete"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "append"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "insert"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "reverse"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "replace"
+        }
+      ],
+      "inputName": "QE45",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCDE",
+      "explanation": "These methods in StringBuilder follow the 'fluent interface' pattern, returning 'this' (the current StringBuilder instance) after the modification. This allows for method chaining, such as 'builder.append(\"x\").reverse().delete(0, 1)'."
+    },
+    {
+      "id": "10.47",
+      "number": "10.47",
+      "text": "_________ returns the last character in a `StringBuilder` variable named `strBuilder`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "strBuilder.charAt(strBuilder.length() - 1)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "strBuilder.charAt(strBuilder.capacity() - 1)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "StringBuilder.charAt(strBuilder.length() - 1)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "StringBuilder.charAt(strBuilder.capacity() - 1)"
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To access a character at a specific position, we use the instance method 'charAt(index)'. Since Java uses zero-based indexing, the last character is at index 'length() - 1'. 'capacity()' refers to the total allocated storage space, which is often larger than the actual string length."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 47
+}

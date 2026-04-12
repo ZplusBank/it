@@ -1,0 +1,1153 @@
+{
+  "id": "explainer-1776005911218-ghmcs",
+  "label": "chapter13liang12e.json",
+  "params": {
+    "file": "chapter13liang12e.json",
+    "chapter": "Chapter 13"
+  },
+  "title": "Abstract Classes and Interfaces",
+  "questions": [
+    {
+      "id": "13.1",
+      "number": "13.1",
+      "text": "Which of the following class definitions defines a legal abstract class?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\nclass A { abstract void unfinished() {     } }\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\nclass A { abstract void unfinished(); }\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\nabstract class A { abstract void unfinished(); }\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\npublic class abstract A { abstract void unfinished(); }\n```"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "To be a legal abstract class in Java: 1) The class itself must be declared with the 'abstract' keyword. 2) Abstract methods must end with a semicolon and cannot have a method body {}. 3) The 'abstract' keyword must come before the 'class' keyword (unlike in choice D)."
+    },
+    {
+      "id": "13.2",
+      "number": "13.2",
+      "text": "Which of the following declares an abstract method in an abstract Java class?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\npublic abstract method();\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\npublic abstract void method();\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\npublic void abstract method();\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\npublic void method() {}\n```"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "```java\npublic abstract void method() {}\n```"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An abstract method declaration requires the access modifier (optional), the 'abstract' keyword, a return type (like 'void'), the method name, and a trailing semicolon. It must not contain a method body."
+    },
+    {
+      "id": "13.3",
+      "number": "13.3",
+      "text": "Which of the following statements regarding abstract methods is false?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "An abstract class can have instances created using the constructor of the abstract class."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "An abstract class can be extended."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A subclass of a non-abstract superclass can be abstract."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A subclass can override a concrete method in a superclass to declare it abstract."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "An abstract class can be used as a data type."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Abstract classes cannot be instantiated using the 'new' operator. While they have constructors (which are called by subclass constructors), you cannot create an instance of an abstract class directly."
+    },
+    {
+      "id": "13.4",
+      "number": "13.4",
+      "text": "Which of the following statements regarding abstract methods is false?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Abstract classes have constructors."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A class that contains abstract methods must be abstract."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It is possible to define an abstract class that contains no abstract methods."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "An abstract method cannot be contained in a nonabstract class."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "A data field can be declared abstract."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "In Java, only classes and methods can be declared 'abstract'. Data fields (variables) cannot be abstract."
+    },
+    {
+      "id": "13.5",
+      "number": "13.5",
+      "text": "Suppose A is an abstract class, B is a concrete subclass of A, and both A and B have a no-arg constructor. Which of the following is correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\nA a = new A();\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\nA a = new B();\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\nB b = new A();\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\nB b = new B();\n```"
+        }
+      ],
+      "inputName": "QD4",
+      "inputType": "checkbox",
+      "correctAnswer": "BD",
+      "explanation": "Choice A and C are incorrect because an abstract class (A) cannot be instantiated. Choice B is correct because a superclass reference can point to a subclass object (polymorphism). Choice D is correct because B is a concrete class and can be instantiated normally."
+    },
+    {
+      "id": "13.6",
+      "number": "13.6",
+      "text": "What is the output of running class Test?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    new Circle9();\n  }\n}\n\npublic abstract class GeometricObject {\n  protected GeometricObject() {\n    System.out.print(\"A\");\n  }\n\n  protected GeometricObject(String color, boolean filled) {\n    System.out.print(\"B\");\n  }\n}\n\npublic class Circle9 extends GeometricObject {\n  public Circle9() {\n    this(1.0);\n    System.out.print(\"C\");\n  }\n\n  public Circle9(double radius) {\n    this(radius, \"white\", false);\n    System.out.print(\"D\");\n  }\n\n  public Circle9(double radius, String color, boolean filled) {\n    super(color, filled);\n    System.out.print(\"E\");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "ABCD"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "BACD"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "CBAE"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "AEDC"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "BEDC"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "When 'new Circle9()' is called, it chains to 'Circle9(1.0)', which chains to 'Circle9(1.0, \"white\", false)', which calls 'super(color, filled)'. The superclass constructor prints 'B'. Then, the constructors finish in reverse order: 'Circle9(double, String, boolean)' prints 'E', 'Circle9(double)' prints 'D', and finally 'Circle9()' prints 'C'."
+    },
+    {
+      "id": "13.7",
+      "number": "13.7",
+      "text": "The java.lang.Number and its subclasses are introduced in this section. Analyze the following code.\n\n```java\nNumber numberRef = new Integer(0);\nDouble doubleRef = (Double)numberRef;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "There is no such class named Integer. You should use the class Int."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The compiler detects that numberRef is not an instance of Double."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A runtime class casting exception occurs, since numberRef is not an instance of Double."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program runs fine, since Integer is a subclass of Double."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "You can convert an int to double, so you can cast an Integer instance to a Double instance."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The reference 'numberRef' points to an Integer object. While both Integer and Double are subclasses of Number, they are siblings; one cannot be cast to the other. This results in a ClassCastException at runtime."
+    },
+    {
+      "id": "13.8",
+      "number": "13.8",
+      "text": "Inspect the following code.\n\n```java\nNumber[] numberArray = new Integer[2];\nnumberArray[0] = new Double(1.5);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "You cannot use Number as a data type since it is an abstract class."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Since each element of numberArray is of the Number type, you cannot assign an Integer object to it."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Since each element of numberArray is of the Number type, you cannot assign a Double object to it."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "At runtime, new Integer[2] is assigned to numberArray. This makes each element of numberArray an Integer object. So you cannot assign a Double object to it."
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In Java, arrays are covariant, so the assignment 'Number[] numberArray = new Integer[2]' is allowed. However, the underlying array is still an Integer array. Attempting to store a Double into an Integer array causes an ArrayStoreException at runtime."
+    },
+    {
+      "id": "13.9",
+      "number": "13.9",
+      "text": "Analyze the following code. Which of the following statements is correct?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    Number x = new Integer(3);\n    System.out.println(x.intValue());\n    System.out.println(x.compareTo(new Integer(4)));\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because an Integer instance cannot be assigned to a Number variable."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because intValue is an abstract method in Number."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error because x does not have the compareTo method."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program compiles and runs fine."
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The variable 'x' is declared as a 'Number'. The compiler checks if the 'Number' class has a 'compareTo' method. Since 'Number' does not define 'compareTo' (it is defined in subclasses like Integer that implement Comparable), the code fails to compile."
+    },
+    {
+      "id": "13.10",
+      "number": "13.10",
+      "text": "Which of the following statements is incorrect?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\nInteger i = 4.5;\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\nDouble i = 4.5;\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\nObject i = 4.5;\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\nNumber i = 4.5;\n```"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The literal 4.5 is a double. Java will autobox it into a 'Double' object. A 'Double' object cannot be assigned to an 'Integer' reference variable."
+    },
+    {
+      "id": "13.11",
+      "number": "13.11",
+      "text": "Analyze the following code. Which of the following statements is correct?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    Number x = new Integer(3);\n    System.out.println(x.intValue());\n    System.out.println((Integer)x.compareTo(new Integer(4)));\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because an Integer instance cannot be assigned to a Number variable."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because intValue is an abstract method in Number."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error because x cannot be cast into Integer."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a compile error because the member access operator (.) is executed before the casting operator."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The program compiles and runs fine."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In Java, the member access operator (`.`) has higher precedence than the casting operator `(Type)`. In the expression `(Integer)x.compareTo(...)`, the compiler tries to invoke `compareTo` on the reference variable `x`, which is of type `Number`. Since the `Number` class does not define a `compareTo` method, a compilation error occurs. To fix this, parentheses would be needed: `((Integer)x).compareTo(...)`."
+    },
+    {
+      "id": "13.12",
+      "number": "13.12",
+      "text": "The `java.util.Calendar` and `java.util.GregorianCalendar` classes are introduced in this section. Analyze the following code. Which of the following statements is correct?\n\n```java\nimport java.util.*;\npublic class Test {\n  public static void main(String[] args) {\n    Calendar[] calendars = new Calendar[10];\n    calendars[0] = new Calendar();\n    calendars[1] = new GregorianCalendar();\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error on Line 4 because java.util.Calendar is an abstract class."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error on Line 5 because java.util.Calendar is an abstract class."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error on Line 6 because Calendar[1] is not of a GregorianCalendar type."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has no compile errors."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "`java.util.Calendar` is an abstract class. Abstract classes cannot be instantiated using the `new` operator. While you can create an array of an abstract type (as seen in Line 4), you cannot create an instance of the abstract class itself (Line 5)."
+    },
+    {
+      "id": "13.13",
+      "number": "13.13",
+      "text": "Assume `Calendar calendar = new GregorianCalendar()`. __________ returns the month of the year.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "calendar.get(Calendar.MONTH)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "calendar.get(Calendar.MONTH_OF_YEAR)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "calendar.get(Calendar.WEEK_OF_MONTH)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "calendar.get(Calendar.WEEK_OF_YEAR)"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `get` method of the `Calendar` class is used to retrieve specific fields. The constant `Calendar.MONTH` is the standard field for the month. Note that months are 0-indexed in the Calendar API (0 for January)."
+    },
+    {
+      "id": "13.14",
+      "number": "13.14",
+      "text": "Assume `Calendar calendar = new GregorianCalendar()`. __________ returns the week of the year.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "calendar.get(Calendar.MONTH)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "calendar.get(Calendar.MONTH_OF_YEAR)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "calendar.get(Calendar.WEEK_OF_MONTH)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "calendar.get(Calendar.WEEK_OF_YEAR)"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The constant `Calendar.WEEK_OF_YEAR` is the correct field used with the `get` method to retrieve the numerical week within the current year."
+    },
+    {
+      "id": "13.15",
+      "number": "13.15",
+      "text": "Assume `Calendar calendar = new GregorianCalendar()`. __________ returns the number of days in a month.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "calendar.get(Calendar.MONTH)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "calendar.get(Calendar.MONTH_OF_YEAR)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "calendar.get(Calendar.WEEK_OF_MONTH)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "calendar.get(Calendar.WEEK_OF_YEAR)"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "calendar.getActualMaximum(Calendar.DAY_OF_MONTH)"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "Since the number of days in a month varies (28, 29, 30, or 31), the `getActualMaximum` method combined with the `Calendar.DAY_OF_MONTH` field determines the highest possible value for the day in the current month of the calendar instance."
+    },
+    {
+      "id": "13.16",
+      "number": "13.16",
+      "text": "Which of the following is a correct interface?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "interface A { void print() { }; }"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "abstract interface A { print(); }"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "abstract interface A { abstract void print() { };}"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "interface A { void print();}"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In a standard Java interface, methods are implicitly public and abstract. Option D is the correct syntax for declaring an abstract method signature. Options A and C are incorrect because abstract methods cannot have a body `{}`. Option B is incorrect because it is missing the return type (void) for the method."
+    },
+    {
+      "id": "13.17",
+      "number": "13.17",
+      "text": "Which of the following are incorrect?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "An abstract class contains constructors."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The constructors in an abstract class should be protected."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The constructors in an abstract class are private."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "You may declare a final abstract class."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "An interface may contain constructors."
+        }
+      ],
+      "inputName": "QE16",
+      "inputType": "checkbox",
+      "correctAnswer": "CDE",
+      "explanation": "Statement C is generally incorrect because private constructors would prevent the class from being subclassed, which defeats the purpose of an abstract class. Statement D is incorrect because `final` and `abstract` are contradictory modifiers: `abstract` requires the class to be extended, while `final` prevents it from being extended. Statement E is incorrect because interfaces cannot be instantiated and do not have state to initialize via a constructor."
+    },
+    {
+      "id": "13.18",
+      "number": "13.18",
+      "text": "_______ is not a reference type.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A class type"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "An interface type"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "An array type"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A primitive type"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In Java, types are categorized into primitive types and reference types. Primitive types (such as `int`, `boolean`, `char`) store actual values, whereas classes, interfaces, and arrays are reference types that store addresses of objects."
+    },
+    {
+      "id": "13.19",
+      "number": "13.19",
+      "text": "Show the output of running the class `Test` in the following code lines:\n\n```java\ninterface A {\n}\n\nclass C {\n}\n\nclass D extends C {\n}\n\nclass B extends D implements A {\n}\n\npublic class Test {\n  public static void main(String[] args) {\n    B b = new B();\n    if (b instanceof A)\n      System.out.println(\"b is an instance of A\");\n    if (b instanceof C)\n      System.out.println(\"b is an instance of C\");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Nothing."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "b is an instance of A."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "b is an instance of C."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "b is an instance of A followed by b is an instance of C."
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The `instanceof` operator checks if an object is of a specific type. Since `B` implements `A`, `b instanceof A` is true. Since `B` extends `D` and `D` extends `C`, `B` is a subclass of `C`, so `b instanceof C` is also true."
+    },
+    {
+      "id": "13.20",
+      "number": "13.20",
+      "text": "Suppose `A` is an interface, `B` is a concrete class with a no-arg constructor that implements `A`. Which of the following is correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A a = new A();"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A a = new B();"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "B b = new A();"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "B b = new B();"
+        }
+      ],
+      "inputName": "QD19",
+      "inputType": "checkbox",
+      "correctAnswer": "BD",
+      "explanation": "Statement B is correct because a reference variable of an interface type can point to an instance of any class that implements that interface (polymorphism). Statement D is correct because a class variable can point to an instance of its own class. Statements A and C are incorrect because interfaces cannot be instantiated using `new`."
+    },
+    {
+      "id": "13.21",
+      "number": "13.21",
+      "text": "Analyze the following code:\n\n```java\npublic class Test1 {\n  public Object max(Object o1, Object o2) {\n    if ((Comparable)o1.compareTo(o2) >= 0) {\n      return o1;\n    }\n    else {\n      return o2;\n    }\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because Test1 does not have a main method."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because o1 is an Object instance and it does not have the compareTo method."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error because you cannot cast an Object instance o1 into Comparable."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program would compile if ((Comparable)o1.compareTo(o2) >= 0) is replaced by (((Comparable)o1).compareTo(o2) >= 0)."
+        }
+      ],
+      "inputName": "QD20",
+      "inputType": "checkbox",
+      "correctAnswer": "BD",
+      "explanation": "The code fails to compile for two reasons: First, the `Object` class does not define a `compareTo` method. Second, the syntax `(Comparable)o1.compareTo(o2)` incorrectly attempts to cast the result of the method call rather than the object `o1`. To fix this, `o1` must be cast to `Comparable` first, as in `((Comparable)o1).compareTo(o2)`."
+    },
+    {
+      "id": "13.22",
+      "number": "13.22",
+      "text": "Which of the following statements are true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The String class implements Comparable."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The Date class implements Comparable."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The Double class implements Comparable."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The BigInteger class implements Comparable."
+        }
+      ],
+      "inputName": "QD21",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD",
+      "explanation": "In Java, many standard library classes that have a natural ordering, including `String`, `Date`, `Double`, and `BigInteger`, implement the `java.lang.Comparable` interface."
+    },
+    {
+      "id": "13.23",
+      "number": "13.23",
+      "text": "Analyze the following code.\n\n```java\n1. public class Test {\n2.   public static void main(String[] args) {\n3.     Fruit[] fruits = {new Fruit(2), new Fruit(3), new Fruit(1)};\n4.     java.util.Arrays.sort(fruits);\n5.   }\n6. }\n\nclass Fruit {\n  private double weight;\n  \n  public Fruit(double weight) {\n    this.weight = weight;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because the Fruit class does not have a no-arg constructor."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a runtime error on Line 3 because the Fruit class does not have a no-arg constructor."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error on Line 4 because the Fruit class does not implement the java.lang.Comparable interface."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a runtime error on Line 4 because the Fruit class does not implement the java.lang.Comparable interface and the Fruit objects are not comparable."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The `java.util.Arrays.sort(Object[])` method expects the elements in the array to implement the `Comparable` interface. While the code compiles because `Fruit[]` is a valid `Object[]`, it will throw a `ClassCastException` at runtime on Line 4 because the JVM cannot cast a `Fruit` object to `Comparable` during the sorting process."
+    },
+    {
+      "id": "13.24",
+      "number": "13.24",
+      "text": "Analyze the following code.\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    java.util.Date x = new java.util.Date();\n    java.util.Date y = x.clone();\n    System.out.println(x = y);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A java.util.Date object is not cloneable."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x = y in System.out.println(x = y) causes a compile error because you cannot have an assignment statement inside a statement."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x = y in System.out.println(x = y) causes a runtime error because you cannot have an assignment statement inside a statement."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a compile error because the return type of the clone() method is java.lang.Object."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The `clone()` method in the `java.util.Date` class is declared with a return type of `java.lang.Object`. Because Java requires explicit casting when moving from a more general type (`Object`) to a more specific type (`Date`), the line `java.util.Date y = x.clone();` results in a compile error."
+    },
+    {
+      "id": "13.25",
+      "number": "13.25",
+      "text": "The output from the following code is __________.\n\n```java\njava.util.ArrayList<String> list = new java.util.ArrayList<String>();\nlist.add(\"New York\"); \njava.util.ArrayList<String> list1 = (java.util.ArrayList<String>)(list.clone());\nlist.add(\"Atlanta\"); \nlist1.add(\"Dallas\"); \nSystem.out.println(list1);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "[New York]"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "[New York, Atlanta]"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "[New York, Atlanta, Dallas]"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "[New York, Dallas]"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The `clone()` method creates a shallow copy of the `ArrayList`. When `list1` is created, it contains \"New York\". Adding \"Atlanta\" to the original `list` does not affect `list1`. However, adding \"Dallas\" directly to `list1` results in `list1` containing `[New York, Dallas]`."
+    },
+    {
+      "id": "13.26",
+      "number": "13.26",
+      "text": "The GeometricObject and Circle classes are defined in this chapter. Analyze the following code. Which statements are correct?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    GeometricObject x = new Circle(3);\n    GeometricObject y = (Circle)(x.clone());\n    System.out.println(x);\n    System.out.println(y);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because the clone() method is protected in the Object class."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "After you override the clone() method and make it public in the Circle class, the program can compile and run just fine, but y is null if Circle does not implement the Cloneable interface."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To enable a Circle object to be cloned, the Circle class has to override the clone() method and implement the java.lang.Cloneable interface."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "If GeometricObject implements Cloneable and Circle overrides the clone() method, the clone() method will work fine to clone Circle objects."
+        }
+      ],
+      "inputName": "QD25",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD",
+      "explanation": "All statements describe valid aspects of Java cloning: `clone()` is protected in `Object`, implementing `Cloneable` is necessary to prevent exceptions, and overriding `clone()` to be public makes it accessible to other classes. Additionally, if a superclass implements `Cloneable`, its subclasses inherit that property."
+    },
+    {
+      "id": "13.27",
+      "number": "13.27",
+      "text": "Which of the following statements is false?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "If you compile an interface without errors, a .class file is created for the interface."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "If you compile a class without errors but with warnings, a .class file is created."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "If you compile a class with errors, a .class file is created for the class."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "If you compile an interface without errors, but with warnings, a .class file is created for the interface."
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "If a Java source file contains compilation errors, the compiler will not generate a `.class` file. Warnings do not prevent the creation of the bytecode file, but errors do."
+    },
+    {
+      "id": "13.28",
+      "number": "13.28",
+      "text": "Which of the following statements are true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Inheritance models the is-a relationship between two classes."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A strong is-a relationship describes a direct inheritance relationship between two classes."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A weak is-a relationship describes that a class has certain properties."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A strong is-a relationship can be represented using class inheritance."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "A weak is-a relationship can be represented using interfaces."
+        }
+      ],
+      "inputName": "QE27",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCDE",
+      "explanation": "In object-oriented design, class inheritance represents a strong 'is-a' relationship (e.g., a Dog is an Animal). Interfaces represent a 'weak is-a' relationship, often referred to as an 'is-kind-of' or capability relationship (e.g., a Dog is a Comparable object)."
+    },
+    {
+      "id": "13.29",
+      "number": "13.29",
+      "text": "What is the best suitable relationship between Employee and Faculty?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Composition"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Aggregation"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Inheritance"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None."
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Faculty is a specialized type of Employee. This defines a strong 'is-a' relationship, which is best modeled through inheritance."
+    },
+    {
+      "id": "13.30",
+      "number": "13.30",
+      "text": "Assume an employee can work for only one company. What is the best suitable relationship between Company and Employee?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "None"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Aggregation"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Inheritance"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Composition"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "A Company 'has' Employees. Since the constraint specifies an employee can work for only one company, this implies a strong ownership relationship where the Employee is a constituent part of the Company, which is best modeled as composition."
+    },
+    {
+      "id": "13.31",
+      "number": "13.31",
+      "text": "The relationship between an interface and the class that implements it is _____________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Composition"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Aggregation"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Inheritance"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In object-oriented programming, when a class implements an interface, it is considered a form of inheritance (specifically, interface inheritance). It establishes an 'is-a' relationship between the class and the interface."
+    },
+    {
+      "id": "13.32",
+      "number": "13.32",
+      "text": "The `Rational` class in this chapter is defined as a subclass of `java.lang.Number`. Which of the following expressions is correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\nRational.doubleValue();\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\nRational.doubleValue(\"5/4\");\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\nnew Rational(5, 4).doubleValue();\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\nnew Rational(5, 4).toDoubleValue();\n```"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "```java\nnew Rational(5, 4).intValue();\n```"
+        }
+      ],
+      "inputName": "QE31",
+      "inputType": "checkbox",
+      "correctAnswer": "CE",
+      "explanation": "The `doubleValue()` and `intValue()` methods are abstract instance methods in `java.lang.Number` that must be implemented by the `Rational` subclass. Because they are instance methods, they must be called on a specific object instance (e.g., `new Rational(5, 4)`), not as static methods."
+    },
+    {
+      "id": "13.33",
+      "number": "13.33",
+      "text": "The `Rational` class in this chapter extends `java.lang.Number` and implements `java.lang.Comparable`. Analyze the following code.\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    Number[] numbers = {new Rational(1, 2), new Integer(4), new Double(5.6)};\n    java.util.Arrays.sort(numbers);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because `numbers` is declared as `Number[]`, so you cannot assign `{new Rational(1, 2), new Integer(4), new Double(5.6)}` to it."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a runtime error because `numbers` is declared as `Number[]`, so you cannot assign `{new Rational(1, 2), new Integer(4), new Double(5.6)}` to it."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error because `numbers` is declared as `Number[]`, so you cannot pass it to `Arrays.sort(Object[])`."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a runtime error because the `compareTo` methods in `Rational`, `Integer`, and `Double` classes do not compare the value of one type with a value of another type."
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "`java.util.Arrays.sort()` relies on the `Comparable` interface. For it to work, elements must be 'mutually comparable.' While `Rational`, `Integer`, and `Double` are all `Number` types, an `Integer` cannot be compared to a `Rational` using the standard `compareTo` implementation, which results in a `ClassCastException` at runtime."
+    },
+    {
+      "id": "13.34",
+      "number": "13.34",
+      "text": "Which of the following statements are true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A class should describe a single entity and all the class operations should logically fit together to support a coherent purpose."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A class should always contain a no-arg constructor."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The constructors must always be public."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The constructors may be protected."
+        }
+      ],
+      "inputName": "QD33",
+      "inputType": "checkbox",
+      "correctAnswer": "AD",
+      "explanation": "Statement A defines the principle of cohesion in class design. Statement D is correct because constructors can have any access modifier (`public`, `protected`, `private`, or package-private). Statement B is false as no-arg constructors are optional, and C is false because constructors are not required to be public (e.g., in Singleton patterns or utility classes)."
+    },
+    {
+      "id": "13.35",
+      "number": "13.35",
+      "text": "Which of the following is poor design?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A data field is derived from other data fields in the same class."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A method must be invoked after/before invoking another method in the same class."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A method is an instance method, but it does not reference any instance data fields or invoke instance methods."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A parameter is passed from a constructor to initialize a static data field."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All of the above."
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "All these points represent poor design: (A) derived fields cause redundancy and sync issues; (B) temporal coupling makes a class fragile; (C) such methods should be static; (D) static fields belong to the class, so initializing them inside a constructor (instance-level) leads to unexpected behavior as every new instance overwrites the shared value."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 35
+}

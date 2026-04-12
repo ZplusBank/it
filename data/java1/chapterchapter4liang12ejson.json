@@ -1,83 +1,83 @@
 {
-  "id": "task-2",
-  "label": "chapter=4, username=liang12e",
+  "id": "explainer-1776005911218-rytbh",
+  "label": "chapter4liang12e.json",
   "params": {
-    "chapter": "Chapter 4",
-    "username": "liang12e"
+    "file": "chapter4liang12e.json",
+    "chapter": "Chapter 4"
   },
-  "title": "Chapter Chapter 4 Mathematical Functions, Characters, and Strings",
+  "title": "Mathematical Functions, Characters, and Strings",
   "questions": [
     {
       "id": "4.1",
       "number": "4.1",
-      "text": "&nbsp;\tTo obtain the sine of 35 degrees, use _______.<br>",
+      "text": "To obtain the sine of 35 degrees, use _______.",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "Math.sin(35)"
+          "text": "```java\nMath.sin(35)\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "Math.sin(Math.toRadians(35))"
+          "text": "```java\nMath.sin(Math.toRadians(35))\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "Math.sin(Math.toDegrees(35))"
+          "text": "```java\nMath.sin(Math.toDegrees(35))\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "Math.sin(Math.toRadian(35))"
+          "text": "```java\nMath.sin(Math.toRadian(35))\n```"
         },
         {
           "value": "E",
           "label": "E",
-          "text": "Math.sin(Math.toDegree(35))"
+          "text": "```java\nMath.sin(Math.toDegree(35))\n```"
         }
       ],
       "inputName": "Q0",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Explanation generation failed."
+      "explanation": "In Java, the trigonometric methods in the `Math` class, such as `Math.sin()`, expect the angle argument to be in radians. Therefore, to find the sine of a value in degrees, you must convert it using `Math.toRadians()`."
     },
     {
       "id": "4.2",
       "number": "4.2",
-      "text": "&nbsp;\tTo obtain the arc sine of 0.5, use _______.<br>",
+      "text": "To obtain the arc sine of 0.5, use _______.",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "Math.asin(0.5)"
+          "text": "```java\nMath.asin(0.5)\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "Math.asin(Math.toDegrees(0.5))"
+          "text": "```java\nMath.asin(Math.toDegrees(0.5))\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "Math.sin(Math.toRadians(0.5))"
+          "text": "```java\nMath.sin(Math.toRadians(0.5))\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "Math.sin(0.5)"
+          "text": "```java\nMath.sin(0.5)\n```"
         }
       ],
       "inputName": "Q1",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Explanation generation failed."
+      "explanation": "The `Math.asin()` method is used to calculate the inverse sine (arc sine) of a value. It takes a double value between -1.0 and 1.0 and returns the angle in radians."
     },
     {
       "id": "4.3",
       "number": "4.3",
-      "text": "&nbsp;\tMath.asin(0.5) returns _______.<br>",
+      "text": "What does `Math.asin(0.5)` return?",
       "choices": [
         {
           "value": "A",
@@ -87,28 +87,28 @@
         {
           "value": "B",
           "label": "B",
-          "text": "Math.toRadians(30)"
+          "text": "```java\nMath.toRadians(30)\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "Math.PI / 4"
+          "text": "```java\nMath.PI / 4\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "Math.PI / 2"
+          "text": "```java\nMath.PI / 2\n```"
         }
       ],
       "inputName": "Q2",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Explanation generation failed."
+      "explanation": "The arc sine of 0.5 is 30 degrees. Since `Math.asin()` returns the result in radians, the value returned is equivalent to 30 degrees converted to radians, or `Math.toRadians(30)`."
     },
     {
       "id": "4.4",
       "number": "4.4",
-      "text": "&nbsp;\tMath.sin(Math.PI) returns _______.<br>",
+      "text": "What does `Math.sin(Math.PI)` return?",
       "choices": [
         {
           "value": "A",
@@ -134,12 +134,12 @@
       "inputName": "Q3",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Explanation generation failed."
+      "explanation": "Mathematically, the sine of PI radians (180 degrees) is 0. In Java, `Math.sin()` returns a double, so the result is represented as 0.0."
     },
     {
       "id": "4.5",
       "number": "4.5",
-      "text": "&nbsp;\tMath.cos(Math.PI) returns _______.<br>",
+      "text": "What does `Math.cos(Math.PI)` return?",
       "choices": [
         {
           "value": "A",
@@ -165,43 +165,43 @@
       "inputName": "Q4",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Explanation generation failed."
+      "explanation": "The cosine of PI radians (180 degrees) is -1. Java's `Math.cos()` method returns a double, resulting in -1.0."
     },
     {
       "id": "4.6",
       "number": "4.6",
-      "text": "&nbsp; Which of the following is correct to obtain the square root of 5? Please select all that apply.<br>",
+      "text": "Which of the following is correct to obtain the square root of 5? Please select all that apply.",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "Math.sqrt(5)"
+          "text": "```java\nMath.sqrt(5)\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "Math.sqrt(25)"
+          "text": "```java\nMath.sqrt(25)\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "Math.pow(5, 0.5)"
+          "text": "```java\nMath.pow(5, 0.5)\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "Math.pow(5, 2)"
+          "text": "```java\nMath.pow(5, 2)\n```"
         }
       ],
       "inputName": "QD5",
       "inputType": "checkbox",
       "correctAnswer": "AC",
-      "explanation": "Explanation generation failed."
+      "explanation": "`Math.sqrt(5)` is the standard method for calculating the square root of 5. Alternatively, raising a number to the power of 0.5 is mathematically equivalent to taking the square root, so `Math.pow(5, 0.5)` is also correct."
     },
     {
       "id": "4.7",
       "number": "4.7",
-      "text": "&nbsp;\tWhat is Math.rint(3.6)?<br>",
+      "text": "What is the result of `Math.rint(3.6)`?",
       "choices": [
         {
           "value": "A",
@@ -227,12 +227,12 @@
       "inputName": "Q6",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Explanation generation failed."
+      "explanation": "The `Math.rint()` method returns the double value that is closest to the argument and equal to a mathematical integer. 3.6 is closer to 4 than to 3, so it returns 4.0."
     },
     {
       "id": "4.8",
       "number": "4.8",
-      "text": "&nbsp;\tWhat is Math.round(3.6)?<br>",
+      "text": "What is the result of `Math.round(3.6)`?",
       "choices": [
         {
           "value": "A",
@@ -258,12 +258,12 @@
       "inputName": "Q7",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Explanation generation failed."
+      "explanation": "The `Math.round(double a)` method rounds to the nearest whole number and returns a `long` (or an `int` if the input is float). 3.6 rounds to the integer 4."
     },
     {
       "id": "4.9",
       "number": "4.9",
-      "text": "&nbsp;\tWhat is Math.rint(3.5)?<br>",
+      "text": "What is the result of `Math.rint(3.5)`?",
       "choices": [
         {
           "value": "A",
@@ -294,12 +294,12 @@
       "inputName": "Q8",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Explanation generation failed."
+      "explanation": "The `Math.rint()` method rounds to the nearest integer. If two integers are equally close (like 3 and 4 are to 3.5), it returns the one that is even. Since 4 is even, it returns 4.0."
     },
     {
       "id": "4.10",
       "number": "4.10",
-      "text": "&nbsp;\tWhat is Math.ceil(3.6)?<br>",
+      "text": "What is the result of `Math.ceil(3.6)`?",
       "choices": [
         {
           "value": "A",
@@ -325,12 +325,12 @@
       "inputName": "Q9",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Explanation generation failed."
+      "explanation": "The `Math.ceil()` (ceiling) method returns the smallest double value that is greater than or equal to the argument and is equal to a mathematical integer. For 3.6, the smallest integer greater than or equal to it is 4.0."
     },
     {
       "id": "4.11",
       "number": "4.11",
-      "text": "&nbsp;\tWhat is Math.floor(3.6)?<br>",
+      "text": "What is the result of `Math.floor(3.6)`?",
       "choices": [
         {
           "value": "A",
@@ -356,105 +356,105 @@
       "inputName": "Q10",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "The Math.floor() method returns the largest double value that is less than or equal to the argument and is equal to a mathematical integer. For 3.6, the result is 3.0."
+      "explanation": "The `Math.floor()` method returns the largest double value that is less than or equal to the argument and is equal to a mathematical integer. For 3.6, the largest integer less than or equal to it is 3.0. Because the method returns a `double` type, the answer is 3.0."
     },
     {
       "id": "4.12",
       "number": "4.12",
-      "text": "&nbsp; Which of the following is correct to obtain the min of x, y, z? Please select all that apply.<br>",
+      "text": "Which of the following is correct to obtain the minimum of `x`, `y`, and `z`? Please select all that apply.",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "Math.min(x, Math.min(y, z))"
+          "text": "`Math.min(x, Math.min(y, z))`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "Math.min(Math.min(x, y), z)"
+          "text": "`Math.min(Math.min(x, y), z)`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "Math.min(Math.min(y, z), x)"
+          "text": "`Math.min(Math.min(y, z), x)`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "Math.min(z, Math.min(x, y))"
+          "text": "`Math.min(z, Math.min(x, y))`"
         }
       ],
       "inputName": "QD11",
       "inputType": "checkbox",
       "correctAnswer": "ABCD",
-      "explanation": "The Math.min() method accepts two arguments. To find the minimum of three values (x, y, and z), you must nest the calls. All provided options (A, B, C, and D) are logically equivalent ways to compare three values by nesting the min function."
+      "explanation": "The `Math.min` method in Java accepts two arguments. To find the minimum of three values, you must nest the function calls. Since the minimum operation is associative and commutative, any order of nesting will correctly identify the smallest value among x, y, and z."
     },
     {
       "id": "4.13",
       "number": "4.13",
-      "text": "&nbsp; Which of the following is correct to obtain a random integer between 5 and 10?<br>",
+      "text": "Which of the following is correct to obtain a random integer between 5 and 10 (inclusive)?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "5 + Math.random() * 6"
+          "text": "`5 + Math.random() * 6`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "5 + (int)(Math.random() * 6)"
+          "text": "`5 + (int)(Math.random() * 6)`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "5 + Math.random() * 5"
+          "text": "`5 + Math.random() * 5`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "5 + (int)(Math.random() * 5)"
+          "text": "`5 + (int)(Math.random() * 5)`"
         }
       ],
       "inputName": "Q12",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "To generate a random integer in the range [min, max], the formula is 'min + (int)(Math.random() * (max - min + 1))'. For the range [5, 10], this becomes '5 + (int)(Math.random() * (10 - 5 + 1))', which simplifies to '5 + (int)(Math.random() * 6)'."
+      "explanation": "To obtain a random integer in the range [low, high], the formula is `low + (int)(Math.random() * (high - low + 1))`. For the range [5, 10], the calculation is `5 + (int)(Math.random() * (10 - 5 + 1))`, which simplifies to `5 + (int)(Math.random() * 6)`."
     },
     {
       "id": "4.14",
       "number": "4.14",
-      "text": "&nbsp;\tWhich of the following is the correct expression of character 4?<br>",
+      "text": "Which of the following is the correct expression of character '4'?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "4"
+          "text": "`4`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "\"4\""
+          "text": "`\"4\"`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "'\\0004'"
+          "text": "`'\\\\0004'`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "'4'"
+          "text": "`'4'`"
         }
       ],
       "inputName": "Q13",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "In Java, character literals are defined by enclosing a single character in single quotes. Therefore, '4' is the correct expression for the character literal 4, whereas \"4\" is a String and 4 is an integer."
+      "explanation": "In Java, character literals are represented by enclosing the character in single quotes (e.g., `'4'`). Double quotes represent `String` literals, and an unquoted number represents an integer value."
     },
     {
       "id": "4.15",
       "number": "4.15",
-      "text": "&nbsp;\tA Java character is stored in __________.<br>",
+      "text": "A Java character is stored in __________.",
       "choices": [
         {
           "value": "A",
@@ -480,12 +480,12 @@
       "inputName": "Q14",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Java uses the Unicode character set (specifically UTF-16) to represent characters. A single character (char) in Java occupies 16 bits, which is equivalent to two bytes."
+      "explanation": "Java uses Unicode (specifically UTF-16) to represent characters. The `char` data type in Java is a 16-bit unsigned integer, which occupies exactly two bytes of memory."
     },
     {
       "id": "4.16",
       "number": "4.16",
-      "text": "&nbsp;\tThe Unicode of 'a' is 97. What is the Unicode for 'c'?<br>",
+      "text": "The Unicode of 'a' is 97. What is the Unicode for 'c'?",
       "choices": [
         {
           "value": "A",
@@ -511,43 +511,43 @@
       "inputName": "Q15",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Unicode characters are ordered sequentially. If 'a' has a Unicode value of 97, then 'b' is 98, and 'c' is 99."
+      "explanation": "Characters in the Unicode character set are mapped to sequential integers for the standard Latin alphabet. If 'a' is 97, then 'b' is 98 and 'c' is 99."
     },
     {
       "id": "4.17",
       "number": "4.17",
-      "text": "&nbsp;\tWhich of the following statements prints smith\\exam1\\test.txt?<br>",
+      "text": "Which of the following statements prints `smith\\\\exam1\\test.txt`?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "System.out.println(\"smith\\exam1\\test.txt\");"
+          "text": "`System.out.println(\"smith\\\\exam1\\test.txt\");`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "System.out.println(\"smith\\\\exam1\\\\test.txt\");"
+          "text": "`System.out.println(\"smith\\\\exam1\\\\test.txt\");`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "System.out.println(\"smith\\\"exam1\\\"test.txt\");"
+          "text": "`System.out.println(\"smith\\\"exam1\\\"test.txt\");`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "System.out.println(\"smith\"\\exam1\"\\test.txt\");"
+          "text": "`System.out.println(\"smith\"\\\\exam1\"\\test.txt\");`"
         }
       ],
       "inputName": "Q16",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "In Java Strings, the backslash character '\\\\' is an escape character used to represent special characters (like '\\n' for newline). To print a literal backslash, you must escape it with another backslash, resulting in '\\\\'."
+      "explanation": "In Java String literals, the backslash character `\\\\` is an escape character. To include a single literal backslash in a string, you must use two backslashes `\\\\`. Thus, `\"smith\\\\exam1\\\\test.txt\"` correctly represents the intended path."
     },
     {
       "id": "4.18",
       "number": "4.18",
-      "text": "&nbsp;\tSuppose x is a char variable with a value 'b'. What is the output of the statement System.out.println(++x)?<br>",
+      "text": "Suppose `x` is a `char` variable with a value `'b'`. What is the output of the statement `System.out.println(++x)`?",
       "choices": [
         {
           "value": "A",
@@ -573,43 +573,43 @@
       "inputName": "Q17",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "The increment operator '++' can be applied to the char type because it is represented numerically. Incrementing the character 'b' moves to the next Unicode character, which is 'c'."
+      "explanation": "The prefix increment operator `++` increases the value of the variable by 1. For a `char` variable, this increments its Unicode value. The Unicode value for 'b' is 98; incrementing it yields 99, which corresponds to the character 'c'."
     },
     {
       "id": "4.19",
       "number": "4.19",
-      "text": "&nbsp;\tSuppose i is an int type variable. Which of the following statements display the character whose Unicode is stored in variable i?<br>",
+      "text": "Suppose `i` is an `int` type variable. Which of the following statements displays the character whose Unicode is stored in variable `i`?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "System.out.println(i);"
+          "text": "`System.out.println(i);`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "System.out.println((char)i);"
+          "text": "`System.out.println((char)i);`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "System.out.println((int)i);"
+          "text": "`System.out.println((int)i);`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "System.out.println(i + \" \");"
+          "text": "`System.out.println(i + \" \");`"
         }
       ],
       "inputName": "Q18",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "To display the character corresponding to a Unicode value stored in an integer variable, you must perform an explicit cast to the 'char' type using (char)i."
+      "explanation": "Since `i` is an integer, `System.out.println(i)` would print its numeric value. To print the character associated with that numeric Unicode value, you must perform an explicit cast to the `char` data type using `(char)i`."
     },
     {
       "id": "4.20",
       "number": "4.20",
-      "text": "&nbsp;\tWill System.out.println((char)4) display 4?<br>",
+      "text": "Will `System.out.println((char)4)` display the digit '4'?",
       "choices": [
         {
           "value": "A",
@@ -625,12 +625,12 @@
       "inputName": "Q19",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "No. The integer 4 represents a non-printable control character in Unicode (End of Transmission). The character literal '4' actually corresponds to the Unicode value 52."
+      "explanation": "Casting the integer `4` to a `char` results in the character at Unicode position 4, which is a non-printable control character (End of Transmission). The Unicode value for the digit character '4' is actually 52."
     },
     {
       "id": "4.21",
       "number": "4.21",
-      "text": "&nbsp;\tWhat is the output of System.out.println('z' - 'a')?<br>",
+      "text": "What is the output of `System.out.println('z' - 'a')`?",
       "choices": [
         {
           "value": "A",
@@ -656,12 +656,12 @@
       "inputName": "Q20",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Characters in Java are represented by Unicode/ASCII values. Subtracting 'a' (97) from 'z' (122) performs integer subtraction of their numeric values, resulting in 25."
+      "explanation": "In Java, when arithmetic operations are performed on `char` values, they are promoted to `int` based on their Unicode values. The Unicode value for 'z' is 122 and 'a' is 97. Therefore, 122 - 97 = 25."
     },
     {
       "id": "4.22",
       "number": "4.22",
-      "text": "&nbsp;\tAn int variable can hold __________. Please select all that apply.<br>",
+      "text": "An `int` variable can hold __________. Please select all that apply.",
       "choices": [
         {
           "value": "A",
@@ -692,12 +692,12 @@
       "inputName": "QE21",
       "inputType": "checkbox",
       "correctAnswer": "AB",
-      "explanation": "In Java, an int can store integer literals (120) and character literals ('x') because chars are implicitly convertible to integers based on their Unicode values. It cannot store doubles (120.0) without a cast, nor String objects (\"x\", \"120\")."
+      "explanation": "An `int` can hold integer literals like 120. It can also hold `char` literals like 'x' because characters are automatically promoted to their numeric Unicode values. It cannot hold `double` values (120.0) or `String` objects (\"x\", \"120\")."
     },
     {
       "id": "4.23",
       "number": "4.23",
-      "text": "&nbsp;\tWhich of the following assignment statements is correct? Please select all that apply.<br>",
+      "text": "Which of the following assignment statements is correct? Please select all that apply.",
       "choices": [
         {
           "value": "A",
@@ -712,7 +712,7 @@
         {
           "value": "C",
           "label": "C",
-          "text": "char c =  \"d\";"
+          "text": "char c = \"d\";"
         },
         {
           "value": "D",
@@ -723,12 +723,12 @@
       "inputName": "QD22",
       "inputType": "checkbox",
       "correctAnswer": "AB",
-      "explanation": "A char variable can be assigned a character literal using single quotes ('d') or an integer literal (100) representing a Unicode value. Double quotes denote Strings, which cannot be assigned to a char variable."
+      "explanation": "Option A is a standard character assignment. Option B is valid because a `char` is a 16-bit unsigned integer, so the integer 100 is assigned as the Unicode character for 100. Options C and D are incorrect because you cannot assign a `String` (double quotes) to a `char` variable."
     },
     {
       "id": "4.24",
       "number": "4.24",
-      "text": "&nbsp;\t'3' - '2' + 'm' / 'n' is ______.<br>",
+      "text": "The result of `'3' - '2' + 'm' / 'n'` is ______.",
       "choices": [
         {
           "value": "A",
@@ -754,79 +754,79 @@
       "inputName": "Q23",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Operations on char values use their numeric Unicode codes. '3' - '2' equals 1. Because 'm' has a lower Unicode value than 'n', the integer division 'm' / 'n' results in 0. Finally, 1 + 0 equals 1."
+      "explanation": "Arithmetic follows operator precedence. `'3' - '2'` results in $51 - 50 = 1$. In the expression `'m' / 'n'`, since the Unicode value of 'm' (109) is less than 'n' (110), the integer division results in 0. Finally, $1 + 0 = 1$."
     },
     {
       "id": "4.25",
       "number": "4.25",
-      "text": "&nbsp; To check whether a char variable ch is an uppercase letter, you write ___________.<br>",
+      "text": "To check whether a `char` variable `ch` is an uppercase letter, you write ___________.",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "(ch &gt;= 'A' &amp;&amp; ch &gt;= 'Z')"
+          "text": "`(ch >= 'A' && ch >= 'Z')`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "(ch &gt;= 'A' &amp;&amp; ch &lt;= 'Z')"
+          "text": "`(ch >= 'A' && ch <= 'Z')`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "(ch &gt;= 'A' || ch &lt;= 'Z')"
+          "text": "`(ch >= 'A' || ch <= 'Z')`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "('A' &lt;= ch &lt;= 'Z')"
+          "text": "('A' <= ch <= 'Z')"
         }
       ],
       "inputName": "Q24",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "To verify if a character is within a range, you must use a logical AND (&&) to ensure the value is both greater than or equal to the lower bound ('A') and less than or equal to the upper bound ('Z'). Java does not support chained comparison syntax like 'A' <= ch <= 'Z'."
+      "explanation": "To verify a range, you must check that the value is both greater than or equal to the start ('A') AND less than or equal to the end ('Z'). Option D is invalid syntax in Java."
     },
     {
       "id": "4.26",
       "number": "4.26",
-      "text": "&nbsp;\tWhich of the following is not a correct method in the Character class? Please select all that apply.<br>",
+      "text": "Which of the following is not a correct method in the `Character` class? Please select all that apply.",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "isLetterOrDigit(char)"
+          "text": "`isLetterOrDigit(char)`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "isLetter(char)"
+          "text": "`isLetter(char)`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "isDigit()"
+          "text": "`isDigit()`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "toLowerCase(char)"
+          "text": "`toLowerCase(char)`"
         },
         {
           "value": "E",
           "label": "E",
-          "text": "toUpperCase()"
+          "text": "`toUpperCase()`"
         }
       ],
       "inputName": "QE25",
       "inputType": "checkbox",
       "correctAnswer": "CE",
-      "explanation": "Most utility methods in the Character class, such as isDigit() and toUpperCase(), are static and require a char argument (e.g., Character.isDigit(ch)). Therefore, the no-argument versions listed in C and E are incorrect."
+      "explanation": "The methods in the `Character` class are static and require a `char` argument. Therefore, `isDigit()` and `toUpperCase()` are incorrect because they are missing the necessary parameter."
     },
     {
       "id": "4.27",
       "number": "4.27",
-      "text": "&nbsp; Suppose s is a string with the value \"java\". What will be assigned to x if you execute the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">char</span>&nbsp;x&nbsp;=&nbsp;s.charAt(<span class=\"constant\">4</span>);<br></span>",
+      "text": "Suppose `s` is a string with the value `\"java\"`. What will be assigned to `x` if you execute the following code?\n\n```java\nchar x = s.charAt(4);\n```",
       "choices": [
         {
           "value": "A",
@@ -847,12 +847,12 @@
       "inputName": "Q26",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Strings in Java are zero-indexed. For the string \"java\", the valid indices are 0, 1, 2, and 3. Accessing index 4 is beyond the end of the string, resulting in a StringIndexOutOfBoundsException."
+      "explanation": "String indexing in Java is zero-based. For the string \"java\", the valid indices are 0, 1, 2, and 3. Attempting to access `charAt(4)` results in a `StringIndexOutOfBoundsException`."
     },
     {
       "id": "4.28",
       "number": "4.28",
-      "text": "&nbsp;\tThe expression \"Java \" + 1 + 2 + 3 evaluates to ________.<br>",
+      "text": "The expression `\"Java \" + 1 + 2 + 3` evaluates to ________.",
       "choices": [
         {
           "value": "A",
@@ -883,12 +883,12 @@
       "inputName": "Q27",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "In Java, the '+' operator is evaluated from left to right. When a String is encountered first (\"Java \"), all subsequent operands (1, 2, and 3) are treated as Strings and concatenated one by one, resulting in \"Java 123\"."
+      "explanation": "In Java, the `+` operator is evaluated from left to right. Since the first operand is a `String`, all subsequent `+` operations result in string concatenation rather than numeric addition. Thus, it becomes \"Java 1\", then \"Java 12\", then \"Java 123\"."
     },
     {
       "id": "4.29",
       "number": "4.29",
-      "text": "&nbsp;\tNote that the Unicode for character A is 65. The expression \"A\" + 1 evaluates to ________.<br>",
+      "text": "Note that the Unicode for character 'A' is 65. The expression `\"A\" + 1` evaluates to ________.",
       "choices": [
         {
           "value": "A",
@@ -914,12 +914,12 @@
       "inputName": "Q28",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "When a String (\"A\") is concatenated with an integer (1), the integer is converted to its String representation. The result is the concatenated String \"A1\"."
+      "explanation": "Because \"A\" is a `String` literal, the `+` operator acts as string concatenation, appending the integer 1 to the string."
     },
     {
       "id": "4.30",
       "number": "4.30",
-      "text": "&nbsp;\tNote that the Unicode for character A is 65. The expression 'A' + 1 evaluates to ________.<br>",
+      "text": "Note that the Unicode for character 'A' is 65. The expression `'A' + 1` evaluates to ________.",
       "choices": [
         {
           "value": "A",
@@ -945,12 +945,12 @@
       "inputName": "Q29",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Unlike String concatenation, adding an integer to a char ('A') triggers numeric promotion. The Unicode value of 'A' (65) is added to 1, resulting in the integer value 66."
+      "explanation": "Because 'A' is a `char` literal, it is treated as its numeric Unicode value (65) when used with an arithmetic operator. Adding 1 results in the integer 66."
     },
     {
       "id": "4.31",
       "number": "4.31",
-      "text": "&nbsp;\tWhich of the following is the correct statement to return JAVA?<br>",
+      "text": "Which of the following is the correct statement to return \"JAVA\"?",
       "choices": [
         {
           "value": "A",
@@ -976,12 +976,12 @@
       "inputName": "Q30",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "The toUpperCase() method in Java is an instance method of the String class that takes no arguments and returns a new string with all characters converted to uppercase. Option C correctly calls this method on the string literal \"Java\"."
+      "explanation": "In Java, `toUpperCase()` is an instance method of the `String` class. It does not take any arguments and is called on the string object itself."
     },
     {
       "id": "4.32",
       "number": "4.32",
-      "text": "&nbsp;\tSuppose s1 and s2 are two strings. Which of the following statements or expressions is incorrect? Please select all that apply.<br>",
+      "text": "Suppose `s1` and `s2` are two strings. Which of the following statements or expressions is incorrect? Please select all that apply.",
       "choices": [
         {
           "value": "A",
@@ -1007,12 +1007,12 @@
       "inputName": "QD31",
       "inputType": "checkbox",
       "correctAnswer": "ABCD",
-      "explanation": "All options are incorrect in Java: A uses the minus operator which isn't defined for Strings; B assigns an int result from compareTo to a boolean; C uses array indexing syntax [] instead of charAt(); and D attempts to access an index equal to the string length, which causes a StringIndexOutOfBoundsException."
+      "explanation": "All options are incorrect: A) Strings do not support the subtraction (-) operator. B) `compareTo` returns an `int`, not a `boolean`. C) Java strings use the `charAt(index)` method, not the array bracket `[]` syntax. D) String indices are zero-based, meaning the last valid index is `length() - 1`; `charAt(s1.length())` will throw a `StringIndexOutOfBoundsException`."
     },
     {
       "id": "4.33",
       "number": "4.33",
-      "text": "&nbsp;\tSuppose s1 and s2 are two strings. What is the result of the following code?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>&nbsp;s1.equals(s2) == s2.equals(s1)<br></span>",
+      "text": "Suppose `s1` and `s2` are two strings. What is the result of the following code?\n\n```java\ns1.equals(s2) == s2.equals(s1)\n```",
       "choices": [
         {
           "value": "A",
@@ -1028,12 +1028,12 @@
       "inputName": "Q32",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "The equals() method in Java is symmetric, meaning s1.equals(s2) will always return the same boolean value as s2.equals(s1). Therefore, comparing the results of these two expressions with == will always yield true."
+      "explanation": "The `equals` method in the `String` class is symmetric. If `s1` is equal to `s2`, both sides of the `==` operator will be `true`. If they are not equal, both sides will be `false`. In both cases, the result of the comparison is `true`."
     },
     {
       "id": "4.34",
       "number": "4.34",
-      "text": "&nbsp;\t\"abc\".compareTo(\"aba\") returns ___________.<br>",
+      "text": "What does the expression `\"abc\".compareTo(\"aba\")` return?",
       "choices": [
         {
           "value": "A",
@@ -1064,12 +1064,12 @@
       "inputName": "Q33",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "The compareTo() method compares strings lexicographically based on Unicode values. For \"abc\" and \"aba\", the first two characters are identical, but the third characters 'c' and 'a' differ. Since 'c' (ASCII 99) minus 'a' (ASCII 97) is 2, the method returns 2."
+      "explanation": "The `compareTo` method compares strings lexicographically based on the Unicode value of each character. It returns the difference between the first two characters that differ. In this case, 'c' (Unicode 99) minus 'a' (Unicode 97) equals 2."
     },
     {
       "id": "4.35",
       "number": "4.35",
-      "text": "&nbsp;\t\"AbA\".compareToIgnoreCase(\"abC\") returns ___________.<br>",
+      "text": "What does the expression `\"AbA\".compareToIgnoreCase(\"abC\")` return?",
       "choices": [
         {
           "value": "A",
@@ -1100,12 +1100,12 @@
       "inputName": "Q34",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "The compareToIgnoreCase() method treats uppercase and lowercase letters as the same. Comparing \"aba\" (from \"AbA\") to \"abc\" (from \"abC\") results in the difference between 'a' and 'c', which is -2."
+      "explanation": "The `compareToIgnoreCase` method treats uppercase and lowercase characters as identical. The comparison effectively becomes `\"aba\".compareTo(\"abc\")`. Since 'a' - 'c' is 97 - 99, the result is -2."
     },
     {
       "id": "4.36",
       "number": "4.36",
-      "text": "&nbsp;\t____________________ returns true. Please select all that apply.<br>",
+      "text": "Which of the following expressions return `true`? Please select all that apply.",
       "choices": [
         {
           "value": "A",
@@ -1136,12 +1136,12 @@
       "inputName": "QE35",
       "inputType": "checkbox",
       "correctAnswer": "CDE",
-      "explanation": "Options C, D, and E return true because equalsIgnoreCase() ignores case differences between 'p' and 'P', and equals() returns true for identical strings. Options A and B return the integer 0 (representing equality) rather than the boolean true."
+      "explanation": "Options C, D, and E return `true` because they are boolean expressions where the content matches. Options A and B are incorrect because `compareToIgnoreCase` returns an `int` (0 for equality), not a `boolean`."
     },
     {
       "id": "4.37",
       "number": "4.37",
-      "text": "&nbsp;\tWhat is the return value of \"SELECT\".substring(0, 5)?<br>",
+      "text": "What is the return value of `\"SELECT\".substring(0, 5)`?",
       "choices": [
         {
           "value": "A",
@@ -1167,12 +1167,12 @@
       "inputName": "Q36",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "The substring(beginIndex, endIndex) method extracts characters starting at beginIndex and ending at endIndex - 1. For (0, 5), it takes characters at indices 0, 1, 2, 3, and 4, which are 'S', 'E', 'L', 'E', 'C'."
+      "explanation": "In Java, `substring(beginIndex, endIndex)` extracts characters from `beginIndex` up to, but not including, `endIndex`. Characters at indices 0, 1, 2, 3, and 4 are 'S', 'E', 'L', 'E', 'C'."
     },
     {
       "id": "4.38",
       "number": "4.38",
-      "text": "&nbsp;\tWhat is the return value of \"SELECT\".substring(4, 4)?<br>",
+      "text": "What is the return value of `\"SELECT\".substring(4, 4)`?",
       "choices": [
         {
           "value": "A",
@@ -1198,12 +1198,12 @@
       "inputName": "Q37",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "In Java, if the beginIndex is equal to the endIndex in the substring method, the result is always an empty string with a length of zero."
+      "explanation": "If the `beginIndex` and `endIndex` in the `substring` method are equal, the result is an empty string."
     },
     {
       "id": "4.39",
       "number": "4.39",
-      "text": "&nbsp;\tTo check if a string s contains the prefix \"Java\", you may write _____________. Please select all that apply.<br>",
+      "text": "To check if a string `s` contains the prefix \"Java\", you may write _____________. Please select all that apply.",
       "choices": [
         {
           "value": "A",
@@ -1223,18 +1223,18 @@
         {
           "value": "D",
           "label": "D",
-          "text": "if (s.charAt(0) == 'J' &amp;&amp; s.charAt(1) == 'a' &amp;&amp; s.charAt(2) == 'v' &amp;&amp; s.charAt(3) == 'a') ..."
+          "text": "if (s.charAt(0) == 'J' && s.charAt(1) == 'a' && s.charAt(2) == 'v' && s.charAt(3) == 'a') ..."
         }
       ],
       "inputName": "QD38",
       "inputType": "checkbox",
       "correctAnswer": "ABCD",
-      "explanation": "All four methods effectively check for the prefix \"Java\": startsWith is the dedicated method; indexOf == 0 ensures the substring is at the start; substring(0, 4) extracts the first four characters for comparison; and the charAt logic manually verifies each leading character."
+      "explanation": "All these methods correctly check if the string starts with \"Java\". A is the standard method, B checks if the first occurrence is at index 0, C extracts the first 4 characters and compares them, and D manually checks the first four characters."
     },
     {
       "id": "4.40",
       "number": "4.40",
-      "text": "&nbsp;\tTo check if a string s contains the suffix \"Java\", you may write _____________. Please select all that apply.<br>",
+      "text": "To check if a string `s` contains the suffix \"Java\", you may write _____________. Please select all that apply.",
       "choices": [
         {
           "value": "A",
@@ -1244,7 +1244,7 @@
         {
           "value": "B",
           "label": "B",
-          "text": "if (s.lastIndexOf(\"Java\") &gt;= 0) ..."
+          "text": "if (s.lastIndexOf(\"Java\") >= 0) ..."
         },
         {
           "value": "C",
@@ -1259,116 +1259,116 @@
         {
           "value": "E",
           "label": "E",
-          "text": "if (s.charAt(s.length() - 4) == 'J' &amp;&amp; s.charAt(s.length() - 3) == 'a' &amp;&amp; s.charAt(s.length() - 2) == 'v' &amp;&amp; s.charAt(s.length() - 1) == 'a') ..."
+          "text": "if (s.charAt(s.length() - 4) == 'J' && s.charAt(s.length() - 3) == 'a' && s.charAt(s.length() - 2) == 'v' && s.charAt(s.length() - 1) == 'a') ..."
         }
       ],
       "inputName": "QE39",
       "inputType": "checkbox",
       "correctAnswer": "ACE",
-      "explanation": "Options A, C, and E are correct: A uses the built-in endsWith method; C extracts exactly the last 4 characters; and E manually checks the last 4 characters. Option B is wrong because it only checks if \"Java\" exists anywhere, and D extracts 5 characters instead of 4."
+      "explanation": "A is the dedicated method for checking suffixes. C extracts the last four characters correctly. E manually verifies the final four characters. B is incorrect because a positive index doesn't guarantee the match is at the very end. D is incorrect because it extracts five characters to compare against a four-character string."
     },
     {
       "id": "4.41",
       "number": "4.41",
-      "text": "&nbsp; The __________ method parses a string s to an int value.<br>",
+      "text": "The __________ method parses a string `s` to an `int` value.",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "integer.parseInt(s);"
+          "text": "`integer.parseInt(s);`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "Integer.parseInt(s);"
+          "text": "`Integer.parseInt(s);`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "integer.parseInteger(s);"
+          "text": "`integer.parseInteger(s);`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "Integer.parseInteger(s);"
+          "text": "`Integer.parseInteger(s);`"
         }
       ],
       "inputName": "Q40",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "In Java, the Integer wrapper class contains the static method parseInt(String s) which is used to convert a numeric string into a primitive int. Options A and C are incorrect because Java is case-sensitive (requiring 'Integer'), and Options C and D use the incorrect method name 'parseInteger'."
+      "explanation": "In Java, the `Integer` wrapper class provides the static method `parseInt(String s)` to convert a numeric string into a primitive `int`. Choice A is incorrect because Java is case-sensitive and the class name must be capitalized. Choices C and D use a method name that does not exist."
     },
     {
       "id": "4.42",
       "number": "4.42",
-      "text": "&nbsp; The __________ method parses a string s to a double value.<br>",
+      "text": "The __________ method parses a string `s` to a `double` value.",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "double.parseDouble(s);"
+          "text": "`double.parseDouble(s);`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "Double.parsedouble(s);"
+          "text": "`Double.parsedouble(s);`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "double.parse(s);"
+          "text": "`double.parse(s);`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "Double.parseDouble(s);"
+          "text": "`Double.parseDouble(s);`"
         }
       ],
       "inputName": "Q41",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "The Double wrapper class provides the static method parseDouble(String s) to convert a string into a primitive double value. Java's case-sensitivity requires the class to start with a capital 'D' and the method to use camelCase (parseDouble)."
+      "explanation": "The `Double` wrapper class provides the static method `parseDouble(String s)` to convert a string to a primitive `double`. Java method naming conventions use camelCase, making `parseDouble` the correct method name."
     },
     {
       "id": "4.43",
       "number": "4.43",
-      "text": "&nbsp; Which of the following is an invalid specifier for the printf statement?<br>",
+      "text": "Which of the following is an invalid specifier for the `printf` statement?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "%4c"
+          "text": "`%4c`"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "%10b"
+          "text": "`%10b`"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "%6d"
+          "text": "`%6d`"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "%8.2d"
+          "text": "`%8.2d`"
         },
         {
           "value": "E",
           "label": "E",
-          "text": "%10.2e"
+          "text": "`%10.2e`"
         }
       ],
       "inputName": "Q42",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "The %d specifier is used for decimal integers. Precision settings (like '.2') are only applicable to floating-point types like %f or %e to specify decimal places. Attempting to use a precision value with an integer specifier like %d results in an IllegalFormatFlagsException."
+      "explanation": "The `%d` specifier is used for integers. Integer format specifiers cannot include a precision component (the `.2` part). Precision is reserved for floating-point numbers (`%f`, `%e`) or strings (`%s`)."
     },
     {
       "id": "4.44",
       "number": "4.44",
-      "text": "&nbsp; The statement System.out.printf(\"%3.1f\", 1234.56) outputs ___________.<br>",
+      "text": "The statement `System.out.printf(\"%3.1f\", 1234.56)` outputs ___________.",
       "choices": [
         {
           "value": "A",
@@ -1399,12 +1399,12 @@
       "inputName": "Q43",
       "inputType": "radio",
       "correctAnswer": "E",
-      "explanation": "The format specifier %3.1f indicates a floating-point number with one decimal place. When 1234.56 is rounded to one decimal place, it becomes 1234.6. Although the minimum width is specified as 3, Java will expand the width automatically to accommodate the full length of the number."
+      "explanation": "The format specifier `%3.1f` indicates a total minimum width of 3 characters and 1 decimal place of precision. Since the value `1234.56` rounded to one decimal place is `1234.6`, and Java expands the width automatically to fit the actual value, the output is `1234.6`."
     },
     {
       "id": "4.45",
       "number": "4.45",
-      "text": "&nbsp; The statement System.out.printf(\"%3.1e\", 1234.56) outputs ___________.<br>",
+      "text": "The statement `System.out.printf(\"%3.1e\", 1234.56)` outputs ___________.",
       "choices": [
         {
           "value": "A",
@@ -1435,12 +1435,12 @@
       "inputName": "Q44",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "The %e specifier formats the number in scientific notation. For the value 1234.56 (which is 1.23456 x 10^3), the precision of '.1' rounds the mantissa to one decimal place, resulting in '1.2e+03'."
+      "explanation": "The `%e` specifier formats the number in computer scientific notation. `%3.1e` requests one decimal place of precision. `1234.56` is `1.23456 * 10^3`, which rounds to `1.2e+03` with one decimal place."
     },
     {
       "id": "4.46",
       "number": "4.46",
-      "text": "&nbsp; The statement System.out.printf(\"%5d\", 123456) outputs ___________.<br>",
+      "text": "The statement `System.out.printf(\"%5d\", 123456)` outputs ___________.",
       "choices": [
         {
           "value": "A",
@@ -1466,12 +1466,12 @@
       "inputName": "Q45",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "The specifier %5d indicates a minimum field width of 5 characters for an integer. Since the value 123456 contains 6 digits, it exceeds the minimum width, and Java will print the entire number without truncation."
+      "explanation": "The specifier `%5d` requests a minimum width of 5 characters for an integer. Because the input value `123456` contains 6 digits, Java ignores the minimum width requirement and prints the full value."
     },
     {
       "id": "4.47",
       "number": "4.47",
-      "text": "&nbsp; The statement System.out.printf(\"%10s\", 123456) outputs ___________. (Note: * represents a space)<br>",
+      "text": "The statement `System.out.printf(\"%10s\", 123456)` outputs ___________. (Note: `*` represents a space)",
       "choices": [
         {
           "value": "A",
@@ -1497,12 +1497,12 @@
       "inputName": "Q46",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "The specifier %10s formats the input as a string with a minimum width of 10 characters. Because the value 123456 has 6 characters, and positive width values indicate right-justification, Java adds 4 leading spaces to the front of the string."
+      "explanation": "The `%10s` specifier treats the input as a string and specifies a minimum width of 10. By default, output in `printf` is right-justified. Since \"123456\" has 6 characters, it is padded with 4 leading spaces."
     },
     {
       "id": "4.48",
       "number": "4.48",
-      "text": "&nbsp; Analyze the following code:<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">int</span>&nbsp;i&nbsp;=&nbsp;<span class=\"constant\">3434</span>;&nbsp;<span class=\"keyword\">double</span>&nbsp;d&nbsp;=&nbsp;<span class=\"constant\">3434</span>;<br>System.out.printf(<span class=\"literal\">\"%5<span class=\"literal\">.</span>1f&nbsp;%5<span class=\"literal\">.</span>1f\"</span>,&nbsp;i,&nbsp;d);<br></span>",
+      "text": "Analyze the following code:\n\n```java\nint i = 3434; \ndouble d = 3434;\nSystem.out.printf(\"%5.1f %5.1f\", i, d);\n```",
       "choices": [
         {
           "value": "A",
@@ -1523,7 +1523,7 @@
       "inputName": "Q47",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "The %f format specifier is specifically designed for floating-point values (float or double). Passing an integer variable 'i' to %f results in an IllegalFormatConversionException because the printf method does not automatically cast integers to floating-point types to match the specifier."
+      "explanation": "In Java's `printf` method, the `%f` specifier requires a floating-point argument (like `float` or `double`). Passing an `int` variable (`i`) to a `%f` specifier results in a `java.util.IllegalFormatConversionException` at runtime."
     }
   ],
   "status": "completed",

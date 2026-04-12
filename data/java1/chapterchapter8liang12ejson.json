@@ -1,0 +1,652 @@
+{
+  "id": "explainer-1776005911218-ry6ij",
+  "label": "chapter8liang12e.json",
+  "params": {
+    "file": "chapter8liang12e.json",
+    "chapter": "Chapter 8"
+  },
+  "title": "Multidimensional Arrays",
+  "questions": [
+    {
+      "id": "8.1",
+      "number": "8.1",
+      "text": "Which of the following statements are correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```char[][] charArray = {'a', 'b'};```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```char[2][2] charArray = {{'a', 'b'}, {'c', 'd'}};```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```char[2][] charArray = {{'a', 'b'}, {'c', 'd'}};```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```char[][] charArray = {{'a', 'b'}, {'c', 'd'}};```"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In Java, you cannot specify dimensions in the type part of the declaration (e.g., char[2][2] is invalid). Choice A is incorrect because it attempts to assign a 1D array to a 2D array variable. Choice D uses the correct shorthand syntax for initializing a 2D array."
+    },
+    {
+      "id": "8.2",
+      "number": "8.2",
+      "text": "What is the indexed variable for the element at the first row and first column in array `a`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```a[0][0]```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```a[1][1]```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```a[0][1]```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```a[1][0]```"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Java uses zero-based indexing for all arrays. The first row is at index 0 and the first column is at index 0, so the element is accessed as `a[0][0]`."
+    },
+    {
+      "id": "8.3",
+      "number": "8.3",
+      "text": "When you create an array using the following statement, the element values are automatically initialized to 0.\n\n```java\nint[][] matrix = new int[5][5];\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, when an array of primitive numeric types (like `int`) is created using the `new` keyword, all its elements are automatically initialized to the default value for that type, which is `0`."
+    },
+    {
+      "id": "8.4",
+      "number": "8.4",
+      "text": "Assume ```double[][] x = new double[4][5]```, what are `x.length` and `x[2].length`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4 and 4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4 and 5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5 and 4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5 and 5"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "For a 2D array, `x.length` refers to the number of rows (the first dimension), which is 4. `x[2].length` refers to the number of columns in the row at index 2, which is 5."
+    },
+    {
+      "id": "8.5",
+      "number": "8.5",
+      "text": "How many elements are in array matrix (```int[][] matrix = new int[5][5]```)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "14"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "20"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "25"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "30"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The total number of elements in a rectangular 2D array is the product of the row length and the column length. 5 rows * 5 columns = 25 elements."
+    },
+    {
+      "id": "8.6",
+      "number": "8.6",
+      "text": "Assume ```int[][] x = {{1, 2}, {3, 4}, {5, 6}}```, what are `x.length` and `x[0].length`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2 and 1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2 and 2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3 and 2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2 and 3"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "3 and 3"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`x.length` is the number of rows (3: `{1, 2}`, `{3, 4}`, and `{5, 6}`). `x[0].length` is the number of elements in the first row `{1, 2}`, which is 2."
+    },
+    {
+      "id": "8.7",
+      "number": "8.7",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    boolean[][] x = new boolean[3][];\n    x[0] = new boolean[1]; \n    x[1] = new boolean[2];\n    x[2] = new boolean[3];\n \n    System.out.println(\"x[2][2] is \" + x[2][2]);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because new boolean[3][] is wrong."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a runtime error because x[2][2] is null."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program runs and displays x[2][2] is null."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program runs and displays x[2][2] is true."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The program runs and displays x[2][2] is false."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "The code creates a ragged array. `x[2]` is initialized as an array of 3 booleans. In Java, boolean array elements are automatically initialized to `false`. Therefore, `x[2][2]` exists and is `false`."
+    },
+    {
+      "id": "8.8",
+      "number": "8.8",
+      "text": "Assume ```int[][] x = {{1, 2}, {3, 4, 5}, {5, 6, 5, 9}}```, what are `x[0].length`, `x[1].length`, and `x[2].length`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2, 3, and 3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2, 3, and 4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3, 3, and 3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3, 3, and 4"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "2, 2, and 2"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "This is a ragged array with three rows of different lengths. The first row has 2 elements, the second has 3, and the third has 4."
+    },
+    {
+      "id": "8.9",
+      "number": "8.9",
+      "text": "What is the output of the following code?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[][] matrix =\n      {{1, 2, 3, 4},\n       {4, 5, 6, 7},\n       {8, 9, 10, 11},\n       {12, 13, 14, 15}};\n\n    for (int i = 0; i < 4; i++)\n      System.out.print(matrix[i][1] + \" \");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 2 3 4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4 5 6 7"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1 3 8 12"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2 5 9 13"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "3 6 10 14"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The loop iterates through each row `i` (from 0 to 3) and prints the element at index 1 (the second column). These elements are 2, 5, 9, and 13."
+    },
+    {
+      "id": "8.10",
+      "number": "8.10",
+      "text": "What is the output of the following program?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[][] values = {{3, 4, 5, 1}, {33, 6, 1, 2}};\n\n    int v = values[0][0];\n    for (int row = 0; row < values.length; row++)\n      for (int column = 0; column < values[row].length; column++)\n        if (v < values[row][column])\n          v = values[row][column];\n\n    System.out.print(v);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "6"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "33"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "This program iterates through every element in the 2D array and uses variable `v` to keep track of the largest value found. The largest value in the provided array is 33."
+    },
+    {
+      "id": "8.11",
+      "number": "8.11",
+      "text": "What is the output of the following program?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[][] values = {{3, 4, 5, 1}, {33, 6, 1, 2}};\n\n    for (int row = 0; row < values.length; row++) {\n      java.util.Arrays.sort(values[row]);\n      for (int column = 0; column < values[row].length; column++)\n        System.out.print(values[row][column] + \" \");\n      System.out.println();\n    }\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program prints two rows 3 4 5 1 followed by 33 6 1 2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program prints on row 3 4 5 1 33 6 1 2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program prints two rows 3 4 5 1 followed by 2 1 6 33"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program prints two rows 1 3 4 5 followed by 1 2 6 33"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The program prints one row 1 3 4 5 1 2 6 33"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The program iterates through each row of the 2D array and applies `java.util.Arrays.sort()` to that row. Sorting `{3, 4, 5, 1}` results in `1 3 4 5`, and sorting `{33, 6, 1, 2}` results in `1 2 6 33`. The nested loops then print these sorted rows on separate lines."
+    },
+    {
+      "id": "8.12",
+      "number": "8.12",
+      "text": "What is the output of the following code?\n\n```java\npublic class Test5 {\n  public static void main(String[] args) {\n    int[][] matrix =\n      {{1, 2, 3, 4},\n       {4, 5, 6, 7},\n       {8, 9, 10, 11},\n       {12, 13, 14, 15}};\n\n    for (int i = 0; i < 4; i++)\n      System.out.print(matrix[1][i] + \" \");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 2 3 4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4 5 6 7"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1 3 8 12"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2 5 9 13"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "3 6 10 14"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The code accesses `matrix[1][i]`. In Java, array indices are zero-based, so `matrix[1]` refers to the second row of the 2D array, which is `{4, 5, 6, 7}`. The loop iterates through all four elements of this row and prints them."
+    },
+    {
+      "id": "8.13",
+      "number": "8.13",
+      "text": "What is the output of the following program?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[][] values = {{3, 4, 5, 1}, {33, 6, 1, 2}};\n\n    int v = values[0][0];\n    for (int[] list : values)\n      for (int element : list)\n        if (v > element)\n          v = element;\n\n    System.out.print(v);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "6"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "33"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The program finds the minimum value in the 2D array. It initializes `v` with the first element (3) and then uses nested enhanced for-loops to compare `v` with every other element. The smallest value found in both rows is 1."
+    },
+    {
+      "id": "8.14",
+      "number": "8.14",
+      "text": "Suppose a method `p` has the following header. What return statement may be used in `p()`?\n\n```java\npublic static int[][] p()\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\nreturn 1;\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\nreturn {1, 2, 3};\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\nreturn int[]{1, 2, 3};\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\nreturn new int[]{1, 2, 3};\n```"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "```java\nreturn new int[][]{{1, 2, 3}, {2, 4, 5}};\n```"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "The return type of method `p` is `int[][]`, which is a two-dimensional array of integers. Choice E is the only valid way to instantiate and return a 2D array. Choices B, C, and D describe 1D arrays or have incorrect syntax."
+    },
+    {
+      "id": "8.15",
+      "number": "8.15",
+      "text": "What is the output of the following program?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[][] values = {{3, 4, 5, 1}, {33, 6, 1, 2}};\n\n    for (int row = 0; row < values.length; row++) {\n      System.out.print(m(values[row]) + \" \");\n    }\n  }\n\n  public static int m(int[] list) {\n    int v = list[0];\n    for (int i = 1; i < list.length; i++)\n      if (v < list[i])\n        v = list[i];\n    return v;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3 33"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5 6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5 33"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "33 5"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The method `m` finds the maximum value in a 1D array. The `main` method iterates through the 2D array `values` and calls `m` for each row. The maximum of the first row `{3, 4, 5, 1}` is 5, and the maximum of the second row `{33, 6, 1, 2}` is 33."
+    },
+    {
+      "id": "8.16",
+      "number": "8.16",
+      "text": "Assume `double[][][] x = new double[4][5][6]`, what are `x.length`, `x[2].length`, and `x[0][0].length`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4, 5, and 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6, 5, and 4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5, 5, and 5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4, 5, and 4"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In a multidimensional array, `.length` returns the size of the immediate dimension. `x.length` is the size of the first dimension (4), `x[2].length` is the size of the second dimension (5), and `x[0][0].length` is the size of the third dimension (6)."
+    },
+    {
+      "id": "8.17",
+      "number": "8.17",
+      "text": "What is the output of the following code?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[][][] data = {{{1, 2}, {3, 4}},\n      {{5, 6}, {7, 8}}};\n\n    System.out.print(data[1][0][0]);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "6"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "`data[1]` refers to the second 2D array: `{{5, 6}, {7, 8}}`. `data[1][0]` refers to the first row of that array: `{5, 6}`. `data[1][0][0]` refers to the first element of that row, which is 5."
+    },
+    {
+      "id": "8.18",
+      "number": "8.18",
+      "text": "What is the output of the following code?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[][][] data = {{{1, 2}, {3, 4}},\n      {{5, 6}, {7, 8}}};\n\n    System.out.print(ttt(data[0]));\n  }\n\n  public static int ttt(int[][] m) {\n    int v = m[0][0];\n    \n    for (int i = 0; i < m.length; i++)\n      for (int j = 0; j < m[i].length; j++)\n        if (v < m[i][j])\n          v = m[i][j];\n   \n    return v;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "6"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The method `ttt` finds the maximum value in a 2D array. The code passes `data[0]`, which is `{{1, 2}, {3, 4}}`, to the method. The maximum value in this specific 2D array is 4."
+    },
+    {
+      "id": "8.19",
+      "number": "8.19",
+      "text": "Which of the following statements are correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\nchar[][][] charArray = new char[2][2][];\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\nchar[2][2][] charArray = {'a', 'b'};\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\nchar[][][] charArray = {{'a', 'b'}, {'c', 'd'}, {'e', 'f'}};\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\nchar[][][] charArray = {{{'a', 'b'}, {'c', 'd'}, {'e', 'f'}}};\n```"
+        }
+      ],
+      "inputName": "QD18",
+      "inputType": "checkbox",
+      "correctAnswer": "AD",
+      "explanation": "A is correct because when using `new`, you must specify the high-level dimensions but can leave the low-level dimensions empty. D is correct as it properly initializes a 3D array using array constants. B is incorrect because dimension sizes cannot be in the type declaration. C is incorrect because it attempts to assign a 2D array literal to a 3D array reference."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 19
+}

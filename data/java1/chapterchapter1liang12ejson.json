@@ -1,16 +1,16 @@
 {
-  "id": "task-0",
-  "label": "chapter=1, username=liang12e",
+  "id": "explainer-1776005911218-bp5j4",
+  "label": "chapter1liang12e.json",
   "params": {
-    "chapter": "Chapter 1",
-    "username": "liang12e"
+    "file": "chapter1liang12e.json",
+    "chapter": "Chapter 1"
   },
-  "title": "Chapter Chapter 1 Introduction to Computers, Programs, and Java",
+  "title": "Introduction to Computers, Programs, and Java",
   "questions": [
     {
       "id": "1.1",
       "number": "1.1",
-      "text": "&nbsp; ________ is the physical aspect of the computer that can be seen.<br>",
+      "text": "________ is the physical aspect of the computer that can be seen.",
       "choices": [
         {
           "value": "A",
@@ -36,12 +36,12 @@
       "inputName": "Q0",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Hardware refers to the tangible, physical components of a computer system, such as the monitor, keyboard, and internal circuitry, that can be seen and touched."
+      "explanation": "Hardware refers to the physical components of a computer system, such as the motherboard, monitor, keyboard, and mouse, which can be seen and touched."
     },
     {
       "id": "1.2",
       "number": "1.2",
-      "text": "&nbsp; __________ is the brain of a computer. <br>",
+      "text": "__________ is the brain of a computer.",
       "choices": [
         {
           "value": "A",
@@ -67,12 +67,12 @@
       "inputName": "Q1",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "The Central Processing Unit (CPU) is known as the brain of the computer because it processes instructions and manages the flow of information through the system."
+      "explanation": "The CPU (Central Processing Unit) is called the 'brain' because it interprets and executes instructions from software and coordinates the activities of other hardware components."
     },
     {
       "id": "1.3",
       "number": "1.3",
-      "text": "&nbsp; The speed of the CPU may be measured in __________. Please select all that apply.<br>",
+      "text": "The speed of the CPU may be measured in __________. (Select all that apply)",
       "choices": [
         {
           "value": "A",
@@ -98,12 +98,12 @@
       "inputName": "QD2",
       "inputType": "checkbox",
       "correctAnswer": "CD",
-      "explanation": "CPU speed, also known as clock speed, is measured in cycles per second using the unit Hertz; megahertz (millions of cycles) and gigahertz (billions of cycles) are the common measurements for modern processors."
+      "explanation": "CPU speed is measured by its clock frequency in hertz. Common units include megahertz (MHz) and gigahertz (GHz). Megabytes and gigabytes are units of data storage capacity, not speed."
     },
     {
       "id": "1.4",
       "number": "1.4",
-      "text": "&nbsp; Why do computers use zeros and ones?<br>",
+      "text": "Why do computers use zeros and ones?",
       "choices": [
         {
           "value": "A",
@@ -129,12 +129,12 @@
       "inputName": "Q3",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Computers operate on binary because digital electronic circuits are made of transistors that act as switches, naturally having two stable states: 'on' (represented as 1) and 'off' (represented as 0)."
+      "explanation": "Electronic components like transistors naturally have two states (on/off, or high/low voltage). Representing these states with the binary digits 0 and 1 is the most efficient and reliable way to design computer circuitry."
     },
     {
       "id": "1.5",
       "number": "1.5",
-      "text": "&nbsp; One byte has ________ bits.<br>",
+      "text": "One byte has ________ bits.",
       "choices": [
         {
           "value": "A",
@@ -160,12 +160,12 @@
       "inputName": "Q4",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "In computing, a byte is the standard unit of information consisting of a sequence of 8 bits, which is sufficient to store a single character of text."
+      "explanation": "A byte is a fundamental unit of data in computing, and by standard convention, it consists of exactly 8 bits."
     },
     {
       "id": "1.6",
       "number": "1.6",
-      "text": "&nbsp; One gigabyte is approximately ________ bytes.<br>",
+      "text": "One gigabyte is approximately ________ bytes.",
       "choices": [
         {
           "value": "A",
@@ -191,12 +191,12 @@
       "inputName": "Q5",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Using the standard metric prefix system, 'giga' signifies one billion (10 to the power of 9), making a gigabyte approximately equal to one billion individual bytes of data."
+      "explanation": "In the metric system (SI), the prefix 'giga-' stands for 10^9, which is 1,000,000,000 (one billion). In binary terms, it is 2^30, which is slightly more than 1 billion."
     },
     {
       "id": "1.7",
       "number": "1.7",
-      "text": "&nbsp; A program and its data must be moved into the computer's _______ before they can be executed by the CPU.<br>",
+      "text": "A program and its data must be moved into the computer's _______ before they can be executed by the CPU.",
       "choices": [
         {
           "value": "A",
@@ -222,12 +222,12 @@
       "inputName": "Q6",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "The CPU can only directly access data stored in primary memory (RAM); therefore, programs and data must be loaded from slower storage devices into memory before the CPU can execute them."
+      "explanation": "The CPU can only execute instructions that are loaded into the computer's RAM (Random Access Memory). Programs stored on permanent storage like a hard disk must be copied to memory first."
     },
     {
       "id": "1.8",
       "number": "1.8",
-      "text": "&nbsp; A computer's _______ is volatile; that is, any information stored in it is lost when the system's power is turned off. <br>",
+      "text": "A computer's _______ is volatile; that is, any information stored in it is lost when the system's power is turned off.",
       "choices": [
         {
           "value": "A",
@@ -253,12 +253,12 @@
       "inputName": "Q7",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Random Access Memory (RAM) is considered volatile because it depends on an active electrical current to hold data; once the power is cut, all information stored in that memory is lost."
+      "explanation": "Volatile memory (like RAM) requires electricity to maintain the stored information. Hard disks, flash sticks, and CD-ROMs are non-volatile, meaning they retain data even without power."
     },
     {
       "id": "1.9",
       "number": "1.9",
-      "text": "&nbsp; Which of the following are storage devices? Please select all that apply.<br>",
+      "text": "Which of the following are storage devices? (Select all that apply)",
       "choices": [
         {
           "value": "A",
@@ -284,12 +284,12 @@
       "inputName": "QD8",
       "inputType": "checkbox",
       "correctAnswer": "ABCD",
-      "explanation": "Storage devices are hardware used for recording and retrieving data; portable disks, hard disks, flash drives, and CD-ROMs are all examples of media designed to hold data permanently or semi-permanently."
+      "explanation": "All the options listed are examples of secondary storage devices used to store data for long periods, unlike primary memory (RAM) which is used for temporary processing."
     },
     {
       "id": "1.10",
       "number": "1.10",
-      "text": "&nbsp; The ____________ specifies the number of pixels in horizontal and vertical dimensions of the display device.<br>",
+      "text": "The ____________ specifies the number of pixels in horizontal and vertical dimensions of the display device.",
       "choices": [
         {
           "value": "A",
@@ -315,12 +315,12 @@
       "inputName": "Q9",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Screen resolution is a measurement of the display's detail, expressed as the total number of pixels arranged horizontally and vertically across the screen."
+      "explanation": "Screen resolution is the measure of how many pixels are displayed across the width and height of a screen (e.g., 1920 by 1080)."
     },
     {
       "id": "1.11",
       "number": "1.11",
-      "text": "&nbsp; ____________ is a device to connect a computer to a local area network (LAN).<br>",
+      "text": "____________ is a device to connect a computer to a local area network (LAN).",
       "choices": [
         {
           "value": "A",
@@ -346,12 +346,12 @@
       "inputName": "Q10",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "A Network Interface Card (NIC) is the hardware component required to connect a computer to a local area network (LAN), enabling communication between devices."
+      "explanation": "A Network Interface Card (NIC) is the hardware component that allows a computer to connect to a local area network (LAN). Modems (Regular, DSL, or Cable) are typically used for connecting to a Wide Area Network (WAN) or the Internet."
     },
     {
       "id": "1.12",
       "number": "1.12",
-      "text": "&nbsp; ____________ are instructions to the computer. Please select all that apply.<br>",
+      "text": "____________ are instructions to the computer. Please select all that apply.",
       "choices": [
         {
           "value": "A",
@@ -377,12 +377,12 @@
       "inputName": "QD11",
       "inputType": "checkbox",
       "correctAnswer": "BC",
-      "explanation": "Software and programs are both terms used to describe the collections of instructions that tell computer hardware how to perform specific tasks."
+      "explanation": "Software and Programs refer to the sets of instructions that tell a computer's hardware what to do. Hardware and keyboards are the physical components themselves."
     },
     {
       "id": "1.13",
       "number": "1.13",
-      "text": "&nbsp; Computer can execute the code in ____________. <br>",
+      "text": "Computer can execute the code in ____________.",
       "choices": [
         {
           "value": "A",
@@ -408,12 +408,12 @@
       "inputName": "Q12",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Machine language is the lowest-level programming language, consisting of binary code (0s and 1s) that the computer's CPU can understand and execute directly."
+      "explanation": "Machine language is the low-level binary code (0s and 1s) that a computer's CPU can understand and execute directly. Assembly and high-level languages must be translated before execution."
     },
     {
       "id": "1.14",
       "number": "1.14",
-      "text": "&nbsp; ___________ translates high-level language program into machine language program.<br>",
+      "text": "___________ translates high-level language program into machine language program.",
       "choices": [
         {
           "value": "A",
@@ -439,12 +439,12 @@
       "inputName": "Q13",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "A compiler is a specialized program that translates high-level source code into machine language, allowing the computer's processor to execute the instructions."
+      "explanation": "A compiler is a specialized program that translates source code written in a high-level language into machine language or bytecode so it can be executed by the computer."
     },
     {
       "id": "1.15",
       "number": "1.15",
-      "text": "&nbsp; ____________ is an operating system. <br>",
+      "text": "____________ is an operating system.",
       "choices": [
         {
           "value": "A",
@@ -475,12 +475,12 @@
       "inputName": "Q14",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Windows is a widely used operating system developed by Microsoft; the other options provided (Java, C++, Visual Basic, and Ada) are programming languages."
+      "explanation": "Windows is a software platform that manages computer hardware and software resources. Java, C++, Visual Basic, and Ada are all programming languages."
     },
     {
       "id": "1.16",
       "number": "1.16",
-      "text": "&nbsp; _____________ is a program that runs on a computer to manage and control a computer's activities.<br>",
+      "text": "_____________ is a program that runs on a computer to manage and control a computer's activities.",
       "choices": [
         {
           "value": "A",
@@ -511,12 +511,12 @@
       "inputName": "Q15",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "An operating system (OS) is the core software that manages hardware resources, provides common services for software, and controls all activities on a computer."
+      "explanation": "The Operating System (OS) acts as the intermediary between the user and the hardware, managing memory, processes, and all other system operations."
     },
     {
       "id": "1.17",
       "number": "1.17",
-      "text": "&nbsp; Due to security reasons, Java ___________ cannot run from a Web browser in the new version of Java.<br>",
+      "text": "Due to security reasons, Java ___________ cannot run from a Web browser in the new version of Java.",
       "choices": [
         {
           "value": "A",
@@ -542,12 +542,12 @@
       "inputName": "Q16",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Java applets were small programs designed to run within web browsers, but they have been phased out in modern versions of Java due to significant security risks."
+      "explanation": "Java applets were small applications that ran inside web browsers. They were deprecated and eventually removed from modern versions of Java due to their history of security vulnerabilities."
     },
     {
       "id": "1.18",
       "number": "1.18",
-      "text": "&nbsp; ________  is not an object-oriented programming language.<br>",
+      "text": "________ is not an object-oriented programming language.",
       "choices": [
         {
           "value": "A",
@@ -578,12 +578,12 @@
       "inputName": "Q17",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "C is a procedural programming language, whereas the other options (Java, C++, C#, and Python) are all built on object-oriented programming (OOP) principles."
+      "explanation": "C is a procedural programming language. Java, C++, C#, and Python are all languages that support object-oriented programming (OOP) principles."
     },
     {
       "id": "1.19",
       "number": "1.19",
-      "text": "&nbsp; ________  is interpreted.<br>",
+      "text": "________ is interpreted.",
       "choices": [
         {
           "value": "A",
@@ -614,12 +614,12 @@
       "inputName": "Q18",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Java is considered an interpreted language because its source code is compiled into bytecode, which is then translated into machine instructions by the Java Virtual Machine (JVM) at runtime."
+      "explanation": "Java is often called an interpreted language because its source code is compiled into bytecode, which is then interpreted by the Java Virtual Machine (JVM) at runtime."
     },
     {
       "id": "1.20",
       "number": "1.20",
-      "text": "&nbsp; ________  is architecture-neutral.<br>",
+      "text": "________ is architecture-neutral.",
       "choices": [
         {
           "value": "A",
@@ -650,12 +650,12 @@
       "inputName": "Q19",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Java is architecture-neutral because it compiles to platform-independent bytecode, allowing the same program to run on any device that has a compatible Java Virtual Machine (JVM)."
+      "explanation": "Java is architecture-neutral because it compiles to bytecode that can run on any hardware platform that has a compatible Java Virtual Machine (JVM)."
     },
     {
       "id": "1.21",
       "number": "1.21",
-      "text": "&nbsp; ________  is a technical definition of the language that includes the syntax and semantics of the Java programming language.<br>",
+      "text": "________ is a technical definition of the language that includes the syntax and semantics of the Java programming language.",
       "choices": [
         {
           "value": "A",
@@ -681,12 +681,12 @@
       "inputName": "Q20",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "The Java language specification is a technical document that describes the syntax (grammar) and semantics (meaning) of the Java language to ensure consistency across different implementations."
+      "explanation": "The Java Language Specification (JLS) is the official technical document that defines the syntax, grammar, and semantics of the Java language."
     },
     {
       "id": "1.22",
       "number": "1.22",
-      "text": "&nbsp; ________ contains predefined classes and interfaces for developing Java programs.<br>",
+      "text": "________ contains predefined classes and interfaces for developing Java programs.",
       "choices": [
         {
           "value": "A",
@@ -712,12 +712,12 @@
       "inputName": "Q21",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "The Java API (Application Programming Interface) is a massive library of prewritten classes and interfaces provided by the language to perform common tasks like I/O, networking, and data manipulation."
+      "explanation": "The Java Application Programming Interface (API), also known as the Java library, contains thousands of predefined classes and interfaces for building applications."
     },
     {
       "id": "1.23",
       "number": "1.23",
-      "text": "&nbsp; ________ consists of a set of separate programs for developing and testing Java programs, each of which is invoked from a command line.<br>",
+      "text": "________ consists of a set of separate programs for developing and testing Java programs, each of which is invoked from a command line.",
       "choices": [
         {
           "value": "A",
@@ -743,12 +743,12 @@
       "inputName": "Q22",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "The Java JDK (Java Development Kit) is a set of command-line tools (like javac and java) used by developers to compile, document, and package Java applications."
+      "explanation": "The Java Development Kit (JDK) is a set of command-line tools (such as javac for compiling and java for running) used for developing and testing Java software."
     },
     {
       "id": "1.24",
       "number": "1.24",
-      "text": "&nbsp; ________  provides an integrated development environment (IDE) for rapidly developing Java programs. Editing, compiling, building, debugging, and online help are integrated in one graphical user interface.<br>",
+      "text": "________ provides an integrated development environment (IDE) for rapidly developing Java programs. Editing, compiling, building, debugging, and online help are integrated in one graphical user interface.",
       "choices": [
         {
           "value": "A",
@@ -774,48 +774,48 @@
       "inputName": "Q23",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "An Integrated Development Environment (IDE) provides a single graphical user interface where developers can write, compile, run, and debug code simultaneously, rather than using separate command-line tools."
+      "explanation": "A Java Integrated Development Environment (IDE), such as Eclipse or IntelliJ IDEA, bundles multiple development tools into a single software application with a GUI."
     },
     {
       "id": "1.25",
       "number": "1.25",
-      "text": "&nbsp;\tThe main method header is written as:<br>",
+      "text": "The main method header is written as:",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "public static void main(string[] args)"
+          "text": "```java\npublic static void main(string[] args)\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "public static void Main(String[] args)"
+          "text": "```java\npublic static void Main(String[] args)\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "public static void main(String[] args)"
+          "text": "```java\npublic static void main(String[] args)\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "public static main(String[] args)"
+          "text": "```java\npublic static main(String[] args)\n```"
         },
         {
           "value": "E",
           "label": "E",
-          "text": "public void main(String[] args)"
+          "text": "```java\npublic void main(String[] args)\n```"
         }
       ],
       "inputName": "Q24",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "In Java, the main method must follow a strict signature: 'public static void main(String[] args)'. Note that Java is case-sensitive; 'String' must be capitalized, and 'main' must be lowercase."
+      "explanation": "In Java, the main method must be `public`, `static`, and `void`. Because Java is case-sensitive, `String` must be capitalized (as it is a class) and `main` must be lowercase."
     },
     {
       "id": "1.26",
       "number": "1.26",
-      "text": "&nbsp;\tWhich of the following statements is correct?<br>",
+      "text": "Which of the following statements is correct?",
       "choices": [
         {
           "value": "A",
@@ -846,48 +846,48 @@
       "inputName": "Q25",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "While blocks (like classes and methods) are enclosed in curly braces, individual Java statements are required by the language syntax to end with a semicolon to indicate the end of an instruction."
+      "explanation": "Java syntax requires that every executable statement ends with a semicolon (`;`). Comments, method signatures, and class definitions do not follow this rule."
     },
     {
       "id": "1.27",
       "number": "1.27",
-      "text": "&nbsp;\tWhich of the following statements is correct to display Welcome to Java on the console?<br>",
+      "text": "Which of the following statements is correct to display Welcome to Java on the console?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "System.out.println('Welcome to Java');"
+          "text": "```java\nSystem.out.println('Welcome to Java');\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "System.out.println(\"Welcome to Java\");"
+          "text": "```java\nSystem.out.println(\"Welcome to Java\");\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "System.println('Welcome to Java');"
+          "text": "```java\nSystem.println('Welcome to Java');\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "System.out.println('Welcome to Java\");"
+          "text": "```java\nSystem.out.println('Welcome to Java\");\n```"
         },
         {
           "value": "E",
           "label": "E",
-          "text": "System.out.println(\"Welcome to Java');"
+          "text": "```java\nSystem.out.println(\"Welcome to Java');\n```"
         }
       ],
       "inputName": "Q26",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "Strings in Java must be enclosed in double quotes (\"\"). Choice B is correct because it uses double quotes, whereas single quotes ('') are reserved for individual character literals (char)."
+      "explanation": "In Java, String literals must be enclosed in double quotes (`\" \"`). Single quotes (`' '`) are used exclusively for single character literals (`char`)."
     },
     {
       "id": "1.28",
       "number": "1.28",
-      "text": "&nbsp;\tWhat is the output of the following code?<br><br><span style=\"font-family:monospace; font-size: 109%;\">&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"1 + 2 + 3\"</span>);<br>&nbsp;&nbsp;System.out.println(<span class=\"constant\">1</span> + <span class=\"constant\">2</span> + <span class=\"constant\">3</span>);<br></span>",
+      "text": "What is the output of the following code?\n\n```java\nSystem.out.println(\"1 + 2 + 3\");\nSystem.out.println(1 + 2 + 3);\n```",
       "choices": [
         {
           "value": "A",
@@ -913,84 +913,84 @@
       "inputName": "Q27",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "The first line prints the literal text inside the double quotes as a string, while the second line performs a mathematical addition of the integers 1, 2, and 3 before printing the result (6)."
+      "explanation": "The first statement prints the string literal \"1 + 2 + 3\" exactly as it appears. The second statement evaluates the numerical addition of 1, 2, and 3, which results in the integer 6."
     },
     {
       "id": "1.29",
       "number": "1.29",
-      "text": "&nbsp; The JDK command to just compile a class (not run) in the file Test.java is<br>",
+      "text": "The JDK command to just compile a class (not run) in the file `Test.java` is:",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "java Test"
+          "text": "```bash\njava Test\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "java Test.java"
+          "text": "```bash\njava Test.java\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "javac Test.java"
+          "text": "```bash\njavac Test.java\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "javac Test"
+          "text": "```bash\njavac Test\n```"
         },
         {
           "value": "E",
           "label": "E",
-          "text": "JAVAC Test.java"
+          "text": "```bash\nJAVAC Test.java\n```"
         }
       ],
       "inputName": "Q28",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "The 'javac' command is the Java compiler. It requires the full filename, including the '.java' extension, to identify the source file that needs to be converted into bytecode."
+      "explanation": "To compile a Java source file from the command line, you use the `javac` command followed by the filename including its `.java` extension."
     },
     {
       "id": "1.30",
       "number": "1.30",
-      "text": "&nbsp; Which JDK command is correct to run a Java application in ByteCode.class?<br>",
+      "text": "Which JDK command is correct to run a Java application in `ByteCode.class`?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "java ByteCode"
+          "text": "```bash\njava ByteCode\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "java ByteCode.class"
+          "text": "```bash\njava ByteCode.class\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "javac ByteCode.java"
+          "text": "```bash\njavac ByteCode.java\n```"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "javac ByteCode"
+          "text": "```bash\njavac ByteCode\n```"
         },
         {
           "value": "E",
           "label": "E",
-          "text": "JAVAC ByteCode"
+          "text": "```bash\nJAVAC ByteCode\n```"
         }
       ],
       "inputName": "Q29",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "The 'java' command is the Java interpreter used to run a program. It expects the name of the class containing the main method, specifically without the '.class' file extension."
+      "explanation": "To run a compiled Java class, you use the `java` command followed by the class name. Do not include the `.class` file extension in this command."
     },
     {
       "id": "1.31",
       "number": "1.31",
-      "text": "&nbsp; Java compiler translates Java source code into _________.<br>",
+      "text": "Java compiler translates Java source code into _________.",
       "choices": [
         {
           "value": "A",
@@ -1016,12 +1016,12 @@
       "inputName": "Q30",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "The Java compiler (javac) converts human-readable source code into platform-independent Java bytecode, which is stored in .class files."
+      "explanation": "The Java compiler (javac) converts high-level Java source code into an intermediate, platform-independent format called bytecode."
     },
     {
       "id": "1.32",
       "number": "1.32",
-      "text": "&nbsp; _________ is a software that interprets Java bytecode.<br>",
+      "text": "_________ is a software that interprets Java bytecode.",
       "choices": [
         {
           "value": "A",
@@ -1047,12 +1047,12 @@
       "inputName": "Q31",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "The Java Virtual Machine (JVM) is the software component responsible for interpreting and executing Java bytecode on a specific computer platform."
+      "explanation": "The Java Virtual Machine (JVM) is responsible for loading, verifying, and executing (interpreting or JIT-compiling) Java bytecode on a specific hardware platform."
     },
     {
       "id": "1.33",
       "number": "1.33",
-      "text": "&nbsp; Suppose you define a Java class as follows, the source code should be stored in a file named _________.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br><br>}<br></span>",
+      "text": "Suppose you define a Java class as follows, the source code should be stored in a file named _________.\n\n```java\npublic class Test {\n\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -1083,12 +1083,12 @@
       "inputName": "Q32",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Java requires that a file containing a public class must have the same name as that class, followed by the .java extension."
+      "explanation": "In Java, a public class must be saved in a source file that has the exact same name as the class, including case-sensitivity, with the `.java` extension."
     },
     {
       "id": "1.34",
       "number": "1.34",
-      "text": "&nbsp; The extension name of a Java bytecode file is<br>",
+      "text": "The extension name of a Java bytecode file is",
       "choices": [
         {
           "value": "A",
@@ -1114,12 +1114,12 @@
       "inputName": "Q33",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "After compilation, the Java compiler produces bytecode files that always carry the .class extension."
+      "explanation": "When source code is compiled, the resulting bytecode is stored in a file with the `.class` extension."
     },
     {
       "id": "1.35",
       "number": "1.35",
-      "text": "&nbsp;\tThe extension name of a Java source code file is<br>",
+      "text": "The extension name of a Java source code file is",
       "choices": [
         {
           "value": "A",
@@ -1145,12 +1145,12 @@
       "inputName": "Q34",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Source code written by a programmer is saved as a text file with the .java extension before it is compiled into bytecode."
+      "explanation": "Java source code files are plain text files created by developers and must use the `.java` extension."
     },
     {
       "id": "1.36",
       "number": "1.36",
-      "text": "&nbsp; Which of the following lines is not a Java comment? Please select all that apply.<br>",
+      "text": "Which of the following lines is not a Java comment? Please select all that apply.",
       "choices": [
         {
           "value": "A",
@@ -1181,12 +1181,12 @@
       "inputName": "QE35",
       "inputType": "checkbox",
       "correctAnswer": "CE",
-      "explanation": "Java supports three comment styles: // (single-line), /* */ (multi-line), and /** */ (documentation). The symbols -- and ** are not recognized as comment indicators in Java."
+      "explanation": "Java supports single-line comments (`//`), multi-line comments (`/* */`), and Javadoc comments (`/** */`). The sequences `--` and `**` are not recognized as comment indicators in Java."
     },
     {
       "id": "1.37",
       "number": "1.37",
-      "text": "&nbsp; Which of the following are the reserved words? Please select all that apply.<br>",
+      "text": "Which of the following are the reserved words? Please select all that apply.",
       "choices": [
         {
           "value": "A",
@@ -1212,12 +1212,12 @@
       "inputName": "QD36",
       "inputType": "checkbox",
       "correctAnswer": "ABCD",
-      "explanation": "Reserved words, or keywords, are predefined identifiers that have special meanings in Java (e.g., public, static, void, class) and cannot be used for other purposes."
+      "explanation": "Reserved words (keywords) are words that have a predefined meaning in the Java language. `public`, `static`, `void`, and `class` are all part of the Java keyword list."
     },
     {
       "id": "1.38",
       "number": "1.38",
-      "text": "&nbsp; Every statement in Java ends with ________.<br>",
+      "text": "Every statement in Java ends with ________.",
       "choices": [
         {
           "value": "A",
@@ -1243,12 +1243,12 @@
       "inputName": "Q37",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "In Java, a semicolon (;) acts as a statement terminator, signaling the end of an individual command to the compiler."
+      "explanation": "Java uses the semicolon (`;`) as a statement terminator to signal the end of an instruction."
     },
     {
       "id": "1.39",
       "number": "1.39",
-      "text": "&nbsp;\tA block is enclosed inside __________.<br>",
+      "text": "A block is enclosed inside __________.",
       "choices": [
         {
           "value": "A",
@@ -1274,12 +1274,12 @@
       "inputName": "Q38",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "A block of code, which groups multiple statements together (such as in a class or method), is always delimited by opening { and closing } curly braces."
+      "explanation": "In Java, a block of code is defined by a pair of curly braces `{ }`."
     },
     {
       "id": "1.40",
       "number": "1.40",
-      "text": "&nbsp;\tProgramming style is important, because ______________. Please select all that apply.<br>",
+      "text": "Programming style is important, because ______________. Please select all that apply.",
       "choices": [
         {
           "value": "A",
@@ -1305,12 +1305,12 @@
       "inputName": "QD39",
       "inputType": "checkbox",
       "correctAnswer": "CD",
-      "explanation": "Good programming style, such as proper indentation and naming, is crucial because it makes code easier to read, maintain, and debug, although it does not affect execution performance or compilation success."
+      "explanation": "While programming style (like indentation and spacing) does not affect compilation or execution speed, it is vital for human readability and helps developers avoid and find logic errors."
     },
     {
       "id": "1.41",
       "number": "1.41",
-      "text": "&nbsp;\tAnalyze the following code.<br><span style=\"font-family:monospace; font-size: 109%;\"><br>I:<br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Welcome to Java!\"</span>);<br>&nbsp;&nbsp;}<br>}<br><br>II:&nbsp;<br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{&nbsp;&nbsp;<span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">static</span>&nbsp;<span class=\"keyword\">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;<br>System.out.println(<span class=\"literal\">\"Welcome&nbsp;to&nbsp;Java!\"</span>);&nbsp;&nbsp;}&nbsp;}<br></span>",
+      "text": "Analyze the following code:\n\n**I:**\n```java\npublic class Test {\n  public static void main(String[] args) {\n    System.out.println(\"Welcome to Java!\");\n  }\n}\n```\n\n**II:**\n```java\npublic class Test {  public static void main(String[] args) {    \nSystem.out.println(\"Welcome to Java!\");  } }\n```",
       "choices": [
         {
           "value": "A",
@@ -1336,12 +1336,12 @@
       "inputName": "Q40",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Java is a free-form language, so white space (newlines and indentation) does not affect how the code compiles or executes as long as the tokens are correctly separated. Both versions contain valid syntax, but code snippet I follows standard industry conventions for readability, whereas code snippet II is difficult to read due to the lack of proper line breaks and indentation."
+      "explanation": "Java is whitespace-insensitive, meaning both code snippets are syntactically correct and will compile and run. However, Code I follows standard indentation practices, making it much easier to read and maintain than the condensed style of Code II."
     },
     {
       "id": "1.42",
       "number": "1.42",
-      "text": "&nbsp; Which of the following code has the best style?<br><span style=\"font-family:monospace; font-size: 109%;\"><br>I:<br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">static</span>&nbsp;<span class=\"keyword\">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Welcome to Java!\"</span>);<br>&nbsp;&nbsp;}<br>}<br><br>II:<br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Welcome to Java!\"</span>);<br>&nbsp;&nbsp;}<br>}<br><br>III:<br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Welcome to Java!\"</span>);<br>&nbsp;&nbsp;}<br>}<br><br>IV:<br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Welcome to Java!\"</span>);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "text": "Which of the following code snippets has the best style?\n\n**I:**\n```java\npublic class Test {\npublic static void main(String[] args) {\n    System.out.println(\"Welcome to Java!\");\n  }\n}\n```\n\n**II:**\n```java\npublic class Test {\n    public static void main(String[] args) {\n    System.out.println(\"Welcome to Java!\");\n  }\n}\n```\n\n**III:**\n```java\npublic class Test {\n  public static void main(String[] args) {\n  System.out.println(\"Welcome to Java!\");\n  }\n}\n```\n\n**IV:**\n```java\npublic class Test {\n  public static void main(String[] args) {\n    System.out.println(\"Welcome to Java!\");\n  }\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -1367,12 +1367,12 @@
       "inputName": "Q41",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Consistent indentation is a key component of good programming style. In Option IV, each block of code (the class body and the method body) is indented consistently, making the structure of the program clear. Options I, II, and III contain inconsistent or missing indentation for either the method header or the method body."
+      "explanation": "Code snippet IV follows the consistent application of nested indentation. Each block level (class and then method) is shifted to the right, which clearly communicates the hierarchy of the code."
     },
     {
       "id": "1.43",
       "number": "1.43",
-      "text": "&nbsp;\tIf a program compiles fine, but it produces incorrect result, then the program suffers  __________.<br>",
+      "text": "If a program compiles fine, but it produces an incorrect result, then the program suffers __________.",
       "choices": [
         {
           "value": "A",
@@ -1393,12 +1393,12 @@
       "inputName": "Q42",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "Errors that occur when a program runs but produces an unintended or incorrect result are called logic errors. These differ from syntax (compile) errors, which prevent the program from starting, and runtime errors, which cause the program to crash during execution."
+      "explanation": "Logic errors occur when the syntax is correct (it compiles) and the program executes without crashing (no runtime error), but the output is wrong because the underlying algorithm or logic is flawed."
     },
     {
       "id": "1.44",
       "number": "1.44",
-      "text": "&nbsp;\tThe following code has __________.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(\"Welcome to Java!);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "text": "The following code has __________.\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    System.out.println(\"Welcome to Java!);\n  }\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -1419,12 +1419,12 @@
       "inputName": "Q43",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "The code contains a syntax error because the string literal inside the println method is missing its closing double quote mark. Since the compiler cannot successfully parse the code, it results in a compile error."
+      "explanation": "The code contains a syntax error because the string literal `\"Welcome to Java!` is missing its closing double quote. Syntax violations prevent the compiler from generating bytecode, resulting in a compile error."
     },
     {
       "id": "1.45",
       "number": "1.45",
-      "text": "&nbsp;\tThe following code has __________.<br><span style=\"font-family:monospace; font-size: 109%;\"><br><span class=\"keyword\">public</span>&nbsp;<span class=\"keyword\">class</span>&nbsp;Test&nbsp;{<br>&nbsp;&nbsp;<span class=\"keyword\">public</span> <span class=\"keyword\">static</span> <span class=\"keyword\">void</span> main(string[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=\"literal\">\"Welcome to Java!\"</span>);<br>&nbsp;&nbsp;}<br>}<br></span>",
+      "text": "The following code has __________.\n\n```java\npublic class Test {\n  public static void main(string[] args) {\n    System.out.println(\"Welcome to Java!\");\n  }\n}\n```",
       "choices": [
         {
           "value": "A",
@@ -1445,7 +1445,7 @@
       "inputName": "Q44",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Java is a case-sensitive language. The standard class used for handling text is 'String', with a capital 'S'. Using 'string' in lowercase causes the compiler to fail because it does not recognize the identifier as a valid type."
+      "explanation": "Java is case-sensitive. The correct class name for a string is `String` with a capital 'S'. Since `string` (lowercase) is not a defined type in Java, the compiler will fail to recognize it and produce a compile error."
     }
   ],
   "status": "completed",

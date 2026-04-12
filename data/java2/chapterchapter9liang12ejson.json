@@ -1,0 +1,1665 @@
+{
+  "id": "explainer-1776005911218-3ak16",
+  "label": "chapter9liang12e.json",
+  "params": {
+    "file": "chapter9liang12e.json",
+    "chapter": "Chapter 9"
+  },
+  "title": "Objects and Classes",
+  "questions": [
+    {
+      "id": "9.1",
+      "number": "9.1",
+      "text": "__________ represents an entity in the real world that can be distinctly identified.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A class"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "An object"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A method"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A data field"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An object is a basic unit of Object-Oriented Programming and represents real-world entities like a person, a car, or a bank account, having state and behavior."
+    },
+    {
+      "id": "9.2",
+      "number": "9.2",
+      "text": "_______ is a template that defines objects of the same type.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A class"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "An object"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A method"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A data field"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A class is a blueprint or template from which objects are created. It defines the properties (data fields) and behaviors (methods) that the objects of that type will possess."
+    },
+    {
+      "id": "9.3",
+      "number": "9.3",
+      "text": "An object is an instance of a __________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "program"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "class"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "method"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "data"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, an object is a concrete instance of a class. The process of creating an object from a class is known as instantiation."
+    },
+    {
+      "id": "9.4",
+      "number": "9.4",
+      "text": "The keyword __________ is required to define a class.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "static"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "void"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "class"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "int"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The reserved keyword `class` is used to declare a class in Java."
+    },
+    {
+      "id": "9.5",
+      "number": "9.5",
+      "text": "If TestCircle.java is compiled successfully, __________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "TestCircle.class is created."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Circle.class is created."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "TestCircle.class and Circle.class are created."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No class files are created."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The Java compiler creates a separate `.class` file for every class defined in a source file. If TestCircle.java contains both the `TestCircle` and `Circle` classes, both `.class` files will be generated."
+    },
+    {
+      "id": "9.6",
+      "number": "9.6",
+      "text": "________ is invoked to create an object.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A constructor"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The main method"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A method with a return type"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A method with the void return type"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Constructors are special methods used to initialize objects. They are automatically called when an instance of a class is created using the `new` operator."
+    },
+    {
+      "id": "9.7",
+      "number": "9.7",
+      "text": "Which of the following statements are true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Multiple constructors can be defined in a class."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Constructors do not have a return type, not even void."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Constructors must have the same name as the class itself."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Constructors are invoked using the new operator when an object is created."
+        }
+      ],
+      "inputName": "QD6",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD",
+      "explanation": "All these points describe the fundamental properties of constructors in Java: they support overloading (multiple definitions), have no return type, match the class name, and are used with the `new` keyword."
+    },
+    {
+      "id": "9.8",
+      "number": "9.8",
+      "text": "Analyze the following code:\n\n```java\nclass TempClass {\n  int i;\n  public void TempClass(int j) {\n    int i = j;\n  }\n}\n\npublic class C {\n  public static void main(String[] args) {\n    TempClass temp = new TempClass(2);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because TempClass does not have a default constructor."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because TempClass does not have a constructor with an int argument."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program compiles fine, but it does not run because class C is not public."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program compiles and runs fine."
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In `TempClass`, the block `public void TempClass(int j)` is a method, not a constructor, because it defines a return type (`void`). Therefore, the class only has the default no-arg constructor. The attempt to instantiate it with `new TempClass(2)` fails because no matching constructor exists."
+    },
+    {
+      "id": "9.9",
+      "number": "9.9",
+      "text": "Which of the following statements are true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A default constructor is provided automatically if no constructors are explicitly defined in the class."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "At least one constructor must always be defined explicitly."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Every class has a default constructor."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The default constructor is a no-arg constructor."
+        }
+      ],
+      "inputName": "QD8",
+      "inputType": "checkbox",
+      "correctAnswer": "AD",
+      "explanation": "Java automatically provides a no-arg default constructor if and only if no other constructors are defined in the class. If you define any constructor, the default one is no longer provided."
+    },
+    {
+      "id": "9.10",
+      "number": "9.10",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    A a = new A();\n    a.print();\n  }\n}\n\nclass A {\n  String s;\n\n  A(String s) {\n    this.s = s;\n  }\n\n  void print() {\n    System.out.println(s);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because class A is not a public class."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because class A does not have a default constructor."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program compiles and runs fine and prints nothing."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program would compile and run if you change A a = new A() to A a = new A(\"5\")."
+        }
+      ],
+      "inputName": "QD9",
+      "inputType": "checkbox",
+      "correctAnswer": "BD",
+      "explanation": "Because class `A` defines a constructor `A(String s)`, the compiler does not provide the default no-arg constructor. Thus, `new A()` causes a compile error. This can be fixed by passing a String argument to the constructor."
+    },
+    {
+      "id": "9.11",
+      "number": "9.11",
+      "text": "Given the declaration `Circle x = new Circle()`, which of the following statements is most accurate?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x contains an int value."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x contains an object of the Circle type."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x contains a reference to a Circle object."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "You can assign an int value to x."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, variables of an object type (classes) do not store the object itself. Instead, they store a reference (the memory address) to where the object is stored in the heap memory."
+    },
+    {
+      "id": "9.12",
+      "number": "9.12",
+      "text": "Which of the following statements are correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A reference variable is an object."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A reference variable references to an object."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A data field in a class must be of a primitive type."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A data field in a class can be of an object type."
+        }
+      ],
+      "inputName": "QD11",
+      "inputType": "checkbox",
+      "correctAnswer": "BD",
+      "explanation": "A reference variable is a pointer to an object, not the object itself. In Java, class data fields (instance variables) can be either primitive types (like int, double) or reference types (like String, Date, or other classes)."
+    },
+    {
+      "id": "9.13",
+      "number": "9.13",
+      "text": "Analyze the following code.\n\n```java\npublic class Test {\n  int x;\n\n  public Test(String t) {\n     System.out.println(\"Test\");\n  }\n\n  public static void main(String[] args) {\n    Test test = new Test();\n    System.out.println(test.x);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because System.out.println method cannot be invoked from the constructor."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because x has not been initialized."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error because you cannot create an object from the class that defines the object."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a compile error because Test does not have a default constructor."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "If a class explicitly defines a constructor with parameters, the Java compiler does not provide a default no-argument constructor. In the main method, `new Test()` attempts to call a no-arg constructor that does not exist."
+    },
+    {
+      "id": "9.14",
+      "number": "9.14",
+      "text": "Analyze the following code.\n\n```java\npublic class Test {\n  int x;\n  \n  public Test(String t) {\n     System.out.println(\"Test\");\n  }\n\n  public static void main(String[] args) {\n    Test test = null;\n    System.out.println(test.x);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because test is not initialized."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because x has not been initialized."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error because you cannot create an object from the class that defines the object."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a compile error because Test does not have a default constructor."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The program has a runtime NullPointerException because test is null while executing test.x."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "The code compiles because `test` is assigned `null`. However, at runtime, attempting to access an instance member (`test.x`) using a variable that references `null` triggers a NullPointerException."
+    },
+    {
+      "id": "9.15",
+      "number": "9.15",
+      "text": "The default value for data field of a boolean type, numeric type, object type is ___________, respectively.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "true, 1, Null"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "false, 0, null"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "true, 0, null"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "true, 1, null"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "false, 1, null"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, instance data fields are automatically initialized: `boolean` to `false`, numeric types (int, long, double, etc.) to `0` or `0.0`, and object reference types to `null`."
+    },
+    {
+      "id": "9.16",
+      "number": "9.16",
+      "text": "Which of the following statements are true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Local variables do not have default values."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data fields have default values."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A variable of a primitive type holds a value of the primitive type."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A variable of a reference type holds a reference to where an object is stored in the memory."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "You may assign an int value to a reference variable."
+        }
+      ],
+      "inputName": "QE15",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD",
+      "explanation": "Local variables (defined within methods) must be initialized before use. Data fields (class members) are automatically assigned default values. Primitive variables store actual values, while reference variables store memory addresses. You cannot assign a primitive `int` directly to a reference variable (except via autoboxing to an `Integer` object, but the statement as written is generally false for raw reference assignments)."
+    },
+    {
+      "id": "9.17",
+      "number": "9.17",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    double radius;\n    final double PI = 3.15169;\n    double area = radius * radius * PI;\n    System.out.println(\"Area is \" + area);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has compile errors because the variable radius is not initialized."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because a constant PI is defined inside a method."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has no compile errors but will get a runtime error because radius is not initialized."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program compiles and runs fine."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Since `radius` is a local variable within the `main` method, Java requires it to be explicitly initialized before it is used in a calculation. Failure to do so results in a compilation error."
+    },
+    {
+      "id": "9.18",
+      "number": "9.18",
+      "text": "Which of the following creates an object of the Date class:\n\n**A:**\n```java\npublic class Test {\n  public Test() {\n    new java.util.Date();\n  }\n}\n```\n\n**B:**\n```java\npublic class Test {\n  public Test() {\n    java.util.Date date = new java.util.Date();\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "B."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Neither"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Both A and B"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In Java, an object is created when the `new` keyword followed by a constructor is executed. Whether the object is assigned to a variable (as in B) or not (as in A, an anonymous object) does not change the fact that an object was created."
+    },
+    {
+      "id": "9.19",
+      "number": "9.19",
+      "text": "Which of the following statements are correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "When creating a Random object, you have to specify the seed or use the default seed."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "If two Random objects have the same seed, the sequence of the random numbers obtained from these two objects are identical."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The nextInt() method in the Random class returns the next random int value."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The nextDouble() method in the Random class returns the next random double value."
+        }
+      ],
+      "inputName": "QD18",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD",
+      "explanation": "The `java.util.Random` class uses a seed to generate a deterministic sequence of numbers. If two instances are initialized with the same seed, they will produce the same output sequence. `nextInt()` and `nextDouble()` are standard methods provided by the class."
+    },
+    {
+      "id": "9.20",
+      "number": "9.20",
+      "text": "To obtain the distance between the points (40, 50) and (5.5, 4.4), use _________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "distance(40, 50, 5.5, 4.4)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "new Point2D(40, 50).distance(5.5, 4.4)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "new Point2D(40, 50).distance(new Point2D(5.5, 4.4))"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "new Point2D(5.5, 4.4).distance(40, 50)"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "new Point2D(5.5, 4.4).distance(new Point2D(40, 50))"
+        }
+      ],
+      "inputName": "QE19",
+      "inputType": "checkbox",
+      "correctAnswer": "BCDE",
+      "explanation": "The `Point2D` class (found in libraries like JavaFX) provides overloaded `distance` methods. You can calculate distance by passing either the x and y coordinates or another `Point2D` object."
+    },
+    {
+      "id": "9.21",
+      "number": "9.21",
+      "text": "A method that is associated with an individual object is called __________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a static method"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "a class method"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "an instance method"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "an object method"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In object-oriented programming, instance methods belong to a specific instance of a class (an object), whereas static methods (class methods) belong to the class itself."
+    },
+    {
+      "id": "9.22",
+      "number": "9.22",
+      "text": "What is the output of the second println statement in the main method?\n\n```java\npublic class Foo {\n  int i;\n  static int s;\n\n  public static void main(String[] args) {\n    Foo f1 = new Foo();\n    System.out.println(\"f1.i is \" + f1.i + \" f1.s is \" + f1.s);\n    Foo f2 = new Foo();\n    System.out.println(\"f2.i is \" + f2.i + \" f2.s is \" + f2.s);\n    Foo f3 = new Foo();\n    System.out.println(\"f3.i is \" + f3.i + \" f3.s is \" + f3.s);\n  }\n\n  public Foo() {\n    i++;\n    s++;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "f2.i is 1 f2.s is 1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "f2.i is 1 f2.s is 2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "f2.i is 2 f2.s is 2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "f2.i is 2 f2.s is 1"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Variable 'i' is an instance variable, so a new copy is created and initialized to 0 for every new Foo object. Variable 's' is static, meaning it is shared by all instances. When f1 is created, i=1 and s=1. When f2 is created, f2.i starts at 0 and becomes 1, while the shared 's' increments from 1 to 2."
+    },
+    {
+      "id": "9.23",
+      "number": "9.23",
+      "text": "What code may be filled in the blank without causing syntax or runtime errors:\n\n```java\npublic class Test {\n  java.util.Date date;\n\n  public static void main(String[] args) {\n    Test test = new Test();\n    System.out.println(_________________);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "test.date"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "date"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "test.date.toString()"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "date.toString()"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The 'date' field is an instance variable and defaults to 'null'. Option A is correct because printing a null reference simply outputs the string 'null'. Option B and D fail because 'date' cannot be accessed directly from a static context. Option C fails at runtime because calling '.toString()' on a null reference throws a NullPointerException."
+    },
+    {
+      "id": "9.24",
+      "number": "9.24",
+      "text": "You should add the static keyword in the place of ? in Line ________ in the following code:\n\n```java\nLine  1 public class Test { \nLine  2   private int age;\nLine  3 \nLine  4   public ? int square(int n) { \nLine  5     return n * n;\nLine  6   }\nLine  7\nLine  8   public ? int getAge() {\nLine  9     return age;\nLine 10   }\nLine 11 }\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "in line 4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "in line 8"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "in both line 4 and line 8"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "none"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The method 'square' does not depend on any instance variables and can be made static. However, 'getAge' accesses the instance variable 'age', so it cannot be static; static methods cannot access instance variables directly."
+    },
+    {
+      "id": "9.25",
+      "number": "9.25",
+      "text": "To declare a constant MAX_LENGTH as a member of the class, you write",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "final static MAX_LENGTH = 99.98;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "final static float MAX_LENGTH = 99.98;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "static double MAX_LENGTH = 99.98;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "final double MAX_LENGTH = 99.98;"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "final static double MAX_LENGTH = 99.98;"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "In Java, class constants are declared using 'static' (to belong to the class) and 'final' (to make it a constant). 'double' is the appropriate type for a decimal literal like 99.98."
+    },
+    {
+      "id": "9.26",
+      "number": "9.26",
+      "text": "Analyze the following code.\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int n = 2;\n    xMethod(n);\n           \n    System.out.println(\"n is \" + n);\n  }\n\n  void xMethod(int n) {\n    n++;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code has a compile error because xMethod does not return a value."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code has a compile error because xMethod is not declared static."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The code prints n is 1."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The code prints n is 2."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The code prints n is 3."
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The 'main' method is a static method. In Java, a static method cannot call a non-static method (instance method) like 'xMethod' without creating an instance of the class."
+    },
+    {
+      "id": "9.27",
+      "number": "9.27",
+      "text": "What is the output of the third println statement in the main method?\n\n```java\npublic class Foo {\n  int i;\n  static int s;\n\n  public static void main(String[] args) {\n    Foo f1 = new Foo();\n    System.out.println(\"f1.i is \" + f1.i + \" f1.s is \" + f1.s);\n    Foo f2 = new Foo();\n    System.out.println(\"f2.i is \" + f2.i + \" f2.s is \" + f2.s);\n    Foo f3 = new Foo();\n    System.out.println(\"f3.i is \" + f3.i + \" f3.s is \" + f3.s);\n  }\n\n  public Foo() {\n    i++;\n    s++;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "f3.i is 1 f3.s is 1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "f3.i is 1 f3.s is 2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "f3.i is 1 f3.s is 3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "f3.i is 3 f3.s is 1"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "f3.i is 3 f3.s is 3"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "With every new 'Foo' object, the instance variable 'i' is re-initialized to 0 and incremented to 1. However, the static variable 's' is shared across all objects and persists its value, incrementing each time a constructor is called. By the third object creation, 's' has reached 3."
+    },
+    {
+      "id": "9.28",
+      "number": "9.28",
+      "text": "Suppose the xMethod() is invoked in the following constructor in a class, xMethod() is _________ in the class.\n\n```java\npublic MyClass() {\n  xMethod();\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a static method"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "an instance method"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "a static method or an instance method"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A constructor is an instance context. Within an instance context, you can call both instance methods and static methods."
+    },
+    {
+      "id": "9.29",
+      "number": "9.29",
+      "text": "Suppose the xMethod() is invoked from a main method in a class as follows, xMethod() is _________ in the class.\n\n```java\npublic static void main(String[] args) {\n  xMethod();\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a static method"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "an instance method"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "a static method or an instance method"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The 'main' method is static. Static methods can only invoke other methods in the same class if those methods are also static."
+    },
+    {
+      "id": "9.30",
+      "number": "9.30",
+      "text": "Variables that are shared by every instance of a class are __________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "public variables"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "private variables"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "instance variables"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "class variables"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Class variables (declared with the 'static' keyword) are shared by all instances of the class. Instance variables are unique to each object."
+    },
+    {
+      "id": "9.31",
+      "number": "9.31",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  public static void main(String args[]) {\n    NClass nc = new NClass();\n    nc.t = nc.t++;\n  }\n}\n\nclass NClass {\n  int t;\n  private NClass() {\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because the NClass class has a private constructor."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program does not compile because the parameter list of the main method is wrong."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program compiles, but has a runtime error because t has no initial value."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program compiles and runs fine."
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The constructor of `NClass` is marked as `private`. Private members, including constructors, are only accessible within the class they are defined. Therefore, the `Test` class cannot instantiate `NClass` using `new NClass()`, resulting in a compilation error."
+    },
+    {
+      "id": "9.32",
+      "number": "9.32",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n  private int t;\n\n  public static void main(String[] args) {\n    int x;\n    System.out.println(t);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The variable t is not initialized and therefore causes errors."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The variable t is private and therefore cannot be accessed in the main method."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "t is non-static and it cannot be referenced in a static context in the main method."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The variable x is not initialized and therefore causes errors."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The program compiles and runs fine."
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, a static method (like `main`) cannot directly access non-static (instance) variables (like `t`) because instance variables require a specific object instance to exist, whereas static methods belong to the class itself."
+    },
+    {
+      "id": "9.33",
+      "number": "9.33",
+      "text": "Analyze the following code and choose the best answer:\n\n```java\npublic class Foo {\n  private int x;\n\n  public static void main(String[] args) {\n    Foo foo = new Foo();\n    System.out.println(foo.x);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Since x is private, it cannot be accessed from an object foo."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Since x is defined in the class Foo, it can be accessed by any method inside the class without using an object. You can write the code to access x without creating an object such as foo in this code."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Since x is an instance variable, it cannot be directly used inside a main method. However, it can be accessed through an object such as foo in this code."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "You cannot create a self-referenced object; that is, foo is created inside the class Foo."
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Private members are accessible anywhere within the class they are defined, including inside the `main` method of that class. Since `x` is an instance variable, it must be accessed via an object reference (like `foo.x`) when called from a static context like `main`."
+    },
+    {
+      "id": "9.34",
+      "number": "9.34",
+      "text": "To prevent a class from being instantiated, _____________________",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "don't use any modifiers on the constructor."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "use the public modifier on the constructor."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "use the private modifier on the constructor."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "use the static modifier on the constructor."
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Declaring a constructor as `private` ensures that no other class can instantiate it using the `new` operator. This is a common pattern used in utility classes or Singleton patterns."
+    },
+    {
+      "id": "9.35",
+      "number": "9.35",
+      "text": "Which is the advantage of encapsulation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Only public methods are needed."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Making the class final causes no consequential changes to other code."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It enables changes to the implementation without changing a class's contract and causes no consequential changes to other code."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It enables changes to a class's contract without changing the implementation and causes no consequential changes to other code."
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Encapsulation hides the internal state and implementation details. By providing a stable public API (the contract), the internal logic can be updated or optimized without requiring users of the class to modify their code."
+    },
+    {
+      "id": "9.36",
+      "number": "9.36",
+      "text": "Which of the following statements are true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Use the private modifier to encapsulate data fields."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Encapsulating data fields makes the program easy to maintain."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Encapsulating data fields makes the program short."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Encapsulating data fields helps prevent programming errors."
+        }
+      ],
+      "inputName": "QD35",
+      "inputType": "checkbox",
+      "correctAnswer": "ABD",
+      "explanation": "Encapsulation involves using the `private` modifier (A), which helps maintainability (B) by decoupling implementation from interface and prevents errors (D) by controlling how data is modified through validation logic in setters."
+    },
+    {
+      "id": "9.37",
+      "number": "9.37",
+      "text": "Suppose you wish to provide an accessor method for a boolean property `finished`, what should the signature of this method be?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\npublic void getFinished()\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\npublic boolean getFinished()\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\npublic boolean isFinished()\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\npublic void isFinished()\n```"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "According to Java naming conventions (JavaBeans spec), the getter method for a boolean property should be prefixed with 'is' rather than 'get'. It must also return a `boolean` value."
+    },
+    {
+      "id": "9.38",
+      "number": "9.38",
+      "text": "Encapsulation means ______________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "that data fields should be declared private"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "that a class can extend another class"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "that a variable of supertype can refer to a subtype object"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "that a class can contain another class"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Encapsulation, often called 'data hiding,' is the practice of keeping data fields private and providing access to them only through public methods to ensure data integrity."
+    },
+    {
+      "id": "9.39",
+      "number": "9.39",
+      "text": "What is the value of `myCount.count` displayed?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    Count myCount = new Count();\n    int times = 0;\n\n    for (int i = 0; i < 100; i++)\n      increment(myCount, times);\n\n    System.out.println(\"myCount.count = \" + myCount.count);\n    System.out.println(\"times = \" + times);\n  }\n\n  public static void increment(Count c, int times) {\n    c.count++;\n    times++;\n  }\n}\n\nclass Count {\n  int count;\n\n  Count(int c) {\n    count = c;\n  }\n\n  Count() {\n    count = 1;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "101"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "100"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "99"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "98"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Objects are passed by reference value in Java. The `increment` method receives the reference to the `myCount` object and modifies its `count` field. Since `count` starts at 1 (via the no-arg constructor) and the loop runs 100 times, the final value is 1 + 100 = 101."
+    },
+    {
+      "id": "9.40",
+      "number": "9.40",
+      "text": "What is the value of `times` displayed?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    Count myCount = new Count();\n    int times = 0;\n\n    for (int i = 0; i < 100; i++)\n      increment(myCount, times);\n\n    System.out.println(\"myCount.count = \" + myCount.count);\n    System.out.println(\"times = \" + times);\n  }\n\n  public static void increment(Count c, int times) {\n    c.count++;\n    times++;\n  }\n}\n\nclass Count {\n  int count;\n\n  Count(int c) {\n    count = c;\n  }\n\n  Count() {\n    count = 1;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "101"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "100"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "99"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "98"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "In Java, primitive types like `int` are passed by value. This means the `increment` method receives a copy of the `times` variable. Modifications to the `times` parameter inside the method do not affect the original `times` variable in the `main` method."
+    },
+    {
+      "id": "9.41",
+      "number": "9.41",
+      "text": "What is the output of the following program?\n\n```java\nimport java.util.Date;\n\npublic class Test {\n  public static void main(String[] args) {\n    Date date = new Date(1234567);\n    m1(date);\n    System.out.print(date.getTime() + \" \");\n\n    m2(date);\n    System.out.println(date.getTime());\n  }\n\n  public static void m1(Date date) {\n    date = new Date(7654321);\n  }\n\n  public static void m2(Date date) {\n    date.setTime(7654321);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1234567 1234567"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1234567 7654321"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "7654321 1234567"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "7654321 7654321"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, object references are passed by value. In m1, the reference is reassigned to a new object, which only affects the local variable within that method. In m2, the method uses the reference to call a mutator method (setTime), which modifies the state of the original object."
+    },
+    {
+      "id": "9.42",
+      "number": "9.42",
+      "text": "When invoking a method with an object argument, ___________ is passed.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "the contents of the object"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "a copy of the object"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "the reference of the object"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "the object is copied, then the reference of the copied object"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Java uses pass-by-value for all arguments. For objects, the value being passed is the reference (the memory address) to the object, not the object itself."
+    },
+    {
+      "id": "9.43",
+      "number": "9.43",
+      "text": "Given the declaration `Circle[] x = new Circle[10]`, which of the following statements is most accurate?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x contains an array of ten int values."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x contains an array of ten objects of the Circle type."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x contains a reference to an array and each element in the array can hold a reference to a Circle object."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x contains a reference to an array and each element in the array can hold a Circle object."
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The statement creates an array that can hold 10 references to Circle objects. The array elements are initialized to null; they do not contain the objects themselves until they are instantiated."
+    },
+    {
+      "id": "9.44",
+      "number": "9.44",
+      "text": "Assume `java.util.Date[] dates = new java.util.Date[10]`, which of the following statements are true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "dates is null."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "dates[0] is null."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "dates = new java.util.Date[5] is fine, which assigns a new array to dates."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "dates = new Date() is fine, which creates a new Date object and assigns to dates."
+        }
+      ],
+      "inputName": "QD43",
+      "inputType": "checkbox",
+      "correctAnswer": "BC",
+      "explanation": "When an array of objects is created, each element is initialized to null (B). The variable 'dates' can be reassigned to another array of the same type (C). Statement A is false because 'dates' refers to the array object. Statement D is false because you cannot assign a single object to an array variable."
+    },
+    {
+      "id": "9.45",
+      "number": "9.45",
+      "text": "Which of the following statements are true about an immutable object?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The contents of an immutable object cannot be modified."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "All properties of an immutable object must be private."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "All properties of an immutable object must be of primitive types."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A readable object type property in an immutable object must also be immutable."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "An immutable object contains no mutator methods."
+        }
+      ],
+      "inputName": "QE44",
+      "inputType": "checkbox",
+      "correctAnswer": "ABDE",
+      "explanation": "An immutable object's state cannot be changed (A). To ensure this, properties should be private (B), there should be no mutator methods (E), and any reference-type fields must also be immutable (D) to prevent external changes to the internal state."
+    },
+    {
+      "id": "9.46",
+      "number": "9.46",
+      "text": "What is the output for the first print statement in the main method?\n\n```java\npublic class Foo {\n  static int i = 0;\n  static int j = 0;\n\n  public static void main(String[] args) {\n    int i = 2;\n    int k = 3;\n    {\n      int j = 3;\n      System.out.println(\"i + j is \" + i + j);\n    }\n\n    k = i + j;\n    System.out.println(\"k is \" + k);\n    System.out.println(\"j is \" + j);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "i + j is 5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "i + j is 6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "i + j is 22"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "i + j is 23"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In Java, the '+' operator evaluates from left to right when used with Strings. \"i + j is \" + i (2) results in the string \"i + j is 2\". Then, adding j (3) results in \"i + j is 23\"."
+    },
+    {
+      "id": "9.47",
+      "number": "9.47",
+      "text": "What is the output for the second print statement in the main method?\n\n```java\npublic class Foo {\n  static int i = 0;\n  static int j = 0;\n\n  public static void main(String[] args) {\n    int i = 2;\n    int k = 3;\n    {\n      int j = 3;\n      System.out.println(\"i + j is \" + i + j);\n    }\n\n    k = i + j;\n    System.out.println(\"k is \" + k);\n    System.out.println(\"j is \" + j);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "k is 0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "k is 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "k is 2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "k is 3"
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The variable 'i' used is the local variable (2). The variable 'j' used is the static class variable (0), because the 'j' declared in the block is no longer in scope. Therefore, k = 2 + 0 = 2."
+    },
+    {
+      "id": "9.48",
+      "number": "9.48",
+      "text": "What is the output for the third print statement in the main method?\n\n```java\npublic class Foo {\n  static int i = 0;\n  static int j = 0;\n\n  public static void main(String[] args) {\n    int i = 2;\n    int k = 3;\n    {\n      int j = 3;\n      System.out.println(\"i + j is \" + i + j);\n    }\n\n    k = i + j;\n    System.out.println(\"k is \" + k);\n    System.out.println(\"j is \" + j);\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "j is 0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "j is 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "j is 2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "j is 3"
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The 'j' in the scope of the third print statement refers to the static class variable 'j', which was initialized to 0 and never modified."
+    },
+    {
+      "id": "9.49",
+      "number": "9.49",
+      "text": "You can declare two variables with the same name in __________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a method, one as a formal parameter and the other as a local variable"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "a block"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "two nested blocks in a method (two nested blocks means one being inside the other)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "different methods in a class"
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Variables declared within a method are local to that method. You can use the same variable name in different methods because their scopes do not overlap."
+    },
+    {
+      "id": "9.50",
+      "number": "9.50",
+      "text": "Analyze the following code:\n\n```java\nclass Circle {\n  private double radius;\n  \n  public Circle(double radius) {\n    radius = radius;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because it does not have a main method."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program will compile, but you cannot create an object of Circle with a specified radius. The object will always have radius 0."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error because you cannot assign radius to radius."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program does not compile because Circle does not have a default constructor."
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In the constructor, 'radius = radius' assigns the parameter 'radius' to itself because the parameter shadows the instance field. To correctly assign the value to the instance field, 'this.radius = radius' should be used. Consequently, the instance field remains at its default value (0.0)."
+    },
+    {
+      "id": "9.51",
+      "number": "9.51",
+      "text": "Which of the following can be placed in the blank line in the following code?\n\n```java\npublic class Test {\n  private int id;\n\n  public void m1() {\n    _____.id = 45;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "this"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Test"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "self"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "This"
+        }
+      ],
+      "inputName": "Q50",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, the 'this' keyword is used to refer to the current object instance. Within the instance method 'm1', 'this.id' correctly identifies the instance variable 'id'. 'Test' cannot be used because 'id' is not a static variable. 'self' is used in other languages like Python, and 'This' is invalid because Java is case-sensitive."
+    },
+    {
+      "id": "9.52",
+      "number": "9.52",
+      "text": "Analyze the following code:\n\n```java\nclass Test {\n  private double i;\n\n  public Test(double i) {\n    this.t();\n    this.i = i;\n  }\n\n  public Test() {\n    System.out.println(\"Default constructor\");\n    this(1);\n  }\n\n  public void t() {\n    System.out.println(\"Invoking t\");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "this.t() may be replaced by t()."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "this.i may be replaced by i."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "this(1) must be called before System.out.println(\"Default constructor\")."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "this(1) must be replaced by this(1.0)."
+        }
+      ],
+      "inputName": "QD51",
+      "inputType": "checkbox",
+      "correctAnswer": "AC",
+      "explanation": "This question has two correct points regarding Java syntax. First (A), 'this' is implicit when calling instance methods within the same class, so 'this.t()' and 't()' are equivalent. Second (C), Java requires that an explicit constructor invocation (like 'this(1)') be the very first statement in the constructor; otherwise, the code will fail to compile. Choice B is incorrect because 'this.i' is required to distinguish the instance variable from the parameter 'i'. Choice D is incorrect because an integer literal '1' is automatically promoted to 'double'."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 52
+}
