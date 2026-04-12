@@ -20,7 +20,13 @@ import urllib.parse
 import urllib.request
 import webbrowser
 from difflib import SequenceMatcher
+from datetime import datetime
 from diagram_support import validate_diagram_blocks
+
+try:
+    import winsound
+except Exception:
+    winsound = None
 
 try:
     from PIL import Image, ImageTk
@@ -52,62 +58,143 @@ COLORS = {
 }
 
 
+def _play_notification_sound(kind="info"):
+    """Play a lightweight notification sound without showing a popup."""
+    try:
+        if winsound is not None:
+            beep_map = {
+                "info": winsound.MB_ICONASTERISK,
+                "warning": winsound.MB_ICONEXCLAMATION,
+                "error": winsound.MB_ICONHAND,
+            }
+            winsound.MessageBeep(beep_map.get(kind, winsound.MB_OK))
+            return
+    except Exception:
+        pass
+
+    try:
+        root = tk._default_root
+        if root is not None:
+            root.bell()
+    except Exception:
+        pass
+
+
+def _sound_only_messagebox(kind, title, message):
+    """Replacement for showinfo/showwarning/showerror that only plays sound."""
+    _play_notification_sound(kind)
+    print(f"[{kind.upper()}] {title}: {message}")
+    return "ok"
+
+
+def _enable_sound_only_notifications():
+    """Disable info/warning/error popups while preserving notification sounds."""
+    messagebox.showinfo = lambda title, message, **kwargs: _sound_only_messagebox("info", title, message)
+    messagebox.showwarning = lambda title, message, **kwargs: _sound_only_messagebox("warning", title, message)
+    messagebox.showerror = lambda title, message, **kwargs: _sound_only_messagebox("error", title, message)
+
+
+def _get_theme_palette(style=None):
+    """Build a palette from the currently active ttkbootstrap theme."""
+    style = style or ttk.Style()
+    colors = style.colors
+
+    bg = getattr(colors, "bg", COLORS["bg_body"])
+    fg = getattr(colors, "fg", COLORS["text_main"])
+    primary = getattr(colors, "primary", COLORS["primary"])
+    warning = getattr(colors, "warning", COLORS["warning"])
+    success = getattr(colors, "success", COLORS["success"])
+    danger = getattr(colors, "danger", COLORS["danger"])
+    border = getattr(colors, "border", COLORS["border"])
+    input_bg = getattr(colors, "inputbg", colors.make_transparent(0.04, fg, bg))
+    input_fg = getattr(colors, "inputfg", fg)
+    select_bg = getattr(colors, "selectbg", primary)
+    select_fg = getattr(colors, "selectfg", "#ffffff")
+
+    # Use subtle primary tint for alternating table rows in any theme.
+    row_odd = colors.make_transparent(0.04, primary, bg)
+    row_even = colors.make_transparent(0.08, primary, bg)
+    header_bg = colors.make_transparent(0.10, primary, bg)
+    card_bg = colors.make_transparent(0.03, fg, bg)
+
+    return {
+        "bg": bg,
+        "fg": fg,
+        "primary": primary,
+        "warning": warning,
+        "success": success,
+        "danger": danger,
+        "border": border,
+        "input_bg": input_bg,
+        "input_fg": input_fg,
+        "select_bg": select_bg,
+        "select_fg": select_fg,
+        "row_odd": row_odd,
+        "row_even": row_even,
+        "header_bg": header_bg,
+        "card_bg": card_bg,
+    }
+
+
 def _configure_custom_styles(style):
-    """Override ttkbootstrap darkly theme to match web app indigo/purple palette."""
+    """Apply app-specific styles derived from the active ttkbootstrap theme."""
+    palette = _get_theme_palette(style)
+
     style.configure("Treeview",
-                     background=COLORS["bg_card"],
-                     foreground=COLORS["text_main"],
-                     fieldbackground=COLORS["bg_card"],
+                     background=palette["card_bg"],
+                     foreground=palette["fg"],
+                     fieldbackground=palette["card_bg"],
                      rowheight=28,
                      borderwidth=0,
                      font=("Segoe UI", 10))
     style.configure("Treeview.Heading",
-                     background=COLORS["bg_body"],
-                     foreground=COLORS["text_muted"],
+                     background=palette["header_bg"],
+                     foreground=palette["fg"],
                      font=("Segoe UI", 10, "bold"),
                      borderwidth=0,
                      relief="flat")
     style.map("Treeview",
-              background=[("selected", COLORS["primary"])],
-              foreground=[("selected", COLORS["selection_fg"])])
+              background=[("selected", palette["primary"])],
+              foreground=[("selected", palette["select_fg"])])
 
     style.configure("TLabelframe",
-                     background=COLORS["bg_card"],
-                     foreground=COLORS["primary_light"],
-                     bordercolor=COLORS["border"])
+                     background=palette["card_bg"],
+                     foreground=palette["primary"],
+                     bordercolor=palette["border"])
     style.configure("TLabelframe.Label",
-                     background=COLORS["bg_card"],
-                     foreground=COLORS["primary_light"],
+                     background=palette["card_bg"],
+                     foreground=palette["primary"],
                      font=("Segoe UI", 10, "bold"))
 
     style.configure("Header.TLabel",
                      font=("Segoe UI", 12, "bold"),
-                     foreground=COLORS["text_main"])
+                     foreground=palette["fg"])
     style.configure("SubHeader.TLabel",
                      font=("Segoe UI", 10, "bold"),
-                     foreground=COLORS["text_secondary"])
+                     foreground=palette["fg"])
     style.configure("Muted.TLabel",
-                     foreground=COLORS["text_muted"])
+                     foreground=palette["border"])
     style.configure("Status.TLabel",
                      font=("Segoe UI", 9))
 
     style.configure("TPanedwindow",
-                     background=COLORS["bg_body"],
+                     background=palette["bg"],
                      sashthickness=6)
 
 
 def _style_tk_text(widget, height=None):
-    """Apply dark theme to a tk.Text widget."""
+    """Apply current theme colors to a tk.Text widget."""
+    palette = _get_theme_palette()
     widget.configure(
-        bg=COLORS["bg_input"],
-        fg=COLORS["text_main"],
-        insertbackground=COLORS["text_main"],
-        selectbackground=COLORS["selection_bg"],
-        selectforeground=COLORS["selection_fg"],
+        bg=palette["input_bg"],
+        fg=palette["input_fg"],
+        insertbackground=palette["input_fg"],
+        selectbackground=palette["select_bg"],
+        selectforeground=palette["select_fg"],
         relief="flat",
         borderwidth=1,
-        highlightbackground=COLORS["border"],
-        highlightcolor=COLORS["primary"],
+        highlightbackground=palette["border"],
+        highlightcolor=palette["primary"],
         highlightthickness=1,
         font=("Segoe UI", 10),
         padx=8,
@@ -118,16 +205,17 @@ def _style_tk_text(widget, height=None):
 
 
 def _style_tk_listbox(widget):
-    """Apply dark theme to a tk.Listbox widget."""
+    """Apply current theme colors to a tk.Listbox widget."""
+    palette = _get_theme_palette()
     widget.configure(
-        bg=COLORS["bg_card"],
-        fg=COLORS["text_main"],
-        selectbackground=COLORS["primary"],
-        selectforeground=COLORS["selection_fg"],
+        bg=palette["card_bg"],
+        fg=palette["fg"],
+        selectbackground=palette["primary"],
+        selectforeground=palette["select_fg"],
         relief="flat",
         borderwidth=0,
-        highlightbackground=COLORS["border"],
-        highlightcolor=COLORS["primary"],
+        highlightbackground=palette["border"],
+        highlightcolor=palette["primary"],
         highlightthickness=1,
         font=("Segoe UI", 10),
         activestyle="none",
@@ -135,10 +223,151 @@ def _style_tk_listbox(widget):
 
 
 def _style_dialog(dialog, title, geometry):
-    """Apply dark theme to a tk.Toplevel dialog."""
+    """Apply active theme to a tk.Toplevel dialog."""
+    palette = _get_theme_palette()
     dialog.title(title)
     dialog.geometry(geometry)
-    dialog.configure(bg=COLORS["bg_body"])
+    dialog.configure(bg=palette["bg"])
+
+
+def _backup_root_for(base_path):
+    return Path(base_path) / ".editor_backups"
+
+
+def _backup_history_dir(base_path):
+    return _backup_root_for(base_path) / "history"
+
+
+def _backup_log_file(base_path):
+    return _backup_root_for(base_path) / "backup_log.jsonl"
+
+
+def _ensure_backup_paths(base_path):
+    _backup_history_dir(base_path).mkdir(parents=True, exist_ok=True)
+
+
+def _safe_relative_path(path, root):
+    path = Path(path)
+    root = Path(root)
+    try:
+        return path.resolve().relative_to(root.resolve())
+    except Exception:
+        return Path(path.name)
+
+
+def _append_backup_log(base_path, record):
+    _ensure_backup_paths(base_path)
+    log_path = _backup_log_file(base_path)
+    with open(log_path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+
+def _create_backup_entry(base_path, action, project, details):
+    """Create a backup entry directory and metadata file."""
+    _ensure_backup_paths(base_path)
+    stamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+    entry_id = f"{stamp}_{action}"
+    entry_dir = _backup_history_dir(base_path) / entry_id
+    payload_dir = entry_dir / "payload"
+    payload_dir.mkdir(parents=True, exist_ok=True)
+
+    metadata = {
+        "id": entry_id,
+        "timestamp": datetime.now().isoformat(timespec="seconds"),
+        "project": project,
+        "action": action,
+        "details": details,
+    }
+    with open(entry_dir / "metadata.json", "w", encoding="utf-8") as f:
+        json.dump(metadata, f, indent=2, ensure_ascii=False)
+
+    _append_backup_log(base_path, {
+        "timestamp": metadata["timestamp"],
+        "id": entry_id,
+        "project": project,
+        "action": action,
+        "details": details,
+    })
+    return entry_dir, payload_dir, metadata
+
+
+def _backup_copy_path(path, root, payload_dir):
+    """Copy a file or directory into a backup payload preserving relative path."""
+    src = Path(path)
+    if not src.exists():
+        return None
+
+    rel = _safe_relative_path(src, root)
+    dest = Path(payload_dir) / rel
+    dest.parent.mkdir(parents=True, exist_ok=True)
+
+    if src.is_dir():
+        if dest.exists():
+            shutil.rmtree(dest)
+        shutil.copytree(src, dest)
+    else:
+        shutil.copy2(src, dest)
+    return str(rel).replace("\\", "/")
+
+
+def _load_backup_entries(base_path):
+    """Load backup metadata entries sorted newest first."""
+    history_dir = _backup_history_dir(base_path)
+    if not history_dir.exists():
+        return []
+
+    entries = []
+    for entry_dir in sorted(history_dir.iterdir(), reverse=True):
+        if not entry_dir.is_dir():
+            continue
+        meta_path = entry_dir / "metadata.json"
+        if not meta_path.exists():
+            continue
+        try:
+            with open(meta_path, "r", encoding="utf-8") as f:
+                meta = json.load(f)
+            meta["entry_dir"] = str(entry_dir)
+            entries.append(meta)
+        except Exception:
+            continue
+    return entries
+
+
+def _restore_backup_entry(base_path, entry_dir):
+    """Restore files from one backup entry payload into the project root."""
+    root = Path(base_path)
+    payload_dir = Path(entry_dir) / "payload"
+    if not payload_dir.exists():
+        return 0
+
+    restored = 0
+    for item in payload_dir.rglob("*"):
+        rel = item.relative_to(payload_dir)
+        target = root / rel
+        if item.is_dir():
+            target.mkdir(parents=True, exist_ok=True)
+            continue
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(item, target)
+        restored += 1
+    return restored
+
+
+def _delete_backup_entry(entry_dir):
+    entry_dir = Path(entry_dir)
+    if entry_dir.exists() and entry_dir.is_dir():
+        shutil.rmtree(entry_dir)
+
+
+def _clear_backup_history(base_path):
+    history_dir = _backup_history_dir(base_path)
+    if history_dir.exists():
+        shutil.rmtree(history_dir)
+    history_dir.mkdir(parents=True, exist_ok=True)
+
+    log_path = _backup_log_file(base_path)
+    if log_path.exists():
+        log_path.unlink()
 
 
 def _replace_escaped_newlines(value):
@@ -244,6 +473,7 @@ class FormattedTextEditor(ttk.Frame):
         self.text.pack(fill=tk.BOTH, expand=True)
 
     def _build_preview(self):
+        palette = _get_theme_palette()
         self._preview_frame = ttk.LabelFrame(self, text="Preview")
         self._preview_frame.pack(fill=tk.X, pady=(3, 0))
         self._preview_text = tk.Text(
@@ -251,10 +481,10 @@ class FormattedTextEditor(ttk.Frame):
             state="disabled", cursor="arrow",
         )
         self._preview_text.configure(
-            bg=COLORS["bg_input_alt"], fg=COLORS["text_main"],
-            insertbackground=COLORS["text_main"],
-            selectbackground=COLORS["selection_bg"],
-            selectforeground=COLORS["selection_fg"],
+            bg=palette["input_bg"], fg=palette["input_fg"],
+            insertbackground=palette["input_fg"],
+            selectbackground=palette["select_bg"],
+            selectforeground=palette["select_fg"],
             relief="flat", borderwidth=0, highlightthickness=0,
             font=("Segoe UI", 10), padx=8, pady=4,
         )
@@ -264,12 +494,12 @@ class FormattedTextEditor(ttk.Frame):
         self._preview_text.tag_configure("bold", font=("Segoe UI", 10, "bold"))
         self._preview_text.tag_configure("italic", font=("Segoe UI", 10, "italic"))
         self._preview_text.tag_configure("code", font=("Consolas", 10),
-                                          foreground=COLORS["success"],
-                                          background="#1a2332")
+                                          foreground=palette["success"],
+                                          background=palette["card_bg"])
         self._preview_text.tag_configure("codeblock", font=("Consolas", 9),
-                                          foreground=COLORS["success"],
-                                          background="#1a2332")
-        self._preview_text.tag_configure("math", foreground=COLORS["accent"],
+                                          foreground=palette["success"],
+                                          background=palette["card_bg"])
+        self._preview_text.tag_configure("math", foreground=palette["primary"],
                                           font=("Cambria Math", 10))
 
     def _toggle_preview(self):
@@ -281,25 +511,26 @@ class FormattedTextEditor(ttk.Frame):
 
     def _setup_tags(self):
         """Configure syntax highlighting tags for the editor."""
+        palette = _get_theme_palette()
         t = self.text
-        t.tag_configure("fmt_bold_marker", foreground="#f59e0b")
+        t.tag_configure("fmt_bold_marker", foreground=palette["warning"])
         t.tag_configure("fmt_bold_text", font=("Segoe UI", 10, "bold"),
-                         foreground="#fbbf24")
-        t.tag_configure("fmt_italic_marker", foreground="#38bdf8")
+                         foreground=palette["warning"])
+        t.tag_configure("fmt_italic_marker", foreground=palette["primary"])
         t.tag_configure("fmt_italic_text", font=("Segoe UI", 10, "italic"),
-                         foreground="#7dd3fc")
-        t.tag_configure("fmt_code_marker", foreground="#065f46")
+                         foreground=palette["primary"])
+        t.tag_configure("fmt_code_marker", foreground=palette["success"])
         t.tag_configure("fmt_code", font=("Consolas", 10),
-                         foreground=COLORS["success"])
+                         foreground=palette["success"])
         t.tag_configure("fmt_codeblock", font=("Consolas", 9),
-                         foreground=COLORS["success"], background="#1a2332")
-        t.tag_configure("fmt_math_marker", foreground="#0e7490")
-        t.tag_configure("fmt_math", foreground=COLORS["accent"])
-        t.tag_configure("fmt_html", foreground=COLORS["warning"])
-        t.tag_configure("fmt_entity", foreground=COLORS["text_muted"],
-                         background="#1c1c2e")
-        t.tag_configure("fmt_diagram_marker", foreground="#a78bfa")
-        t.tag_configure("fmt_diagram_lang", foreground="#c4b5fd", font=("Consolas", 9, "bold"))
+                         foreground=palette["success"], background=palette["card_bg"])
+        t.tag_configure("fmt_math_marker", foreground=palette["primary"])
+        t.tag_configure("fmt_math", foreground=palette["primary"])
+        t.tag_configure("fmt_html", foreground=palette["warning"])
+        t.tag_configure("fmt_entity", foreground=palette["border"],
+                         background=palette["card_bg"])
+        t.tag_configure("fmt_diagram_marker", foreground=palette["primary"])
+        t.tag_configure("fmt_diagram_lang", foreground=palette["primary"], font=("Consolas", 9, "bold"))
 
     def _bind_events(self):
         self.text.bind("<KeyRelease>", self._schedule_highlight)
@@ -498,6 +729,27 @@ class FormattedTextEditor(ttk.Frame):
         content = self.text.get("1.0", "end-1c")
         return validate_diagram_blocks(content, subject_id=subject_id)
 
+    def apply_theme(self):
+        """Reapply theme colors to editor and preview widgets."""
+        _style_tk_text(self.text)
+        self._setup_tags()
+        if self.show_preview and hasattr(self, "_preview_text"):
+            self._build_preview_colors_only()
+
+    def _build_preview_colors_only(self):
+        """Reconfigure preview colors without recreating the preview widget."""
+        palette = _get_theme_palette()
+        self._preview_text.configure(
+            bg=palette["input_bg"],
+            fg=palette["input_fg"],
+            insertbackground=palette["input_fg"],
+            selectbackground=palette["select_bg"],
+            selectforeground=palette["select_fg"],
+        )
+        self._preview_text.tag_configure("code", foreground=palette["success"], background=palette["card_bg"])
+        self._preview_text.tag_configure("codeblock", foreground=palette["success"], background=palette["card_bg"])
+        self._preview_text.tag_configure("math", foreground=palette["primary"], font=("Cambria Math", 10))
+
     # -- Compatibility proxy methods (match tk.Text interface) --
 
     def get(self, *args, **kwargs):
@@ -526,10 +778,12 @@ class AdvancedChapterEditor:
         
         # Create images folder if it doesn't exist
         self.images_folder.mkdir(parents=True, exist_ok=True)
+        _ensure_backup_paths(self.base_path)
         
         self.window = tk.Toplevel(parent)
         self.window.title(f"Advanced Chapter Editor - {self.chapter_file.stem}")
-        self.window.geometry("1100x800")
+        self.window.geometry("1280x900")
+        self.window.minsize(1160, 820)
         self.window.configure(bg=COLORS["bg_body"])
         self.window.transient(parent)
         
@@ -543,7 +797,7 @@ class AdvancedChapterEditor:
         self.search_in_choices_var = tk.BooleanVar(value=True)
         self.search_in_meta_var = tk.BooleanVar(value=False)
         self.filtered_question_indices = []
-        self.is_maximized = True
+        self.is_maximized = False
         self.question_search_var.trace_add("write", lambda *_: self.refresh_questions_list())
         self.search_in_text_var.trace_add("write", lambda *_: self.refresh_questions_list())
         self.search_in_explanation_var.trace_add("write", lambda *_: self.refresh_questions_list())
@@ -552,6 +806,7 @@ class AdvancedChapterEditor:
 
         self.window.bind("<F11>", self.toggle_maximize)
         self.window.bind("<Control-m>", self.toggle_maximize)
+        self.window.bind("<Control-Shift-M>", self.minimize_window)
         self.window.bind("<Configure>", self.on_window_configure)
         
         self.load_chapter_data()
@@ -590,9 +845,15 @@ class AdvancedChapterEditor:
         toolbar = ttk.Frame(self.window)
         toolbar.pack(side=tk.TOP, fill=tk.X, padx=10, pady=10)
 
-        ttk.Button(toolbar, text="Add Question", command=self.add_question,
+        left_tools = ttk.Frame(toolbar)
+        left_tools.pack(side=tk.LEFT, fill=tk.X, expand=True)
+
+        right_tools = ttk.Frame(toolbar)
+        right_tools.pack(side=tk.RIGHT)
+
+        ttk.Button(left_tools, text="Add Question", command=self.add_question,
                   width=15, bootstyle="success").pack(side=tk.LEFT, padx=5)
-        ttk.Button(toolbar, text="Delete Question", command=self.delete_question,
+        ttk.Button(left_tools, text="Delete Question", command=self.delete_question,
                   width=18, bootstyle="danger-outline").pack(side=tk.LEFT, padx=5)
 
         self.tools_menu = tk.Menu(
@@ -615,7 +876,7 @@ class AdvancedChapterEditor:
         self.tools_menu.add_command(label="Validate Diagram Blocks", command=self.validate_diagram_blocks_for_chapter)
 
         self.tools_btn = ttk.Button(
-            toolbar,
+            left_tools,
             text="Tools ▼",
             width=10,
             bootstyle="warning-outline",
@@ -624,20 +885,59 @@ class AdvancedChapterEditor:
         self.tools_btn.pack(side=tk.LEFT, padx=5)
         self.tools_btn.bind("<Enter>", self.show_tools_menu)
 
-        ttk.Button(toolbar, text="▲", command=self.move_question_up,
+        ttk.Button(left_tools, text="▲", command=self.move_question_up,
                   width=3, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=2)
-        ttk.Button(toolbar, text="▼", command=self.move_question_down,
+        ttk.Button(left_tools, text="▼", command=self.move_question_down,
                   width=3, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=2)
+
+        ttk.Label(
+            left_tools,
+            text="F11: Max/Restore | Ctrl+Shift+M: Minimize",
+            style="Muted.TLabel",
+        ).pack(side=tk.LEFT, padx=(10, 0))
+
+        self.backups_btn = ttk.Button(
+            right_tools,
+            text="Backups ▼",
+            width=12,
+            bootstyle="warning-outline",
+            command=self.show_backups_menu,
+        )
+        self.backups_btn.pack(side=tk.RIGHT, padx=5)
+        self.minimize_btn = ttk.Button(
+            right_tools,
+            text="Minimize",
+            command=self.minimize_window,
+            width=10,
+            bootstyle="secondary-outline",
+        )
+        self.minimize_btn.pack(side=tk.RIGHT, padx=5)
         self.maximize_btn = ttk.Button(
-            toolbar,
+            right_tools,
             text="Maximize",
             command=self.toggle_maximize,
             width=12,
             bootstyle="secondary-outline",
         )
         self.maximize_btn.pack(side=tk.RIGHT, padx=5)
-        ttk.Button(toolbar, text="Save Changes", command=self.save_chapter,
+        ttk.Button(right_tools, text="Save Changes", command=self.save_chapter,
                   width=15, bootstyle="primary").pack(side=tk.RIGHT, padx=5)
+
+        self.backups_menu = tk.Menu(
+            self.window,
+            tearoff=0,
+            bg=COLORS["bg_card"],
+            fg=COLORS["text_main"],
+            activebackground=COLORS["primary"],
+            activeforeground=COLORS["selection_fg"],
+            relief=tk.FLAT,
+            font=("Segoe UI", 9),
+        )
+        self.backups_menu.add_command(label="Open Backup Folder", command=self.open_backup_folder)
+        self.backups_menu.add_command(label="Backup History", command=self.show_backup_history_dialog)
+        self.backups_menu.add_command(label="Restore Latest Backup", command=self.restore_latest_backup)
+        self.backups_menu.add_separator()
+        self.backups_menu.add_command(label="Clear Backup History", command=self.clear_backup_history)
 
         # Main container
         container = ttk.Panedwindow(self.window, orient=tk.HORIZONTAL)
@@ -737,6 +1037,12 @@ class AdvancedChapterEditor:
         # Initialize editor widgets (will be populated when question is selected)
         self.init_editor_widgets()
 
+        status_bar = ttk.Frame(self.window)
+        status_bar.pack(side=tk.BOTTOM, fill=tk.X, padx=10, pady=(0, 8))
+        self.editor_status_label = ttk.Label(status_bar, text="Questions: 0 | Selected: 0", style="Muted.TLabel")
+        self.editor_status_label.pack(side=tk.LEFT)
+        self._update_editor_status_strip()
+
     def show_tools_menu(self, event=None):
         """Show the tools menu below the tools button."""
         if not hasattr(self, "tools_btn") or not hasattr(self, "tools_menu"):
@@ -757,6 +1063,14 @@ class AdvancedChapterEditor:
             self.is_maximized = new_state
             if hasattr(self, "maximize_btn"):
                 self.maximize_btn.configure(text="Restore" if self.is_maximized else "Maximize")
+
+    def minimize_window(self, event=None):
+        """Minimize chapter editor window."""
+        try:
+            self.window.iconify()
+        except tk.TclError:
+            pass
+        return "break"
 
     def _window_is_maximized(self):
         """Return True when the chapter editor window is maximized."""
@@ -782,6 +1096,172 @@ class AdvancedChapterEditor:
 
         self.on_window_configure()
         return "break"
+
+    def update_status(self, message, color="blue"):
+        """Lightweight status feedback in chapter editor title and console."""
+        try:
+            self.window.title(f"Advanced Chapter Editor - {self.chapter_file.stem} | {message}")
+        except Exception:
+            pass
+        print(f"[{color.upper()}] {message}")
+
+    def apply_theme(self):
+        """Reapply current theme colors to chapter editor widgets."""
+        palette = _get_theme_palette(ttk.Style())
+        self.window.configure(bg=palette["bg"])
+
+        if hasattr(self, "editor_canvas"):
+            self.editor_canvas.configure(bg=palette["card_bg"])
+        if hasattr(self, "questions_listbox"):
+            _style_tk_listbox(self.questions_listbox)
+        if hasattr(self, "choices_listbox"):
+            _style_tk_listbox(self.choices_listbox)
+        if hasattr(self, "q_text") and isinstance(self.q_text, FormattedTextEditor):
+            self.q_text.apply_theme()
+        if hasattr(self, "q_explanation") and isinstance(self.q_explanation, FormattedTextEditor):
+            self.q_explanation.apply_theme()
+
+    def _backup_operation(self, action, details, paths):
+        entry_dir, payload_dir, meta = _create_backup_entry(
+            self.base_path,
+            action,
+            self.section_path.name,
+            details,
+        )
+        copied = []
+        for path in paths:
+            rel = _backup_copy_path(path, self.base_path, payload_dir)
+            if rel:
+                copied.append(rel)
+        with open(Path(entry_dir) / "metadata.json", "w", encoding="utf-8") as f:
+            meta["files"] = copied
+            json.dump(meta, f, indent=2, ensure_ascii=False)
+        return entry_dir
+
+    def show_backups_menu(self, event=None):
+        """Show backup controls menu."""
+        x = self.backups_btn.winfo_rootx()
+        y = self.backups_btn.winfo_rooty() + self.backups_btn.winfo_height()
+        try:
+            self.backups_menu.tk_popup(x, y)
+        finally:
+            self.backups_menu.after_idle(self.backups_menu.grab_release)
+        return "break"
+
+    def open_backup_folder(self):
+        """Open the backup folder in file explorer."""
+        backup_root = _backup_root_for(self.base_path)
+        try:
+            if hasattr(os, "startfile"):
+                os.startfile(str(backup_root))
+            else:
+                webbrowser.open(backup_root.as_uri())
+        except Exception as e:
+            messagebox.showerror("Backups", f"Unable to open backup folder: {e}")
+
+    def restore_latest_backup(self):
+        """Restore the latest backup snapshot for this project."""
+        entries = _load_backup_entries(self.base_path)
+        if not entries:
+            messagebox.showwarning("Backups", "No backup snapshots available.")
+            return
+        latest = entries[0]
+        if not messagebox.askyesno("Restore Backup", f"Restore latest backup '{latest.get('id', '')}'?"):
+            return
+        restored = _restore_backup_entry(self.base_path, latest["entry_dir"])
+        self.load_chapter_data()
+        self.refresh_questions_list()
+        self.update_status(f"Restored backup ({restored} file(s))", "blue")
+
+    def clear_backup_history(self):
+        """Clear all backup snapshots and logs."""
+        if not messagebox.askyesno("Clear Backups", "Delete all backup history and logs?"):
+            return
+        _clear_backup_history(self.base_path)
+        self.update_status("Backup history cleared", "orange")
+
+    def show_backup_history_dialog(self):
+        """Open backup history list for restore/delete operations."""
+        dlg = tk.Toplevel(self.window)
+        _style_dialog(dlg, "Backup History", "920x560")
+        dlg.transient(self.window)
+
+        frame = ttk.Frame(dlg, padding=14, bootstyle="dark")
+        frame.pack(fill=tk.BOTH, expand=True)
+        ttk.Label(frame, text="Backup History", style="Header.TLabel").pack(anchor=tk.W, pady=(0, 8))
+
+        list_frame = ttk.Frame(frame)
+        list_frame.pack(fill=tk.BOTH, expand=True)
+
+        scroll = ttk.Scrollbar(list_frame, orient=tk.VERTICAL)
+        history_list = tk.Listbox(list_frame, exportselection=False)
+        _style_tk_listbox(history_list)
+        scroll.config(command=history_list.yview)
+        history_list.config(yscrollcommand=scroll.set)
+        history_list.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        scroll.pack(side=tk.RIGHT, fill=tk.Y)
+
+        details_var = tk.StringVar(value="Select a backup entry to view details.")
+        ttk.Label(frame, textvariable=details_var, style="Muted.TLabel", justify=tk.LEFT).pack(anchor=tk.W, pady=(8, 6))
+
+        entries = []
+
+        def refresh_entries():
+            history_list.delete(0, tk.END)
+            entries.clear()
+            for entry in _load_backup_entries(self.base_path):
+                row = f"{entry.get('timestamp', '')} | {entry.get('action', '')} | {entry.get('details', '')}"
+                history_list.insert(tk.END, row)
+                entries.append(entry)
+
+        def selected_entry():
+            sel = history_list.curselection()
+            if not sel:
+                return None
+            idx = sel[0]
+            if 0 <= idx < len(entries):
+                return entries[idx]
+            return None
+
+        def on_select(event=None):
+            entry = selected_entry()
+            if not entry:
+                return
+            details_var.set(
+                f"ID: {entry.get('id', '')} | Project: {entry.get('project', '')}\n"
+                f"Details: {entry.get('details', '')}"
+            )
+
+        def restore_selected():
+            entry = selected_entry()
+            if not entry:
+                return
+            if not messagebox.askyesno("Restore Backup", f"Restore '{entry.get('id', '')}'?"):
+                return
+            restored = _restore_backup_entry(self.base_path, entry["entry_dir"])
+            self.load_chapter_data()
+            self.refresh_questions_list()
+            self.update_status(f"Restored backup {entry.get('id', '')} ({restored} file(s))", "blue")
+
+        def delete_selected():
+            entry = selected_entry()
+            if not entry:
+                return
+            if not messagebox.askyesno("Delete Backup", f"Delete '{entry.get('id', '')}' permanently?"):
+                return
+            _delete_backup_entry(entry["entry_dir"])
+            refresh_entries()
+
+        controls = ttk.Frame(frame)
+        controls.pack(fill=tk.X, pady=(6, 0))
+        ttk.Button(controls, text="Restore Selected", command=restore_selected, bootstyle="primary-outline").pack(side=tk.LEFT, padx=(0, 6))
+        ttk.Button(controls, text="Delete Selected", command=delete_selected, bootstyle="danger-outline").pack(side=tk.LEFT, padx=(0, 6))
+        ttk.Button(controls, text="Open Backup Folder", command=self.open_backup_folder, bootstyle="info-outline").pack(side=tk.LEFT, padx=(0, 6))
+        ttk.Button(controls, text="Clear All", command=self.clear_backup_history, bootstyle="warning-outline").pack(side=tk.LEFT, padx=(0, 6))
+        ttk.Button(controls, text="Refresh", command=refresh_entries, bootstyle="secondary-outline").pack(side=tk.RIGHT)
+
+        history_list.bind("<<ListboxSelect>>", on_select)
+        refresh_entries()
     
     def init_editor_widgets(self):
         """Initialize editor widget placeholders"""
@@ -847,7 +1327,7 @@ class AdvancedChapterEditor:
         # Explanation
         ttk.Label(self.editor_frame, text="Explanation:", style="SubHeader.TLabel").pack(
             fill=tk.X, padx=10, pady=(0, 5))
-        self.q_explanation = FormattedTextEditor(self.editor_frame, height=4, show_preview=False)
+        self.q_explanation = FormattedTextEditor(self.editor_frame, height=5, show_preview=True)
         self.q_explanation.pack(fill=tk.X, padx=10, pady=(0, 10))
 
         # Choices section
@@ -896,6 +1376,18 @@ class AdvancedChapterEditor:
             self.questions_listbox.insert(tk.END, display)
 
         self.restore_question_selection(selected_actual_indices)
+        self._update_editor_status_strip()
+
+    def _update_editor_status_strip(self):
+        """Update the bottom status strip for question counts and selection."""
+        if not hasattr(self, "editor_status_label"):
+            return
+        total = len(self.questions)
+        visible = len(self.filtered_question_indices)
+        selected = len(self.questions_listbox.curselection()) if hasattr(self, "questions_listbox") else 0
+        self.editor_status_label.config(
+            text=f"Questions: {total} | Visible: {visible} | Selected: {selected}"
+        )
 
     def get_filtered_question_indices(self):
         """Return question indexes that match the current search filter."""
@@ -986,10 +1478,12 @@ class AdvancedChapterEditor:
         """Handle question selection"""
         selected_indices = self.get_selected_question_indices()
         if not selected_indices:
+            self._update_editor_status_strip()
             return
         
         self.current_question_idx = selected_indices[0]
         self.display_question()
+        self._update_editor_status_strip()
     
     def show_question_context_menu(self, event):
         """Show context menu on right-click"""
@@ -1113,12 +1607,14 @@ class AdvancedChapterEditor:
             return
 
         dialog = tk.Toplevel(self.window)
-        _style_dialog(dialog, "Add Choice", "550x380")
+        _style_dialog(dialog, "Add Choice", "760x560")
+        dialog.minsize(700, 500)
         dialog.transient(self.window)
         dialog.grab_set()
 
-        frame = ttk.Frame(dialog, padding=15, bootstyle="dark")
+        frame = ttk.Frame(dialog, padding=18, bootstyle="dark")
         frame.pack(fill=tk.BOTH, expand=True)
+        frame.columnconfigure(0, weight=1)
 
         ttk.Label(frame, text="Choice Value (A, B, C, D):", style="SubHeader.TLabel").pack(
             fill=tk.X, pady=(0, 5))
@@ -1128,7 +1624,7 @@ class AdvancedChapterEditor:
 
         ttk.Label(frame, text="Choice Text:", style="SubHeader.TLabel").pack(
             fill=tk.X, pady=(0, 5))
-        text_entry = FormattedTextEditor(frame, height=4, show_preview=False)
+        text_entry = FormattedTextEditor(frame, height=5, show_preview=True)
         text_entry.pack(fill=tk.BOTH, expand=True, pady=(0, 10))
 
         def save():
@@ -1172,12 +1668,14 @@ class AdvancedChapterEditor:
         choice = q.get('choices', [])[choice_idx]
 
         dialog = tk.Toplevel(self.window)
-        _style_dialog(dialog, "Edit Choice", "550x380")
+        _style_dialog(dialog, "Edit Choice", "760x560")
+        dialog.minsize(700, 500)
         dialog.transient(self.window)
         dialog.grab_set()
 
-        frame = ttk.Frame(dialog, padding=15, bootstyle="dark")
+        frame = ttk.Frame(dialog, padding=18, bootstyle="dark")
         frame.pack(fill=tk.BOTH, expand=True)
+        frame.columnconfigure(0, weight=1)
 
         ttk.Label(frame, text="Choice Value:", style="SubHeader.TLabel").pack(
             fill=tk.X, pady=(0, 5))
@@ -1188,7 +1686,7 @@ class AdvancedChapterEditor:
 
         ttk.Label(frame, text="Choice Text:", style="SubHeader.TLabel").pack(
             fill=tk.X, pady=(0, 5))
-        text_entry = FormattedTextEditor(frame, height=4, show_preview=False)
+        text_entry = FormattedTextEditor(frame, height=5, show_preview=True)
         text_entry.insert(1.0, choice.get('text', ''))
         text_entry.pack(fill=tk.BOTH, expand=True, pady=(0, 10))
 
@@ -2123,6 +2621,19 @@ class AdvancedChapterEditor:
         btn_frame.pack(fill=tk.X, pady=(10, 0))
 
         def do_delete():
+            backup_paths = [self.chapter_file]
+            if del_image_var.get():
+                for idx in selected_question_indices:
+                    image_path = self.questions[idx].get('image', '')
+                    if image_path:
+                        backup_paths.append(self.base_path / image_path)
+
+            self._backup_operation(
+                "delete_question",
+                f"Deleting {len(selected_question_indices)} question(s) from {self.chapter_file.name}",
+                backup_paths,
+            )
+
             if del_image_var.get():
                 for idx in selected_question_indices:
                     image_path = self.questions[idx].get('image', '')
@@ -2272,6 +2783,7 @@ class ExamEditor:
         self.base_path = Path(__file__).parent.parent
         self.data_path = self.base_path / "data"
         self.config_path = self.base_path / "config"
+        _ensure_backup_paths(self.base_path)
         
         self.sections = []
         self.current_section = None
@@ -2281,6 +2793,7 @@ class ExamEditor:
         self.section_filter_var = tk.StringVar(value="")
         self.chapter_filter_var = tk.StringVar(value="")
         self.status_reset_job = None
+        self.chapter_editor_windows = []
         
         self.setup_ui()
         self._bind_shortcuts()
@@ -2307,6 +2820,7 @@ class ExamEditor:
         self.base_path = self.workspace_root / project_name
         self.data_path = self.base_path / "data"
         self.config_path = self.base_path / "config"
+        _ensure_backup_paths(self.base_path)
 
     def on_project_change(self, event=None):
         """Handle project combobox selection changes."""
@@ -2379,6 +2893,31 @@ class ExamEditor:
         self.theme_combo.pack(side=tk.LEFT, padx=(0, 5))
         self.theme_combo.bind("<<ComboboxSelected>>", self.on_theme_change)
 
+        self.backups_btn = ttk.Button(
+            toolbar,
+            text="Backups ▼",
+            width=12,
+            bootstyle="warning-outline",
+            command=self.show_backups_menu,
+        )
+        self.backups_btn.pack(side=tk.LEFT, padx=(8, 4))
+
+        self.backups_menu = tk.Menu(
+            self.root,
+            tearoff=0,
+            bg=COLORS["bg_card"],
+            fg=COLORS["text_main"],
+            activebackground=COLORS["primary"],
+            activeforeground=COLORS["selection_fg"],
+            relief=tk.FLAT,
+            font=("Segoe UI", 9),
+        )
+        self.backups_menu.add_command(label="Open Backup Folder", command=self.open_backup_folder)
+        self.backups_menu.add_command(label="Backup History", command=self.show_backup_history_dialog)
+        self.backups_menu.add_command(label="Restore Latest Backup", command=self.restore_latest_backup)
+        self.backups_menu.add_separator()
+        self.backups_menu.add_command(label="Clear Backup History", command=self.clear_backup_history)
+
         self.metrics_label = ttk.Label(
             toolbar,
             text="Sections: 0 | Chapters: 0 | Questions: 0",
@@ -2448,7 +2987,7 @@ class ExamEditor:
                                          columns=("Name", "ID", "Path"),
                                          show="headings",
                                          yscrollcommand=sections_scroll.set,
-                                         selectmode="browse",
+                                         selectmode="extended",
                                          height=15)
 
         sections_scroll.config(command=self.sections_tree.yview)
@@ -2473,6 +3012,26 @@ class ExamEditor:
         self.sections_tree.bind("<F2>", self.on_section_double_click)
         self.sections_tree.bind("<Delete>", self.delete_section)
         self.sections_tree.bind("<Escape>", self.clear_all_filters)
+        self.sections_tree.bind("<Button-3>", self.show_section_context_menu)
+
+        self.section_context_menu = tk.Menu(
+            self.root,
+            tearoff=0,
+            bg=COLORS["bg_card"],
+            fg=COLORS["text_main"],
+            activebackground=COLORS["primary"],
+            activeforeground=COLORS["selection_fg"],
+            relief=tk.FLAT,
+            font=("Segoe UI", 9),
+        )
+        self.section_context_menu.add_command(label="Add Section", command=self.add_section)
+        self.section_context_menu.add_command(label="Import Section", command=self.import_section)
+        self.section_context_menu.add_separator()
+        self.section_context_menu.add_command(label="Edit Selected", command=self.edit_section)
+        self.section_context_menu.add_command(label="Delete Selected", command=self.delete_section)
+        self.section_context_menu.add_separator()
+        self.section_context_menu.add_command(label="Move Up", command=self.move_section_up)
+        self.section_context_menu.add_command(label="Move Down", command=self.move_section_down)
 
         # Right Panel - Chapters
         right_frame = ttk.Frame(paned)
@@ -2589,6 +3148,7 @@ class ExamEditor:
 
         self.chapters_tree.tag_configure("oddrow", background=COLORS["treeview_row_odd"])
         self.chapters_tree.tag_configure("evenrow", background=COLORS["treeview_row_even"])
+        self._retheme_tables()
 
         self.chapters_tree.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         chapters_scroll.pack(side=tk.RIGHT, fill=tk.Y)
@@ -2599,6 +3159,26 @@ class ExamEditor:
         self.chapters_tree.bind("<F2>", self.on_chapter_double_click)
         self.chapters_tree.bind("<Delete>", self.delete_chapter)
         self.chapters_tree.bind("<Escape>", self.clear_all_filters)
+        self.chapters_tree.bind("<Button-3>", self.show_chapter_context_menu)
+
+        self.chapter_context_menu = tk.Menu(
+            self.root,
+            tearoff=0,
+            bg=COLORS["bg_card"],
+            fg=COLORS["text_main"],
+            activebackground=COLORS["primary"],
+            activeforeground=COLORS["selection_fg"],
+            relief=tk.FLAT,
+            font=("Segoe UI", 9),
+        )
+        self.chapter_context_menu.add_command(label="Add Chapter", command=self.add_chapter)
+        self.chapter_context_menu.add_command(label="Import Chapters", command=self.import_chapters)
+        self.chapter_context_menu.add_separator()
+        self.chapter_context_menu.add_command(label="Edit Selected", command=self.open_selected_chapter_editor)
+        self.chapter_context_menu.add_command(label="Delete Selected", command=self.delete_chapter)
+        self.chapter_context_menu.add_separator()
+        self.chapter_context_menu.add_command(label="Move Up", command=self.move_chapter_up)
+        self.chapter_context_menu.add_command(label="Move Down", command=self.move_chapter_down)
 
         # Chapter editor panel
         editor_frame = ttk.LabelFrame(right_frame, text="Edit Chapter")
@@ -2672,14 +3252,207 @@ class ExamEditor:
             lambda: self.status_label.config(text="Ready", foreground=COLORS["success"]),
         )
 
+    def _retheme_tables(self):
+        """Reapply alternating row colors to sections and chapters trees."""
+        palette = _get_theme_palette(ttk.Style())
+        if hasattr(self, "sections_tree"):
+            self.sections_tree.tag_configure("oddrow", background=palette["row_odd"], foreground=palette["fg"])
+            self.sections_tree.tag_configure("evenrow", background=palette["row_even"], foreground=palette["fg"])
+        if hasattr(self, "chapters_tree"):
+            self.chapters_tree.tag_configure("oddrow", background=palette["row_odd"], foreground=palette["fg"])
+            self.chapters_tree.tag_configure("evenrow", background=palette["row_even"], foreground=palette["fg"])
+
+    def _prune_chapter_editor_windows(self):
+        """Drop references to chapter editor windows that are already closed."""
+        alive = []
+        for editor in self.chapter_editor_windows:
+            try:
+                if editor.window.winfo_exists():
+                    alive.append(editor)
+            except Exception:
+                continue
+        self.chapter_editor_windows = alive
+
+    def _apply_theme_to_open_chapter_editors(self):
+        """Re-theme any open AdvancedChapterEditor windows."""
+        self._prune_chapter_editor_windows()
+        for editor in self.chapter_editor_windows:
+            try:
+                editor.apply_theme()
+            except Exception:
+                continue
+
+    def show_backups_menu(self, event=None):
+        """Show backup controls menu next to the Backups button."""
+        if not hasattr(self, "backups_btn"):
+            return "break"
+        x = self.backups_btn.winfo_rootx()
+        y = self.backups_btn.winfo_rooty() + self.backups_btn.winfo_height()
+        try:
+            self.backups_menu.tk_popup(x, y)
+        finally:
+            self.backups_menu.after_idle(self.backups_menu.grab_release)
+        return "break"
+
+    def open_backup_folder(self):
+        """Open the backup folder in the OS file explorer."""
+        backup_root = _backup_root_for(self.base_path)
+        _ensure_backup_paths(self.base_path)
+        try:
+            if hasattr(os, "startfile"):
+                os.startfile(str(backup_root))
+            else:
+                webbrowser.open(backup_root.as_uri())
+        except Exception as e:
+            messagebox.showerror("Backups", f"Unable to open backup folder: {e}")
+
+    def _backup_operation(self, action, details, paths):
+        """Create one backup snapshot for an operation touching files/folders."""
+        project = self.current_project or self.base_path.name
+        entry_dir, payload_dir, meta = _create_backup_entry(self.base_path, action, project, details)
+        copied = []
+        for path in paths:
+            rel = _backup_copy_path(path, self.base_path, payload_dir)
+            if rel:
+                copied.append(rel)
+
+        with open(Path(entry_dir) / "metadata.json", "w", encoding="utf-8") as f:
+            meta["files"] = copied
+            json.dump(meta, f, indent=2, ensure_ascii=False)
+
+        return str(entry_dir)
+
+    def _collect_backup_entries(self):
+        return _load_backup_entries(self.base_path)
+
+    def restore_latest_backup(self):
+        """Restore files from the most recent backup snapshot."""
+        entries = self._collect_backup_entries()
+        if not entries:
+            messagebox.showwarning("Backups", "No backup snapshots available.")
+            return
+
+        latest = entries[0]
+        if not messagebox.askyesno("Restore Backup", f"Restore latest backup '{latest.get('id', '')}'?"):
+            return
+
+        restored = _restore_backup_entry(self.base_path, latest["entry_dir"])
+        self.load_sections()
+        if self.current_section:
+            self.load_chapters()
+        self.update_status(f"Restored backup: {latest.get('action', 'snapshot')} ({restored} file(s))", "blue")
+
+    def clear_backup_history(self):
+        """Delete all backup snapshots and reset backup logs."""
+        if not messagebox.askyesno("Clear Backups", "Delete all backup history and logs?"):
+            return
+        _clear_backup_history(self.base_path)
+        self.update_status("Backup history cleared", "orange")
+
+    def show_backup_history_dialog(self):
+        """Open a backup history manager dialog with restore/delete controls."""
+        dlg = tk.Toplevel(self.root)
+        _style_dialog(dlg, "Backup History", "920x560")
+        dlg.transient(self.root)
+
+        frame = ttk.Frame(dlg, padding=14, bootstyle="dark")
+        frame.pack(fill=tk.BOTH, expand=True)
+
+        ttk.Label(frame, text="Backup History", style="Header.TLabel").pack(anchor=tk.W, pady=(0, 8))
+
+        list_frame = ttk.Frame(frame)
+        list_frame.pack(fill=tk.BOTH, expand=True)
+
+        scroll = ttk.Scrollbar(list_frame, orient=tk.VERTICAL)
+        history_list = tk.Listbox(list_frame, exportselection=False)
+        _style_tk_listbox(history_list)
+        scroll.config(command=history_list.yview)
+        history_list.config(yscrollcommand=scroll.set)
+        history_list.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        scroll.pack(side=tk.RIGHT, fill=tk.Y)
+
+        details_var = tk.StringVar(value="Select a backup entry to view details.")
+        ttk.Label(frame, textvariable=details_var, style="Muted.TLabel", justify=tk.LEFT).pack(anchor=tk.W, pady=(8, 6))
+
+        entries = []
+
+        def refresh_entries():
+            history_list.delete(0, tk.END)
+            entries.clear()
+            for entry in self._collect_backup_entries():
+                stamp = entry.get("timestamp", "")
+                action = entry.get("action", "backup")
+                details = entry.get("details", "")
+                row = f"{stamp} | {action} | {details}"
+                history_list.insert(tk.END, row)
+                entries.append(entry)
+            if not entries:
+                details_var.set("No backup entries found.")
+
+        def selected_entry():
+            sel = history_list.curselection()
+            if not sel:
+                return None
+            idx = sel[0]
+            if 0 <= idx < len(entries):
+                return entries[idx]
+            return None
+
+        def on_select(event=None):
+            entry = selected_entry()
+            if not entry:
+                return
+            files_count = len(entry.get("files", []) or [])
+            details_var.set(
+                f"ID: {entry.get('id', '')} | Project: {entry.get('project', '')} | Files: {files_count}\n"
+                f"Details: {entry.get('details', '')}"
+            )
+
+        def restore_selected():
+            entry = selected_entry()
+            if not entry:
+                return
+            if not messagebox.askyesno("Restore Backup", f"Restore '{entry.get('id', '')}'?"):
+                return
+            restored = _restore_backup_entry(self.base_path, entry["entry_dir"])
+            self.load_sections()
+            if self.current_section:
+                self.load_chapters()
+            self.update_status(f"Restored backup {entry.get('id', '')} ({restored} file(s))", "blue")
+
+        def delete_selected():
+            entry = selected_entry()
+            if not entry:
+                return
+            if not messagebox.askyesno("Delete Backup", f"Delete '{entry.get('id', '')}' permanently?"):
+                return
+            _delete_backup_entry(entry["entry_dir"])
+            refresh_entries()
+
+        controls = ttk.Frame(frame)
+        controls.pack(fill=tk.X, pady=(6, 0))
+        ttk.Button(controls, text="Restore Selected", command=restore_selected, bootstyle="primary-outline").pack(side=tk.LEFT, padx=(0, 6))
+        ttk.Button(controls, text="Delete Selected", command=delete_selected, bootstyle="danger-outline").pack(side=tk.LEFT, padx=(0, 6))
+        ttk.Button(controls, text="Open Backup Folder", command=self.open_backup_folder, bootstyle="info-outline").pack(side=tk.LEFT, padx=(0, 6))
+        ttk.Button(controls, text="Clear All", command=self.clear_backup_history, bootstyle="warning-outline").pack(side=tk.LEFT, padx=(0, 6))
+        ttk.Button(controls, text="Refresh", command=refresh_entries, bootstyle="secondary-outline").pack(side=tk.RIGHT)
+
+        history_list.bind("<<ListboxSelect>>", on_select)
+        refresh_entries()
+
     def on_theme_change(self, event=None):
         """Apply selected ttkbootstrap theme instantly."""
         chosen = self.theme_var.get().strip()
         if not chosen:
             return
         try:
-            ttk.Style().theme_use(chosen)
-            _configure_custom_styles(ttk.Style())
+            style = ttk.Style()
+            style.theme_use(chosen)
+            _configure_custom_styles(style)
+            self._retheme_tables()
+            self.refresh_sections_tree()
+            self.refresh_chapters_tree()
+            self._apply_theme_to_open_chapter_editors()
             self.update_status(f"Theme changed to {chosen}", "blue")
         except Exception as e:
             messagebox.showerror("Theme", f"Failed to apply theme: {e}")
@@ -3047,6 +3820,67 @@ class ExamEditor:
             self.current_section = self.sections[self.current_section_idx]['id']
             self.load_chapters()
             self.update_status(f"Selected: {self.sections[self.current_section_idx]['name']}", "blue")
+
+    def get_selected_section_indices(self):
+        """Return selected section indices from the tree."""
+        indices = []
+        for iid in self.sections_tree.selection():
+            try:
+                idx = int(iid)
+            except (TypeError, ValueError):
+                continue
+            if 0 <= idx < len(self.sections):
+                indices.append(idx)
+        return sorted(set(indices))
+
+    def _prepare_tree_context_selection(self, tree, event):
+        """Select the row under the pointer before showing a context menu."""
+        row_id = tree.identify_row(event.y)
+        if not row_id:
+            return None
+        if row_id not in tree.selection():
+            tree.selection_set(row_id)
+        tree.focus(row_id)
+        return row_id
+
+    def show_section_context_menu(self, event):
+        """Show the sections context menu."""
+        if not hasattr(self, "section_context_menu"):
+            return "break"
+
+        row_id = self._prepare_tree_context_selection(self.sections_tree, event)
+        if row_id is None:
+            return "break"
+
+        selected_indices = self.get_selected_section_indices()
+        if selected_indices:
+            self.current_section_idx = selected_indices[0]
+            self.current_section = self.sections[self.current_section_idx]['id']
+
+        try:
+            self.section_context_menu.tk_popup(event.x_root, event.y_root)
+        finally:
+            self.section_context_menu.after_idle(self.section_context_menu.grab_release)
+        return "break"
+
+    def show_chapter_context_menu(self, event):
+        """Show the chapters context menu."""
+        if not hasattr(self, "chapter_context_menu"):
+            return "break"
+
+        row_id = self._prepare_tree_context_selection(self.chapters_tree, event)
+        if row_id is None:
+            return "break"
+
+        selected_indices = self.get_selected_chapter_indices()
+        if selected_indices:
+            self.current_chapter_idx = selected_indices[0]
+
+        try:
+            self.chapter_context_menu.tk_popup(event.x_root, event.y_root)
+        finally:
+            self.chapter_context_menu.after_idle(self.chapter_context_menu.grab_release)
+        return "break"
     
     def load_chapters(self):
         """Load chapters for current section"""
@@ -3141,6 +3975,34 @@ class ExamEditor:
         else:
             self.current_chapter_idx = None
             self.update_chapter_btn.config(state="disabled")
+
+    def open_selected_chapter_editor(self, event=None):
+        """Open the advanced editor for the first selected chapter."""
+        selected_indices = self.get_selected_chapter_indices()
+        if not selected_indices:
+            messagebox.showwarning("Warning", "Select a chapter first")
+            return "break" if event is not None else None
+
+        if not self.current_section:
+            messagebox.showwarning("Warning", "Select a section first")
+            return "break" if event is not None else None
+
+        self.current_chapter_idx = selected_indices[0]
+        chapter = self.chapters[self.current_chapter_idx]
+
+        section = next((s for s in self.sections if s['id'] == self.current_section), None)
+        if not section:
+            messagebox.showerror("Error", "Section not found")
+            return "break" if event is not None else None
+
+        chapter_file_path = self.base_path / section['path'] / chapter.get('file', '')
+        if not chapter_file_path.exists():
+            messagebox.showerror("Error", f"Chapter file not found: {chapter_file_path}")
+            return "break" if event is not None else None
+
+        editor = AdvancedChapterEditor(self.root, chapter_file_path, section['path'], self.base_path)
+        self.chapter_editor_windows.append(editor)
+        return "break" if event is not None else None
 
     def _normalize_for_compare(self, value):
         """Normalize text for duplicate comparisons."""
@@ -3432,31 +4294,7 @@ class ExamEditor:
     
     def on_chapter_double_click(self, event):
         """Open advanced chapter editor when double-clicking a chapter"""
-        selection = self.chapters_tree.selection()
-        if not selection:
-            return
-        
-        if not self.current_section:
-            messagebox.showwarning("Warning", "Select a section first")
-            return
-        
-        self.current_chapter_idx = int(selection[0])
-        chapter = self.chapters[self.current_chapter_idx]
-        
-        # Get the chapter file path
-        section = next((s for s in self.sections if s['id'] == self.current_section), None)
-        if not section:
-            messagebox.showerror("Error", "Section not found")
-            return
-        
-        chapter_file_path = self.base_path / section['path'] / chapter.get('file', '')
-        
-        if not chapter_file_path.exists():
-            messagebox.showerror("Error", f"Chapter file not found: {chapter_file_path}")
-            return
-        
-        # Open advanced editor
-        AdvancedChapterEditor(self.root, chapter_file_path, section['path'], self.base_path)
+        return self.open_selected_chapter_editor(event)
     
     def update_chapter(self):
         """Update the selected chapter"""
@@ -3826,49 +4664,71 @@ class ExamEditor:
     
     def delete_section(self):
         """Delete selected section"""
-        if self.current_section_idx is None:
+        selected_indices = self.get_selected_section_indices()
+        if not selected_indices and self.current_section_idx is not None:
+            selected_indices = [self.current_section_idx]
+        if not selected_indices:
             messagebox.showwarning("Warning", "Select a section first")
             return
 
-        section = self.sections[self.current_section_idx]
+        selected_sections = [self.sections[i] for i in selected_indices]
+        section_names = [s.get('name', s.get('id', '')) for s in selected_sections]
+        preview_names = "\n".join(f"- {name}" for name in section_names[:8])
+        if len(section_names) > 8:
+            preview_names += f"\n... and {len(section_names) - 8} more"
+
         dlg = tk.Toplevel(self.root)
-        _style_dialog(dlg, "Delete Section", "480x180")
+        _style_dialog(dlg, "Delete Section", "560x300")
         dlg.transient(self.root)
         dlg.grab_set()
 
-        frame = ttk.Frame(dlg, padding=12, bootstyle="dark")
+        frame = ttk.Frame(dlg, padding=14, bootstyle="dark")
         frame.pack(fill=tk.BOTH, expand=True)
 
-        ttk.Label(frame, text=f"Delete section '{section['name']}'?", style="Header.TLabel").pack(anchor=tk.W, pady=(0,8))
-        ttk.Label(frame, text="This will remove the section from the config.").pack(anchor=tk.W)
+        ttk.Label(frame, text=f"Delete {len(selected_sections)} section(s)?", style="Header.TLabel").pack(anchor=tk.W, pady=(0,8))
+        ttk.Label(frame, text="This will remove the section(s) from the config.").pack(anchor=tk.W)
+        ttk.Label(frame, text=preview_names, style="Muted.TLabel", justify=tk.LEFT).pack(anchor=tk.W, pady=(8, 0))
 
         del_var = tk.BooleanVar(value=False)
-        ttk.Checkbutton(frame, text="Also delete section files from disk (permanent)", variable=del_var, bootstyle="warning").pack(anchor=tk.W, pady=8)
+        ttk.Checkbutton(frame, text="Also delete section files from disk (permanent)", variable=del_var, bootstyle="warning").pack(anchor=tk.W, pady=(10, 0))
 
         btn_frame = ttk.Frame(frame)
-        btn_frame.pack(fill=tk.X, pady=(10,0))
+        btn_frame.pack(fill=tk.X, pady=(14,0))
 
         def do_delete():
-            if del_var.get():
-                try:
-                    full_path = self.base_path / section.get('path', '')
-                    if full_path.exists():
-                        shutil.rmtree(full_path)
-                except Exception as e:
-                    messagebox.showerror("Error", f"Failed to delete section files: {e}")
-                    return
+            backup_paths = [self.config_path / "sections.json"]
+            for section in selected_sections:
+                sec_path = self.base_path / section.get('path', '')
+                backup_paths.append(sec_path)
+            self._backup_operation(
+                "delete_section",
+                f"Deleting {len(selected_sections)} section(s)",
+                backup_paths,
+            )
 
-            try:
-                del self.sections[self.current_section_idx]
-            except Exception:
-                pass
+            for idx in reversed(selected_indices):
+                section = self.sections[idx]
+                if del_var.get():
+                    try:
+                        full_path = self.base_path / section.get('path', '')
+                        if full_path.exists():
+                            shutil.rmtree(full_path)
+                    except Exception as e:
+                        messagebox.showerror("Error", f"Failed to delete section files: {e}")
+                        return
+
+                try:
+                    del self.sections[idx]
+                except Exception:
+                    pass
+
             self.current_section = None
             self.current_section_idx = None
             self.save_sections()
             self.load_sections()
             self.chapters = []
             self.refresh_chapters_tree()
-            self.update_status("Section deleted", "orange")
+            self.update_status(f"Deleted {len(selected_sections)} section(s)", "orange")
             dlg.destroy()
 
         def cancel():
@@ -3886,69 +4746,87 @@ class ExamEditor:
         section = self.sections[self.current_section_idx]
 
         dialog = tk.Toplevel(self.root)
-        _style_dialog(dialog, "Edit Section", "620x560")
+        _style_dialog(dialog, "Edit Section", "980x760")
+        dialog.minsize(920, 700)
+        try:
+            dialog.state("zoomed")
+        except Exception:
+            pass
         dialog.transient(self.root)
         dialog.grab_set()
 
-        frame = ttk.Frame(dialog, padding=20, bootstyle="dark")
+        frame = ttk.Frame(dialog, padding=24, bootstyle="dark")
         frame.pack(fill=tk.BOTH, expand=True)
+        frame.columnconfigure(1, weight=1)
+        frame.rowconfigure(3, weight=1)
+
+        title_bar = ttk.Frame(frame)
+        title_bar.grid(row=0, column=0, columnspan=2, sticky=tk.EW, pady=(0, 16))
+        ttk.Label(title_bar, text="Edit Section", style="Header.TLabel").pack(side=tk.LEFT)
+        ttk.Label(
+            title_bar,
+            text="Update the section metadata, icon, and folder path.",
+            style="Muted.TLabel",
+        ).pack(side=tk.RIGHT)
 
         ttk.Label(frame, text="Section ID:", style="SubHeader.TLabel").grid(
-            row=0, column=0, sticky=tk.W, pady=10)
-        sec_id = ttk.Entry(frame, width=30, bootstyle="info")
+            row=1, column=0, sticky=tk.W, pady=10)
+        sec_id = ttk.Entry(frame, width=42, bootstyle="info")
         sec_id.insert(0, section.get('id', ''))
-        sec_id.grid(row=0, column=1, pady=10, padx=10)
+        sec_id.grid(row=1, column=1, sticky=tk.EW, pady=10, padx=(12, 0))
         sec_id.focus()
 
         ttk.Label(frame, text="Section Name:", style="SubHeader.TLabel").grid(
-            row=1, column=0, sticky=tk.W, pady=10)
-        sec_name = ttk.Entry(frame, width=30, bootstyle="info")
+            row=2, column=0, sticky=tk.W, pady=10)
+        sec_name = ttk.Entry(frame, width=42, bootstyle="info")
         sec_name.insert(0, section.get('name', ''))
-        sec_name.grid(row=1, column=1, pady=10, padx=10)
+        sec_name.grid(row=2, column=1, sticky=tk.EW, pady=10, padx=(12, 0))
 
         ttk.Label(frame, text="Data Path:", style="SubHeader.TLabel").grid(
-            row=2, column=0, sticky=tk.W, pady=10)
-        sec_path = ttk.Entry(frame, width=30, bootstyle="info")
+            row=3, column=0, sticky=tk.W, pady=10)
+        sec_path = ttk.Entry(frame, width=42, bootstyle="info")
         sec_path.insert(0, section.get('path', ''))
-        sec_path.grid(row=2, column=1, pady=10, padx=10)
+        sec_path.grid(row=3, column=1, sticky=tk.EW, pady=10, padx=(12, 0))
 
         ttk.Label(frame, text="Description:", style="SubHeader.TLabel").grid(
-            row=3, column=0, sticky=tk.W, pady=10)
-        sec_desc = ttk.Entry(frame, width=30, bootstyle="info")
-        sec_desc.insert(0, section.get('description', ''))
-        sec_desc.grid(row=3, column=1, pady=10, padx=10)
+            row=4, column=0, sticky=tk.NW, pady=10)
+        sec_desc = tk.Text(frame, height=5, wrap="word")
+        _style_tk_text(sec_desc, height=5)
+        sec_desc.insert("1.0", section.get('description', ''))
+        sec_desc.grid(row=4, column=1, sticky=tk.NSEW, pady=10, padx=(12, 0))
 
         ttk.Label(frame, text="Icon Path:", style="SubHeader.TLabel").grid(
-            row=4, column=0, sticky=tk.W, pady=10)
+            row=5, column=0, sticky=tk.W, pady=10)
         icon_var = tk.StringVar(value=section.get('icon', self._default_section_icon_rel(section.get('id', ''), section.get('path', ''))))
-        ttk.Entry(frame, width=30, bootstyle="info", textvariable=icon_var).grid(row=4, column=1, pady=10, padx=10)
+        ttk.Entry(frame, width=42, bootstyle="info", textvariable=icon_var).grid(row=5, column=1, sticky=tk.EW, pady=10, padx=(12, 0))
 
         ttk.Label(frame, text="Icon URL:", style="SubHeader.TLabel").grid(
-            row=5, column=0, sticky=tk.W, pady=10)
+            row=6, column=0, sticky=tk.W, pady=10)
         icon_url_var = tk.StringVar(value="")
-        ttk.Entry(frame, width=30, bootstyle="info", textvariable=icon_url_var).grid(row=5, column=1, pady=10, padx=10)
+        ttk.Entry(frame, width=42, bootstyle="info", textvariable=icon_url_var).grid(row=6, column=1, sticky=tk.EW, pady=10, padx=(12, 0))
 
         default_icon_val = section.get('icon', self._default_section_icon_rel(section.get('id', ''), section.get('path', '')))
         current_icon_is_path = self._looks_like_icon_path(default_icon_val)
 
         ttk.Label(frame, text="Icon Emoji:", style="SubHeader.TLabel").grid(
-            row=6, column=0, sticky=tk.W, pady=10)
+            row=7, column=0, sticky=tk.W, pady=10)
         icon_emoji_var = tk.StringVar(value="" if current_icon_is_path else str(default_icon_val))
-        emoji_entry = ttk.Entry(frame, width=30, bootstyle="info", textvariable=icon_emoji_var)
-        emoji_entry.grid(row=6, column=1, pady=10, padx=10)
+        emoji_entry = ttk.Entry(frame, width=42, bootstyle="info", textvariable=icon_emoji_var)
+        emoji_entry.grid(row=7, column=1, sticky=tk.EW, pady=10, padx=(12, 0))
 
         resize_icon_var = tk.BooleanVar(value=False)
         resize_max_var = tk.StringVar(value="768")
         icon_upload_source = {"path": ""}
 
         icon_controls = ttk.Frame(frame)
-        icon_controls.grid(row=7, column=0, columnspan=2, sticky=tk.W, pady=(0, 8))
+        icon_controls.grid(row=8, column=0, columnspan=2, sticky=tk.EW, pady=(6, 8))
 
         preview_frame = ttk.Frame(frame)
-        preview_frame.grid(row=8, column=0, columnspan=2, sticky=tk.W, pady=(0, 8))
+        preview_frame.grid(row=9, column=0, columnspan=2, sticky=tk.NSEW, pady=(0, 12))
+        preview_frame.columnconfigure(1, weight=1)
         ttk.Label(preview_frame, text="Icon Preview:", style="SubHeader.TLabel").pack(side=tk.LEFT, padx=(0, 8))
-        preview_label = ttk.Label(preview_frame, text="No icon preview", width=28, style="Muted.TLabel")
-        preview_label.pack(side=tk.LEFT)
+        preview_label = ttk.Label(preview_frame, text="No icon preview", width=42, style="Muted.TLabel")
+        preview_label.pack(side=tk.LEFT, padx=(0, 8))
 
         def choose_icon_file():
             file_path = filedialog.askopenfilename(
@@ -4017,8 +4895,8 @@ class ExamEditor:
             section['id'] = sec_id.get()
             section['name'] = sec_name.get()
             section['path'] = section_path_rel
-            section['description'] = sec_desc.get()
             section['icon'] = self._normalize_rel_path(icon_var.get()) or self._default_section_icon_rel(section['id'], section['path'])
+            section['description'] = sec_desc.get("1.0", tk.END).strip()
 
             if icon_upload_source["path"]:
                 try:
@@ -4061,8 +4939,10 @@ class ExamEditor:
             self.update_status(f"Section updated: {section['name']}", "orange")
             dialog.destroy()
 
-        ttk.Button(frame, text="Save Changes", command=save,
-                  width=20, bootstyle="success").grid(row=9, column=0, columnspan=2, pady=20)
+        button_bar = ttk.Frame(frame)
+        button_bar.grid(row=10, column=0, columnspan=2, sticky=tk.E, pady=(10, 0))
+        ttk.Button(button_bar, text="Save Changes", command=save,
+              width=22, bootstyle="success").pack(side=tk.RIGHT)
 
         dialog.bind('<Return>', lambda e: save())
 
@@ -4329,6 +5209,19 @@ class ExamEditor:
         def do_delete():
             section = next((s for s in self.sections if s['id'] == self.current_section), None)
 
+            backup_paths = []
+            if section:
+                backup_paths.append(self.base_path / section.get('path', '') / "chapters.json")
+                for idx in selected_indices:
+                    chapter = self.chapters[idx]
+                    backup_paths.append(self.base_path / section.get('path', '') / chapter.get('file', ''))
+
+            self._backup_operation(
+                "delete_chapter",
+                f"Deleting {len(selected_indices)} chapter(s) in section {self.current_section}",
+                backup_paths,
+            )
+
             for idx in reversed(selected_indices):
                 chapter = self.chapters[idx]
                 image_paths = []
@@ -4579,6 +5472,8 @@ class ExamEditor:
 
 
 if __name__ == "__main__":
+    _enable_sound_only_notifications()
+
     root = ttk.Window(
         title="Exam Engine Editor",
         themename="darkly",
