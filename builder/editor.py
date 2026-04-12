@@ -3085,6 +3085,11 @@ class ExamEditor:
             label="Delete Selected Chapters",
             command=self.delete_chapter,
         )
+        self.chapter_tools_menu.add_separator()
+        self.chapter_tools_menu.add_command(
+            label="Image Normalizing",
+            command=self.image_normalizing,
+        )
 
         self.chapter_tools_btn = ttk.Button(
             chapters_header,
@@ -3762,6 +3767,143 @@ class ExamEditor:
                     section["icon"] = normalized_icon
                     changed = True
         return changed
+
+    def _optimize_icon_file(self, icon_file):
+        """Optimize one icon file for smaller size without changing pixel dimensions."""
+        path = Path(icon_file)
+        if not path.exists() or not path.is_file():
+            return False, 0, 0, "File not found"
+
+        suffix = path.suffix.lower()
+        if suffix not in {".png", ".jpg", ".jpeg", ".webp", ".gif"}:
+            return False, path.stat().st_size, path.stat().st_size, "Unsupported format"
+
+        before_size = path.stat().st_size
+        tmp_file = tempfile.NamedTemporaryFile(delete=False, suffix=suffix)
+        tmp_file.close()
+        tmp_path = Path(tmp_file.name)
+
+        try:
+            with Image.open(path) as img:
+                fmt = (img.format or "").upper()
+                save_img = img
+                save_fmt = fmt
+                save_kwargs = {"optimize": True}
+
+                if suffix in {".jpg", ".jpeg"} or fmt == "JPEG":
+                    if img.mode not in {"RGB", "L"}:
+                        save_img = img.convert("RGB")
+                    save_fmt = "JPEG"
+                    save_kwargs.update({"quality": 82, "progressive": True})
+                elif suffix == ".webp" or fmt == "WEBP":
+                    if img.mode not in {"RGB", "RGBA"}:
+                        save_img = img.convert("RGBA" if "A" in img.getbands() else "RGB")
+                    save_fmt = "WEBP"
+                    save_kwargs.update({"quality": 80, "method": 6})
+                elif suffix == ".gif" or fmt == "GIF":
+                    save_fmt = "GIF"
+                    save_img = img.convert("P", palette=Image.ADAPTIVE, colors=256)
+                else:
+                    save_fmt = "PNG"
+                    save_kwargs.update({"compress_level": 9})
+                    # Keep dimensions unchanged; only reduce color table when file is already heavy.
+                    if before_size > 70 * 1024:
+                        if "A" in img.getbands():
+                            save_img = img.convert("RGBA").quantize(colors=256)
+                        else:
+                            save_img = img.convert("P", palette=Image.ADAPTIVE, colors=256)
+
+                save_img.save(tmp_path, format=save_fmt, **save_kwargs)
+
+            after_size = tmp_path.stat().st_size
+            if after_size < before_size:
+                shutil.move(str(tmp_path), str(path))
+                return True, before_size, after_size, ""
+
+            try:
+                tmp_path.unlink(missing_ok=True)
+            except Exception:
+                pass
+            return False, before_size, before_size, ""
+        except Exception as e:
+            try:
+                tmp_path.unlink(missing_ok=True)
+            except Exception:
+                pass
+            return False, before_size, before_size, str(e)
+
+    def image_normalizing(self):
+        """Normalize section icon files to reduce transfer size while keeping resolution."""
+        if Image is None:
+            messagebox.showerror("Image Normalizing", "Pillow is required. Install with: pip install pillow")
+            return
+
+        icon_files = []
+        seen = set()
+        for section in self.sections:
+            icon_value = str(section.get("icon", "")).strip()
+            if not icon_value or not self._looks_like_icon_path(icon_value):
+                continue
+            if re.match(r"^https?://", icon_value, flags=re.IGNORECASE):
+                continue
+
+            icon_rel = self._normalize_rel_path(icon_value)
+            if not icon_rel:
+                continue
+            icon_abs = (self.base_path / icon_rel).resolve()
+
+            if icon_abs in seen:
+                continue
+            seen.add(icon_abs)
+
+            if icon_abs.exists() and icon_abs.is_file():
+                icon_files.append(icon_abs)
+
+        if not icon_files:
+            messagebox.showinfo("Image Normalizing", "No local section icon files were found.")
+            return
+
+        if not messagebox.askyesno(
+            "Image Normalizing",
+            f"Normalize {len(icon_files)} icon file(s)?\n"
+            "This keeps resolution unchanged and only applies smaller encodings."
+        ):
+            return
+
+        self._backup_operation(
+            "image_normalizing",
+            {"count": len(icon_files), "scope": "section_icons"},
+            icon_files,
+        )
+
+        optimized_count = 0
+        skipped_count = 0
+        error_count = 0
+        saved_total = 0
+
+        for icon_file in icon_files:
+            optimized, before_size, after_size, error = self._optimize_icon_file(icon_file)
+            if error:
+                error_count += 1
+            elif optimized:
+                optimized_count += 1
+                saved_total += max(0, before_size - after_size)
+            else:
+                skipped_count += 1
+
+        saved_kb = saved_total / 1024
+        self.update_status(
+            f"Image normalizing done: {optimized_count} optimized, {skipped_count} unchanged, {error_count} errors",
+            "green" if error_count == 0 else "orange"
+        )
+        messagebox.showinfo(
+            "Image Normalizing",
+            f"Scanned: {len(icon_files)} icon(s)\n"
+            f"Optimized: {optimized_count}\n"
+            f"Unchanged: {skipped_count}\n"
+            f"Errors: {error_count}\n"
+            f"Saved: {saved_kb:.1f} KB"
+        )
     
     def refresh_all(self):
         """Refresh all data and auto-configure engine"""
