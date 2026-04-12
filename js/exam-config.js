@@ -1,5 +1,86 @@
 const EXAM_CONFIG = [
   {
+    "id": "c++",
+    "name": "C++",
+    "description": "An introduction to programming teaches the fundamental logic and syntax used to instruct computers to solve problems in C++",
+    "path": "data/c++",
+    "icon": "data/c++/icon.png",
+    "chapters": [
+      {
+        "id": "1",
+        "name": "First",
+        "q": 12,
+        "file": "data/c++/chapterC++ - First.pdfvisual_extractor.json"
+      },
+      {
+        "id": "2",
+        "name": "Second",
+        "q": 17,
+        "file": "data/c++/chapterC++ - Second.pdfvisual_extractor.json"
+      },
+      {
+        "id": "3",
+        "name": "Final",
+        "q": 12,
+        "file": "data/c++/chapterC++ - Final.pdfvisual_extractor.json"
+      },
+      {
+        "id": "Chapter  1",
+        "name": "An Overview of Computers and Programming Languages",
+        "q": 25,
+        "file": "data/c++/Chapter-1.json"
+      },
+      {
+        "id": "Chapter  2",
+        "name": " Basic Elements of C++",
+        "q": 25,
+        "file": "data/c++/Chapter-2.json"
+      },
+      {
+        "id": "Chapter 3",
+        "name": "Input/Output and Predefined Functions",
+        "q": 25,
+        "file": "data/c++/Chapter-3.json"
+      },
+      {
+        "id": "Chapter 4",
+        "name": "Control Structures I (Selection)",
+        "q": 25,
+        "file": "data/c++/Chapter-4.json"
+      },
+      {
+        "id": "Chapter 5",
+        "name": " Control Structures II (Repetition)",
+        "q": 25,
+        "file": "data/c++/Chapter-5.json"
+      },
+      {
+        "id": "Chapter  6",
+        "name": " User-Defined Functions I",
+        "q": 25,
+        "file": "data/c++/Chapter-6.json"
+      },
+      {
+        "id": "Chapter 7",
+        "name": "User-Defined Functions II",
+        "q": 25,
+        "file": "data/c++/Chapter-7.json"
+      },
+      {
+        "id": "Chapter  9",
+        "name": "C++ Arrays and Strings",
+        "q": 25,
+        "file": "data/c++/Chapter-9.json"
+      },
+      {
+        "id": "Chapter  12",
+        "name": "Classes and Data Abstraction",
+        "q": 25,
+        "file": "data/c++/Chapter-12.json"
+      }
+    ]
+  },
+  {
     "id": "java1",
     "name": "Java 1",
     "description": "Introduction to Java",
@@ -108,78 +189,6 @@ const EXAM_CONFIG = [
     ]
   },
   {
-    "id": "algorithm",
-    "name": "Algorithms",
-    "description": "Algorithm Analysis",
-    "path": "data/algorithm",
-    "icon": "data/algorithm/icon.png",
-    "chapters": [
-      {
-        "id": "1",
-        "name": "First",
-        "q": 8,
-        "file": "data/algorithm/midMultiple Filesvisual_extractor.json"
-      },
-      {
-        "id": "2",
-        "name": "Second",
-        "q": 13,
-        "file": "data/algorithm/chapterMultiple Filesvisual_extractor (3).json"
-      },
-      {
-        "id": "3",
-        "name": "Mid",
-        "q": 40,
-        "file": "data/algorithm/chapterMultiple Filesvisual_extractor (5).json"
-      },
-      {
-        "id": "4",
-        "name": "Mid By Z+",
-        "q": 30,
-        "file": "data/algorithm/chapterMultiple Filesregenerationsame.json"
-      },
-      {
-        "id": "5",
-        "name": "Mid By Z+ (Hard)",
-        "q": 30,
-        "file": "data/algorithm/chapterMultiple Filesregenerationharder.json"
-      },
-      {
-        "id": "6",
-        "name": "Final",
-        "q": 41,
-        "file": "data/algorithm/chapterMultiple Filesvisual_extractor (4).json"
-      }
-    ]
-  },
-  {
-    "id": "data_structure",
-    "name": "Data Structures",
-    "description": "Data Structures",
-    "path": "data/data_structure",
-    "icon": "data/data_structure/icon.png",
-    "chapters": [
-      {
-        "id": "1",
-        "name": "First",
-        "q": 65,
-        "file": "data/data_structure/chapterMultiple Filesvisual_extractor (1) fir.json"
-      },
-      {
-        "id": "2",
-        "name": "Second",
-        "q": 61,
-        "file": "data/data_structure/combined_questions (1).json"
-      },
-      {
-        "id": "3",
-        "name": "Final",
-        "q": 83,
-        "file": "data/data_structure/combined_questions (2).json"
-      }
-    ]
-  },
-  {
     "id": "java_advanced",
     "name": "Java Advanced",
     "description": "Enterprise Java",
@@ -231,6 +240,33 @@ const EXAM_CONFIG = [
     ]
   },
   {
+    "id": "data_structure",
+    "name": "Data Structures",
+    "description": "Data Structures",
+    "path": "data/data_structure",
+    "icon": "data/data_structure/icon.png",
+    "chapters": [
+      {
+        "id": "1",
+        "name": "First",
+        "q": 65,
+        "file": "data/data_structure/chapterMultiple Filesvisual_extractor (1) fir.json"
+      },
+      {
+        "id": "2",
+        "name": "Second",
+        "q": 61,
+        "file": "data/data_structure/combined_questions (1).json"
+      },
+      {
+        "id": "3",
+        "name": "Final",
+        "q": 83,
+        "file": "data/data_structure/combined_questions (2).json"
+      }
+    ]
+  },
+  {
     "id": "DBMS",
     "name": "Data Base",
     "description": "Structured data storage",
@@ -276,39 +312,6 @@ const EXAM_CONFIG = [
     ]
   },
   {
-    "id": "Network",
-    "name": "Network",
-    "description": "Study of data transmission across networks.",
-    "path": "data/Network",
-    "icon": "data/Network/icon.png",
-    "chapters": [
-      {
-        "id": "1",
-        "name": "Introduction to Data Communications and Networking",
-        "q": 40,
-        "file": "data/Network/chapterch01.pdf (1).json"
-      },
-      {
-        "id": "2",
-        "name": "Network Models",
-        "q": 50,
-        "file": "data/Network/chapterch02.pdf.json"
-      },
-      {
-        "id": "3",
-        "name": " Mid",
-        "q": 33,
-        "file": "data/Network/Mid.json"
-      },
-      {
-        "id": "4",
-        "name": "Final",
-        "q": 42,
-        "file": "data/Network/Final.json"
-      }
-    ]
-  },
-  {
     "id": "soft",
     "name": "Software Fundamentals",
     "description": "engineering principles to design, develop, maintain, and test software.",
@@ -338,6 +341,84 @@ const EXAM_CONFIG = [
         "name": "Final",
         "q": 96,
         "file": "data/soft/chapterMultiple Filesvisual_extractor (1) final.json"
+      }
+    ]
+  },
+  {
+    "id": "algorithm",
+    "name": "Algorithms",
+    "description": "Algorithm Analysis",
+    "path": "data/algorithm",
+    "icon": "data/algorithm/icon.png",
+    "chapters": [
+      {
+        "id": "1",
+        "name": "First",
+        "q": 8,
+        "file": "data/algorithm/midMultiple Filesvisual_extractor.json"
+      },
+      {
+        "id": "2",
+        "name": "Second",
+        "q": 13,
+        "file": "data/algorithm/chapterMultiple Filesvisual_extractor (3).json"
+      },
+      {
+        "id": "3",
+        "name": "Mid",
+        "q": 40,
+        "file": "data/algorithm/chapterMultiple Filesvisual_extractor (5).json"
+      },
+      {
+        "id": "4",
+        "name": "Mid By Z+",
+        "q": 30,
+        "file": "data/algorithm/chapterMultiple Filesregenerationsame.json"
+      },
+      {
+        "id": "5",
+        "name": "Mid By Z+ (Hard)",
+        "q": 30,
+        "file": "data/algorithm/chapterMultiple Filesregenerationharder.json"
+      },
+      {
+        "id": "6",
+        "name": "Final",
+        "q": 41,
+        "file": "data/algorithm/chapterMultiple Filesvisual_extractor (4).json"
+      }
+    ]
+  },
+  {
+    "id": "Network",
+    "name": "Network",
+    "description": "Study of data transmission across networks.",
+    "path": "data/Network",
+    "icon": "data/Network/icon.png",
+    "chapters": [
+      {
+        "id": "1",
+        "name": "Introduction to Data Communications and Networking",
+        "q": 40,
+        "file": "data/Network/chapterch01.pdf (1).json"
+      },
+      {
+        "id": "2",
+        "name": "Network Models",
+        "q": 50,
+        "file": "data/Network/chapterch02.pdf.json"
+      },
+      {
+        "id": "3",
+        "name": " Mid",
+        "q": 33,
+        "file": "data/Network/Mid.json"
+      },
+      {
+        "id": "4",
+        "name": "Final",
+        "q": 42,
+        "file": "data/Network/Final.json"
       }
     ]
   },
@@ -449,87 +530,6 @@ const EXAM_CONFIG = [
         "name": "Mass-Storage Systems",
         "q": 25,
         "file": "data/os/ch10.json"
-      }
-    ]
-  },
-  {
-    "id": "c++",
-    "name": "C++",
-    "description": "An introduction to programming teaches the fundamental logic and syntax used to instruct computers to solve problems in C++",
-    "path": "data/c++",
-    "icon": "data/c++/icon.png",
-    "chapters": [
-      {
-        "id": "1",
-        "name": "First",
-        "q": 12,
-        "file": "data/c++/chapterC++ - First.pdfvisual_extractor.json"
-      },
-      {
-        "id": "2",
-        "name": "Second",
-        "q": 17,
-        "file": "data/c++/chapterC++ - Second.pdfvisual_extractor.json"
-      },
-      {
-        "id": "3",
-        "name": "Final",
-        "q": 12,
-        "file": "data/c++/chapterC++ - Final.pdfvisual_extractor.json"
-      },
-      {
-        "id": "Chapter  1",
-        "name": "An Overview of Computers and Programming Languages",
-        "q": 25,
-        "file": "data/c++/Chapter-1.json"
-      },
-      {
-        "id": "Chapter  2",
-        "name": " Basic Elements of C++",
-        "q": 25,
-        "file": "data/c++/Chapter-2.json"
-      },
-      {
-        "id": "Chapter 3",
-        "name": "Input/Output and Predefined Functions",
-        "q": 25,
-        "file": "data/c++/Chapter-3.json"
-      },
-      {
-        "id": "Chapter 4",
-        "name": "Control Structures I (Selection)",
-        "q": 25,
-        "file": "data/c++/Chapter-4.json"
-      },
-      {
-        "id": "Chapter 5",
-        "name": " Control Structures II (Repetition)",
-        "q": 25,
-        "file": "data/c++/Chapter-5.json"
-      },
-      {
-        "id": "Chapter  6",
-        "name": " User-Defined Functions I",
-        "q": 25,
-        "file": "data/c++/Chapter-6.json"
-      },
-      {
-        "id": "Chapter 7",
-        "name": "User-Defined Functions II",
-        "q": 25,
-        "file": "data/c++/Chapter-7.json"
-      },
-      {
-        "id": "Chapter  9",
-        "name": "C++ Arrays and Strings",
-        "q": 25,
-        "file": "data/c++/Chapter-9.json"
-      },
-      {
-        "id": "Chapter  12",
-        "name": "Classes and Data Abstraction",
-        "q": 25,
-        "file": "data/c++/Chapter-12.json"
       }
     ]
   },

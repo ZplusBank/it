@@ -2296,6 +2296,7 @@ class ExamEditor:
         # Main container with PanedWindow
         paned = ttk.Panedwindow(self.root, orient=tk.HORIZONTAL)
         paned.pack(fill=tk.BOTH, expand=True, padx=10, pady=(0, 10))
+        self.main_paned = paned
 
         # Left Panel - Sections
         left_frame = ttk.Frame(paned)
@@ -2316,6 +2317,10 @@ class ExamEditor:
                   width=4, bootstyle="warning-outline").pack(side=tk.RIGHT, padx=2)
         ttk.Button(sections_header, text="Del", command=self.delete_section,
                   width=3, bootstyle="danger-outline").pack(side=tk.RIGHT, padx=2)
+        ttk.Button(sections_header, text="Dn", command=self.move_section_down,
+              width=4, bootstyle="secondary-outline").pack(side=tk.RIGHT, padx=2)
+        ttk.Button(sections_header, text="Up", command=self.move_section_up,
+              width=4, bootstyle="secondary-outline").pack(side=tk.RIGHT, padx=2)
 
         # Sections table
         sections_scroll = ttk.Scrollbar(left_frame, orient=tk.VERTICAL)
@@ -2333,9 +2338,9 @@ class ExamEditor:
         self.sections_tree.heading("ID", text="ID")
         self.sections_tree.heading("Path", text="Path")
 
-        self.sections_tree.column("Name", width=150)
-        self.sections_tree.column("ID", width=80)
-        self.sections_tree.column("Path", width=120)
+        self.sections_tree.column("Name", width=125, minwidth=90, stretch=True)
+        self.sections_tree.column("ID", width=70, minwidth=55, stretch=True)
+        self.sections_tree.column("Path", width=105, minwidth=80, stretch=True)
 
         self.sections_tree.tag_configure("oddrow", background=COLORS["treeview_row_odd"])
         self.sections_tree.tag_configure("evenrow", background=COLORS["treeview_row_even"])
@@ -2414,10 +2419,10 @@ class ExamEditor:
               width=6, bootstyle="info-outline").pack(side=tk.RIGHT, padx=2)
         ttk.Button(chapters_header, text="Del", command=self.delete_chapter,
                   width=3, bootstyle="danger-outline").pack(side=tk.RIGHT, padx=2)
-        ttk.Button(chapters_header, text="▼", command=self.move_chapter_down,
-                  width=3, bootstyle="secondary-outline").pack(side=tk.RIGHT, padx=2)
-        ttk.Button(chapters_header, text="▲", command=self.move_chapter_up,
-                  width=3, bootstyle="secondary-outline").pack(side=tk.RIGHT, padx=2)
+        ttk.Button(chapters_header, text="Dn", command=self.move_chapter_down,
+              width=4, bootstyle="secondary-outline").pack(side=tk.RIGHT, padx=2)
+        ttk.Button(chapters_header, text="Up", command=self.move_chapter_up,
+              width=4, bootstyle="secondary-outline").pack(side=tk.RIGHT, padx=2)
 
         # Chapters table
         chapters_scroll = ttk.Scrollbar(right_frame, orient=tk.VERTICAL)
@@ -2436,10 +2441,13 @@ class ExamEditor:
         self.chapters_tree.heading("Questions", text="Questions")
         self.chapters_tree.heading("File", text="File")
 
-        self.chapters_tree.column("ID", width=50)
-        self.chapters_tree.column("Name", width=250)
-        self.chapters_tree.column("Questions", width=80)
-        self.chapters_tree.column("File", width=150)
+        self.chapters_tree.column("ID", width=50, minwidth=45, stretch=True)
+        self.chapters_tree.column("Name", width=220, minwidth=150, stretch=True)
+        self.chapters_tree.column("Questions", width=75, minwidth=70, stretch=True)
+        self.chapters_tree.column("File", width=130, minwidth=100, stretch=True)
+
+        # Keep enough room on the sections side so header controls stay visible.
+        self.root.after(120, lambda: self.main_paned.sashpos(0, 420))
 
         self.chapters_tree.tag_configure("oddrow", background=COLORS["treeview_row_odd"])
         self.chapters_tree.tag_configure("evenrow", background=COLORS["treeview_row_even"])
@@ -3773,6 +3781,48 @@ class ExamEditor:
 
         dialog.bind('<Return>', lambda e: save())
 
+    def move_section_up(self):
+        """Move the selected section up in the list"""
+        if self.current_section_idx is None:
+            messagebox.showwarning("Warning", "Select a section first")
+            return
+
+        idx = self.current_section_idx
+        if idx <= 0:
+            return
+
+        self.sections[idx], self.sections[idx - 1] = self.sections[idx - 1], self.sections[idx]
+        self.current_section_idx = idx - 1
+        self.current_section = self.sections[self.current_section_idx].get('id')
+
+        self.refresh_sections_tree()
+        self.sections_tree.selection_set(str(self.current_section_idx))
+        self.sections_tree.focus(str(self.current_section_idx))
+        self.sections_tree.see(str(self.current_section_idx))
+        self.load_chapters()
+        self.update_status("Section moved up (click Save All)", "orange")
+
+    def move_section_down(self):
+        """Move the selected section down in the list"""
+        if self.current_section_idx is None:
+            messagebox.showwarning("Warning", "Select a section first")
+            return
+
+        idx = self.current_section_idx
+        if idx >= len(self.sections) - 1:
+            return
+
+        self.sections[idx], self.sections[idx + 1] = self.sections[idx + 1], self.sections[idx]
+        self.current_section_idx = idx + 1
+        self.current_section = self.sections[self.current_section_idx].get('id')
+
+        self.refresh_sections_tree()
+        self.sections_tree.selection_set(str(self.current_section_idx))
+        self.sections_tree.focus(str(self.current_section_idx))
+        self.sections_tree.see(str(self.current_section_idx))
+        self.load_chapters()
+        self.update_status("Section moved down (click Save All)", "orange")
+
     def move_chapter_up(self):
         """Move the selected chapter up in the list"""
         selected_indices = self.get_selected_chapter_indices()
@@ -4231,7 +4281,7 @@ if __name__ == "__main__":
     root = ttk.Window(
         title="Exam Engine Editor",
         themename="darkly",
-        size=(1200, 700),
+        size=(1480, 860),
     )
     style = ttk.Style()
     _configure_custom_styles(style)
