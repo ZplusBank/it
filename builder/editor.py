@@ -2278,8 +2278,12 @@ class ExamEditor:
         self.current_section_idx = None
         self.chapters = []
         self.current_chapter_idx = None
+        self.section_filter_var = tk.StringVar(value="")
+        self.chapter_filter_var = tk.StringVar(value="")
+        self.status_reset_job = None
         
         self.setup_ui()
+        self._bind_shortcuts()
         default_project = Path(__file__).resolve().parents[1].name
         if default_project not in self.available_projects and self.available_projects:
             default_project = self.available_projects[0]
@@ -2336,14 +2340,18 @@ class ExamEditor:
         
     def setup_ui(self):
         """Setup main UI with improved layout"""
+        self.root.minsize(1200, 760)
+
         # Top toolbar
         toolbar = ttk.Frame(self.root)
-        toolbar.pack(side=tk.TOP, fill=tk.X, padx=10, pady=10)
+        toolbar.pack(side=tk.TOP, fill=tk.X, padx=10, pady=(10, 6))
 
         ttk.Button(toolbar, text="Save All", command=self.save_all,
                   width=15, bootstyle="primary").pack(side=tk.LEFT, padx=5)
         ttk.Button(toolbar, text="Refresh", command=self.refresh_all,
                   width=12, bootstyle="info-outline").pack(side=tk.LEFT, padx=5)
+        ttk.Button(toolbar, text="Shortcuts", command=self.show_shortcuts_help,
+                  width=12, bootstyle="secondary-outline").pack(side=tk.LEFT, padx=5)
 
         ttk.Label(toolbar, text="Builder:", style="SubHeader.TLabel").pack(side=tk.LEFT, padx=(10, 4))
         self.project_combo = ttk.Combobox(
@@ -2356,6 +2364,34 @@ class ExamEditor:
         )
         self.project_combo.pack(side=tk.LEFT, padx=(0, 5))
         self.project_combo.bind("<<ComboboxSelected>>", self.on_project_change)
+
+        ttk.Label(toolbar, text="Theme:", style="SubHeader.TLabel").pack(side=tk.LEFT, padx=(10, 4))
+        style = ttk.Style()
+        self.theme_var = tk.StringVar(value=style.theme_use())
+        self.theme_combo = ttk.Combobox(
+            toolbar,
+            textvariable=self.theme_var,
+            values=tuple(style.theme_names()),
+            state="readonly",
+            width=12,
+            bootstyle="secondary",
+        )
+        self.theme_combo.pack(side=tk.LEFT, padx=(0, 5))
+        self.theme_combo.bind("<<ComboboxSelected>>", self.on_theme_change)
+
+        self.metrics_label = ttk.Label(
+            toolbar,
+            text="Sections: 0 | Chapters: 0 | Questions: 0",
+            style="Muted.TLabel",
+        )
+        self.metrics_label.pack(side=tk.RIGHT, padx=(8, 12))
+
+        self.toolbar_hint_label = ttk.Label(
+            toolbar,
+            text="F2 edit | Del delete | Esc clear filters",
+            style="Muted.TLabel",
+        )
+        self.toolbar_hint_label.pack(side=tk.RIGHT, padx=(0, 12))
 
         self.status_label = ttk.Label(toolbar, text="Ready",
                                        foreground=COLORS["success"],
@@ -2392,6 +2428,19 @@ class ExamEditor:
         ttk.Button(sections_header, text="Up", command=self.move_section_up,
               width=4, bootstyle="secondary-outline").pack(side=tk.RIGHT, padx=2)
 
+        ttk.Button(sections_header, text="Clear", command=self.clear_section_filter,
+                  width=6, bootstyle="secondary-outline").pack(side=tk.RIGHT, padx=(0, 4))
+        ttk.Label(sections_header, text="Filter:", style="Muted.TLabel").pack(side=tk.RIGHT, padx=(8, 2))
+        self.sections_filter_entry = ttk.Entry(
+            sections_header,
+            textvariable=self.section_filter_var,
+            width=16,
+            bootstyle="info",
+        )
+        self.sections_filter_entry.pack(side=tk.RIGHT, padx=(0, 4))
+        self.sections_filter_entry.bind("<Escape>", self.clear_section_filter)
+        self.section_filter_var.trace_add("write", lambda *_: self.refresh_sections_tree())
+
         # Sections table
         sections_scroll = ttk.Scrollbar(left_frame, orient=tk.VERTICAL)
 
@@ -2419,6 +2468,11 @@ class ExamEditor:
         sections_scroll.pack(side=tk.RIGHT, fill=tk.Y)
 
         self.sections_tree.bind("<<TreeviewSelect>>", self.on_section_select)
+        self.sections_tree.bind("<Double-1>", self.on_section_double_click)
+        self.sections_tree.bind("<Return>", self.on_section_double_click)
+        self.sections_tree.bind("<F2>", self.on_section_double_click)
+        self.sections_tree.bind("<Delete>", self.delete_section)
+        self.sections_tree.bind("<Escape>", self.clear_all_filters)
 
         # Right Panel - Chapters
         right_frame = ttk.Frame(paned)
@@ -2494,6 +2548,19 @@ class ExamEditor:
         ttk.Button(chapters_header, text="Up", command=self.move_chapter_up,
               width=4, bootstyle="secondary-outline").pack(side=tk.RIGHT, padx=2)
 
+        ttk.Button(chapters_header, text="Clear", command=self.clear_chapter_filter,
+                  width=6, bootstyle="secondary-outline").pack(side=tk.RIGHT, padx=(0, 4))
+        ttk.Label(chapters_header, text="Filter:", style="Muted.TLabel").pack(side=tk.RIGHT, padx=(8, 2))
+        self.chapters_filter_entry = ttk.Entry(
+            chapters_header,
+            textvariable=self.chapter_filter_var,
+            width=24,
+            bootstyle="info",
+        )
+        self.chapters_filter_entry.pack(side=tk.RIGHT, padx=(0, 4))
+        self.chapters_filter_entry.bind("<Escape>", self.clear_chapter_filter)
+        self.chapter_filter_var.trace_add("write", lambda *_: self.refresh_chapters_tree())
+
         # Chapters table
         chapters_scroll = ttk.Scrollbar(right_frame, orient=tk.VERTICAL)
 
@@ -2528,6 +2595,10 @@ class ExamEditor:
 
         self.chapters_tree.bind("<<TreeviewSelect>>", self.on_chapter_select)
         self.chapters_tree.bind("<Double-1>", self.on_chapter_double_click)
+        self.chapters_tree.bind("<Return>", self.on_chapter_double_click)
+        self.chapters_tree.bind("<F2>", self.on_chapter_double_click)
+        self.chapters_tree.bind("<Delete>", self.delete_chapter)
+        self.chapters_tree.bind("<Escape>", self.clear_all_filters)
 
         # Chapter editor panel
         editor_frame = ttk.LabelFrame(right_frame, text="Edit Chapter")
@@ -2591,8 +2662,110 @@ class ExamEditor:
         }
         mapped = color_map.get(color, color)
         self.status_label.config(text=message, foreground=mapped)
-        self.root.after(3000, lambda: self.status_label.config(
-            text="Ready", foreground=COLORS["success"]))
+        if self.status_reset_job is not None:
+            try:
+                self.root.after_cancel(self.status_reset_job)
+            except Exception:
+                pass
+        self.status_reset_job = self.root.after(
+            3200,
+            lambda: self.status_label.config(text="Ready", foreground=COLORS["success"]),
+        )
+
+    def on_theme_change(self, event=None):
+        """Apply selected ttkbootstrap theme instantly."""
+        chosen = self.theme_var.get().strip()
+        if not chosen:
+            return
+        try:
+            ttk.Style().theme_use(chosen)
+            _configure_custom_styles(ttk.Style())
+            self.update_status(f"Theme changed to {chosen}", "blue")
+        except Exception as e:
+            messagebox.showerror("Theme", f"Failed to apply theme: {e}")
+
+    def _bind_shortcuts(self):
+        """Register high-value keyboard shortcuts."""
+        self.root.bind("<Control-s>", lambda e: self.save_all())
+        self.root.bind("<Control-r>", lambda e: self.refresh_all())
+        self.root.bind("<F5>", lambda e: self.refresh_all())
+        self.root.bind("<Control-f>", self.focus_chapter_filter)
+        self.root.bind("<Control-Shift-F>", self.focus_section_filter)
+        self.root.bind("<F1>", lambda e: self.show_shortcuts_help())
+
+    def show_shortcuts_help(self):
+        """Display keyboard shortcuts."""
+        messagebox.showinfo(
+            "Keyboard Shortcuts",
+            "Ctrl+S  Save all\n"
+            "Ctrl+R  Refresh all\n"
+            "F5      Refresh all\n"
+            "Ctrl+F  Focus chapter filter\n"
+            "Ctrl+Shift+F  Focus section filter\n"
+            "Esc     Clear filters\n"
+            "F2      Edit selected item\n"
+            "Delete  Remove selected item\n"
+            "F1      Show this help",
+        )
+
+    def focus_chapter_filter(self, event=None):
+        """Focus the chapter filter entry for quick searching."""
+        if hasattr(self, "chapters_filter_entry"):
+            self.chapters_filter_entry.focus_set()
+            self.chapters_filter_entry.selection_range(0, tk.END)
+        return "break"
+
+    def focus_section_filter(self, event=None):
+        """Focus the section filter entry for quick searching."""
+        if hasattr(self, "sections_filter_entry"):
+            self.sections_filter_entry.focus_set()
+            self.sections_filter_entry.selection_range(0, tk.END)
+        return "break"
+
+    def clear_section_filter(self, event=None):
+        """Clear the section filter and refresh the table."""
+        self.section_filter_var.set("")
+        if hasattr(self, "sections_filter_entry"):
+            self.sections_filter_entry.focus_set()
+        return "break"
+
+    def clear_chapter_filter(self, event=None):
+        """Clear the chapter filter and refresh the table."""
+        self.chapter_filter_var.set("")
+        if hasattr(self, "chapters_filter_entry"):
+            self.chapters_filter_entry.focus_set()
+        return "break"
+
+    def clear_all_filters(self, event=None):
+        """Clear both filters at once."""
+        self.section_filter_var.set("")
+        self.chapter_filter_var.set("")
+        self.update_status("Filters cleared", "blue")
+        return "break"
+
+    def on_section_double_click(self, event=None):
+        """Open the section editor from the tree."""
+        self.edit_section()
+        return "break"
+
+    def _matches_filter(self, query, values):
+        """Return True when any provided value contains the query text."""
+        needle = str(query or "").strip().lower()
+        if not needle:
+            return True
+        for value in values:
+            if needle in str(value or "").lower():
+                return True
+        return False
+
+    def _update_metrics(self):
+        """Update top-level counters for quick overview."""
+        section_count = len(self.sections)
+        chapter_count = len(self.chapters)
+        question_count = sum(int(ch.get("q", 0) or 0) for ch in self.chapters)
+        self.metrics_label.config(
+            text=f"Sections: {section_count} | Chapters: {chapter_count} | Questions: {question_count}"
+        )
 
     def _normalize_rel_path(self, path_text):
         """Normalize a config-relative path using forward slashes."""
@@ -2843,13 +3016,22 @@ class ExamEditor:
             self.save_sections()
         
         self.refresh_sections_tree()
+        self._update_metrics()
     
     def refresh_sections_tree(self):
         """Refresh sections tree"""
         for item in self.sections_tree.get_children():
             self.sections_tree.delete(item)
 
+        filter_text = self.section_filter_var.get().strip()
         for idx, section in enumerate(self.sections):
+            if not self._matches_filter(filter_text, [
+                section.get('name', ''),
+                section.get('id', ''),
+                section.get('path', ''),
+                section.get('description', ''),
+            ]):
+                continue
             tag = "evenrow" if idx % 2 == 0 else "oddrow"
             self.sections_tree.insert("", tk.END, iid=str(idx), values=(
                 section['name'],
@@ -2871,6 +3053,7 @@ class ExamEditor:
         if not self.current_section:
             self.chapters = []
             self.refresh_chapters_tree()
+            self._update_metrics()
             return
         
         section = next((s for s in self.sections if s['id'] == self.current_section), None)
@@ -2884,13 +3067,22 @@ class ExamEditor:
             self.chapters = []
         
         self.refresh_chapters_tree()
+        self._update_metrics()
     
     def refresh_chapters_tree(self):
         """Refresh chapters tree"""
         for item in self.chapters_tree.get_children():
             self.chapters_tree.delete(item)
 
+        filter_text = self.chapter_filter_var.get().strip()
         for idx, chapter in enumerate(self.chapters):
+            if not self._matches_filter(filter_text, [
+                chapter.get('id', ''),
+                chapter.get('name', ''),
+                chapter.get('file', ''),
+                chapter.get('q', ''),
+            ]):
+                continue
             tag = "evenrow" if idx % 2 == 0 else "oddrow"
             self.chapters_tree.insert("", tk.END, iid=str(idx), values=(
                 chapter.get('id', ''),
@@ -2898,6 +3090,7 @@ class ExamEditor:
                 chapter.get('q', 0),
                 chapter.get('file', '')
             ), tags=(tag,))
+        self._update_metrics()
 
     def get_selected_chapter_indices(self):
         """Return selected chapter indices from the chapters tree."""

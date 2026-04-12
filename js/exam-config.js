@@ -554,5 +554,4 @@ const EXAM_CONFIG = [
       }
     ]
   }
-
 ];
