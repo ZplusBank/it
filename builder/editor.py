@@ -2297,6 +2297,7 @@ class ExamEditor:
         paned = ttk.Panedwindow(self.root, orient=tk.HORIZONTAL)
         paned.pack(fill=tk.BOTH, expand=True, padx=10, pady=(0, 10))
         self.main_paned = paned
+        self._pane_layout_initialized = False
 
         # Left Panel - Sections
         left_frame = ttk.Frame(paned)
@@ -2446,8 +2447,9 @@ class ExamEditor:
         self.chapters_tree.column("Questions", width=75, minwidth=70, stretch=True)
         self.chapters_tree.column("File", width=130, minwidth=100, stretch=True)
 
-        # Keep enough room on the sections side so header controls stay visible.
-        self.root.after(120, lambda: self.main_paned.sashpos(0, 420))
+        # Initialize split position after layout to avoid a collapsed left pane.
+        self.root.after_idle(self._initialize_main_pane_layout)
+        self.root.after(350, self._initialize_main_pane_layout)
 
         self.chapters_tree.tag_configure("oddrow", background=COLORS["treeview_row_odd"])
         self.chapters_tree.tag_configure("evenrow", background=COLORS["treeview_row_even"])
@@ -2488,6 +2490,27 @@ class ExamEditor:
         self.update_chapter_btn.grid(row=1, column=3, sticky=tk.E, padx=10, pady=8)
 
         editor_frame.columnconfigure(3, weight=1)
+
+    def _initialize_main_pane_layout(self):
+        """Set a safe initial split so both sections and chapters panes are visible."""
+        if self._pane_layout_initialized or not hasattr(self, "main_paned"):
+            return
+
+        try:
+            total_width = max(self.main_paned.winfo_width(), self.root.winfo_width())
+            if total_width <= 1:
+                return
+
+            min_left = 360
+            min_right = 620
+            preferred = int(total_width * 0.34)
+            max_left = max(min_left, total_width - min_right)
+            target = max(min_left, min(preferred, max_left))
+
+            self.main_paned.sashpos(0, target)
+            self._pane_layout_initialized = True
+        except tk.TclError:
+            pass
 
     def update_status(self, message, color="green"):
         """Update status message"""
