@@ -534,7 +534,7 @@
     {
       "id": "regen-1775923939078-17",
       "number": "18",
-      "text": "Insert the following elements into an initially empty binary min-heap: <5, 10, 3, 8, 1, 12, 7>. What data element is sitting in the left child of the root?",
+      "text": "Insert the following elements into an initially empty binary max-heap: \\( \\langle 5, 10, 3, 8, 1, 12, 7 \\rangle \\). What data element is sitting in the left child of the root?",
       "choices": [
         {
           "value": "A",
@@ -564,8 +564,8 @@
       ],
       "inputName": "Q17",
       "inputType": "radio",
-      "correctAnswer": "B",
-      "explanation": "Heap construction:\n1. [5]\n2. [5, 10]\n3. [3, 10, 5]\n4. [3, 8, 5, 10]\n5. [1, 3, 5, 10, 8]\n6. [1, 3, 5, 10, 8, 12]\n7. [1, 3, 5, 10, 8, 12, 7]\nRoot is 1 (index 1). Left child is index 2. Value at index 2 is 3."
+      "correctAnswer": "E",
+      "explanation": "To find the element in the left child of the root, we perform step-by-step insertions and heapify (bubble up) operations:\n\n1.  **Insert 5**: `[5]`\n2.  **Insert 10**: `[5, 10]` \\( \\rightarrow \\) 10 is greater than 5, swap: `[10, 5]`\n3.  **Insert 3**: `[10, 5, 3]`\n4.  **Insert 8**: `[10, 5, 3, 8]` \\( \\rightarrow \\) 8 is greater than parent 5, swap: `[10, 8, 3, 5]`\n5.  **Insert 1**: `[10, 8, 3, 5, 1]`\n6.  **Insert 12**: `[10, 8, 3, 5, 1, 12]` \\( \\rightarrow \\) 12 is greater than parent 3, swap: `[10, 8, 12, 5, 1, 3]` \\( \\rightarrow \\) 12 is greater than parent 10, swap: `[12, 8, 10, 5, 1, 3]`\n7.  **Insert 7**: `[12, 8, 10, 5, 1, 3, 7]` \\( \\rightarrow \\) 7 is less than parent 10, no swap.\n\nThe final heap array is `[12, 8, 10, 5, 1, 3, 7]`.\n- **Root** (Index 0): 12\n- **Left Child** (Index 1): 8\n- **Right Child** (Index 2): 10\n\nThus, the element in the left child of the root is 8."
     },
     {
       "id": "regen-1775923939078-18",
@@ -936,5 +936,6 @@
     }
   ],
   "status": "completed",
-  "totalQuestions": 30
+  "totalQuestions": 30,
+  "q": 30
 }

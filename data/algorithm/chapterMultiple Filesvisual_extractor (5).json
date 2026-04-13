@@ -533,7 +533,7 @@
     {
       "id": "extract-combined-1775923635728-17",
       "number": "18",
-      "text": "Insert the following elements into an initially empty binary heap: <10, 12, 1, 14, 6, 5, 8, 15, 3, 9, 7, 4, 11, 13, 2>. What data element is sitting in the right child of the left child of the root?",
+      "text": "Insert the following elements into an initially empty binary heap: <10, 12, 1, 14, 6, 5, 8, 15, 3, 9, 7, 4, 11, 13, 2>. What data element is sitting in the right child of the left child of the root? (Note: This is a max heap)",
       "choices": [
         {
           "value": "A",
@@ -563,8 +563,8 @@
       ],
       "inputName": "Q17",
       "inputType": "radio",
-      "correctAnswer": "B",
-      "explanation": "Constructing a min-heap from the given sequence:\n- After inserting the first 11 elements [1, 3, 5, 6, 7, 10, 8, 15, 14, 12, 9], the value at index 5 (right child of the left child) is 7.\n- Subsequent insertions of [4, 11, 13, 2] involve bubble-up operations that move 4 and 2 upwards. After all 15 elements are inserted, the array representing the heap is [1, 3, 2, 6, 7, 10, 4, 15, 14, 12, 9, 8, 11, 13, 5].\n- The root is at index 1 (value 1). Its left child is at index 2 (value 3). The right child of that node is at index 5 (\\( 2 \\times 2 + 1 \\)). The value at index 5 is 7."
+      "correctAnswer": "C",
+      "explanation": "To find the value, we perform standard binary max-heap insertion for each element, following the bubble-up rule (where a newly added node swaps with its parent if it is larger).\n\n1.  **10**: [10]\n2.  **12**: [12, 10]\n3.  **1**: [12, 10, 1]\n4.  **14**: [14, 12, 1, 10] (14 swaps with 10 then 12)\n5.  **6**: [14, 12, 1, 10, 6]\n6.  **5**: [14, 12, 5, 10, 6, 1] (5 swaps with 1)\n7.  **8**: [14, 12, 8, 10, 6, 1, 5] (8 swaps with 5)\n8.  **15**: [15, 14, 8, 12, 6, 1, 5, 10] (15 swaps with 10, 12, and 14)\n9.  **3**: [15, 14, 8, 12, 6, 1, 5, 10, 3]\n10. **9**: [15, 14, 8, 12, 9, 1, 5, 10, 3, 6] (9 swaps with 6 at index 5)\n11. **7**: [15, 14, 8, 12, 9, 1, 5, 10, 3, 6, 7]\n12. **4**: [15, 14, 8, 12, 9, 4, 5, 10, 3, 6, 7, 1] (4 swaps with 1)\n13. **11**: [15, 14, 11, 12, 9, 8, 5, 10, 3, 6, 7, 1, 4] (11 swaps with 4 then 8)\n14. **13**: [15, 14, 13, 12, 9, 8, 11, 10, 3, 6, 7, 1, 4, 5] (13 swaps with 5 then 11)\n15. **2**: [15, 14, 13, 12, 9, 8, 11, 10, 3, 6, 7, 1, 4, 5, 2]\n\nThe final heap structure in level-order is: `[15, 14, 13, 12, 9, 8, 11, 10, 3, 6, 7, 1, 4, 5, 2]`.\n\nIdentifying the requested node:\n- **Root**: 15 (Index 1)\n- **Left Child of Root**: 14 (Index 2)\n- **Right Child of the Left Child (of 14)**: 9 (Index 5)\n\nSince 9 is not among the numeric choices provided (6, 7, 8, 5), the correct answer is **none**."
     },
     {
       "id": "extract-combined-1775923635728-18",
@@ -1245,5 +1245,6 @@
     }
   ],
   "status": "completed",
-  "totalQuestions": 40
+  "totalQuestions": 40,
+  "q": 40
 }

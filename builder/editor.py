@@ -11,6 +11,8 @@ import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 import json
 import os
+import stat
+import time
 from pathlib import Path
 import re
 import shutil
@@ -246,6 +248,39 @@ def _ensure_backup_paths(base_path):
     _backup_history_dir(base_path).mkdir(parents=True, exist_ok=True)
 
 
+def _on_rmtree_error(func, path, exc_info):
+    """Best-effort recovery for Windows read-only files during rmtree."""
+    try:
+        os.chmod(path, stat.S_IWRITE)
+    except Exception:
+        pass
+    func(path)
+
+
+def _safe_rmtree(path, retries=3):
+    """Remove a directory tree with retries for transient Windows file locks."""
+    target = Path(path)
+    if not target.exists():
+        return
+
+    last_error = None
+    for attempt in range(retries):
+        try:
+            shutil.rmtree(target, onerror=_on_rmtree_error)
+            return
+        except PermissionError as e:
+            last_error = e
+            if attempt < retries - 1:
+                time.sleep(0.2 * (attempt + 1))
+        except OSError as e:
+            last_error = e
+            if attempt < retries - 1:
+                time.sleep(0.2 * (attempt + 1))
+
+    if last_error is not None:
+        raise last_error
+
+
 def _safe_relative_path(path, root):
     path = Path(path)
     root = Path(root)
@@ -303,7 +338,7 @@ def _backup_copy_path(path, root, payload_dir):
 
     if src.is_dir():
         if dest.exists():
-            shutil.rmtree(dest)
+            _safe_rmtree(dest)
         shutil.copytree(src, dest)
     else:
         shutil.copy2(src, dest)
@@ -356,13 +391,13 @@ def _restore_backup_entry(base_path, entry_dir):
 def _delete_backup_entry(entry_dir):
     entry_dir = Path(entry_dir)
     if entry_dir.exists() and entry_dir.is_dir():
-        shutil.rmtree(entry_dir)
+        _safe_rmtree(entry_dir)
 
 
 def _clear_backup_history(base_path):
     history_dir = _backup_history_dir(base_path)
     if history_dir.exists():
-        shutil.rmtree(history_dir)
+        _safe_rmtree(history_dir)
     history_dir.mkdir(parents=True, exist_ok=True)
 
     log_path = _backup_log_file(base_path)
@@ -1177,8 +1212,11 @@ class AdvancedChapterEditor:
         """Clear all backup snapshots and logs."""
         if not messagebox.askyesno("Clear Backups", "Delete all backup history and logs?"):
             return
-        _clear_backup_history(self.base_path)
-        self.update_status("Backup history cleared", "orange")
+        try:
+            _clear_backup_history(self.base_path)
+            self.update_status("Backup history cleared", "orange")
+        except Exception as e:
+            messagebox.showerror("Clear Backups", f"Unable to clear backup history: {e}")
 
     def show_backup_history_dialog(self):
         """Open backup history list for restore/delete operations."""
@@ -1249,15 +1287,29 @@ class AdvancedChapterEditor:
                 return
             if not messagebox.askyesno("Delete Backup", f"Delete '{entry.get('id', '')}' permanently?"):
                 return
-            _delete_backup_entry(entry["entry_dir"])
-            refresh_entries()
+            try:
+                _delete_backup_entry(entry["entry_dir"])
+                refresh_entries()
+            except Exception as e:
+                messagebox.showerror("Delete Backup", f"Unable to delete backup: {e}")
+
+        def clear_all_entries():
+            if not messagebox.askyesno("Clear Backups", "Delete all backup history and logs?"):
+                return
+            try:
+                _clear_backup_history(self.base_path)
+                refresh_entries()
+                details_var.set("No backup entries found.")
+                self.update_status("Backup history cleared", "orange")
+            except Exception as e:
+                messagebox.showerror("Clear Backups", f"Unable to clear backup history: {e}")
 
         controls = ttk.Frame(frame)
         controls.pack(fill=tk.X, pady=(6, 0))
         ttk.Button(controls, text="Restore Selected", command=restore_selected, bootstyle="primary-outline").pack(side=tk.LEFT, padx=(0, 6))
         ttk.Button(controls, text="Delete Selected", command=delete_selected, bootstyle="danger-outline").pack(side=tk.LEFT, padx=(0, 6))
         ttk.Button(controls, text="Open Backup Folder", command=self.open_backup_folder, bootstyle="info-outline").pack(side=tk.LEFT, padx=(0, 6))
-        ttk.Button(controls, text="Clear All", command=self.clear_backup_history, bootstyle="warning-outline").pack(side=tk.LEFT, padx=(0, 6))
+        ttk.Button(controls, text="Clear All", command=clear_all_entries, bootstyle="warning-outline").pack(side=tk.LEFT, padx=(0, 6))
         ttk.Button(controls, text="Refresh", command=refresh_entries, bootstyle="secondary-outline").pack(side=tk.RIGHT)
 
         history_list.bind("<<ListboxSelect>>", on_select)
@@ -3351,8 +3403,11 @@ class ExamEditor:
         """Delete all backup snapshots and reset backup logs."""
         if not messagebox.askyesno("Clear Backups", "Delete all backup history and logs?"):
             return
-        _clear_backup_history(self.base_path)
-        self.update_status("Backup history cleared", "orange")
+        try:
+            _clear_backup_history(self.base_path)
+            self.update_status("Backup history cleared", "orange")
+        except Exception as e:
+            messagebox.showerror("Clear Backups", f"Unable to clear backup history: {e}")
 
     def show_backup_history_dialog(self):
         """Open a backup history manager dialog with restore/delete controls."""
@@ -3431,15 +3486,29 @@ class ExamEditor:
                 return
             if not messagebox.askyesno("Delete Backup", f"Delete '{entry.get('id', '')}' permanently?"):
                 return
-            _delete_backup_entry(entry["entry_dir"])
-            refresh_entries()
+            try:
+                _delete_backup_entry(entry["entry_dir"])
+                refresh_entries()
+            except Exception as e:
+                messagebox.showerror("Delete Backup", f"Unable to delete backup: {e}")
+
+        def clear_all_entries():
+            if not messagebox.askyesno("Clear Backups", "Delete all backup history and logs?"):
+                return
+            try:
+                _clear_backup_history(self.base_path)
+                refresh_entries()
+                details_var.set("No backup entries found.")
+                self.update_status("Backup history cleared", "orange")
+            except Exception as e:
+                messagebox.showerror("Clear Backups", f"Unable to clear backup history: {e}")
 
         controls = ttk.Frame(frame)
         controls.pack(fill=tk.X, pady=(6, 0))
         ttk.Button(controls, text="Restore Selected", command=restore_selected, bootstyle="primary-outline").pack(side=tk.LEFT, padx=(0, 6))
         ttk.Button(controls, text="Delete Selected", command=delete_selected, bootstyle="danger-outline").pack(side=tk.LEFT, padx=(0, 6))
         ttk.Button(controls, text="Open Backup Folder", command=self.open_backup_folder, bootstyle="info-outline").pack(side=tk.LEFT, padx=(0, 6))
-        ttk.Button(controls, text="Clear All", command=self.clear_backup_history, bootstyle="warning-outline").pack(side=tk.LEFT, padx=(0, 6))
+        ttk.Button(controls, text="Clear All", command=clear_all_entries, bootstyle="warning-outline").pack(side=tk.LEFT, padx=(0, 6))
         ttk.Button(controls, text="Refresh", command=refresh_entries, bootstyle="secondary-outline").pack(side=tk.RIGHT)
 
         history_list.bind("<<ListboxSelect>>", on_select)
