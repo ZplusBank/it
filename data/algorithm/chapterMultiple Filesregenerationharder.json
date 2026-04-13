@@ -1,297 +1,79 @@
 {
-  "id": "regen-1775923942150",
+  "id": "regen-1776120212922",
   "label": "Regenerated: Combined Batch (21 files)",
   "params": {
     "file": "Multiple Files",
     "type": "regeneration",
-    "difficulty": "harder",
-    "chapter": "5"
+    "difficulty": "harder"
   },
-  "title": "Mid By Z+ (Hard)",
+  "title": "Regenerated: Extracted Batch: 40 Questions",
   "questions": [
     {
-      "id": "regen-1775923942150-0",
+      "id": "regen-1776120212922-0",
       "number": "1",
-      "text": "In the Red-Black tree shown below, if we insert node 58, which sequence of fix-up operations (rotations and recoloring) will occur to restore Red-Black properties?\n\nNote 1: Bold nodes are black; underlined nodes are red.\nNote 2: NIL nodes are black.\n\n```mermaid\ngraph TD\n    30((30)) --- 15((15))\n    30 --- 45((45))\n    45 --- 35((35))\n    45 --- 60((60))\n    60 --- 55((55))\n    60 --- 70((70))\n    style 15 fill:#000,stroke:#333,stroke-width:2px,color:#fff\n    style 30 fill:#000,stroke:#333,stroke-width:2px,color:#fff\n    style 45 fill:#f00,stroke:#333,stroke-width:2px,color:#fff\n    style 35 fill:#000,stroke:#333,stroke-width:2px,color:#fff\n    style 60 fill:#000,stroke:#333,stroke-width:2px,color:#fff\n    style 55 fill:#f00,stroke:#333,stroke-width:2px,color:#fff\n    style 70 fill:#f00,stroke:#333,stroke-width:2px,color:#fff\n```",
+      "text": "Consider the Red-Black tree depicted below. If we insert node 58, which sequence of operations is required to maintain the Red-Black properties?\n\nNote: a node in **bold** is black and an underlined node is red.\n\n```mermaid\ngraph TD\n    30((30)):::black --- 15((15)):::black\n    30 --- 45((45)):::red\n    45 --- 35((35)):::black\n    45 --- 60((60)):::black\n    60 --- 55((55)):::red\n    \n    classDef black fill:#333,stroke:#000,color:#fff,font-weight:bold;\n    classDef red fill:#f96,stroke:#f00,color:#000,text-decoration:underline;\n```",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "Case 1 (Recoloring) only"
+          "text": "Recolor parent and uncle, then recolor grandparent."
         },
         {
           "value": "B",
           "label": "B",
-          "text": "Case 2 (Left Rotation) then Case 3 (Right Rotation + Recoloring)"
+          "text": "Perform a left rotation on node 55, then a right rotation on node 60."
         },
         {
           "value": "C",
           "label": "C",
-          "text": "Case 1 at level 2, then Case 1 at the root"
+          "text": "Perform a right rotation on node 60, then recolor."
         },
         {
           "value": "D",
           "label": "D",
-          "text": "Case 1 (Recoloring) followed by Case 2/3 at the grandparent level"
+          "text": "No operations required; the tree remains valid."
         }
       ],
       "inputName": "Q0",
       "inputType": "radio",
-      "correctAnswer": "D",
-      "explanation": "Inserting 58 makes it the right child of 55. Since 55 and its sibling 70 are both red (uncle is red), **Case 1** is triggered: 55 and 70 become black, and 60 becomes red. This moves the violation to 60 (Red) and its parent 45 (Red). Since 45's sibling 15 is black, we then apply Case 2/3 relative to the grandparent 30."
+      "correctAnswer": "B",
+      "explanation": "Node 58 is inserted as the right child of 55. Node 55 is red, and its uncle (right child of 60) is NIL (black). This forms a 'triangle' configuration (60 \\(\\to\\) 55-left \\(\\to\\) 58-right). To fix this, Case 2 is invoked: a left rotation on the parent (55) to form a 'line', followed by Case 3: a right rotation on the grandparent (60) and recoloring."
     },
     {
-      "id": "regen-1775923942150-1",
+      "id": "regen-1776120212922-1",
       "number": "2",
-      "text": "Using the Red-Black tree structure from Question 1, which of the following insertions would result in NO property violations and require zero fix-up cases?",
+      "text": "Given the array representation of a tree \\( A = \\{50, 30, 40, 20, 10, 25, 35\\} \\), which index contains the first element that violates the **Max-Heap** property?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "Insert 20"
+          "text": "Index 3 (value 40)"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "Insert 40"
+          "text": "Index 6 (value 25)"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "Insert 50"
+          "text": "Index 7 (value 35)"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "Insert 5"
+          "text": "None, it is already a max-heap"
         }
       ],
       "inputName": "Q1",
       "inputType": "radio",
-      "correctAnswer": "A",
-      "explanation": "Node 20 would be inserted as the right child of node 15. Since node 15 is black, adding a red child (20) does not violate the Red-Black property that no two red nodes can be adjacent. Insertion of 40, 50, or 5 would all occur under existing red or black nodes in ways that either violate property 4 or require rebalancing."
+      "correctAnswer": "D",
+      "explanation": "Checking parents (1-based): \n- Root (50) > children (30, 40). \n- Node 30 > children (20, 10). \n- Node 40 > children (25, 35). \nAll parent nodes are greater than or equal to their children. Thus, no violations occur."
     },
     {
-      "id": "regen-1775923942150-2",
+      "id": "regen-1776120212922-2",
       "number": "3",
-      "text": "What is the maximum possible height of a Red-Black tree with a black-height (bh) of 3, including NIL nodes as leaves?",
-      "choices": [
-        {
-          "value": "A",
-          "label": "A",
-          "text": "3"
-        },
-        {
-          "value": "B",
-          "label": "B",
-          "text": "6"
-        },
-        {
-          "value": "C",
-          "label": "C",
-          "text": "7"
-        },
-        {
-          "value": "D",
-          "label": "D",
-          "text": "5"
-        }
-      ],
-      "inputName": "Q2",
-      "inputType": "radio",
-      "correctAnswer": "B",
-      "explanation": "In a Red-Black tree, the height \\( h \\) is at most \\( 2bh \\). If the black height is 3, the maximum height is \\( 2 \\times 3 = 6 \\). This occurs in a path that alternates between black and red nodes."
-    },
-    {
-      "id": "regen-1775923942150-3",
-      "number": "4",
-      "text": "Identify all indices in the following 1-indexed array that violate the Max-Heap property: \\( A = \\{50, 30, 40, 35, 20, 45, 10, 8, 15, 25\\} \\).",
-      "choices": [
-        {
-          "value": "A",
-          "label": "A",
-          "text": "Index 3 only"
-        },
-        {
-          "value": "B",
-          "label": "B",
-          "text": "Index 3 and Index 5"
-        },
-        {
-          "value": "C",
-          "label": "C",
-          "text": "Index 6 and Index 10"
-        },
-        {
-          "value": "D",
-          "label": "D",
-          "text": "Index 4 and Index 3"
-        }
-      ],
-      "inputName": "Q3",
-      "inputType": "radio",
-      "correctAnswer": "A",
-      "explanation": "Let's check parent-child relationships: \n- Index 1 (50) > indices 2 (30) & 3 (40). \n- Index 2 (30) > indices 4 (35) is FALSE (Violation). \n- Index 3 (40) > indices 6 (45) is FALSE (Violation). \n- Index 5 (20) > index 10 (25) is FALSE (Violation). \nTherefore, multiple violations exist; specifically at index 3 relative to child 45, index 2 relative to child 35, and index 5 relative to child 25."
-    },
-    {
-      "id": "regen-1775923942150-4",
-      "number": "5",
-      "text": "Perform a post-order traversal on the tree described in Question 1. What is the resulting sequence?",
-      "choices": [
-        {
-          "value": "A",
-          "label": "A",
-          "text": "15, 35, 55, 60, 45, 30"
-        },
-        {
-          "value": "B",
-          "label": "B",
-          "text": "15, 35, 55, 60, 45, 30"
-        },
-        {
-          "value": "C",
-          "label": "C",
-          "text": "30, 15, 45, 35, 60, 55"
-        },
-        {
-          "value": "D",
-          "label": "D",
-          "text": "15, 35, 55, 60, 45, 30"
-        }
-      ],
-      "inputName": "Q4",
-      "inputType": "radio",
-      "correctAnswer": "D",
-      "explanation": "Post-order traversal: Left, Right, Root. \n1. Left child of 30: 15. \n2. Right child of 30: (Subtree at 45). \n   - Left child of 45: 35. \n   - Right child of 45: (Subtree at 60). \n     - Left child of 60: 55. \n     - Right of 60: NIL. \n     - Visit 60: 55, 60. \n   - Visit 45: 35, 55, 60, 45. \n3. Visit root 30: 15, 35, 55, 60, 45, 30."
-    },
-    {
-      "id": "regen-1775923942150-5",
-      "number": "6",
-      "text": "Let \\( f(n) = n^2 + 100n \\) and \\( g(n) = \\frac{n^2}{1000} \\). Which of the following is true?",
-      "choices": [
-        {
-          "value": "A",
-          "label": "A",
-          "text": "\\( f(n) = O(g(n)) \\)"
-        },
-        {
-          "value": "B",
-          "label": "B",
-          "text": "\\( f(n) = \\Omega(g(n)) \\)"
-        },
-        {
-          "value": "C",
-          "label": "C",
-          "text": "\\( f(n) = \\Theta(g(n)) \\)"
-        },
-        {
-          "value": "D",
-          "label": "D",
-          "text": "All of the above"
-        }
-      ],
-      "inputName": "Q5",
-      "inputType": "radio",
-      "correctAnswer": "D",
-      "explanation": "Since both functions are quadratic (degree 2 polynomials), they grow at the same rate asymptotically. The constants 100 or 1/1000 do not affect the Big-Theta classification. Thus, \\( f(n) \\) is both \\( O(g(n)) \\) and \\( \\Omega(g(n)) \\)."
-    },
-    {
-      "id": "regen-1775923942150-6",
-      "number": "7",
-      "text": "Given array \\( A = <8, 3, 10, 1, 6, 14, 4, 7, 13, 9> \\), what is the state of the array after one Lomuto partition using the last element as the pivot?",
-      "choices": [
-        {
-          "value": "A",
-          "label": "A",
-          "text": "<8, 3, 1, 6, 4, 7, 10, 14, 13, 9>"
-        },
-        {
-          "value": "B",
-          "label": "B",
-          "text": "<3, 1, 6, 4, 7, 8, 10, 14, 13, 9>"
-        },
-        {
-          "value": "C",
-          "label": "C",
-          "text": "<8, 3, 4, 1, 6, 7, 10, 14, 13, 9>"
-        },
-        {
-          "value": "D",
-          "label": "D",
-          "text": "<8, 3, 10, 1, 6, 14, 4, 7, 13, 9>"
-        }
-      ],
-      "inputName": "Q6",
-      "inputType": "radio",
-      "correctAnswer": "B",
-      "explanation": "Pivot = 9. \n- 8 < 9 (swap with index 1: 8) \n- 3 < 9 (swap with index 2: 3) \n- 10 > 9 (skip) \n- 1 < 9 (swap with index 3: 10) -> <8, 3, 1, 10, 6, 14, 4, 7, 13, 9> \n- 6 < 9 (swap with index 4: 10) -> <8, 3, 1, 6, 10, 14, 4, 7, 13, 9> \n- 14 > 9 (skip) \n- 4 < 9 (swap with index 5: 10) -> <8, 3, 1, 6, 4, 14, 10, 7, 13, 9> \n- 7 < 9 (swap with index 6: 14) -> <8, 3, 1, 6, 4, 7, 10, 14, 13, 9> \n- Final swap 9 with 10: <8, 3, 1, 6, 4, 7, 9, 14, 13, 10>."
-    },
-    {
-      "id": "regen-1775923942150-7",
-      "number": "8",
-      "text": "Apply `Max-Heapify(A, 2)` on the array \\( A = <50, 10, 45, 30, 20, 40, 35, 15, 25> \\). What is the final array?",
-      "choices": [
-        {
-          "value": "A",
-          "label": "A",
-          "text": "<50, 45, 10, 30, 20, 40, 35, 15, 25>"
-        },
-        {
-          "value": "B",
-          "label": "B",
-          "text": "<50, 30, 45, 25, 20, 40, 35, 15, 10>"
-        },
-        {
-          "value": "C",
-          "label": "C",
-          "text": "<50, 30, 45, 10, 20, 40, 35, 15, 25>"
-        },
-        {
-          "value": "D",
-          "label": "D",
-          "text": "<50, 30, 45, 15, 20, 40, 35, 10, 25>"
-        }
-      ],
-      "inputName": "Q7",
-      "inputType": "radio",
-      "correctAnswer": "B",
-      "explanation": "1. At index 2 (val 10), children are index 4 (30) and 5 (20). Max is 30. Swap 10 and 30. \n2. Array: <50, 30, 45, 10, 20, 40, 35, 15, 25>. \n3. Now check new index 4 (val 10), children are index 8 (15) and 9 (25). Max is 25. Swap 10 and 25. \n4. Final: <50, 30, 45, 25, 20, 40, 35, 15, 10>."
-    },
-    {
-      "id": "regen-1775923942150-8",
-      "number": "9",
-      "text": "What is the tightest upper bound on the number of nodes in a Red-Black tree of black-height \\( bh \\)?",
-      "choices": [
-        {
-          "value": "A",
-          "label": "A",
-          "text": "\\( 2^{bh} - 1 \\)"
-        },
-        {
-          "value": "B",
-          "label": "B",
-          "text": "\\( 4^{bh} - 1 \\)"
-        },
-        {
-          "value": "C",
-          "label": "C",
-          "text": "\\( 2^{2bh} - 1 \\)"
-        },
-        {
-          "value": "D",
-          "label": "D",
-          "text": "\\( 2^{bh+1} \\)"
-        }
-      ],
-      "inputName": "Q8",
-      "inputType": "radio",
-      "correctAnswer": "C",
-      "explanation": "Since the height \\( h \\le 2bh \\), the number of nodes in a complete binary tree of height \\( 2bh \\) is \\( 2^{2bh+1}-1 \\). However, following the lemma in CLRS, any node with black-height \\( bh \\) has at least \\( 2^{bh}-1 \\) internal nodes. The upper bound on nodes for a given \\( bh \\) relates to the maximum possible height \\( 2bh \\), giving \\( 2^{2bh}-1 \\)."
-    },
-    {
-      "id": "regen-1775923942150-9",
-      "number": "10",
-      "text": "Solve the recurrence \\( T(n) = 4T(n/2) + n^2 \\log n \\) using the Master Theorem.",
+      "text": "For the recurrence \\( T(n) = 4T(n/2) + n^2 \\log n \\), determine the asymptotic bound using the Master Theorem.",
       "choices": [
         {
           "value": "A",
@@ -311,235 +93,80 @@
         {
           "value": "D",
           "label": "D",
-          "text": "\\( \\Theta(n^2 \\sqrt{\\log n}) \\)"
+          "text": "\\( \\Theta(n^3) \\)"
         }
       ],
-      "inputName": "Q9",
+      "inputName": "Q2",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "\\( a=4, b=2 \\). \\( n^{\\log_2 4} = n^2 \\). Since \\( f(n) = n^2 \\log n \\), we use the extended Case 2 of Master Theorem. If \\( f(n) = \\Theta(n^{\\log_b a} \\log^k n) \\), then \\( T(n) = \\Theta(n^{\\log_b a} \\log^{k+1} n) \\). Here \\( k=1 \\), so \\( T(n) = \\Theta(n^2 \\log^2 n) \\)."
+      "explanation": "Here \\( a=4, b=2 \\). \\( n^{\\log_b a} = n^{\\log_2 4} = n^2 \\). Since \\( f(n) = n^2 \\log n \\), we compare it to \\( n^{\\log_b a} \\). This is Case 2 of the Master Theorem (extended), where \\( f(n) = \\Theta(n^{\\log_b a} \\log^k n) \\) with \\( k=1 \\). The solution is \\( T(n) = \\Theta(n^{\\log_b a} \\log^{k+1} n) = \\Theta(n^2 \\log^2 n) \\)."
     },
     {
-      "id": "regen-1775923942150-10",
-      "number": "11",
-      "text": "In a Binary Search Tree, if a node has exactly one child, which of the following is true about its successor?",
+      "id": "regen-1776120212922-3",
+      "number": "4",
+      "text": "In a Red-Black tree with \\( n \\) internal nodes, what is the maximum possible height \\( h \\) in terms of the number of nodes?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "The successor is the node's child."
+          "text": "\\( h \\leq 2 \\log(n+1) \\)"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "The successor is the leftmost node in the right subtree if the right child exists."
+          "text": "\\( h = \\log(n) \\)"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "The successor is always the parent."
+          "text": "\\( h = n \\)"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "It has no successor."
+          "text": "\\( h \\leq bh(x) \\)"
         }
       ],
-      "inputName": "Q10",
-      "inputType": "radio",
-      "correctAnswer": "B",
-      "explanation": "Successor rules: If the right subtree is non-empty, the successor is the minimum in the right subtree. This holds regardless of whether the node has a left child or not."
-    },
-    {
-      "id": "regen-1775923942150-11",
-      "number": "12",
-      "text": "A min-heap contains 511 nodes. What is the maximum number of nodes that could be at a height of 2?",
-      "choices": [
-        {
-          "value": "A",
-          "label": "A",
-          "text": "64"
-        },
-        {
-          "value": "B",
-          "label": "B",
-          "text": "128"
-        },
-        {
-          "value": "C",
-          "label": "C",
-          "text": "32"
-        },
-        {
-          "value": "D",
-          "label": "D",
-          "text": "16"
-        }
-      ],
-      "inputName": "Q11",
+      "inputName": "Q3",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "The number of nodes at height \\( h \\) in a heap of \\( n \\) nodes is at most \\( \\lceil n / 2^{h+1} \\rceil \\). For \\( n=511 \\) and \\( h=2 \\): \\( \\lceil 511 / 2^3 \\rceil = \\lceil 511 / 8 \\rceil = 64 \\)."
+      "explanation": "A fundamental property of Red-Black trees is that a tree with \\( n \\) internal nodes has height \\( h \\leq 2 \\log_2(n+1) \\), ensuring logarithmic time complexity for operations."
     },
     {
-      "id": "regen-1775923942150-12",
-      "number": "13",
-      "text": "Determine the Big-Oh complexity of the following code segment:\n\n```cpp\nfor (int i = 1; i <= n; i *= 2) {\n    for (int j = 0; j < i; ++j) {\n        sum += j;\n    }\n}\n```",
+      "id": "regen-1776120212922-4",
+      "number": "5",
+      "text": "Analyze the following code and determine the Big-Oh complexity:\n```cpp\nvoid process(int n) {\n    for (int i = 1; i <= n; i *= 2) {\n        for (int j = 0; j < i; j++) {\n            cout << \"Complexity\";\n        }\n    }\n}\n```",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "O(n \\log n)"
+          "text": "\\( O(n \\log n) \\)"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "O(n)"
+          "text": "\\( O(n) \\)"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "O(n^2)"
+          "text": "\\( O(n^2) \\)"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "O(\\log n)"
+          "text": "\\( O(\"2^n\") \\)"
         }
       ],
-      "inputName": "Q12",
+      "inputName": "Q4",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "The outer loop runs for \\( i = 1, 2, 4, ..., 2^k \\) where \\( 2^k \\le n \\). The inner loop runs \\( i \\) times. The total work is \\( 1 + 2 + 4 + ... + 2^k \\). This is a geometric series sum which equals \\( 2^{k+1} - 1 \\). Since \\( 2^k \\approx n \\), the complexity is \\( O(n) \\)."
+      "explanation": "The outer loop runs for \\( i = 1, 2, 4, ..., 2^{\\lfloor \\log n \\rfloor} \\). The inner loop runs \\( i \\) times. The total work is the sum of a geometric series: \\( 1 + 2 + 4 + ... + n \\approx 2n \\). Thus, the complexity is \\( O(n) \\)."
     },
     {
-      "id": "regen-1775923942150-13",
-      "number": "14",
-      "text": "Which of the following traversals on a Max-Heap will always produce the elements in non-increasing order?",
-      "choices": [
-        {
-          "value": "A",
-          "label": "A",
-          "text": "Inorder"
-        },
-        {
-          "value": "B",
-          "label": "B",
-          "text": "Preorder"
-        },
-        {
-          "value": "C",
-          "label": "C",
-          "text": "None of these"
-        },
-        {
-          "value": "D",
-          "label": "D",
-          "text": "Level-order"
-        }
-      ],
-      "inputName": "Q13",
-      "inputType": "radio",
-      "correctAnswer": "C",
-      "explanation": "Standard traversals (pre, in, post) do not guarantee sorted order for heaps. Heaps only guarantee a partial ordering (parent vs child). Only a Binary Search Tree produces sorted output with inorder traversal."
-    },
-    {
-      "id": "regen-1775923942150-14",
-      "number": "15",
-      "text": "In the recurrence \\( T(n) = 3T(n/2) + n \\), how many nodes are at level \\( k \\) of the recursion tree?",
-      "choices": [
-        {
-          "value": "A",
-          "label": "A",
-          "text": "\\( 2^k \\)"
-        },
-        {
-          "value": "B",
-          "label": "B",
-          "text": "\\( 3^k \\)"
-        },
-        {
-          "value": "C",
-          "label": "C",
-          "text": "\\( (n/2)^k \\)"
-        },
-        {
-          "value": "D",
-          "label": "D",
-          "text": "\\( 3^n \\)"
-        }
-      ],
-      "inputName": "Q14",
-      "inputType": "radio",
-      "correctAnswer": "B",
-      "explanation": "The number of subproblems (nodes) at level \\( k \\) for a recurrence \\( T(n) = aT(n/b) + f(n) \\) is \\( a^k \\). Here, \\( a = 3 \\)."
-    },
-    {
-      "id": "regen-1775923942150-15",
-      "number": "16",
-      "text": "What is the height of a *perfect* binary tree containing 1023 nodes?",
-      "choices": [
-        {
-          "value": "A",
-          "label": "A",
-          "text": "10"
-        },
-        {
-          "value": "B",
-          "label": "B",
-          "text": "9"
-        },
-        {
-          "value": "C",
-          "label": "C",
-          "text": "1023"
-        },
-        {
-          "value": "D",
-          "label": "D",
-          "text": "11"
-        }
-      ],
-      "inputName": "Q15",
-      "inputType": "radio",
-      "correctAnswer": "B",
-      "explanation": "A perfect binary tree with \\( n \\) nodes has height \\( h = \\log_2(n+1) - 1 \\). \\( \\log_2(1024) - 1 = 10 - 1 = 9 \\)."
-    },
-    {
-      "id": "regen-1775923942150-16",
-      "number": "17",
-      "text": "Calculate the black-height of the root (30) in the tree from Question 1, assuming it is currently valid.",
-      "choices": [
-        {
-          "value": "A",
-          "label": "A",
-          "text": "1"
-        },
-        {
-          "value": "B",
-          "label": "B",
-          "text": "2"
-        },
-        {
-          "value": "C",
-          "label": "C",
-          "text": "3"
-        },
-        {
-          "value": "D",
-          "label": "D",
-          "text": "4"
-        }
-      ],
-      "inputName": "Q16",
-      "inputType": "radio",
-      "correctAnswer": "B",
-      "explanation": "From root 30, pick a path to NIL: 30(B) \\(\\rightarrow\\) 15(B) \\(\\rightarrow\\) NIL(B). Black nodes excluding root: 15 and NIL. Total = 2. Path to NIL via 45: 30(B) \\(\\rightarrow\\) 45(R) \\(\\rightarrow\\) 60(B) \\(\\rightarrow\\) NIL(B). Black nodes excluding root: 60 and NIL. Total = 2."
-    },
-    {
-      "id": "regen-1775923942150-17",
-      "number": "18",
-      "text": "Starting with an empty max-heap, insert:\\(<15, 10, 20, 5, 12, 8, 25>\\) . Which element is the left child of the node containing 10?",
+      "id": "regen-1776120212922-5",
+      "number": "6",
+      "text": "If you perform a `MAX-HEAPIFY` on index 1 of the array \\( A = \\{15, 60, 45, 50, 30, 70, 80\\} \\), which value will end up at index 6?",
       "choices": [
         {
           "value": "A",
@@ -549,126 +176,90 @@
         {
           "value": "B",
           "label": "B",
-          "text": "12"
+          "text": "70"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "20"
+          "text": "80"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "25"
-        },
-        {
-          "value": "E",
-          "label": "E",
-          "text": "No children"
+          "text": "45"
         }
       ],
-      "inputName": "Q17",
+      "inputName": "Q5",
       "inputType": "radio",
-      "correctAnswer": "E",
-      "explanation": "Let's trace the insertion of elements into the max-heap step-by-step:\n1. **Insert 15**: [15]\n2. **Insert 10**: [15, 10] (10 is left child of 15)\n3. **Insert 20**: [15, 10, 20] -> Swap 20 and 15 -> [20, 10, 15]\n4. **Insert 5**: [20, 10, 15, 5] (5 is left child of 10)\n5. **Insert 12**: [20, 10, 15, 5, 12] -> Swap 12 and 10 -> [20, 12, 15, 5, 10]\n6. **Insert 8**: [20, 12, 15, 5, 10, 8] (8 is left child of 15)\n7. **Insert 25**: [20, 12, 15, 5, 10, 8, 25] -> Swap 25 and 15 -> [20, 12, 25, 5, 10, 8, 15] -> Swap 25 and 20 -> [25, 12, 20, 5, 10, 8, 15]\n\nFinal Array: `[25, 12, 20, 5, 10, 8, 15]`\nIn this max-heap, the node containing 10 is at index 4 (0-indexed). Its children would be at index \\(2i + 1 = 9\\) and \\(2i + 2 = 10\\). Since there are only 7 elements, 10 is a leaf node and has no children.\n\nHowever, if we follow the same process for a **min-heap**:\n- Final Array: `[5, 10, 8, 15, 12, 20, 25]`\n- Node 10 is at index 1. Its left child is at index \\(2(1) + 1 = 3\\).\n- Value at index 3 is **15**."
+      "correctAnswer": "D",
+      "explanation": "1. Root is 15. Children are 60 and 45. Largest is 60 (idx 2). Swap 15 and 60. \n2. New root idx 2 (value 15). Children are 50 and 30. Largest is 50 (idx 4). Swap 15 and 50. \n3. No further swaps for 15. \nNote: Index 6 (value 70) was never touched because the heapify path followed the left branch (idx 2 then idx 4). Thus, the value at index 6 remains 70. Wait, 45 is at index 3. Let's re-verify: Index 6 is 70. Choice B is correct."
     },
     {
-      "id": "regen-1775923942150-18",
-      "number": "19",
-      "text": "Given array \\( A = \\{20, 15, 10, 5, 25, 30\\} \\), what is the array state after the 4th outer loop iteration of Insertion Sort (sorting indices 0 to 4)?",
+      "id": "regen-1776120212922-6",
+      "number": "7",
+      "text": "What is the result of the `PARTITION` procedure on \\( A = \\langle 5, 8, 1, 3, 7, 9, 2 \\rangle \\) using the last element as the pivot (Lomuto scheme)?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "\\{5, 10, 15, 20, 25, 30\\}"
+          "text": "\\( \\langle 1, 2, 5, 3, 7, 9, 8 \\rangle \\)"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "\\{10, 15, 20, 25, 5, 30\\}"
+          "text": "\\( \\langle 1, 5, 8, 3, 7, 9, 2 \\rangle \\)"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "\\{5, 15, 20, 10, 25, 30\\}"
+          "text": "\\( \\langle 1, 2, 8, 3, 7, 9, 5 \\rangle \\)"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "\\{5, 10, 15, 20, 25, 30\\}"
+          "text": "\\( \\langle 1, 2, 5, 8, 3, 7, 9 \\rangle \\)"
         }
       ],
-      "inputName": "Q18",
+      "inputName": "Q6",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "- Start: {20, 15, 10, 5, 25, 30} \n- k=1 (key 15): {15, 20, 10, 5, 25, 30} \n- k=2 (key 10): {10, 15, 20, 5, 25, 30} \n- k=3 (key 5): {5, 10, 15, 20, 25, 30} \n- k=4 (key 25): {5, 10, 15, 20, 25, 30}."
+      "explanation": "Pivot = 2. \n1. 5 > 2. \n2. 8 > 2. \n3. 1 < 2: Swap 5 and 1 \\( \\to \\) [1, 8, 5, 3, 7, 9, 2]. \n4. 3 > 2, 7 > 2, 9 > 2. \n5. Final swap: Swap A[i+1] (8) and pivot (2). Array: [1, 2, 5, 3, 7, 9, 8]."
     },
     {
-      "id": "regen-1775923942150-19",
-      "number": "20",
-      "text": "What is the depth of node 55 in the tree provided in Question 1?",
+      "id": "regen-1776120212922-7",
+      "number": "8",
+      "text": "Consider a Binary Search Tree where the root is 50. After inserting 30, 70, 20, 40, 60, and 80, what is the Pre-order traversal of the tree?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "3"
+          "text": "50, 30, 20, 40, 70, 60, 80"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "2"
+          "text": "20, 30, 40, 50, 60, 70, 80"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "4"
+          "text": "20, 40, 30, 60, 80, 70, 50"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "1"
+          "text": "50, 70, 80, 60, 30, 40, 20"
         }
       ],
-      "inputName": "Q19",
+      "inputName": "Q7",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Depth is the number of edges from the root. Path: 30 \\(\\rightarrow\\) 45 \\(\\rightarrow\\) 60 \\(\\rightarrow\\) 55. This is 3 edges."
+      "explanation": "BST structure: Root 50. Left: 30 (L: 20, R: 40). Right: 70 (L: 60, R: 80). Pre-order: Root-Left-Right: 50, 30, 20, 40, 70, 60, 80."
     },
     {
-      "id": "regen-1775923942150-20",
-      "number": "21",
-      "text": "In a Red-Black tree, if you delete a node and its replacement is red, what action is taken?",
-      "choices": [
-        {
-          "value": "A",
-          "label": "A",
-          "text": "Apply Case 1 for deletion"
-        },
-        {
-          "value": "B",
-          "label": "B",
-          "text": "Recolor the replacement node to black"
-        },
-        {
-          "value": "C",
-          "label": "C",
-          "text": "Rotate the sibling"
-        },
-        {
-          "value": "D",
-          "label": "D",
-          "text": "No action is required"
-        }
-      ],
-      "inputName": "Q20",
-      "inputType": "radio",
-      "correctAnswer": "B",
-      "explanation": "If the extra blackness can be pushed onto a red node (making it black), the violation is resolved immediately without further rotations."
-    },
-    {
-      "id": "regen-1775923942150-21",
-      "number": "22",
-      "text": "Consider the recurrence \\( T(n) = T(n/3) + T(2n/3) + cn \\). What is the total cost of the second level (i=1) of the recursion tree?",
+      "id": "regen-1776120212922-8",
+      "number": "9",
+      "text": "For the recurrence \\( T(n) = T(n/3) + T(2n/3) + cn \\), what is the total work done at the second level (level 1) of the recursion tree?",
       "choices": [
         {
           "value": "A",
@@ -683,188 +274,591 @@
         {
           "value": "C",
           "label": "C",
-          "text": "\\( cn \\log n \\)"
+          "text": "\\( cn/3 \\)"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "\\( (2/3)cn \\)"
+          "text": "\\( 2cn/3 \\)"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Level 0: \\( cn \\). \nLevel 1: The nodes are \\( T(n/3) \\) and \\( T(2n/3) \\). The work is \\( c(n/3) + c(2n/3) = cn \\). Every level of this recursion tree sums to \\( cn \\) until the branches start hitting base cases."
+    },
+    {
+      "id": "regen-1776120212922-9",
+      "number": "10",
+      "text": "A Red-Black tree has a black-height of 3. What is the maximum possible number of internal nodes in this tree?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "7"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "15"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "63"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "31"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A node with black-height \\( bh \\) has at least \\( 2^{bh}-1 \\) internal nodes. To maximize nodes, we alternate red and black nodes. Maximum height \\( h = 2bh = 6 \\). Max nodes \\( n = 2^{h+1}-1 = 2^7-1 = 127 \\)? No, black height property says \\( n \\geq 2^{bh}-1 \\). Maximum nodes for black-height \\( bh \\) occurs when we maximize red nodes: \\( 2^{2bh}-1 \\). For \\( bh=3 \\), max nodes = \\( 2^{2(3)}-1 = 2^6-1 = 63 \\)."
+    },
+    {
+      "id": "regen-1776120212922-10",
+      "number": "11",
+      "text": "What is the predecessor of node 35 in the Red-Black tree shown below?\n\n```mermaid\ngraph TD\n    30((30)):::black --- 15((15)):::black\n    30 --- 45((45)):::red\n    45 --- 35((35)):::black\n    45 --- 60((60)):::black\n    60 --- 55((55)):::red\n    \n    classDef black fill:#333,stroke:#000,color:#fff,font-weight:bold;\n    classDef red fill:#f96,stroke:#f00,color:#000,text-decoration:underline;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "30"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "15"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "45"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "none"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In a BST, the predecessor is the largest value in the left subtree. Node 35 has no left subtree. Therefore, the predecessor is the first ancestor that contains 35 in its right subtree. Tracking up from 35: 45 (35 is in left), 30 (35 is in right). Thus, 30 is the predecessor."
+    },
+    {
+      "id": "regen-1776120212922-11",
+      "number": "12",
+      "text": "Which of the following is true regarding the asymptotic relationship between \\( f(n) = n^2 \\) and \\( g(n) = n^{2.1} \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( f(n) = O(g(n)) \\) and \\( f(n) \neq \\Theta(g(n)) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( f(n) = \\Omega(g(n)) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( f(n) = \\Theta(g(n)) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( g(n) = O(f(n)) \\)"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "\\( \\lim_{n \\to \\infty} \\frac{n^2}{n^{2.1}} = \\lim_{n \\to \\infty} n^{-0.1} = 0 \\). This implies \\( f(n) = o(g(n)) \\), meaning \\( f(n) = O(g(n)) \\) but not \\( \\Theta(g(n)) \\)."
+    },
+    {
+      "id": "regen-1776120212922-12",
+      "number": "13",
+      "text": "When building a max-heap from the array \\( \\langle 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 \\rangle \\), what is the state of the array after the first call to `MAX-HEAPIFY` (at the first non-leaf node)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( \\langle 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 \\rangle \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( \\langle 4, 1, 3, 14, 16, 9, 10, 2, 8, 7 \\rangle \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( \\langle 16, 14, 10, 8, 7, 9, 3, 2, 4, 1 \\rangle \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( \\langle 4, 1, 3, 14, 7, 9, 10, 2, 8, 16 \\rangle \\)"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Non-leaf nodes start from index \\( \\lfloor n/2 \\rfloor = 5 \\). \n1. Index 5 (16): Children at 10 (7). 16 > 7, no swap. \n2. Index 4 (2): Children at 8 (14) and 9 (8). Largest is 14. Swap 2 and 14. \nArray becomes: [4, 1, 3, 14, 16, 9, 10, 2, 8, 7]."
+    },
+    {
+      "id": "regen-1776120212922-13",
+      "number": "14",
+      "text": "What is the black-height of the root (30) in the provided tree after inserting 50 and rebalancing?\n\n```mermaid\ngraph TD\n    30((30)):::black --- 15((15)):::black\n    30 --- 45((45)):::red\n    45 --- 35((35)):::black\n    45 --- 60((60)):::black\n    60 --- 55((55)):::red\n    \n    classDef black fill:#333,stroke:#000,color:#fff,font-weight:bold;\n    classDef red fill:#f96,stroke:#f00,color:#000,text-decoration:underline;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Inserting 50 into this tree triggers Case 2 (triangle) then Case 3 (line) at the node 60 level. This involves rotations and recoloring within the subtree rooted at 45. Rebalancing a Case 2/3 violation does not change the black-height of the root unless Case 1 propagates to the root and forces a root-recolor. Here, 45 stays red or becomes black, but the path count of black nodes remains 2."
+    },
+    {
+      "id": "regen-1776120212922-14",
+      "number": "15",
+      "text": "In Quick Sort, if the partition always splits the array in a ratio of 9:1, what is the resulting time complexity?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(n^2) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n \\log n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(\"log n\") \\)"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Any constant ratio split (even 99:1) results in a recursion tree depth of \\( \\log_{10/9} n \\), which is still \\( O(\\log n) \\). Since each level takes \\( O(n) \\) work, the total complexity is \\( O(n \\log n) \\)."
+    },
+    {
+      "id": "regen-1776120212922-15",
+      "number": "16",
+      "text": "Given the Insertion Sort algorithm, which input array results in the maximum number of comparisons?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "An array sorted in descending order."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "An array sorted in ascending order."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "An array with all identical elements."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "An array where elements are randomly distributed."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The worst case for Insertion Sort is an array sorted in reverse (descending) order. Each new element must be compared and shifted past all previously sorted elements, leading to \\( O(n^2) \\) comparisons."
+    },
+    {
+      "id": "regen-1776120212922-16",
+      "number": "17",
+      "text": "In a max-heap with \\( n \\) nodes, where is the second-largest element located?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Index 2 or 3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Always at index 2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Any leaf node"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The rightmost node of the last level"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In a max-heap, the largest element is at the root (index 1). The second-largest must be one of the root's children (index 2 or index 3)."
+    },
+    {
+      "id": "regen-1776120212922-17",
+      "number": "18",
+      "text": "What is the black-height of a NIL node in a Red-Black tree?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "-1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It depends on the path"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "By definition, the black-height of a node is the number of black nodes on the path to a leaf, NOT including the node itself. Since a NIL node is a leaf and has no descendants, its black-height is 0."
+    },
+    {
+      "id": "regen-1776120212922-18",
+      "number": "19",
+      "text": "Consider the following recurrence: \\( T(n) = 2T(n/2) + n \\). Using the recursion tree, what is the total work done at level \\( k \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( n \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( 2^k \\cdot n \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( n/2^k \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( k \\cdot n \\)"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "At level \\( k \\), there are \\( 2^k \\) nodes, each processing a subproblem of size \\( n/2^k \\). The work per node is \\( f(n/2^k) = n/2^k \\). Total work = \\( 2^k \\cdot (n/2^k) = n \\)."
+    },
+    {
+      "id": "regen-1776120212922-19",
+      "number": "20",
+      "text": "Which of the following properties is NOT required for a valid Red-Black tree?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The root must be red if it has two black children."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Every leaf (NIL) is black."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "If a node is red, both its children are black."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "For each node, all paths to descendant leaves contain the same number of black nodes."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The root of a Red-Black tree must always be black. Option A is factually incorrect and not a property."
+    },
+    {
+      "id": "regen-1776120212922-20",
+      "number": "21",
+      "text": "A max-heap contains the elements \\( \\langle 100, 19, 36, 17, 3, 25, 1, 2, 7 \\rangle \\). After deleting the root (100) and performing `MAX-HEAPIFY`, what is the new root?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "36"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "19"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "7"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "25"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. Replace root with the last element (7). \n2. Root is 7, children are 19 and 36. \n3. 36 is larger, swap 7 and 36. New root is 36."
+    },
+    {
+      "id": "regen-1776120212922-21",
+      "number": "22",
+      "text": "What is the worst-case time complexity of searching for a value in a Red-Black tree with \\( n \\) nodes?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(\\log n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(1) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(n \\log n) \\)"
         }
       ],
       "inputName": "Q21",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "Level 0 cost = \\( cn \\). Level 1 has two nodes: \\( c(n/3) \\) and \\( c(2n/3) \\). Sum = \\( c(n/3 + 2n/3) = cn \\)."
+      "explanation": "Because a Red-Black tree is always balanced (height is logarithmic), searching for a value takes \\( O(h) \\), which is \\( O(\\log n) \\)."
     },
     {
-      "id": "regen-1775923942150-22",
+      "id": "regen-1776120212922-22",
       "number": "23",
-      "text": "Which of the following functions grows the fastest asymptotically?",
+      "text": "In the Quick Sort `PARTITION` algorithm, what happens if all elements in the array are identical?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "\\( n \\log n \\)"
+          "text": "The pivot splits the array into one element and \\( n-1 \\) elements (worst case)."
         },
         {
           "value": "B",
           "label": "B",
-          "text": "\\( n^{1.1} \\)"
+          "text": "The pivot splits the array exactly in half (best case)."
         },
         {
           "value": "C",
           "label": "C",
-          "text": "\\( n \\log^2 n \\)"
+          "text": "The algorithm fails to terminate."
         },
         {
           "value": "D",
           "label": "D",
-          "text": "\\( n \\sqrt{n} \\)"
+          "text": "The partition procedure takes \\( O(n \\log n) \\) time."
         }
       ],
       "inputName": "Q22",
       "inputType": "radio",
-      "correctAnswer": "D",
-      "explanation": "\\( n \\sqrt{n} = n^{1.5} \\). Since 1.5 > 1.1 > 1.0 (for n log n), \\( n^{1.5} \\) is the fastest."
+      "correctAnswer": "A",
+      "explanation": "In the Lomuto partition scheme, if all elements are equal to the pivot, the loop condition \\( A[j] \\leq x \\) is always true. The index \\( i \\) will increment in every iteration, and the pivot will ultimately be swapped with the last element, resulting in a split of \\( n-1 \\) and 0 elements."
     },
     {
-      "id": "regen-1775923942150-23",
+      "id": "regen-1776120212922-23",
       "number": "24",
-      "text": "What is the result of a right-rotation on node 'y' where 'x' is the left child of 'y'?",
+      "text": "Compare \\( f(n) = 2^n \\) and \\( g(n) = 3^n \\). Which of the following is true?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "'y' becomes the left child of 'x'"
+          "text": "\\( f(n) = O(g(n)) \\)"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "'x' becomes the right child of 'y'"
+          "text": "\\( f(n) = \\Omega(g(n)) \\)"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "'y' becomes the right child of 'x'"
+          "text": "\\( f(n) = \\Theta(g(n)) \\)"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "'x' becomes the parent of the root"
+          "text": "None of the above"
         }
       ],
       "inputName": "Q23",
       "inputType": "radio",
-      "correctAnswer": "C",
-      "explanation": "In a right rotation, the pivot (y) moves down to the right, and its left child (x) moves up to take its place. Thus, y becomes x's right child."
+      "correctAnswer": "A",
+      "explanation": "\\( \\lim_{n \\to \\infty} \\frac{2^n}{3^n} = \\lim_{n \\to \\infty} (2/3)^n = 0 \\). Thus \\( f(n) = o(g(n)) \\), which implies \\( f(n) = O(g(n)) \\)."
     },
     {
-      "id": "regen-1775923942150-24",
+      "id": "regen-1776120212922-24",
       "number": "25",
-      "text": "A Binary Search Tree contains the following keys in Level-order: \\( <10, 5, 20, 2, 7, 15, 25> \\). What is the predecessor of node 10?",
+      "text": "A heap with 511 nodes is perfectly full. What is the height of a node at level 7 (where the root is level 0)?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "5"
+          "text": "1"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "7"
+          "text": "8"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "2"
+          "text": "7"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "15"
+          "text": "2"
         }
       ],
       "inputName": "Q24",
       "inputType": "radio",
-      "correctAnswer": "B",
-      "explanation": "Predecessor of 10 is the maximum value in the left subtree. Left subtree of 10 contains 5, 2, and 7. Max is 7."
+      "correctAnswer": "A",
+      "explanation": "A full tree with 511 nodes has \\( 2^9 - 1 \\) nodes, meaning its levels are 0 through 8. Total height \\( H = 8 \\). The height of a node at level \\( d \\) is \\( H - d = 8 - 7 = 1 \\)."
     },
     {
-      "id": "regen-1775923942150-25",
+      "id": "regen-1776120212922-25",
       "number": "26",
-      "text": "A min-heap is represented by \\( A = <3, 8, 10, 15, 20, 12, 11> \\). After performing `Extract-Min`, what is the element at the root?",
+      "text": "What is the post-order traversal of the following tree?\n\n```mermaid\ngraph TD\n    30((30)):::black --- 15((15)):::black\n    30 --- 45((45)):::red\n    45 --- 35((35)):::black\n    45 --- 60((60)):::black\n\n    classDef black fill:#333,stroke:#000,color:#fff,font-weight:bold;\n    classDef red fill:#f96,stroke:#f00,color:#000,text-decoration:underline;\n```",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "8"
+          "text": "15, 35, 60, 45, 30"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "11"
+          "text": "15, 30, 35, 45, 60"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "10"
+          "text": "30, 15, 45, 35, 60"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "12"
+          "text": "60, 35, 45, 15, 30"
         }
       ],
       "inputName": "Q25",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "1. Remove 3. Move last element (11) to root: <11, 8, 10, 15, 20, 12>. \n2. Heapify-down on root: compare 11 with 8 and 10. Smallest is 8. Swap 11 and 8. \n3. New root is 8."
+      "explanation": "Post-order: Left-Right-Root. \n1. Left subtree of 30: **15**. \n2. Right subtree of 30 (rooted at 45): \n   - Left of 45: **35**. \n   - Right of 45: **60**. \n   - Root of subtree: **45**. \n3. Root of tree: **30**. \nSequence: 15, 35, 60, 45, 30."
     },
     {
-      "id": "regen-1775923942150-26",
+      "id": "regen-1776120212922-26",
       "number": "27",
-      "text": "If \\( T(n) = 2T(n/4) + 1 \\), what is the Big-Theta complexity?",
+      "text": "If \\( T(n) = 2T(n/2) + n \\), how many nodes are at level \\( i \\) in the recursion tree?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "\\( \\Theta(\\sqrt{n}) \\)"
+          "text": "\\( 2^i \\)"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "\\( \\Theta(n) \\)"
+          "text": "\\( i^2 \\)"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "\\( \\Theta(\\log n) \\)"
+          "text": "\\( n/2^i \\)"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "\\( \\Theta(n^2) \\)"
+          "text": "\\( 2n \\)"
         }
       ],
       "inputName": "Q26",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "\\( a=2, b=4 \\). \\( n^{\\log_4 2} = n^{0.5} = \\sqrt{n} \\). Since \\( f(n) = 1 = O(n^{0.5-\\epsilon}) \\), Case 1 of Master Theorem applies."
+      "explanation": "In the standard recursion tree for \\( aT(n/b) + f(n) \\), each level \\( i \\) contains \\( a^i \\) nodes. Here \\( a=2 \\), so there are \\( 2^i \\) nodes."
     },
     {
-      "id": "regen-1775923942150-27",
+      "id": "regen-1776120212922-27",
       "number": "28",
-      "text": "Which of these sorting algorithms has the best worst-case time complexity?",
+      "text": "Which sorting algorithm is stable and has a worst-case time complexity of \\( O(n \\log n) \\)?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "Insertion Sort"
+          "text": "Merge Sort"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "Quick Sort (Lomuto)"
+          "text": "Quick Sort"
         },
         {
           "value": "C",
@@ -874,75 +868,75 @@
         {
           "value": "D",
           "label": "D",
-          "text": "Selection Sort"
+          "text": "Insertion Sort"
         }
       ],
       "inputName": "Q27",
       "inputType": "radio",
-      "correctAnswer": "C",
-      "explanation": "Heap Sort is \\( O(n \\log n) \\) in the worst case. Insertion, Selection, and Quick Sort (without specific optimizations) are \\( O(n^2) \\) in the worst case."
+      "correctAnswer": "A",
+      "explanation": "Merge Sort is stable and guaranteed \\( O(n \\log n) \\). Quick Sort is \\( O(n^2) \\) worst-case and unstable. Heap Sort is \\( O(n \\log n) \\) but unstable."
     },
     {
-      "id": "regen-1775923942150-28",
+      "id": "regen-1776120212922-28",
       "number": "29",
-      "text": "In the context of the Master Theorem, if \\( f(n) = \\Theta(n^{\\log_b a}) \\), which case are we in?",
+      "text": "What is the maximum number of edges on a path from the root to a leaf in a Red-Black tree with black-height \\( bh \\)?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "Case 1"
+          "text": "\\( 2bh \\)"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "Case 2"
+          "text": "\\( bh \\)"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "Case 3"
+          "text": "\\( 2^bh \\)"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "None"
+          "text": "\\( bh/2 \\)"
         }
       ],
       "inputName": "Q28",
       "inputType": "radio",
-      "correctAnswer": "B",
-      "explanation": "Case 2 occurs when the cost of the work at each level is roughly the same, specifically when the driving function \\( f(n) \\) is the same complexity as the number of leaves in the recursion tree."
+      "correctAnswer": "A",
+      "explanation": "Since red nodes cannot be adjacent, the longest possible path alternates between red and black nodes. For a path with \\( bh \\) black nodes, the maximum total number of nodes is \\( 2bh \\) (including red nodes)."
     },
     {
-      "id": "regen-1775923942150-29",
+      "id": "regen-1776120212922-29",
       "number": "30",
-      "text": "In a Red-Black tree, what is the maximum number of red nodes that can exist on a path from the root to a NIL leaf if the black-height is 4?",
+      "text": "What is the value of \\( T(n) \\) for the recurrence \\( T(n) = T(n-1) + 1 \\)?",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "4"
+          "text": "\\( \\Theta(n) \\)"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "5"
+          "text": "\\( \\Theta(\\log n) \\)"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "3"
+          "text": "\\( \\Theta(n^2) \\)"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "2"
+          "text": "\\( \\Theta(1) \\)"
         }
       ],
       "inputName": "Q29",
       "inputType": "radio",
       "correctAnswer": "A",
-      "explanation": "To maintain black-height 4, there are 4 black nodes. To maximize red nodes, we place a red node between every black node. Since the root must be black, the path looks like: B-R-B-R-B-R-B-R-NIL. This allows up to 4 red nodes."
+      "explanation": "This is a simple arithmetic progression. Each step reduces \\( n \\) by 1 and adds a constant. Summing 1, \\( n \\) times, gives \\( T(n) = \\Theta(n) \\)."
     }
   ],
   "status": "completed",
