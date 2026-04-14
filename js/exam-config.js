@@ -553,5 +553,50 @@ const EXAM_CONFIG = [
         "file": "data/Design/chapterMultiple Filesvisual_extractor final.json"
       }
     ]
+  },
+  {
+    "id": "Requirements ",
+    "name": "Requirements Engineering",
+    "description": "Introduction to Requirements Engineering",
+    "path": "data/Requirements",
+    "icon": "data/Requirements/icon.png",
+    "chapters": [
+      {
+        "id": "1",
+        "name": "Mid",
+        "q": 42,
+        "file": "data/Requirements/chapterMultiple Filesvisual_extractor mid.json"
+      },
+      {
+        "id": "2",
+        "name": "Mid by Z+",
+        "q": 40,
+        "file": "data/Requirements/chapterMultiple Filesregenerationsame mid by z+.json"
+      },
+      {
+        "id": "3",
+        "name": "Mid by Z+ (hard)",
+        "q": 40,
+        "file": "data/Requirements/chapterMultiple Filesregenerationharder mid by z+.json"
+      },
+      {
+        "id": "4",
+        "name": "Final",
+        "q": 41,
+        "file": "data/Requirements/chapterMultiple Filesvisual_extractor final.json"
+      },
+      {
+        "id": "5",
+        "name": "Final by Z+",
+        "q": 40,
+        "file": "data/Requirements/chapterMultiple Filesregenerationsame final by Z+.json"
+      },
+      {
+        "id": "6",
+        "name": "Final by Z+(hard)",
+        "q": 40,
+        "file": "data/Requirements/chapterMultiple Filesregenerationharder final by z+ hard.json"
+      }
+    ]
   }
 ];
