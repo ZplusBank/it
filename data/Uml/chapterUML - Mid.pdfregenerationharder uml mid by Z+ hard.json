@@ -1,0 +1,635 @@
+{
+  "id": "regen-1776181729595",
+  "label": "Regenerated: UML - Mid.pdf",
+  "params": {
+    "file": "UML - Mid.pdf",
+    "type": "regeneration",
+    "difficulty": "harder",
+    "chapter": "3"
+  },
+  "title": "Mid by Z+ (hard)",
+  "questions": [
+    {
+      "id": "regen-1776181729595-0",
+      "number": "1",
+      "text": "When transitioning from a textual requirements specification to a UML Domain Model, a software engineer encounters the phrase 'The registrar maintains a history of course modifications.' Which analytical approach provides the most robust identification of conceptual classes?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Mapping 'maintains' to a class attribute to represent state changes."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Identifying 'Registrar' and 'CourseModification' as noun phrases representing conceptual entities."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Reusing a generic 'Administrative' pattern regardless of the specific business rules."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Executing a CRUD analysis on 'History' to determine its database schema."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In conceptual modeling, identification is driven by identifying nouns/noun phrases (Registrar, CourseModification) that represent real-world concepts, rather than implementation details like database schemas or specific method logic."
+    },
+    {
+      "id": "regen-1776181729595-1",
+      "number": "2",
+      "text": "During the Object-Oriented Analysis (OOA) phase, what is the primary purpose of defining operation contracts for system operations derived from use cases?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To specify the procedural logic and algorithmic steps of the implementation."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To define the state changes in the Domain Model using pre-conditions and post-conditions."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To establish the physical database constraints and foreign key relationships."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To document the user interface layout and event handling sequences."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Operation contracts describe the effect of system operations on the Domain Model objects in terms of state changes (post-conditions) rather than procedural logic, which is a key activity in the analysis phase."
+    },
+    {
+      "id": "regen-1776181729595-2",
+      "number": "3",
+      "text": "Which statement best characterizes the relationship between modern software frameworks and design patterns?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Frameworks are collections of library functions that exclude pattern implementations to maintain performance."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Design patterns are concrete code implementations, whereas frameworks are theoretical abstractions."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Frameworks leverage design patterns to provide 'hooks' for extensibility, facilitating the 'Inversion of Control' principle."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Frameworks and design patterns are mutually exclusive approaches to software reuse."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Frameworks achieve reusability and flexibility by implementing various design patterns (like Template Method or Observer) that allow developers to inject custom logic into pre-defined execution flows."
+    },
+    {
+      "id": "regen-1776181729595-3",
+      "number": "4",
+      "text": "Why is it generally considered a modeling error to include primitive data types (e.g., \\( int \\), \\( String \\)) and visibility modifiers (e.g., \\( + \\), \\( - \\)) in a conceptual Domain Model?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It violates the principle of encapsulation by exposing internal data structures."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It prematurely shifts the focus from real-world business concepts to software-specific implementation details."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Primitive types are only permitted in Design Class Diagrams if the system is being built in C++."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "UML syntax strictly forbids the use of text labels within class boxes in analysis models."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Domain Model is an abstraction of the problem domain. Including implementation-specific details like data types and visibility modifiers is reserved for the Design Class Diagram (DCD)."
+    },
+    {
+      "id": "regen-1776181729595-4",
+      "number": "5",
+      "text": "A corporation decides to build a new AI-driven supply chain management system without utilizing any of its existing 1980s COBOL infrastructure. This project is best classified as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Brownfield Engineering"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Refactoring Engineering"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Greenfield Engineering"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Reverse Engineering"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Greenfield engineering involves developing a system from scratch without the constraints of legacy systems or the need to integrate with pre-existing codebases."
+    },
+    {
+      "id": "regen-1776181729595-5",
+      "number": "6",
+      "text": "Analyze the following requirement: 'A Course Catalog contains multiple Course Offerings, each of which is associated with a specific Professor.' Which UML relationship types are most directly suggested by the verbs 'contains' and 'associated with'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Generalization and Realization"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Aggregation/Composition and Association"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Dependency and Generalization"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Attribute and Multiplicity"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "'Contains' implies a structural whole-part relationship (Aggregation or Composition), while 'associated with' implies a standard peer relationship (Association) between objects."
+    },
+    {
+      "id": "regen-1776181729595-6",
+      "number": "7",
+      "text": "Consider the following UML Use Case Diagram for the **Advanced Course Registration System (ACRS)**. Which of the following describes the most accurate relationship between 'Register for Course' and 'Verify Prerequisites'?\n\n```mermaid\ngraph LR\n    Student((Student))\n    Registrar((Registrar))\n    subgraph \"ACRS System\"\n        RC([Register for Course])\n        VP([Verify Prerequisites])\n        HW([Handle Waitlist])\n        L([Login])\n        VS([View Schedule])\n        \n        Student --- RC\n        Student --- VS\n        RC -. \"<<include>>\" .-> L\n        RC -. \"<<include>>\" .-> VP\n        RC -. \"<<extend>>\" .-> HW\n        Registrar --- HW\n    end\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Relationship is «extend»; the base case is 'Verify Prerequisites'."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Relationship is «include»; 'Register for Course' is the base case and 'Verify Prerequisites' is mandatory."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Relationship is «include»; 'Verify Prerequisites' is the base case."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Relationship is «extend»; 'Register for Course' is the base case."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The diagram shows a dashed arrow with the «include» stereotype from 'Register for Course' to 'Verify Prerequisites', meaning the latter is a mandatory part of the registration process."
+    },
+    {
+      "id": "regen-1776181729595-7",
+      "number": "8",
+      "text": "Based on the provided diagram, what is required for the 'Register for Course' use case to successfully reach its post-condition?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Only the Login use case must execute."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Only the Verify Prerequisites use case must execute."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Both Login and Verify Prerequisites must execute as they are included."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Login, Verify Prerequisites, and Handle Waitlist must all execute."
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Included use cases are mandatory. Both 'Login' and 'Verify Prerequisites' are linked to 'Register for Course' via «include», making them necessary components of the base use case flow."
+    },
+    {
+      "id": "regen-1776181729595-8",
+      "number": "9",
+      "text": "Under what circumstance would the 'Handle Waitlist' use case be triggered in the ACRS diagram?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Whenever a Student attempts to Register for a Course."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Every time the Login use case fails."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Only when a specific condition (e.g., course full) is met during the 'Register for Course' process."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Only when the Registrar manually initiates the process."
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The «extend» relationship indicates an optional or conditional flow. 'Handle Waitlist' extends 'Register for Course', meaning it only occurs under specific extension point conditions."
+    },
+    {
+      "id": "regen-1776181729595-9",
+      "number": "10",
+      "text": "Who are the primary and secondary actors for the 'Handle Waitlist' use case?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Primary: Student; Secondary: Registrar"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Primary: Registrar; Secondary: Student"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Primary: Student; there is no secondary actor."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Primary: System; Secondary: Student"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "'Handle Waitlist' extends 'Register for Course' (initiated by Student) and has a direct association with 'Registrar', making the Student the primary trigger and Registrar a secondary participant."
+    },
+    {
+      "id": "regen-1776181729595-10",
+      "number": "11",
+      "text": "What would be an appropriate pre-condition for the 'Register for Course' use case in the ACRS?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The student has received a registration confirmation email."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The system database has been backed up."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The registration window for the current semester is open."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The student has successfully viewed their schedule."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A pre-condition is a state that must be true before the use case can start. The registration window being open is a necessary prerequisite for the registration process."
+    },
+    {
+      "id": "regen-1776181729595-11",
+      "number": "12",
+      "text": "If the arrow between 'Register for Course' and 'Login' were reversed, with 'Login' pointing to 'Register for Course' with an «include» label, what would this imply?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Every time a user logs in, they are forced to register for a course."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Registration is now an optional part of the login process."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The student must login before they can register."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The model remains logically identical as the relationship is bidirectional."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In an «include» relationship, the base use case (at the tail of the arrow) explicitly incorporates the behavior of the included use case (at the head). If Login includes Register, then every login triggers a registration."
+    },
+    {
+      "id": "regen-1776181729595-12",
+      "number": "13",
+      "text": "In the context of the diagram, which use case represents a 'Cross-Cutting Concern' that is likely factored out to avoid redundancy?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Register for Course"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Handle Waitlist"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Login"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "View Schedule"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "'Login' is factored out as an included use case because it is a common requirement across multiple functional use cases (like Register and potentially View Schedule)."
+    },
+    {
+      "id": "regen-1776181729595-13",
+      "number": "14",
+      "text": "Which of the following is the most likely 'Basic Flow' (Happy Path) for the 'Verify Prerequisites' use case?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "System checks student record; prerequisite not found; system displays error."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Student enters course ID; system identifies required courses; system confirms student has completed them; use case ends."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Student logs into the system; student selects 'Register'; student enters payment details."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Registrar reviews the waitlist; registrar approves the student; system sends email."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The basic flow represents the most common, successful path without errors or deviations. Choice B describes the successful verification of prerequisites."
+    },
+    {
+      "id": "regen-1776181729595-14",
+      "number": "15",
+      "text": "In the ACRS diagram, how many 'Base Use Cases' are directly associated with the 'Student' actor?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Student actor has direct solid-line associations with two use cases: 'Register for Course' and 'View Schedule'."
+    },
+    {
+      "id": "regen-1776181729595-15",
+      "number": "16",
+      "text": "What is the primary difference between the «include» and «extend» relationships as shown in the ACRS diagram?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "«include» is for optional behavior; «extend» is for mandatory behavior."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "«include» arrows point to the sub-use case; «extend» arrows point to the base use case."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "«include» represents a generalization; «extend» represents a specialization."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "There is no functional difference; they are used interchangeably in UML 2.0."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In UML, the «include» arrow points from the base use case to the included part (mandatory). The «extend» arrow points from the extending (optional) use case back to the base case."
+    },
+    {
+      "id": "regen-1776181729595-16",
+      "number": "17",
+      "text": "What would be the most logical 'Post-condition' for the 'View Schedule' use case?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The student has successfully logged out of the system."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The student's course enrollments are displayed on the screen."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The student is added to the course waitlist."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The registrar has approved the student's graduation request."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A post-condition describes the system state after completion. For 'View Schedule', the successful outcome is that the requested information is presented to the user."
+    },
+    {
+      "id": "regen-1776181729595-17",
+      "number": "18",
+      "text": "If the 'ACRS System' subgraph box were removed from the diagram, which element of the Use Case Model would be lost?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The Actors"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The Relationships"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The System Boundary"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The Use Case Scenarios"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The box surrounding the use cases represents the 'System Boundary', defining what is inside the software system versus what is external (the actors)."
+    },
+    {
+      "id": "regen-1776181729595-18",
+      "number": "19",
+      "text": "Which of the following would be an example of an 'Alternative Flow' for the 'Register for Course' use case?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The student successfully adds three courses and exits."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The student enters an invalid course ID, and the system prompts for a retry."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The student logs in with valid credentials."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The system sends a registration summary to the student's email."
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An alternative flow (or exception flow) handles situations where the path deviates from the 'Happy Path' due to errors or conditional logic, such as an invalid input."
+    },
+    {
+      "id": "regen-1776181729595-19",
+      "number": "20",
+      "text": "Why is the 'Registrar' actor associated with 'Handle Waitlist' but not with 'Register for Course'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The Registrar is not allowed to register for courses."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The Registrar's involvement is only required when the automated registration fails and a waitlist must be managed."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The Student handles the waitlist, and the diagram is incorrect."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All actors must be associated with every use case by default."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Actors are associated with use cases they interact with. The diagram suggests that while the Student initiates registration, the Registrar is specifically involved in the waitlist management process."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 20
+}

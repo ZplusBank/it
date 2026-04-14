@@ -1,0 +1,585 @@
+{
+  "id": "regen-1776181725803",
+  "label": "Regenerated: UML - Mid.pdf",
+  "params": {
+    "file": "UML - Mid.pdf",
+    "type": "regeneration",
+    "difficulty": "same",
+    "chapter": "2"
+  },
+  "title": "Mid by Z+",
+  "questions": [
+    {
+      "id": "regen-1776181725803-0",
+      "number": "1",
+      "text": "Which of the following is an effective technique for identifying conceptual classes in the domain model?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Listing nouns and noun phrases from use case descriptions."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Consulting a category list of common domain objects (e.g., places, roles, transactions)."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Reusing existing data models from similar systems."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the above."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Domain class identification typically involves linguistic analysis (noun extraction), category-based checklists, and historical knowledge from previous systems in the same domain."
+    },
+    {
+      "id": "regen-1776181725803-1",
+      "number": "2",
+      "text": "During the Object-Oriented Analysis phase, is it standard practice for a developer to define operation contracts?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Operation contracts are part of the analysis phase; they formalize what system operations do (pre/post-conditions) based on the use case requirements."
+    },
+    {
+      "id": "regen-1776181725803-2",
+      "number": "3",
+      "text": "Software frameworks often incorporate multiple design patterns to provide extensible skeletons for applications.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Frameworks leverage patterns like the Template Method or Strategy to allow developers to hook into existing code and customize behavior."
+    },
+    {
+      "id": "regen-1776181725803-3",
+      "number": "4",
+      "text": "In a high-level Domain Model, it is recommended to include method signatures and visibility (public/private) for all classes.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A conceptual domain model should focus on real-world entities and associations. Detailed software artifacts like method signatures and visibility are part of the Design Class Diagram (DCD)."
+    },
+    {
+      "id": "regen-1776181725803-4",
+      "number": "5",
+      "text": "Brownfield engineering is defined as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Developing a completely new system with no prior constraints."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Developing or evolving a system within the context of existing legacy software and infrastructure."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Designing a system using only open-source tools."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Decommissioning an old software system."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Unlike Greenfield engineering, Brownfield engineering involves building upon or integrating with existing 'contaminated' or established legacy systems."
+    },
+    {
+      "id": "regen-1776181725803-5",
+      "number": "6",
+      "text": "The use of 'is-a' relationships in a system description (e.g., 'A Manager is a type of Employee') typically helps identify:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Aggregation and Composition"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Attributes and Types"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Generalization and Specialization (Inheritance)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "System Operations"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "'Is-a' statements indicate a hierarchy where a subclass specializes a superclass, mapped to Generalization in UML."
+    },
+    {
+      "id": "regen-1776181725803-6",
+      "number": "7",
+      "text": "Based on the provided use case diagram for the **Library Management System (LMS)**, what is the post-condition for the use case \"Borrow Book\"?\n\n```mermaid\ngraph LR\n    Member((Member))\n    subgraph \"Library Management System (LMS)\"\n        Overdue([Fine Calculated])\n        Borrow([Borrow Book])\n        UC_Search([Search Catalog])\n        Login([Login])\n        UC_Update([Update Inventory])\n\n        Member --- Borrow\n        Member --- UC_Search\n\n        Borrow -. \"<<include>>\" .-> Login\n        Borrow -. \"<<include>>\" .-> UC_Update\n\n        Overdue -. \"<<extend>>\" .-> Borrow\n        UC_Search -. \"<<include>>\" .-> Login\n    end\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The book record is updated to reflect the new loan status."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The member provides their library card."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The member must have no outstanding fines."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The book must be available in the stacks."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A post-condition describes the state of the system after completion. Updating the inventory/loan status is the result of borrowing a book."
+    },
+    {
+      "id": "regen-1776181725803-7",
+      "number": "8",
+      "text": "What is the relationship between the use case \"Search Catalog\" and the use case \"Login\" in the LMS diagram?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Relationship \"include\"; base case is \"Login\", included case is \"Search Catalog\"."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Relationship \"include\"; base case is \"Search Catalog\", included case is \"Login\"."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Relationship \"extend\"; base case is \"Login\", extending case is \"Search Catalog\"."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Relationship \"extend\"; base case is \"Search Catalog\", extending case is \"Login\"."
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The arrow points from Search Catalog to Login, indicating that Search Catalog depends on Login as a mandatory inclusion."
+    },
+    {
+      "id": "regen-1776181725803-8",
+      "number": "9",
+      "text": "Does the diagram correctly represent that every time a \"Borrow Book\" operation occurs, the \"Update Inventory\" use case must also execute?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `<<include>>` relationship indicates that the behavior of the included use case is a required part of the base use case's flow."
+    },
+    {
+      "id": "regen-1776181725803-9",
+      "number": "10",
+      "text": "How many total included use case(s) are triggered by the \"Borrow Book\" use case?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The diagram shows two dashed arrows with `<<include>>` originating from \"Borrow Book\": one to \"Login\" and one to \"Update Inventory\"."
+    },
+    {
+      "id": "regen-1776181725803-10",
+      "number": "11",
+      "text": "What is a likely entry condition (pre-condition) for the use case \"Borrow Book\"?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The member must have a valid membership account."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The system prints a receipt."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The librarian puts the book back on the shelf."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The system sends an email reminder."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Pre-conditions must be true before a use case can start. Having a valid account is a prerequisite for borrowing."
+    },
+    {
+      "id": "regen-1776181725803-11",
+      "number": "12",
+      "text": "What is the relationship between \"Fine Calculated\" and \"Borrow Book\"?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Relationship is «extend»; \"Borrow Book\" is the base case."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Relationship is «extend»; \"Fine Calculated\" is the base case."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Relationship is «include»; \"Borrow Book\" is the base case."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Relationship is «include»; \"Fine Calculated\" is the base case."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The «extend» relationship is used for optional or conditional behavior. Calculating a fine only happens under specific conditions (e.g., if there are overdue items), making it an extension of the base Borrow Book process."
+    },
+    {
+      "id": "regen-1776181725803-12",
+      "number": "13",
+      "text": "In the LMS diagram, which use cases does the actor \"Member\" interact with directly?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Login and Update Inventory"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Borrow Book and Search Catalog"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Fine Calculated only"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All use cases inside the system boundary"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Solid lines connect the Actor (Member) to \"Borrow Book\" and \"Search Catalog\". Other use cases are reached through internal relationships (include/extend)."
+    },
+    {
+      "id": "regen-1776181725803-13",
+      "number": "14",
+      "text": "What is the most likely final step in the basic flow for \"Borrow Book\"?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The system displays the book's due date to the member."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The member searches for a book by title."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The member enters their password incorrectly."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The librarian logs into the system admin panel."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The final step of the 'happy path' (basic flow) is the system providing the final output or confirmation of the successful transaction."
+    },
+    {
+      "id": "regen-1776181725803-14",
+      "number": "15",
+      "text": "In a UML Domain Model, the term **multiplicity** refers to:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The number of methods in a class."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The number of instances of one class that can be associated with one instance of another class."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The number of subclasses an entity has."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The number of developers working on a specific module."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Multiplicity (e.g., 1..*, 0..1) defines how many objects participate in a relationship."
+    },
+    {
+      "id": "regen-1776181725803-15",
+      "number": "16",
+      "text": "What is the primary purpose of a System Sequence Diagram (SSD) in the analysis phase?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To show the internal logic and method calls within the code."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To illustrate the physical deployment of servers."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To visualize the interactions between external actors and the system as a black box."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To define the database schema."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "An SSD treats the system as a single object (black box) and shows the sequence of system events generated by actors."
+    },
+    {
+      "id": "regen-1776181725803-16",
+      "number": "17",
+      "text": "Which UML relationship describes a 'part-of' relationship where the 'part' cannot exist without the 'whole' (strong ownership)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Aggregation"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Generalization"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Composition"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Realization"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Composition (filled diamond) implies that the lifecycle of the part is managed by the whole; if the whole is destroyed, the parts are destroyed."
+    },
+    {
+      "id": "regen-1776181725803-17",
+      "number": "18",
+      "text": "An **Association Class** is used when:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A class has too many attributes."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "An attribute belongs to the relationship between two classes rather than to either class individually."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A class inherits from multiple parents."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "There is no relationship between two entities."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If information (like 'grade' in a relationship between 'Student' and 'Course') belongs to the link itself, an Association Class is the correct UML representation."
+    },
+    {
+      "id": "regen-1776181725803-18",
+      "number": "19",
+      "text": "In UML Use Case modeling, an **Actor** can only represent a human user.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An actor represents a role played by an external entity, which could be a human, another software system, or a hardware device."
+    },
+    {
+      "id": "regen-1776181725803-19",
+      "number": "20",
+      "text": "Object-Oriented Design (OOD) differs from Object-Oriented Analysis (OOA) primarily because OOD focuses on:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Understanding the problem domain."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Defining the software solution and its technical implementation details."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Interviewing stakeholders to gather requirements."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Creating use case diagrams for the first time."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "While OOA focuses on 'what' the system should do (domain concepts), OOD focuses on 'how' it will be built in software (design patterns, class signatures, UI, etc.)."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 20
+}

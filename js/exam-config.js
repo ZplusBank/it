@@ -454,19 +454,19 @@ const EXAM_CONFIG = [
         "id": "1",
         "name": "Mid",
         "q": 14,
-        "file": "data/Uml/chapterchapterUML - Mid.pdfvisual_extractor (1).json uml mid.json"
+        "file": "data/Uml/chapterUML - Mid.pdfvisual_extractor midddddddddddddddddddd ulm.json"
       },
       {
         "id": "2",
         "name": "Mid by Z+",
         "q": 20,
-        "file": "data/Uml/chapterchapterUML - Mid.pdfvisual_extractor (1).jsonregenerationsame by Z+ mid.json"
+        "file": "data/Uml/chapterUML - Mid.pdfregenerationsame uml z+ mid.json"
       },
       {
         "id": "3",
         "name": "Mid by Z+ (hard)",
         "q": 20,
-        "file": "data/Uml/chapterchapterUML - Mid.pdfvisual_extractor (1).jsonregenerationharder Z+ mid.json"
+        "file": "data/Uml/chapterUML - Mid.pdfregenerationharder uml mid by Z+ hard.json"
       },
       {
         "id": "4",
