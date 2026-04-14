@@ -1,0 +1,625 @@
+{
+  "id": "regen-1776179962387",
+  "label": "Regenerated: chapterUML - Mid.pdfvisual_extractor (1).json",
+  "params": {
+    "file": "chapterUML - Mid.pdfvisual_extractor (1).json",
+    "type": "regeneration",
+    "difficulty": "harder",
+    "chapter": "3"
+  },
+  "title": "Mid by Z+ (hard)",
+  "questions": [
+    {
+      "id": "regen-1776179962387-0",
+      "number": "1",
+      "text": "A requirements engineer is tasked with modeling a legacy migration project where no documentation exists, but a database schema and user manuals are available. Which combination of identification strategies would yield the most accurate Domain Model?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Solely reverse-engineering the database schema into a class diagram."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Extracting noun phrases from user manuals and mapping them to existing database tables."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Using a conceptual category list to brainstorm missing business concepts not reflected in the current implementation."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Integrating noun phrase extraction from manuals, database schema analysis, and applying conceptual category lists."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "To achieve a comprehensive domain model, the engineer must synthesize evidence from existing artifacts (manuals/schema) while using conceptual categories to identify 'hidden' domain logic or entities that might not be explicitly stored but are essential to the business process."
+    },
+    {
+      "id": "regen-1776179962387-1",
+      "number": "2",
+      "text": "When defining a System Operation Contract during the requirements analysis phase, which of the following best describes the purpose of a 'Post-condition'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To describe the procedural steps or algorithm the system follows to produce an output."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To declare state changes in the Domain Model, such as instances created, associations formed, or attributes modified."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To define the UI navigation that occurs after a user clicks a button."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To list the database triggers that must fire upon completion of the transaction."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In OOA, post-conditions describe the *result* of an operation on the conceptual model (state changes) rather than the *process* (logic) or UI behavior."
+    },
+    {
+      "id": "regen-1776179962387-2",
+      "number": "3",
+      "text": "The 'Inversion of Control' (IoC) principle in software frameworks is primarily implemented through which design pattern to allow the framework to call user-defined code?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Singleton Pattern"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Template Method Pattern"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Facade Pattern"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Strategy Pattern"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Frameworks often use the Template Method pattern where the framework defines the algorithm's structure (invariant parts) and provides 'hooks' (variant parts) for users to implement, thus inverting the control flow."
+    },
+    {
+      "id": "regen-1776179962387-3",
+      "number": "4",
+      "text": "In a conceptual Domain Model, why is the inclusion of 'Foreign Key' attributes (e.g., adding `customerID` to an `Order` class) generally discouraged?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It violates the encapsulation of the class."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Domain models should represent conceptual associations, not implementation-level data pointers."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It increases the complexity of the UML diagram unnecessarily."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Attributes in UML cannot be of type 'ID'."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Conceptual models focus on the 'real world' relationships. In OOA, we use associations (lines) to connect classes; explicit ID-based pointers are implementation details reserved for database design or Design Class Diagrams (DCDs)."
+    },
+    {
+      "id": "regen-1776179962387-4",
+      "number": "5",
+      "text": "Compare Greenfield and Brownfield engineering. Which statement accurately identifies a major risk unique to Brownfield projects?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The lack of established requirements leads to 'scope creep'."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The absence of legacy constraints results in over-engineering the architecture."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Undocumented dependencies in legacy code can cause catastrophic failures when integrating new modules."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Greenfield projects require more developers than Brownfield projects."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Brownfield engineering involves working within the constraints of existing systems. A primary risk is the 'hidden' logic or dependencies in legacy code that are not documented but impact the new development."
+    },
+    {
+      "id": "regen-1776179962387-5",
+      "number": "6",
+      "text": "Consider the requirement: 'A branch manager reviews the monthly performance report containing data from every teller in that branch.' Identify the aggregation and attribute relationships.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Aggregation: Branch has Tellers; Attribute: Performance Data."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Aggregation: Report has Tellers; Attribute: Branch Manager."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Generalization: Branch Manager is a Teller; Attribute: Monthly Report."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Composition: Teller contains Branch; Attribute: Review."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The 'Branch' is a whole that contains 'Tellers' (Aggregation). The 'Performance Data' is a descriptive property (Attribute) of the entities involved."
+    },
+    {
+      "id": "regen-1776179962387-6",
+      "number": "7",
+      "text": "Examine the following Use Case Diagram for an \"Advanced Automated Library System (AALS)\":\n\n```mermaid\ngraph LR\n    S((Student))\n    L((Librarian))\n    subgraph AALS [Advanced Automated Library System]\n        BB([Borrow Book])\n        SC([Search Catalog])\n        PF([Pay Fine])\n        UI([Update Inventory])\n        AU([Authenticate])\n        MR([Manage Reservations])\n    end\n    S --- BB\n    S --- SC\n    L --- MR\n    BB -. \"<<include>>\" .-> AU\n    SC -. \"<<include>>\" .-> AU\n    MR -. \"<<include>>\" .-> AU\n    BB -. \"<<include>>\" .-> UI\n    PF -. \"<<extend>>\" .-> BB\n```\n\nWhich of the following is a mandatory condition for **Search Catalog** to complete successfully?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The student must have no outstanding fines."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The system must execute the **Authenticate** use case."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The inventory must be updated."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The Librarian must approve the search."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Since **Search Catalog** has an `<<include>>` relationship to **Authenticate**, the authentication logic is a mandatory part of the searching process."
+    },
+    {
+      "id": "regen-1776179962387-7",
+      "number": "8",
+      "text": "In the AALS diagram, which use case acts as the **base use case** for an optional flow that occurs only when a specific condition (e.g., an overdue balance) is met?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Pay Fine"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Borrow Book"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Update Inventory"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Authenticate"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The arrow with `<<extend>>` points from **Pay Fine** to **Borrow Book**. This means **Borrow Book** is the base use case, and **Pay Fine** is the extending use case that only occurs under certain conditions (the extension point)."
+    },
+    {
+      "id": "regen-1776179962387-8",
+      "number": "9",
+      "text": "True or False: Based on the provided diagram, the **Librarian** actor is permitted to execute the **Borrow Book** use case.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In the diagram, there is no association line between the **Librarian** actor and the **Borrow Book** use case. Therefore, the Librarian does not initiate this specific use case."
+    },
+    {
+      "id": "regen-1776179962387-9",
+      "number": "10",
+      "text": "Analyze the transitive dependencies in the diagram. If the **Update Inventory** use case fails due to a database error, which primary use case is directly prevented from completing its basic flow?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Search Catalog"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Manage Reservations"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Borrow Book"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Authenticate"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "**Borrow Book** includes **Update Inventory**. Because an `<<include>>` relationship implies mandatory execution, a failure in the included case typically prevents the base case from succeeding."
+    },
+    {
+      "id": "regen-1776179962387-10",
+      "number": "11",
+      "text": "Which of the following would be the most appropriate **pre-condition** for the **Pay Fine** use case in the AALS system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The student has successfully logged out."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The student has an identified outstanding balance in their account record."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The system sends a receipt to the student's email."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The librarian marks the book as returned."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A pre-condition must be true before the use case begins. To pay a fine, the system must recognize that a fine exists."
+    },
+    {
+      "id": "regen-1776179962387-11",
+      "number": "12",
+      "text": "How many distinct use cases shown in the AALS diagram require the **Authenticate** behavior?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The diagram shows three incoming `<<include>>` arrows to **Authenticate** from: **Borrow Book**, **Search Catalog**, and **Manage Reservations**."
+    },
+    {
+      "id": "regen-1776179962387-12",
+      "number": "13",
+      "text": "In the context of the **Borrow Book** use case, which post-condition represents a change in the 'Physical World' rather than just a system state change?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The `Loan` object's `dueDate` attribute is set."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "An association is created between the `Student` and the `BookCopy`."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The student is in possession of the physical book."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The `BookCopy.status` is updated to 'Checked Out'."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "While OOA focuses on system state (A, B, D), a comprehensive use case description often includes the physical outcome of the interaction, which is the student physically having the book."
+    },
+    {
+      "id": "regen-1776179962387-13",
+      "number": "14",
+      "text": "If we were to add an actor **Guest** who can **Search Catalog** but does NOT need to **Authenticate**, how should the diagram be modified to maintain logical consistency?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Keep the `<<include>>` and allow Guests to bypass it via a note."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Create a new use case **Search Catalog (Public)** without the inclusion, and link the **Guest** actor to it."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Change the `<<include>>` to `<<extend>>` for all actors."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Make **Student** a generalization of **Guest**."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Because `<<include>>` is mandatory, if one actor does not require the behavior, the current model is invalid for that actor. Creating a specialized use case or refactoring the inclusion is necessary."
+    },
+    {
+      "id": "regen-1776179962387-14",
+      "number": "15",
+      "text": "During domain modeling, you encounter a 'has' relationship where the life-cycle of the child object is strictly bound to the parent (e.g., if the Order is deleted, the OrderLineItems must also be deleted). This is best modeled as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Generalization"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Shared Aggregation (White Diamond)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Composition (Black Diamond)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Reflexive Association"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Composition is a strong form of aggregation where the part's existence is dependent on the whole."
+    },
+    {
+      "id": "regen-1776179962387-15",
+      "number": "16",
+      "text": "A System Sequence Diagram (SSD) is primarily used to identify:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The internal method calls between objects."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The system events (operations) that cross the system boundary from actors."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The database schema layout."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The inheritance hierarchy of the domain classes."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "SSDs treat the system as a 'black box' and focus on the input/output events occurring between actors and the system."
+    },
+    {
+      "id": "regen-1776179962387-16",
+      "number": "17",
+      "text": "Which of the following is a valid reason to use an 'Association Class' in a Domain Model?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To simplify a one-to-many relationship."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "When an attribute belongs to the relationship between two classes rather than to either class alone (e.g., a 'grade' for a Student-Course enrollment)."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To represent a subclass that has no unique attributes."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To replace a composition relationship."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Association classes are used when data (like a grade or timestamp) specifically describes the link between two entities."
+    },
+    {
+      "id": "regen-1776179962387-17",
+      "number": "18",
+      "text": "In a formal use case description, the section describing 'Extensions' (or Alternative Flows) handles:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The happy path where everything goes correctly."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Non-functional requirements like performance and security."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Error conditions, branching logic, and exceptional user choices."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The data types of the system inputs."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Extensions describe alternate paths and error handling that deviate from the primary success scenario (the basic flow)."
+    },
+    {
+      "id": "regen-1776179962387-18",
+      "number": "19",
+      "text": "Which UML stereotype would most appropriately be applied to a class that acts as a 'Value Object' (e.g., a `Money` or `Address` class) in a Domain Model?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`<<interface>>`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`<<actor>>`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`<<dataType>>`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`<<control>>`"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Value objects, which are defined by their attributes rather than a unique identity, are often modeled with the `<<dataType>>` stereotype."
+    },
+    {
+      "id": "regen-1776179962387-19",
+      "number": "20",
+      "text": "When transitioning from a Domain Model to a Design Class Diagram (DCD), which change is expected?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Generalization relationships are removed."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Attributes are assigned specific data types (e.g., `String`, `int`) and visibility (e.g., `-` for private)."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Associations are converted back into noun phrases."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Multiplicities are omitted to simplify implementation."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "DCDs are implementation-oriented. They add technical details like visibility, data types, and method signatures that are intentionally omitted from conceptual domain models."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 20
+}

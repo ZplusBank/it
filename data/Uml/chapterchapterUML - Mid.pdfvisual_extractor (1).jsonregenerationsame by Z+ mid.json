@@ -1,0 +1,625 @@
+{
+  "id": "regen-1776179959667",
+  "label": "Regenerated: chapterUML - Mid.pdfvisual_extractor (1).json",
+  "params": {
+    "file": "chapterUML - Mid.pdfvisual_extractor (1).json",
+    "type": "regeneration",
+    "difficulty": "same",
+    "chapter": "2"
+  },
+  "title": "Mid by Z+",
+  "questions": [
+    {
+      "id": "regen-1776179959667-0",
+      "number": "1",
+      "text": "Which of the following approaches is considered most effective for a requirements engineer to discover domain classes in a complex system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Extracting candidate classes from existing industry reference models."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Performing noun-phrase analysis on use case descriptions."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Categorizing physical objects, roles, and transactions using a conceptual checklist."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Utilizing all the aforementioned strategies in combination."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Effective domain class identification relies on multi-perspective strategies: using existing models for industry standards, linguistic analysis (noun extraction) for specific requirements, and brainstorming categories to ensure broad coverage of the problem domain."
+    },
+    {
+      "id": "regen-1776179959667-1",
+      "number": "2",
+      "text": "At which point in the Object-Oriented Analysis and Design (OOAD) process are system operation contracts typically established?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Requirements Analysis phase"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "System Architecture phase"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Source Code Implementation phase"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Database Schema Design phase"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "System operation contracts are part of the Analysis phase. They define the intended effects (post-conditions) of operations discovered during use case analysis and system sequence diagramming, before technical design starts."
+    },
+    {
+      "id": "regen-1776179959667-2",
+      "number": "3",
+      "text": "Is it accurate to state that software frameworks typically provide a skeleton of an application by leveraging several design patterns?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Only in procedural languages"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Only for front-end development"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Frameworks are sophisticated software components that manage control flow using patterns like Template Method, Factory, and Observer, allowing developers to extend functionality while maintaining a consistent architecture."
+    },
+    {
+      "id": "regen-1776179959667-3",
+      "number": "4",
+      "text": "In a high-level Domain Model, should the engineer include technical attribute types such as \\( \\text{char*}, \\text{long}, \\) or \\( \\text{Boolean} \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Only if the database requires it"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Only for primary keys"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A conceptual Domain Model is language-independent and focuses on business logic. Technical data types are implementation details and belong in the Design Class Diagram (DCD), not the initial domain analysis."
+    },
+    {
+      "id": "regen-1776179959667-4",
+      "number": "5",
+      "text": "Which term describes a software project where the team must integrate with and modify existing legacy codebases?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Greenfield engineering"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Bluefield engineering"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Brownfield engineering"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Whitfield engineering"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Brownfield engineering involves developing software on top of or within the constraints of an existing system. Greenfield engineering, by contrast, starts from scratch without legacy constraints."
+    },
+    {
+      "id": "regen-1776179959667-5",
+      "number": "6",
+      "text": "The use of the phrase 'is a type of' (e.g., 'a manager is a type of employee') primarily helps an engineer identify which UML relationship?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Aggregation"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Generalization/Inheritance"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Composition"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Dependency"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "'Is-a' relationships indicate taxonomic hierarchies, which are modeled as Generalization (inheritance) in UML. 'Has-a' relationships usually indicate attributes or aggregation."
+    },
+    {
+      "id": "regen-1776179959667-6",
+      "number": "7",
+      "text": "Consider the following Use Case Diagram for a 'Library Management System (LMS)'. What is a valid post-condition for the **Process Loan** use case?\n\n```mermaid\ngraph LR\n    Librarian((Librarian))\n    subgraph LMS [Library Management System]\n        LF([Collect Late Fee])\n        PL([Process Loan])\n        CI([Check ID])\n        CB([Check Book])\n        LO([Login])\n    end\n    Librarian --- PL\n    LF -. \"<<extend>>\" .-> PL\n    PL -. \"<<include>>\" .-> CI\n    PL -. \"<<include>>\" .-> CB\n    CI -. \"<<include>>\" .-> LO\n    CB -. \"<<include>>\" .-> LO\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The librarian is authenticated."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A new loan record is successfully created in the database."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The book must be in the library catalog."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The system prompts for the member ID."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A post-condition defines the state of the system after the completion of the use case. Creating a loan record is the direct outcome of a successful 'Process Loan' operation."
+    },
+    {
+      "id": "regen-1776179959667-7",
+      "number": "8",
+      "text": "Based on the LMS diagram, what is the relationship between **Process Loan** and **Check ID**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A mandatory inclusion where **Process Loan** is the base and **Check ID** is included."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "An optional extension where **Check ID** extends **Process Loan**."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A mandatory inclusion where **Check ID** is the base and **Process Loan** is included."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A generalization where **Process Loan** inherits from **Check ID**."
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The arrow points from 'Process Loan' to 'Check ID' with the `<<include>>` stereotype, indicating that 'Check ID' is a mandatory sub-routine of the 'Process Loan' flow."
+    },
+    {
+      "id": "regen-1776179959667-8",
+      "number": "9",
+      "text": "In the provided diagram, does the use case **Login** represent a shared dependency for multiple base use cases?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Both 'Check ID' and 'Check Book' include the 'Login' use case, demonstrating that 'Login' is a shared functionality (dependency) used by multiple other behaviors."
+    },
+    {
+      "id": "regen-1776179959667-9",
+      "number": "10",
+      "text": "How many direct `<<include>>` dependencies originate from the **Process Loan** use case?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Zero"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "According to the diagram, 'Process Loan' has two outgoing arrows labeled `<<include>>`: one pointing to 'Check ID' and one pointing to 'Check Book'."
+    },
+    {
+      "id": "regen-1776179959667-10",
+      "number": "11",
+      "text": "What is a necessary pre-condition for the librarian to start the **Process Loan** use case?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The member has already paid all late fees."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The librarian is logged into the system and authorized."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The book is marked as 'lost'."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The loan receipt is printed."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Pre-conditions are the state requirements before a use case begins. For a librarian to process a loan, they must already have access (authentication/authorization) to the system."
+    },
+    {
+      "id": "regen-1776179959667-11",
+      "number": "12",
+      "text": "What is the relationship between **Collect Late Fee** and **Process Loan**, and which is the base use case?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Relationship is `<<extend>>`; Base is **Process Loan**, Extension is **Collect Late Fee**."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Relationship is `<<extend>>`; Base is **Collect Late Fee**, Extension is **Process Loan**."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Relationship is `<<include>>`; Base is **Process Loan**, Included is **Collect Late Fee**."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Relationship is `<<include>>`; Base is **Collect Late Fee**, Included is **Process Loan**."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The dashed arrow with `<<extend>>` points from the extending case (Collect Late Fee) to the base case (Process Loan). This implies that if a specific condition occurs (overdue books), the late fee logic is executed."
+    },
+    {
+      "id": "regen-1776179959667-12",
+      "number": "13",
+      "text": "What is the correct relationship description for **Login** relative to **Check Book**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "**Check Book** includes **Login**."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "**Login** includes **Check Book**."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "**Check Book** extends **Login**."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "**Login** extends **Check Book**."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The diagram shows an inclusion arrow from 'Check Book' to 'Login', meaning that checking a book's status requires the login functionality to be invoked."
+    },
+    {
+      "id": "regen-1776179959667-13",
+      "number": "14",
+      "text": "What is the likely final interaction in the basic flow of the **Process Loan** use case?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The librarian identifies the book barcode."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The librarian scans the member's card."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The system displays a 'Loan Successful' message and the librarian acknowledges it."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The librarian enters their password to log in."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The basic flow (success scenario) ends when the primary goal of the use case is achieved and the system provides confirmation of the completed transaction to the user."
+    },
+    {
+      "id": "regen-1776179959667-14",
+      "number": "15",
+      "text": "In Requirements Engineering, which category of classes represents concrete entities in the real world, such as 'Sensor' or 'Vehicle'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Physical Objects"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Transactions"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Roles"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Abstract Specifications"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Physical objects are a standard category in conceptual class identification, representing tangible items relevant to the system's operation."
+    },
+    {
+      "id": "regen-1776179959667-15",
+      "number": "16",
+      "text": "A System Sequence Diagram (SSD) is primarily used to model interactions between:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Internal software objects and the database."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A specific Actor and the System as a black box."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Different layers of the software architecture."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The Controller and the View in MVC."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "During analysis, an SSD shows the sequence of system events generated by external actors, treating the system as a single entity to focus on external behavior."
+    },
+    {
+      "id": "regen-1776179959667-16",
+      "number": "17",
+      "text": "Which principle in Responsibility-Driven Design (GRASP) suggests assigning a responsibility to the class that has the information necessary to fulfill it?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Creator"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Low Coupling"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Information Expert"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "High Cohesion"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Information Expert is a foundational GRASP pattern that guides the assignment of responsibilities based on which class 'knows' the data required for the task."
+    },
+    {
+      "id": "regen-1776179959667-17",
+      "number": "18",
+      "text": "Non-functional requirements differ from functional requirements in that they focus on:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The specific tasks the user can perform."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The system's quality attributes such as performance, security, and usability."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The data schema for the application."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The calculation logic for business rules."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Functional requirements define *what* the system does (features), while non-functional requirements define *how* it performs or behaves (quality constraints)."
+    },
+    {
+      "id": "regen-1776179959667-18",
+      "number": "19",
+      "text": "In a UML Class Diagram, a solid line with a hollow diamond at the end indicates which type of relationship?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Composition (strong ownership)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Aggregation (weak ownership)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Dependency"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Realization"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A hollow diamond represents aggregation ('part-of'), implying a relationship where the part can exist independently of the whole. A filled diamond represents composition."
+    },
+    {
+      "id": "regen-1776179959667-19",
+      "number": "20",
+      "text": "When defining an `<<extend>>` relationship, the specific location in the base use case where the behavior is inserted is called the:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Insertion Point"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Extension Point"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Hook Point"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Branch Point"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In UML, an 'Extension Point' is a named tag in a base use case that marks where an extending use case's behavior may be optionally added."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 20
+}
