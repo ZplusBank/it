@@ -298,6 +298,9 @@ const app = {
                 // A, B, C, D - Select answer
                 else if (['a', 'b', 'c', 'd', 'e', 'f'].includes(e.key.toLowerCase())) {
                     e.preventDefault();
+                    if (this.checkedAnswers[this.currentQuestionIndex]) {
+                        return;
+                    }
                     const value = e.key.toUpperCase();
                     const input = document.getElementById(`choice-${value}`);
                     if (input) {
@@ -1206,6 +1209,7 @@ const app = {
         const isCheckbox = question.inputType === 'checkbox';
         const inputType = isCheckbox ? 'checkbox' : 'radio';
         const currentAnswer = this.userAnswers[idx] || (isCheckbox ? [] : '');
+        const isChecked = () => !!this.checkedAnswers[idx];
         const isLastQuestion = idx === this.questions.length - 1;
 
         document.getElementById('currentQuestion').textContent = idx + 1;
@@ -1236,6 +1240,7 @@ const app = {
         const choicesDiv = document.createElement('div');
         choicesDiv.className = 'choices';
         choicesDiv.addEventListener('change', (e) => {
+            if (isChecked()) return;
             const input = e.target;
             if (input.name === 'answer') {
                 this.selectAnswer(input.value, isCheckbox);
@@ -1244,6 +1249,7 @@ const app = {
 
         // Improve click/tap reliability by treating the whole answer card as selectable.
         choicesDiv.addEventListener('click', (e) => {
+            if (isChecked()) return;
             const choiceCard = e.target.closest('.choice');
             if (!choiceCard) return;
 
@@ -1307,6 +1313,7 @@ const app = {
             input.name = 'answer';
             input.value = choice.value;
             if (isSelected) input.checked = true;
+            if (isChecked()) input.disabled = true;
 
             const label = document.createElement('label');
             label.htmlFor = `choice-${choice.value}`;
@@ -1336,7 +1343,7 @@ const app = {
 
         prevBtn.disabled = idx === 0;
         nextBtn.disabled = false;
-        checkBtn.style.display = 'block';
+        checkBtn.style.display = isChecked() ? 'none' : 'block';
         submitBtn.style.display = isLastQuestion ? 'block' : 'none';
 
         // Clear feedback
@@ -1351,8 +1358,13 @@ const app = {
 
     selectAnswer(value, isCheckbox) {
         const idx = this.currentQuestionIndex;
+
+        // Once checked, the answer is locked for this question.
+        if (this.checkedAnswers[idx]) {
+            return;
+        }
+
         const wasPreviouslyAnswered = !this._isSkipped(this.userAnswers[idx]);
-        const wasChecked = !!this.checkedAnswers[idx];
 
         if (isCheckbox) {
             const current = this.userAnswers[idx] || [];
@@ -1366,16 +1378,6 @@ const app = {
             }
         } else {
             this.userAnswers[idx] = value;
-        }
-
-        if (wasChecked) {
-            delete this.checkedAnswers[idx];
-            delete this.questionStatuses[idx];
-            const feedbackEl = document.getElementById('feedback');
-            if (feedbackEl) {
-                feedbackEl.className = 'feedback';
-                feedbackEl.textContent = '';
-            }
         }
 
         // Update incremental answered count
@@ -1407,6 +1409,11 @@ const app = {
         this.updateQuestionNumberStyles();
         this.showFeedback(idx, status);
 
+        // Lock answer controls immediately after checking.
+        this._lockCurrentQuestionInputs();
+        const checkBtn = document.getElementById('checkBtn');
+        if (checkBtn) checkBtn.style.display = 'none';
+
         // Toast feedback 
         this.showToast(
             status === 'correct'
@@ -1415,6 +1422,13 @@ const app = {
             status === 'correct' ? 'success' : (status === 'wrong' ? 'error' : 'info'),
             2500
         );
+    },
+
+    _lockCurrentQuestionInputs() {
+        const inputs = document.querySelectorAll('#questionContainer input[name="answer"]');
+        inputs.forEach((input) => {
+            input.disabled = true;
+        });
     },
 
     /** Determine the status for a checked question */
