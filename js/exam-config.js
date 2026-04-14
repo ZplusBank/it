@@ -373,7 +373,7 @@ const EXAM_CONFIG = [
         "id": "4",
         "name": "Mid By Z+",
         "q": 30,
-        "file": "data/algorithm/chapterMultiple Filesregenerationsame.json"
+        "file": "data/algorithm/chapterchapterMultiple Filesregenerationsame.json.json"
       },
       {
         "id": "5",

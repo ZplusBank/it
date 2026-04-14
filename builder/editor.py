@@ -441,6 +441,52 @@ def _fix_escaped_newlines_in_question(question):
     return replacements
 
 
+def _replace_double_backslashes(value):
+    """Collapse accidental repeated backslashes outside code spans/blocks."""
+    text = str(value or "")
+    if "\\" not in text:
+        return text, 0
+
+    parts = re.split(r'(```[\s\S]*?```|`[^`\n]+`)', text)
+    replacements = 0
+
+    for idx, part in enumerate(parts):
+        if not part:
+            continue
+        if part.startswith("```") or (part.startswith("`") and part.endswith("`")):
+            continue
+
+        collapsed = re.sub(r'\\{2,}', r'\\', part)
+        if collapsed != part:
+            replacements += sum(1 for _ in re.finditer(r'\\{2,}', part))
+            parts[idx] = collapsed
+
+    return "".join(parts), replacements
+
+
+def _fix_double_backslashes_in_question(question):
+    """Fix doubled backslashes in common question text fields."""
+    if not isinstance(question, dict):
+        return 0
+
+    replacements = 0
+    for field in ("text", "explanation"):
+        fixed, count = _replace_double_backslashes(question.get(field, ""))
+        if count:
+            question[field] = fixed
+            replacements += count
+
+    for choice in question.get("choices", []) or []:
+        if not isinstance(choice, dict):
+            continue
+        fixed, count = _replace_double_backslashes(choice.get("text", ""))
+        if count:
+            choice["text"] = fixed
+            replacements += count
+
+    return replacements
+
+
 def _load_json_file(path):
     """Load JSON using UTF-8 BOM-safe decoding."""
     with open(path, 'r', encoding='utf-8-sig') as f:
@@ -905,6 +951,7 @@ class AdvancedChapterEditor:
         self.tools_menu.add_command(label="Smart Duplicates", command=self.delete_similar_questions)
         self.tools_menu.add_command(label="Fix Numbering", command=self.fix_question_numbering)
         self.tools_menu.add_command(label="Fix Escaped \\n", command=self.fix_escaped_newlines)
+        self.tools_menu.add_command(label="Fix Double Backslashes", command=self.fix_double_backslashes)
         self.tools_menu.add_command(label="Fix Choice IDs", command=self.fix_choice_ids)
         self.tools_menu.add_command(label="Fix Input Typing", command=self.fix_input_typing)
         self.tools_menu.add_separator()
@@ -2541,6 +2588,44 @@ class AdvancedChapterEditor:
 
         return replacements
 
+    def fix_double_backslashes(self, show_message=True):
+        """Collapse accidental repeated backslashes in question content."""
+        if not self.questions:
+            if show_message:
+                messagebox.showinfo("No Questions", "There are no questions to process.")
+            return 0
+
+        replacements = 0
+        touched_questions = 0
+        for question in self.questions:
+            fixed_count = _fix_double_backslashes_in_question(question)
+            if fixed_count:
+                touched_questions += 1
+                replacements += fixed_count
+
+        if touched_questions:
+            self.refresh_questions_list()
+            if self.current_question_idx is not None and self.questions:
+                keep_idx = max(0, min(self.current_question_idx, len(self.questions) - 1))
+                self.current_question_idx = keep_idx
+                self.restore_question_selection([keep_idx])
+                self.display_question()
+
+        if show_message:
+            if touched_questions:
+                messagebox.showinfo(
+                    "Double Backslashes Fixed",
+                    f"Updated {touched_questions} question(s).\n"
+                    f"Replaced {replacements} doubled backslash sequence(s)."
+                )
+            else:
+                messagebox.showinfo(
+                    "Already Clean",
+                    "No doubled backslashes were found."
+                )
+
+        return replacements
+
     def sync_question_count(self):
         """Keep the chapter Questions field aligned with the actual question count."""
         count = len(self.questions)
@@ -2795,6 +2880,7 @@ class AdvancedChapterEditor:
 
             # Ensure every question follows website-compatible answer format.
             self.fix_escaped_newlines(show_message=False)
+            self.fix_double_backslashes(show_message=False)
             self.fix_input_typing(show_message=False)
             self.fix_choice_ids(show_message=False)
             
@@ -3113,6 +3199,10 @@ class ExamEditor:
         self.chapter_tools_menu.add_command(
             label="Fix Escaped \\n (Selected)",
             command=lambda: self.apply_tools_to_selected_chapters("fix_escaped_newlines"),
+        )
+        self.chapter_tools_menu.add_command(
+            label="Fix Double Backslashes (Selected)",
+            command=lambda: self.apply_tools_to_selected_chapters("fix_double_backslashes"),
         )
         self.chapter_tools_menu.add_command(
             label="Fix Input Typing (Selected)",
@@ -4359,6 +4449,7 @@ class ExamEditor:
             "questions_removed": 0,
             "numbering_fixed": 0,
             "newline_fixed": 0,
+            "backslash_fixed": 0,
             "typing_fixed": 0,
             "type_fixed": 0,
         }
@@ -4386,6 +4477,13 @@ class ExamEditor:
                         replacements += _fix_escaped_newlines_in_question(question)
                     changed = replacements > 0
                     stats["newline_fixed"] += replacements
+
+                elif tool_name == "fix_double_backslashes":
+                    replacements = 0
+                    for question in questions:
+                        replacements += _fix_double_backslashes_in_question(question)
+                    changed = replacements > 0
+                    stats["backslash_fixed"] += replacements
 
                 elif tool_name == "fix_input_typing":
                     answer_changes = 0
@@ -4481,6 +4579,11 @@ class ExamEditor:
             message = (
                 f"Processed {stats['chapters']} chapter(s).\n"
                 f"Replaced {stats['newline_fixed']} escaped newline sequence(s)."
+            )
+        elif tool_name == "fix_double_backslashes":
+            message = (
+                f"Processed {stats['chapters']} chapter(s).\n"
+                f"Replaced {stats['backslash_fixed']} doubled backslash sequence(s)."
             )
         elif tool_name == "fix_input_typing":
             message = (
