@@ -356,21 +356,21 @@ header::after {
 }
 
 .logo-mark {
-    font-family: 'Orbitron', sans-serif;
     background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.85));
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     color: color-mix(in srgb, var(--primary-light) 78%, #ffffff 22%);
-    padding: 8px 14px;
+    
     border-radius: 8px;
-    margin-right: 12px;
-    font-weight: 900;
-    font-size: 1.2em;
-    display: inline-block;
+    margin-right: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid color-mix(in srgb, var(--primary-light) 48%, transparent);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 8px 20px rgba(15, 23, 42, 0.28);
     transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-    letter-spacing: 0.08em;
+    width: 68px;
+    height: 52px;
 }
 
 
@@ -378,16 +378,25 @@ header::after {
     position: relative;
 }
 
+.logo-mark::before {
+    content: "";
+    width: 47px;
+    height: 39px;
+    background-color: currentColor;
+    -webkit-mask: url('../assets/hero-logo.svg') center / contain no-repeat;
+    mask: url('../assets/hero-logo.svg') center / contain no-repeat;
+}
+
 .logo-mark:hover {
-    color: #e2e8f0;
+    color: color-mix(in srgb, var(--accent-light) 72%, #ffffff 28%);
     transform: scale(1.08);
     border-color: color-mix(in srgb, var(--accent-light) 60%, transparent);
 }
 
 [data-theme="dark"] .logo-mark {
     background: rgba(0, 0, 0, 0.5);
-    color: #c4b5fd;
-    border-color: rgba(196, 181, 253, 0.4);
+    color: color-mix(in srgb, var(--primary-light) 80%, #ffffff 20%);
+    border-color: color-mix(in srgb, var(--primary-light) 52%, transparent);
 }
 
 /* ============= Back to Home Button ============= */
@@ -2432,9 +2441,15 @@ button.submit-btn {
     }
 
     .logo-mark {
-        padding: 5px 10px;
-        font-size: 1em;
+        padding: 6px 11px;
         margin-right: 8px;
+        width: 52px;
+        height: 38px;
+    }
+
+    .logo-mark::before {
+        width: 28px;
+        height: 23px;
     }
 
     .theme-toggle {
