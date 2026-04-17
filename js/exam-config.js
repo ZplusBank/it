@@ -679,5 +679,38 @@ const EXAM_CONFIG = [
         "file": "data/Multi/Final.json"
       }
     ]
+  },
+  {
+    "id": "securityCIS",
+    "name": "Security CIS",
+    "description": "Securing organizational information systems",
+    "path": "data/securityCIS",
+    "icon": "data/securityCIS/icon.png",
+    "chapters": [
+      {
+        "id": "1",
+        "name": "First",
+        "q": 50,
+        "file": "data/securityCIS/First.json"
+      },
+      {
+        "id": "2",
+        "name": "Second",
+        "q": 34,
+        "file": "data/securityCIS/Second.json"
+      },
+      {
+        "id": "3",
+        "name": "Mid",
+        "q": 81,
+        "file": "data/securityCIS/Mid.json"
+      },
+      {
+        "id": "4",
+        "name": "Final",
+        "q": 87,
+        "file": "data/securityCIS/Final.json"
+      }
+    ]
   }
 ];

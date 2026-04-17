@@ -1,0 +1,3018 @@
+{
+  "id": "extract-combined-1776452631293",
+  "label": "Combined Batch (3 files)",
+  "params": {
+    "file": "Multiple Files",
+    "type": "visual_extractor",
+    "chapter": "4"
+  },
+  "title": "Final",
+  "questions": [
+    {
+      "id": "extract-combined-1776452631293-0",
+      "number": "1",
+      "text": "Message authentication is achieved using a ___",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "MAC"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "DES"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "SHA"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "MDF"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All of the above."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Message Authentication Code (MAC) is specifically designed to provide message authentication."
+    },
+    {
+      "id": "extract-combined-1776452631293-1",
+      "number": "2",
+      "text": "The principal object of a hash function is ___",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "collision resistance."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "data integrity."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "compression."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "mapping messages."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Message delay."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "While hash functions possess properties like collision resistance and compression, their primary purpose in security is to ensure data integrity."
+    },
+    {
+      "id": "extract-combined-1776452631293-2",
+      "number": "3",
+      "text": "The function F provides the element of ___ in a Feistel cipher.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "clarification"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "alignment"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "stability"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Availability"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "confusion."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "In a Feistel cipher, the round function F is designed to create confusion, making the relationship between the key and ciphertext as complex as possible."
+    },
+    {
+      "id": "extract-combined-1776452631293-3",
+      "number": "4",
+      "text": "The greater the number of rounds, the ___ it is to perform cryptanalysis.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "less difficult"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "easier"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "harder"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "equally difficult"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the above."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Increasing the number of rounds in a block cipher generally increases its security and makes it harder to crack using cryptanalysis."
+    },
+    {
+      "id": "extract-combined-1776452631293-4",
+      "number": "5",
+      "text": "Encipherment mechanism could be implemented for several security services, but has nothing to do with some of them. Which of the following service(s) can implement and benefit from encipherment mechanism?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Access control."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data Confidentiality."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Data origin authentication."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "b + c"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "a + c"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Encipherment (encryption) is the primary method for ensuring Data Confidentiality and can be used in mechanisms like digital signatures or MACs to provide Data origin authentication."
+    },
+    {
+      "id": "extract-combined-1776452631293-5",
+      "number": "6",
+      "text": "A cryptosystem runs Row Transposition Cipher algorithm. Plaintext is written in rectangle of 3 rows and 6 columns. Given the secret key = 321654, what is the ciphertext of \"cannot come today sir\"?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "cneedsaonotaintmoyr"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Can not come today sir"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "cedaonmynyesotitor"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "comnotcansirdayeto"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "nmynoacedtorotines"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "Writing the plaintext in a 3x6 grid:\nRow 1: c a n n o t\nRow 2: c o m e t o\nRow 3: d a y s i r\n\nColumns are:\n1: ccd, 2: aoa, 3: nmy, 4: nes, 5: oti, 6: tor\n\nReading in key order (3, 2, 1, 6, 5, 4):\nnmy + aoa + ccd + tor + oti + nes = nmynoacedtorotines"
+    },
+    {
+      "id": "extract-combined-1776452631293-6",
+      "number": "7",
+      "text": "___ involves the passive capture of a data unit and its subsequent retransmission to produce an unauthorized effect.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "integrity"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "encryption"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "analysis"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "masquerade"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Playfair"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The definition provided describes a **Replay Attack**. Among the options, 'masquerade' is an active attack that can be achieved via replay, though technically 'Replay' would be the precise term."
+    },
+    {
+      "id": "extract-combined-1776452631293-7",
+      "number": "8",
+      "text": "Verifying that users are who they say they are and that each input arriving at the system came from a trusted source is ___.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "authenticity."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "credibility."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "accountability"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Integrity"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "A+B"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Authenticity is the property of being genuine and being able to be verified and trusted; confidence in the validity of a transmission, a message, or a message originator."
+    },
+    {
+      "id": "extract-combined-1776452631293-8",
+      "number": "9",
+      "text": "Which of the following ciphers is NOT computationally secure?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Caesar Cipher."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Vigenere Cipher."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "RSA."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "a and b"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All of the above are computationally secure."
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Caesar and Vigenere ciphers are classical substitution/polyalphabetic ciphers that can be easily broken with modern computing (and even manually). RSA is considered computationally secure when using large keys."
+    },
+    {
+      "id": "extract-combined-1776452631293-9",
+      "number": "10",
+      "text": "Which of the following is valid input for simplified DES (S-DES)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Data block = 01010100 and key= 11100011100011100011001100110011."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data block = 000011111001 and key = 111000111000111000."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Data block = 01010100 and key = 111000111000111000111111111111."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Data block = 01010100 and key = 654321."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Data block = 00110011 and key = 1110001110."
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "Simplified DES (S-DES) operates on 8-bit data blocks and uses a 10-bit key. Option E correctly provides an 8-bit data block and a 10-bit binary key."
+    },
+    {
+      "id": "extract-combined-1776452631293-10",
+      "number": "11",
+      "text": "In DES round, \\(L_i =\\) ___",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\(R_{i-1}\\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\(R_{i-1} \\oplus F(K_i)\\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\(L_{i-1} \\oplus F(K_i, R_{i-1})\\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\(R_{i-1} \\oplus F(K_i, L_{i-1})\\)"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "\\(L_{i-1} \\oplus F(K_i)\\)"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In a standard Feistel round as used in DES, the left half of the current round \\(L_i\\) is simply the right half of the previous round \\(R_{i-1}\\)."
+    },
+    {
+      "id": "extract-combined-1776452631293-11",
+      "number": "12",
+      "text": "Which of the following is CORRECT statement regarding Feistel Cipher?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The algorithm goes through a number of rounds."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A different key is generated for each round."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The output of round I is the input of the round i+1."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the above are correct."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the above."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Feistel ciphers are iterative block ciphers that use multiple rounds, generate round subkeys from a main key, and feed the output of one round into the next."
+    },
+    {
+      "id": "extract-combined-1776452631293-12",
+      "number": "13",
+      "text": "A straightforward implementation of 3DES would be in practice \\(C = E_{k1}(D_{k2}(E_{k1}(m)))\\). What if \\(k1 = k2\\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "More complex implementation of DES."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Will be the same as 1DES."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Cannot set k1 to be equal to k2."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Will be the same as 2DES."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "We cannot implement 3DES in practice."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Triple DES (EDE mode), if \\(k1 = k2\\), the middle decryption step undoes the first encryption step, effectively leaving a single encryption with key \\(k1\\), which is standard single DES (1DES)."
+    },
+    {
+      "id": "extract-combined-1776452631293-13",
+      "number": "14",
+      "text": "Which of the following are relatively prime numbers (co-prime)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "25, 11"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "25, 20"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "25, 5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "22, 11"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the above."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Two numbers are relatively prime if their greatest common divisor (GCD) is 1. GCD(25, 11) is 1. For the others: GCD(25, 20)=5, GCD(25, 5)=5, GCD(22, 11)=11."
+    },
+    {
+      "id": "extract-combined-1776452631293-14",
+      "number": "15",
+      "text": "Which of the following is Invalid set of inputs for RSA?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "P = 7, q = 25, e = 7."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "P = 5, q = 11, e = 5."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "P = 17, q = 21, e = 7."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the above are invalid sets."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All of the above are valid and correct sets of inputs."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In RSA, p and q must be prime. (a) q=25 is not prime. (c) q=21 is not prime. Also, e must be relatively prime to \\(\\phi(n) = (p-1)(q-1)\\). In (b), \\(\\phi(n) = 4 \\times 10 = 40\\), and GCD(5, 40) is 5, not 1, so (b) is also invalid."
+    },
+    {
+      "id": "extract-combined-1776452631293-15",
+      "number": "16",
+      "text": "The criteria used in the design of the \\_\\_ focused on the design of the S-boxes and on the P function that takes the output of the S-boxes.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Avalanche Attack"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data Encryption Standard"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Product Cipher"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Substitution Key"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The design criteria for the Data Encryption Standard (DES), which were later partially made public by IBM, focused on the specific design of the S-boxes to ensure resistance against differential cryptanalysis and the P-function permutation for spreading bits across the block."
+    },
+    {
+      "id": "extract-combined-1776452631293-16",
+      "number": "17",
+      "text": "In RSA, given \\(p = 5\\), \\(q = 5\\) and \\(e = 3\\). What is the ciphertext of message = 2.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "16"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "25"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "8"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Cannot calculate the ciphertext given only the above inputs."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In RSA, the modulus is \\(n = p \\times q = 5 \\times 5 = 25\\). The ciphertext \\(C\\) is calculated as \\(C = M^e \\pmod{n}\\). Substituting the given values: \\(C = 2^3 \\pmod{25} = 8 \\pmod{25} = 8\\)."
+    },
+    {
+      "id": "extract-combined-1776452631293-17",
+      "number": "18",
+      "text": "In RSA, given \\(p = 5\\), \\(q = 5\\) and \\(e = 3\\). Which of the following could be a valid value of the private key (d)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "11"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the above."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the above."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "To find the private key \\(d\\), we need \\(d \\equiv e^{-1} \\pmod{\\phi(n)}\\). Using the formula \\(\\phi(n) = (p-1)(q-1)\\) (often used in textbooks for such examples even if \\(p=q\\)), \\(\\phi(n) = 4 \\times 4 = 16\\). We solve \\(3d \\equiv 1 \\pmod{16}\\). Since \\(3 \\times 11 = 33\\) and \\(33 \\pmod{16} = 1\\), \\(d = 11\\) is a valid value."
+    },
+    {
+      "id": "extract-combined-1776452631293-18",
+      "number": "19",
+      "text": "\\_\\_ is any action that compromises the security of information owned by an organization.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "security attack"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "security service"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "security alert"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "security mechanism"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Privacy system"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "According to standard definitions (e.g., RFC 2828), a security attack is any action that compromises the security of information owned by an organization."
+    },
+    {
+      "id": "extract-combined-1776452631293-19",
+      "number": "20",
+      "text": "Given the following S-boxes, what is the output of the s-box operation in simplified DES (S-DES) algorithm when the results of XOR operation with key1 = 11000010?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "S_0 = 01 and S_1 = 01"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "S_0 = 11 and S_1 = 10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "S_0 = 01 and S_1 = 11"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "S_0 = 00 and S_1 = 00"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "S_0 = 11 and S_1 = 11"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The 8-bit XOR result (11000010) is split into two 4-bit parts: 1100 for \\(S_0\\) and 0010 for \\(S_1\\). For \\(S_0\\), input '1100' uses bits 1 and 4 for the row (10 = 2) and bits 2 and 3 for the column (10 = 2). In standard S-DES \\(S_0\\), row 2, col 2 is 1 (01). For \\(S_1\\), input '0010' uses bits 1 and 4 for row (00 = 0) and bits 2 and 3 for column (01 = 1). In standard S-DES \\(S_1\\), row 0, col 1 is 1 (01)."
+    },
+    {
+      "id": "extract-combined-1776452631293-20",
+      "number": "21",
+      "text": "What is the result of SWAP function in simplified DES (S-DES) if input = 10110011?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "00111011"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "01001100"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "01111100"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "01100001"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "11111111"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The SWAP function in the S-DES algorithm simply interchanges the left 4 bits and the right 4 bits of the 8-bit input. Swapping '1011' and '0011' results in '00111011'."
+    },
+    {
+      "id": "extract-combined-1776452631293-21",
+      "number": "22",
+      "text": "\\_\\_ techniques map plaintext elements (characters, bits) into ciphertext elements.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Transposition"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Substitution"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Traditional"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Symmetric"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Asymmetric"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Substitution techniques are those in which the letters or bits of the plaintext are replaced by other letters, bits, or numbers."
+    },
+    {
+      "id": "extract-combined-1776452631293-22",
+      "number": "23",
+      "text": "A \\_\\_ attack involves trying every possible key until an intelligible translation of the ciphertext is obtained.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Caesar attack"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "ciphertext only"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "chosen plaintext"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Known plaintext"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "brute-force"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "A brute-force attack is a cryptanalytic attack that attempts every possible key until the correct one is found and the plaintext is recovered."
+    },
+    {
+      "id": "extract-combined-1776452631293-23",
+      "number": "24",
+      "text": "\\_\\_ are common two-letter combinations in the English language.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Streamings"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Transpositions"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Polyalphabetic ciphers"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Digrams"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Transposition cipher"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In cryptography and linguistics, digrams (or diagrams) are pairs of consecutive letters used for statistical analysis of language and frequency analysis in ciphers."
+    },
+    {
+      "id": "extract-combined-1776452631293-24",
+      "number": "25",
+      "text": "DES exhibits the classic \\_\\_ block cipher structure, which consists of a number of identical rounds of processing.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Feistel"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "SAC"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Rendell"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Shannon"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "linear"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "DES is a Feistel cipher. The Feistel structure is a common design for block ciphers where the same basic operation is repeated across multiple rounds."
+    },
+    {
+      "id": "extract-combined-1776452631293-25",
+      "number": "26",
+      "text": "The vast majority of network-based symmetric cryptographic applications make use of \\_\\_ ciphers.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "linear"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "stream"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "permutation"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "block"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Block ciphers, such as AES, are the primary symmetric encryption algorithms used for network protocols like TLS, IPsec, and SSH."
+    },
+    {
+      "id": "extract-combined-1776452631293-26",
+      "number": "27",
+      "text": "The methods of \\_\\_ conceal the existence of the message in a graphic image.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "decryptology"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "cryptography"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "steganography"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "cryptology"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "integrity"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Steganography is the practice of hiding a secret message within a non-secret carrier (like a digital image file) such that the message's existence is hidden."
+    },
+    {
+      "id": "extract-combined-1776452631293-27",
+      "number": "28",
+      "text": "Confusion hides the relationship between the ciphertext and the plaintext. (True/False)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "According to Claude Shannon, Confusion obscures the relationship between the encryption key and the ciphertext. Diffusion is the property that hides the relationship between the plaintext and the ciphertext."
+    },
+    {
+      "id": "extract-combined-1776452631293-28",
+      "number": "29",
+      "text": "The S-Box is used to provide confusion, as it is dependent on the unknown key. (True/False)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "S-boxes (substitution boxes) provide the confusion property in symmetric ciphers by introducing non-linear transformations that complicate the relationship between the key and the ciphertext."
+    },
+    {
+      "id": "extract-combined-1776452631293-29",
+      "number": "30",
+      "text": "A way to improve on the simple monoalphabetic technique is to use different monoalphabetic substitutions as one proceeds through the plaintext message. The general name for this approach is \\_\\_.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "rail fence cipher"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "cryptanalysis"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "polyalphabetic substitution cipher"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "polyanalysis cipher"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A polyalphabetic substitution cipher uses a sequence of monoalphabetic ciphers in a periodic way, significantly increasing the complexity of frequency analysis compared to simple substitution."
+    },
+    {
+      "id": "extract-combined-1776452631293-30",
+      "number": "31",
+      "text": "Verifying that users are who they say they are and that each input arriving at the system came from a trusted source is \\_\\_.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "authenticity"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "credibility"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "accountability"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "integrity"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Authenticity ensures that the source of a message or the identity of a user is legitimate and verified."
+    },
+    {
+      "id": "extract-combined-1776452631293-31",
+      "number": "32",
+      "text": "A \\_\\_ accepts a variable length block of data as input and produces a fixed size hash value \\(h = H(M)\\).",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "hash resistance"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "hash value"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "hash function"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "hash code"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A hash function is a mathematical algorithm that maps input data of any size to a fixed-length string of characters."
+    },
+    {
+      "id": "extract-combined-1776452631293-32",
+      "number": "33",
+      "text": "\\_\\_ refer to common two-letter combinations in the English language.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Streaming"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Transposition"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Digrams"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Polyalphabetic cipher"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Digrams are pairs of consecutive letters used for frequency analysis in classical cryptanalysis."
+    },
+    {
+      "id": "extract-combined-1776452631293-33",
+      "number": "34",
+      "text": "A common technique for masking contents of messages or other information traffic so that opponents can not extract the information from the message is \\_\\_.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "integrity"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "encryption"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "analysis"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "masquerade"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Encryption is the primary cryptographic method used to ensure confidentiality by transforming plaintext into unreadable ciphertext."
+    },
+    {
+      "id": "extract-combined-1776452631293-34",
+      "number": "35",
+      "text": "A(n) \\_\\_ is a potential for violation of security, which exists when there is a circumstance, capability, action or event that could breach security and cause harm.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "threat"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "attack"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "risk"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "attack vector"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In computer security, a threat is a potential negative event that can exploit a vulnerability to cause harm to an asset."
+    },
+    {
+      "id": "extract-combined-1776452631293-35",
+      "number": "36",
+      "text": "The protection of the information that might be derived from observation of traffic flows is \\_\\_.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "connectionless confidentiality"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "connection confidentiality"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "traffic-flow confidentiality"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "selective-field confidentiality"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Traffic-flow confidentiality is a security service that masks the source and destination of messages, as well as the frequency and length of the traffic, to prevent an attacker from gaining information through traffic analysis."
+    },
+    {
+      "id": "extract-combined-1776452631293-36",
+      "number": "37",
+      "text": "A \\_\\_ attack involves trying every possible key until an intelligible translation of the ciphertext is obtained.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "brute-force"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Caesar attack"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "ciphertext only"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "chosen plaintext"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A brute-force attack is a cryptanalytic attack that consists of trying every possible key until the correct one is found. The difficulty of this attack depends on the size of the key space."
+    },
+    {
+      "id": "extract-combined-1776452631293-37",
+      "number": "38",
+      "text": "The greater the number of rounds, the \\_\\_ it is to perform cryptanalysis.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "less difficult"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "easier"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "harder"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "equally difficult"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In symmetric block ciphers, increasing the number of rounds increases the complexity and the diffusion/confusion properties of the algorithm, making it more resistant to cryptanalytic techniques like differential or linear cryptanalysis."
+    },
+    {
+      "id": "extract-combined-1776452631293-38",
+      "number": "39",
+      "text": "If both sender and receiver use the same key, the system is referred to as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "public-key encryption"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "two-key"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "asymmetric"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "conventional encryption"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Conventional encryption, also known as symmetric, secret-key, or single-key encryption, relies on a single shared secret key used for both encryption and decryption."
+    },
+    {
+      "id": "extract-combined-1776452631293-39",
+      "number": "40",
+      "text": "Public-key encryption is also known as \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "digital-key encryption"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "asymmetric encryption"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "one way time exchange encryption"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "optimal-key encryption"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Public-key encryption is termed asymmetric encryption because it uses a pair of mathematically related but different keys: a public key for encryption and a private key for decryption."
+    },
+    {
+      "id": "extract-combined-1776452631293-40",
+      "number": "41",
+      "text": "For a 200-bit message and a 20-bit MAC, how many values are the MAC value-dependent?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\(2^{100}\\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "None of the choices"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\(2^{200}\\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\(2^{20}\\)"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "\\(2^{220}\\)"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "A Message Authentication Code (MAC) of length \\(n\\) bits has \\(2^n\\) possible values. Since the MAC length is 20 bits, there are \\(2^{20}\\) possible MAC values."
+    },
+    {
+      "id": "extract-combined-1776452631293-41",
+      "number": "42",
+      "text": "Which of the following public key distribution systems is more easy to use?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Public-Key Certificates"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Publicly available directories"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Public announcements"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Public-Key authority"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Public announcements are the simplest to implement as they require no central infrastructure or registration, though they are the least secure against forgery."
+    },
+    {
+      "id": "extract-combined-1776452631293-42",
+      "number": "43",
+      "text": "A cryptosystem runs Row Transposition Cipher algorithm. Given the secret key = 321654, what is the ciphertext of \"cannot come today sir\"?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "cncedsaootaintmoyr"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "comnotcansirdayeto"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "ccdaoanmynesotitor"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "tonnacotemocrisyad"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "nmyaoaccdtorotines"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "The text 'cannotcometodaysir' (18 chars) is written into a 3x6 matrix:\nc a n n o t\nc o m e t o\nd a y s i r\nReading columns based on the key 321654 (Order: 3=col1, 2=col2, 1=col3, 6=col4, 5=col5, 4=col6):\nKey 1 (Col 3): nmy\nKey 2 (Col 2): aoa\nKey 3 (Col 1): ccd\nKey 4 (Col 6): tor\nKey 5 (Col 5): oti\nKey 6 (Col 4): nes\nResult: nmyaoaccdtorotines."
+    },
+    {
+      "id": "extract-combined-1776452631293-43",
+      "number": "44",
+      "text": "Which of the following figures implements authentication and digital signature only?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "b"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "c"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "d"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Figure (c) uses the sender's private key (\\(PR_a\\)) for encryption. Since only the sender possesses this key, it provides authentication and a digital signature. It does not provide confidentiality because anyone with the public key can decrypt it.",
+      "image": "data/securityCIS/images/image44_a23f451e.png"
+    },
+    {
+      "id": "extract-combined-1776452631293-44",
+      "number": "45",
+      "text": "In brute force attack, on average all of all possible keys must be tried to achieve success.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In a brute force attack, on average, only half of the possible keys need to be tried before the correct one is found."
+    },
+    {
+      "id": "extract-combined-1776452631293-45",
+      "number": "46",
+      "text": "In DES scheme the round key size is ....... bit and the Plain text input each round is ....... bits.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "48, 32"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "64, 32"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "32, 32"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "56, 24"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In the Data Encryption Standard (DES), while the block size is 64 bits, each round's F-function takes a 48-bit subkey and operates on a 32-bit half of the plaintext block."
+    },
+    {
+      "id": "extract-combined-1776452631293-46",
+      "number": "47",
+      "text": "If X wants to send an encrypted message to Y using Asymmetric Encryption cryptosystem, which key does X use to encrypt the message?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Y public key"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Single Key"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "X private key"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "X public key"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Y private key"
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "X Certificate"
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In asymmetric encryption (public key cryptography), the sender uses the recipient's public key to encrypt a message so that only the recipient (using their private key) can decrypt it."
+    },
+    {
+      "id": "extract-combined-1776452631293-47",
+      "number": "48",
+      "text": "In the RSA which one of the following numbers will always be largest?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "n"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "e"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "q"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "p"
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In RSA, \\(n\\) is the modulus calculated as \\(p \\times q\\). Therefore, \\(n\\) is always larger than both prime factors \\(p\\) and \\(q\\), and practically larger than the exponents \\(e\\) and \\(d\\)."
+    },
+    {
+      "id": "extract-combined-1776452631293-48",
+      "number": "49",
+      "text": "If we used Caesar Cipher to decrypt (WV) and find out that the Plain Text is (LK), what is the KEY?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "None of the choices"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "15"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "11"
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "5"
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "Using A=0, B=1, ... L=11, W=22, V=21, K=10. The shift is calculated as \\(Cipher - Plain\\). For W to L: \\(22 - 11 = 11\\). For V to K: \\(21 - 10 = 11\\). The key is 11."
+    },
+    {
+      "id": "extract-combined-1776452631293-49",
+      "number": "50",
+      "text": "....... is the science of studying ciphers and attacks.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Cryptographic system"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Feistel Cipher"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2-DES"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Cryptography"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Cryptology"
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "Cryptanalysis"
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "Cryptology is the umbrella term for both cryptography (making codes) and cryptanalysis (breaking codes/studying attacks)."
+    },
+    {
+      "id": "extract-combined-1776452631293-50",
+      "number": "51",
+      "text": "The Greek language consists of 29 letters. Using Caesar cipher, which one of the mathematical representations below would return the cipher-text of the 6th letter in Greek alphabetic? Assume key=10.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "(10 - 6) mod 29"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "(6 + 10) mod 26"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "(5 + 9) mod (26 + 29)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "(10 + 6) mod 29"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "(10 - 6) mod 26"
+        }
+      ],
+      "inputName": "Q50",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The general formula for Caesar encryption is \\(C = (P + K) \\mod n\\). Here, \\(P = 6\\), \\(K = 10\\), and \\(n = 29\\), so the representation is \\((10 + 6) \\mod 29\\)."
+    },
+    {
+      "id": "extract-combined-1776452631293-51",
+      "number": "52",
+      "text": "What is the objective of Diffie-Hellman key exchange?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To establish a shared secret key on both sides"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To protect encrypted data from man-in-the-middle attack"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To prove to another party that one holds a secret key without revealing it"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To perform mutual authentication on both sides"
+        }
+      ],
+      "inputName": "Q51",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The Diffie-Hellman algorithm is specifically designed to allow two parties to securely establish a shared secret key over an insecure channel."
+    },
+    {
+      "id": "extract-combined-1776452631293-52",
+      "number": "53",
+      "text": "Data Integrity is the assurance that the communicating entity is the one claimed.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "False"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Sometimes in special cases"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "True"
+        }
+      ],
+      "inputName": "Q52",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The assurance that an entity is who they claim to be is known as 'Authentication'. 'Data Integrity' ensures that data has not been modified or corrupted."
+    },
+    {
+      "id": "extract-combined-1776452631293-53",
+      "number": "54",
+      "text": "Which is the largest disadvantage of Symmetric Encryption?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Problem of the secure transmission of the Secret Key"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "None of the choices"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "More complex and therefore more time-consuming calculations"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Isn't used any more"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Less secure encryption function"
+        }
+      ],
+      "inputName": "Q53",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The main drawback of symmetric cryptography is the 'key distribution problem', where the sender and receiver must securely share the secret key beforehand."
+    },
+    {
+      "id": "extract-combined-1776452631293-54",
+      "number": "55",
+      "text": "X would like to digitally sign a message and send it to Y. Which key should X use to sign the message?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "MAC"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "X private key"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Y Certificate"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "X public key"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Y public key"
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "Y private key"
+        }
+      ],
+      "inputName": "Q54",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A digital signature is created by encrypting the message hash with the sender's private key. Since only the sender has this key, it provides non-repudiation and authenticity."
+    },
+    {
+      "id": "extract-combined-1776452631293-55",
+      "number": "56",
+      "text": "In ....... cipher, the keyword is repeated so that the key-length is equal to the plain text-length. It has several Caesar ciphers in sequence with different shift values.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Product"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Permutation"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Vigenère"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Rotor"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Playfair"
+        }
+      ],
+      "inputName": "Q55",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The Vigenère cipher is a polyalphabetic substitution cipher that uses a repeated keyword to perform a series of Caesar shifts."
+    },
+    {
+      "id": "extract-combined-1776452631293-56",
+      "number": "57",
+      "text": "....... is an authentication technique that also includes measures to counter repudiation by the source.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Digital signature"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Confidentiality"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Message encryption"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Checksum"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the choices"
+        }
+      ],
+      "inputName": "Q56",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Digital signatures provide non-repudiation, which prevents the source from later denying that they sent the message."
+    },
+    {
+      "id": "extract-combined-1776452631293-57",
+      "number": "58",
+      "text": "How many keys does the Triple DES algorithm use?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2 or 3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3 or 4"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the choices"
+        }
+      ],
+      "inputName": "Q57",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Triple DES (3DES) can be implemented using three distinct keys (K1, K2, K3) or two distinct keys (where K1 = K3)."
+    },
+    {
+      "id": "extract-combined-1776452631293-58",
+      "number": "59",
+      "text": "For \\( p = 7 \\) and \\( q = 11 \\) and choose \\( d = 5 \\). Apply RSA algorithm to find the plain text where Cipher message = 3.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "None of the choices"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "108"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "84"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "20"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "12"
+        }
+      ],
+      "inputName": "Q58",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "1. \\( n = p \\times q = 77 \\). \n2. Decryption formula: \\( M = C^d \\mod n \\).\n3. \\( M = 3^5 \\mod 77 = 243 \\mod 77 \\).\n4. \\( 243 / 77 = 3 \\) with a remainder of 12 (since \\( 77 \\times 3 = 231 \\)).\n5. The plaintext is 12."
+    },
+    {
+      "id": "extract-combined-1776452631293-59",
+      "number": "60",
+      "text": "If you are given the following system \\( E(M \\parallel H(M \\parallel K)) \\), where M is plain text, H is Hash Function, E is Encryption algorithm and K is single Key ... What can we get out of this system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "authentication"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "authentication and signature"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "confidentiality and authentication"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "confidentiality, authentication, and signature"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "confidentiality"
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "confidentiality and signature"
+        }
+      ],
+      "inputName": "Q59",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The outer encryption function \\( E \\) provides confidentiality. The inner hash function includes a secret key \\( K \\) (similar to an HMAC construction), which provides authentication/integrity because only parties with the key could generate that hash. It does not provide a digital signature because a signature requires asymmetric (private/public) keys, and this system uses a single symmetric key \\( K \\)."
+    },
+    {
+      "id": "extract-combined-1776452631293-60",
+      "number": "61",
+      "text": "Monoalphabetic ciphers are stronger than Polyalphabetic ciphers.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q60",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Polyalphabetic ciphers are generally stronger than monoalphabetic ciphers because they use multiple cipher alphabets, which helps flatten the frequency distribution of characters and makes them much harder to break using frequency analysis."
+    },
+    {
+      "id": "extract-combined-1776452631293-61",
+      "number": "62",
+      "text": "_________________ is making each plain-text bit affect as many cipher-text bits as possible.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Diffusion"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Feistel Cipher"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Ideal Block cipher"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Confusion"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "2-DES"
+        }
+      ],
+      "inputName": "Q61",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Diffusion is a property of the operation of a cryptographic algorithm where each plaintext digit should affect many ciphertext digits. This was defined by Claude Shannon to obscure the relationship between the plaintext and the ciphertext."
+    },
+    {
+      "id": "extract-combined-1776452631293-62",
+      "number": "63",
+      "text": "On Encrypting \"cryptography\" using Caesar Cipher System with key=19, if the plain text is \"LUCKY YOU\", then the ciphertext is ________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "None of the choices"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Jsaiw wms"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Hqygu ukq"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Gpxft tjp"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Envdr rhn"
+        }
+      ],
+      "inputName": "Q62",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "Using a Caesar cipher shift of 19:\n- L (11) + 19 = 30 mod 26 = 4 (E)\n- U (20) + 19 = 39 mod 26 = 13 (N)\n- C (2) + 19 = 21 (V)\n- K (10) + 19 = 29 mod 26 = 3 (D)\n- Y (24) + 19 = 43 mod 26 = 17 (R)\n- Space remains space\n- Y (24) -> R\n- O (14) + 19 = 33 mod 26 = 7 (H)\n- U (20) -> N\nResulting in \"ENVDR RHN\"."
+    },
+    {
+      "id": "extract-combined-1776452631293-63",
+      "number": "64",
+      "text": "A cryptosystem runs a Playfair algorithm to encrypt plain text messages using the key = \"Emad\". What is the final cipher-text generated by the cryptosystem for the plain text \"Security\"?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "dlwdllfg"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "QAIQUFYD"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "TVIH"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "employee"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "ldwnlty"
+        }
+      ],
+      "inputName": "Q63",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Construct the 5x5 Playfair matrix with key 'EMAD' (merging I/J):\nE M A D B\nC F G H I\nK L N O P\nQ R S T U\nV W X Y Z\n\nSplit plaintext 'Security' into digraphs: SE, CU, RI, TY.\n1. SE: S(3,2), E(0,0). Rectangle corners: Q(3,0), A(0,2) -> QA.\n2. CU: C(1,0), U(3,4). Rectangle corners: I(1,4), Q(3,0) -> IQ.\n3. RI: R(3,1), I(1,4). Rectangle corners: U(3,4), F(1,1) -> UF.\n4. TY: T(3,3), Y(4,3). Same column. Shift down: T->Y, Y->D (wrap around) -> YD.\nCombined: QAIQUFYD."
+    },
+    {
+      "id": "extract-combined-1776452631293-64",
+      "number": "65",
+      "text": "Message authentication is achieved using a __________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "MAC"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "DES"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "SHA"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "MDF"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All of the above."
+        }
+      ],
+      "inputName": "Q64",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A Message Authentication Code (MAC) is a cryptographic checksum on data that uses a symmetric key to provide both data integrity and authenticity."
+    },
+    {
+      "id": "extract-combined-1776452631293-65",
+      "number": "66",
+      "text": "The principal object of a hash function is __________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "collision resistance."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "data integrity"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "compression."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "mapping messages"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Message delay."
+        }
+      ],
+      "inputName": "Q65",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Hash functions are primarily used to ensure data integrity by producing a unique digest of the data; any change in the data results in a different hash value."
+    },
+    {
+      "id": "extract-combined-1776452631293-66",
+      "number": "67",
+      "text": "The function F provides the element of __________ in a Feistel cipher.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "clarification"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "alignment"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "stability"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Availability"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "confusion."
+        }
+      ],
+      "inputName": "Q66",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "In a Feistel cipher, the round function F is designed to introduce confusion, making the relationship between the key and the ciphertext as complex as possible."
+    },
+    {
+      "id": "extract-combined-1776452631293-67",
+      "number": "68",
+      "text": "The greater the number of rounds, the __________ it is to perform cryptanalysis.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "less difficult"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "easier"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "harder"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "equally difficult"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the above."
+        }
+      ],
+      "inputName": "Q67",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Increasing the number of rounds in a block cipher generally increases its security margin, making it more computationally difficult and complex to perform successful cryptanalysis."
+    },
+    {
+      "id": "extract-combined-1776452631293-68",
+      "number": "69",
+      "text": "Encipherment mechanism could be implemented for several security services, but has nothing to do with some of them. Which of the following service(s) can implement and benefit from encipherment mechanism?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Access control."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data Confidentiality."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Data origin authentication."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "b + c"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "a + c"
+        }
+      ],
+      "inputName": "Q68",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Encipherment (encryption) directly provides data confidentiality. It can also provide data origin authentication (e.g., in symmetric encryption where only two parties share a key)."
+    },
+    {
+      "id": "extract-combined-1776452631293-69",
+      "number": "70",
+      "text": "Using key = \"employee\", the Playfair matrix will be:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "E M P L O \n V E E A B \n C D F G H \n I J K L M \n Q R S T U"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "E M P L O \n Y A B C D \n E F G H I/J \n K L M N O \n P Q R S T"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "E M P L O \n Y A B C D \n F G H I/J K \n N Q R S T \n U V W X Z"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "E M P L O \n Y A B C D \n F G H I/J K \n L N P Q R \n S T U V Y/Z"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Either a or c."
+        }
+      ],
+      "inputName": "Q69",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The key \"employee\" simplifies to \"employ\" (removing duplicates). Filling the 5x5 matrix with unique letters of the key first, then remaining alphabet letters (omitting 'J' or combining I/J):\nRow 1: E M P L O\nRow 2: Y A B C D (starts after 'employ' in alphabet order)\nRow 3: F G H I/J K\nRow 4: N Q R S T\nRow 5: U V W X Z"
+    },
+    {
+      "id": "extract-combined-1776452631293-70",
+      "number": "71",
+      "text": "A cryptosystem runs Playfair algorithm **twice** to encrypt plaintext messages using the same key. Using the same key in Q6 above, what is the final ciphertext generated by the cryptosystem for the plaintext \"course\"?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "dhwnnl"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "employee"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "course"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Dlwwll"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the above."
+        }
+      ],
+      "inputName": "Q70",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "If a Playfair cipher is run twice with the same key, it typically returns the plaintext for pairs that form rectangles (as the rectangle operation is its own inverse). For \"course\" (CO, UR, SE), in matrix (C), all pairs form rectangles: CO \\(\\rightarrow\\) DL, UR \\(\\rightarrow\\) WN, SE \\(\\rightarrow\\) NL. Encrypting again: DL \\(\\rightarrow\\) CO, WN \\(\\rightarrow\\) UR, NL \\(\\rightarrow\\) SE. The result is the original plaintext."
+    },
+    {
+      "id": "extract-combined-1776452631293-71",
+      "number": "72",
+      "text": "Using the same key in Q6, what is the plaintext of the ciphertext \"COLOUTER\" if the cryptosystem runs the algorithm twice?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Computing"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Computer"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Computation"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Compute"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Calculate"
+        }
+      ],
+      "inputName": "Q71",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Similar to Q7, if the cryptosystem runs Playfair twice, the final result for a set of rectangular pairs is the input itself. If the input cipher text was generated by running Playfair twice on \"Computer\", it would remain \"Computer\"."
+    },
+    {
+      "id": "extract-combined-1776452631293-72",
+      "number": "73",
+      "text": "A cryptosystem runs Row Transposition Cipher algorithm. Plaintext is written in rectangle of 3 rows and 6 columns. Given the secret key = 321654, what is the ciphertext of \"cannot come today sir\"?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "encedsaoataintmoyr"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Can not come today sir"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "ccdaoanmynestitor"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "comnotcansirdayeto"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "nmyaoaccdtorotines"
+        }
+      ],
+      "inputName": "Q72",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "Write plaintext in 3 rows, 6 cols:\nRow 1: c a n n o t\nRow 2: c o m e t o\nRow 3: d a y s i r\nCols: 1:ccd, 2:aoa, 3:nmy, 4:nes, 5:oti, 6:tor.\nKey 321654 indicates column reading order. Read Col 3, then 2, 1, 6, 5, 4:\n3:nmy, 2:aoa, 1:ccd, 6:tor, 5:oti, 4:nes \\(\\rightarrow\\) nmyaoaccdtorotines."
+    },
+    {
+      "id": "extract-combined-1776452631293-73",
+      "number": "74",
+      "text": "__________ involves the passive capture of a data unit and its subsequent retransmission to produce an unauthorized effect.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "integrity"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "encryption"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "analysis"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "masquerade"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Playfair"
+        }
+      ],
+      "inputName": "Q73",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "While specifically a 'Replay' attack, it falls under active attacks often used to achieve 'masquerade' (where one entity pretends to be another by replaying captured authentication data)."
+    },
+    {
+      "id": "extract-combined-1776452631293-74",
+      "number": "75",
+      "text": "Verifying that users are who they say they are and that each input arriving at the system came from a trusted source is __________.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "authenticity."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "credibility."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "accountability"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "integrity"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "A+B"
+        }
+      ],
+      "inputName": "Q74",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Authenticity is the security service that ensures that a communication is genuine and that both entities involved are who they claim to be."
+    },
+    {
+      "id": "extract-combined-1776452631293-75",
+      "number": "76",
+      "text": "Which of the following ciphers is NOT computationally secure?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Caesar Cipher."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Vigenere Cipher."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "RSA."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "a and b"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All of the above are computationally secure."
+        }
+      ],
+      "inputName": "Q75",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Classical ciphers like Caesar and Vigenere are easily broken with modern frequency analysis and brute force, meaning they have zero computational security today."
+    },
+    {
+      "id": "extract-combined-1776452631293-76",
+      "number": "77",
+      "text": "Which of the following is valid input for simplified DES (S-DES)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Data block = 01010100 and key = 11100011100011100011001100110011."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data block = 00001111001 and key = 111000111000111000."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Data block = 01010100 and key = 11100011100011100011111111."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Data block = 01010100 and key = 654321."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Data block = 00110011 and key = 1110001110."
+        }
+      ],
+      "inputName": "Q76",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "Simplified DES (S-DES) is defined to operate on an 8-bit block of data using a 10-bit key. Option E specifies an 8-bit block (00110011) and a 10-bit key (1110001110)."
+    },
+    {
+      "id": "extract-combined-1776452631293-77",
+      "number": "78",
+      "text": "In a DES round, \\( L_i = \\)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( R_{i-1} \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( R_{i-1} \\oplus F(K_i) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( L_{i-1} \\oplus F(K_i, R_{i-1}) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( R_{i-1} \\oplus F(K_i, L_{i-1}) \\)"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "\\( L_{i-1} \\oplus F(K_i) \\)"
+        }
+      ],
+      "inputName": "Q77",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In a Feistel structure round like DES, the left half of the output (\\( L_i \\)) is simply the right half of the input (\\( R_{i-1} \\))."
+    },
+    {
+      "id": "extract-combined-1776452631293-78",
+      "number": "79",
+      "text": "Which of the following is a CORRECT statement regarding Feistel Cipher?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The algorithm goes through a number of rounds."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A different key is generated for each round."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The output of round I is the input of the round i+1."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the above are correct."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the above."
+        }
+      ],
+      "inputName": "Q78",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "A Feistel cipher operates by repeating a series of rounds (A), using a distinct subkey derived from the master key for each round (B), and feeding the output of one round into the next (C)."
+    },
+    {
+      "id": "extract-combined-1776452631293-79",
+      "number": "80",
+      "text": "A straightforward implementation of 3DES would be in practice \\( C = E_{k1}(D_{k2}(E_{k1}(m))) \\). What if \\( k_1 = k_2 \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "More complex implementation of DES."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Will be the same as 1DES."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Cannot set \\( k_1 \\) to be equal to \\( k_2 \\)."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Will be the same as 2DES."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "We cannot implement 3DES in practice."
+        }
+      ],
+      "inputName": "Q79",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If \\( k_1 = k_2 \\), then \\( E_{k1}(D_{k1}(E_{k1}(m))) \\) simplifies: the first encryption and the second decryption cancel out because they use the same key, leaving only the final single DES encryption: \\( E_{k1}(m) \\)."
+    },
+    {
+      "id": "extract-combined-1776452631293-80",
+      "number": "81",
+      "text": "Which of the following are relatively prime numbers (co-prime)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "25, 11"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "25, 20"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "25, 5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "22, 11"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the above."
+        }
+      ],
+      "inputName": "Q80",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Two numbers are relatively prime if their greatest common divisor (GCD) is 1. GCD(25, 11) = 1. For others: GCD(25, 20)=5, GCD(25, 5)=5, GCD(22, 11)=11."
+    },
+    {
+      "id": "extract-combined-1776452631293-81",
+      "number": "82",
+      "text": "Which of the following is an **Invalid** set of inputs for RSA?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "P = 7, q = 25, e = 7."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "P = 5, q = 11, e = 5."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "P = 17, q = 21, e = 7."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the above are invalid sets."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All of the above are valid and correct sets of inputs."
+        }
+      ],
+      "inputName": "Q81",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "RSA requires p and q to be prime. 25 and 21 are not prime (A, C). Also, the public exponent 'e' must be relatively prime to \\( (p-1)(q-1) \\). In B, \\( (5-1)(11-1) = 40 \\), and GCD(5, 40) = 5 (not 1), so 'e' is invalid. Thus, all are invalid."
+    },
+    {
+      "id": "extract-combined-1776452631293-82",
+      "number": "83",
+      "text": "The criteria used in the design of the __________ focused on the design of the S-boxes and on the P function that takes the output of the S-boxes.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Avalanche Attack"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data Encryption Standard"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Product Cipher"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Substitution Key"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the above."
+        }
+      ],
+      "inputName": "Q82",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Data Encryption Standard (DES) design criteria were famously focused on creating non-linear S-boxes and P-permutations that would provide strength against cryptanalysis (like differential cryptanalysis)."
+    },
+    {
+      "id": "extract-combined-1776452631293-83",
+      "number": "84",
+      "text": "In RSA, given p = 5, q = 5 and e = 3. What is the ciphertext of message = 2?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "16"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "25"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "8"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Cannot calculate the ciphertext given only the above inputs."
+        }
+      ],
+      "inputName": "Q83",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "\\( n = p \\times q = 5 \\times 5 = 25 \\). Ciphertext \\( C = M^e \\pmod{n} = 2^3 \\pmod{25} = 8 \\pmod{25} = 8 \\)."
+    },
+    {
+      "id": "extract-combined-1776452631293-84",
+      "number": "85",
+      "text": "In RSA, given p = 5, q = 5 and e = 3. Which of the following could be a valid value of the private key (d)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "11"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the above."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the above."
+        }
+      ],
+      "inputName": "Q84",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "\\( \\phi(n) = (p-1)(q-1) = 4 \\times 4 = 16 \\). We need \\( d \\times e \\equiv 1 \\pmod{\\phi(n)} \\). \\( 3d \\equiv 1 \\pmod{16} \\). If \\( d = 11 \\), \\( 33 \\pmod{16} = 1 \\). So 11 is a valid private key."
+    },
+    {
+      "id": "extract-combined-1776452631293-85",
+      "number": "86",
+      "text": "A __________ is any action that compromises the security of information owned by an organization.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "security attack"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "security service"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "security alert"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "security mechanism"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Privacy system"
+        }
+      ],
+      "inputName": "Q85",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A security attack is defined as any deliberate action that targets information security systems to compromise confidentiality, integrity, or availability."
+    },
+    {
+      "id": "extract-combined-1776452631293-86",
+      "number": "87",
+      "text": "Given the following S-boxes, what is the output of the s-box operation in simplified DES (S-DES) algorithm when the results of XOR operation with key1 = 11000010?\n\nS0:\n| | 0 | 1 | 2 | 3 |\n|---|---|---|---|---|\n| 0 | 1 | 0 | 3 | 2 |\n| 1 | 3 | 2 | 1 | 0 |\n| 2 | 0 | 2 | 1 | 3 |\n| 3 | 3 | 1 | 3 | 2 |\n\nS1:\n| | 0 | 1 | 2 | 3 |\n|---|---|---|---|---|\n| 0 | 0 | 1 | 2 | 3 |\n| 1 | 2 | 0 | 1 | 3 |\n| 2 | 3 | 0 | 1 | 0 |\n| 3 | 2 | 1 | 0 | 3 |",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( S_0 = 01 \\) and \\( s_1 = 01 \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( S_0 = 11 \\) and \\( s_1 = 10 \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( S_0 = 01 \\) and \\( s_1 = 11 \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( S_0 = 00 \\) and \\( s_1 = 00 \\)"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "\\( S_0 = 11 \\) and \\( s_1 = 11 \\)"
+        }
+      ],
+      "inputName": "Q86",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In S-DES, input 11000010 is split: S0 input is 1100, S1 input is 0010.\nS0: Outer bits (1,0) indicate Row 2. Inner bits (1,0) indicate Col 2. S0(2,2) = 1 \\(\\rightarrow\\) 01.\nS1: Outer bits (0,0) indicate Row 0. Inner bits (0,1) indicate Col 1. S1(0,1) = 1 \\(\\rightarrow\\) 01."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 87,
+  "q": 87
+}
