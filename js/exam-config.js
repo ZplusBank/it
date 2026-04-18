@@ -465,8 +465,8 @@ const EXAM_CONFIG = [
       {
         "id": "1",
         "name": "Mid",
-        "q": 14,
-        "file": "data/Uml/chapterUML - Mid.pdfvisual_extractor midddddddddddddddddddd ulm.json"
+        "q": 55,
+        "file": "data/Uml/combined_questions mod 5.json"
       },
       {
         "id": "2",

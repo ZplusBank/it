@@ -1,0 +1,1837 @@
+{
+  "title": "Mid",
+  "timestamp": 1776527190594,
+  "totalQuestions": 59,
+  "questions": [
+    {
+      "id": "extract-combined-1776526001713-0",
+      "number": "1",
+      "text": "The \"Analyst\" is interested in:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Application classes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Associations between classes"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Solution classes"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Exact signature of the operations"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All of the mentioned"
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "Only A and B"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "F",
+      "explanation": "An Analyst focuses on the problem domain, which involves identifying application classes and the relationships (associations) between them. Solution-oriented details like specific implementation classes or operation signatures are typically the concern of the Designer."
+    },
+    {
+      "id": "extract-combined-1776526001713-1",
+      "number": "2",
+      "text": "\"Definition of the system in terms understood by the developer\", is called:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Problem statement"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Problem description"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "System specification"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Problem specification"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "B and C"
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "C and D"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "F",
+      "explanation": "The problem statement is usually a natural language description for the client. The system specification and problem specification are formal documents resulting from analysis that define the system in terms precise enough for developers."
+    },
+    {
+      "id": "extract-combined-1776526001713-2",
+      "number": "3",
+      "text": "\"Abbott technique\" is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Used in the requirements analysis phase to map parts of speech to model components."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Used in the requirements elicitation phase to help identify use cases."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Used in the requirements analysis phase to help classify objects into boundary, control, and entity objects."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the mentioned"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Only A and C"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Abbott's technique is a natural language analysis method where nouns in a requirement description are mapped to potential classes/objects and verbs are mapped to potential operations."
+    },
+    {
+      "id": "extract-combined-1776526001713-3",
+      "number": "4",
+      "text": "Sequence diagram helps in:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Describe the interaction between objects"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Refine use cases"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Identify additional objects"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Identify operations"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Refine subsystem interfaces"
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "All of the mentioned"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "F",
+      "explanation": "Sequence diagrams model the dynamic behavior of the system by showing object interactions. This process helps in defining operations (messages), refining high-level use cases into detailed logic, discovering missing objects, and establishing clear interfaces."
+    },
+    {
+      "id": "extract-combined-1776526001713-4",
+      "number": "5",
+      "text": "The ability to change the system to deal with new technology or to fix defects is called:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "adaptability"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "maintainability"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "portability"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "extensibility"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "none of the mentioned"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Maintainability refers to the ease with which a software system can be modified to correct faults, improve performance, or adapt to a changed environment."
+    },
+    {
+      "id": "extract-combined-1776526001713-5",
+      "number": "6",
+      "text": "Inheritance simplifies the model by eliminating redundancy.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Inheritance allows child classes to inherit properties and behaviors from a parent class, meaning common attributes/methods are defined only once, thus reducing redundancy."
+    },
+    {
+      "id": "extract-combined-1776526001713-6",
+      "number": "7",
+      "text": "The description of the problem addressed by the system that is provided by the client is called:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Problem statement"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Statement of work"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Problem description"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Requirements specification"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "A and B"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "Both 'Problem Statement' and 'Statement of Work' (SoW) are terms used for the initial document provided by the client to describe their needs and the project scope."
+    },
+    {
+      "id": "extract-combined-1776526001713-7",
+      "number": "8",
+      "text": "Which of the following falls under the \"dependability\" requirement?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Reliability"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Robustness"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Safety"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Availability"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All of the mentioned"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "Dependability is a composite quality attribute that includes reliability, availability, safety, and security."
+    },
+    {
+      "id": "extract-combined-1776526001713-8",
+      "number": "9",
+      "text": "Requirement specifications of the system are said to be correct if:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "it represents the system that the clients needs"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "it represents the system that the developers intend to build"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "it is accurate"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All aspects of the system are represented in the requirements model"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All of the mentioned"
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "All Except D"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Correctness is specifically the degree to which the requirements correctly represent the client's needs. Representing 'all aspects' is completeness, not just correctness."
+    },
+    {
+      "id": "extract-combined-1776526001713-9",
+      "number": "10",
+      "text": "To Provide the services of an existing system in a new environment is called:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Greenfield engineering"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Reengineering"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Interface engineering"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Forward engineering"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "B and C"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Interface engineering involves providing an existing system's functionality in a new environment or to a new type of client without necessarily changing the core implementation of the system."
+    },
+    {
+      "id": "extract-combined-1776526001713-10",
+      "number": "11",
+      "text": "The requirements elicitation phase results in:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "System specification"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Analysis model"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Problem specification"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the mentioned"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Only A and C"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "Requirements elicitation focuses on gathering requirements and documenting them in a specification (System/Problem specification). The Analysis model is the result of the Analysis phase, which follows elicitation."
+    },
+    {
+      "id": "extract-combined-1776526001713-11",
+      "number": "12",
+      "text": "In \"forward engineering\", we can identify classes in an existing system.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "TRUE"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "FALSE"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Forward engineering is the traditional process of moving from high-level abstractions to implementation. Identifying classes from an existing system (source code) is called reverse engineering."
+    },
+    {
+      "id": "extract-combined-1776526001713-12",
+      "number": "13",
+      "text": "Which of the following is NOT true about scenarios:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A textual description of the usage of a system."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "is written from an end user's point of view"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "a concrete, and focused"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "abstract and formal"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "none of the mentioned"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Scenarios are meant to be concrete, informal examples of system use. They are not intended to be abstract or formal; those qualities belong more to use cases or formal specifications."
+    },
+    {
+      "id": "extract-combined-1776526001713-13",
+      "number": "14",
+      "text": "Which of the following statements (is/are) NOT true about package in UML?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Used to organize UML models to increase their readability."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Used to model subsystems in a complex system"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Usually is an Application domain concept"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Organization construct"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the mentioned"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Packages are primarily organizational constructs used by designers to group related elements and manage complexity. While they can correspond to architectural components, they are not typically concepts found directly in the application domain (like 'Customer' or 'Account')."
+    },
+    {
+      "id": "extract-combined-1776526001713-14",
+      "number": "15",
+      "text": "Which of the following statements (is/are) true about \"modelling\"?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Used to deal with complexity."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Used to represent the system in an abstract way."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Shows relevant details only."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Used to visualize the system."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All of the mentioned"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "Modeling is the creation of an abstraction of a system to help understand complexity, visualize the design, and focus only on details relevant to a particular perspective."
+    },
+    {
+      "id": "extract-combined-1776526001713-15",
+      "number": "16",
+      "text": "When mapping an object model to a database, an instance of a class is mapped onto a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Table"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Row"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Column"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Instances are not mapped into database elements"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In object-relational mapping, a class typically maps to a table, and each specific instance (object) of that class maps to a single row in that table."
+    },
+    {
+      "id": "extract-combined-1776526001713-16",
+      "number": "17",
+      "text": "Mapping an object model to code is considered:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Model transformation"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Forward engineering"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Reverse engineering"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Refactoring"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Reengineering"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Forward engineering is the process of generating code from a design or model. Reverse engineering is the opposite process."
+    },
+    {
+      "id": "extract-combined-1776526001713-17",
+      "number": "18",
+      "text": "In the class diagram below, the developer of class D is (a/an) ________ of class C and (a/an) ________ of class E.\n\n```mermaid\nclassDiagram\n    E <|-- D\n    A <|-- C\n    A <|-- B\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Extender, user"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Implementer, user"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "User, extender"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "User, implementer"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "User, user"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In software engineering roles, a developer creating a subclass (D) is an 'extender' of the superclass (E). If class D uses class C, the developer is a 'user' of C."
+    },
+    {
+      "id": "extract-combined-1776526001713-18",
+      "number": "19",
+      "text": "Information hiding improves efficiency.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Information hiding primarily improves maintainability, portability, and readability. It may slightly decrease runtime efficiency due to abstraction layers or accessor methods."
+    },
+    {
+      "id": "extract-combined-1776526001713-19",
+      "number": "20",
+      "text": "Which of the following is/are considered a design issue:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "System decomposition"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Identification of concurrency"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Hardware/software allocation"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Data management"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All of the mentioned"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "During the system design phase, designers must address decomposition, concurrency, hardware mapping, and data management strategies."
+    },
+    {
+      "id": "extract-combined-1776526001713-20",
+      "number": "21",
+      "text": "A system with more functionality is considered more usable.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Usability refers to how easy and efficient a system is for users to use. More functionality often increases complexity, which can decrease usability."
+    },
+    {
+      "id": "extract-combined-1776526001713-21",
+      "number": "22",
+      "text": "High coherence can be achieved if most of the interaction is across subsystems.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Cohesion (coherence) refers to how strongly related the internal elements of a subsystem are. High interaction *across* subsystems refers to coupling, and high coupling is generally undesirable."
+    },
+    {
+      "id": "extract-combined-1776526001713-22",
+      "number": "23",
+      "text": "The term \"API\" is used to describe the subsystem \"interface\" in the ________ phase.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Requirements elicitation"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Requirements analysis"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "System design"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Object design"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Implementation"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "During Object Design, interfaces (APIs) for components and classes are defined in detail to prepare for implementation."
+    },
+    {
+      "id": "extract-combined-1776526001713-23",
+      "number": "24",
+      "text": "The subsystem decomposition is mainly based on:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Functional model"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Non-functional requirements"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Object model"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Dynamic model"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Initial subsystem decomposition is often driven by the functional model to ensure all required features are accounted for in the structural breakdown."
+    },
+    {
+      "id": "extract-combined-1776526001713-24",
+      "number": "25",
+      "text": "\"A pattern for a subsystem decomposition\" is called:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Subsystem decomposition"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Architectural style"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Software architecture"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Design pattern"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the mentioned"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Architectural styles (like Layered, Client-Server, or Peer-to-Peer) represent general patterns for organizing subsystems."
+    },
+    {
+      "id": "extract-combined-1776526001713-25",
+      "number": "26",
+      "text": "Which of the following is/are considered in the analysis object model?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Identify attributes and operations"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Visibility information"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Type signature information"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Contracts"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the mentioned"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The Analysis Object Model focuses on identifying key domain objects, their attributes, and basic operations. Details like visibility, types, and formal contracts are usually deferred to the Object Design phase."
+    },
+    {
+      "id": "extract-combined-1776526001713-27",
+      "number": "27",
+      "text": "The icon is used to represent:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Boundary object"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Control object"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Entity object"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the mentioned"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Unified Modeling Language (UML) analysis diagrams, a circle with a vertical line attached to the left represents a Boundary Object.",
+      "image": "data/Uml/images/image28_e3061b88.png"
+    },
+    {
+      "id": "extract-combined-1776526001713-28",
+      "number": "28",
+      "text": "Design usability implies that the interfaces can also be used in other (future) software systems.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The ability for components to be used in other systems is called 'Reusability', not 'Usability'."
+    },
+    {
+      "id": "extract-combined-1776526001713-29",
+      "number": "29",
+      "text": "While validating requirements, a specification is considered \"consistent\" if:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It represents accurately the client needs"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "All aspects of the system are represented in the requirements model"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No contradictions between requirements"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Each system function can be traced to a corresponding set of functional requirements"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All of the mentioned"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Consistency means that the requirements do not conflict with or contradict each other."
+    },
+    {
+      "id": "extract-combined-1776526001713-30",
+      "number": "30",
+      "text": "Which of the following is/are considered non-functional requirements?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The system should be easy to learn"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Constraints on system data size"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Input/output format"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Time to restart after failure"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All of the mentioned"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "Non-functional requirements specify quality attributes (usability, constraints, performance, reliability) rather than specific behaviors."
+    },
+    {
+      "id": "extract-combined-1776526001713-34",
+      "number": "31",
+      "text": "The \"Analyst\" is interested in:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Application classes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Associations between classes"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Solution classes"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Exact signature of the operations"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All of the mentioned"
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "Only A and B"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "F",
+      "explanation": "Analysts focus on the domain/application logic and how entities relate. Solution classes and method signatures are the focus of software designers and developers."
+    },
+    {
+      "id": "extract-combined-1776526001713-35",
+      "number": "32",
+      "text": "\"Definition of the system in terms understood by the developer\", is called:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Problem statement"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Problem description"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "System specification"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Problem specification"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "B and C"
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "C and D"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The System Specification is the technical document that translates user requirements into terms that software developers can use for implementation."
+    },
+    {
+      "id": "extract-combined-1776526001713-36",
+      "number": "33",
+      "text": "\"Abbott technique\":",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Used in the requirements analysis phase to map parts of speech to model components"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Used in the requirements elicitation phase to help identify use cases"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Used in the requirements analysis phase to help classify objects into boundary, control, or entity objects"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the mentioned"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Only A and C"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Abbott's technique is a natural language analysis where nouns are potential classes and verbs are potential methods or operations."
+    },
+    {
+      "id": "extract-combined-1776526001713-37",
+      "number": "34",
+      "text": "Sequence diagram helps in:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Describe the interaction between objects"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Refine use cases"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Identify objects"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the mentioned"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Sequence diagrams model object interactions, which helps in identifying objects needed for a scenario and refining the logic of use cases."
+    },
+    {
+      "id": "extract-combined-1776526001713-38",
+      "number": "35",
+      "text": "Which of the following is NOT an output of the requirements analysis phase?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Refined functional model"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Object model"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Dynamic model"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Solution domain object model"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the mentioned"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The analysis phase focuses on the application domain model. The solution domain object model is developed later during the design phase."
+    },
+    {
+      "id": "extract-combined-1776526001713-39",
+      "number": "36",
+      "text": "Which of the following statements is/are NOT true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Boundary object can create control object"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Control object can create boundary object"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Boundary object can create entity object"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Control object can create entity object"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "None of the mentioned"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Under Robustness Analysis (BCE pattern) rules, Boundary objects interact with users and Control objects. They should not directly create or interact with Entity objects; that is the responsibility of Control objects."
+    },
+    {
+      "id": "extract-combined-1776526001713-40",
+      "number": "37",
+      "text": "We usually draw state diagram for the object with long life span. This is true for ________:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Entity object"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Boundary object"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Control object"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the mentioned"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Only A and E"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Entity objects persist over long periods and have complex states that warrant state diagrams. Boundary and Control objects are often transient (existing only for a specific interaction or task)."
+    },
+    {
+      "id": "extract-combined-1776526001713-41",
+      "number": "38",
+      "text": "The relationship between a \"House\" and a \"Room\" can be accurately described as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Inheritance"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Association"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Aggregation"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Composition"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Specialization"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Composition is a strong 'part-of' relationship where the parts (rooms) cannot logically exist without the whole (house)."
+    },
+    {
+      "id": "extract-combined-1776526001713-42",
+      "number": "39",
+      "text": "Which of the following diagrams helps in requirements elicitation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Usecase diagram"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Class diagram"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Sequence diagram"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "State diagram"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "A and C"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Usecase diagrams are primary tools during elicitation to identify system actors and their required interactions with the system."
+    },
+    {
+      "id": "extract-combined-1776526001713-43",
+      "number": "40",
+      "text": "The description of the problem addressed by the system that is developed by the client is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Problem statement"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Statement of work"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Problem description"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Requirements specification"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "A and B"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The Problem Statement is typically the initial document provided by the client describing the business need or problem to be solved."
+    },
+    {
+      "id": "extract-combined-1776526001713-44",
+      "number": "41",
+      "text": "Which of the following falls under the \"dependability\" requirement of a system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Reliability"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Robustness"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Safety"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Availability"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All of the mentioned"
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "Dependability is a composite property including reliability, availability, safety, and security."
+    },
+    {
+      "id": "extract-1776181366915-jfn2f-0",
+      "number": "42",
+      "text": "How can domain classes be identified in a UML project?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "By reusing existing domain models."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "By identifying noun phrases in the system description."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "By using a conceptual class category list."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the above."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Identifying domain (conceptual) classes involves several standard techniques: identifying nouns/noun phrases from requirements text, using pre-defined category lists (like physical objects, transactions, roles, etc.), and reusing established models from similar domains."
+    },
+    {
+      "id": "extract-1776181366915-jfn2f-1",
+      "number": "43",
+      "text": "Does the software engineer add operation contracts in the requirement analysis phase?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Object-Oriented Analysis, operation contracts are created to describe the behavior of system operations in terms of state changes to the domain objects, occurring during the analysis phase following the creation of use cases."
+    },
+    {
+      "id": "extract-1776181366915-jfn2f-2",
+      "number": "44",
+      "text": "Frameworks usually contain implementations of many design patterns.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Software frameworks are built to provide reusable abstractions and generic functionality, which is achieved by implementing various design patterns (e.g., Template Method for hooks, Observer for event handling) that developers can then extend."
+    },
+    {
+      "id": "extract-1776181366915-jfn2f-3",
+      "number": "45",
+      "text": "In application domain objects (domain model), the attribute types are typically shown in the class diagram.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In a conceptual domain model, attribute types (like int, String) and methods are usually omitted. The goal is to represent real-world concepts and their relationships rather than software implementation details, which are reserved for the Design Class Diagram."
+    },
+    {
+      "id": "extract-1776181366915-jfn2f-4",
+      "number": "46",
+      "text": "Greenfield engineering is defined as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Developing an existing software further."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Re-implementing an existing software system."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Developing the software from scratch without constraints of legacy systems."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Re-designing a legacy software system."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Greenfield engineering refers to a project that starts on 'green fields'—meaning there is no previous work or legacy infrastructure that the new system must be compatible with, allowing it to be built from scratch."
+    },
+    {
+      "id": "extract-1776181366915-jfn2f-5",
+      "number": "47",
+      "text": "The use of 'having' verbs (e.g., 'has') in a requirement description helps the requirement engineer to identify which of the following?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Generalization and Specialization"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Attribute and Aggregation"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Class and Object"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Inheritance and Specialization"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A 'has-a' relationship in natural language identifies that one concept contains or is composed of another. In UML, this translates to either an 'Attribute' (e.g., a person has a name) or an 'Aggregation/Composition' relationship (e.g., a car has wheels)."
+    },
+    {
+      "id": "extract-1776181366915-jfn2f-6",
+      "number": "48",
+      "text": "Based on the provided use case diagram for the **Online Course Registration System (OCRS)**, what is the post-condition for the use case \"Add Course\"?\n\n```mermaid\ngraph LR\n    Student((Student))\n    subgraph \"Online Course Registration System (OCRS)\"\n        RC([Registration Closed])\n        AC([Add Course])\n        UC3([UseCase3])\n        UC1([UseCase1])\n        Login([Login])\n        UC2([UseCase2])\n\n        Student --- AC\n        Student --- UC1\n\n        AC -. \"<<include>>\" .-> UC3\n        AC -. \"<<include>>\" .-> Login\n\n        RC --- AC\n        UC1 --- Login\n        Login --- UC2\n    end\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Course shall be available"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Notification email shall be sends to the student"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Student shall be active"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "System sends confirmation message"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Student enter invalid password"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "A post-condition defines the state of the system after a use case has successfully completed. In a transaction system like adding a course, the final system action is typically sending a confirmation message to the user."
+    },
+    {
+      "id": "extract-1776181366915-jfn2f-7",
+      "number": "49",
+      "text": "What is the relationship between the use case \"UseCase1\" and the use case \"Login\"?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Relationship \"include\" and the base case is \"UseCase1\" and the included use case is \"Login\""
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Relationship \"include\" and the base case is \"Login\" and the included use case is \"UseCase1\""
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Relationship \"extend\" and the base case is \"UseCase1\" and the extending use case is \"Login\""
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Relationship \"extend\" and the base case is \"Login\" and the extending use case is \"UseCase1\""
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In typical system modeling, mandatory requirements like authentication (Login) are 'included' by functional use cases. Therefore, UseCase1 serves as the base case that includes the Login functionality."
+    },
+    {
+      "id": "extract-1776181366915-jfn2f-8",
+      "number": "50",
+      "text": "The relationship shown in the diagram between the use case \"Add Course\" and the use case \"Login\" is correct.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Incorrect, it should be an extend relationship"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Incorrect, Login should be the base case"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The diagram explicitly shows a dashed arrow labeled `<<include>>` from \"Add Course\" to \"Login\", which correctly indicates that adding a course requires the login process as part of its execution."
+    },
+    {
+      "id": "extract-1776181366915-jfn2f-9",
+      "number": "51",
+      "text": "How many included use case(s) for the use case \"Add Course\" are shown in the diagram?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "There is no included use case(s)"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The diagram shows two dashed lines labeled `<<include>>` originating from \"Add Course\" and pointing towards \"UseCase3\" and \"Login\"."
+    },
+    {
+      "id": "extract-1776181366915-jfn2f-10",
+      "number": "52",
+      "text": "What is the entry Condition (pre-condition) for the use case \"Add Course\"?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Course shall be available."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Notification email shall be sent to the student."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Student shall be active."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "System sends confirmation message."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Student enter invalid password."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "An entry condition is a state that must be true before the use case can begin. A student must be 'active' in the system as a prerequisite for adding courses."
+    },
+    {
+      "id": "extract-1776181366915-jfn2f-11",
+      "number": "53",
+      "text": "What is the relationship between use case \"Add Course\" and use case \"Registration Closed\" and which one is the base use case?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Relationship is «extend» and the base use case is 'Add Course' and the extending use case is 'Registration Closed'."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Relationship is «extend» and the base use case is 'Registration Closed' and the extend 'Add Course'."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Relationship is <<include>> and the base use case is 'Add Course' and the included 'Registration Closed'."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Relationship is «include» and the base use case is 'Registration Closed' and the extend 'Add Course'."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The 'extend' relationship is used to handle conditional or exceptional behavior. 'Registration Closed' is a condition that extends the standard 'Add Course' behavior. Therefore, 'Add Course' is the base use case."
+    },
+    {
+      "id": "extract-1776181366915-jfn2f-12",
+      "number": "54",
+      "text": "What is the relationship between use case \"Login\" and \"UseCase2\"?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Relationship \"include\" and the base case is \"UseCase2\" and the included use case is \"Login\""
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Relationship \"include\" and the base case is \"Login\" and the included use case is \"UseCase2\""
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Relationship \"extend\" and the base case is \"UseCase2\" and the extending use case is \"Login\""
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Relationship \"extend\" and the base case is \"Login\" and the extending use case is \"UseCase2\""
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In most system architectures, specialized functions like UseCase2 include a core Login component for security. UseCase2 acts as the base case that includes Login."
+    },
+    {
+      "id": "extract-1776181366915-jfn2f-13",
+      "number": "55",
+      "text": "What is the last step of the basic flow of the use case \"Add Course\"?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Student enter course name."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Student enter password."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Student clicks ok button on confirmation message."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Student shall be active."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Include (login)."
+        },
+        {
+          "value": "F",
+          "label": "F",
+          "text": "Student enter invalid password."
+        },
+        {
+          "value": "G",
+          "label": "G",
+          "text": "Notification email shall be sent to the student."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "G",
+      "explanation": "The final step of a basic flow (happy path) usually involves the system providing the final result or notification to the user. Sending a notification email confirms the completion of the 'Add Course' process."
+    }
+  ],
+  "params": {
+    "chapter": "1"
+  },
+  "q": 55
+}
