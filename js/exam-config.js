@@ -545,7 +545,7 @@ const EXAM_CONFIG = [
       },
       {
         "id": "Mid (Zplus)",
-        "name": "Combined Questions",
+        "name": "hard (ch1,ch2,ch3) ",
         "q": 125,
         "file": "data/os/Mid (Zplus).json"
       }
