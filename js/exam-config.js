@@ -496,68 +496,68 @@ const EXAM_CONFIG = [
     "icon": "data/os/icon.png",
     "chapters": [
       {
-        "id": "ch1",
-        "name": "Chapter 1: Operating System Introduction",
+        "id": "1",
+        "name": "Ch1:Operating System Introduction",
         "q": 25,
         "file": "data/os/ch1.json"
       },
       {
-        "id": "ch2",
-        "name": "Operating-System Structures",
+        "id": "2",
+        "name": "Ch2:Operating-System Structures",
         "q": 25,
         "file": "data/os/ch2.json"
       },
       {
-        "id": "ch3",
-        "name": "Chapter 3: Processes",
+        "id": "3",
+        "name": "Ch3:Processes",
         "q": 25,
         "file": "data/os/ch3.json"
       },
       {
-        "id": "ch4",
-        "name": "Chapter 4: Threads",
+        "id": "4",
+        "name": "Ch4:Threads",
         "q": 29,
         "file": "data/os/ch4.json"
       },
       {
-        "id": "ch5",
-        "name": "Process Synchronization",
+        "id": "5",
+        "name": "Ch5:Process Synchronization",
         "q": 25,
         "file": "data/os/ch5.json"
       },
       {
-        "id": "ch6",
-        "name": "Chapter 6: CPU Scheduling",
+        "id": "6",
+        "name": "Ch6:CPU Scheduling",
         "q": 25,
         "file": "data/os/ch6.json"
       },
       {
-        "id": "ch7",
-        "name": "Chapter 7: Deadlocks",
+        "id": "7",
+        "name": "Ch7:Deadlocks",
         "q": 25,
         "file": "data/os/ch7.json"
       },
       {
-        "id": "ch8",
-        "name": "Main Memory Management",
+        "id": "8",
+        "name": "Ch8:Main Memory Management",
         "q": 25,
         "file": "data/os/ch8.json"
       },
       {
-        "id": "ch9",
-        "name": "Virtual Memory Management",
+        "id": "9",
+        "name": "Ch9:Virtual Memory Management",
         "q": 25,
         "file": "data/os/ch9.json"
       },
       {
-        "id": "ch10",
-        "name": "Mass-Storage Systems",
+        "id": "10",
+        "name": "Ch10:Mass-Storage Systems",
         "q": 25,
         "file": "data/os/ch10.json"
       },
       {
-        "id": "Mid (Zplus)",
-        "name": "hard (ch1,ch2,ch3) ",
+        "id": "11",
+        "name": "Mid (ch1,ch2,ch3) By Z+ (hard)",
         "q": 125,
         "file": "data/os/Mid (Zplus).json"
       }
