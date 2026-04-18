@@ -1,0 +1,1368 @@
+{
+  "id": "upload-1776520926366-5mx1k",
+  "label": "ch08.ppt",
+  "params": {
+    "file": "ch08.ppt",
+    "chapter": "3"
+  },
+  "title": "Ch8:Introduction to Switching",
+  "questions": [
+    {
+      "id": "upload-1776520926366-0",
+      "number": "1",
+      "text": "What is the primary function of a switch in a network?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To provide permanent physical links between all devices."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To create temporary connections between two or more linked devices."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To act as an end system for user communication."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To provide constant bandwidth to all nodes simultaneously."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A switch is a device capable of creating temporary connections between two or more devices linked to it, allowing for the efficient transfer of data without requiring permanent dedicated links between every possible pair."
+    },
+    {
+      "id": "upload-1776520926366-1",
+      "number": "2",
+      "text": "In a switched network, nodes that are NOT connected to end systems are typically used for:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Data storage"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Routing"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Signal generation"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Encryption"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Nodes in a switched network are either connected to end systems or used strictly for routing traffic through the network."
+    },
+    {
+      "id": "upload-1776520926366-0",
+      "number": "3",
+      "text": "At which layer of the OSI model does circuit switching take place?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Data Link Layer"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Network Layer"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Physical Layer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Transport Layer"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Circuit switching takes place at the physical layer, involving physical links and dedicated channels."
+    },
+    {
+      "id": "upload-1776520926366-1",
+      "number": "4",
+      "text": "Which of the following is a characteristic of circuit switching?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Data is divided into packets."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Resources are allocated on demand."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Resources must be reserved before communication starts."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Each packet is treated independently."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In circuit switching, stations must make a reservation for resources (bandwidth, switches) before communication begins."
+    },
+    {
+      "id": "upload-1776520926366-2",
+      "number": "5",
+      "text": "In a circuit-switched network, how is a single link typically divided into multiple channels?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Using VCI identifiers"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Using FDM or TDM"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Using routing tables"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Using destination addresses"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Physical links in circuit switching are normally divided into channels using Frequency-Division Multiplexing (FDM) or Time-Division Multiplexing (TDM)."
+    },
+    {
+      "id": "upload-1776520926366-3",
+      "number": "6",
+      "text": "During which phase(s) is addressing used in circuit-switched networks?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Only during the data transfer phase"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Throughout all phases"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Only during the setup phase"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "During setup and teardown only"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Addressing is used only during the setup phase to establish the dedicated connection; once established, the data flows through the reserved path without needing further addressing."
+    },
+    {
+      "id": "upload-1776520926366-4",
+      "number": "7",
+      "text": "What is the primary reason for the low efficiency of circuit-switched networks in computer communications?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "High propagation delay"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Resources remain allocated even during periods of no activity."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The overhead of packet headers"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Frequent packet collisions"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Efficiency is low because once resources are allocated for a connection, they are unavailable to others, even if no data is being sent (idle time)."
+    },
+    {
+      "id": "upload-1776520926366-5",
+      "number": "8",
+      "text": "In circuit switching, the 'delay' during data transfer consists of:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Transmission time + Propagation time"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Transmission time + Waiting time at switches"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Setup time + Transmission time + Queuing time"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Propagation time + Waiting time"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Once the circuit is established, there is no waiting time at each node. The delay is simply the sum of transmission time and propagation time."
+    },
+    {
+      "id": "upload-1776520926366-6",
+      "number": "9",
+      "text": "Suppose a circuit-switched network uses FDM to connect 4-kHz voice channels. If a link supports a maximum of 3 channels, what is the total bandwidth of that link?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4 kHz"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "8 kHz"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "12 kHz"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "16 kHz"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "If each channel requires 4 kHz and there are 3 channels, the total bandwidth is \\( 3 \\times 4\\text{ kHz} = 12\\text{ kHz} \\)."
+    },
+    {
+      "id": "upload-1776520926366-7",
+      "number": "10",
+      "text": "Which network type is traditionally associated with circuit switching?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The Internet"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Telephone Networks"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Local Area Networks (LAN)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Satellite Networks"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The traditional telephone network (PSTN) uses the circuit-switching approach at the physical layer."
+    },
+    {
+      "id": "upload-1776520926366-8",
+      "number": "11",
+      "text": "What happens during the teardown phase of a circuit-switched connection?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The routing table is updated with a new destination."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A signal is sent to each switch to release the reserved resources."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The bandwidth is increased for the next session."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The sender waits for an ACK to confirm data receipt."
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "When a party disconnects, a signal is sent to all switches involved to release the channels and resources for other users."
+    },
+    {
+      "id": "upload-1776520926366-9",
+      "number": "12",
+      "text": "True or False: In circuit switching, data is divided into fixed-size packets before transmission.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In pure circuit switching, data is a continuous stream and is not packetized."
+    },
+    {
+      "id": "upload-1776520926366-10",
+      "number": "13",
+      "text": "The total delay in circuit switching includes the time to create the connection, the time to transfer data, and the time to disconnect the circuit.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Total delay = Setup time + Data transfer time (transmission + propagation) + Teardown time."
+    },
+    {
+      "id": "upload-1776520926366-11",
+      "number": "14",
+      "text": "In Example 8.2, a T-1 line connects two offices with 4x8 switches. Why are four output ports 'folded' back into the input ports?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To increase the speed of the T-1 line."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To allow communication between computers in the same office."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To prevent data collisions."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To act as a backup in case of switch failure."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Folding output ports into input ports allows the switch to route internal traffic within the same office."
+    },
+    {
+      "id": "upload-1776520926366-12",
+      "number": "15",
+      "text": "In the circuit switching setup phase, what is the 'ACK' sent by system M used for?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To acknowledge the receipt of the first data packet."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To confirm that the connection is established and the sender can start data transfer."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To request the destination address."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To release the circuit resources."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "System A only starts the data transfer phase after receiving the ACK from system M, which confirms the end-to-end path is ready."
+    },
+    {
+      "id": "upload-1776520926366-0",
+      "number": "16",
+      "text": "At which layer of the OSI model does datagram switching primarily occur in the Internet?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Physical Layer"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data Link Layer"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Network Layer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Application Layer"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In the Internet, packet switching using the datagram approach is performed at the network layer."
+    },
+    {
+      "id": "upload-1776520926366-1",
+      "number": "17",
+      "text": "Datagram networks are characterized as being:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Connection-oriented"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Connectionless"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Resource-reserved"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Fixed-path"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Datagram networks are connectionless, meaning there are no setup or teardown phases, and each packet is handled independently."
+    },
+    {
+      "id": "upload-1776520926366-2",
+      "number": "18",
+      "text": "How are resources allocated in a datagram network?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Reserved during the setup phase"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Allocated on demand (first-come, first-served)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Pre-allocated by the network administrator"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Dedicated to each specific user"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In datagram networks, there is no reservation; resources are allocated on demand as packets arrive."
+    },
+    {
+      "id": "upload-1776520926366-3",
+      "number": "19",
+      "text": "The routing table in a datagram switch is based on which information?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Source Address"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "VCI"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Destination Address"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Port Number only"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In datagram networks, switches (routers) use the destination address in the packet header to determine the output port."
+    },
+    {
+      "id": "upload-1776520926366-4",
+      "number": "20",
+      "text": "What happens to the destination address in the header of a packet as it travels through a datagram network?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It changes at every switch."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It is removed after the first hop."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It remains the same during the entire journey."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It is encrypted by each router."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The destination address remains constant in a datagram packet header from the source to the final destination."
+    },
+    {
+      "id": "upload-1776520926366-5",
+      "number": "21",
+      "text": "Why is datagram switching considered more efficient than circuit switching?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Because it has no propagation delay."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Because resources are reallocated for other packets during idle times."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Because packets always follow the same path."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Because it uses FDM to divide links."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Efficiency is high because resources are only used when packets are being transferred. If a source is idle, those resources can be used by other packets."
+    },
+    {
+      "id": "upload-1776520926366-6",
+      "number": "22",
+      "text": "In addition to transmission and propagation time, what additional delay is common in datagram networks?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Setup delay"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Waiting (queuing) time at switches"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Teardown delay"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "VCI translation delay"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Because resources are not reserved, packets may have to wait in a queue at a switch if the output port is busy, leading to variable delay."
+    },
+    {
+      "id": "upload-1776520926366-7",
+      "number": "23",
+      "text": "True or False: In a datagram network, all packets from Source A to Destination B must follow the same physical path.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Each packet is treated independently; if the routing table changes or traffic patterns shift, different packets of the same message may take different paths."
+    },
+    {
+      "id": "upload-1776520926366-8",
+      "number": "24",
+      "text": "Which of the following determines the size of the packets in a datagram network?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The user's computer only"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The destination telephone"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The network and the governing protocol"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The number of switches in the path"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The network and its protocols determine whether packets are of fixed or variable size."
+    },
+    {
+      "id": "upload-1776520926366-9",
+      "number": "25",
+      "text": "Compared to circuit switching, the delay in a datagram network is usually:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Lower"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Greater"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Zero"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The same"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Due to waiting/queuing times at each switch, the overall delay in datagram networks is typically greater and more variable."
+    },
+    {
+      "id": "upload-1776520926366-0",
+      "number": "26",
+      "text": "A virtual-circuit network is described as a 'cross' between circuit switching and datagram switching because:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It uses FDM and routing tables simultaneously."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It has setup/teardown phases like circuit switching but packets carry addresses like datagram switching."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It only operates at the physical layer."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It does not use switches."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Virtual-circuit networks combine the connection-oriented phases (setup/teardown) of circuit switching with the packetized data transfer of datagram networks."
+    },
+    {
+      "id": "upload-1776520926366-1",
+      "number": "27",
+      "text": "In which layer is virtual-circuit switching normally implemented in Wide Area Networks (WANs)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Physical Layer"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data Link Layer"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Network Layer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Session Layer"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Switching at the data link layer in a switched WAN is normally implemented using virtual-circuit techniques."
+    },
+    {
+      "id": "upload-1776520926366-2",
+      "number": "28",
+      "text": "What does 'VCI' stand for in the context of virtual-circuit networks?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Virtual Channel Interface"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Virtual Connection Identifier"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Virtual Circuit Identifier"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Variable Circuit Index"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "VCI stands for Virtual Circuit Identifier, which is a local address used for identifying the circuit within the scope of a switch."
+    },
+    {
+      "id": "upload-1776520926366-3",
+      "number": "29",
+      "text": "What is the scope of a Virtual Circuit Identifier (VCI)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "International scope"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Universal scope within the entire network"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Local scope within a switch"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Scope limited only to the end systems"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The VCI is a small number that has only switch scope. When a frame leaves a switch, its VCI is usually changed."
+    },
+    {
+      "id": "upload-1776520926366-4",
+      "number": "30",
+      "text": "In a virtual-circuit network, when is the global destination address used?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "In every data packet header"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Only during the teardown phase"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Only during the setup phase to create the VCIs"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It is never used; only VCIs are used."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Global addressing is used only during the setup phase to establish the connection and fill in the VCI tables in the switches."
+    },
+    {
+      "id": "upload-1776520926366-5",
+      "number": "31",
+      "text": "Which of the following is true regarding packet paths in virtual-circuit networks?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Each packet can take a different path."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "All packets belonging to the same source and destination travel the same path."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Path selection is done for each packet independently at every switch."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Packets do not follow a physical path; they are broadcast."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Once the setup phase is complete, a fixed path is defined, and all packets for that connection follow the same route."
+    },
+    {
+      "id": "upload-1776520926366-6",
+      "number": "32",
+      "text": "In the Virtual-Circuit Setup Phase, the 'Setup Acknowledgement' frame is sent by the:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Sender"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Receiver"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "First Switch"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Network Administrator"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The receiver sends the Setup Acknowledgement back to the sender to complete the table entries in the switches along the path."
+    },
+    {
+      "id": "upload-1776520926366-7",
+      "number": "33",
+      "text": "During the Teardown Phase in a virtual-circuit network, what action do the switches take?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "They increase the VCI number for the next user."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "They delete the corresponding entry from their routing/switch tables."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "They restart the setup phase immediately."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "They store the path for future use."
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Once a teardown request or confirmation is processed, switches delete the VCI mapping entries from their tables to free up resources."
+    },
+    {
+      "id": "upload-1776520926366-8",
+      "number": "34",
+      "text": "Efficiency in virtual-circuit switching is higher than circuit switching because:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It uses global addresses for every packet."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Resources can be allocated on demand rather than reserved exclusively."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It does not require a setup phase."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It operates at the physical layer."
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "While VC networks have a setup phase, resource allocation can be on demand, allowing the network to be more flexible than rigid circuit switching."
+    },
+    {
+      "id": "upload-1776520926366-9",
+      "number": "35",
+      "text": "True or False: In virtual-circuit switching, packets may arrive at the destination with different delays if resource allocation is on demand.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Even though all packets follow the same path, if resources are allocated on demand, packets might experience different queuing delays at switches."
+    },
+    {
+      "id": "upload-1776520926366-0",
+      "number": "36",
+      "text": "Which switching method requires the destination address to be present in every packet header throughout the entire data transfer?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Circuit Switching"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Datagram Switching"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Virtual-Circuit Switching"
+        },
+        {
+          "value": "D",
+          "label": "B and C only",
+          "text": "B and C only"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Datagram switching, each packet must contain the full destination address. In VC, packets contain a VCI. In Circuit Switching, addressing is only used in setup."
+    },
+    {
+      "id": "upload-1776520926366-1",
+      "number": "37",
+      "text": "Match the technology to the phase requirement: 'No setup or teardown phases.'",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Circuit Switching"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Datagram Switching"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Virtual-Circuit Switching"
+        },
+        {
+          "value": "D",
+          "label": "All of the above",
+          "text": "All of the above"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Datagram switching is connectionless and does not utilize setup or teardown phases."
+    },
+    {
+      "id": "upload-1776520926366-2",
+      "number": "38",
+      "text": "Which of the following is true regarding resource reservation in the three types of switching?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Circuit: Mandatory; Datagram: Mandatory; VC: Optional"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Circuit: Mandatory; Datagram: None; VC: Optional/On-demand"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Circuit: Optional; Datagram: None; VC: Mandatory"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Circuit switching requires reservation. Datagram has no reservation. Virtual-Circuit can allocate during setup or on demand."
+    },
+    {
+      "id": "upload-1776520926366-3",
+      "number": "39",
+      "text": "Identify the component 'Waiting time at switches' as a major delay factor in:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Circuit Switching only"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Datagram Switching only"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Datagram and Virtual-Circuit (if on-demand)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Waiting/queuing time occurs when multiple packets compete for the same resource, common in Datagram and some Virtual-Circuit implementations."
+    },
+    {
+      "id": "upload-1776520926366-4",
+      "number": "40",
+      "text": "In a datagram network, what is the 'Routing Table' based on?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Global Destination Address"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "VCI"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Port numbers only"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Packet sequence numbers"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The routing table in a datagram network uses the destination address to decide where to send the packet next."
+    },
+    {
+      "id": "upload-1776520926366-5",
+      "number": "41",
+      "text": "Which of the following best describes the path of packets in Datagram Switching?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A dedicated physical path is established."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "All packets follow the same path established in setup."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Each packet is routed independently and may take different paths."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Packets are broadcast to all nodes."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Since datagram switching is connectionless, each packet is routed based on the current state of routing tables, potentially taking different routes."
+    },
+    {
+      "id": "upload-1776520926366-6",
+      "number": "42",
+      "text": "If a system sends a 'Setup Request' to Switch I, including the address of System M, which switching type is being initiated?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Circuit Switching or Virtual-Circuit Switching"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Datagram Switching"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Only Circuit Switching"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Message Switching"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Both Circuit and Virtual-Circuit switching require a setup phase initiated by a request containing the destination address."
+    },
+    {
+      "id": "upload-1776520926366-7",
+      "number": "43",
+      "text": "When comparing the three types, which one typically provides the highest reliability for real-time constant-bit-rate voice communication?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Datagram Switching"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Virtual-Circuit Switching"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Circuit Switching"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All are equal"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Circuit switching provides a dedicated channel with guaranteed bandwidth and minimal delay variance, making it ideal for traditional voice traffic."
+    },
+    {
+      "id": "upload-1776520926366-8",
+      "number": "44",
+      "text": "What does a 'Teardown Confirmation' frame signify in a Virtual-Circuit network?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The sender is ready to send more data."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The receiver has acknowledged the end of the connection."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The connection has failed due to error."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The VCI table has been updated with new values."
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "It is the final step in the teardown phase where the receiver confirms it has received the request to disconnect."
+    },
+    {
+      "id": "upload-1776520926366-9",
+      "number": "45",
+      "text": "Which method is the most appropriate for bursty data traffic commonly found in computer networks?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Circuit Switching"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Datagram Switching"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Dedicated lines"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Fixed-line FDM"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Datagram switching is highly efficient for bursty data because it does not tie up resources during idle periods."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 45
+}
