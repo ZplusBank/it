@@ -1,0 +1,4106 @@
+{
+  "title": "Hard quesions (ch1+ch2+ch3)",
+  "timestamp": 1776512499146,
+  "totalQuestions": 125,
+  "questions": [
+    {
+      "id": "upload-1776511743902-0",
+      "number": "1",
+      "text": "Which of the following describes the 'desktop metaphor' typically found in a Graphical User Interface (GUI)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A text-based entry system where commands are typed into a shell."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "An interface using icons to represent files, programs, and actions, often navigated with a mouse."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A system where programs are submitted in batches and executed without user interaction."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A kernel-level interface that bypasses the hardware abstraction layer."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "A purely voice-activated command system used in mobile environments."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A GUI provides a desktop metaphor where icons represent system objects and actions are performed via mouse/keyboard interactions, as pioneered at Xerox PARC."
+    },
+    {
+      "id": "upload-1776511743902-1",
+      "number": "2",
+      "text": "Modern operating systems often include multiple interfaces. Which of the following statements correctly matches an OS to its interface structure?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Microsoft Windows is strictly a CLI with a GUI shell wrapper."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Apple Mac OS X uses a GUI interface with a UNIX kernel and available shells."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Linux systems are GUI-only and do not allow Command Line Interfaces."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Unix systems have a GUI kernel that cannot be bypassed by CLI shells."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "MS-DOS was the first system to implement a hybrid GUI-UNIX kernel."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Mac OS X (now macOS) uses the Aqua GUI with a BSD-based UNIX kernel underneath, providing both graphical and command-line access."
+    },
+    {
+      "id": "upload-1776511743902-2",
+      "number": "3",
+      "text": "System programs are divided into several categories. Which of the following are considered valid categories of system programs? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "File manipulation and modification"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Status information"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Programming language support"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Background services (daemons)"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Hardware manufacturing tools"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD",
+      "explanation": "System programs include file management, status info, language support, program loading, communications, and background services. Hardware manufacturing is not an OS system program category."
+    },
+    {
+      "id": "upload-1776511743902-3",
+      "number": "4",
+      "text": "What is the primary characteristic of 'Background Services' (also known as daemons or subsystems)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "They run exclusively in kernel mode to ensure system stability."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "They are launched only when a user clicks an icon on the desktop."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "They provide facilities like error logging and process scheduling while running in user context."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "They are typically considered part of the Application Program layer, not the OS."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "They terminate immediately after the bootstrap loader finishes."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Services or daemons run from boot to shutdown in user context (not kernel context) to provide essential system functions like disk checking or scheduling."
+    },
+    {
+      "id": "upload-1776511743902-4",
+      "number": "5",
+      "text": "When defining the design and implementation of an OS, which of the following is considered a **System Goal** rather than a User Goal?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The system should be convenient to use."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The system should be easy to learn."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The system should be easy to maintain and flexible."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The system should be safe and fast for the user."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The system should provide a familiar desktop metaphor."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "User goals focus on convenience, ease of use, and speed. System goals focus on the 'developer' side: ease of design, implementation, maintenance, and efficiency."
+    },
+    {
+      "id": "upload-1776511743902-5",
+      "number": "6",
+      "text": "The original UNIX operating system is often described as having a limited structure. What are the two main separable parts of the original UNIX OS?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The Microkernel and the Nano-kernel"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The GUI and the CLI"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The Systems programs and the Kernel"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The BIOS and the File System"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The Application layer and the Driver layer"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The traditional UNIX structure consists of system programs and the monolithic kernel, which contains everything below the system-call interface and above the hardware."
+    },
+    {
+      "id": "upload-1776511743902-6",
+      "number": "7",
+      "text": "Which of the following describes the 'Layered Approach' to system structure?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "All functions are contained within a single, large kernel address space."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The OS is divided into layers where each layer uses only the services of lower-level layers."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The kernel is kept as small as possible, and services are moved to user space."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Components communicate solely through message passing between independent modules."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "A system where the hardware is the highest layer (Layer N)."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In a layered approach, Layer 0 is the hardware and Layer N is the user interface; each layer is an abstraction that utilizes the functionality of the layer directly beneath it."
+    },
+    {
+      "id": "upload-1776511743902-7",
+      "number": "8",
+      "text": "What are the primary benefits of using a **Microkernel** architecture? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Easier to extend the OS by adding new services to user space."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Increased performance due to reduced context switching."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Increased reliability, as less code runs in kernel mode."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Easier to port the OS to new hardware architectures."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Eliminates the need for message passing."
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "checkbox",
+      "correctAnswer": "ACD",
+      "explanation": "Microkernels are easier to extend and port, and they are more reliable/secure. However, they suffer from performance overhead due to communication between user space and kernel space."
+    },
+    {
+      "id": "upload-1776511743902-8",
+      "number": "9",
+      "text": "Most modern operating systems like Linux and Solaris use **Loadable Kernel Modules**. How does this approach differ from a strictly layered approach?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Modules must be recompiled every time a new device is added."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It is more flexible because any module can call any other module over known interfaces, unlike strict layers."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Modules run in user space to prevent kernel crashes."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It requires the entire kernel to be loaded into ROM at all times."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "It uses a message-passing bus similar to the microkernel architecture."
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "While modular kernels resemble layered systems, they are more flexible because modules can interact more freely than the strict top-down dependency of a layered system."
+    },
+    {
+      "id": "upload-1776511743902-9",
+      "number": "10",
+      "text": "Mac OS X is considered a **Hybrid System**. Which components make up its kernel (Darwin)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Windows NT kernel and the Linux shell."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Mach microkernel and parts of BSD Unix."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "MS-DOS and the Java Virtual Machine."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The Dalvik VM and the Android API."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Strictly the Cocoa Touch programming environment."
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Mac OS X/Darwin combines the Mach microkernel for core tasks and BSD Unix for POSIX support and networking, making it a hybrid."
+    },
+    {
+      "id": "upload-1776511743902-10",
+      "number": "11",
+      "text": "In the Android architecture, what is the role of the **Dalvik Virtual Machine**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It provides power management for the Linux kernel."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It acts as the primary web browser framework (Webkit)."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It executes translated Java bytecode for applications."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It manages the SQLite database connections."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "It is the primary C++ library used for system calls."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Android apps are written in Java, compiled to bytecode, and then translated to be run in the Dalvik VM (or ART in newer versions)."
+    },
+    {
+      "id": "upload-1776511743902-11",
+      "number": "12",
+      "text": "Which of the following are sets of services provided by the OS specifically to ensure **efficient operation** of the system? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Resource allocation"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Accounting"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Program execution"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Protection and security"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "I/O operations"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "checkbox",
+      "correctAnswer": "ABD",
+      "explanation": "Resource allocation, Accounting, and Protection/Security are services for system efficiency and sharing. Program execution and I/O operations are services that specifically help the user."
+    },
+    {
+      "id": "upload-1776511743902-12",
+      "number": "13",
+      "text": "Most programmers access OS services through an **Application Programming Interface (API)**. Why is an API used instead of direct system calls?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Direct system calls are only available in assembly language."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "APIs allow for greater portability and handle the complex details of the system-call interface."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "APIs are faster than direct system calls because they bypass the kernel."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Direct system calls cannot pass parameters to the kernel."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "APIs prevent the use of the C standard library."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "APIs like Win32 or POSIX provide a standard interface for programmers, making code portable and hiding the low-level complexity of kernel interactions."
+    },
+    {
+      "id": "upload-1776511743902-13",
+      "number": "14",
+      "text": "Identify the three general methods used to pass parameters to the operating system during a system call. (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Passing parameters in registers"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Storing parameters in a block/table in memory and passing the address in a register"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Pushing parameters onto a stack to be popped by the OS"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Storing parameters in the CPU's L1 cache directly"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Hardcoding parameters into the kernel's source code during SYSGEN"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "checkbox",
+      "correctAnswer": "ABC",
+      "explanation": "The three standard methods are using registers (fast but limited space), memory blocks (for many parameters), or the system stack."
+    },
+    {
+      "id": "upload-1776511743902-14",
+      "number": "15",
+      "text": "Under **Process Control**, which of the following is a valid system call function?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Reposition (seek) a file pointer"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Logically attach or detach a device"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Wait for a specific event or signal"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Get or set system time and date"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Create a communication connection to a host"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Waiting for an event/signal, creating/terminating processes, and allocating memory are all Process Control system calls."
+    },
+    {
+      "id": "upload-1776511743902-15",
+      "number": "16",
+      "text": "What is the primary difference between a **Core Dump** and a **Crash Dump**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A core dump is for hardware failure, while a crash dump is for user input errors."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A core dump captures memory of a failed application process; a crash dump captures kernel memory after an OS failure."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Crash dumps are only generated in Linux, while core dumps are only in Windows."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "There is no difference; the terms are synonymous."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Core dumps are used for performance tuning, while crash dumps are for security auditing."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Core dumps pertain to specific user processes that fail, whereas crash dumps pertain to the operating system kernel itself failing."
+    },
+    {
+      "id": "upload-1776511743902-16",
+      "number": "17",
+      "text": "The **DTrace** tool is used for live instrumentation and debugging. What are 'probes' in the context of DTrace?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Hardware sensors that detect CPU heat."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Special kernel modules used to simulate hardware failure."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Points in code that 'fire' when executed, capturing state data to be sent to consumers."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Security protocols that check for unauthorized user access."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Registers used to pass parameters to system calls."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "DTrace uses probes (dynamic instrumentation points) that fire when specific code is executed, allowing for performance analysis and debugging without restarting the system."
+    },
+    {
+      "id": "upload-1776511743902-17",
+      "number": "18",
+      "text": "During the **System Boot** process, what is the role of the **Bootstrap Loader**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It manages the UI and icons on the desktop."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It is a small piece of code in ROM that locates the kernel and starts its execution."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It is a system program used to create core dump files."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It executes the SYSGEN program to configure the hardware."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "It is a user-mode service that provides status information."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The bootstrap loader (found in ROM or EEPROM) is the initial code executed to locate the OS kernel on disk, load it into memory, and begin execution."
+    },
+    {
+      "id": "upload-1776511743902-18",
+      "number": "19",
+      "text": "Which boot-related component allows a user to select from multiple kernels or disk versions?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The System Registry"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "DTrace"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "GRUB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The POSIX API"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The Dalvik VM"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "GRUB is a common bootstrap loader that provides a menu to select different operating systems, kernel versions, or boot options."
+    },
+    {
+      "id": "upload-1776511743902-19",
+      "number": "20",
+      "text": "In OS implementation, why is it beneficial to use high-level languages like C or C++ instead of Assembly? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code is easier to port to other hardware architectures."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code is faster to write and easier to debug."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "High-level languages are always faster than Assembly code."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "They allow for the use of complex data structures and object-oriented design."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "They eliminate the need for a compiler."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "checkbox",
+      "correctAnswer": "ABD",
+      "explanation": "High-level languages improve portability and developer productivity, though they may be slightly slower than hand-optimized assembly. C and C++ are the standard for modern OS development."
+    },
+    {
+      "id": "upload-1776511743902-20",
+      "number": "21",
+      "text": "What does the term **Profiling** refer to in the context of OS debugging?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Assigning security permissions to a specific user account."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Periodic sampling of the instruction pointer to find statistical trends in code execution."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The process of hardware configuration during boot (SYSGEN)."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Creating a log file of all system calls made by a process."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Identifying the hardware components connected to the system."
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Profiling helps identify 'hot spots' in code by sampling the instruction pointer, allowing developers to optimize performance where it is most needed."
+    },
+    {
+      "id": "upload-1776511743902-21",
+      "number": "22",
+      "text": "Which of the following describes the relationship between a Standard C Library call (like `printf()`) and a system call (like `write()`) in a Unix environment?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`printf()` is a system call, and `write()` is a library call."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The application calls `printf()`, which then invokes the `write()` system call through the API interface."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`printf()` and `write()` are identical and use the same interrupt vector."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Library calls never interact with system calls for security reasons."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "System calls are only used by the kernel, while library calls are used by hardware drivers."
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Standard libraries provide high-level functions that programmers use. These functions internally manage the necessary system calls (like `write()` for output) to interact with the kernel."
+    },
+    {
+      "id": "upload-1776511743902-22",
+      "number": "23",
+      "text": "What is the primary purpose of a **SYSGEN** (System Generation) program?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To generate user-level application programs automatically."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To configure the OS kernel for a specific hardware site and configuration."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To detect and fix bugs in the kernel using trace listings."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To act as a secondary bootstrap loader for GRUB."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "To manage the message-passing queue in a microkernel."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "SYSGEN allows a generic OS to be tailored to the specific hardware (CPU, memory, devices) of a particular installation, creating a more efficient, tuned kernel."
+    },
+    {
+      "id": "upload-1776511743902-23",
+      "number": "24",
+      "text": "How does a touchscreen interface differ from a traditional GUI? (Select all that apply)",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It relies on gestures rather than mouse clicks."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It often uses a virtual keyboard for text entry."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It does not support voice commands."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It may require entirely new UI paradigms because a mouse is not desired."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "It runs exclusively on the Mach microkernel."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "checkbox",
+      "correctAnswer": "ABD",
+      "explanation": "Touchscreens use gestures and virtual keyboards and require different design considerations than mouse-and-keyboard GUIs. Voice commands are often supported but are not the primary 'touch' distinction."
+    },
+    {
+      "id": "upload-1776511743902-24",
+      "number": "25",
+      "text": "In a **Shared-Memory** model of inter-process communication (IPC), how is information transferred?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Processes send packets of data to each other via kernel-managed mailboxes."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Processes create and gain access to common regions of memory to read and write data."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The kernel copies data from the sender's stack to the receiver's registers."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Communication occurs only through network sockets."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Data is written to a file on disk that is then read by the other process."
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The shared-memory model involves processes creating regions of memory that both can access, allowing for high-speed data exchange compared to message passing."
+    },
+    {
+      "id": "upload-1776511743902-25",
+      "number": "26",
+      "text": "According to the Silberschatz text, which of the following are the primary goals of an operating system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Execute user programs and make solving user problems easier."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Make the computer system convenient to use."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Use the computer hardware in an efficient manner."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Minimize the cost of hardware manufacturing."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Provide a platform for compiler development only."
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "checkbox",
+      "correctAnswer": "ABC",
+      "explanation": "The OS acts as an intermediary with three main goals: convenience, efficiency, and program execution."
+    },
+    {
+      "id": "upload-1776511743902-26",
+      "number": "27",
+      "text": "What is the primary purpose of the 'Kernel' in a computer system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It is the program that is running at all times on the computer."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It is a set of utilities used to manage files."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It is the GUI layer that interacts with the user."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It is the hardware component that manages the CPU."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "It is the application layer for web browsing."
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The kernel is the one program running at all times on the computer; everything else is either a system program or an application program."
+    },
+    {
+      "id": "upload-1776511743902-27",
+      "number": "28",
+      "text": "In dual-mode operation, which bit setting typically indicates that the system is in 'Kernel Mode'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Mode bit = 1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Mode bit = 0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Interrupt bit = 1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Wait bit = 0"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Standard OS architecture uses a mode bit where 0 represents kernel/monitor/system mode and 1 represents user mode."
+    },
+    {
+      "id": "upload-1776511743902-28",
+      "number": "29",
+      "text": "Which of the following events would cause the mode bit to transition from User Mode to Kernel Mode?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A system call (trap)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "An external interrupt"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A hardware failure"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Completion of a user-level arithmetic operation"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "A software-generated error"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCE",
+      "explanation": "Whenever an interrupt or trap occurs, the hardware switches from user mode to kernel mode to handle the event."
+    },
+    {
+      "id": "upload-1776511743902-29",
+      "number": "30",
+      "text": "Which of the following components are typically found in a Process Control Block (PCB)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Process State"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Program Counter"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "CPU Registers"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Memory-management information"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Monitor Refresh Rate"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD",
+      "explanation": "The PCB contains the state, PC, registers, memory limits, and list of open files, but not hardware peripherals like monitor refresh rates."
+    },
+    {
+      "id": "upload-1776511743902-30",
+      "number": "31",
+      "text": "A process has just been created. Into which state is it initially placed according to the 5-state process model?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Running"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Waiting"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Ready"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "New"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Terminated"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The 'New' state represents a process being created before it is admitted to the 'Ready' queue."
+    },
+    {
+      "id": "upload-1776511743902-31",
+      "number": "32",
+      "text": "Which scheduling algorithm is non-preemptive by definition and results in the 'Convoy Effect'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Round Robin (RR)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Shortest Job First (SJF)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "First-Come, First-Served (FCFS)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Multilevel Queue Scheduling"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "FCFS suffers from the Convoy Effect, where small processes wait for one long process to release the CPU."
+    },
+    {
+      "id": "upload-1776511743902-32",
+      "number": "33",
+      "text": "In Round Robin scheduling, what happens when a process's CPU burst exceeds the time quantum \\( q \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The process is terminated."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The process is preempted and put at the end of the ready queue."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The process is given another quantum automatically."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The process is moved to a waiting queue for I/O."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The system enters a deadlock state."
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If the burst is longer than the quantum, the process is preempted and returns to the ready queue to allow other processes to run."
+    },
+    {
+      "id": "upload-1776511743902-33",
+      "number": "34",
+      "text": "Select all the necessary conditions that must hold simultaneously for a deadlock to occur.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Mutual Exclusion"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Hold and Wait"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Preemption"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Circular Wait"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "No Preemption"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "checkbox",
+      "correctAnswer": "ABDE",
+      "explanation": "Deadlock requires Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait. If any one of these is absent, deadlock is impossible."
+    },
+    {
+      "id": "upload-1776511743902-34",
+      "number": "35",
+      "text": "Which of the following is a method for handling deadlocks by ensuring the system never enters an 'unsafe' state?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Deadlock Detection"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Banker's Algorithm"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Ostrich Algorithm"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Mutual Exclusion Elimination"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Banker's Algorithm is a deadlock avoidance algorithm that checks if resource allocation leaves the system in a safe state."
+    },
+    {
+      "id": "upload-1776511743902-35",
+      "number": "36",
+      "text": "What is the primary difference between a 'Logical Address' and a 'Physical Address'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Logical addresses are generated by the CPU; physical addresses are seen by the memory unit."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Physical addresses are used by the programmer; logical addresses are used by the hardware."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Logical addresses are always larger than physical addresses."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "There is no difference in modern systems."
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A logical address (virtual address) is generated by the CPU and translated by the MMU into a physical address in RAM."
+    },
+    {
+      "id": "upload-1776511743902-36",
+      "number": "37",
+      "text": "In a Paging system, if the page size is \\( 2^n \\) bytes and the logical address is \\( m \\) bits, how many bits represent the page offset?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( m \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( n \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( m - n \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( 2^n \\)"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The low-order bits (n) of a logical address define the page offset, while the high-order bits (m-n) designate the page number."
+    },
+    {
+      "id": "upload-1776511743902-37",
+      "number": "38",
+      "text": "Which of the following are benefits of Virtual Memory?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Allows programs to be larger than physical memory."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Abstracts main memory into a large, uniform array of storage."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Allows files and memory to be shared by several processes."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Eliminates the need for a CPU cache."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Reduces the degree of multiprogramming."
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "checkbox",
+      "correctAnswer": "ABC",
+      "explanation": "Virtual memory allows for larger logical address spaces, sharing, and more efficient process creation, though it does not replace the cache."
+    },
+    {
+      "id": "upload-1776511743902-38",
+      "number": "39",
+      "text": "What is 'Thrashing' in the context of memory management?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The process of clearing the cache during a context switch."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "High paging activity where a system spends more time paging than executing."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A hardware failure in the hard drive motor."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The allocation of memory to a process that is not running."
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Thrashing occurs when a system does not have enough frames for the working set of active processes, causing constant page faults."
+    },
+    {
+      "id": "upload-1776511743902-39",
+      "number": "40",
+      "text": "Which disk scheduling algorithm selects the request with the minimum seek time from the current head position?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "FCFS"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "SCAN"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "SSTF (Shortest Seek Time First)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "C-LOOK"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "SSTF chooses the request closest to the current head position to minimize head movement."
+    },
+    {
+      "id": "upload-1776511743902-40",
+      "number": "41",
+      "text": "A 'Race Condition' occurs when:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Two threads access shared data concurrently and the outcome depends on the order of execution."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A process is unable to finish because it is waiting for a resource."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The CPU scheduler cannot decide which process to run."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A user tries to run two programs at the same time."
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Race conditions happen when several processes/threads access and manipulate the same data concurrently and the result depends on the particular order."
+    },
+    {
+      "id": "upload-1776511743902-41",
+      "number": "42",
+      "text": "Which synchronization primitive consists of an integer variable that is accessed only through two standard atomic operations: `wait()` and `signal()`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Mutex lock"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Monitor"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Semaphore"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Critical Section"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Semaphores use wait (P) and signal (V) operations to manage access to shared resources."
+    },
+    {
+      "id": "upload-1776511743902-42",
+      "number": "43",
+      "text": "In the context of I/O, what does DMA (Direct Memory Access) allow?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The CPU to bypass the memory unit entirely."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Device controllers to transfer blocks of data directly to/from main memory without CPU intervention for every byte."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Users to access the hard drive without a password."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The OS to run on a computer without RAM."
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "DMA is used for high-speed I/O devices to transmit information between the device and memory without burdening the CPU with every byte of the transfer."
+    },
+    {
+      "id": "upload-1776511743902-43",
+      "number": "44",
+      "text": "Which of the following are common file-allocation methods?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Contiguous Allocation"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Linked Allocation"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Indexed Allocation"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Parallel Allocation"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Distributed Hash Allocation"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "checkbox",
+      "correctAnswer": "ABC",
+      "explanation": "Contiguous, Linked, and Indexed are the three major methods of allocating disk space for files."
+    },
+    {
+      "id": "upload-1776511743902-44",
+      "number": "45",
+      "text": "What is the purpose of a 'Translation Lookaside Buffer' (TLB)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To speed up the translation of logical addresses to physical addresses."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To store frequently used file data."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To act as a secondary CPU."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To handle disk I/O requests."
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The TLB is a fast-lookup hardware cache that stores recently used page-table entries to reduce memory access time."
+    },
+    {
+      "id": "upload-1776511743902-45",
+      "number": "46",
+      "text": "According to the Silberschatz text, which of the following is true regarding 'User Threads' and 'Kernel Threads'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "User threads are supported above the kernel and managed without kernel support."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Kernel threads are supported and managed directly by the operating system."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "User threads are slower than kernel threads."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The kernel is unaware of user-level threads."
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "checkbox",
+      "correctAnswer": "ABD",
+      "explanation": "User threads are managed by a thread library; kernel threads are managed by the OS. The kernel typically does not see user threads."
+    },
+    {
+      "id": "upload-1776511743902-46",
+      "number": "47",
+      "text": "Which of the following describes the 'Belady’s Anomaly'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Adding more CPU cores can decrease performance."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "For some page-replacement algorithms, the page-fault rate may increase as the number of allocated frames increases."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A process can never have more than 1024 pages."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The first page loaded into memory is always the first one replaced."
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Belady's Anomaly is specifically associated with the FIFO page-replacement algorithm."
+    },
+    {
+      "id": "upload-1776511743902-47",
+      "number": "48",
+      "text": "Which of the following are criteria for evaluating CPU scheduling algorithms?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "CPU Utilization"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Throughput"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Turnaround Time"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Waiting Time"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Monitor Resolution"
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD",
+      "explanation": "Scheduling is evaluated based on how well it utilizes the CPU, maximizes throughput, and minimizes turnaround/waiting/response times."
+    },
+    {
+      "id": "upload-1776511743902-48",
+      "number": "49",
+      "text": "What is the function of the 'Dispatcher' module?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It selects which process should be executed next."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It gives control of the CPU to the process selected by the short-term scheduler."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It manages the swap space on the disk."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It allocates memory to new processes."
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The dispatcher involves context switching, switching to user mode, and jumping to the proper location in the user program to restart it."
+    },
+    {
+      "id": "upload-1776511743902-49",
+      "number": "50",
+      "text": "In a distributed system, what does 'Transparency' refer to?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The ability of the user to see the source code of the OS."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The system appearing as a single coherent system rather than a collection of independent nodes."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The OS keeping logs of every user action."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The network cables being visible to the administrator."
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Transparency ensures that the distributed nature of the system is hidden from the user."
+    },
+    {
+      "id": "upload-1776511829628-0",
+      "number": "51",
+      "text": "Which of the following best defines a process in the context of an operating system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A passive entity stored on a disk as an executable file."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A program in execution that must progress in a sequential fashion."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The set of all registers and stack data associated with a user."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A collection of multiple threads sharing the same program counter."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A program is a passive entity, whereas a process is an active entity—a program in execution that progresses sequentially."
+    },
+    {
+      "id": "upload-1776511829628-1",
+      "number": "52",
+      "text": "In the memory layout of a process, which section is responsible for storing dynamically allocated memory during runtime?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Text section"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data section"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Stack"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Heap"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The heap is used for memory dynamically allocated during process runtime."
+    },
+    {
+      "id": "upload-1776511829628-2",
+      "number": "53",
+      "text": "A process is currently waiting for an I/O operation to complete. What is its current state in the process state diagram?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Ready"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Running"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Waiting"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "New"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The 'waiting' state occurs when a process is waiting for some event to occur, such as an I/O completion or reception of a signal."
+    },
+    {
+      "id": "upload-1776511829628-3",
+      "number": "54",
+      "text": "Which components are typically stored within the Process Control Block (PCB)? Select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Process state"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Program counter"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "CPU registers"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "CPU scheduling information"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Memory-management information"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCDE",
+      "explanation": "The PCB serves as the repository for any information that may vary from process to process, including state, counter, registers, scheduling, and memory limits."
+    },
+    {
+      "id": "upload-1776511829628-4",
+      "number": "55",
+      "text": "Which scheduler is responsible for selecting which process should be brought into the ready queue from the job pool to control the degree of multiprogramming?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Short-term scheduler (CPU scheduler)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Medium-term scheduler"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Long-term scheduler (Job scheduler)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "I/O scheduler"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The long-term scheduler, or job scheduler, selects processes from a pool and loads them into memory for execution, thus controlling the number of processes in memory (degree of multiprogramming)."
+    },
+    {
+      "id": "upload-1776511829628-5",
+      "number": "56",
+      "text": "A process that spends significantly more of its time performing computations than it does performing I/O requests is known as a(n):",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "I/O-bound process"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "CPU-bound process"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Interactive process"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Foreground process"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "CPU-bound processes generate I/O requests infrequently, using more of their time doing computations."
+    },
+    {
+      "id": "upload-1776511829628-6",
+      "number": "57",
+      "text": "What is the primary purpose of adding a medium-term scheduler to an operating system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To increase the speed of the context switch."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To provide more registers for the CPU."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To remove processes from memory (swapping) to reduce the degree of multiprogramming."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To manage the communication between parent and child processes."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The medium-term scheduler can remove a process from memory (and later reintroduce it) to balance the process mix or reduce the degree of multiprogramming via swapping."
+    },
+    {
+      "id": "upload-1776511829628-7",
+      "number": "58",
+      "text": "During a context switch, the operating system performs which of the following tasks? Select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Saves the state of the currently running process into its PCB."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Executes user instructions for the new process immediately."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Loads the saved state of the next process from its PCB."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Performs useful computational work for the user."
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "checkbox",
+      "correctAnswer": "AC",
+      "explanation": "A context switch involves saving the state of the old process and loading the saved state for the new process. During this time, the system does no 'useful' work."
+    },
+    {
+      "id": "upload-1776511829628-8",
+      "number": "59",
+      "text": "In UNIX systems, what is the specific function of the `fork()` system call?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To terminate the current process."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To replace the process's memory space with a new program."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To create a new process that is a duplicate of the parent."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To synchronize the execution of parent and child."
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `fork()` system call creates a new process. The new process (child) consists of a copy of the address space of the original process (parent)."
+    },
+    {
+      "id": "upload-1776511829628-9",
+      "number": "60",
+      "text": "A process has terminated, but its parent has not yet called `wait()`. In what state does the terminated process exist?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Orphan"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Zombie"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Cascading"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Suspended"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A process that has terminated, but whose parent has not yet called wait(), is known as a zombie process."
+    },
+    {
+      "id": "upload-1776511829628-10",
+      "number": "61",
+      "text": "Which of the following are reasons for a parent process to terminate the execution of one of its children using the `abort()` system call? Select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The child has exceeded its usage of some resources it has been allocated."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The task assigned to the child is no longer required."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The child process has called `exec()`."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The parent is exiting, and the OS does not allow children to continue without a parent."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "checkbox",
+      "correctAnswer": "ABD",
+      "explanation": "Aborting a child happens if the child exceeds resources, the task is unneeded, or the parent is exiting (cascading termination)."
+    },
+    {
+      "id": "upload-1776511829628-11",
+      "number": "62",
+      "text": "Google Chrome uses a multiprocess architecture. Which process is responsible for dealing with HTML and JavaScript and runs in a restricted sandbox?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Browser process"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Renderer process"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Plug-in process"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Network process"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Renderer process in Chrome handles HTML/Javascript and runs in a sandbox to minimize security exploits."
+    },
+    {
+      "id": "upload-1776511829628-12",
+      "number": "63",
+      "text": "What are the two fundamental models of interprocess communication (IPC)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Local and Remote"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Shared Memory and Message Passing"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Synchronous and Asynchronous"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Direct and Indirect"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The two models are Shared Memory (processes share a memory region) and Message Passing (processes exchange messages)."
+    },
+    {
+      "id": "upload-1776511829628-13",
+      "number": "64",
+      "text": "In the Bounded-Buffer producer-consumer problem, if the buffer size is defined as \\( N \\), why can only \\( N-1 \\) elements be used in the provided shared-memory solution?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To prevent the 'in' pointer from overtaking the 'out' pointer."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Because one slot is reserved for the null terminator."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To distinguish between an empty buffer and a full buffer using the logic `(in + 1) % BUFFER_SIZE == out`."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Due to hardware limitations in the data section."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In this specific circular buffer implementation, if the buffer were completely filled, `in` would equal `out`, which is the same condition used to check if the buffer is empty. Thus, one space is left empty to differentiate."
+    },
+    {
+      "id": "upload-1776511829628-14",
+      "number": "65",
+      "text": "Which of the following is a characteristic of 'Indirect Communication' in message passing?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Processes must explicitly name each other (e.g., `send(P, message)`)."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Messages are directed to and received from mailboxes or ports."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A link is associated with exactly one pair of communicating processes."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The communication link is established automatically by the OS."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Indirect communication uses mailboxes (or ports) where messages are placed and picked up. Multiple processes can share a mailbox."
+    },
+    {
+      "id": "upload-1776511829628-15",
+      "number": "66",
+      "text": "When both the `send()` and `receive()` operations in a message-passing system are blocking, the condition is known as a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Deadlock"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Rendezvous"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Race condition"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Buffering"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A rendezvous occurs when both the sender and receiver are blocked until the message transfer is completed."
+    },
+    {
+      "id": "upload-1776511829628-16",
+      "number": "67",
+      "text": "What are the three common implementations for the queue of messages in a communication link? Select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Zero capacity (no queuing)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Bounded capacity (finite length)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Unbounded capacity (infinite length)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Circular capacity (recycled length)"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "checkbox",
+      "correctAnswer": "ABC",
+      "explanation": "The three methods of implementation for the queue are Zero capacity, Bounded capacity, and Unbounded capacity."
+    },
+    {
+      "id": "upload-1776511829628-17",
+      "number": "68",
+      "text": "In the Mach operating system, which system calls are used for message transfer? Select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`msg_send()`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`msg_receive()`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`msg_rpc()`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`shm_open()`"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "checkbox",
+      "correctAnswer": "ABC",
+      "explanation": "Mach communication uses `msg_send()`, `msg_receive()`, and `msg_rpc()` (remote procedure call)."
+    },
+    {
+      "id": "upload-1776511829628-18",
+      "number": "69",
+      "text": "How is a 'socket' defined in client-server communication?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "An internal mailbox ID."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The concatenation of an IP address and a port number."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A shared memory segment identifier."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The process identifier (PID) of the server."
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A socket is an endpoint for communication defined by the combination of an IP address and a port number."
+    },
+    {
+      "id": "upload-1776511829628-19",
+      "number": "70",
+      "text": "Which of the following statements about Remote Procedure Calls (RPC) is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "RPC is only used for communication between processes on the same machine."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "External Data Representation (XDR) is used to resolve differences in data representation (e.g., endianness)."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "RPC messages are delivered exactly once by default without extra OS services."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "RPC bypasses the network stack for faster communication."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "XDR is used in RPC to handle different data representations (big-endian vs little-endian) between different architectures."
+    },
+    {
+      "id": "upload-1776511829628-20",
+      "number": "71",
+      "text": "Consider 'Ordinary Pipes'. Which of the following is a significant limitation of this communication method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "They are bidirectional by default."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "They allow communication between any two unrelated processes on the system."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "They require a parent-child relationship between the communicating processes."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "They are implemented using sockets."
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Ordinary pipes are unidirectional and require a parent-child relationship. Named pipes are more powerful and do not require such a relationship."
+    },
+    {
+      "id": "upload-1776511829628-21",
+      "number": "72",
+      "text": "In a mobile system like Android, how does a background process typically perform tasks if it is suspended?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It uses the long-term scheduler to stay in memory."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It uses a 'service' to perform tasks without a user interface."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It migrates to the ready queue continuously."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It remains in the foreground process group."
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Android uses services for background tasks. Services have no UI and can keep running even if the main background process is suspended."
+    },
+    {
+      "id": "upload-1776511829628-22",
+      "number": "73",
+      "text": "What happens when a process invokes the `exit()` system call?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The process is immediately deleted from the process table."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The process asks the OS to delete it and returns status data to its parent."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The process enters the 'ready' state to wait for deallocation."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The parent process is automatically terminated."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `exit()` call indicates a process has finished. It returns data to the parent (collected via `wait()`) and resource deallocation begins."
+    },
+    {
+      "id": "upload-1776511829628-23",
+      "number": "74",
+      "text": "Which of the following are advantages of process cooperation? Select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Information sharing"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Computation speedup"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Modularity"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Increased security through isolation"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Convenience"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCE",
+      "explanation": "The advantages of cooperating processes are information sharing, speedup, modularity, and convenience. Isolation is a trait of independent processes."
+    },
+    {
+      "id": "upload-1776511829628-24",
+      "number": "75",
+      "text": "In POSIX shared memory, which function is used to set the size of the shared memory object?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`shm_open()`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`mmap()`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`ftruncate()`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`sprintf()`"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "After creating or opening a shared memory segment with `shm_open()`, `ftruncate()` is used to configure the size of the object in bytes."
+    },
+    {
+      "id": "upload-1776511829628-25",
+      "number": "76",
+      "text": "Based on the foundational definitions in Operating Systems, what is the primary purpose of the kernel?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To provide a user-friendly interface for application development."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To act as the one program running at all times on the computer."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To manage the graphical user interface and desktop environment."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To serve as a set of library routines for high-level languages."
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The kernel is the core of the operating system and is the one program running at all times on the computer (all else being application programs or system programs)."
+    },
+    {
+      "id": "upload-1776511829628-26",
+      "number": "77",
+      "text": "Which of the following are considered 'Resource Management' responsibilities of an Operating System? Select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "CPU Scheduling"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Memory Allocation"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "File Storage Management"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Web Browser Rendering"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "I/O Management"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCE",
+      "explanation": "An OS manages hardware resources including the CPU, memory, storage, and I/O devices. Web browser rendering is an application-level task."
+    },
+    {
+      "id": "upload-1776511829628-27",
+      "number": "78",
+      "text": "In a dual-mode operation system, what is the purpose of the 'mode bit'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To distinguish between a 32-bit and 64-bit architecture."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To indicate whether the CPU is executing kernel code or user code."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To toggle between power-saving mode and performance mode."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To manage the read/write permissions of a specific memory block."
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The mode bit (0 for kernel, 1 for user) allows the hardware to distinguish between tasks performed on behalf of the OS and those performed on behalf of the user, protecting the system from malicious or buggy user code."
+    },
+    {
+      "id": "upload-1776511829628-28",
+      "number": "79",
+      "text": "How does a user program request a service from the operating system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "By direct access to kernel memory."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Through an API call that triggers a system call."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "By sending a hardware interrupt to the CPU."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "By modifying the mode bit directly in the EFLAGS register."
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "System calls provide an interface to the services made available by an OS. Users typically interact with these via APIs (like Win32 or POSIX)."
+    },
+    {
+      "id": "upload-1776511829628-29",
+      "number": "80",
+      "text": "Which of the following states can a process be in? Select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "New"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Running"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Waiting"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Ready"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Terminated"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCDE",
+      "explanation": "According to the Silberschatz model, these are the five fundamental process states."
+    },
+    {
+      "id": "upload-1776511829628-30",
+      "number": "81",
+      "text": "Consider the following process state transition diagram. What event causes a process to move from **Running** to **Ready**?\n\n```dot\ndigraph process_states {\n    rankdir=LR;\n    node [shape = circle];\n    New -> Ready [label=\"admitted\"];\n    Ready -> Running [label=\"scheduler dispatch\"];\n    Running -> Terminated [label=\"exit\"];\n    Running -> Waiting [label=\"I/O or event wait\"];\n    Waiting -> Ready [label=\"I/O or event completion\"];\n    Running -> Ready [label=\"?\"];\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "I/O completion"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Interrupt (e.g., time slice expired)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "System call request"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Process termination"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A transition from Running to Ready occurs when an interrupt (like a timer interrupt) forces the process to relinquish the CPU, even though it is still capable of running."
+    },
+    {
+      "id": "upload-1776511829628-31",
+      "number": "82",
+      "text": "What information is typically stored in a Process Control Block (PCB)? Select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Process State"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Program Counter"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "CPU Registers"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Memory-management information"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "List of open files"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCDE",
+      "explanation": "The PCB contains all the data needed by the OS to manage a specific process, including its state, counter, registers, memory limits, and I/O status."
+    },
+    {
+      "id": "upload-1776511829628-32",
+      "number": "83",
+      "text": "What is the primary difference between a 'Short-term Scheduler' and a 'Long-term Scheduler'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Short-term selects which process should be executed next; Long-term selects which processes should be brought into the ready queue."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Short-term manages I/O devices; Long-term manages CPU allocation."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Short-term is invoked every few minutes; Long-term is invoked every millisecond."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Short-term controls the degree of multiprogramming; Long-term controls CPU utilization."
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The short-term scheduler (CPU scheduler) must be very fast. The long-term scheduler (job scheduler) controls the degree of multiprogramming by deciding which jobs enter the system."
+    },
+    {
+      "id": "upload-1776511829628-33",
+      "number": "84",
+      "text": "During a context switch, what is the specific action taken by the kernel?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It clears the cache to ensure the next process has a fresh environment."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It saves the state of the current process and restores the state of the next process to be run."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It kills the current process to make room for a higher priority one."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It moves all waiting processes to the ready queue."
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Context switching is the process of storing and restoring the state (context) of a CPU so that process execution can be resumed from the same point at a later time."
+    },
+    {
+      "id": "upload-1776511829628-34",
+      "number": "85",
+      "text": "In Inter-process Communication (IPC), how does the 'Shared Memory' model differ from the 'Message Passing' model?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Shared Memory is generally slower than Message Passing."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Message Passing requires system calls for every data transfer, whereas Shared Memory only requires system calls to establish the region."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Shared Memory is easier to implement in distributed systems."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Message Passing allows processes to directly write into each other's address spaces."
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Shared memory allows for faster communication once established, but message passing is more modular and better suited for smaller amounts of data or distributed systems."
+    },
+    {
+      "id": "upload-1776511829628-35",
+      "number": "86",
+      "text": "What is a significant advantage of using threads over separate processes?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Threads provide higher security because they do not share memory."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Threads have much lower overhead for creation and context switching."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A crash in one thread does not affect other threads in the same process."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Threads are easier to debug than processes."
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Threads share the process's resources and are 'lightweight,' making their creation and switching much faster than full process creation/switching."
+    },
+    {
+      "id": "upload-1776511829628-36",
+      "number": "87",
+      "text": "In the context of multi-threading, what is the 'Many-to-One' model?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Many user-level threads are mapped to one kernel thread."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "One user-level thread is mapped to many kernel threads."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Many user-level threads are mapped to many kernel threads."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "One kernel thread manages many distinct processes."
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In the Many-to-One model, thread management is done in user space; however, if a thread makes a blocking system call, the entire process blocks."
+    },
+    {
+      "id": "upload-1776511829628-37",
+      "number": "88",
+      "text": "Which of the following is a criterion for evaluating a CPU scheduling algorithm?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Minimize CPU Utilization"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Minimize Throughput"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Minimize Turnaround Time"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Maximize Waiting Time"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Scheduling goals include maximizing CPU utilization and throughput while minimizing turnaround time, waiting time, and response time."
+    },
+    {
+      "id": "upload-1776511829628-38",
+      "number": "89",
+      "text": "What is the 'Convoy Effect' in FCFS (First-Come, First-Served) scheduling?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Short processes get stuck behind a long, CPU-bound process."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The scheduler constantly switches between processes, wasting CPU cycles."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Processes are executed in reverse order of their arrival."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Higher priority processes are forced to wait for lower priority ones."
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The convoy effect occurs when many I/O-bound processes wait for one big CPU-bound process to finish, resulting in poor resource utilization."
+    },
+    {
+      "id": "upload-1776511829628-39",
+      "number": "90",
+      "text": "Which scheduling algorithm is provably optimal in terms of minimizing average waiting time?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "First-Come, First-Served (FCFS)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Shortest-Job-First (SJF)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Round Robin (RR)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Priority Scheduling"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Shortest-Job-First (SJF) minimizes average waiting time because it schedules the shortest tasks first, though it is difficult to implement because the next CPU burst length is unknown."
+    },
+    {
+      "id": "upload-1776511829628-40",
+      "number": "91",
+      "text": "What is 'Starvation' in the context of Priority Scheduling?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A process uses up all available CPU time."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A low-priority process waits indefinitely while higher-priority processes keep arriving."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The OS runs out of memory for new Process Control Blocks."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A process is blocked waiting for an I/O device that is broken."
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Indefinite blocking, or starvation, happens when low-priority processes are never executed because there is always a higher-priority process ready."
+    },
+    {
+      "id": "upload-1776511829628-41",
+      "number": "92",
+      "text": "What technique is used to solve the problem of starvation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Paging"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Aging"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Segmentation"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Swapping"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Aging is a technique that gradually increases the priority of processes that wait in the system for a long time."
+    },
+    {
+      "id": "upload-1776511829628-42",
+      "number": "93",
+      "text": "Which of the following are necessary conditions for a deadlock to occur? Select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Mutual Exclusion"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Hold and Wait"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No Preemption"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Circular Wait"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Preemptive Scheduling"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCD",
+      "explanation": "Deadlock can only occur if these four conditions hold simultaneously in a system."
+    },
+    {
+      "id": "upload-1776511829628-43",
+      "number": "94",
+      "text": "What is the purpose of the Banker's Algorithm?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To prevent deadlock by denying circular wait."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To detect if a system is currently in a deadlock state."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To avoid deadlock by ensuring the system remains in a safe state."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To recover from a deadlock by terminating processes."
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The Banker's Algorithm is a deadlock avoidance algorithm that checks if granting a request would lead to an unsafe state."
+    },
+    {
+      "id": "upload-1776511829628-44",
+      "number": "95",
+      "text": "In memory management, what is 'Internal Fragmentation'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Total memory space exists to satisfy a request, but it is not contiguous."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Memory that is unused within a partition allocated to a process."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The overhead of the page table itself."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Memory wasted when swapping processes to disk."
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Internal fragmentation occurs when the allocated memory is slightly larger than the requested memory (e.g., in fixed-sized paging)."
+    },
+    {
+      "id": "upload-1776511829628-45",
+      "number": "96",
+      "text": "Which component of the OS is responsible for translating logical addresses to physical addresses?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Memory Management Unit (MMU)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "CPU Scheduler"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Interrupt Controller"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "I/O Bridge"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The MMU is a hardware device that maps virtual (logical) addresses to physical addresses at runtime."
+    },
+    {
+      "id": "upload-1776511829628-46",
+      "number": "97",
+      "text": "What is a 'Page Fault'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "An error in the hard drive hardware."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "An interrupt that occurs when a process tries to access a page that is not currently in main memory."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "When the CPU crashes due to a memory overflow."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A security breach where a process accesses another process's memory."
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A page fault occurs in demand paging when the 'valid-invalid' bit in the page table is set to 'invalid', indicating the page must be brought in from disk."
+    },
+    {
+      "id": "upload-1776511829628-47",
+      "number": "98",
+      "text": "Which of the following are benefits of Virtual Memory? Select all that apply.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Allows programs to be larger than physical memory."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Higher degree of multiprogramming."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Less I/O needed to load or swap programs into memory."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Faster CPU execution speeds."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Simplified program linking and loading."
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "checkbox",
+      "correctAnswer": "ABCE",
+      "explanation": "Virtual memory provides many benefits, but it does not inherently increase CPU clock speed (it may actually slow things down due to page faults)."
+    },
+    {
+      "id": "upload-1776511829628-48",
+      "number": "99",
+      "text": "How does 'Belady's Anomaly' describe the behavior of the FIFO page-replacement algorithm?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Adding more frames always decreases the number of page faults."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The number of page faults may increase as the number of frames increases."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The algorithm is optimal for all possible reference strings."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Memory becomes fragmented over time as more frames are added."
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Belady's Anomaly is the counter-intuitive observation that for some page-replacement algorithms (like FIFO), the page-fault rate may increase as the number of allocated frames increases."
+    },
+    {
+      "id": "upload-1776511829628-49",
+      "number": "100",
+      "text": "In the context of synchronization, what does 'Mutual Exclusion' ensure?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Only one process can be in its critical section at a time."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Processes must wait an equal amount of time for resources."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Deadlocks are impossible in the system."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All processes finish execution in the order they were started."
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Mutual exclusion is the requirement that if one process is executing in its critical section, no other processes can be executing in their critical sections."
+    },
+    {
+      "id": "upload-1776511923565-0",
+      "number": "101",
+      "text": "A computer system can be divided into four major components. Which of the following are included in these four components?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Hardware, Operating System, Application Programs, and Users"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "CPU, Memory, I/O devices, and Storage"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Kernel, Shell, File System, and Hardware"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Word processors, Compilers, Web browsers, and Databases"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The four main components are Hardware (resources), Operating System (coordination), Application Programs (utilization), and Users (people or other machines)."
+    },
+    {
+      "id": "upload-1776511923565-1",
+      "number": "102",
+      "text": "What are the primary goals of an operating system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Execute user programs and make solving problems easier"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Make the computer system convenient to use"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Use the computer hardware in an efficient manner"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Directly replace the need for high-speed hardware"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "All of the above except D"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "checkbox",
+      "correctAnswer": "ABC",
+      "explanation": "The OS acts as an intermediary with goals of program execution, convenience, and efficiency."
+    },
+    {
+      "id": "upload-1776511923565-2",
+      "number": "103",
+      "text": "The bootstrap program, which initializes all aspects of the system at power-up, is typically stored in which type of memory?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "RAM (Random Access Memory)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "ROM or EPROM (Firmware)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Secondary Storage (Hard Disk)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "CPU Registers"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The bootstrap program is firmware stored in ROM or EPROM."
+    },
+    {
+      "id": "upload-1776511923565-3",
+      "number": "104",
+      "text": "When a device controller informs the CPU that it has finished its operation, it does so by causing a(n):",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "System call"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Trap"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Interrupt"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Polling event"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Device controllers signal completion to the CPU via hardware interrupts."
+    },
+    {
+      "id": "upload-1776511923565-4",
+      "number": "105",
+      "text": "Which of the following describes a 'trap' or 'exception'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A hardware-generated signal from an I/O device"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A software-generated interrupt caused by an error or user request"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A physical failure of the memory bus"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A method to increase CPU clock speed"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Traps are software-generated interrupts, often due to errors like division by zero or specific service requests."
+    },
+    {
+      "id": "upload-1776511923565-5",
+      "number": "106",
+      "text": "In a von Neumann architecture, what is the standard cycle for instruction execution?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Fetch, Decode, Execute"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Input, Process, Output"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Load, Store, Branch"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Interrupt, Handle, Return"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Modern systems follow the von Neumann architecture where the CPU fetches instructions from memory, decodes them, and executes them."
+    },
+    {
+      "id": "upload-1776511923565-6",
+      "number": "107",
+      "text": "Which I/O method allows the return of control to the user program only after the I/O operation is fully completed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Asynchronous I/O"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Synchronous I/O"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Direct Memory Access (DMA)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Interrupt-driven I/O"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In synchronous I/O, the CPU waits until the I/O is finished before returning control to the user program."
+    },
+    {
+      "id": "upload-1776511923565-7",
+      "number": "108",
+      "text": "A 64-bit computer architecture typically has a native unit of data called a 'word' that is how many bytes long?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4 bytes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "8 bytes"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "16 bytes"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "64 bytes"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "64 bits divided by 8 bits per byte equals 8 bytes."
+    },
+    {
+      "id": "upload-1776511923565-8",
+      "number": "109",
+      "text": "Why are networking measurements typically given in bits rather than bytes?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Because networks move data one byte at a time"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Because networks move data one bit at a time"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To make the numbers look larger for marketing purposes"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Because bits are the native unit of storage in RAM"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Networking measurements are an exception because networks transmit data serially, one bit at a time."
+    },
+    {
+      "id": "upload-1776511923565-9",
+      "number": "110",
+      "text": "Which of the following storage types are considered volatile?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Main memory (RAM)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Solid-state disks (SSD)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Registers"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Cache"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Hard disks"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "checkbox",
+      "correctAnswer": "ACD",
+      "explanation": "Registers, Cache, and Main Memory lose their contents when power is removed. SSDs and Hard disks are non-volatile."
+    },
+    {
+      "id": "upload-1776511923565-10",
+      "number": "111",
+      "text": "What is the primary benefit of Direct Memory Access (DMA)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It eliminates the need for interrupts entirely"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It allows the device controller to transfer blocks of data to memory without CPU intervention"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It makes secondary storage faster than main memory"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It provides a mechanism for multiprogramming"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "DMA allows high-speed I/O devices to transmit blocks of data directly to memory, reducing the CPU overhead of handling one interrupt per byte."
+    },
+    {
+      "id": "upload-1776511923565-11",
+      "number": "112",
+      "text": "In Symmetric Multiprocessing (SMP), which of the following is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "One processor is the master and the others are slaves"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Each processor performs all tasks, and all are peers"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Processors cannot share the same physical memory"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It is only used in single-core systems"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "SMP involves multiple processors where each peer processor performs all tasks within the operating system."
+    },
+    {
+      "id": "upload-1776511923565-12",
+      "number": "113",
+      "text": "What is the primary purpose of a 'Clustered System'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To replace the need for an operating system"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To provide high-availability service that survives failures"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To allow a single CPU to handle multiple users"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To manage I/O devices via a local buffer"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Clustered systems consist of multiple systems working together, often sharing storage, to provide high availability and fault tolerance."
+    },
+    {
+      "id": "upload-1776511923565-13",
+      "number": "114",
+      "text": "Multiprogramming increases CPU efficiency by:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Running a single program faster"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Keeping the CPU and I/O devices busy by always having a job to execute"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Reducing the amount of RAM needed"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Eliminating the need for a kernel"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Multiprogramming organizes jobs so the CPU always has something to do, even when one job is waiting for I/O."
+    },
+    {
+      "id": "upload-1776511923565-14",
+      "number": "115",
+      "text": "Dual-mode operation uses a 'mode bit' to distinguish between:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "User mode and Kernel mode"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Read mode and Write mode"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Main memory and Secondary storage"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Symmetric and Asymmetric multiprocessing"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The mode bit allows the hardware to distinguish when the system is running user code (User mode) or OS kernel code (Kernel mode)."
+    },
+    {
+      "id": "upload-1776511923565-15",
+      "number": "116",
+      "text": "Which of the following actions requires a 'privileged instruction'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Performing a mathematical addition"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Changing the state of the timer"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Printing a line of text to a user-owned file"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Switching from User mode to Kernel mode via a system call"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Instructions that can harm the system, like modifying the timer or I/O control, are privileged and only executable in Kernel mode."
+    },
+    {
+      "id": "upload-1776511923565-16",
+      "number": "117",
+      "text": "A program is a passive entity, whereas a process is a(n) ________ entity.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Static"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Active"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Dormant"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Secondary"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A process is defined as a program in execution, making it an active unit of work in the system."
+    },
+    {
+      "id": "upload-1776511923565-17",
+      "number": "118",
+      "text": "Which of the following are responsibilities of the Operating System in connection with memory management?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Keeping track of which parts of memory are currently used and by whom"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Deciding which processes to move into memory"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Allocating and deallocating memory space"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Physically manufacturing the RAM modules"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "checkbox",
+      "correctAnswer": "ABC",
+      "explanation": "OS memory management involves tracking usage, process movement, and allocation/deallocation."
+    },
+    {
+      "id": "upload-1776511923565-18",
+      "number": "119",
+      "text": "In the storage hierarchy, which of the following is the fastest but also the most expensive and smallest?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Magnetic disk"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Main memory"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Cache"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Registers"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Registers are at the top of the hierarchy, followed by cache, then main memory."
+    },
+    {
+      "id": "upload-1776511923565-19",
+      "number": "120",
+      "text": "The I/O subsystem is responsible for which of the following tasks?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Buffering (storing data temporarily during transfer)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Caching (storing parts of data in faster storage)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Spooling (overlapping output of one job with input of another)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Compiling source code into machine code"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "checkbox",
+      "correctAnswer": "ABC",
+      "explanation": "I/O management includes buffering, caching, and spooling to hide hardware peculiarities."
+    },
+    {
+      "id": "upload-1776511923565-20",
+      "number": "121",
+      "text": "In a Peer-to-Peer (P2P) computing environment, how do nodes find services?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "They must always request permission from a central server"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "They register with a central lookup service or broadcast discovery requests"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "They only communicate with dumb terminals"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Services are hard-coded into the hardware"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "P2P nodes act as both clients and servers and use discovery protocols or central lookups to find peers."
+    },
+    {
+      "id": "upload-1776511923565-21",
+      "number": "122",
+      "text": "What is the primary characteristic of a 'Real-Time Operating System'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It must support high-definition video games"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It has well-defined, fixed time constraints for processing"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It is only found on Apple iOS devices"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It allows the CPU to run without any interrupts"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Real-time systems must process data within specific time constraints to operate correctly."
+    },
+    {
+      "id": "upload-1776511923565-22",
+      "number": "123",
+      "text": "What is the Big O search performance of a balanced binary search tree used in kernel data structures?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( O(n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( O(1) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( O(\\lg n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( O(n^2) \\)"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Balanced binary search trees offer \\( O(\\lg n) \\) performance, which is better than the linear \\( O(n) \\) of unbalanced trees."
+    },
+    {
+      "id": "upload-1776511923565-23",
+      "number": "124",
+      "text": "A 'Virtual Machine Manager' (VMM) allows a system to:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Increase the physical RAM of the computer"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Run multiple operating systems concurrently on one set of hardware"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Bypass the need for a CPU"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Automatically delete all viruses"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Virtualization/VMM allows running guest operating systems on a host system for exploration, compatibility, or data center management."
+    },
+    {
+      "id": "upload-1776511923565-24",
+      "number": "125",
+      "text": "What does 'cache coherency' ensure in a multiprocessor environment?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "That all processors run at the same clock speed"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "That all CPUs see the most recent value of a datum in their respective caches"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "That the hard drive is always defragmented"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "That memory is only accessed by one CPU at a time"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Cache coherency (often handled in hardware) ensures that if one CPU updates a value, other CPUs do not use an outdated version of that value from their own caches."
+    }
+  ],
+  "params": {
+    "chapter": "Mid (Zplus)"
+  },
+  "q": 125
+}

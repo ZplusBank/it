@@ -542,6 +542,12 @@ const EXAM_CONFIG = [
         "name": "Mass-Storage Systems",
         "q": 25,
         "file": "data/os/ch10.json"
+      },
+      {
+        "id": "Mid (Zplus)",
+        "name": "Combined Questions",
+        "q": 125,
+        "file": "data/os/Mid (Zplus).json"
       }
     ]
   },
