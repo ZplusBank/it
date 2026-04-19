@@ -649,54 +649,6 @@ const EXAM_CONFIG = [
     "icon": "data/Multi/icon.png",
     "chapters": [
       {
-        "id": "1",
-        "name": "Chapter 1",
-        "q": 33,
-        "file": "data/Multi/Ch1.json"
-      },
-      {
-        "id": "2",
-        "name": "Chapter 2",
-        "q": 18,
-        "file": "data/Multi/Ch2.json"
-      },
-      {
-        "id": "3",
-        "name": "Chapter 3",
-        "q": 32,
-        "file": "data/Multi/Ch3.json"
-      },
-      {
-        "id": "4",
-        "name": "Chapter 4",
-        "q": 39,
-        "file": "data/Multi/Ch4.json"
-      },
-      {
-        "id": "5",
-        "name": "Chapter 5",
-        "q": 25,
-        "file": "data/Multi/Ch5.json"
-      },
-      {
-        "id": "6",
-        "name": "Chapter 6",
-        "q": 25,
-        "file": "data/Multi/Ch6.json"
-      },
-      {
-        "id": "7",
-        "name": "Chapter 7",
-        "q": 24,
-        "file": "data/Multi/Ch7.json"
-      },
-      {
-        "id": "8",
-        "name": "Multiple Chapters ",
-        "q": 243,
-        "file": "data/Multi/Multiable Chapters.json"
-      },
-      {
         "id": "9",
         "name": "Mid",
         "q": 140,
