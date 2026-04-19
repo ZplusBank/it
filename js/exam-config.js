@@ -410,15 +410,15 @@ const EXAM_CONFIG = [
       },
       {
         "id": "3",
-        "name": "Ch8:Introduction to Switching",
-        "q": 45,
-        "file": "data/Network/chapterch08.ppt.json"
-      },
-      {
-        "id": "4",
         "name": "Ch7:Transmission Media",
         "q": 45,
         "file": "data/Network/chapterch07.pdf.json"
+      },
+      {
+        "id": "4",
+        "name": "Ch8:Introduction to Switching",
+        "q": 45,
+        "file": "data/Network/chapterch08.ppt.json"
       },
       {
         "id": "5",
