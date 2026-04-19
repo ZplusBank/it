@@ -437,6 +437,12 @@ const EXAM_CONFIG = [
         "name": "Mid (ch1,ch2,ch7,ch8) By Z+ (hard)",
         "q": 290,
         "file": "data/Network/combined_questions.json"
+      },
+      {
+        "id": "8",
+        "name": "Mid-mathbased by Z+",
+        "q": 37,
+        "file": "data/Network/midmath.json"
       }
     ]
   },
