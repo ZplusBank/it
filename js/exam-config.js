@@ -440,7 +440,7 @@ const EXAM_CONFIG = [
       },
       {
         "id": "8",
-        "name": "Mid-mathbased by Z+",
+        "name": "Mid - MATH by Z+",
         "q": 37,
         "file": "data/Network/midmath.json"
       }
