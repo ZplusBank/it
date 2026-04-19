@@ -431,6 +431,12 @@ const EXAM_CONFIG = [
         "name": "Final",
         "q": 42,
         "file": "data/Network/Final.json"
+      },
+      {
+        "id": "7",
+        "name": "Mid (ch1,ch2,ch7,ch8) By Z+ (hard)",
+        "q": 290,
+        "file": "data/Network/combined_questions.json"
       }
     ]
   },
