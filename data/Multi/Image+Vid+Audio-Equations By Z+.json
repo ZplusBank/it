@@ -1,0 +1,780 @@
+{
+  "id": "regen-1776636394401",
+  "label": "Regenerated: Combined Batch (3 files)",
+  "params": {
+    "file": "Multiple Files",
+    "type": "regeneration",
+    "difficulty": "same",
+    "chapter": "11"
+  },
+  "title": "Image+Vid+Audio-Equations By Z+",
+  "questions": [
+    {
+      "id": "regen-1776636394401-0",
+      "number": "1",
+      "text": "A graphic image with a resolution of \\( 800 \\times 600 \\) pixels and 24-bit color depth will result in what file size in KB?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1,406.25 KB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4,800 KB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1,200.5 KB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1,440 KB"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Calculation: \\( \\frac{800 \\times 600 \\times 24}{8} = 1,440,000 \\) bytes. To convert to KB: \\( \\frac{1,440,000}{1,024} \\approx 1,406.25 \\text{ KB} \\)."
+    },
+    {
+      "id": "regen-1776636394401-1",
+      "number": "2",
+      "text": "What is the file size (in MB) of a 30-second audio clip recorded at 48 kHz, 16-bit resolution, in stereo?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "5.49 MB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2.75 MB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "11.0 MB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1.37 MB"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "File size = \\( \\frac{\\text{Sample Rate} \\times \\text{Bit Depth} \\times \\text{Channels} \\times \\text{Time}}{8} \\). \\n\\( \\text{Size} = \\frac{48,000 \\times 16 \\times 2 \\times 30}{8} = 5,760,000 \\text{ bytes} \\). \\nConvert to MB: \\( \\frac{5,760,000}{1,024 \\times 1,024} \\approx 5.49 \\text{ MB} \\)."
+    },
+    {
+      "id": "regen-1776636394401-2",
+      "number": "3",
+      "text": "Calculate the file size (in GB) of 2 minutes of uncompressed HD video (1280 x 720 resolution, 24-bit color, 30 fps).",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2.76 GB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "9.27 GB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "11.1 GB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "18.5 GB"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "1. Frame size: \\( 1,280 \\times 720 \\times 3 \\text{ bytes} = 2,764,800 \\text{ bytes/frame} \\). \\n2. Total frames: \\( 2 \\times 60 \\times 30 = 3,600 \\text{ frames} \\). \\n3. Total size: \\( 2,764,800 \\times 3,600 = 9,953,280,000 \\text{ bytes} \\). \\n4. Convert to GB: \\( \\frac{9,953,280,000}{1,024^3} \\approx 9.27 \\text{ GB} \\)."
+    },
+    {
+      "id": "regen-1776636394401-3",
+      "number": "4",
+      "text": "What is the file size (in KB) of a 15-second sound recording with a sample rate of 11.025 kHz, 8-bit depth, and monophonic sound?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "165.38 KB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "161.5 KB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "322.7 KB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "20.6 KB"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Calculation: \\( \\frac{11,025 \\times 8 \\times 1 \\times 15}{8} = 165,375 \\text{ bytes} \\). \\nIn KB (binary): \\( \\frac{165,375}{1,024} \\approx 161.5 \\text{ KB} \\)."
+    },
+    {
+      "id": "regen-1776636394401-4",
+      "number": "5",
+      "text": "Calculate the file size in KB for an icon with dimensions \\( 32 \\times 32 \\) and a color depth of 32 bits.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4 KB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "32 KB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1 KB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "8 KB"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Total bits: \\( 32 \\times 32 \\times 32 = 32,768 \\text{ bits} \\). \\nBytes: \\( 32,768 / 8 = 4,096 \\text{ bytes} \\). \\nKB: \\( 4,096 / 1,024 = 4 \\text{ KB} \\)."
+    },
+    {
+      "id": "regen-1776636394401-5",
+      "number": "6",
+      "text": "What is the size of a bitmap image in KB if the resolution is \\( 100 \\times 50 \\) and the color depth is 48 bits?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "29.30 KB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "30.00 KB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "15.00 KB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "240.00 KB"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. Total bits: \\( 100 \\times 50 \\times 48 = 240,000 \\text{ bits} \\). \\n2. Total bytes: \\( 240,000 / 8 = 30,000 \\text{ bytes} \\). \\n3. KB (binary): \\( 30,000 / 1,024 \\approx 29.30 \\text{ KB} \\)."
+    },
+    {
+      "id": "regen-1776636394401-6",
+      "number": "7",
+      "text": "A 12-second audio recording is sampled at 22.05 kHz with 16-bit resolution in stereo. The file size is approximately:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1.01 MB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "529 KB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2.1 MB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0.5 MB"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "\\( \\text{Size} = 22,050 \\times 2 \\text{ bytes} \\times 2 \\text{ channels} \\times 12 \\text{ seconds} = 1,058,400 \\text{ bytes} \\). \\nConvert to MB: \\( \\frac{1,058,400}{1,024 \\times 1,024} \\approx 1.01 \\text{ MB} \\)."
+    },
+    {
+      "id": "regen-1776636394401-7",
+      "number": "8",
+      "text": "If a 5-minute recording is made with a sample rate of 44.1 kHz, 8-bit depth, and mono type, what is the file size in MB?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "12.62 MB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "13.23 MB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "26.46 MB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1.32 MB"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Calculation: \\( 44,100 \\times 1 \\text{ byte} \\times 1 \\text{ channel} \\times 300 \\text{ seconds} = 13,230,000 \\text{ bytes} \\). \\nIn MB: \\( \\frac{13,230,000}{1,024 \\times 1,024} \\approx 12.62 \\text{ MB} \\)."
+    },
+    {
+      "id": "regen-1776636394401-8",
+      "number": "9",
+      "text": "How many distinct colors can a 4-bit image display?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "8"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "16"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "32"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Color depth is calculated as \\( 2^n \\) where n is the number of bits. \\( 2^4 = 16 \\)."
+    },
+    {
+      "id": "regen-1776636394401-9",
+      "number": "10",
+      "text": "A graphic with resolution \\( 1024 \\times 768 \\) at an 8-bit color depth will yield a file size of:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "768 KB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1024 KB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "786,432 KB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2304 KB"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "\\( 1,024 \\times 768 \\times 1 \\text{ byte} = 786,432 \\text{ bytes} \\). \\nIn KB: \\( 786,432 / 1,024 = 768 \\text{ KB} \\)."
+    },
+    {
+      "id": "regen-1776636394401-10",
+      "number": "11",
+      "text": "What is the approximate size of a recording with these parameters in KB? Duration 8s, Sample rate 8 kHz, Bit rate 8, Type Mono.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "64 KB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "62.5 KB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "128 KB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "8000 KB"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "\\( 8,000 \\times 1 \\text{ byte} \\times 1 \\times 8 \\text{ seconds} = 64,000 \\text{ bytes} \\). \\nIn decimal KB: \\( 64,000 / 1,000 = 64 \\text{ KB} \\)."
+    },
+    {
+      "id": "regen-1776636394401-11",
+      "number": "12",
+      "text": "What is the binary representation of the web color <#0, #F, #0>?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "000000001111111100000000"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "111111110000000011111111"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "000011110000"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "000000000000000011111111"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "#0F0 is shorthand for #00FF00. In 24-bit binary, Red (00) is 00000000, Green (FF) is 11111111, and Blue (00) is 00000000."
+    },
+    {
+      "id": "regen-1776636394401-12",
+      "number": "13",
+      "text": "What is the hexadecimal representation of the 24-bit color binary: 11111111 11111111 11111111?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<#00, #00, #00>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<#F1, #F1, #F1>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<#FF, #FF, #FF>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<#AA, #AA, #AA>"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Binary 11111111 is FF in hexadecimal. Therefore, the sequence represents White: <#FF, #FF, #FF>."
+    },
+    {
+      "id": "regen-1776636394401-13",
+      "number": "14",
+      "text": "Determine the size of a bitmap image in Bytes given a resolution of \\( 40 \\times 30 \\) pixels and a color depth of 24 bits.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1,200 Bytes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3,600 Bytes"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "900 Bytes"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "28,800 Bytes"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "\\( 40 \\times 30 \\times (24 / 8) = 1,200 \\text{ pixels} \\times 3 \\text{ bytes/pixel} = 3,600 \\text{ bytes} \\)."
+    },
+    {
+      "id": "regen-1776636394401-14",
+      "number": "15",
+      "text": "True or False: In a standard 24-bit RGB model, the intensity of each color component (Red, Green, Blue) is defined by an integer ranging from 0 to 255.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In an 8-bit per channel system, there are 256 possible values, which are indexed from 0 up to 255."
+    },
+    {
+      "id": "regen-1776636394401-15",
+      "number": "16",
+      "text": "Calculate the file size in KB for a bitmap image with a resolution of \\( 20 \\times 10 \\) and a color depth of 32 bits.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0.78 KB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0.80 KB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6.40 KB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0.10 KB"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "\\( 20 \\times 10 \\times 4 \\text{ bytes (32 bits)} = 800 \\text{ bytes} \\). \\nKB (binary): \\( 800 / 1,024 \\approx 0.78 \\text{ KB} \\)."
+    },
+    {
+      "id": "regen-1776636394401-16",
+      "number": "17",
+      "text": "What is the size (in GB) of 1 minute of uncompressed video with a resolution of 1920 x 1080, 24-bit color, at 60 fps?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "20.86 GB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10.43 GB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5.22 GB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "41.72 GB"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. Frame size: \\( 1920 \\times 1080 \\times 3 = 6,220,800 \\text{ bytes} \\). \\n2. Total frames: \\( 60 \\text{ seconds} \\times 60 \\text{ fps} = 3,600 \\text{ frames} \\). \\n3. Total size: \\( 6,220,800 \\times 3,600 = 22,394,880,000 \\text{ bytes} \\). \\n4. Convert to GB: \\( \\frac{22,394,880,000}{1,024^3} \\approx 20.86 \\text{ GB} \\)."
+    },
+    {
+      "id": "regen-1776636394401-17",
+      "number": "18",
+      "text": "The Red Book standard for CD audio specifies a sampling rate of 44.1 kHz and 16-bit stereo. What is the approximate file size of 1 minute of this audio?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "10.1 MB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5.05 MB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1.41 MB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "20.2 MB"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "\\( 44,100 \\times 2 \\text{ bytes} \\times 2 \\text{ channels} \\times 60 \\text{ seconds} = 10,584,000 \\text{ bytes} \\). \\nIn MB: \\( \\frac{10,584,000}{1,024 \\times 1,024} \\approx 10.09 \\text{ MB} \\)."
+    },
+    {
+      "id": "regen-1776636394401-18",
+      "number": "19",
+      "text": "How many colors are possible in a High Color (16-bit) image?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "256"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "65,536"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "16,777,216"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "32,768"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Color depth is calculated as \\( 2^{16} = 65,536 \\)."
+    },
+    {
+      "id": "regen-1776636394401-19",
+      "number": "20",
+      "text": "What is the file size in KB of an image with resolution \\( 320 \\times 240 \\) and 16-bit color depth?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "150 KB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "300 KB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "75 KB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1,200 KB"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Size = \\( 320 \\times 240 \\times 2 \\text{ bytes} = 153,600 \\text{ bytes} \\). \\nKB: \\( 153,600 / 1,024 = 150 \\text{ KB} \\)."
+    },
+    {
+      "id": "regen-1776636394401-20",
+      "number": "21",
+      "text": "Calculate the file size in KB for 10 seconds of speech audio sampled at 8 kHz, 8-bit, mono.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "80 KB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "78.1 KB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "160 KB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "40 KB"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "\\( 8,000 \\times 1 \\text{ byte} \\times 1 \\times 10 = 80,000 \\text{ bytes} \\). \\nDecimal KB: \\( 80,000 / 1,000 = 80 \\text{ KB} \\). Binary KB: \\( \\approx 78.1 \\text{ KB} \\). 80 KB is the standard decimal representation."
+    },
+    {
+      "id": "regen-1776636394401-21",
+      "number": "22",
+      "text": "Convert the following binary color string to hexadecimal: 11000011 01010101 00001111.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<#C3, #55, #0F>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<#3C, #55, #F0>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<#C3, #5A, #0F>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<#A1, #B2, #C3>"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1100 0011 = C 3; 0101 0101 = 5 5; 0000 1111 = 0 F."
+    },
+    {
+      "id": "regen-1776636394401-22",
+      "number": "23",
+      "text": "If you double the bit depth of an audio recording from 8-bit to 16-bit while keeping other parameters the same, the file size will:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Stay the same"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Double"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Quadruple"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Increase by 50%"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "File size is directly proportional to bit depth. Doubling the bits per sample doubles the total data."
+    },
+    {
+      "id": "regen-1776636394401-23",
+      "number": "24",
+      "text": "Find the file size (in MB) of a 10-second video clip with resolution 640 x 480, 24-bit color depth, and a frame rate of 30 fps.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "263.67 MB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "276.48 MB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "92.16 MB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "131.84 MB"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. Frame size: \\( 640 \\times 480 \\times 3 = 921,600 \\text{ bytes} \\). \\n2. Total frames: \\( 10 \\times 30 = 300 \\text{ frames} \\). \\n3. Total bytes: \\( 921,600 \\times 300 = 276,480,000 \\text{ bytes} \\). \\n4. MB: \\( \\frac{276,480,000}{1,024 \\times 1,024} \\approx 263.67 \\text{ MB} \\)."
+    },
+    {
+      "id": "regen-1776636394401-24",
+      "number": "25",
+      "text": "What is the file size in KB of a black and white (1-bit) image with a resolution of \\( 500 \\times 500 \\) pixels?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "30.52 KB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "31.25 KB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "250 KB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "62.5 KB"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Total bits: \\( 500 \\times 500 \\times 1 = 250,000 \\text{ bits} \\). \\nBytes: \\( 250,000 / 8 = 31,250 \\text{ bytes} \\). \\nKB (binary): \\( 31,250 / 1,024 \\approx 30.52 \\text{ KB} \\)."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}

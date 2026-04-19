@@ -1,0 +1,790 @@
+{
+  "id": "regen-1776636397746",
+  "label": "Regenerated: Combined Batch (3 files)",
+  "params": {
+    "file": "Multiple Files",
+    "type": "regeneration",
+    "difficulty": "harder",
+    "chapter": "10"
+  },
+  "title": "Image+Vid+Audio-Equations By Z+ (Hard)",
+  "questions": [
+    {
+      "id": "regen-1776636397746-0",
+      "number": "1",
+      "text": "A high-definition video frame with a resolution of \\( 3840 \\times 2160 \\) (4K) utilizes a 10-bit color depth per channel (HDR10). Calculate the memory required for a single uncompressed frame in megabytes (MB) using binary units.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "23.73 MB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "31.64 MB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "29.66 MB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "33.17 MB"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "1. Calculate total pixels: \\( 3840 \\times 2160 = 8,294,400 \\) pixels.\n2. Calculate bits per pixel: HDR10 uses 3 channels (R, G, B) at 10 bits each = 30 bits.\n3. Total bits: \\( 8,294,400 \\times 30 = 248,832,000 \\) bits.\n4. Convert to bytes: \\( 248,832,000 / 8 = 31,104,000 \\) bytes.\n5. Convert to MB (binary): \\( 31,104,000 / (1024 \\times 1024) \\approx 29.66 \\text{ MB} \\)."
+    },
+    {
+      "id": "regen-1776636397746-1",
+      "number": "2",
+      "text": "What is the file size (in MB) of a 30-second high-resolution audio clip recorded at a sampling rate of 192 kHz, with 24-bit depth, in a 5.1 surround sound configuration (6 channels)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "105.47 MB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "98.88 MB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "164.79 MB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "207.36 MB"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. Formula: \\( \\text{Size} = \\frac{\\text{Rate} \\times \\text{Depth} \\times \\text{Channels} \\times \\text{Time}}{8} \\).\n2. \\( \\text{Size} = \\frac{192,000 \\times 24 \\times 6 \\times 30}{8} = 110,592,000 \\text{ bytes} \\).\n3. Convert to MB: \\( 110,592,000 / (1024^2) \\approx 105.47 \\text{ MB} \\)."
+    },
+    {
+      "id": "regen-1776636397746-2",
+      "number": "3",
+      "text": "An uncompressed video stream runs at 1080p (\\( 1920 \\times 1080 \\)) at 60 fps with 24-bit color. What is the required network bandwidth in Gigabits per second (Gbps) to stream this without compression?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1.49 Gbps"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2.98 Gbps"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3.11 Gbps"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0.37 Gbps"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "1. Bits per frame: \\( 1920 \\times 1080 \\times 24 = 49,766,400 \\) bits.\n2. Bits per second: \\( 49,766,400 \\times 60 = 2,985,984,000 \\) bps.\n3. Convert to Gbps: \\( 2,985,984,000 / 10^9 = 2.986 \\text{ Gbps} \\)."
+    },
+    {
+      "id": "regen-1776636397746-3",
+      "number": "4",
+      "text": "A digital recording system captures 45 seconds of mono audio. If the resulting file size is exactly 3.87 MB (binary), what was the approximate sampling rate used, assuming a 16-bit depth?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "44.1 kHz"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "48.0 kHz"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "22.05 kHz"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "96.0 kHz"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. Size in bytes: \\( 3.87 \\times 1024 \\times 1024 = 4,057,989 \\) bytes.\n2. Total bits: \\( 4,057,989 \\times 8 = 32,463,912 \\) bits.\n3. Rate = \\( \\frac{\\text{Bits}}{\\text{Depth} \\times \\text{Time} \\times \\text{Channels}} \\).\n4. Rate = \\( \\frac{32,463,912}{16 \\times 45 \\times 1} \\approx 45,088 \\text{ Hz} \\). This most closely aligns with the standard 44.1 kHz (allowing for slight binary rounding in the prompt)."
+    },
+    {
+      "id": "regen-1776636397746-4",
+      "number": "5",
+      "text": "Calculate the file size in Kilobytes (KB) of a bitmap image with a resolution of \\( 1024 \\times 768 \\) that includes an 8-bit alpha channel in addition to standard 24-bit RGB color.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2,304 KB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3,000 KB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3,072 KB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2,359 KB"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "1. Total bits per pixel: 24 (RGB) + 8 (Alpha) = 32 bits.\n2. Total bytes: \\( (1024 \\times 768 \\times 32) / 8 = 3,145,728 \\) bytes.\n3. Convert to KB (binary): \\( 3,145,728 / 1024 = 3,072 \\text{ KB} \\)."
+    },
+    {
+      "id": "regen-1776636397746-5",
+      "number": "6",
+      "text": "A raw image file of size 12 MB is being transmitted over a connection with an effective throughput of 5 Mbps. How long will the transmission take?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2.4 seconds"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "19.2 seconds"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "20.1 seconds"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "10.0 seconds"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "1. Convert 12 MB to bits: \\( 12 \\times 1024 \\times 1024 \\times 8 = 100,663,296 \\) bits.\n2. Divide by speed: \\( 100,663,296 / 5,000,000 \\approx 20.13 \\text{ seconds} \\)."
+    },
+    {
+      "id": "regen-1776636397746-6",
+      "number": "7",
+      "text": "According to the Nyquist-Shannon sampling theorem, to accurately capture an audio signal with a maximum frequency of 22,050 Hz, what is the minimum required sampling rate?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "22,050 Hz"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "44,100 Hz"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "11,025 Hz"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "48,000 Hz"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Nyquist rate states that the sampling frequency must be at least twice the highest frequency component of the signal: \\( 22,050 \\times 2 = 44,100 \\text{ Hz} \\)."
+    },
+    {
+      "id": "regen-1776636397746-7",
+      "number": "8",
+      "text": "Which of the following binary strings correctly represents the RGBA color <#A1, #1A, #FF, #80>?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "10100001 00011010 11111111 10000000"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10100001 00011011 11111111 01111111"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10110001 00011010 11111111 10000000"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "10100001 10100001 11111111 10000001"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Convert each Hex pair to 8-bit binary:\n- A1: \\( A=1010, 1=0001 \\rightarrow 10100001 \\)\n- 1A: \\( 1=0001, A=1010 \\rightarrow 00011010 \\)\n- FF: \\( F=1111, F=1111 \\rightarrow 11111111 \\)\n- 80: \\( 8=1000, 0=0000 \\rightarrow 10000000 \\)"
+    },
+    {
+      "id": "regen-1776636397746-8",
+      "number": "9",
+      "text": "If a specialized medical imaging display requires 4,096 distinct levels of gray per pixel, what is the minimum bit depth required per pixel?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "8-bit"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10-bit"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "12-bit"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "16-bit"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The number of levels \\( L \\) is related to bit depth \\( n \\) by \\( L = 2^n \\). To find \\( n \\): \\( 2^n = 4096 \\). Since \\( 2^{12} = 4096 \\), 12 bits are required."
+    },
+    {
+      "id": "regen-1776636397746-9",
+      "number": "10",
+      "text": "A frame buffer is designed to hold a single 8-bit grayscale image of 1 MB (binary). If the image is square, what is its resolution in pixels?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1000 x 1000"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1024 x 1024"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "512 x 512"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2048 x 2048"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "1. 1 MB = \\( 1024 \\times 1024 = 1,048,576 \\) bytes.\n2. Since it is 8-bit grayscale, 1 pixel = 1 byte.\n3. Total pixels = 1,048,576.\n4. Resolution = \\( \\sqrt{1,048,576} = 1024 \\). Thus, \\( 1024 \\times 1024 \\)."
+    },
+    {
+      "id": "regen-1776636397746-10",
+      "number": "11",
+      "text": "A professional audio project contains 24 tracks, each 5 minutes long, recorded at 96 kHz / 24-bit (Mono). What is the total storage required for the raw audio data in GB (binary)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1.93 GB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2.06 GB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "15.45 GB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0.08 GB"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. Size per track: \\( \\frac{96,000 \\times 24 \\times 1 \\times 300}{8} = 86,400,000 \\) bytes.\n2. Total size for 24 tracks: \\( 86,400,000 \\times 24 = 2,073,600,000 \\) bytes.\n3. Convert to GB: \\( 2,073,600,000 / (1024^3) \\approx 1.931 \\text{ GB} \\)."
+    },
+    {
+      "id": "regen-1776636397746-11",
+      "number": "12",
+      "text": "What is the hexadecimal representation of the 24-bit color represented by the binary string: `11011110 10101101 10111110`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "#DEADBE"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "#EADADE"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "#DEADBEF"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "#DE ADBE"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Convert 4-bit nibbles:\n- 1101 = D, 1110 = E \\(\\rightarrow DE\\)\n- 1010 = A, 1101 = D \\(\\rightarrow AD\\)\n- 1011 = B, 1110 = E \\(\\rightarrow BE\\)\nResult: #DEADBE."
+    },
+    {
+      "id": "regen-1776636397746-12",
+      "number": "13",
+      "text": "In a 16-bit 'High Color' system, 5 bits are used for Red, 6 bits for Green, and 5 bits for Blue. How many unique shades of Green can be represented?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "32"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "64"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "256"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "65536"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "With 6 bits dedicated to the Green channel, the number of shades is \\( 2^6 = 64 \\)."
+    },
+    {
+      "id": "regen-1776636397746-13",
+      "number": "14",
+      "text": "A bitmap image (\\( 100 \\times 100 \\)) with 24-bit color is compressed using a lossless algorithm with a 4:1 compression ratio. What is the final file size in bytes?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "7,500 bytes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "30,000 bytes"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10,000 bytes"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2,500 bytes"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. Uncompressed size: \\( 100 \\times 100 \\times (24/8) = 30,000 \\) bytes.\n2. Compressed size: \\( 30,000 / 4 = 7,500 \\) bytes."
+    },
+    {
+      "id": "regen-1776636397746-14",
+      "number": "15",
+      "text": "Which statement best describes a limitation of the standard 24-bit RGB color model regarding human perception?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It can represent more colors than the human eye can distinguish."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It assigns equal bit depth to all channels, despite the human eye being more sensitive to Green luminance."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It only allows for 256 total colors in an image."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It uses 0-255 indexing which excludes the color white."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The human eye is more sensitive to green light (luminance). Modern color spaces or formats (like YCbCr) often exploit this by giving more bandwidth/bits to luminance or green, whereas standard 24-bit RGB treats R, G, and B equally with 8 bits each."
+    },
+    {
+      "id": "regen-1776636397746-15",
+      "number": "16",
+      "text": "A storage drive reports a capacity of 500 GB (Decimal/SI). When viewed in a computer's OS (Binary), what is the approximate size displayed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "500.0 GB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "536.8 GB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "465.7 GB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "488.2 GB"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "1. SI Size: \\( 500 \\times 10^9 \\) bytes.\n2. Binary Size: \\( (500 \\times 10^9) / (1024^3) \\approx 465.66 \\text{ GB} \\)."
+    },
+    {
+      "id": "regen-1776636397746-16",
+      "number": "17",
+      "text": "What is the maximum duration of uncompressed 480p SD video (\\( 640 \\times 480 \\), 24-bit, 30 fps) that can fit on a 4.7 GB (SI) DVD?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "170 seconds"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "12 seconds"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "542 seconds"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "23 seconds"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. Bytes per frame: \\( 640 \\times 480 \\times 3 = 921,600 \\) bytes.\n2. Bytes per second: \\( 921,600 \\times 30 = 27,648,000 \\) bytes/s.\n3. DVD size in bytes: \\( 4.7 \\times 10^9 = 4,700,000,000 \\) bytes.\n4. Time: \\( 4,700,000,000 / 27,648,000 \\approx 170 \\text{ seconds} \\)."
+    },
+    {
+      "id": "regen-1776636397746-17",
+      "number": "18",
+      "text": "Digital Audio Workstations often use 32-bit floating point processing. How much more storage space does a 32-bit float mono file require compared to a standard 16-bit integer mono file of the same duration and sample rate?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "50% more"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "100% more"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "200% more"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It is the same size."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "32 bits is exactly double 16 bits. Therefore, it requires 100% more (twice the) storage space."
+    },
+    {
+      "id": "regen-1776636397746-18",
+      "number": "19",
+      "text": "Identify the number of possible quantization levels for a digital audio signal recorded with a bit depth of 24 bits.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1,048,576"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "16,777,216"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4,294,967,296"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "65,536"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "\\( 2^{24} = 16,777,216 \\)."
+    },
+    {
+      "id": "regen-1776636397746-19",
+      "number": "20",
+      "text": "Which of the following would produce the largest uncompressed file?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "5 seconds of 44.1kHz/16-bit stereo audio"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A single \\( 1000 \\times 1000 \\) pixel 24-bit image"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1 second of \\( 320 \\times 240 \\) 8-bit video at 10 fps"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "10 seconds of 22.05kHz/8-bit mono audio"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A: \\( 44100 \\times 2 \\times 2 \\times 5 = 882,000 \\) bytes.\nB: \\( 1000 \\times 1000 \\times 3 = 3,000,000 \\) bytes.\nC: \\( 320 \\times 240 \\times 1 \\times 10 = 768,000 \\) bytes.\nD: \\( 22050 \\times 1 \\times 1 \\times 10 = 220,500 \\) bytes.\nB is the largest."
+    },
+    {
+      "id": "regen-1776636397746-20",
+      "number": "21",
+      "text": "In a palette-based (indexed) image format using an 8-bit index, the 'Color Look-Up Table' (CLUT) typically stores 24-bit RGB values for each index. What is the size of the CLUT itself in bytes?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "256 bytes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "768 bytes"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1024 bytes"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "6144 bytes"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An 8-bit index allows for 256 colors. Each color entry in the table is 24 bits (3 bytes). \\( 256 \\times 3 = 768 \\) bytes."
+    },
+    {
+      "id": "regen-1776636397746-21",
+      "number": "22",
+      "text": "Calculate the bit rate in Megabits per second (Mbps) for a 'Red Book' standard CD audio stream.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0.705 Mbps"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1.411 Mbps"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10.58 Mbps"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "128 Mbps"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Bit Rate = \\( \\text{Sample Rate} \\times \\text{Bit Depth} \\times \\text{Channels} \\).\n\\( 44,100 \\times 16 \\times 2 = 1,411,200 \\) bits per second. \nIn Mbps: \\( 1,411,200 / 10^6 = 1.4112 \\text{ Mbps} \\)."
+    },
+    {
+      "id": "regen-1776636397746-22",
+      "number": "23",
+      "text": "A legacy system uses 4-bit color depth for a resolution of \\( 320 \\times 200 \\). How much memory in KB (binary) is required for the frame buffer?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "31.25 KB"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "64.00 KB"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "32.00 KB"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "15.63 KB"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. Total bits: \\( 320 \\times 200 \\times 4 = 256,000 \\) bits.\n2. Convert to bytes: \\( 256,000 / 8 = 32,000 \\) bytes.\n3. Convert to KB: \\( 32,000 / 1024 = 31.25 \\text{ KB} \\)."
+    },
+    {
+      "id": "regen-1776636397746-23",
+      "number": "24",
+      "text": "What happens to the file size of an uncompressed audio recording if the sampling rate is doubled and the bit depth is halved?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It doubles."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It is halved."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It remains the same."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It increases by 50%."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Size is proportional to \\( \\text{Rate} \\times \\text{Depth} \\). If Rate becomes \\( 2x \\) and Depth becomes \\( 0.5x \\), the product is \\( 2 \\times 0.5 = 1 \\), meaning the size remains unchanged."
+    },
+    {
+      "id": "regen-1776636397746-24",
+      "number": "25",
+      "text": "A video uses 4:2:2 chroma subsampling. In this scheme, the luma (Y) is sampled at full resolution, but the chroma (Cb, Cr) are sampled at half the horizontal resolution. How does the size of one frame compare to a 4:4:4 (full resolution) 24-bit frame?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It is 2/3 the size."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It is 1/2 the size."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It is 3/4 the size."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It is 1/3 the size."
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In 4:4:4, for every 4 pixels, you have 4 Y, 4 Cb, and 4 Cr samples (12 total). In 4:2:2, for every 4 pixels, you have 4 Y, 2 Cb, and 2 Cr samples (8 total). \\( 8 / 12 = 2/3 \\). Thus, the frame is 2/3 the size of a full 4:4:4 frame."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 25
+}

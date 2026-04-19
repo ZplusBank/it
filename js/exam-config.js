@@ -649,16 +649,70 @@ const EXAM_CONFIG = [
     "icon": "data/Multi/icon.png",
     "chapters": [
       {
-        "id": "9",
+        "id": "1",
         "name": "Mid",
         "q": 140,
         "file": "data/Multi/Mid1.json"
       },
       {
-        "id": "10",
+        "id": "2",
         "name": "Final",
         "q": 113,
         "file": "data/Multi/Final.json"
+      },
+      {
+        "id": "3",
+        "name": "Chapter 1",
+        "q": 15,
+        "file": "data/Multi/chapterChapter1.pdf.json"
+      },
+      {
+        "id": "4",
+        "name": "Chapter 2",
+        "q": 15,
+        "file": "data/Multi/chapterChapter2.pdf.json"
+      },
+      {
+        "id": "5",
+        "name": "Chapter 3",
+        "q": 18,
+        "file": "data/Multi/chapterChapter3.pdf.json"
+      },
+      {
+        "id": "6",
+        "name": "Chapter 4",
+        "q": 15,
+        "file": "data/Multi/chapterChapter4.pdf.json"
+      },
+      {
+        "id": "7",
+        "name": "Chapter 5",
+        "q": 15,
+        "file": "data/Multi/chapterChapter5.pdf.json"
+      },
+      {
+        "id": "8",
+        "name": "Image+Vid+Audio-Theoretical By Z+ (Hard)",
+        "q": 40,
+        "file": "data/Multi/Image+Vid+Audio (Theoretical) By Z+ (Hard).json"
+      },
+      {
+        "id": "9",
+        "name": "Image+Vid+Audio-Theoretical By Z+ ",
+        "q": 40,
+        "file": "data/Multi/Image+Vid+Audio (Theoretical) By Z+ .json"
+      },
+      {
+        "id": "10",
+        "name": "Image+Vid+Audio-Equations By Z+ (Hard)",
+        "q": 25,
+        "file": "data/Multi/Image+Vid+Audio-Equations By Z+ (Hard).json"
+      },
+      {
+        "id": "11",
+        "name": "Image+Vid+Audio-Equations By Z+",
+        "q": 25,
+        "file": "data/Multi/Image+Vid+Audio-Equations By Z+.json"
       }
     ]
   },
