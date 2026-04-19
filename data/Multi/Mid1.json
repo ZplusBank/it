@@ -569,33 +569,33 @@
     {
       "id": "extract-combined-1776616659590-18",
       "number": "19",
-      "text": "What is the file size of a 15-minute uncompressed video at \\( 6000 \\times 4000 \\) resolution with 24-bit color depth (assuming 30 fps)?",
+      "text": "What is the file size of a 15-minute video with a \\(6000 \\times 4000\\) screen resolution and 24-bit color depth? (Assume 30 fps and use 1024 for unit conversion)",
       "choices": [
         {
           "value": "A",
           "label": "A",
-          "text": "1.94 GB"
+          "text": "1555.20 GB"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "19.4 GB"
+          "text": "1728.32 GB"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "194.4 GB"
+          "text": "1944.00 GB"
         },
         {
           "value": "D",
           "label": "D",
-          "text": "1944 GB"
+          "text": "1810.49 GB"
         }
       ],
       "inputName": "Q18",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Calculation: \\( 6000 \\times 4000 \\times 3 \\text{ bytes/pixel} \\times 30 \\text{ fps} \\times 900 \\text{ seconds} = 1,944,000,000,000 \\text{ bytes} \\), which equals 1944 GB."
+      "explanation": "To calculate the file size: 1. **Bits per frame**: \\(6000 \\times 4000 \\times 24 = 576,000,000\\) bits. 2. **Bytes per frame**: \\(576,000,000 / 8 = 72,000,000\\) bytes. 3. **Total frames**: \\(15 \\text{ minutes} \\times 60 \\text{ seconds} \\times 30 \\text{ fps} = 27,000\\) frames. 4. **Total bytes**: \\(72,000,000 \\text{ bytes/frame} \\times 27,000 \\text{ frames} = 1,944,000,000,000\\) bytes. 5. **Convert to GB**: \\(1,944,000,000,000 / (1024 \\times 1024 \\times 1024) \\approx 1810.49\\) GB."
     },
     {
       "id": "extract-combined-1776616659590-19",
