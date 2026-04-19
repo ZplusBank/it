@@ -286,10 +286,11 @@ const app = {
                     const checkBtn = document.getElementById('checkBtn');
                     const nextBtn = document.getElementById('nextBtn');
                     const submitBtn = document.getElementById('submitBtn');
+                    const isCurrentChecked = !!this.checkedAnswers[this.currentQuestionIndex];
 
-                    if (checkBtn.style.display !== 'none' && !this.checkedAnswers[this.currentQuestionIndex]) {
+                    if (checkBtn.style.display !== 'none' && !isCurrentChecked) {
                         this.checkAnswer();
-                    } else if (submitBtn.style.display !== 'none') {
+                    } else if (submitBtn.style.display !== 'none' && isCurrentChecked) {
                         this.showReviewModal();
                     } else if (!nextBtn.disabled) {
                         this.nextQuestion();
@@ -298,9 +299,6 @@ const app = {
                 // A, B, C, D - Select answer
                 else if (['a', 'b', 'c', 'd', 'e', 'f'].includes(e.key.toLowerCase())) {
                     e.preventDefault();
-                    if (this.checkedAnswers[this.currentQuestionIndex]) {
-                        return;
-                    }
                     const value = e.key.toUpperCase();
                     const input = document.getElementById(`choice-${value}`);
                     if (input) {
@@ -1209,7 +1207,6 @@ const app = {
         const isCheckbox = question.inputType === 'checkbox';
         const inputType = isCheckbox ? 'checkbox' : 'radio';
         const currentAnswer = this.userAnswers[idx] || (isCheckbox ? [] : '');
-        const isChecked = () => !!this.checkedAnswers[idx];
         const isLastQuestion = idx === this.questions.length - 1;
 
         document.getElementById('currentQuestion').textContent = idx + 1;
@@ -1217,11 +1214,18 @@ const app = {
         // Build DOM with DocumentFragment for single reflow
         const fragment = document.createDocumentFragment();
 
+        // Two-column layout: question + choices and per-question explanation panel.
+        const layoutDiv = document.createElement('div');
+        layoutDiv.className = 'question-layout';
+
+        const questionMain = document.createElement('div');
+        questionMain.className = 'question-main';
+
         // Question text
         const textDiv = document.createElement('div');
         textDiv.className = 'question-text';
         textDiv.innerHTML = this._renderQuestionContent(question.text, question);
-        fragment.appendChild(textDiv);
+        questionMain.appendChild(textDiv);
 
         // Question image (lazy loaded with decode hints)
         if (question.image) {
@@ -1233,14 +1237,13 @@ const app = {
             img.loading = 'lazy';
             img.decoding = 'async';
             imgWrapper.appendChild(img);
-            fragment.appendChild(imgWrapper);
+            questionMain.appendChild(imgWrapper);
         }
 
         // Choices container with event delegation
         const choicesDiv = document.createElement('div');
         choicesDiv.className = 'choices';
         choicesDiv.addEventListener('change', (e) => {
-            if (isChecked()) return;
             const input = e.target;
             if (input.name === 'answer') {
                 this.selectAnswer(input.value, isCheckbox);
@@ -1249,7 +1252,6 @@ const app = {
 
         // Improve click/tap reliability by treating the whole answer card as selectable.
         choicesDiv.addEventListener('click', (e) => {
-            if (isChecked()) return;
             const choiceCard = e.target.closest('.choice');
             if (!choiceCard) return;
 
@@ -1313,7 +1315,6 @@ const app = {
             input.name = 'answer';
             input.value = choice.value;
             if (isSelected) input.checked = true;
-            if (isChecked()) input.disabled = true;
 
             const label = document.createElement('label');
             label.htmlFor = `choice-${choice.value}`;
@@ -1323,7 +1324,15 @@ const app = {
             choiceDiv.appendChild(label);
             choicesDiv.appendChild(choiceDiv);
         }
-        fragment.appendChild(choicesDiv);
+        questionMain.appendChild(choicesDiv);
+
+        const explanationPanel = document.createElement('aside');
+        explanationPanel.className = 'question-explanation-panel';
+        explanationPanel.id = 'questionExplanationPanel';
+
+        layoutDiv.appendChild(questionMain);
+        layoutDiv.appendChild(explanationPanel);
+        fragment.appendChild(layoutDiv);
 
         // Single DOM write
         container.textContent = '';
@@ -1343,7 +1352,8 @@ const app = {
 
         prevBtn.disabled = idx === 0;
         nextBtn.disabled = false;
-        checkBtn.style.display = isChecked() ? 'none' : 'block';
+        checkBtn.style.display = 'block';
+        checkBtn.textContent = this.checkedAnswers[idx] ? 'Update Check' : 'Check Answer';
         submitBtn.style.display = isLastQuestion ? 'block' : 'none';
 
         // Clear feedback
@@ -1354,15 +1364,12 @@ const app = {
         if (this.checkedAnswers[idx]) {
             this.showFeedback(idx);
         }
+
+        this.renderQuestionExplanation(idx);
     },
 
     selectAnswer(value, isCheckbox) {
         const idx = this.currentQuestionIndex;
-
-        // Once checked, the answer is locked for this question.
-        if (this.checkedAnswers[idx]) {
-            return;
-        }
 
         const wasPreviouslyAnswered = !this._isSkipped(this.userAnswers[idx]);
 
@@ -1392,7 +1399,15 @@ const app = {
             choice.classList.toggle('selected', input && input.checked);
         });
 
+        if (this.checkedAnswers[idx]) {
+            const question = this.questions[idx];
+            const updatedStatus = this._getQuestionStatus(question, this.userAnswers[idx]);
+            this.questionStatuses[idx] = updatedStatus;
+            this.showFeedback(idx, updatedStatus);
+        }
+
         this.updateQuestionNumberStyles();
+        this.renderQuestionExplanation(idx);
 
         // Auto-save on answer change (debounced)
         this.saveProgress();
@@ -1409,10 +1424,9 @@ const app = {
         this.updateQuestionNumberStyles();
         this.showFeedback(idx, status);
 
-        // Lock answer controls immediately after checking.
-        this._lockCurrentQuestionInputs();
         const checkBtn = document.getElementById('checkBtn');
-        if (checkBtn) checkBtn.style.display = 'none';
+        if (checkBtn) checkBtn.textContent = 'Update Check';
+        this.renderQuestionExplanation(idx);
 
         // Toast feedback 
         this.showToast(
@@ -1422,13 +1436,6 @@ const app = {
             status === 'correct' ? 'success' : (status === 'wrong' ? 'error' : 'info'),
             2500
         );
-    },
-
-    _lockCurrentQuestionInputs() {
-        const inputs = document.querySelectorAll('#questionContainer input[name="answer"]');
-        inputs.forEach((input) => {
-            input.disabled = true;
-        });
     },
 
     /** Determine the status for a checked question */
@@ -1463,6 +1470,56 @@ const app = {
         temp.innerHTML = ContentRenderer.render(choice.text || '');
         const plain = (temp.textContent || temp.innerText || '').trim();
         return plain || value;
+    },
+
+    _formatAnswerSummary(question, answer) {
+        if (this._isSkipped(answer)) return 'Not selected yet';
+        if (question.inputType === 'checkbox') {
+            const selected = Array.isArray(answer) ? answer : [];
+            return selected.map((v) => this._getChoiceTextByValue(question, v)).join(', ');
+        }
+        return this._getChoiceTextByValue(question, answer);
+    },
+
+    renderQuestionExplanation(index) {
+        const panel = document.getElementById('questionExplanationPanel');
+        if (!panel) return;
+
+        const question = this.questions[index];
+        if (!question) return;
+
+        const userAnswer = this.userAnswers[index];
+        const isChecked = !!this.checkedAnswers[index];
+        const status = isChecked ? this._getQuestionStatus(question, userAnswer) : 'pending';
+        const labels = {
+            pending: 'Not Checked',
+            correct: 'Correct',
+            wrong: 'Incorrect',
+            skipped: 'Skipped'
+        };
+
+        const explanationRaw = question.explanation || 'Coming soon...';
+        const selectedText = this._formatAnswerSummary(question, userAnswer);
+        const correctAnswerText = question.inputType === 'checkbox'
+            ? question.correctAnswer.split('').map(a => this._getChoiceTextByValue(question, a)).join(', ')
+            : this._getChoiceTextByValue(question, question.correctAnswer);
+        const correctLabel = question.inputType === 'checkbox' ? 'Correct answers:' : 'Correct answer:';
+
+        panel.innerHTML = `
+            <div class="question-explanation-head">
+                <span>Explanation</span>
+                <span class="explanation-state ${status}">${labels[status]}</span>
+            </div>
+            <div class="question-explanation-body">${this._renderQuestionContent(explanationRaw, question)}</div>
+            <div class="question-explanation-meta">
+                <div><strong>Your answer:</strong> ${this.escapeHtml(selectedText)}</div>
+                <div><strong>${correctLabel}</strong> ${this.escapeHtml(correctAnswerText)}</div>
+            </div>
+        `;
+
+        ContentRenderer.typeset(panel);
+        this._enhanceDiagrams(panel);
+        ContentRenderer.attachImageListeners(panel);
     },
 
     showFeedback(index, status = null) {

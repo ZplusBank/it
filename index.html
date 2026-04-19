@@ -506,6 +506,22 @@
             }
         }
     </script>
+
+    <!-- Client-side translator button (no backend required) -->
+    <div class="gtranslate_wrapper" aria-label="Translate this page"></div>
+    <script>
+        window.gtranslateSettings = {
+            default_language: 'en',
+            languages: ['en', 'ar', 'fr', 'es', 'de', 'tr', 'it', 'ru', 'zh-CN'],
+            native_language_names: true,
+            detect_browser_language: true,
+            wrapper_selector: '.gtranslate_wrapper',
+            switcher_horizontal_position: 'left',
+            switcher_vertical_position: 'bottom',
+            switcher_open_direction: 'top'
+        };
+    </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 </body>
 
 </html>
