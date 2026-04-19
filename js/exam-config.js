@@ -643,7 +643,7 @@ const EXAM_CONFIG = [
   },
   {
     "id": "Multi",
-    "name": "Multi Media",
+    "name": "Multimedia",
     "description": "Integrated digital media production.",
     "path": "data/Multi",
     "icon": "data/Multi/icon.png",
