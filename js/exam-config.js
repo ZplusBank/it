@@ -693,8 +693,8 @@ const EXAM_CONFIG = [
       {
         "id": "9",
         "name": "Mid",
-        "q": 118,
-        "file": "data/Multi/Mid.json"
+        "q": 140,
+        "file": "data/Multi/Mid1.json"
       },
       {
         "id": "10",
