@@ -82,7 +82,7 @@ const EXAM_CONFIG = [
   },
   {
     "id": "java1",
-    "name": "Java 1",
+    "name": "Java 1 (OOP 1)",
     "description": "Introduction to Java",
     "path": "data/java1",
     "icon": "data/java1/icon.png",
@@ -145,7 +145,7 @@ const EXAM_CONFIG = [
   },
   {
     "id": "java2",
-    "name": "Java 2",
+    "name": "Java 2 (OOP 2)",
     "description": "Advanced Java",
     "path": "data/java2",
     "icon": "data/java2/icon.png",
