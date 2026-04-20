@@ -691,28 +691,28 @@ const EXAM_CONFIG = [
         "file": "data/Multi/chapterChapter5.pdf.json"
       },
       {
-        "id": "8",
-        "name": "Image+Vid+Audio-Theoretical By Z+ (Hard)",
-        "q": 40,
-        "file": "data/Multi/Image+Vid+Audio (Theoretical) By Z+ (Hard).json"
-      },
-      {
         "id": "9",
         "name": "Image+Vid+Audio-Theoretical By Z+ ",
         "q": 40,
         "file": "data/Multi/Image+Vid+Audio (Theoretical) By Z+ .json"
       },
       {
-        "id": "10",
-        "name": "Image+Vid+Audio-Equations By Z+ (Hard)",
-        "q": 25,
-        "file": "data/Multi/Image+Vid+Audio-Equations By Z+ (Hard).json"
+        "id": "8",
+        "name": "Image+Vid+Audio-Theoretical By Z+ (Hard)",
+        "q": 40,
+        "file": "data/Multi/Image+Vid+Audio (Theoretical) By Z+ (Hard).json"
       },
       {
         "id": "11",
         "name": "Image+Vid+Audio-Equations By Z+",
         "q": 25,
         "file": "data/Multi/Image+Vid+Audio-Equations By Z+.json"
+      },
+      {
+        "id": "10",
+        "name": "Image+Vid+Audio-Equations By Z+ (Hard)",
+        "q": 25,
+        "file": "data/Multi/Image+Vid+Audio-Equations By Z+ (Hard).json"
       }
     ]
   },
