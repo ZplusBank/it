@@ -19,6 +19,7 @@ const app = {
     questionLang: 'en',
     _translationCache: {},
     _translationInFlight: {},
+    _remoteTranslateCache: {},
 
     // === Toast Notification System ===
     showToast(message, type = 'info', duration = 3000) {
@@ -593,8 +594,144 @@ const app = {
     },
 
     _isLikelyCodeText(text) {
+        const value = String(text || '').trim();
+        if (!value) return false;
+
+        // Strong code signals (includes HTML/canvas snippets)
+        if (/```|`|#include|<\/?[a-z][^>]*>|\b(function|class|import|export|namespace|typedef|canvas|getContext|ctx\.)\b/i.test(value)) {
+            return true;
+        }
+
+        const lines = value.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+        if (!lines.length) return false;
+
+        // Single-line operator-heavy snippets are usually code/expressions.
+        if (lines.length === 1 && value.length <= 90) {
+            const operatorHeavy = /[=!<>+\-*/%&|^]{1,2}|[(){}\[\];]/.test(value);
+            const plainSentence = /[A-Za-z]{3,}\s+[A-Za-z]{3,}/.test(value);
+            if (operatorHeavy && !plainSentence) return true;
+        }
+
+        // Multi-line blocks with many code-like lines.
+        let codeLikeLines = 0;
+        for (let i = 0; i < lines.length; i++) {
+            if (/;\s*$|[{}]|=>|::|\b(var|let|const|int|float|double|bool|void|return|if\s*\(|for\s*\(|while\s*\()\b/i.test(lines[i])) {
+                codeLikeLines++;
+            }
+        }
+
+        return codeLikeLines >= Math.max(2, Math.ceil(lines.length * 0.5));
+    },
+
+    _isLikelyDiagramText(text) {
+        const value = String(text || '').trim();
+        if (!value) return false;
+
+        // Common diagram languages/syntax (Mermaid, PlantUML, DOT, nomnoml, sequence-like arrows)
+        if (/^\s*(graph|flowchart|sequenceDiagram|classDiagram|stateDiagram|erDiagram|journey|gantt|pie|mindmap)\b/i.test(value)) return true;
+        if (/^\s*(@startuml|@enduml|digraph|strict digraph|subgraph|participant|actor|entity|database|package)\b/i.test(value)) return true;
+        if (/\b(mermaid|plantuml|graphviz|nomnoml|uml)\b/i.test(value)) return true;
+        if (/-->|==>|<-+|->|\|\||:::/i.test(value) && /[A-Za-z]/.test(value)) return true;
+
+        return false;
+    },
+
+    async _translateLinePreservingInlineCode(line, targetLang) {
+        if (!line.trim()) return line;
+        if (this._isLikelyCodeText(line) || this._isLikelyDiagramText(line)) return line;
+
+        // Preserve inline code, HTML tags, and markdown links while translating surrounding plain text.
+        const parts = line.split(/(`[^`]*`|<[^>]+>|\[[^\]]*\]\([^)]*\))/g);
+        const translated = new Array(parts.length);
+
+        for (let i = 0; i < parts.length; i++) {
+            const part = parts[i];
+            if (!part) {
+                translated[i] = part;
+                continue;
+            }
+
+            const protectedPart = /^`[^`]*`$/.test(part)
+                || /^<[^>]+>$/.test(part)
+                || /^\[[^\]]*\]\([^)]*\)$/.test(part)
+                || this._isLikelyCodeText(part)
+                || this._isLikelyDiagramText(part);
+
+            if (protectedPart || !part.trim()) {
+                translated[i] = part;
+                continue;
+            }
+
+            translated[i] = await this._translatePlainSegment(part, targetLang);
+        }
+
+        return translated.join('');
+    },
+
+    _decodeHtmlEntities(text) {
         const value = String(text || '');
-        return /```|`|#include|<\/?[a-z][^>]*>|\{[^}]*\}|;\s*$|\b(for|while|if|return|class|public|private|void|int|string)\b/i.test(value);
+        if (!value || !/[&][a-z#0-9]+;/i.test(value)) return value;
+        const ta = document.createElement('textarea');
+        ta.innerHTML = value;
+        return ta.value;
+    },
+
+    async _translatePlainSegment(text, targetLang) {
+        const value = String(text || '').trim();
+        if (!value) return value;
+
+        const cacheKey = `${targetLang}::${value}`;
+        if (this._remoteTranslateCache[cacheKey]) {
+            return this._remoteTranslateCache[cacheKey];
+        }
+
+        const sourceLang = this._containsArabic(value) ? 'ar' : 'en';
+        if (sourceLang === targetLang) {
+            this._remoteTranslateCache[cacheKey] = value;
+            return value;
+        }
+
+        // Primary: Google public translate endpoint.
+        try {
+            const googleUrl = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLang}&dt=t&q=${encodeURIComponent(value)}`;
+            const response = await fetch(googleUrl);
+            if (response.ok) {
+                const data = await response.json();
+                if (Array.isArray(data) && Array.isArray(data[0])) {
+                    const translated = data[0]
+                        .map((chunk) => (Array.isArray(chunk) ? chunk[0] : ''))
+                        .join('')
+                        .trim();
+                    if (translated) {
+                        const clean = this._decodeHtmlEntities(translated);
+                        this._remoteTranslateCache[cacheKey] = clean;
+                        return clean;
+                    }
+                }
+            }
+        } catch (_) {
+            // Try fallback below.
+        }
+
+        // Fallback: MyMemory
+        try {
+            const mmUrl = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(value)}&langpair=${sourceLang}|${targetLang}`;
+            const response = await fetch(mmUrl);
+            if (response.ok) {
+                const data = await response.json();
+                const translated = String(data?.responseData?.translatedText || '').trim();
+                if (translated) {
+                    const clean = this._decodeHtmlEntities(translated);
+                    this._remoteTranslateCache[cacheKey] = clean;
+                    return clean;
+                }
+            }
+        } catch (_) {
+            // Keep source text.
+        }
+
+        this._remoteTranslateCache[cacheKey] = value;
+        return value;
     },
 
     _getQuestionTranslationKey(index, field) {
@@ -611,22 +748,30 @@ const app = {
         const sourceText = String(text || '').trim();
         if (!sourceText) return sourceText;
         if (targetLang !== 'ar') return sourceText;
-        if (this._isLikelyCodeText(sourceText)) return sourceText;
+        if (this._isLikelyCodeText(sourceText) || this._isLikelyDiagramText(sourceText)) return sourceText;
 
-        const sourceLang = this._containsArabic(sourceText) ? 'ar' : 'en';
-        if (sourceLang === targetLang) return sourceText;
+        // Translate line-by-line while preserving fenced code/diagram blocks.
+        const lines = sourceText.split(/\r?\n/);
+        const out = new Array(lines.length);
+        let inFence = false;
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
 
-        try {
-            const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(sourceText)}&langpair=${sourceLang}|${targetLang}`;
-            const response = await fetch(url);
-            if (!response.ok) return sourceText;
-            const data = await response.json();
-            const translated = data?.responseData?.translatedText;
-            if (!translated || typeof translated !== 'string') return sourceText;
-            return translated.trim() || sourceText;
-        } catch (_) {
-            return sourceText;
+            if (/^\s*```/.test(line)) {
+                inFence = !inFence;
+                out[i] = line;
+                continue;
+            }
+
+            if (inFence || !line.trim() || this._isLikelyCodeText(line) || this._isLikelyDiagramText(line)) {
+                out[i] = line;
+                continue;
+            }
+
+            out[i] = await this._translateLinePreservingInlineCode(line, targetLang);
         }
+
+        return out.join('\n');
     },
 
     async _queueQuestionTranslation(index, question) {
@@ -1222,6 +1367,7 @@ const app = {
         this.questionLang = 'en';
         this._translationCache = {};
         this._translationInFlight = {};
+        this._remoteTranslateCache = {};
         this.clearProgress(); // Clear any old progress when starting new exam
 
         // Lazy-load content rendering libs before showing exam
@@ -2151,6 +2297,7 @@ const app = {
         this.questionLang = 'en';
         this._translationCache = {};
         this._translationInFlight = {};
+        this._remoteTranslateCache = {};
         this._cleanupResultIO();
         this._cleanupResultImageIO();
     },
