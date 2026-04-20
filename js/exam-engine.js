@@ -16,6 +16,9 @@ const app = {
     _resultIO: null,         // IntersectionObserver for lazy results
     _resultImageIO: null,    // IntersectionObserver for lazy result images
     _subjectIconObserver: null, // IntersectionObserver for subject icons
+    questionLang: 'en',
+    _translationCache: {},
+    _translationInFlight: {},
 
     // === Toast Notification System ===
     showToast(message, type = 'info', duration = 3000) {
@@ -299,6 +302,9 @@ const app = {
                 // A, B, C, D - Select answer
                 else if (['a', 'b', 'c', 'd', 'e', 'f'].includes(e.key.toLowerCase())) {
                     e.preventDefault();
+                    if (this.checkedAnswers[this.currentQuestionIndex]) {
+                        return;
+                    }
                     const value = e.key.toUpperCase();
                     const input = document.getElementById(`choice-${value}`);
                     if (input) {
@@ -580,6 +586,88 @@ const app = {
         }
 
         return ContentRenderer.render(text);
+    },
+
+    _containsArabic(text) {
+        return /[\u0600-\u06FF]/.test(String(text || ''));
+    },
+
+    _isLikelyCodeText(text) {
+        const value = String(text || '');
+        return /```|`|#include|<\/?[a-z][^>]*>|\{[^}]*\}|;\s*$|\b(for|while|if|return|class|public|private|void|int|string)\b/i.test(value);
+    },
+
+    _getQuestionTranslationKey(index, field) {
+        return `${index}::${field}`;
+    },
+
+    _getLocalizedQuestionField(index, field, fallback) {
+        if (this.questionLang !== 'ar') return fallback;
+        const key = this._getQuestionTranslationKey(index, field);
+        return this._translationCache[key] || fallback;
+    },
+
+    async _translateTextOnline(text, targetLang) {
+        const sourceText = String(text || '').trim();
+        if (!sourceText) return sourceText;
+        if (targetLang !== 'ar') return sourceText;
+        if (this._isLikelyCodeText(sourceText)) return sourceText;
+
+        const sourceLang = this._containsArabic(sourceText) ? 'ar' : 'en';
+        if (sourceLang === targetLang) return sourceText;
+
+        try {
+            const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(sourceText)}&langpair=${sourceLang}|${targetLang}`;
+            const response = await fetch(url);
+            if (!response.ok) return sourceText;
+            const data = await response.json();
+            const translated = data?.responseData?.translatedText;
+            if (!translated || typeof translated !== 'string') return sourceText;
+            return translated.trim() || sourceText;
+        } catch (_) {
+            return sourceText;
+        }
+    },
+
+    async _queueQuestionTranslation(index, question) {
+        if (this.questionLang !== 'ar' || !question) return;
+
+        const inFlightKey = `q${index}`;
+        if (this._translationInFlight[inFlightKey]) return;
+
+        const tasks = [];
+        const pushTask = (field, value) => {
+            const key = this._getQuestionTranslationKey(index, field);
+            if (this._translationCache[key] || !String(value || '').trim()) return;
+            tasks.push({ key, value });
+        };
+
+        pushTask('question', question.text || '');
+        pushTask('explanation', question.explanation || '');
+        (question.choices || []).forEach((choice, choiceIdx) => {
+            pushTask(`choice_${choiceIdx}`, choice?.text || '');
+        });
+
+        if (!tasks.length) return;
+
+        this._translationInFlight[inFlightKey] = true;
+        try {
+            for (let i = 0; i < tasks.length; i++) {
+                const translated = await this._translateTextOnline(tasks[i].value, 'ar');
+                this._translationCache[tasks[i].key] = translated;
+            }
+        } finally {
+            delete this._translationInFlight[inFlightKey];
+        }
+
+        if (this.currentView === 'exam' && this.currentQuestionIndex === index && this.questionLang === 'ar') {
+            this.renderCurrentQuestion();
+        }
+    },
+
+    toggleQuestionLanguage() {
+        this.questionLang = this.questionLang === 'en' ? 'ar' : 'en';
+        this.renderCurrentQuestion();
     },
 
     /**
@@ -1131,6 +1219,9 @@ const app = {
         this.checkedAnswers = {};
         this.questionStatuses = {};
         this._answeredCount = 0;
+        this.questionLang = 'en';
+        this._translationCache = {};
+        this._translationInFlight = {};
         this.clearProgress(); // Clear any old progress when starting new exam
 
         // Lazy-load content rendering libs before showing exam
@@ -1208,6 +1299,8 @@ const app = {
         const inputType = isCheckbox ? 'checkbox' : 'radio';
         const currentAnswer = this.userAnswers[idx] || (isCheckbox ? [] : '');
         const isLastQuestion = idx === this.questions.length - 1;
+        const isArabicUI = this.questionLang === 'ar';
+        const uiDir = isArabicUI ? 'rtl' : 'ltr';
 
         document.getElementById('currentQuestion').textContent = idx + 1;
 
@@ -1217,14 +1310,38 @@ const app = {
         // Two-column layout: question + choices and per-question explanation panel.
         const layoutDiv = document.createElement('div');
         layoutDiv.className = 'question-layout';
+        layoutDiv.setAttribute('dir', uiDir);
+        layoutDiv.setAttribute('lang', this.questionLang);
 
         const questionMain = document.createElement('div');
         questionMain.className = 'question-main';
+        questionMain.setAttribute('dir', uiDir);
+        questionMain.setAttribute('lang', this.questionLang);
+
+        const titleRow = document.createElement('div');
+        titleRow.className = 'question-title-row';
+
+        const titleEl = document.createElement('div');
+        titleEl.className = 'question-title';
+        titleEl.textContent = isArabicUI ? `السؤال ${idx + 1}` : `Question ${idx + 1}`;
+
+        const langBtn = document.createElement('button');
+        langBtn.className = 'question-lang-btn';
+        langBtn.type = 'button';
+        langBtn.title = isArabicUI ? 'Switch to English' : 'التحويل إلى العربية';
+        langBtn.setAttribute('aria-label', langBtn.title);
+        langBtn.textContent = isArabicUI ? 'EN' : 'AR';
+        langBtn.addEventListener('click', () => this.toggleQuestionLanguage());
+
+        titleRow.appendChild(titleEl);
+        titleRow.appendChild(langBtn);
+        questionMain.appendChild(titleRow);
 
         // Question text
         const textDiv = document.createElement('div');
         textDiv.className = 'question-text';
-        textDiv.innerHTML = this._renderQuestionContent(question.text, question);
+        const localizedQuestionText = this._getLocalizedQuestionField(idx, 'question', question.text);
+        textDiv.innerHTML = this._renderQuestionContent(localizedQuestionText, question);
         questionMain.appendChild(textDiv);
 
         // Question image (lazy loaded with decode hints)
@@ -1244,6 +1361,7 @@ const app = {
         const choicesDiv = document.createElement('div');
         choicesDiv.className = 'choices';
         choicesDiv.addEventListener('change', (e) => {
+            if (this.checkedAnswers[idx]) return;
             const input = e.target;
             if (input.name === 'answer') {
                 this.selectAnswer(input.value, isCheckbox);
@@ -1252,6 +1370,7 @@ const app = {
 
         // Improve click/tap reliability by treating the whole answer card as selectable.
         choicesDiv.addEventListener('click', (e) => {
+            if (this.checkedAnswers[idx]) return;
             const choiceCard = e.target.closest('.choice');
             if (!choiceCard) return;
 
@@ -1315,10 +1434,12 @@ const app = {
             input.name = 'answer';
             input.value = choice.value;
             if (isSelected) input.checked = true;
+            if (this.checkedAnswers[idx]) input.disabled = true;
 
             const label = document.createElement('label');
             label.htmlFor = `choice-${choice.value}`;
-            label.innerHTML = this._renderQuestionContent(choice.text, question);
+            const localizedChoiceText = this._getLocalizedQuestionField(idx, `choice_${i}`, choice.text);
+            label.innerHTML = this._renderQuestionContent(localizedChoiceText, question);
 
             choiceDiv.appendChild(input);
             choiceDiv.appendChild(label);
@@ -1326,12 +1447,7 @@ const app = {
         }
         questionMain.appendChild(choicesDiv);
 
-        const explanationPanel = document.createElement('aside');
-        explanationPanel.className = 'question-explanation-panel';
-        explanationPanel.id = 'questionExplanationPanel';
-
         layoutDiv.appendChild(questionMain);
-        layoutDiv.appendChild(explanationPanel);
         fragment.appendChild(layoutDiv);
 
         // Single DOM write
@@ -1352,8 +1468,8 @@ const app = {
 
         prevBtn.disabled = idx === 0;
         nextBtn.disabled = false;
-        checkBtn.style.display = 'block';
-        checkBtn.textContent = this.checkedAnswers[idx] ? 'Update Check' : 'Check Answer';
+        checkBtn.style.display = this.checkedAnswers[idx] ? 'none' : 'block';
+        checkBtn.textContent = 'Check Answer';
         submitBtn.style.display = isLastQuestion ? 'block' : 'none';
 
         // Clear feedback
@@ -1365,11 +1481,17 @@ const app = {
             this.showFeedback(idx);
         }
 
-        this.renderQuestionExplanation(idx);
+        if (isArabicUI) {
+            this._queueQuestionTranslation(idx, question);
+        }
     },
 
     selectAnswer(value, isCheckbox) {
         const idx = this.currentQuestionIndex;
+
+        if (this.checkedAnswers[idx]) {
+            return;
+        }
 
         const wasPreviouslyAnswered = !this._isSkipped(this.userAnswers[idx]);
 
@@ -1399,15 +1521,7 @@ const app = {
             choice.classList.toggle('selected', input && input.checked);
         });
 
-        if (this.checkedAnswers[idx]) {
-            const question = this.questions[idx];
-            const updatedStatus = this._getQuestionStatus(question, this.userAnswers[idx]);
-            this.questionStatuses[idx] = updatedStatus;
-            this.showFeedback(idx, updatedStatus);
-        }
-
         this.updateQuestionNumberStyles();
-        this.renderQuestionExplanation(idx);
 
         // Auto-save on answer change (debounced)
         this.saveProgress();
@@ -1424,9 +1538,10 @@ const app = {
         this.updateQuestionNumberStyles();
         this.showFeedback(idx, status);
 
+        this._lockCurrentQuestionInputs();
+
         const checkBtn = document.getElementById('checkBtn');
-        if (checkBtn) checkBtn.textContent = 'Update Check';
-        this.renderQuestionExplanation(idx);
+        if (checkBtn) checkBtn.style.display = 'none';
 
         // Toast feedback 
         this.showToast(
@@ -1436,6 +1551,13 @@ const app = {
             status === 'correct' ? 'success' : (status === 'wrong' ? 'error' : 'info'),
             2500
         );
+    },
+
+    _lockCurrentQuestionInputs() {
+        const inputs = document.querySelectorAll('#questionContainer input[name="answer"]');
+        inputs.forEach((input) => {
+            input.disabled = true;
+        });
     },
 
     /** Determine the status for a checked question */
@@ -1455,30 +1577,35 @@ const app = {
     },
 
     /** Resolve answer key (A/B/C...) to the actual choice text */
-    _getChoiceTextByValue(question, value) {
+    _getChoiceTextByValue(question, value, questionIndex = this.currentQuestionIndex) {
         const choices = Array.isArray(question?.choices) ? question.choices : [];
-        const choice = choices.find(c => c.value === value);
+        const choiceIdx = choices.findIndex(c => c.value === value);
+        const choice = choiceIdx >= 0 ? choices[choiceIdx] : null;
         if (!choice) return value;
+
+        const localized = this._getLocalizedQuestionField(questionIndex, `choice_${choiceIdx}`, choice.text || value);
 
         // For web questions, return raw text to preserve visible HTML tags
         if (this._isWebRelatedQuestion(question)) {
-            return choice.text || value;
+            return localized;
         }
 
         // Convert rendered rich text to plain text for compact feedback line
         const temp = document.createElement('div');
-        temp.innerHTML = ContentRenderer.render(choice.text || '');
+        temp.innerHTML = ContentRenderer.render(localized || '');
         const plain = (temp.textContent || temp.innerText || '').trim();
         return plain || value;
     },
 
-    _formatAnswerSummary(question, answer) {
-        if (this._isSkipped(answer)) return 'Not selected yet';
+    _formatAnswerSummary(question, answer, questionIndex = this.currentQuestionIndex) {
+        if (this._isSkipped(answer)) {
+            return this.questionLang === 'ar' ? 'لم يتم الاختيار بعد' : 'Not selected yet';
+        }
         if (question.inputType === 'checkbox') {
             const selected = Array.isArray(answer) ? answer : [];
-            return selected.map((v) => this._getChoiceTextByValue(question, v)).join(', ');
+            return selected.map((v) => this._getChoiceTextByValue(question, v, questionIndex)).join(', ');
         }
-        return this._getChoiceTextByValue(question, answer);
+        return this._getChoiceTextByValue(question, answer, questionIndex);
     },
 
     renderQuestionExplanation(index) {
@@ -1490,29 +1617,45 @@ const app = {
 
         const userAnswer = this.userAnswers[index];
         const isChecked = !!this.checkedAnswers[index];
-        const status = isChecked ? this._getQuestionStatus(question, userAnswer) : 'pending';
-        const labels = {
-            pending: 'Not Checked',
-            correct: 'Correct',
-            wrong: 'Incorrect',
-            skipped: 'Skipped'
-        };
+        const isArabicUI = this.questionLang === 'ar';
+        panel.setAttribute('dir', isArabicUI ? 'rtl' : 'ltr');
+        panel.setAttribute('lang', this.questionLang);
 
-        const explanationRaw = question.explanation || 'Coming soon...';
-        const selectedText = this._formatAnswerSummary(question, userAnswer);
+        const status = isChecked ? this._getQuestionStatus(question, userAnswer) : 'pending';
+        const labels = isArabicUI
+            ? {
+                pending: 'غير مفحوص',
+                correct: 'صحيح',
+                wrong: 'خاطئ',
+                skipped: 'متروك'
+            }
+            : {
+                pending: 'Not Checked',
+                correct: 'Correct',
+                wrong: 'Incorrect',
+                skipped: 'Skipped'
+            };
+
+        const explanationFallback = isArabicUI ? 'سيتم إضافة التوضيح قريبا...' : 'Coming soon...';
+        const explanationRaw = this._getLocalizedQuestionField(index, 'explanation', question.explanation || explanationFallback);
+        const selectedText = this._formatAnswerSummary(question, userAnswer, index);
         const correctAnswerText = question.inputType === 'checkbox'
-            ? question.correctAnswer.split('').map(a => this._getChoiceTextByValue(question, a)).join(', ')
-            : this._getChoiceTextByValue(question, question.correctAnswer);
-        const correctLabel = question.inputType === 'checkbox' ? 'Correct answers:' : 'Correct answer:';
+            ? question.correctAnswer.split('').map(a => this._getChoiceTextByValue(question, a, index)).join(', ')
+            : this._getChoiceTextByValue(question, question.correctAnswer, index);
+        const yourAnswerLabel = isArabicUI ? 'إجابتك:' : 'Your answer:';
+        const correctLabel = isArabicUI
+            ? (question.inputType === 'checkbox' ? 'الإجابات الصحيحة:' : 'الإجابة الصحيحة:')
+            : (question.inputType === 'checkbox' ? 'Correct answers:' : 'Correct answer:');
+        const headerLabel = isArabicUI ? 'توضيح' : 'Explanation';
 
         panel.innerHTML = `
             <div class="question-explanation-head">
-                <span>Explanation</span>
+                <span>${headerLabel}</span>
                 <span class="explanation-state ${status}">${labels[status]}</span>
             </div>
             <div class="question-explanation-body">${this._renderQuestionContent(explanationRaw, question)}</div>
             <div class="question-explanation-meta">
-                <div><strong>Your answer:</strong> ${this.escapeHtml(selectedText)}</div>
+                <div><strong>${yourAnswerLabel}</strong> ${this.escapeHtml(selectedText)}</div>
                 <div><strong>${correctLabel}</strong> ${this.escapeHtml(correctAnswerText)}</div>
             </div>
         `;
@@ -1527,18 +1670,28 @@ const app = {
         const userAnswer = this.userAnswers[index];
         const feedbackEl = document.getElementById('feedback');
         const answerStatus = status || this._getQuestionStatus(question, userAnswer);
+        const isArabicUI = this.questionLang === 'ar';
+
+        feedbackEl.setAttribute('dir', isArabicUI ? 'rtl' : 'ltr');
+        feedbackEl.setAttribute('lang', this.questionLang);
 
         feedbackEl.className = `feedback ${answerStatus}`;
 
-        const message = answerStatus === 'correct' ? '✓ Correct!' : (answerStatus === 'wrong' ? '✗ Incorrect' : '○ Skipped');
+        const message = isArabicUI
+            ? (answerStatus === 'correct' ? '✓ صحيح!' : (answerStatus === 'wrong' ? '✗ خطأ' : '○ متروك'))
+            : (answerStatus === 'correct' ? '✓ Correct!' : (answerStatus === 'wrong' ? '✗ Incorrect' : '○ Skipped'));
         const correctAnswerText = question.inputType === 'checkbox'
-            ? question.correctAnswer.split('').map(a => this._getChoiceTextByValue(question, a)).join(', ')
-            : this._getChoiceTextByValue(question, question.correctAnswer);
-        const correctText = question.inputType === 'checkbox'
-            ? `Correct answers: ${correctAnswerText}`
-            : `Correct answer: ${correctAnswerText}`;
+            ? question.correctAnswer.split('').map(a => this._getChoiceTextByValue(question, a, index)).join(', ')
+            : this._getChoiceTextByValue(question, question.correctAnswer, index);
+        const correctText = isArabicUI
+            ? (question.inputType === 'checkbox'
+                ? `الإجابات الصحيحة: ${correctAnswerText}`
+                : `الإجابة الصحيحة: ${correctAnswerText}`)
+            : (question.inputType === 'checkbox'
+                ? `Correct answers: ${correctAnswerText}`
+                : `Correct answer: ${correctAnswerText}`);
 
-        const explanationRaw = question.explanation || 'Coming soon...';
+        const explanationRaw = this._getLocalizedQuestionField(index, 'explanation', question.explanation || (isArabicUI ? 'سيتم إضافة التوضيح قريبا...' : 'Coming soon...'));
 
         // Build feedback DOM
         const frag = document.createDocumentFragment();
@@ -1555,7 +1708,7 @@ const app = {
         const explanationDiv = document.createElement('div');
         explanationDiv.className = 'explanation';
         explanationDiv.style.cssText = 'margin-top:10px;padding-top:10px;border-top:1px solid rgba(0,0,0,0.1)';
-        explanationDiv.innerHTML = `<strong>Explanation:</strong><br>${this._renderQuestionContent(explanationRaw, question)}`;
+        explanationDiv.innerHTML = `<strong>${isArabicUI ? 'توضيح:' : 'Explanation:'}</strong><br>${this._renderQuestionContent(explanationRaw, question)}`;
         frag.appendChild(explanationDiv);
 
         feedbackEl.textContent = '';
@@ -1995,6 +2148,9 @@ const app = {
         this.checkedAnswers = {};
         this.questionStatuses = {};
         this._answeredCount = 0;
+        this.questionLang = 'en';
+        this._translationCache = {};
+        this._translationInFlight = {};
         this._cleanupResultIO();
         this._cleanupResultImageIO();
     },
