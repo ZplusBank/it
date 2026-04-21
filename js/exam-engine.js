@@ -271,9 +271,7 @@ const app = {
     },
 
     _shouldWarnOnSiteExit() {
-        const inExamFlow = this.currentView === 'exam' || this.currentView === 'chapters' || this.currentView === 'results';
-        const hasExamData = this.questions.length > 0 || Object.keys(this.userAnswers || {}).length > 0;
-        return inExamFlow || hasExamData;
+        return this.currentView === 'exam';
     },
 
     confirmSiteExit(onConfirm) {
@@ -318,21 +316,16 @@ const app = {
             this._seededExitGuardState = true;
 
             this.confirmSiteExit(() => {
-                this._allowBrowserExitOnce = true;
-                this.clearProgress();
-                history.back();
+                this.exitExam();
             });
         });
 
-        window.addEventListener('beforeunload', (e) => {
+        window.addEventListener('beforeunload', () => {
             if (this._allowBrowserExitOnce || !this._shouldWarnOnSiteExit()) {
                 return;
             }
 
             this._flushSave();
-            // Browsers only allow native confirm dialogs during unload events.
-            e.preventDefault();
-            e.returnValue = '';
         });
     },
 

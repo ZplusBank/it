@@ -174,6 +174,29 @@ const DiagramHandler = {
         return candidates;
     },
 
+    _normalizeSvgViewBox(svgEl) {
+        if (!svgEl) return;
+
+        // If viewBox already exists and has valid dimensions, leave it as-is
+        if (svgEl.hasAttribute('viewBox')) return;
+
+        const width = parseFloat(svgEl.getAttribute('width'));
+        const height = parseFloat(svgEl.getAttribute('height'));
+
+        // Only proceed if we have both width and height
+        if (isNaN(width) || isNaN(height) || width <= 0 || height <= 0) return;
+
+        // Derive viewBox from width and height
+        svgEl.setAttribute('viewBox', `0 0 ${width} ${height}`);
+
+        // Remove fixed dimensions to allow responsive scaling
+        svgEl.removeAttribute('width');
+        svgEl.removeAttribute('height');
+
+        // Ensure SVG content is not clipped
+        svgEl.setAttribute('overflow', 'visible');
+    },
+
     async _renderCandidate(candidate, engineName) {
         const engine = this._engines[engineName];
         if (!engine) return false;
@@ -191,6 +214,13 @@ const DiagramHandler = {
         try {
             await engine.load();
             await engine.render(candidate.code, mount);
+
+            // Normalize SVG viewBox and dimensions for responsive scaling
+            const svg = mount.querySelector('svg');
+            if (svg) {
+                this._normalizeSvgViewBox(svg);
+            }
+
             wrapper.dataset.diagramEnhanced = '1';
             wrapper.classList.add('diagram-enhanced');
             return true;
