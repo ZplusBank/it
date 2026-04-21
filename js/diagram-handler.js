@@ -19,6 +19,7 @@ const DiagramHandler = {
         database: ['mermaid'],
         algorithm: ['mermaid']
     },
+    _viewBoxPrecision: 2,
 
     init() {
         if (this._initialized) return;
@@ -37,9 +38,27 @@ const DiagramHandler = {
                 if (typeof mermaid === 'undefined') {
                     throw new Error('Mermaid is not available');
                 }
+                await this._waitForRenderStability();
                 const diagramId = `diagram_mermaid_${Date.now()}_${Math.floor(Math.random() * 1e6)}`;
-                const rendered = await mermaid.render(diagramId, code);
-                mountEl.innerHTML = rendered.svg || '';
+                const prevZoom = mountEl.style.zoom;
+                const prevTransform = mountEl.style.transform;
+                const prevTransformOrigin = mountEl.style.transformOrigin;
+
+                // Keep Mermaid measurement at a neutral scale to reduce DPR/zoom drift.
+                mountEl.style.zoom = '1';
+                mountEl.style.transform = 'none';
+                mountEl.style.transformOrigin = 'top left';
+
+                try {
+                    const rendered = (document.fonts && document.fonts.ready)
+                        ? await document.fonts.ready.then(() => mermaid.render(diagramId, code))
+                        : await mermaid.render(diagramId, code);
+                    mountEl.innerHTML = rendered.svg || '';
+                } finally {
+                    mountEl.style.zoom = prevZoom;
+                    mountEl.style.transform = prevTransform;
+                    mountEl.style.transformOrigin = prevTransformOrigin;
+                }
             }
         });
 
@@ -174,26 +193,81 @@ const DiagramHandler = {
         return candidates;
     },
 
+    _raf() {
+        return new Promise(resolve => requestAnimationFrame(() => resolve()));
+    },
+
+    async _waitForRenderStability() {
+        if (document.fonts && document.fonts.ready) {
+            try {
+                await document.fonts.ready;
+            } catch (_) {
+                // Ignore font loading errors and continue with available metrics.
+            }
+        }
+
+        // Wait two frames so layout/glyph metrics settle before measurement-heavy rendering.
+        await this._raf();
+        await this._raf();
+    },
+
+    _roundMetric(value) {
+        if (!Number.isFinite(value)) return 0;
+        const precision = this._viewBoxPrecision;
+        const factor = Math.pow(10, precision);
+        return Math.round(value * factor) / factor;
+    },
+
+    _parseViewBox(svgEl) {
+        const raw = String(svgEl.getAttribute('viewBox') || '').trim();
+        if (!raw) return null;
+
+        const parts = raw.split(/[\s,]+/).map(Number);
+        if (parts.length !== 4 || parts.some(n => !Number.isFinite(n))) return null;
+
+        return {
+            minX: parts[0],
+            minY: parts[1],
+            width: parts[2],
+            height: parts[3]
+        };
+    },
+
     _normalizeSvgViewBox(svgEl) {
         if (!svgEl) return;
+        const current = this._parseViewBox(svgEl);
 
-        // If viewBox already exists and has valid dimensions, leave it as-is
-        if (svgEl.hasAttribute('viewBox')) return;
+        let normalized = current;
 
-        const width = parseFloat(svgEl.getAttribute('width'));
-        const height = parseFloat(svgEl.getAttribute('height'));
+        if (!normalized) {
+            const width = parseFloat(svgEl.getAttribute('width'));
+            const height = parseFloat(svgEl.getAttribute('height'));
+            if (Number.isFinite(width) && Number.isFinite(height) && width > 0 && height > 0) {
+                normalized = { minX: 0, minY: 0, width, height };
+            }
+        }
 
-        // Only proceed if we have both width and height
-        if (isNaN(width) || isNaN(height) || width <= 0 || height <= 0) return;
+        if (!normalized) return;
 
-        // Derive viewBox from width and height
-        svgEl.setAttribute('viewBox', `0 0 ${width} ${height}`);
+        // Keep Mermaid's computed extents and only normalize precision.
+        const minX = this._roundMetric(normalized.minX);
+        const minY = this._roundMetric(normalized.minY);
+        const width = this._roundMetric(Math.max(1, normalized.width));
+        const height = this._roundMetric(Math.max(1, normalized.height));
 
-        // Remove fixed dimensions to allow responsive scaling
-        svgEl.removeAttribute('width');
-        svgEl.removeAttribute('height');
+        svgEl.setAttribute('viewBox', `${minX} ${minY} ${width} ${height}`);
 
-        // Ensure SVG content is not clipped
+        const widthAttr = String(svgEl.getAttribute('width') || '').trim();
+        if (!widthAttr || /^\d+(\.\d+)?(px)?$/i.test(widthAttr)) {
+            svgEl.setAttribute('width', '100%');
+        }
+
+        const heightAttr = String(svgEl.getAttribute('height') || '').trim();
+        if (!heightAttr || /^\d+(\.\d+)?(px)?$/i.test(heightAttr)) {
+            svgEl.removeAttribute('height');
+        }
+
+        svgEl.setAttribute('preserveAspectRatio', svgEl.getAttribute('preserveAspectRatio') || 'xMidYMid meet');
         svgEl.setAttribute('overflow', 'visible');
     },
 
@@ -214,6 +288,7 @@ const DiagramHandler = {
         try {
             await engine.load();
             await engine.render(candidate.code, mount);
+            await this._waitForRenderStability();
 
             // Normalize SVG viewBox and dimensions for responsive scaling
             const svg = mount.querySelector('svg');
