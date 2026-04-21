@@ -249,11 +249,15 @@ const DiagramHandler = {
 
         if (!normalized) return;
 
-        // Keep Mermaid's computed extents and only normalize precision.
-        const minX = this._roundMetric(normalized.minX);
-        const minY = this._roundMetric(normalized.minY);
-        const width = this._roundMetric(Math.max(1, normalized.width));
-        const height = this._roundMetric(Math.max(1, normalized.height));
+        // Keep Mermaid's computed extents, but add a small safety margin to avoid
+        // browser/device-specific clipping of markers/strokes at the edges.
+        const dpr = window.devicePixelRatio || 1;
+        const pad = dpr > 1.25 ? 2 : 3;
+
+        const minX = this._roundMetric(normalized.minX - pad);
+        const minY = this._roundMetric(normalized.minY - pad);
+        const width = this._roundMetric(Math.max(1, normalized.width + pad * 2));
+        const height = this._roundMetric(Math.max(1, normalized.height + pad * 2));
 
         svgEl.setAttribute('viewBox', `${minX} ${minY} ${width} ${height}`);
 
