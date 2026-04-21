@@ -464,6 +464,24 @@ const EXAM_CONFIG = [
         "name": "Final",
         "q": 17,
         "file": "data/web/chapterWeb-Final(1).pdfvisual_extractor.json"
+      },
+      {
+        "id": "3",
+        "name": "Chapter 2",
+        "q": 50,
+        "file": "data/web/chapter 2.json"
+      },
+      {
+        "id": "4",
+        "name": "Chapter 3",
+        "q": 50,
+        "file": "data/web/chapter 3.json"
+      },
+      {
+        "id": "5",
+        "name": "Chapter 4",
+        "q": 50,
+        "file": "data/web/chapter 4.json"
       }
     ]
   },

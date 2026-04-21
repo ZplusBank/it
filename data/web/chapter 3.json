@@ -1,0 +1,1553 @@
+{
+  "id": "upload-1776789902985-brrsc",
+  "label": "iw3htp5_03.pdf",
+  "params": {
+    "file": "iw3htp5_03.pdf",
+    "chapter": "4"
+  },
+  "title": "Chapter 3",
+  "questions": [
+    {
+      "id": "upload-1776789902985-0",
+      "number": "1",
+      "text": "What is the primary purpose of the HTML5 `input` type `color`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To change the background color of the webpage"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To allow the user to select or enter a color value"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To validate that a user has entered a valid CSS class"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To automatically detect the user's favorite color"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The color input type enables the user to enter a color, often rendered as a text field for hex codes or a color picker dialog."
+    },
+    {
+      "id": "upload-1776789902985-1",
+      "number": "2",
+      "text": "Which attribute can be used in only one `input` element on a form to automatically give it focus when the page loads?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "select"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "active"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "autofocus"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "auto"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The autofocus attribute is an optional attribute that automatically gives focus to the input element, allowing immediate typing."
+    },
+    {
+      "id": "upload-1776789902985-2",
+      "number": "3",
+      "text": "What is the main advantage of HTML5's self-validating input types?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "They eliminate the need for server-side validation entirely"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "They allow the browser to correct invalid data automatically without user input"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "They reduce the need for complicated client-side JavaScript validation"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "They encrypt the data before it is sent to the server"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Self-validating elements check data on the client side, reducing the need for JavaScript validation and unnecessary server traffic for invalid data."
+    },
+    {
+      "id": "upload-1776789902985-3",
+      "number": "4",
+      "text": "If a developer wants to submit a form without triggering HTML5's built-in validation, which attribute should be added to the submit button?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "novalidate"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "skipvalidation"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "formnovalidate"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "bypass"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The formnovalidate attribute can be added to an input type='submit' to bypass form validation."
+    },
+    {
+      "id": "upload-1776789902985-4",
+      "number": "5",
+      "text": "What is the standard format for the value of an `input type=\"date\"` element?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "mm-dd-yyyy"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "dd-mm-yyyy"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "yyyy-mm-dd"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "yyyy-dd-mm"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The date input type enables the user to enter a date in the specific format yyyy-mm-dd."
+    },
+    {
+      "id": "upload-1776789902985-5",
+      "number": "6",
+      "text": "Which of the following is true regarding the `input type=\"email\"`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It checks if the email address actually exists on the internet"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It validates that the text entered is in the proper email format"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It requires the user to enter a password as well"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It only accepts addresses ending in .com or .org"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "HTML5 validates that the email address entered is in the proper format, but it does not check if the address actually exists."
+    },
+    {
+      "id": "upload-1776789902985-6",
+      "number": "7",
+      "text": "To allow a user to enter multiple email addresses in a single `email` input field, which attribute must be present?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "list"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "multiple"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "array"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "comma-separated"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The multiple attribute allows the user to enter a list of e-mail addresses separated by commas."
+    },
+    {
+      "id": "upload-1776789902985-7",
+      "number": "8",
+      "text": "What happens to `placeholder` text when the user clicks inside or focuses on the text field?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It becomes the actual value submitted to the server"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It changes color to black"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It disappears"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It moves to a label above the field"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Placeholder text provides a hint or example format and disappears when the focus is placed in the text field."
+    },
+    {
+      "id": "upload-1776789902985-8",
+      "number": "9",
+      "text": "HTML5 supports the `placeholder` attribute for which of these specific input types?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "text, search, url, tel, email, and password"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "color, date, range, and number"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "checkbox, radio, and submit"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All input types support placeholder"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "According to the material, HTML5 supports placeholder text for only six types: text, search, url, tel, email and password."
+    },
+    {
+      "id": "upload-1776789902985-9",
+      "number": "10",
+      "text": "Which attribute forces a user to enter a value in an input field before the form can be submitted?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "validate"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "mandatory"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "required"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "needed"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The required attribute forces the user to enter a value before submitting the form."
+    },
+    {
+      "id": "upload-1776789902985-10",
+      "number": "11",
+      "text": "For the `number` input type, which attribute determines the increment by which the values increase or decrease when using the spinner control?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "jump"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "increment"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "step"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "range"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The step attribute determines the increment in which the numbers increase or decrease."
+    },
+    {
+      "id": "upload-1776789902985-11",
+      "number": "12",
+      "text": "The `range` input type is considered 'inherently self-validating' when rendered as a slider because:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It automatically corrects spelling errors"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The user cannot move the slider outside the specified min/max bounds"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It requires a password to move the slider"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It only accepts prime numbers"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Because the slider is restricted by the min and max attributes, the user is physically unable to select a value outside that range."
+    },
+    {
+      "id": "upload-1776789902985-12",
+      "number": "13",
+      "text": "Which input type is functionally equivalent to `type=\"text\"` but may include a 'clear' button (X) in browsers like Chrome and Safari?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "url"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "tel"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "search"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "email"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The search input type is functionally equivalent to text, but some browsers add UI enhancements like an 'X' to clear the query."
+    },
+    {
+      "id": "upload-1776789902985-13",
+      "number": "14",
+      "text": "Which statement about `input type=\"tel\"` is TRUE according to the text?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It automatically validates the telephone number based on the user's country"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It is rendered as a dropdown list of area codes"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "HTML5 does NOT self-validate this input type automatically"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It only allows numeric digits and no special characters like hyphens"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The text explicitly states that HTML5 does not self-validate the tel input type; developers must use the pattern attribute for validation."
+    },
+    {
+      "id": "upload-1776789902985-14",
+      "number": "15",
+      "text": "What attribute should be used with `input type=\"tel\"` to ensure the user enters a phone number in a specific format (e.g., (555) 555-5555)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "format"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "pattern"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "regex"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "validate"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The pattern attribute uses regular expressions to determine if the input matches a specific format."
+    },
+    {
+      "id": "upload-1776789902985-15",
+      "number": "16",
+      "text": "If you want a telephone input to accept exactly 10 digits, which pattern should you use?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "pattern=\"\\d{10}\""
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "pattern=\"[10]\""
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "pattern=\"10-digits\""
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "pattern=\"###-###-####\""
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The regular expression \\d{10} specifies exactly ten numeric digits."
+    },
+    {
+      "id": "upload-1776789902985-16",
+      "number": "17",
+      "text": "What is the correct input type for allowing a user to enter a time (hour, minute, seconds) without a time zone?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "datetime"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "clock"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "timer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "time"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The time input type enables the user to enter an hour, minute, and optionally seconds."
+    },
+    {
+      "id": "upload-1776789902985-17",
+      "number": "18",
+      "text": "How does `input type=\"url\"` validate the user's input?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It pings the website to see if it is online"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It checks if the URL is in the proper format (e.g., starting with http://)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It searches for the URL in Google's database"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It only allows URLs from the same domain as the current page"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "HTML5 validates that the URL entered is in the proper format, not whether the URL actually exists."
+    },
+    {
+      "id": "upload-1776789902985-18",
+      "number": "19",
+      "text": "The `week` input type uses which format to represent the data?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "mm-dd-yyyy"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "yyyy-Wnn (where nn is 01-53)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Wnn-yyyy"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "yyyy-mm-week"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The week input type represents a year and a week number in the format yyyy-Wnn."
+    },
+    {
+      "id": "upload-1776789902985-19",
+      "number": "20",
+      "text": "What is the purpose of the `autocomplete` attribute in a form?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To spell-check the user's input as they type"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To suggest words based on a dictionary"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To fill in information based on previous input from the user"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To automatically submit the form when it is finished"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The autocomplete attribute automatically fills in user information (like name or email) based on previous input."
+    },
+    {
+      "id": "upload-1776789902985-20",
+      "number": "21",
+      "text": "For which types of fields should `autocomplete` typically be set to 'off' for security reasons?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Name and Address"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Email and Telephone"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Credit card numbers and passwords"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Search queries"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Security-sensitive information like credit card numbers and passwords should have autocomplete='off'."
+    },
+    {
+      "id": "upload-1776789902985-21",
+      "number": "22",
+      "text": "Which element is used to provide a predefined list of options for an `<input>` element as the user types?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<select>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<datalist>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<optionlist>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<autocomplete>"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The datalist element provides input options for an input element, creating a drop-down or narrowed list based on user typing."
+    },
+    {
+      "id": "upload-1776789902985-22",
+      "number": "23",
+      "text": "What is the difference between `datetime` and `datetime-local` input types?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "datetime is for dates only, local is for time only"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "datetime is set to UTC, whereas datetime-local uses the user's local time zone"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "datetime-local is only for mobile browsers"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "There is no difference; they are synonymous"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The datetime type includes the time zone set to UTC, while datetime-local allows entering date and time in a single control without a specific zone (usually local)."
+    },
+    {
+      "id": "upload-1776789902985-23",
+      "number": "24",
+      "text": "In the `number` input type, what does the `min` attribute specify?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The minimum number of characters allowed"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The minimum valid numerical value"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The smallest width of the input box"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The minimum font size"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The min attribute sets the minimum valid numerical value for the number input type."
+    },
+    {
+      "id": "upload-1776789902985-24",
+      "number": "25",
+      "text": "What happens if a user enters 'January 2012' into an `input type=\"month\"` field?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The browser automatically converts it to 2012-01"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The form will be submitted successfully"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A callout will appear stating that an invalid value was entered"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The input field will be cleared immediately"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The month type requires the format yyyy-mm. Entering 'January 2012' is an improper format and triggers a validation callout."
+    },
+    {
+      "id": "upload-1776789902985-0",
+      "number": "26",
+      "text": "Which new HTML5 element is used to define the introductory content or navigation links at the top of a page or section?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<top>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<heading>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<header>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<navhead>"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The header element creates a header for a page or section and can contain headings, navigation, and logos."
+    },
+    {
+      "id": "upload-1776789902985-1",
+      "number": "27",
+      "text": "True or False: The `<header>` element can be used multiple times on a single page.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The header element can be used multiple times on a page, for example, within both the body and individual sections or articles."
+    },
+    {
+      "id": "upload-1776789902985-2",
+      "number": "28",
+      "text": "Which element is specifically designed to identify a date, a time, or both in a machine-readable way?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<date>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<clock>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<time>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<calendar>"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The time element identifies a specific date, time, or both."
+    },
+    {
+      "id": "upload-1776789902985-3",
+      "number": "29",
+      "text": "The `<nav>` element is intended to group:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "All links on a webpage"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Major navigation links"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Images with captions"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "External advertisements"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The nav element groups navigation links, typically major navigation blocks for the site or current page."
+    },
+    {
+      "id": "upload-1776789902985-4",
+      "number": "30",
+      "text": "Which pair of elements is used to describe an image, chart, or table and its associated caption?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<image> and <caption-text>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<figure> and <figcaption>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<div> and <p>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<media> and <details>"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The figure element describes the figure (image, chart, etc.), and figcaption provides the caption for it."
+    },
+    {
+      "id": "upload-1776789902985-5",
+      "number": "31",
+      "text": "Which element represents a self-contained piece of content that could be distributed or reused independently (like a blog post or news story)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<section>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<aside>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<article>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<block>"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The article element describes standalone content that could be used or distributed elsewhere."
+    },
+    {
+      "id": "upload-1776789902985-6",
+      "number": "32",
+      "text": "What does the `<summary>` element do when used inside a `<details>` element?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It summarizes the entire webpage for SEO"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It provides a visible caption or heading that, when clicked, toggles the visibility of the rest of the content"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It acts as a footer for the details element"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It defines a list of keywords"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The summary element displays a summary or caption; when clicked, it reveals the content hidden in the details element."
+    },
+    {
+      "id": "upload-1776789902985-7",
+      "number": "33",
+      "text": "Which element is used to group related content, usually with its own heading, representing a thematic grouping of content?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<section>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<div>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<aside>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<span>"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The section element describes a section of a document, usually with its own heading."
+    },
+    {
+      "id": "upload-1776789902985-8",
+      "number": "34",
+      "text": "Content that is related to the main article but is somewhat separate from the flow of text (like background history or a sidebar) should be placed in which element?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<extra>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<margin>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<aside>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<footer>"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The aside element describes content related to surrounding content but somewhat separate from the main flow."
+    },
+    {
+      "id": "upload-1776789902985-9",
+      "number": "35",
+      "text": "Which element provides a visual representation of a scalar measurement within a known range, like a gauge or survey results?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<progress>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<meter>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<range>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<gauge>"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The meter element renders a visual representation of a measure within a specific range."
+    },
+    {
+      "id": "upload-1776789902985-10",
+      "number": "36",
+      "text": "The attributes `min`, `max`, and `value` are used with which structure element to define its data points?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<time>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<footer>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<meter>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<nav>"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The meter element uses min, max, and value attributes to determine how to render the visual measure."
+    },
+    {
+      "id": "upload-1776789902985-11",
+      "number": "37",
+      "text": "What is typically found in the `<footer>` element?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Main navigation links and logos"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Copyright notices and contact information"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The main article text"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A list of definitions"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The footer element usually appears at the bottom of a section or page and includes copyright or contact details."
+    },
+    {
+      "id": "upload-1776789902985-12",
+      "number": "38",
+      "text": "Which element is used to highlight specific text within a paragraph?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<strong>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<mark>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<em>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<high>"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The mark element highlights text enclosed within it, typically with a yellow background by default."
+    },
+    {
+      "id": "upload-1776789902985-13",
+      "number": "39",
+      "text": "What is the purpose of the `<wbr>` element?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To force a line break in all browsers"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To indicate an appropriate place to break a word if the text wraps"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To define a website's base URL"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To wrap text around an image"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The wbr element (Word Break Opportunity) indicates where it would be appropriate to break a long word if the line wraps."
+    },
+    {
+      "id": "upload-1776789902985-14",
+      "number": "40",
+      "text": "Which element can be nested within an `<article>` to represent comments related to that article?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<section>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<aside>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<article>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<footer>"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The material notes that article elements can be nested, for example, reader comments nested as articles within a larger magazine article."
+    },
+    {
+      "id": "upload-1776789902985-15",
+      "number": "41",
+      "text": "When using `<datalist>`, how does Firefox filter the results differently compared to Opera when a user types a letter like 'M'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Opera shows nothing, Firefox shows everything"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Opera shows only words starting with 'M', while Firefox shows any words containing 'M'"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Firefox shows only words starting with 'M', while Opera shows any words containing 'M'"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Both browsers behave identically"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "According to the text, Opera narrows the list to items starting with the letter, whereas Firefox shows all items containing that letter."
+    },
+    {
+      "id": "upload-1776789902985-16",
+      "number": "42",
+      "text": "Which input type specifically triggers a numeric keypad on most mobile devices?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "text"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "range"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "number"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "search"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The number input type typically triggers a numeric keypad on mobile devices for easier entry."
+    },
+    {
+      "id": "upload-1776789902985-17",
+      "number": "43",
+      "text": "In a `<meter>` element, if the `max` is 100 and the `value` is 25, what does the visual bar represent?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "100%"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "25%"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "75%"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The meter value is 25 out of a maximum 100, which visually represents one-quarter or 25% of the gauge."
+    },
+    {
+      "id": "upload-1776789902985-18",
+      "number": "44",
+      "text": "Which of the following is NOT one of the input types that supports the `placeholder` attribute?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "search"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "url"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "range"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "password"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The placeholder attribute is supported for text, search, url, tel, email, and password. It is not listed for 'range'."
+    },
+    {
+      "id": "upload-1776789902985-19",
+      "number": "45",
+      "text": "How many `input` elements in a single form can have the `autofocus` attribute?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Zero"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Only one"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Two (one for desktop, one for mobile)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "As many as needed"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The autofocus attribute can be used in only one input element on a form."
+    },
+    {
+      "id": "upload-1776789902985-20",
+      "number": "46",
+      "text": "What does the `multiple` attribute allow in an `input type=\"email\"`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The user to enter multiple email accounts for one person"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The user to enter a list of e-mail addresses separated by commas"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The browser to send the form to multiple servers"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The input to accept both email and phone numbers"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Specified in Section 3.1.5, the multiple attribute enables a comma-separated list of addresses."
+    },
+    {
+      "id": "upload-1776789902985-21",
+      "number": "47",
+      "text": "Which structured element would be most appropriate for a sidebar containing links to related articles?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<aside>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<footer>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<header>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<figure>"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "An aside is used for content related to the surrounding text but separate from it, like sidebars."
+    },
+    {
+      "id": "upload-1776789902985-22",
+      "number": "48",
+      "text": "To create a telephone input that must start with '079' and be followed by exactly 7 more digits, which pattern is correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "pattern=\"079-7\""
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "pattern=\"079\\d{7}\""
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "pattern=\"\\d{10}\""
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "pattern=\"079#######\""
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The pattern 079\\d{7} matches the literal string '079' followed by seven digits."
+    },
+    {
+      "id": "upload-1776789902985-23",
+      "number": "49",
+      "text": "Which element is used to provide a caption for the contents of a `<figure>` element?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<label>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<caption>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<figcaption>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<summary>"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The figcaption element provides a caption for the image or content within a figure element."
+    },
+    {
+      "id": "upload-1776789902985-24",
+      "number": "50",
+      "text": "Which of the following describes the behavior of `input type=\"search\"` in some browsers when the user starts typing?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It automatically opens Google Search in a new tab"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It displays an 'X' that can be clicked to clear the field"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It highlights all occurrences of the word on the current page"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It disables the submit button until a keyword is found"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Chrome and Safari specifically display an 'X' in search input fields to allow the user to clear the query easily."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 50
+}

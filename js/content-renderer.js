@@ -432,7 +432,10 @@ const ContentRenderer = {
     _restoreMath(html, blocks) {
         for (let i = 0; i < blocks.length; i++) {
             const block = blocks[i];
-            let content = block.content;
+            // Keep math content as literal text in HTML to prevent tags like <hr>
+            // from being parsed as DOM elements before MathJax typesets.
+            const escapedMath = this._escapeHtml(block.content);
+            let content = escapedMath;
             if (content.startsWith('\\(')) {
                 content = `<span class="math-scroll-wrapper">${content}</span>`;
             }

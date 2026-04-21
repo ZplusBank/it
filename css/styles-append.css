@@ -525,6 +525,11 @@ p,
         isolation: isolate;
     }
 
+    /* Keep modals above fixed exam controls on phones */
+    .modal-overlay {
+        z-index: 1306 !important;
+    }
+
     .exam-controls .group-btns,
     .exam-controls button {
         pointer-events: auto;

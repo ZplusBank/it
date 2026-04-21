@@ -19,6 +19,9 @@ const app = {
     _themeToggleOriginalParent: null,
     _examControlsPlaceholder: null,
     _controlLabelSyncBound: null,
+    _siteExitGuardsReady: false,
+    _allowBrowserExitOnce: false,
+    _seededExitGuardState: false,
     questionLang: 'en',
     _translationCache: {},
     _translationInFlight: {},
@@ -214,6 +217,7 @@ const app = {
 
     async init() {
         this.initTheme();
+        this.initSiteExitGuards();
         this._controlLabelSyncBound = () => this.syncExamControlLabels();
         window.addEventListener('resize', this._controlLabelSyncBound, { passive: true });
         this.syncExamControlLabels();
@@ -263,6 +267,72 @@ const app = {
             if (e.target.id === 'keyboardHelp') {
                 this.closeKeyboardHelp();
             }
+        });
+    },
+
+    _shouldWarnOnSiteExit() {
+        const inExamFlow = this.currentView === 'exam' || this.currentView === 'chapters' || this.currentView === 'results';
+        const hasExamData = this.questions.length > 0 || Object.keys(this.userAnswers || {}).length > 0;
+        return inExamFlow || hasExamData;
+    },
+
+    confirmSiteExit(onConfirm) {
+        this._flushSave();
+        this.showModal(
+            'Exit Exam?',
+            'Are you sure you want to exit? Your current progress will be lost.',
+            true,
+            onConfirm
+        );
+    },
+
+    _armSiteExitGuard() {
+        if (this._seededExitGuardState) return;
+        history.pushState({ __siteExitGuard: true }, '', location.href);
+        this._seededExitGuardState = true;
+        this._allowBrowserExitOnce = false;
+    },
+
+    initSiteExitGuards() {
+        if (this._siteExitGuardsReady) return;
+        this._siteExitGuardsReady = true;
+
+        window.addEventListener('popstate', () => {
+            if (this._allowBrowserExitOnce) {
+                this._allowBrowserExitOnce = false;
+                return;
+            }
+
+            if (!this._shouldWarnOnSiteExit()) {
+                // If guard state was popped outside exam flow, allow leaving site.
+                if (this._seededExitGuardState) {
+                    this._allowBrowserExitOnce = true;
+                    this._seededExitGuardState = false;
+                    history.back();
+                }
+                return;
+            }
+
+            // Reinsert sentinel state so user remains on page until confirmation.
+            history.pushState({ __siteExitGuard: true }, '', location.href);
+            this._seededExitGuardState = true;
+
+            this.confirmSiteExit(() => {
+                this._allowBrowserExitOnce = true;
+                this.clearProgress();
+                history.back();
+            });
+        });
+
+        window.addEventListener('beforeunload', (e) => {
+            if (this._allowBrowserExitOnce || !this._shouldWarnOnSiteExit()) {
+                return;
+            }
+
+            this._flushSave();
+            // Browsers only allow native confirm dialogs during unload events.
+            e.preventDefault();
+            e.returnValue = '';
         });
     },
 
@@ -1061,6 +1131,7 @@ const app = {
 
     showSubjectsView() {
         this.currentView = 'subjects';
+        this._allowBrowserExitOnce = false;
         this.resetExam();
         this.hideAllViews();
         const view = document.getElementById('subjectsView');
@@ -1242,6 +1313,7 @@ const app = {
 
     showChaptersView(subject) {
         this.currentView = 'chapters';
+        this._armSiteExitGuard();
         this.hideAllViews();
         const view = document.getElementById('chaptersView');
         view.style.display = 'block';
@@ -1485,6 +1557,7 @@ const app = {
 
     showExamView() {
         this.currentView = 'exam';
+        this._armSiteExitGuard();
         this.hideAllViews();
         document.body.classList.add('exam-active');
         this._pinThemeToggleForExam();
@@ -2465,13 +2538,7 @@ const app = {
     },
 
     confirmExit() {
-        this._flushSave(); // Ensure progress is saved before exit dialog
-        this.showModal(
-            'Exit Exam?',
-            'Are you sure you want to exit? Your current progress will be lost.',
-            true,
-            () => this.exitExam()
-        );
+        this.confirmSiteExit(() => this.exitExam());
     },
 
     closeConfirmModal() {
