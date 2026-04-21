@@ -423,7 +423,7 @@ const EXAM_CONFIG = [
       {
         "id": "5",
         "name": " Mid",
-        "q": 33,
+        "q": 32,
         "file": "data/Network/Mid.json"
       },
       {
