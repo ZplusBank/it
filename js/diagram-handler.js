@@ -218,6 +218,37 @@ const DiagramHandler = {
         return Math.round(value * factor) / factor;
     },
 
+    _getSvgBounds(svgEl) {
+        if (!svgEl) return null;
+
+        try {
+            if (typeof svgEl.getBBox === 'function') {
+                const box = svgEl.getBBox();
+                if (box && Number.isFinite(box.x) && Number.isFinite(box.y) && Number.isFinite(box.width) && Number.isFinite(box.height) && box.width > 0 && box.height > 0) {
+                    return {
+                        minX: box.x,
+                        minY: box.y,
+                        width: box.width,
+                        height: box.height
+                    };
+                }
+            }
+        } catch (_) {
+            // Some browsers throw when SVG layout is not fully ready yet.
+        }
+
+        const current = this._parseViewBox(svgEl);
+        if (current) return current;
+
+        const width = parseFloat(svgEl.getAttribute('width'));
+        const height = parseFloat(svgEl.getAttribute('height'));
+        if (Number.isFinite(width) && Number.isFinite(height) && width > 0 && height > 0) {
+            return { minX: 0, minY: 0, width, height };
+        }
+
+        return null;
+    },
+
     _parseViewBox(svgEl) {
         const raw = String(svgEl.getAttribute('viewBox') || '').trim();
         if (!raw) return null;
@@ -235,18 +266,7 @@ const DiagramHandler = {
 
     _normalizeSvgViewBox(svgEl) {
         if (!svgEl) return;
-        const current = this._parseViewBox(svgEl);
-
-        let normalized = current;
-
-        if (!normalized) {
-            const width = parseFloat(svgEl.getAttribute('width'));
-            const height = parseFloat(svgEl.getAttribute('height'));
-            if (Number.isFinite(width) && Number.isFinite(height) && width > 0 && height > 0) {
-                normalized = { minX: 0, minY: 0, width, height };
-            }
-        }
-
+        const normalized = this._getSvgBounds(svgEl);
         if (!normalized) return;
 
         // Keep Mermaid's computed extents, but add a small safety margin to avoid
