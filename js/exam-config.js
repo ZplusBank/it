@@ -461,24 +461,36 @@ const EXAM_CONFIG = [
       },
       {
         "id": "2",
+        "name": "Mid By Z+",
+        "q": 50,
+        "file": "data/web/chapterMultiple Filesregenerationsame.json"
+      },
+      {
+        "id": "3",
+        "name": "Mid By Z+ (Hard)",
+        "q": 50,
+        "file": "data/web/chapterMultiple Filesregenerationharder.json"
+      },
+      {
+        "id": "4",
         "name": "Final",
         "q": 17,
         "file": "data/web/chapterWeb-Final(1).pdfvisual_extractor.json"
       },
       {
-        "id": "3",
+        "id": "5",
         "name": "Chapter 2",
         "q": 50,
         "file": "data/web/chapter 2.json"
       },
       {
-        "id": "4",
+        "id": "6",
         "name": "Chapter 3",
         "q": 50,
         "file": "data/web/chapter 3.json"
       },
       {
-        "id": "5",
+        "id": "7",
         "name": "Chapter 4",
         "q": 50,
         "file": "data/web/chapter 4.json"

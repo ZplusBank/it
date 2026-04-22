@@ -1,0 +1,1565 @@
+{
+  "id": "regen-1776860040154",
+  "label": "Regenerated: Combined Batch (2 files)",
+  "params": {
+    "file": "Multiple Files",
+    "type": "regeneration",
+    "difficulty": "harder",
+    "chapter": "3"
+  },
+  "title": "Mid By Z+ (Hard)",
+  "questions": [
+    {
+      "id": "regen-1776860040154-0",
+      "number": "1",
+      "text": "If an image `hello.jpg` has an intrinsic aspect ratio of 1:2 and you specify `<img src=\"hello.jpg\" width=\"250\">` in the HTML without any accompanying CSS, how will the browser render the height of the image?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The height will default to 0 pixels."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The height will be automatically scaled to 500 pixels to maintain the aspect ratio."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The browser will display the image at its original height regardless of the width."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The image will fail to render without a mandatory height attribute."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In HTML5, if only one dimension (width or height) is specified on an `<img>` tag, the browser calculates the other dimension automatically to preserve the intrinsic aspect ratio of the image file."
+    },
+    {
+      "id": "regen-1776860040154-1",
+      "number": "2",
+      "text": "Consider the following CSS selector. Which HTML structure will have the background color applied to the text?\n```css\nsection > div p { background-color: #555555; }\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<section> <p> <div> Text </div> </p> </section>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<section> <div> <span> <p> Text </p> </span> </div> </section>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<div> <section> <p> Text </p> </section> </div>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<footer> <section> <div> <p> Text </p> </div> </section> </footer>"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The selector `section > div p` uses a child combinator (`>`) and a descendant combinator (space). It targets a `<p>` that is a descendant of a `<div>`, where that `<div>` is a direct child of a `<section>`. Option D satisfies this hierarchy."
+    },
+    {
+      "id": "regen-1776860040154-2",
+      "number": "3",
+      "text": "Which of the following best describes the structural requirement of XHTML compared to HTML5?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "XHTML permits attribute minimization like `checked` instead of `checked=\"checked\"`."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "XHTML is case-insensitive for tag names but case-sensitive for attributes."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "XHTML documents must be well-formed XML, requiring all elements to be explicitly closed and nested correctly."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "XHTML does not require a root element like `<html>`."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "XHTML (Extensible HyperText Markup Language) is a reformulation of HTML as an XML application. It requires strict adherence to XML syntax, including closing all tags (e.g., `<br />`), proper nesting, and lowercase tag names."
+    },
+    {
+      "id": "regen-1776860040154-3",
+      "number": "4",
+      "text": "For accessibility and SEO, what is the most appropriate way to handle an image `x.jpg` that is purely decorative and contains no meaningful content?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<img src=\"x.jpg\" alt=\"decorative\">"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<img src=\"x.jpg\" alt=\"\">"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<img src=\"x.jpg\" title=\"image\">"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<img src=\"x.jpg\">"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "For decorative images, providing an empty `alt` attribute (`alt=\"\"`) signals to screen readers that the image can be ignored. Omitting the attribute entirely (Choice D) may cause screen readers to read the file name instead."
+    },
+    {
+      "id": "regen-1776860040154-4",
+      "number": "5",
+      "text": "Which semantic HTML5 element should be used to wrap a group of navigation links that are primary to the site's functionality?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<header>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<hgroup>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<nav>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<section>"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `<nav>` element is specifically intended for blocks of navigation links. While navigation is often placed inside a `<header>`, the `<nav>` tag provides the most specific semantic meaning for screen readers."
+    },
+    {
+      "id": "regen-1776860040154-5",
+      "number": "6",
+      "text": "What is the correct CSS declaration to set the background color of the body to red using the hexadecimal shorthand notation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "body { background: #F00; }"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "body { background-color: #RR0000; }"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "body: background-color = red;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "{body; background: #FF;}"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "CSS allows shorthand hexadecimal colors. `#F00` is equivalent to `#FF0000` (Red). The property `background` is a shorthand that includes `background-color`."
+    },
+    {
+      "id": "regen-1776860040154-6",
+      "number": "7",
+      "text": "To create a list where the items are marked with square bullets instead of the default circles, which CSS property and value should be applied to the `<ul>` tag?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "list-style-type: square;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "type: square;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "bullet: square;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "list-type: bullet-square;"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `list-style-type` property defines the appearance of the list item marker. Valid values for unordered lists include `disc`, `circle`, and `square`."
+    },
+    {
+      "id": "regen-1776860040154-7",
+      "number": "8",
+      "text": "Which HTML tag pair is semantically correct for indicating that text has been added to a document as a replacement for deleted text?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<strike> and <add>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<s> and <u>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<del> and <ins>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<removed> and <new>"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `<del>` tag represents deleted text, and the `<ins>` tag represents inserted text. Browsers typically render `<del>` with a strikethrough and `<ins>` with an underline."
+    },
+    {
+      "id": "regen-1776860040154-8",
+      "number": "9",
+      "text": "If you need to display text exactly as it is typed in the HTML source code, including multiple spaces and literal line breaks, which tag should you use?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<code>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<pre>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<br>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<span>"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `<pre>` (preformatted text) tag preserves both spaces and line breaks. By default, browsers render it in a fixed-width font."
+    },
+    {
+      "id": "regen-1776860040154-9",
+      "number": "10",
+      "text": "When linking an external stylesheet, which attribute in the `<link>` tag is used to specify the relationship between the HTML document and the linked file?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "type"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "href"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "rel"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "media"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `rel` attribute stands for 'relationship'. For stylesheets, its value must be set to `\"stylesheet\"`."
+    },
+    {
+      "id": "regen-1776860040154-10",
+      "number": "11",
+      "text": "Analyze the following CSS block. Which line contains a syntax error that will cause the entire rule to be ignored or behave unexpectedly?\n1. `p {` \n2. `font: 12pt bold arial;` \n3. `color: #00FF00;` \n4. `text-decoration: none;` \n5. `}`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Line 2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Line 3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Line 4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "There are no errors."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In the CSS `font` shorthand property, the order is strict. The font-size must come immediately before the font-family. The correct order would be `font: bold 12pt arial;`. Putting `bold` after `12pt` is a syntax error."
+    },
+    {
+      "id": "regen-1776860040154-11",
+      "number": "12",
+      "text": "The W3C Markup Validation Service finds an error in your document regarding a missing `alt` attribute on an `<img>` tag. This is because:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The browser cannot render the image without the `alt` text."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The `alt` attribute is mandatory for HTML5 technical validity and accessibility."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The `alt` attribute defines the file path of the image."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The validator is checking for CSS styling errors."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `alt` attribute is required for the `<img>` element to pass W3C validation as it ensures the page is accessible to visually impaired users."
+    },
+    {
+      "id": "regen-1776860040154-12",
+      "number": "13",
+      "text": "Given the following CSS, which color will be applied to the text inside `<div id=\"main\" class=\"content\">Text</div>`?\n```css\n#main { color: blue; }\n.content { color: red; }\ndiv { color: green; }\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Red"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Blue"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Green"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The colors will mix into purple."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "CSS specificity rules dictate that an ID selector (`#main`) has a higher priority than a class selector (`.content`), which in turn has higher priority than an element selector (`div`)."
+    },
+    {
+      "id": "regen-1776860040154-13",
+      "number": "14",
+      "text": "How can you specify that an external stylesheet should only be applied when the web page is being printed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<link rel=\"stylesheet\" href=\"print.css\" media=\"print\">"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<link rel=\"print\" href=\"print.css\">"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<style type=\"print\"> @import \"print.css\"; </style>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<link rel=\"stylesheet\" href=\"print.css\" type=\"paper\">"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `media` attribute of the `<link>` tag allows you to specify target media types. The value `print` ensures the stylesheet is only active for print output."
+    },
+    {
+      "id": "regen-1776860040154-14",
+      "number": "15",
+      "text": "To improve page load performance, which attribute should be added to an `<img>` tag to prevent the browser from downloading the image until it is near the viewport?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "defer=\"true\""
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "async=\"lazy\""
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "loading=\"lazy\""
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "fetchpriority=\"low\""
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `loading=\"lazy\"` attribute is a native HTML5 feature that defers the loading of off-screen images until the user scrolls near them."
+    },
+    {
+      "id": "regen-1776860040154-15",
+      "number": "16",
+      "text": "You want to move an element 50 pixels down and 20 pixels to the right from where it would naturally appear in the document flow, without affecting the position of surrounding elements. Which CSS is correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "position: absolute; top: 50px; left: 20px;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "position: relative; top: 50px; left: 20px;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "position: static; margin-top: 50px; margin-left: 20px;"
+        },
+        {
+          "value": "D",
+          "label": "B and C",
+          "text": "B and C"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": " `position: relative` moves an element relative to its normal position. Crucially, the space originally occupied by the element is preserved in the document flow."
+    },
+    {
+      "id": "regen-1776860040154-16",
+      "number": "17",
+      "text": "What is the result of the following CSS and HTML inheritance?\n```html\n<style>\n  body { color: black; }\n  .container { color: blue; }\n  p { color: inherit; }\n</style>\n<body class=\"container\">\n  <p>Hello World</p>\n</body>\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The text is black because body is the parent."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The text is blue because the class .container on the body overrides the body tag selector."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The text is green by default browser behavior."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The text is red because of a syntax error."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The class selector `.container` has higher specificity than the `body` element selector. Since the `p` tag is set to `inherit`, it takes the computed color of its parent (`body`), which is blue."
+    },
+    {
+      "id": "regen-1776860040154-17",
+      "number": "18",
+      "text": "Which attribute must be identical across a group of `<input type=\"radio\">` elements to ensure that only one option can be selected at a time?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "id"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "name"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "value"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "class"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Radio buttons are grouped by the `name` attribute. Only one radio button in a group (sharing the same name) can be checked at once."
+    },
+    {
+      "id": "regen-1776860040154-18",
+      "number": "19",
+      "text": "You need to validate a zip code field to accept exactly 5 digits. Which HTML5 attribute and value is most appropriate?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "type=\"number\" max=\"99999\""
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "pattern=\"\\d{5}\""
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "maxlength=\"5\""
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "min=\"10000\" max=\"99999\""
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `pattern` attribute uses a Regular Expression to validate the input. `\\d{5}` ensures exactly five numeric digits are entered."
+    },
+    {
+      "id": "regen-1776860040154-19",
+      "number": "20",
+      "text": "To create a link that opens a new blank browser tab when clicked, which attribute should be added to the `<a>` tag?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "target=\"_new\""
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "target=\"_blank\""
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "rel=\"external\""
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "href=\"_tab\""
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `target=\"_blank\"` attribute tells the browser to open the linked document in a new window or tab."
+    },
+    {
+      "id": "regen-1776860040154-20",
+      "number": "21",
+      "text": "Which CSS selector targets only the `<span>` elements that are immediately preceded by a `<div>` element?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "div span"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "div > span"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "div + span"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "div ~ span"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `+` is the adjacent sibling selector. It matches an element that is the immediate next sibling of the first element."
+    },
+    {
+      "id": "regen-1776860040154-21",
+      "number": "22",
+      "text": "In the property `font-family: \"Times New Roman\", Times, serif;`, why is \"Times New Roman\" enclosed in double quotes?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Because it is the primary font."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Because the font name contains spaces."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Because it is a serif font."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To indicate it is an external web font."
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In CSS, font names that contain white space must be quoted to be interpreted as a single name."
+    },
+    {
+      "id": "regen-1776860040154-22",
+      "number": "23",
+      "text": "Where is the content of the `<title>` element typically displayed by modern browsers?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Inside the `<body>` of the page as an H1."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "In the browser's search history only."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "On the browser tab and in search engine results."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "In a tooltip when hovering over the logo."
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `<title>` tag content defines the title in the browser toolbar and is used by search engines (like Google) as the clickable headline in search results."
+    },
+    {
+      "id": "regen-1776860040154-23",
+      "number": "24",
+      "text": "Which HTML5 input type provides a user interface for selecting a specific month and year, but not a specific day?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<input type=\"date\">"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<input type=\"month\">"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<input type=\"datetime\">"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<input type=\"calendar\">"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `type=\"month\"` input allows users to select a month and year. It does not allow for a specific day or time selection."
+    },
+    {
+      "id": "regen-1776860040154-24",
+      "number": "25",
+      "text": "For the best accessibility, how should a label be associated with a text input field?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<label>Name: <input type=\"text\"></label>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<label for=\"user-name\">Name:</label> <input id=\"user-name\" type=\"text\">"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<input name=\"Name\" type=\"text\">"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A and B"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Labels can be implicitly associated by nesting the input (A) or explicitly associated using the `for` and `id` attributes (B). Both are valid and accessible."
+    },
+    {
+      "id": "regen-1776860040154-25",
+      "number": "26",
+      "text": "To ensure CSS pseudo-classes for links work correctly, they must be defined in a specific order. Which of the following is the standard 'LVHA' order?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": ":hover, :link, :visited, :active"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": ":link, :visited, :hover, :active"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": ":visited, :link, :active, :hover"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": ":active, :hover, :visited, :link"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The LVHA order (Link, Visited, Hover, Active) ensures that styles override each other logically. For example, the `:hover` style must come after `:visited` to be visible when hovering over a visited link."
+    },
+    {
+      "id": "regen-1776860040154-26",
+      "number": "27",
+      "text": "What does the following CSS rule accomplish?\n`p { font: italic small-caps bold 16px/1.5 arial; }` ",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Sets the font-size to 16px and the line-height to 1.5."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Sets the paragraph text to 1.5 times the font size."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Creates a syntax error because of the slash (`/`)."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Sets the font to bold only."
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In the `font` shorthand, `16px/1.5` defines the font-size (16px) followed by the line-height (1.5)."
+    },
+    {
+      "id": "regen-1776860040154-27",
+      "number": "28",
+      "text": "Which selector has the highest specificity?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "nav ul li a"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": ".nav-link"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "ul .active"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "#main-nav"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Specificity is calculated as (IDs, Classes/Pseudo-classes, Elements). #main-nav is (1,0,0). ul .active is (0,1,1). .nav-link is (0,1,0). nav ul li a is (0,0,4). The ID wins."
+    },
+    {
+      "id": "regen-1776860040154-28",
+      "number": "29",
+      "text": "In a 3x3 table, how would you make a single cell occupy the entire first column?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<td colspan=\"3\">"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<td rowspan=\"3\">"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<td span=\"column-3\">"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<td height=\"3\">"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `rowspan` attribute allows a cell to stretch vertically across multiple rows. In a 3x3 table, `rowspan=\"3\"` on the first cell of the first row would take up the whole first column."
+    },
+    {
+      "id": "regen-1776860040154-29",
+      "number": "30",
+      "text": "Which HTML entity should be used to display the 'less than' symbol (<) to prevent the browser from interpreting it as the start of a tag?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "&less;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "&lt;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "&gt;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "&#tag;"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The entity `&lt;` stands for 'less than'. Using literal `<` symbols in content can break HTML parsing."
+    },
+    {
+      "id": "regen-1776860040154-30",
+      "number": "31",
+      "text": "The 'Cascading' in Cascading Style Sheets refers to:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The way styles 'flow' from one page to another via links."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The process of browser rendering from the top-down."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The algorithm that determines which rule applies when multiple rules match an element."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The ability to nest HTML tags inside each other."
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Cascading refers to the priority scheme used to determine which style rules apply if there is more than one rule for a particular HTML element."
+    },
+    {
+      "id": "regen-1776860040154-31",
+      "number": "32",
+      "text": "Which `<meta>` tag is critical for ensuring a website is responsive and renders correctly on mobile devices?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<meta name=\"mobile-optimized\" content=\"width\">"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<meta charset=\"UTF-8\">"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<meta http-equiv=\"refresh\" content=\"30\">"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `viewport` meta tag controls the layout on mobile browsers, ensuring the width of the page matches the width of the screen."
+    },
+    {
+      "id": "regen-1776860040154-32",
+      "number": "33",
+      "text": "What is the specificity value of the following CSS selector?\n`div#header .menu-item a:hover`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "(0, 1, 2, 2)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "(1, 2, 2)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "(1, 0, 1, 2)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "(0, 2, 1, 1)"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Specificity calculation: 1 ID (`#header`), 2 classes/pseudo-classes (`.menu-item`, `:hover`), 2 elements (`div`, `a`). Result: (1, 2, 2)."
+    },
+    {
+      "id": "regen-1776860040154-33",
+      "number": "34",
+      "text": "Which pseudo-class applies a style only when an element (like a button or link) is currently being clicked by the user?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": ":focus"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": ":hover"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": ":active"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": ":visited"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `:active` pseudo-class represents an element being activated by the user. On a mouse-driven device, it's the moment between mouse-down and mouse-up."
+    },
+    {
+      "id": "regen-1776860040154-34",
+      "number": "35",
+      "text": "In the `<meter>` element, what is the purpose of the `optimum` attribute?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It defines the maximum possible value."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It specifies which value is considered 'ideal' or 'best'."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It sets the speed of the animation."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It acts as a placeholder for the current value."
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `optimum` attribute indicates the 'best' value for the meter. Browsers may change the color of the bar (e.g., green vs yellow) based on how close the `value` is to the `optimum`."
+    },
+    {
+      "id": "regen-1776860040154-35",
+      "number": "36",
+      "text": "Which HTML code will correctly display the vulgar fraction one-half (½)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "&fraction12;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "&half;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "&frac12;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1/2"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The entity `&frac12;` is the standard way to display the character ½ in HTML."
+    },
+    {
+      "id": "regen-1776860040154-36",
+      "number": "37",
+      "text": "How do you insert a comment in a CSS file?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "// comment"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<!-- comment -->"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "/* comment */"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "' comment"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "CSS uses C-style multi-line comments `/* ... */`. Double slashes `//` are used in JavaScript and some CSS preprocessors (like SASS), but not standard CSS."
+    },
+    {
+      "id": "regen-1776860040154-37",
+      "number": "38",
+      "text": "What is the correct syntax for a `mailto:` link that includes a pre-filled subject line?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<a href=\"mailto:x@y.com?subject=Hello\">Contact</a>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<a href=\"mailto:x@y.com&subject=Hello\">Contact</a>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<a href=\"mailto:x@y.com/subject:Hello\">Contact</a>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<a mailto=\"x@y.com\" subject=\"Hello\">Contact</a>"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `mailto:` protocol uses a query string format. The first parameter is preceded by a `?`, and subsequent parameters are preceded by `&`."
+    },
+    {
+      "id": "regen-1776860040154-38",
+      "number": "39",
+      "text": "An element with `z-index: 999` is still appearing behind an element with `z-index: 1`. What is the most likely cause?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The browser has a z-index limit of 100."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The element with z-index 999 is set to `position: static`."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The element with z-index 1 is a child of the element with z-index 999."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "z-index only works on images, not text."
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `z-index` property only works on elements that have a `position` value other than `static` (e.g., relative, absolute, fixed, or sticky)."
+    },
+    {
+      "id": "regen-1776860040154-39",
+      "number": "40",
+      "text": "Identify the logic error in this CSS rule:\n`p { width: 50%; padding: 10px; border: 5px solid black; }`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Padding cannot be set in pixels if width is in percentage."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The total visible width of the paragraph will be larger than 50% of the parent container unless `box-sizing: border-box` is used."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The border color must be defined in hex code."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The paragraph will automatically shrink to fit its content regardless of the width."
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "By default (`content-box`), the width of an element only includes the content. Padding and border are added to the outside, making the total width \\(50\\% + 20px + 10px\\)."
+    },
+    {
+      "id": "regen-1776860040154-40",
+      "number": "41",
+      "text": "When using `width: 50%` on a `<div>`, what is the 50% relative to?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The width of the entire screen/viewport."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The width of the parent (containing) element."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The height of the div itself."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The total width of all elements in the same row."
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Percentage values for the `width` property in CSS are calculated based on the width of the element's parent container."
+    },
+    {
+      "id": "regen-1776860040154-41",
+      "number": "42",
+      "text": "Which CSS property is used to create space between the element's border and the borders of adjacent elements?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "padding"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "margin"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "spacing"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "outline"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Margin is the outer space of an element, creating distance from other elements. Padding is the inner space between the content and the border."
+    },
+    {
+      "id": "regen-1776860040154-42",
+      "number": "43",
+      "text": "What is the function of the `@media` rule in CSS?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To import images and videos into the document."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To apply different styles based on the device's characteristics (like screen width)."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To link multiple external CSS files together."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To define animations and transitions."
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Media queries (`@media`) allow content rendering to adapt to conditions such as screen resolution or browser window width."
+    },
+    {
+      "id": "regen-1776860040154-43",
+      "number": "44",
+      "text": "Which HTML5 attribute for the `<video>` tag ensures that the video starts playing immediately as soon as the page loads?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "play"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "start"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "autoplay"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "loop"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `autoplay` attribute is a boolean attribute that, when present, starts the video immediately. Note: Many browsers now require the `muted` attribute for `autoplay` to work."
+    },
+    {
+      "id": "regen-1776860040154-44",
+      "number": "45",
+      "text": "In CSS, which of the following represents a fully transparent color?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "rgba(0, 0, 0, 1)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "rgb(255, 255, 255)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "rgba(255, 255, 255, 0)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "#000000"
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In the `rgba` color model, the fourth value (alpha) ranges from 0 to 1. A value of `0` means the color is 100% transparent."
+    },
+    {
+      "id": "regen-1776860040154-45",
+      "number": "46",
+      "text": "To embed another web page inside your current HTML document, which tag is used?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "<embed>"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "<object>"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "<iframe>"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "<link>"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "An `<iframe>` (inline frame) is used to embed another document within the current HTML document."
+    },
+    {
+      "id": "regen-1776860040154-46",
+      "number": "47",
+      "text": "In HTML5, how can you store custom data that is private to the page or application?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Using `id` attributes."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Using `class` attributes."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Using `data-*` attributes."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Using `<meta>` tags."
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `data-*` attributes allow us to store extra information on standard, semantic HTML elements without having to use non-standard attributes."
+    },
+    {
+      "id": "regen-1776860040154-47",
+      "number": "48",
+      "text": "If you apply `box-sizing: border-box;` to an element, the `width` property will include:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Only the content."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The content and the padding."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The content, padding, and border."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The content, padding, border, and margin."
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "With `border-box`, the width and height properties include the content, padding, and border. It does not include the margin."
+    },
+    {
+      "id": "regen-1776860040154-48",
+      "number": "49",
+      "text": "Which CSS selector targets all `<span>` elements that are siblings of a `<div>` and come after it, even if they are not immediately adjacent?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "div + span"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "div ~ span"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "div span"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "div > span"
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `~` (general sibling selector) matches all iterations of the second element that are preceded by the first element and share the same parent."
+    },
+    {
+      "id": "regen-1776860040154-49",
+      "number": "50",
+      "text": "Which logical operator is used in a media query to combine multiple conditions where all must be true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "or"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "not"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "and"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "only"
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `and` operator combines multiple media features into a single media query, requiring each chained feature to return true for the query to be true."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 50
+}
