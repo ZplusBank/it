@@ -469,12 +469,12 @@
         {
           "value": "B",
           "label": "B",
-          "text": "```html\n<form>\n<p>\n<label>\ntype: <input name = \"x\" type = \"text\">\n</label>\n</p>\n</form>\n```"
+          "text": "```html\n<form>\n<p>\n<label>\ntype: <input name = \"x\" type = \"name\">\n</label>\n</p>\n</form>\n```"
         },
         {
           "value": "C",
           "label": "C",
-          "text": "```html\n<form>\n<p>\n<label>\nName: <input name = \"x\" type = \"name\"\n</label>\n</p>\n</form>\n```"
+          "text": "```html\n<form>\n<p>\n<label>\nName: <input name = \"x\" type = \"text\">\n</label>\n</p>\n</form>\n```"
         },
         {
           "value": "D",
@@ -485,7 +485,7 @@
       "inputName": "Q14",
       "inputType": "radio",
       "correctAnswer": "C",
-      "explanation": "While `type=\"name\"` is not a standard HTML attribute value (the standard is `text`), browsers typically fall back to a text input field for unrecognized types. Option C is the only choice that includes the specific 'Name:' label text shown in the image alongside an input field that would appear as a text box.",
+      "explanation": "Option C is the only choice that includes the specific 'Name:' label text shown in the image alongside an input field that would appear as a text box.",
       "image": "data/web/images/image15_993825c2.png"
     },
     {
