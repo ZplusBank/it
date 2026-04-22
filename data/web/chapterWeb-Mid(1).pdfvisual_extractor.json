@@ -11,26 +11,26 @@
     {
       "id": "extract-1775331211260-vys0c-0",
       "number": "1",
-      "text": "There is an error in the following CSS rules. The error is in line:\n1. `em {font-weight: bold;`\n2. `font-color: black; }`\n3. `.special { font-style: italic; }`\n4. `h1 {font-size: 12pt;}`",
+      "text": "There is an error in the following CSS rules. The error is in line:\n```CSS\n1. `em {font-weight: bold;`\n2. `font-color: black; }`\n3. `.special { font-style: italic; }`\n4. `h1 {font-size: 12pt;}`\n```",
       "choices": [
         {
           "value": "A",
-          "label": "1",
+          "label": "A",
           "text": "1"
         },
         {
           "value": "B",
-          "label": "2",
+          "label": "B",
           "text": "2"
         },
         {
           "value": "C",
-          "label": "3",
+          "label": "C",
           "text": "3"
         },
         {
           "value": "D",
-          "label": "4",
+          "label": "D",
           "text": "4"
         }
       ],
@@ -46,22 +46,22 @@
       "choices": [
         {
           "value": "A",
-          "label": "Rendering the output of the HTML Document",
+          "label": "A",
           "text": "Rendering the output of the HTML Document"
         },
         {
           "value": "B",
-          "label": "Correcting the errors in HTML document.",
+          "label": "B",
           "text": "Correcting the errors in HTML document."
         },
         {
           "value": "C",
-          "label": "Checking the syntax of the CSS rules",
+          "label": "C",
           "text": "Checking the syntax of the CSS rules"
         },
         {
           "value": "D",
-          "label": "Checking that an HTML5 document is syntactically correct",
+          "label": "D",
           "text": "Checking that an HTML5 document is syntactically correct"
         }
       ],
@@ -73,26 +73,26 @@
     {
       "id": "extract-1775331211260-vys0c-2",
       "number": "3",
-      "text": "Given the CSS rule below, which of the following elements would have the color red?\n\ncss\n.fav {color: red;}\n",
+      "text": "Given the CSS rule below, which of the following elements would have the color red?\n\n```CSS\n.fav {color: red;}\n```",
       "choices": [
         {
           "value": "A",
-          "label": "<p>some text</p>",
+          "label": "A",
           "text": "<p>some text</p>"
         },
         {
           "value": "B",
-          "label": "<div id=\"fav\">some text</div>",
+          "label": "B",
           "text": "<div id=\"fav\">some text</div>"
         },
         {
           "value": "C",
-          "label": "<div class=\"fav\">some text</div>",
+          "label": "C",
           "text": "<div class=\"fav\">some text</div>"
         },
         {
           "value": "D",
-          "label": "<p>.fav</p>",
+          "label": "D",
           "text": "<p>.fav</p>"
         }
       ],
@@ -108,23 +108,23 @@
       "choices": [
         {
           "value": "A",
-          "label": "<link rel = href = \"myfavourite.css;\">",
-          "text": "<link rel = href = \"myfavourite.css;\">"
+          "label": "A",
+          "text": "```html\n<link rel = href = \"myfavourite.css;\">\n```"
         },
         {
           "value": "B",
-          "label": "<link stylesheet = \"myfavourite.css;\">",
-          "text": "<link stylesheet = \"myfavourite.css;\">"
+          "label": "B",
+          "text": "```html\n<link stylesheet = \"myfavourite.css;\">\n```"
         },
         {
           "value": "C",
-          "label": "<link = \"myfavourite.css;\">",
-          "text": "<link = \"myfavourite.css;\">"
+          "label": "C",
+          "text": "```html\n<link = \"myfavourite.css;\">\n```"
         },
         {
           "value": "D",
-          "label": "<link rel = \"stylesheet\" type = \"text/css\" href = \"myfavourite.css\">",
-          "text": "<link rel = \"stylesheet\" type = \"text/css\" href = \"myfavourite.css\">"
+          "label": "D",
+          "text": "```html\n<link rel = \"stylesheet\" type = \"text/css\" href = \"myfavourite.css\">\n```"
         }
       ],
       "inputName": "Q3",
@@ -139,23 +139,23 @@
       "choices": [
         {
           "value": "A",
-          "label": "<img href=\"x.jpg\" height = \"100\" width = \"200\" >",
-          "text": "<img href=\"x.jpg\" height = \"100\" width = \"200\" >"
+          "label": "A",
+          "text": "```html\n<img href=\"x.jpg\" height = \"100\" width = \"200\" >\n```"
         },
         {
           "value": "B",
-          "label": "<img src=\"x.jpg\" height = \"100\" width = \"200\" >",
-          "text": "<img src=\"x.jpg\" height = \"100\" width = \"200\" >"
+          "label": "B",
+          "text": "```html\n<img src=\"x.jpg\" height = \"100\" width = \"200\" >\n```"
         },
         {
           "value": "C",
-          "label": "<img=\"x.jpg\" height = \"100\" width = \"200\" >",
-          "text": "<img=\"x.jpg\" height = \"100\" width = \"200\" >"
+          "label": "C",
+          "text": "```html\n<img=\"x.jpg\" height = \"100\" width = \"200\" >\n```"
         },
         {
           "value": "D",
-          "label": "<img http=\"x.jpg\" height = \"100\" width = \"200\" >",
-          "text": "<img http=\"x.jpg\" height = \"100\" width = \"200\" >"
+          "label": "D",
+          "text": "```html\n<img http=\"x.jpg\" height = \"100\" width = \"200\" >\n```"
         }
       ],
       "inputName": "Q4",
@@ -170,23 +170,23 @@
       "choices": [
         {
           "value": "A",
-          "label": "<p> I am a <span style = \"position: relative; top : -2ex; color:blue;\"> fourth year </span> student at Hashemite University. </p>",
-          "text": "<p> I am a <span style = \"position: relative; top : -2ex; color:blue;\"> fourth year </span> student at Hashemite University. </p>"
+          "label": "A",
+          "text": "```html\n<p>\nI am a \n<span style = \"position: relative; top : -2ex; color:blue;\">\nfourth year \n</span> student at Hashemite University.\n</p>\n```"
         },
         {
           "value": "B",
-          "label": "<p> I am a <span style = \"position: relative; bottom:-2ex; color:blue;\"> fourth year </span> student at Hashemite University. </p>",
-          "text": "<p> I am a <span style = \"position: relative; bottom:-2ex; color:blue;\"> fourth year </span> student at Hashemite University. </p>"
+          "label": "B",
+          "text": "```html\n<p>\nI am a \n<span style = \"position: relative; bottom:-2ex; color:blue;\">\nfourth year\n</span>\nstudent at Hashemite University.\n</p>\n```"
         },
         {
           "value": "C",
-          "label": "<p> I am a fourth year student at Hashemite University. </p>",
-          "text": "<p> I am a fourth year student at Hashemite University. </p>"
+          "label": "C",
+          "text": "```html\n<p> \nI am a fourth year student at Hashemite University.\n</p>\n```"
         },
         {
           "value": "D",
-          "label": "<p style = \"position: relative; bottom:-2ex; color:blue;\" > I am a fourth year student at Hashemite University. </p>",
-          "text": "<p style = \"position: relative; bottom:-2ex; color:blue;\" > I am a fourth year student at Hashemite University. </p>"
+          "label": "D",
+          "text": "```html\n<p style = \"position: relative; bottom:-2ex; color:blue;\" >\nI am a fourth year student at Hashemite University.\n</p>\n```"
         }
       ],
       "inputName": "Q5",
@@ -202,22 +202,22 @@
       "choices": [
         {
           "value": "A",
-          "label": "Hello is blue, goodbye is red",
+          "label": "A",
           "text": "Hello is blue, goodbye is red"
         },
         {
           "value": "B",
-          "label": "Hello is blue, goodbye is green",
+          "label": "B",
           "text": "Hello is blue, goodbye is green"
         },
         {
           "value": "C",
-          "label": "Hello is red, goodbye is red",
+          "label": "C",
           "text": "Hello is red, goodbye is red"
         },
         {
           "value": "D",
-          "label": "Hello is red, goodbye is green",
+          "label": "D",
           "text": "Hello is red, goodbye is green"
         }
       ],
@@ -229,33 +229,34 @@
     {
       "id": "extract-1775331211260-vys0c-7",
       "number": "8",
-      "text": "What is the HTML code which gives the following output? (Note: The image shows 'What is your Specilization:' with a line break, then radio buttons where 'CS' is selected.)\n\n| Output Snippet |\n| --- |\n| **What is your Specilization:**<br> CIS ● CS ○ SWE ● |",
+      "text": "What is the HTML code which gives the following output?",
       "choices": [
         {
           "value": "A",
-          "label": "<form><p> What is your Specilization:< br><label>CIS <input name = \"X\" type = \"radio\" value = \"CIS\" > </label><label>CS <input name = \"x\" type = \"radio\" value = \"CS\"></label><label>SWE <input name = \"X\" type = \"radio\" value = \"swe\"></label></p></form>",
-          "text": "<form><p> What is your Specilization:< br><label>CIS <input name = \"X\" type = \"radio\" value = \"CIS\" > </label><label>CS <input name = \"x\" type = \"radio\" value = \"CS\"></label><label>SWE <input name = \"X\" type = \"radio\" value = \"swe\"></label></p></form>"
+          "label": "A",
+          "text": "```html\n<form>\n<p>\n What is your Specilization:< br>\n<label>\nCIS <input name = \"X\" type = \"radio\" value = \"CIS\" > \n</label>\n<label>\nCS <input name = \"x\" type = \"radio\" value = \"CS\">\n</label>\n<label>\nSWE <input name = \"X\" type = \"radio\" value = \"swe\">\n</label>\n</p>\n</form>\n```"
         },
         {
           "value": "B",
-          "label": "<form><p>What is your Specilization:<br><label>CIS <input name = \"x\" type = \"checkbox\" value = \"CIS\"> </label><label> <input name = \"x\" type = \"checkbox\" value = \"CS\" ></label><label>SWE <input name = \"X\" type = \"checkbox\" value = \"swe\"></label></p></form>",
-          "text": "<form><p>What is your Specilization:<br><label>CIS <input name = \"x\" type = \"checkbox\" value = \"CIS\"> </label><label> <input name = \"x\" type = \"checkbox\" value = \"CS\" ></label><label>SWE <input name = \"X\" type = \"checkbox\" value = \"swe\"></label></p></form>"
+          "label": "B",
+          "text": "```html\n<form>\n<p>\nWhat is your Specilization:<br>\n<label>\nCIS <input name = \"x\" type = \"checkbox\" value = \"CIS\"> \n</label>\n<label>\n<input name = \"x\" type = \"checkbox\" value = \"CS\" >\n</label>\n<label>\nSWE <input name = \"X\" type = \"checkbox\" value = \"swe\">\n</label>\n</p>\n</form>\n```"
         },
         {
           "value": "C",
-          "label": "<form style = \"background-color:red;\" > <p> What is your Specilization: <br> <label>CIS <input name = \"X\" type = \"radio\" value = \"CIS\" checked></label><label>CS <input name = \"X\" type = \"radio\" value = \"CS\"></label> <label>SWE <input name = \"X\" type = \"radio\" value = \"swe\" checked> </label></p></form>",
-          "text": "<form style = \"background-color:red;\" > <p> What is your Specilization: <br> <label>CIS <input name = \"X\" type = \"radio\" value = \"CIS\" checked></label><label>CS <input name = \"X\" type = \"radio\" value = \"CS\"></label> <label>SWE <input name = \"X\" type = \"radio\" value = \"swe\" checked> </label></p></form>"
+          "label": "C",
+          "text": "```html\n<form style = \"background-color:red;\" > \n<p>\n What is your Specilization: <br>\n <label>\nCIS <input name = \"X\" type = \"radio\" value = \"CIS\" checked>\n</label>\n<label>\nCS <input name = \"X\" type = \"radio\" value = \"CS\">\n</label>\n<label>\nSWE <input name = \"X\" type = \"radio\" value = \"swe\" checked>\n</label>\n</p>\n</form>\n```"
         },
         {
           "value": "D",
-          "label": "<form style = \"background-color:blue\" ><p>What is your Specilization: <br> <label>CIS <input name = \"X\" type = \"radio\" value = \"CIS\" checked></label><label>CS <input name = \"X\" type = \"radio\" value = \"CS\" checked> </label><label>SWE <input name = \"X\" type = \"radio\" value = \"swe\"></label></p></form>",
-          "text": "<form style = \"background-color:blue\" ><p>What is your Specilization: <br> <label>CIS <input name = \"X\" type = \"radio\" value = \"CIS\" checked></label><label>CS <input name = \"X\" type = \"radio\" value = \"CS\" checked> </label><label>SWE <input name = \"X\" type = \"radio\" value = \"swe\"></label></p></form>"
+          "label": "D",
+          "text": "```html\n<form style = \"background-color:blue\" >\n<p>\nWhat is your Specilization: <br>\n<label>\nCIS <input name = \"X\" type = \"radio\" value = \"CIS\" checked>\n</label>\n<label>\nCS <input name = \"X\" type = \"radio\" value = \"CS\" checked>\n</label>\n<label>\nSWE <input name = \"X\" type = \"radio\" value = \"swe\">\n</label>\n</p>\n</form>\n```"
         }
       ],
       "inputName": "Q7",
       "inputType": "radio",
       "correctAnswer": "D",
-      "explanation": "Option D uses radio buttons and includes the `checked` attribute for the desired selections and a background style. While option D has two buttons marked as `checked`, in standard HTML behavior for radio buttons with the same `name`, the last one would typically remain selected; however, this option is the most likely intended answer in the context of the exam's structure compared to checkboxes or un-styled/un-checked versions."
+      "explanation": "Option D uses radio buttons and includes the `checked` attribute for the desired selections and a background style. While option D has two buttons marked as `checked`, in standard HTML behavior for radio buttons with the same `name`, the last one would typically remain selected; however, this option is the most likely intended answer in the context of the exam's structure compared to checkboxes or un-styled/un-checked versions.",
+      "image": "data/web/images/image8_04f1b81d.png"
     },
     {
       "id": "extract-1775331211260-vys0c-8",
@@ -264,23 +265,23 @@
       "choices": [
         {
           "value": "A",
-          "label": "<p> <label>Input Phone Number: <input type = \"tel\" placeholder = \"(00962)079-XXXXXXX \"required > (00962)079-xxxxxxx </label> </p>",
-          "text": "<p> <label>Input Phone Number: <input type = \"tel\" placeholder = \"(00962)079-XXXXXXX \"required > (00962)079-xxxxxxx </label> </p>"
+          "label": "A",
+          "text": "```html\n<p> \n<label>\nInput Phone Number: <input type = \"tel\" placeholder = \"(00962)079-XXXXXXX \"required > (00962)079-xxxxxxx \n</label>\n </p>\n```"
         },
         {
           "value": "B",
-          "label": "<p> <label>Input Phone Number: <input type = \"tel\" pattern = \"(00962)079-\\d{7}\" > (00962)079-xxxxxxx </label> </p>",
-          "text": "<p> <label>Input Phone Number: <input type = \"tel\" pattern = \"(00962)079-\\d{7}\" > (00962)079-xxxxxxx </label> </p>"
+          "label": "B",
+          "text": "```html\n<p>\n<label>\nInput Phone Number: <input type = \"tel\" pattern = \"(00962)079-\\d{7}\" > (00962)079-xxxxxxx\n</label>\n</p>\n\n```"
         },
         {
           "value": "C",
-          "label": "<p> <label>Input Phone Number: <input type = \"tel\" placeholder =\" (00962)079-xxxxxxx \" pattern = \"\\(00962\\)079-\\d{7}\" > (00962)079-XXXXXXX </label> </p>",
-          "text": "<p> <label>Input Phone Number: <input type = \"tel\" placeholder =\" (00962)079-xxxxxxx \" pattern = \"\\(00962\\)079-\\d{7}\" > (00962)079-XXXXXXX </label> </p>"
+          "label": "C",
+          "text": "```html\n<p>\n<label>\nInput Phone Number: <input type = \"tel\" placeholder =\" (00962)079-xxxxxxx \" pattern = \"\\(00962\\)079-\\d{7}\" > (00962)079-XXXXXXX\n</label>\n</p>\n```"
         },
         {
           "value": "D",
-          "label": "<p> <label>Input Phone Number: <input type = \"tel\" placeholder =\" (00962)079-xxxxxxx \" pattern =\"\\(00962\\)079-\\d{7}\" required > (00962)079-xxxxxxx </label> </p>",
-          "text": "<p> <label>Input Phone Number: <input type = \"tel\" placeholder =\" (00962)079-xxxxxxx \" pattern =\"\\(00962\\)079-\\d{7}\" required > (00962)079-xxxxxxx </label> </p>"
+          "label": "D",
+          "text": "```html\n<p>\n<label>\nInput Phone Number: <input type = \"tel\" placeholder =\" (00962)079-xxxxxxx \" pattern =\"\\(00962\\)079-\\d{7}\" required > (00962)079-xxxxxxx \n</label>\n</p>\n```"
         }
       ],
       "inputName": "Q8",
@@ -297,22 +298,22 @@
         {
           "value": "A",
           "label": "A",
-          "text": "`<http a= \" https://www.hu.edu.jo \" Hashemite university`"
+          "text": "```html\n<http a= \" https://www.hu.edu.jo \" Hashemite university\n```"
         },
         {
           "value": "B",
           "label": "B",
-          "text": "`<a href=\" https://www.hu.edu.jo \" Hashemite university`"
+          "text": "```html\n<a href=\" https://www.hu.edu.jo \" Hashemite university\n```"
         },
         {
           "value": "C",
-          "label": "<a href= = \"Hashemite university\"> https://www.hu.edufjo",
-          "text": "<a href= = \"Hashemite university\"> https://www.hu.edufjo"
+          "label": "C",
+          "text": "```html\n<a href= = \"Hashemite university\"> https://www.hu.edufjo\n```"
         },
         {
           "value": "D",
-          "label": "<a src= \" https://www.hu.edu.jo \"> Hashemite university",
-          "text": "<a src= \" https://www.hu.edu.jo \"> Hashemite university"
+          "label": "D",
+          "text": "```html\n<a src= \" https://www.hu.edu.jo \"> Hashemite university\n```"
         }
       ],
       "inputName": "Q9",
@@ -327,32 +328,32 @@
       "choices": [
         {
           "value": "A",
-          "label": "<div> Corona Virus is gone </div>",
-          "text": "<div> Corona Virus is gone </div>"
+          "label": "A",
+          "text": "```html\n<div>\nCorona Virus is gone \n</div>\n```"
         },
         {
           "value": "B",
-          "label": "<p><div> Corona Virus is gone </div> </p>",
-          "text": "<p><div> Corona Virus is gone </div> </p>"
+          "label": "B",
+          "text": "```html\n`<p>\n<div> \nCorona Virus is gone \n</div> \n</p>`\n```"
         },
         {
           "value": "C",
-          "label": "<div> <p> Corona Virus is gone </p> </div>",
-          "text": "<div> <p> Corona Virus is gone </p> </div>"
+          "label": "C",
+          "text": "```html\n<div>\n<p>\nCorona Virus is gone\n</p>\n</div>\n```"
         },
         {
           "value": "D",
-          "label": "<p> Corona Virus is gone </p>",
-          "text": "<p> Corona Virus is gone </p>"
+          "label": "D",
+          "text": "```html\n<p>\nCorona Virus is gone \n</p>\n```"
         },
         {
           "value": "E",
-          "label": "B and C",
+          "label": "E",
           "text": "B and C"
         },
         {
           "value": "F",
-          "label": "All of the above",
+          "label": "F",
           "text": "All of the above"
         }
       ],
@@ -368,22 +369,22 @@
       "choices": [
         {
           "value": "A",
-          "label": "It tells the browser to use both fonts every time.",
+          "label": "A",
           "text": "It tells the browser to use both fonts every time."
         },
         {
           "value": "B",
-          "label": "It tells the browser to use Arial font always.",
+          "label": "B",
           "text": "It tells the browser to use Arial font always."
         },
         {
           "value": "C",
-          "label": "It tells the browser to use any font but not Arial or Helvetica.",
+          "label": "C",
           "text": "It tells the browser to use any font but not Arial or Helvetica."
         },
         {
           "value": "D",
-          "label": "It tells the browser to use Helvetica if Arial is not present.",
+          "label": "D",
           "text": "It tells the browser to use Helvetica if Arial is not present."
         }
       ],
@@ -399,22 +400,22 @@
       "choices": [
         {
           "value": "A",
-          "label": "There is no tag in html called `<title>`",
+          "label": "A",
           "text": "There is no tag in html called `<title>`"
         },
         {
           "value": "B",
-          "label": "Give information about the table contents that help search engines finding a the web page",
+          "label": "B",
           "text": "Give information about the table contents that help search engines finding a the web page"
         },
         {
           "value": "C",
-          "label": "Display a title of the web page that appears in the first row of the page contents",
+          "label": "C",
           "text": "Display a title of the web page that appears in the first row of the page contents"
         },
         {
           "value": "D",
-          "label": "Display a title of the web page in the browser toolbar",
+          "label": "D",
           "text": "Display a title of the web page in the browser toolbar"
         }
       ],
@@ -430,23 +431,23 @@
       "choices": [
         {
           "value": "A",
-          "label": "`<p> <label>Time:<input type = \"datetime\" /> dd/mm/yyyy hh:mm (AM/PM)) </label></p>`",
-          "text": "`<p> <label>Time:<input type = \"datetime\" /> dd/mm/yyyy hh:mm (AM/PM)) </label></p>`"
+          "label": "A",
+          "text": "```html\n<p>\n<label>\nTime:<input type = \"datetime\" /> dd/mm/yyyy hh:mm (AM/PM))\n</label>\n</p>\n```"
         },
         {
           "value": "B",
-          "label": "`<p><label>Time:<input type = \"datetime-local\" /> dd/mm/yyyy hh:mm (AM/PM)) </label></p>`",
-          "text": "`<p><label>Time:<input type = \"datetime-local\" /> dd/mm/yyyy hh:mm (AM/PM)) </label></p>`"
+          "label": "B",
+          "text": "```html\n<p>\n<label>\nTime:<input type = \"datetime-local\" /> dd/mm/yyyy hh:mm (AM/PM))\n</label>\n</p>\n```"
         },
         {
           "value": "C",
-          "label": "`<p><label>Time:<input type = \"date\" /> dd/mm/yyyy hh:mm (AM/PM)) </label></p>`",
-          "text": "`<p><label>Time:<input type = \"date\" /> dd/mm/yyyy hh:mm (AM/PM)) </label></p>`"
+          "label": "C",
+          "text": "```html\n<p>\n<label>\nTime:<input type = \"date\" /> dd/mm/yyyy hh:mm (AM/PM)) \n</label>\n</p>\n```"
         },
         {
           "value": "D",
-          "label": " `<p> <label>Time:<input type = \"time\" /> dd/mm/yyyy hh:mm (AM/PM)) </label> </p>`",
-          "text": " `<p> <label>Time:<input type = \"time\" /> dd/mm/yyyy hh:mm (AM/PM)) </label> </p>`"
+          "label": "D",
+          "text": "```html\n<p>\n<label>\nTime:<input type = \"time\" /> dd/mm/yyyy hh:mm (AM/PM))\n</label>\n</p>\n```"
         }
       ],
       "inputName": "Q13",
@@ -462,23 +463,23 @@
       "choices": [
         {
           "value": "A",
-          "label": "`<form> <p> <label>Name: <input name = \"x\" type = \"button\"> </label></p> </form>`",
-          "text": "`<form> <p> <label>Name: <input name = \"x\" type = \"button\"> </label></p> </form>`"
+          "label": "A",
+          "text": "```html\n<form>\n<p>\n<label>\nName: <input name = \"x\" type = \"button\">\n</label>\n</p>\n</form>\n```"
         },
         {
           "value": "B",
-          "label": "`<form> <p><label>type: <input name = \"x\" type = \"text\"></label></p> </form>`",
-          "text": "`<form> <p><label>type: <input name = \"x\" type = \"text\"></label></p> </form>`"
+          "label": "B",
+          "text": "```html\n<form>\n<p>\n<label>\ntype: <input name = \"x\" type = \"text\">\n</label>\n</p>\n</form>\n```"
         },
         {
           "value": "C",
-          "label": "`<form> <p><label>Name: <input name = \"x\" type = \"name\" </label></p></form>`",
-          "text": "`<form> <p><label>Name: <input name = \"x\" type = \"name\" </label></p></form>`"
+          "label": "C",
+          "text": "```html\n<form>\n<p>\n<label>\nName: <input name = \"x\" type = \"name\"\n</label>\n</p>\n</form>\n```"
         },
         {
           "value": "D",
-          "label": "`<form> <p><label><input name = \"x\" type = \"text\"></label></p> </form>`",
-          "text": "`<form> <p><label><input name = \"x\" type = \"text\"></label></p> </form>`"
+          "label": "D",
+          "text": "```html\n<form>\n<p>\n<label>\n<input name = \"x\" type = \"text\">\n</label>\n</p>\n</form>\n```"
         }
       ],
       "inputName": "Q14",
@@ -494,23 +495,23 @@
       "choices": [
         {
           "value": "A",
-          "label": "<a style=\"text-decoration: underline; color: red;\" href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">Wadi Al-Rayan</a>",
-          "text": "<a style=\"text-decoration: underline; color: red;\" href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">Wadi Al-Rayan</a>"
+          "label": "A",
+          "text": "```html\n<a style=\"text-decoration: underline; color: red;\" href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">\nWadi Al-Rayan\n</a>\n```"
         },
         {
           "value": "B",
-          "label": "<a style=\"text-decoration: none; color: blue;\" href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">WadiAI-Rayan</a>",
-          "text": "<a style=\"text-decoration: none; color: blue;\" href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">WadiAI-Rayan</a>"
+          "label": "B",
+          "text": "```html\n<a style=\"text-decoration: none; color: blue;\" href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">\nWadiAI-Rayan\n</a>\n```"
         },
         {
           "value": "C",
-          "label": "<a href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">WadiAI- Rayan</a>",
-          "text": "<a href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">WadiAI- Rayan</a>"
+          "label": "C",
+          "text": "```html\n<a href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">\nWadiAI- Rayan\n</a>\n```"
         },
         {
           "value": "D",
-          "label": "<a style=\"text-decoration: none; color: red;\" href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">Wadi Al-Rayan</a>",
-          "text": "<a style=\"text-decoration: none; color: red;\" href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">Wadi Al-Rayan</a>"
+          "label": "D",
+          "text": "```html\n<a style=\"text-decoration: none; color: red;\" href=\"https://razanmasri.com/travel/jordan/wadi-yabis/\">\nWadi Al-Rayan\n</a>\n```"
         }
       ],
       "inputName": "Q15",
@@ -526,23 +527,23 @@
       "choices": [
         {
           "value": "A",
-          "label": "<p style=\"color: blue;\">I am a <span style=\"color: red;\">fourth year</span> student at Hashemite University</p>",
-          "text": "<p style=\"color: blue;\">I am a <span style=\"color: red;\">fourth year</span> student at Hashemite University</p>"
+          "label": "A",
+          "text": "```html\n<p style=\"color: blue;\">\nI am a \n<span style=\"color: red;\">\nfourth year\n</span>\n student at Hashemite University\n</p>\n```"
         },
         {
           "value": "B",
-          "label": "<p style=\"color: red;\">I am a <span style=\"color: blue;\">fourth year</span> student at Hashemite University</p>",
-          "text": "<p style=\"color: red;\">I am a <span style=\"color: blue;\">fourth year</span> student at Hashemite University</p>"
+          "label": "B",
+          "text": "```html\n<p style=\"color: red;\">\nI am a \n<span style=\"color: blue;\">\nfourth year\n</span>\nstudent at Hashemite University\n</p>\n```"
         },
         {
           "value": "C",
-          "label": "<p style=\"color: blue;\">I am a <b style=\"color: red;\">fourth year</b> student at Hashemite University</p>",
-          "text": "<p style=\"color: blue;\">I am a <b style=\"color: red;\">fourth year</b> student at Hashemite University</p>"
+          "label": "C",
+          "text": "```html\n<p style=\"color: blue;\">\nI am a\n<b style=\"color: red;\">\nfourth year</b>\nstudent at Hashemite University\n</p>\n```"
         },
         {
           "value": "D",
-          "label": "<p color=\"blue\">I am a <span color=\"red\">fourth year</span> student at Hashemite University</p>",
-          "text": "<p color=\"blue\">I am a <span color=\"red\">fourth year</span> student at Hashemite University</p>"
+          "label": "D",
+          "text": "```html\n<p color=\"blue\">\nI am a \n<span color=\"red\">\nfourth year\n</span>\nstudent at Hashemite University\n</p>\n```"
         }
       ],
       "inputName": "Q16",
@@ -558,22 +559,22 @@
       "choices": [
         {
           "value": "A",
-          "label": "p {font: bold}",
+          "label": "A",
           "text": "p {font: bold}"
         },
         {
           "value": "B",
-          "label": "p {text-size: bold}",
+          "label": "B",
           "text": "p {text-size: bold}"
         },
         {
           "value": "C",
-          "label": "p {font-weight: bold}",
+          "label": "C",
           "text": "p {font-weight: bold}"
         },
         {
           "value": "D",
-          "label": "style: bold",
+          "label": "D",
           "text": "style: bold"
         }
       ],
@@ -589,23 +590,23 @@
       "choices": [
         {
           "value": "A",
-          "label": "<h1> I love web Prog. </h1>",
-          "text": "<h1> I love web Prog. </h1>"
+          "label": "A",
+          "text": "```html\n<h1>I love web Prog.</h1>\n```"
         },
         {
           "value": "B",
-          "label": "<h1 style = \"x\"> I love web Prog. </h1>",
-          "text": "<h1 style = \"x\"> I love web Prog. </h1>"
+          "label": "B",
+          "text": "```html\n<h1 style = \"x\">I love web Prog.</h1>\n```"
         },
         {
           "value": "C",
-          "label": "<h1 class = \"x\"> I love web prog. </h1>",
-          "text": "<h1 class = \"x\"> I love web prog. </h1>"
+          "label": "C",
+          "text": "```html\n<h1 class = \"x\"> I love web prog. </h1>\n```"
         },
         {
           "value": "D",
-          "label": "<h1 class = \"special\"> I love web Prog. </h1>",
-          "text": "<h1 class = \"special\"> I love web Prog. </h1>"
+          "label": "D",
+          "text": "```html\n<h1 class = \"special\"> I love web Prog. </h1>\n```"
         }
       ],
       "inputName": "Q18",
@@ -620,23 +621,23 @@
       "choices": [
         {
           "value": "A",
-          "label": "<table border=\"1\"><tr> <th colspan= \"2\"> Cascading Style Sheets</th> <td>left</td> <td rowspan=2>shift</td>",
-          "text": "<table border=\"1\"><tr> <th colspan= \"2\"> Cascading Style Sheets</th> <td>left</td> <td rowspan=2>shift</td>"
+          "label": "A",
+          "text": "```html\n<table border=\"1\">\n <tr>\n<th colspan= \"2\">Cascading Style Sheets</th>\n<td>left</td>\n<td rowspan=2>shift</td>\n```"
         },
         {
           "value": "B",
-          "label": "<table border=\"1\"><tr> <th colspan = \"4\"> cascading Style Sheets </th> <tr> <tr> <td>right</td> <td rowspan=2>left </td></tr> <tr><td>shift</td></tr>",
-          "text": "<table border=\"1\"><tr> <th colspan = \"4\"> cascading Style Sheets </th> <tr> <tr> <td>right</td> <td rowspan=2>left </td></tr> <tr><td>shift</td></tr>"
+          "label": "B",
+          "text": "```html\n<table border=\"1\">\n <tr>\n<th colspan = \"4\"> cascading Style Sheets </th>\n <tr>\n <tr>\n<td>right</td>\n<td rowspan=2>left</td>\n </tr>\n <tr>\n<td>shift</td>\n </tr>\n```"
         },
         {
           "value": "C",
-          "label": "<table border=\"1\"> <tr><th colspan=\"2\"> Cascading Style Sheets </th> </tr> <tr><td>left</td><td rowspan= 2> shift </td> </tr> <tr> <td>right</td></tr> </table>",
-          "text": "<table border=\"1\"> <tr><th colspan=\"2\"> Cascading Style Sheets </th> </tr> <tr><td>left</td><td rowspan= 2> shift </td> </tr> <tr> <td>right</td></tr> </table>"
+          "label": "C",
+          "text": "```html\n<table border=\"1\">\n  <tr>\n<th colspan=\"2\">Cascading Style Sheets</th>\n  </tr> \n  <tr>\n<td>left</td>\n<td rowspan= 2> shift </td>\n </tr> \n <tr> \n<td>right</td>\n </tr>\n</table>\n```"
         },
         {
           "value": "D",
-          "label": "<table border=\"1\"> <tr> <th rowspan=\"2\"> left</th></tr> <tr> <td>shift</td> <td colspan=2> Cascading Style Sheet </td></tr><tr> <td>right</td></tr>",
-          "text": "<table border=\"1\"> <tr> <th rowspan=\"2\"> left</th></tr> <tr> <td>shift</td> <td colspan=2> Cascading Style Sheet </td></tr><tr> <td>right</td></tr>"
+          "label": "D",
+          "text": "```html\n<table border=\"1\">\n <tr> \n<th rowspan=\"2\">left</th>\n</tr>\n <tr>\n<td>shift</td>\n<td colspan=2>Cascading Style Sheet</td>\n </tr>\n <tr>\n<td>right</td>\n </tr>\n```"
         }
       ],
       "inputName": "Q19",
@@ -648,33 +649,34 @@
     {
       "id": "extract-1775331211260-vys0c-20",
       "number": "21",
-      "text": "Which HTML code generates the following output?\n\nWindows ® is registered trade mark",
+      "text": "Which HTML code generates the following output?",
       "choices": [
         {
           "value": "A",
-          "label": "<p> Windows &trade; is registered trade mark </p>",
-          "text": "<p> Windows &trade; is registered trade mark </p>"
+          "label": "A",
+          "text": "```html\n<p> Windows &trade; is registered trade mark </p>\n```"
         },
         {
           "value": "B",
-          "label": "<p> Windows &reg; is registered trade mark </p>",
-          "text": "<p> Windows &reg; is registered trade mark </p>"
+          "label": "B",
+          "text": "```html\n<p> Windows &reg; is registered trade mark </p>\n```"
         },
         {
           "value": "C",
-          "label": "<p> Windows &copy; is registered trade mark </p>",
-          "text": "<p> Windows &copy; is registered trade mark </p>"
+          "label": "C",
+          "text": "```html\n<p> Windows &copy; is registered trade mark </p>\n```"
         },
         {
           "value": "D",
-          "label": "<p> Windows is registered trade mark </p>",
-          "text": "<p> Windows is registered trade mark </p>"
+          "label": "D",
+          "text": "```html\n<p> Windows is registered trade mark </p>\n```"
         }
       ],
       "inputName": "Q20",
       "inputType": "radio",
       "correctAnswer": "B",
-      "explanation": "The registered trademark symbol (®) is represented by the HTML character entity `&reg;`. `&trade;` is used for the trademark symbol (™) and `&copy;` for the copyright symbol (©)."
+      "explanation": "The registered trademark symbol (®) is represented by the HTML character entity `&reg;`. `&trade;` is used for the trademark symbol (™) and `&copy;` for the copyright symbol (©).",
+      "image": "data/web/images/image21_e8d71166.png"
     },
     {
       "id": "extract-1775331211260-vys0c-21",
@@ -683,22 +685,22 @@
       "choices": [
         {
           "value": "A",
-          "label": "Creative Style Sheets",
+          "label": "A",
           "text": "Creative Style Sheets"
         },
         {
           "value": "B",
-          "label": "Computer Style Sheets",
+          "label": "B",
           "text": "Computer Style Sheets"
         },
         {
           "value": "C",
-          "label": "Cascading Style Sheets",
+          "label": "C",
           "text": "Cascading Style Sheets"
         },
         {
           "value": "D",
-          "label": "Colorful Style Sheets",
+          "label": "D",
           "text": "Colorful Style Sheets"
         }
       ],
@@ -714,22 +716,22 @@
       "choices": [
         {
           "value": "A",
-          "label": "One way that search engines catalog pages is by reading the meta element's contents.",
+          "label": "A",
           "text": "One way that search engines catalog pages is by reading the meta element's contents."
         },
         {
           "value": "B",
-          "label": "Meta elements are not visible to users.",
+          "label": "B",
           "text": "Meta elements are not visible to users."
         },
         {
           "value": "C",
-          "label": "Meta elements must be placed inside the head section of the HTML Document to be read by search engines.",
+          "label": "C",
           "text": "Meta elements must be placed inside the head section of the HTML Document to be read by search engines."
         },
         {
           "value": "D",
-          "label": "All of the Above",
+          "label": "D",
           "text": "All of the Above"
         }
       ],
@@ -741,26 +743,26 @@
     {
       "id": "extract-1775331211260-vys0c-23",
       "number": "24",
-      "text": "What color will be applied to the text of the `em` element in the following code snippet?\n\nhtml\n<style type = \"text/css\">\n.text em {color: red}\nem {color: blue}\nh1 {color: green;}\nh1 em {color: black;}\np em {color: yellow;}\n</style>\n<h1><p>\n<em class= \"text\"> <em>Text </em> </em>\n</p></h>\n",
+      "text": "What color will be applied to the text of the `em` element in the following code snippet?\n\n```html\n<style type = \"text/css\">\n.text em {color: red}\nem {color: blue}\nh1 {color: green;}\nh1 em {color: black;}\np em {color: yellow;}\n</style>\n<h1><p>\n<em class= \"text\"> <em>Text </em> </em>\n</p></h>\n```",
       "choices": [
         {
           "value": "A",
-          "label": "red",
+          "label": "A",
           "text": "red"
         },
         {
           "value": "B",
-          "label": "green",
+          "label": "B",
           "text": "green"
         },
         {
           "value": "C",
-          "label": "yellow",
+          "label": "C",
           "text": "yellow"
         },
         {
           "value": "D",
-          "label": "blue",
+          "label": "D",
           "text": "blue"
         }
       ],
@@ -772,26 +774,26 @@
     {
       "id": "extract-1775331211260-vys0c-24",
       "number": "25",
-      "text": "What does the following CSS rule mean:\n\ncss\na:hover {color:green;}",
+      "text": "What does the following CSS rule mean:\n\n```css\na:hover {color:green;}\n```",
       "choices": [
         {
           "value": "A",
-          "label": "When the mouse cursor is over the link, the whole document font color becomes green",
+          "label": "A",
           "text": "When the mouse cursor is over the link, the whole document font color becomes green"
         },
         {
           "value": "B",
-          "label": "When the mouse cursor is over the link, the font color comes back to blue",
+          "label": "B",
           "text": "When the mouse cursor is over the link, the font color comes back to blue"
         },
         {
           "value": "C",
-          "label": "When the mouse cursor is over the link, the font color becomes green",
+          "label": "C",
           "text": "When the mouse cursor is over the link, the font color becomes green"
         },
         {
           "value": "D",
-          "label": "When the mouse cursor is over the link, the whole paragraph font color becomes green",
+          "label": "D",
           "text": "When the mouse cursor is over the link, the whole paragraph font color becomes green"
         }
       ],
@@ -807,23 +809,23 @@
       "choices": [
         {
           "value": "A",
-          "label": "20 <meter min = \"0\" max = \"100\" value = \"5\"></meter> 100",
-          "text": "20 <meter min = \"0\" max = \"100\" value = \"5\"></meter> 100"
+          "label": "A",
+          "text": "```html\n20 <meter min = \"0\" max = \"100\" value = \"5\"></meter> 100\n```"
         },
         {
           "value": "B",
-          "label": "0 <meter min = \"2\" max = \"10\" value = \"5\"></meter> 100",
-          "text": "0 <meter min = \"2\" max = \"10\" value = \"5\"></meter> 100"
+          "label": "B",
+          "text": "```html\n0 <meter min = \"2\" max = \"10\" value = \"5\"></meter> 100\n```"
         },
         {
           "value": "C",
-          "label": "20 <meter min = \"2\" max = \"10\" value = \"5\"></meter> 100",
-          "text": "20 <meter min = \"2\" max = \"10\" value = \"5\"></meter> 100"
+          "label": "C",
+          "text": "```html\n20 <meter min = \"2\" max = \"10\" value = \"5\"></meter> 100\n```"
         },
         {
           "value": "D",
-          "label": "20 <meter min = \"2\" max = \"10\" value = \"2\"></meter> 100",
-          "text": "20 <meter min = \"2\" max = \"10\" value = \"2\"></meter> 100"
+          "label": "D",
+          "text": "```html\n20 <meter min = \"2\" max = \"10\" value = \"2\"></meter> 100\n```"
         }
       ],
       "inputName": "Q25",
@@ -835,27 +837,27 @@
     {
       "id": "extract-1775331211260-vys0c-26",
       "number": "27",
-      "text": "The HTML source code which gives the following output is:\\n**Nearly > 3/4 of our students love web prog.**",
+      "text": "The HTML source code which gives the following output is:\n**Nearly > 3/4 of our students love web prog.**",
       "choices": [
         {
           "value": "A",
-          "label": "<p> Nearly > &frac34; of our students love web prog.</p>",
-          "text": "<p> Nearly > &frac34; of our students love web prog.</p>"
+          "label": "A",
+          "text": "```html\n<p> Nearly > &frac34; of our students love web prog.</p>\n```"
         },
         {
           "value": "B",
-          "label": "<p> Nearly &gt; 3/4 of our students love web prog.</p>",
-          "text": "<p> Nearly &gt; 3/4 of our students love web prog.</p>"
+          "label": "B",
+          "text": "```html\n<p> Nearly &gt; 3/4 of our students love web prog.</p>\n```"
         },
         {
           "value": "C",
-          "label": "<p> Nearly > 3/4 of our students love web prog.</p>",
-          "text": "<p> Nearly > 3/4 of our students love web prog.</p>"
+          "label": "C",
+          "text": "```html\n<p> Nearly > 3/4 of our students love web prog.</p>\n```"
         },
         {
           "value": "D",
-          "label": "<p> Nearly &gt; &frac34; of our students love web prog.</p>",
-          "text": "<p> Nearly &gt; &frac34; of our students love web prog.</p>"
+          "label": "D",
+          "text": "```html\n<p> Nearly &gt; &frac34; of our students love web prog.</p>\n```"
         }
       ],
       "inputName": "Q26",
@@ -885,8 +887,8 @@
         },
         {
           "value": "D",
-          "label": "<!-- and -->",
-          "text": "<!-- and -->"
+          "label": "D",
+          "text": "`<!-- and -->`"
         }
       ],
       "inputName": "Q27",
@@ -901,23 +903,23 @@
       "choices": [
         {
           "value": "A",
-          "label": "<p> For further information, please contact <a href = \" ymkilani@hu.edu.jo \">me. </p>",
-          "text": "<p> For further information, please contact <a href = \" ymkilani@hu.edu.jo \">me. </p>"
+          "label": "A",
+          "text": "```html\n<p> \nFor further information, please contact \n<a href = \" ymkilani@hu.edu.jo \">\nme.\n</p>\n```"
         },
         {
           "value": "B",
-          "label": "<p> <a href =\" ymkilani@hu.edu.jo\"> For further information, please contact me. </p>",
-          "text": "<p> <a href =\" ymkilani@hu.edu.jo\"> For further information, please contact me. </p>"
+          "label": "B",
+          "text": "```html\n<p> \n<a href =\" ymkilani@hu.edu.jo\">For further information, please contact me.\n</p>\n```"
         },
         {
           "value": "C",
-          "label": "<p> For further information, please contact <a href = \" mailto:ymkilani@hu.edu.jo\">me. </p>",
-          "text": "<p> For further information, please contact <a href = \" mailto:ymkilani@hu.edu.jo\">me. </p>"
+          "label": "C",
+          "text": "```html\n<p>\n For further information, please contact\n<a href = \" mailto:ymkilani@hu.edu.jo\">\nme.\n</p>\n```"
         },
         {
           "value": "D",
-          "label": "<p> <a href = \"mailto:ymkilani@hu.edu.jo\"> For further information, please contact me. </p>",
-          "text": "<p> <a href = \"mailto:ymkilani@hu.edu.jo\"> For further information, please contact me. </p>"
+          "label": "D",
+          "text": "```html\n<p> \na href = \"mailto:ymkilani@hu.edu.jo\">\nFor further information, please contact me. \n</p>\n```"
         }
       ],
       "inputName": "Q28",
@@ -928,27 +930,27 @@
     {
       "id": "extract-1775331211260-vys0c-29",
       "number": "30",
-      "text": "Given the following CSS rules:\ncss\n.d1 {top: 20px; left:30px; z-index : 10;}\n.d2 {top: 20px; left:40px; z-index: 5;}\n.d3 {top: 20px; left:50px; z-index: 4;}\n\nThe HTML code which shows `x.jpg` behind `y.jpg` and `y.jpg` behind `z.png` is:",
+      "text": "Given the following CSS rules:\n```css\n.d1 {top: 20px; left:30px; z-index : 10;}\n.d2 {top: 20px; left:40px; z-index: 5;}\n.d3 {top: 20px; left:50px; z-index: 4;}\n```\n\nThe HTML code which shows `x.jpg` behind `y.jpg` and `y.jpg` behind `z.png` is:",
       "choices": [
         {
           "value": "A",
-          "label": "<img src=\"x.jpg\" width = \"100\" height = \"200\" class = \"d3\"> <img src=\"y.jpg\" width = \"100\" height = \"200\" class = \"d1\"> <img src=\"z.jpg\" width = \"100\" height = \"200\" class = \"d2\">",
-          "text": "<img src=\"x.jpg\" width = \"100\" height = \"200\" class = \"d3\"> <img src=\"y.jpg\" width = \"100\" height = \"200\" class = \"d1\"> <img src=\"z.jpg\" width = \"100\" height = \"200\" class = \"d2\">"
+          "label": "A",
+          "text": "```html\n<img src=\"x.jpg\" width = \"100\" height = \"200\" class = \"d3\">\n<img src=\"y.jpg\" width = \"100\" height = \"200\" class = \"d1\"> \n<img src=\"z.jpg\" width = \"100\" height = \"200\" class = \"d2\">\n```"
         },
         {
           "value": "B",
-          "label": "<img src=\"x.jpg\" width = \"100\" height = \"200\" class = \"d3\"> <img src=\"y.jpg\" width = \"100\" height = \"200\" class = \"d2\"> <img src=\"z.jpg\" width = '100' height = \"200\" class = \"d3\">",
-          "text": "<img src=\"x.jpg\" width = \"100\" height = \"200\" class = \"d3\"> <img src=\"y.jpg\" width = \"100\" height = \"200\" class = \"d2\"> <img src=\"z.jpg\" width = '100' height = \"200\" class = \"d3\">"
+          "label": "B",
+          "text": "```html\n<img src=\"x.jpg\" width = \"100\" height = \"200\" class = \"d3\">\n<img src=\"y.jpg\" width = \"100\" height = \"200\" class = \"d2\">\n<img src=\"z.jpg\" width = '100' height = \"200\" class = \"d3\">\n```"
         },
         {
           "value": "C",
-          "label": "<img src=\"x.jpg\" width = \"100\" height = \"200\" class = \"d1\"> <img src=\"y.jpg\" width = \"100\" height = \"200\" class = \"d2\"> <img src=\"z.jpg\" width = 100 height = \"200\" class = \"d3\">",
-          "text": "<img src=\"x.jpg\" width = \"100\" height = \"200\" class = \"d1\"> <img src=\"y.jpg\" width = \"100\" height = \"200\" class = \"d2\"> <img src=\"z.jpg\" width = 100 height = \"200\" class = \"d3\">"
+          "label": "C",
+          "text": "```html\n<img src=\"x.jpg\" width = \"100\" height = \"200\" class = \"d1\">\n<img src=\"y.jpg\" width = \"100\" height = \"200\" class = \"d2\">\n<img src=\"z.jpg\" width = 100 height = \"200\" class = \"d3\">\n```"
         },
         {
           "value": "D",
-          "label": "<img src= x.jpg width = \"100\" height - \"200\" class = \"d3\"> <img src=\" y.jpg\" width = \"100\" height = \"200\" class=\"d2\"> <img src= z.jpg width = \"100\" height = \"200\" class = \"d1\">",
-          "text": "<img src= x.jpg width = \"100\" height - \"200\" class = \"d3\"> <img src=\" y.jpg\" width = \"100\" height = \"200\" class=\"d2\"> <img src= z.jpg width = \"100\" height = \"200\" class = \"d1\">"
+          "label": "D",
+          "text": "```html\n<img src= x.jpg width = \"100\" height - \"200\" class = \"d3\">\n<img src=\" y.jpg\" width = \"100\" height = \"200\" class=\"d2\">\n<img src= z.jpg width = \"100\" height = \"200\" class = \"d1\">\n```"
         }
       ],
       "inputName": "Q29",
@@ -959,26 +961,26 @@
     {
       "id": "extract-1775331211260-vys0c-30",
       "number": "31",
-      "text": "There is/are an error in the following CSS rules. The error is in line:\n\ncss\n1 en color: blue; background-color: green;\n2 p. fav [weight-color: bold; color: yellow]\n3 mybest (font-size: 12pt; image: url(x.png);}\n4 h2 {font-size: 12pt;}\n5 p {wd: 30ex)\n",
+      "text": "There is/are an error in the following CSS rules. The error is in line:\n\n```css\n1 en color: blue; background-color: green;\n2 p. fav [weight-color: bold; color: yellow]\n3 mybest (font-size: 12pt; image: url(x.png);}\n4 h2 {font-size: 12pt;}\n5 p {wd: 30ex)\n```",
       "choices": [
         {
           "value": "A",
-          "label": "1,5",
+          "label": "A",
           "text": "1,5"
         },
         {
           "value": "B",
-          "label": "1,2,3",
+          "label": "B",
           "text": "1,2,3"
         },
         {
           "value": "C",
-          "label": "2,3,5",
+          "label": "C",
           "text": "2,3,5"
         },
         {
           "value": "D",
-          "label": "1,2,3,5",
+          "label": "D",
           "text": "1,2,3,5"
         }
       ],
@@ -994,22 +996,22 @@
       "choices": [
         {
           "value": "A",
-          "label": "<table border=\"2\">",
+          "label": "A",
           "text": "<table border=\"2\">"
         },
         {
           "value": "B",
-          "label": "<table border = \"2\" table Width=\"35%\">",
+          "label": "B",
           "text": "<table border = \"2\" table Width=\"35%\">"
         },
         {
           "value": "C",
-          "label": "<table border = \"2\" style=\"width:35%\">",
+          "label": "C",
           "text": "<table border = \"2\" style=\"width:35%\">"
         },
         {
           "value": "D",
-          "label": "<table border = \"35%\">",
+          "label": "D",
           "text": "<table border = \"35%\">"
         }
       ],

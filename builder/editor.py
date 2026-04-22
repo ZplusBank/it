@@ -1749,7 +1749,19 @@ class AdvancedChapterEditor:
             dialog.destroy()
 
         ttk.Button(frame, text="Add", command=save, width=20, bootstyle="success").pack(pady=10)
-        dialog.bind('<Return>', lambda e: save())
+        def handle_return(event):
+            # Keep Enter behavior inside the multiline choice editor.
+            if event.state & 0x0001:  # Shift key
+                return
+            widget = event.widget
+            while widget is not None:
+                if widget == text_entry:
+                    return
+                widget = widget.master
+            save()
+            return "break"
+
+        dialog.bind('<Return>', handle_return)
     
     def edit_choice(self):
         """Edit selected choice"""
@@ -1804,7 +1816,19 @@ class AdvancedChapterEditor:
             dialog.destroy()
 
         ttk.Button(frame, text="Save", command=save, width=20, bootstyle="success").pack(pady=10)
-        dialog.bind('<Return>', lambda e: save())
+        def handle_return(event):
+            # Keep Enter behavior inside the multiline choice editor.
+            if event.state & 0x0001:  # Shift key
+                return
+            widget = event.widget
+            while widget is not None:
+                if widget == text_entry:
+                    return
+                widget = widget.master
+            save()
+            return "break"
+
+        dialog.bind('<Return>', handle_return)
     
     def delete_choice(self):
         """Delete selected choice"""
