@@ -507,7 +507,7 @@ const EXAM_CONFIG = [
       {
         "id": "1",
         "name": "Mid",
-        "q": 55,
+        "q": 49,
         "file": "data/Uml/combined_questions mod 5.json"
       },
       {
