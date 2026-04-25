@@ -15,6 +15,9 @@ const app = {
     _saveTimer: null,        // Debounced save timer
     _resultIO: null,         // IntersectionObserver for lazy results
     _resultImageIO: null,    // IntersectionObserver for lazy result images
+    _activeResultsFilter: 'none',
+    _resultsFilterHintVisible: true,
+    _resultStatusByIndex: [],
     _subjectIconObserver: null, // IntersectionObserver for subject icons
     _themeToggleOriginalParent: null,
     _examControlsPlaceholder: null,
@@ -2227,10 +2230,35 @@ const app = {
         return 'danger';
     },
 
+    _getResultStatus(result) {
+        if (!result) return 'skipped';
+        if (result.wasSkipped) return 'skipped';
+        return result.isCorrect ? 'correct' : 'wrong';
+    },
+
+    _shouldShowResultStatus(cardStatus) {
+        const filter = this._activeResultsFilter || 'none';
+        if (filter === 'none') return false;
+        if (filter === 'all') return true;
+        return cardStatus === filter;
+    },
+
+    _hideResultsFilterHint() {
+        if (!this._resultsFilterHintVisible) return;
+        this._resultsFilterHintVisible = false;
+        const targets = document.querySelectorAll('.results-filter-target');
+        for (let i = 0; i < targets.length; i++) {
+            targets[i].classList.add('results-filter-hint-hidden');
+        }
+    },
+
     calculateAndDisplayResults() {
         const totalCount = this.questions.length;
         let correctCount = 0, wrongCount = 0, skippedCount = 0;
         const questionResults = new Array(totalCount);
+        this._activeResultsFilter = 'none';
+        this._resultsFilterHintVisible = true;
+        this._resultStatusByIndex = new Array(totalCount);
 
         // Single pass classification
         for (let idx = 0; idx < totalCount; idx++) {
@@ -2238,12 +2266,14 @@ const app = {
             const userAnswer = this.userAnswers[idx];
             const wasSkipped = this._isSkipped(userAnswer);
             const isCorrect = wasSkipped ? false : this._isAnswerCorrect(question, userAnswer);
+            const status = this._getResultStatus({ wasSkipped, isCorrect });
 
             if (wasSkipped) skippedCount++;
             else if (isCorrect) correctCount++;
             else wrongCount++;
 
             questionResults[idx] = { question, idx, userAnswer, isCorrect, wasSkipped };
+            this._resultStatusByIndex[idx] = status;
         }
 
         const percentage = totalCount > 0 ? Math.round((correctCount / totalCount) * 100) : 0;
@@ -2292,9 +2322,12 @@ const app = {
         ];
         for (const stat of statDefs) {
             const card = document.createElement('div');
-            card.className = `results-stat-card ${stat.cls}`;
+            card.className = `results-stat-card results-filter-target ${stat.cls}`;
             card.title = `Show only ${stat.label.toLowerCase()} answers`;
-            card.onclick = () => this.filterResults(stat.filter);
+            card.onclick = () => {
+                this._hideResultsFilterHint();
+                this.filterResults(stat.filter);
+            };
             card.innerHTML = `<div class="stat-icon">${stat.icon}</div><div class="stat-number">${stat.count}</div><div class="stat-label">${stat.label}</div>`;
             statsDiv.appendChild(card);
         }
@@ -2304,10 +2337,13 @@ const app = {
         const showAllWrap = document.createElement('div');
         showAllWrap.style.cssText = 'text-align:center;margin-bottom:20px';
         const showAllBtn = document.createElement('button');
-        showAllBtn.className = 'nav-btn';
+        showAllBtn.className = 'nav-btn results-filter-target';
         showAllBtn.style.cssText = 'display:inline-block;width:auto;padding:8px 16px;font-size:0.9rem;opacity:0.8';
         showAllBtn.textContent = 'Show All Questions';
-        showAllBtn.onclick = () => this.filterResults('all');
+        showAllBtn.onclick = () => {
+            this._hideResultsFilterHint();
+            this.filterResults('all');
+        };
         showAllWrap.appendChild(showAllBtn);
         mainFrag.appendChild(showAllWrap);
 
@@ -2323,6 +2359,7 @@ const app = {
             if (i < INITIAL_RENDER_COUNT) {
                 // Render first batch immediately for instant LCP
                 const card = this._buildResultCard(questionResults[i]);
+                card.style.display = this._shouldShowResultStatus(this._resultStatusByIndex[i]) ? 'block' : 'none';
                 listDiv.appendChild(card);
             } else {
                 // Create a lightweight sentinel placeholder
@@ -2330,6 +2367,7 @@ const app = {
                 sentinel.className = 'results-card-sentinel';
                 sentinel.style.minHeight = '200px'; // Approximate card height for scroll stability
                 sentinel.dataset.idx = i;
+                sentinel.style.display = this._shouldShowResultStatus(this._resultStatusByIndex[i]) ? 'block' : 'none';
                 listDiv.appendChild(sentinel);
                 sentinels.push(sentinel);
             }
@@ -2358,6 +2396,7 @@ const app = {
 
                     // Replace sentinel with fully rendered card
                     const card = this._buildResultCard(questionResults[idx]);
+                    card.style.display = this._shouldShowResultStatus(this._resultStatusByIndex[idx]) ? 'block' : 'none';
                     sentinel.replaceWith(card);
                     this._resultIO.unobserve(sentinel);
 
@@ -2370,6 +2409,8 @@ const app = {
                 this._resultIO.observe(sentinel);
             }
         }
+
+        this.filterResults('none');
     },
 
     /** Build a single result question card DOM element */
@@ -2476,6 +2517,9 @@ const app = {
         this._translationCache = {};
         this._translationInFlight = {};
         this._remoteTranslateCache = {};
+        this._activeResultsFilter = 'none';
+        this._resultsFilterHintVisible = true;
+        this._resultStatusByIndex = [];
         this._cleanupResultIO();
         this._cleanupResultImageIO();
     },
@@ -2502,17 +2546,26 @@ const app = {
     },
 
     filterResults(status) {
-        // status: 'correct', 'wrong', 'skipped', 'all'
+        // status: 'none' | 'correct' | 'wrong' | 'skipped' | 'all'
+        const allowed = new Set(['none', 'correct', 'wrong', 'skipped', 'all']);
+        if (!allowed.has(status)) status = 'none';
+        this._activeResultsFilter = status;
+
         const cards = document.querySelectorAll('.results-question-card');
         const statCards = document.querySelectorAll('.results-stat-card');
+        const sentinels = document.querySelectorAll('.results-card-sentinel');
+        const showAllBtn = document.querySelector('#resultDetails .nav-btn.results-filter-target');
 
         // Batch reads first, then writes (avoid layout thrashing)
-        const isAll = status === 'all';
+        const isNone = status === 'none';
 
         // Write phase — stat card opacity/transform
         for (let i = 0; i < statCards.length; i++) {
             const c = statCards[i];
-            if (isAll) {
+            if (isNone) {
+                c.style.opacity = '1';
+                c.style.transform = '';
+            } else if (status === 'all') {
                 c.style.opacity = '1';
                 c.style.transform = '';
             } else if (c.classList.contains(`stat-${status}`)) {
@@ -2524,9 +2577,25 @@ const app = {
             }
         }
 
+        if (showAllBtn) {
+            showAllBtn.style.opacity = status === 'all' ? '1' : '0.8';
+            showAllBtn.style.transform = status === 'all' ? 'scale(1.04)' : '';
+        }
+
         // Write phase — card visibility
         for (let i = 0; i < cards.length; i++) {
-            cards[i].style.display = (isAll || cards[i].classList.contains(status)) ? 'block' : 'none';
+            const card = cards[i];
+            let cardStatus = 'skipped';
+            if (card.classList.contains('correct')) cardStatus = 'correct';
+            else if (card.classList.contains('wrong')) cardStatus = 'wrong';
+            card.style.display = this._shouldShowResultStatus(cardStatus) ? 'block' : 'none';
+        }
+
+        for (let i = 0; i < sentinels.length; i++) {
+            const sentinel = sentinels[i];
+            const idx = parseInt(sentinel.dataset.idx, 10);
+            const statusByIndex = Number.isNaN(idx) ? 'skipped' : (this._resultStatusByIndex[idx] || 'skipped');
+            sentinel.style.display = this._shouldShowResultStatus(statusByIndex) ? 'block' : 'none';
         }
     },
 

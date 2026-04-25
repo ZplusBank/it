@@ -2110,6 +2110,37 @@ button.submit-btn {
     overflow: hidden;
 }
 
+.results-filter-target {
+    position: relative;
+}
+
+.results-filter-target::after {
+    content: '☝';
+    position: absolute;
+    right: 8px;
+    bottom: 6px;
+    font-size: 0.95rem;
+    line-height: 1;
+    opacity: 0.9;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    animation: resultsHintBounce 1.2s ease-in-out infinite;
+}
+
+.results-filter-target.results-filter-hint-hidden::after {
+    display: none;
+}
+
+@keyframes resultsHintBounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
 .results-stat-card::before {
     content: '';
     position: absolute;
