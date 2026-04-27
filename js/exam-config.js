@@ -778,5 +778,20 @@ const EXAM_CONFIG = [
         "file": "data/securityCIS/Final.json"
       }
     ]
+  },
+  {
+    "id": "parallel",
+    "name": "Parallel Computing",
+    "description": "Simultaneous execution of tasks.",
+    "path": "data/parallel",
+    "icon": "data/parallel/icon.png",
+    "chapters": [
+      {
+        "id": "Mid",
+        "name": "Combined Questions",
+        "q": 84,
+        "file": "data/parallel/Mid.json"
+      }
+    ]
   }
 ];

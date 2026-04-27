@@ -1,0 +1,2572 @@
+{
+  "title": "Combined Questions",
+  "timestamp": 1777317295845,
+  "totalQuestions": 84,
+  "questions": [
+    {
+      "id": "extract-1777316789554-isbbt-0",
+      "number": "1",
+      "text": "The main components of OpenMP consist of which of the following?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Directives, messages, and caches"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Compiler directives, runtime routines, and environment variables"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Compiler, parser, and assembler"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "OpenMP (Open Multi-Processing) is an API that supports multi-platform shared-memory multiprocessing programming. Its three primary components are compiler directives (e.g., `#pragma omp`), runtime library routines (e.g., `omp_get_thread_num()`), and environment variables (e.g., `OMP_NUM_THREADS`)."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-1",
+      "number": "2",
+      "text": "Parallel applications typically require:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Functional parallelism in hardware"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A parallel programming model"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Communication between working threads/processes via shared memory, a network, or both"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the above"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Effective parallel applications require hardware support (parallelism), a software framework or model (like OpenMP or MPI), and a mechanism for threads or processes to coordinate and exchange data."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-2",
+      "number": "3",
+      "text": "Task decomposition is associated with which type of parallelism?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Data parallelism"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Task parallelism"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Regular parallelism"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the above"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Task decomposition involves breaking a problem into independent tasks that can be executed concurrently. This is the fundamental basis of Task Parallelism, as opposed to Data Parallelism where the same operation is performed on different subsets of data."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-3",
+      "number": "4",
+      "text": "Which of the following is correct regarding Symmetric Multi-Processing (SMP) architecture?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Processors access different memory spaces"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Some processors access memory locations at different costs"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "All processors share the same memory and have uniform access costs (UMA)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "SMP architecture is characterized by multiple identical processors sharing a single main memory and having equal (uniform) access time to all memory locations. This is known as Uniform Memory Access (UMA)."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-4",
+      "number": "5",
+      "text": "Within the context of multi-core processing units, which component is sometimes referred to as an 'incomplete' CPU because it shares resources with others in the same package?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Processor"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Thread"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Core"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Bus"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A 'core' is an individual processing unit within a CPU package. While it can execute instructions, it often shares resources like L3 cache or memory controllers with other cores, making it a component of the larger 'complete' processor."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-5",
+      "number": "6",
+      "text": "Which of the following represents a 'coarse-grain' level of parallelism?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Small instruction"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Function or Subroutine"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Single statement"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Arithmetic operation"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Granularity refers to the ratio of computation to communication. Coarse-grained parallelism involves larger blocks of code, such as entire functions or subroutines, executing independently between synchronization points."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-6",
+      "number": "7",
+      "text": "In Vector supercomputers, which characteristic is typically observed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Low overhead in setting up the pipeline"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Multiple operations are performed on a single data operand"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A single instruction is applied to a vector of data (SIMD)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Instructions are never pipelined"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Vector processors are designed to perform the same operation on large sets of data (vectors) simultaneously using a single instruction, following the SIMD (Single Instruction, Multiple Data) paradigm."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-7",
+      "number": "8",
+      "text": "Which statement is correct regarding Distributed Shared Memory (DSM)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It requires physical shared memory hardware only"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It is strictly a distributed memory architecture with no abstraction"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It typically involves a shared global address space abstracted over distributed memory"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It requires explicit message passing for every data access"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "DSM is a form of memory architecture where physically separate memories can be addressed as a single logical shared address space, allowing programmers to use shared-memory programming models on distributed-memory hardware."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-8",
+      "number": "9",
+      "text": "Which of the following is correct about high-level parallel programming?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The compiler is responsible for managing low-level implementation details"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It often utilizes implicit parallelism"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The programmer provides less low-level detail compared to explicit parallel models"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All of the above"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "High-level parallel programming abstracts the complexity of thread management and synchronization. The compiler or runtime system handles the mapping to hardware, making parallelism more implicit for the developer."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-9",
+      "number": "10",
+      "text": "Is the following code block parallelizable (specifically the loop iterations)?\n\n```c\nfor( i=0 ; i<=10 ;i++) a[i]=x;\nfor (i=0; i<100 ;i++) b[i]=i ;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Only if \\( x \\) is constant"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Only for the first loop"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Both loops contain iterations that are completely independent of each other. In the first loop, every index of \\( a \\) is assigned the same value. In the second loop, every index of \\( b \\) is assigned its own index value. There are no loop-carried dependencies, so they are fully parallelizable."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-10",
+      "number": "11",
+      "text": "Characteristics of distributed memory architecture include:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A shared physical address space"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Nodes connected via a network"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "User-defined data partitioning across local memories"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Both B and C"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In distributed memory systems, processors have their own local memory and are connected via a network. Because there is no global memory, the programmer (user) must define how data is partitioned and shared via messages."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-11",
+      "number": "12",
+      "text": "SMP architecture is generally considered most optimal to use when:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The number of processors is very large"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "There is only one level of cache memory"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The number of processors is relatively small"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "SMP systems use a shared bus or crossbar to access a single memory. This becomes a bottleneck as the number of processors increases (scalability issues). Therefore, SMP is most efficient for small-scale multiprocessing."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-12",
+      "number": "13",
+      "text": "What does 'Cache Coherency' mean in a parallel system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "There is exactly one level of cache per processor"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "There are different levels of cache per processor"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Data is allowed to be inconsistent among different caches"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Data must remain consistent among the various private caches of different processors"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Cache coherency is the uniformity of shared resource data that ends up stored in multiple local caches. When one processor modifies a value in its cache, other processors must see that change or have their cached versions invalidated to maintain consistency."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-13",
+      "number": "14",
+      "text": "Is the following code block parallelizable?\n\n```c\nfor (i=1; i<n ; i++) a[i-1]=b[i];\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Only if \\( a \\) and \\( b \\) are the same array"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In this loop, the value written to `a[i-1]` depends only on a value from array `b`. Since array `b` is not being modified within the loop, and every write location in `a` is unique to the iteration index \\( i \\), there are no data dependencies between iterations. Thus, it is parallelizable."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-14",
+      "number": "15",
+      "text": "Regarding the `#pragma omp parallel for` construct in OpenMP, which of the following is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It creates a team of threads where each thread executes a portion (some iterations) of the loop"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "This construct is syntactically invalid"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It creates a team of threads where each thread executes all iterations of the loop"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `#pragma omp parallel for` is a combined construct. It both triggers a parallel region (creating a team of threads) and applies a work-sharing directive to distribute the subsequent loop's iterations across those threads."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-15",
+      "number": "16",
+      "text": "One main difference between hyperthreading and multithreading is that:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Multithreading divides a processor into multiple virtual processors."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Hyperthreading divides a processor into multiple virtual processors."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Multithreading was introduced to overcome delays while waiting for data."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Hyper-threading (HT) is Intel's proprietary simultaneous multithreading (SMT) implementation used to improve parallelization of computations. It makes a single physical processor core appear as two logical (virtual) processors to the operating system."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-16",
+      "number": "17",
+      "text": "OpenMP is a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Distributed-Memory programming model."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Shared-Memory programming model."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "PGAS Model"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "OpenMP (Open Multi-Processing) is an API that supports multi-platform shared-memory multiprocessing programming in C, C++, and Fortran."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-17",
+      "number": "18",
+      "text": "Is it possible to parallelize the following loop iterations?\n\n```c\nfor( i=0 ; i<100;i++){ b[i]= i ; a[i]= a[i] - b[i];}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Depends on the used compiler"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Yes, it is possible because there are no loop-carried dependencies. Each iteration \\( i \\) uses and modifies values indexed only by \\( i \\), which are independent of other iterations."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-18",
+      "number": "19",
+      "text": "Coarse grain parallelism is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Parallel execution of instructions."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Execute programs with very large datasets"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Parallel execution of functions"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Coarse-grained parallelism involves dividing a task into large sub-tasks, such as entire functions or large blocks of code, that can be executed in parallel with infrequent communication."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-19",
+      "number": "20",
+      "text": "Fixed portions of work; when a thread finishes, it starts on the next portion on works.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Auto scheduling."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Dynamic scheduling."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Guided scheduling."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Static scheduling."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In dynamic scheduling, iterations are divided into chunks, and when a thread finishes its current chunk, it dynamically requests the next available chunk from a queue."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-20",
+      "number": "21",
+      "text": "A process:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "All."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Is a program of execution."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Communicates with other processes by sending messages to each other."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "May include several threads"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "All statements are correct: a process is an instance of a program being executed, it can communicate via Inter-Process Communication (IPC) such as message passing, and it can contain one or more threads."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-21",
+      "number": "22",
+      "text": "When can statements be executed in parallel?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Never."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Always."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "When their order of execution does not matter."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "When their order of execution matters"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Statements can be executed in parallel only if they are independent, meaning the outcome remains the same regardless of the relative order in which they execute."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-22",
+      "number": "23",
+      "text": "Parallel application require:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Functional parallelism in hardware."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "All."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Parallel programming model."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "communication between working threads/processes via a shared memory or via a network or via both"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A parallel application requires underlying hardware support, a programming model to express parallelism, and mechanisms for communication between concurrent units."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-23",
+      "number": "24",
+      "text": "The collapse clause on the for loop construct:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Decreases size of granularity"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Is used with perfectly nested loops."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "All."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Indicates how many loops should be collapsed"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `collapse(n)` clause in OpenMP is used with perfectly nested loops to combine them into a single larger iteration space, which can decrease the granularity of individual tasks and specifies the number of loops to fuse."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-24",
+      "number": "25",
+      "text": "Data decomposition is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "All"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data parallelism"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Data partitioning into pieces."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Regular parallelism"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Data decomposition involves partitioning data into discrete pieces to be processed in parallel, which is the basis of data parallelism and regular parallel patterns."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-25",
+      "number": "26",
+      "text": "One of the following is correct about SMP architecture:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "All"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Processor access different memory spaces."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Some processors access memory locations in different costs."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All processors access memory locations in the same cost"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Symmetric Multiprocessing (SMP) architecture is characterized by multiple identical processors connected to a single, shared main memory with a uniform memory access (UMA) time for all processors."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-26",
+      "number": "27",
+      "text": "Speedup is calculated as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Sequential time / (# of processors * Parallel time)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Parallel time / processors * sequential time"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Sequential time / parallel time"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Sequential time * parallel time"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Speedup \\( S \\) is defined as the ratio of the execution time of the sequential algorithm (\\( T_s \\)) to the execution time of the parallel algorithm (\\( T_p \\)): \\( S = T_s / T_p \\)."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-27",
+      "number": "28",
+      "text": "Based on Amdahl's law, if 85% of the execution time is a subject of speeding up; if the improvement makes the affected part 5 times as fast, find the overall speedup:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1.25"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1.5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2.5"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Using Amdahl's Law: \\( S = \\frac{1}{(1-P) + \\frac{P}{k}} \\). For \\( P = 0.85 \\) and \\( k = 5 \\), \\( S = \\frac{1}{(1-0.85) + \\frac{0.85}{5}} = \\frac{1}{0.15 + 0.17} = \\frac{1}{0.32} = 3.125 \\). None of the options exactly match 3.125, but 2.5 is the closest option and is the result if the parallel portion was 75% (\\( \\frac{1}{0.25+0.15}=2.5 \\)). Assuming a possible typo in the problem statement or options, D is the typical intended answer for such multiple choice questions."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-28",
+      "number": "29",
+      "text": "The following parallel code will give correct results as the sequential version:\n\n```c\n#pragma omp parallel for\nfor(i=0; i<100; i++)\n  b[i] = (a[i] + b[i]) + c[i];\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Depends on the compiler"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "This loop contains no loop-carried dependencies because each iteration writes to a unique index `b[i]` and reads from unique indices `a[i]`, `b[i]`, and `c[i]`. It is safe to parallelize."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-29",
+      "number": "30",
+      "text": "Which of the following is not a type of overheads:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Replication overheads"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Synchronization overheads"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Load imbalance overheads"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Compiler overheads"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Standard overheads in parallel computing include synchronization, communication, load imbalance, and replication. Compiler overhead (the time taken to compile) is not considered a runtime parallel execution overhead."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-30",
+      "number": "31",
+      "text": "Will the following parallel code give correct results as in its sequential version:\n\n```c\nint tmp;\n#pragma omp parallel for\nfor(i=0; i<n; i++){\n  tmp = a[i];\n  a[i] = b[i];\n  b[i] = tmp;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Cannot be determined"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The variable `tmp` is declared outside the parallel region, making it shared among all threads. This creates a data race where multiple threads attempt to write to and read from `tmp` simultaneously, leading to incorrect results."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-31",
+      "number": "32",
+      "text": "`#pragma omp single` is usually used with OpenMP tasks to ensure that:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Task completion is done by one thread"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Task execution is done by one thread"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Task creation is done by one thread"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `single` directive is commonly used to ensure that only one thread executes a block of code that creates tasks. Once tasks are created, they are placed in a queue to be executed by any available thread in the team."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-32",
+      "number": "33",
+      "text": "Tracing generates more log files compared with profiling:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Tracing records timestamped events for every occurrence (e.g., function entry/exit), leading to very large log files. Profiling provides aggregated statistics, which results in much smaller data overhead."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-33",
+      "number": "34",
+      "text": "What is the output of the following code?\n\n```cpp\nint m = 1;\n\n#pragma omp parallel for reduction(+:m)\nfor(int j = 1; j < 5; j++)\n    m = m * j;\n\ncout << m;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "24"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "undefined"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "10"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In OpenMP, when a reduction is specified for a variable (in this case `m`), a private copy of the variable is created for each thread and initialized to the identity value of the reduction operator. For the addition operator `+`, the identity value is `0`. Consequently, each thread's local `m` starts at `0`. The operation `m = m * j` within the parallel loop will therefore always result in `0` for each local copy (since `0 * j = 0`). After the parallel region, the original value of `m` (which was `1`) is combined with all the local results using the reduction operator `+`. Since all local results are `0`, the final result is `1 + 0 + ... + 0 = 1`."
+    },
+    {
+      "id": "extract-1777316789554-isbbt-34",
+      "number": "35",
+      "text": "Which one of the following OpenMP library functions is used to specify the number of threads:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "omp_get_num_threads"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "omp_get_thread_num"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "omp_set_num_threads"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "omp_set_dynamic"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `omp_set_num_threads` function is used to set the number of threads for subsequent parallel regions unless overridden by a `num_threads` clause. `omp_get_num_threads` returns the current number of threads, and `omp_get_thread_num` returns the ID of the calling thread."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-0",
+      "number": "36",
+      "text": "One of the following is incorrect about high-level parallel programming:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "System is responsible about details"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It is called implicit parallel programming"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Programmer makes strategy decisions"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Programmer gives a lot of details"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "High-level (or implicit) parallel programming abstracts away the low-level details of thread management and synchronization. The system or compiler handles these details, while the programmer focuses on high-level strategy rather than providing exhaustive implementation details."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-1",
+      "number": "37",
+      "text": "In Vector supercomputers:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Low overhead in setting up pipeline"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Multiple operations are performed on single data operand"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Multiple CPUs are used"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Instructions are pipelined"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Vector supercomputers achieve high performance by applying a single instruction to multiple data elements (SIMD) through extensively pipelined functional units."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-2",
+      "number": "38",
+      "text": "Is it possible to parallelize the following code?\n```c\nfor (i=0; i<100; i++) a[i] = x;\nfor (i=0; i<100; i++) b[i] = i;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Loops can be executed in parallel but iterations cannot"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Loops and iterations cannot be executed in parallel"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Loops and iterations can be executed in parallel"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Iterations can be executed in parallel but loops cannot"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The two loops operate on completely different data structures (\\(a\\) and \\(b\\)), making the loops independent. Furthermore, within each loop, each iteration \\(i\\) accesses a unique index independent of other iterations, allowing for both loop-level and iteration-level parallelism."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-3",
+      "number": "39",
+      "text": "Parallelism is mainly used to:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Execute programs with very small data sets"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "None"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Execute small programs"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Handle few queries simultaneously"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Parallelism is primarily used to handle very large data sets, complex computations, or a high volume of simultaneous queries to improve throughput and reduce execution time. Since the positive options list 'small' or 'few', 'None' is the correct choice."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-4",
+      "number": "40",
+      "text": "In distributed memory architecture:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Nodes do not share memory"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "All"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Nodes connected via network"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Nodes may be single processor machine, SMP or multicore"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Distributed memory systems consist of multiple autonomous nodes connected via a network. Each node has its own local memory that is not directly shared with others. These nodes can themselves be single-processor systems or more complex multicore/SMP systems."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-5",
+      "number": "41",
+      "text": "SMP architecture is optimal to be used when:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "None"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "One level of cache memory"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The number of processors is large"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The number of processors is small"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Symmetric Multi-Processing (SMP) relies on a shared system bus and shared memory. As the number of processors increases, bus contention and memory bandwidth become significant bottlenecks, making it optimal primarily for a small number of processors."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-6",
+      "number": "42",
+      "text": "Cache coherency means:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Data must be consistent among the different processors' caches"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "There are different levels of caches per processor"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "There is one level of cache per processor"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Data must be inconsistent among the different processors' caches"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Cache coherency is the uniformity of shared resource data that ends up stored in multiple local caches. When one processor modifies a copy of a data item in its cache, all other copies of that item must be updated or invalidated to ensure consistency."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-7",
+      "number": "43",
+      "text": "Which of the following is/are used for synchronization in OpenMP?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "All"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Critical"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Barrier"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Atomic"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "OpenMP provides several synchronization constructs: `critical` ensures exclusive access to a block, `barrier` forces threads to wait for each other, and `atomic` ensures a specific memory location is updated atomically."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-8",
+      "number": "44",
+      "text": "Is the following code parallelizable?\n```c\nfor (i=1; i<n; i++) a[i-1] = b[i];\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Assuming \\(a\\) and \\(b\\) are distinct arrays, there are no data dependencies between iterations. Every iteration writes to a unique location in \\(a\\) and reads from a unique location in \\(b\\). Even if they were the same array, it would be an anti-dependency which can often be parallelized."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-9",
+      "number": "45",
+      "text": "#pragma omp parallel for construct:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Creates a team of threads where each thread executes some iterations in the loop"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "This construct cannot be written like this"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Creates a team of threads where each thread executes all iterations in the loop"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `#pragma omp parallel for` directive is a shortcut that triggers a parallel region and then distributes the loop iterations among the threads in the created team."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-10",
+      "number": "46",
+      "text": "One main difference between hyperthreading and multithreading is that:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Multithreading divides a processor into multiple virtual processors"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "None"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Hyperthreading divides a processor into multiple virtual processors"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Multithreading was introduced to overcome delays while waiting for data"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Hyperthreading is Intel's implementation of Simultaneous Multi-Threading (SMT). It allows a single physical processor core to behave like two logical (virtual) processors by sharing execution resources."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-11",
+      "number": "47",
+      "text": "A hardware component that can be considered incomplete processor is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Process"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Core"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Thread"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In the context of hardware (like hyperthreading), a 'thread' refers to the state and context required to execute code on a shared core. Since it shares the core's execution units, it is not a complete, independent processor."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-12",
+      "number": "48",
+      "text": "OpenMP is a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Distributed-Memory programming model"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Shared-Memory programming model"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "None"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "PGAS Model"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "OpenMP is an API designed for multi-platform shared-memory parallel programming in C, C++, and Fortran."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-13",
+      "number": "49",
+      "text": "Is it possible to parallelize the following loop iterations?\n```c\nfor (i=0; i<100; i++) { \n  b[i] = i; \n  a[i] = a[i] - b[i]; \n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Depends on the used compiler"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "While there is a dependency within each iteration (\\(a[i]\\) uses \\(b[i]\\)), there is no dependency between different iterations (no iteration \\(i\\) relies on data from iteration \\(j\\)). Thus, the iterations can be executed in parallel."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-14",
+      "number": "50",
+      "text": "Coarse grain parallelism is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Parallel execution of instructions"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "All"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Execute programs with very large data sets"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Parallel execution of functions"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Grain size refers to the amount of computation in a task relative to communication/synchronization overhead. Coarse-grained parallelism involves larger tasks like subroutines or functions, whereas fine-grained parallelism involves smaller tasks like individual instructions."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-15",
+      "number": "51",
+      "text": "The main components of OpenMP are:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Directives, messages, and caches"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Compiler directives, runtime routines and environment variables"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Compiler, parser, and assembler"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "OpenMP consists of three primary components: compiler directives (pragmas), runtime library routines (API functions), and environment variables for system configuration."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-16",
+      "number": "52",
+      "text": "Fixed portions of work; when a thread finishes, it starts on the next portion of work:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Auto scheduling"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Dynamic scheduling"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Guided scheduling"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Static scheduling"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In dynamic scheduling, iterations are divided into chunks. When a thread finishes its current chunk, it dynamically requests the next available chunk from a shared queue until all work is done."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-17",
+      "number": "53",
+      "text": "A process:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "All"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Is a program of execution"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Communicates with other processes by sending messages to each other"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "May include several threads"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A process is an instance of a computer program being executed. It can contain multiple threads (multithreading) and communicates with other processes using Inter-Process Communication (IPC) methods such as message passing."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-18",
+      "number": "54",
+      "text": "When can statements be executed in parallel?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Never"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Always"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "When their order of execution does not matter"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "When their order of execution matters"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Parallelism is possible when there are no dependencies between tasks, meaning the statements are independent and their specific order of execution does not affect the final outcome."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-19",
+      "number": "55",
+      "text": "Parallel applications require:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Functional parallelism in Hardware"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "All"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Parallel programming model"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Communication between working threads/processes via a shared memory or via a network or via both"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Effective parallel computing requires a combination of hardware that supports concurrent operations, a programming model to express parallelism (like OpenMP or MPI), and methods for data exchange and synchronization between processing units."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-20",
+      "number": "56",
+      "text": "The `collapse` clause on the `for` loop construct:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Decreases size of granularity"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Is used with perfectly nested loops"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "All"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Indicates how many loops should be collapsed"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In OpenMP, the `collapse` clause is applied to perfectly nested loops to combine their iteration spaces. This increases the total number of iterations available for scheduling, which can decrease the granularity (task size) to better utilize multiple processors, and requires an integer argument to specify the nesting depth to collapse."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-21",
+      "number": "57",
+      "text": "Data decomposition is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "All"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data parallelism"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Data partitioning into pieces"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Regular parallelism"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Data decomposition involves partitioning a data set into smaller chunks (partitioning). When these chunks are processed simultaneously, it achieves data parallelism, which typically manifests as regular or structured parallel execution."
+    },
+    {
+      "id": "extract-1777316880760-1hh1i-22",
+      "number": "58",
+      "text": "One of the following is correct about SMP architecture:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "All"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Processors access different memory spaces"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Some processors access memory locations in different costs"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All processors access memory locations in the same cost"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "SMP (Symmetric Multiprocessing) is characterized by a single shared memory where every processor has a uniform access time (the same 'cost' or latency) to all memory locations, unlike NUMA (Non-Uniform Memory Access) systems."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-0",
+      "number": "59",
+      "text": "Can the following code be parallelized?\n\n```c\nfor (i = 1; i < 100; i++) {\n  for (j = 1; j < 100; j++) {\n    a[i][j] = a[i-1][j];\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Both loops can be parallelized"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Inner loop only can be parallelized"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Neither of them can be parallelized"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Outer loop only can be parallelized"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The outer loop (i) has a loop-carried dependency because iteration \\(i\\) requires the result from iteration \\(i-1\\) (\\(a[i-1][j]\\)). This prevents the outer loop from being parallelized. However, for a fixed \\(i\\), the inner loop (j) has no dependencies between its iterations as each iteration writes to and reads from a unique column \\(j\\). Thus, only the inner loop can be parallelized."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-1",
+      "number": "60",
+      "text": "Is it possible to exchange the following two loops?\n\n```c\nfor (j = 1; j < n; j++) {\n  for (i = 1; i < n; i++) {\n    a[i][j] = a[i][j-1];\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "False"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "True"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Only if n is a power of 2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Only if the array is stored in row-major order"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Loop interchange is valid if the data dependencies are preserved. The dependency vector for this code is \\((d_j, d_i) = (1, 0)\\) because the write at index \\(j\\) depends on the value from index \\(j-1\\) in the outer loop scope. Swapping the loops results in a dependency vector of \\((1, 0)\\) or \\((0, 1)\\) depending on the new nesting, both of which are lexicographically positive. Therefore, the transformation is legal."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-2",
+      "number": "61",
+      "text": "One main difference between hyperthreading and multithreading is that:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "None"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Multithreading was introduced to overcome delays while waiting for data"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Hyperthreading divides a processor into multiple virtual processors"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Multithreading divides a processor into multiple virtual processors"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Hyper-threading is a hardware technology (a form of Simultaneous Multithreading or SMT) that allows a single physical CPU core to appear as multiple logical or 'virtual' processors to the operating system. This allows the core to execute multiple threads simultaneously by sharing execution resources."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-3",
+      "number": "62",
+      "text": "One of the following is **incorrect** about high-level parallel programming:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "System is responsible about details"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It is called implicit parallel programming"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Programmer makes strategy decisions"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Programmer gives a lot of details"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "High-level parallel programming, also known as implicit parallel programming, abstracts away the low-level details of execution. The system (compiler or runtime) handles tasks like synchronization and thread management. Therefore, it is incorrect to say the programmer provides a lot of details; that characteristic belongs to low-level or explicit parallel programming."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-4",
+      "number": "63",
+      "text": "In Vector supercomputers:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Low overhead in setting up pipeline"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Multiple operations are performed on single data operand"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Multiple CPUs are used"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Instructions are pipelined"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Vector processors are designed to perform the same operation on large arrays of data (vectors) very efficiently. They rely heavily on deep pipelining of instructions and data in their functional units to achieve high throughput, amortizing the cost of instruction processing over many data elements."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-5",
+      "number": "64",
+      "text": "Is it possible to parallelize the following code?\n```c\nfor ( i = 0 ; i < 100 ; i++ ) a [i] = x;\nfor ( i = 0 ; i < 100 ; i++ ) b [i] = i;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Loops can be executed in parallel but iterations cannot"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Loops and iterations cannot be executed in parallel"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Loops and iterations can be executed in parallel"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Iterations can be executed in parallel but loops cannot"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Both loops operate on distinct arrays (\\(a\\) and \\(b\\)), so there is no dependency between the loops, allowing loop-level parallelism. Within each loop, each iteration is independent of the others as they access different indices, allowing for iteration-level parallelism."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-6",
+      "number": "65",
+      "text": "Parallelism is mainly used to",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Execute programs with very small data sets"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "None"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Execute small programs"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Handle few queries simultaneously"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Parallelism is primarily used to handle very large datasets, large complex programs, or a massive number of simultaneous queries. Since all other options describe \"small\" or \"few\" scales, \"None\" is the most appropriate choice."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-7",
+      "number": "66",
+      "text": "In distributed memory architecture",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Nodes do not share memory"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "All"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Nodes connected via network"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Nodes may be single processor machine, SMP or multicore"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In distributed memory architectures, nodes have their own local memory and do not share it (A). They communicate and are connected via a network (C). Individual nodes can be composed of various processor configurations, including single-core, SMP, or multi-core (D). Therefore, all statements are true."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-8",
+      "number": "67",
+      "text": "SMP architecture is optimal to be used when",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "None"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "One level of cache memory"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The number of processors is large"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The number of processors is small"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Symmetric Multi-Processing (SMP) uses a shared system bus and shared memory. As the number of processors increases, bus contention and memory bandwidth become significant bottlenecks, limiting scalability. Thus, it is most efficient for a relatively small number of processors."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-9",
+      "number": "68",
+      "text": "Cache coherency means",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Data must be consistent among the different processors' caches"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "There are different levels of caches per processor"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "There is one level of cache per processor"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Data must be inconsistent among the different processors' caches"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Cache coherency is the protocol that ensures that data stored in multiple local caches is consistent, meaning all processors see the same value for the same memory location at the same time."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-10",
+      "number": "69",
+      "text": "Which of the following is/are used for synchronization in OpenMP?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "All"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Critical"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Barrier"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Atomic"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "OpenMP provides several synchronization constructs to manage thread interaction. `critical` provides mutual exclusion, `barrier` synchronizes all threads in a team, and `atomic` ensures specific memory updates are performed without interruption."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-11",
+      "number": "70",
+      "text": "Is the following code parallelizable?\n```c\nfor (i = 1; i < n; i++) \n    a[i-1] = b[i];\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Only if \\( n \\) is even"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Only if the arrays are of fixed size"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "This loop is parallelizable because there are no loop-carried dependencies. Each iteration \\( i \\) writes to a unique index \\( a[i-1] \\) and reads from a unique index \\( b[i] \\). Since no value written in one iteration is read or overwritten by another, the iterations can be executed in any order or simultaneously."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-12",
+      "number": "71",
+      "text": "What is the function of the `#pragma omp parallel for` construct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Creates a team of threads where each thread executes some iterations in the loop"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "This construct cannot be written like this"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Creates a team of threads where each thread executes all iterations in the loop"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `#pragma omp parallel for` is a combined directive. The `parallel` part creates a team of threads, and the `for` part distributes the iterations of the associated loop among those threads. Thus, each thread executes a subset (some) of the total iterations."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-13",
+      "number": "72",
+      "text": "One main difference between hyperthreading and multithreading is that:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Multithreading divides a processor into multiple virtual processors"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "None"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Hyperthreading divides a processor into multiple virtual processors"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Multithreading was introduced to overcome delays while waiting for data"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Hyper-threading (Intel's implementation of Simultaneous Multithreading) is a hardware feature that allows a single physical CPU core to function as two logical (virtual) processors. While 'multithreading' is a general concept (both hardware and software), 'hyperthreading' specifically refers to the hardware's ability to present multiple virtual cores to the OS."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-14",
+      "number": "73",
+      "text": "A hardware component that can be considered an incomplete processor is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Process"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Core"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Thread"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In the context of computer architecture and SMT (Simultaneous Multithreading), a hardware 'thread' is often considered an 'incomplete processor' or 'logical processor'. It maintains its own architectural state (registers, program counter) but shares execution units (ALUs, FPUs) and caches with other threads on the same physical core."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-15",
+      "number": "74",
+      "text": "OpenMP is a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Distributed-Memory programming model"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Shared-Memory programming model"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "None"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "PGAS Model"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "OpenMP (Open Multi-Processing) is an API designed for shared-memory multiprocessing programming. It allows multiple threads to access a common memory space."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-16",
+      "number": "75",
+      "text": "Is it possible to parallelize the following loop iterations?\n\n```c\nfor ( i = 0 ; i < 100 ; i++ ) {\n  b [i] = i; \n  a [i] = a [i] - b[i]; \n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Depends on the used compiler"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The loop iterations are independent. For every index \\( i \\), the operations only read from and write to the \\( i \\)-th elements of arrays \\( a \\) and \\( b \\). There are no loop-carried dependencies, so it can be parallelized safely."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-17",
+      "number": "76",
+      "text": "Coarse grain parallelism is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Parallel execution of instructions"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "All of the above"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Execute programs with very large data sets"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Parallel execution of functions"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Coarse-grained parallelism refers to the decomposition of a program into large, independent tasks or functions that can be executed in parallel, as opposed to fine-grained parallelism which happens at the instruction level."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-18",
+      "number": "77",
+      "text": "The main components of OpenMP are:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Directives, messages, and caches"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Compiler directives, runtime routines and environment variables"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Compiler, parser, and assembler"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The OpenMP specification is defined by three primary components: Compiler Directives (e.g., `#pragma omp parallel`), Runtime Library Routines (e.g., `omp_get_thread_num()`), and Environment Variables (e.g., `OMP_NUM_THREADS`)."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-19",
+      "number": "78",
+      "text": "Which scheduling type is described by: 'Fixed portions of work; when a thread finishes, it starts on the next portion of work'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Auto scheduling"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Dynamic scheduling"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Guided scheduling"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Static scheduling"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In dynamic scheduling, iterations are divided into chunks. When a thread finishes its current chunk, it dynamically requests or grabs the next available chunk of work from the pool until all iterations are completed."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-20",
+      "number": "79",
+      "text": "A process",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "All"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Is a program of execution"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Communicates with other processes by sending messages to each other"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "May include several threads"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A process is a program in execution. It is an active entity that can communicate with other processes via inter-process communication (IPC) such as message passing. Modern operating systems also allow a single process to spawn multiple threads of execution."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-21",
+      "number": "80",
+      "text": "When can statements be executed in parallel?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Never"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Always"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "When their order of execution does not matter"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "When their order of execution matters"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Statements can be executed in parallel when they are independent. Independence means that the output of one does not serve as the input for another (no data dependencies), so their relative order of execution does not affect the final computational result."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-22",
+      "number": "81",
+      "text": "Parallel applications require",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Functional parallelism in Hardware"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "All"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Parallel programming model"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Communication between working threads/processes via a shared memory or via a network or via both"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "To successfully implement and run parallel applications, one needs hardware that supports parallel execution (functional parallelism), a programming model (like OpenMP or MPI) to express the parallelism, and a mechanism for the parallel tasks to communicate and synchronize, whether through shared memory or network-based message passing."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-23",
+      "number": "82",
+      "text": "The collapse clause on the for loop construct",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Decreases size of granularity"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Is used with perfectly nested loops"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "All"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Indicates how many loops should be collapsed"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In OpenMP, the `collapse(n)` clause is used with perfectly nested loops to combine 'n' loops into a single linear iteration space. By creating more iterations that can be assigned to threads, it effectively decreases the granularity of work. It specifically indicates the depth of the nested loops to be merged."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-24",
+      "number": "83",
+      "text": "Data decomposition is",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "All"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data parallelism"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Data partitioning into pieces"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Regular parallelism"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Data decomposition is the method of partitioning data into smaller chunks so that each chunk can be processed by a different parallel task. This is the foundation of data parallelism. When data is partitioned in a structured, uniform way, it is also referred to as regular parallelism."
+    },
+    {
+      "id": "extract-1777317099592-pmfso-25",
+      "number": "84",
+      "text": "One of the following is correct about SMP architecture",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "All"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Processors access different memory spaces"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Some processors access memory locations in different costs"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All processors access memory locations in the same cost"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Symmetric Multiprocessing (SMP) is an architecture where multiple processors share a single, common main memory. A key characteristic of SMP is Uniform Memory Access (UMA), which means that any memory location can be accessed by any processor with the same latency or 'cost'."
+    }
+  ],
+  "q": 84
+}
