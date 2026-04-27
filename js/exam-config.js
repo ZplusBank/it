@@ -787,37 +787,37 @@ const EXAM_CONFIG = [
     "icon": "data/parallel/icon.png",
     "chapters": [
       {
-        "id": "Mid",
+        "id": "1",
         "name": "Mid",
         "q": 54,
         "file": "data/parallel/Mid.json"
       },
       {
-        "id": "chapterParallel CH1.pdf",
+        "id": "2",
         "name": "Ch1",
         "q": 35,
         "file": "data/parallel/chapterParallel CH1.pdf.json"
       },
       {
-        "id": "chapterParallel CH2.pdf",
+        "id": "3",
         "name": "Ch2",
         "q": 40,
         "file": "data/parallel/chapterParallel CH2.pdf.json"
       },
       {
-        "id": "chapterParallel CH3.pdf",
+        "id": "4",
         "name": "Ch3",
         "q": 50,
         "file": "data/parallel/chapterParallel CH3.pdf.json"
       },
       {
-        "id": "chapterParallel CH8.pdf",
+        "id": "5",
         "name": "Ch8",
         "q": 30,
         "file": "data/parallel/chapterParallel CH8.pdf.json"
       },
       {
-        "id": "chapterParallel CH9.pdf",
+        "id": "6",
         "name": "Ch9",
         "q": 30,
         "file": "data/parallel/chapterParallel CH9.pdf.json"
