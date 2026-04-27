@@ -1,0 +1,1253 @@
+{
+  "id": "upload-1777319113191-lfvid",
+  "label": "Parallel CH2.pdf",
+  "params": {
+    "file": "Parallel CH2.pdf",
+    "chapter": "chapterParallel CH2.pdf"
+  },
+  "title": "Ch2",
+  "questions": [
+    {
+      "id": "upload-1777319113191-0",
+      "number": "1",
+      "text": "What was the primary bottleneck in the performance of the traditional von Neumann sequential hardware architecture?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The speed of the Control Unit"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The bus between main memory and the CPU"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The size of the instruction registers"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The efficiency of the ALU"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In the traditional von Neumann architecture, the bus connecting the main memory and the CPU was typically the bottleneck because instructions and data had to share the same path, limiting throughput."
+    },
+    {
+      "id": "upload-1777319113191-1",
+      "number": "2",
+      "text": "In Flynn’s Taxonomy, which category is described as the most common and general parallel machine architecture?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "SISD"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "SIMD"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "MISD"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "MIMD"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "MIMD (Multiple Instructions Multiple Data) is the most general and flexible architecture, allowing every processor to execute different instructions on different data sets."
+    },
+    {
+      "id": "upload-1777319113191-2",
+      "number": "3",
+      "text": "Which of the following technologies is a prominent example of SIMD (Single Instruction Multiple Data) architecture?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Traditional single-core CPUs"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Graphics Processing Units (GPUs)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Cloud computing clusters"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Standard network routers"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "GPUs are a prime example of SIMD as they execute the same instruction on thousands of data elements (pixels or vertices) simultaneously."
+    },
+    {
+      "id": "upload-1777319113191-3",
+      "number": "4",
+      "text": "What characterizes a Shared Memory System in terms of addressing?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Each processor has its own private address space."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "All processes share the same global address space."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Memory is only accessible via message passing."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Data is only accessible through remote procedure calls."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In shared memory systems, all processors or processes have access to the same physical or logical address space, allowing data exchange through shared variables."
+    },
+    {
+      "id": "upload-1777319113191-4",
+      "number": "5",
+      "text": "What is the primary limiting factor for scaling Symmetric Multi-Processors (SMPs)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Number of instruction registers"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Lack of peer relationship between CPUs"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Memory bandwidth per processor"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Complexity of the ALU"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Since all processors in an SMP share the same physical main memory and the same bus/interconnect, memory bandwidth becomes the bottleneck as more cores are added."
+    },
+    {
+      "id": "upload-1777319113191-5",
+      "number": "6",
+      "text": "Which memory architecture is defined by the fact that access time varies depending on which data item a processor retrieves?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "SMP"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "SISD"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "NUMA"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "MISD"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "NUMA (Non-Uniform Memory Access) systems have memory that is physically closer to some processors than others, leading to varying access times (latencies)."
+    },
+    {
+      "id": "upload-1777319113191-6",
+      "number": "7",
+      "text": "In a NUMA system, what does the **First Touch Policy** imply?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The first processor to manufacture the chip determines the speed."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A data item is located in the memory of the processor that first accesses it."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The first instruction in a program must be a write command."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Only the first processor in the socket can access the L3 cache."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The 'first touch policy' is a common memory allocation strategy where data is placed in the local memory of the node/processor that first writes to or accesses it."
+    },
+    {
+      "id": "upload-1777319113191-7",
+      "number": "8",
+      "text": "How do processes communicate in a Distributed Memory Machine?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "By writing to shared variables in a common address space."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Via explicit data exchange like Message Passing or Sockets."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Through shared L1 and L2 caches only."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "By using a single global bus for all instructions."
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In distributed memory systems, each processor has its own address space, so information must be explicitly exchanged using methods like MPI (Message Passing Interface) or sockets."
+    },
+    {
+      "id": "upload-1777319113191-8",
+      "number": "9",
+      "text": "Which category of distributed memory machines consists of independent computers (nodes) connected via a high-speed network like Ethernet or Infiniband?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Massively Parallel Processors (MPPs)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Symmetric Multiprocessors (SMPs)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Clusters (Loosely Coupled Systems)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Grid Computing"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Clusters, or loosely coupled systems, are composed of independent nodes, each with its own OS and memory, connected by a network."
+    },
+    {
+      "id": "upload-1777319113191-9",
+      "number": "10",
+      "text": "A 'Cluster of SMPs' is an example of what kind of system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Purely Shared Memory"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Purely Distributed Memory"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Hybrid System"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "SISD System"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Hybrid systems combine shared-memory multiprocessor nodes (SMPs) with a distributed-memory network interconnect."
+    },
+    {
+      "id": "upload-1777319113191-10",
+      "number": "11",
+      "text": "Define **Latency** in the context of network topologies.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The amount of data transferred per second."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The total number of nodes in the network."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The minimal time to send a very short message from one processor to another."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The physical distance between the processors."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Latency is the time delay involved in communicating between nodes, usually measured for the smallest possible message."
+    },
+    {
+      "id": "upload-1777319113191-11",
+      "number": "12",
+      "text": "Which network topology is characterized by all nodes being connected to the same communication medium, allowing only one communication at a time?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Crossbar Network"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Bus-Based Network"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Mesh Network"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Hypercube"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In a bus-based network, the medium is shared; therefore, only one node can transmit at a time, making it simple but not scalable."
+    },
+    {
+      "id": "upload-1777319113191-12",
+      "number": "13",
+      "text": "What is a major financial disadvantage of Crossbar Networks as the number of ports increases?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "They cannot support simultaneous connections."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "They are too simple to broadcast data."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "They do not scale financially (cost increases quadratically)."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "They have higher latency than Bus networks."
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Crossbar networks provide high performance but become extremely expensive to build as the number of inputs and outputs increases due to the grid of switches required."
+    },
+    {
+      "id": "upload-1777319113191-13",
+      "number": "14",
+      "text": "In **Instruction-Level Parallelism (ILP)**, what is the mechanism where multiple instructions are issued per clock cycle?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Pipelining"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Hyper-Threading"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Superscalar execution"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "SIMD"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Superscalar execution refers to a CPU's ability to issue and execute more than one instruction during a single clock cycle."
+    },
+    {
+      "id": "upload-1777319113191-14",
+      "number": "15",
+      "text": "How does **Out-of-order execution** improve performance in an ILP context?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "By executing instructions strictly in the order they appear in code."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "By executing independent instructions as soon as their operands are ready, even if earlier instructions are stalled."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "By duplicating the front-end of the processor for multiple threads."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "By using a single instruction for multiple data points."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Out-of-order execution allows the processor to keep its functional units busy by looking ahead for instructions that are not dependent on currently stalled operations."
+    },
+    {
+      "id": "upload-1777319113191-15",
+      "number": "16",
+      "text": "What is the specific purpose of **Hyper-Threading (HT)** technology?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To allow a single physical core to act like two logical cores by duplicating the front-end."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To increase the physical number of ALUs in a processor."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To replace the need for L3 cache."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To convert a distributed memory system into a shared memory system."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Hyper-Threading allows one physical core to manage two instruction streams (threads) simultaneously to keep execution units busy, effectively appearing as two logical cores to the OS."
+    },
+    {
+      "id": "upload-1777319113191-16",
+      "number": "17",
+      "text": "Which of the following describes **Process-Level Parallelism** correctly?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Threads sharing a common memory space."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Multiple instructions acting on a single data stream."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Execution of independent tasks using separate memory spaces."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A single instruction stream broadcasted to array processors."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Unlike thread-level parallelism where memory is shared, process-level parallelism uses separate processes with their own dedicated memory spaces."
+    },
+    {
+      "id": "upload-1777319113191-17",
+      "number": "18",
+      "text": "Which level of parallelism operates at the **coarsest granularity**, involving large units of work with minimal communication?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Instruction-Level Parallelism"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Thread-Level Parallelism"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Data-Level Parallelism"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Job-Level Parallelism"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Job-Level parallelism involves running independent programs or jobs simultaneously, representing the coarsest level of parallel granularity."
+    },
+    {
+      "id": "upload-1777319113191-18",
+      "number": "19",
+      "text": "Which modern CPU extensions are listed as examples of SIMD units used as accelerators?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "OpenMP and MPI"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Intel AVX, SSE, and ARM NEON"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "PCI Express and Infinity Fabric"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "L1 and L2 Caches"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Intel AVX, SSE, and ARM NEON are all vector extensions that allow CPUs to perform SIMD operations (performing the same math on multiple data values at once)."
+    },
+    {
+      "id": "upload-1777319113191-19",
+      "number": "20",
+      "text": "What does **ccNUMA** stand for?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Cache-coherent Non-Uniform Memory Access"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Calculated-clock Non-Uniform Memory Access"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Central-core Network Universal Memory Access"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Cross-cluster Non-Uniform Memory Architecture"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "ccNUMA stands for cache-coherent Non-Uniform Memory Access, which uses hardware to maintain consistency between caches in a NUMA system."
+    },
+    {
+      "id": "upload-1777319113191-20",
+      "number": "21",
+      "text": "In an **In-order CPU**, if Instruction 2 depends on a result from Instruction 1, what happens to an independent Instruction 3?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Instruction 3 executes immediately."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Instruction 3 waits for Instruction 1 and 2 to finish."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Instruction 3 bypasses the pipeline entirely."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Instruction 3 cancels Instruction 2."
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In an in-order CPU, instructions must wait for preceding instructions to complete their stage, even if there is no data dependency, causing pipeline stalls."
+    },
+    {
+      "id": "upload-1777319113191-21",
+      "number": "22",
+      "text": "Which metric is measured in units such as Bytes/sec, MB/s, or Gb/s?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Latency"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Bandwidth"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Flops"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Clock speed"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Bandwidth refers to the amount of data transferred in a certain timeframe, measured in bytes or bits per second."
+    },
+    {
+      "id": "upload-1777319113191-22",
+      "number": "23",
+      "text": "Which of the following is NOT a direct network topology mentioned in the text?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Ring network"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2D Mesh"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Hypercube"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Ethernet Bus"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "While Ethernet is a network, the text distinguishes direct connections (Ring, Mesh, Hypercube, Torus) from the shared medium 'Bus-based' network."
+    },
+    {
+      "id": "upload-1777319113191-23",
+      "number": "24",
+      "text": "What is the primary difference between SMP and NUMA in terms of the memory 'view' of the processor?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "In SMP, memory is distributed; in NUMA, it is shared."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "In SMP, access time is uniform for all memory; in NUMA, it depends on location."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "NUMA cannot address the whole memory space, while SMP can."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "SMP requires message passing, while NUMA uses shared variables."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In SMP (Symmetric), all memory is treated equally with the same access time. In NUMA (Non-Uniform), the address space is shared but local memory is faster than remote memory."
+    },
+    {
+      "id": "upload-1777319113191-24",
+      "number": "25",
+      "text": "Which of the following is considered 'off-the-shelf' technology for distributed memory interconnects?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "PCI Express"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "AMD Infinity Fabric"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Gigabit-Ethernet"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Hyper-threading"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Fast-Ethernet and Gigabit-Ethernet are common, 'off-the-shelf' technologies, whereas specialized interconnects like Infinity Fabric are proprietary/advanced."
+    },
+    {
+      "id": "upload-1777319113191-25",
+      "number": "26",
+      "text": "In the Intel Xeon Gold 6248R example, how is the L3 cache organized?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Shared per CPU (socket)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Private per core"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Shared across the UPI interconnect"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Non-existent in that model"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "According to the example, L1 and L2 caches are private to each core, but the L3 cache is shared among the 24 cores within a single CPU socket."
+    },
+    {
+      "id": "upload-1777319113191-26",
+      "number": "27",
+      "text": "What is the purpose of **multistage networks** in parallel architecture?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To increase the latency of a single bus."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To overcome the financial cost problem of large crossbar networks."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To provide a direct connection between every single processor pair."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To eliminate the need for memory controllers."
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Multistage networks offer a compromise between the expensive crossbar (which connects everything to everything) and the non-scalable bus, providing high connectivity at a lower cost."
+    },
+    {
+      "id": "upload-1777319113191-27",
+      "number": "28",
+      "text": "Which Flynn category involves a single instruction stream broadcasted to multiple processors, each having its own data stream?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "SISD"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "SIMD"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "MISD"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "MIMD"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "SIMD (Single Instruction Multiple Data), also known as array processors, broadcasts one instruction to many units acting on their own data."
+    },
+    {
+      "id": "upload-1777319113191-28",
+      "number": "29",
+      "text": "What is the primary way modern sequential architectures cope with the 'von Neumann bottleneck' between CPU and memory?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Using slower ALUs"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Adding levels of cache memory between main memory and registers"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Increasing the number of program counters"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Removing the bus entirely"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Caches (L1, L2, L3) are used to store frequently accessed data closer to the CPU, reducing the frequency of slow trips to the main memory across the bus."
+    },
+    {
+      "id": "upload-1777319113191-29",
+      "number": "30",
+      "text": "Which system type involves large-scale distributed memory across different geographical locations interconnected via the Internet?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Massively Parallel Processors (MPPs)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "SMP servers"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Grid and Cloud Computing Systems"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Single Instruction Multiple Data units"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Grid and cloud systems are characterized by their distributed nature across geographical distances, often using standard internet protocols."
+    },
+    {
+      "id": "upload-1777319113191-30",
+      "number": "31",
+      "text": "What does the metric 'Aggregated Bandwidth' represent in a Crossbar network?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The bandwidth of the slowest connection."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The sum of the bandwidth of all possible simultaneous connections."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The latency of the grid switches."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The bandwidth of a single broadcast."
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Because crossbar networks allow multiple pairs to communicate at once, the total (aggregated) bandwidth is the sum of all those individual parallel connections."
+    },
+    {
+      "id": "upload-1777319113191-31",
+      "number": "32",
+      "text": "In the context of Process-Level Parallelism, how must processes exchange data since they do not share memory?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Direct register access"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Inter-process communication (IPC) like pipes or sockets"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Instruction-level pipelining"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Vector extensions"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Since processes have separate memory spaces, they cannot use shared variables and must rely on IPC methods managed by the OS."
+    },
+    {
+      "id": "upload-1777319113191-32",
+      "number": "33",
+      "text": "Which level of parallelism involves different stages of multiple instructions executing in parallel?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Pipelining"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data-level parallelism"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Job-level parallelism"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Shared-memory parallelism"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Pipelining is a form of instruction-level parallelism where the execution of an instruction is divided into stages, allowing multiple instructions to be in different stages of completion at once."
+    },
+    {
+      "id": "upload-1777319113191-33",
+      "number": "34",
+      "text": "Which of the following is a disadvantage of Process-Level Parallelism compared to Thread-Level Parallelism?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It is less secure due to shared memory."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It requires more overhead due to separate memory management by the OS."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It cannot be used on supercomputers."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It only works on SISD machines."
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Managing separate address spaces for processes involves more operating system overhead than managing threads within a single process."
+    },
+    {
+      "id": "upload-1777319113191-34",
+      "number": "35",
+      "text": "What happens in a **MISD** (Multiple Instructions Single Data) architecture according to Flynn’s Taxonomy?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Multiple instructions are performed on different data streams."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "One instruction is performed on many data points."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Multiple instructions operate on a single data stream."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "One instruction operates on one data stream."
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "MISD involves multiple instructions for a single piece of data, though the text notes it is essentially non-existent in practice."
+    },
+    {
+      "id": "upload-1777319113191-35",
+      "number": "36",
+      "text": "In a distributed memory machine, what does the performance 'strongly depend' on?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The size of the L1 cache"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The quality and topology of the network interconnect"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The number of registers in the CPU"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The speed of the local ALU"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Because data must be exchanged across the network, the network's bandwidth, latency, and layout are critical to the system's overall speed."
+    },
+    {
+      "id": "upload-1777319113191-36",
+      "number": "37",
+      "text": "Which of these is a 'high-end' example of an SMP server that can reach up to 256 cores?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Intel Xeon Gold 6248R"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "HPE Superdome"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Apple M-series"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "AMD Opteron Barcelona"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text identifies HPE Superdome, IBM Power, and AMD EPYC as examples of high-end servers that scale SMP to hundreds of cores."
+    },
+    {
+      "id": "upload-1777319113191-37",
+      "number": "38",
+      "text": "How is Data-Level Parallelism (DLP) primarily achieved?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Pipelining and superscalar execution"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "SIMD architectures and vector processors"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Hyper-Threading and multi-core CPUs"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Cloud computing and Grid systems"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "DLP is about performing the same operation on many data elements, which is the definition of SIMD and vector processing."
+    },
+    {
+      "id": "upload-1777319113191-38",
+      "number": "39",
+      "text": "In an out-of-order CPU, what is the 'processor detecting' to decide if an instruction can be executed early?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "If the instruction is independent and operands are ready."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "If the instruction is the very next one in the sequence."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "If the instruction requires access to the L3 cache."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "If the instruction is a branch command."
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Out-of-order CPUs identify instructions that do not depend on the results of currently running instructions and execute them as soon as their data is available."
+    },
+    {
+      "id": "upload-1777319113191-39",
+      "number": "40",
+      "text": "Which of the following describes the 'Massively Parallel Processors (MPPs)' class?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Computers in different cities connected via the Internet."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A PC with two processors sharing one RAM."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Hundreds or thousands of processors with local memory connected by a dedicated high-speed network."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A CPU with multiple instruction registers but one ALU."
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "MPPs (supercomputers) are tightly coupled systems with a massive number of processors, each with local memory, using very high-speed specialized interconnects."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 40
+}

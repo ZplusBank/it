@@ -1,0 +1,943 @@
+{
+  "id": "upload-1777319294793-crrpt",
+  "label": "Parallel CH8.pdf",
+  "params": {
+    "file": "Parallel CH8.pdf",
+    "chapter": "chapterParallel CH8.pdf"
+  },
+  "title": "Ch8",
+  "questions": [
+    {
+      "id": "upload-1777319294793-0",
+      "number": "1",
+      "text": "What does MPI stand for in the context of parallel computing?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Multiprocessing Protocol Interface"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Message Passing Interface"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Main Process Integration"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Memory Parallel Interconnect"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "MPI stands for Message Passing Interface, a standard for communication in parallel computing."
+    },
+    {
+      "id": "upload-1777319294793-1",
+      "number": "2",
+      "text": "MPI is primarily designed for which type of computer architecture?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Shared memory machines"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Distributed memory machines"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Single-core processors"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Standalone workstations only"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text explicitly mentions MPI in the context of distributed memory machines and communication between different machines."
+    },
+    {
+      "id": "upload-1777319294793-2",
+      "number": "3",
+      "text": "In an MPI environment, what is the unique identifier assigned to each process?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "IP Address"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Hostname"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Rank"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Process ID (PID)"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Addressing in MPI is handled by giving every process a unique identifier called a rank."
+    },
+    {
+      "id": "upload-1777319294793-3",
+      "number": "4",
+      "text": "If you start \\( n \\) processes using MPI, what is the range of the rank values?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 to \\( n \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0 to \\( n \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0 to \\( n - 1 \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1 to \\( n + 1 \\)"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The rank value is always between 0 and \\( n - 1 \\)."
+    },
+    {
+      "id": "upload-1777319294793-4",
+      "number": "5",
+      "text": "When was the first 'MPI: A Message-Passing Standard' introduced?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1990"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1994"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1997"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2012"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The MPI Forum introduced the first standard in 1994."
+    },
+    {
+      "id": "upload-1777319294793-5",
+      "number": "6",
+      "text": "Which utility is typically used to start the required number of MPI processes?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "mpiexecute"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "mpistart"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "mpirun"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "mpinit"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "According to the text, 'mpirun' starts the required number of processes."
+    },
+    {
+      "id": "upload-1777319294793-6",
+      "number": "7",
+      "text": "What is the name of the default process group that includes all processes started at the beginning?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "MPI_GROUP_ALL"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "MPI_COMM_WORLD"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "MPI_DEFAULT_COMM"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "MPI_MAIN_COMM"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "All processes started by mpirun are organized in a process group called MPI_COMM_WORLD."
+    },
+    {
+      "id": "upload-1777319294793-7",
+      "number": "8",
+      "text": "Which of the following is true about `MPI_COMM_WORLD`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It is dynamic; processes can be added later."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The number of processes can change during execution."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It is static; the number of processes cannot change."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Participating processes can be swapped out for others."
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The text states that MPI_COMM_WORLD is static, meaning the number of processes and participating processes cannot change."
+    },
+    {
+      "id": "upload-1777319294793-8",
+      "number": "9",
+      "text": "How is a process uniquely identified in an environment with multiple groups?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "By its rank only"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "By its IP Address"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "By a tuple of (rank, process group)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "By its global PID"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The rank of a process is always related to a specific process group; thus, (rank, process group) uniquely identifies it."
+    },
+    {
+      "id": "upload-1777319294793-9",
+      "number": "10",
+      "text": "If `MPI_Recv` is called and the specified sender rank exists but never actually sends a message, what is the result?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The MPI library returns an error immediately."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program crashes."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The function waits forever (deadlock)."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The function returns a null buffer."
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "If the rank exists but doesn't send, MPI_Recv waits forever, leading to a deadlock."
+    },
+    {
+      "id": "upload-1777319294793-10",
+      "number": "11",
+      "text": "What happens if a process attempts to receive a message using a tag that is outside the allowed range (e.g., greater than `MPI_TAG_UB`)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It results in a deadlock."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The MPI library can recognize it and return an error."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The message is automatically truncated."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The tag is ignored."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If the tag is outside the allowed range, the MPI library can detect this and return an error."
+    },
+    {
+      "id": "upload-1777319294793-11",
+      "number": "12",
+      "text": "How many MPI functions are considered sufficient to program a distributed memory machine?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Two"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Four"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Six"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Over one hundred"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The text mentions that six MPI functions are sufficient for programming a distributed memory machine."
+    },
+    {
+      "id": "upload-1777319294793-12",
+      "number": "13",
+      "text": "Which of the following is categorized as a 'Performance' reason to use advanced MPI functions?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Error handling"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Language bindings"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Collective operations"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Environmental management"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Collective operations, one-sided operations, and parallel I/O are listed under Performance."
+    },
+    {
+      "id": "upload-1777319294793-13",
+      "number": "14",
+      "text": "Which of the following is categorized as a 'Usability' feature in MPI?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Derived data-types"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Process grouping functions"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Asynchronous point-to-point operations"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "One-sided operations"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Process grouping functions, error handling, and language bindings are listed under Usability."
+    },
+    {
+      "id": "upload-1777319294793-14",
+      "number": "15",
+      "text": "In which year was MPI-2.0 completed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1994"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1997"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2012"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2015"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The history section states that MPI-2.0 was completed in 1997."
+    },
+    {
+      "id": "upload-1777319294793-15",
+      "number": "16",
+      "text": "What is the primary difference between MPI and standard protocols like TCP/IP as described in the text?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "MPI is only for the Internet."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "MPI defines interfaces/routines but does not specify a specific protocol."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "TCP/IP uses ranks while MPI uses hostnames."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "MPI requires every process to be started manually one by one."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text specifies that MPI defines interfaces/routines to send/receive data but 'does not specify a protocol'."
+    },
+    {
+      "id": "upload-1777319294793-16",
+      "number": "17",
+      "text": "If a process is part of multiple groups, which statement is true about its rank?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It has the same rank in all groups."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It can only have a rank in MPI_COMM_WORLD."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It has a specific rank within each group it belongs to."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Ranks are only unique across the whole Internet."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The text says 'a process has in each group a rank', implying it can have different ranks in different groups."
+    },
+    {
+      "id": "upload-1777319294793-17",
+      "number": "18",
+      "text": "What is a 'Tag mismatch' deadlock scenario in MPI?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The tag is larger than `MPI_TAG_UB`."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The tag in `MPI_Recv` does not match the tag in `MPI_Send`."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The tag is a negative number."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The process group does not support tags."
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If the tag specified in `MPI_Recv` differs from the one in `MPI_Send`, `MPI_Recv` waits forever, causing a deadlock."
+    },
+    {
+      "id": "upload-1777319294793-18",
+      "number": "19",
+      "text": "MPI-3.1 was finalized in 2015. What was its main purpose?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Introducing a completely new architecture."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Adding small fixes to MPI-3.0."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Removing the concept of ranks."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Restricting MPI to shared memory only."
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text states that MPI-3.1 added small fixes to the previous version (3.0)."
+    },
+    {
+      "id": "upload-1777319294793-19",
+      "number": "20",
+      "text": "Why would a programmer use 'one-sided operations' in MPI?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To improve usability and error handling."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To simplify management of parallel applications."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To fully exploit hardware capabilities for performance."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Because they are part of the basic six functions."
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "One-sided operations are listed under the 'Performance' section as a way to exploit hardware capabilities."
+    },
+    {
+      "id": "upload-1777319294793-20",
+      "number": "21",
+      "text": "In `MPI_COMM_WORLD`, how many processes can have a rank of 0?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "None"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Exactly one"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Multiple if they are on different machines"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Depends on the number of nodes"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text states that every process has a unique identifier (rank) and no identifiers are duplicate."
+    },
+    {
+      "id": "upload-1777319294793-21",
+      "number": "22",
+      "text": "What occurs if an MPI library detects that a destination rank in a send operation does not exist?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It results in a deadlock."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It returns an error."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It sends the message to rank 0 instead."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It creates a new process for that rank."
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text states: 'if rank does not exist... the MPI library can recognize it and return an error'."
+    },
+    {
+      "id": "upload-1777319294793-22",
+      "number": "23",
+      "text": "Which of the following is NOT listed as a reason to go beyond the basic six MPI functions?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Performance"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Usability"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Abstracting communication patterns"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Increasing the number of allowed machines on the Internet"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Performance and Usability (including abstracting patterns) are explicitly listed as reasons. Increasing the number of machines on the Internet is not."
+    },
+    {
+      "id": "upload-1777319294793-23",
+      "number": "24",
+      "text": "Parallel I/O is considered which type of MPI feature?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Performance feature"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Usability feature"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Basic feature"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Environmental feature"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Parallel I/O is listed under the Performance sub-bullets."
+    },
+    {
+      "id": "upload-1777319294793-24",
+      "number": "25",
+      "text": "What defines the process startup mechanism in the 'Message Passing universe'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Manual startup of each application separately"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "HTTP protocols"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Mechanisms provided by the MPI library to start \\( n \\) processes"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Operating system's task manager only"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The text explains that while typical internet processes start separately, MPI provides mechanisms to start \\( n \\) processes working on the same problem."
+    },
+    {
+      "id": "upload-1777319294793-25",
+      "number": "26",
+      "text": "According to the history provided, which version of MPI was finalized in 2012?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "MPI-1.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "MPI-2.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "MPI-3.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "MPI-3.1"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "MPI-3.0 was finalized in 2012."
+    },
+    {
+      "id": "upload-1777319294793-26",
+      "number": "27",
+      "text": "In a group of 7 processes, what are the identifiers (ranks) of the processes?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1, 2, 3, 4, 5, 6, 7"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0, 1, 2, 3, 4, 5, 6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0, 2, 4, 6, 8, 10, 12"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Any 7 unique random numbers"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Ranks start at 0 and go to \\( n - 1 \\). For \\( n=7 \\), this is 0 to 6."
+    },
+    {
+      "id": "upload-1777319294793-27",
+      "number": "28",
+      "text": "Which of the following describes a 'sender mismatch' that leads to an error rather than a deadlock?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The sender sends a message with the wrong tag."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The sender rank specified does not exist in the communicator."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The sender exists but is busy with another task."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The sender and receiver are on the same machine."
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text says if a rank does not exist, the library can recognize it and return an error. If it does exist but doesn't send, it deadlocks."
+    },
+    {
+      "id": "upload-1777319294793-28",
+      "number": "29",
+      "text": "Object attributes and language bindings are classified under which category?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Performance"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Usability"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Protocol Specification"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Hardware Abstraction"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Both are listed as sub-bullets under the Usability section."
+    },
+    {
+      "id": "upload-1777319294793-29",
+      "number": "30",
+      "text": "What does the MPI Forum represent?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A single company that owns MPI"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A consensus-based effort to create a portable parallel computing standard"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A government agency regulating internet traffic"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A hardware manufacturer for supercomputers"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text describes the MPI Forum as a consensus-based effort to create a portable parallel computing standard."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 30
+}

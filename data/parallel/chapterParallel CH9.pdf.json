@@ -1,0 +1,943 @@
+{
+  "id": "upload-1777319338116-1qdhe",
+  "label": "Parallel CH9.pdf",
+  "params": {
+    "file": "Parallel CH9.pdf",
+    "chapter": "chapterParallel CH9.pdf"
+  },
+  "title": "Ch9",
+  "questions": [
+    {
+      "id": "upload-1777319338116-0",
+      "number": "1",
+      "text": "How many MPI functions are considered sufficient for programming a distributed system memory machine?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Four"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Six"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Eight"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Ten"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "According to the material, six MPI functions are sufficient for programming a distributed system memory machine."
+    },
+    {
+      "id": "upload-1777319338116-1",
+      "number": "2",
+      "text": "In MPI point-to-point communication, which description best characterizes the interaction?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "One-sided communication where only the sender is active"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Collective communication involving all processes in a communicator"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Two-sided communication where both processes actively participate"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Broadcasting data from a root process to all other processes"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Point-to-point operations involve data exchange between two processes where both are actively participating, known as two-sided communication."
+    },
+    {
+      "id": "upload-1777319338116-2",
+      "number": "3",
+      "text": "Which of the following is NOT part of the message 'envelope' or header in MPI?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Rank of the sender process"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The communicator"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The tag"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The beginning of the buffer"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The beginning of the buffer is part of the data description, not the message header (envelope)."
+    },
+    {
+      "id": "upload-1777319338116-3",
+      "number": "4",
+      "text": "What does the MPI 'Non-overtaking' rule guarantee?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Messages from process A to process B arrive in the same order they were posted"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The receiver process cannot finish before the sender"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Messages will never be lost"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A message is always received by the first available Recv operation"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The non-overtaking rule guarantees that if process A sends two messages to process B, they arrive in the same order they were sent."
+    },
+    {
+      "id": "upload-1777319338116-4",
+      "number": "5",
+      "text": "According to the message-based paradigm in MPI, a single message can be received by how many `Recv` operations?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "As many as requested by the communicator"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Exactly one"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Multiple, unlike socket programming"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Two (for redundancy)"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "MPI specifies that a single message cannot be received with more than one Recv operation."
+    },
+    {
+      "id": "upload-1777319338116-5",
+      "number": "6",
+      "text": "Which of these parameters is NOT used by the receiver to match an incoming message?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Tag"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Sender Rank"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Communicator"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Message Length"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Message length is not used for matching. Matching is based on sender, tag, and communicator."
+    },
+    {
+      "id": "upload-1777319338116-6",
+      "number": "7",
+      "text": "What occurs if a received message is longer than the expected message length provided in the `Recv` operation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The message is truncated automatically without error"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "An error code `MPI_ERR_TRUNC` is returned"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The extra data is stored in a temporary system buffer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The operation waits for more buffer space to become available"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If the received message is longer than the expected message, MPI returns an error code (MPI_ERR_TRUNC), or the application may abort/deadlock."
+    },
+    {
+      "id": "upload-1777319338116-7",
+      "number": "8",
+      "text": "Which piece of information is directly accessible from the MPI status object in C?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The message length"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The rank of the sender"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Whether the message was cancelled"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The buffer memory address"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The rank of the sender, the tag, and the error code are directly accessible from the status object. Message length and cancellation status are indirectly accessible through function calls."
+    },
+    {
+      "id": "upload-1777319338116-8",
+      "number": "9",
+      "text": "If a programmer does not need the status information from `MPI_Recv`, what should they pass as the status argument?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "NULL"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "MPI_STATUS_IGNORE"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "MPI_STATUS_NULL"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "If you are not interested in the status, you can pass MPI_STATUS_NULL."
+    },
+    {
+      "id": "upload-1777319338116-9",
+      "number": "10",
+      "text": "When does a regular `MPI_Send` operation return?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Immediately after the function call"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "When the data is safely stored away"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "When the receiver process starts receiving the data"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "When the entire ring communication is complete"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A regular (blocking) MPI_Send returns when the data is safely stored away (either in a system buffer or delivered to the receiver)."
+    },
+    {
+      "id": "upload-1777319338116-10",
+      "number": "11",
+      "text": "Which prefix is used for MPI functions that initiate non-blocking communication?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "N_"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "NB_"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "I"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Async_"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Immediate (non-blocking) functions have an 'I' prefix, such as MPI_Isend or MPI_Irecv."
+    },
+    {
+      "id": "upload-1777319338116-11",
+      "number": "12",
+      "text": "What is the primary purpose of the 'request' argument in non-blocking MPI functions?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To request more memory from the system"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To uniquely identify an ongoing communication to check for completion later"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To specify the priority of the message"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To ask the receiver if they are ready"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A request uniquely identifies an ongoing communication and is used to check or wait for the completion of a posted communication."
+    },
+    {
+      "id": "upload-1777319338116-12",
+      "number": "13",
+      "text": "Is it permissible to modify the communication buffer immediately after calling `MPI_Isend`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Yes, because the data is already copied to the system"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Yes, but only for the first half of the buffer"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No, it is not allowed to touch the buffer until completion"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No, unless `MPI_STATUS_NULL` was used"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "After initiating a non-blocking communication, it is not allowed to modify the buffer until completion because you cannot assume when the message will actually be transferred."
+    },
+    {
+      "id": "upload-1777319338116-13",
+      "number": "14",
+      "text": "Which function would you use to block execution until a specific non-blocking communication has finished?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "MPI_Test"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "MPI_Check"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "MPI_Wait"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "MPI_Finalize"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "MPI_Wait is used to wait for the completion of a non-blocking operation."
+    },
+    {
+      "id": "upload-1777319338116-14",
+      "number": "15",
+      "text": "What is the difference between `MPI_Wait` and `MPI_Test`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "MPI_Wait is for sends, MPI_Test is for receives"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "MPI_Wait blocks until completion; MPI_Test returns immediately with a flag"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "MPI_Wait is only for collective operations"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "There is no functional difference"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Wait-functions block until the communication is finished, while Test-functions check if a communication has finished and return immediately."
+    },
+    {
+      "id": "upload-1777319338116-15",
+      "number": "16",
+      "text": "Which function checks if ALL communications in a list of requests have finished?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "MPI_Waitany"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "MPI_Testsome"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "MPI_Testall"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "MPI_Waitall"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "MPI_Testall checks whether all communications in a provided list have finished."
+    },
+    {
+      "id": "upload-1777319338116-16",
+      "number": "17",
+      "text": "Information regarding whether an MPI message has been cancelled is accessible through:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The status object's direct fields"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The Request object's attributes"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Indirectly through specific function calls"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The communicator's error handler"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Information such as message length and whether it has been cancelled is accessible indirectly through function calls using the status object."
+    },
+    {
+      "id": "upload-1777319338116-17",
+      "number": "18",
+      "text": "In the context of the ring implementation example, which process typically starts the communication?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The last rank"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Rank 0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Any process chosen at random"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All processes simultaneously"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In the example provided, Rank 0 starts the ring implementation."
+    },
+    {
+      "id": "upload-1777319338116-18",
+      "number": "19",
+      "text": "What happens if a received message is shorter than the expected buffer size?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "An error code is returned"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The application deadlocks"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No problem occurs; the message is received normally"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The remaining buffer space is filled with random data"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "If the received message is shorter than the expected message, there are no problems."
+    },
+    {
+      "id": "upload-1777319338116-19",
+      "number": "20",
+      "text": "Which of these is NOT a completion function for non-blocking operations?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "MPI_Waitall"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "MPI_Testany"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "MPI_Waitany"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "MPI_Recv_check"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "MPI_Recv_check is not a standard completion function mentioned; Wait and Test variants (all, any, some) are the standard ones."
+    },
+    {
+      "id": "upload-1777319338116-20",
+      "number": "21",
+      "text": "MPI guarantees reliability in point-to-point communication. This means:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Messages are guaranteed to arrive within a specific time"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No message gets lost"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The sender will always know when the receiver has read the data"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The network will never fail"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Reliability in MPI guarantees that no message gets lost during the communication process."
+    },
+    {
+      "id": "upload-1777319338116-21",
+      "number": "22",
+      "text": "Which function allows a program to check how many communications from a list have finished?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "MPI_Testsome"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "MPI_Waitall"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "MPI_Checksome"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "MPI_Testany"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "MPI_Testsome checks how many of a list of communications have finished."
+    },
+    {
+      "id": "upload-1777319338116-22",
+      "number": "23",
+      "text": "In C, which field of the `MPI_Status` structure stores the rank of the process that sent the message?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "status.MPI_TAG"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "status.MPI_RANK"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "status.MPI_SOURCE"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "status.MPI_SENDER"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In the standard C implementation of MPI, the sender's rank is stored in the `MPI_SOURCE` field of the status object."
+    },
+    {
+      "id": "upload-1777319338116-23",
+      "number": "24",
+      "text": "If you are using a list of requests, which function will block until at least one of the requests is completed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "MPI_Waitall"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "MPI_Waitany"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "MPI_Testany"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "MPI_Waitsome"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "MPI_Waitany blocks until any one of the communications in a list has finished."
+    },
+    {
+      "id": "upload-1777319338116-24",
+      "number": "25",
+      "text": "Which of the following describes the data being sent in an MPI message?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Buffer beginning, data-type, and number of elements"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Sender rank, receiver rank, and tag"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Communicator and length"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Buffer address and completion request"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The data part of a message is described by the beginning of the buffer, the data-type, and the number of elements."
+    },
+    {
+      "id": "upload-1777319338116-25",
+      "number": "26",
+      "text": "What is a potential consequence of an `MPI_ERR_TRUNC` error?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The application will automatically retry with a larger buffer"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The application might deadlock or abort"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The extra data is lost but the program continues safely"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The sender is notified to resend a shorter message"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "When a truncation error occurs, the application might abort, deadlock, or write a core-dump."
+    },
+    {
+      "id": "upload-1777319338116-26",
+      "number": "27",
+      "text": "Why are non-blocking operations often used in complex MPI programs?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To reduce the number of processes needed"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To avoid deadlocks and overlap communication with computation"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Because they are simpler to implement than Send/Recv"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To ensure messages are never lost"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Non-blocking operations allow the program to continue executing while communication is ongoing, which helps in avoiding deadlocks (as revisited in the text) and improving performance."
+    },
+    {
+      "id": "upload-1777319338116-27",
+      "number": "28",
+      "text": "Which function is used to check if a specific communication has finished without blocking?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "MPI_Wait"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "MPI_Test"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "MPI_Probe"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "MPI_Irecv"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "MPI_Test checks whether a communication has finished and returns a flag immediately."
+    },
+    {
+      "id": "upload-1777319338116-28",
+      "number": "29",
+      "text": "In MPI, a 'tag' is used for:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Identifying the process priority"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Providing an additional level of message matching"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Specifying the size of the buffer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Naming the communicator"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The tag is part of the message envelope and must match the expected tag at the receiver for the message to be matched."
+    },
+    {
+      "id": "upload-1777319338116-29",
+      "number": "30",
+      "text": "Which information is considered 'indirectly accessible' through function calls using the status object?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Rank of the sender"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Tag of the message"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "How long the message is"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The error code"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The length of the message and whether it was cancelled are indirectly accessible through function calls like `MPI_Get_count`."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 30
+}

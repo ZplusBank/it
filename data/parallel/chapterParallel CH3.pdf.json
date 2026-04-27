@@ -1,0 +1,1553 @@
+{
+  "id": "upload-1777319191189-l3gz5",
+  "label": "Parallel CH3.pdf",
+  "params": {
+    "file": "Parallel CH3.pdf",
+    "chapter": "chapterParallel CH3.pdf"
+  },
+  "title": "Ch3",
+  "questions": [
+    {
+      "id": "upload-1777319191189-0",
+      "number": "1",
+      "text": "At a system level, what is a thread defined as?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A physical CPU core"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A set of resources capable of supporting execution of an instruction stream"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A complete copy of the operating system"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A block of data stored in DDR2 RAM"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "According to the slides, at the system level, a thread is a set of resources capable of supporting execution of an instruction stream."
+    },
+    {
+      "id": "upload-1777319191189-1",
+      "number": "2",
+      "text": "In a shared memory programming model, what do threads share?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The registers"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The L1 cache exclusively"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The address space"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Instruction pointers"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In shared memory programs, several threads in the same process share the same memory (the address space)."
+    },
+    {
+      "id": "upload-1777319191189-2",
+      "number": "3",
+      "text": "What is the term for the size of the pieces of code executed concurrently in a parallel program?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Fragmentation"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Decomposition"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Granularity"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Concurrency factor"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Granularity of parallelism refers to the size of the pieces of code executed concurrently, ranging from fine-grain to coarse-grain."
+    },
+    {
+      "id": "upload-1777319191189-3",
+      "number": "4",
+      "text": "Which dependency exists if Statement \\(S_2\\) reads a value that was written by Statement \\(S_1\\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Anti-dependence"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Output dependence"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "True dependence"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Control dependence"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "\\(S_2\\) has a true dependence on \\(S_1\\) if \\(S_2\\) reads a value written by \\(S_1\\) (also known as Read-After-Write or RAW)."
+    },
+    {
+      "id": "upload-1777319191189-4",
+      "number": "5",
+      "text": "Identify the dependence in the following code:\n```\nS1: b = a;\nS2: a = 1;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True dependence"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Anti-dependence"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Output dependence"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Loop-carried dependence"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "\\(S_2\\) writes to variable 'a' which was previously read by \\(S_1\\). This is an anti-dependence (Write-After-Read)."
+    },
+    {
+      "id": "upload-1777319191189-5",
+      "number": "6",
+      "text": "Which of the following is true regarding 'Embarrassingly Parallel' patterns?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "They involve complex recursive logic"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The tasks are highly dependent on each other"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The tasks can be executed with little to no interaction or synchronization"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "They require a pipeline structure"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Embarrassingly parallel tasks (like many simple loops) require little to no communication or dependency management between them."
+    },
+    {
+      "id": "upload-1777319191189-6",
+      "number": "7",
+      "text": "What happens if a programmer uses 'replication' to eliminate a dependency (e.g., calculating a value twice instead of passing it)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It always eliminates overhead"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It reduces observed speedup but can be useful"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It decreases the memory footprint"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It is only possible in distributed memory"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Replication reduces the observed speedup and introduces overheads because of redundant work, but it can be useful to enable parallelism."
+    },
+    {
+      "id": "upload-1777319191189-7",
+      "number": "8",
+      "text": "In a loop-carried dependence, where does the dependence occur?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Within the same iteration"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Outside of the loop structure entirely"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Between statement instances in different iterations"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Only in nested loops"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A loop-carried dependence is a dependence between a pair of statement instances in two different iterations of a loop nest."
+    },
+    {
+      "id": "upload-1777319191189-8",
+      "number": "9",
+      "text": "Consider this loop:\n```c\nfor (i=0; i<100; i++) \n    a[i] = a[i] + 100;\n```\nIs this loop parallelizable?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "No, because there is a dependence within the statement"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Yes, because the dependence is loop-independent"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No, because it is an output dependence"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Only if we use task parallelism"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The dependence is within the same iteration (a[i] is read and written in the same 'i'). There is no dependence between different iterations, so it is parallelizable."
+    },
+    {
+      "id": "upload-1777319191189-9",
+      "number": "10",
+      "text": "In the context of the Cell processor or modern cores with limited memory, what type of granularity is sometimes required?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Coarse-grain"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Fine-grain"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Macro-grain"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Sequential"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "While conventional wisdom suggests larger granularity is better, hardware like IBM's Cell processor often needed fine-grained parallelism."
+    },
+    {
+      "id": "upload-1777319191189-10",
+      "number": "11",
+      "text": "Which of the following describes an Output Dependence?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\(S_2\\) reads a value written by \\(S_1\\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\(S_2\\) writes a value read by \\(S_1\\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\(S_2\\) writes to a variable that was also written by \\(S_1\\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\(S_2\\) is controlled by the output of a branch in \\(S_1\\)"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Output dependence occurs when two statements write to the same memory location/variable (Write-After-Write)."
+    },
+    {
+      "id": "upload-1777319191189-11",
+      "number": "12",
+      "text": "What is the primary goal of loop interchange (exchange)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To reduce the number of iterations"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To move parallelizable loops to the outermost position"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To eliminate true dependences"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To convert data parallelism into task parallelism"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Loop interchange is used to move parallelizable loops to the outermost position, which often increases the granularity of parallelism and improves performance."
+    },
+    {
+      "id": "upload-1777319191189-12",
+      "number": "13",
+      "text": "Evaluate the following code for parallelization:\n```c\nfor (i=0; i<100; i++)\n    a[i] = f(a[i-1]);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Parallelizable: No dependences"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Parallelizable: Loop-independent dependence"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Not parallelizable: Loop-carried true dependence"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Not parallelizable: Output dependence"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Iteration \\(i=2\\) reads \\(a[1]\\), which was written by iteration \\(i=1\\). This is a loop-carried true dependence, preventing parallel execution."
+    },
+    {
+      "id": "upload-1777319191189-13",
+      "number": "14",
+      "text": "What is meant by 'Execution Context' in the context of threads?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The physical location of the CPU"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The state required to execute a thread (registers, stack pointer, etc.)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The total amount of memory available to the process"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The sequence of messages sent in a distributed system"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Execution context refers to the state (like register values) that defines where a thread is in its instruction stream and its current data environment."
+    },
+    {
+      "id": "upload-1777319191189-14",
+      "number": "15",
+      "text": "In a distributed memory model, how do processes communicate?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "By reading and writing to a common address space"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "By sharing the same L2 cache"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "By sending messages to each other"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "They cannot interact"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In distributed memory models, processes have distinct memories and interact by sending messages."
+    },
+    {
+      "id": "upload-1777319191189-15",
+      "number": "16",
+      "text": "If two statements \\(S_1\\) and \\(S_2\\) can be executed in any order without changing the result, they are:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Dependent"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Synchronized"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Independent"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Distributed"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Statements are independent if their order of execution does not matter, meaning they can safely execute in parallel."
+    },
+    {
+      "id": "upload-1777319191189-16",
+      "number": "17",
+      "text": "Why might a compiler be unable to parallelize the following loop?\n```c\nfor (i=0; i<100; i++)\n    a[i] = f(a[index[i]]);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It is always parallelizable"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Lack of information about the values in `index[]`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The function `f` is too small"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "There is a confirmed output dependence"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The compiler cannot determine if there is a dependence without knowing the contents of `index[]`. If two indices are the same or refer to a previously written element, a dependence exists."
+    },
+    {
+      "id": "upload-1777319191189-17",
+      "number": "18",
+      "text": "What does the 'level of loop-carried dependence' indicate?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The total number of dependencies in the code"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The nesting depth of the loop that carries the dependence"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The speedup factor"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The number of threads used"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The level corresponds to the depth of the loop that carries the dependence, determining which loops in a nest can or cannot be parallelized."
+    },
+    {
+      "id": "upload-1777319191189-18",
+      "number": "19",
+      "text": "Which of these is a 'hidden' output dependence?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Calculating `a = b + c` twice"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Two `printf` statements writing to the same file stream"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Assigning `a[i] = i` in a loop"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Using a local variable in a function"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "I/O operations (like `printf`) have a hidden output dependence because they update the same output stream, and changing their order changes the file contents."
+    },
+    {
+      "id": "upload-1777319191189-19",
+      "number": "20",
+      "text": "Analyze this loop nest:\n```c\nfor (i=0; i<100; i++)\n    for (j=0; j<100; j++)\n        a[i][j] = f(a[i][j-1]);\n```\nWhich statement is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Both loops can be parallelized"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Only the inner loop (j) can be parallelized"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Only the outer loop (i) can be parallelized"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Neither loop can be parallelized"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The inner loop (j) has a dependence (j depends on j-1). The outer loop (i) has no dependence across different values of 'i', so 'i' can be parallelized."
+    },
+    {
+      "id": "upload-1777319191189-20",
+      "number": "21",
+      "text": "What is the result of 'Chop up the data domain' pattern?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Task Parallelism"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Instruction Level Parallelism"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Data Parallelism"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Pipeline Parallelism"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Giving each thread a portion of the data domain to compute is called Data Parallelism."
+    },
+    {
+      "id": "upload-1777319191189-21",
+      "number": "22",
+      "text": "Which condition makes loop interchange ILLEGAL?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "If it improves memory use"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "If it changes the order in which data objects are accessed such that the outcome changes"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "If it increases granularity"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "If there are no dependences"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Loop interchange is only legal if the relative order of data accesses that have a dependence is preserved."
+    },
+    {
+      "id": "upload-1777319191189-22",
+      "number": "23",
+      "text": "What is 'Coarse-grain' parallelism?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Parallelism at the individual instruction level"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Parallelism at the level of procedures or whole programs"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Parallelism within a single statement"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Parallelism using sub-instruction threads"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Coarse-grain parallelism refers to larger pieces of code, such as procedures or entire programs, being executed concurrently."
+    },
+    {
+      "id": "upload-1777319191189-23",
+      "number": "24",
+      "text": "How can you remove a dependence like `T = T + f(K)` in a loop to enable parallelism?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "By using loop interchange"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "By replacing the variable `T` with an array to store intermediate values"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "By increasing the granularity"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It cannot be removed"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "As shown in Example 15, replacing a scalar variable that creates a dependence with an array (expansion) can sometimes allow for parallel execution."
+    },
+    {
+      "id": "upload-1777319191189-24",
+      "number": "25",
+      "text": "What does 'Time-slicing' achieve in a single-core system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True simultaneous execution"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The appearance of working simultaneously by switching between threads"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Elimination of anti-dependences"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Automatic loop interchange"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Time-slicing allows multiple threads to share a single core by giving each a small window of time, creating the illusion of concurrency."
+    },
+    {
+      "id": "upload-1777319191189-25",
+      "number": "26",
+      "text": "What is a 'Loop-independent' dependence?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A dependence that exists even if the code is not in a loop"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A dependence between two different iterations"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A dependence that only occurs in nested loops"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A dependence that cannot be removed"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Loop-independent dependences occur within the same iteration of a loop nest (or outside of loops) and do not themselves prevent loop parallelization."
+    },
+    {
+      "id": "upload-1777319191189-26",
+      "number": "27",
+      "text": "In Example 16, how was the loop parallelized?\n```c\nfor (i=1; i<N; i++) {\n    a[i] = b[i] + c[i];\n    d[i] = a[i-1] + d[i];\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "By loop interchange"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "By splitting it into two separate loops"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "By removing the anti-dependence"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It was not parallelizable"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "By splitting (distributing) the loop into two, the first loop (calculating all `a[i]`) becomes fully parallelizable. The second loop still has a dependence but the transformation helps structure the parallelism."
+    },
+    {
+      "id": "upload-1777319191189-27",
+      "number": "28",
+      "text": "Why must you check 'hidden' dependences in functions `f(x)` and `g(x)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Because they might be recursive"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Because they might update the same global variable (side effects)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Because they use too much memory"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Functions cannot be executed in parallel"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Functions may have hidden dependences if they access or modify shared global state or variables not passed as local parameters."
+    },
+    {
+      "id": "upload-1777319191189-28",
+      "number": "29",
+      "text": "What does 'Synchronization' do in parallel software?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Makes threads run faster"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Ensures two threads do not access the same memory location simultaneously in an unsafe way"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Automatically removes output dependences"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It converts coarse-grain into fine-grain"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Synchronization is used to coordinate interactions, making one thread wait for another or preventing race conditions."
+    },
+    {
+      "id": "upload-1777319191189-29",
+      "number": "30",
+      "text": "Is it possible to parallelize a loop with a dependence of the form `a[i] = f(a[i-10])`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "No, it is strictly sequential"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Yes, but only if we use loop interchange"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Yes, partial parallel execution or pipelining is possible"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Yes, it has no dependence"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "While complete parallel execution is impossible, dependencies with a distance (like 10) allow for some groups of iterations to run in parallel or for pipelined execution."
+    },
+    {
+      "id": "upload-1777319191189-30",
+      "number": "31",
+      "text": "Which architectural component usually contains the smallest, fastest memory for a core?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "L2 Cache"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Registers"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "DDR2 RAM"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "L1 Dcache"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Registers are the smallest and fastest storage level inside the core."
+    },
+    {
+      "id": "upload-1777319191189-31",
+      "number": "32",
+      "text": "True or False: In a shared memory model, threads can have some data of their own.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The slides state: 'Threads share the address space – But they might also have some data of their own' (e.g., private variables)."
+    },
+    {
+      "id": "upload-1777319191189-32",
+      "number": "33",
+      "text": "What is a 'Light-weight process' often used as a synonym for?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A virtual machine"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A thread"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A hardware register"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A message packet"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Threads were historically often referred to as light-weight processes."
+    },
+    {
+      "id": "upload-1777319191189-33",
+      "number": "34",
+      "text": "Which fundamental assumption is made about thread execution order?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Threads always execute in the order they were created"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Threads execute independently with no control over relative order unless specified"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Thread 1 always finishes before Thread 2 starts"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Operating systems ensure threads never overlap"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Fundamental Assumption is that threads execute independently on their assigned resources: no control over order of execution unless specified by the programmer."
+    },
+    {
+      "id": "upload-1777319191189-34",
+      "number": "35",
+      "text": "If statement order affects the outcome, the statements are said to be:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Independent"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Dependent"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Atomic"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Encapsulated"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Dependences prevent parallel execution because changing the order of dependent statements changes the result."
+    },
+    {
+      "id": "upload-1777319191189-35",
+      "number": "36",
+      "text": "What is 'Task Parallelism'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Applying the same operation to different data elements"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Dividing the overall work into different functional pieces or tasks"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Executing instructions in a pipeline"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Replicating data across all cores"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Task parallelism involves chopping up the work into pieces (tasks) and assigning those pieces to threads."
+    },
+    {
+      "id": "upload-1777319191189-36",
+      "number": "37",
+      "text": "Which is an example of an 'Irregular' pattern mentioned in the patterns of parallelism?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Loop iteration"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Irregular mesh"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Linear array"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Constant stride"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The slides list 'Irregular mesh' as one of the patterns (Divide & Conquer, Recursive, Pipeline, etc.)."
+    },
+    {
+      "id": "upload-1777319191189-37",
+      "number": "38",
+      "text": "In Example 12, why can the outer loop be parallelized?\n```c\nfor (i=0; i<100; i++)\n    for (j=0; j<100; j++)\n        a[i][j] = f(a[i][j-1]);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Because there are no dependences in the code at all"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Because the dependence is loop-independent relative to the outer loop"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Because the compiler automatically removes the dependence"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It cannot be parallelized"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The dependence is between `a[i][j]` and `a[i][j-1]`. This means for a fixed `i`, iterations of `j` are dependent. However, different values of `i` do not depend on each other."
+    },
+    {
+      "id": "upload-1777319191189-38",
+      "number": "39",
+      "text": "What is 'Fine-grain' parallelism?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Parallelism at the level of whole programs"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Parallelism at the level of individual instructions or statements"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Parallelism across different data centers"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Parallelism only used in shared memory"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Fine-grain parallelism refers to very small pieces of work, like individual instructions or statements, being executed concurrently."
+    },
+    {
+      "id": "upload-1777319191189-39",
+      "number": "40",
+      "text": "What is a 'Message-passing' program characteristic?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Independent processes sending messages"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Threads sharing a single address space"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No ability to run on multiple processors"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Always requires a multicore core"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Message-passing programs consist of independent processes that communicate by sending messages, usually in a distributed memory environment."
+    },
+    {
+      "id": "upload-1777319191189-40",
+      "number": "41",
+      "text": "In the following code, what type of dependence exists between S1 and S2?\n```\nS1: a = 1;\nS2: a = 2;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True dependence"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Anti-dependence"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Output dependence"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No dependence"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Both statements write to variable 'a'. This is an output dependence (WAW)."
+    },
+    {
+      "id": "upload-1777319191189-41",
+      "number": "42",
+      "text": "Why is the order of statements in a loop sometimes re-ordered before splitting it into two loops?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To increase the number of threads"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To handle cases where a dependence source comes after the sink textually"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To reduce the amount of memory used"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It is never necessary"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Re-ordering statements allows us to manage anti-dependences so that loop splitting (distribution) can be applied safely."
+    },
+    {
+      "id": "upload-1777319191189-42",
+      "number": "43",
+      "text": "Which of the following describes 'Divide & Conquer' in parallelism?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A way of creating parallel code by breaking a problem into sub-problems"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A method to eliminate all output dependences"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A type of hardware thread"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The same as time-slicing"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Divide & Conquer is a pattern where a problem is recursively divided into independent tasks that can be solved in parallel."
+    },
+    {
+      "id": "upload-1777319191189-43",
+      "number": "44",
+      "text": "Can two statements `a = 1;` and `b = 2;` execute in parallel?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Yes, they are independent"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No, they have an anti-dependence"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No, they have a true dependence"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Only if they are in a loop"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "There are no shared variables between the two statements (no RAW, WAR, or WAW dependences), so they can execute in parallel."
+    },
+    {
+      "id": "upload-1777319191189-44",
+      "number": "45",
+      "text": "What is the primary constraint on achieving parallelism in software?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Clock speed"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Memory size"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Dependences"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The operating system"
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Dependences (true, anti, and output) are the fundamental constraints that limit which parts of a program can execute concurrently."
+    },
+    {
+      "id": "upload-1777319191189-45",
+      "number": "46",
+      "text": "In a modern multicore processor, where might threads in the same core share resources?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "L2 cache and L1 Dcache"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Only the RAM"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Only the registers"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "They share nothing"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Threads running on the same core often share L1 and L2 caches, among other core-local resources."
+    },
+    {
+      "id": "upload-1777319191189-46",
+      "number": "47",
+      "text": "What term is used for the process of determining which loop iterations can run simultaneously?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Dependency Analysis"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Loop Interchange"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Vectorization"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Granularity analysis"
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Identifying dependences (Dependency Analysis) is the key to finding which loops can be parallelized."
+    },
+    {
+      "id": "upload-1777319191189-47",
+      "number": "48",
+      "text": "Which of the following describes a 'Wavefront' pattern?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "All iterations depend on the very first one"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Dependences allow a 'diagonal' of tasks to execute in parallel"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Tasks are completely independent"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The code is strictly sequential"
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In a wavefront, data dependences exist such that you can process elements in a 'wave' (e.g., diagonally across a matrix) where elements in the same wave are independent."
+    },
+    {
+      "id": "upload-1777319191189-48",
+      "number": "49",
+      "text": "In Example 13, why is loop interchange beneficial?\n```c\nfor (j=0; j<100; j++)\n    for (i=0; i<100; i++)\n        a[i][j] = f(a[i][j-1]);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It removes the dependence on `j`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It makes the inner loop parallelizable"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It moves the parallelizable loop `i` to the outside, increasing granularity"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It decreases memory use by removing `a[i][j]`"
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In the original, only the inner loop `i` is parallelizable. By swapping, `i` becomes the outer loop, allowing larger chunks of work (entire `j` loops) to be distributed, which is usually better for performance."
+    },
+    {
+      "id": "upload-1777319191189-49",
+      "number": "50",
+      "text": "What is the starting point for most parallelization efforts?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A parallel algorithm from scratch"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A sequential program"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A hardware schematic"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A message-passing API"
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "As noted in the slides, the starting point for parallel software is often a sequential program."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 50
+}

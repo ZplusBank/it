@@ -1,0 +1,1098 @@
+{
+  "id": "upload-1777318987736-zhzud",
+  "label": "Parallel CH1.pdf",
+  "params": {
+    "file": "Parallel CH1.pdf",
+    "chapter": "chapterParallel CH1.pdf"
+  },
+  "title": "Ch1",
+  "questions": [
+    {
+      "id": "upload-1777318987736-0",
+      "number": "1",
+      "text": "What are the primary physical limits of single-processor systems that have driven the shift toward parallel and distributed computing?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Cost wall and Size wall"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Power wall and Frequency wall"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Storage wall and Bandwidth wall"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Logic wall and Memory wall"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text explicitly mentions the 'power wall' and 'frequency wall' as limits of single-processor systems that necessitate parallel solutions."
+    },
+    {
+      "id": "upload-1777318987736-1",
+      "number": "2",
+      "text": "In Parallel Computing, how do processors typically interact with memory?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Each processor has its own private, isolated memory space."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Processors share access to a common memory space."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Memory is accessed only via internet protocols."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Memory is stored on a centralized remote server."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Parallel computing typically involves shared memory where processors share access to a common memory space within one computer."
+    },
+    {
+      "id": "upload-1777318987736-2",
+      "number": "3",
+      "text": "Which of the following is a key benefit of **Distributed Computing** compared to Parallel Computing?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Lower latency"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Higher bandwidth for internal tasks"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Fault tolerance (system remains operational if some nodes fail)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Use of a shared system bus"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Distributed computing provides fault tolerance because it uses multiple independent computers; the failure of one does not necessarily crash the whole system."
+    },
+    {
+      "id": "upload-1777318987736-3",
+      "number": "4",
+      "text": "Which communication mechanism is typically used in **Distributed Computing** to exchange information between independent computers?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Shared system bus"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Direct cache access"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Message passing over a network"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Shared memory pointers"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Distributed systems rely on message passing over a network because they do not share a common physical memory space."
+    },
+    {
+      "id": "upload-1777318987736-4",
+      "number": "5",
+      "text": "What is the definition of **Granularity** in the context of parallel processing?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The number of bits processed per cycle"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The physical size of the CPU chip"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The amount of computation in a task relative to communication overhead"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The total number of cores in a supercomputer"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Granularity is defined as the ratio of computation time to the communication/synchronization overhead."
+    },
+    {
+      "id": "upload-1777318987736-5",
+      "number": "6",
+      "text": "Which of the following is a disadvantage of **Fine-grained** parallelism?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Poor load balancing"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Low potential for parallelism"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "High communication overhead"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Inefficient resource utilization"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Fine-grained parallelism requires frequent communication and synchronization because tasks are very small, leading to high overhead."
+    },
+    {
+      "id": "upload-1777318987736-6",
+      "number": "7",
+      "text": "Why is **Coarse-grained** parallelism often preferred for distributed systems?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It provides the best possible load balancing."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It minimizes communication overhead over expensive network links."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It requires the most frequent synchronization."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It divides problems into the smallest possible units."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Coarse-grained parallelism uses large, independent tasks, which is ideal for networks where communication is slow or expensive."
+    },
+    {
+      "id": "upload-1777318987736-7",
+      "number": "8",
+      "text": "What is a major risk associated with **Coarse-grained** parallelism?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Too much network traffic"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Load imbalance if task execution times are uneven"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Extremely high synchronization frequency"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Excessive power consumption"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Because tasks are fewer and larger, if one task takes much longer than others, processors may sit idle, causing load imbalance."
+    },
+    {
+      "id": "upload-1777318987736-0",
+      "number": "9",
+      "text": "A single CPU chip containing two or more independent processing cores is known as a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Multiprocessor system"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Multicore computer"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Grid computer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Distributed cluster"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Multicore computers feature multiple cores integrated onto a single CPU chip."
+    },
+    {
+      "id": "upload-1777318987736-1",
+      "number": "10",
+      "text": "Which statement correctly describes a **Multiprocessor** system as defined in the text?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It always uses a single CPU chip."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It has two or more separate CPU chips on the motherboard."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It consumes less power than a multicore system."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It is primarily used for mobile devices."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Multiprocessors have separate CPU chips installed in the same system, typically on the same motherboard."
+    },
+    {
+      "id": "upload-1777318987736-2",
+      "number": "11",
+      "text": "What provides redundancy in a multiprocessor system, allowing it to continue functioning if one processor fails?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Shared cache"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Message passing interface"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Having multiple physical processors"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The frequency wall"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "According to the text, having multiple physical processors provides redundancy, allowing the system to stay operational during a hardware failure."
+    },
+    {
+      "id": "upload-1777318987736-3",
+      "number": "12",
+      "text": "How do GPUs differ from traditional CPUs in their architecture?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "GPUs have a few complex cores for sequential tasks."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "GPUs contain hundreds or thousands of smaller cores for parallel processing."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "GPUs do not support parallel processing frameworks."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "GPUs are designed only for distributed computing across the internet."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "GPUs are specialized for doing many simple operations simultaneously using a massive number of small cores."
+    },
+    {
+      "id": "upload-1777318987736-4",
+      "number": "13",
+      "text": "Which frameworks allow programmers to use GPUs for general-purpose computing?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "MPI and OpenMP"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Apache Spark and Hadoop"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "CUDA and OpenCL"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Pthreads and Monte Carlo"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "CUDA and OpenCL are specifically mentioned as the frameworks for general-purpose computing on GPUs."
+    },
+    {
+      "id": "upload-1777318987736-5",
+      "number": "14",
+      "text": "Which of the following is an example of a processor chip used in high-performance multiprocessor servers?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Intel Core i3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Intel Xeon"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Pentium II"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "ARM Cortex-M0"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text lists Intel Xeon, AMD EPYC, and IBM POWER9 as examples for multiprocessor systems."
+    },
+    {
+      "id": "upload-1777318987736-0",
+      "number": "15",
+      "text": "What characterizes a **Supercomputer** according to the text?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A group of independent PCs connected via the internet."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A single extremely powerful system with millions of tightly connected processors."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A decentralized network of volunteer PCs."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A small chip designed for mobile graphics."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Supercomputers are described as single systems with thousands or millions of tightly connected processors for large-scale computation."
+    },
+    {
+      "id": "upload-1777318987736-1",
+      "number": "16",
+      "text": "Which supercomputer is hosted at Lawrence Livermore National Laboratory and cost \\$600 million?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Summit"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Frontier"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "EL CAPITAN"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Atos BullSequana"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The text highlights 'EL CAPITAN' as the supercomputer at Lawrence Livermore National Laboratory."
+    },
+    {
+      "id": "upload-1777318987736-2",
+      "number": "17",
+      "text": "A **Cluster** is defined as a group of __________ computers closely connected in the same location.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Heterogeneous"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Homogeneous"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Randomly distributed"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Disconnected"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Clusters typically consist of homogeneous (similar) computers connected via a high-speed LAN."
+    },
+    {
+      "id": "upload-1777318987736-3",
+      "number": "18",
+      "text": "How does a **Grid** differ from a **Cluster**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Grids are always in one location; clusters are global."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Grids use homogeneous hardware; clusters use heterogeneous hardware."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Grids involve independent, heterogeneous resources often spread across different organizations."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Grids use a single central controller; clusters do not."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Grids share heterogeneous resources across different locations and organizations via the internet, unlike local clusters."
+    },
+    {
+      "id": "upload-1777318987736-4",
+      "number": "19",
+      "text": "Which of these is a typical use case for a **Supercomputer**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Hosting a small personal blog"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Climate modeling and nuclear simulations"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Validating a single Bitcoin transaction"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Checking local emails"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text lists weather forecasting, climate modeling, and nuclear simulations as primary uses for supercomputers."
+    },
+    {
+      "id": "upload-1777318987736-5",
+      "number": "20",
+      "text": "The **ECMWF** uses a supercomputer to predict global weather patterns. Why is Parallel and Distributed Computing (PDC) essential for this?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To reduce the cost of the electricity bill."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Without PDC, a 10-day forecast would take longer than 10 days to calculate."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To allow volunteers to help with the calculations via the internet."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To store the data on a single hard drive."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text states that without PDC, the generation of the forecast would take longer than the actual time period predicted, making it useless."
+    },
+    {
+      "id": "upload-1777318987736-0",
+      "number": "21",
+      "text": "Which programming model is core to the **Apache Hadoop** framework for processing large datasets?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Monte Carlo"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "MapReduce"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Pthreads"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "MPI"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "MapReduce is the core programming model within the Apache Hadoop framework."
+    },
+    {
+      "id": "upload-1777318987736-1",
+      "number": "22",
+      "text": "How are operations organized and executed in **Apache Spark**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Using a single linear list"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Using a Directed Acyclic Graph (DAG)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Using a shared system bus"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Using a physical circuit board"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text states that in Apache Spark, operations are organized and executed using a Directed Acyclic Graph (DAG)."
+    },
+    {
+      "id": "upload-1777318987736-2",
+      "number": "23",
+      "text": "Which technology is primarily used for **real-time trend detection** and sentiment analysis in social media?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "CUDA only"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Apache Spark and Hadoop clusters"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Single-core CPUs"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Local hard drives"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Apache Spark and Hadoop clusters are mentioned as key tools for social media analytics."
+    },
+    {
+      "id": "upload-1777318987736-3",
+      "number": "24",
+      "text": "In financial applications, what type of simulations do institutions like **JP Morgan** run to predict risk?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Monte Carlo simulations"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Weather simulations"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Nuclear fusion simulations"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Graphic rendering simulations"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The text specifies that financial institutions run parallel Monte Carlo simulations for risk modeling."
+    },
+    {
+      "id": "upload-1777318987736-4",
+      "number": "25",
+      "text": "How do **Bitcoin and Ethereum** ensure transaction validity?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Using a single central server at a bank"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Distributed consensus across thousands of nodes"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Shared memory across a single supercomputer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Manual verification by employees"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Cryptocurrencies rely on distributed consensus across many nodes in a network."
+    },
+    {
+      "id": "upload-1777318987736-5",
+      "number": "26",
+      "text": "Which framework would you likely use for **Shared Memory Programming**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "MPI"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "OpenMP"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "MapReduce"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Blockchain"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "OpenMP and Pthreads are categorized under shared memory programming in the course outline."
+    },
+    {
+      "id": "upload-1777318987736-6",
+      "number": "27",
+      "text": "Which framework is specifically mentioned for **Message Passing Programming**?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Pthreads"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "MPI"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "OpenMP"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "CUDA"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "MPI (Message Passing Interface) is the standard for message passing programming."
+    },
+    {
+      "id": "upload-1777318987736-7",
+      "number": "28",
+      "text": "Training large AI models like **GPT** typically requires which of the following?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A single high-end multicore CPU chip"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Thousands of GPUs working in parallel"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A volunteer grid network using the internet"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Sequential processing to ensure accuracy"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text mentions OpenAI's GPT models are trained using thousands of GPUs in parallel."
+    },
+    {
+      "id": "upload-1777318987736-8",
+      "number": "29",
+      "text": "Which of these is NOT a challenge mentioned in the course objectives?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Scalability"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Fault tolerance"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Consistency"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "User interface design"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Scalability, fault tolerance, and consistency are listed as challenges; UI design is not."
+    },
+    {
+      "id": "upload-1777318987736-0",
+      "number": "30",
+      "text": "If a problem is divided into very small tasks that require constant data exchange, it is using:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Coarse-grained parallelism"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Fine-grained parallelism"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Distributed computing"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Sequential processing"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Fine-grained approach divides a problem into a large number of very small tasks with frequent communication."
+    },
+    {
+      "id": "upload-1777318987736-1",
+      "number": "31",
+      "text": "The 'Power Wall' refers to the limitation where:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Computers cannot get enough electricity from the grid."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Increasing clock speeds further results in excessive heat that cannot be dissipated."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Batteries are too small for modern laptops."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Software requires too much power to install."
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The power wall is the limit where increasing processor frequency leads to unmanageable heat and power consumption."
+    },
+    {
+      "id": "upload-1777318987736-2",
+      "number": "32",
+      "text": "A **Cluster** node is typically managed by:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A volunteer PC"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The Internet"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A central controller"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A decentralized blockchain"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In a cluster, nodes are managed by a central controller."
+    },
+    {
+      "id": "upload-1777318987736-3",
+      "number": "33",
+      "text": "Which statement about **Multicore** systems is TRUE?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "They are more power-hungry than multiple physical processors."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Each core shares resources like the cache and memory bus."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "They cannot run multiple threads simultaneously."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "They are only used in supercomputers."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In multicore systems, all cores share resources such as cache and the memory bus."
+    },
+    {
+      "id": "upload-1777318987736-4",
+      "number": "34",
+      "text": "In a **Distributed Computing** model, each computer has:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Access to a shared global RAM chip"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Its own private memory (distributed memory)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No memory of its own"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The same clock speed as all other nodes"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Distributed computing relies on distributed memory where each node has its own private memory space."
+    },
+    {
+      "id": "upload-1777318987736-5",
+      "number": "35",
+      "text": "What is the floor space occupied by the **El Capitan** supercomputer?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "100 square feet"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "7,500 square feet"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "75,000 square feet"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "One square mile"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The text states El Capitan takes up 7,500 square feet (700 \\( m^2 \\))."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 35
+}

@@ -788,9 +788,39 @@ const EXAM_CONFIG = [
     "chapters": [
       {
         "id": "Mid",
-        "name": "Combined Questions",
-        "q": 84,
+        "name": "Mid",
+        "q": 54,
         "file": "data/parallel/Mid.json"
+      },
+      {
+        "id": "chapterParallel CH1.pdf",
+        "name": "Ch1",
+        "q": 35,
+        "file": "data/parallel/chapterParallel CH1.pdf.json"
+      },
+      {
+        "id": "chapterParallel CH2.pdf",
+        "name": "Ch2",
+        "q": 40,
+        "file": "data/parallel/chapterParallel CH2.pdf.json"
+      },
+      {
+        "id": "chapterParallel CH3.pdf",
+        "name": "Ch3",
+        "q": 50,
+        "file": "data/parallel/chapterParallel CH3.pdf.json"
+      },
+      {
+        "id": "chapterParallel CH8.pdf",
+        "name": "Ch8",
+        "q": 30,
+        "file": "data/parallel/chapterParallel CH8.pdf.json"
+      },
+      {
+        "id": "chapterParallel CH9.pdf",
+        "name": "Ch9",
+        "q": 30,
+        "file": "data/parallel/chapterParallel CH9.pdf.json"
       }
     ]
   }
