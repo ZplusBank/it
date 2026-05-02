@@ -1,0 +1,3945 @@
+{
+  "id": "extract-combined-1777734536329",
+  "label": "Combined Batch (6 files)",
+  "params": {
+    "file": "Multiple Files",
+    "type": "visual_extractor",
+    "chapter": "3"
+  },
+  "title": "Final",
+  "questions": [
+    {
+      "id": "extract-combined-1777734536329-0",
+      "number": "1",
+      "text": "What is the output of the following Code?\n\n```java\npublic class Main {\n    public static void main(String[] args) {\n        String str = new String(\"Hello\");\n        for (int i = str.length() - 1; i > 0; i -= 2) {\n            str = str.replace(str.charAt(i), 'm');\n        }\n        System.out.println(str);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Hellm"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Hemlm"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Hemo"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Hemmm"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The loop starts at index 4 ('o') and replaces all 'o's with 'm', resulting in \"Hellm\". Then $i$ becomes 2 ('l'). The `replace` method replaces all occurrences of the character, so both 'l's are replaced with 'm', resulting in \"Hemmm\". Since the loop condition is $i > 0$, it terminates before processing index 0."
+    },
+    {
+      "id": "extract-combined-1777734536329-1",
+      "number": "2",
+      "text": "What is the output of the following Code?\n\n```java\nclass Test {\n    public static void main(String args[]) {\n        int arr[2];\n        System.out.println(arr[0]);\n        System.out.println(arr[1]);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "garbage value garbage value"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "00"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No correct answer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Compiler error"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In Java, the syntax `int arr[2];` is invalid for array declaration and instantiation. Arrays must be declared as `int[] arr;` and instantiated using the `new` keyword, like `int[] arr = new int[2];`. This results in a compilation error."
+    },
+    {
+      "id": "extract-combined-1777734536329-2",
+      "number": "3",
+      "text": "Complete the missing code: The sum of each row is to be stored in the diagonal of the matrix.\n\n```java\nint a[][] = {{0, 5, 6}, {5, 0, 2}, {7, 3, 0}};\nint sum = 0;\nfor (int i = 0; i < a.length; i++) {\n    sum = 0;\n    for (int j = 0; j < a[i].length; j++) {\n        if (i != j)\n            // missing\n    }\n    a[i][i] = sum;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "sum += a[i][j];"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "sum += a[j][i];"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "sum = a[i][j];"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "To sum the elements of a row `i` (excluding the diagonal where $i=j$), you iterate through each column `j` and add `a[i][j]` to the running sum."
+    },
+    {
+      "id": "extract-combined-1777734536329-3",
+      "number": "4",
+      "text": "What is the value of z after executing the following code?\n\n```java\nint x = 20;\nint y = 10;\ndouble z = y / x;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0.5"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The operation `y / x` involves two integers, performing integer division. $10 / 20$ results in $0$. This integer value is then assigned to a double variable `z`, becoming $0.0$."
+    },
+    {
+      "id": "extract-combined-1777734536329-4",
+      "number": "5",
+      "text": "What is `(int) Math.random()`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "both 0 and 1 are possible"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "`Math.random()` returns a double value in the range \\( [0.0, 1.0) \\). Casting it to an `int` truncates the decimal part, always resulting in 0 because the maximum possible value is less than 1."
+    },
+    {
+      "id": "extract-combined-1777734536329-5",
+      "number": "6",
+      "text": "What is the output of the following code:\n\n```java\nclass Test {\n    public static void main(String[] args) {\n        System.out.println(xMethod(((double)5)));\n    }\n    public static int xMethod(int n) {\n        System.out.println(\"int\");\n        return n;\n    }\n    public static long xMethod(long n) {\n        System.out.println(\"long\");\n        return n;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays int followed by 5."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program does not compile."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program runs fine but displays things other than given in a and b."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program displays long followed by 5."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The code calls `xMethod` with a `double` argument. Java does not have an `xMethod(double)` defined, and it will not automatically downcast a `double` to a `long` or `int` for method overloading, leading to a compilation error."
+    },
+    {
+      "id": "extract-combined-1777734536329-6",
+      "number": "7",
+      "text": "What is the output of the following Code?\n\n```java\nclass Test {\n    public static void main(String[] args) {\n        int[][] ar = {{1, 2, 3, 4}, {2, 2, 3}, {3, 9, 10, 11}, {2, 1}};\n        fun2(ar);\n    }\n    public static void fun2(int[][] arr) {\n        for (int e = 0; e < arr.length; e++) {\n            System.out.print(arr[e][arr[e].length - 1] + \" \");\n        }\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 2 3 4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4 3 11 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No correct answer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1 2 3 2"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The loop iterates through each row `e` of the 2D array and prints the element at the last index of that row (`arr[e].length - 1`). These are 4, 3, 11, and 1 respectively."
+    },
+    {
+      "id": "extract-combined-1777734536329-7",
+      "number": "8",
+      "text": "What is the output of the following Code?\n\n```java\nclass Test {\n    public static void main(String[] args) {\n        int[] ar = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};\n        int n = 6;\n        n = ar[ar[n] / 2];\n        System.out.println(n);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "First, `ar[n]` is `ar[6]`, which is 6. Then `6 / 2` is 3. Finally, `ar[3]` is 3. Thus, `n` becomes 3."
+    },
+    {
+      "id": "extract-combined-1777734536329-8",
+      "number": "9",
+      "text": "In java, array elements are stored in \n__________ memory locations.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Sequential & Random"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Random"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No correct answer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Sequential"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In Java, array elements are stored in contiguous, sequential memory locations."
+    },
+    {
+      "id": "extract-combined-1777734536329-9",
+      "number": "10",
+      "text": "Analyze the following code:\n\n```java\npublic class test {\n    public static void main(String[] args) {\n        int n = 2;\n        xMethod(n);\n        System.out.println(\"n is \" + n);\n    }\n    public static void xMethod(int n) {\n        n++;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code prints n is 2."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code prints n is 3."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Syntax error."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The code prints n is 1."
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Java uses pass-by-value. When `n` is passed to `xMethod`, a copy of its value is created. Incrementing the local variable `n` inside `xMethod` does not affect the original `n` in the `main` method."
+    },
+    {
+      "id": "extract-combined-1777734536329-10",
+      "number": "11",
+      "text": "What is the output of the following code fragment?\n\n```java\npublic class Test {\n    public static void main(String[] args) {\n        int[][] x = {{1, 2, 3, 4, 5}, {6, 7, 7}, {8, 9, 10, 11}, {12}};\n        int sum = 0;\n        for (int i = 0; i < x.length; i++) {\n            for (int j = 1; j < x[i].length; j++) {\n                if (i == 2 || (j == 3)) continue;\n                sum += x[i][j];\n            }\n        }\n        System.out.println(sum);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "20"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No correct answer"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "24"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "10"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The inner loop starts at `j = 1`. \n- Row 0: `j=1(2), j=2(3), j=3(skip), j=4(5)`. Subtotal = 10.\n- Row 1: `j=1(7), j=2(7)`. Subtotal = 14.\n- Row 2: `i == 2` is true, so it continues (skips everything).\n- Row 3: `x[3].length` is 1, so `j < 1` is false immediately.\nTotal sum = $10 + 14 = 24$."
+    },
+    {
+      "id": "extract-combined-1777734536329-11",
+      "number": "12",
+      "text": "What is the output of the following code?\n\n```java\npublic class Test {\n    public static void main(String[] args) {\n        String str = new String(\"History of Jordan\");\n        String str2 = \"\";\n        for (int i = 0; i < str.length() / 2 - 2; i++) {\n            str2 += str.substring(i, i + 1);\n        }\n        System.out.println(str2);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Histor"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Jordan"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "History"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "History of"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The length of \"History of Jordan\" is 17. `17 / 2` is 8. `8 - 2` is 6. The loop runs for $i = 0, 1, 2, 3, 4, 5$, concatenating the first 6 characters: \"H\", \"i\", \"s\", \"t\", \"o\", \"r\"."
+    },
+    {
+      "id": "extract-combined-1777734536329-12",
+      "number": "13",
+      "text": "What is the output of the following code?\n\n```java\npublic class Test {\n    public static void main(String args[]) {\n        int i = 1, j = 0;\n        switch (i) {\n            case 2:\n                j += 6;\n            case 4:\n                j += 1;\n            default:\n                j += 2;\n            case 0:\n                j += 4;\n        }\n        System.out.println(\"j = \" + j);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "j = 2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "j = 6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No correct answer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "j = 0"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Since `i = 1` matches no specific case, the `default` block is executed, adding 2 to `j`. Because there are no `break` statements, execution falls through to `case 0`, adding another 4 to `j`. The final value is 6."
+    },
+    {
+      "id": "extract-combined-1777734536329-13",
+      "number": "14",
+      "text": "Based on the code segment below, the valid and accessible output statements in Class2 are:\n\n```java\npublic class Class1 {\n    public int x;\n    int y;\n    private int z;\n    // ... methods ...\n}\n\npublic class Class2 {\n    public static void main(String[] args) {\n        Class1 obj1 = new Class1();\n        System.out.println(obj1.x);\n        System.out.println(obj1.y);\n        System.out.println(obj1.z);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "only z"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "only y"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x and y and z"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x and y"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "`x` is public and accessible everywhere. `y` has package-private access and is accessible if `Class2` is in the same package. `z` is private and strictly inaccessible outside `Class1`. Thus, only `x` and `y` are valid assuming they share a package."
+    },
+    {
+      "id": "extract-combined-1777734536329-14",
+      "number": "15",
+      "text": "What is the output of the following code?\n\n```java\npublic class test {\n    public static void main(String[] args) {\n        int s = 0;\n        for (int i = 1; i <= 5; ++i) {\n            if (i % 2 == 0) {\n                while (s < 4) {\n                    System.out.print(++s);\n                    i++;\n                    s += 2;\n                }\n            } else continue;\n        }\n        System.out.print(s);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "146"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "134"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1468"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "- $i=1$: skip.\n- $i=2$: `while (0 < 4)`: `++s` (1) printed, $i \rightarrow 3, s \rightarrow 3$.\n- `while (3 < 4)`: `++s` (4) printed, $i \rightarrow 4, s \rightarrow 6$.\n- Loop increments $i$ to 5.\n- $i=5$: skip.\n- Final print of `s` (6). Total output: 146."
+    },
+    {
+      "id": "extract-combined-1777734536329-15",
+      "number": "16",
+      "text": "Analyze the following code.\n\n```java\npublic class test {\n    public static void main(String[] args) {\n        for (int i = 1; i < 10; i++) {\n            int k = 3;\n            System.out.println(k);\n        }\n        System.out.println(\"k is \" + k);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code prints k is 0."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code prints k is 2."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The code prints k is 3."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The code has a syntax error because k is not defined in System.out.println(\"k is\" + k)."
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The variable `k` is declared inside the `for` loop block. Therefore, its scope is limited to that block. Attempting to access `k` outside the loop in the `System.out.println` statement results in a compilation error because `k` is not defined in that scope."
+    },
+    {
+      "id": "extract-combined-1777734536329-16",
+      "number": "17",
+      "text": "The classes below are used for Questions from 17-27:\n\n```java\nclass ClassA {\n    private int x;\n    public int y;\n    public static int z = 0;\n\n    ClassA(int n1, int n2) {\n        x = n1;\n        y = n2;\n        z += 2;\n        System.out.println(z);\n    }\n\n    private void Method1() {\n        x = 6;\n        System.out.println(x);\n    }\n\n    public static void Method2(int n2) {\n        z += 2;\n        System.out.println(z);\n    }\n\n    void Method3() {\n        y = x;\n        z += 3;\n        Method1();\n    }\n\n    public void Method3(ClassA n3) {\n        System.out.println(z);\n        n3.x = 5;\n        n3.y = 6;\n        n3.z = 1;\n        z++;\n    }\n}\n\nclass test {\n    public static void main(String[] args) {\n        ClassA ref1 = new ClassA(2, 9); // Statement #1\n        ClassA ref2 = new ClassA(1, 8); // Statement #2\n        ref2.Method2(8); // Statement #3\n        ref1.Method1(); // Statement #4\n        System.out.println(ref2.x); // Statement #5\n        System.out.println(ref2.y); // Statement #6\n        System.out.println(ClassA.y); // Statement #7\n        ref1.Method3(); // Statement #8\n        ref2.Method3(ref1); // Statement #9\n        System.out.println(ClassA.z); // Statement #10\n        System.out.println(ref1.y); // Statement #11\n    }\n}\n```\n\nWhat is the output for statement #1?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "error"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Nothing"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Statement #1 creates a new instance of `ClassA`. The constructor initializes `z` (static) to 0 + 2 = 2 and then prints `z`. The output is 2."
+    },
+    {
+      "id": "extract-combined-1777734536329-17",
+      "number": "18",
+      "text": "Referring to the code in Q17, what is the output for statement #2?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Error"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "6"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Statement #2 creates another instance of `ClassA`. Since `z` is static, it persists across instances. The constructor adds 2 to the current value of `z` (which was 2), making it 4, and then prints it."
+    },
+    {
+      "id": "extract-combined-1777734536329-18",
+      "number": "19",
+      "text": "Referring to the code in Q17, what is the output for statement #3?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Error"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "6"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Statement #3 calls the static `Method2`. It increments the static variable `z` by 2 (4 + 2 = 6) and prints it."
+    },
+    {
+      "id": "extract-combined-1777734536329-19",
+      "number": "20",
+      "text": "Referring to the code in Q17, what is the output for statement #4?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Statement #4 attempts to call `ref1.Method1()`. However, `Method1` is declared as `private` in `ClassA`, so it cannot be accessed from the `test` class. This results in a compilation error."
+    },
+    {
+      "id": "extract-combined-1777734536329-20",
+      "number": "21",
+      "text": "Referring to the code in Q17, what is the output for statement #5?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Statement #5 attempts to access `ref2.x`. Since `x` is a `private` instance variable in `ClassA`, it is not visible to the `test` class, causing a compilation error."
+    },
+    {
+      "id": "extract-combined-1777734536329-21",
+      "number": "22",
+      "text": "Referring to the code in Q17, what is the output for statement #6?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "8"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Statement #6 prints `ref2.y`. Variable `y` is public and was initialized to 8 in the constructor call `ClassA ref2 = new ClassA(1, 8)`. Output is 8."
+    },
+    {
+      "id": "extract-combined-1777734536329-22",
+      "number": "23",
+      "text": "Referring to the code in Q17, what is the output for statement #7?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Error"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Statement #7 attempts to access `ClassA.y`. Since `y` is an instance variable (non-static), it must be accessed through an object reference, not directly through the class name. This results in a compilation error."
+    },
+    {
+      "id": "extract-combined-1777734536329-23",
+      "number": "24",
+      "text": "Referring to the code in Q17, what is the output for statement #8?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Statement #8 calls `ref1.Method3()`. Inside `Method3()`: `z` becomes 6 + 3 = 9, and `Method1()` is called. `Method1` sets `x` to 6 and prints it. The output is 6."
+    },
+    {
+      "id": "extract-combined-1777734536329-24",
+      "number": "25",
+      "text": "Referring to the code in Q17, what is the output for statement #9?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "8"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "7"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Statement #9 calls the overloaded `Method3(ClassA n3)` on `ref2` with `ref1` as an argument. The first line of this method prints `z`. The value of `z` was previously updated to 9 in statement #8. Output is 9."
+    },
+    {
+      "id": "extract-combined-1777734536329-25",
+      "number": "26",
+      "text": "Referring to the code in Q17, what is the output for statement #10?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "9"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The program has multiple compilation errors (Statements #4, #5, #7) because of private field access and non-static variable access through a class. In a real environment, the code would not compile or run."
+    },
+    {
+      "id": "extract-combined-1777734536329-26",
+      "number": "27",
+      "text": "Referring to the code in Q17, what is the output for statement #11?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Assuming the code ran despite previous errors, Statement #9 (`ref2.Method3(ref1)`) executed `n3.y = 6;` where `n3` was `ref1`. Thus, `ref1.y` is now 6."
+    },
+    {
+      "id": "extract-combined-1777734536329-27",
+      "number": "28",
+      "text": "Given the following Java snippet, if we need to find the sum of all even integers in a two-dimensional array, what would be statement (1)?\n\n```java\nclass test {\n    public static void main(String[] args) {\n        int xx[][] = {{3, 4, 5, 1}, {33, 6, 1, 2}};\n        // (1)\n        for (int i = 0; i < xx.length; i++) {\n            for (int j = 0; j < xx[i].length; j++) {\n                if (xx[i][j] % 2 == 0) {\n                    sum += xx[i][j];\n                }\n            }\n        }\n        System.out.println(sum);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "int min = 0;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "sum = xx[i][j]"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "int sum = 0;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "something else"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "To calculate a sum, we must first declare and initialize an accumulator variable (usually called `sum`) to zero before the loop starts."
+    },
+    {
+      "id": "extract-combined-1777734536329-28",
+      "number": "29",
+      "text": "Referring to the code in Q28, what would be statement (2) in the inner loop condition `j < (2)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "xx.length;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "xx[i].length;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "xx[j].length;"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "When iterating through a 2D array, the inner loop should bound itself to the length of the current row, which is `xx[i].length`."
+    },
+    {
+      "id": "extract-combined-1777734536329-29",
+      "number": "30",
+      "text": "Is the following java statement legal (correct) to declare and initialize an identifier in java?\n\n`long _ = 256983;`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Starting from Java 9, using a single underscore `_` as an identifier is illegal and will result in a compilation error. In earlier versions it was allowed, but discouraged."
+    },
+    {
+      "id": "extract-combined-1777734536329-30",
+      "number": "31",
+      "text": "Assume x = 0, what is the value of x after executing if statement?\n\n```java\nif(x == 3 && x++ < 3)\n    System.out.println(\"good\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The expression uses the short-circuit AND operator `&&`. Since `x == 3` is `false` (0 == 3), the second operand `x++ < 3` is never evaluated. Therefore, the increment operation `x++` does not occur, and `x` remains 0."
+    },
+    {
+      "id": "extract-combined-1777734536329-31",
+      "number": "32",
+      "text": "Suppose that int alpha = 2, x = 3. What is the value of alpha after the following statement executes?\n\n```java\nalpha *= 5 % 2 + (int) (11.9 / 3) * --x / 2;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Syntax error"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "8"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Illegal statement"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Following order of operations:\n1. `5 % 2 = 1`\n2. `11.9 / 3 = 3.966...` -> `(int) 3.966... = 3` \n3. `--x` makes `x` = 2 and returns 2.\n4. Multiplication and division: `3 * 2 / 2 = 3`.\n5. Addition: `1 + 3 = 4`.\n6. Compound assignment: `alpha *= 4` -> `2 * 4 = 8`."
+    },
+    {
+      "id": "extract-combined-1777734536329-32",
+      "number": "33",
+      "text": "What is the output of the following java code:\n\n```java\npublic static void main(String[] args) {\n    int x = 1;\n    if ('f' < 'd') {\n        if (x++ % 2 == 0) {\n            System.out.print(\"Welcome\");\n        } else {\n            System.out.print(\"to\");\n        }\n    }\n    System.out.print(\"java\");\n    System.out.println(x);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Java1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Welcome to1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Welcome to java1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Welcome to java 1"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Characters are compared by their Unicode values. 'f' (102) is greater than 'd' (100), so the condition `'f' < 'd'` is `false`. The entire nested `if` structure is skipped. The program then prints \"java\" followed by the value of `x` (1). Output is `java1`."
+    },
+    {
+      "id": "extract-combined-1777734536329-33",
+      "number": "34",
+      "text": "Which line(s) will yield compilation error?\n\n```java\nclass test {\n    public static void main(String[] args) {\n        final int x = 10; // Line 1\n        System.out.println(++x); // Line 2\n        if (x = 5) // Line 3\n            System.out.println(\"equal\"); // Line 4\n        else // Line 5\n            System.out.println(\"not equal\"); // Line 6\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Line 3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Lines 2 + 3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Line 5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Lines 5 + 2"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Line 2 is an error because `x` is declared as `final`, so it cannot be modified by `++x`. Line 3 is an error because `x = 5` is an assignment that returns an integer, but an `if` condition requires a `boolean`. Additionally, `x` is `final`, so it cannot be reassigned."
+    },
+    {
+      "id": "extract-combined-1777734536329-34",
+      "number": "35",
+      "text": "Assume the signature of the method xMethod is as follows :\n\n```java\npublic static void xMethod(double[] a)\n```\n\nWhich of the following could be used to invoke it:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "xMethod({3, 4});"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "xMethod(new int[]{1, 2, 3});"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "xMethod(5);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "xMethod(new double[]{2.0, 3.0});"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Option D is the correct way to pass an anonymous array of doubles to a method. Option A is invalid syntax because array initializers can only be used in declarations. Option B passes an `int[]`, which is not compatible with `double[]`. Option C passes a single value instead of an array."
+    },
+    {
+      "id": "extract-combined-1777734536329-35",
+      "number": "36",
+      "text": "What is the output of the following code:\n\n```java\nint i = 3, j = 5, k = 7, num;\nif (j > k) {\n    if (i > j) {\n        num = i;\n    } else {\n        num = j;\n    }\n} else if (i > k) {\n    num = 1;\n} else {\n    num = k;\n}\nSystem.out.println(num);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "7"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Initial values: i=3, j=5, k=7. The first condition `(j > k)` (5 > 7) is false. The code moves to the `else if (i > k)` (3 > 7) which is also false. Finally, it enters the `else` block where `num = k`, so `num` becomes 7. The program prints 7."
+    },
+    {
+      "id": "extract-combined-1777734536329-36",
+      "number": "37",
+      "text": "What is the output of the following code:\n\n```java\nclass test {\n    public static void main(String[] args) {\n        for (int i = 1; i <= 2; i++) {\n            for (int j = 1; j <= 4; j++) {\n                if (j == 1) {\n                    break;\n                }\n            }\n        }\n        System.out.print(\"A \");\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "AAAAAA"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "AAAA"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No output"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The inner loop breaks immediately on its first iteration because `j == 1`. After the nested loops finish their execution cycles (doing essentially nothing due to the break), the program executes the print statement exactly once, outputting \"A \"."
+    },
+    {
+      "id": "extract-combined-1777734536329-37",
+      "number": "38",
+      "text": "What is the output of the following java code:\n\n```java\nclass test {\n    public static void main(String[] args) {\n        int count = 1;\n        while (count++ <= 5) {\n            System.out.print(count % 2 == 1 ? count : ++count);\n            ++count;\n        }\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "135"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "24"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "12345"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "35"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "1st Iteration: count=1. `count++ <= 5` is true, count becomes 2. Ternary: `2%2 == 1` is false, evaluates `++count`, count becomes 3 and prints 3. `++count` on line 6 makes count 4.\n2nd Iteration: count=4. `count++ <= 5` is true, count becomes 5. Ternary: `5%2 == 1` is true, prints 5. `++count` on line 6 makes count 6.\n3rd Iteration: count=6. `count++ <= 5` is false. Loop terminates. Output is 35."
+    },
+    {
+      "id": "extract-combined-1777734536329-38",
+      "number": "39",
+      "text": "What is the output of the following java code:\n\n```java\nclass test {\n    public static void f1(char ch) {\n        int x = 3;\n        switch (ch) {\n            case 'A':\n                x += 2;\n            case 'B':\n                x += 2;\n            case 'C':\n                x += 2;\n                break;\n        }\n        System.out.println(x);\n    }\n    public static void main(String[] args) {\n        f1('B');\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "7"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "9"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The input character is 'B'. The switch enters at `case 'B'`, adding 2 to x (3 + 2 = 5). Since there is no `break` after `case 'B'`, it falls through to `case 'C'`, adding another 2 (5 + 2 = 7). The `break` at the end of `case 'C'` exits the switch, and 7 is printed."
+    },
+    {
+      "id": "extract-combined-1777734536329-39",
+      "number": "40",
+      "text": "What is the output of the following java code:\n\n```java\nclass test {\n    public static int f1(int x, int y) {\n        int f = 1;\n        for (int i = 1; i <= y; i++) {\n            f *= x;\n        }\n        return f;\n    }\n    public static void main(String[] args) {\n        System.out.println(f1(4, 3));\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "12"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "64"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "16"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The method `f1(4, 3)` calculates \\( 4^3 \\). The loop runs 3 times, multiplying `f` (initially 1) by 4 in each iteration: \\( 1 \\times 4 \\times 4 \\times 4 = 64 \\)."
+    },
+    {
+      "id": "extract-combined-1777734536329-40",
+      "number": "41",
+      "text": "What is the output of the following java code:\n\n```java\npublic class test {\n    public static void main(String[] args) {\n        int x = 1;\n        int y = x = x + 1;\n        System.out.println(\"y is \" + y);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "y is 0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "y is 1 because x is assigned to y first."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "y is 2 because x + 1 is assigned to x and then x is assigned to y."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a compile error since x is redeclared in the statement int y = x"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, assignment operators associate from right to left. First, `x + 1` (2) is calculated and assigned to `x`. Then, the result of that assignment (2) is assigned to `y`. Thus, y is 2."
+    },
+    {
+      "id": "extract-combined-1777734536329-41",
+      "number": "42",
+      "text": "What is the output of the following java code:\n\n```java\npublic class Test {\n    int x;\n    public Test(String t) {\n        System.out.println(\"Test\");\n    }\n    public static void main(String[] args) {\n        Test test = new Test();\n        System.out.println(test.x);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because System.out.println method cannot be invoked from the constructor."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because x has not been initialized."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error because you cannot create an object from the class that defines the object."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a compile error because Test does not have a default constructor."
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Since a parameterized constructor `Test(String t)` is defined, the Java compiler does not automatically provide a default no-argument constructor. Attempting to call `new Test()` results in a compile error."
+    },
+    {
+      "id": "extract-combined-1777734536329-42",
+      "number": "43",
+      "text": "What is the output of the following java code:\n\n```java\npublic class test {\n    public static void main(String[] args) {\n        int n = 2;\n        xMethod(n);\n        System.out.println(\"n is \" + n);\n    }\n    void xMethod(int n) {\n        n++;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code has a compile error because xMethod does not return a value."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code has a compile error because xMethod is not declared static."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The code prints n is 1."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The code prints n is 2."
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `main` method is `static`, but `xMethod` is an instance method (non-static). A static method cannot call an instance method directly without creating an instance of the class."
+    },
+    {
+      "id": "extract-combined-1777734536329-43",
+      "number": "44",
+      "text": "What is the output of the following java code:\n\n```java\npublic class Test {\n    private int t;\n    public static void main(String[] args) {\n        int x;\n        System.out.println(t);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The variable t is not initialized and therefore causes errors."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The variable t is private and therefore cannot be accessed in the main method."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "t is non-static and it cannot be referenced in a static context in the main method."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The variable x is not initialized."
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The variable `t` is an instance field (non-static), while the `main` method is static. Non-static variables cannot be accessed directly from a static context without an object reference."
+    },
+    {
+      "id": "extract-combined-1777734536329-44",
+      "number": "45",
+      "text": "What is the output of the following java code:\n\n```java\npublic class test {\n    public static void main(String[] args) {\n        Count myCount = new Count();\n        int times = 0;\n        increment(myCount, times);\n        System.out.println(\"myCount.count = \" + myCount.count);\n        System.out.println(\"times = \" + times);\n    }\n    public static void increment(Count c, int times) {\n        c.count++;\n        times++;\n    }\n}\nclass Count {\n    int count;\n    Count() {\n        count = 0;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "myCount.count = 1, times = 0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "myCount.count = 0, times = 0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "myCount.count = 1, times = 1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "myCount.count = 0, times = 1"
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, object references are passed by value, so `c.count++` modifies the actual object stored in memory, resulting in `myCount.count` becoming 1. Primitive types like `int` are passed by value; therefore, the increment of `times` inside the method does not affect the `times` variable in the `main` method."
+    },
+    {
+      "id": "extract-combined-1777734536329-45",
+      "number": "46",
+      "text": "Based on the code segment below, the valid and accessible output statement in class2 are:\n\n```java\npackage p1;\n\npublic class Class1 {\n    public int x;\n    int y;\n    private int z;\n\n    public void method1() {\n        x = 1; y = 2; z = 3;\n    }\n    void method2() {\n        x = 4; y = 5; z = 6;\n    }\n    private void method3() {\n        x = 7; y = 8; z = 9;\n    }\n}\n\npackage p1;\n\npublic class Class2 {\n    public static void main(String[] args) {\n        Class1 obj1 = new Class1();\n        System.out.println(\"x = \" + obj1.x);\n        System.out.println(\"y = \" + obj1.y);\n        System.out.println(\"z = \" + obj1.z);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "only y"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "only x"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x and y"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "a and y and z"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, access modifiers control visibility:\n- **public** fields (like `x`) are accessible from any class.\n- **Default/Package-private** fields (like `y`, which has no modifier) are accessible from any class within the same package.\n- **private** fields (like `z`) are only accessible within the declaring class.\n\nSince `Class1` and `Class2` are both in package `p1`, `Class2` can access `x` and `y`, but not `z`. Therefore, the statements for `x` and `y` are valid, while the one for `z` causes a compilation error."
+    },
+    {
+      "id": "extract-combined-1777734536329-46",
+      "number": "47",
+      "text": "The classes below are used for Questions 2 - 12. What is the output for statement 1?\n\n```java\nclass ClassA {\n    private int x;\n    public int y;\n    public static int z = 0;\n\n    ClassA(int n1, int n2) {\n        x = n1; y = n2; z += 2;\n        System.out.println(z);\n    }\n\n    private void Method1() {\n        x = 6;\n        System.out.println(x);\n    }\n\n    public static void Method2(int n2) {\n        z += 2;\n        System.out.println(z);\n    }\n\n    void Method3() {\n        y = x;\n        z += 3;\n        Method1();\n    }\n\n    public void method3(ClassA n3) {\n        System.out.println(z);\n        n3.x = 5; n3.y = 6; n3.z = 1;\n        z++;\n    }\n}\n\n// main execution block (assuming it is inside ClassA or same package)\npublic static void main(String[] args) {\n    ClassA ref1 = new ClassA(2, 9); // //1\n    ClassA ref2 = new ClassA(1, 8); // //2\n    ref2.Method2(8);               // //3\n    ref1.Method1();                // //4\n    System.out.println(ref2.x);    // //5\n    System.out.println(ref2.y);    // //6\n    System.out.println(ClassA.y);  // //7\n    ref1.Method3();                // //8\n    ref2.method3(ref1);            // //9\n    System.out.println(ClassA.z);  // //10\n    System.out.println(ref1.y);    // //11\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "error"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "6"
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Statement 1 invokes the constructor: `ClassA ref1 = new ClassA(2, 9);`. Inside the constructor, the static variable `z` (initially 0) is incremented by 2 (`z += 2`) and then printed. The output is 2."
+    },
+    {
+      "id": "extract-combined-1777734536329-47",
+      "number": "48",
+      "text": "Based on the code from question 2, what is the output for statement #2?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "error"
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Statement 2 invokes the constructor: `ClassA ref2 = new ClassA(1, 8);`. The static variable `z` was already 2 from the previous statement. Incrementing it by 2 (`z += 2`) makes it 4, which is then printed."
+    },
+    {
+      "id": "extract-combined-1777734536329-48",
+      "number": "49",
+      "text": "Based on the code from question 2, what is the output for statement #3?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "6"
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Statement 3 calls the static method `Method2`: `ref2.Method2(8);`. Inside `Method2`, the static variable `z` (currently 4) is incremented by 2 (`z += 2`) and printed. The output is 6."
+    },
+    {
+      "id": "extract-combined-1777734536329-49",
+      "number": "50",
+      "text": "Based on the code from question 2, what is the output for statement #4?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "error"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2"
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Statement 4 calls `ref1.Method1();`. Since `Method1` is private, it is only accessible if the `main` method is within `ClassA`. Assuming accessibility (based on options providing numerical results), `Method1` sets `x = 6` and prints `x`. The output is 6."
+    },
+    {
+      "id": "extract-combined-1777734536329-50",
+      "number": "51",
+      "text": "Based on the code from question 2, what is the output for statement #5?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "error"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "6"
+        }
+      ],
+      "inputName": "Q50",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Statement 5 is `System.out.println(ref2.x);`. Object `ref2` was initialized with `n1=1`, so its `x` field is 1. The output is 1."
+    },
+    {
+      "id": "extract-combined-1777734536329-51",
+      "number": "52",
+      "text": "Based on the code from question 2, what is the output for statement #6?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "error"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "8"
+        }
+      ],
+      "inputName": "Q51",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Statement 6 is `System.out.println(ref2.y);`. Object `ref2` was initialized with `n2=8`, so its `y` field is 8. The output is 8."
+    },
+    {
+      "id": "extract-combined-1777734536329-52",
+      "number": "53",
+      "text": "Based on the code from question 2, what is the output for statement #7?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "error"
+        }
+      ],
+      "inputName": "Q52",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Statement 7 is `System.out.println(ClassA.y);`. In Java, you cannot access an instance variable (`y`) using the class name (`ClassA`). This requires a static field. This statement results in a compilation error."
+    },
+    {
+      "id": "extract-combined-1777734536329-53",
+      "number": "54",
+      "text": "Based on the code from question 2, what is the output for statement #8?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2"
+        }
+      ],
+      "inputName": "Q53",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Statement 8 calls `ref1.Method3();`. Inside `Method3`, it sets `y = x`, increments the static variable `z` (making it 6+3=9), and then calls `Method1()`. `Method1` sets `x = 6` and prints `x`. The output is 6."
+    },
+    {
+      "id": "extract-combined-1777734536329-54",
+      "number": "55",
+      "text": "Based on the code from question 2, what is the output for statement #9?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "8"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "7"
+        }
+      ],
+      "inputName": "Q54",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Statement 9 calls `ref2.method3(ref1);`. Inside the `method3` method, the first line is `System.out.println(z);`. After Statement 8, the static variable `z` is 9. Therefore, the output is 9."
+    },
+    {
+      "id": "extract-combined-1777734536329-55",
+      "number": "56",
+      "text": "If we need to write a method to find the sum of all even integers in a two-dimensional array, what would be the statement (1)?\n\n```java\nint xx[][] = {{3, 4, 5, 1}, {33, 6, 1, 2}};\n----------(1)\nfor(int I = 0; i < xx.length; i++)\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "sum = x[0][0];"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "int min = 0;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Something else"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "int sum = 0;"
+        }
+      ],
+      "inputName": "Q55",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "To calculate a sum, you must first declare and initialize an accumulator variable to zero before the loop starts. `int sum = 0;` is the standard initialization for such a variable in Java."
+    },
+    {
+      "id": "extract-combined-1777734536329-56",
+      "number": "57",
+      "text": "Based on the picture from question 2, what is the output for statement #10?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "error"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q56",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Based on the provided answer key, statement #10 results in an error. This is likely due to a syntax error (such as the case-sensitivity mismatch between variable 'I' and 'i' seen in the related code snippet) or an invalid array access."
+    },
+    {
+      "id": "extract-combined-1777734536329-57",
+      "number": "58",
+      "text": "Based on the picture from question 2, what is the output for statement #11?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q57",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "According to the solution key, executing statement #11 results in a compilation or runtime error."
+    },
+    {
+      "id": "extract-combined-1777734536329-58",
+      "number": "59",
+      "text": "Which of the following statements regarding the default constructor in Java is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A default constructor is implemented by default by the Java compiler only if there is no explicit constructor implemented by the user for the class."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A default constructor is always implemented by the compiler even if the user provides their own constructor."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The user must always provide at least one constructor for a class to compile."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A default constructor always has one parameter by default."
+        }
+      ],
+      "inputName": "Q58",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, if a class does not have any explicitly defined constructors, the compiler automatically provides a no-argument default constructor. If any constructor is defined by the user, the compiler does not provide the default one."
+    },
+    {
+      "id": "extract-combined-1777734536329-59",
+      "number": "60",
+      "text": "What is the output of the following Java statements?\n\n```java\npublic static void main(String[] args) {\n    int x;\n    System.out.println(\"x is \" + x);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x is 0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x is 0.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x is 1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Compilation Error"
+        }
+      ],
+      "inputName": "Q59",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In Java, local variables (variables defined inside a method) are not initialized to default values. Attempting to use a local variable before it has been explicitly initialized results in a compilation error."
+    },
+    {
+      "id": "extract-combined-1777734536329-60",
+      "number": "61",
+      "text": "What is the output of the following code snippet?\n\n```java\nString s1 = \"Jordan\";\nString s2 = new String(\"Jordan\");\nString s3 = \"Jordan\";\n\nif ((s1 == s2) || (s1 == s3))\n    System.out.println(\"equal\");\nelse\n    System.out.println(\"not equal\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "equal"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Run time error"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "not equal"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "logic error"
+        }
+      ],
+      "inputName": "Q60",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "`s1 == s2` is false because `s2` is a new object in memory. However, `s1 == s3` is true because both point to the same literal in the String constant pool. Since the condition uses the OR (`||`) operator, the entire expression evaluates to true."
+    },
+    {
+      "id": "extract-combined-1777734536329-61",
+      "number": "62",
+      "text": "How many times will the print statement be executed in the following code?\n\n```java\nfor (int i = 2; i < 10; i++)\n    for (int j = 0; j < 5; j += 2)\n        System.out.print(\"*\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "16 times"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "24 times"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "50 times"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q61",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The outer loop runs for `i = 2, 3, 4, 5, 6, 7, 8, 9` (8 iterations). The inner loop runs for `j = 0, 2, 4` (3 iterations). Total executions = 8 * 3 = 24."
+    },
+    {
+      "id": "extract-combined-1777734536329-62",
+      "number": "63",
+      "text": "What values of **a** and **b** will make the following condition evaluate to **true**?\n`((a > 3) && (b == 5))`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a = 1, b = 2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "a = 1, b = 5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "a = 5, b = 5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q62",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "For the AND (`&&`) condition to be true, both sub-conditions must be true. `a > 3` is true when a is 5. `b == 5` is true when b is 5."
+    },
+    {
+      "id": "extract-combined-1777734536329-63",
+      "number": "64",
+      "text": "Which of the following is **NOT** a feature of a Java constructor?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It has no return data type, not even void."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It cannot be overloaded."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It must have the same name as the class."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Each object can invoke the constructor only once (at creation)."
+        }
+      ],
+      "inputName": "Q63",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Constructors can be overloaded in Java by having different parameter lists."
+    },
+    {
+      "id": "extract-combined-1777734536329-64",
+      "number": "65",
+      "text": "Observe the following code involving `ClassA` and `FinalExam`. What is the result of attempting to compile and run this code?\n\n```java\npublic class ClassA {\n    private int x;\n    public int y;\n    public static int z = 0;\n    // ... constructor and methods ...\n    private void Method1() { ... }\n}\n\npublic class FinalExam {\n    public static void main(String[] args) {\n        ClassA ref1 = new ClassA(5, 10);\n        ref1.Method1();\n        System.out.println(ref1.x);\n        System.out.println(ClassA.y);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code runs and prints values for x, y, and z."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Compilation Error: private members (x, Method1) cannot be accessed from outside ClassA, and y is not static."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Runtime Error: NullPointerException."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Logic Error: The static variable z is not incremented correctly."
+        }
+      ],
+      "inputName": "Q64",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The code contains multiple errors: 1. `Method1` and `x` are private and cannot be accessed from `FinalExam`. 2. `y` is an instance variable and cannot be accessed statically via `ClassA.y`."
+    },
+    {
+      "id": "extract-combined-1777734536329-65",
+      "number": "66",
+      "text": "What is the final value of **A** printed by the following code?\n\n```java\nint A = 0;\nfor (int x = 0; x < 2; x++) {\n    for (int y = 0; y < 5; y++) {\n        A += 2;\n    }\n}\nSystem.out.println(A);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "10"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "20"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "30"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "40"
+        }
+      ],
+      "inputName": "Q65",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The inner loop adds 2 to A, 5 times. This inner process happens twice (due to the outer loop). Total addition = (5 * 2) * 2 = 20."
+    },
+    {
+      "id": "extract-combined-1777734536329-66",
+      "number": "67",
+      "text": "Given the method `mimi` which finds the minimum value in an array, what will be the output for the second row of the `values` array?\n\n```java\nint values[][] = {{3, 4, 12, 3}, {33, 6, 4, 21}};\n// ... call mimi(values[1]) ...\n\npublic static int mimi(int list[]) {\n    int v = list[0];\n    for (int i = 1; i < list.length; i++)\n        if (list[i] < v)\n            v = list[i];\n    return v;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "33"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "21"
+        }
+      ],
+      "inputName": "Q66",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The method `mimi` iterates through the provided array row `{33, 6, 4, 21}` and keeps track of the smallest value found. The smallest value in that set is 4."
+    },
+    {
+      "id": "extract-combined-1777734536329-67",
+      "number": "68",
+      "text": "What is the output of the following code snippet?\n\n```java\nint a = 0, s = 1;\nwhile (s <= 11) {\n    if (a % 2 == 1)\n        s += a;\n    else\n        s--;\n    a += 3;\n}\nSystem.out.println(s);\nSystem.out.println(a);\nSystem.out.println(\"out side\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "25\\n18\\nout side"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "11\\n15\\nout side"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10\\n12\\nout side"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "12\\n12\\nout side"
+        }
+      ],
+      "inputName": "Q67",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Tracing the loop: \n1. a=0 (even): s=1-1=0, a=3.\n2. a=3 (odd): s=0+3=3, a=6.\n3. a=6 (even): s=3-1=2, a=9.\n4. a=9 (odd): s=2+9=11, a=12.\n5. a=12 (even): s=11-1=10, a=15.\n6. a=15 (odd): s=10+15=25, a=18. \nLoop ends as s(25) > 11."
+    },
+    {
+      "id": "extract-combined-1777734536329-68",
+      "number": "69",
+      "text": "Based on the requirements for the `Account` class, which keyword should be used for the `annualInterestRate` field to ensure it is shared between all objects?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "private"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "final"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "static"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "transient"
+        }
+      ],
+      "inputName": "Q68",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, the `static` keyword is used to create fields and methods that belong to the class itself rather than to individual instances. This means the value is shared among all objects of that class."
+    },
+    {
+      "id": "extract-combined-1777734536329-69",
+      "number": "70",
+      "text": "Complete the `main` method in the `ClassMain` class to fulfill the following requirements:\n1. Print the annual interest rate for all accounts (assume this is a static property of the `Account` class).\n2. Create an `Account` object named `acc1` with an account ID of `1122`, a balance of `20000`, and an annual interest rate of `4.5%`.\n\n```java\npublic class ClassMain {\n    public static void main(String[] args) {\n        // Your code here\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\nAccount.setAnnualInterestRate(4.5);\nSystem.out.println(Account.getAnnualInterestRate());\nAccount acc1 = new Account(1122, 20000);\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\nSystem.out.println(Account.getAnnualInterestRate());\nAccount acc1 = new Account(1122, 20000, 4.5);\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\nAccount acc1 = new Account(1122, 20000);\nacc1.setAnnualInterestRate(4.5);\nSystem.out.println(acc1.getAnnualInterestRate());\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\nSystem.out.println(Account.annualInterestRate);\nAccount acc1 = new Account(1122, 20000);\nacc1.annualInterestRate = 4.5;\n```"
+        }
+      ],
+      "inputName": "Q69",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Because the requirement specifies the annual interest rate is 'for all accounts', it should be treated as a static member of the `Account` class. Option A correctly sets the static interest rate for the class, prints it, and then instantiates the specific account object with the provided ID and balance."
+    },
+    {
+      "id": "extract-combined-1777734536329-70",
+      "number": "71",
+      "text": "Is the following java statement legal (correct) to declare and initialize an identifier in java?\n\n```java\nlong _ = 256983;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q70",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Starting from Java 9, the single underscore `_` is a reserved keyword and can no longer be used as a standalone identifier. Therefore, the statement is illegal in modern Java."
+    },
+    {
+      "id": "extract-combined-1777734536329-71",
+      "number": "72",
+      "text": "Assume \\( x=0 \\), what is the value of \\( x \\) after executing the following if statement?\n\n```java\nif (x==3 && x++<3)\n    System.out.println(\"good\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        }
+      ],
+      "inputName": "Q71",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The logical AND operator `&&` uses short-circuit evaluation. Since the first condition `x == 3` evaluates to `false` (as `x` is 0), the second condition `x++ < 3` is never executed. Consequently, the value of `x` remains 0."
+    },
+    {
+      "id": "extract-combined-1777734536329-72",
+      "number": "73",
+      "text": "Suppose that `int alpha = 2, x = 3`. What is the value of `alpha` after the following statement executes?\n\n```java\nalpha *= 5 % 2 + (int) (11.9/3) * --x / 2;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "8"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Illegal statement"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Syntax error"
+        }
+      ],
+      "inputName": "Q72",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Let's break down the expression: \n1. `5 % 2` = 1. \n2. `(int)(11.9 / 3)` = `(int)(3.966...)` = 3. \n3. `--x` decrements `x` to 2 and returns 2. \n4. The expression becomes `alpha = alpha * (1 + 3 * 2 / 2)`. \n5. `3 * 2 / 2` = 3. \n6. `1 + 3` = 4. \n7. `alpha = 2 * 4` = 8."
+    },
+    {
+      "id": "extract-combined-1777734536329-73",
+      "number": "74",
+      "text": "What is the output of the following Java code?\n\n```java\nint x=1;\nif ('f' < 'd')\n    if (x++ % 2 ==0)\n        System.out.print(\"Welcome\");\n    else System.out.print(\"to\");\nSystem.out.print(\"java\");\nSystem.out.print(x);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Java1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Welcome1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Welcome to1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Welcome to java1"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Welcome to java 1"
+        }
+      ],
+      "inputName": "Q73",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The condition `'f' < 'd'` is false because the ASCII value of 'f' is greater than 'd'. Therefore, the entire nested `if-else` block is skipped. The program proceeds to execute `System.out.print(\"java\")` and `System.out.print(x)`. Since `x` was never modified inside the skipped block, it remains 1. The output is `java1` (capitalized in the provided options as `Java1`)."
+    },
+    {
+      "id": "extract-combined-1777734536329-74",
+      "number": "75",
+      "text": "Which line(s) will yield compilation errors?\n\n```java\npublic static void main(String[] args) {\n    /* Line 1 */ final int x=10;\n    /* Line 2 */ System.out.println(++x);\n    /* Line 3 */ if (x=5)\n    /* Line 4 */ System.out.println(\"equal\");\n    /* Line 5 */ else ;\n    /* Line 6 */ System.out.println(\"not equal\");\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Line 1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Line 2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Line 2 + 3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Line 5"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Line 2 + 5"
+        }
+      ],
+      "inputName": "Q74",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Line 2 causes an error because it attempts to increment a `final` variable. Line 3 causes two errors: first, it tries to assign a value to a `final` variable; second, the `if` statement requires a boolean expression, but `x=5` evaluates to the integer 5."
+    },
+    {
+      "id": "extract-combined-1777734536329-75",
+      "number": "76",
+      "text": "Assume the signature of the method `xMethod` is as follows:\n`public static void xMethod(double[] a)`\n\nWhich of the following could be used to invoke `xMethod`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "xMethod({3, 4});"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "xMethod(new int[]{1, 2, 3});"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "xMethod(5);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "xMethod(new double[]{2.0, 3.0});"
+        }
+      ],
+      "inputName": "Q75",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Option A is illegal because array initializer literals can only be used in declarations. Option B is incorrect because Java does not automatically widen arrays (an `int[]` is not a `double[]`). Option C is incorrect as it passes a scalar integer instead of an array. Option D correctly initializes an anonymous `double` array to pass as an argument."
+    },
+    {
+      "id": "extract-combined-1777734536329-76",
+      "number": "77",
+      "text": "What is the output of the following code:\n\n```java\nint i=3, j=5, k=7, num;\nif (j > k)\n    if (i > j)\n        num = i;\n    else\n        num = j;\nelse\n    if (i > k)\n        num = i;\n    else\n        num = k;\nSystem.out.println(num);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "7"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Syntax error"
+        }
+      ],
+      "inputName": "Q76",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Given `i=3, j=5, k=7`. The first condition `j > k` (5 > 7) is false, so the `else` branch is taken. Inside that branch, `i > k` (3 > 7) is also false, so the inner `else` branch is taken, assigning `num = k`. Thus, `num` is 7."
+    },
+    {
+      "id": "extract-combined-1777734536329-77",
+      "number": "78",
+      "text": "What is the output of the following code:\n\n```java\nfor(int i=1; i<=2; i++) {\n    for (int j=1; j<=4; j++) {\n        if (j==1)\n            break;\n    }\n    System.out.print(\"A\");\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "AA"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "AAAA"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No output"
+        }
+      ],
+      "inputName": "Q77",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "For each iteration of the outer loop (`i=1` and `i=2`), the inner loop starts. In the inner loop, when `j=1`, the `break` statement executes immediately, exiting the inner loop. The `System.out.print(\"A\")` statement then runs once for every outer loop iteration, resulting in \"AA\"."
+    },
+    {
+      "id": "extract-combined-1777734536329-78",
+      "number": "79",
+      "text": "What is the output of the following code:\n\n```java\nint count = 1;\nwhile (count++ <= 5) {\n    System.out.print(count % 2 == 1 ? count : ++count);\n    System.out.println();\n    ++count;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3\\n5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2\\n4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3\\n4\\n5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1\\n3\\n5"
+        }
+      ],
+      "inputName": "Q78",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Iteration 1: `count++ <= 5` (1 <= 5) is true, `count` becomes 2. `2 % 2 == 1` is false, so it prints `++count`, which is 3. Then `++count` at the end makes `count` 4. \nIteration 2: `count++ <= 5` (4 <= 5) is true, `count` becomes 5. `5 % 2 == 1` is true, so it prints `count`, which is 5. Then `++count` at the end makes `count` 6. \nIteration 3: `count++ <= 5` (6 <= 5) is false. Loop ends."
+    },
+    {
+      "id": "extract-combined-1777734536329-79",
+      "number": "80",
+      "text": "What is the output of the following code:\n\n```java\npublic static void f1(char ch){\n    int x=3;\n    switch(ch){\n        case 'A':\n            x+=2;\n        case 'B':\n            x+=2;\n        case 'C':\n            x+=2;\n            break;\n    }\n    System.out.println(x);\n}\npublic static void main(String[] args) {\n    f1('B');\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "7"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "9"
+        }
+      ],
+      "inputName": "Q79",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The method `f1` is called with `'B'`. The switch matches `case 'B'`, adding 2 to `x` (making it 5). Because there is no `break` after `case 'B'`, it falls through to `case 'C'`, adding another 2 to `x` (making it 7). The `break` in `case 'C'` then exits the switch. Finally, 7 is printed."
+    },
+    {
+      "id": "extract-combined-1777734536329-80",
+      "number": "81",
+      "text": "What is the output of the following Java code?\n\n```java\npublic static int f1(int x, int y) {\n    int f = 1;\n    for (int i = 1; i <= y; i++)\n        f *= x;\n    return f;\n}\n\npublic static void main(String[] args) {\n    System.out.println(f1(4, 3));\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "12"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "16"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "64"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "81"
+        }
+      ],
+      "inputName": "Q80",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The method `f1(x, y)` calculates the value of \\( x^y \\). For input (4, 3), the loop runs 3 times, multiplying 1 by 4 thrice: \\( 1 \\times 4 \\times 4 \\times 4 = 64 \\)."
+    },
+    {
+      "id": "extract-combined-1777734536329-81",
+      "number": "82",
+      "text": "Select the correct Java method that finds \\( x(n) = 1 - \\sum_{i=3, step 2}^{n} \\frac{1}{i^2} \\) for a positive odd number \\( n > 3 \\). If \\( n \\) is even, the method should return 0.\n\nExample Case: Input \\( n = 7 \\), result is \\( 1 - (\\frac{1}{3^2} + \\frac{1}{5^2} + \\frac{1}{7^2}) \\).",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\ndouble sum(int n) {\n    if (n % 2 == 0) return 0;\n    double s = 0;\n    for (int i = 3; i <= n; i += 2)\n        s += 1.0 / (i * i);\n    return 1 - s;\n}\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\ndouble sum(int n) {\n    if (n % 2 != 0) return 0;\n    double s = 0;\n    for (int i = 3; i <= n; i++)\n        s += 1 / (i * i);\n    return 1 - s;\n}\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\ndouble sum(int n) {\n    double s = 1;\n    for (int i = 3; i <= n; i += 2)\n        s += 1.0 / (i * i);\n    return s;\n}\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\ndouble sum(int n) {\n    if (n % 2 == 0) return 0;\n    double s = 0;\n    for (int i = 1; i <= n; i += 2)\n        s -= 1.0 / (i * i);\n    return s;\n}\n```"
+        }
+      ],
+      "inputName": "Q81",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Option A correctly validates the parity of \\( n \\), iterates through odd numbers starting from 3 with a step of 2, uses floating-point division to calculate reciprocals of squares, and subtracts the total sum from 1 as per the Case 1 example."
+    },
+    {
+      "id": "extract-combined-1777734536329-82",
+      "number": "83",
+      "text": "Based on the provided Java classes `CoronaFinal` and `Coronal`, what is the output of Statement 5: `System.out.println(A.cy);` in the `main` method of `CoronaFinal`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "7"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Compilation Error: cy is private"
+        }
+      ],
+      "inputName": "Q82",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, private members are accessible within the same class. Since the `main` method is defined inside the `CoronaFinal` class, it can access the private variable `cy` of object `A`, which is initialized to 7."
+    },
+    {
+      "id": "extract-combined-1777734536329-83",
+      "number": "84",
+      "text": "Based on the provided Java classes, what is the output of Statement 8: `System.out.println(A.cresult(B));`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "9"
+        }
+      ],
+      "inputName": "Q83",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "When object `B` of type `Coronal` is created, the static variable `z` is set to 2. In `cresult(B)`, `cx` is set to `B.x` (2) and `cy` is set to `B.x + Coronal.z` (2 + 2 = 4). The method returns `cx + cy`, which is 6."
+    },
+    {
+      "id": "extract-combined-1777734536329-84",
+      "number": "85",
+      "text": "Based on the provided code, what is the output of Statement 9: `System.out.println(Coronal.z++);`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q84",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The static variable `z` was set to 2 during the constructor execution of object `B`. The post-increment operator `z++` returns the current value of the variable before performing the increment. Thus, it prints 2."
+    },
+    {
+      "id": "extract-combined-1777734536329-85",
+      "number": "86",
+      "text": "Based on the provided code, what is the output of Statement 11: `System.out.println(B.result());`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "7"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "8"
+        }
+      ],
+      "inputName": "Q85",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "After Statement 9, the static variable `z` is 3. Inside the `result()` method, `z++` increments `z` to 4. The method then returns `y + z` (where `y = 3` and `z = 4`), which equals 7."
+    },
+    {
+      "id": "extract-combined-1777734536329-86",
+      "number": "87",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n    public static void main(String[] args) {\n        int[] a = new int[4];\n        a[1] = 1;\n        a = new int[2];\n        System.out.println(\"a[1] is \" + a[1]);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because `new int[2]` is assigned to `a`."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a runtime error because `a[1]` is not initialized."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program displays `a[1] is 0`."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program displays `a[1] is 1`."
+        }
+      ],
+      "inputName": "Q86",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Initially, `a` refers to an array of size 4 where `a[1]` is set to 1. Then, `a` is reassigned to a new array of size 2. In Java, elements of a new `int` array are automatically initialized to 0. Therefore, `a[1]` in the new array is 0."
+    },
+    {
+      "id": "extract-combined-1777734536329-87",
+      "number": "88",
+      "text": "Assume `Circle[] all = new Circle[10]`. Which of the following statements are true?\n\n- S1: `all` is `null`.\n- S2: `all[0]` is `null`.\n- S3: `all = new Circle[5]` is fine, which assigns a new array to `all`.\n- S4: `all = new Circle()` is fine, which creates a new Circle object and assigns it to `all`.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "S1 and S4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "S2 and S4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "S3 and S4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "S1 and S2"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "S2 and S3"
+        }
+      ],
+      "inputName": "Q87",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "S1 is false because `all` is initialized to an array object. S2 is true because elements of an array of objects are initialized to `null`. S3 is true because the reference variable `all` can be reassigned to a different array object. S4 is false because `all` is an array type (`Circle[]`) and cannot directly reference a single `Circle` instance."
+    },
+    {
+      "id": "extract-combined-1777734536329-88",
+      "number": "89",
+      "text": "What is the output of the third `println` statement in the `main` method?\n\n```java\npublic class Foo {\n    int i;\n    static int s;\n\n    public static void main(String[] args) {\n        Foo f1 = new Foo();\n        System.out.println(\"f1.i is \" + f1.i + \" f1.s is \" + f1.s);\n        Foo f2 = new Foo();\n        System.out.println(\"f2.i is \" + f2.i + \" f2.s is \" + f2.s);\n        Foo f3 = new Foo();\n        System.out.println(\"f3.i is \" + f3.i + \" f3.s is \" + f3.s);\n    }\n\n    public Foo() {\n        i++;\n        s++;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "f3.i is 1 f3.s is 1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "f3.i is 1 f3.s is 2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "f3.i is 1 f3.s is 3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "f3.i is 3 f3.s is 1"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "f3.i is 3 f3.s is 3"
+        }
+      ],
+      "inputName": "Q88",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`i` is an instance variable (default 0), so every time a new `Foo` is created, the new instance's `i` starts at 0 and is incremented to 1. `s` is a static variable (shared across instances), so it increments every time the constructor is called. By the time `f3` is created, `s` has been incremented 3 times."
+    },
+    {
+      "id": "extract-combined-1777734536329-89",
+      "number": "90",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n    public static void main(String[] args) {\n        int n = 2;\n        xMethod(n);\n\n        System.out.println(\"n is \" + n);\n    }\n\n    void xMethod(int n) {\n        n++;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code has a compile error because `xMethod` does not return a value."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code has a compile error because `xMethod` is not declared static."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The code prints `n is 1`."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The code prints `n is 2`."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The code prints `n is 3`."
+        }
+      ],
+      "inputName": "Q89",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `main` method is `static`. It attempts to call `xMethod(n)` directly. In Java, a static method cannot call a non-static method without an instance of the class."
+    },
+    {
+      "id": "extract-combined-1777734536329-90",
+      "number": "91",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n    private int t;\n    public static void main(String[] args) {\n        int x;\n        System.out.println(t);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The variable `t` is not initialized and therefore causes errors."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The variable `t` is private and therefore cannot be accessed in the main method."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The variable `t` is non-static and it cannot be referenced in a static context in the main method."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The variable `x` is not initialized and therefore causes errors."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The program compiles and runs fine."
+        }
+      ],
+      "inputName": "Q90",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The variable `t` is an instance field (non-static). The `main` method is static. Static methods cannot access non-static fields directly; they must access them via an object instance."
+    },
+    {
+      "id": "extract-combined-1777734536329-91",
+      "number": "92",
+      "text": "What is the output of the following code?\n\n```java\ndouble[] myList = {1, 5, 5, 5, 5, 1};\ndouble max = myList[0];\nint indexOfMax = 0;\nfor (int i = 1; i < myList.length; i++) {\n    if (myList[i] > max) {\n        max = myList[i];\n        indexOfMax = i;\n    }\n}\nSystem.out.println(indexOfMax);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q91",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The code iterates through the array to find the index of the maximum value. `max` starts as 1. When `i=1`, `myList[1]` is 5, which is greater than 1, so `indexOfMax` becomes 1 and `max` becomes 5. For subsequent elements where the value is also 5, the condition `myList[i] > max` is false (5 is not greater than 5), so `indexOfMax` remains 1."
+    },
+    {
+      "id": "extract-combined-1777734536329-92",
+      "number": "93",
+      "text": "What are the values of `times` and `myCount.count` displayed?\n\n```java\npublic class Test {\n    public static void main(String[] args) {\n        Count myCount = new Count();\n        int times = 0;\n        increment(myCount, times);\n        System.out.println(\"myCount.count = \" + myCount.count);\n        System.out.println(\"times = \" + times);\n    }\n\n    public static void increment(Count c, int times) {\n        c.count++;\n        times++;\n    }\n}\n\nclass Count {\n    int count;\n    Count() {\n        count = 0;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "myCount.count = 0, times = 0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "myCount.count = 1, times = 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "myCount.count = 0, times = 1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "myCount.count = 1, times = 0"
+        }
+      ],
+      "inputName": "Q92",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Java passes arguments by value. For objects like `Count`, the reference is passed by value, so `c.count++` modifies the actual object in memory. For primitives like `int`, a copy is passed, so `times++` in the method only affects the local copy and does not change the `times` variable in the `main` method."
+    },
+    {
+      "id": "extract-combined-1777734536329-93",
+      "number": "94",
+      "text": "Suppose a method `p` has the following heading: `public static int[][] p()`. What return statement may be used inside this method?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "return 1;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "return {1, 2, 3};"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "return int[][]{1, 2, 3};"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "return new int[]{1, 2, 3};"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "return new int[][]{{1, 2, 3}, {2, 4, 5}};"
+        }
+      ],
+      "inputName": "Q93",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "The method must return a two-dimensional integer array (`int[][]`). Option E is the correct syntax for creating and returning an anonymous 2D array literal."
+    },
+    {
+      "id": "extract-combined-1777734536329-94",
+      "number": "95",
+      "text": "Which of the following correctly creates an array of five empty Strings?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "String[] a = new String[5];"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "String[] a = {\"\", \"\", \"\", \"\", \"\"};"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "String[5] a;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "String[] a = new String[5]; for (int i = 0; i < 5; a[i++] = null);"
+        }
+      ],
+      "inputName": "Q94",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An empty string is `\"\"`. Option A and D result in an array containing `null` values. Option C is invalid Java syntax. Option B correctly initializes an array with five empty string objects."
+    },
+    {
+      "id": "extract-combined-1777734536329-95",
+      "number": "96",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n    public static void main(String[] args) {\n        boolean[][] x = new boolean[3][];\n        x[0] = new boolean[1];\n        x[1] = new boolean[2];\n        x[2] = new boolean[3];\n\n        System.out.println(\"x[2][2] is \" + x[2][2]);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because `new boolean[3][]` is wrong."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a runtime error because `x[2][2]` is null."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program runs and displays `x[2][2] is null`."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program runs and displays `x[2][2] is true`."
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "The program runs and displays `x[2][2] is false`."
+        }
+      ],
+      "inputName": "Q95",
+      "inputType": "radio",
+      "correctAnswer": "E",
+      "explanation": "This creates a ragged 2D boolean array. `x[2]` is initialized as an array of size 3, so `x[2][2]` is a valid access. In Java, `boolean` array elements are initialized to `false` by default."
+    },
+    {
+      "id": "extract-combined-1777734536329-96",
+      "number": "97",
+      "text": "What is y displayed in the following code?\n\n```java\npublic class Test1 {\n    public static void main(String[] args) {\n        int x = 1;\n        int y = x = x + 1;\n        System.out.println(\"y is \" + y);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "y is 0."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "y is 1 because x is assigned to y first."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "y is 2 because x + 1 is assigned to x and then x is assigned to y."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a compile error since x is redeclared in the statement `int y = x = x + 1`."
+        }
+      ],
+      "inputName": "Q96",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, the assignment operator `=` is right-associative. In the statement `int y = x = x + 1;`, the expression `x = x + 1` is evaluated first. `x` becomes 2, and the value of that expression (2) is then assigned to `y`. Thus, `y` is 2."
+    },
+    {
+      "id": "extract-combined-1777734536329-97",
+      "number": "98",
+      "text": "Analyze the following code:\n\n```java\npublic class Test {\n    int x;\n\n    public Test(String t) {\n        System.out.println(\"Test\");\n    }\n\n    public static void main(String[] args) {\n        Test test = new Test();\n        System.out.println(test.x);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program has a compile error because `System.out.println` method cannot be invoked from the constructor."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program has a compile error because `x` has not been initialized."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program has a compile error because you cannot create an object from the class that defines the object."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program has a compile error because `Test` does not have a default constructor."
+        }
+      ],
+      "inputName": "Q97",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "When a class defines at least one constructor (in this case `public Test(String t)`), the compiler does not provide the default no-argument constructor. Therefore, attempting to instantiate the class using `new Test()` results in a compilation error because that specific constructor does not exist."
+    },
+    {
+      "id": "extract-combined-1777734536329-98",
+      "number": "99",
+      "text": "Assume `Circle[] all = new Circle[10]`, which of the following statements are true?\n\nS1. `all` is `null`.\nS2. `all[0]` is `null`.\nS3. `all = new Circle[5]` is fine, which assigns a new array to `all`.\nS4. `all = new Circle()` is fine, which creates a new Circle object and assigns to `all`.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "S1 and S4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "S2 and S4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "S3 and S4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "S2 and S3"
+        }
+      ],
+      "inputName": "Q98",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "S1 is false because `all` refers to a newly created array object. S2 is true because array elements for reference types are initialized to `null`. S3 is true because `all` is a reference variable of type `Circle[]` and can be reassigned to another `Circle[]` object. S4 is false because a single `Circle` object cannot be assigned to a reference variable of type `Circle[]` (array type)."
+    },
+    {
+      "id": "extract-combined-1777734536329-99",
+      "number": "100",
+      "text": "If we need to write a method to find the sum of all even integers in a two-dimensional array, what would be the statement (1)?\n\n```java\nint xx[][] = {{3, 4, 5, 1}, {33, 6, 1, 2}};\n// ----------(1)\nfor (int i = 0; i < xx.length; i++)\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "int sum[0] = 0;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "sum = x[0][0];"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "int min = 0;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "int sum = 0;"
+        }
+      ],
+      "inputName": "Q99",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "To calculate a cumulative sum, a variable must be declared and initialized to 0 before the loops begin. `int sum = 0;` correctly initializes an integer accumulator variable for this purpose."
+    },
+    {
+      "id": "extract-combined-1777734536329-100",
+      "number": "101",
+      "text": "What is the result of the expression `(int)Math.random()`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0.5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "both 0 and 1 are possible"
+        }
+      ],
+      "inputName": "Q100",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The method `Math.random()` returns a double value in the range \\( [0.0, 1.0) \\). Casting this value to an `int` truncates the decimal part, which means any value less than 1.0 will always result in 0."
+    },
+    {
+      "id": "extract-combined-1777734536329-101",
+      "number": "102",
+      "text": "Complete the missing code. The objective is to store the sum of each row (excluding the element at the diagonal position) into the diagonal element of that matrix.\n\nExample Transformation:\n| Row index | Elements | Sum (excluding diagonal) |\n| :--- | :--- | :--- |\n| Row 0 | [0, 5, 6] | 5 + 6 = 11 |\n| Row 1 | [5, 0, 2] | 5 + 2 = 7 |\n| Row 2 | [7, 3, 0] | 7 + 3 = 10 |\n\n```java\nint a[][] = {{0, 5, 6}, {5, 0, 2}, {7, 3, 0}};\nint sum = 0;\nfor (int i = 0; i < a.length; i++) {\n    sum = 0;\n    for (int j = 0; j < a[i].length; j++) {\n        if (i != j)\n            // ---------- \\\\ missing\n    }\n    a[i][i] = sum;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "sum = a[i][j];"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "sum += a[i][j];"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No correct answer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "sum = a[j][i];"
+        }
+      ],
+      "inputName": "Q101",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The logic requires accumulating values from the row where the column index `j` does not equal the row index `i`. The `+=` operator is used to add the value of `a[i][j]` to the current `sum` variable during each valid iteration of the inner loop."
+    },
+    {
+      "id": "extract-combined-1777734536329-102",
+      "number": "103",
+      "text": "What is the output of the following code?\n```java\nclass Test {\n    public static void main(String args[]) {\n        int arr[2];\n        System.out.println(arr[0]);\n        System.out.println(arr[1]);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "garbage value garbage value"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0 0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No correct answer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Compiler Error"
+        }
+      ],
+      "inputName": "Q102",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In Java, array declarations such as `int arr[2];` are syntactically incorrect. The size of an array must be specified when it is instantiated using the `new` keyword (e.g., `int[] arr = new int[2];`), not in the declaration itself. This results in a compiler error."
+    },
+    {
+      "id": "extract-combined-1777734536329-103",
+      "number": "104",
+      "text": "Analyze the following code:\n```java\nclass Test {\n    public static void main(String[] args) {\n        System.out.println(xMethod((double) 5));\n    }\n    public static int xMethod(int n) {\n        System.out.println(\"int\");\n        return n;\n    }\n    public static long xMethod(long n) {\n        System.out.println(\"long\");\n        return n;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program displays int followed by 5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program does not compile"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program runs fine but displays things other than given in a and b"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program displays long followed by 5"
+        }
+      ],
+      "inputName": "Q103",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The code invokes `xMethod` with a `double` argument. However, the class only defines versions of `xMethod` that accept `int` and `long`. In Java, a `double` cannot be implicitly cast to a narrower type like `int` or `long` during method invocation. Since no matching method signature is found, the program will not compile."
+    },
+    {
+      "id": "extract-combined-1777734536329-104",
+      "number": "105",
+      "text": "What is the output of the following code fragment?\n```java\nint[][] arr = {{1, 2, 3, 4},\n               {2, 2, 3},\n               {3, 9, 10, 11},\n               {2, 1}};\nfun2(arr);\n\npublic static void fun2(int [][] arr) {\n    for (int i = 0; i < arr.length; i++) {\n        System.out.print(arr[i][arr[i].length - 1] + \" \");\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 2 3 4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4 3 11 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No correct answer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1 2 3 2"
+        }
+      ],
+      "inputName": "Q104",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The code iterates through each row of the 2D array `arr` and prints the element at the last index of each row (`arr[i].length - 1`). \n- Row 0 (`{1, 2, 3, 4}`): prints 4\n- Row 1 (`{2, 2, 3}`): prints 3\n- Row 2 (`{3, 9, 10, 11}`): prints 11\n- Row 3 (`{2, 1}`): prints 1\nThe final output is \"4 3 11 1 \"."
+    },
+    {
+      "id": "extract-combined-1777734536329-105",
+      "number": "106",
+      "text": "Analyze the following code:\n```java\npublic class Test {\n    public static void main(String[] args) {\n        int n = 2;\n        xMethod(n);\n        System.out.println(\"n is \" + n);\n    }\n    public static void xMethod(int n) {\n        n++;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code prints n is 3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code prints n is 2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "syntax error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The code prints n is 1"
+        }
+      ],
+      "inputName": "Q105",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Java uses pass-by-value for primitive types. When `xMethod(n)` is called, a copy of the value of `n` is passed into the method. The increment operation `n++` inside `xMethod` modifies only the local parameter variable and has no effect on the original variable `n` declared in the `main` method."
+    },
+    {
+      "id": "extract-combined-1777734536329-106",
+      "number": "107",
+      "text": "Based on the code segment below, the valid and accessible output statements in Class2 are:\n\n```java\n// File 1\npackage p1;\npublic class Class1 {\n    public int x;\n    int y;\n    private int z;\n\n    public void method1() { x = 1; y = 2; z = 3; }\n    void method2() { x = 4; y = 5; z = 6; }\n    private void method3() { x = 7; y = 8; z = 9; }\n}\n\n// File 2\npackage p1;\npublic class Class2 {\n    public static void main(String[] args) {\n        Class1 obj1 = new Class1();\n        System.out.println(\" x = \" + obj1.x);\n        System.out.println(\" y = \" + obj1.y);\n        System.out.println(\" z = \" + obj1.z);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "only x"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "only y"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x and y and z"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x and y"
+        }
+      ],
+      "inputName": "Q106",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In Java, `public` members are accessible from anywhere. Members with no modifier (default/package-private) are accessible only within the same package. `private` members are accessible only within the same class. Since `Class1` and `Class2` are both in package `p1`, `x` (public) and `y` (default) are accessible, but `z` (private) is not."
+    },
+    {
+      "id": "extract-combined-1777734536329-107",
+      "number": "108",
+      "text": "What is the output of the following code?\n\n```java\nint s = 0;\nfor (int i = 1; i <= 5; ++i) {\n    if (i % 2 == 0)\n        while (s < 4) {\n            System.out.print(++s);\n            i++;\n            s += 2;\n        }\n    else\n        continue;\n}\nSystem.out.print(s);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "146"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "134"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1468"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q107",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. `i=1`: `1%2 != 0`, `continue`. Loop `++i` makes `i=2`.\n2. `i=2`: `2%2 == 0`. `while(0 < 4)`:\n   - `++s` makes `s=1`. Prints '1'.\n   - `i++` makes `i=3`.\n   - `s+=2` makes `s=3`.\n   - `while(3 < 4)` is true.\n   - `++s` makes `s=4`. Prints '4'.\n   - `i++` makes `i=4`.\n   - `s+=2` makes `s=6`.\n   - `while(6 < 4)` is false. Loop ends.\n3. Loop `++i` makes `i=5`.\n4. `i=5`: `5%2 != 0`, `continue`. Loop `++i` makes `i=6`. Loop ends.\n5. `System.out.print(s)` prints '6'. Total output: 146."
+    },
+    {
+      "id": "extract-combined-1777734536329-108",
+      "number": "109",
+      "text": "If we need to write a method to find the sum of all even integers in a two-dimensional array, what would be the statement marked (2) in the code below?\n\n```java\nint xx[][] = {{3, 4, 5, 1}, {33, 6, 1, 2}};\n// ----------(1)\nfor (int i = 0; i < xx.length; i++)\n    for (int j = 0; j < -------(2); j++)\n        if (xx[i][j] % 2 == 0)\n            sum += xx[i][j];\nSystem.out.println(sum);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "xx.length"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "xx[i].length"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "xx[0].length"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "sum = xx[i][j]"
+        }
+      ],
+      "inputName": "Q108",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "To iterate through the columns of a specific row in a two-dimensional array, you use the length of that specific row, which is accessed via `arrayName[rowIndex].length` (in this case `xx[i].length`)."
+    },
+    {
+      "id": "extract-combined-1777734536329-109",
+      "number": "110",
+      "text": "Analyze the following code:\n\n```java\npublic static void main(String[] args) {\n    for (int i = 1; i < 10; i++) {\n        int k = 3;\n        System.out.println(k);\n    }\n    System.out.println(\"k is \" + k);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code prints k is 0."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code has a syntax error because k is not defined in System.out.println(\"k is \" + k)."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The code prints k is 3."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The code prints k is 2."
+        }
+      ],
+      "inputName": "Q109",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The variable `k` is declared inside the scope of the `for` loop. It cannot be accessed outside of the curly braces where it was defined. Therefore, the final print statement will cause a compiler error."
+    },
+    {
+      "id": "extract-combined-1777734536329-110",
+      "number": "111",
+      "text": "What is the value of `z` after executing the following code?\n\n```java\nint x = 20;\nint y = 10;\ndouble z = y / x;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0.5"
+        }
+      ],
+      "inputName": "Q110",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Since both `x` and `y` are of type `int`, the operation `y / x` performs integer division. `10 / 20` results in `0`. This integer result is then implicitly cast to a `double` when assigned to `z`, resulting in `0.0`."
+    },
+    {
+      "id": "extract-combined-1777734536329-111",
+      "number": "112",
+      "text": "What is the result of the following expression in Java?\n\n```java\n(int)Math.random()\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Always 0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Always 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A random integer between 0 and 10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A compiler error"
+        }
+      ],
+      "inputName": "Q111",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "`Math.random()` returns a `double` value in the range `[0.0, 1.0)`. Casting this to an `int` truncates the decimal portion. Since the maximum possible value is less than 1.0, any result from 0.0 to 0.999... truncated to an integer will always be 0."
+    },
+    {
+      "id": "extract-combined-1777734536329-112",
+      "number": "113",
+      "text": "What is the output of the following code fragment?\n\n```java\nint[][] x = {{1, 2, 3, 4, 5}, {6, 7, 7}, {8, 9, 10, 11}, {12}};\nint sum = 0;\nfor (int i = 0; i < x.length; ++i) {\n    for (int j = 1; j < x[i].length; ++j) {\n        if ((i == 2) || (j == 3))\n            continue;\n        sum += x[i][j];\n    }\n}\nSystem.out.println(sum);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "20"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No correct answer"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "24"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "10"
+        }
+      ],
+      "inputName": "Q112",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Let's trace the nested loops:\n- When `i=0`: `x[0]` is `{1, 2, 3, 4, 5}`. Inner loop `j` starts at 1. Values at indices 1, 2, and 4 are added (j=3 is skipped due to `continue`). `sum = 2 + 3 + 5 = 10`.\n- When `i=1`: `x[1]` is `{6, 7, 7}`. `j` goes from 1 to 2. `sum = 10 + 7 + 7 = 24`.\n- When `i=2`: The condition `i == 2` is true, so `continue` executes for every inner iteration. `sum` remains 24.\n- When `i=3`: `x[3].length` is 1. The inner loop condition `j < 1` is false immediately.\nFinal output is 24."
+    },
+    {
+      "id": "extract-combined-1777734536329-113",
+      "number": "114",
+      "text": "What is the output of the following code?\n\n```java\npublic static void main(String[] args) {\n    String str = new String(\"History of Jordan\");\n    String str2 = \"\";\n    for (int i = 0; i < str.length() / 2 - 2; i++) {\n        str2 += str.substring(i, i + 1);\n    }\n    System.out.println(str2);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Histor"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Jordan"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "History"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "History of"
+        }
+      ],
+      "inputName": "Q113",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. `str.length()` is 17.\n2. The loop limit is `17 / 2 - 2`, which is `8 - 2 = 6`.\n3. The loop runs from `i = 0` to `i = 5`.\n4. `str.substring(i, i + 1)` takes one character at a time from index 0 to 5.\n5. The characters are 'H', 'i', 's', 't', 'o', 'r', resulting in \"Histor\"."
+    },
+    {
+      "id": "extract-combined-1777734536329-114",
+      "number": "115",
+      "text": "What is the output of the following code?\n\n```java\npublic static void main(String args[]) {\n    int i = 1, j = 0;\n    switch (i) {\n        case 2 :\n            j += 6;\n        case 4 :\n            j += 1;\n        default :\n            j += 2;\n        case 0 :\n            j += 4;\n    }\n    System.out.println(\"j = \" + j);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "j=2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No correct answer"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "j=6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "j=0"
+        }
+      ],
+      "inputName": "Q114",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "1. `i` is initialized to 1.\n2. In the `switch` block, there is no `case 1`, so execution jumps to the `default` label.\n3. `j += 2` is executed, so `j` becomes 2.\n4. Because there are no `break` statements, execution falls through to `case 0`.\n5. `j += 4` is executed, so `j` becomes 6.\n6. The final output is \"j = 6\"."
+    },
+    {
+      "id": "extract-combined-1777734536329-115",
+      "number": "116",
+      "text": "Based on the code below, what is the output for statement #1?\n\n```java\nclass ClassA {\n    private int x;\n    public int y;\n    public static int z = 0;\n    ClassA(int n1, int n2) {\n        x = n1; y = n2; z += 2;\n        System.out.println(z);\n    }\n    private void Method1() {\n        x = 6;\n        System.out.println(x);\n    }\n    public static void Method2(int n) {\n        z += 2;\n        System.out.println(z);\n    }\n    void Method3() {\n        y = x; z += 3; Method1();\n    }\n    public void method3(ClassA n3) {\n        System.out.println(z);\n        n3.x = 5; n3.y = 6; n3.z = 1; z++;\n    }\n}\n\n// Main execution statements:\nClassA ref1 = new ClassA(2, 9); // #1\nClassA ref2 = new ClassA(1, 8); // #2\nref2.Method2(8);               // #3\nref1.Method1();                // #4 \nSystem.out.println(ref2.x);    // #5\nSystem.out.println(ref2.y);    // #6\nSystem.out.println(ClassA.y);  // #7\nref1.Method3();                // #8\nref2.method3(ref1);            // #9\nSystem.out.println(ClassA.z);  // #10\nSystem.out.println(ref1.y);    // #11\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q115",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Statement #1 instantiates `ClassA`. In the constructor, the static variable `z` (initially 0) is incremented by 2 and printed. Output is 2."
+    },
+    {
+      "id": "extract-combined-1777734536329-116",
+      "number": "117",
+      "text": "Based on the picture from question 17, what is the output for statement #2?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q116",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Statement #2 instantiates another `ClassA`. Static variable `z` is currently 2. The constructor increments it by 2, making it 4, and prints it. Output is 4."
+    },
+    {
+      "id": "extract-combined-1777734536329-117",
+      "number": "118",
+      "text": "Based on the picture from question 17, what is the output for statement #8?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q117",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Statement #8 calls `ref1.Method3()`. Inside `Method3`, `Method1()` is invoked. `Method1` contains the statement `System.out.println(x)` after setting `x` to 6. Thus, the output for this call is 6."
+    },
+    {
+      "id": "extract-combined-1777734536329-118",
+      "number": "119",
+      "text": "Based on the picture from question 17, what is the output for statement #9?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "8"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "7"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q118",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Statement #9 calls `ref2.method3(ref1)`. The first line in `method3` prints the static variable `z`. Prior to this, `z` was 6 (from #3) and was incremented by 3 during the execution of `Method3` in statement #8, resulting in 9. So, it prints 9."
+    },
+    {
+      "id": "extract-combined-1777734536329-119",
+      "number": "120",
+      "text": "Based on the picture from question 17, what is the output for statement #10?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "9"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q119",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Statement #10 prints the value of `ClassA.z`. During the execution of statement #9, the code `n3.z = 1` sets the static variable `z` to 1, and then `z++` increments it to 2. Therefore, statement #10 prints 2."
+    },
+    {
+      "id": "extract-combined-1777734536329-120",
+      "number": "121",
+      "text": "What is the output of the following code?\n\n```java\npublic static void main(String[] args) {\n    String str = new String(\"Hello\");\n    for (int i = str.length() - 1; i > 0; i -= 2) {\n        str = str.replace(str.charAt(i), 'm');\n    }\n    System.out.println(str);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Hellm"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Hemlm"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Hemo"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Hemmm"
+        }
+      ],
+      "inputName": "Q120",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The loop iterates twice with index `i` values of 4 and 2:\n1. When `i = 4`, `str.charAt(4)` is 'o'. `str.replace('o', 'm')` results in \"Hellm\".\n2. When `i = 2`, `str.charAt(2)` is 'l'. `str.replace('l', 'm')` replaces all occurrences of 'l', resulting in \"Hemmm\".\nThe loop then decrements `i` to 0, which fails the condition `i > 0`."
+    },
+    {
+      "id": "extract-combined-1777734536329-121",
+      "number": "122",
+      "text": "What is the output of the following code?\n\n```java\npublic static void main(String[] args) {\n    int arr[] = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};\n    int n = 6;\n    n = arr[arr[n] / 2];\n    System.out.print(n);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q121",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "First, `arr[n]` where `n=6` is `arr[6]`, which equals 6. Then, the expression becomes `arr[6 / 2]`, which is `arr[3]`. Looking at the array, `arr[3]` is 3. Thus, 3 is printed."
+    },
+    {
+      "id": "extract-combined-1777734536329-122",
+      "number": "123",
+      "text": "In java, array elements are stored in _______ memory locations.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Sequential & Random"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Random"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No correct answer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Sequential"
+        }
+      ],
+      "inputName": "Q122",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In Java, while arrays are objects allocated on the heap, the elements within the array are stored in contiguous, sequential memory locations."
+    },
+    {
+      "id": "extract-combined-1777734536329-123",
+      "number": "124",
+      "text": "The classes below are used for Questions from 17-27. What is the output for statement #1?\n\n```java\npublic static void main(String[] args) {\n    ClassA ref1 = new ClassA(2, 9); // #1\n    ClassA ref2 = new ClassA(1, 8); // #2\n    ref2.Method2(8); // #3\n    ref1.Method10(); // #4\n    // ... other statements\n}\n\nclass ClassA {\n    private int x;\n    public int y;\n    public static int z = 0;\n    \n    ClassA(int n1, int n2) {\n        x = n1; y = n2; z += 2;\n        System.out.println(z);\n    }\n    \n    private void Method10() {\n        x = 6;\n        System.out.println(x);\n    }\n    \n    public static void Method2(int n2) {\n        z += 2;\n        System.out.println(z);\n    }\n    \n    void Method3() {\n        y = x;\n        z += 3;\n        Method10();\n    }\n    \n    public void method3(ClassA n3) {\n        System.out.println(z);\n        n3.x = 5; n3.y = 6; n3.z = 1;\n        z++;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q123",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Statement #1 instantiates `ClassA`. The static variable `z` begins at 0. The constructor `ClassA(2, 9)` executes `z += 2`, changing `z` to 2, and then calls `System.out.println(z)`, which prints 2."
+    },
+    {
+      "id": "extract-combined-1777734536329-124",
+      "number": "125",
+      "text": "Based on the code provided in question 17: What is the output for statement #2?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q124",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Statement #2 instantiates another `ClassA` object. Since `z` is a static variable, it retains the value 2 from the previous instantiation. The constructor executes `z += 2`, changing `z` to 4, and prints 4."
+    },
+    {
+      "id": "extract-combined-1777734536329-125",
+      "number": "126",
+      "text": "Based on the code provided in question 17: What is the output for statement #3?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Error"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q125",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Statement #3 calls the static method `Method2`. The static variable `z` is currently 4. `Method2` executes `z += 2`, updating `z` to 6, and prints 6."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 126
+}

@@ -1,0 +1,4039 @@
+{
+  "id": "extract-combined-1777733652940",
+  "label": "Combined Batch (9 files)",
+  "params": {
+    "file": "Multiple Files",
+    "type": "visual_extractor",
+    "chapter": "2"
+  },
+  "title": "Second",
+  "questions": [
+    {
+      "id": "extract-combined-1777733652940-0",
+      "number": "1",
+      "text": "Which of the following declares an array of integers named number?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "int number;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "int [] number;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "int new number [];"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "int number = new [];"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, an array is declared using the type followed by square brackets and the variable name, such as `int [] number;` or `int number[];`."
+    },
+    {
+      "id": "extract-combined-1777733652940-1",
+      "number": "2",
+      "text": "What is the output of the following code snippet?\n\n```java\nint [] fun = new int [5];\nfun[0]=1;\nfun[1]=2;\nfun[2]=3;\nfun[3]=4;\nfun[4]=5;\nint j=3;\nSystem.out.println(fun[j-1]);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The variable `j` is 3, so `fun[j-1]` evaluates to `fun[2]`. Array indexing starts at 0, so `fun[2]` is the third element, which was assigned the value 3."
+    },
+    {
+      "id": "extract-combined-1777733652940-2",
+      "number": "3",
+      "text": "What is the output of the following code snippet?\n\n```java\nint [] items={2,7,3,5,8,9};\nint funny=items[0];\nfor(int i=0;i<items.length;i++)\n{\n    if(items[i]>funny)\n        funny = items[i];\n}\nSystem.out.print(funny);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "9"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "273589"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "235789"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "This code iterates through the array and maintains the variable `funny` as the maximum value found so far. The largest value in the array `{2, 7, 3, 5, 8, 9}` is 9."
+    },
+    {
+      "id": "extract-combined-1777733652940-3",
+      "number": "4",
+      "text": "What is the length of this array?\n\n```java\ndouble [] stuff={1.5,2.5,3.5,4.5,5.5,6.5};\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "6"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The array `stuff` contains 6 elements: 1.5, 2.5, 3.5, 4.5, 5.5, and 6.5."
+    },
+    {
+      "id": "extract-combined-1777733652940-4",
+      "number": "5",
+      "text": "What is the output of the following program?\n\n```java\npublic static void main(String [] args)\n{\n    int a=5;\n    System.out.println(cube(a));\n}\n\nstatic int cube(int theNum)\n{\n    return theNum*theNum*theNum;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "125"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "25"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "555"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `cube` method returns the cube of the input integer. For an input of 5, the calculation is \\( 5 \\times 5 \\times 5 = 125 \\)."
+    },
+    {
+      "id": "extract-combined-1777733652940-5",
+      "number": "6",
+      "text": "What is the output of the following program?\n\n```java\npublic static void main(String [] s)\n{\n    int x =6,y=3,z=12;\n    int w=method1(x,y,z);\n    System.out.print(\"w=\"+w);\n}\n\npublic static int method1(int y,int z,int x)\n{\n    return (x*z)/y;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "24"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "w=6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "36"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "w=24"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "When `method1(x, y, z)` is called with `x=6`, `y=3`, and `z=12`, the parameters map as follows: parameter `y` gets 6, parameter `z` gets 3, and parameter `x` gets 12. The calculation is `(x*z)/y` -> `(12*3)/6` = 36/6 = 6. The main method then prints \"w=\" followed by the result."
+    },
+    {
+      "id": "extract-combined-1777733652940-6",
+      "number": "7",
+      "text": "What is the output of the following program?\n\n```java\nstatic boolean oka(char c)\n{\n    System.out.print(c+\" \");\n    return true;\n}\n\npublic static void main(String []args)\n{\n    int i=0;\n    for(oka('a'); i < 2 && oka('B'); oka('C'))\n    {\n        i++;\n        oka('D');\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "a B D C B D C "
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "a B D C B D "
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "a B D B D "
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A B C D A B C D"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Tracing the loop: \n1. Init: `oka('a')` prints 'a '. \n2. Cond check 1: `i < 2` (0 < 2) is true, `oka('B')` prints 'B '. \n3. Body: `i` becomes 1, `oka('D')` prints 'D '. \n4. Update: `oka('C')` prints 'C '. \n5. Cond check 2: `i < 2` (1 < 2) is true, `oka('B')` prints 'B '. \n6. Body: `i` becomes 2, `oka('D')` prints 'D '. \n7. Update: `oka('C')` prints 'C '. \n8. Cond check 3: `i < 2` (2 < 2) is false, loop terminates. \nResult: 'a B D C B D C '."
+    },
+    {
+      "id": "extract-combined-1777733652940-7",
+      "number": "8",
+      "text": "What is the output of the following Java code?\n\n```java\npublic static void main(String [] args)\n{\n    int x, first, second;\n    x = 42;\n    first = getFirstDigit(x);\n    second = getSecondDigit(x);\n    System.out.print(second);\n    System.out.print(first);\n}\n\npublic static int getFirstDigit(int value)\n{\n    return value / 10;\n}\n\npublic static int getSecondDigit(int value)\n{\n    return value % 10;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "42"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "24"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4 2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2 4"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The method `getFirstDigit(42)` returns \\( 42 / 10 = 4 \\). The method `getSecondDigit(42)` returns \\( 42 \\% 10 = 2 \\). The code prints `second` (2) and then `first` (4), resulting in `24`."
+    },
+    {
+      "id": "extract-combined-1777733652940-8",
+      "number": "9",
+      "text": "What is the output of the following code?\n\n```java\npublic static void main(String [] args)\n{\n    int [] arr = {3, 1, 8, 7};\n    for (int i = 0; i < arr.length; i++)\n    {\n        int index = arr.length - i - 1;\n        int t = arr[i];\n        arr[i] = arr[index];\n        arr[index] = t;\n    }\n    for (int i = 0; i < arr.length; i++)\n        System.out.println(arr[i]);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "7\n8\n1\n3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3\n1\n8\n7"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "7\n1\n8\n3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3\n8\n1\n7"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The loop iterates through the entire length of the array. In the first half, it swaps elements to reverse them (making it `{7, 8, 1, 3}`). In the second half, it swaps them back to their original positions (returning it to `{3, 1, 8, 7}`)."
+    },
+    {
+      "id": "extract-combined-1777733652940-9",
+      "number": "10",
+      "text": "What is the output of the following code snippet?\n\n```java\npublic static void main(String [] args)\n{\n    int array_variable[] = new int [10];\n    for (int i = 0; i < 10; i++)\n    {\n        array_variable[i] = i;\n        System.out.print(array_variable[i] + \" \");\n        i++;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0 1 2 3 4 5 6 7 8 9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1 3 5 7 9"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0 2 4 6 8"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0 2 4 6 8 10"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The variable `i` is incremented twice in each iteration: once inside the block (`i++`) and once by the loop header (`i++`). Thus, `i` takes the values 0, 2, 4, 6, and 8 before the condition `i < 10` becomes false (when `i` reaches 10)."
+    },
+    {
+      "id": "extract-combined-1777733652940-10",
+      "number": "11",
+      "text": "Consider the following Java code. What will be printed?\n\n```java\npublic static void main(String [] args)\n{\n    int arr [] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};\n    int n = 6;\n    n = arr[arr[n] / 2];\n    System.out.println(arr[n] / 2);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "1. `arr[n]` is `arr[6]`, which is 6.\n2. `6 / 2` is 3.\n3. `n = arr[3]`, which is 3.\n4. `arr[n] / 2` is `arr[3] / 2`, which is `3 / 2 = 1` (integer division)."
+    },
+    {
+      "id": "extract-combined-1777733652940-11",
+      "number": "12",
+      "text": "What is the output of the following program?\n\n```java\npublic static int minimum(int[] ar)\n{\n    int min = ar[0];\n    for(int i = 1; i < ar.length; i++)\n    {\n        if(ar[i] < min)\n            min = ar[i];\n        return min;\n    }\n    return min;\n}\n\npublic static void main (String[] args)\n{\n    int []arr = {3, 6, 80, -3, 9, -3};\n    System.out.println(minimum(arr));\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "-3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In the `minimum` method, the `return min;` statement is located inside the `for` loop. Therefore, the function returns immediately after the first comparison (when `i=1`). Since `ar[1]` (6) is not less than `min` (3), the value 3 is returned."
+    },
+    {
+      "id": "extract-combined-1777733652940-12",
+      "number": "13",
+      "text": "Which method from the `java.util.Arrays` class is used to sort a numeric array in ascending order?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Arrays.order()"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Arrays.sort()"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Arrays.arrange()"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Arrays.numericSort()"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `Arrays.sort()` method is the standard library method in Java to sort arrays."
+    },
+    {
+      "id": "extract-combined-1777733652940-13",
+      "number": "14",
+      "text": "To reverse an integer mathematically (e.g., 3456 to 6543), which pair of operators is essential to extract and remove the last digit in a loop?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "+ and -"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "* and /"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "% 10 and / 10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "pow() and sqrt()"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Using modulo 10 (`% 10`) extracts the last digit, and using integer division by 10 (`/ 10`) removes the last digit from the number."
+    },
+    {
+      "id": "extract-combined-1777733652940-14",
+      "number": "15",
+      "text": "When calculating the average of student marks stored in an integer array `int[] marks`, what logic should be used?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Sum all elements and divide by `marks.length`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Multiply all elements and divide by `marks.length`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Subtract the minimum from the maximum and divide by 2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Find the middle element of the sorted array"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The average is defined as the sum of all values divided by the count of those values."
+    },
+    {
+      "id": "extract-combined-1777733652940-15",
+      "number": "16",
+      "text": "What is the output of the following Java statement?\n```java\nSystem.out.println( Math.rint (2.5) + Math.ceil(-3.7) )\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "-1.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "-2.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "-3.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "-2.8"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. `Math.rint(2.5)` returns the double value closest to the argument that is equal to a mathematical integer. If two integers are equally close, the result is the even integer. Since 2.0 and 3.0 are equidistant, it returns `2.0` (even).\n2. `Math.ceil(-3.7)` returns the smallest double value that is greater than or equal to the argument and is equal to a mathematical integer. For -3.7, this is `-3.0`.\n3. `2.0 + (-3.0) = -1.0`."
+    },
+    {
+      "id": "extract-combined-1777733652940-16",
+      "number": "17",
+      "text": "What is the output of the following code?\n```java\nint x = 20;\nString str = \"Hello Java\";\nSystem.out.printf(\"print %s, %d times + %d\", str, 10, x);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "print Hello Java times"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "print Hello Java, %d times + %d"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "print Hello Java, 10 times + 20"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `printf` method uses format specifiers. `%s` is replaced by the String `str` (\"Hello Java\"), the first `%d` is replaced by the integer `10`, and the second `%d` is replaced by the value of `x` (20). The resulting string is \"print Hello Java, 10 times + 20\"."
+    },
+    {
+      "id": "extract-combined-1777733652940-17",
+      "number": "18",
+      "text": "What is the output of the following code?\n```java\npublic static void main(String[] args) {\n    double [] B = {1,2,3,4};\n    fun (B,5);\n    System.out.print(B[0]+B[1] + \" \");\n}\n\npublic static void fun(double[] A, int s) {\n    for (int c = 0; c < A.length; c++) {\n        A[c] = s;\n    }\n    System.out.print(A[1] + A[2]+ \" \");\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3 10"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10.0 10.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3.0 10.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "1. In `main`, array `B` is initialized with values {1.0, 2.0, 3.0, 4.0}.\n2. `fun(B, 5)` is called. Since arrays are passed by reference in Java, modifications to `A` in `fun` affect `B` in `main`.\n3. The loop in `fun` sets every element in the array to `5.0`. The array now contains {5.0, 5.0, 5.0, 5.0}.\n4. `fun` prints `A[1] + A[2]` (5.0 + 5.0 = 10.0) followed by a space.\n5. Execution returns to `main`, which prints `B[0] + B[1]` (5.0 + 5.0 = 10.0) followed by a space.\n6. Total output: `10.0 10.0 `."
+    },
+    {
+      "id": "extract-combined-1777733652940-18",
+      "number": "19",
+      "text": "What is the output of the following code?\n```java\npublic static void main(String[] args) {\n    System.out.println (yy ( yy ( yy( 3 ) ) ) );\n}\n\npublic static int yy(int a){\n    return a*2;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "No correct answer"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "24"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "27"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "12"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The method `yy` is called nested three times:\n1. `yy(3)` returns \\( 3 \\times 2 = 6 \\).\n2. `yy(6)` returns \\( 6 \\times 2 = 12 \\).\n3. `yy(12)` returns \\( 12 \\times 2 = 24 \\).\nFinally, 24 is printed."
+    },
+    {
+      "id": "extract-combined-1777733652940-19",
+      "number": "20",
+      "text": "Consider a program that fills an array A with a random sequence of 0s and 1s. Then a method fills another array B with the number of occurrences of 0 and 1 in A. What is the correct missing statement (C) to achieve this?\n\n```java\npublic static void main(String[] args) {\n    int [] A = new int [10];\n    int [] B = new int [2];\n    // Assume loop (A) fills A with 0s and 1s\n    fun (A,B);\n    for (int c = 0; c < B.length; c++) {\n        System.out.println(B[c]);\n    }\n}\n\npublic static void fun(int[] A, int[] B) {\n    for (int c = 0; c < A.length; c++) {\n        // ---(C)\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A[B[c]]++;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "B[A[c]]++;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "B[c]++;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct Answer"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "To count the frequency of values, we use the value of the element in array `A` as the index for array `B`. Since `A` contains only 0s and 1s, and `B` has a length of 2, the statement `B[A[c]]++` increments the count at index 0 if `A[c]` is 0, or at index 1 if `A[c]` is 1."
+    },
+    {
+      "id": "extract-combined-1777733652940-20",
+      "number": "21",
+      "text": "What is the output of the following code snippet?\n\n```java\nint [] A = new int [5];\nint [] B = new int [5];\nfor (int i = 0; i < A.length; i++)\n    A[i] = i;\nSystem.arraycopy(A, 2, B, 1, 2);\nSystem.out.println(B[0] + B[1] + B[2] + B[3] + B[4]);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "7"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "1. Array `A` is initialized and filled with values: `[0, 1, 2, 3, 4]`.\n2. Array `B` is initialized as `[0, 0, 0, 0, 0]`.\n3. `System.arraycopy(A, 2, B, 1, 2)` copies 2 elements from `A` starting at index 2 (`A[2]=2`, `A[3]=3`) into `B` starting at index 1.\n4. Array `B` becomes: `[0, 2, 3, 0, 0]`.\n5. The sum is `0 + 2 + 3 + 0 + 0 = 5`."
+    },
+    {
+      "id": "extract-combined-1777733652940-21",
+      "number": "22",
+      "text": "Consider the following code snippet inside a class:\n\n```java\npublic static void main(String[] args) {\n    double x = fun(1.0, 2);\n}\n```\n\nWhich of the following is a possible header for the method `fun`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "public static void fun (double x, double y)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "public static int fun (double x, double y)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No correct answer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "public static double fun (int x, double y)"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The call `fun(1.0, 2)` passes a `double` and an `int`. \n- Option A is incorrect because the return type is `void`, so it cannot be assigned to `double x`.\n- Option B is correct because `2` (int) can be promoted to `double` for the parameter, and the `int` return value can be automatically promoted to `double` for assignment to `x`.\n- Option D is incorrect because the first argument `1.0` is a `double` and cannot be automatically narrowed to an `int` parameter."
+    },
+    {
+      "id": "extract-combined-1777733652940-22",
+      "number": "23",
+      "text": "Consider a program that fills an array `A` with 10 random numbers (either 0 or 1). Then a method fills another array `B` with the number of occurrences of 0 and 1 in `A`. Identify the correct code for statement (A) in the following snippet:\n\n```java\npublic static void main(String[] args) { \n    int [] A = new int [10];\n    int [] B = new int [2]; \n    for (int i = 0; i < A.length; i++) \n        // (A) - MISSING CODE\n    fun(A, B); \n    for (int c = 0; c < B.length; c++) {\n        System.out.println(B[c]);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "B[i] = (int) Math.random() * 2;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "B[i] = (int) Math.random() * 1;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A[i] = (int) (1 + Math.random() * 2);"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A[i] = (int) (Math.random() * 2);"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "`Math.random()` returns a double in the range [0.0, 1.0). Multiplying by 2 gives [0.0, 2.0). Casting to `(int)` results in either 0 or 1. This must be assigned to array `A` to initialize the data."
+    },
+    {
+      "id": "extract-combined-1777733652940-23",
+      "number": "24",
+      "text": "Function overloading refers to several functions with different names but the same set of parameters.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "false"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "true"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Only true if they are in different classes"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Only true if return types are different"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Function overloading occurs when multiple methods in the same class have the **same name** but **different parameters** (signature). The statement describes the opposite."
+    },
+    {
+      "id": "extract-combined-1777733652940-24",
+      "number": "25",
+      "text": "What is the result of executing the following code?\n\n```java\nint [] b = new int [5]; \nfor (int i = 0; i <= 5; i++) \n    b[i] = 1;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Syntax error"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Run time error"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Logical error"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The array `b` has a length of 5, meaning valid indices are 0, 1, 2, 3, and 4. The loop condition `i <= 5` causes the code to attempt to access `b[5]`, which throws an `ArrayIndexOutOfBoundsException` at runtime."
+    },
+    {
+      "id": "extract-combined-1777733652940-25",
+      "number": "26",
+      "text": "What is the output of the following code?\n\n```java\nint sum = 0;\nint [] Arr = new int [5];\nfor (int i = 0; i < 5; i++)\n    Arr[i] = 2 * i - 3;\nfor (int i = 4; i >= 0; i--)\n    sum += Arr[i];\nSystem.out.println(sum);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "7"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Let's trace the code:\n1. The first loop populates the array `Arr` of size 5:\n   - \\( i = 0 \\implies Arr[0] = 2(0) - 3 = -3 \\)\n   - \\( i = 1 \\implies Arr[1] = 2(1) - 3 = -1 \\)\n   - \\( i = 2 \\implies Arr[2] = 2(2) - 3 = 1 \\)\n   - \\( i = 3 \\implies Arr[3] = 2(3) - 3 = 3 \\)\n   - \\( i = 4 \\implies Arr[4] = 2(4) - 3 = 5 \\)\n2. The second loop iterates through the array from index 4 down to 0 and accumulates the values into `sum`:\n   - \\( sum = 5 + 3 + 1 + (-1) + (-3) = 5 \\)\n3. Finally, `System.out.println(sum)` outputs 5."
+    },
+    {
+      "id": "extract-combined-1777733652940-26",
+      "number": "27",
+      "text": "What is the output of the following code?\n```java\nint x[]={1,2,3};\nint y[]={4,5,5,2,2,7};\n\nSystem.out.print(x[0]+ y[5]);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "8"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "11"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, array indexing starts at 0. \n- \\( x[0] \\) refers to the first element of array \\( x \\), which is 1.\n- \\( y[5] \\) refers to the sixth element of array \\( y \\), which is 7.\n- The sum is \\( 1 + 7 = 8 \\)."
+    },
+    {
+      "id": "extract-combined-1777733652940-27",
+      "number": "28",
+      "text": "What is the output of the following code?\n```java\nint[] a1 = { 3, 2, 1 };\nint[] a2 = { 4, 5, 6 };\na1 = a2;\na1[0] = 4;\nSystem.out.print(a1[0] + a2[0] );\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "7"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "8"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "9"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Arrays are reference types in Java. When `a1 = a2;` is executed, both variables point to the same array object `{ 4, 5, 6 }`. \n- `a1[0] = 4;` modifies the first element of that shared array (it was already 4).\n- `a1[0]` is 4 and `a2[0]` is 4. The sum is \\( 4 + 4 = 8 \\)."
+    },
+    {
+      "id": "extract-combined-1777733652940-28",
+      "number": "29",
+      "text": "What is the output of the following code?\n```java\nint x[] = {5,9,7};\nfor (int i=1; i<x.length; i++)\n    System.out.print(x[i]/2);\nSystem.out.print(i);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "433"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "43"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Compilation error"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "543"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, when a variable is declared in the initialization part of a `for` loop (like `int i=1`), its scope is limited to the loop block. Since there are no curly braces, only the first `System.out.print` statement is inside the loop. The second `System.out.print(i);` is outside the loop, where `i` is no longer defined, causing a compilation error."
+    },
+    {
+      "id": "extract-combined-1777733652940-29",
+      "number": "30",
+      "text": "What is the output of the following code?\n```java\nclass array_output {\n    public static void main(String args[]) {\n        int array_variable [] = new int[10];\n        for (int i = 0; i < 10; ++i) {\n            array_variable[i] = i;\n            System.out.print(array_variable[i] + \" \");\n            i++;\n        }\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0 1 2 3 4 5 6 7 8 9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0 2 4 6 8"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1 3 5 7 9"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0 2 4 6 8 10"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The loop increments `i` twice per iteration: once inside the block (`i++`) and once in the for-loop header (`++i`). \n- Iteration 1: `i=0`, prints \"0 \", `i` becomes 1. Loop header makes `i=2`.\n- Iteration 2: `i=2`, prints \"2 \", `i` becomes 3. Loop header makes `i=4`.\n- This continues until `i` is 10, skipping odd numbers."
+    },
+    {
+      "id": "extract-combined-1777733652940-30",
+      "number": "31",
+      "text": "What is the output of this program?\n```java\nclass evaluate {\n    public static void main(String args[]) {\n        int arr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};\n        int n = 6;\n        n = arr[arr[n] / 2];\n        System.out.println(arr[n] / 2);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "1. `n = 6`.\n2. `arr[n]` is `arr[6]`, which is 6.\n3. `arr[6] / 2` is 3.\n4. `n = arr[3]`, which is 3.\n5. `System.out.println(arr[3] / 2);` calculates `3 / 2`. In integer division, this is 1."
+    },
+    {
+      "id": "extract-combined-1777733652940-31",
+      "number": "32",
+      "text": "Which code block correctly implements a method `Increment(int[] a)` that adds 1 to each element of the array and then prints them?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\npublic static void Increment(int[] a) {\n    for(int i = 0; i < a.length; i++) {\n        a[i]++;\n        System.out.print(a[i] + \" \");\n    }\n}\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\npublic static void Increment(int[] a) {\n    for(int i = 0; i < a.length; i++) {\n        a[i] + 1;\n        System.out.print(a[i]);\n    }\n}\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\npublic static void Increment(int[] a) {\n    a++;\n    System.out.print(a);\n}\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\npublic static void Increment(int[] a) {\n    for(int x : a) {\n        x++;\n        System.out.print(x + \" \");\n    }\n}\n```"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Option A uses a standard for-loop to access each index, increment the value, and print it. Option D uses an enhanced for-loop, which increments a copy of the value (`x`), not the actual array element."
+    },
+    {
+      "id": "extract-combined-1777733652940-32",
+      "number": "33",
+      "text": "Which method implementation correctly counts and returns the number of odd integers in an array `a`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\nint countOdd(int[] a) {\n    int count = 0;\n    for(int x : a) {\n        if(x % 2 != 0) count++;\n    }\n    return count;\n}\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\nint countOdd(int[] a) {\n    int count = 0;\n    for(int i = 0; i < a.length; i++) {\n        if(a[i] / 2 == 0) count++;\n    }\n    return count;\n}\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\nint countOdd(int[] a) {\n    return a.length % 2;\n}\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "```java\nint countOdd(int[] a) {\n    int count = 0;\n    while(a.length > 0) count++;\n    return count;\n}\n```"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Odd numbers are those that have a remainder when divided by 2. The modulo operator `%` checks this remainder. `x % 2 != 0` correctly identifies odd numbers."
+    },
+    {
+      "id": "extract-combined-1777733652940-33",
+      "number": "34",
+      "text": "Which logic represents a method `printPrimes(int[] a)` that correctly iterates through an array and prints only the prime numbers?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Iterate through array; for each element `n > 1`, check if any number from 2 to `sqrt(n)` divides `n` perfectly. If none do, print `n`."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Iterate through array; print every element `n` where `n % 2 != 0`."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Iterate through array; print every element `n` where `n % n == 0`."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Iterate through array; print all elements that are greater than 1."
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself. Option A describes the standard trial division algorithm for primality testing."
+    },
+    {
+      "id": "extract-combined-1777733652940-34",
+      "number": "35",
+      "text": "What is the output of the following code?\n```java\npublic static void main(String[] args) {\n    double [] B = {1,2,3,4};\n    fun (B,5);\n    System.out.print(B[0]+B[1] + \" \");\n}\n\npublic static void fun(double[] A, int s) {\n    for (int c = 0; c < A.length; c++) {\n        A[c] = s;\n    }\n    System.out.print(A[1] + A[2]+ \" \");\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "3 10"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "10.0 10.0"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "3.0 10.0"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "2",
+      "explanation": "1. `fun(B, 5)` is called. Since arrays are passed by reference, `A` in the method refers to the same array as `B` in `main`.\n2. The loop in `fun` sets every element of the array to 5 (converted to 5.0).\n3. `fun` prints `A[1] + A[2]`, which is `5.0 + 5.0 = 10.0`.\n4. Control returns to `main`, which prints `B[0] + B[1]`, which is also `5.0 + 5.0 = 10.0`."
+    },
+    {
+      "id": "extract-combined-1777733652940-35",
+      "number": "36",
+      "text": "What is the result of executing the following code?\n```java\nint [] b = new int [5];\nfor (int i = 0; i <= 5; i++) \n    b[i] = 1;\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "Syntax error"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "Run time error"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "No error"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "Logical error"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "2",
+      "explanation": "The array `b` is initialized with size 5, meaning valid indices are 0, 1, 2, 3, and 4. The loop condition `i <= 5` causes the code to attempt to access `b[5]` during the last iteration. This results in an `ArrayIndexOutOfBoundsException` at runtime."
+    },
+    {
+      "id": "extract-combined-1777733652940-36",
+      "number": "37",
+      "text": "What is the output of the following statement?\n```java\nSystem.out.println( Math.rint (2.5) + Math.ceil(-3.7) )\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "-1.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "-2.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "-3.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "-2.8"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "`Math.rint(2.5)` returns the closest integer as a double; if two are equally close, it returns the even one, so it returns `2.0`. `Math.ceil(-3.7)` returns the smallest double greater than or equal to the argument, which is `-3.0`. The sum is `2.0 + (-3.0) = -1.0`."
+    },
+    {
+      "id": "extract-combined-1777733652940-37",
+      "number": "38",
+      "text": "Analyze the following code:\n```java\npublic class Test {\n  public static void main (String[] args){\n    int n=2;\n    xMethod(n);\n    System.out.println(\"n is \"+n);\n  }\n  public static void xMethod(int n){\n    n++;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "the code prints n is 3."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "syntax error."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "the code prints n is 1."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "the code prints n is 2."
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In Java, primitive types like `int` are passed by value. The changes made to `n` inside `xMethod` do not affect the variable `n` in the `main` method."
+    },
+    {
+      "id": "extract-combined-1777733652940-38",
+      "number": "39",
+      "text": "Consider a code segment where the following call is made: `double x = fun(1.0, 2);`. Which of the following is a possible valid header for the method `fun`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "public static void fun (double x, double y)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "public static int fun (double x, double y)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No correct answer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "public static double fun (int x, double y)"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Option B is valid because the arguments `(1.0, 2)` match `(double, double)` (the int 2 is promoted to double), and the return type `int` can be implicitly assigned to a variable of type `double`. Option A is invalid because it returns `void`. Option D is invalid because the double `1.0` cannot be implicitly narrowed to an `int`."
+    },
+    {
+      "id": "extract-combined-1777733652940-39",
+      "number": "40",
+      "text": "What is the output of the following code?\n```java\npublic static void f1(int a, int x)\n{\n  x+=2;\n  a+=2;\n}\npublic static void main (String[] args) {\n  int []ar={1,2,3,4};\n  f1(ar[2],ar[3]);\n  System.out.println(ar[2]+ar[3]);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "7"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "9"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "11"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Array elements passed as individual arguments to a method are passed by value. Changes to `a` and `x` inside `f1` do not modify the original array `ar`. Thus, `ar[2]` remains 3 and `ar[3]` remains 4. The sum is `3 + 4 = 7`."
+    },
+    {
+      "id": "extract-combined-1777733652940-40",
+      "number": "41",
+      "text": "What is the output of the following code:\n```java\nString obj = \"hello\";\nString obj1 = \"world\";\nString obj2 = \"hello\";\nSystem.out.println(obj.equals(obj2)+\" \"+obj.equals(obj2));\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "true true"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "false true"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "true false"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "false false"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `equals()` method compares the content of strings. Since `obj` and `obj2` both contain \"hello\", `obj.equals(obj2)` evaluates to `true`. Both calls in the print statement yield `true`."
+    },
+    {
+      "id": "extract-combined-1777733652940-41",
+      "number": "42",
+      "text": "Function overloading refers to several functions with different names but the same set of parameters.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "false"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "true"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "only if parameters are final"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "only for static methods"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Function overloading refers to multiple functions with the SAME name but DIFFERENT parameter lists. The statement provided is false."
+    },
+    {
+      "id": "extract-combined-1777733652940-42",
+      "number": "43",
+      "text": "What is the output of the following code?\n```java\npublic static void main (String [ ] args) {\n  System. out. printIn (yy ( yy (yy(3))));\n}\npublic static int yy(int a) {\n  return a * 2;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "NO correct answer"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "24"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "27"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "12"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The nested calls work as follows: `yy(3)` returns 6. Then `yy(6)` returns 12. Finally, `yy(12)` returns 24."
+    },
+    {
+      "id": "extract-combined-1777733652940-43",
+      "number": "44",
+      "text": "What is the output of the following code?\n```java\npublic static void main(String [] args ){\n  double [ ] B ={1,2,3,4};\n  fun (B, 5);\n  System. out. print (B [0] + B [1] + \" \")\n}\npublic static void fun (double[] A, int s){\n  for (int c =0; c < A. length; c++) {\n    A[c] = s ;\n  }\n  System. out. print (A [1] + a[2] + \" \");\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "310"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10.0 10.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3.0 10.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In the `fun` method, the code tries to access `a[2]`, but only `A` (uppercase) is declared as a parameter. Since Java is case-sensitive, this results in a compilation error. Therefore, the code has no valid output."
+    },
+    {
+      "id": "extract-combined-1777733652940-44",
+      "number": "45",
+      "text": "Analyze the following code:\n```java\nclass Test {\n  public static void main (String[] args){\n    System.out.println(xMethod( (double) 5 ) ) ;\n  }\n  public static int xMethod(int n) {\n    System.out.println( \" int \" ) ;\n    return n;\n  }\n  public static long xmethod ( long n){\n    System. out .println (\" long \");\n    return n;\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The program runs fine but displays things other than given in a and b."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The program displays int followed by 5."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The program does not compile."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The program displays long followed by 5."
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Java is case-sensitive. The main method calls `xMethod` with a `double` argument. The only method named `xMethod` (capital M) takes an `int`. A `double` cannot be implicitly converted to an `int`. The other method is named `xmethod` (lowercase m) and is not matched by the call. Thus, the code fails to compile."
+    },
+    {
+      "id": "extract-combined-1777733652940-45",
+      "number": "46",
+      "text": "What is the output of the following statement?\n```java\nSystem.out.print(Math.round(Math.rint(-4.5)));\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "-4"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "-5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "-4.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "-5.0"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "`Math.rint(-4.5)` returns the closest integer that is even when equidistant, which is `-4.0`. `Math.round(-4.0)` then returns the integer `-4`."
+    },
+    {
+      "id": "extract-combined-1777733652940-46",
+      "number": "47",
+      "text": "What is the output of the following code?\n\n```java\nSystem.out.print(Math.ceil(-2.1));\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "-2.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "-3.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "-2.1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2.0"
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `Math.ceil()` method rounds a number toward positive infinity. For `-2.1`, the smallest integer greater than or equal to `-2.1` is `-2.0`. Since the input is double, the output is also double."
+    },
+    {
+      "id": "extract-combined-1777733652940-47",
+      "number": "48",
+      "text": "Consider a program that fills an array `A` of a random number of 0 and 1. Then a method fills another array `B` with the number of occurrence of 0 and 1 in `A`. Fill the missing code for statement **C**.\n\n```java\npublic static void main(String[] args) {\n    int []A = new int [10];\n    int []B = new int [2];\n    for(int i=0; i<A.length ;i++) ........(A)\n    fun(A,B);\n    for(int c=0; c<B.length; c++) {\n        System.out.println(B[c]);\n    }\n}\n\npublic static void ........(B) {\n    for(int c=0; c<A.length; c++) {\n        ........(C)\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "A[B[C]]++;"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "B[A[C]]++;"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "B[C]++;"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "No correct answer."
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "2",
+      "explanation": "To count the occurrences, we use the value at array `A` as an index for array `B` and increment the value at that index. In the loop, `A[c]` will be either 0 or 1, so `B[A[c]]++` increments the count for that specific value."
+    },
+    {
+      "id": "extract-combined-1777733652940-48",
+      "number": "49",
+      "text": "What is the output of the following code?\n\n```java\nSystem.out.print(55+(int) Math.random()*55);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "55"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "110"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A random number between 55 and 110"
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, type casting `(int)` has a higher precedence than multiplication `*`. `Math.random()` returns a double in the range [0.0, 1.0). Casting it to an `int` always results in `0`. Therefore, the expression evaluates as `55 + (0 * 55)`, which is `55`."
+    },
+    {
+      "id": "extract-combined-1777733652940-49",
+      "number": "50",
+      "text": "Consider a program that fills an array `A` of a random number of 0 and 1. Then a method fills another array `B` with the number of occurrence of 0 and 1 in `A`. Fill the missing code for statement **A**.\n\n```java\npublic static void main(String[] args) {\n    int []A = new int [10];\n    int []B = new int [2];\n    for(int i=0; i<A.length ;i++) ........(A)\n    fun(A,B);\n    // ... code continues ...\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "B[i] = (int) Math.random()*2 ;"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "B[i] = (int) Math.random()*1 ;"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "A[i] = (int) (1+Math.random()*2) ;"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "A[i]= (int) (Math.random()*2);"
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "4",
+      "explanation": "To generate a random integer of either 0 or 1, we multiply `Math.random()` (range [0,1)) by 2 to get range [0,2) and then cast to `int`, resulting in either 0 or 1. This value must be stored in array `A`."
+    },
+    {
+      "id": "extract-combined-1777733652940-50",
+      "number": "51",
+      "text": "What is the output of the following code?\n\n```java\nSystem.out.println( Math.rint (2.5) + Math.ceil(-3.7) )\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "-1.0"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "-2.0"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "-3.0"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "-2.8"
+        }
+      ],
+      "inputName": "Q50",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "`Math.rint(2.5)` returns the closest integer value. If two integers are equally close (like 2 and 3 for 2.5), it returns the even one, which is `2.0`. `Math.ceil(-3.7)` rounds towards positive infinity, resulting in `-3.0`. The sum is `2.0 + (-3.0) = -1.0`."
+    },
+    {
+      "id": "extract-combined-1777733652940-51",
+      "number": "52",
+      "text": "What is the output of the following code?\n\n```java\npublic static void main(String[] args) {\n    System.out.println (yy ( yy ( yy( 3 ) ) ) );\n}\n\npublic static int yy(int a) {\n    return a*2;\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "No correct answer"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "24"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "27"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "12"
+        }
+      ],
+      "inputName": "Q51",
+      "inputType": "radio",
+      "correctAnswer": "2",
+      "explanation": "The function `yy` multiplies its input by 2. Executing nested calls: `yy(3)` = 6, then `yy(6)` = 12, then `yy(12)` = 24."
+    },
+    {
+      "id": "extract-combined-1777733652940-52",
+      "number": "53",
+      "text": "Consider a program that fills an array `A` of a random number of 0 and 1. Then a method fills another array `B` with the number of occurrence of 0 and 1 in `A`. Fill the missing code for statement **B**.\n\n```java\npublic static void main(String[] args) {\n    int []A = new int [10];\n    int []B = new int [2];\n    fun(A, B);\n}\n\npublic static void ........(B) {\n    // code ...\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "fun(int[] A, int[] B);"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "fun(int A, int B)"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "No correct Answer"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "fun(int[] A, int[] B)"
+        }
+      ],
+      "inputName": "Q52",
+      "inputType": "radio",
+      "correctAnswer": "4",
+      "explanation": "Statement B is a method header. Since the call is `fun(A, B)` where `A` and `B` are integer arrays (`int[]`), the header must define parameters of type `int[]`. Method headers do not end with a semicolon, making option 4 correct."
+    },
+    {
+      "id": "extract-combined-1777733652940-53",
+      "number": "54",
+      "text": "Consider the following code, a possible header for the method `fun` is:\n\n```java\ndouble x = fun(1.0, 2);\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "public static void fun (double x, double y)"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "public static int fun (double x, double y)"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "No correct answer"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "public static double fun (int x, double y)"
+        }
+      ],
+      "inputName": "Q53",
+      "inputType": "radio",
+      "correctAnswer": "2",
+      "explanation": "The call `fun(1.0, 2)` passes a `double` and an `int`. The return value is assigned to a `double`. Option 2 works because the `int` argument `2` can be implicitly promoted to `double`, and the `int` return type can be implicitly assigned to the `double` variable `x`. Option 1 is invalid (void), and option 4 is invalid because the double literal `1.0` cannot be implicitly passed to an `int` parameter."
+    },
+    {
+      "id": "extract-combined-1777733652940-54",
+      "number": "55",
+      "text": "Function overloading refers to several functions with different names but the same set of parameters.",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "false"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "true"
+        }
+      ],
+      "inputName": "Q54",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "Function overloading refers to multiple functions with the **same name** but **different sets of parameters** (different types, order, or count). The statement describes the opposite."
+    },
+    {
+      "id": "extract-combined-1777733652940-55",
+      "number": "56",
+      "text": "What is the output of the following code snippet?\n\n```java\nint x[] = {3, 6, 7, 9, 11, 2};\nint y[] = {4, 5, 6, 8};\nSystem.arraycopy(x, 3, y, 1, 3);\nfor(int i = 0; i < y.length; i++)\n    System.out.println(y[i]);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4\n9\n11\n2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4\n5\n6\n8"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3\n6\n7\n9"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "9\n11\n2\n8"
+        }
+      ],
+      "inputName": "Q55",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `System.arraycopy(src, srcPos, dest, destPos, length)` method copies `length` elements from the source array starting at `srcPos` to the destination array starting at `destPos`. Here, elements from `x` at index 3 (values 9, 11, 2) are copied into `y` starting at index 1. Thus, `y` changes from `{4, 5, 6, 8}` to `{4, 9, 11, 2}`."
+    },
+    {
+      "id": "extract-combined-1777733652940-56",
+      "number": "57",
+      "text": "What is the output of the following statements?\n\n```java\nSystem.out.println(Math.rint(5.5));\nSystem.out.println(Math.round(-6.5));\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6.0 and -7"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5.0 and -6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6.0 and -6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5.5 and -6.5"
+        }
+      ],
+      "inputName": "Q56",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`Math.rint(5.5)` returns the double value that is closest to 5.5; if two are equally close, it returns the even integer, which is `6.0`. `Math.round(-6.5)` works by adding 0.5 and taking the floor: \\(-6.5 + 0.5 = -6.0\\), which results in `-6`."
+    },
+    {
+      "id": "extract-combined-1777733652940-57",
+      "number": "58",
+      "text": "What will be printed by the following program?\n\n```java\npublic class Test {\n    public static void main(String[] args) {\n        double[][] m = {{1, 2, 3}, {1.5, 2.5, 3.5}, {0.1, 0.1, 0.1}};\n        System.out.println(sum(m));\n    }\n    public static double sum(double[][] m) {\n        double sum = 0;\n        for (int i = 0; i < m.length; i++)\n            sum += m[i][i];\n        return sum;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3.6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10.8"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4.5"
+        }
+      ],
+      "inputName": "Q57",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The loop calculates the sum of the diagonal elements of the 2D array: `m[0][0]` (1.0), `m[1][1]` (2.5), and `m[2][2]` (0.1). \\(1.0 + 2.5 + 0.1 = 3.6\\)."
+    },
+    {
+      "id": "extract-combined-1777733652940-58",
+      "number": "59",
+      "text": "What is the output of the following code snippet?\n\n```java\nint[] list1 = {3, 2, 1, 0};\nint[] list2 = {1, 2, 3, 4};\nlist2 = list1;\nlist1[0] = 0; list1[1] = 1; list2[2] = 2;\nfor (int i = list2.length - 1; i >= 0; i--)\n    System.out.print(list2[i] + \" \");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0 2 1 0 "
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4 3 2 1 "
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0 1 2 3 "
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3 2 1 0 "
+        }
+      ],
+      "inputName": "Q58",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "After `list2 = list1`, both variables point to the same array object. The modifications `list1[0]=0`, `list1[1]=1`, and `list2[2]=2` update that shared array from `{3, 2, 1, 0}` to `{0, 1, 2, 0}`. The loop then prints these elements in reverse order."
+    },
+    {
+      "id": "extract-combined-1777733652940-59",
+      "number": "60",
+      "text": "What is the output of the following program?\n\n```java\npublic class Test {\n    public static void main(String[] args) {\n        int a[] = {3, 7, 2, 11};\n        int b[] = {4, 8, 3, 12, 17, 18};\n        m(a, b);\n        for (int i = 0; i < b.length; i++)\n            System.out.print(b[i]);\n    }\n    public static void m(int[] arr1, int[] arr2) {\n        for (int i = 0, j = arr2.length - 1; i < arr1.length && j > 0; i++, j--) {\n            arr2[j] = arr1[i];\n        }\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "483121718"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "372111718"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4811273"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4831273"
+        }
+      ],
+      "inputName": "Q59",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The method `m` modifies `b` (arr2) by taking elements from `a` (arr1) and placing them at the end of `b` moving backwards. \n- i=0, j=5: `b[5] = a[0] = 3` \n- i=1, j=4: `b[4] = a[1] = 7` \n- i=2, j=3: `b[3] = a[2] = 2` \n- i=3, j=2: `b[2] = a[3] = 11` \nThe loop terminates when `i` reaches 4. The final array `b` is `{4, 8, 11, 2, 7, 3}`."
+    },
+    {
+      "id": "extract-combined-1777733652940-60",
+      "number": "61",
+      "text": "Which of the following statements is correct for initializing a 2D character array?",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "char[][] c = {{'a', 'b'}, {'c', 'd'}};"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "char[][] c = [['a', 'b'], ['c', 'd']];"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "char[2][2] c = {{'a', 'b'}, {'c', 'd'}};"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "char[][] c = {'a', 'b'};"
+        }
+      ],
+      "inputName": "Q60",
+      "inputType": "radio",
+      "correctAnswer": "a",
+      "explanation": "Option (a) follows the correct Java syntax for initializing a 2D array using nested curly braces. Option (b) uses incorrect bracket notation, (c) incorrectly places dimensions in the type declaration, and (d) attempts to assign a 1D initializer to a 2D variable."
+    },
+    {
+      "id": "extract-combined-1777733652940-61",
+      "number": "62",
+      "text": "What is the output of the following code?\n\n```java\nint[] myList = {1, 2, 3, 4, 5, 6};\nfor (int i = myList.length - 2; i >= 0; i--) {\n    myList[i + 1] = myList[i];\n}\nfor (int i = 0; i < myList.length; i++)\n    System.out.print(myList[i] + \" \");\n```",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "6 2 3 4 5 1 "
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "6 1 2 3 4 5 "
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "1 1 2 3 4 5 "
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "1 2 3 4 5 6 "
+        }
+      ],
+      "inputName": "Q61",
+      "inputType": "radio",
+      "correctAnswer": "c",
+      "explanation": "The loop shifts elements to the right starting from the end. \n- i=4: `myList[5] = myList[4]` (5)\n- i=3: `myList[4] = myList[3]` (4)\n- i=2: `myList[3] = myList[2]` (3)\n- i=1: `myList[2] = myList[1]` (2)\n- i=0: `myList[1] = myList[0]` (1)\nThe result is `{1, 1, 2, 3, 4, 5}`."
+    },
+    {
+      "id": "extract-combined-1777733652940-62",
+      "number": "63",
+      "text": "Consider the following incomplete code, what is the missing code to make it valid?\n\n```java\npublic class Test {\n    public static void main(String[] args) {\n        System.out.println(f(5));\n    }\n    public static int f(int number) {\n        // missing code\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "return \"number\";"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "System.out.println(number);"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "System.out.println(\"number\");"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "return number;"
+        }
+      ],
+      "inputName": "Q62",
+      "inputType": "radio",
+      "correctAnswer": "d",
+      "explanation": "The method `f` has a return type of `int`. Therefore, it must return an integer value. Option (d) correctly returns the integer parameter `number`."
+    },
+    {
+      "id": "extract-combined-1777733652940-63",
+      "number": "64",
+      "text": "What is the output of the following code?\n\n```java\npublic class TestArrayArguments {\n    public static void main(String[] args) {\n        int x = 1;\n        int[] y = new int[10];\n        m(x, y);\n        System.out.println(\"x is \" + x);\n        System.out.println(\"y[0] is \" + y[0]);\n    }\n    public static void m(int number, int[] numbers) {\n        number = 3;\n        numbers[0] = 99;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x is 1 and y[0] is 0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x is 3 and y[0] is 99"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x is 1 and y[0] is 99"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x is 3 and y[0] is 0"
+        }
+      ],
+      "inputName": "Q63",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, primitive types like `int` are passed by value, so changing `number` inside `m` does not affect `x`. Arrays are objects, and their reference is passed by value, meaning modifications to the array's contents (like `numbers[0] = 99`) reflect in the original array `y`."
+    },
+    {
+      "id": "extract-combined-1777733652940-64",
+      "number": "65",
+      "text": "What will be the output of the following program?\n\n```java\npublic class Test {\n    public static void main(String[] args) {\n        int[] x = {1, 2, 3, 4};\n        int[] y = x;\n        x = new int[2];\n        for (int i = 0; i < x.length; i++)\n            System.out.print(x[i] + \" \");\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "The program displays 0 0 "
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "The program displays 0 0 3 4 "
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "The program displays 1 2 3 4 "
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "The program displays 0 0 0 0 "
+        }
+      ],
+      "inputName": "Q64",
+      "inputType": "radio",
+      "correctAnswer": "a",
+      "explanation": "Initially `x` and `y` point to the same array. Then `x` is reassigned to a new array of size 2. Elements of a new `int` array are initialized to 0 by default. The loop iterates through the new array of length 2, printing `0 0 `."
+    },
+    {
+      "id": "extract-combined-1777733652940-65",
+      "number": "66",
+      "text": "Calling `fun(5)` will return what value?\n\n```java\npublic static int fun(int n) {\n    if (n != 5)\n        return 1;\n    else if (n == 5)\n        return 2;\n    return 0;\n}\n```",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "1"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "2"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "Syntax error"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "Compilation error"
+        }
+      ],
+      "inputName": "Q65",
+      "inputType": "radio",
+      "correctAnswer": "b",
+      "explanation": "Since the input `n` is 5, the first `if` condition `(5 != 5)` is false. The code proceeds to the `else if` condition `(5 == 5)`, which is true, and returns 2."
+    },
+    {
+      "id": "extract-combined-1777733652940-66",
+      "number": "67",
+      "text": "The expression `(char)('a' + Math.random() * ('f' - 'a'))` returns a random character in which range?",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "between 'a' and 'z'"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "between 'a' and 'f'"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "between 'a' and 'e'"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "between 'a' and 'g'"
+        }
+      ],
+      "inputName": "Q66",
+      "inputType": "radio",
+      "correctAnswer": "c",
+      "explanation": "`Math.random()` returns a value in `[0, 1)`. The term `('f' - 'a')` is equal to 5. The total expression calculates `'a' + [0, 5)`, which results in values from 97.0 up to (but not including) 102.0. When cast to `char`, this includes values 97, 98, 99, 100, and 101, which correspond to 'a', 'b', 'c', 'd', and 'e'."
+    },
+    {
+      "id": "extract-combined-1777733652940-67",
+      "number": "68",
+      "text": "What is the value of `y` after executing the following statement?\n\n```java\ndouble y = Math.ceil(-7.5);\n```",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "-7.0"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "-8.0"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "-7.5"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "-7"
+        }
+      ],
+      "inputName": "Q67",
+      "inputType": "radio",
+      "correctAnswer": "a",
+      "explanation": "`Math.ceil(x)` returns the smallest double value that is not less than the argument and is equal to a mathematical integer. For -7.5, the next integer higher is -7.0."
+    },
+    {
+      "id": "extract-combined-1777733652940-68",
+      "number": "69",
+      "text": "Assume `int[][] x = {{1, 2}, {3, 4, 5}, {5, 6, 5}};`. What are `x[0].length`, `x[1].length`, and `x[2].length`?",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "2, 3, and 4"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "3, 3, and 3"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "2, 3, and 3"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "3, 3, and 4"
+        }
+      ],
+      "inputName": "Q68",
+      "inputType": "radio",
+      "correctAnswer": "c",
+      "explanation": "Row 0 has 2 elements: `{1, 2}`. Row 1 has 3 elements: `{3, 4, 5}`. Row 2 has 3 elements: `{5, 6, 5}`. Thus the lengths are 2, 3, and 3."
+    },
+    {
+      "id": "extract-combined-1777733652940-69",
+      "number": "70",
+      "text": "Trace the following Java code and determine the output:\n\n```java\nimport java.util.Scanner;\npublic class Solution {\n    public static void main(String[] args) {\n        int n = 2350;\n        System.out.printf(\"Original Number: %d\\n\", n);\n        int shift_right_count = 0;\n        do {\n            n >>= 1;\n            shift_right_count++;\n        } while (n != 0);\n        shift_right_count--;\n        System.out.printf(\"Result: %s\\r\\n\", shift_right_count);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Original Number: 2350\nResult: 11"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Original Number: 2350\nResult: 12"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Original Number: 2350\nResult: 10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Original Number: 2350\nResult: 13"
+        }
+      ],
+      "inputName": "Q69",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The number 2350 in binary is `100100101110`, which has 12 bits. The `do-while` loop performs a right shift (`>>= 1`) 12 times until `n` becomes 0. Thus, `shift_right_count` becomes 12. After the loop, the value is decremented (`shift_right_count--`), resulting in 11."
+    },
+    {
+      "id": "extract-combined-1777733652940-70",
+      "number": "71",
+      "text": "What is the output of the `transpose` call in the following code snippet?\n\n```java\nint[][] twodm = {\n    {10, 20, 30},\n    {40, 50, 60}\n};\n// ... transpose(twodm) is called ...\nprivate static void transpose(int[][] twodm) {\n    int[][] newtwodm = new int[twodm[0].length][twodm.length];\n    for (int i = 0; i < twodm.length; i++) {\n        for (int j = 0; j < twodm[0].length; j++) {\n            newtwodm[j][i] = twodm[i][j];\n        }\n    }\n    print_array(newtwodm);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "10 40 \n20 50 \n30 60 "
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "10 20 30 \n40 50 60 "
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "40 10 \n50 20 \n60 30 "
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "10 20 \n30 40 \n50 60 "
+        }
+      ],
+      "inputName": "Q70",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The code transposes a 2x3 matrix into a 3x2 matrix. The element at `twodm[i][j]` moves to `newtwodm[j][i]`. Thus, columns become rows: the first column [10, 40] becomes the first row, etc."
+    },
+    {
+      "id": "extract-combined-1777733652940-71",
+      "number": "72",
+      "text": "Trace the output of the nested loops for the boolean array provided below:\n\n```java\nboolean[][] array = {\n    {true, false, true},\n    {false, true, false}\n};\nfor (int i = 0; i < rows_length; i++) {\n    for (int j = 0; j < columns_length; j++) {\n        if (array[i][j]) {\n            System.out.print(\" t \");\n        } else {\n            System.out.print(\" f \");\n        }\n    }\n    System.out.println();\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": " t  f  t \n f  t  f "
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": " f  t  f \n t  f  t "
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": " t  t  t \n f  f  f "
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "true false true\nfalse true false"
+        }
+      ],
+      "inputName": "Q71",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The loop iterates through each element of the 2D array. It prints 't' if the boolean is true and 'f' if false. Row 0: true, false, true -> ` t  f  t `. Row 1: false, true, false -> ` f  t  f `."
+    },
+    {
+      "id": "extract-combined-1777733652940-72",
+      "number": "73",
+      "text": "Assuming the input for `dividend` is 625 and `divider` is 25, what will the following method return?\n\n```java\npublic static float divide_using_subtraction(int dividend, int divider) {\n    if (divider == 0) { return 0; }\n    float result = 0;\n    while (dividend > divider) {\n        dividend -= divider;\n        result++;\n    }\n    float decimalPart = (float) dividend / (float) divider;\n    result += decimalPart;\n    return result;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "25.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "24.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "25"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0.0"
+        }
+      ],
+      "inputName": "Q72",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The loop runs while `dividend > divider`. For 625 and 25, the loop performs 24 subtractions, leaving `dividend = 25` and `result = 24.0`. Then `decimalPart = 25 / 25 = 1.0`. Finally, `result = 24.0 + 1.0 = 25.0`."
+    },
+    {
+      "id": "extract-combined-1777733652940-73",
+      "number": "74",
+      "text": "Determine the output of the multiplication logic when `n1 = 25` and `n2 = 5`:\n\n```java\npublic static int multiply(int n1, int n2) {\n    int result = 0;\n    boolean negative_num = (n1 < 0 && n2 >= 0) || (n2 < 0 && n1 >= 0);\n    boolean positive_num = !negative_num;\n    n1 = Math.abs(n1);\n    for (int i = 0; i < n1; i++) {\n        if (negative_num && n2 > 0 || positive_num && n2 < 0)\n            result -= n2;\n        else\n            result += n2;\n    }\n    return result;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Result: 125"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Result: 30"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Result: 20"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Result: 5"
+        }
+      ],
+      "inputName": "Q73",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Since both numbers are positive, `negative_num` is false and `positive_num` is true. The condition `(positive_num && n2 < 0)` is false because `5 < 0` is false. Thus, it enters the `else` block and adds `n2` to `result` exactly `n1` times (25 times), giving \\( 25 \\times 5 = 125 \\)."
+    },
+    {
+      "id": "extract-combined-1777733652940-74",
+      "number": "75",
+      "text": "What is the output of the loop structure provided in the `Exercise` class?\n\n```java\nSystem.out.println(\"\\nDivided by 3: \");\nfor (int i=1; i<16; i++) {\n    if (i%3==0) System.out.print(i + \", \");\n}\nSystem.out.println(\"\\nDivided by 5: \");\nfor (int i=1; i<16; i++) {\n    if (i%5==0) System.out.print(i + \", \");\n}\nSystem.out.println(\"\\nDivided by 3 & 5: \");\nfor (int i=1; i<16; i++) {\n    if (i%3==0 && i%5==0) System.out.print(i + \", \");\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Divided by 3: 3, 6, 9, 12, 15, \nDivided by 5: 5, 10, 15, \nDivided by 3 & 5: 15, "
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Divided by 3: 3, 6, 9, 12, \nDivided by 5: 5, 10, \nDivided by 3 & 5: 15, "
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Divided by 3: 3, 6, 9, 12, 15\nDivided by 5: 5, 10, 15\nDivided by 3 & 5: 15"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Divided by 3: 1, 2, 3, \nDivided by 5: 1, 5, \nDivided by 3 & 5: 1, "
+        }
+      ],
+      "inputName": "Q74",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The loops iterate from 1 to 15 (inclusive, since `i < 16`). Numbers divisible by 3 are 3, 6, 9, 12, 15. Numbers divisible by 5 are 5, 10, 15. The number divisible by both 3 and 5 in that range is 15."
+    },
+    {
+      "id": "extract-combined-1777733652940-75",
+      "number": "76",
+      "text": "If the input is 119, what is the value returned by `add_digits_until_one(int n)`?\n\n```java\npublic static int add_digits_until_one(int n) {\n    while (n > 9) {\n        int sum_digits = 0;\n        while (n != 0) {\n            sum_digits += n % 10;\n            n /= 10;\n        }\n        n = sum_digits;\n    }\n    return n;\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "11"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "9"
+        }
+      ],
+      "inputName": "Q75",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "First iteration: `n = 119`, `sum_digits = 1 + 1 + 9 = 11`. Second iteration: `n = 11`, `sum_digits = 1 + 1 = 2`. Since 2 is not greater than 9, the loop terminates and returns 2."
+    },
+    {
+      "id": "extract-combined-1777733652940-76",
+      "number": "77",
+      "text": "Which of the following correctly lists the output of these Java `Math` operations?\n\n- `Math.ceil(2.1)`\n- `Math.ceil(-2.1)`\n- `Math.floor(2.1)`\n- `Math.floor(-2.1)`\n- `Math.rint(2.5)`\n- `Math.round(2.6f)`\n- `Math.round(-2.6)`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3.0, -2.0, 2.0, -3.0, 2.0, 3, -3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2.0, -3.0, 3.0, -2.0, 3.0, 2, -2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3.0, -3.0, 2.0, -2.0, 3.0, 3, -3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2.1, -2.1, 2.1, -2.1, 2.5, 3, -3"
+        }
+      ],
+      "inputName": "Q76",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "`ceil` rounds up to the next integer. `floor` rounds down. `rint` rounds to the nearest integer, and if equidistant, to the nearest even integer (2.5 -> 2.0). `round` rounds to the nearest long or int (\\( x + 0.5 \\) and floor)."
+    },
+    {
+      "id": "extract-combined-1777733652940-77",
+      "number": "78",
+      "text": "Show the output of the following code:\n\n```java\nint[][] array = {{1, 2}, {3, 4}, {5, 6}};\nfor (int i = array.length - 1; i >= 0; i--) {\n    for (int j = array[i].length - 1; j >= 0; j--)\n        System.out.print(array[i][j] + \" \");\n    System.out.println();\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6 5\n4 3\n2 1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5 6\n3 4\n1 2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1 2\n3 4\n5 6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2 1\n4 3\n6 5"
+        }
+      ],
+      "inputName": "Q77",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The outer loop starts from the last row index (2) and goes down to 0. The inner loop starts from the last column index of each row (1) and goes down to 0. \n- Row 2 ({5, 6}) prints: `6 5` \n- Row 1 ({3, 4}) prints: `4 3` \n- Row 0 ({1, 2}) prints: `2 1`"
+    },
+    {
+      "id": "extract-combined-1777733652940-78",
+      "number": "79",
+      "text": "Show the output of the following code:\n\n```java\nint[][] array = {{1, 2}, {3, 4}, {5, 6}};\nint sum = 0;\nfor (int i = 0; i < array.length; i++)\n    sum += array[i][0];\nSystem.out.println(sum);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "9"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "21"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "12"
+        }
+      ],
+      "inputName": "Q78",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The loop iterates through each row of the array and adds the element at the first column (index 0) to the sum variable:\n- array[0][0] = 1\n- array[1][0] = 3\n- array[2][0] = 5\nSum = 1 + 3 + 5 = 9."
+    },
+    {
+      "id": "extract-combined-1777733652940-79",
+      "number": "80",
+      "text": "Which of the following array declarations are valid in Java?\n\n1. `int[][] r = new int[2];`  \n2. `int[] x = new int[];`  \n3. `int[][] y = new int[3][];`  \n4. `int[][] z = {{1, 2}};`  \n5. `int[][] m = {{1, 2}, {2, 3}};`  \n6. `int[][] n = {{1, 2}, {2, 3}, };` ",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3, 4, 5, and 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1, 2, and 3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4, 5, and 6 only"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All are valid"
+        }
+      ],
+      "inputName": "Q79",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "- Statement 1 is invalid (type mismatch: cannot assign 1D array to 2D reference).\n- Statement 2 is invalid (dimension must be specified).\n- Statement 3 is valid (jagged array initialization).\n- Statements 4 and 5 are valid literal initializations.\n- Statement 6 is valid (trailing commas are allowed in Java array initializers)."
+    },
+    {
+      "id": "extract-combined-1777733652940-80",
+      "number": "81",
+      "text": "What is the result of the following Java code snippet?\n\n```java\npublic class Be_Careful {\n    public static void main(String[] args) {\n        int[] primes = new int[10];\n        primes[0] = \"a\"; \n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Compile-time error"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Runtime Exception"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The code runs and prints 'a'"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The code runs and assigns 97 to primes[0]"
+        }
+      ],
+      "inputName": "Q80",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, you cannot assign a String literal (`\"a\"`) to an element of an integer array (`int[]`). This results in a compile-time error due to incompatible types."
+    },
+    {
+      "id": "extract-combined-1777733652940-81",
+      "number": "82",
+      "text": "What is the output of the following code?\n\n```java\nint[] a = {1, 3, 5, 7, 9, 11};\nint[] b = {0, 2, 4, 6, 8, 10};\nSystem.arraycopy(a, 3, b, 1, 3);\nfor(int i = 0; i < b.length; i++)\n    System.out.print(b[i] + \" \");\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "0 7 9 11 8 10"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "0 5 7 9 8 10"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "5 7 9 6 8 10"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "7 9 11 6 8 10"
+        }
+      ],
+      "inputName": "Q81",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "The `System.arraycopy(src, srcPos, dest, destPos, length)` method copies data. Here, it takes 3 elements from `a` starting at index 3 ({7, 9, 11}) and places them into `b` starting at index 1. This replaces {2, 4, 6} in `b` with {7, 9, 11}, resulting in `{0, 7, 9, 11, 8, 10}`."
+    },
+    {
+      "id": "extract-combined-1777733652940-82",
+      "number": "83",
+      "text": "Which of the following is a correct call to method `m`, `public static void m(int[] a)`?",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "m(new int[]{1, 2, 3});"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "m(new int {1, 2, 3})"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "m(int[] {1, 2, 3});"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "m({1, 2, 3});"
+        }
+      ],
+      "inputName": "Q82",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "To pass an anonymous array as a parameter, you must use the syntax `new type[]{elements}`. Option 4 is incorrect because the shorthand array initializer `{}` can only be used in a declaration statement like `int[] a = {1, 2, 3};`."
+    },
+    {
+      "id": "extract-combined-1777733652940-83",
+      "number": "84",
+      "text": "Given the code below, which of the following will cause Ambiguous method call error?\n\n```java\npublic static double f(int x, double y) {\n    return x * y;\n}\npublic static double f(double x, int y) {\n    return x * y;\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "f(2, 3);"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "f(2.0, 3);"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "f(2, 3.0);"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "none of the given choices"
+        }
+      ],
+      "inputName": "Q83",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "In `f(2, 3)`, both arguments are integers. Java can promote an `int` to a `double`. Therefore, both method signatures match: the first by promoting the second argument, and the second by promoting the first argument. Since the compiler cannot determine which promotion is \"better,\" it results in an ambiguous call error."
+    },
+    {
+      "id": "extract-combined-1777733652940-84",
+      "number": "85",
+      "text": "What is the output of the following code?\n\n```java\npublic static void main(String[] args) {\n    int[] a = {2, 4, 6, 8, 10};\n    f(a);\n    for (int i = 0; i < a.length; i++) {\n        System.out.print(a[i] + \" \");\n    }\n}\n\npublic static void f(int[] t) {\n    int[] c = t;\n    int first = c[0];\n    for (int i = 1; i < c.length; i++) {\n        c[i - 1] = c[i];\n    }\n    c[c.length - 1] = first;\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "2 4 6 8 10"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "4 6 8 10 10"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "4 6 8 10 2"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "10 2 4 6 8"
+        }
+      ],
+      "inputName": "Q84",
+      "inputType": "radio",
+      "correctAnswer": "3",
+      "explanation": "The method `f` performs a left circular shift. Since `c` points to the same array object as `a`, the changes are reflected in `a`. The value at index 0 (2) is saved, elements are shifted left, and the saved value is put at the last index. The result is `{4, 6, 8, 10, 2}`."
+    },
+    {
+      "id": "extract-combined-1777733652940-85",
+      "number": "86",
+      "text": "What is the output of the following code?\n\n```java\nint[] a = {11, 3, 5, 7, 9, 1};\nfor(int i=0, j=a.length-1; i<j; i+=2, j-=2) {\n    int temp = a[i];\n    a[i] = a[j];\n    a[j] = temp;\n}\nfor(int i=0; i<a.length; i++) {\n    System.out.print(a[i] + \" \");\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "1 3 7 5 9 11"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "11 9 7 5 3 1"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "1 3 5 7 9 11"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "1 1 1 5 7 9 3"
+        }
+      ],
+      "inputName": "Q85",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "The loop swaps elements at index (0, 5) and (2, 3). \nInitial: `{11, 3, 5, 7, 9, 1}`\nAfter first swap (0 and 5): `{1, 3, 5, 7, 9, 11}`\nAfter second swap (2 and 3): `{1, 3, 7, 5, 9, 11}`."
+    },
+    {
+      "id": "extract-combined-1777733652940-86",
+      "number": "87",
+      "text": "What is the output of the following after calling `f(2)`?\n\n```java\npublic static int f(int x) {\n    if (x == 0)\n        return 0;\n    if (x > 0)\n        return 1;\n    else if (x < 0)\n        return -1;\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "0"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "1"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "-1"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q86",
+      "inputType": "radio",
+      "correctAnswer": "4",
+      "explanation": "Although logically every integer input is covered by the `if` conditions, the Java compiler requires a guaranteed return statement or an `else` block that concludes the method. Since the compiler doesn't perform range analysis to see that all possible `int` values are handled, it will throw a \"Missing return statement\" compilation error."
+    },
+    {
+      "id": "extract-combined-1777733652940-87",
+      "number": "88",
+      "text": "A variable defined inside a method is referred to as:",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "a global variable"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "a method variable"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "a block variable"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "a local variable"
+        }
+      ],
+      "inputName": "Q87",
+      "inputType": "radio",
+      "correctAnswer": "4",
+      "explanation": "Variables defined within methods are called local variables. They only exist while the method is executing and cannot be accessed outside of it."
+    },
+    {
+      "id": "extract-combined-1777733652940-88",
+      "number": "89",
+      "text": "What is the output of the following code?\n\n```java\npublic static void main(String[] args) {\n    int x = 5, y = 7;\n    swap(x, y);\n    System.out.println(x + \" \" + y);\n}\npublic static void swap(int x, int y) {\n    int temp = x;\n    x = y;\n    y = temp;\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "5 7"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "7 5"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "5 5"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "7 7"
+        }
+      ],
+      "inputName": "Q88",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "Java is strictly pass-by-value. When `swap(x, y)` is called, the method receives copies of the values of `x` and `y`. Changes to these copies inside the method do not affect the original variables in `main`."
+    },
+    {
+      "id": "extract-combined-1777733652940-89",
+      "number": "90",
+      "text": "Which of the following statements generates a random character between '0' and '9'?",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "(char) ('0' + Math.random() * ('9' - '0' + 1));"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "(char) (Math.random() * 10);"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "(char) (48 + Math.random() * (57 - 48));"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "All options"
+        }
+      ],
+      "inputName": "Q89",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "The standard formula to generate a random integer in the range `[min, max]` is `min + (int)(Math.random() * (max - min + 1))`. For characters '0' and '9', this maps to ASCII values 48 and 57. Option 1 correctly uses the character literals to achieve this range."
+    },
+    {
+      "id": "extract-combined-1777733652940-90",
+      "number": "91",
+      "text": "What is the output of the following code?\n\n```java\nchar[] a = {'J', 'a', 'v', 'A'};\nArrays.sort(a);\nfor(int i = 0; i < a.length; i++)\n    System.out.print(a[i] + \" \");\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "a A j v"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "A J a v"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "a J A v"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "J a v A"
+        }
+      ],
+      "inputName": "Q90",
+      "inputType": "radio",
+      "correctAnswer": "2",
+      "explanation": "The `Arrays.sort()` method sorts characters based on their Unicode values. Since uppercase letters ('A' = 65, 'J' = 74) have lower values than lowercase letters ('a' = 97, 'v' = 118), the sorted output is `A J a v `."
+    },
+    {
+      "id": "extract-combined-1777733652940-91",
+      "number": "92",
+      "text": "What is the output of the following code?\n\n```java\nint[] a = {1, 4, 7};\nint[] b = {5, 8, 11};\nb = a;\na[0] = 6;\na[1] = 0;\nb[2] = 2;\nfor(int i = 0; i < b.length; i++)\n    System.out.print(b[i]);\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "582"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "642"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "142"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "602"
+        }
+      ],
+      "inputName": "Q91",
+      "inputType": "radio",
+      "correctAnswer": "4",
+      "explanation": "The statement `b = a` makes `b` reference the same array object as `a`. All subsequent modifications (`a[0]`, `a[1]`, `b[2]`) are performed on that same single array. The final values in the array are `6`, `0`, and `2`."
+    },
+    {
+      "id": "extract-combined-1777733652940-92",
+      "number": "93",
+      "text": "Given the following method, what is the output of the call `nPrint('a', 4)`?\n\n```java\nstatic void nPrint(String message, int n) {\n    while (n > 0) {\n        System.out.print(message);\n        n--;\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "aaaaa"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "aaaa"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "aaa"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "Invalid call"
+        }
+      ],
+      "inputName": "Q92",
+      "inputType": "radio",
+      "correctAnswer": "4",
+      "explanation": "The method `nPrint` defines its first parameter as a `String`. Passing a character literal `'a'` results in a compilation error because Java does not implicitly convert a `char` to a `String` to match a method signature."
+    },
+    {
+      "id": "extract-combined-1777733652940-93",
+      "number": "94",
+      "text": "Once an array is created, its size:",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "can be changed"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "is fixed"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "is not determined"
+        }
+      ],
+      "inputName": "Q93",
+      "inputType": "radio",
+      "correctAnswer": "2",
+      "explanation": "In Java, arrays have a fixed size once they are instantiated. To change the capacity, a new array must be created and elements copied over."
+    },
+    {
+      "id": "extract-combined-1777733652940-94",
+      "number": "95",
+      "text": "What is the output of the following code?\n\n```java\npublic static void main(String[] args) {\n    int[] a = {1, 2, 3, 4};\n    int[] b = m(a);\n    b[0] += 2;\n    b[2] += 3;\n    for (int i = 0; i < a.length; i++) {\n        System.out.print(a[i]);\n    }\n}\n\npublic static int[] m(int[] a) {\n    int[] b = a;\n    a[a.length - 1]--;\n    return b;\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "3263"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "1234"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "3264"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "1263"
+        }
+      ],
+      "inputName": "Q94",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "In Java, array references are passed. Inside `m`, `b` and `a` point to the same array. `a[a.length - 1]--` changes the last element (4) to 3. In `main`, the returned `b` also points to this array. `b[0] += 2` changes index 0 from 1 to 3. `b[2] += 3` changes index 2 from 3 to 6. The final array content is `{3, 2, 6, 3}`."
+    },
+    {
+      "id": "extract-combined-1777733652940-95",
+      "number": "96",
+      "text": "How many (*) this code will print?\n\n```java\nint i=0;\nwhile (i++ < 5) {\n    for(int j=i; j<6; j++)\n        System.out.println(\"*\"); \n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "15"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "14"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "25"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "26"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "13"
+        }
+      ],
+      "inputName": "Q95",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Let's trace the loop execution:\n1. `i=0`: `while(0 < 5)` is true, `i` becomes 1. Inner loop runs from `j=1` to `j<6` (5 times).\n2. `i=1`: `while(1 < 5)` is true, `i` becomes 2. Inner loop runs from `j=2` to `j<6` (4 times).\n3. `i=2`: `while(2 < 5)` is true, `i` becomes 3. Inner loop runs from `j=3` to `j<6` (3 times).\n4. `i=3`: `while(3 < 5)` is true, `i` becomes 4. Inner loop runs from `j=4` to `j<6` (2 times).\n5. `i=4`: `while(4 < 5)` is true, `i` becomes 5. Inner loop runs from `j=5` to `j<6` (1 time).\n6. `i=5`: `while(5 < 5)` is false, loop terminates.\nTotal stars: \\( 5 + 4 + 3 + 2 + 1 = 15 \\)."
+    },
+    {
+      "id": "extract-combined-1777733652940-96",
+      "number": "97",
+      "text": "What is the output of the following code?\n\n```java\nint[] a = {2, 0, 1, 2, 3, 0, 3, 0};\nint[] b = {4, 6, 8, 10};\nfor (int i = 0; i < a.length; i++)\n    b[a[i]]++;\nfor (int i = 0; i < b.length; i++)\n    System.out.print(b[i] + \" \");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "7 7 10 12"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4 6 8 10"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6 6 10 12"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "7 7 10 11"
+        }
+      ],
+      "inputName": "Q96",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The first loop iterates through array `a` and uses its values as indices for array `b`, incrementing the values in `b`. \n- The value 0 appears in `a` 3 times: `b[0]` becomes \\( 4 + 3 = 7 \\).\n- The value 1 appears in `a` 1 time: `b[1]` becomes \\( 6 + 1 = 7 \\).\n- The value 2 appears in `a` 2 times: `b[2]` becomes \\( 8 + 2 = 10 \\).\n- The value 3 appears in `a` 2 times: `b[3]` becomes \\( 10 + 2 = 12 \\).\nFinal array `b` is `{7, 7, 10, 12}`."
+    },
+    {
+      "id": "extract-combined-1777733652940-97",
+      "number": "98",
+      "text": "What is the output of the following code?\n\n```java\npublic static void main(String[] args) {\n    float x = 2.0f;\n    System.out.println(m(m(x)));\n}\npublic static int m(int x) {\n    return x * x;\n}\npublic static int m(double x) {\n    return (int) (x + x + x);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "36"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "18"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "16"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "12"
+        },
+        {
+          "value": "E",
+          "label": "E",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q97",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. The inner call is `m(x)` where `x` is a `float` (2.0f). Java will promote the `float` to a `double` to match the `m(double)` method signature. \n2. `m(2.0)` calculates `(int)(2.0 + 2.0 + 2.0)`, which returns `6` as an integer.\n3. The outer call is now `m(6)`. Since `6` is an `int`, it matches the `m(int)` method signature.\n4. `m(6)` calculates `6 * 6`, which returns `36`."
+    },
+    {
+      "id": "extract-combined-1777733652940-98",
+      "number": "99",
+      "text": "What is the output of the following code?\n\n```java\nint ctr = 0;\nfor (int i = 0; i < 5; i++)\n    for (int j = 0; j < i; j++)\n        ctr++;\nSystem.out.println(ctr);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "10"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "11"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "9"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "8"
+        }
+      ],
+      "inputName": "Q98",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The code calculates the sum of integers from 0 to 4:\n- `i = 0`: inner loop runs 0 times.\n- `i = 1`: inner loop runs 1 time.\n- `i = 2`: inner loop runs 2 times.\n- `i = 3`: inner loop runs 3 times.\n- `i = 4`: inner loop runs 4 times.\nTotal `ctr` = \\( 0 + 1 + 2 + 3 + 4 = 10 \\)."
+    },
+    {
+      "id": "extract-combined-1777733652940-99",
+      "number": "100",
+      "text": "Suppose array a is \\( \\text{int [] a} = \\{1,2,3\\} \\) what is the value of \\( a[0] - a[2] \\)?",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "1"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "3"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "2"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q99",
+      "inputType": "radio",
+      "correctAnswer": "d",
+      "explanation": "In the array `a = {1, 2, 3}`, `a[0]` is 1 and `a[2]` is 3. The calculation \\( 1 - 3 \\) results in -2, which is not among the options provided."
+    },
+    {
+      "id": "extract-combined-1777733652940-100",
+      "number": "101",
+      "text": "Given the following statement:\n```java\nint [] list = new int[10];\n```\n`list.length` has the value:",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "10"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "The value depends on how many integers are stored in list"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "9"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q100",
+      "inputType": "radio",
+      "correctAnswer": "a",
+      "explanation": "In Java, the `.length` property of an array returns the capacity of the array (the number of elements it was declared to hold), which in this case is 10."
+    },
+    {
+      "id": "extract-combined-1777733652940-101",
+      "number": "102",
+      "text": "Which of the following are valid array declarations?",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "Char[] cahrArray = new char [26] ;"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "Char [] charArray = \"Computer\";"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "Int[] words = new words [10];"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "Double [3] nums = { 3.5 , 35.1 , 32.0 };"
+        }
+      ],
+      "inputName": "Q101",
+      "inputType": "radio",
+      "correctAnswer": "a",
+      "explanation": "Option (a) follows the correct syntax structure `Type[] name = new Type[size]`, although standard Java uses lowercase `char`. Option (b) incorrectly assigns a String to a char array. Option (c) uses an invalid constructor `new words`. Option (d) incorrectly specifies the array size within the type declaration `Double [3]`."
+    },
+    {
+      "id": "extract-combined-1777733652940-102",
+      "number": "103",
+      "text": "Given the following declaration, what is the value of `a[1][3]`?\n```java\nint a[][] = {{1,2,3}, {4,5,6,7}, {8,9,10,11,12}};\n```",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "4"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "7"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "Error"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "16"
+        }
+      ],
+      "inputName": "Q102",
+      "inputType": "radio",
+      "correctAnswer": "b",
+      "explanation": "The array `a[1]` refers to the second inner array: `{4, 5, 6, 7}`. The element at index 3 of this inner array is 7."
+    },
+    {
+      "id": "extract-combined-1777733652940-103",
+      "number": "104",
+      "text": "If you declare an array `double [] list = { 3.4 , 2.0 , 3.5 , 5.5 };`, the result of `System.out.println ( list[4] );` is ________.",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "5.5"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "0.0"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "Null"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "Array Index Out Of Bounds"
+        }
+      ],
+      "inputName": "Q103",
+      "inputType": "radio",
+      "correctAnswer": "d",
+      "explanation": "The array has 4 elements, with valid indices from 0 to 3. Attempting to access `list[4]` throws an `ArrayIndexOutOfBoundsException`."
+    },
+    {
+      "id": "extract-combined-1777733652940-104",
+      "number": "105",
+      "text": "How many columns does (a) have if it is created as follows:\n```java\nint [][] a = {{2,4,6,8},{1,2,3,4}};\n```",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "2"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "8"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "4"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "3"
+        }
+      ],
+      "inputName": "Q104",
+      "inputType": "radio",
+      "correctAnswer": "c",
+      "explanation": "The 2D array contains two inner arrays (rows), each containing 4 elements. Therefore, the number of columns is 4."
+    },
+    {
+      "id": "extract-combined-1777733652940-105",
+      "number": "106",
+      "text": "Which of the following create an empty 2D array with dimensions 2*2 ?",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "int [][] blue = new int [2,2];"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "int [][] blue = new int[2][2];"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "int [][] blue = new int [2], [2];"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "int [][] blue = {{2}, {2}};"
+        }
+      ],
+      "inputName": "Q105",
+      "inputType": "radio",
+      "correctAnswer": "b",
+      "explanation": "In Java, the correct syntax for instantiating a 2D array with fixed dimensions is `new type[rows][columns]`."
+    },
+    {
+      "id": "extract-combined-1777733652940-106",
+      "number": "107",
+      "text": "What is the content of `charr` array after executing the following code?\n```java\nchar charr [] = {'1','9','0'};\nArrays.sort(charr);\n```",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "{'1', '9', '0'}"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "Null Null Null"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "{'0', '1', '9'}"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q106",
+      "inputType": "radio",
+      "correctAnswer": "c",
+      "explanation": "`Arrays.sort()` sorts the characters in ascending order based on their Unicode/ASCII values. The order is '0' (48), '1' (49), and '9' (57)."
+    },
+    {
+      "id": "extract-combined-1777733652940-107",
+      "number": "108",
+      "text": "The default array value of boolean type is:",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "True"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "0"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "False"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "1"
+        }
+      ],
+      "inputName": "Q107",
+      "inputType": "radio",
+      "correctAnswer": "c",
+      "explanation": "In Java, when an array of primitives is created, elements are initialized to their default values. The default value for a `boolean` is `false`."
+    },
+    {
+      "id": "extract-combined-1777733652940-108",
+      "number": "109",
+      "text": "What is the output of the following code fragment?\n```java\ndouble [] x = new double [4];\nx[0] = 8.5;\nx[1] = 6.5;\nx[2] = 9.5;\nx[3] = 12.5;\nSystem.out.println ( x[1 + 2] );\n```",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "5"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "12.5"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "6.5 9.5"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "9.5 12.5"
+        }
+      ],
+      "inputName": "Q108",
+      "inputType": "radio",
+      "correctAnswer": "b",
+      "explanation": "The expression `x[1 + 2]` evaluates to `x[3]`. The value stored at index 3 is 12.5."
+    },
+    {
+      "id": "extract-combined-1777733652940-109",
+      "number": "110",
+      "text": "What is the output of the following code?\n```java\nint [] list1 = {3,2,1};\nint [] list2 = {1,2,3};\nlist2 = list1;\nlist1 [0] = 0;\nlist1 [1] = 1;\nlist2 [2] = 2;\nfor(int i = list2.length - 1; i >= 0; i--)\n  System.out.print(list2[i] + \" \");\n```",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "2 1 0"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "0 1 2"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "3 2 1"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "1 2 3"
+        }
+      ],
+      "inputName": "Q109",
+      "inputType": "radio",
+      "correctAnswer": "a",
+      "explanation": "`list2 = list1` makes both variables point to the same array object. The modifications result in the shared array being `{0, 1, 2}`. The loop prints these values in reverse order: `2 1 0`."
+    },
+    {
+      "id": "extract-combined-1777733652940-110",
+      "number": "111",
+      "text": "What is the output of the following code?\n```java\ndouble [] numbers = { 1, 4, 3, 5.55, 3.4 };\ndouble [] x = new double [numbers.length];\nSystem.arraycopy(numbers, 1, x, 0, 3);\nfor (int i = 0; i < x.length; i++)\n  System.out.print(x[i] + \" \");\n```",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "4.0 3.0 5.55 0.0 0.0"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "1.0 4.0 3.0 5.55 3.4"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "4.0 3.0 5.55"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "0.0 4.0 3.0 5.55 0.0"
+        }
+      ],
+      "inputName": "Q110",
+      "inputType": "radio",
+      "correctAnswer": "a",
+      "explanation": "`System.arraycopy` copies 3 elements from `numbers` starting at index 1 (`4.0, 3.0, 5.55`) into `x` starting at index 0. Array `x` has 5 elements, so the remaining two indices are their default `0.0`."
+    },
+    {
+      "id": "extract-combined-1777733652940-111",
+      "number": "112",
+      "text": "What is the output of the following code?\n```java\npublic class Test {\n  public static void main(String[] args){\n    int [] a = {1,2};\n    System.out.print(\"a[0] = \" + a[0] + \" a[1] = \" + a[1] + \" \");\n    swap(a[0], a[1]);\n    System.out.print(\"a[0] = \" + a[0] + \" a[1] = \" + a[1]);\n  }\n  public static void swap (int n1, int n2){\n    int temp = n1;\n    n1 = n2;\n    n2 = temp;\n    System.out.print(\" n1 =\" + n1 + \" n2 = \" + n2 + \" \");\n  }\n}\n```",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "a[0] = 1 a[1] = 2 n1 = 2 n2 = 1 a[0] = 2 a[1] = 1"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "a[0] = 1 a[1] = 2 n1 = 2 n2 = 1 a[0] = 1 a[1] = 2"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "a[0] = 1 a[1] = 2 a[0] = 1 a[1] = 2"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q111",
+      "inputType": "radio",
+      "correctAnswer": "b",
+      "explanation": "In Java, primitives are passed by value. The `swap` method swaps local copies of the integers, not the original array elements. Thus, `a[0]` and `a[1]` remain unchanged in the `main` method."
+    },
+    {
+      "id": "extract-combined-1777733652940-112",
+      "number": "113",
+      "text": "What is the output of the following code snippet?\n```java\nint [][] x = {{1,2,3,4}, {2,2,3}, {3,9,10,11}, {2,1}};\nfor (int i = 0; i < 2; i++) {\n  for (int j = 1; j < 3; j++) {\n    System.out.print(x[i][j] + \" \");\n  }\n  System.out.println();\n}\n```",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "2 3\\n2 3"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "1 2\\n2 2"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "2 3 4\\n2 3"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "9 10\\n1"
+        }
+      ],
+      "inputName": "Q112",
+      "inputType": "radio",
+      "correctAnswer": "a",
+      "explanation": "The outer loop runs for `i=0` and `i=1`. The inner loop runs for `j=1` and `j=2`. For `i=0`, it prints `x[0][1]` (2) and `x[0][2]` (3). For `i=1`, it prints `x[1][1]` (2) and `x[1][2]` (3)."
+    },
+    {
+      "id": "extract-combined-1777733652940-113",
+      "number": "114",
+      "text": "Consider a method `sumOddDia` that calculates the sum of odd elements on the major diagonal and odd elements on the minor diagonal of a 2D square array. What is the return value for the following array?\n```java\nint[][] matrix = {{1,2,3}, {4,7,8}, {1,11,6}};\n```",
+      "choices": [
+        {
+          "value": "a",
+          "label": "a",
+          "text": "6"
+        },
+        {
+          "value": "b",
+          "label": "b",
+          "text": "19"
+        },
+        {
+          "value": "c",
+          "label": "c",
+          "text": "15"
+        },
+        {
+          "value": "d",
+          "label": "d",
+          "text": "11"
+        }
+      ],
+      "inputName": "Q113",
+      "inputType": "radio",
+      "correctAnswer": "b",
+      "explanation": "Major diagonal: 1, 7, 6. Odd elements: 1, 7 (Sum = 8). Minor diagonal: 3, 7, 1. Odd elements: 3, 7, 1 (Sum = 11). Total sum = 8 + 11 = 19."
+    },
+    {
+      "id": "extract-combined-1777733652940-114",
+      "number": "115",
+      "text": "What is the output of the following statement?\n```java\nSystem.out.println(Math.abs(Math.floor(-10.5)));\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "-11.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "-10.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "-10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "11.0"
+        }
+      ],
+      "inputName": "Q114",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "`Math.floor(-10.5)` returns the largest integer less than or equal to -10.5, which is `-11.0`. `Math.abs(-11.0)` then returns the absolute value, which is `11.0`."
+    },
+    {
+      "id": "extract-combined-1777733652940-115",
+      "number": "116",
+      "text": "What is the output of the following statement?\n```java\nSystem.out.println(Math.round(10.5));\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "10"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "11"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "11.0"
+        }
+      ],
+      "inputName": "Q115",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "`Math.round(double a)` returns the closest `long` to the argument. For `10.5`, it rounds up to `11`."
+    },
+    {
+      "id": "extract-combined-1777733652940-116",
+      "number": "117",
+      "text": "Which of the following create an empty two-dimensional array with dimensions \\( 2 \\times 2 \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "int[][] blue = new int[2, 2];"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "int[][] blue = new int[2], [2];"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "int[][] blue = new int[2][2];"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "int[][] blue = {{2}, {2}};"
+        }
+      ],
+      "inputName": "Q116",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, a multi-dimensional array is declared using multiple sets of square brackets `[][]` and initialized using `new type[rows][cols]`."
+    },
+    {
+      "id": "extract-combined-1777733652940-117",
+      "number": "118",
+      "text": "What is the output of the following statement?\n```java\nint[][] list = { {1, 2, 3}, {4, 6}, {7}, {10, 11, 12} };\nSystem.out.println(list[1].length);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2"
+        }
+      ],
+      "inputName": "Q117",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "`list[1]` refers to the second sub-array: `{4, 6}`. The length of this sub-array is `2`."
+    },
+    {
+      "id": "extract-combined-1777733652940-118",
+      "number": "119",
+      "text": "What is the output of the following statement?\n```java\nString sarr[] = {\"hi\", \"welcome\", \"HU\", \"IT\"};\nSystem.out.println(sarr[sarr.length - 2]);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "hi"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "welcome"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "HU"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "IT"
+        }
+      ],
+      "inputName": "Q118",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`sarr.length` is 4. `4 - 2` is 2. `sarr[2]` accesses the third element in the array, which is `\"HU\"`."
+    },
+    {
+      "id": "extract-combined-1777733652940-119",
+      "number": "120",
+      "text": "Default Array value of boolean type is?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "null"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0"
+        }
+      ],
+      "inputName": "Q119",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, elements of a `boolean` array are automatically initialized to `false` by default."
+    },
+    {
+      "id": "extract-combined-1777733652940-120",
+      "number": "121",
+      "text": "What is the process of defining more than one method with the same name and different signatures (headers)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Function overriding"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Function doubling"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Function overloading"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct Answer"
+        }
+      ],
+      "inputName": "Q120",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Method overloading allows a class to have more than one method with the same name, provided their parameter lists (signatures) are different."
+    },
+    {
+      "id": "extract-combined-1777733652940-121",
+      "number": "122",
+      "text": "What is the output of the following code?\n```java\nint a[] = new int[5];\nSystem.out.print(a);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Syntax error"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0 0 0 0 0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Address"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Runtime error index out of bound"
+        }
+      ],
+      "inputName": "Q121",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Printing an array reference variable directly prints its internal string representation, which includes the type and the memory address (hashcode)."
+    },
+    {
+      "id": "extract-combined-1777733652940-122",
+      "number": "123",
+      "text": "If you declare an array `double[] list = {3.4, 2.0, 3.5, 5.5}`, what is the result of executing `System.out.println(list[4]);`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5.5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3.5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Error index out of bound"
+        }
+      ],
+      "inputName": "Q122",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The array has 4 elements with valid indices 0, 1, 2, and 3. Attempting to access `list[4]` throws an `ArrayIndexOutOfBoundsException`."
+    },
+    {
+      "id": "extract-combined-1777733652940-123",
+      "number": "124",
+      "text": "What is the output of the following code?\n```java\nchar carr[] = {'A', 'V', '3', 'f'};\nArrays.sort(carr);\nfor (int i = 0; i < carr.length; i++)\n    System.out.print(carr[i] + \" \");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "f A V 3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3 f A V"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3 A V f"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A V 3 f"
+        }
+      ],
+      "inputName": "Q123",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Characters are sorted by their Unicode values. Digits come before uppercase letters, and uppercase letters come before lowercase letters. '3' is 51, 'A' is 65, 'V' is 86, and 'f' is 102."
+    },
+    {
+      "id": "extract-combined-1777733652940-124",
+      "number": "125",
+      "text": "What is the output of the following code?\n```java\nint sor[] = {5, 2, 3, 10};\nint dest[] = new int[5];\nSystem.arraycopy(sor, 1, dest, 2, 3);\nfor (int i = 0; i < dest.length; i++)\n    System.out.print(dest[i] + \" \");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "2 3 0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2 3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0 0 2 3 10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0 2 3 10 0"
+        }
+      ],
+      "inputName": "Q124",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`arraycopy(src, srcPos, dest, destPos, length)` copies 3 elements from `sor` starting at index 1 (`2, 3, 10`) into `dest` starting at index 2. `dest` was `{0, 0, 0, 0, 0}`, so it becomes `{0, 0, 2, 3, 10}`."
+    },
+    {
+      "id": "extract-combined-1777733652940-125",
+      "number": "126",
+      "text": "What is the output of the following code segment?\n```java\nint a[] = new int[6];\nfor (int i = 0; i < a.length; i++)\n    a[i] = i + 1;\nfor (int i = a.length - 1; i >= 0; i--)\n    System.out.print(a[i] + \" \");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 2 3 4 5 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6 5 4 3 2 1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5 4 3 2 1 0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0 1 2 3 4 5"
+        }
+      ],
+      "inputName": "Q125",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The first loop fills the array with `[1, 2, 3, 4, 5, 6]`. The second loop prints the elements starting from the last index (5) down to the first index (0), resulting in `6 5 4 3 2 1 `."
+    },
+    {
+      "id": "extract-combined-1777733652940-126",
+      "number": "127",
+      "text": "What is the output of the following code segment?\n```java\nint [][]ar = new int[3][2];\nfor (int i = 0; i < ar.length; i++)\n    for (int j = 0; j < ar[i].length; j++)\n        ar[i][j] = i + 5;\n\nfor (int i = 0; i < 2; i++)\n    System.out.println(ar[i][i]);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "5\\n6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5\\n5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6\\n7"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0\\n1"
+        }
+      ],
+      "inputName": "Q126",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The array is filled as follows: `ar[0][0]=5, ar[0][1]=5`, `ar[1][0]=6, ar[1][1]=6`, `ar[2][0]=7, ar[2][1]=7`. The final loop prints `ar[0][0]` (5) and `ar[1][1]` (6)."
+    },
+    {
+      "id": "extract-combined-1777733652940-127",
+      "number": "128",
+      "text": "What is the output of the following code segment?\n```java\nint list1[] = {3, 2, 1};\nlist1[2] = list1[0];\nint list2[] = {1, 2, 3};\nlist2[2] = list2[0] + list2[1];\nlist2 = list1;\nfor (int i = 0; i < list2.length; i++)\n    System.out.print(list2[i] + \" \");\nSystem.out.println();\nfor (int i = 0; i < list2.length; i++)\n    System.out.print(list1[i] + \" \");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3 2 1 \\n1 2 3 "
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3 2 3 \\n3 2 3 "
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1 2 3 \\n1 2 3 "
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3 2 3 \\n1 2 3 "
+        }
+      ],
+      "inputName": "Q127",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "`list1` becomes `{3, 2, 3}`. `list2` is then assigned to the same reference as `list1`. Therefore, both loops print the contents of the array `{3, 2, 3}`."
+    },
+    {
+      "id": "extract-combined-1777733652940-128",
+      "number": "129",
+      "text": "What is the output of the following `HelloWorld` class?\n```java\nclass HelloWorld {\n    public static void main(String[] args) {\n        int a = 8;\n        System.out.println(\"before calling \" + a);\n        func1(a);\n        System.out.println(\"after calling \" + a);\n    }\n    public static void func1(int x) {\n        x++;\n        System.out.println(x);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "before calling 8\\n8\\nafter calling 8"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "before calling 8\\n9\\nafter calling 9"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "before calling 8\\n9\\nafter calling 8"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "before calling 8\\n8\\nafter calling 9"
+        }
+      ],
+      "inputName": "Q128",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Java uses pass-by-value. The variable `a` is passed to `func1`, where a local copy `x` is incremented to 9 and printed. The original variable `a` in `main` remains 8."
+    },
+    {
+      "id": "extract-combined-1777733652940-129",
+      "number": "130",
+      "text": "If a method `countodd` is written to return the number of odd integers in a one-dimensional array, what would be the returned value when invoked with the array `{11, 2, 4, 5, 8, 7, 3}`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "7"
+        }
+      ],
+      "inputName": "Q129",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The odd numbers in the array are 11, 5, 7, and 3. There are 4 odd numbers in total."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 130
+}

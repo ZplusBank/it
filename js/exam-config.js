@@ -140,6 +140,24 @@ const EXAM_CONFIG = [
         "name": "Objects and Classes",
         "q": 52,
         "file": "data/java1/chapterchapter9liang12ejson.json"
+      },
+      {
+        "id": "1",
+        "name": "First",
+        "q": 102,
+        "file": "data/java1/First.json"
+      },
+      {
+        "id": "2",
+        "name": "Second",
+        "q": 130,
+        "file": "data/java1/Second.json"
+      },
+      {
+        "id": "3",
+        "name": "Final",
+        "q": 126,
+        "file": "data/java1/Final.json"
       }
     ]
   },

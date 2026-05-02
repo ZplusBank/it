@@ -1,0 +1,3176 @@
+{
+  "id": "extract-combined-1777733152510",
+  "label": "Combined Batch (8 files)",
+  "params": {
+    "file": "Multiple Files",
+    "type": "visual_extractor",
+    "chapter": "1"
+  },
+  "title": "First",
+  "questions": [
+    {
+      "id": "extract-combined-1777733152510-0",
+      "number": "1",
+      "text": "What is the output of the following code?\n```java\nSystem.out.println((6 + 12) / 3 * (1 + 1) + 3 % 10);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "30"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "15"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Follow the order of operations (PEMDAS/BODMAS):\n1. Parentheses: \\( (6 + 12) = 18 \\) and \\( (1 + 1) = 2 \\).\n2. Division and Multiplication (left to right): \\( 18 / 3 = 6 \\), then \\( 6 * 2 = 12 \\).\n3. Modulo: \\( 3 \\% 10 = 3 \\).\n4. Addition: \\( 12 + 3 = 15 \\)."
+    },
+    {
+      "id": "extract-combined-1777733152510-1",
+      "number": "2",
+      "text": "What is the output of the following code?\n```java\nint x = 6, y = 7;\nif ((++x == 6) || (++y >= 8))\n    System.out.println(x + y);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "14"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "12"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "13"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "1. `x = 6`, `y = 7`.\n2. `++x == 6`: `x` becomes 7. `7 == 6` is false.\n3. The short-circuit OR (`||`) evaluates the second operand because the first was false.\n4. `++y >= 8`: `y` becomes 8. `8 >= 8` is true. \n5. The condition is true, so it prints `x + y` which is `7 + 8 = 15`. 15 is not among the options A, B, or C."
+    },
+    {
+      "id": "extract-combined-1777733152510-2",
+      "number": "3",
+      "text": "Which of the following is equivalent to:\n```java\nif (y == x)\n    System.out.println(\"11\");\nelse\n    System.out.println(\"22\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\nif (x > y || x < y)\n    System.out.println(\"11\");\nelse\n    System.out.println(\"22\");\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\nif (x > y && x < y)\n    System.out.println(\"22\");\nelse\n    System.out.println(\"11\");\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\nif (x == y)\n    System.out.println(\"11\");\nelse\n    System.out.println(\"22\");\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The condition `y == x` is logically identical to `x == y`. Option C preserves the same logic and the same output branches."
+    },
+    {
+      "id": "extract-combined-1777733152510-3",
+      "number": "4",
+      "text": "What is the output of the following code?\n```java\nint a = 1, b = 2;\nif (a > b || a + b != ++b)\n    System.out.println(b);\nelse if (b == 0 && b-- > a)\n    System.out.println(b);\nelse if (b == 3)\n    System.out.println(a);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "6"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. `a=1, b=2`.\n2. `a > b` (1 > 2) is false.\n3. Evaluate `a + b != ++b`: In Java, operands are evaluated left-to-right. `a + b` is 3. Then `++b` makes `b = 3` and evaluates to 3. `3 != 3` is false.\n4. First `if` block is skipped.\n5. `else if (b == 0 && ...)`: `b` is 3, so `3 == 0` is false. This block is skipped.\n6. `else if (b == 3)`: `3 == 3` is true.\n7. `System.out.println(a)` prints 1."
+    },
+    {
+      "id": "extract-combined-1777733152510-4",
+      "number": "5",
+      "text": "What is the output of the following code?\n```java\nint x = 1;\nswitch(x + 2 % 3){\n    case 0: x++;\n    case 3: ++x;\n    case 6: x += 2;\n    default: x--;\n}\nSystem.out.println(x);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "2"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "1. Expression `x + 2 % 3` = `1 + 2` = 3.\n2. `switch(3)` jumps to `case 3`.\n3. `case 3`: `++x` makes `x = 2`. No break, so it falls through.\n4. `case 6`: `x += 2` makes `x = 4`. No break, so it falls through.\n5. `default`: `x--` makes `x = 3`.\n6. Final value printed is 3."
+    },
+    {
+      "id": "extract-combined-1777733152510-5",
+      "number": "6",
+      "text": "What is the output of the following code?\n```java\nint a = 10;\nif (a == 9)\n    System.out.println(\"OK\");\n    System.out.println(\"MASTER\");\nelse\n    System.out.println(\"BYE\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "OK MASTER"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "OK"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "BYE"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The code causes a compile-time error. Without curly braces, only the first statement after the `if` belongs to the `if`. The statement `System.out.println(\"MASTER\");` is treated as a separate statement, which leaves the `else` without a preceding `if` block."
+    },
+    {
+      "id": "extract-combined-1777733152510-6",
+      "number": "7",
+      "text": "Which one of the following is a valid declaration for an integer identifier?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "int arab *;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "int &arab;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "int 6arab;"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "int arab_true;"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "In Java, identifiers can contain letters, numbers, underscores, and dollar signs, but they cannot start with a number (C is invalid) or contain special characters like `*` or `&` (A and B are invalid). `arab_true` is a valid identifier."
+    },
+    {
+      "id": "extract-combined-1777733152510-7",
+      "number": "8",
+      "text": "The expression `(int)(88.026 * 100) / 100` evaluates to :",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "88.03"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "88.02"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "88.0252175"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "88"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "1. `88.026 * 100` = 8802.6\n2. `(int)(8802.6)` casts the double to an integer, resulting in 8802.\n3. `8802 / 100` is integer division, which discards the remainder, resulting in 88."
+    },
+    {
+      "id": "extract-combined-1777733152510-8",
+      "number": "9",
+      "text": "What is the result of `(double)(1/2)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0.5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "1. Inside the parentheses, `1 / 2` is integer division, which evaluates to 0.\n2. Casting 0 to a double results in `0.0`."
+    },
+    {
+      "id": "extract-combined-1777733152510-9",
+      "number": "10",
+      "text": "Assume x=1 and y=2, what is the result of evaluating `\"x + y = \" + x + y`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x + y = 3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x + y = x + y"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x + y = 12"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Illegal operations"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Java evaluates the expression from left to right. \n1. `\"x + y = \" + x` results in the String `\"x + y = 1\"`.\n2. `\"x + y = 1\" + y` results in the String `\"x + y = 12\"` due to string concatenation."
+    },
+    {
+      "id": "extract-combined-1777733152510-10",
+      "number": "11",
+      "text": "What is the result of the following statement: `System.out.print(17/4);`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4.25"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4.5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Since both 17 and 4 are integers, the `/` operator performs integer division. \\( 17 / 4 = 4 \\) with a remainder of 1. The result is 4."
+    },
+    {
+      "id": "extract-combined-1777733152510-11",
+      "number": "12",
+      "text": "What is the output of the following code?\n```java\nint x = 3, y = 1;\nswitch (x - y) {\n    case 2: y = 0; x = 5;\n    case 3: y = 3; x = 7;\n}\nSystem.out.println(y);\nSystem.out.println(x);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0 5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3 7"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3 5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0 7"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "1. `x - y` = 3 - 1 = 2.\n2. `switch(2)` goes to `case 2`.\n3. In `case 2`, `y` becomes 0 and `x` becomes 5. Because there is no `break` statement, it falls through to `case 3`.\n4. In `case 3`, `y` becomes 3 and `x` becomes 7.\n5. Output is `3` and `7`."
+    },
+    {
+      "id": "extract-combined-1777733152510-12",
+      "number": "13",
+      "text": "What is the output of the following code?\n```java\nSystem.out.println(Math.rint(2.5) + Math.ceil(-3.7));\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "-1.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "-2.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "-3.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "-2.8"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. `Math.rint(2.5)`: Returns the double value closest to the argument that is an integer. If two are equally close (2.0 and 3.0), it returns the even one, which is 2.0.\n2. `Math.ceil(-3.7)`: Returns the smallest double value that is greater than or equal to the argument. For -3.7, this is -3.0.\n3. `2.0 + (-3.0) = -1.0`."
+    },
+    {
+      "id": "extract-combined-1777733152510-13",
+      "number": "14",
+      "text": "Consider the following code and determine the values of x, y, and z if the output is \"to\":\n```java\nif (x != y && z-- > x)\n    if (x++ > 5 ^ x > z)\n        if (x < y || z > x)\n            System.out.println(\"Hello\");\n        else\n            System.out.println(\"to\");\n    else\n        System.out.println(\"java\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x=4, y=2, z=5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x=1, y=2, z=5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x=7, y=4, z=5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "x=1, y=6, z=5"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "With x=4, y=2, z=5:\n1. `if (x != y && z-- > x)`: `4 != 2` (True) and `5 > 4` (True). After evaluation, `z` becomes 4.\n2. `if (x++ > 5 ^ x > z)`: `4 > 5` (False). After this, `x` becomes 5. `5 > 4` is True. `False ^ True` is True.\n3. `if (x < y || z > x)`: `5 < 2` (False) or `4 > 5` (False). `False || False` is False.\n4. Code goes to `else` and prints \"to\"."
+    },
+    {
+      "id": "extract-combined-1777733152510-14",
+      "number": "15",
+      "text": "What is the output of the following code?\n```java\nString str = new String(\"Hello\");\nstr = str.replace('l', 'm');\nSystem.out.println(str);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Hello"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Hemmo"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Hemlo"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The `replace` method replaces all occurrences of the target character with the replacement character. \"Hello\" becomes \"Hemmo\". Since the result is assigned back to `str`, it prints \"Hemmo\"."
+    },
+    {
+      "id": "extract-combined-1777733152510-15",
+      "number": "16",
+      "text": "What is the output of the following code?\n```java\nString str = new String(\"Hello\");\nstr.replace('l', 'm');\nSystem.out.println(str);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Hello"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Hemmo"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Hemlo"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Strings in Java are immutable. The `str.replace` method returns a new string but does not modify the existing `str` object. Since the return value is not assigned back to `str`, `str` remains \"Hello\"."
+    },
+    {
+      "id": "extract-combined-1777733152510-16",
+      "number": "17",
+      "text": "What is the output of the following code?\n\n```java\nint x = 3;\nif (x == 3)\n{ System.out.print(\"hi\"); }\nelse;\nSystem.out.print(\"bye\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "a",
+          "text": "hi"
+        },
+        {
+          "value": "B",
+          "label": "b",
+          "text": "bye"
+        },
+        {
+          "value": "C",
+          "label": "c",
+          "text": "hibye"
+        },
+        {
+          "value": "D",
+          "label": "d",
+          "text": "none"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The condition `x == 3` is true, so `\"hi\"` is printed. The `else` statement is followed by a semicolon, making it an empty statement. The final `System.out.print(\"bye\")` is outside the `if-else` structure and executes regardless of the condition. Thus, the output is `\"hibye\"`."
+    },
+    {
+      "id": "extract-combined-1777733152510-17",
+      "number": "18",
+      "text": "What is the output of the following code?\n\n```java\nint x = 5, y = 4;\nif (x == 5 ^ y >= 2)\n    System.out.println(\"yes\");\nelse\n    System.out.println(\"no\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "a",
+          "text": "yes"
+        },
+        {
+          "value": "B",
+          "label": "b",
+          "text": "no"
+        },
+        {
+          "value": "C",
+          "label": "c",
+          "text": "error"
+        },
+        {
+          "value": "D",
+          "label": "d",
+          "text": "none"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The expression uses the XOR (`^`) operator. `x == 5` is `true` and `y >= 2` is `true`. Since both operands are `true`, the XOR operation results in `false`. Therefore, the `else` block executes, printing `\"no\"`."
+    },
+    {
+      "id": "extract-combined-1777733152510-18",
+      "number": "19",
+      "text": "What is the output of the following code?\n\n```java\nint i = 20, count = 0;\nfor (i = 3; i <= 20; i += 3)\n{\n    if (i < 8 || i > 12)\n        count++;\n}\nSystem.out.println(i + \" \" + count);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "a",
+          "text": "20 3"
+        },
+        {
+          "value": "B",
+          "label": "b",
+          "text": "20 4"
+        },
+        {
+          "value": "C",
+          "label": "c",
+          "text": "21 3"
+        },
+        {
+          "value": "D",
+          "label": "d",
+          "text": "21 4"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The loop runs for `i` values: 3, 6, 9, 12, 15, 18. \n- `i=3`: `3 < 8` is true, `count=1`.\n- `i=6`: `6 < 8` is true, `count=2`.\n- `i=9`: false, `count=2`.\n- `i=12`: false, `count=2`.\n- `i=15`: `15 > 12` is true, `count=3`.\n- `i=18`: `18 > 12` is true, `count=4`.\nThe next `i` is 21, which terminates the loop. The output is `21 4`."
+    },
+    {
+      "id": "extract-combined-1777733152510-19",
+      "number": "20",
+      "text": "What is the output of the following code?\n\n```java\nint x = 2, y = 7;\nint a = (x >= y ? 5 : (y == 7 ? x / y : y / x));\nSystem.out.println(a);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "a",
+          "text": "7"
+        },
+        {
+          "value": "B",
+          "label": "b",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "c",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "d",
+          "text": "none"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`x >= y` (2 >= 7) is `false`, so it evaluates the nested ternary: `y == 7 ? x / y : y / x`. Since `y == 7` is `true`, it evaluates `x / y` (2 / 7). Because these are integers, the result is 0."
+    },
+    {
+      "id": "extract-combined-1777733152510-20",
+      "number": "21",
+      "text": "What is the output of the following code?\n\n```java\nString str1 = \"aabb\";\nString str2 = \"aabb\";\nString str3 = new String(\"aabb\");\nstr2 = str3;\nSystem.out.print((str1 == str2));\nSystem.out.println(\" \" + (str2 == str3));\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "a",
+          "text": "true true"
+        },
+        {
+          "value": "B",
+          "label": "b",
+          "text": "false false"
+        },
+        {
+          "value": "C",
+          "label": "c",
+          "text": "true false"
+        },
+        {
+          "value": "D",
+          "label": "d",
+          "text": "false true"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "`str1` and `str2` initially point to the same pool object. However, `str2` is then reassigned to point to the new object created by `str3`. Therefore, `str1 == str2` is `false` (comparing pool vs heap reference), and `str2 == str3` is `true` (both pointing to the same heap object)."
+    },
+    {
+      "id": "extract-combined-1777733152510-21",
+      "number": "22",
+      "text": "What is the output of the following code?\n\n```java\nSystem.out.println(37 % 3 * 0.5 + 2 * 3);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "a",
+          "text": "7.5"
+        },
+        {
+          "value": "B",
+          "label": "b",
+          "text": "6.5"
+        },
+        {
+          "value": "C",
+          "label": "c",
+          "text": "7"
+        },
+        {
+          "value": "D",
+          "label": "d",
+          "text": "6"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Order of operations: \n1. `37 % 3` is 1.\n2. `1 * 0.5` is 0.5.\n3. `2 * 3` is 6.\n4. `0.5 + 6` is 6.5."
+    },
+    {
+      "id": "extract-combined-1777733152510-22",
+      "number": "23",
+      "text": "Which is a valid identifier?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "a",
+          "text": "a_1"
+        },
+        {
+          "value": "B",
+          "label": "b",
+          "text": "1_a"
+        },
+        {
+          "value": "C",
+          "label": "c",
+          "text": "a 1"
+        },
+        {
+          "value": "D",
+          "label": "d",
+          "text": "none"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In Java, identifiers must start with a letter, `$`, or `_`. They cannot start with a digit (eliminating `1_a`) and cannot contain spaces (eliminating `a 1`). `a_1` is valid."
+    },
+    {
+      "id": "extract-combined-1777733152510-23",
+      "number": "24",
+      "text": "What is the output of the following code?\n\n```java\nint x = 3, y = 2;\nswitch (x % 6 / 2)\n{\n    case 0: y += 1;\n    case 1: y += 1;\n    case 2: y += 1;\n    default: y += 1;\n}\nSystem.out.println(y);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "a",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "b",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "c",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "d",
+          "text": "2"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The switch expression `3 % 6 / 2` evaluates to `3 / 2`, which is 1. The code execution starts at `case 1`. Since there are no `break` statements, it falls through to `case 2` and `default`. `y` increments three times (from 2 to 3, 3 to 4, and 4 to 5)."
+    },
+    {
+      "id": "extract-combined-1777733152510-24",
+      "number": "25",
+      "text": "What is the output of the following code?\n\n```java\nint a = 5;\nint b = a++ * 3;\nSystem.out.println(b + \" \" + a);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "a",
+          "text": "18 6"
+        },
+        {
+          "value": "B",
+          "label": "b",
+          "text": "18 5"
+        },
+        {
+          "value": "C",
+          "label": "c",
+          "text": "15 6"
+        },
+        {
+          "value": "D",
+          "label": "d",
+          "text": "15 5"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The post-increment operator `a++` uses the current value (5) for the multiplication and then increments `a` to 6. So `b = 5 * 3 = 15` and `a = 6`. The output is `15 6`."
+    },
+    {
+      "id": "extract-combined-1777733152510-25",
+      "number": "26",
+      "text": "What is the output of the following code?\n\n```java\nchar ch = 'a';\nint x = 10;\nwhile (ch != 'd')\n{\n    x += 4;\n    if (x % 10 == 2)\n        ch = 'd';\n    else\n        System.out.print(x + \" \");\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "a",
+          "text": "14 18"
+        },
+        {
+          "value": "B",
+          "label": "b",
+          "text": "14 18 22"
+        },
+        {
+          "value": "C",
+          "label": "c",
+          "text": "18"
+        },
+        {
+          "value": "D",
+          "label": "d",
+          "text": "14"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "- Iteration 1: `x` becomes 14. `14 % 10` is 4. Prints \"14 \".\n- Iteration 2: `x` becomes 18. `18 % 10` is 8. Prints \"18 \".\n- Iteration 3: `x` becomes 22. `22 % 10` is 2. `ch` becomes 'd'. Nothing is printed. Loop terminates."
+    },
+    {
+      "id": "extract-combined-1777733152510-26",
+      "number": "27",
+      "text": "What is the output of the following code?\n\n```java\nString str = \"welcome\";\nstr = str.length() + str.substring(2);\nSystem.out.println(str);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "a",
+          "text": "6lcome"
+        },
+        {
+          "value": "B",
+          "label": "b",
+          "text": "6 elcome"
+        },
+        {
+          "value": "C",
+          "label": "c",
+          "text": "7lcome"
+        },
+        {
+          "value": "D",
+          "label": "d",
+          "text": "none"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`str.length()` is 7. `str.substring(2)` extracts the string from index 2 to the end, which is \"lcome\". Concatenating them results in \"7lcome\"."
+    },
+    {
+      "id": "extract-combined-1777733152510-27",
+      "number": "28",
+      "text": "What is the output of the following code?\n\n```java\nString str = \"hi all\";\nstr += str.replace('l', '*');\nSystem.out.println(str);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "a",
+          "text": "hi a**"
+        },
+        {
+          "value": "B",
+          "label": "b",
+          "text": "hi allhi a**"
+        },
+        {
+          "value": "C",
+          "label": "c",
+          "text": "hi all hi a**"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "`str.replace('l', '*')` returns the string \"hi a**\". The `+=` operator concatenates this to the original string \"hi all\", resulting in \"hi allhi a**\"."
+    },
+    {
+      "id": "extract-combined-1777733152510-28",
+      "number": "29",
+      "text": "What is the output of the following code?\n\n```java\nint sum = 0;\nfor (int i = 1; i <= 20; i *= 5)\n{\n    sum += i;\n}\nSystem.out.println(sum);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "a",
+          "text": "5"
+        },
+        {
+          "value": "B",
+          "label": "b",
+          "text": "11"
+        },
+        {
+          "value": "C",
+          "label": "c",
+          "text": "26"
+        },
+        {
+          "value": "D",
+          "label": "d",
+          "text": "6"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The loop runs for `i = 1` and `i = 5`. For `i = 1`, `sum` becomes 1. For `i = 5`, `sum` becomes 6. Then `i` becomes 25, which is greater than 20, so the loop ends. Output is 6."
+    },
+    {
+      "id": "extract-combined-1777733152510-29",
+      "number": "30",
+      "text": "What is the output of the following code?\n\n```java\nSystem.out.println(5 + 2 + \"1\" + 1 + 2);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "a",
+          "text": "5213"
+        },
+        {
+          "value": "B",
+          "label": "b",
+          "text": "7112"
+        },
+        {
+          "value": "C",
+          "label": "c",
+          "text": "52112"
+        },
+        {
+          "value": "D",
+          "label": "d",
+          "text": "713"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Execution goes left to right: `5 + 2` is 7. `7 + \"1\"` converts 7 to string resulting in \"71\". \"71\" + 1 results in \"711\". \"711\" + 2 results in \"7112\"."
+    },
+    {
+      "id": "extract-combined-1777733152510-30",
+      "number": "31",
+      "text": "What is the output of the following code?\n\n```java\nboolean f = true;\nint x = 2;\nif (f || ++x != 3)\n    System.out.println(x);\nelse\n    System.out.println(x * 2);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "a",
+          "text": "2"
+        },
+        {
+          "value": "B",
+          "label": "b",
+          "text": "3"
+        },
+        {
+          "value": "C",
+          "label": "c",
+          "text": "6"
+        },
+        {
+          "value": "D",
+          "label": "d",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `||` operator is short-circuiting. Since `f` is `true`, the second expression `++x != 3` is not evaluated at all. Thus, `x` remains 2 and is printed by the `if` block."
+    },
+    {
+      "id": "extract-combined-1777733152510-31",
+      "number": "32",
+      "text": "What is the output of the following code?\n\n```java\nSystem.out.println((double)(int) 3.5 / 2);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1.5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "none"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The expression evaluates according to Java's operator precedence rules:\n1. The cast operations have higher precedence than division and associate from right to left.\n2. `(int) 3.5` is evaluated first, which truncates the value to the integer `3`.\n3. `(double) 3` is then evaluated, converting the integer to a double `3.0`.\n4. Finally, `3.0 / 2` is performed. Since one operand is a double, floating-point division is used, resulting in `1.5`."
+    },
+    {
+      "id": "extract-combined-1777733152510-32",
+      "number": "33",
+      "text": "Which is a valid constant name?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "MAX SALARY"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "MAX_SALARY"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "MaxSalary"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Max_Salary"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, standard naming conventions for constants (typically `static final` variables) use all uppercase letters with underscores to separate words (e.g., `MAX_SALARY`). Option A is syntactically invalid because it contains a space. Options C and D are valid identifiers but follow camelCase or other conventions not typically used for constants."
+    },
+    {
+      "id": "extract-combined-1777733152510-33",
+      "number": "34",
+      "text": "Which keyword is used in Java to declare a constant variable?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "const"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "final"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "static"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "fixed"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, the `final` keyword is used to indicate that a variable's value cannot be changed once it has been initialized, effectively making it a constant. While `const` is a reserved word in Java, it is not functional; `final` is the correct keyword to use."
+    },
+    {
+      "id": "extract-combined-1777733152510-34",
+      "number": "35",
+      "text": "What is the output of the following code?\n\n```java\nint r, c, s = 0;\nfor ( r = 1 ; r < 4 ; r++ )\n{\n    for ( c = r; c < 3 ; c++ )\n    {\n        s = s + r + c;\n    }\n}\nSystem.out.println (s);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "11"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No correct answer"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "13"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "9"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Let's trace the nested loops:\n1. When \\( r = 1 \\):\n   - \\( c = 1 \\): \\( s = 0 + 1 + 1 = 2 \\)\n   - \\( c = 2 \\): \\( s = 2 + 1 + 2 = 5 \\)\n2. When \\( r = 2 \\):\n   - \\( c = 2 \\): \\( s = 5 + 2 + 2 = 9 \\)\n3. When \\( r = 3 \\):\n   - Inner loop condition (\\( c < 3 \\)) is false immediately because \\( c = r = 3 \\).\n\nThe final value of \\( s \\) is 9."
+    },
+    {
+      "id": "extract-combined-1777733152510-35",
+      "number": "36",
+      "text": "What is the output of the following statement?\n\n`System.out.println(( 6 + 12 ) / 3 * (1 + 1) + 3 % 10);`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "30"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "15"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Using Java operator precedence rules:\n1. Parentheses first: `(6 + 12) = 18` and `(1 + 1) = 2`.\n2. Expression becomes: `18 / 3 * 2 + 3 % 10`.\n3. Multiplication, division, and modulo have equal precedence and are evaluated left-to-right:\n   - `18 / 3 = 6`\n   - `6 * 2 = 12`\n   - `3 % 10 = 3`\n4. Addition: `12 + 3 = 15`."
+    },
+    {
+      "id": "extract-combined-1777733152510-36",
+      "number": "37",
+      "text": "What is the output of the following code?\n\n```java\npublic static void main(String[] args) {\n    int x = 993;\n    while ( x == 1050 )\n        x++;\n    System.out.println (x);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "993"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1050"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1051"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The variable `x` is initialized to 993. The `while` loop condition checks if `x == 1050`. Since this condition is false (993 is not 1050), the loop body `x++` never executes. The program immediately proceeds to print the value of `x`, which remains 993."
+    },
+    {
+      "id": "extract-combined-1777733152510-37",
+      "number": "38",
+      "text": "Which of the following loops will display **HALA** 20 times?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "for ( a=1 ; a < 20 ; a+=1 ) System.out.println(\"HALA\");"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "for ( a=0 ; a < 20 ; a+=2 ) System.out.println(\"HALA\");"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "for ( a=0 ; a <= 20 ; a+=1 ) System.out.println(\"HALA\");"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "for ( a=0 ; a < 40 ; a+=2 ) System.out.println(\"HALA\");"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Let's count the iterations for each loop:\n- A: 1 to 19 (inclusive) = 19 iterations.\n- B: 0, 2, 4, 6, 8, 10, 12, 14, 16, 18 = 10 iterations.\n- C: 0 to 20 (inclusive) = 21 iterations.\n- D: Starting at 0, incrementing by 2 up to but not including 40 (0, 2, ... 38) results in exactly 20 iterations (\\( 40 / 2 = 20 \\))."
+    },
+    {
+      "id": "extract-combined-1777733152510-38",
+      "number": "39",
+      "text": "Consider a program that evaluates the following expression. What is the missing code?\n\n\\[ \\sum_{i=1}^{20} 1/i \\]\n\n```java\ndouble sum = 0.0;\nfor (int i = 1; i <= 20; i++) {\n    // missing code\n}\nSystem.out.println(sum);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "sum = 20 + 1/i;"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "sum = sum + 1/i;"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No correct answer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "sum += 1.0/i;"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "To correctly evaluate the harmonic series summation, we need to accumulate the reciprocal of the loop counter `i`. In Java, if both operands are integers (e.g., `1/i`), the result is an integer (integer division). For example, `1/2` would be `0`. To get a precise floating-point result, at least one operand must be a double, which is why `1.0/i` is required."
+    },
+    {
+      "id": "extract-combined-1777733152510-39",
+      "number": "40",
+      "text": "What is the output of the following code?\n\n```java\nint x = 5;\nint y = 7;\nif ((++x == 6) || (++y >= 8))\n    System.out.println(x + y);\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "A",
+          "text": "14"
+        },
+        {
+          "value": "2",
+          "label": "B",
+          "text": "12"
+        },
+        {
+          "value": "3",
+          "label": "C",
+          "text": "13"
+        },
+        {
+          "value": "4",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "3",
+      "explanation": "In Java, the logical OR operator `||` is short-circuited. First, `++x == 6` is evaluated. `x` is incremented to 6, and `6 == 6` is `true`. Because the first operand is `true`, the entire condition is `true` and the second operand `(++y >= 8)` is not executed. Therefore, `y` remains 7. The code prints `x + y`, which is `6 + 7 = 13`."
+    },
+    {
+      "id": "extract-combined-1777733152510-40",
+      "number": "41",
+      "text": "Which of the following is equivalent to: `if ( y == x ) System.out.println (\" 11 \"); else System.out.println (\" 22 \");`?",
+      "choices": [
+        {
+          "value": "1",
+          "label": "A",
+          "text": "```java\nif (x > y && x < y)\n    System.out.println (\" 22 \");\nelse\n    System.out.println (\" 11 \");\n```"
+        },
+        {
+          "value": "2",
+          "label": "B",
+          "text": "```java\nif (x > y || x < y)\n    System.out.println (\" 11 \");\nelse\n    System.out.println (\" 22 \");\n```"
+        },
+        {
+          "value": "3",
+          "label": "C",
+          "text": "```java\nif (x != y)\n    System.out.println (\" 11 \");\nelse\n    System.out.println (\" 22 \");\n```"
+        },
+        {
+          "value": "4",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "4",
+      "explanation": "The original code prints '11' if `y == x` and '22' otherwise. \n- Option A: `x > y && x < y` is impossible, so it always prints '11'. \n- Option B: `x > y || x < y` is equivalent to `x != y`. It prints '11' if they are NOT equal, which is the opposite of the original. \n- Option C: `x != y` prints '11' if they are NOT equal, which is also the opposite. \nSince none match the logic of the original statement, 'No correct answer' is the right choice."
+    },
+    {
+      "id": "extract-combined-1777733152510-41",
+      "number": "42",
+      "text": "What is the output of the following code snippet?\n\n```java\nint x = 1;\nint y = 0;\nwhile ( y <= 10 ) {\n    if ( x % 3 != 0 )\n        y = y + 3;\n    else\n        y = y - 2;\n    x++;\n}\nSystem.out.println (y);\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "value": "2",
+          "label": "B",
+          "text": "11"
+        },
+        {
+          "value": "3",
+          "label": "C",
+          "text": "13"
+        },
+        {
+          "value": "4",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "2",
+      "explanation": "Tracing the execution:\n1. `y=0`, `x=1`: `1%3!=0` (T), `y=3`, `x=2`\n2. `y=3`, `x=2`: `2%3!=0` (T), `y=6`, `x=3`\n3. `y=6`, `x=3`: `3%3!=0` (F), `y=4`, `x=4`\n4. `y=4`, `x=4`: `4%3!=0` (T), `y=7`, `x=5`\n5. `y=7`, `x=5`: `5%3!=0` (T), `y=10`, `x=6`\n6. `y=10`, `x=6`: `6%3!=0` (F), `y=8`, `x=7`\n7. `y=8`, `x=7`: `7%3!=0` (T), `y=11`, `x=8`\n8. `y=11`: `11 <= 10` is false. Loop terminates. Output is 11."
+    },
+    {
+      "id": "extract-combined-1777733152510-42",
+      "number": "43",
+      "text": "Assume the following Java code snippet:\n```java\nint x = 5;\nint y = (--x > 4) ? ++x : x--;\n```\nWhat is the value of \\( y \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "6"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "1. Initially, `x = 5`.\n2. The ternary condition `(--x > 4)` is evaluated. \n3. `--x` is a prefix decrement, so `x` becomes 4 and the expression returns 4.\n4. `4 > 4` is `false`.\n5. Since the condition is false, the second expression `x--` is executed.\n6. `x--` is a postfix decrement. It returns the current value of `x` (which is 4) and then decrements `x` to 3.\n7. Therefore, `y` is assigned the value 4."
+    },
+    {
+      "id": "extract-combined-1777733152510-43",
+      "number": "44",
+      "text": "Assume `int year = 2012`. What is the result of the following Java statement?\n```java\nSystem.out.println(\"Is \" + year + \" a leap year? \" + ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)));\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Is year a leap year? True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Is year a leap year? False"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Is 2012 a leap year? True"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Is 2012 a leap year? False"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The code concatenates the string literal with the variable `year` (2012) and the boolean result of the leap year logic. \nFor 2012:\n- `2012 % 4 == 0` is `true`.\n- `2012 % 100 != 0` is `true`.\n- `true && true` is `true`.\n- `true || (anything)` is `true`.\nThe final string is \"Is 2012 a leap year? true\"."
+    },
+    {
+      "id": "extract-combined-1777733152510-44",
+      "number": "45",
+      "text": "Suppose that `int a = 4;`. The value of the expression `a = (a = 3) + a` is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "7"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, operands are evaluated from left to right. \n1. The sub-expression `(a = 3)` is evaluated first. It assigns 3 to `a` and returns the value 3.\n2. The second operand is the current value of `a`. Since `a` was just updated to 3, the operand is 3.\n3. The expression becomes `3 + 3`, which is 6.\n4. Finally, 6 is assigned to `a`."
+    },
+    {
+      "id": "extract-combined-1777733152510-45",
+      "number": "46",
+      "text": "The expression `(int) (88.026 * 100) / 100` evaluates to:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "88.03"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "88.02"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "88.0252175"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "88"
+        }
+      ],
+      "inputName": "Q45",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "1. `88.026 * 100 = 8802.6`.\n2. Casting to `(int)` truncates the decimal part: `(int) 8802.6 = 8802`.\n3. `8802 / 100` uses integer division because both operands are integers.\n4. `8802 / 100 = 88`."
+    },
+    {
+      "id": "extract-combined-1777733152510-46",
+      "number": "47",
+      "text": "What is the result of the expression `(double) (1 / 2)`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0.5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q46",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The expression inside the parentheses `(1 / 2)` is evaluated first. Since both 1 and 2 are integers, integer division is performed, resulting in 0. Then, 0 is cast to a double, resulting in `0.0`."
+    },
+    {
+      "id": "extract-combined-1777733152510-47",
+      "number": "48",
+      "text": "Assume `x = 1` and `y = 2`. What is the result of evaluating the expression `\"x + y = \" + x + y`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x + y = 3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "x + y = 12"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "x + y = x + y"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Illegal operations"
+        }
+      ],
+      "inputName": "Q47",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, the `+` operator is evaluated from left to right. \n1. `\"x + y = \" + x` results in the string `\"x + y = 1\"`.\n2. `\"x + y = 1\" + y` results in the string `\"x + y = 12\"` because the second `+` is also treated as string concatenation."
+    },
+    {
+      "id": "extract-combined-1777733152510-48",
+      "number": "49",
+      "text": "What is the result of the following statement?\n```java\nSystem.out.print(17 / 4);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "4.25"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4.5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5"
+        }
+      ],
+      "inputName": "Q48",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The numbers 17 and 4 are integer literals. In Java, dividing an integer by an integer results in an integer (the decimal part is discarded). Therefore, `17 / 4 = 4`."
+    },
+    {
+      "id": "extract-combined-1777733152510-49",
+      "number": "50",
+      "text": "Suppose that `char x = 'A'` and `char y = 'C'`. What is the output of the following statement?\n```java\nSystem.out.printf(\"%c and %c\", ++x, y + 2);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "B and E"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A and C"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "B and C"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q49",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "1. `++x` increments 'A' to 'B' and returns 'B'. \n2. `y + 2` adds 2 to the ASCII/Unicode value of 'C' (67 + 2 = 69). The value 69 corresponds to the character 'E'. \n3. The format specifier `%c` prints the character representation. Thus, it prints \"B and E\"."
+    },
+    {
+      "id": "extract-combined-1777733152510-50",
+      "number": "51",
+      "text": "Consider a program that evaluates the following summation:\n\n\\[ \\sum_{i=1}^{20} 1/i \\]\n\nWhat is the missing code to correctly calculate this sum?\n\n```java\ndouble sum = 0.0;\nfor (int i = 1; i <= 20; i++) {\n    // Missing code\n}\nSystem.out.println(sum);\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "sum = 20 + 1/i;"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "sum = sum - 1/i;"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "No correct answer"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "sum += 1.0/i;"
+        }
+      ],
+      "inputName": "Q50",
+      "inputType": "radio",
+      "correctAnswer": "4",
+      "explanation": "To calculate a summation, we use an accumulator (`sum += ...`). Because `i` is an integer, `1/i` would result in integer division (e.g., `1/2` would be 0). Using a double literal `1.0/i` ensures floating-point division is performed, correctly calculating the fractions."
+    },
+    {
+      "id": "extract-combined-1777733152510-51",
+      "number": "52",
+      "text": "What is the output of the following code?\n\n```java\nint x = 20;\nString str = \"Hello Java\";\nSystem.out.printf(\"print %s, %d times + %d\", str, 10, x);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "print\nHello\nJava\ntimes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "print\nHello\nJava, %\nd times\n+%d"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "print Hello Java, 10 times + 20"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q51",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `printf` method uses format specifiers. `%s` is replaced by the string `str` (\"Hello Java\"), the first `%d` is replaced by the integer 10, and the second `%d` is replaced by the value of `x` (20). The resulting string is \"print Hello Java, 10 times + 20\"."
+    },
+    {
+      "id": "extract-combined-1777733152510-52",
+      "number": "53",
+      "text": "What is the output of the following line of code?\n\n`System.out.println((6 + 12 ) / 3 * (1 + 1) + 3 % 10);`",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "30"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "15"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q52",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Order of operations (PEMDAS/BODMAS):\n1. Parentheses: `(6 + 12) = 18` and `(1 + 1) = 2`.\n2. The expression becomes `18 / 3 * 2 + 3 % 10`.\n3. Multiplication, Division, and Modulo are evaluated left-to-right: \n   - `18 / 3 = 6` \n   - `6 * 2 = 12` \n   - `3 % 10 = 3`.\n4. Addition: `12 + 3 = 15`."
+    },
+    {
+      "id": "extract-combined-1777733152510-53",
+      "number": "54",
+      "text": "What is the output of the following code?\n\n```java\npublic static void main(String[] args) {\n    int x = 993;\n    while ( x == 1050 )\n        x++;\n    System.out.println (x);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "993"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1050"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1051"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q53",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The `while` loop condition `x == 1050` is evaluated. Since `x` is initially 993, the condition is false immediately. The loop body `x++` is skipped, and the code prints the initial value of `x`, which is 993."
+    },
+    {
+      "id": "extract-combined-1777733152510-54",
+      "number": "55",
+      "text": "Which of the following loops will display HALA 20 times?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "`for ( a=1 ; a < 20 ; a+=1 ) System.out.println(\"HALA\");`"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "`for ( a=0 ; a < 20 ; a+=2 ) System.out.println(\"HALA\");`"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "`for ( a=0 ; a <= 20 ; a+=1 ) System.out.println(\"HALA\");`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "`for ( a=0 ; a < 40 ; a+=2 ) System.out.println(\"HALA\");`"
+        }
+      ],
+      "inputName": "Q54",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "- Option A: Runs from 1 to 19 (19 times).\n- Option B: Runs for 0, 2, 4, 6, 8, 10, 12, 14, 16, 18 (10 times).\n- Option C: Runs from 0 to 20 (21 times).\n- Option D: Runs for values 0, 2, 4, ..., 38. This is exactly 20 iterations (40 / 2)."
+    },
+    {
+      "id": "extract-combined-1777733152510-55",
+      "number": "56",
+      "text": "What is the output of the following code?\n\n```java\nint sum = 0;\nint [] Arr = new int [5];\nfor (int i = 0; i < 5; i++)\n    Arr[i] = 2 * i - 3;\nfor (int i = 4; i >= 0; i--)\n    sum += Arr[i];\nSystem.out.println(sum);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "7"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q55",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "First loop calculates values for `Arr`:\n- Arr[0] = 2(0)-3 = -3\n- Arr[1] = 2(1)-3 = -1\n- Arr[2] = 2(2)-3 = 1\n- Arr[3] = 2(3)-3 = 3\n- Arr[4] = 2(4)-3 = 5\n\nThe second loop sums all elements: `-3 + -1 + 1 + 3 + 5 = 5`."
+    },
+    {
+      "id": "extract-combined-1777733152510-56",
+      "number": "57",
+      "text": "What is the output of the following code?\n\n```java\nint x=5;\nint y=7;\nif ((++x==6) || (++y==8))\n    System.out.println(x+y);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "14"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "12"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "13"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q56",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The code uses the short-circuit OR operator (`||`). First, `++x` is evaluated, making `x = 6`. The condition `6 == 6` is true. Because the first part of the OR is true, the second part (`++y == 8`) is never evaluated. Therefore, `y` remains 7. The result of `x + y` is `6 + 7 = 13`."
+    },
+    {
+      "id": "extract-combined-1777733152510-57",
+      "number": "58",
+      "text": "Which of the following is equivalent to: `if (y == x) System.out.println(\" 11 \"); else System.out.println(\" 22 \");`?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "```java\nif(x > y && x < y)\n    System.out.println(\" 22 \");\nelse\n    System.out.println(\" 11 \");\n```"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "```java\nif(x > y || x < y)\n    System.out.println(\" 11 \");\nelse\n    System.out.println(\" 22 \");\n```"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "```java\nif(x != y)\n    System.out.println(\" 11 \");\nelse\n    System.out.println(\" 22 \");\n```"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q57",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The original logic prints \"11\" if `x == y`. \n- Option A: `x > y && x < y` is always false, so it always prints \"11\", which is not logically equivalent for all cases.\n- Option B: `x > y || x < y` is equivalent to `x != y`. It prints \"11\" when `x != y`, which is the opposite of the original.\n- Option C: Identical to Option B logic. \nTherefore, none of the options are equivalent."
+    },
+    {
+      "id": "extract-combined-1777733152510-58",
+      "number": "59",
+      "text": "What is the output of the following code?\n\n```java\nint x = 1;\nint y = 0;\nwhile ( y <= 10 ){\n    if ( x % 3 != 0 )\n        y = y + 3;\n    else\n        y = y - 2;\n    x++;\n}\nSystem.out.println (y);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "11"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "13"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q58",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Iteration trace:\n1. y=0, x=1: 1%3!=0 (T) -> y=3, x=2\n2. y=3, x=2: 2%3!=0 (T) -> y=6, x=3\n3. y=6, x=3: 3%3!=0 (F) -> y=4, x=4\n4. y=4, x=4: 4%3!=0 (T) -> y=7, x=5\n5. y=7, x=5: 5%3!=0 (T) -> y=10, x=6\n6. y=10, x=6: 6%3!=0 (F) -> y=8, x=7\n7. y=8, x=7: 7%3!=0 (T) -> y=11, x=8\n8. y=11: Loop condition (y <= 10) is False. Prints 11."
+    },
+    {
+      "id": "extract-combined-1777733152510-59",
+      "number": "60",
+      "text": "The expression \\( (double)6 + 3 / 2 \\) is evaluated to:",
+      "choices": [
+        {
+          "value": "1",
+          "label": "A",
+          "text": "4.5"
+        },
+        {
+          "value": "2",
+          "label": "B",
+          "text": "7.5"
+        },
+        {
+          "value": "3",
+          "label": "C",
+          "text": "7.0"
+        },
+        {
+          "value": "4",
+          "label": "D",
+          "text": "4.0"
+        }
+      ],
+      "inputName": "Q59",
+      "inputType": "radio",
+      "correctAnswer": "3",
+      "explanation": "In Java, type casting has higher precedence than division. `(double)6` becomes `6.0`. Then, integer division `3 / 2` is performed, which equals `1`. Finally, `6.0 + 1` results in `7.0`."
+    },
+    {
+      "id": "extract-combined-1777733152510-60",
+      "number": "61",
+      "text": "What is the output of the following code?\n\n```java\nString s1 = \"computer science\";\ns1.replace('e', 'i');\nSystem.out.println(s1);\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "A",
+          "text": "computir sciinci"
+        },
+        {
+          "value": "2",
+          "label": "B",
+          "text": "computer\nscience"
+        },
+        {
+          "value": "3",
+          "label": "C",
+          "text": "computir science"
+        },
+        {
+          "value": "4",
+          "label": "D",
+          "text": "computer science"
+        }
+      ],
+      "inputName": "Q60",
+      "inputType": "radio",
+      "correctAnswer": "4",
+      "explanation": "Strings in Java are immutable. The `replace` method returns a new string with the replacements, but it does not modify the original string `s1`. Since the result of `replace` is not reassigned to `s1`, `System.out.println(s1)` prints the original value."
+    },
+    {
+      "id": "extract-combined-1777733152510-61",
+      "number": "62",
+      "text": "What is the output of the following code?\n\n```java\ndouble x = 2.5, y = 2;\nSystem.out.println((int)x++ * y);\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "A",
+          "text": "7.0"
+        },
+        {
+          "value": "2",
+          "label": "B",
+          "text": "5.0"
+        },
+        {
+          "value": "3",
+          "label": "C",
+          "text": "6.0"
+        },
+        {
+          "value": "4",
+          "label": "D",
+          "text": "4.0"
+        }
+      ],
+      "inputName": "Q61",
+      "inputType": "radio",
+      "correctAnswer": "4",
+      "explanation": "The post-increment operator `x++` uses the current value of `x` before incrementing it. `(int)2.5` evaluates to `2`. Then `2 * 2.0` (since `y` is a double) results in `4.0`."
+    },
+    {
+      "id": "extract-combined-1777733152510-62",
+      "number": "63",
+      "text": "What is the output of the following code?\n\n```java\ndouble i = 3749.32682;\ndouble d = ((int) (i * 1000) / 1000);\nSystem.out.println(d);\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "A",
+          "text": "3749.326"
+        },
+        {
+          "value": "2",
+          "label": "B",
+          "text": "3749.0"
+        },
+        {
+          "value": "3",
+          "label": "C",
+          "text": "3749"
+        },
+        {
+          "value": "4",
+          "label": "D",
+          "text": "3749.32"
+        }
+      ],
+      "inputName": "Q62",
+      "inputType": "radio",
+      "correctAnswer": "2",
+      "explanation": "1. `i * 1000` is `3749326.82`.\n2. `(int) 3749326.82` casts it to `3749326`.\n3. `3749326 / 1000` is integer division, which results in `3749`.\n4. Assigning the integer `3749` to a double `d` makes it `3749.0`."
+    },
+    {
+      "id": "extract-combined-1777733152510-63",
+      "number": "64",
+      "text": "What is the output of the following code?\n\n```java\nint n = 5;\nint y = (n >= 5 || n++ < 10) ? n : n * n;\nSystem.out.println(y);\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "A",
+          "text": "5"
+        },
+        {
+          "value": "2",
+          "label": "B",
+          "text": "6"
+        },
+        {
+          "value": "3",
+          "label": "C",
+          "text": "25"
+        },
+        {
+          "value": "4",
+          "label": "D",
+          "text": "36"
+        }
+      ],
+      "inputName": "Q63",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "The logical OR operator `||` is short-circuiting. Since the first condition `n >= 5` is true, the second part `n++ < 10` is never evaluated. Therefore, `n` remains 5. The ternary operator returns `n`, so `y` is 5."
+    },
+    {
+      "id": "extract-combined-1777733152510-64",
+      "number": "65",
+      "text": "What is the output of the following code?\n\n```java\nint x = 5, y = 0;\nif (x % 5 == 0 ^ x > 0)\n    y++;\ny += 2;\nSystem.out.println(y);\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "value": "2",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "3",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "4",
+          "label": "D",
+          "text": "1"
+        }
+      ],
+      "inputName": "Q64",
+      "inputType": "radio",
+      "correctAnswer": "2",
+      "explanation": "`x % 5 == 0` is true, and `x > 0` is true. The XOR operator `^` returns true only if exactly one operand is true. Since both are true, the condition is false. `y++` is skipped, and `y += 2` results in `y = 2`."
+    },
+    {
+      "id": "extract-combined-1777733152510-65",
+      "number": "66",
+      "text": "What is the return value of \\( \"SELECT\".substring(0, 5) \\)?",
+      "choices": [
+        {
+          "value": "1",
+          "label": "A",
+          "text": "\"SELECT\""
+        },
+        {
+          "value": "2",
+          "label": "B",
+          "text": "\"SELEC\""
+        },
+        {
+          "value": "3",
+          "label": "C",
+          "text": "\"SELE\""
+        },
+        {
+          "value": "4",
+          "label": "D",
+          "text": "\"ELECT\""
+        }
+      ],
+      "inputName": "Q65",
+      "inputType": "radio",
+      "correctAnswer": "2",
+      "explanation": "The `substring(beginIndex, endIndex)` method in Java returns a string starting at `beginIndex` (inclusive) and ending at `endIndex` (exclusive). Indices 0 to 4 are 'S', 'E', 'L', 'E', 'C'."
+    },
+    {
+      "id": "extract-combined-1777733152510-66",
+      "number": "67",
+      "text": "The expression \\( 4 + 20 / (3 - 1) * 2 \\) is evaluated to:",
+      "choices": [
+        {
+          "value": "1",
+          "label": "A",
+          "text": "4"
+        },
+        {
+          "value": "2",
+          "label": "B",
+          "text": "20"
+        },
+        {
+          "value": "3",
+          "label": "C",
+          "text": "24"
+        },
+        {
+          "value": "4",
+          "label": "D",
+          "text": "9"
+        },
+        {
+          "value": "5",
+          "label": "E",
+          "text": "25"
+        }
+      ],
+      "inputName": "Q66",
+      "inputType": "radio",
+      "correctAnswer": "3",
+      "explanation": "Following PEMDAS/BODMAS:\n1. Parentheses: `(3 - 1) = 2`.\n2. Division and Multiplication (left-to-right): `20 / 2 = 10`, then `10 * 2 = 20`.\n3. Addition: `4 + 20 = 24`."
+    },
+    {
+      "id": "extract-combined-1777733152510-67",
+      "number": "68",
+      "text": "What is the output?\n\n```java\nint sum = 0;\nfor (int i = 1; i <= 10; i++) {\n    if (i % 3 == 0 || i % 5 == 0)\n        continue;\n    sum += i;\n}\nSystem.out.println(sum);\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "A",
+          "text": "47"
+        },
+        {
+          "value": "2",
+          "label": "B",
+          "text": "37"
+        },
+        {
+          "value": "3",
+          "label": "C",
+          "text": "28"
+        },
+        {
+          "value": "4",
+          "label": "D",
+          "text": "22"
+        }
+      ],
+      "inputName": "Q67",
+      "inputType": "radio",
+      "correctAnswer": "4",
+      "explanation": "The loop iterates from 1 to 10. The `continue` statement skips numbers divisible by 3 (3, 6, 9) or 5 (5, 10). The remaining numbers are 1, 2, 4, 7, and 8. Their sum is `1 + 2 + 4 + 7 + 8 = 22`."
+    },
+    {
+      "id": "extract-combined-1777733152510-68",
+      "number": "69",
+      "text": "What is the output of the following code?\n\n```java\nint x = 7, y = 8, r = 2;\nr *= x + y;\nSystem.out.println(r);\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "A",
+          "text": "30"
+        },
+        {
+          "value": "2",
+          "label": "B",
+          "text": "22"
+        },
+        {
+          "value": "3",
+          "label": "C",
+          "text": "17"
+        },
+        {
+          "value": "4",
+          "label": "D",
+          "text": "23"
+        }
+      ],
+      "inputName": "Q68",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "The compound assignment operator `*=` has lower precedence than the addition operator `+`. Thus, the expression `r *= x + y` is equivalent to `r = r * (x + y)`. Therefore, `r = 2 * (7 + 8) = 2 * 15 = 30`."
+    },
+    {
+      "id": "extract-combined-1777733152510-69",
+      "number": "70",
+      "text": "How many stars (*) the following code will print?\n\n```java\nfor (int i = 1; i < 5; i++) {\n    for (int j = i; j > 0; j--)\n        System.out.print(\"*\");\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "8"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "9"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "10"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "11"
+        }
+      ],
+      "inputName": "Q69",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The outer loop iterates for values of \\( i \\) from 1 to 4 (since \\( i < 5 \\)). For each iteration of the outer loop, the inner loop prints a star \\( i \\) times (as \\( j \\) goes from \\( i \\) down to 1).\n- When \\( i = 1 \\), the inner loop runs 1 time.\n- When \\( i = 2 \\), the inner loop runs 2 times.\n- When \\( i = 3 \\), the inner loop runs 3 times.\n- When \\( i = 4 \\), the inner loop runs 4 times.\n\nTotal stars = \\( 1 + 2 + 3 + 4 = 10 \\)."
+    },
+    {
+      "id": "extract-combined-1777733152510-70",
+      "number": "71",
+      "text": "The keyword used to create a constant variable in Java is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "const"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "final"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "static"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "none of these"
+        }
+      ],
+      "inputName": "Q70",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In Java, the `final` keyword is used to declare a constant variable, meaning its value cannot be changed once assigned."
+    },
+    {
+      "id": "extract-combined-1777733152510-71",
+      "number": "72",
+      "text": "Which of the following is a constant, according to Java naming conventions?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "read"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "ReadInt"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "MAX_VALUE"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Test"
+        }
+      ],
+      "inputName": "Q71",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "According to Java naming conventions, constants should be written in all uppercase letters with underscores separating words (e.g., `MAX_VALUE`)."
+    },
+    {
+      "id": "extract-combined-1777733152510-72",
+      "number": "73",
+      "text": "Which one of the following is a valid identifier in Java?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "x1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "$x"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "1x"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "X 1"
+        }
+      ],
+      "inputName": "Q72",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Valid identifiers in Java must start with a letter, underscore, or dollar sign. They cannot start with a digit (eliminating '1x') and cannot contain spaces (eliminating 'X 1'). While '$x' is technically valid, 'x1' is the most standard valid identifier among the choices."
+    },
+    {
+      "id": "extract-combined-1777733152510-73",
+      "number": "74",
+      "text": "Which of the following loops will execute the body of the loop even when the condition controlling the loop is initially false?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "do-while"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "for"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "while"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the mentioned"
+        }
+      ],
+      "inputName": "Q73",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A `do-while` loop is a post-test loop, meaning it executes the body at least once before checking the condition."
+    },
+    {
+      "id": "extract-combined-1777733152510-74",
+      "number": "75",
+      "text": "What is the output of the following code?\n```java\nSystem.out.println( (int) ( Math.random() ) );\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1.0"
+        }
+      ],
+      "inputName": "Q74",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "`Math.random()` returns a double value greater than or equal to 0.0 and less than 1.0. Casting this to an `int` truncates the decimal, always resulting in 0."
+    },
+    {
+      "id": "extract-combined-1777733152510-75",
+      "number": "76",
+      "text": "How many times \"bye\" will be printed?\n```java\nfor(int i=2; i<=8; i+=2)\n    for(int j=0; j<6; j++)\n        System.out.println(\"bye\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "36"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "48"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "24"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "42"
+        }
+      ],
+      "inputName": "Q75",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The outer loop runs for \\(i = 2, 4, 6, 8\\) (4 iterations). The inner loop runs for \\(j = 0, 1, 2, 3, 4, 5\\) (6 iterations). Total iterations = \\(4 \\times 6 = 24\\)."
+    },
+    {
+      "id": "extract-combined-1777733152510-76",
+      "number": "77",
+      "text": "What is the output of the following code segment?\n```java\nint a[] = new int[6];\nfor (int i = 0; i < a.length; i++)\n    a[i] = i + 1;\n\nfor (int i = a.length - 1; i >= 0; i--)\n    System.out.print(a[i] + \" \");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1 2 3 4 5 6 "
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6 5 4 3 2 1 "
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0 1 2 3 4 5 "
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5 4 3 2 1 0 "
+        }
+      ],
+      "inputName": "Q76",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The first loop initializes the array with values [1, 2, 3, 4, 5, 6]. The second loop prints the elements starting from the last index (5) down to index 0, resulting in \"6 5 4 3 2 1 \"."
+    },
+    {
+      "id": "extract-combined-1777733152510-77",
+      "number": "78",
+      "text": "What is the output of the following code segment?\n```java\nint [][]ar = new int [3] [2];\nfor (int i = 0; i < ar.length; i++)\n    for (int j = 0; j < ar[i].length; j++)\n        ar[i][j] = i + 5;\n\nfor (int i = 0; i < 2; i++)\n    System.out.println(ar[i][i]);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "5\n6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5\n5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0\n1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "5\n6\n7"
+        }
+      ],
+      "inputName": "Q77",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The array is size 3x2. For i=0, ar[0][0] and ar[0][1] are 5. For i=1, ar[1][0] and ar[1][1] are 6. For i=2, ar[2][0] and ar[2][1] are 7. The print loop prints ar[0][0] which is 5, then ar[1][1] which is 6."
+    },
+    {
+      "id": "extract-combined-1777733152510-78",
+      "number": "79",
+      "text": "What is the output of the following code segment?\n```java\nint list1[] = {3, 2, 1};\nlist1[2] = list1[0];\n\nint list2[] = {1, 2, 3};\nlist2[2] = list2[0] + list2[1];\n\nlist2 = list1;\nfor (int i = 0; i < list2.length; i++)\n    System.out.print(list2[i] + \" \");\nSystem.out.println();\nfor (int i = 0; i < list2.length; i++)\n    System.out.print(list2[i] + \" \");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3 2 1 \\n1 2 3 "
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3 2 3 \\n1 2 3 "
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3 2 3 \\n3 2 3 "
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1 2 3 \\n1 2 3 "
+        }
+      ],
+      "inputName": "Q78",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "list1 becomes {3, 2, 3} after list1[2] = 3. Then list2 is assigned the reference of list1 (`list2 = list1`). Therefore, both loops print the current contents of list1, which is \"3 2 3 \"."
+    },
+    {
+      "id": "extract-combined-1777733152510-79",
+      "number": "80",
+      "text": "What is the output of the following code?\n```java\nclass HelloWorld {\n    public static void main(String[] args) {\n        int a = 8;\n        System.out.println(\"before calling \" + a);\n        func1(a);\n        System.out.println(\"after calling \" + a);\n    }\n    public static void func1(int x) {\n        x++;\n        System.out.println(x);\n    }\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "before calling 8\\n8\\nafter calling 8"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "before calling 8\\n9\\nafter calling 9"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "before calling 8\\n9\\nafter calling 8"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "before calling 8\\n8\\nafter calling 9"
+        }
+      ],
+      "inputName": "Q79",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Java is pass-by-value. The variable `a` is passed to `func1`, where its value is copied to `x`. Changing `x` inside `func1` does not affect the original variable `a` in the main method."
+    },
+    {
+      "id": "extract-combined-1777733152510-80",
+      "number": "81",
+      "text": "What is the output of the following code segment?\n```java\nint i = 2;\nfor (i = 3; i <= 19; i += 3) {\n    if (i < 8 || i > 12)\n        continue;\n    System.out.println(i);\n}\nSystem.out.println(i);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3\\n6\\n9\\n12\\n15\\n18\\n21"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "9\\n12\\n21"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "9\\n12\\n19"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3\\n6\\n15\\n18\\n21"
+        }
+      ],
+      "inputName": "Q80",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The loop checks i = 3, 6, 9, 12, 15, 18. The `continue` statement skips 3, 6, 15, and 18 because they satisfy the condition `i < 8 || i > 12`. It prints 9 and 12. After the loop, i has been incremented to 21, so it prints 21."
+    },
+    {
+      "id": "extract-combined-1777733152510-81",
+      "number": "82",
+      "text": "What is the output of the following code segment?\n```java\nString x = \"OOP1_First\";\nString y = \"Exam_\";\nSystem.out.println(x.substring(5));\nSystem.out.println(x.substring(5, 6).concat(y));\nSystem.out.println(y.replace('E', '*'));\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "First\\nFExam_\\n*xam_"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "_First\\n_Exam_\\n*xam_"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "First\\nOOP1_Exam_\\n*xam_"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "First\\nFExam_\\nExam_"
+        }
+      ],
+      "inputName": "Q81",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "`x.substring(5)` starts from index 5 to the end (\"First\"). `x.substring(5, 6)` is index 5 (\"F\"). Concatenating \"F\" with \"Exam_\" gives \"FExam_\". `y.replace('E', '*')` replaces the 'E' in \"Exam_\" with '*', giving \"*xam_\"."
+    },
+    {
+      "id": "extract-combined-1777733152510-82",
+      "number": "83",
+      "text": "What is the output of the following code segment?\n```java\nint x1 = 10, x2 = 5;\ndouble y1 = 2.0, y2 = 8.0;\nSystem.out.println((double) (x2 / x1));\nSystem.out.println((int) y1 * y2);\ny1 = (int) (y1 / y2);\nSystem.out.println(y1);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0.5\\n16\\n0.25"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "0.0\\n16.0\\n0.0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0.0\\n16\\n0.0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0.5\\n16.0\\n0.0"
+        }
+      ],
+      "inputName": "Q82",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "1. `x2 / x1` is integer division (5/10), resulting in 0. Casting to double gives `0.0`. 2. `(int) y1 * y2` casts `y1` to int (2) then multiplies by 8.0, resulting in `16.0`. 3. `y1 / y2` is 2.0/8.0 = 0.25. Casting to int gives 0. Storing in double y1 gives `0.0`."
+    },
+    {
+      "id": "extract-combined-1777733152510-83",
+      "number": "84",
+      "text": "What is the output of the following code segment?\n```java\nint x = 10; int y = 5;\nswitch (x % y + 1) {\n    case 0: y = y + 6;\n    case 1: y++;\n    case 3: y = y + 2;\n        System.out.println(y);\n    case 4: y = 2 * y + 2;\n    case 5: System.out.println(y);\n    case 6: y = y - 3; break;\n}\nSystem.out.println(y);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "8\\n18\\n15"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6\\n14\\n11"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "8\\n18\\n18"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "15"
+        }
+      ],
+      "inputName": "Q83",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "`x % y + 1` is 10 % 5 + 1 = 1. Jump to `case 1`. `y` becomes 6. Due to fall-through, `case 3` makes `y = 8` and prints 8. `case 4` makes `y = 18`. `case 5` prints 18. `case 6` makes `y = 15` and breaks. Final print is 15."
+    },
+    {
+      "id": "extract-combined-1777733152510-84",
+      "number": "85",
+      "text": "What is the output of the following code segment?\n```java\nint x = 10, y = 5, z = 1;\nif (x == y || y < 10) {\n    if (z > x) {\n        System.out.println(\"S1\");\n    }\n} else {\n    System.out.println(\"S1\");\n}\nSystem.out.println(\"S2\");\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "S1\\nS2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "S2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "S1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No output"
+        }
+      ],
+      "inputName": "Q84",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The outer if condition (10 == 5 || 5 < 10) evaluates to true. It enters the block. The inner if (1 > 10) is false, so nothing is printed. The else block is skipped. Finally, \"S2\" is printed."
+    },
+    {
+      "id": "extract-combined-1777733152510-85",
+      "number": "86",
+      "text": "What is the output of the following code snippet?\n\n```java\nSystem.out.println((6 + 12) / 3 * (1 + 1) + 3 % 10);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "30"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "15"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q85",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The expression is evaluated following the order of operations:\n1. Parentheses: \\((6 + 12) = 18\\) and \\((1 + 1) = 2\\).\n2. Multiplication, Division, and Modulo (left to right): \\(18 / 3 = 6\\), then \\(6 * 2 = 12\\), and \\(3 \\% 10 = 3\\).\n3. Addition: \\(12 + 3 = 15\\)."
+    },
+    {
+      "id": "extract-combined-1777733152510-86",
+      "number": "87",
+      "text": "What is the output of the following code?\n\n```java\nint x = 20;\nString str = \"Hello Java\";\nSystem.out.printf(\"print %s, %d times + %d\", str, 10, x);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "print Hello Java times"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "print Hello Java %d times + %d"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "print Hello Java 10 times + 20"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Error"
+        }
+      ],
+      "inputName": "Q86",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The `printf` method replaces the format specifiers with the provided arguments: `%s` with `str` (\"Hello Java\"), the first `%d` with 10, and the second `%d` with `x` (20). While option C in the image slightly deviates from the format string by missing a comma, it is the intended answer."
+    },
+    {
+      "id": "extract-combined-1777733152510-87",
+      "number": "88",
+      "text": "What is the output of the following code?\n\n```java\nint x=5;\nint y=7;\nif ((++x==6) || (++y>=8))\n    System.out.println(x+y);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "14"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "12"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "13"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q87",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The pre-increment `++x` changes `x` to 6. The condition `(6 == 6)` is true. Because Java uses short-circuit evaluation for the OR operator (`||`), the second part `(++y>=8)` is not executed. Therefore, `y` remains 7. The code prints `x + y`, which is `6 + 7 = 13`."
+    },
+    {
+      "id": "extract-combined-1777733152510-88",
+      "number": "89",
+      "text": "What is the output of the following code?\n\n```java\nString str=\"ali sameer\";\nString str2=str.replace(\"a\", \"!\")+str.indexOf(\"e\");\nSystem.out.println(str2);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "!li s!meer7"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "!li s!meer6"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "!li s!meer8"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "!li sameer7"
+        }
+      ],
+      "inputName": "Q88",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "`str.replace(\"a\", \"!\")` replaces all occurrences of 'a' with '!', resulting in \"!li s!meer\". `str.indexOf(\"e\")` finds the first occurrence of 'e' at index 7. Concatenating them results in \"!li s!meer7\"."
+    },
+    {
+      "id": "extract-combined-1777733152510-89",
+      "number": "90",
+      "text": "What is the output of the following code?\n\n```java\npublic static void main(String[] args) {\n    int i = 1, j = 0;\n    switch(i){\n        case 2:\n            j += 6;\n        case 4:\n            j += 1;\n        default:\n            j += 2;\n        case 0:\n            j += 4;\n    }\n    System.out.println(\"j = \" + j);\n}\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "j = 6"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "j = 0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "j = 2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No correct answer"
+        }
+      ],
+      "inputName": "Q89",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Since `i` is 1 and does not match any specific case (2, 4, or 0), the `default` case is executed. Because there are no `break` statements, the code falls through from `default` to `case 0`. `j` becomes \\(0 + 2 = 2\\) in `default`, then \\(2 + 4 = 6\\) in `case 0`."
+    },
+    {
+      "id": "extract-combined-1777733152510-90",
+      "number": "91",
+      "text": "What is the value of z after executing the following code?\n\n```java\nint x = 20;\nint y = 10;\ndouble z = y / x;\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "0.0"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "error"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "0"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "0.5"
+        }
+      ],
+      "inputName": "Q90",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Since both `y` and `x` are integers, the division `y / x` (10 / 20) is performed as integer division, which results in 0. This value is then promoted to a double when assigned to `z`, resulting in `0.0`."
+    },
+    {
+      "id": "extract-combined-1777733152510-91",
+      "number": "92",
+      "text": "What is the output of the following code?\n\n```java\npublic static void main(String[] args) {\n    int x = 993;\n    while (x == 1050)\n        x++;\n    System.out.println(x);\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "993"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "1050"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "1051"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "no correct answer"
+        }
+      ],
+      "inputName": "Q91",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "The `while` loop condition `x == 1050` is evaluated before entering the loop. Since `x` is initially `993`, the condition is `false`. Therefore, the loop body `x++` never executes. The code then prints the original value of `x`, which is `993`."
+    },
+    {
+      "id": "extract-combined-1777733152510-92",
+      "number": "93",
+      "text": "Consider a program that evaluates the following expression: \\( \\\\sum_{i=1}^{20} 1/i \\). What is the missing code in the loop body to correctly perform the summation using floating-point arithmetic?\n\n```java\ndouble sum = 0.0;\nfor (int i = 1; i <= 20; i++) {\n    // missing code\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "sum = 20 + 1/i;"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "sum = sum + 1/i;"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "no correct answer"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "sum += 1.0/i;"
+        }
+      ],
+      "inputName": "Q92",
+      "inputType": "radio",
+      "correctAnswer": "4",
+      "explanation": "To correctly calculate the sum of fractions, floating-point division must be used. In Java, `1/i` performs integer division because both `1` and `i` (int) are integers, resulting in `0` for any `i > 1`. Using a double literal like `1.0` in `1.0/i` ensures the division is performed with decimal precision. `sum += 1.0/i;` correctly accumulates these results into the `double sum` variable."
+    },
+    {
+      "id": "extract-combined-1777733152510-93",
+      "number": "94",
+      "text": "What is the output of the following code?\n\n```java\nint x = 1;\nint y = 0;\nwhile (y <= 10) {\n    if (x % 3 != 0)\n        y = y + 3;\n    else\n        y = y - 2;\n    x++;\n}\nSystem.out.println(y);\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "9"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "11"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "13"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "no correct answer"
+        }
+      ],
+      "inputName": "Q93",
+      "inputType": "radio",
+      "correctAnswer": "2",
+      "explanation": "Tracing the loop:\n1. `x=1, y=0`: `1%3!=0` (T) \\( \\rightarrow \\) `y=3`, `x=2`\n2. `x=2, y=3`: `2%3!=0` (T) \\( \\rightarrow \\) `y=6`, `x=3`\n3. `x=3, y=6`: `3%3!=0` (F) \\( \\rightarrow \\) `y=4`, `x=4`\n4. `x=4, y=4`: `4%3!=0` (T) \\( \\rightarrow \\) `y=7`, `x=5`\n5. `x=5, y=7`: `5%3!=0` (T) \\( \\rightarrow \\) `y=10`, `x=6`\n6. `x=6, y=10`: `6%3!=0` (F) \\( \\rightarrow \\) `y=8`, `x=7`\n7. `x=7, y=8`: `7%3!=0` (T) \\( \\rightarrow \\) `y=11`, `x=8`\nNow `y=11`, which is not `<= 10`, so the loop terminates and prints 11."
+    },
+    {
+      "id": "extract-combined-1777733152510-94",
+      "number": "95",
+      "text": "What is the output of the following code?\n\n```java\nString list = \"Hashemite\";\nString sum = \" \";\nfor (int i = 3; i < 6; i++) {\n    sum = sum + list.charAt(i);\n}\nSystem.out.println(sum);\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "ash"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "she"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "hem"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "Has"
+        }
+      ],
+      "inputName": "Q94",
+      "inputType": "radio",
+      "correctAnswer": "3",
+      "explanation": "The loop iterates through characters at indices 3, 4, and 5 of the string \"Hashemite\". Index 3 is 'h', 4 is 'e', and 5 is 'm'. Concatenating these characters (ignoring the initial space in the string variable initialization) results in the substring \"hem\"."
+    },
+    {
+      "id": "extract-combined-1777733152510-95",
+      "number": "96",
+      "text": "What is the output of the following code?\n\n```java\nint s = 6;\nfor (int i = 2; i < 4; i++) {\n    if (s % i == 0)\n        s--;\n    else\n        System.out.println(s);\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "22"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "5"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "2"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "55"
+        }
+      ],
+      "inputName": "Q95",
+      "inputType": "radio",
+      "correctAnswer": "2",
+      "explanation": "Tracing the logic:\n- At `i = 2`: `s = 6`. `6 % 2 == 0` is true, so `s` becomes 5. No output.\n- At `i = 3`: `s = 5`. `5 % 3 == 0` is false, so it executes the `else` block and prints the current value of `s`, which is 5."
+    },
+    {
+      "id": "extract-combined-1777733152510-96",
+      "number": "97",
+      "text": "What is the output of the following code?\n\n```java\nString str = \"abbaabahaa\";\nString str2;\nint count = 0;\nfor (int i = str.length() - 1; i >= 2; i -= 4)\n    if (str.substring(i, str.length() - 1).contains(\"a\"))\n        count++;\nSystem.out.println(count);\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "4"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "3"
+        }
+      ],
+      "inputName": "Q96",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "The string length is 10. `i` starts at 9.\n- `i=9`: `str.substring(9, 9)` is \"\", which doesn't contain \"a\".\n- `i=5`: `str.substring(5, 9)` is \"baha\", which contains \"a\", so `count` becomes 1.\n- Next `i` is 1, which terminates the loop (`i >= 2`). Final `count` is 1."
+    },
+    {
+      "id": "extract-combined-1777733152510-97",
+      "number": "98",
+      "text": "What is the output of the following code?\n\n```java\nint x = 4; \nint y = 4;\nif (x == y || x >= 3 && y == 3)\n    System.out.println(\"No\");\nelse\n    System.out.println(\"Yes\");\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "Yes NO"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "Yes"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "None"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "No"
+        }
+      ],
+      "inputName": "Q97",
+      "inputType": "radio",
+      "correctAnswer": "4",
+      "explanation": "In the condition `x == y || x >= 3 && y == 3`, the `&&` operator has higher priority than `||`. However, `x == y` (4 == 4) is true, and since it is the first part of an OR expression, the logic short-circuits and evaluates the entire condition as true. Thus, \"No\" is printed."
+    },
+    {
+      "id": "extract-combined-1777733152510-98",
+      "number": "99",
+      "text": "What is the output of the following code?\n\n```java\nString str = new String(\"History of Jordan\");\nString str2 = \"\";\nfor (int i = 0; i < str.length() / 2 - 2; i++) {\n    str2 += str.charAt(i);\n}\nSystem.out.println(str2);\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "Histor"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "History"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "Jordan"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "History of"
+        }
+      ],
+      "inputName": "Q98",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "The length of the string is 17. `17 / 2` (integer division) is 8. The loop condition is `i < 8 - 2`, which means `i < 6`. The loop runs for `i = 0` to `5`, appending the first 6 characters ('H', 'i', 's', 't', 'o', 'r') to `str2`."
+    },
+    {
+      "id": "extract-combined-1777733152510-99",
+      "number": "100",
+      "text": "What is the output of the following code?\n\n```java\nint s = 0;\nfor (int i = 1; i <= 5; ++i) {\n    if (i % 2 == 0) {\n        while (s < 4) {\n            System.out.println(++s);\n            i++;\n            s += 2;\n        }\n    } else {\n        continue;\n    }\n}\nSystem.out.println(s);\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "146"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "134"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "1468"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "no correct answer"
+        }
+      ],
+      "inputName": "Q99",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "Tracing the execution:\n1. `i=1`: Odd, continue.\n2. `i=2`: Even, enter while loop.\n   - `s=0`: `++s` makes `s=1`, print 1. `i` becomes 3, `s` becomes 3.\n   - `s=3`: `++s` makes `s=4`, print 4. `i` becomes 4, `s` becomes 6.\n   - Loop `while` terminates as `6 < 4` is false.\n3. End of `for` iteration: `++i` makes `i=5`.\n4. `i=5`: Odd, continue.\n5. End of `for` iteration: `++i` makes `i=6`. Loop ends.\n6. Print final `s` which is 6. The sequence is 1, 4, 6."
+    },
+    {
+      "id": "extract-combined-1777733152510-100",
+      "number": "101",
+      "text": "What is the output of the following code?\n\n```java\npublic static void main(String[] args) {\n    String str = new String(\"Hello\");\n    for (int i = str.length() - 1; i > 0; i -= 2) {\n        str = str.replace(str.charAt(i), 'm');\n    }\n    System.out.println(str);\n}\n```",
+      "choices": [
+        {
+          "value": "1",
+          "label": "1",
+          "text": "Hemmm"
+        },
+        {
+          "value": "2",
+          "label": "2",
+          "text": "Hemo"
+        },
+        {
+          "value": "3",
+          "label": "3",
+          "text": "hemlm"
+        },
+        {
+          "value": "4",
+          "label": "4",
+          "text": "Hellm"
+        }
+      ],
+      "inputName": "Q100",
+      "inputType": "radio",
+      "correctAnswer": "1",
+      "explanation": "1. `i = 4`: `str.charAt(4)` is 'o'. `str.replace('o', 'm')` results in \"Hellm\".\n2. `i = 2`: `str.charAt(2)` is 'l'. `str.replace('l', 'm')` replaces all occurrences of 'l' with 'm', resulting in \"Hemmm\".\nThe loop ends as the next `i` would be 0. The output is \"Hemmm\"."
+    },
+    {
+      "id": "extract-combined-1777733152510-101",
+      "number": "102",
+      "text": "Analyze the following code:\n\n```java\nString str = new String(\"Hello\");\nfor (int i = 1; i < 10; i++) {\n    int k = 3;\n    System.out.println(k);\n}\nSystem.out.println(\"k is \" + k);\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The code prints k is 2"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The code prints k is 0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The code has a syntax error because k is not defined in `System.out.println(\"k is \" + k);`"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The code prints k is 3"
+        }
+      ],
+      "inputName": "Q101",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In Java, variables declared inside a block (such as a `for` loop) have **block scope**. This means the variable `k` only exists and is only accessible between the curly braces `{ ... }` of the loop. Since the statement `System.out.println(\"k is \" + k);` is located outside of those braces, the compiler will not recognize the variable `k`, resulting in a syntax (compilation) error."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 102
+}
