@@ -274,6 +274,36 @@ const EXAM_CONFIG = [
     "icon": "data/DBMS/icon.png",
     "chapters": [
       {
+        "id": "1",
+        "name": "Chapter 1: Databases and Database Users",
+        "q": 40,
+        "file": "data/DBMS/chapter1 Database and Database users.pptx.json"
+      },
+      {
+        "id": "2",
+        "name": "Chapter 2 : The Relational Data Model and Relational Database Constraints",
+        "q": 45,
+        "file": "data/DBMS/chapter2 Relational Data Model and Relational Database Constraints.pptx.json"
+      },
+      {
+        "id": "3",
+        "name": "Chapter 3 :Data Modeling Using the Entity-Relationship (ER) Model",
+        "q": 45,
+        "file": "data/DBMS/chapter3 Data Modeling Using the Entity-Relationship (ER) .pptx.json"
+      },
+      {
+        "id": "4",
+        "name": "Chapter 4 :Enhanced Entity-Relationship (EER) Modeling",
+        "q": 45,
+        "file": "data/DBMS/chapter4 Enhanced Entity-Relationship (EER) Modeling.pptx.json"
+      },
+      {
+        "id": "5",
+        "name": "Chapter 5 :ER-to-Relational Mapping Algorithm",
+        "q": 40,
+        "file": "data/DBMS/chapter5 ER- and EER-to-Relational Mapping.pptx.json"
+      },
+      {
         "id": "First.1",
         "name": "#1",
         "q": 37,

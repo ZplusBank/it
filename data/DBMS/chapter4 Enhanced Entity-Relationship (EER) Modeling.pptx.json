@@ -1,0 +1,1388 @@
+{
+  "id": "upload-1777722424228-d3h3q",
+  "label": "4 Enhanced Entity-Relationship (EER) Modeling.pptx",
+  "params": {
+    "file": "4 Enhanced Entity-Relationship (EER) Modeling.pptx",
+    "chapter": "4"
+  },
+  "title": "Chapter 4 :Enhanced Entity-Relationship (EER) Modeling",
+  "questions": [
+    {
+      "id": "upload-1777722424228-0",
+      "number": "1",
+      "text": "What does the abbreviation EER stand for in database modeling?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Essential Entity-Relationship"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Enhanced Entity-Relationship"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Extended Entity-Relationship"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Both B and C"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "According to the chapter outline, EER stands for either Enhanced ER or Extended ER."
+    },
+    {
+      "id": "upload-1777722424228-1",
+      "number": "2",
+      "text": "Which of the following is an additional concept provided by the EER model that is NOT present in the basic ER model?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Entity types"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Relationship types"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Subclasses and Superclasses"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Attributes"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Subclasses/superclasses, specialization/generalization, categories, and inheritance are additional EER concepts."
+    },
+    {
+      "id": "upload-1777722424228-2",
+      "number": "3",
+      "text": "If an entity type `EMPLOYEE` is grouped into `SECRETARY`, `ENGINEER`, and `TECHNICIAN`, what are these subgroupings called?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Superclasses"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Subclasses"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Categories"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Union types"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An entity type may have additional meaningful subgroupings called subclasses or subtypes."
+    },
+    {
+      "id": "upload-1777722424228-3",
+      "number": "4",
+      "text": "The relationship between a subclass and its superclass is often referred to as a(n) ________ relationship.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "HAS-A"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "IS-A"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "PART-OF"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "WORKS-FOR"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Subclass/superclass relationships are called IS-A relationships (e.g., SECRETARY IS-A EMPLOYEE)."
+    },
+    {
+      "id": "upload-1777722424228-4",
+      "number": "5",
+      "text": "Which of the following statements is true regarding subclass membership?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "An entity can exist in a subclass without being a member of the superclass."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "An entity must be a member of the superclass to be a member of a subclass."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Every entity in a superclass must belong to at least one subclass."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A subclass member is a different real-world entity than the superclass member."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An entity cannot exist in the database merely by being a member of a subclass; it must also be a member of the superclass."
+    },
+    {
+      "id": "upload-1777722424228-5",
+      "number": "6",
+      "text": "When a subclass inherits from a superclass, it inherits:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Only the attributes of the superclass."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Only the relationships of the superclass."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Both all attributes and all relationships of the superclass."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Only the primary key of the superclass."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Inheritance in EER means a subclass member inherits all attributes and all relationships of the entity as a member of the superclass."
+    },
+    {
+      "id": "upload-1777722424228-6",
+      "number": "7",
+      "text": "What is 'Specialization' in the context of EER modeling?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A bottom-up process of synthesis."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A top-down process of defining a set of subclasses of a superclass."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The process of combining multiple entity types into one."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Defining the primary key for an entity."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Specialization is the process of defining a set of subclasses based on distinguishing characteristics (top-down process)."
+    },
+    {
+      "id": "upload-1777722424228-7",
+      "number": "8",
+      "text": "Attributes that apply only to a specific subclass (e.g., `TypingSpeed` for a `SECRETARY`) are called:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Inherited attributes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Global attributes"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Specific or local attributes"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Shared attributes"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Attributes of a subclass that are not inherited from the superclass are called specific or local attributes."
+    },
+    {
+      "id": "upload-1777722424228-8",
+      "number": "9",
+      "text": "________ is the process of identifying common features among several entity types and grouping them into a single superclass.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Specialization"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Generalization"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Aggregation"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Classification"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Generalization is the reverse of specialization; it is a bottom-up process where common features are generalized into a superclass."
+    },
+    {
+      "id": "upload-1777722424228-9",
+      "number": "10",
+      "text": "In a predicate-defined subclass, how is membership determined?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Manually by the database user."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Automatically by a condition on an attribute of the superclass."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "By the primary key value."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "By the relationship type."
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A predicate-defined (or condition-defined) subclass uses a condition on the superclass attributes to determine membership."
+    },
+    {
+      "id": "upload-1777722424228-10",
+      "number": "11",
+      "text": "If membership in a subclass is determined manually by a user rather than by a condition, the subclass is called:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Condition-defined"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Predicate-defined"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "User-defined"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Attribute-defined"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In user-defined subclasses, membership is specified individually for each entity by the database user applying an operation."
+    },
+    {
+      "id": "upload-1777722424228-11",
+      "number": "12",
+      "text": "An attribute-defined specialization occurs when:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "All subclasses are based on different attributes."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "All subclasses in a specialization have membership conditions on the same attribute of the superclass."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A subclass has multiple attributes defined locally."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The superclass has only one attribute."
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If all subclasses in a specialization have a membership condition on the same attribute, it is an attribute-defined specialization."
+    },
+    {
+      "id": "upload-1777722424228-12",
+      "number": "13",
+      "text": "Which constraint specifies that an entity can be a member of at most one subclass in a specialization?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Completeness constraint"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Overlapping constraint"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Disjointness constraint"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Partial constraint"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The disjointness constraint specifies that subclasses must be disjoint; an entity can belong to at most one."
+    },
+    {
+      "id": "upload-1777722424228-13",
+      "number": "14",
+      "text": "In an EER diagram, how is a disjoint specialization represented?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "With an 'o' inside a circle."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "With a 'd' inside a circle."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "With a double line."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "With a single line."
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Disjointness is specified by a 'd' in the EER diagram circle."
+    },
+    {
+      "id": "upload-1777722424228-14",
+      "number": "15",
+      "text": "If an entity can belong to more than one subclass of the same specialization, the specialization is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Disjoint"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Overlapping"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Total"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Shared"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If not disjoint, a specialization is overlapping, meaning the same entity can be a member of more than one subclass."
+    },
+    {
+      "id": "upload-1777722424228-15",
+      "number": "16",
+      "text": "The completeness constraint that specifies every entity in the superclass must be a member of at least one subclass is called:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Partial specialization"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Total specialization"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Disjoint specialization"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Overlapping specialization"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Total specialization specifies that every entity in the superclass must be a member of some subclass."
+    },
+    {
+      "id": "upload-1777722424228-16",
+      "number": "17",
+      "text": "How is total specialization represented in an EER diagram?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A single line connecting the superclass to the circle."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A 'd' in the circle."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A double line connecting the superclass to the circle."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A 't' in the circle."
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Total specialization is shown by a double line, while partial specialization is shown by a single line."
+    },
+    {
+      "id": "upload-1777722424228-17",
+      "number": "18",
+      "text": "A specialization where an entity can exist in the superclass without belonging to any subclass is a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Total specialization"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Partial specialization"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Disjoint specialization"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Overlapping specialization"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Partial specialization allows an entity not to belong to any of the subclasses."
+    },
+    {
+      "id": "upload-1777722424228-18",
+      "number": "19",
+      "text": "Which type of specialization is most common when the superclass is derived from the subclasses (Generalization)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Disjoint partial"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Overlapping partial"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Total"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Predicate-defined"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Generalization usually results in a total specialization because the superclass is derived from the specific subclasses."
+    },
+    {
+      "id": "upload-1777722424228-19",
+      "number": "20",
+      "text": "A subclass that has more than one superclass is called a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Lattice subclass"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Shared subclass"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Category"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Union type"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A subclass with more than one superclass is called a shared subclass, which leads to multiple inheritance."
+    },
+    {
+      "id": "upload-1777722424228-20",
+      "number": "21",
+      "text": "What is the difference between a specialization hierarchy and a specialization lattice?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A hierarchy allows multiple inheritance, a lattice does not."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A hierarchy is top-down, a lattice is bottom-up."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A hierarchy allows only single inheritance; a lattice allows multiple inheritance."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "There is no difference; they are synonymous."
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In a hierarchy, every subclass has only one superclass (single inheritance). In a lattice, a subclass can have more than one superclass (multiple inheritance)."
+    },
+    {
+      "id": "upload-1777722424228-21",
+      "number": "22",
+      "text": "In a lattice, what does a shared subclass inherit?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Only attributes of its first defined superclass."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Only attributes of its direct superclasses."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Attributes of its direct superclasses and all their predecessor superclasses."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Only the primary keys of its superclasses."
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A shared subclass inherits attributes of all its direct superclasses as well as all its predecessor superclasses (multiple inheritance)."
+    },
+    {
+      "id": "upload-1777722424228-22",
+      "number": "23",
+      "text": "A subclass that represents a collection of entities from a UNION of different entity types is called a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Shared subclass"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Lattice"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Category (or UNION type)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Predicate-defined subclass"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A category or UNION type is a subclass that represents a collection of entities from the union of different superclass entity types."
+    },
+    {
+      "id": "upload-1777722424228-23",
+      "number": "24",
+      "text": "What is a key difference between a shared subclass and a category (union type)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Shared subclasses use single inheritance; categories use multiple inheritance."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A shared subclass member must exist in ALL its superclasses; a category member must exist in AT LEAST ONE."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A shared subclass is a union; a category is an intersection."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "There is no difference; they are different names for the same concept."
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A shared subclass is a subset of the *intersection* of its superclasses (must be in all). A category is a subset of the *union* (must be in at least one)."
+    },
+    {
+      "id": "upload-1777722424228-24",
+      "number": "25",
+      "text": "Consider a vehicle registration database where an OWNER can be a PERSON, a BANK, or a COMPANY. This is best modeled as a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Shared subclass"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Category (Union type)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Attribute-defined specialization"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Total disjoint specialization"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Since an OWNER can be one of several different entity types (PERSON, BANK, COMPANY), this is a category (Union Type)."
+    },
+    {
+      "id": "upload-1777722424228-25",
+      "number": "26",
+      "text": "The formal definition of a category \\( T \\) with superclasses \\( D_1, D_2, \\dots, D_n \\) is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( T \\subseteq (D_1 \\cap D_2 \\cap \\dots \\cap D_n) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( T \\subseteq (D_1 \\cup D_2 \\cup \\dots \\cup D_n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( T = (D_1 \\cup D_2 \\cup \\dots \\cup D_n) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( T = (D_1 \\cap D_2 \\cap \\dots \\cap D_n) \\)"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A category \\( T \\) is defined as a subset of the union of its superclasses: \\( T \\subseteq (D_1 \\cup D_2 \\cup \\dots \\cup D_n) \\)."
+    },
+    {
+      "id": "upload-1777722424228-26",
+      "number": "27",
+      "text": "A specialization \\( Z = \\{S_1, S_2, \\dots, S_n\\) with superclass \\( G \\) is considered **total** if:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( S_1 \\cap S_2 \\cap \\dots \\cap S_n = \\emptyset \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( S_1 \\cup S_2 \\cup \\dots \\cup S_n = G \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( S_1 \\cup S_2 \\cup \\dots \\cup S_n \\subseteq G \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( S_i = G \\) for all \\( i \\)"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Specialization is total if the union of all subclasses equals the superclass set."
+    },
+    {
+      "id": "upload-1777722424228-27",
+      "number": "28",
+      "text": "A specialization is formally **disjoint** if for any \\( i \neq j \\):",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( S_i \\cap S_j = \\emptyset \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( S_i \\cup S_j = G \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( S_i = S_j \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( S_i \\cap S_j = G \\)"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Disjoint means the intersection of any two distinct subclasses is an empty set."
+    },
+    {
+      "id": "upload-1777722424228-28",
+      "number": "29",
+      "text": "If an attribute-defined specialization is based on a single-valued attribute \\( A \\), and each subclass \\( S_i \\) is defined by \\( A = c_i \\) where all \\( c_i \\) are distinct, the specialization is automatically:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Overlapping"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Disjoint"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Total"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Generalization"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "If the defining attribute is single-valued and the constant values are distinct, an entity can satisfy only one condition, making it disjoint."
+    },
+    {
+      "id": "upload-1777722424228-29",
+      "number": "30",
+      "text": "Which notation is an alternative to EER diagrams for displaying specialization and generalization?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Data Flow Diagrams"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "UML class diagrams"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Network diagrams"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "State-transition diagrams"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "UML class diagrams are a popular alternative notation mentioned in the slides for EER concepts."
+    },
+    {
+      "id": "upload-1777722424228-30",
+      "number": "31",
+      "text": "In EER terminology, the word 'Class' can refer to:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Only entity types."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Only subclasses."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Any entity type, superclass, subclass, or category."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Only relationship types."
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Slide 16 states that all entity types and their corresponding collections (superclasses, subclasses, etc.) can be called 'classes'."
+    },
+    {
+      "id": "upload-1777722424228-31",
+      "number": "32",
+      "text": "The conceptual synthesis process (bottom-up) starts with many entity types and finds common properties. This is called:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Specialization"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Generalization"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Classification"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Instantiation"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Generalization is described as a bottom-up conceptual synthesis process."
+    },
+    {
+      "id": "upload-1777722424228-32",
+      "number": "33",
+      "text": "Which abstraction concept refers to the relationship between an entity type and the specific entity instances?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Aggregation"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Association"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Classification and Instantiation"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Identification"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Classification and Instantiation represent the relationship between the class/type and the instances."
+    },
+    {
+      "id": "upload-1777722424228-33",
+      "number": "34",
+      "text": "In EER diagrams, a single line between a superclass and the specialization circle indicates:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Total Specialization"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Partial Specialization"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Disjoint Specialization"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Overlapping Specialization"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Partial specialization is shown by a single line, allowing an entity to belong to none of the subclasses."
+    },
+    {
+      "id": "upload-1777722424228-34",
+      "number": "35",
+      "text": "True or False: An engineering manager who is both a MANAGER and an ENGINEER belongs to two subclasses of the superclass EMPLOYEE. This is an example of an overlapping specialization.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Since the entity belongs to more than one subclass in the same context, it is overlapping."
+    },
+    {
+      "id": "upload-1777722424228-35",
+      "number": "36",
+      "text": "Which of the following is NOT one of the four types of specialization/generalization?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Disjoint, total"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Disjoint, partial"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Overlapping, shared"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Overlapping, total"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The four types are Disjoint Total, Disjoint Partial, Overlapping Total, and Overlapping Partial."
+    },
+    {
+      "id": "upload-1777722424228-36",
+      "number": "37",
+      "text": "In EER modeling, why might one use a 'top-down' approach?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To combine existing entity types into a common superclass."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To refine an entity type into more specific subclasses (Specialization)."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To remove unnecessary attributes from the database."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To convert EER to UML."
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Top-down refinement is the process used in specialization to define subclasses of an existing entity type."
+    },
+    {
+      "id": "upload-1777722424228-37",
+      "number": "38",
+      "text": "What is the specific notation for an overlapping constraint in an EER diagram?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The letter 'd'"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The letter 'o'"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A double arrow"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "An asterisk (*)"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Overlapping is specified by an 'o' in the EER diagram circle."
+    },
+    {
+      "id": "upload-1777722424228-38",
+      "number": "39",
+      "text": "Can a subclass participate in its own specific relationship types, distinct from its superclass?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "No, it only uses superclass relationships."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Yes, it can participate in local relationship types."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Only if it is a shared subclass."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Only if it is a total specialization."
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A subclass can participate in specific relationship types (e.g., `HOURLY_EMPLOYEE` participates in `BELONGS_TO`)."
+    },
+    {
+      "id": "upload-1777722424228-39",
+      "number": "40",
+      "text": "In a shared subclass (multiple inheritance), if the superclasses have different keys, what is the key of the shared subclass?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A new surrogate key."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A union of all keys."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It inherits the key from its superclasses (which must represent the same real-world entity)."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It has no key."
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The subclass member represents the same real-world entity; thus, it uses the inherited identifying attribute (key) of the superclasses."
+    },
+    {
+      "id": "upload-1777722424228-40",
+      "number": "41",
+      "text": "Which constraint refers to 'Total vs Partial' and 'Exclusive vs Overlapping'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Aggregation constraints"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Coverage constraints"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Cardinality constraints"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Attribute constraints"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Slide 41 lists 'Coverage' as including Total vs. Partial and Exclusive (disjoint) vs. Overlapping."
+    },
+    {
+      "id": "upload-1777722424228-41",
+      "number": "42",
+      "text": "General conceptual modeling concepts include 'Aggregation and Association'. These primarily refer to:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Attributes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Subclasses"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Relationships"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Keys"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Slide 41 notes that Aggregation and Association are forms of relationships."
+    },
+    {
+      "id": "upload-1777722424228-42",
+      "number": "43",
+      "text": "True or False: In EER, it is possible for a superclass to be a subclass of another superclass.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A subclass may itself have further subclasses, forming a hierarchy or lattice."
+    },
+    {
+      "id": "upload-1777722424228-43",
+      "number": "44",
+      "text": "If a specialization is attribute-defined based on 'JobType', and the values for subclasses are 'Secretary', 'Engineer', and 'Technician', what happens to an employee whose 'JobType' is 'Sales'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The database generates an error."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The employee is placed in all three subclasses."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The employee belongs to the superclass but none of these subclasses."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The employee is automatically a Secretary."
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In a partial specialization (implied if 'Sales' isn't a subclass), an entity doesn't have to belong to any subclass."
+    },
+    {
+      "id": "upload-1777722424228-44",
+      "number": "45",
+      "text": "The concept of 'Inheritance' in EER is most closely related to which programming paradigm?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Procedural programming"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Object-oriented concepts"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Functional programming"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Logic programming"
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Slide 2 mentions that EER includes object-oriented concepts such as inheritance."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 45
+}

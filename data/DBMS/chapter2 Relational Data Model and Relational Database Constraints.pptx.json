@@ -1,0 +1,1408 @@
+{
+  "id": "upload-1777722547953-1zti8",
+  "label": "2 Relational Data Model and Relational Database Constraints.pptx",
+  "params": {
+    "file": "2 Relational Data Model and Relational Database Constraints.pptx",
+    "chapter": "2"
+  },
+  "title": "Chapter 2 : The Relational Data Model and Relational Database Constraints",
+  "questions": [
+    {
+      "id": "upload-1777722547953-0",
+      "number": "1",
+      "text": "Who is credited with first proposing the Relational Model of Data in 1970?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Shamkant B. Navathe"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Ramez Elmasri"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "E.F. Codd"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Alan Turing"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Dr. E.F. Codd proposed the relational model in his 1970 paper 'A Relational Model for Large Shared Data Banks'."
+    },
+    {
+      "id": "upload-1777722547953-1",
+      "number": "2",
+      "text": "In the formal relational model, what is the informal equivalent of a 'Relation'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Row"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Table"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Column Header"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Database"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Informally, a relation looks like a table of values."
+    },
+    {
+      "id": "upload-1777722547953-2",
+      "number": "3",
+      "text": "What is the formal term for a 'Row' in the relational model?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Attribute"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Domain"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Tuple"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Schema"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In the formal model, rows are called tuples."
+    },
+    {
+      "id": "upload-1777722547953-3",
+      "number": "4",
+      "text": "The column header in a table is formally referred to as a/an:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Attribute name"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Domain"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Tuple ID"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Relation State"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "In the formal model, the column header is called an attribute name (or just attribute)."
+    },
+    {
+      "id": "upload-1777722547953-4",
+      "number": "5",
+      "text": "What type of key is used when row-ids or sequential numbers are assigned to identify rows in a table?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Candidate key"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Superkey"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Artificial or surrogate key"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Foreign key"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Sequential numbers or row-ids assigned as keys are called artificial or surrogate keys."
+    },
+    {
+      "id": "upload-1777722547953-5",
+      "number": "6",
+      "text": "Which of the following describes a 'Relation Schema'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A set of tuples"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The description of a relation, denoted by \\( R(A_1, A_2, ..., A_n) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The current values stored in a table"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The Cartesian product of all domains"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A schema is the description of a relation, consisting of its name and its attributes."
+    },
+    {
+      "id": "upload-1777722547953-6",
+      "number": "7",
+      "text": "In the tuple \\( <632895, \"John Smith\", \"Atlanta\"> \\), the fact it has 3 values makes it a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Triple-domain"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "3-tuple"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Relation State"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Superkey"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A tuple with \\( n \\) values is called an \\( n \\)-tuple."
+    },
+    {
+      "id": "upload-1777722547953-7",
+      "number": "8",
+      "text": "A domain has a logical definition and a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Primary Key"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data-type or format"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Set of tuples"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Relation name"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A domain has both a logical definition (e.g., USA phone numbers) and a data-type or format (e.g., (ddd)ddd-dddd)."
+    },
+    {
+      "id": "upload-1777722547953-8",
+      "number": "9",
+      "text": "The formal definition of a relation state \\( r(R) \\) is a subset of the ________ of the domains of its attributes.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Union"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Intersection"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Cartesian product"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Difference"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The relation state is a subset of the Cartesian product of the domains of its attributes: \\( r(R) \\subseteq dom(A_1) \\times dom(A_2) \\times ... \\times dom(A_n) \\)."
+    },
+    {
+      "id": "upload-1777722547953-9",
+      "number": "10",
+      "text": "If \\( dom(A_1) = \\{0, 1\\} \\) and \\( dom(A_2) = \\{a, b, c\\} \\), how many possible combinations are in the Cartesian product?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "5"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "6"
+        },
+        {
+          "value": "C",
+          "label": "D",
+          "text": "2"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "3"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The Cartesian product has \\( 2 \\times 3 = 6 \\) combinations: \\( \\{<0,a>, <0,b>, <0,c>, <1,a>, <1,b>, <1,c>\\} \\)."
+    },
+    {
+      "id": "upload-1777722547953-10",
+      "number": "11",
+      "text": "Which of the following is true regarding the ordering of tuples in a relation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Tuples must be ordered by the primary key."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Tuples are not considered to be ordered."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Tuples are ordered chronologically by insertion."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Tuples must be ordered alphabetically by the first attribute."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "According to the characteristics of relations, tuples are not considered to be ordered, even if they appear so in a table."
+    },
+    {
+      "id": "upload-1777722547953-11",
+      "number": "12",
+      "text": "In the formal relational model, values in a tuple are considered to be:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Composite"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Atomic (indivisible)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Multi-valued"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Repeating groups"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Values in a tuple are considered atomic (indivisible)."
+    },
+    {
+      "id": "upload-1777722547953-12",
+      "number": "13",
+      "text": "What is the purpose of a 'null' value in the relational model?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To represent a value of zero"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To represent unknown or inapplicable values"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To act as a primary key"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To link two tables together"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A special null value is used for values that are unknown or inapplicable to certain tuples."
+    },
+    {
+      "id": "upload-1777722547953-13",
+      "number": "14",
+      "text": "How do we formally refer to the value of attribute \\( A_i \\) for tuple \\( t \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( R(A_i) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( t[A_i] \\) or \\( t.A_i \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( dom(A_i) \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( r(t) \\)"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Component values are referred to by \\( t[A_i] \\) or \\( t.A_i \\)."
+    },
+    {
+      "id": "upload-1777722547953-14",
+      "number": "15",
+      "text": "Which of the following is NOT one of the three main types of integrity constraints?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Key constraints"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Entity integrity constraints"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Referential integrity constraints"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Logical integrity constraints"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The three main types are Key, Entity integrity, and Referential integrity. Domain constraints are implicit."
+    },
+    {
+      "id": "upload-1777722547953-15",
+      "number": "16",
+      "text": "A set of attributes \\( SK \\) of \\( R \\) where no two tuples in any valid state have the same value for \\( SK \\) is called a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Foreign key"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Superkey"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Domain"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Relation state"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A superkey is a set of attributes that uniquely identifies each tuple in a relation."
+    },
+    {
+      "id": "upload-1777722547953-16",
+      "number": "17",
+      "text": "A 'minimal' superkey is formally called a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Schema"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Tuple"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Key"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Subtuple"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A key is a superkey such that removal of any attribute from it results in a set that is no longer a superkey (minimal uniqueness)."
+    },
+    {
+      "id": "upload-1777722547953-17",
+      "number": "18",
+      "text": "If a relation has multiple candidate keys, the one chosen to uniquely identify tuples is the:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Foreign Key"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Secondary Key"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Primary Key"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Surrogate Key"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "One of the candidate keys is chosen arbitrarily to be the primary key."
+    },
+    {
+      "id": "upload-1777722547953-18",
+      "number": "19",
+      "text": "How is a Primary Key typically denoted in a relation schema?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Bold text"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Italicized text"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Underlined attribute names"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Capitalized attribute names"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The primary key attributes are traditionally underlined in the schema representation."
+    },
+    {
+      "id": "upload-1777722547953-19",
+      "number": "20",
+      "text": "The rule stating that 'primary key attributes cannot have null values' is called:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Referential Integrity"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Entity Integrity"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Key Uniqueness"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Domain Constraint"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Entity integrity states that primary key attributes (PK) cannot have null values in any tuple."
+    },
+    {
+      "id": "upload-1777722547953-20",
+      "number": "21",
+      "text": "Which constraint involves specifying a relationship between tuples in two different relations?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Entity Integrity"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Key Constraint"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Referential Integrity"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Domain Constraint"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Referential integrity is a constraint involving two relations: a referencing relation and a referenced relation."
+    },
+    {
+      "id": "upload-1777722547953-21",
+      "number": "22",
+      "text": "A foreign key value can be either a primary key value in the referenced relation or:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A negative number"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A null value"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A random unique string"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The name of the table"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Referential integrity allows a foreign key to be null, provided it is not part of its own relation's primary key."
+    },
+    {
+      "id": "upload-1777722547953-22",
+      "number": "23",
+      "text": "In a relational schema diagram, referential integrity is displayed as a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Dotted line"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Double line"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Directed arc (arrow)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Mathematical equation"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Referential integrity constraints are displayed as directed arcs from the foreign key to the referenced primary key."
+    },
+    {
+      "id": "upload-1777722547953-23",
+      "number": "24",
+      "text": "Constraints like 'the maximum hours per employee is 56' are known as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Key constraints"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Semantic Integrity Constraints"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Referential constraints"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Primary constraints"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Semantic integrity constraints are based on application semantics and cannot always be expressed by the basic model constraints."
+    },
+    {
+      "id": "upload-1777722547953-24",
+      "number": "25",
+      "text": "What does a 'relational database state' consist of?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The list of table names only"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The union of all individual relation states in the database"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A list of all possible values for each attribute"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The SQL code used to create the tables"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A relational database state is a union of all individual relation states (populated tables) at a given time."
+    },
+    {
+      "id": "upload-1777722547953-25",
+      "number": "26",
+      "text": "Which basic update operation can violate any of the four constraints (Domain, Key, Entity Integrity, Referential Integrity)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "DELETE"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "INSERT"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "MODIFY an ordinary attribute"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "SELECT"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "INSERTing a new tuple can violate all mentioned constraints depending on the values provided."
+    },
+    {
+      "id": "upload-1777722547953-26",
+      "number": "27",
+      "text": "Which constraint is primarily at risk during a DELETE operation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Entity Integrity"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Key Constraint"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Referential Integrity"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Domain Constraint"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "DELETE may violate referential integrity if the primary key being deleted is still referenced by other tuples."
+    },
+    {
+      "id": "upload-1777722547953-27",
+      "number": "28",
+      "text": "The 'CASCADE' option for dealing with integrity violations means:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The operation is rejected entirely."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The user is informed but the change is made anyway."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The update/deletion is propagated to all referencing tuples."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Referencing values are set to a default value."
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The CASCADE option triggers additional updates so that the violation is corrected by propagating the change."
+    },
+    {
+      "id": "upload-1777722547953-28",
+      "number": "29",
+      "text": "What happens under the 'RESTRICT' (or REJECT) option during a violation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The operation is cancelled."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The system automatically fixes the error."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Related data is deleted."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "NULL values are inserted."
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The RESTRICT option rejects the operation that causes the violation."
+    },
+    {
+      "id": "upload-1777722547953-29",
+      "number": "30",
+      "text": "Updating a primary key attribute is formally equivalent to which sequence of operations?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "An INSERT followed by another INSERT"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A DELETE followed by an INSERT"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A MODIFY followed by a DELETE"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A single MODIFY with no side effects"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Updating the primary key (PK) is similar to a DELETE of the old tuple followed by an INSERT of the new one."
+    },
+    {
+      "id": "upload-1777722547953-30",
+      "number": "31",
+      "text": "If you update an ordinary attribute that is neither a Primary Key nor a Foreign Key, which constraint could potentially be violated?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Entity Integrity"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Referential Integrity"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Domain Constraint"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Key Constraint"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Updating an ordinary attribute can only violate domain constraints (or NOT NULL constraints)."
+    },
+    {
+      "id": "upload-1777722547953-31",
+      "number": "32",
+      "text": "Which SQL feature is mentioned as a way to express semantic integrity constraints?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "SELECT statements"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "JOIN operations"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Triggers and ASSERTIONS"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Primary Key declarations"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "SQL-99 allows triggers and ASSERTIONS to express complex semantic integrity constraints."
+    },
+    {
+      "id": "upload-1777722547953-32",
+      "number": "33",
+      "text": "In the relation CAR(State, Reg#, SerialNo, Make, Model, Year), if {SerialNo} is a key, what is {SerialNo, Make} called?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Key"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Superkey"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Primary Key"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Foreign Key"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Any set of attributes that includes a key is a superkey, but it is not necessarily a key if it's not minimal."
+    },
+    {
+      "id": "upload-1777722547953-33",
+      "number": "34",
+      "text": "Which of the following is true about a 'Key' in a relation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It can contain null values."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It must be the largest set of attributes in the relation."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It is a minimal superkey."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It can have duplicate values across rows."
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A key is defined as a minimal superkey; no subset of its attributes can maintain the uniqueness property."
+    },
+    {
+      "id": "upload-1777722547953-34",
+      "number": "35",
+      "text": "What is 'r(R)' formally called?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Relation schema"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Relation state (or population)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Domain set"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Primary Key set"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "r(R) represents a specific state or population of the relation R at a given time."
+    },
+    {
+      "id": "upload-1777722547953-35",
+      "number": "36",
+      "text": "Which concept is the relational model based on?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Calculus"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Graph theory"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Mathematical theory of sets and relations"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Hierarchical logic"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The relational model is based on the mathematical concept of a relation and the theory of sets."
+    },
+    {
+      "id": "upload-1777722547953-36",
+      "number": "37",
+      "text": "If \\( t \\) is a tuple in \\( r(R) \\), and \\( R \\) has attributes \\( A_1, A_2, A_3 \\), then \\( t = <v_1, v_2, v_3> \\) where each \\( v_j \\) must belong to:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( dom(A_j) \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( PK(R) \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The table name"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The superkey set"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Each element \\( v_j \\) of a tuple must be a member of the domain of its corresponding attribute \\( A_j \\)."
+    },
+    {
+      "id": "upload-1777722547953-37",
+      "number": "38",
+      "text": "In referential integrity, if tuple \\( t_1 \\) in relation \\( R_1 \\) references tuple \\( t_2 \\) in relation \\( R_2 \\), then:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "\\( t_1[PK] = t_2[PK] \\)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "\\( t_1[FK] = t_2[PK] \\)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "\\( t_1[FK] = t_2[FK] \\)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "\\( t_1 = t_2 \\)"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A tuple \\( t_1 \\) references \\( t_2 \\) if the foreign key values of \\( t_1 \\) match the primary key values of \\( t_2 \\)."
+    },
+    {
+      "id": "upload-1777722547953-38",
+      "number": "39",
+      "text": "Which of the following describes the 'SET NULL' action for referential integrity violations?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The entire database is cleared."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The deletion of the referenced tuple is blocked."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The foreign keys of the referencing tuples are set to NULL."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A new tuple is created to replace the old one."
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The SET NULL option remedies a violation by setting the foreign key of the referencing tuples to NULL when the referenced tuple is deleted."
+    },
+    {
+      "id": "upload-1777722547953-39",
+      "number": "40",
+      "text": "A relational database schema \\( S \\) is formally defined as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A single table"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A set of relation schemas \\( \\{R_1, R_2, ..., R_n\\} \\) that belong to the same database"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The list of primary keys"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The data values currently in the tables"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A Relational Database Schema is a set of relation schemas that belong to the same database."
+    },
+    {
+      "id": "upload-1777722547953-40",
+      "number": "41",
+      "text": "What is the standard model used in practice (for database management systems) based on?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Fortran"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "C++"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "SQL"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "COBOL"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In practice, there is a standard model based on SQL, which differs slightly from the formal relational model."
+    },
+    {
+      "id": "upload-1777722547953-41",
+      "number": "42",
+      "text": "Under the characteristics of relations, what is true about the ordering of attributes in a schema \\( R(A_1, A_2, ..., A_n) \\)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "They are strictly unordered."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "They are considered ordered in this chapter's definition."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "They must be ordered alphabetically."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Ordering is only required for primary keys."
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In the provided text, attributes in R and values in a tuple are considered ordered, though more general definitions exist where they are not."
+    },
+    {
+      "id": "upload-1777722547953-42",
+      "number": "43",
+      "text": "The set of all possible values that an attribute can take is its:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "State"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Domain"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Key"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Schema"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A domain contains the set of all possible values the attribute can take."
+    },
+    {
+      "id": "upload-1777722547953-43",
+      "number": "44",
+      "text": "If a primary key consists of several attributes, entity integrity requires:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Only the first attribute cannot be null."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "At least one attribute must not be null."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "None of the attributes in the primary key can be null."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "All attributes must be null."
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Entity integrity dictates that if the primary key has several attributes, null is not allowed in any of these attributes."
+    },
+    {
+      "id": "upload-1777722547953-44",
+      "number": "45",
+      "text": "A 'Subtuple' refers to:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A tuple in a different relation."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A tuple containing only values of a specific subset of attributes."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A tuple that is being deleted."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The name of a row."
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Notation like \\( t[A_u, A_v] \\) refers to a subtuple containing values of specific attributes."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 45
+}
