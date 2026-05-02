@@ -1,0 +1,1034 @@
+{
+  "title": "ER and EER Diagrams",
+  "timestamp": 1777724895814,
+  "totalQuestions": 33,
+  "questions": [
+    {
+      "id": "regen-1777724673441-0",
+      "number": "1",
+      "text": "Consider the following ER diagram using (min, max) notation:\n\n```dot\ngraph ER {\n    layout=neato;\n    node [shape=box]; EMPLOYEE; PROJECT; DEPARTMENT;\n    node [shape=diamond]; WORKS_ON; MANAGES; CONTROLS;\n\n    EMPLOYEE -- WORKS_ON [label=\"(1, 3)\", len=1.5];\n    WORKS_ON -- PROJECT [label=\"(4, n)\", len=1.5];\n    EMPLOYEE -- MANAGES [label=\"(0, 1)\", len=1.5];\n    MANAGES -- DEPARTMENT [label=\"(1, 1)\", len=1.5];\n    DEPARTMENT -- CONTROLS [label=\"(1, 5)\", len=1.5];\n    CONTROLS -- PROJECT [label=\"(1, 1)\", len=1.5];\n}\n```\n\nBased on the diagram, which of the following statements regarding the number of projects an employee can work on is correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "An employee can work on zero projects."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "An employee must work on at least one project and at most three projects."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "An employee can work on an unlimited number of projects."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "An employee must work on exactly four projects."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In (min, max) notation, the numbers on the side of the entity EMPLOYEE for the WORKS_ON relationship are (1, 3). This indicates that each employee must participate in at least 1 and at most 3 project assignments."
+    },
+    {
+      "id": "regen-1777724673441-1",
+      "number": "2",
+      "text": "Consider the following ER diagram using (min, max) notation:\n\n```dot\ngraph ER {\n    layout=neato;\n    node [shape=box]; EMPLOYEE; PROJECT; DEPARTMENT;\n    node [shape=diamond]; WORKS_ON; MANAGES; CONTROLS;\n\n    EMPLOYEE -- WORKS_ON [label=\"(1, 3)\", len=1.5];\n    WORKS_ON -- PROJECT [label=\"(4, n)\", len=1.5];\n    EMPLOYEE -- MANAGES [label=\"(0, 1)\", len=1.5];\n    MANAGES -- DEPARTMENT [label=\"(1, 1)\", len=1.5];\n    DEPARTMENT -- CONTROLS [label=\"(1, 5)\", len=1.5];\n    CONTROLS -- PROJECT [label=\"(1, 1)\", len=1.5];\n}\n```\n\nIs the participation of the EMPLOYEE entity in the MANAGES relationship total or partial?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Total participation"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Partial participation"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Mandatory participation"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It depends on the department size"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The notation on the EMPLOYEE side for the MANAGES relationship is (0, 1). A minimum participation of 0 indicates partial participation, meaning not every employee manages a department."
+    },
+    {
+      "id": "regen-1777724673441-2",
+      "number": "3",
+      "text": "Consider the following ER diagram using (min, max) notation:\n\n```dot\ngraph ER {\n    layout=neato;\n    node [shape=box]; EMPLOYEE; PROJECT; DEPARTMENT;\n    node [shape=diamond]; WORKS_ON; MANAGES; CONTROLS;\n\n    EMPLOYEE -- WORKS_ON [label=\"(1, 3)\", len=1.5];\n    WORKS_ON -- PROJECT [label=\"(4, n)\", len=1.5];\n    EMPLOYEE -- MANAGES [label=\"(0, 1)\", len=1.5];\n    MANAGES -- DEPARTMENT [label=\"(1, 1)\", len=1.5];\n    DEPARTMENT -- CONTROLS [label=\"(1, 5)\", len=1.5];\n    CONTROLS -- PROJECT [label=\"(1, 1)\", len=1.5];\n}\n```\n\nUsing the provided diagram, is it true that the 'Solar Tech' project must be managed specifically by an employee named 'John Doe'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True, as per the (1, 1) constraint."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False, because ER diagrams represent the schema and structural constraints, not specific data instances like employee names."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "True, because it is a fixed data constraint."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Not enough information to determine."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "ER diagrams define entity sets and relationship types (the schema), but they do not contain specific row-level data or individual instances like 'John Doe'."
+    },
+    {
+      "id": "regen-1777724673441-3",
+      "number": "4",
+      "text": "Consider the following ER diagram using (min, max) notation:\n\n```dot\ngraph ER {\n    layout=neato;\n    node [shape=box]; EMPLOYEE; PROJECT; DEPARTMENT;\n    node [shape=diamond]; WORKS_ON; MANAGES; CONTROLS;\n\n    EMPLOYEE -- WORKS_ON [label=\"(1, 3)\", len=1.5];\n    WORKS_ON -- PROJECT [label=\"(4, n)\", len=1.5];\n    EMPLOYEE -- MANAGES [label=\"(0, 1)\", len=1.5];\n    MANAGES -- DEPARTMENT [label=\"(1, 1)\", len=1.5];\n    DEPARTMENT -- CONTROLS [label=\"(1, 5)\", len=1.5];\n    CONTROLS -- PROJECT [label=\"(1, 1)\", len=1.5];\n}\n```\n\nBased on the MANAGES relationship in the diagram, which statement is correct regarding DEPARTMENT participation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A department can exist without any manager."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "All departments must have exactly one manager."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A department can be managed by multiple employees simultaneously."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The manager is optional for a department."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The notation on the DEPARTMENT side for the MANAGES relationship is (1, 1). This indicates total participation (min 1) and a maximum of one manager (max 1)."
+    },
+    {
+      "id": "regen-1777724673441-4",
+      "number": "5",
+      "text": "Consider the following ER diagram using (min, max) notation:\n\n```dot\ngraph ER {\n    layout=neato;\n    node [shape=box]; EMPLOYEE; PROJECT; DEPARTMENT;\n    node [shape=diamond]; WORKS_ON; MANAGES; CONTROLS;\n\n    EMPLOYEE -- WORKS_ON [label=\"(1, 3)\", len=1.5];\n    WORKS_ON -- PROJECT [label=\"(4, n)\", len=1.5];\n    EMPLOYEE -- MANAGES [label=\"(0, 1)\", len=1.5];\n    MANAGES -- DEPARTMENT [label=\"(1, 1)\", len=1.5];\n    DEPARTMENT -- CONTROLS [label=\"(1, 5)\", len=1.5];\n    CONTROLS -- PROJECT [label=\"(1, 1)\", len=1.5];\n}\n```\n\nWhich of the following describes the relationship between DEPARTMENT and PROJECT according to the CONTROLS relationship in the diagram?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A department can control between one and five projects."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A department must control at least five projects."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Every department must control exactly ten projects."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Projects are not controlled by departments."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The notation on the DEPARTMENT side for the CONTROLS relationship is (1, 5). This means a department must control at least 1 project and a maximum of 5 projects."
+    },
+    {
+      "id": "regen-1777724673441-5",
+      "number": "6",
+      "text": "Consider the following ER diagram using (min, max) notation:\n\n```dot\ngraph ER {\n    layout=neato;\n    node [shape=box]; EMPLOYEE; PROJECT; DEPARTMENT;\n    node [shape=diamond]; WORKS_ON; MANAGES; CONTROLS;\n\n    EMPLOYEE -- WORKS_ON [label=\"(1, 3)\", len=1.5];\n    WORKS_ON -- PROJECT [label=\"(4, n)\", len=1.5];\n    EMPLOYEE -- MANAGES [label=\"(0, 1)\", len=1.5];\n    MANAGES -- DEPARTMENT [label=\"(1, 1)\", len=1.5];\n    DEPARTMENT -- CONTROLS [label=\"(1, 5)\", len=1.5];\n    CONTROLS -- PROJECT [label=\"(1, 1)\", len=1.5];\n}\n```\n\nRegarding the CONTROLS relationship in the diagram, how many departments can control a specific project?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A project can be controlled by multiple departments."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A project must be controlled by exactly one department."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A project may have no controlling department."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A project is controlled by up to five departments."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The notation on the PROJECT side for the CONTROLS relationship is (1, 1). This indicates every project must be associated with exactly one department."
+    },
+    {
+      "id": "regen-1777724673441-6",
+      "number": "7",
+      "text": "Consider the following ER diagram using (min, max) notation:\n\n```dot\ngraph ER {\n    layout=neato;\n    node [shape=box]; EMPLOYEE; PROJECT; DEPARTMENT;\n    node [shape=diamond]; WORKS_ON; MANAGES; CONTROLS;\n\n    EMPLOYEE -- WORKS_ON [label=\"(1, 3)\", len=1.5];\n    WORKS_ON -- PROJECT [label=\"(4, n)\", len=1.5];\n    EMPLOYEE -- MANAGES [label=\"(0, 1)\", len=1.5];\n    MANAGES -- DEPARTMENT [label=\"(1, 1)\", len=1.5];\n    DEPARTMENT -- CONTROLS [label=\"(1, 5)\", len=1.5];\n    CONTROLS -- PROJECT [label=\"(1, 1)\", len=1.5];\n}\n```\n\nIf the CONTROLS relationship between DEPARTMENT and PROJECT is represented with a (1, 1) constraint on the PROJECT side, which of the following is true regarding existence constraints?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The existence of a PROJECT is dependent on a DEPARTMENT."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The existence of a DEPARTMENT is dependent on a PROJECT."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "There is no existence dependency between the two."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Participation is partial for the PROJECT entity."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A (1, 1) constraint on the PROJECT side signifies total participation. In ER terminology, if an entity must participate in a relationship to exist within the context of the schema, it has an existence dependency on the related entity."
+    },
+    {
+      "id": "regen-1777724673441-7",
+      "number": "8",
+      "text": "Assume you have the following instances for the given relations in a specialization hierarchy where All_Engineers is the superclass:\n- Junior_Engineers = {E1, E2}\n- Senior_Engineers = {E2, E3}\n- All_Engineers = {E1, E2, E3, E4}\n\nWhat type of constraint is applied to this specialization?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Total Disjoint"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Partial Disjoint"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Total Overlapping"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Partial Overlapping"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The union of subclasses {E1, E2, E3} is a proper subset of the superclass {E1, E2, E3, E4}, making it a partial specialization. Since E2 belongs to both subclasses, the specialization is overlapping."
+    },
+    {
+      "id": "regen-1777724673441-8",
+      "number": "9",
+      "text": "Consider the following formal definition: A specialization \\( S = \\{v_1, v_2, \\dots, v_n\\} \\) of a superclass \\( G \\) is disjoint if for any \\( i \neq j \\), \\( v_i \\cap v_j = \\emptyset \\). \n\nIs this statement true or false?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It only applies to total specializations"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "The disjointness constraint specifies that the subclasses of a specialization must be disjoint, meaning an entity can be a member of at most one subclass. In set theory, this means the intersection of any two distinct subclasses is empty."
+    },
+    {
+      "id": "regen-1777724673441-9",
+      "number": "10",
+      "text": "If a specialization is defined by a condition such as `Job_Type = 'Manager'`, where `Job_Type` is an attribute of the superclass, what category of specialization is this?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "User-defined specialization"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Attribute-defined specialization"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Relation-defined specialization"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Total specialization"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "When membership in a subclass is determined by the value of a specific attribute belonging to the superclass, the specialization is categorized as attribute-defined."
+    },
+    {
+      "id": "regen-1777724673441-10",
+      "number": "11",
+      "text": "Consider the following EER diagram for a Vehicle entity:\n\n```mermaid\ngraph TD\n  Vehicle --- Vin\n  Vehicle --- Model\n  Vehicle --- Year\n  Vehicle --- Color\n  Vehicle --- VType\n  Vehicle === O((o))\n  O --- Car\n  O --- Truck\n  O --- Bus\n  Car --- TrunkSize\n  Truck --- BedLength\n  Bus --- NumSeats\n```\n\nBased on the 'o' symbol in the circle, is it possible for a record to exist as both a Car and a Truck simultaneously?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "No, it is disjoint."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Yes, because the 'o' indicates an overlapping constraint."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "No, because the participation is total."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Yes, but only if they share the same Vin."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The 'o' symbol stands for 'overlapping', meaning an entity instance can belong to more than one subclass in the specialization at the same time."
+    },
+    {
+      "id": "regen-1777724673441-11",
+      "number": "12",
+      "text": "In the Vehicle EER diagram provided below, what does the double line between the 'Vehicle' entity and the circle containing 'o' signify?\n\n```mermaid\ngraph TD\n  Vehicle --- Vin\n  Vehicle --- Model\n  Vehicle --- Year\n  Vehicle --- Color\n  Vehicle --- VType\n  Vehicle === O((o))\n  O --- Car\n  O --- Truck\n  O --- Bus\n  Car --- TrunkSize\n  Truck --- BedLength\n  Bus --- NumSeats\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Partial specialization (a vehicle might not be a Car, Truck, or Bus)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Total specialization (every vehicle must belong to at least one subclass)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Attribute-defined constraint"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Disjointness constraint"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The double line represents a total completeness constraint (total specialization), meaning every entity in the superclass must be a member of at least one of the subclasses."
+    },
+    {
+      "id": "regen-1777724673441-12",
+      "number": "13",
+      "text": "How many attributes (including inherited ones) are required to fully represent a Bus according to the provided EER design?\n\n```mermaid\ngraph TD\n  Vehicle --- Vin\n  Vehicle --- Model\n  Vehicle --- Year\n  Vehicle --- Color\n  Vehicle --- VType\n  Vehicle === O((o))\n  O --- Car\n  O --- Truck\n  O --- Bus\n  Car --- TrunkSize\n  Truck --- BedLength\n  Bus --- NumSeats\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "7"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The Bus subclass inherits 5 attributes from the Vehicle superclass (Vin, Model, Year, Color, VType) and has 1 specific attribute (NumSeats), totaling 6 attributes."
+    },
+    {
+      "id": "regen-1777724673441-13",
+      "number": "14",
+      "text": "In the EER diagram for Vehicle, which attribute would serve as the primary key for the 'Truck' subclass?\n\n```mermaid\ngraph TD\n  Vehicle --- Vin\n  Vehicle --- Model\n  Vehicle --- Year\n  Vehicle --- Color\n  Vehicle --- VType\n  Vehicle === O((o))\n  O --- Car\n  O --- Truck\n  O --- Bus\n  Car --- TrunkSize\n  Truck --- BedLength\n  Bus --- NumSeats\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "BedLength"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Vin"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "VType"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Model"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In specialization, subclasses inherit the primary key of the superclass. Since 'Vin' is the identifier for the Vehicle superclass, it also serves as the primary key for the Truck subclass."
+    },
+    {
+      "id": "regen-1777724673441-14",
+      "number": "15",
+      "text": "If the circle in the Vehicle EER diagram contained a 'd' instead of an 'o', what would be the constraint on the subclasses?\n\n```mermaid\ngraph TD\n  Vehicle --- Vin\n  Vehicle --- Model\n  Vehicle --- Year\n  Vehicle --- Color\n  Vehicle --- VType\n  Vehicle === O((o))\n  O --- Car\n  O --- Truck\n  O --- Bus\n  Car --- TrunkSize\n  Truck --- BedLength\n  Bus --- NumSeats\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A vehicle could be both a Car and a Bus."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A vehicle could be at most one of the three types: Car, Truck, or Bus."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The specialization would become partial."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Attributes would no longer be inherited."
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The 'd' symbol represents a disjoint constraint, which specifies that an entity can be a member of at most one subclass in the specialization."
+    },
+    {
+      "id": "regen-1777724673441-15",
+      "number": "16",
+      "text": "Which of the following terms describes the top-down process of defining a set of subclasses of an entity type, as shown in the Vehicle diagram?\n\n```mermaid\ngraph TD\n  Vehicle --- Vin\n  Vehicle --- Model\n  Vehicle --- Year\n  Vehicle --- Color\n  Vehicle --- VType\n  Vehicle === O((o))\n  O --- Car\n  O --- Truck\n  O --- Bus\n  Car --- TrunkSize\n  Truck --- BedLength\n  Bus --- NumSeats\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Generalization"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Specialization"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Aggregation"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Normalization"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Specialization is the top-down process of defining a set of subclasses of an entity type (the superclass) based on specific characteristics."
+    },
+    {
+      "id": "regen-1777724673441-16",
+      "number": "17",
+      "text": "In the (min, max) notation for structural constraints, if the constraint on an entity's participation in a relationship is (0, n), what are the equivalent cardinality ratio and participation constraints?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1:N cardinality, Total participation"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "M:N cardinality, Total participation"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "N cardinality, Partial participation"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "1:1 cardinality, Partial participation"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In (min, max) notation, a 'min' value of 0 indicates partial participation, while a 'max' value of 'n' indicates a cardinality of many (N)."
+    },
+    {
+      "id": "regen-1777724673441-17",
+      "number": "18",
+      "text": "Consider the WORKS_ON relationship between EMPLOYEE and PROJECT. If the constraints are (1, 3) for EMPLOYEE and (4, n) for PROJECT, what is the maximum number of employees that can work on a single project instance?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "4"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Unlimited (n)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Exactly 1"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The constraint (4, n) on the PROJECT entity means that each project must be associated with at least 4 employees, and 'n' indicates there is no specified upper limit (unlimited)."
+    },
+    {
+      "id": "regen-1777724673441-18",
+      "number": "19",
+      "text": "In EER modeling, the bottom-up process of synthesizing multiple entity types with common features into a single higher-level entity type is known as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Specialization"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Generalization"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Classification"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Association"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Generalization is the bottom-up process of identifying commonalities among several entity types to create a single superclass."
+    },
+    {
+      "id": "regen-1777724673441-19",
+      "number": "20",
+      "text": "Consider a MANAGES relationship between EMPLOYEE and DEPARTMENT where an employee can optionally manage one department (0, 1). If the business rules change so that every employee MUST manage exactly one department, how would the (min, max) notation for EMPLOYEE change?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "From (0, 1) to (1, 1)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "From (0, 1) to (1, n)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "From (0, 1) to (0, n)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It would remain (0, 1)"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Changing the participation from partial (optional) to total (must participate) changes the 'min' from 0 to 1. Since the employee manages exactly one department, the 'max' is 1, resulting in (1, 1)."
+    },
+    {
+      "id": "extract-combined-1777724196019-0",
+      "number": "21",
+      "text": "Consider the following ER diagram using (min, max) notation:\n\n```dot\ngraph ER {\n    layout=neato;\n    node [shape=box]; INSTRUCTOR; COURSE; TEXT;\n    node [shape=diamond]; TEACHES; ADOPTS; USES;\n\n    INSTRUCTOR -- TEACHES [label=\"(2, 4)\", len=1.5];\n    TEACHES -- COURSE [label=\"(1, 1)\", len=1.5];\n    INSTRUCTOR -- ADOPTS [label=\"(0, n)\", len=1.5];\n    ADOPTS -- TEXT [label=\"(0, 1)\", len=1.5];\n    COURSE -- USES [label=\"(0, 5)\", len=1.5];\n    USES -- TEXT [label=\"(1, 1)\", len=1.5];\n}\n```\n\nBased on the diagram, which of the following statements regarding the number of courses an instructor can teach is correct?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "An instructor can teach exactly one course."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "An instructor must teach at least two courses and at most four courses."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "An instructor can choose not to teach any courses."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "An instructor can teach an unlimited number of courses."
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In (min, max) notation, the numbers on the side of the entity INSTRUCTOR for the TEACHES relationship are (2, 4). This means an instructor must participate in at least 2 and at most 4 instances of the relationship."
+    },
+    {
+      "id": "extract-combined-1777724196019-1",
+      "number": "22",
+      "text": "Consider the following ER diagram using (min, max) notation:\n\n```dot\ngraph ER {\n    layout=neato;\n    node [shape=box]; INSTRUCTOR; COURSE; TEXT;\n    node [shape=diamond]; TEACHES; ADOPTS; USES;\n\n    INSTRUCTOR -- TEACHES [label=\"(2, 4)\", len=1.5];\n    TEACHES -- COURSE [label=\"(1, 1)\", len=1.5];\n    INSTRUCTOR -- ADOPTS [label=\"(0, n)\", len=1.5];\n    ADOPTS -- TEXT [label=\"(0, 1)\", len=1.5];\n    COURSE -- USES [label=\"(0, 5)\", len=1.5];\n    USES -- TEXT [label=\"(1, 1)\", len=1.5];\n}\n```\n\nIs the participation of the INSTRUCTOR entity in the ADOPTS relationship total or partial?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Total participation"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Partial participation"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Mandatory participation"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It depends on the specific instructor"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The notation on the INSTRUCTOR side for the ADOPTS relationship is (0, n). Since the minimum participation (min) is 0, it indicates partial participation, meaning an instructor does not necessarily have to adopt any text."
+    },
+    {
+      "id": "extract-combined-1777724196019-2",
+      "number": "23",
+      "text": "Consider the following ER diagram using (min, max) notation:\n\n```dot\ngraph ER {\n    layout=neato;\n    node [shape=box]; INSTRUCTOR; COURSE; TEXT;\n    node [shape=diamond]; TEACHES; ADOPTS; USES;\n\n    INSTRUCTOR -- TEACHES [label=\"(2, 4)\", len=1.5];\n    TEACHES -- COURSE [label=\"(1, 1)\", len=1.5];\n    INSTRUCTOR -- ADOPTS [label=\"(0, n)\", len=1.5];\n    ADOPTS -- TEXT [label=\"(0, 1)\", len=1.5];\n    COURSE -- USES [label=\"(0, 5)\", len=1.5];\n    USES -- TEXT [label=\"(1, 1)\", len=1.5];\n}\n```\n\nAccording to the provided ER diagram, is it true that a specific 'Database' course can only be taught by Dr. Subhieh and Dr. Fairouz?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True, because it is a fixed constraint in the diagram."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False, because ER diagrams represent schemas (structural constraints) and do not typically contain specific data instances or names."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "True, as implied by the (1, 1) constraint on the Course side."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Not enough information is provided to determine the validity."
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "ER diagrams define structural constraints and relationships between entity sets (the schema), not specific data instances like the individual names of instructors."
+    },
+    {
+      "id": "extract-combined-1777724196019-3",
+      "number": "24",
+      "text": "Consider the following ER diagram using (min, max) notation:\n\n```dot\ngraph ER {\n    layout=neato;\n    node [shape=box]; INSTRUCTOR; COURSE; TEXT;\n    node [shape=diamond]; TEACHES; ADOPTS; USES;\n\n    INSTRUCTOR -- TEACHES [label=\"(2, 4)\", len=1.5];\n    TEACHES -- COURSE [label=\"(1, 1)\", len=1.5];\n    INSTRUCTOR -- ADOPTS [label=\"(0, n)\", len=1.5];\n    ADOPTS -- TEXT [label=\"(0, 1)\", len=1.5];\n    COURSE -- USES [label=\"(0, 5)\", len=1.5];\n    USES -- TEXT [label=\"(1, 1)\", len=1.5];\n}\n```\n\nBased on the TEACHES relationship, which statement is correct regarding COURSE participation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A course can exist without any assigned instructor."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "All courses must have exactly one instructor to teach them."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A course can be taught by multiple instructors."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Courses do not require instructors."
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The notation on the COURSE side for the TEACHES relationship is (1, 1). This indicates total participation (min 1) and that each course is associated with exactly one instructor (max 1)."
+    },
+    {
+      "id": "extract-combined-1777724196019-4",
+      "number": "25",
+      "text": "Consider the following ER diagram using (min, max) notation:\n\n```dot\ngraph ER {\n    layout=neato;\n    node [shape=box]; INSTRUCTOR; COURSE; TEXT;\n    node [shape=diamond]; TEACHES; ADOPTS; USES;\n\n    INSTRUCTOR -- TEACHES [label=\"(2, 4)\", len=1.5];\n    TEACHES -- COURSE [label=\"(1, 1)\", len=1.5];\n    INSTRUCTOR -- ADOPTS [label=\"(0, n)\", len=1.5];\n    ADOPTS -- TEXT [label=\"(0, 1)\", len=1.5];\n    COURSE -- USES [label=\"(0, 5)\", len=1.5];\n    USES -- TEXT [label=\"(1, 1)\", len=1.5];\n}\n```\n\nWhich of the following describes the relationship between COURSE and TEXT according to the USES relationship?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Every course must have at least one textbook."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A course may have no textbook or up to five textbooks."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A course must have exactly five textbooks."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Textbooks are mandatory for all courses."
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The notation on the COURSE side for the USES relationship is (0, 5). This means a course is not required to have a textbook (min 0) and can have a maximum of five."
+    },
+    {
+      "id": "extract-combined-1777724196019-5",
+      "number": "26",
+      "text": "Consider the following ER diagram using (min, max) notation:\n\n```dot\ngraph ER {\n    layout=neato;\n    node [shape=box]; INSTRUCTOR; COURSE; TEXT;\n    node [shape=diamond]; TEACHES; ADOPTS; USES;\n\n    INSTRUCTOR -- TEACHES [label=\"(2, 4)\", len=1.5];\n    TEACHES -- COURSE [label=\"(1, 1)\", len=1.5];\n    INSTRUCTOR -- ADOPTS [label=\"(0, n)\", len=1.5];\n    ADOPTS -- TEXT [label=\"(0, 1)\", len=1.5];\n    COURSE -- USES [label=\"(0, 5)\", len=1.5];\n    USES -- TEXT [label=\"(1, 1)\", len=1.5];\n}\n```\n\nRegarding the USES relationship, how many courses can use a specific textbook?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A textbook can be used by zero or more courses."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A textbook must be used by exactly one course."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A textbook can be used by a maximum of five courses."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A textbook can be used by multiple courses simultaneously."
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The notation on the TEXT side for the USES relationship is (1, 1). This indicates that every textbook entity must be associated with exactly one course."
+    },
+    {
+      "id": "extract-combined-1777724196019-6",
+      "number": "27",
+      "text": "Consider the following ER diagram using (min, max) notation:\n\n```dot\ngraph ER {\n    layout=neato;\n    node [shape=box]; INSTRUCTOR; COURSE; TEXT;\n    node [shape=diamond]; TEACHES; ADOPTS; USES;\n\n    INSTRUCTOR -- TEACHES [label=\"(2, 4)\", len=1.5];\n    TEACHES -- COURSE [label=\"(1, 1)\", len=1.5];\n    INSTRUCTOR -- ADOPTS [label=\"(0, n)\", len=1.5];\n    ADOPTS -- TEXT [label=\"(0, 1)\", len=1.5];\n    COURSE -- USES [label=\"(0, 5)\", len=1.5];\n    USES -- TEXT [label=\"(1, 1)\", len=1.5];\n}\n```\n\nIf the TEACHES relationship between INSTRUCTOR and COURSE is represented with a cardinality ratio of 1:N (1 on Instructor, N on Course), which of the following is true regarding existence constraints if the (min, max) notation on the Course side is (1, 1)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The existence of a COURSE is dependent on an INSTRUCTOR."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The existence of an INSTRUCTOR is dependent on a COURSE."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Neither entity has an existence constraint."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Participation is partial for both entities."
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A (1, 1) constraint on the Course side means every course MUST be associated with an instructor. In ER modeling, this signifies total participation, also known as existence dependency."
+    },
+    {
+      "id": "extract-combined-1777724196019-7",
+      "number": "28",
+      "text": "Assume you have the following instances for the given relations:\n- Students = {P1, P2, P3}\n- Employees = {P1, P4, P5}\n- Persons = {P1, P2, P3, P4, P5}\n\nWhat type of constraint is applied to these relations in a specialization hierarchy where Persons is the superclass?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Partial Disjoint"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Total Disjoint"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Partial Overlapping"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Total Overlapping"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "The union of Students and Employees is {P1, P2, P3, P4, P5}, which equals the set of Persons; this indicates a Total completeness constraint. Since P1 exists in both subclasses, the specialization is Overlapping."
+    },
+    {
+      "id": "extract-combined-1777724196019-8",
+      "number": "29",
+      "text": "Consider the following definition: A specialization $S = \\{v_1, v_2, \\dots, v_n\\}$ is a set of subclasses with the same superclass $G$. If the union of the subclasses is not required to be equal to $G$ (i.e., $\\bigcup v_i \\subseteq G$), then $S$ is a partial specialization.\n\nIs this statement true or false?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "False"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It depends on the disjointness constraint"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "None of the above"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "By definition, a partial specialization allows members of the superclass to not belong to any of the defined subclasses. This means the union of the subclasses is a subset of the superclass, but not necessarily equal to it."
+    },
+    {
+      "id": "extract-combined-1777724196019-9",
+      "number": "30",
+      "text": "Consider the following specialization diagram for the Student entity:\n\n```dot\ngraph ER {\n    node [shape=box] Student, Undergraduate, Master, \"Ph.D.\";\n    node [shape=ellipse] Name, \"Univ_ID\", \"Birth_date\", Address, Program, Minor, \"Project Title\", \"AdvisorName\";\n    node [shape=circle] d;\n\n    Student -- Name;\n    Student -- \"Univ_ID\";\n    Student -- \"Birth_date\";\n    Student -- Address;\n    Student -- Program;\n\n    Student -- d [label=\"total\", style=bold, penwidth=3];\n    d -- Undergraduate;\n    d -- Master;\n    d -- \"Ph.D.\";\n\n    Undergraduate -- Minor;\n    Master -- \"Project Title\";\n    \"Ph.D.\" -- \"AdvisorName\";\n}\n```\n\nBased on the attribute 'Program' being attached to the superclass and determining the specialization subclasses, this is defined as a/an:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "User-defined specialization"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Attribute-defined specialization"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Predicate-defined specialization"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Both B and C are correct"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Specialization based on the value of a specific attribute (like Program) is known as attribute-defined specialization. Since attribute-defined specialization is a specific type of predicate-defined specialization (where the predicate is 'Program = value'), both B and C are correct."
+    },
+    {
+      "id": "extract-combined-1777724196019-10",
+      "number": "31",
+      "text": "Referring to the provided Student specialization diagram, is it possible for a record of the same student to exist in both the Master and Ph.D. programs simultaneously?\n\n```mermaid\ngraph TD\n  Student --- Name\n  Student --- Univ_ID\n  Student --- Birth_date\n  Student --- Address\n  Student --- Program\n  Student === D((d))\n  D --- Undergraduate\n  D --- Master\n  D --- PhD[Ph.D.]\n  Undergraduate --- Minor\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Yes, because it is an overlapping specialization."
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No, because the 'd' symbol indicates a disjoint specialization."
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Yes, if the student is enrolled in a dual degree."
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "No, because the participation is total."
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The 'd' inside the circle stands for 'disjoint', which means an entity instance can belong to at most one of the subclasses in the specialization."
+    },
+    {
+      "id": "extract-combined-1777724196019-11",
+      "number": "32",
+      "text": "In the provided Student specialization diagram, what does the double line (represented as `===` in the mermaid diagram) between Student and the circle 'd' signify?\n\n```mermaid\ngraph TD\n  Student --- Name\n  Student --- Univ_ID\n  Student --- Birth_date\n  Student --- Address\n  Student --- Program\n  Student === D((d))\n  D --- Undergraduate\n  D --- Master\n  D --- PhD[Ph.D.]\n  Undergraduate --- Minor\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Partial specialization constraint"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Total specialization constraint (every student must belong to at least one program)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Disjoint constraint"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Attribute-defined constraint"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A double line from the superclass to the specialization circle indicates total specialization (completeness constraint), meaning every entity in the superclass must be a member of at least one subclass."
+    },
+    {
+      "id": "extract-combined-1777724196019-12",
+      "number": "33",
+      "text": "How many attributes (including inherited ones) are required to fully represent an Undergraduate student according to the provided EER design?\n\n```mermaid\ngraph TD\n  Student --- Name\n  Student --- Univ_ID\n  Student --- Birth_date\n  Student --- Address\n  Student --- Program\n  Student === D((d))\n  D --- Undergraduate\n  D --- Master\n  D --- PhD[Ph.D.]\n  Undergraduate --- Minor\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "5"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "6"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "7"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The Undergraduate subclass inherits all 5 attributes from the Student superclass (Name, Univ_ID, Birth_date, Address, Program) and has 1 specific attribute (Minor), totaling 6 attributes."
+    }
+  ],
+  "params": {
+    "chapter": "6"
+  },
+  "q": 33
+}

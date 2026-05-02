@@ -304,6 +304,12 @@ const EXAM_CONFIG = [
         "file": "data/DBMS/chapter5 ER- and EER-to-Relational Mapping.pptx.json"
       },
       {
+        "id": "6",
+        "name": "ER and EER Diagrams",
+        "q": 33,
+        "file": "data/DBMS/ERandEER.json"
+      },
+      {
         "id": "First.1",
         "name": "#1",
         "q": 37,
