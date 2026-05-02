@@ -275,33 +275,33 @@ const EXAM_CONFIG = [
     "chapters": [
       {
         "id": "1",
-        "name": "Chapter 1: Databases and Database Users",
-        "q": 40,
-        "file": "data/DBMS/chapter1 Database and Database users.pptx.json"
+        "name": "Chapter 1_ Databases and Database Users",
+        "q": 78,
+        "file": "data/DBMS/Chapter 1_ Databases and Database Users.json"
       },
       {
         "id": "2",
-        "name": "Chapter 2 : The Relational Data Model and Relational Database Constraints",
-        "q": 45,
-        "file": "data/DBMS/chapter2 Relational Data Model and Relational Database Constraints.pptx.json"
+        "name": "Chapter 2 _ The Relational Data Model and Relational Database Constraints",
+        "q": 86,
+        "file": "data/DBMS/Chapter 2 _ The Relational Data Model and Relational Database Constraints.json"
       },
       {
         "id": "3",
-        "name": "Chapter 3 :Data Modeling Using the Entity-Relationship (ER) Model",
-        "q": 45,
-        "file": "data/DBMS/chapter3 Data Modeling Using the Entity-Relationship (ER) .pptx.json"
+        "name": "Chapter 3 _Data Modeling Using the Entity-Relationship (ER) Model",
+        "q": 90,
+        "file": "data/DBMS/Chapter 3 _Data Modeling Using the Entity-Relationship (ER) Model.json"
       },
       {
         "id": "4",
-        "name": "Chapter 4 :Enhanced Entity-Relationship (EER) Modeling",
-        "q": 45,
-        "file": "data/DBMS/chapter4 Enhanced Entity-Relationship (EER) Modeling.pptx.json"
+        "name": "Chapter 4 _Enhanced Entity-Relationship (EER) Modeling",
+        "q": 89,
+        "file": "data/DBMS/Chapter 4 _Enhanced Entity-Relationship (EER) Modeling.json"
       },
       {
         "id": "5",
-        "name": "Chapter 5 :ER-to-Relational Mapping Algorithm",
-        "q": 40,
-        "file": "data/DBMS/chapter5 ER- and EER-to-Relational Mapping.pptx.json"
+        "name": "Chapter 5 _ER-to-Relational Mapping Algorithm",
+        "q": 80,
+        "file": "data/DBMS/Chapter 5 _ER-to-Relational Mapping Algorithm.json"
       },
       {
         "id": "6",

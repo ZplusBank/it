@@ -1,0 +1,1407 @@
+{
+  "id": "upload-1777724024166-nlz9s",
+  "label": "3 Data Modeling Using the Entity-Relationship (ER) .pptx",
+  "params": {
+    "file": "3 Data Modeling Using the Entity-Relationship (ER) .pptx"
+  },
+  "title": "Data Modeling Using the Entity-Relationship (ER) Model",
+  "questions": [
+    {
+      "id": "upload-1777724024166-0",
+      "number": "1",
+      "text": "What are the two main activities involved in the database design process as described in the text?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Hardware design and Software design"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Database design and Applications design"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Schema design and UI design"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Logical design and Physical design"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "According to Slide 4, the database design process involves two main activities: Database design (conceptual schema) and Applications design (programs and interfaces)."
+    },
+    {
+      "id": "upload-1777724024166-1",
+      "number": "2",
+      "text": "Which of the following describes 'Entities' in the ER Model?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Properties used to describe an object"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Specific objects or things in the mini-world represented in the database"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The mathematical relations between tables"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The data types associated with attributes"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Entities are specific objects or things in the mini-world that are represented in the database, such as a specific employee or department (Slide 8)."
+    },
+    {
+      "id": "upload-1777724024166-2",
+      "number": "3",
+      "text": "An attribute that can be divided into smaller sub-parts with independent meanings (e.g., Name into FirstName, MiddleName, LastName) is called a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Simple attribute"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Multi-valued attribute"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Composite attribute"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Derived attribute"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A composite attribute may be composed of several components, such as Address or Name (Slide 9)."
+    },
+    {
+      "id": "upload-1777724024166-3",
+      "number": "4",
+      "text": "How is a multi-valued attribute represented in an ER diagram?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Single oval"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Double oval"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Dashed oval"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Underlined oval"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In ER diagrams, multi-valued attributes are displayed in double ovals (Slide 14)."
+    },
+    {
+      "id": "upload-1777724024166-4",
+      "number": "5",
+      "text": "Which notation is used to represent an Entity Type in an ER diagram?\n\n```mermaid\ngraph LR\n    A[Rectangular Box] \n    B((Oval))\n    C{Diamond}\n    D[(Cylinder)]\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Rectangular Box"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Oval"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Diamond-shaped Box"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Double Oval"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Entity types are displayed in rectangular boxes (Slide 14)."
+    },
+    {
+      "id": "upload-1777724024166-5",
+      "number": "6",
+      "text": "What is a 'Key Attribute' of an entity type?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "An attribute that must be a string"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "An attribute that can have null values"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "An attribute for which each entity must have a unique value"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "An attribute that links two entities"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A key attribute is an attribute for which each entity must have a unique value, such as SSN for EMPLOYEE (Slide 12)."
+    },
+    {
+      "id": "upload-1777724024166-6",
+      "number": "7",
+      "text": "Which of the following is true regarding a 'Weak Entity Type'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It has multiple key attributes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It does not have a key attribute of its own"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It is represented by a single rectangle"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It cannot have any attributes"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A weak entity type is an entity that does not have a key attribute and must participate in an identifying relationship (Slide 29)."
+    },
+    {
+      "id": "upload-1777724024166-7",
+      "number": "8",
+      "text": "In the COMPANY database example, if an EMPLOYEE is identified by SSN and a DEPENDENT is identified by the combination of the EMPLOYEE's SSN and the DEPENDENT's Name, the Name of the DEPENDENT is called a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Primary Key"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Foreign Key"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Partial Key"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Composite Key"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The Name of a DEPENDENT is a partial key because it identifies the weak entity only in combination with the owner entity (Slide 29)."
+    },
+    {
+      "id": "upload-1777724024166-8",
+      "number": "9",
+      "text": "What does the 'Degree' of a relationship type represent?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The number of attributes in the relationship"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The number of participating entity types"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The maximum number of entities allowed"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The level of nesting in attributes"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The degree of a relationship type is the number of participating entity types (Slide 20)."
+    },
+    {
+      "id": "upload-1777724024166-9",
+      "number": "10",
+      "text": "A relationship type where the same entity type participates more than once in different roles is called a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Binary relationship"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Ternary relationship"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Recursive relationship"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Identifying relationship"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A recursive relationship type is one in which the same participating entity type exists in distinct roles (Slide 28)."
+    },
+    {
+      "id": "upload-1777724024166-10",
+      "number": "11",
+      "text": "In a 1:N relationship (e.g., WORKS_FOR between DEPARTMENT and EMPLOYEE), where is the relationship attribute usually best placed if it exists?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "On the 1-side entity type"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "On the N-side entity type"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "On a new weak entity"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It must stay on the relationship diamond"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In 1:N relationships, relationship attributes can be transferred to the entity type on the N-side (Slide 36)."
+    },
+    {
+      "id": "upload-1777724024166-11",
+      "number": "12",
+      "text": "What is the meaning of a 'Total Participation' constraint (existence dependency)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Every entity in the entity set must participate in at least one relationship instance"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Entities can optionally participate in the relationship"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Each entity can only participate in one relationship instance"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The relationship must have at least two attributes"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Total participation (existence dependency) means every entity in the set must participate in the relationship, shown by a double line (Slide 30, 38)."
+    },
+    {
+      "id": "upload-1777724024166-12",
+      "number": "13",
+      "text": "Using (min, max) notation, if an employee can manage at most one department but may manage none, the participation of EMPLOYEE in the MANAGES relationship is:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "(1, 1)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "(0, 1)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "(0, n)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "(1, n)"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Min=0 means optional participation; Max=1 means at most one relationship instance (Slide 39)."
+    },
+    {
+      "id": "upload-1777724024166-13",
+      "number": "14",
+      "text": "How does UML represent entity types (classes)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Diamonds with attributes attached"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Ovals with lines to rectangles"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Large rounded boxes with three sections"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Double-lined rectangles"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "UML class diagrams represent classes as large rounded boxes with three sections: name, attributes, and operations (Slide 44)."
+    },
+    {
+      "id": "upload-1777724024166-14",
+      "number": "15",
+      "text": "In an ER diagram, how is a relationship type visualized?\n\n```mermaid\ngraph TD\n    subgraph Legend\n    R1[Rect] --- Entity\n    R2{Diamond} --- Relationship\n    R3((Oval)) --- Attribute\n    end\n```",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Rectangle"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Diamond"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Oval"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Double Rectangle"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A diamond-shaped box is used to display a relationship type (Slide 24)."
+    },
+    {
+      "id": "upload-1777724024166-15",
+      "number": "16",
+      "text": "Which of the following is an example of a multi-valued attribute from the provided text?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Social Security Number (SSN)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Employee Name"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Locations of a DEPARTMENT"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Birth Date"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "According to Slide 6 and Slide 9, a department may have several locations, making it a multi-valued attribute."
+    },
+    {
+      "id": "upload-1777724024166-16",
+      "number": "17",
+      "text": "What is the difference between a 'Relationship Type' and a 'Relationship Set'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A type is the current state; a set is the schema description"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A type is the schema description; a set is the current collection of instances"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "They are identical terms and used interchangeably"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A type refers to binary relationships; a set refers to ternary relationships"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Relationship Type is the schema description; Relationship Set is the current set of instances in the database (Slide 23)."
+    },
+    {
+      "id": "upload-1777724024166-17",
+      "number": "18",
+      "text": "If a relationship involves three entity types, it is called a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Binary relationship"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Recursive relationship"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Ternary relationship"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Unary relationship"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Relationship types of degree 3 are called ternary (Slide 46)."
+    },
+    {
+      "id": "upload-1777724024166-18",
+      "number": "19",
+      "text": "What is the purpose of 'Role Names' in an ER diagram?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To name the primary key of an entity"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To distinguish the different participations of an entity type in a recursive relationship"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To identify the data type of an attribute"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To list the operations in a UML class"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Role names are used to distinguish participations, especially in recursive relationships like SUPERVISION (Slide 33)."
+    },
+    {
+      "id": "upload-1777724024166-19",
+      "number": "20",
+      "text": "A 'VehicleTagNumber' is a key of the CAR entity type with components (Number, State). This is an example of a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Simple key"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Composite key"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Multi-valued key"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Weak key"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A key attribute may be composite, such as VehicleTagNumber which consists of (Number, State) (Slide 13)."
+    },
+    {
+      "id": "upload-1777724024166-20",
+      "number": "21",
+      "text": "In (min, max) notation, what does a `min = 0` signify?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Mandatory participation"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Optional participation"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The entity does not exist"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The relationship is invalid"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Min=0 signifies optional participation (Slide 39)."
+    },
+    {
+      "id": "upload-1777724024166-21",
+      "number": "22",
+      "text": "Which attribute type is denoted by curly braces { } in text descriptions (e.g., {Color})?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Composite attribute"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Multi-valued attribute"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Key attribute"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Simple attribute"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Multi-valued attributes are denoted as {Color} or {PreviousDegrees} (Slide 9)."
+    },
+    {
+      "id": "upload-1777724024166-22",
+      "number": "23",
+      "text": "The 'WORKS_ON' relationship in the COMPANY database between EMPLOYEE and PROJECT is likely to be of which cardinality ratio, given an employee can work on several projects and a project can have several employees?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1:1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "1:N"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "N:1"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "M:N"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "Because an employee works on several projects and a project involves several employees, it is a many-to-many (M:N) relationship (Slide 22, 30)."
+    },
+    {
+      "id": "upload-1777724024166-23",
+      "number": "24",
+      "text": "What does a double-lined rectangle represent in an ER diagram?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A strong entity type"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A weak entity type"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A multi-valued attribute"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A relationship type"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "While Slide 14 mentions rectangles for entity types, standard ER notation (and common usage for identifying weak entities) uses double rectangles for weak entities. Slide 43's summary confirms double rectangles for weak entities."
+    },
+    {
+      "id": "upload-1777724024166-24",
+      "number": "25",
+      "text": "Which of the following is NOT part of the basic ER model concepts but is included in UML class diagrams?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Attributes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Entity Names"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Class Operations"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Relationships"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Slide 44 states that operations are not in the basic ER model but are included in the third section of UML class diagrams."
+    },
+    {
+      "id": "upload-1777724024166-25",
+      "number": "26",
+      "text": "Identify the degree of the SUPERVISION relationship.",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "SUPERVISION is a binary relationship (degree 2) because it relates two entities of the same type (Slide 25)."
+    },
+    {
+      "id": "upload-1777724024166-26",
+      "number": "27",
+      "text": "If a relationship attribute 'Hours' is associated with the 'WORKS_ON' relationship between EMPLOYEE and PROJECT, it means:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Total hours worked by an employee across all projects"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Total hours spent on a project by all employees"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The number of hours a specific employee works on a specific project"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The duration of the project"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The value of a relationship attribute depends on the particular combination of participating entities (Slide 36)."
+    },
+    {
+      "id": "upload-1777724024166-27",
+      "number": "28",
+      "text": "A 'Value Set' associated with an attribute is essentially its:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Primary key"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data type"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Entity set"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Relationship set"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Each attribute has a value set (or data type) associated with it, such as integer or string (Slide 8)."
+    },
+    {
+      "id": "upload-1777724024166-28",
+      "number": "29",
+      "text": "How is a 'Total Participation' constraint represented in an ER diagram notation?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Single line"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Double line"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Dashed line"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Arrow head"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Total participation is shown by a double line (Slide 38)."
+    },
+    {
+      "id": "upload-1777724024166-29",
+      "number": "30",
+      "text": "In the (min, max) notation, where is the constraint displayed?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Inside the diamond box"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "On the oval of the attribute"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "On the edge connecting the entity type and the relationship type"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Underneath the entity rectangle"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The (min, max) notation is specified on each participation of an entity type E in a relationship type R, effectively on the connecting edges (Slide 39)."
+    },
+    {
+      "id": "upload-1777724024166-30",
+      "number": "31",
+      "text": "If a ternary relationship exists between SUPPLIER, PART, and PROJECT, which of the following is true?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It can always be replaced by three binary relationships without loss of information"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "It represents an association between three entity types"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "It must have at least one weak entity"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It is always redundant"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A ternary relationship involves three entity types and is generally not equivalent to three binary relationships (Slide 46, 47)."
+    },
+    {
+      "id": "upload-1777724024166-31",
+      "number": "32",
+      "text": "Which of the following is considered a 'negative' of many popular data modeling tools?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "They provide graphical editors"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "They serve as documentation"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "They often lack proper notation for relationship attributes"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "They support relational mapping"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Most tools lack a proper distinct notation for relationships with relationship attributes (Slide 52)."
+    },
+    {
+      "id": "upload-1777724024166-32",
+      "number": "33",
+      "text": "In the COMPANY database, the 'DEPENDENTS_OF' relationship is an example of an:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Identifying relationship"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Recursive relationship"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "M:N relationship"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Ternary relationship"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "A weak entity must participate in an identifying relationship type with an owner entity type; DEPENDENT participates in DEPENDENTS_OF (Slide 29)."
+    },
+    {
+      "id": "upload-1777724024166-33",
+      "number": "34",
+      "text": "If an attribute `PreviousDegrees` is defined as `{PreviousDegrees (College, Year, Degree, Field)}`, it is a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Simple attribute"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Simple multi-valued attribute"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Composite multi-valued attribute"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Key attribute"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "It is multi-valued (multiple degrees possible) and composite (each degree has sub-components) (Slide 10)."
+    },
+    {
+      "id": "upload-1777724024166-34",
+      "number": "35",
+      "text": "What is an 'Entity Set'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The collection of all entity types in the schema"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A collection of entities of the same type currently stored in the database"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The list of attributes for an entity"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A set of keys for a specific entity"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "An entity set is the collection of all entities of a particular entity type at any point in time (Slide 16)."
+    },
+    {
+      "id": "upload-1777724024166-35",
+      "number": "36",
+      "text": "Which of these is a valid constraint on a (min, max) specification?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "min > max"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "min < 0"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "min ≤ max"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "max = 0"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "According to Slide 39, we must have min ≤ max, min ≥ 0, and max ≥ 1."
+    },
+    {
+      "id": "upload-1777724024166-36",
+      "number": "37",
+      "text": "In ER Diagrams, how are components of a composite attribute connected?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Directly to the entity rectangle"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To the oval representing the composite attribute"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To the relationship diamond"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Using double lines to the entity"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Components of a composite attribute are connected to the oval representing the composite attribute (Slide 14)."
+    },
+    {
+      "id": "upload-1777724024166-37",
+      "number": "38",
+      "text": "What does a '1' on an edge of a higher-degree relationship indicate?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "That participation is optional"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "That participation is total"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "That an entity can participate in at most one relationship instance given a unique combination of other entities"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "That there is only one entity type in the relationship"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In higher-degree relationships, a 1 indicates that an entity can participate in at most one relationship instance for a particular combination of the other participating entities (Slide 51)."
+    },
+    {
+      "id": "upload-1777724024166-38",
+      "number": "39",
+      "text": "Which notation is typically used to represent a partial key?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Solid underline"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Dashed underline"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Double underline"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Bold text"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "In ER diagrams, key attributes are underlined. Partial keys are typically represented with a dashed underline (implied by standard ER notation in Slide 43's summary table)."
+    },
+    {
+      "id": "upload-1777724024166-39",
+      "number": "40",
+      "text": "In the (min, max) notation, what is the default constraint if none is specified?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "min=1, max=1"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "min=0, max=1"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "min=0, max=n"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "min=1, max=n"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Default (no constraint) is min=0, max=n, signifying no limit (Slide 39)."
+    },
+    {
+      "id": "upload-1777724024166-40",
+      "number": "41",
+      "text": "Relationships of the same type are grouped into a:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Relationship set"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Relationship type"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Entity type"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Value set"
+        }
+      ],
+      "inputName": "Q40",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Relationships of the same type are grouped or typed into a relationship type (Slide 20)."
+    },
+    {
+      "id": "upload-1777724024166-41",
+      "number": "42",
+      "text": "Which model extension is mentioned to support specialization and generalization abstractions?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Relational Model"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Object-Oriented Model"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Extended Entity-Relationship (EER) Model"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "UML Association Model"
+        }
+      ],
+      "inputName": "Q41",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The Extended Entity-Relationship (EER) model supports specialization and generalization (Slide 53)."
+    },
+    {
+      "id": "upload-1777724024166-42",
+      "number": "43",
+      "text": "In UML class diagrams, relationships are called:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Entities"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Attributes"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Associations"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Methods"
+        }
+      ],
+      "inputName": "Q42",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "In UML, relationships are represented as lines connecting classes and are called associations (Slide 44)."
+    },
+    {
+      "id": "upload-1777724024166-43",
+      "number": "44",
+      "text": "A specific employee entity has the attribute Name='John Smith'. Here, 'John Smith' is a/an:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Attribute name"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Value"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Entity set"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Key"
+        }
+      ],
+      "inputName": "Q43",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A specific entity will have a value for each of its attributes (Slide 8)."
+    },
+    {
+      "id": "upload-1777724024166-44",
+      "number": "45",
+      "text": "In the COMPANY database, the 'SUPERVISION' relationship involves which entity type?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "DEPARTMENT and EMPLOYEE"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "EMPLOYEE and EMPLOYEE"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "PROJECT and EMPLOYEE"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "DEPARTMENT and PROJECT"
+        }
+      ],
+      "inputName": "Q44",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The SUPERVISION relationship is recursive, where an EMPLOYEE participates twice (as supervisor and supervisee) (Slide 28)."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 45
+}

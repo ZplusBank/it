@@ -1,0 +1,1252 @@
+{
+  "id": "upload-1777723942307-cubgo",
+  "label": "1 Database and Database users.pptx",
+  "params": {
+    "file": "1 Database and Database users.pptx"
+  },
+  "title": "Chapter 1: Databases and Database Users",
+  "questions": [
+    {
+      "id": "upload-1777723942308-0",
+      "number": "1",
+      "text": "What is the primary function of a Geographic Information System (GIS)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Store textual or numeric information only"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Control industrial and manufacturing processes"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Store and analyze maps, weather data, and satellite images"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Extract business information from very large databases"
+        }
+      ],
+      "inputName": "Q0",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "GIS are specialized databases designed to handle spatial data such as maps and satellite imagery."
+    },
+    {
+      "id": "upload-1777723942308-1",
+      "number": "2",
+      "text": "The term 'Miniworld' or 'Universe of Discourse' (UoD) refers to:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A global network of databases"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The specific aspect of the real world that a database represents"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The meta-data stored in a database catalog"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A database containing only multimedia files"
+        }
+      ],
+      "inputName": "Q1",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A database represents some specific aspect of the real world, called the miniworld or UoD."
+    },
+    {
+      "id": "upload-1777723942308-2",
+      "number": "3",
+      "text": "Which of the following defines a Database Management System (DBMS)?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A collection of related data with implicit meaning"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A specific piece of hardware used for storage"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "A collection of programs that enables users to create and maintain a database"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The set of records stored in a file system"
+        }
+      ],
+      "inputName": "Q2",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "A DBMS is the software package that facilitates the creation and maintenance of a computerized database."
+    },
+    {
+      "id": "upload-1777723942308-3",
+      "number": "4",
+      "text": "In the context of database management, what does 'Defining' a database involve?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Retrieving data via queries"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Specifying data types, structures, and constraints"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Updating records in the miniworld"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Generating monthly reports for management"
+        }
+      ],
+      "inputName": "Q3",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Defining involves specifying the structure, types, and constraints of the data to be stored."
+    },
+    {
+      "id": "upload-1777723942308-4",
+      "number": "5",
+      "text": "What is 'Meta-data' in a database system?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The raw data values for students and courses"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The hardware configuration of the database server"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Descriptive information about the database structure stored in a catalog"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The log of user login attempts"
+        }
+      ],
+      "inputName": "Q4",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Meta-data is descriptive information (database definition) stored in the catalog or dictionary."
+    },
+    {
+      "id": "upload-1777723942308-5",
+      "number": "6",
+      "text": "Which property ensures that either all operations in a transaction are executed or none are?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Isolation"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Atomicity"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Abstraction"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Redundancy"
+        }
+      ],
+      "inputName": "Q5",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Atomicity ensures that a transaction is treated as a single unit; it either completes entirely or fails entirely."
+    },
+    {
+      "id": "upload-1777723942308-6",
+      "number": "7",
+      "text": "Consider the following database system components. Match them to the correct hierarchy level:\n\n```mermaid\ngraph TD\n    A[End Users] --> B[DBMS Software]\n    B --> C[Stored Database Definition / Meta-data]\n    B --> D[Stored Database]\n```\nWhat is the name of the 'Stored Database Definition' used by the DBMS software to achieve self-description?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Database Schema"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Database Catalog"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Application Program"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Transaction Log"
+        }
+      ],
+      "inputName": "Q6",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The database catalog stores the meta-data, allowing the system to be self-describing."
+    },
+    {
+      "id": "upload-1777723942308-7",
+      "number": "8",
+      "text": "Which phase of database design focuses on specifying the data types and structures for the UNIVERSITY database?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Requirements specification"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Physical design"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Logical design"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Conceptual design"
+        }
+      ],
+      "inputName": "Q7",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Logical design (or Data Model Mapping) involves mapping the conceptual schema into the data model of the specific DBMS (like relational structures)."
+    },
+    {
+      "id": "upload-1777723942308-8",
+      "number": "9",
+      "text": "What is the main drawback of traditional file processing compared to the database approach?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "It requires expensive DBMS software"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data is defined once and accessed by many"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Each user defines and implements the specific files they need, leading to redundancy"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "It uses meta-data which slows down the system"
+        }
+      ],
+      "inputName": "Q8",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Traditional file processing leads to data redundancy and inconsistency because each application maintains its own files."
+    },
+    {
+      "id": "upload-1777723942308-9",
+      "number": "10",
+      "text": "Program-data independence is achieved because:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Data is stored on separate physical disks"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The structure of data files is stored in the DBMS catalog separately from access programs"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Users are not allowed to access the data directly"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The DBMS uses C++ to store objects"
+        }
+      ],
+      "inputName": "Q9",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Storing the structure in the catalog (meta-data) allows the DBMS to change storage structures without modifying application programs."
+    },
+    {
+      "id": "upload-1777723942308-10",
+      "number": "11",
+      "text": "Which characteristic of the database approach allows a student to see their grades while a registrar sees student billing information from the same database?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Program-operation independence"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data abstraction"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Support of multiple views"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Concurrency control"
+        }
+      ],
+      "inputName": "Q10",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Multiple views allow different users to see different subsets or perspectives of the database."
+    },
+    {
+      "id": "upload-1777723942308-11",
+      "number": "12",
+      "text": "What does the 'Isolation' property of a transaction ensure?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A transaction must be completed in its entirety"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Each transaction appears to execute without interference from other concurrent transactions"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Only one user can use the database at a time"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The database is protected from hardware failure"
+        }
+      ],
+      "inputName": "Q11",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Isolation ensures that the execution of one transaction is not affected by others occurring at the same time."
+    },
+    {
+      "id": "upload-1777723942308-12",
+      "number": "13",
+      "text": "Who is responsible for authorizing access to the database and coordinating/monitoring its use?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Database Designer"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "System Analyst"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Database Administrator (DBA)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Application Programmer"
+        }
+      ],
+      "inputName": "Q12",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The DBA is responsible for administration tasks like security, authorization, and resource acquisition."
+    },
+    {
+      "id": "upload-1777723942308-13",
+      "number": "14",
+      "text": "Users who use 'canned transactions' to interact with the database (e.g., bank tellers) are classified as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Casual end users"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Sophisticated end users"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Naive or parametric end users"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Standalone users"
+        }
+      ],
+      "inputName": "Q13",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Naive or parametric users interact through standard, predefined transactions."
+    },
+    {
+      "id": "upload-1777723942308-14",
+      "number": "15",
+      "text": "Which of the following is considered a 'Worker behind the scene'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Database Designer"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "DBMS system designer and implementer"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Database Administrator"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Casual end user"
+        }
+      ],
+      "inputName": "Q14",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Workers behind the scene develop the tools and the DBMS software itself, rather than using the database content."
+    },
+    {
+      "id": "upload-1777723942308-15",
+      "number": "16",
+      "text": "What is the purpose of 'Controlled Redundancy' in a database?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "To increase security"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "To improve query performance"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "To save storage space"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "To simplify database design"
+        }
+      ],
+      "inputName": "Q15",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "While redundancy is generally avoided, controlled redundancy (denormalization) is sometimes used to speed up specific queries."
+    },
+    {
+      "id": "upload-1777723942308-16",
+      "number": "17",
+      "text": "A 'Referential Integrity' constraint ensures that:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Every record has a unique ID"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A record in one file (e.g., Grade) must relate to an existing record in another file (e.g., Student)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The database is backed up every day"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Only authorized users can access the data"
+        }
+      ],
+      "inputName": "Q16",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Referential integrity maintains consistency between related files."
+    },
+    {
+      "id": "upload-1777723942308-17",
+      "number": "18",
+      "text": "What is the 'Impedance Mismatch' problem?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "The difference between disk speed and CPU speed"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "The mismatch between data structures in a programming language (like C++) and those in a database model"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The conflict between two users updating the same record"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The failure of a transaction to achieve atomicity"
+        }
+      ],
+      "inputName": "Q17",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Impedance mismatch refers to the difficulty of mapping object-oriented programming structures to relational database structures."
+    },
+    {
+      "id": "upload-1777723942308-18",
+      "number": "19",
+      "text": "Under which condition is it better to use regular files instead of a DBMS?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "When the database is expected to grow rapidly"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "When there are multiple users accessing the data"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "When there are stringent real-time requirements that DBMS overhead might hinder"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "When complex relationships need to be represented"
+        }
+      ],
+      "inputName": "Q18",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "DBMS overhead (security, concurrency, etc.) can be too high for certain time-critical or storage-limited applications."
+    },
+    {
+      "id": "upload-1777723942308-19",
+      "number": "20",
+      "text": "Which of these is an example of an 'Update' operation in a UNIVERSITY database?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Retrieve the transcript of a student"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "List the prerequisites of a course"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Changing a student's class from 'freshman' to 'sophomore'"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Generating a list of students in the Fall section"
+        }
+      ],
+      "inputName": "Q19",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Changing data values constitutes an update, whereas simply listing or retrieving data are queries."
+    },
+    {
+      "id": "upload-1777723942308-20",
+      "number": "21",
+      "text": "Which property of database systems allows the implementation of an operation to be changed without affecting the application program that calls it?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Program-operation independence"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Program-data independence"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Multiuser concurrency"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Data Normalization"
+        }
+      ],
+      "inputName": "Q20",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Program-operation independence separates the interface (name/arguments) from the implementation."
+    },
+    {
+      "id": "upload-1777723942308-21",
+      "number": "22",
+      "text": "In a database, a 'Trigger' is defined as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "A button in the GUI"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "A rule activated automatically by updates to a table"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The primary key of a table"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "A hardware switch for backups"
+        }
+      ],
+      "inputName": "Q21",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Triggers are active rules that run automatically when specific data modifications occur."
+    },
+    {
+      "id": "upload-1777723942308-22",
+      "number": "23",
+      "text": "Which type of end user typically writes complex queries to meet new or unusual requirements?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Parametric end users"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Sophisticated end users"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Standalone users"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Casual end users"
+        }
+      ],
+      "inputName": "Q22",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Sophisticated end users (engineers, scientists, analysts) use the full capabilities of the DBMS for complex tasks."
+    },
+    {
+      "id": "upload-1777723942308-23",
+      "number": "24",
+      "text": "What is the role of 'System Analysts' in the database environment?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Writing the code for application programs"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Maintaining the hardware"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Determining the requirements of end users"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Choosing storage structures"
+        }
+      ],
+      "inputName": "Q23",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "System analysts bridge the gap between users and programmers by defining system requirements."
+    },
+    {
+      "id": "upload-1777723942308-24",
+      "number": "25",
+      "text": "Providing backup and recovery is a task of the DBMS intended to protect against:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Unauthorized users"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "System crashes or hardware failures"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Data redundancy"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Logical errors in program code"
+        }
+      ],
+      "inputName": "Q24",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The backup and recovery subsystem restores the database to a consistent state after a crash."
+    },
+    {
+      "id": "upload-1777723942308-25",
+      "number": "26",
+      "text": "The conceptual representation of data that hides storage details is known as:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Physical structure"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Data model"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Transaction log"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Data Redundancy"
+        }
+      ],
+      "inputName": "Q25",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "A data model is a type of data abstraction used to provide a conceptual representation."
+    },
+    {
+      "id": "upload-1777723942308-26",
+      "number": "27",
+      "text": "Which category of database applications is specifically used to control industrial and manufacturing processes?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "OLAP systems"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Multimedia databases"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Real-time and active databases"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "GIS"
+        }
+      ],
+      "inputName": "Q26",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "Real-time and active database technology is used for process control where time sensitivity is critical."
+    },
+    {
+      "id": "upload-1777723942308-27",
+      "number": "28",
+      "text": "Which of the following is NOT one of the main phases of database design mentioned in the slides?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Requirements specification and analysis"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Conceptual design"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Hardware maintenance design"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Physical design"
+        }
+      ],
+      "inputName": "Q27",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "The standard phases are Requirements, Conceptual, Logical, and Physical design."
+    },
+    {
+      "id": "upload-1777723942308-28",
+      "number": "29",
+      "text": "Which actor is responsible for choosing the structures to represent and store data?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Database Designer"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Casual end user"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Application Programmer"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Tool developer"
+        }
+      ],
+      "inputName": "Q28",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Database designers identify the data to be stored and choose the structures."
+    },
+    {
+      "id": "upload-1777723942308-29",
+      "number": "30",
+      "text": "What does OLAP stand for in the context of data warehouses?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Online Linear Access Protocol"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Offline Analytical Processing"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Online Analytical Processing"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Optimal Logical Access Process"
+        }
+      ],
+      "inputName": "Q29",
+      "inputType": "radio",
+      "correctAnswer": "C",
+      "explanation": "OLAP systems extract and analyze business information from very large databases to support decision-making."
+    },
+    {
+      "id": "upload-1777723942308-30",
+      "number": "31",
+      "text": "A 'Key' or 'Uniqueness' constraint ensures that:",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "All data in the table is numeric"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No two records have the same value for a specific field (like Course_number)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "The data is always encrypted"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The database is shared across multiple servers"
+        }
+      ],
+      "inputName": "Q30",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Key constraints ensure each record is uniquely identifiable."
+    },
+    {
+      "id": "upload-1777723942308-31",
+      "number": "32",
+      "text": "Which of the following is a benefit of the database approach regarding software development?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Elimination of all programming needs"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Reduced application development time"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Reduced need for hardware"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Slower but more accurate development"
+        }
+      ],
+      "inputName": "Q31",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Using a DBMS provides many standard functions, reducing the time needed to develop custom applications."
+    },
+    {
+      "id": "upload-1777723942308-32",
+      "number": "33",
+      "text": "What is 'Concurrency Control'?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Restricting users from logging in after hours"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Ensuring multiple users can update the same data simultaneously without errors"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Running backups while the database is in use"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Checking if two records are identical"
+        }
+      ],
+      "inputName": "Q32",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Concurrency control software manages simultaneous access to ensure the database remains consistent."
+    },
+    {
+      "id": "upload-1777723942308-33",
+      "number": "34",
+      "text": "Which system uses rules to infer new information from existing facts in the database?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Object-oriented DBMS"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Deductive database systems"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Real-time systems"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Traditional file systems"
+        }
+      ],
+      "inputName": "Q33",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Deductive database systems provide capabilities for defining deduction rules to infer new information."
+    },
+    {
+      "id": "upload-1777723942308-34",
+      "number": "35",
+      "text": "The transition from the Conceptual design to the Physical design typically includes which intermediary step?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "User survey"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Logical design"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Hardware acquisition"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Security auditing"
+        }
+      ],
+      "inputName": "Q34",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "The workflow is: Requirements -> Conceptual -> Logical -> Physical."
+    },
+    {
+      "id": "upload-1777723942308-35",
+      "number": "36",
+      "text": "In the UNIVERSITY database example, which of these is likely a PREREQUISITE record element?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Student Name"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Course_number and its Prerequisite_number"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Current Semester Grade"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Instructor salary"
+        }
+      ],
+      "inputName": "Q35",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Prerequisite records represent the relationships between different courses."
+    },
+    {
+      "id": "upload-1777723942308-36",
+      "number": "37",
+      "text": "Which is NOT a reason to avoid a DBMS?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Simple application not expected to change"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "No multiple-user access needed"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Embedded system with limited storage"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Need for high data security"
+        }
+      ],
+      "inputName": "Q36",
+      "inputType": "radio",
+      "correctAnswer": "D",
+      "explanation": "A DBMS actually provides better security via its security and authorization subsystems."
+    },
+    {
+      "id": "upload-1777723942308-37",
+      "number": "38",
+      "text": "Which component is responsible for increasing the efficiency of query processing?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Indexes"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Application program"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Naive end users"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "The catalog"
+        }
+      ],
+      "inputName": "Q37",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Indexes are storage structures used to speed up the retrieval of specific data."
+    },
+    {
+      "id": "upload-1777723942308-38",
+      "number": "39",
+      "text": "What type of end users maintain their own personal databases by using ready-made software packages?",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Parametric end users"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Standalone users"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Casual end users"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Database Designers"
+        }
+      ],
+      "inputName": "Q38",
+      "inputType": "radio",
+      "correctAnswer": "B",
+      "explanation": "Standalone users maintain personal databases with easy-to-use packages."
+    },
+    {
+      "id": "upload-1777723942308-39",
+      "number": "40",
+      "text": "Complete the logic: Data abstraction = conceptual representation of data + _____",
+      "choices": [
+        {
+          "value": "A",
+          "label": "A",
+          "text": "Hiding of storage details"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "text": "Increased redundancy"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "text": "Hardware maintenance"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "text": "Manual file searching"
+        }
+      ],
+      "inputName": "Q39",
+      "inputType": "radio",
+      "correctAnswer": "A",
+      "explanation": "Data abstraction allows the conceptual representation of data without including details of how it is stored."
+    }
+  ],
+  "status": "completed",
+  "totalQuestions": 40
+}
